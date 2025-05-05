@@ -11448,7 +11448,7 @@
       "apCost": 3,
       "usesPerTurn": 2,
       "minRange": 2,
-      "maxRange": 3,
+      "maxRange": 6,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -14222,7 +14222,7 @@
       "apCost": 3,
       "usesPerTurn": 2,
       "minRange": 2,
-      "maxRange": 4,
+      "maxRange": 6,
       "baseCritChance": 30,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -14371,7 +14371,7 @@
       "apCost": 4,
       "usesPerTurn": 1,
       "minRange": 2,
-      "maxRange": 3,
+      "maxRange": 5,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -15296,7 +15296,7 @@
       "apCost": 4,
       "usesPerTurn": 1,
       "minRange": 2,
-      "maxRange": 4,
+      "maxRange": 6,
       "baseCritChance": 30,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -24560,6 +24560,103 @@
     "imageUrl": "item/7057.png"
   },
   {
+    "dofusID": "8098",
+    "name": {
+      "en": "Blade O'Ven",
+      "fr": "Lame Usicke",
+      "de": "Errs Klinge",
+      "es": "Hacha Musical",
+      "pt": "Lâmina de Thoven",
+      "it": "Blade O'Ven"
+    },
+    "itemType": "Axe",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 450
+      },
+      {
+        "stat": "Chance",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 5,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": 2,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        {
+          "stat": "Water damage",
+          "minStat": 11,
+          "maxStat": 14
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 11,
+          "maxStat": 14
+        },
+        {
+          "stat": "MP",
+          "minStat": null,
+          "maxStat": -1
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/19038.png"
+  },
+  {
     "dofusID": "8099",
     "name": {
       "en": "Axe of Lies",
@@ -25084,7 +25181,7 @@
       "apCost": 4,
       "usesPerTurn": 2,
       "minRange": 2,
-      "maxRange": 4,
+      "maxRange": 6,
       "baseCritChance": 25,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -25448,7 +25545,7 @@
       "it": "Minotot Sceptre"
     },
     "itemType": "Staff",
-    "setID": null,
+    "setID": "57",
     "level": 151,
     "stats": [
       {
@@ -29268,7 +29365,7 @@
       "it": "Cheeken Axe"
     },
     "itemType": "Axe",
-    "setID": null,
+    "setID": "997",
     "level": 137,
     "stats": [
       {
@@ -29355,7 +29452,7 @@
       "it": "Kidommer"
     },
     "itemType": "Hammer",
-    "setID": null,
+    "setID": "999",
     "level": 77,
     "stats": [
       {
@@ -30462,12 +30559,12 @@
       }
     ],
     "weaponStats": {
-      "apCost": 5,
+      "apCost": 4,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 5,
-      "critBonusDamage": 7,
+      "baseCritChance": 20,
+      "critBonusDamage": 4,
       "weapon_effects": [
         {
           "stat": "Air damage",
@@ -34085,7 +34182,7 @@
       "apCost": 5,
       "usesPerTurn": 1,
       "minRange": 2,
-      "maxRange": 3,
+      "maxRange": 5,
       "baseCritChance": 15,
       "critBonusDamage": 4,
       "weapon_effects": [
@@ -39123,7 +39220,7 @@
       "it": "Sea Knife"
     },
     "itemType": "Dagger",
-    "setID": null,
+    "setID": "995",
     "level": 124,
     "stats": [
       {
@@ -40008,7 +40105,7 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 10,
+      "baseCritChance": 15,
       "critBonusDamage": 4,
       "weapon_effects": [
         {
@@ -40128,7 +40225,7 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 5,
+      "baseCritChance": 20,
       "critBonusDamage": 7,
       "weapon_effects": [
         {
@@ -42303,7 +42400,7 @@
       "apCost": 5,
       "usesPerTurn": 1,
       "minRange": 4,
-      "maxRange": 7,
+      "maxRange": 8,
       "baseCritChance": 15,
       "critBonusDamage": 4,
       "weapon_effects": [
@@ -44305,8 +44402,8 @@
       "apCost": 5,
       "usesPerTurn": 1,
       "minRange": 3,
-      "maxRange": 7,
-      "baseCritChance": 10,
+      "maxRange": 8,
+      "baseCritChance": 20,
       "critBonusDamage": 5,
       "weapon_effects": [
         {
@@ -46532,12 +46629,12 @@
       }
     ],
     "weaponStats": {
-      "apCost": 3,
+      "apCost": 4,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
       "baseCritChance": 15,
-      "critBonusDamage": 6,
+      "critBonusDamage": 8,
       "weapon_effects": [
         {
           "stat": "Fire steal",
@@ -47415,7 +47512,7 @@
       "it": "Sacrificial Knives"
     },
     "itemType": "Dagger",
-    "setID": null,
+    "setID": "467",
     "level": 200,
     "stats": [
       {
@@ -48828,7 +48925,7 @@
         "Cooperative crafting impossible"
       ],
       "fr": [
-        "Craft coopératif impossible"
+        "Fabrication coopérative impossible"
       ],
       "de": [
         "Kooperatives Craften unmöglich"
@@ -48924,7 +49021,7 @@
         "Cooperative crafting impossible"
       ],
       "fr": [
-        "Craft coopératif impossible"
+        "Fabrication coopérative impossible"
       ],
       "de": [
         "Kooperatives Craften unmöglich"
@@ -49020,7 +49117,7 @@
         "Cooperative crafting impossible"
       ],
       "fr": [
-        "Craft coopératif impossible"
+        "Fabrication coopérative impossible"
       ],
       "de": [
         "Kooperatives Craften unmöglich"
@@ -49116,7 +49213,7 @@
         "Cooperative crafting impossible"
       ],
       "fr": [
-        "Craft coopératif impossible"
+        "Fabrication coopérative impossible"
       ],
       "de": [
         "Kooperatives Craften unmöglich"
@@ -49242,7 +49339,7 @@
         "Cooperative crafting impossible"
       ],
       "fr": [
-        "Craft coopératif impossible"
+        "Fabrication coopérative impossible"
       ],
       "de": [
         "Kooperatives Craften unmöglich"
@@ -49343,7 +49440,7 @@
         "Cooperative crafting impossible"
       ],
       "fr": [
-        "Craft coopératif impossible"
+        "Fabrication coopérative impossible"
       ],
       "de": [
         "Kooperatives Craften unmöglich"
@@ -50016,7 +50113,7 @@
       "usesPerTurn": 1,
       "minRange": 1,
       "maxRange": 2,
-      "baseCritChance": 5,
+      "baseCritChance": 10,
       "critBonusDamage": 15,
       "weapon_effects": [
         {
@@ -50892,8 +50989,8 @@
       "usesPerTurn": 1,
       "minRange": 1,
       "maxRange": 2,
-      "baseCritChance": 10,
-      "critBonusDamage": 3,
+      "baseCritChance": 15,
+      "critBonusDamage": 10,
       "weapon_effects": [
         {
           "stat": "Neutral damage",
@@ -50991,11 +51088,11 @@
     ],
     "weaponStats": {
       "apCost": 4,
-      "usesPerTurn": 1,
+      "usesPerTurn": 2,
       "minRange": 1,
       "maxRange": 2,
       "baseCritChance": 10,
-      "critBonusDamage": 5,
+      "critBonusDamage": 2,
       "weapon_effects": [
         {
           "stat": "Fire healing",
@@ -52806,8 +52903,8 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 10,
-      "critBonusDamage": 3,
+      "baseCritChance": 15,
+      "critBonusDamage": 6,
       "weapon_effects": [
         {
           "stat": "Neutral steal",

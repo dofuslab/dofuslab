@@ -1359,22 +1359,22 @@
     ],
     "customStats": {
       "en": [
-        "Deep Crimson:\n• When attacked by an enemy, the bearer gains 1% final damage for 2 turns (stackable 10 times)."
+        "Deep Crimson:\n• When attacked, the bearer gains 1% final damage for 2 turns (stackable 10 times)."
       ],
       "fr": [
-        "Pourpre Profond :\n• Lorsque le porteur est attaqué par un ennemi, il gagne 1% de dommages finaux pendant 2 tours (cumulable 10 fois)"
+        "Pourpre Profond :\n• Lorsque le porteur est attaqué, il gagne 1% de dommages finaux pendant 2 tours (cumulable 10 fois)."
       ],
       "de": [
-        "Purpurrot:\n• Wenn der Träger von einem Gegner angegriffen wird, erhöht sich sein Endschaden 2 Runden lang um 1 % (10-mal kumulierbar)."
+        "Purpurrot:\n• Wenn der Träger angegriffen wird, erhöht sich sein Endschaden 2 Runden lang um 1 % (10-mal kumulierbar)."
       ],
       "es": [
-        "Púrpura Profundo:\n• Cuando el portador es atacado por un enemigo, gana un 1% de daños finales durante 2 turnos (acumulable 10 veces)."
+        "Púrpura Profundo:\n• Cuando el portador es atacado, gana un 1% de daños finales durante 2 turnos (acumulable 10 veces)."
       ],
       "pt": [
-        "Púrpura Profundo:\n• Quando o portador é atacado por um inimigo, ele recebe 1% de danos finais por 2 turnos (acumula 10 vezes)"
+        "Púrpura Profundo:\n• Quando o portador é atacado, ele recebe 1% de danos finais por 2 turnos (acumula 10 vezes)."
       ],
       "it": [
-        "Deep Crimson:\n• When attacked by an enemy, the bearer gains 1% final damage for 2 turns (stackable 10 times)."
+        "Deep Crimson:\n• When attacked, the bearer gains 1% final damage for 2 turns (stackable 10 times)."
       ]
     },
     "conditions": {
@@ -4645,7 +4645,7 @@
       "it": "Dazzling Cloak"
     },
     "itemType": "Cloak",
-    "setID": null,
+    "setID": "993",
     "level": 55,
     "stats": [
       {
@@ -4686,8 +4686,8 @@
       "it": "Dazzling Belt"
     },
     "itemType": "Belt",
-    "setID": null,
-    "level": 30,
+    "setID": "993",
+    "level": 50,
     "stats": [
       {
         "stat": "AP",
@@ -4715,7 +4715,7 @@
       "conditions": {
         "stat": "AP",
         "operator": "<",
-        "value": 8
+        "value": 10
       },
       "customConditions": {}
     },
@@ -7238,7 +7238,7 @@
       "it": "Crocoburio's Strength"
     },
     "itemType": "Ring",
-    "setID": null,
+    "setID": "992",
     "level": 40,
     "stats": [
       {
@@ -7264,11 +7264,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "stat": "STRENGTH",
-        "operator": ">",
-        "value": 59
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/9038.png"
@@ -7284,7 +7280,7 @@
       "it": "Crocoburio's Spirit"
     },
     "itemType": "Boots",
-    "setID": null,
+    "setID": "992",
     "level": 42,
     "stats": [
       {
@@ -7305,11 +7301,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "stat": "INTELLIGENCE",
-        "operator": ">",
-        "value": 49
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/11012.png"
@@ -7325,7 +7317,7 @@
       "it": "Crocoburio's Power"
     },
     "itemType": "Belt",
-    "setID": null,
+    "setID": "992",
     "level": 34,
     "stats": [
       {
@@ -7346,11 +7338,7 @@
     ],
     "customStats": {},
     "conditions": {
-      "conditions": {
-        "stat": "VITALITY",
-        "operator": ">",
-        "value": 119
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/10018.png"
@@ -7525,7 +7513,7 @@
       "it": "Ouginak Cloak"
     },
     "itemType": "Cloak",
-    "setID": null,
+    "setID": "998",
     "level": 50,
     "stats": [
       {
@@ -8090,7 +8078,7 @@
       "it": "Powerful Dazzling Belt"
     },
     "itemType": "Belt",
-    "setID": null,
+    "setID": "994",
     "level": 80,
     "stats": [
       {
@@ -12518,7 +12506,7 @@
       "it": "Ouginiakal Belt"
     },
     "itemType": "Belt",
-    "setID": null,
+    "setID": "998",
     "level": 65,
     "stats": [
       {
@@ -14722,23 +14710,23 @@
       },
       {
         "stat": "Agility",
-        "minStat": -200,
-        "maxStat": -101
+        "minStat": null,
+        "maxStat": -100
       },
       {
         "stat": "Chance",
-        "minStat": -200,
-        "maxStat": -101
+        "minStat": null,
+        "maxStat": -100
       },
       {
         "stat": "Strength",
-        "minStat": -200,
-        "maxStat": -101
+        "minStat": null,
+        "maxStat": -100
       },
       {
         "stat": "Intelligence",
-        "minStat": -200,
-        "maxStat": -101
+        "minStat": null,
+        "maxStat": -100
       }
     ],
     "customStats": {},
@@ -19652,7 +19640,7 @@
       "it": "Graytess Cape"
     },
     "itemType": "Cloak",
-    "setID": null,
+    "setID": "987",
     "level": 105,
     "stats": [
       {
@@ -21810,7 +21798,7 @@
       "it": "Himune"
     },
     "itemType": "Hat",
-    "setID": null,
+    "setID": "987",
     "level": 122,
     "stats": [
       {
@@ -26091,9 +26079,9 @@
     "dofusID": "8120",
     "name": {
       "en": "Golden Scarabugly Amulet",
-      "fr": "Amulette Scarabosse Doré",
-      "de": "Amulett des goldenen Scarabiestes",
-      "es": "Amuleto de Escarajefe Dorado",
+      "fr": "Amulette du Scarabosse Doré",
+      "de": "Amulett des Goldenen Scarabiests",
+      "es": "Amuleto del Escarajefe Dorado",
       "pt": "Amuleto do Scarachefe Dourado",
       "it": "Golden Scarabugly Amulet"
     },
@@ -27145,12 +27133,12 @@
   {
     "dofusID": "8216",
     "name": {
-      "en": "Green Piwi Amulet",
-      "fr": "Amulette du Piou Vert",
-      "de": "Amulett des grünen Piepmatzes",
-      "es": "Amuleto de pío verde",
-      "pt": "Amuleto do Piu Verde",
-      "it": "Green Piwi Amulet"
+      "en": "Yellow Piwi Amulet",
+      "fr": "Amulette du Piou Jaune",
+      "de": "Amulett des gelben Piepmatzes",
+      "es": "Amuleto de pío amarillo",
+      "pt": "Amuleto do Piu Amarelo",
+      "it": "Yellow Piwi Amulet"
     },
     "itemType": "Amulet",
     "setID": "71",
@@ -27172,17 +27160,17 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item/1103.png"
+    "imageUrl": "item/1104.png"
   },
   {
     "dofusID": "8217",
     "name": {
-      "en": "Yellow Piwi Amulet",
-      "fr": "Amulette du Piou Jaune",
-      "de": "Amulett des gelben Piepmatzes",
-      "es": "Amuleto de pío amarillo",
-      "pt": "Amuleto do Piu Amarelo",
-      "it": "Yellow Piwi Amulet"
+      "en": "Green Piwi Amulet",
+      "fr": "Amulette du Piou Vert",
+      "de": "Amulett des grünen Piepmatzes",
+      "es": "Amuleto de pío verde",
+      "pt": "Amuleto do Piu Verde",
+      "it": "Green Piwi Amulet"
     },
     "itemType": "Amulet",
     "setID": "72",
@@ -27204,7 +27192,7 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item/1104.png"
+    "imageUrl": "item/1103.png"
   },
   {
     "dofusID": "8218",
@@ -27337,12 +27325,12 @@
   {
     "dofusID": "8222",
     "name": {
-      "en": "Green Piwi Ring",
-      "fr": "Anneau du Piou Vert",
-      "de": "Ring des grünen Piepmatzes",
-      "es": "Anillo de pío verde",
-      "pt": "Anel do Piu Verde",
-      "it": "Green Piwi Ring"
+      "en": "Yellow Piwi Ring",
+      "fr": "Anneau du Piou Jaune",
+      "de": "Ring des gelben Piepmatzes",
+      "es": "Anillo de pío amarillo",
+      "pt": "Anel do Piu Amarelo",
+      "it": "Yellow Piwi Ring"
     },
     "itemType": "Ring",
     "setID": "71",
@@ -27364,17 +27352,17 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item/9109.png"
+    "imageUrl": "item/9110.png"
   },
   {
     "dofusID": "8223",
     "name": {
-      "en": "Yellow Piwi Ring",
-      "fr": "Anneau du Piou Jaune",
-      "de": "Ring des gelben Piepmatzes",
-      "es": "Anillo de pío amarillo",
-      "pt": "Anel do Piu Amarelo",
-      "it": "Yellow Piwi Ring"
+      "en": "Green Piwi Ring",
+      "fr": "Anneau du Piou Vert",
+      "de": "Ring des grünen Piepmatzes",
+      "es": "Anillo de pío verde",
+      "pt": "Anel do Piu Verde",
+      "it": "Green Piwi Ring"
     },
     "itemType": "Ring",
     "setID": "72",
@@ -27396,7 +27384,7 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item/9110.png"
+    "imageUrl": "item/9109.png"
   },
   {
     "dofusID": "8224",
@@ -27529,12 +27517,12 @@
   {
     "dofusID": "8228",
     "name": {
-      "en": "Green Piwi Sandals",
-      "fr": "Sandales du Piou Vert",
-      "de": "Sandalen des grünen Piepmatzes",
-      "es": "Sandalias de pío verde",
-      "pt": "Sandálias do Piu Verde",
-      "it": "Green Piwi Sandals"
+      "en": "Yellow Piwi Sandals",
+      "fr": "Sandales du Piou Jaune",
+      "de": "Sandalen des gelben Piepmatzes",
+      "es": "Sandalias de pío amarillo",
+      "pt": "Sandálias do Piu Amarelo",
+      "it": "Yellow Piwi Sandals"
     },
     "itemType": "Boots",
     "setID": "71",
@@ -27556,17 +27544,17 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item/11081.png"
+    "imageUrl": "item/11082.png"
   },
   {
     "dofusID": "8229",
     "name": {
-      "en": "Yellow Piwi Sandals",
-      "fr": "Sandales du Piou Jaune",
-      "de": "Sandalen des gelben Piepmatzes",
-      "es": "Sandalias de pío amarillo",
-      "pt": "Sandálias do Piu Amarelo",
-      "it": "Yellow Piwi Sandals"
+      "en": "Green Piwi Sandals",
+      "fr": "Sandales du Piou Vert",
+      "de": "Sandalen des grünen Piepmatzes",
+      "es": "Sandalias de pío verde",
+      "pt": "Sandálias do Piu Verde",
+      "it": "Green Piwi Sandals"
     },
     "itemType": "Boots",
     "setID": "72",
@@ -27588,7 +27576,7 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item/11082.png"
+    "imageUrl": "item/11081.png"
   },
   {
     "dofusID": "8230",
@@ -27689,12 +27677,12 @@
   {
     "dofusID": "8233",
     "name": {
-      "en": "Green Piwi Cape",
-      "fr": "Cape du Piou Vert",
-      "de": "Umhang des grünen Piepmatzes",
-      "es": "Capa de pío verde",
-      "pt": "Capa do Piu Verde",
-      "it": "Green Piwi Cape"
+      "en": "Yellow Piwi Cape",
+      "fr": "Cape du Piou Jaune",
+      "de": "Umhang des gelben Piepmatzes",
+      "es": "Capa de pío amarillo",
+      "pt": "Capa do Piu Amarelo",
+      "it": "Yellow Piwi Cape"
     },
     "itemType": "Cloak",
     "setID": "71",
@@ -27716,7 +27704,7 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item/17105.png"
+    "imageUrl": "item/17107.png"
   },
   {
     "dofusID": "8234",
@@ -27785,12 +27773,12 @@
   {
     "dofusID": "8236",
     "name": {
-      "en": "Yellow Piwi Cape",
-      "fr": "Cape du Piou Jaune",
-      "de": "Umhang des gelben Piepmatzes",
-      "es": "Capa de pío amarillo",
-      "pt": "Capa do Piu Amarelo",
-      "it": "Yellow Piwi Cape"
+      "en": "Green Piwi Cape",
+      "fr": "Cape du Piou Vert",
+      "de": "Umhang des grünen Piepmatzes",
+      "es": "Capa de pío verde",
+      "pt": "Capa do Piu Verde",
+      "it": "Green Piwi Cape"
     },
     "itemType": "Cloak",
     "setID": "72",
@@ -27812,7 +27800,7 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item/17107.png"
+    "imageUrl": "item/17105.png"
   },
   {
     "dofusID": "8237",
@@ -27913,12 +27901,12 @@
   {
     "dofusID": "8240",
     "name": {
-      "en": "Green Piwi Belt",
-      "fr": "Ceinture du Piou Vert",
-      "de": "Gürtel des grünen Piepmatzes",
-      "es": "Cinturón de pío verde",
-      "pt": "Cinto do Piu Verde",
-      "it": "Green Piwi Belt"
+      "en": "Yellow Piwi Belt",
+      "fr": "Ceinture du Piou Jaune",
+      "de": "Gürtel des gelben Piepmatzes",
+      "es": "Cinturón de pío amarillo",
+      "pt": "Cinto do Piu Amarelo",
+      "it": "Yellow Piwi Belt"
     },
     "itemType": "Belt",
     "setID": "71",
@@ -27940,17 +27928,17 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item/10099.png"
+    "imageUrl": "item/10100.png"
   },
   {
     "dofusID": "8241",
     "name": {
-      "en": "Yellow Piwi Belt",
-      "fr": "Ceinture du Piou Jaune",
-      "de": "Gürtel des gelben Piepmatzes",
-      "es": "Cinturón de pío amarillo",
-      "pt": "Cinto do Piu Amarelo",
-      "it": "Yellow Piwi Belt"
+      "en": "Green Piwi Belt",
+      "fr": "Ceinture du Piou Vert",
+      "de": "Gürtel des grünen Piepmatzes",
+      "es": "Cinturón de pío verde",
+      "pt": "Cinto do Piu Verde",
+      "it": "Green Piwi Belt"
     },
     "itemType": "Belt",
     "setID": "72",
@@ -27972,7 +27960,7 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item/10100.png"
+    "imageUrl": "item/10099.png"
   },
   {
     "dofusID": "8242",
@@ -28105,12 +28093,12 @@
   {
     "dofusID": "8246",
     "name": {
-      "en": "Green Piwi Hat",
-      "fr": "Chapeau du Piou Vert",
-      "de": "Hut des grünen Piepmatzes",
-      "es": "Sombrero de pío verde",
-      "pt": "Chapéu do Piu Verde",
-      "it": "Green Piwi Hat"
+      "en": "Yellow Piwi Hat",
+      "fr": "Chapeau du Piou Jaune",
+      "de": "Hut des gelben Piepmatzes",
+      "es": "Sombrero de pío amarillo",
+      "pt": "Chapéu do Piu Amarelo",
+      "it": "Yellow Piwi Hat"
     },
     "itemType": "Hat",
     "setID": "71",
@@ -28132,17 +28120,17 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item/16140.png"
+    "imageUrl": "item/16141.png"
   },
   {
     "dofusID": "8247",
     "name": {
-      "en": "Yellow Piwi Hat",
-      "fr": "Chapeau du Piou Jaune",
-      "de": "Hut des gelben Piepmatzes",
-      "es": "Sombrero de pío amarillo",
-      "pt": "Chapéu do Piu Amarelo",
-      "it": "Yellow Piwi Hat"
+      "en": "Green Piwi Hat",
+      "fr": "Chapeau du Piou Vert",
+      "de": "Hut des grünen Piepmatzes",
+      "es": "Sombrero de pío verde",
+      "pt": "Chapéu do Piu Verde",
+      "it": "Green Piwi Hat"
     },
     "itemType": "Hat",
     "setID": "72",
@@ -28164,7 +28152,7 @@
       "conditions": {},
       "customConditions": {}
     },
-    "imageUrl": "item/16141.png"
+    "imageUrl": "item/16140.png"
   },
   {
     "dofusID": "8248",
@@ -34097,9 +34085,9 @@
     "customStats": {
       "en": [
         "Pressure: line of sight off",
-        "Fracture: -1 AP",
-        "Destructive Sword: -1 AP",
-        "Castigation: -1 AP",
+        "Fracture: +2 Maximum Range",
+        "Destructive Sword: +3 Maximum Range",
+        "Castigation: +3 Maximum Range",
         "Intimidation: line of sight off",
         "Conquest: -1 cooldown",
         "Jump: +1 Maximum Range",
@@ -34107,9 +34095,9 @@
       ],
       "fr": [
         "Pression : ligne de vue désactivée",
-        "Fracture : -1 PA",
-        "Épée Destructrice : -1 PA",
-        "Fustigation : -1 PA",
+        "Fracture : +2 Portée maximale",
+        "Épée Destructrice : +3 Portée maximale",
+        "Fustigation : +3 Portée maximale",
         "Intimidation : ligne de vue désactivée",
         "Conquête : -1 de relance",
         "Bond : +1 Portée maximale",
@@ -34117,9 +34105,9 @@
       ],
       "de": [
         "Druck: Sichtlinie deaktiviert",
-        "Bruch: –1 AP",
-        "Zerstörerisches Schwert: –1 AP",
-        "Geißelung: –1 AP",
+        "Bruch: +2 Maximale Reichweite",
+        "Zerstörerisches Schwert: +3 Maximale Reichweite",
+        "Geißelung: +3 Maximale Reichweite",
         "Einschüchterung: Sichtlinie deaktiviert",
         "Eroberung: Abklingzeit verringert um –1",
         "Sprung: +1 Maximale Reichweite",
@@ -34127,9 +34115,9 @@
       ],
       "es": [
         "Presión: línea de visión desactivada",
-        "Fractura: -1 PA",
-        "Espada Destructora: -1 PA",
-        "Fustigación: -1 PA",
+        "Fractura: +2 de alcance máximo",
+        "Espada Destructora: +3 de alcance máximo",
+        "Fustigación: +3 de alcance máximo",
         "Intimidación: línea de visión desactivada",
         "Conquista: -1 de reactivación",
         "Salto: +1 de alcance máximo",
@@ -34137,9 +34125,9 @@
       ],
       "pt": [
         "Pressão: linha de visão desativada",
-        "Fratura: -1 PA",
-        "Espada Destrutiva: -1 PA",
-        "Fustigação: -1 PA",
+        "Fratura: +2 de alcance máximo",
+        "Espada Destrutiva: +3 de alcance máximo",
+        "Fustigação: +3 de alcance máximo",
         "Intimidação: linha de visão desativada",
         "Conquista: -1 de relançamento",
         "Salto: +1 de alcance máximo",
@@ -34147,9 +34135,9 @@
       ],
       "it": [
         "Pressure: line of sight off",
-        "Fracture: -1 AP",
-        "Destructive Sword: -1 AP",
-        "Castigation: -1 AP",
+        "Fracture: +2 Maximum Range",
+        "Destructive Sword: +3 Maximum Range",
+        "Castigation: +3 Maximum Range",
         "Intimidation: line of sight off",
         "Conquest: -1 cooldown",
         "Jump: +1 Maximum Range",
@@ -34260,64 +34248,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Miry Trap: -1 AP",
+        "Miry Trap: +2 Maximum Range",
         "Epidemic: straight-line casting off",
-        "Malevolent Trap: -1 AP",
+        "Malevolent Trap: +2 Maximum Range",
         "Break-In: modifiable Range",
         "Repelling Trap: +3 Maximum Range",
         "Frightful Trap: +3 Maximum Range",
         "Tricky Trap: +3 Maximum Range",
-        "Waylaying: -1 AP"
+        "Waylaying: +3 Maximum Range"
       ],
       "fr": [
-        "Piège Fangeux : -1 PA",
+        "Piège Fangeux : +2 Portée maximale",
         "Épidémie : lancer en ligne désactivée",
-        "Piège Funeste : -1 PA",
+        "Piège Funeste : +2 Portée maximale",
         "Effraction : Portée modifiable",
         "Piège Répulsif : +3 Portée maximale",
         "Piège Effroyable : +3 Portée maximale",
         "Piège Sournois : +3 Portée maximale",
-        "Guet-apens : -1 PA"
+        "Guet-apens : +3 Portée maximale"
       ],
       "de": [
-        "Schlammfalle: –1 AP",
+        "Schlammfalle: +2 Maximale Reichweite",
         "Epidemie: Lineare Wirkungsweise deaktiviert",
-        "Elende Falle: –1 AP",
+        "Elende Falle: +2 Maximale Reichweite",
         "Einbruch: Veränderbare Reichweite",
         "Rückstoßfalle: +3 Maximale Reichweite",
         "Erschreckende Falle: +3 Maximale Reichweite",
         "Tückische Falle: +3 Maximale Reichweite",
-        "Auflauern: –1 AP"
+        "Auflauern: +3 Maximale Reichweite"
       ],
       "es": [
-        "Trampa Fangosa: -1 PA",
+        "Trampa Fangosa: +2 de alcance máximo",
         "Epidemia: lanzamiento en línea desactivado",
-        "Trampa Funesta: -1 PA",
+        "Trampa Funesta: +2 de alcance máximo",
         "Efracción: alcance modificable",
         "Trampa Repulsiva: +3 de alcance máximo",
         "Trampa Espeluznante: +3 de alcance máximo",
         "Trampas solapadas: +3 de alcance máximo",
-        "Zalagarda: -1 PA"
+        "Zalagarda: +3 de alcance máximo"
       ],
       "pt": [
-        "Armadilha Abjeta: -1 PA",
+        "Armadilha Abjeta: +2 de alcance máximo",
         "Epidemia: lançamento em linha desativado",
-        "Armadilha Funesta: -1 PA",
+        "Armadilha Funesta: +2 de alcance máximo",
         "Intrusão: alcance modificável",
         "Armadilha Repulsiva: +3 de alcance máximo",
         "Armadilha Apavorante: +3 de alcance máximo",
         "Armadilha Enganosa: +3 de alcance máximo",
-        "Tocaia: -1 PA"
+        "Tocaia: +3 de alcance máximo"
       ],
       "it": [
-        "Miry Trap: -1 AP",
+        "Miry Trap: +2 Maximum Range",
         "Epidemic: straight-line casting off",
-        "Malevolent Trap: -1 AP",
+        "Malevolent Trap: +2 Maximum Range",
         "Break-In: modifiable Range",
         "Repelling Trap: +3 Maximum Range",
         "Frightful Trap: +3 Maximum Range",
         "Tricky Trap: +3 Maximum Range",
-        "Waylaying: -1 AP"
+        "Waylaying: +3 Maximum Range"
       ]
     },
     "conditions": {
@@ -34342,60 +34330,60 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Disruption: -1 AP",
-        "Cog: -1 AP",
+        "Disruption: +1 Maximum Range",
+        "Cog: +1 Maximum Range",
         "Frostbite: straight-line casting off",
-        "Dust: -1 AP",
+        "Dust: +1 Maximum Range",
         "Souvenir: line of sight off",
         "Permutation: straight-line casting off",
         "Xelor's Punch: +1 Maximum Range",
         "Pendulum: +1 Maximum Range"
       ],
       "fr": [
-        "Perturbation : -1 PA",
-        "Rouage : -1 PA",
+        "Perturbation : +1 Portée maximale",
+        "Rouage : +1 Portée maximale",
         "Gelure : lancer en ligne désactivée",
-        "Poussière : -1 PA",
+        "Poussière : +1 Portée maximale",
         "Souvenir : ligne de vue désactivée",
         "Permutation : lancer en ligne désactivée",
         "Frappe de Xélor : +1 Portée maximale",
         "Pendule : +1 Portée maximale"
       ],
       "de": [
-        "Kontinuumsstörung: –1 AP",
-        "Rädchen: –1 AP",
+        "Kontinuumsstörung: +1 Maximale Reichweite",
+        "Rädchen: +1 Maximale Reichweite",
         "Einfrieren: Lineare Wirkungsweise deaktiviert",
-        "Staub: –1 AP",
+        "Staub: +1 Maximale Reichweite",
         "Souvenir: Sichtlinie deaktiviert",
         "Permutation: Lineare Wirkungsweise deaktiviert",
         "Faust von Xélor: +1 Maximale Reichweite",
         "Pendel: +1 Maximale Reichweite"
       ],
       "es": [
-        "Perturbación: -1 PA",
-        "Rueda Dentada: -1 PA",
+        "Perturbación: +1 de alcance máximo",
+        "Rueda Dentada: +1 de alcance máximo",
         "Congelación: lanzamiento en línea desactivado",
-        "Polvo: -1 PA",
+        "Polvo: +1 de alcance máximo",
         "Recuerdo: línea de visión desactivada",
         "Permutación: lanzamiento en línea desactivado",
         "Golpe de Xelor: +1 de alcance máximo",
         "Péndulo: +1 de alcance máximo"
       ],
       "pt": [
-        "Perturbação: -1 PA",
-        "Mecanismo: -1 PA",
+        "Perturbação: +1 de alcance máximo",
+        "Mecanismo: +1 de alcance máximo",
         "Enregelamento: lançamento em linha desativado",
-        "Poeira: -1 PA",
+        "Poeira: +1 de alcance máximo",
         "Souvenir: linha de visão desativada",
         "Permutação: lançamento em linha desativado",
         "Golpe de Xelor: +1 de alcance máximo",
         "Pêndulo: +1 de alcance máximo"
       ],
       "it": [
-        "Disruption: -1 AP",
-        "Cog: -1 AP",
+        "Disruption: +1 Maximum Range",
+        "Cog: +1 Maximum Range",
         "Frostbite: straight-line casting off",
-        "Dust: -1 AP",
+        "Dust: +1 Maximum Range",
         "Souvenir: line of sight off",
         "Permutation: straight-line casting off",
         "Xelor's Punch: +1 Maximum Range",
@@ -34426,60 +34414,60 @@
       "en": [
         "Stimulating Word: line of sight off",
         "Word of Decline: line of sight off",
-        "Raucous Word: -1 AP",
+        "Raucous Word: +40% Critical",
         "Deafening Cry: +2 Maximum Range",
         "Vampiric Word: line of sight off",
-        "Sobs: -1 AP",
+        "Sobs: +2 Maximum Range",
         "Lamentations: -1 AP",
         "Commotion: +2 Maximum Range"
       ],
       "fr": [
         "Mot Stimulant : ligne de vue désactivée",
         "Mot de Déclin : ligne de vue désactivée",
-        "Mot Tapageur : -1 PA",
+        "Mot Tapageur : +40% Critique",
         "Cri Assourdissant : +2 Portée maximale",
         "Mot Vampirique : ligne de vue désactivée",
-        "Sanglots : -1 PA",
+        "Sanglots : +2 Portée maximale",
         "Lamentations : -1 PA",
         "Vacarme : +2 Portée maximale"
       ],
       "de": [
         "Stimulierendes Wort: Sichtlinie deaktiviert",
         "Verfallendes Wort: Sichtlinie deaktiviert",
-        "Lärmendes Wort: –1 AP",
+        "Lärmendes Wort: +40 % Kritische Treffer",
         "Ohrenbetäubender Schrei: +2 Maximale Reichweite",
         "Vampirhaftes Wort: Sichtlinie deaktiviert",
-        "Schluchzer: –1 AP",
+        "Schluchzer: +2 Maximale Reichweite",
         "Wehklagen: –1 AP",
         "Gebrause: +2 Maximale Reichweite"
       ],
       "es": [
         "Palabra Estimulante: línea de visión desactivada",
         "Palabra de Declive: línea de visión desactivada",
-        "Palabra Escandalosa: -1 PA",
+        "Palabra Escandalosa: +40% de crítico",
         "Grito Ensordecedor: +2 de alcance máximo",
         "Palabra Vampírica: línea de visión desactivada",
-        "Sollozos: -1 PA",
+        "Sollozos: +2 de alcance máximo",
         "Lamentos: -1 PA",
         "Demencia: +2 de alcance máximo"
       ],
       "pt": [
         "Palavra Estimulante: linha de visão desativada",
         "Palavra de Declínio: linha de visão desativada",
-        "Palavra Escandalosa: -1 PA",
+        "Palavra Escandalosa: +40% de crítico",
         "Grito ensurdecedor: +2 de alcance máximo",
         "Palavra Vampírica: linha de visão desativada",
-        "Soluços: -1 PA",
+        "Soluços: +2 de alcance máximo",
         "Lamentações: -1 PA",
         "Algazarra: +2 de alcance máximo"
       ],
       "it": [
         "Stimulating Word: line of sight off",
         "Word of Decline: line of sight off",
-        "Raucous Word: -1 AP",
+        "Raucous Word: +40% Critical",
         "Deafening Cry: +2 Maximum Range",
         "Vampiric Word: line of sight off",
-        "Sobs: -1 AP",
+        "Sobs: +2 Maximum Range",
         "Lamentations: -1 AP",
         "Commotion: +2 Maximum Range"
       ]
@@ -34588,7 +34576,7 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Stase: +1 Maximum Range",
+        "Stase: +2 Maximum Range",
         "Projection: line of sight off",
         "Hostility: line of sight off",
         "Mutilation: -1 AP",
@@ -34598,7 +34586,7 @@
         "Fluctuation: -1 cooldown"
       ],
       "fr": [
-        "Stase : +1 Portée maximale",
+        "Stase : +2 Portée maximale",
         "Projection : ligne de vue désactivée",
         "Hostilité : ligne de vue désactivée",
         "Mutilation : -1 PA",
@@ -34608,7 +34596,7 @@
         "Fluctuation : -1 de relance"
       ],
       "de": [
-        "Stase: +1 Maximale Reichweite",
+        "Stase: +2 Maximale Reichweite",
         "Projektion: Sichtlinie deaktiviert",
         "Feindseligkeit: Sichtlinie deaktiviert",
         "Verstümmelung: –1 AP",
@@ -34618,7 +34606,7 @@
         "Fluktuation: Abklingzeit verringert um –1"
       ],
       "es": [
-        "Estasis: +1 de alcance máximo",
+        "Estasis: +2 de alcance máximo",
         "Proyección: línea de visión desactivada",
         "Hostilidad: línea de visión desactivada",
         "Mutilación: -1 PA",
@@ -34628,7 +34616,7 @@
         "Fluctuación: -1 de reactivación"
       ],
       "pt": [
-        "Estase: +1 de alcance máximo",
+        "Estase: +2 de alcance máximo",
         "Projeção: linha de visão desativada",
         "Hostilidade: linha de visão desativada",
         "Mutilação: -1 PA",
@@ -34638,7 +34626,7 @@
         "Flutuação: -1 de relançamento"
       ],
       "it": [
-        "Stase: +1 Maximum Range",
+        "Stase: +2 Maximum Range",
         "Projection: line of sight off",
         "Hostility: line of sight off",
         "Mutilation: -1 AP",
@@ -34754,61 +34742,61 @@
       "en": [
         "Hangover: +2 Maximum Range",
         "Stretcher: +1 Maximum Range",
-        "Debauchery: +30% Critical",
+        "Debauchery: line of sight off",
         "Alcoshu: line of sight off",
         "Stabilisation: -1 cooldown",
         "Sherpa: -1 AP",
-        "Schnaps: +1 Maximum Range",
+        "Schnaps: +30% Critical",
         "Fiery Breath: -1 AP"
       ],
       "fr": [
         "Gueule de Bois : +2 Portée maximale",
         "Brancard : +1 Portée maximale",
-        "Ribote : +30% Critique",
+        "Ribote : ligne de vue désactivée",
         "Alcoshu : ligne de vue désactivée",
         "Stabilisation : -1 de relance",
         "Varappe : -1 PA",
-        "Schnaps : +1 Portée maximale",
+        "Schnaps : +30% Critique",
         "Souffle Enflammé : -1 PA"
       ],
       "de": [
         "Brummschädel: +2 Maximale Reichweite",
         "Krankentrage: +1 Maximale Reichweite",
-        "Zecherei: +30 % Kritische Treffer",
+        "Zecherei: Sichtlinie deaktiviert",
         "Alkoshu: Sichtlinie deaktiviert",
         "Stabilisierung: Abklingzeit verringert um –1",
         "Kletterei: –1 AP",
-        "Schnaps: +1 Maximale Reichweite",
+        "Schnaps: +30 % Kritische Treffer",
         "Brennender Atem: –1 AP"
       ],
       "es": [
         "Resaca: +2 de alcance máximo",
         "Camilla: +1 de alcance máximo",
-        "Jarana: +30% de crítico",
+        "Jarana: línea de visión desactivada",
         "Alcoshu: línea de visión desactivada",
         "Estabilización: -1 de reactivación",
         "Escalada: -1 PA",
-        "Ventolera: +1 de alcance máximo",
+        "Ventolera: +30% de crítico",
         "Soplido Flamígero: -1 PA"
       ],
       "pt": [
         "Ressaca: +2 de alcance máximo",
         "Padiola: +1 de alcance máximo",
-        "Esbórnia: +30% de crítico",
+        "Esbórnia: linha de visão desativada",
         "Álcooshu: linha de visão desativada",
         "Estabilização: -1 de relançamento",
         "Alpinismo: -1 PA",
-        "Aguardente: +1 de alcance máximo",
+        "Aguardente: +30% de crítico",
         "Sopro Flamejante: -1 PA"
       ],
       "it": [
         "Hangover: +2 Maximum Range",
         "Stretcher: +1 Maximum Range",
-        "Debauchery: +30% Critical",
+        "Debauchery: line of sight off",
         "Alcoshu: line of sight off",
         "Stabilisation: -1 cooldown",
         "Sherpa: -1 AP",
-        "Schnaps: +1 Maximum Range",
+        "Schnaps: +30% Critical",
         "Fiery Breath: -1 AP"
       ]
     },
@@ -34917,7 +34905,7 @@
     "customStats": {
       "en": [
         "Drowsiness: line of sight off",
-        "Manœuvre: -1 AP",
+        "Manœuvre: +1 Maximum Range",
         "Bubble: line of sight off",
         "Cowbell: -1 AP",
         "Rampart: +3 Maximum Range",
@@ -34927,7 +34915,7 @@
       ],
       "fr": [
         "Somnolence : ligne de vue désactivée",
-        "Manœuvre : -1 PA",
+        "Manœuvre : +1 Portée maximale",
         "Bulle : ligne de vue désactivée",
         "Sonnailles : -1 PA",
         "Rempart : +3 Portée maximale",
@@ -34937,7 +34925,7 @@
       ],
       "de": [
         "Schlaftrunkenheit: Sichtlinie deaktiviert",
-        "Manöver: –1 AP",
+        "Manöver: +1 Maximale Reichweite",
         "Blase: Sichtlinie deaktiviert",
         "Glöckchen: –1 AP",
         "Bollwerk: +3 Maximale Reichweite",
@@ -34947,7 +34935,7 @@
       ],
       "es": [
         "Somnolencia: línea de visión desactivada",
-        "Maniobra: -1 PA",
+        "Maniobra: +1 de alcance máximo",
         "Pompa: línea de visión desactivada",
         "Cencerro: -1 PA",
         "Murallón: +3 de alcance máximo",
@@ -34957,7 +34945,7 @@
       ],
       "pt": [
         "Lassidão: linha de visão desativada",
-        "Manobra : -1 PA",
+        "Manobra : +1 de alcance máximo",
         "Bolha: linha de visão desativada",
         "Cincerro: -1 PA",
         "Muralha: +3 de alcance máximo",
@@ -34967,7 +34955,7 @@
       ],
       "it": [
         "Drowsiness: line of sight off",
-        "Manœuvre: -1 AP",
+        "Manœuvre: +1 Maximum Range",
         "Bubble: line of sight off",
         "Cowbell: -1 AP",
         "Rampart: +3 Maximum Range",
@@ -34999,7 +34987,7 @@
     "customStats": {
       "en": [
         "Mound: +2 Maximum Range",
-        "Mine Fire: -1 AP",
+        "Mine Fire: +35% Critical",
         "Shovel Kiss: +2 Maximum Range",
         "Collapse: +2 Maximum Range",
         "Treasure Key: -1 cooldown",
@@ -35009,7 +34997,7 @@
       ],
       "fr": [
         "Remblai : +2 Portée maximale",
-        "Feu de Mine : -1 PA",
+        "Feu de Mine : +35% Critique",
         "Roulage de Pelle : +2 Portée maximale",
         "Éboulement : +2 Portée maximale",
         "Clef du Trésor : -1 de relance",
@@ -35019,7 +35007,7 @@
       ],
       "de": [
         "Aufhäufen: +2 Maximale Reichweite",
-        "Minenfeuer: –1 AP",
+        "Minenfeuer: +35 % Kritische Treffer",
         "Herumwirbelnde Schaufel: +2 Maximale Reichweite",
         "Erdrutsch: +2 Maximale Reichweite",
         "Schlüssel zum Schatz: Abklingzeit verringert um –1",
@@ -35029,7 +35017,7 @@
       ],
       "es": [
         "Terraplenado: +2 de alcance máximo",
-        "Fuego de Mina: -1 PA",
+        "Fuego de Mina: +35% de crítico",
         "Jarabe de Pala: +2 de alcance máximo",
         "Desprendimiento: +2 de alcance máximo",
         "Llave del Tesoro: -1 de reactivación",
@@ -35039,7 +35027,7 @@
       ],
       "pt": [
         "Aterro: +2 de alcance máximo",
-        "Fogo de Mina: -1 PA",
+        "Fogo de Mina: +35% de crítico",
         "Pá Virada: +2 de alcance máximo",
         "Desmoronamento: +2 de alcance máximo",
         "Chave do Tesouro: -1 de relançamento",
@@ -35049,7 +35037,7 @@
       ],
       "it": [
         "Mound: +2 Maximum Range",
-        "Mine Fire: -1 AP",
+        "Mine Fire: +35% Critical",
         "Shovel Kiss: +2 Maximum Range",
         "Collapse: +2 Maximum Range",
         "Treasure Key: -1 cooldown",
@@ -35246,7 +35234,7 @@
       "en": [
         "Deviousness: modifiable Range",
         "Cut-Throat: modifiable Range",
-        "Cruelty: -1 AP",
+        "Cruelty: +35% Critical",
         "Jinx: -1 AP",
         "Sickrat Trap: +3 Maximum Range",
         "Fragmentation Trap: -1 AP",
@@ -35256,7 +35244,7 @@
       "fr": [
         "Sournoiserie : Portée modifiable",
         "Coupe-gorge : Portée modifiable",
-        "Cruauté : -1 PA",
+        "Cruauté : +35% Critique",
         "Poisse : -1 PA",
         "Piège Scélérat : +3 Portée maximale",
         "Piège à Fragmentation : -1 PA",
@@ -35266,7 +35254,7 @@
       "de": [
         "Heimtücke: Veränderbare Reichweite",
         "M. Euchel: Veränderbare Reichweite",
-        "Grausamkeiten: –1 AP",
+        "Grausamkeiten: +35 % Kritische Treffer",
         "Pech: –1 AP",
         "Heimtückische Falle: +3 Maximale Reichweite",
         "Fragmentierungsfalle: –1 AP",
@@ -35276,7 +35264,7 @@
       "es": [
         "Engaño: alcance modificable",
         "Rebanacuellos: alcance modificable",
-        "Crueldad: -1 PA",
+        "Crueldad: +35% de crítico",
         "Mala Sombra: -1 PA",
         "Trampa Miserable: +3 de alcance máximo",
         "Trampa de Fragmentación: -1 PA",
@@ -35286,7 +35274,7 @@
       "pt": [
         "Engano: alcance modificável",
         "Degolador: alcance modificável",
-        "Crueldade: -1 PA",
+        "Crueldade: +35% de crítico",
         "Zica: -1 PA",
         "Armadilha Celerrato: +3 de alcance máximo",
         "Armadilha de Fragmentação: -1 PA",
@@ -35296,7 +35284,7 @@
       "it": [
         "Deviousness: modifiable Range",
         "Cut-Throat: modifiable Range",
-        "Cruelty: -1 AP",
+        "Cruelty: +35% Critical",
         "Jinx: -1 AP",
         "Sickrat Trap: +3 Maximum Range",
         "Fragmentation Trap: -1 AP",
@@ -35326,60 +35314,60 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Gear: -1 AP",
+        "Gear: +1 Maximum Range",
         "Dropper: straight-line casting off",
         "Clock: straight-line casting off",
-        "Water Clock: -1 AP",
+        "Water Clock: modifiable Range",
         "Desynchronisation: -1 AP",
         "Spacetime: -1 AP",
         "Rewind: straight-line casting off",
         "Remanence: -1 AP"
       ],
       "fr": [
-        "Engrenage : -1 PA",
+        "Engrenage : +1 Portée maximale",
         "Compte-goutte : lancer en ligne désactivée",
         "Horloge : lancer en ligne désactivée",
-        "Clepsydre : -1 PA",
+        "Clepsydre : Portée modifiable",
         "Désynchronisation : -1 PA",
         "Espace-temps : -1 PA",
         "Rembobinage : lancer en ligne désactivée",
         "Rémanence : -1 PA"
       ],
       "de": [
-        "Räderwerk: –1 AP",
+        "Räderwerk: +1 Maximale Reichweite",
         "Tropfenzähler: Lineare Wirkungsweise deaktiviert",
         "Uhrwerk: Lineare Wirkungsweise deaktiviert",
-        "Clepsydre: –1 AP",
+        "Clepsydre: Veränderbare Reichweite",
         "Desynchronisation: –1 AP",
         "Raumzeit: –1 AP",
         "Zurückspulen: Lineare Wirkungsweise deaktiviert",
         "Remanenz: –1 AP"
       ],
       "es": [
-        "Engranaje: -1 PA",
+        "Engranaje: +1 de alcance máximo",
         "Cuentagotas: lanzamiento en línea desactivado",
         "Reloj: lanzamiento en línea desactivado",
-        "Reloj de Agua: -1 PA",
+        "Reloj de Agua: alcance modificable",
         "Desincronización: -1 PA",
         "Espaciotiempo: -1 PA",
         "Rebobinamiento: lanzamiento en línea desactivado",
         "Remanencia: -1 PA"
       ],
       "pt": [
-        "Engrenagem: -1 PA",
+        "Engrenagem: +1 de alcance máximo",
         "Conta-Gotas: lançamento em linha desativado",
         "Relógio: lançamento em linha desativado",
-        "Clepsidra: -1 PA",
+        "Clepsidra: alcance modificável",
         "Dessincronização: -1 PA",
         "Espaço-tempo: -1 PA",
         "Rebobinando: lançamento em linha desativado",
         "Remanência: -1 PA"
       ],
       "it": [
-        "Gear: -1 AP",
+        "Gear: +1 Maximum Range",
         "Dropper: straight-line casting off",
         "Clock: straight-line casting off",
-        "Water Clock: -1 AP",
+        "Water Clock: modifiable Range",
         "Desynchronisation: -1 AP",
         "Spacetime: -1 AP",
         "Rewind: straight-line casting off",
@@ -35410,61 +35398,61 @@
       "en": [
         "Life-Giving Word: line of sight off",
         "Galvanising Word: line of sight off",
-        "Profanity: -1 AP",
+        "Profanity: +40% Critical",
         "Tribal Paintbrush: +1 cast(s) per target",
-        "Pilfering: -1 AP",
+        "Pilfering: +40% Critical",
         "Distracting Word: +1 cast(s) per turn",
-        "Ancestral Ointment: -1 AP",
+        "Ancestral Ointment: +35% Critical",
         "Shrill Choir: +1 cast(s) per turn"
       ],
       "fr": [
         "Mot Vivifiant : ligne de vue désactivée",
         "Mot Galvanisant : ligne de vue désactivée",
-        "Juron : -1 PA",
+        "Juron : +40% Critique",
         "Pinceau Tribal : +1 lancer(s) par cible",
-        "Chapardage : -1 PA",
+        "Chapardage : +40% Critique",
         "Mot Distrayant : +1 lancer(s) par tour",
-        "Onguent Ancestral : -1 PA",
+        "Onguent Ancestral : +35% Critique",
         "Chœur Strident : +1 lancer(s) par tour"
       ],
       "de": [
         "Leben spendendes Wort: Sichtlinie deaktiviert",
         "Elektrisierendes Wort: Sichtlinie deaktiviert",
-        "Schimpfwort: –1 AP",
+        "Schimpfwort: +40 % Kritische Treffer",
         "Stammespinsel : +1 Zauber pro Ziel",
-        "Diebstahl: –1 AP",
+        "Diebstahl: +40 % Kritische Treffer",
         "Unterhaltsames Wort : +1 Zauber pro Runde",
-        "Salbe der Ahnen: –1 AP",
+        "Salbe der Ahnen: +35 % Kritische Treffer",
         "Schriller Chor : +1 Zauber pro Runde"
       ],
       "es": [
         "Palabra Revitalizante: línea de visión desactivada",
         "Palabra Galvanizadora: línea de visión desactivada",
-        "Blasfemia: -1 PA",
+        "Blasfemia: +40% de crítico",
         "Pincel Tribal: +1 lanzamiento(s) por objetivo",
-        "Ladronceo: -1 PA",
+        "Ladronceo: +40% de crítico",
         "Palabra Entretenida: +1 lanzamiento(s) por turno",
-        "Ungüento Ancestral: -1 PA",
+        "Ungüento Ancestral: +35% de crítico",
         "Coro Estridente: +1 lanzamiento(s) por turno"
       ],
       "pt": [
         "Palavra Vivificante: linha de visão desativada",
         "Palavra Galvanizadora: linha de visão desativada",
-        "Xingamento: -1 PA",
+        "Xingamento: +40% de crítico",
         "Pincel Tribal: +1 lançamento(s) por alvo",
-        "Latrocínio: -1 PA",
+        "Latrocínio: +40% de crítico",
         "Palavra Distrativa: +1 lançamento(s) por turno",
-        "Unguento Ancestral: -1 PA",
+        "Unguento Ancestral: +35% de crítico",
         "Coro Estridente: +1 lançamento(s) por turno"
       ],
       "it": [
         "Life-Giving Word: line of sight off",
         "Galvanising Word: line of sight off",
-        "Profanity: -1 AP",
+        "Profanity: +40% Critical",
         "Tribal Paintbrush: +1 cast(s) per target",
-        "Pilfering: -1 AP",
+        "Pilfering: +40% Critical",
         "Distracting Word: +1 cast(s) per turn",
-        "Ancestral Ointment: -1 AP",
+        "Ancestral Ointment: +35% Critical",
         "Shrill Choir: +1 cast(s) per turn"
       ]
     },
@@ -35730,64 +35718,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Explosive Palm: +30% Critical",
+        "Explosive Palm: +40% Critical",
         "Pandilongation: +1 Maximum Range",
-        "Liqueur: +30% Critical",
-        "Explosive Flask: +25% Critical",
-        "Pandatak: +25% Critical",
+        "Liqueur: +40% Critical",
+        "Explosive Flask: +40% Critical",
+        "Pandatak: +35% Critical",
         "Terror: +1 cast(s) per target",
         "Consolation: +1 cast(s) per turn",
-        "Distillation: +2 Maximum Range"
+        "Distillation: modifiable Range"
       ],
       "fr": [
-        "Paume Explosive : +30% Critique",
+        "Paume Explosive : +40% Critique",
         "Pandikulation : +1 Portée maximale",
-        "Liqueur : +30% Critique",
-        "Flasque Explosive : +25% Critique",
-        "Pandatak : +25% Critique",
+        "Liqueur : +40% Critique",
+        "Flasque Explosive : +40% Critique",
+        "Pandatak : +35% Critique",
         "Épouvante : +1 lancer(s) par cible",
         "Consolation : +1 lancer(s) par tour",
-        "Distillation : +2 Portée maximale"
+        "Distillation : Portée modifiable"
       ],
       "de": [
-        "Explosive Handfläche: +30 % Kritische Treffer",
+        "Explosive Handfläche: +40 % Kritische Treffer",
         "Pandikulation: +1 Maximale Reichweite",
-        "Likör: +30 % Kritische Treffer",
-        "Explosiver Flachmann: +25 % Kritische Treffer",
-        "Pandattak: +25 % Kritische Treffer",
+        "Likör: +40 % Kritische Treffer",
+        "Explosiver Flachmann: +40 % Kritische Treffer",
+        "Pandattak: +35 % Kritische Treffer",
         "Grusel : +1 Zauber pro Ziel",
         "Trost : +1 Zauber pro Runde",
-        "Destillation: +2 Maximale Reichweite"
+        "Destillation: Veränderbare Reichweite"
       ],
       "es": [
-        "Palma Explosiva: +30% de crítico",
+        "Palma Explosiva: +40% de crítico",
         "Pandikulación: +1 de alcance máximo",
-        "Licor: +30% de crítico",
-        "Frasco Explosivo: +25% de crítico",
-        "Pandatak: +25% de crítico",
+        "Licor: +40% de crítico",
+        "Frasco Explosivo: +40% de crítico",
+        "Pandatak: +35% de crítico",
         "Terror: +1 lanzamiento(s) por objetivo",
         "Consuelo: +1 lanzamiento(s) por turno",
-        "Destilación: +2 de alcance máximo"
+        "Destilación: alcance modificable"
       ],
       "pt": [
-        "Palma Explosiva: +30% de crítico",
+        "Palma Explosiva: +40% de crítico",
         "Pandikulação: +1 de alcance máximo",
-        "Licor: +30% de crítico",
-        "Frasco Explosivo: +25% de crítico",
-        "Pandatak: +25% de crítico",
+        "Licor: +40% de crítico",
+        "Frasco Explosivo: +40% de crítico",
+        "Pandatak: +35% de crítico",
         "Pavor: +1 lançamento(s) por alvo",
         "Consolação: +1 lançamento(s) por turno",
-        "Destilação: +2 de alcance máximo"
+        "Destilação: alcance modificável"
       ],
       "it": [
-        "Explosive Palm: +30% Critical",
+        "Explosive Palm: +40% Critical",
         "Pandilongation: +1 Maximum Range",
-        "Liqueur: +30% Critical",
-        "Explosive Flask: +25% Critical",
-        "Pandatak: +25% Critical",
+        "Liqueur: +40% Critical",
+        "Explosive Flask: +40% Critical",
+        "Pandatak: +35% Critical",
         "Terror: +1 cast(s) per target",
         "Consolation: +1 cast(s) per turn",
-        "Distillation: +2 Maximum Range"
+        "Distillation: modifiable Range"
       ]
     },
     "conditions": {
@@ -35813,7 +35801,7 @@
     "customStats": {
       "en": [
         "Immobilising Arrow: +1 cast(s) per target",
-        "Assailing Arrow: -1 AP",
+        "Assailing Arrow: +35% Critical",
         "Retreating Shot: line of sight off",
         "Barricade Shot: line of sight off",
         "Erosive Arrows: -1 AP",
@@ -35823,7 +35811,7 @@
       ],
       "fr": [
         "Flèche d'Immobilisation : +1 lancer(s) par cible",
-        "Flèche Assaillante : -1 PA",
+        "Flèche Assaillante : +35% Critique",
         "Tir de Recul : ligne de vue désactivée",
         "Tir de Barrage : ligne de vue désactivée",
         "Flèches Érosives : -1 PA",
@@ -35833,7 +35821,7 @@
       ],
       "de": [
         "Lähmpfeil : +1 Zauber pro Ziel",
-        "Angriffspfeil: –1 AP",
+        "Angriffspfeil: +35 % Kritische Treffer",
         "Rückstoßschuss: Sichtlinie deaktiviert",
         "Sperrfeuer: Sichtlinie deaktiviert",
         "Erosionspfeile: –1 AP",
@@ -35843,7 +35831,7 @@
       ],
       "es": [
         "Flecha Inmovilizadora: +1 lanzamiento(s) por objetivo",
-        "Flecha Asaltante: -1 PA",
+        "Flecha Asaltante: +35% de crítico",
         "Disparo de Retroceso: línea de visión desactivada",
         "Tiro Peleón: línea de visión desactivada",
         "Flechas Erosivas: -1 PA",
@@ -35853,7 +35841,7 @@
       ],
       "pt": [
         "Flecha de Imobilização: +1 lançamento(s) por alvo",
-        "Flecha Agressora: -1 PA",
+        "Flecha Agressora: +35% de crítico",
         "Tiro de Recuo: linha de visão desativada",
         "Tiro de Barricada: linha de visão desativada",
         "Flechas Erosivas: -1 PA",
@@ -35863,7 +35851,7 @@
       ],
       "it": [
         "Immobilising Arrow: +1 cast(s) per target",
-        "Assailing Arrow: -1 AP",
+        "Assailing Arrow: +35% Critical",
         "Retreating Shot: line of sight off",
         "Barricade Shot: line of sight off",
         "Erosive Arrows: -1 AP",
@@ -35901,7 +35889,7 @@
         "Bastion: -1 AP",
         "Truce: -1 AP",
         "Sudden Shower: -1 AP",
-        "Shiver: -1 AP"
+        "Shiver: +2 Maximum Range"
       ],
       "fr": [
         "Léthargie : ligne de vue désactivée",
@@ -35911,7 +35899,7 @@
         "Bastion : -1 PA",
         "Trêve : -1 PA",
         "Giboulée : -1 PA",
-        "Frisson : -1 PA"
+        "Frisson : +2 Portée maximale"
       ],
       "de": [
         "Lethargie: Sichtlinie deaktiviert",
@@ -35921,7 +35909,7 @@
         "Bastion: –1 AP",
         "Waffenstillstand: –1 AP",
         "Schauer: –1 AP",
-        "Schauder: –1 AP"
+        "Schauder: +2 Maximale Reichweite"
       ],
       "es": [
         "Letargo: línea de visión desactivada",
@@ -35931,7 +35919,7 @@
         "Bastión: -1 PA",
         "Tregua: -1 PA",
         "Chaparrón: -1 PA",
-        "Escalofrío: -1 PA"
+        "Escalofrío: +2 de alcance máximo"
       ],
       "pt": [
         "Letargia: linha de visão desativada",
@@ -35941,7 +35929,7 @@
         "Bastião: -1 PA",
         "Trégua: -1 PA",
         "Bátega: -1 PA",
-        "Calafrio: -1 PA"
+        "Calafrio: +2 de alcance máximo"
       ],
       "it": [
         "Lethargy: line of sight off",
@@ -35951,7 +35939,7 @@
         "Bastion: -1 AP",
         "Truce: -1 AP",
         "Sudden Shower: -1 AP",
-        "Shiver: -1 AP"
+        "Shiver: +2 Maximum Range"
       ]
     },
     "conditions": {
@@ -35978,62 +35966,62 @@
       "en": [
         "Coin Throwing: +3 Maximum Range",
         "Hard Cash: +2 Maximum Range",
-        "Bankruptcy: -1 AP",
+        "Bankruptcy: +35% Critical",
         "Decadence: +1 cast(s) per turn",
         "Miserliness: -1 AP",
         "Living Bag: +3 Maximum Range",
         "Living Satchel: -1 cooldown",
-        "Shovel Throwing: -1 AP"
+        "Shovel Throwing: +35% Critical"
       ],
       "fr": [
         "Lancer de Pièces : +3 Portée maximale",
         "Monnaie Sonnante : +2 Portée maximale",
-        "Banqueroute : -1 PA",
+        "Banqueroute : +35% Critique",
         "Décadence : +1 lancer(s) par tour",
         "Avarice : -1 PA",
         "Sac Animé : +3 Portée maximale",
         "Musette Animée : -1 de relance",
-        "Lancer de Pelle : -1 PA"
+        "Lancer de Pelle : +35% Critique"
       ],
       "de": [
         "Münzenwurf: +3 Maximale Reichweite",
         "Klingende Münze: +2 Maximale Reichweite",
-        "Bankrott: –1 AP",
+        "Bankrott: +35 % Kritische Treffer",
         "Dekadenz : +1 Zauber pro Runde",
         "Geiz: –1 AP",
         "Belebter Rucksack: +3 Maximale Reichweite",
         "Belebter Beutel: Abklingzeit verringert um –1",
-        "Schaufelwurf: –1 AP"
+        "Schaufelwurf: +35 % Kritische Treffer"
       ],
       "es": [
         "Lanzamiento de Monedas: +3 de alcance máximo",
         "Moneda sonante: +2 de alcance máximo",
-        "Bancarrota: -1 PA",
+        "Bancarrota: +35% de crítico",
         "Decadencia: +1 lanzamiento(s) por turno",
         "Avaricia: -1 PA",
         "Mochila Animada: +3 de alcance máximo",
         "Morral Animado: -1 de reactivación",
-        "Lanzamiento de Pala: -1 PA"
+        "Lanzamiento de Pala: +35% de crítico"
       ],
       "pt": [
         "Arremesso de Moedas: +3 de alcance máximo",
         "Moeda Falsa: +2 de alcance máximo",
-        "Falência: -1 PA",
+        "Falência: +35% de crítico",
         "Decadência: +1 lançamento(s) por turno",
         "Avareza: -1 PA",
         "Mochila Animada: +3 de alcance máximo",
         "Bolsa Animada: -1 de relançamento",
-        "Arremesso de Pá: -1 PA"
+        "Arremesso de Pá: +35% de crítico"
       ],
       "it": [
         "Coin Throwing: +3 Maximum Range",
         "Hard Cash: +2 Maximum Range",
-        "Bankruptcy: -1 AP",
+        "Bankruptcy: +35% Critical",
         "Decadence: +1 cast(s) per turn",
         "Miserliness: -1 AP",
         "Living Bag: +3 Maximum Range",
         "Living Satchel: -1 cooldown",
-        "Shovel Throwing: -1 AP"
+        "Shovel Throwing: +35% Critical"
       ]
     },
     "conditions": {
@@ -36063,7 +36051,7 @@
         "Endurance: +2 Maximum Range",
         "Pygmachia: +1 cast(s) per turn",
         "Sword of Iop: modifiable Range",
-        "Cleaver: -1 AP",
+        "Cleaver: modifiable Range",
         "Fit of Rage: +2 Maximum Range",
         "Iop's Wrath: -1 AP"
       ],
@@ -36073,7 +36061,7 @@
         "Endurance : +2 Portée maximale",
         "Pugilat : +1 lancer(s) par tour",
         "Épée de Iop : Portée modifiable",
-        "Fendoir : -1 PA",
+        "Fendoir : Portée modifiable",
         "Fureur : +2 Portée maximale",
         "Colère de Iop : -1 PA"
       ],
@@ -36083,7 +36071,7 @@
         "Ausdauer: +2 Maximale Reichweite",
         "Faustkampf : +1 Zauber pro Runde",
         "Iops Schwert: Veränderbare Reichweite",
-        "Hackmesser: –1 AP",
+        "Hackmesser: Veränderbare Reichweite",
         "Zorn: +2 Maximale Reichweite",
         "Iops Wut: –1 AP"
       ],
@@ -36093,7 +36081,7 @@
         "Aguante: +2 de alcance máximo",
         "Pugilato: +1 lanzamiento(s) por turno",
         "Espada de Yopuka: alcance modificable",
-        "Cuchillo de Carnicero: -1 PA",
+        "Cuchillo de Carnicero: alcance modificable",
         "Furor: +2 de alcance máximo",
         "Ira de Yopuka: -1 PA"
       ],
@@ -36103,7 +36091,7 @@
         "Resistência: +2 de alcance máximo",
         "Pugilato: +1 lançamento(s) por turno",
         "Espada de Iop: alcance modificável",
-        "Rachador: -1 PA",
+        "Rachador: alcance modificável",
         "Furor: +2 de alcance máximo",
         "Ira de Iop: -1 PA"
       ],
@@ -36113,7 +36101,7 @@
         "Endurance: +2 Maximum Range",
         "Pygmachia: +1 cast(s) per turn",
         "Sword of Iop: modifiable Range",
-        "Cleaver: -1 AP",
+        "Cleaver: modifiable Range",
         "Fit of Rage: +2 Maximum Range",
         "Iop's Wrath: -1 AP"
       ]
@@ -36145,9 +36133,9 @@
         "Luck: +40% Critical",
         "Nerve: modifiable Range",
         "Blakjak: +40% Critical",
-        "Fate of Ecaflip: +30% Critical",
+        "Fate of Ecaflip: modifiable Range",
         "Belote: +40% Critical",
-        "Peril: +30% Critical"
+        "Peril: modifiable Range"
       ],
       "fr": [
         "Jass : +40% Critique",
@@ -36155,9 +36143,9 @@
         "Baraka : +40% Critique",
         "Toupet : Portée modifiable",
         "Blakjak : +40% Critique",
-        "Destin d'Ecaflip : +30% Critique",
+        "Destin d'Ecaflip : Portée modifiable",
         "Belote : +40% Critique",
-        "Péril : +30% Critique"
+        "Péril : Portée modifiable"
       ],
       "de": [
         "Jass: +40 % Kritische Treffer",
@@ -36165,9 +36153,9 @@
         "Segenskraft: +40 % Kritische Treffer",
         "Dreistigkeit: Veränderbare Reichweite",
         "Blakjak: +40 % Kritische Treffer",
-        "Ecaflips Schicksal: +30 % Kritische Treffer",
+        "Ecaflips Schicksal: Veränderbare Reichweite",
         "Belote: +40 % Kritische Treffer",
-        "Bedrohung: +30 % Kritische Treffer"
+        "Bedrohung: Veränderbare Reichweite"
       ],
       "es": [
         "Jass: +40% de crítico",
@@ -36175,9 +36163,9 @@
         "Baraka: +40% de crítico",
         "Osadía: alcance modificable",
         "Blakjak: +40% de crítico",
-        "Destino de Zurcarák: +30% de crítico",
+        "Destino de Zurcarák: alcance modificable",
         "Belote: +40% de crítico",
-        "Peligro: +30% de crítico"
+        "Peligro: alcance modificable"
       ],
       "pt": [
         "Jass: +40% de crítico",
@@ -36185,9 +36173,9 @@
         "Baraka: +40% de crítico",
         "Ousadia: alcance modificável",
         "Blakjak: +40% de crítico",
-        "Destino de Ecaflip: +30% de crítico",
+        "Destino de Ecaflip: alcance modificável",
         "Belote: +40% de crítico",
-        "Perigo: +30% de crítico"
+        "Perigo: alcance modificável"
       ],
       "it": [
         "Jass: +40% Critical",
@@ -36195,9 +36183,9 @@
         "Luck: +40% Critical",
         "Nerve: modifiable Range",
         "Blakjak: +40% Critical",
-        "Fate of Ecaflip: +30% Critical",
+        "Fate of Ecaflip: modifiable Range",
         "Belote: +40% Critical",
-        "Peril: +30% Critical"
+        "Peril: modifiable Range"
       ]
     },
     "conditions": {
@@ -36304,61 +36292,61 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Shrivelling: -1 AP",
+        "Shrivelling: +2 Maximum Range",
         "Hand: +1 cast(s) per turn",
         "Slow Down: line of sight off",
         "Xelor's Sandglass: +1 cast(s) per target",
-        "Regulator: -1 AP",
+        "Regulator: +2 Maximum Range",
         "Petrification: +1 cast(s) per target",
         "Harmpit: +1 cast(s) per target",
         "Refraction: +1 cast(s) per turn"
       ],
       "fr": [
-        "Flétrissement : -1 PA",
+        "Flétrissement : +2 Portée maximale",
         "Aiguille : +1 lancer(s) par tour",
         "Ralentissement : ligne de vue désactivée",
         "Sablier de Xélor : +1 lancer(s) par cible",
-        "Régulateur : -1 PA",
+        "Régulateur : +2 Portée maximale",
         "Pétrification : +1 lancer(s) par cible",
         "Gousset : +1 lancer(s) par cible",
         "Réfraction : +1 lancer(s) par tour"
       ],
       "de": [
-        "Verwelken: –1 AP",
+        "Verwelken: +2 Maximale Reichweite",
         "Zeiger : +1 Zauber pro Runde",
         "Verlangsamen: Sichtlinie deaktiviert",
         "Sanduhr von Xélor : +1 Zauber pro Ziel",
-        "Regulator: –1 AP",
+        "Regulator: +2 Maximale Reichweite",
         "Versteinerung : +1 Zauber pro Ziel",
         "Taschenzauber : +1 Zauber pro Ziel",
         "Refraktion : +1 Zauber pro Runde"
       ],
       "es": [
-        "Marchitación: -1 PA",
+        "Marchitación: +2 de alcance máximo",
         "Aguja: +1 lanzamiento(s) por turno",
         "Ralentización: línea de visión desactivada",
         "Reloj de Arena de Xelor: +1 lanzamiento(s) por objetivo",
-        "Regulador: -1 PA",
+        "Regulador: +2 de alcance máximo",
         "Petrificación: +1 lanzamiento(s) por objetivo",
         "Reloj de Bolsillo: +1 lanzamiento(s) por objetivo",
         "Refracción: +1 lanzamiento(s) por turno"
       ],
       "pt": [
-        "Murchidão: -1 PA",
+        "Murchidão: +2 de alcance máximo",
         "Ponteiro: +1 lançamento(s) por turno",
         "Desaceleração: linha de visão desativada",
         "Ampulheta de Xelor: +1 lançamento(s) por alvo",
-        "Regulador: -1 PA",
+        "Regulador: +2 de alcance máximo",
         "Petrificação: +1 lançamento(s) por alvo",
         "Relógio de Bolso: +1 lançamento(s) por alvo",
         "Refração: +1 lançamento(s) por turno"
       ],
       "it": [
-        "Shrivelling: -1 AP",
+        "Shrivelling: +2 Maximum Range",
         "Hand: +1 cast(s) per turn",
         "Slow Down: line of sight off",
         "Xelor's Sandglass: +1 cast(s) per target",
-        "Regulator: -1 AP",
+        "Regulator: +2 Maximum Range",
         "Petrification: +1 cast(s) per target",
         "Harmpit: +1 cast(s) per target",
         "Refraction: +1 cast(s) per turn"
@@ -36389,7 +36377,7 @@
         "Overwhelming Word: line of sight off",
         "Discouraging Word: line of sight off",
         "Mischievous Word: +1 cast(s) per turn",
-        "Malicious Word: -1 AP",
+        "Malicious Word: +35% Critical",
         "War Cry: -1 AP",
         "Ritual Word: -1 cooldown",
         "Warpaint: line of sight off",
@@ -36399,7 +36387,7 @@
         "Mot Accablant : ligne de vue désactivée",
         "Mot Décourageant : ligne de vue désactivée",
         "Mot Espiègle : +1 lancer(s) par tour",
-        "Mot Malicieux : -1 PA",
+        "Mot Malicieux : +35% Critique",
         "Cri de Guerre : -1 PA",
         "Mot Rituel : -1 de relance",
         "Peinture de Guerre : ligne de vue désactivée",
@@ -36409,7 +36397,7 @@
         "Belastendes Wort: Sichtlinie deaktiviert",
         "Entmutigendes Wort: Sichtlinie deaktiviert",
         "Neckisches Wort : +1 Zauber pro Runde",
-        "Tückisches Wort: –1 AP",
+        "Tückisches Wort: +35 % Kritische Treffer",
         "Kriegsschrei: –1 AP",
         "Ritualwort: Abklingzeit verringert um –1",
         "Kriegsgemälde: Sichtlinie deaktiviert",
@@ -36419,7 +36407,7 @@
         "Palabra Abrumadora: línea de visión desactivada",
         "Palabra Desanimadora: línea de visión desactivada",
         "Palabra Juguetona: +1 lanzamiento(s) por turno",
-        "Palabra Maliciosa: -1 PA",
+        "Palabra Maliciosa: +35% de crítico",
         "Grito de Guerra: -1 PA",
         "Palabra Ritual: -1 de reactivación",
         "Pintura de Guerra: línea de visión desactivada",
@@ -36429,7 +36417,7 @@
         "Palavra Arrasadora: linha de visão desativada",
         "Palavra Desencorajadora: linha de visão desativada",
         "Palavra Maliciosa: +1 lançamento(s) por turno",
-        "Palavra Insidiosa: -1 PA",
+        "Palavra Insidiosa: +35% de crítico",
         "Grito de Guerra: -1 PA",
         "Palavra Ritual: -1 de relançamento",
         "Pintura de Guerra: linha de visão desativada",
@@ -36439,7 +36427,7 @@
         "Overwhelming Word: line of sight off",
         "Discouraging Word: line of sight off",
         "Mischievous Word: +1 cast(s) per turn",
-        "Malicious Word: -1 AP",
+        "Malicious Word: +35% Critical",
         "War Cry: -1 AP",
         "Ritual Word: -1 cooldown",
         "Warpaint: line of sight off",
@@ -36468,8 +36456,8 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Wild Grass: straight-line casting off",
-        "Voodoo Curse: modifiable Range",
+        "Wild Grass: -1 AP",
+        "Voodoo Curse: -1 AP",
         "Voodoo Sacrifice: +1 cast(s) per target",
         "Ardent Thistles: -1 cooldown",
         "Soothing Bramble: straight-line casting off",
@@ -36478,8 +36466,8 @@
         "Transmuted Sacrificial Doll: -1 cooldown"
       ],
       "fr": [
-        "Herbes Folles : lancer en ligne désactivée",
-        "Malédiction Vaudou : Portée modifiable",
+        "Herbes Folles : -1 PA",
+        "Malédiction Vaudou : -1 PA",
         "Sacrifice Vaudou : +1 lancer(s) par cible",
         "Chardons Ardents : -1 de relance",
         "Ronce Apaisante : lancer en ligne désactivée",
@@ -36488,8 +36476,8 @@
         "La Sacrifiée Transmutée : -1 de relance"
       ],
       "de": [
-        "Wuchernde Gräser: Lineare Wirkungsweise deaktiviert",
-        "Wuddu-Fluch: Veränderbare Reichweite",
+        "Wuchernde Gräser: –1 AP",
+        "Wuddu-Fluch: –1 AP",
         "Wuddu-Opfer : +1 Zauber pro Ziel",
         "Brennende Disteln: Abklingzeit verringert um –1",
         "Besänftigende Ranken: Lineare Wirkungsweise deaktiviert",
@@ -36498,8 +36486,8 @@
         "Das Verwandelte Opferpüppchen: Abklingzeit verringert um –1"
       ],
       "es": [
-        "Hierbas Locas: lanzamiento en línea desactivado",
-        "Maldición Vudú: alcance modificable",
+        "Hierbas Locas: -1 PA",
+        "Maldición Vudú: -1 PA",
         "Sacrificio Vudú: +1 lanzamiento(s) por objetivo",
         "Cardos Ardientes: -1 de reactivación",
         "Zarza Tranquilizadora: lanzamiento en línea desactivado",
@@ -36508,8 +36496,8 @@
         "La Sacrificada Transmutada: -1 de reactivación"
       ],
       "pt": [
-        "Ervas Daninhas: lançamento em linha desativado",
-        "Maldição Vodu: alcance modificável",
+        "Ervas Daninhas: -1 PA",
+        "Maldição Vodu: -1 PA",
         "Sacrifício Vodu: +1 lançamento(s) por alvo",
         "Cardos Ardentes: -1 de relançamento",
         "Sarça Calmante: lançamento em linha desativado",
@@ -36518,8 +36506,8 @@
         "A Sacrificada Transmutada: -1 de relançamento"
       ],
       "it": [
-        "Wild Grass: straight-line casting off",
-        "Voodoo Curse: modifiable Range",
+        "Wild Grass: -1 AP",
+        "Voodoo Curse: -1 AP",
         "Voodoo Sacrifice: +1 cast(s) per target",
         "Ardent Thistles: -1 cooldown",
         "Soothing Bramble: straight-line casting off",
@@ -36550,61 +36538,61 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Slaughter: -1 AP",
-        "Gash: -1 AP",
-        "Dissolution: -1 AP",
-        "Carnage: -1 AP",
-        "Retribution: -1 AP",
+        "Slaughter: +2 Maximum Range",
+        "Gash: +2 Maximum Range",
+        "Dissolution: +2 Maximum Range",
+        "Carnage: +2 Maximum Range",
+        "Retribution: +2 Maximum Range",
         "Bloodthirsty Madness: -1 cooldown",
         "Voracious Sword: -2 cooldown",
         "Dancing Sword: -2 cooldown"
       ],
       "fr": [
-        "Hécatombe : -1 PA",
-        "Entaille : -1 PA",
-        "Dissolution : -1 PA",
-        "Carnage : -1 PA",
-        "Punition : -1 PA",
+        "Hécatombe : +2 Portée maximale",
+        "Entaille : +2 Portée maximale",
+        "Dissolution : +2 Portée maximale",
+        "Carnage : +2 Portée maximale",
+        "Punition : +2 Portée maximale",
         "Folie Sanguinaire : -1 de relance",
         "Épée Vorace : -2 de relance",
         "Épée Dansante : -2 de relance"
       ],
       "de": [
-        "Gemetzel: –1 AP",
-        "Kerbe: –1 AP",
-        "Auflösung: –1 AP",
-        "Abmetzeln: –1 AP",
-        "Strafe: –1 AP",
+        "Gemetzel: +2 Maximale Reichweite",
+        "Kerbe: +2 Maximale Reichweite",
+        "Auflösung: +2 Maximale Reichweite",
+        "Abmetzeln: +2 Maximale Reichweite",
+        "Strafe: +2 Maximale Reichweite",
         "Blutiger Wahnsinn: Abklingzeit verringert um –1",
         "Gefräßiges Schwert: Abklingzeit verringert um –2",
         "Tanzendes Schwert: Abklingzeit verringert um –2"
       ],
       "es": [
-        "Hecatombe: -1 PA",
-        "Corte: -1 PA",
-        "Disolución: -1 PA",
-        "Carnicería: -1 PA",
-        "Punición: -1 PA",
+        "Hecatombe: +2 de alcance máximo",
+        "Corte: +2 de alcance máximo",
+        "Disolución: +2 de alcance máximo",
+        "Carnicería: +2 de alcance máximo",
+        "Punición: +2 de alcance máximo",
         "Locura Sanguinaria: -1 de reactivación",
         "Espada Voraz: -2 de reactivación",
         "Espada Bailarina: -2 de reactivación"
       ],
       "pt": [
-        "Hecatombe: -1 PA",
-        "Entalhe: -1 PA",
-        "Dissolução: -1 PA",
-        "Carnificina: -1 PA",
-        "Punição: -1 PA",
+        "Hecatombe: +2 de alcance máximo",
+        "Entalhe: +2 de alcance máximo",
+        "Dissolução: +2 de alcance máximo",
+        "Carnificina: +2 de alcance máximo",
+        "Punição: +2 de alcance máximo",
         "Loucura Sanguinária: -1 de relançamento",
         "Espada Voraz: -2 de relançamento",
         "Espada Dançante: -2 de relançamento"
       ],
       "it": [
-        "Slaughter: -1 AP",
-        "Gash: -1 AP",
-        "Dissolution: -1 AP",
-        "Carnage: -1 AP",
-        "Retribution: -1 AP",
+        "Slaughter: +2 Maximum Range",
+        "Gash: +2 Maximum Range",
+        "Dissolution: +2 Maximum Range",
+        "Carnage: +2 Maximum Range",
+        "Retribution: +2 Maximum Range",
         "Bloodthirsty Madness: -1 cooldown",
         "Voracious Sword: -2 cooldown",
         "Dancing Sword: -2 cooldown"
@@ -36793,7 +36781,7 @@
         "Powerful Shots: -1 cooldown",
         "Exploding Arrow: +1 cast(s) per turn",
         "Tormenting Arrow: -1 AP",
-        "Piercing Shot: -1 AP",
+        "Piercing Shot: +35% Critical",
         "Devouring Arrow: +1 cast(s) per turn",
         "Explosive Arrow: +2 Maximum Range",
         "Fulminating Arrow: +2 Maximum Range",
@@ -36803,7 +36791,7 @@
         "Tirs Puissants : -1 de relance",
         "Flèche Détonante : +1 lancer(s) par tour",
         "Flèche de Tourment : -1 PA",
-        "Tir Perforant : -1 PA",
+        "Tir Perforant : +35% Critique",
         "Flèche Dévorante : +1 lancer(s) par tour",
         "Flèche Explosive : +2 Portée maximale",
         "Flèche Fulminante : +2 Portée maximale",
@@ -36813,7 +36801,7 @@
         "Powerschüsse: Abklingzeit verringert um –1",
         "Detonationspfeil : +1 Zauber pro Runde",
         "Peinigender Pfeil: –1 AP",
-        "Durchdringender Schuss: –1 AP",
+        "Durchdringender Schuss: +35 % Kritische Treffer",
         "Verheerender Pfeil : +1 Zauber pro Runde",
         "Explosionspfeil: +2 Maximale Reichweite",
         "Tobender Pfeil: +2 Maximale Reichweite",
@@ -36823,7 +36811,7 @@
         "Tiros Potentes: -1 de reactivación",
         "Flecha Detonadora: +1 lanzamiento(s) por turno",
         "Flecha de Tormento: -1 PA",
-        "Tiro Perforante: -1 PA",
+        "Tiro Perforante: +35% de crítico",
         "Flecha Voraz: +1 lanzamiento(s) por turno",
         "Flecha Explosiva: +2 de alcance máximo",
         "Flecha Fulminante: +2 de alcance máximo",
@@ -36833,7 +36821,7 @@
         "Tiros Poderosos: -1 de relançamento",
         "Flecha Detonante: +1 lançamento(s) por turno",
         "Flecha de Tormento: -1 PA",
-        "Tiro Penetrante: -1 PA",
+        "Tiro Penetrante: +35% de crítico",
         "Flecha Devoradora: +1 lançamento(s) por turno",
         "Flecha Explosiva: +2 de alcance máximo",
         "Flecha Fulminante: +2 de alcance máximo",
@@ -36843,7 +36831,7 @@
         "Powerful Shots: -1 cooldown",
         "Exploding Arrow: +1 cast(s) per turn",
         "Tormenting Arrow: -1 AP",
-        "Piercing Shot: -1 AP",
+        "Piercing Shot: +35% Critical",
         "Devouring Arrow: +1 cast(s) per turn",
         "Explosive Arrow: +2 Maximum Range",
         "Fulminating Arrow: +2 Maximum Range",
@@ -36955,7 +36943,7 @@
     "customStats": {
       "en": [
         "Ghostly Shovel: +2 Maximum Range",
-        "Last Resort: -1 AP",
+        "Last Resort: modifiable Range",
         "Opportuneness: +1 cast(s) per turn",
         "Firedamp Explosion: modifiable Range",
         "Pandora's Box: -1 AP",
@@ -36965,7 +36953,7 @@
       ],
       "fr": [
         "Pelle Fantomatique : +2 Portée maximale",
-        "Dernier Recours : -1 PA",
+        "Dernier Recours : Portée modifiable",
         "Opportunité : +1 lancer(s) par tour",
         "Coup de Grisou : Portée modifiable",
         "Boîte de Pandore : -1 PA",
@@ -36975,7 +36963,7 @@
       ],
       "de": [
         "Phantomschaufel: +2 Maximale Reichweite",
-        "Letzter Ausweg: –1 AP",
+        "Letzter Ausweg: Veränderbare Reichweite",
         "Gelegenheit : +1 Zauber pro Runde",
         "Schlagwetterexplosion: Veränderbare Reichweite",
         "Pandoras Box: –1 AP",
@@ -36985,7 +36973,7 @@
       ],
       "es": [
         "Pala Fantomática: +2 de alcance máximo",
-        "Último Recurso: -1 PA",
+        "Último Recurso: alcance modificable",
         "Oportunidad: +1 lanzamiento(s) por turno",
         "Explosión de Grisú: alcance modificable",
         "Caja de Pandora: -1 PA",
@@ -36995,7 +36983,7 @@
       ],
       "pt": [
         "Pá Fantasmagórica: +2 de alcance máximo",
-        "Último Recurso: -1 PA",
+        "Último Recurso: alcance modificável",
         "Oportunidade: +1 lançamento(s) por turno",
         "Explosão de Grisu: alcance modificável",
         "Caixa de Pandora: -1 PA",
@@ -37005,7 +36993,7 @@
       ],
       "it": [
         "Ghostly Shovel: +2 Maximum Range",
-        "Last Resort: -1 AP",
+        "Last Resort: modifiable Range",
         "Opportuneness: +1 cast(s) per turn",
         "Firedamp Explosion: modifiable Range",
         "Pandora's Box: -1 AP",
@@ -37044,62 +37032,62 @@
       "en": [
         "Divine Sword: +2 Maximum Range",
         "Sword of Judgement: modifiable Range",
-        "Outpouring: -1 AP",
+        "Outpouring: straight-line casting off",
         "Destructive Ring: +2 Maximum Range",
         "Vitality: -1 AP",
-        "Violence: +1 cast(s) per turn",
-        "Precipitation: -1 cooldown",
-        "Determination: -1 cooldown"
+        "Violence: -1 AP",
+        "Precipitation: -1 AP",
+        "Determination: -1 AP"
       ],
       "fr": [
         "Épée Divine : +2 Portée maximale",
         "Épée du Jugement : Portée modifiable",
-        "Déferlement : -1 PA",
+        "Déferlement : lancer en ligne désactivée",
         "Anneau Destructeur : +2 Portée maximale",
         "Vitalité : -1 PA",
-        "Violence : +1 lancer(s) par tour",
-        "Précipitation : -1 de relance",
-        "Détermination : -1 de relance"
+        "Violence : -1 PA",
+        "Précipitation : -1 PA",
+        "Détermination : -1 PA"
       ],
       "de": [
         "Göttliches Schwert: +2 Maximale Reichweite",
         "Schwert der Verurteilung: Veränderbare Reichweite",
-        "Überschwemmung: –1 AP",
+        "Überschwemmung: Lineare Wirkungsweise deaktiviert",
         "Zerstörerischer Ring: +2 Maximale Reichweite",
         "Vitalität: –1 AP",
-        "Gewalt : +1 Zauber pro Runde",
-        "Überstürzen: Abklingzeit verringert um –1",
-        "Entschlossenheit: Abklingzeit verringert um –1"
+        "Gewalt: –1 AP",
+        "Überstürzen: –1 AP",
+        "Entschlossenheit: –1 AP"
       ],
       "es": [
         "Espada Divina: +2 de alcance máximo",
         "Espada del Juicio: alcance modificable",
-        "Oleada: -1 PA",
+        "Oleada: lanzamiento en línea desactivado",
         "Anillo Destructor: +2 de alcance máximo",
         "Vitalidad: -1 PA",
-        "Violencia: +1 lanzamiento(s) por turno",
-        "Precipitación: -1 de reactivación",
-        "Determinación: -1 de reactivación"
+        "Violencia: -1 PA",
+        "Precipitación: -1 PA",
+        "Determinación: -1 PA"
       ],
       "pt": [
         "Espada Divina: +2 de alcance máximo",
         "Espada do Julgamento: alcance modificável",
-        "Pandemônio: -1 PA",
+        "Pandemônio: lançamento em linha desativado",
         "Anel Destruidor: +2 de alcance máximo",
         "Vitalidade: -1 PA",
-        "Violência: +1 lançamento(s) por turno",
-        "Precipitação: -1 de relançamento",
-        "Determinação: -1 de relançamento"
+        "Violência: -1 PA",
+        "Precipitação: -1 PA",
+        "Determinação: -1 PA"
       ],
       "it": [
         "Divine Sword: +2 Maximum Range",
         "Sword of Judgement: modifiable Range",
-        "Outpouring: -1 AP",
+        "Outpouring: straight-line casting off",
         "Destructive Ring: +2 Maximum Range",
         "Vitality: -1 AP",
-        "Violence: +1 cast(s) per turn",
-        "Precipitation: -1 cooldown",
-        "Determination: -1 cooldown"
+        "Violence: -1 AP",
+        "Precipitation: -1 AP",
+        "Determination: -1 AP"
       ]
     },
     "conditions": {
@@ -37218,7 +37206,7 @@
     ],
     "customStats": {
       "en": [
-        "Gangsterdom: -1 AP",
+        "Gangsterdom: +35% Critical",
         "Pitfall: modifiable Range",
         "Arsenic: straight-line casting off",
         "Toxines: -1 AP",
@@ -37228,7 +37216,7 @@
         "Mass Grave: -1 AP"
       ],
       "fr": [
-        "Truanderie : -1 PA",
+        "Truanderie : +35% Critique",
         "Chausse-trappe : Portée modifiable",
         "Arsenic : lancer en ligne désactivée",
         "Toxines : -1 PA",
@@ -37238,7 +37226,7 @@
         "Fosse Commune : -1 PA"
       ],
       "de": [
-        "Gaunerei: –1 AP",
+        "Gaunerei: +35 % Kritische Treffer",
         "Fußangeln: Veränderbare Reichweite",
         "Arsen: Lineare Wirkungsweise deaktiviert",
         "Giftstoffe: –1 AP",
@@ -37248,7 +37236,7 @@
         "Massengrab: –1 AP"
       ],
       "es": [
-        "Truhanería: -1 PA",
+        "Truhanería: +35% de crítico",
         "Abrojo: alcance modificable",
         "Arsénico: lanzamiento en línea desactivado",
         "Toxinas: -1 PA",
@@ -37258,7 +37246,7 @@
         "Fosa Común: -1 PA"
       ],
       "pt": [
-        "Bandidagem: -1 PA",
+        "Bandidagem: +35% de crítico",
         "Estrepe: alcance modificável",
         "Arsênico: lançamento em linha desativado",
         "Toxinas: -1 PA",
@@ -37268,7 +37256,7 @@
         "Vala Comum: -1 PA"
       ],
       "it": [
-        "Gangsterdom: -1 AP",
+        "Gangsterdom: +35% Critical",
         "Pitfall: modifiable Range",
         "Arsenic: straight-line casting off",
         "Toxines: -1 AP",
@@ -37307,7 +37295,7 @@
     "customStats": {
       "en": [
         "Drying Up: -1 AP",
-        "Distortion: -1 AP",
+        "Distortion: +2 Maximum Range",
         "Sands of Time: -1 AP",
         "Temporal Haze: -1 AP",
         "Conservation: -1 cooldown",
@@ -37317,7 +37305,7 @@
       ],
       "fr": [
         "Dessèchement : -1 PA",
-        "Distorsion : -1 PA",
+        "Distorsion : +2 Portée maximale",
         "Sables du Temps : -1 PA",
         "Flou Temporel : -1 PA",
         "Conservation : -1 de relance",
@@ -37327,7 +37315,7 @@
       ],
       "de": [
         "Austrocknung: –1 AP",
-        "Verzerrung: –1 AP",
+        "Verzerrung: +2 Maximale Reichweite",
         "Sande der Zeit: –1 AP",
         "Vergängliche Verschwommenheit: –1 AP",
         "Bewahrung: Abklingzeit verringert um –1",
@@ -37337,7 +37325,7 @@
       ],
       "es": [
         "Desecamiento: -1 PA",
-        "Distorsión: -1 PA",
+        "Distorsión: +2 de alcance máximo",
         "Arenas del Tiempo: -1 PA",
         "Borroso Temporal: -1 PA",
         "Conservación: -1 de reactivación",
@@ -37347,7 +37335,7 @@
       ],
       "pt": [
         "Ressecamento: -1 PA",
-        "Distorção: -1 PA",
+        "Distorção: +2 de alcance máximo",
         "Areias do Tempo: -1 PA",
         "Desfocado Temporal: -1 PA",
         "Conservação: -1 de relançamento",
@@ -37357,7 +37345,7 @@
       ],
       "it": [
         "Drying Up: -1 AP",
-        "Distortion: -1 AP",
+        "Distortion: +2 Maximum Range",
         "Sands of Time: -1 AP",
         "Temporal Haze: -1 AP",
         "Conservation: -1 cooldown",
@@ -37398,7 +37386,7 @@
         "Depressing Word: line of sight off",
         "Forbidden Word: modifiable Range",
         "Bloodless Word: line of sight off",
-        "Flowery Word: -1 AP",
+        "Flowery Word: +35% Critical",
         "Enchanted Thicket: straight-line casting off",
         "Cryotherapy: -1 AP",
         "Murmur: +2 Maximum Range"
@@ -37408,7 +37396,7 @@
         "Mot Déprimant : ligne de vue désactivée",
         "Mot Interdit : Portée modifiable",
         "Mot Exsangue : ligne de vue désactivée",
-        "Mot Fleuri : -1 PA",
+        "Mot Fleuri : +35% Critique",
         "Bosquet Enchanté : lancer en ligne désactivée",
         "Cryothérapie : -1 PA",
         "Murmure : +2 Portée maximale"
@@ -37418,7 +37406,7 @@
         "Deprimierendes Wort: Sichtlinie deaktiviert",
         "Unerlaubtes Wort: Veränderbare Reichweite",
         "Blutleeres Wort: Sichtlinie deaktiviert",
-        "Blumiges Wort: –1 AP",
+        "Blumiges Wort: +35 % Kritische Treffer",
         "Verzaubertes Wäldchen: Lineare Wirkungsweise deaktiviert",
         "Kryotherapie: –1 AP",
         "Murmeln: +2 Maximale Reichweite"
@@ -37428,7 +37416,7 @@
         "Palabra Deprimente: línea de visión desactivada",
         "Palabra Prohibida: alcance modificable",
         "Palabra Exangüe: línea de visión desactivada",
-        "Palabra Florida: -1 PA",
+        "Palabra Florida: +35% de crítico",
         "Bosquecillo Encantado: lanzamiento en línea desactivado",
         "Crioterapia: -1 PA",
         "Murmullo: +2 de alcance máximo"
@@ -37438,7 +37426,7 @@
         "Palavra Deprimente: linha de visão desativada",
         "Palavra Proibida: alcance modificável",
         "Palavra Exsangue: linha de visão desativada",
-        "Palavra Florida: -1 PA",
+        "Palavra Florida: +35% de crítico",
         "Bosque Encantado: lançamento em linha desativado",
         "Crioterapia: -1 PA",
         "Murmúrio: +2 de alcance máximo"
@@ -37448,7 +37436,7 @@
         "Depressing Word: line of sight off",
         "Forbidden Word: modifiable Range",
         "Bloodless Word: line of sight off",
-        "Flowery Word: -1 AP",
+        "Flowery Word: +35% Critical",
         "Enchanted Thicket: straight-line casting off",
         "Cryotherapy: -1 AP",
         "Murmur: +2 Maximum Range"
@@ -37482,8 +37470,8 @@
     ],
     "customStats": {
       "en": [
-        "Bramble: line of sight off",
-        "Insolent Bramble: straight-line casting off",
+        "Bramble: +3 Maximum Range",
+        "Insolent Bramble: -1 AP",
         "Sadida's Tear: straight-line casting off",
         "Rise of Sap: +1 cast(s) per turn",
         "Bane: modifiable Range",
@@ -37492,8 +37480,8 @@
         "Leafy Tree: -1 AP"
       ],
       "fr": [
-        "Ronce : ligne de vue désactivée",
-        "Ronce Insolente : lancer en ligne désactivée",
+        "Ronce : +3 Portée maximale",
+        "Ronce Insolente : -1 PA",
         "Larme de Sadida : lancer en ligne désactivée",
         "Montée de Sève : +1 lancer(s) par tour",
         "Fléau : Portée modifiable",
@@ -37502,8 +37490,8 @@
         "Arbre Feuillu : -1 PA"
       ],
       "de": [
-        "Ranken: Sichtlinie deaktiviert",
-        "Bodenlose Rankenheit: Lineare Wirkungsweise deaktiviert",
+        "Ranken: +3 Maximale Reichweite",
+        "Bodenlose Rankenheit: –1 AP",
         "Sadida-Träne: Lineare Wirkungsweise deaktiviert",
         "Harzstoß : +1 Zauber pro Runde",
         "Geißel: Veränderbare Reichweite",
@@ -37512,8 +37500,8 @@
         "Laubbaum: –1 AP"
       ],
       "es": [
-        "Zarza: línea de visión desactivada",
-        "Zarza Insolente: lanzamiento en línea desactivado",
+        "Zarza: +3 de alcance máximo",
+        "Zarza Insolente: -1 PA",
         "Lágrima de Sadida: lanzamiento en línea desactivado",
         "Subida de Savia: +1 lanzamiento(s) por turno",
         "Plaga: alcance modificable",
@@ -37522,8 +37510,8 @@
         "Árbol Frondoso: -1 PA"
       ],
       "pt": [
-        "Sarça: linha de visão desativada",
-        "Sarça Insolente: lançamento em linha desativado",
+        "Sarça: +3 de alcance máximo",
+        "Sarça Insolente: -1 PA",
         "Lágrima de Sadida: lançamento em linha desativado",
         "Inundação de Seiva: +1 lançamento(s) por turno",
         "Flagelo: alcance modificável",
@@ -37532,8 +37520,8 @@
         "Árvore Frondosa: -1 PA"
       ],
       "it": [
-        "Bramble: line of sight off",
-        "Insolent Bramble: straight-line casting off",
+        "Bramble: +3 Maximum Range",
+        "Insolent Bramble: -1 AP",
         "Sadida's Tear: straight-line casting off",
         "Rise of Sap: +1 cast(s) per turn",
         "Bane: modifiable Range",
@@ -37572,62 +37560,62 @@
       "en": [
         "Assault: line of sight off",
         "Aversion: +1 cast(s) per turn",
-        "Desolation: -1 AP",
-        "Immolation: -1 AP",
+        "Immolation: +2 Maximum Range",
         "Sacrifice: -1 cooldown",
         "Penitence: -1 cooldown",
         "Absorption: +1 Maximum Range",
-        "Fury: +2 Maximum Range"
+        "Fury: +2 Maximum Range",
+        "Blood Bath: +25% Critical"
       ],
       "fr": [
         "Assaut : ligne de vue désactivée",
         "Aversion : +1 lancer(s) par tour",
-        "Désolation : -1 PA",
-        "Immolation : -1 PA",
+        "Immolation : +2 Portée maximale",
         "Sacrifice : -1 de relance",
         "Pénitence : -1 de relance",
         "Absorption : +1 Portée maximale",
-        "Furie : +2 Portée maximale"
+        "Furie : +2 Portée maximale",
+        "Bain de Sang : +25% Critique"
       ],
       "de": [
         "Sturmangriff: Sichtlinie deaktiviert",
         "Aversion : +1 Zauber pro Runde",
-        "Verzweiflung: –1 AP",
-        "Flammenschlag: –1 AP",
+        "Flammenschlag: +2 Maximale Reichweite",
         "Opfer: Abklingzeit verringert um –1",
         "Buße: Abklingzeit verringert um –1",
         "Absorption: +1 Maximale Reichweite",
-        "Raserei: +2 Maximale Reichweite"
+        "Raserei: +2 Maximale Reichweite",
+        "Blutbad: +25 % Kritische Treffer"
       ],
       "es": [
         "Asalto: línea de visión desactivada",
         "Aversión: +1 lanzamiento(s) por turno",
-        "Desolación: -1 PA",
-        "Inmolación: -1 PA",
+        "Inmolación: +2 de alcance máximo",
         "Sacrificio: -1 de reactivación",
         "Penitencia: -1 de reactivación",
         "Absorción: +1 de alcance máximo",
-        "Furia: +2 de alcance máximo"
+        "Furia: +2 de alcance máximo",
+        "Baño de Sangre: +25% de crítico"
       ],
       "pt": [
         "Assalto: linha de visão desativada",
         "Aversão: +1 lançamento(s) por turno",
-        "Desolação: -1 PA",
-        "Imolação: -1 PA",
+        "Imolação: +2 de alcance máximo",
         "Sacrifício: -1 de relançamento",
         "Penitência: -1 de relançamento",
         "Absorção: +1 de alcance máximo",
-        "Fúria: +2 de alcance máximo"
+        "Fúria: +2 de alcance máximo",
+        "Banho de Sangue: +25% de crítico"
       ],
       "it": [
         "Assault: line of sight off",
         "Aversion: +1 cast(s) per turn",
-        "Desolation: -1 AP",
-        "Immolation: -1 AP",
+        "Immolation: +2 Maximum Range",
         "Sacrifice: -1 cooldown",
         "Penitence: -1 cooldown",
         "Absorption: +1 Maximum Range",
-        "Fury: +2 Maximum Range"
+        "Fury: +2 Maximum Range",
+        "Blood Bath: +25% Critical"
       ]
     },
     "conditions": {
@@ -37938,63 +37926,63 @@
     ],
     "customStats": {
       "en": [
-        "Pandjiu: -1 AP",
+        "Pandjiu: modifiable Range",
         "Propulsion: +1 Maximum Range",
-        "Absinthe: straight-line casting off",
+        "Absinthe: modifiable Range",
         "Waterfall: +1 Maximum Range",
         "Drunkenness: -1 AP",
         "Inebriation: -1 AP",
-        "Melancholy: +25% Critical",
+        "Melancholy: +35% Critical",
         "Nausea: straight-line casting off"
       ],
       "fr": [
-        "Pandjiu : -1 PA",
+        "Pandjiu : Portée modifiable",
         "Propulsion : +1 Portée maximale",
-        "Absinthe : lancer en ligne désactivée",
+        "Absinthe : Portée modifiable",
         "Cascade : +1 Portée maximale",
         "Ivresse : -1 PA",
         "Ébriété : -1 PA",
-        "Vague à Lame : +25% Critique",
+        "Vague à Lame : +35% Critique",
         "Nausée : lancer en ligne désactivée"
       ],
       "de": [
-        "Pandjiu: –1 AP",
+        "Pandjiu: Veränderbare Reichweite",
         "Voran-Trieb: +1 Maximale Reichweite",
-        "Absinth: Lineare Wirkungsweise deaktiviert",
+        "Absinth: Veränderbare Reichweite",
         "Kaskade: +1 Maximale Reichweite",
         "Rausch: –1 AP",
         "Trunkenheit: –1 AP",
-        "Welle der Traurigkeit: +25 % Kritische Treffer",
+        "Welle der Traurigkeit: +35 % Kritische Treffer",
         "Übelkeit: Lineare Wirkungsweise deaktiviert"
       ],
       "es": [
-        "Pandjiu: -1 PA",
+        "Pandjiu: alcance modificable",
         "Propulsión: +1 de alcance máximo",
-        "Absenta: lanzamiento en línea desactivado",
+        "Absenta: alcance modificable",
         "Cascada: +1 de alcance máximo",
         "Embriaguez: -1 PA",
         "Ebriedad: -1 PA",
-        "Ola Marejadora: +25% de crítico",
+        "Ola Marejadora: +35% de crítico",
         "Náuseas: lanzamiento en línea desactivado"
       ],
       "pt": [
-        "Pandjiu: -1 PA",
+        "Pandjiu: alcance modificável",
         "Propulsão: +1 de alcance máximo",
-        "Absinto: lançamento em linha desativado",
+        "Absinto: alcance modificável",
         "Cascata: +1 de alcance máximo",
         "Bebedeira: -1 PA",
         "Sobriedade: -1 PA",
-        "Onda de Tristeza: +25% de crítico",
+        "Onda de Tristeza: +35% de crítico",
         "Náusea: lançamento em linha desativado"
       ],
       "it": [
-        "Pandjiu: -1 AP",
+        "Pandjiu: modifiable Range",
         "Propulsion: +1 Maximum Range",
-        "Absinthe: straight-line casting off",
+        "Absinthe: modifiable Range",
         "Waterfall: +1 Maximum Range",
         "Drunkenness: -1 AP",
         "Inebriation: -1 AP",
-        "Melancholy: +25% Critical",
+        "Melancholy: +35% Critical",
         "Nausea: straight-line casting off"
       ]
     },
@@ -38022,7 +38010,7 @@
       "en": [
         "Recall Beacon: line of sight off",
         "Concentration Arrow: +1 cast(s) per turn",
-        "Destructive Bolts: -1 AP",
+        "Destructive Bolts: +35% Critical",
         "Bat's Eye: -1 AP",
         "Crushing Arrow: -1 AP",
         "Persecuting Arrow: straight-line casting off",
@@ -38032,7 +38020,7 @@
       "fr": [
         "Balise de Rappel : ligne de vue désactivée",
         "Flèche de Concentration : +1 lancer(s) par tour",
-        "Carreaux Destructeurs : -1 PA",
+        "Carreaux Destructeurs : +35% Critique",
         "Œil de Taupe : -1 PA",
         "Flèche Écrasante : -1 PA",
         "Flèche Persécutrice : lancer en ligne désactivée",
@@ -38042,7 +38030,7 @@
       "de": [
         "Leitmarkierung der Erinnerung: Sichtlinie deaktiviert",
         "Pfeil der Konzentration : +1 Zauber pro Runde",
-        "Zerstörerische Karos: –1 AP",
+        "Zerstörerische Karos: +35 % Kritische Treffer",
         "Maulwurfssicht: –1 AP",
         "Zermalmungspfeil: –1 AP",
         "Heimsuchender Pfeil: Lineare Wirkungsweise deaktiviert",
@@ -38052,7 +38040,7 @@
       "es": [
         "Baliza de Recuerdo: línea de visión desactivada",
         "Flecha de Concentración: +1 lanzamiento(s) por turno",
-        "Diamantes Destructores: -1 PA",
+        "Diamantes Destructores: +35% de crítico",
         "Ojo de Topo: -1 PA",
         "Flecha Aplastante: -1 PA",
         "Flecha Perseguidora: lanzamiento en línea desactivado",
@@ -38062,7 +38050,7 @@
       "pt": [
         "Baliza de Recuo: linha de visão desativada",
         "Flecha de Concentração: +1 lançamento(s) por turno",
-        "Ladrilhos Destruidores: -1 PA",
+        "Ladrilhos Destruidores: +35% de crítico",
         "Olho de Toupeira: -1 PA",
         "Flecha Esmagadora: -1 PA",
         "Flecha Perseguidora: lançamento em linha desativado",
@@ -38072,7 +38060,7 @@
       "it": [
         "Recall Beacon: line of sight off",
         "Concentration Arrow: +1 cast(s) per turn",
-        "Destructive Bolts: -1 AP",
+        "Destructive Bolts: +35% Critical",
         "Bat's Eye: -1 AP",
         "Crushing Arrow: -1 AP",
         "Persecuting Arrow: straight-line casting off",
@@ -38348,8 +38336,8 @@
         "Barrier: line of sight off",
         "Greener Pastures: +2 Maximum Range",
         "Aegis: modifiable Range",
-        "Silbo: -1 AP",
-        "Getaway: -1 AP"
+        "Silbo: +1 cast(s) per turn",
+        "Getaway: +3 Maximum Range"
       ],
       "fr": [
         "Houlette : ligne de vue désactivée",
@@ -38358,8 +38346,8 @@
         "Barrière : ligne de vue désactivée",
         "Transhumance : +2 Portée maximale",
         "Égide : Portée modifiable",
-        "Silbo : -1 PA",
-        "Escapade : -1 PA"
+        "Silbo : +1 lancer(s) par tour",
+        "Escapade : +3 Portée maximale"
       ],
       "de": [
         "Hirtenstab: Sichtlinie deaktiviert",
@@ -38368,8 +38356,8 @@
         "Barriere: Sichtlinie deaktiviert",
         "Vermenschwandlung: +2 Maximale Reichweite",
         "Schirmherrschaft: Veränderbare Reichweite",
-        "Silbo: –1 AP",
-        "Spritztour: –1 AP"
+        "Silbo : +1 Zauber pro Runde",
+        "Spritztour: +3 Maximale Reichweite"
       ],
       "es": [
         "Cayado: línea de visión desactivada",
@@ -38378,8 +38366,8 @@
         "Parapeto: línea de visión desactivada",
         "Trashumancia: +2 de alcance máximo",
         "Égida: alcance modificable",
-        "Silbo: -1 PA",
-        "Escapadita: -1 PA"
+        "Silbo: +1 lanzamiento(s) por turno",
+        "Escapadita: +3 de alcance máximo"
       ],
       "pt": [
         "Cajado: linha de visão desativada",
@@ -38388,8 +38376,8 @@
         "Barreira: linha de visão desativada",
         "Transumância: +2 de alcance máximo",
         "Égide: alcance modificável",
-        "Silbo: -1 PA",
-        "Escapada: -1 PA"
+        "Silbo: +1 lançamento(s) por turno",
+        "Escapada: +3 de alcance máximo"
       ],
       "it": [
         "Shepherd's Crook: line of sight off",
@@ -38398,8 +38386,8 @@
         "Barrier: line of sight off",
         "Greener Pastures: +2 Maximum Range",
         "Aegis: modifiable Range",
-        "Silbo: -1 AP",
-        "Getaway: -1 AP"
+        "Silbo: +1 cast(s) per turn",
+        "Getaway: +3 Maximum Range"
       ]
     },
     "conditions": {
@@ -38426,7 +38414,7 @@
       "en": [
         "Loafylactic: +2 Maximum Range",
         "Tunnel: straight-line casting off",
-        "Spade of the Ancients: -1 AP",
+        "Spade of the Ancients: modifiable Range",
         "Shovel of the Ancients: +2 Maximum Range",
         "Deposit: modifiable Range",
         "Expiry: -1 AP",
@@ -38436,7 +38424,7 @@
       "fr": [
         "Abattement : +2 Portée maximale",
         "Souterrain : lancer en ligne désactivée",
-        "Bêche des Anciens : -1 PA",
+        "Bêche des Anciens : Portée modifiable",
         "Pelle des Anciens : +2 Portée maximale",
         "Gisement : Portée modifiable",
         "Péremption : -1 PA",
@@ -38446,7 +38434,7 @@
       "de": [
         "Schlag lass nach!: +2 Maximale Reichweite",
         "Untergrund: Lineare Wirkungsweise deaktiviert",
-        "Spaten der Alten: –1 AP",
+        "Spaten der Alten: Veränderbare Reichweite",
         "Schaufel der Alten: +2 Maximale Reichweite",
         "Erzvorkommen: Veränderbare Reichweite",
         "Verfall: –1 AP",
@@ -38456,7 +38444,7 @@
       "es": [
         "Debilitación: +2 de alcance máximo",
         "Subterráneo: lanzamiento en línea desactivado",
-        "Laya de los Ancianos: -1 PA",
+        "Laya de los Ancianos: alcance modificable",
         "Pala de los Ancianos: +2 de alcance máximo",
         "Filón: alcance modificable",
         "Caducidad: -1 PA",
@@ -38466,7 +38454,7 @@
       "pt": [
         "Abate: +2 de alcance máximo",
         "Subterrâneo: lançamento em linha desativado",
-        "Enxada dos Antigos: -1 PA",
+        "Enxada dos Antigos: alcance modificável",
         "Pá dos Antigos: +2 de alcance máximo",
         "Jazida: alcance modificável",
         "Expiração: -1 PA",
@@ -38476,7 +38464,7 @@
       "it": [
         "Loafylactic: +2 Maximum Range",
         "Tunnel: straight-line casting off",
-        "Spade of the Ancients: -1 AP",
+        "Spade of the Ancients: modifiable Range",
         "Shovel of the Ancients: +2 Maximum Range",
         "Deposit: modifiable Range",
         "Expiry: -1 AP",
@@ -38511,8 +38499,8 @@
         "Word of Recovery: line of sight off",
         "Uniting Word: line of sight off",
         "Prankster's Word: +1 cast(s) per target",
-        "Defensive Word: +1 cast(s) per turn",
-        "Turbulent Word: +1 cast(s) per turn",
+        "Defensive Word: -1 AP",
+        "Turbulent Word: -1 AP",
         "Furious Word: -1 AP"
       ],
       "fr": [
@@ -38521,8 +38509,8 @@
         "Mot de Reconstitution : ligne de vue désactivée",
         "Mot de Solidarité : ligne de vue désactivée",
         "Mot Farceur : +1 lancer(s) par cible",
-        "Mot Défendu : +1 lancer(s) par tour",
-        "Mot Turbulent : +1 lancer(s) par tour",
+        "Mot Défendu : -1 PA",
+        "Mot Turbulent : -1 PA",
         "Mot Furieux : -1 PA"
       ],
       "de": [
@@ -38531,8 +38519,8 @@
         "Wort der Genesung: Sichtlinie deaktiviert",
         "Solidarisches Wort: Sichtlinie deaktiviert",
         "Schelmisches Wort : +1 Zauber pro Ziel",
-        "Verbotenes Wort : +1 Zauber pro Runde",
-        "Ungestümes Wort : +1 Zauber pro Runde",
+        "Verbotenes Wort: –1 AP",
+        "Ungestümes Wort: –1 AP",
         "Zorniges Wort: –1 AP"
       ],
       "es": [
@@ -38541,8 +38529,8 @@
         "Palabra de Reconstitución: línea de visión desactivada",
         "Palabra de Solidaridad: línea de visión desactivada",
         "Palabra Bromista: +1 lanzamiento(s) por objetivo",
-        "Palabra Censurada: +1 lanzamiento(s) por turno",
-        "Palabra Turbulenta: +1 lanzamiento(s) por turno",
+        "Palabra Censurada: -1 PA",
+        "Palabra Turbulenta: -1 PA",
         "Palabra Furiosa: -1 PA"
       ],
       "pt": [
@@ -38551,8 +38539,8 @@
         "Palavra de Reconstituição: linha de visão desativada",
         "Palavra de Solidariedade: linha de visão desativada",
         "Palavra Farsesca: +1 lançamento(s) por alvo",
-        "Palavra Vetada: +1 lançamento(s) por turno",
-        "Palavra Turbulenta: +1 lançamento(s) por turno",
+        "Palavra Vetada: -1 PA",
+        "Palavra Turbulenta: -1 PA",
         "Palavra Furiosa: -1 PA"
       ],
       "it": [
@@ -38561,8 +38549,8 @@
         "Word of Recovery: line of sight off",
         "Uniting Word: line of sight off",
         "Prankster's Word: +1 cast(s) per target",
-        "Defensive Word: +1 cast(s) per turn",
-        "Turbulent Word: +1 cast(s) per turn",
+        "Defensive Word: -1 AP",
+        "Turbulent Word: -1 AP",
         "Furious Word: -1 AP"
       ]
     },
@@ -38588,64 +38576,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Tipple: +1 Maximum Range",
-        "Eviction: +25% Critical",
+        "Tipple: +40% Critical",
+        "Eviction: +1 cast(s) per turn",
         "Brandy: +2 Maximum Range",
-        "Filthipint: -1 AP",
+        "Filthipint: +35% Critical",
         "Bamboo Milk: -1 cooldown",
         "Prohibition: straight-line casting off",
         "Numbness: -1 AP",
-        "Alcoholic Breath: +30% Critical"
+        "Alcoholic Breath: +40% Critical"
       ],
       "fr": [
-        "Ethylo : +1 Portée maximale",
-        "Éviction : +25% Critique",
+        "Ethylo : +40% Critique",
+        "Éviction : +1 lancer(s) par tour",
         "Eau-de-vie : +2 Portée maximale",
-        "Bistouille : -1 PA",
+        "Bistouille : +35% Critique",
         "Lait de Bambou : -1 de relance",
         "Prohibition : lancer en ligne désactivée",
         "Engourdissement : -1 PA",
-        "Souffle Alcoolisé : +30% Critique"
+        "Souffle Alcoolisé : +40% Critique"
       ],
       "de": [
-        "Ethyllo: +1 Maximale Reichweite",
-        "Verdrängung: +25 % Kritische Treffer",
+        "Ethyllo: +40 % Kritische Treffer",
+        "Verdrängung : +1 Zauber pro Runde",
         "Wasser des Lebens: +2 Maximale Reichweite",
-        "Kaffee mit Schuss: –1 AP",
+        "Kaffee mit Schuss: +35 % Kritische Treffer",
         "Bambusmilch: Abklingzeit verringert um –1",
         "Prohibition: Lineare Wirkungsweise deaktiviert",
         "Benommenheit: –1 AP",
-        "Alkoholatem: +30 % Kritische Treffer"
+        "Alkoholatem: +40 % Kritische Treffer"
       ],
       "es": [
-        "Etilo: +1 de alcance máximo",
-        "Desalojo: +25% de crítico",
+        "Etilo: +40% de crítico",
+        "Desalojo: +1 lanzamiento(s) por turno",
         "Aguardiente: +2 de alcance máximo",
-        "Aguachirle: -1 PA",
+        "Aguachirle: +35% de crítico",
         "Leche de Bambú: -1 de reactivación",
         "Interdicción: lanzamiento en línea desactivado",
         "Entumecimiento: -1 PA",
-        "Soplido Alcoholizado: +30% de crítico"
+        "Soplido Alcoholizado: +40% de crítico"
       ],
       "pt": [
-        "Etílico: +1 de alcance máximo",
-        "Despejo: +25% de crítico",
+        "Etílico: +40% de crítico",
+        "Despejo: +1 lançamento(s) por turno",
         "Limonada: +2 de alcance máximo",
-        "Zurrapa: -1 PA",
+        "Zurrapa: +35% de crítico",
         "Leite de Bambu: -1 de relançamento",
         "Lei Seca: lançamento em linha desativado",
         "Dormência: -1 PA",
-        "Sopro Alcoolizado: +30% de crítico"
+        "Sopro Alcoolizado: +40% de crítico"
       ],
       "it": [
-        "Tipple: +1 Maximum Range",
-        "Eviction: +25% Critical",
+        "Tipple: +40% Critical",
+        "Eviction: +1 cast(s) per turn",
         "Brandy: +2 Maximum Range",
-        "Filthipint: -1 AP",
+        "Filthipint: +35% Critical",
         "Bamboo Milk: -1 cooldown",
         "Prohibition: straight-line casting off",
         "Numbness: -1 AP",
-        "Alcoholic Breath: +30% Critical"
+        "Alcoholic Breath: +40% Critical"
       ]
     },
     "conditions": {
@@ -38752,60 +38740,60 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Teleportation: -1 AP",
-        "Astrolabe: -1 AP",
-        "Accomplice: modifiable Range",
-        "Xelor's Dial: modifiable Range",
+        "Teleportation: -1 cooldown",
+        "Astrolabe: -1 cooldown",
+        "Accomplice: +1 cast(s) per turn",
+        "Xelor's Dial: -1 cooldown",
         "Paradox: -1 AP",
         "Rift: -1 AP",
         "Synchro: modifiable Range",
         "Knell: modifiable Range"
       ],
       "fr": [
-        "Téléportation : -1 PA",
-        "Astrolabe : -1 PA",
-        "Complice : Portée modifiable",
-        "Cadran de Xélor : Portée modifiable",
+        "Téléportation : -1 de relance",
+        "Astrolabe : -1 de relance",
+        "Complice : +1 lancer(s) par tour",
+        "Cadran de Xélor : -1 de relance",
         "Paradoxe : -1 PA",
         "Faille : -1 PA",
         "Synchro : Portée modifiable",
         "Glas : Portée modifiable"
       ],
       "de": [
-        "Teleportation: –1 AP",
-        "Astrolabium: –1 AP",
-        "Komplize: Veränderbare Reichweite",
-        "Zifferblatt von Xélor: Veränderbare Reichweite",
+        "Teleportation: Abklingzeit verringert um –1",
+        "Astrolabium: Abklingzeit verringert um –1",
+        "Komplize : +1 Zauber pro Runde",
+        "Zifferblatt von Xélor: Abklingzeit verringert um –1",
         "Paradoxon: –1 AP",
         "Riss: –1 AP",
         "Synchro: Veränderbare Reichweite",
         "Totenglocke: Veränderbare Reichweite"
       ],
       "es": [
-        "Teletransportación: -1 PA",
-        "Astrolabio: -1 PA",
-        "Cómplice: alcance modificable",
-        "Esfera de Xelor: alcance modificable",
+        "Teletransportación: -1 de reactivación",
+        "Astrolabio: -1 de reactivación",
+        "Cómplice: +1 lanzamiento(s) por turno",
+        "Esfera de Xelor: -1 de reactivación",
         "Paradoja: -1 PA",
         "Falla: -1 PA",
         "Syncro: alcance modificable",
         "Tañido: alcance modificable"
       ],
       "pt": [
-        "Teletransporte: -1 PA",
-        "Astrolábio: -1 PA",
-        "Cúmplice: alcance modificável",
-        "Quadrante de Xelor: alcance modificável",
+        "Teletransporte: -1 de relançamento",
+        "Astrolábio: -1 de relançamento",
+        "Cúmplice: +1 lançamento(s) por turno",
+        "Quadrante de Xelor: -1 de relançamento",
         "Paradoxo: -1 PA",
         "Falha: -1 PA",
         "Sincro: alcance modificável",
         "Dobre Fúnebre: alcance modificável"
       ],
       "it": [
-        "Teleportation: -1 AP",
-        "Astrolabe: -1 AP",
-        "Accomplice: modifiable Range",
-        "Xelor's Dial: modifiable Range",
+        "Teleportation: -1 cooldown",
+        "Astrolabe: -1 cooldown",
+        "Accomplice: +1 cast(s) per turn",
+        "Xelor's Dial: -1 cooldown",
         "Paradox: -1 AP",
         "Rift: -1 AP",
         "Synchro: modifiable Range",
@@ -38834,9 +38822,9 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Aggressive Bramble: -1 AP",
-        "Charred Charms: -1 AP",
-        "Contagion: straight-line casting off",
+        "Aggressive Bramble: +1 cast(s) per target",
+        "Charred Charms: +3 Maximum Range",
+        "Contagion: +1 cast(s) per turn",
         "Mangrove: -1 AP",
         "Inflatable Doll: -1 cooldown",
         "Transmuted Inflatable: -1 cooldown",
@@ -38844,9 +38832,9 @@
         "Transmuted Ultra-Powerful: -1 cooldown"
       ],
       "fr": [
-        "Ronces Agressives : -1 PA",
-        "Fétiches Calcinés : -1 PA",
-        "Contagion : lancer en ligne désactivée",
+        "Ronces Agressives : +1 lancer(s) par cible",
+        "Fétiches Calcinés : +3 Portée maximale",
+        "Contagion : +1 lancer(s) par tour",
         "Mangrove : -1 PA",
         "La Gonflable : -1 de relance",
         "La Gonflable Transmutée : -1 de relance",
@@ -38854,9 +38842,9 @@
         "La Surpuissante Transmutée : -1 de relance"
       ],
       "de": [
-        "Aggressive Ranken: –1 AP",
-        "Verkohlte Glücksbringer: –1 AP",
-        "Ansteckung: Lineare Wirkungsweise deaktiviert",
+        "Aggressive Ranken : +1 Zauber pro Ziel",
+        "Verkohlte Glücksbringer: +3 Maximale Reichweite",
+        "Ansteckung : +1 Zauber pro Runde",
         "Mangrove: –1 AP",
         "Aufblaspüppchen: Abklingzeit verringert um –1",
         "Das Verwandelte Aufblaspüppchen: Abklingzeit verringert um –1",
@@ -38864,9 +38852,9 @@
         "Das Verwandelte Superpüppchen: Abklingzeit verringert um –1"
       ],
       "es": [
-        "Zarzas Agresivas: -1 PA",
-        "Fetiches Calcinados: -1 PA",
-        "Contagio: lanzamiento en línea desactivado",
+        "Zarzas Agresivas: +1 lanzamiento(s) por objetivo",
+        "Fetiches Calcinados: +3 de alcance máximo",
+        "Contagio: +1 lanzamiento(s) por turno",
         "Manglar: -1 PA",
         "La Hinchable: -1 de reactivación",
         "La Hinchable Transmutada: -1 de reactivación",
@@ -38874,9 +38862,9 @@
         "La Superpoderosa Transmutada: -1 de reactivación"
       ],
       "pt": [
-        "Sarças Agressivas: -1 PA",
-        "Fetiches Calcinados: -1 PA",
-        "Contágio: lançamento em linha desativado",
+        "Sarças Agressivas: +1 lançamento(s) por alvo",
+        "Fetiches Calcinados: +3 de alcance máximo",
+        "Contágio: +1 lançamento(s) por turno",
         "Mangue: -1 PA",
         "A Inflável: -1 de relançamento",
         "A Inflável Transmutada: -1 de relançamento",
@@ -38884,9 +38872,9 @@
         "A Superpoderosa Transmutada: -1 de relançamento"
       ],
       "it": [
-        "Aggressive Bramble: -1 AP",
-        "Charred Charms: -1 AP",
-        "Contagion: straight-line casting off",
+        "Aggressive Bramble: +1 cast(s) per target",
+        "Charred Charms: +3 Maximum Range",
+        "Contagion: +1 cast(s) per turn",
         "Mangrove: -1 AP",
         "Inflatable Doll: -1 cooldown",
         "Transmuted Inflatable: -1 cooldown",
@@ -38916,64 +38904,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Blood Bath: -1 AP",
-        "Clobbering: -1 AP",
-        "Condensation: -1 AP",
+        "Clobbering: +2 Maximum Range",
+        "Condensation: +2 Maximum Range",
         "Influx: +1 cast(s) per turn",
         "Libation: -1 cooldown",
         "Punishment: -1 cooldown",
         "Torture: +2 Maximum Range",
-        "Nervousness: +2 Maximum Range"
+        "Nervousness: +2 Maximum Range",
+        "Desolation: +2 Maximum Range"
       ],
       "fr": [
-        "Bain de Sang : -1 PA",
-        "Déchaînement : -1 PA",
-        "Condensation : -1 PA",
+        "Déchaînement : +2 Portée maximale",
+        "Condensation : +2 Portée maximale",
         "Afflux : +1 lancer(s) par tour",
         "Libation : -1 de relance",
         "Châtiment : -1 de relance",
         "Supplice : +2 Portée maximale",
-        "Nervosité : +2 Portée maximale"
+        "Nervosité : +2 Portée maximale",
+        "Désolation : +2 Portée maximale"
       ],
       "de": [
-        "Blutbad: –1 AP",
-        "Entfesselung: –1 AP",
-        "Kondensation: –1 AP",
+        "Entfesselung: +2 Maximale Reichweite",
+        "Kondensation: +2 Maximale Reichweite",
         "Zustrom : +1 Zauber pro Runde",
         "Trankopfer: Abklingzeit verringert um –1",
         "Strafe: Abklingzeit verringert um –1",
         "Tortur: +2 Maximale Reichweite",
-        "Nervosität: +2 Maximale Reichweite"
+        "Nervosität: +2 Maximale Reichweite",
+        "Verzweiflung: +2 Maximale Reichweite"
       ],
       "es": [
-        "Baño de Sangre: -1 PA",
-        "Desencadenamiento: -1 PA",
-        "Condensación: -1 PA",
+        "Desencadenamiento: +2 de alcance máximo",
+        "Condensación: +2 de alcance máximo",
         "Aflujo: +1 lanzamiento(s) por turno",
         "Libación: -1 de reactivación",
         "Castigo: -1 de reactivación",
         "Suplicio: +2 de alcance máximo",
-        "Nerviosismo: +2 de alcance máximo"
+        "Nerviosismo: +2 de alcance máximo",
+        "Desolación: +2 de alcance máximo"
       ],
       "pt": [
-        "Banho de Sangue: -1 PA",
-        "Desencadeamento: -1 PA",
-        "Condensação: -1 PA",
+        "Desencadeamento: +2 de alcance máximo",
+        "Condensação: +2 de alcance máximo",
         "Afluxo: +1 lançamento(s) por turno",
         "Libação: -1 de relançamento",
         "Castigo: -1 de relançamento",
         "Suplício: +2 de alcance máximo",
-        "Nervosismo: +2 de alcance máximo"
+        "Nervosismo: +2 de alcance máximo",
+        "Desolação: +2 de alcance máximo"
       ],
       "it": [
-        "Blood Bath: -1 AP",
-        "Clobbering: -1 AP",
-        "Condensation: -1 AP",
+        "Clobbering: +2 Maximum Range",
+        "Condensation: +2 Maximum Range",
         "Influx: +1 cast(s) per turn",
         "Libation: -1 cooldown",
         "Punishment: -1 cooldown",
         "Torture: +2 Maximum Range",
-        "Nervousness: +2 Maximum Range"
+        "Nervousness: +2 Maximum Range",
+        "Desolation: +2 Maximum Range"
       ]
     },
     "conditions": {
@@ -39004,9 +38992,9 @@
     ],
     "customStats": {
       "en": [
-        "Prime of Life: -1 AP",
+        "Prime of Life: +2 Maximum Range",
         "Placer Mining: +2 Maximum Range",
-        "Auriferous Shovel: -1 AP",
+        "Auriferous Shovel: +35% Critical",
         "Peat Bog: -1 AP",
         "Goldrush: -1 cooldown",
         "Wandering: straight-line casting off",
@@ -39014,9 +39002,9 @@
         "Golden Age: -1 cooldown"
       ],
       "fr": [
-        "Force de l'Âge : -1 PA",
+        "Force de l'Âge : +2 Portée maximale",
         "Orpaillage : +2 Portée maximale",
-        "Pelle Aurifère : -1 PA",
+        "Pelle Aurifère : +35% Critique",
         "Tourbière : -1 PA",
         "Ruée vers l'Or : -1 de relance",
         "Déambulation : lancer en ligne désactivée",
@@ -39024,9 +39012,9 @@
         "Âge d'Or : -1 de relance"
       ],
       "de": [
-        "Kraft des Alters: –1 AP",
+        "Kraft des Alters: +2 Maximale Reichweite",
         "Goldwaschen: +2 Maximale Reichweite",
-        "Goldschaufel: –1 AP",
+        "Goldschaufel: +35 % Kritische Treffer",
         "Moor: –1 AP",
         "Goldrausch: Abklingzeit verringert um –1",
         "Schlendern: Lineare Wirkungsweise deaktiviert",
@@ -39034,9 +39022,9 @@
         "Goldenes Zeitalter: Abklingzeit verringert um –1"
       ],
       "es": [
-        "Fuerza de la Edad: -1 PA",
+        "Fuerza de la Edad: +2 de alcance máximo",
         "Búsqueda de Oro: +2 de alcance máximo",
-        "Pala Aurífera: -1 PA",
+        "Pala Aurífera: +35% de crítico",
         "Turbera: -1 PA",
         "Fiebre del Oro: -1 de reactivación",
         "Andador: lanzamiento en línea desactivado",
@@ -39044,9 +39032,9 @@
         "Edad de Oro: -1 de reactivación"
       ],
       "pt": [
-        "Flor da Idade: -1 PA",
+        "Flor da Idade: +2 de alcance máximo",
         "Garimpo: +2 de alcance máximo",
-        "Pá Aurífera: -1 PA",
+        "Pá Aurífera: +35% de crítico",
         "Turfeira: -1 PA",
         "Febre do Ouro: -1 de relançamento",
         "Deambulação: lançamento em linha desativado",
@@ -39054,9 +39042,9 @@
         "Idade de Ouro: -1 de relançamento"
       ],
       "it": [
-        "Prime of Life: -1 AP",
+        "Prime of Life: +2 Maximum Range",
         "Placer Mining: +2 Maximum Range",
-        "Auriferous Shovel: -1 AP",
+        "Auriferous Shovel: +35% Critical",
         "Peat Bog: -1 AP",
         "Goldrush: -1 cooldown",
         "Wandering: straight-line casting off",
@@ -39759,6 +39747,63 @@
       "customConditions": {}
     },
     "imageUrl": "item/16195.png"
+  },
+  {
+    "dofusID": "8828",
+    "name": {
+      "en": "Cheeken Wig",
+      "fr": "Perruque du Poolay",
+      "de": "Heenchen-Perücke",
+      "es": "Peluca de pohoyo",
+      "pt": "Peruca do Phrango",
+      "it": "Cheeken Wig"
+    },
+    "itemType": "Hat",
+    "setID": "997",
+    "level": 142,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": 36,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": 36,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 6,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 6,
+        "maxStat": 10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16196.png"
   },
   {
     "dofusID": "8829",
@@ -40903,7 +40948,7 @@
       "it": "Parkinn Pan's Pikokowal Belt"
     },
     "itemType": "Belt",
-    "setID": null,
+    "setID": "1000",
     "level": 148,
     "stats": [
       {
@@ -41109,7 +41154,7 @@
       "it": "Powerful Dazzling Cloak"
     },
     "itemType": "Cloak",
-    "setID": null,
+    "setID": "994",
     "level": 110,
     "stats": [
       {
@@ -41717,7 +41762,7 @@
       "it": "Polished Ring"
     },
     "itemType": "Ring",
-    "setID": null,
+    "setID": "999",
     "level": 66,
     "stats": [
       {
@@ -41809,7 +41854,7 @@
       "it": "Amufafah"
     },
     "itemType": "Amulet",
-    "setID": null,
+    "setID": "999",
     "level": 83,
     "stats": [
       {
@@ -41972,7 +42017,7 @@
       "it": "Air Pikoko Helmet"
     },
     "itemType": "Hat",
-    "setID": null,
+    "setID": "1000",
     "level": 154,
     "stats": [
       {
@@ -53329,22 +53374,22 @@
           {
             "stat": "AGILITY",
             "operator": ">",
-            "value": 200
+            "value": 199
           },
           {
             "stat": "CHANCE",
             "operator": ">",
-            "value": 200
+            "value": 199
           },
           {
             "stat": "STRENGTH",
             "operator": ">",
-            "value": 200
+            "value": 199
           },
           {
             "stat": "INTELLIGENCE",
             "operator": ">",
-            "value": 200
+            "value": 199
           }
         ]
       },
@@ -54698,7 +54743,7 @@
       "it": "Cromagmunk Helmet"
     },
     "itemType": "Hat",
-    "setID": null,
+    "setID": "996",
     "level": 127,
     "stats": [
       {
@@ -54775,7 +54820,7 @@
       "it": "Frighog Helmet"
     },
     "itemType": "Hat",
-    "setID": null,
+    "setID": "996",
     "level": 130,
     "stats": [
       {
@@ -55384,7 +55429,7 @@
       "it": "Boy's Own Chain"
     },
     "itemType": "Amulet",
-    "setID": null,
+    "setID": "1001",
     "level": 160,
     "stats": [
       {
@@ -55655,7 +55700,7 @@
       "it": "Hippy Pants"
     },
     "itemType": "Belt",
-    "setID": null,
+    "setID": "1001",
     "level": 152,
     "stats": [
       {
@@ -56281,7 +56326,7 @@
       "it": "Indigenous Boots"
     },
     "itemType": "Boots",
-    "setID": null,
+    "setID": "995",
     "level": 138,
     "stats": [
       {
@@ -56368,7 +56413,7 @@
       "it": "Kanigloo Loincloth"
     },
     "itemType": "Belt",
-    "setID": null,
+    "setID": "996",
     "level": 137,
     "stats": [
       {
@@ -59641,22 +59686,22 @@
           {
             "stat": "AGILITY",
             "operator": ">",
-            "value": 250
+            "value": 249
           },
           {
             "stat": "CHANCE",
             "operator": ">",
-            "value": 250
+            "value": 249
           },
           {
             "stat": "STRENGTH",
             "operator": ">",
-            "value": 250
+            "value": 249
           },
           {
             "stat": "INTELLIGENCE",
             "operator": ">",
-            "value": 250
+            "value": 249
           }
         ]
       },
@@ -64687,61 +64732,61 @@
         "Seismobomb: line of sight off",
         "Resilient Seismobomb: line of sight off",
         "Bombard: line of sight off",
-        "Machine Gun: +1 Maximum Range",
+        "Machine Gun: +2 Maximum Range",
         "Grenado: line of sight off",
         "Resilient Grenado: line of sight off",
         "Carbine: line of sight off",
-        "Obliteration: +1 Maximum Range"
+        "Obliteration: +2 Maximum Range"
       ],
       "fr": [
         "Sismobombe : ligne de vue désactivée",
         "Sismobombe Résiliente : ligne de vue désactivée",
         "Bombarde : ligne de vue désactivée",
-        "Mitraille : +1 Portée maximale",
+        "Mitraille : +2 Portée maximale",
         "Tornabombe : ligne de vue désactivée",
         "Tornabombe Résiliente : ligne de vue désactivée",
         "Espingole : ligne de vue désactivée",
-        "Oblitération : +1 Portée maximale"
+        "Oblitération : +2 Portée maximale"
       ],
       "de": [
         "Seismobombe: Sichtlinie deaktiviert",
         "Widerstandsfähige Seismobombe: Sichtlinie deaktiviert",
         "Bombarde: Sichtlinie deaktiviert",
-        "Kugelschauer: +1 Maximale Reichweite",
+        "Kugelschauer: +2 Maximale Reichweite",
         "Tornabombe: Sichtlinie deaktiviert",
         "Widerstandsfähige Tornabombe: Sichtlinie deaktiviert",
         "Espingole: Sichtlinie deaktiviert",
-        "Eingehen: +1 Maximale Reichweite"
+        "Eingehen: +2 Maximale Reichweite"
       ],
       "es": [
         "Sismobomba: línea de visión desactivada",
         "Sismobomba Resiliente: línea de visión desactivada",
         "Bombardeo: línea de visión desactivada",
-        "Metralla: +1 de alcance máximo",
+        "Metralla: +2 de alcance máximo",
         "Tornabombas: línea de visión desactivada",
         "Tornabomba Resiliente: línea de visión desactivada",
         "Fusil: línea de visión desactivada",
-        "Obliteración: +1 de alcance máximo"
+        "Obliteración: +2 de alcance máximo"
       ],
       "pt": [
         "Sismobomba: linha de visão desativada",
         "Sismobomba Resiliente: linha de visão desativada",
         "Bombarda: linha de visão desativada",
-        "Metralha: +1 de alcance máximo",
+        "Metralha: +2 de alcance máximo",
         "Tornabomba: linha de visão desativada",
         "Tornabomba Resiliente: linha de visão desativada",
         "Carabina: linha de visão desativada",
-        "Obliteração: +1 de alcance máximo"
+        "Obliteração: +2 de alcance máximo"
       ],
       "it": [
         "Seismobomb: line of sight off",
         "Resilient Seismobomb: line of sight off",
         "Bombard: line of sight off",
-        "Machine Gun: +1 Maximum Range",
+        "Machine Gun: +2 Maximum Range",
         "Grenado: line of sight off",
         "Resilient Grenado: line of sight off",
         "Carbine: line of sight off",
-        "Obliteration: +1 Maximum Range"
+        "Obliteration: +2 Maximum Range"
       ]
     },
     "conditions": {
@@ -64771,7 +64816,7 @@
         "Poltroon Mask: modifiable Range",
         "Brincaderia: line of sight off",
         "Picada: +2 Maximum Range",
-        "Cavalcade: -1 AP",
+        "Cavalcade: +3 Maximum Range",
         "Tortoruga: -1 AP",
         "Armadur: -1 AP"
       ],
@@ -64781,7 +64826,7 @@
         "Masque du Couard : Portée modifiable",
         "Brincadeira : ligne de vue désactivée",
         "Picada : +2 Portée maximale",
-        "Cavalcade : -1 PA",
+        "Cavalcade : +3 Portée maximale",
         "Tortoruga : -1 PA",
         "Armadur : -1 PA"
       ],
@@ -64791,7 +64836,7 @@
         "Maske des Duckmäusers: Veränderbare Reichweite",
         "Brincadeira: Sichtlinie deaktiviert",
         "Picada: +2 Maximale Reichweite",
-        "Reiterzug: –1 AP",
+        "Reiterzug: +3 Maximale Reichweite",
         "Tortoruga: –1 AP",
         "Armadur: –1 AP"
       ],
@@ -64801,7 +64846,7 @@
         "Máscara de Cobarde: alcance modificable",
         "Brincadeira: línea de visión desactivada",
         "Picado: +2 de alcance máximo",
-        "Cabalgata: -1 PA",
+        "Cabalgata: +3 de alcance máximo",
         "Tortoruga: -1 PA",
         "Armaduro: -1 PA"
       ],
@@ -64811,7 +64856,7 @@
         "Máscara do Medroso: alcance modificável",
         "Brincadeira: linha de visão desativada",
         "Picada: +2 de alcance máximo",
-        "Cavalgada: -1 PA",
+        "Cavalgada: +3 de alcance máximo",
         "Tortoruga: -1 PA",
         "Armaduro: -1 PA"
       ],
@@ -64821,7 +64866,7 @@
         "Poltroon Mask: modifiable Range",
         "Brincaderia: line of sight off",
         "Picada: +2 Maximum Range",
-        "Cavalcade: -1 AP",
+        "Cavalcade: +3 Maximum Range",
         "Tortoruga: -1 AP",
         "Armadur: -1 AP"
       ]
@@ -64850,62 +64895,62 @@
       "en": [
         "Water Bomb: line of sight off",
         "Resilient Water Bomb: line of sight off",
-        "Stolen Goods: +1 Maximum Range",
+        "Stolen Goods: modifiable Range",
         "Weigh Down: +2 Maximum Range",
         "Explobomb: line of sight off",
         "Resilient Explobomb: line of sight off",
-        "Pulsar: +1 Maximum Range",
-        "Shrapnel: +1 Maximum Range"
+        "Pulsar: modifiable Range",
+        "Shrapnel: +40% Critical"
       ],
       "fr": [
         "Bombe à Eau : ligne de vue désactivée",
         "Bombe à Eau Résiliente : ligne de vue désactivée",
-        "Recel : +1 Portée maximale",
+        "Recel : Portée modifiable",
         "Plombage : +2 Portée maximale",
         "Explobombe : ligne de vue désactivée",
         "Explobombe Résiliente : ligne de vue désactivée",
-        "Pulsar : +1 Portée maximale",
-        "Shrapnel : +1 Portée maximale"
+        "Pulsar : Portée modifiable",
+        "Shrapnel : +40% Critique"
       ],
       "de": [
         "Wasserbombe: Sichtlinie deaktiviert",
         "Widerstandsfähige Wasserbombe: Sichtlinie deaktiviert",
-        "Hehlerei: +1 Maximale Reichweite",
+        "Hehlerei: Veränderbare Reichweite",
         "Plombe: +2 Maximale Reichweite",
         "Explobombe: Sichtlinie deaktiviert",
         "Widerstandsfähige Explobombe: Sichtlinie deaktiviert",
-        "Quasar: +1 Maximale Reichweite",
-        "Schrapnell: +1 Maximale Reichweite"
+        "Quasar: Veränderbare Reichweite",
+        "Schrapnell: +40 % Kritische Treffer"
       ],
       "es": [
         "Bombas de agua: línea de visión desactivada",
         "Bomba de Agua Resiliente: línea de visión desactivada",
-        "Receptación: +1 de alcance máximo",
+        "Receptación: alcance modificable",
         "Emplomado: +2 de alcance máximo",
         "Explobomba: línea de visión desactivada",
         "Explobomba Resiliente: línea de visión desactivada",
-        "Púlsar: +1 de alcance máximo",
-        "Perdigonazo: +1 de alcance máximo"
+        "Púlsar: alcance modificable",
+        "Perdigonazo: +40% de crítico"
       ],
       "pt": [
         "Bomba d'Água: linha de visão desativada",
         "Bomba d'Água Resiliente: linha de visão desativada",
-        "Encobrimento: +1 de alcance máximo",
+        "Encobrimento: alcance modificável",
         "Rebaixamento: +2 de alcance máximo",
         "Explobomba: linha de visão desativada",
         "Explobomba Resiliente: linha de visão desativada",
-        "Pulsar: +1 de alcance máximo",
-        "Shrapnel: +1 de alcance máximo"
+        "Pulsar: alcance modificável",
+        "Shrapnel: +40% de crítico"
       ],
       "it": [
         "Water Bomb: line of sight off",
         "Resilient Water Bomb: line of sight off",
-        "Stolen Goods: +1 Maximum Range",
+        "Stolen Goods: modifiable Range",
         "Weigh Down: +2 Maximum Range",
         "Explobomb: line of sight off",
         "Resilient Explobomb: line of sight off",
-        "Pulsar: +1 Maximum Range",
-        "Shrapnel: +1 Maximum Range"
+        "Pulsar: modifiable Range",
+        "Shrapnel: +40% Critical"
       ]
     },
     "conditions": {
@@ -65025,7 +65070,7 @@
         "Magnet: -1 AP",
         "Crossing: modifiable Range",
         "Boomerang Daggers: +35% Critical",
-        "Blunderbuss: +1 Maximum Range"
+        "Blunderbuss: line of sight off"
       ],
       "fr": [
         "Mousquet : +2 Portée maximale",
@@ -65035,7 +65080,7 @@
         "Aimantation : -1 PA",
         "Croisement : Portée modifiable",
         "Dagues Boomerang : +35% Critique",
-        "Tromblon : +1 Portée maximale"
+        "Tromblon : ligne de vue désactivée"
       ],
       "de": [
         "Mus Kete: +2 Maximale Reichweite",
@@ -65045,7 +65090,7 @@
         "Magnetisierung: –1 AP",
         "Kreuzung: Veränderbare Reichweite",
         "Boomerangdolch: +35 % Kritische Treffer",
-        "Kartätsche: +1 Maximale Reichweite"
+        "Kartätsche: Sichtlinie deaktiviert"
       ],
       "es": [
         "Mosquete: +2 de alcance máximo",
@@ -65055,7 +65100,7 @@
         "Imantación: -1 PA",
         "Cruce: alcance modificable",
         "Dagas Bumerán: +35% de crítico",
-        "Tromba: +1 de alcance máximo"
+        "Tromba: línea de visión desactivada"
       ],
       "pt": [
         "Mosquete: +2 de alcance máximo",
@@ -65065,7 +65110,7 @@
         "Imantação: -1 PA",
         "Cruzamento: alcance modificável",
         "Adagas Bumerangue: +35% de crítico",
-        "Mosquete: +1 de alcance máximo"
+        "Mosquete: linha de visão desativada"
       ],
       "it": [
         "Musket: +2 Maximum Range",
@@ -65075,7 +65120,7 @@
         "Magnet: -1 AP",
         "Crossing: modifiable Range",
         "Boomerang Daggers: +35% Critical",
-        "Blunderbuss: +1 Maximum Range"
+        "Blunderbuss: line of sight off"
       ]
     },
     "conditions": {
@@ -65276,7 +65321,7 @@
         "Agular: +2 Maximum Range",
         "Boliche: +2 Maximum Range",
         "Ronda: -1 AP",
-        "Apathy: -1 AP",
+        "Apathy: +30% Critical",
         "Retention: +2 Maximum Range"
       ],
       "fr": [
@@ -65286,7 +65331,7 @@
         "Agular : +2 Portée maximale",
         "Boliche : +2 Portée maximale",
         "Ronda : -1 PA",
-        "Apathie : -1 PA",
+        "Apathie : +30% Critique",
         "Rétention : +2 Portée maximale"
       ],
       "de": [
@@ -65296,7 +65341,7 @@
         "Agular: +2 Maximale Reichweite",
         "Impuls-Trick: +2 Maximale Reichweite",
         "Ronda: –1 AP",
-        "Apathie: –1 AP",
+        "Apathie: +30 % Kritische Treffer",
         "Aufhalten: +2 Maximale Reichweite"
       ],
       "es": [
@@ -65306,7 +65351,7 @@
         "Agular: +2 de alcance máximo",
         "Boliche: +2 de alcance máximo",
         "Ronda: -1 PA",
-        "Apatía: -1 PA",
+        "Apatía: +30% de crítico",
         "Retención: +2 de alcance máximo"
       ],
       "pt": [
@@ -65316,7 +65361,7 @@
         "Agular: +2 de alcance máximo",
         "Boliche: +2 de alcance máximo",
         "Roda: -1 PA",
-        "Apatia: -1 PA",
+        "Apatia: +30% de crítico",
         "Retenção: +2 de alcance máximo"
       ],
       "it": [
@@ -65326,7 +65371,7 @@
         "Agular: +2 Maximum Range",
         "Boliche: +2 Maximum Range",
         "Ronda: -1 AP",
-        "Apathy: -1 AP",
+        "Apathy: +30% Critical",
         "Retention: +2 Maximum Range"
       ]
     },
@@ -71950,7 +71995,7 @@
     },
     "itemType": "Boots",
     "setID": "244",
-    "level": 199,
+    "level": 194,
     "stats": [
       {
         "stat": "Vitality",
@@ -72893,60 +72938,60 @@
     "customStats": {
       "en": [
         "Hoofbeat: modifiable Range",
-        "Periscope: -1 AP",
+        "Periscope: +2 Maximum Range",
         "Tide: line of sight off",
-        "Scaphander: -1 cooldown",
-        "Armour-Plating: -1 cooldown",
+        "Scaphander: -1 AP",
+        "Armour-Plating: -1 AP",
         "Evolution: modifiable Range",
         "Hypertension: modifiable Range",
         "Vapour: modifiable Range"
       ],
       "fr": [
         "Sabotage : Portée modifiable",
-        "Périscope : -1 PA",
+        "Périscope : +2 Portée maximale",
         "Marée : ligne de vue désactivée",
-        "Scaphandre : -1 de relance",
-        "Blindage : -1 de relance",
+        "Scaphandre : -1 PA",
+        "Blindage : -1 PA",
         "Évolution : Portée modifiable",
         "Surtension : Portée modifiable",
         "Vapor : Portée modifiable"
       ],
       "de": [
         "Sabotage: Veränderbare Reichweite",
-        "Periskop: –1 AP",
+        "Periskop: +2 Maximale Reichweite",
         "Gezeiten: Sichtlinie deaktiviert",
-        "Taucheranzug: Abklingzeit verringert um –1",
-        "Abschirmung: Abklingzeit verringert um –1",
+        "Taucheranzug: –1 AP",
+        "Abschirmung: –1 AP",
         "Evolution: Veränderbare Reichweite",
         "Überspannung: Veränderbare Reichweite",
         "Vapor: Veränderbare Reichweite"
       ],
       "es": [
         "Sabotaje: alcance modificable",
-        "Periscopio: -1 PA",
+        "Periscopio: +2 de alcance máximo",
         "Marea: línea de visión desactivada",
-        "Escafandra: -1 de reactivación",
-        "Blindaje: -1 de reactivación",
+        "Escafandra: -1 PA",
+        "Blindaje: -1 PA",
         "Evolución: alcance modificable",
         "Sobretensión: alcance modificable",
         "Vapor: alcance modificable"
       ],
       "pt": [
         "Sabotagem: alcance modificável",
-        "Periscópio: -1 PA",
+        "Periscópio: +2 de alcance máximo",
         "Maré: linha de visão desativada",
-        "Escafandro: -1 de relançamento",
-        "Blindagem: -1 de relançamento",
+        "Escafandro: -1 PA",
+        "Blindagem: -1 PA",
         "Evolução: alcance modificável",
         "Sobretensão: alcance modificável",
         "Vapor: alcance modificável"
       ],
       "it": [
         "Hoofbeat: modifiable Range",
-        "Periscope: -1 AP",
+        "Periscope: +2 Maximum Range",
         "Tide: line of sight off",
-        "Scaphander: -1 cooldown",
-        "Armour-Plating: -1 cooldown",
+        "Scaphander: -1 AP",
+        "Armour-Plating: -1 AP",
         "Evolution: modifiable Range",
         "Hypertension: modifiable Range",
         "Vapour: modifiable Range"
@@ -73064,60 +73109,60 @@
       "en": [
         "Trident: modifiable Range",
         "Rudder: line of sight off",
-        "Torpedo: -1 AP",
+        "Torpedo: +3 Maximum Range",
         "Capstan: modifiable Range",
-        "First Aid: -1 AP",
-        "Rescue: -1 AP",
+        "First Aid: +2 Maximum Range",
+        "Rescue: +2 Maximum Range",
         "Lifesaver: line of sight off",
         "Drill: line of sight off"
       ],
       "fr": [
         "Foène : Portée modifiable",
         "Gouvernail : ligne de vue désactivée",
-        "Torpille : -1 PA",
+        "Torpille : +3 Portée maximale",
         "Cabestan : Portée modifiable",
-        "Secourisme : -1 PA",
-        "Sauvetage : -1 PA",
+        "Secourisme : +2 Portée maximale",
+        "Sauvetage : +2 Portée maximale",
         "Gardienne : ligne de vue désactivée",
         "Foreuse : ligne de vue désactivée"
       ],
       "de": [
         "Lyster: Veränderbare Reichweite",
         "Steuerruder: Sichtlinie deaktiviert",
-        "Torpedo: –1 AP",
+        "Torpedo: +3 Maximale Reichweite",
         "Spill: Veränderbare Reichweite",
-        "Erste Hilfe: –1 AP",
-        "Rettung: –1 AP",
+        "Erste Hilfe: +2 Maximale Reichweite",
+        "Rettung: +2 Maximale Reichweite",
         "Wachturm: Sichtlinie deaktiviert",
         "Bohrmaschine: Sichtlinie deaktiviert"
       ],
       "es": [
         "Tridente: alcance modificable",
         "Timón: línea de visión desactivada",
-        "Torpedo: -1 PA",
+        "Torpedo: +3 de alcance máximo",
         "Cabestrante: alcance modificable",
-        "Socorrismo: -1 PA",
-        "Salvamento: -1 PA",
+        "Socorrismo: +2 de alcance máximo",
+        "Salvamento: +2 de alcance máximo",
         "Guardianas: línea de visión desactivada",
         "Perforadora: línea de visión desactivada"
       ],
       "pt": [
         "Arpéu: alcance modificável",
         "Leme: linha de visão desativada",
-        "Torpedo: -1 PA",
+        "Torpedo: +3 de alcance máximo",
         "Cabrestante: alcance modificável",
-        "Primeiros Socorros: -1 PA",
-        "Salvamento: -1 PA",
+        "Primeiros Socorros: +2 de alcance máximo",
+        "Salvamento: +2 de alcance máximo",
         "Guardiã: linha de visão desativada",
         "Perfuradora: linha de visão desativada"
       ],
       "it": [
         "Trident: modifiable Range",
         "Rudder: line of sight off",
-        "Torpedo: -1 AP",
+        "Torpedo: +3 Maximum Range",
         "Capstan: modifiable Range",
-        "First Aid: -1 AP",
-        "Rescue: -1 AP",
+        "First Aid: +2 Maximum Range",
+        "Rescue: +2 Maximum Range",
         "Lifesaver: line of sight off",
         "Drill: line of sight off"
       ]
@@ -73145,8 +73190,8 @@
     "customStats": {
       "en": [
         "Turbine: modifiable Range",
-        "Pilfer: modifiable Range",
-        "Froth: -1 AP",
+        "Pilfer: +2 Maximum Range",
+        "Froth: +3 Maximum Range",
         "Backwash: line of sight off",
         "Sonar: +1 cast(s) per turn",
         "Ambush: modifiable Range",
@@ -73155,8 +73200,8 @@
       ],
       "fr": [
         "Turbine : Portée modifiable",
-        "Flibuste : Portée modifiable",
-        "Écume : -1 PA",
+        "Flibuste : +2 Portée maximale",
+        "Écume : +3 Portée maximale",
         "Ressac : ligne de vue désactivée",
         "Sonar : +1 lancer(s) par tour",
         "Embuscade : Portée modifiable",
@@ -73165,8 +73210,8 @@
       ],
       "de": [
         "Turbine: Veränderbare Reichweite",
-        "Bukanier: Veränderbare Reichweite",
-        "Gischt: –1 AP",
+        "Bukanier: +2 Maximale Reichweite",
+        "Gischt: +3 Maximale Reichweite",
         "Brandung: Sichtlinie deaktiviert",
         "Sonar : +1 Zauber pro Runde",
         "Hinterhalt: Veränderbare Reichweite",
@@ -73175,8 +73220,8 @@
       ],
       "es": [
         "Turbina: alcance modificable",
-        "Piratería: alcance modificable",
-        "Espuma de Mar: -1 PA",
+        "Piratería: +2 de alcance máximo",
+        "Espuma de Mar: +3 de alcance máximo",
         "Resacón: línea de visión desactivada",
         "Sónar: +1 lanzamiento(s) por turno",
         "Emboscada: alcance modificable",
@@ -73185,8 +73230,8 @@
       ],
       "pt": [
         "Turbina: alcance modificável",
-        "Pirataria: alcance modificável",
-        "Espuma: -1 PA",
+        "Pirataria: +2 de alcance máximo",
+        "Espuma: +3 de alcance máximo",
         "Refluxo: linha de visão desativada",
         "Sonar: +1 lançamento(s) por turno",
         "Emboscada: alcance modificável",
@@ -73195,8 +73240,8 @@
       ],
       "it": [
         "Turbine: modifiable Range",
-        "Pilfer: modifiable Range",
-        "Froth: -1 AP",
+        "Pilfer: +2 Maximum Range",
+        "Froth: +3 Maximum Range",
         "Backwash: line of sight off",
         "Sonar: +1 cast(s) per turn",
         "Ambush: modifiable Range",
@@ -73226,8 +73271,8 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Spyglass: -1 AP",
-        "Corrosion: -1 AP",
+        "Spyglass: +2 Maximum Range",
+        "Corrosion: +2 Maximum Range",
         "Harmattan: -1 AP",
         "Torrent: line of sight off",
         "Dive: +1 cast(s) per turn",
@@ -73236,8 +73281,8 @@
         "Bathyscaphe: line of sight off"
       ],
       "fr": [
-        "Longue-vue : -1 PA",
-        "Corrosion : -1 PA",
+        "Longue-vue : +2 Portée maximale",
+        "Corrosion : +2 Portée maximale",
         "Harmattan : -1 PA",
         "Courant : ligne de vue désactivée",
         "Plongée : +1 lancer(s) par tour",
@@ -73246,8 +73291,8 @@
         "Bathyscaphe : ligne de vue désactivée"
       ],
       "de": [
-        "Fernrohr: –1 AP",
-        "Korrosion: –1 AP",
+        "Fernrohr: +2 Maximale Reichweite",
+        "Korrosion: +2 Maximale Reichweite",
         "Harmattan: –1 AP",
         "Strömung: Sichtlinie deaktiviert",
         "Tauchgang : +1 Zauber pro Runde",
@@ -73256,8 +73301,8 @@
         "Bathyskaph: Sichtlinie deaktiviert"
       ],
       "es": [
-        "Catalejo: -1 PA",
-        "Corrosión: -1 PA",
+        "Catalejo: +2 de alcance máximo",
+        "Corrosión: +2 de alcance máximo",
         "Harmatán: -1 PA",
         "Corriente: línea de visión desactivada",
         "Buceo: +1 lanzamiento(s) por turno",
@@ -73266,8 +73311,8 @@
         "Batiscafo: línea de visión desactivada"
       ],
       "pt": [
-        "Luneta: -1 PA",
-        "Corrosão: -1 PA",
+        "Luneta: +2 de alcance máximo",
+        "Corrosão: +2 de alcance máximo",
         "Harmatão: -1 PA",
         "Corrente: linha de visão desativada",
         "Mergulho: +1 lançamento(s) por turno",
@@ -73276,8 +73321,8 @@
         "Batiscafo: linha de visão desativada"
       ],
       "it": [
-        "Spyglass: -1 AP",
-        "Corrosion: -1 AP",
+        "Spyglass: +2 Maximum Range",
+        "Corrosion: +2 Maximum Range",
         "Harmattan: -1 AP",
         "Torrent: line of sight off",
         "Dive: +1 cast(s) per turn",
@@ -84796,7 +84841,7 @@
       "it": "Pauper's Robe"
     },
     "itemType": "Cloak",
-    "setID": null,
+    "setID": "986",
     "level": 200,
     "stats": [
       {
@@ -84878,7 +84923,7 @@
       "it": "Epeni's Belt"
     },
     "itemType": "Belt",
-    "setID": null,
+    "setID": "986",
     "level": 200,
     "stats": [
       {
@@ -85134,7 +85179,7 @@
       "it": "White Lai Amulet"
     },
     "itemType": "Amulet",
-    "setID": null,
+    "setID": "986",
     "level": 200,
     "stats": [
       {
@@ -99683,60 +99728,60 @@
       "en": [
         "Shock: modifiable Range",
         "Convulsion: modifiable Range",
-        "Wakfu Ray: line of sight off",
-        "Lazybeam: -1 AP",
+        "Wakfu Ray: +3 Maximum Range",
+        "Lazybeam: +3 Maximum Range",
         "Insult: modifiable Range",
-        "Contempt: modifiable Range",
+        "Contempt: -1 AP",
         "Audacious: modifiable Range",
         "Tribulation: -1 AP"
       ],
       "fr": [
         "Commotion : Portée modifiable",
         "Convulsion : Portée modifiable",
-        "Rayon de Wakfu : ligne de vue désactivée",
-        "Faisceau : -1 PA",
+        "Rayon de Wakfu : +3 Portée maximale",
+        "Faisceau : +3 Portée maximale",
         "Affront : Portée modifiable",
-        "Mépris : Portée modifiable",
+        "Mépris : -1 PA",
         "Audace : Portée modifiable",
         "Tribulation : -1 PA"
       ],
       "de": [
         "Schock: Veränderbare Reichweite",
         "Krampf: Veränderbare Reichweite",
-        "Wakfu-Strahl: Sichtlinie deaktiviert",
-        "Zwielichtstrahl: –1 AP",
+        "Wakfu-Strahl: +3 Maximale Reichweite",
+        "Zwielichtstrahl: +3 Maximale Reichweite",
         "Affront: Veränderbare Reichweite",
-        "Verachtung: Veränderbare Reichweite",
+        "Verachtung: –1 AP",
         "Tollkühn: Veränderbare Reichweite",
         "Leiden: –1 AP"
       ],
       "es": [
         "Shock: alcance modificable",
         "Convulsión: alcance modificable",
-        "Rayo de Wakfu: línea de visión desactivada",
-        "Resplandor: -1 PA",
+        "Rayo de Wakfu: +3 de alcance máximo",
+        "Resplandor: +3 de alcance máximo",
         "Insulto: alcance modificable",
-        "Desprecio: alcance modificable",
+        "Desprecio: -1 PA",
         "Audacia: alcance modificable",
         "Tribulación: -1 PA"
       ],
       "pt": [
         "Comoção: alcance modificável",
         "Convulsão: alcance modificável",
-        "Raio de Wakfu: linha de visão desativada",
-        "Feixe: -1 PA",
+        "Raio de Wakfu: +3 de alcance máximo",
+        "Feixe: +3 de alcance máximo",
         "Afronta: alcance modificável",
-        "Desprezo: alcance modificável",
+        "Desprezo: -1 PA",
         "Audácia: alcance modificável",
         "Tribulação: -1 PA"
       ],
       "it": [
         "Shock: modifiable Range",
         "Convulsion: modifiable Range",
-        "Wakfu Ray: line of sight off",
-        "Lazybeam: -1 AP",
+        "Wakfu Ray: +3 Maximum Range",
+        "Lazybeam: +3 Maximum Range",
         "Insult: modifiable Range",
-        "Contempt: modifiable Range",
+        "Contempt: -1 AP",
         "Audacious: modifiable Range",
         "Tribulation: -1 AP"
       ]
@@ -99766,61 +99811,61 @@
         "Neutral: line of sight off",
         "Interruption: +1 cast(s) per turn",
         "Portal: +1 Maximum Range",
-        "Flexible Portal: +1 cast(s) per turn",
+        "Wandering: +1 cast(s) per turn",
         "Transcendence: -1 cooldown",
         "Exile: +2 Maximum Range",
         "Stupor: +1 Maximum Range",
-        "Reminiscence: -1 cooldown"
+        "Choppy Wake: -1 AP"
       ],
       "fr": [
         "Neutral : ligne de vue désactivée",
         "Interruption : +1 lancer(s) par tour",
         "Portail : +1 Portée maximale",
-        "Portail Flexible : +1 lancer(s) par tour",
+        "Errance : +1 lancer(s) par tour",
         "Transcendance : -1 de relance",
         "Exil : +2 Portée maximale",
         "Stupeur : +1 Portée maximale",
-        "Réminiscence : -1 de relance"
+        "Sillage : -1 PA"
       ],
       "de": [
         "Neutral: Sichtlinie deaktiviert",
         "Unterbrechung : +1 Zauber pro Runde",
         "Portal: +1 Maximale Reichweite",
-        "Flexibles Portal : +1 Zauber pro Runde",
+        "Irrfahrt : +1 Zauber pro Runde",
         "Transzendenz: Abklingzeit verringert um –1",
         "Exil: +2 Maximale Reichweite",
         "Stupor: +1 Maximale Reichweite",
-        "Reminiszenz: Abklingzeit verringert um –1"
+        "Nachbeben: –1 AP"
       ],
       "es": [
         "Neutral: línea de visión desactivada",
         "Interrupción: +1 lanzamiento(s) por turno",
         "Portal: +1 de alcance máximo",
-        "Portal Flexible: +1 lanzamiento(s) por turno",
+        "Errancia: +1 lanzamiento(s) por turno",
         "Trascendencia: -1 de reactivación",
         "Exilio: +2 de alcance máximo",
         "Estupor: +1 de alcance máximo",
-        "Reminiscencia: -1 de reactivación"
+        "Estela: -1 PA"
       ],
       "pt": [
         "Neutral: linha de visão desativada",
         "Interrupção: +1 lançamento(s) por turno",
         "Portal: +1 de alcance máximo",
-        "Portal Flexível: +1 lançamento(s) por turno",
+        "Errância: +1 lançamento(s) por turno",
         "Transcendência: -1 de relançamento",
         "Exílio: +2 de alcance máximo",
         "Estupor: +1 de alcance máximo",
-        "Reminiscência: -1 de relançamento"
+        "Rastro: -1 PA"
       ],
       "it": [
         "Neutral: line of sight off",
         "Interruption: +1 cast(s) per turn",
         "Portal: +1 Maximum Range",
-        "Flexible Portal: +1 cast(s) per turn",
+        "Wandering: +1 cast(s) per turn",
         "Transcendence: -1 cooldown",
         "Exile: +2 Maximum Range",
         "Stupor: +1 Maximum Range",
-        "Reminiscence: -1 cooldown"
+        "Choppy Wake: -1 AP"
       ]
     },
     "conditions": {
@@ -99934,63 +99979,63 @@
     "customStats": {
       "en": [
         "Distribution: -1 cooldown",
-        "Diffusion: -1 cooldown",
+        "Resonance: -1 cooldown",
         "Sinecure: +1 Maximum Range",
         "Persiflage: +2 Maximum Range",
         "Sarcasm: modifiable Range",
-        "Ridicule: -1 AP",
+        "Ridicule: +2 Maximum Range",
         "Healing: -1 AP",
-        "Conjuration: modifiable Range"
+        "Pride: modifiable Range"
       ],
       "fr": [
         "Distribution : -1 de relance",
-        "Diffusion : -1 de relance",
+        "Résonance : -1 de relance",
         "Sinécure : +1 Portée maximale",
         "Persiflage : +2 Portée maximale",
         "Sarcasme : Portée modifiable",
-        "Raillerie : -1 PA",
+        "Raillerie : +2 Portée maximale",
         "Cicatrisation : -1 PA",
-        "Conjuration : Portée modifiable"
+        "Orgueil : Portée modifiable"
       ],
       "de": [
         "Verteilung: Abklingzeit verringert um –1",
-        "Diffusion: Abklingzeit verringert um –1",
+        "Resonanz: Abklingzeit verringert um –1",
         "Zuckerschlecken: +1 Maximale Reichweite",
         "Persiflage: +2 Maximale Reichweite",
         "Sarkasmus: Veränderbare Reichweite",
-        "Gespött: –1 AP",
+        "Gespött: +2 Maximale Reichweite",
         "Wundheilung: –1 AP",
-        "Beschwörung: Veränderbare Reichweite"
+        "Stolz: Veränderbare Reichweite"
       ],
       "es": [
         "Distribución: -1 de reactivación",
-        "Difusión: -1 de reactivación",
+        "Resonancia: -1 de reactivación",
         "Sinecura: +1 de alcance máximo",
         "Mofa: +2 de alcance máximo",
         "Sarcasmo: alcance modificable",
-        "Ridículo: -1 PA",
+        "Ridículo: +2 de alcance máximo",
         "Sanación: -1 PA",
-        "Conjuro: alcance modificable"
+        "Soberbia: alcance modificable"
       ],
       "pt": [
         "Distribuição: -1 de relançamento",
-        "Difusão: -1 de relançamento",
+        "Ressonância: -1 de relançamento",
         "Mamata: +1 de alcance máximo",
         "Galhofa: +2 de alcance máximo",
         "Sarcasmo: alcance modificável",
-        "Chacota: -1 PA",
+        "Chacota: +2 de alcance máximo",
         "Cicatrização: -1 PA",
-        "Conjuração: alcance modificável"
+        "Orgulho: alcance modificável"
       ],
       "it": [
         "Distribution: -1 cooldown",
-        "Diffusion: -1 cooldown",
+        "Resonance: -1 cooldown",
         "Sinecure: +1 Maximum Range",
         "Persiflage: +2 Maximum Range",
         "Sarcasm: modifiable Range",
-        "Ridicule: -1 AP",
+        "Ridicule: +2 Maximum Range",
         "Healing: -1 AP",
-        "Conjuration: modifiable Range"
+        "Pride: modifiable Range"
       ]
     },
     "conditions": {
@@ -100018,60 +100063,60 @@
         "Bullying: straight-line casting off",
         "Sermon: -1 AP",
         "Lightning Fist: modifiable Range",
-        "Insolence: -1 AP",
+        "Insolence: +2 Maximum Range",
         "Therapy: +1 Maximum Range",
-        "Snub: -1 AP",
-        "Extinction: -1 AP",
+        "Snub: +2 Maximum Range",
+        "Extinction: +2 Maximum Range",
         "Cataclysm: straight-line casting off"
       ],
       "fr": [
         "Brimade : lancer en ligne désactivée",
         "Sermon : -1 PA",
         "Poing Fulgurant : Portée modifiable",
-        "Insolence : -1 PA",
+        "Insolence : +2 Portée maximale",
         "Thérapie : +1 Portée maximale",
-        "Camouflet : -1 PA",
-        "Extinction : -1 PA",
+        "Camouflet : +2 Portée maximale",
+        "Extinction : +2 Portée maximale",
         "Cataclysme : lancer en ligne désactivée"
       ],
       "de": [
         "Schikane: Lineare Wirkungsweise deaktiviert",
         "Predigt: –1 AP",
         "Blitzfaust: Veränderbare Reichweite",
-        "Unverfrorenheit: –1 AP",
+        "Unverfrorenheit: +2 Maximale Reichweite",
         "Therapie: +1 Maximale Reichweite",
-        "Schmach: –1 AP",
-        "Auslöschung: –1 AP",
+        "Schmach: +2 Maximale Reichweite",
+        "Auslöschung: +2 Maximale Reichweite",
         "Naturkatastrophe: Lineare Wirkungsweise deaktiviert"
       ],
       "es": [
         "Acoso: lanzamiento en línea desactivado",
         "Sermón: -1 PA",
         "Puño Relámpago: alcance modificable",
-        "Insolencia: -1 PA",
+        "Insolencia: +2 de alcance máximo",
         "Terapia: +1 de alcance máximo",
-        "Desdén: -1 PA",
-        "Extinción: -1 PA",
+        "Desdén: +2 de alcance máximo",
+        "Extinción: +2 de alcance máximo",
         "Cataclismo: lanzamiento en línea desactivado"
       ],
       "pt": [
         "Implicância: lançamento em linha desativado",
         "Sermão: -1 PA",
         "Punho Fulminante: alcance modificável",
-        "Insolência: -1 PA",
+        "Insolência: +2 de alcance máximo",
         "Terapia: +1 de alcance máximo",
-        "Ultraje: -1 PA",
-        "Extinção: -1 PA",
+        "Ultraje: +2 de alcance máximo",
+        "Extinção: +2 de alcance máximo",
         "Cataclismo: lançamento em linha desativado"
       ],
       "it": [
         "Bullying: straight-line casting off",
         "Sermon: -1 AP",
         "Lightning Fist: modifiable Range",
-        "Insolence: -1 AP",
+        "Insolence: +2 Maximum Range",
         "Therapy: +1 Maximum Range",
-        "Snub: -1 AP",
-        "Extinction: -1 AP",
+        "Snub: +2 Maximum Range",
+        "Extinction: +2 Maximum Range",
         "Cataclysm: straight-line casting off"
       ]
     },
@@ -105744,7 +105789,7 @@
         "Runification: -1 AP",
         "Storm: line of sight off",
         "Manifestation: -1 AP",
-        "Flamethrower: -1 AP",
+        "Flamethrower: +40% Critical",
         "Celestial Wave: straight-line casting off",
         "Tectonic Breach: +1 cast(s) per turn",
         "Transfixing Gust: +2 Maximum Range",
@@ -105754,7 +105799,7 @@
         "Runification : -1 PA",
         "Orage : ligne de vue désactivée",
         "Manifestation : -1 PA",
-        "Lance-flamme : -1 PA",
+        "Lance-flamme : +40% Critique",
         "Onde Céleste : lancer en ligne désactivée",
         "Brèche Tectonique : +1 lancer(s) par tour",
         "Rafale Transperçante : +2 Portée maximale",
@@ -105764,7 +105809,7 @@
         "Runifizierung: –1 AP",
         "Gewitter: Sichtlinie deaktiviert",
         "Erscheinung: –1 AP",
-        "Flammenwerfer: –1 AP",
+        "Flammenwerfer: +40 % Kritische Treffer",
         "Himmlische Welle: Lineare Wirkungsweise deaktiviert",
         "Tektonische Bresche : +1 Zauber pro Runde",
         "Stechende Böe: +2 Maximale Reichweite",
@@ -105774,7 +105819,7 @@
         "Runificación: -1 PA",
         "Tormenta: línea de visión desactivada",
         "Manifestación: -1 PA",
-        "Lanzallamas: -1 PA",
+        "Lanzallamas: +40% de crítico",
         "Onda Celeste: lanzamiento en línea desactivado",
         "Brecha Tectónica: +1 lanzamiento(s) por turno",
         "Ráfaga Traspasadora: +2 de alcance máximo",
@@ -105784,7 +105829,7 @@
         "Runificação: -1 PA",
         "Tormenta: linha de visão desativada",
         "Manifestação: -1 PA",
-        "Lança-Chamas: -1 PA",
+        "Lança-Chamas: +40% de crítico",
         "Onda Celestial: lançamento em linha desativado",
         "Brecha Tectônica: +1 lançamento(s) por turno",
         "Rajada Trespassante: +2 de alcance máximo",
@@ -105794,7 +105839,7 @@
         "Runification: -1 AP",
         "Storm: line of sight off",
         "Manifestation: -1 AP",
-        "Flamethrower: -1 AP",
+        "Flamethrower: +40% Critical",
         "Celestial Wave: straight-line casting off",
         "Tectonic Breach: +1 cast(s) per turn",
         "Transfixing Gust: +2 Maximum Range",
@@ -105824,57 +105869,57 @@
     "customStats": {
       "en": [
         "Volcano: line of sight off",
-        "Ether: -1 AP",
-        "Stinger: +1 cast(s) per target",
+        "Ether: +40% Critical",
+        "Stinger: +45% Critical",
         "Deflagration: +1 Maximum Range",
         "Elemental Shield: -1 AP",
         "Elemental Guardian: -1 cooldown",
-        "Astral Blade: -1 AP"
+        "Astral Blade: +1 Maximum Range"
       ],
       "fr": [
         "Volcan : ligne de vue désactivée",
-        "Éther : -1 PA",
-        "Dard : +1 lancer(s) par cible",
+        "Éther : +40% Critique",
+        "Dard : +45% Critique",
         "Déflagration : +1 Portée maximale",
         "Bouclier Élémentaire : -1 PA",
         "Gardien Élémentaire : -1 de relance",
-        "Lame Astrale : -1 PA"
+        "Lame Astrale : +1 Portée maximale"
       ],
       "de": [
         "Vulkan: Sichtlinie deaktiviert",
-        "Äther: –1 AP",
-        "Stachel : +1 Zauber pro Ziel",
+        "Äther: +40 % Kritische Treffer",
+        "Stachel: +45 % Kritische Treffer",
         "Detonation: +1 Maximale Reichweite",
         "Elementar-Schild: –1 AP",
         "Elementarwächter: Abklingzeit verringert um –1",
-        "Astralklinge: –1 AP"
+        "Astralklinge: +1 Maximale Reichweite"
       ],
       "es": [
         "Volcán: línea de visión desactivada",
-        "Éter: -1 PA",
-        "Dardo: +1 lanzamiento(s) por objetivo",
+        "Éter: +40% de crítico",
+        "Dardo: +45% de crítico",
         "Deflagración: +1 de alcance máximo",
         "Escudo Elemental: -1 PA",
         "Guardián Elemental: -1 de reactivación",
-        "Hoja Astral: -1 PA"
+        "Hoja Astral: +1 de alcance máximo"
       ],
       "pt": [
         "Vulcão: linha de visão desativada",
-        "Éter: -1 PA",
-        "Dardo: +1 lançamento(s) por alvo",
+        "Éter: +40% de crítico",
+        "Dardo: +45% de crítico",
         "Deflagração: +1 de alcance máximo",
         "Escudo Elementar: -1 PA",
         "Guardião Elementar: -1 de relançamento",
-        "Lâmina Astral: -1 PA"
+        "Lâmina Astral: +1 de alcance máximo"
       ],
       "it": [
         "Volcano: line of sight off",
-        "Ether: -1 AP",
-        "Stinger: +1 cast(s) per target",
+        "Ether: +40% Critical",
+        "Stinger: +45% Critical",
         "Deflagration: +1 Maximum Range",
         "Elemental Shield: -1 AP",
         "Elemental Guardian: -1 cooldown",
-        "Astral Blade: -1 AP"
+        "Astral Blade: +1 Maximum Range"
       ]
     },
     "conditions": {
@@ -105908,61 +105953,61 @@
         "Burning Stroke: modifiable Range",
         "Propagation: line of sight off",
         "Elemental Trap: +1 cast(s) per turn",
-        "Telluric Wave: -1 AP",
+        "Telluric Wave: +40% Critical",
         "Cataract: line of sight off",
         "Hurricane: +1 Maximum Range",
         "Sun Lance: line of sight off",
-        "Flood: -1 AP"
+        "Flood: +35% Critical"
       ],
       "fr": [
         "Trait Ardent : Portée modifiable",
         "Propagation : ligne de vue désactivée",
         "Piège Élémentaire : +1 lancer(s) par tour",
-        "Onde Tellurique : -1 PA",
+        "Onde Tellurique : +40% Critique",
         "Cataracte : ligne de vue désactivée",
         "Ouragan : +1 Portée maximale",
         "Lance Solaire : ligne de vue désactivée",
-        "Déluge : -1 PA"
+        "Déluge : +35% Critique"
       ],
       "de": [
         "Feuriger Zug: Veränderbare Reichweite",
         "Ausbreitung: Sichtlinie deaktiviert",
         "Elementarfalle : +1 Zauber pro Runde",
-        "Tellurwelle: –1 AP",
+        "Tellurwelle: +40 % Kritische Treffer",
         "Katarakt: Sichtlinie deaktiviert",
         "Orkan: +1 Maximale Reichweite",
         "Sonnenspeer: Sichtlinie deaktiviert",
-        "Sintflut: –1 AP"
+        "Sintflut: +35 % Kritische Treffer"
       ],
       "es": [
         "Trazo Flamígero: alcance modificable",
         "Propagación: línea de visión desactivada",
         "Trampa Elemental: +1 lanzamiento(s) por turno",
-        "Onda Telúrica: -1 PA",
+        "Onda Telúrica: +40% de crítico",
         "Catarata: línea de visión desactivada",
         "Huracán: +1 de alcance máximo",
         "Lanza Solar: línea de visión desactivada",
-        "Diluvio: -1 PA"
+        "Diluvio: +35% de crítico"
       ],
       "pt": [
         "Tiro Ardente: alcance modificável",
         "Propagação: linha de visão desativada",
         "Armadilha Elementar: +1 lançamento(s) por turno",
-        "Onda Telúrica: -1 PA",
+        "Onda Telúrica: +40% de crítico",
         "Catarata: linha de visão desativada",
         "Furacão: +1 de alcance máximo",
         "Lança Solar: linha de visão desativada",
-        "Dilúvio: -1 PA"
+        "Dilúvio: +35% de crítico"
       ],
       "it": [
         "Burning Stroke: modifiable Range",
         "Propagation: line of sight off",
         "Elemental Trap: +1 cast(s) per turn",
-        "Telluric Wave: -1 AP",
+        "Telluric Wave: +40% Critical",
         "Cataract: line of sight off",
         "Hurricane: +1 Maximum Range",
         "Sun Lance: line of sight off",
-        "Flood: -1 AP"
+        "Flood: +35% Critical"
       ]
     },
     "conditions": {
@@ -106070,63 +106115,63 @@
     "customStats": {
       "en": [
         "Imprint: -1 cooldown",
-        "Striking Meteor: -1 AP",
+        "Striking Meteor: +35% Critical",
         "Elemental Cycle: line of sight off",
-        "Stalagmite: -1 AP",
+        "Stalagmite: modifiable Range",
         "Ember: modifiable Range",
         "Telluric Blade: line of sight off",
         "Icy Shards: straight-line casting off",
-        "Comet: -1 AP"
+        "Comet: +35% Critical"
       ],
       "fr": [
         "Empreinte : -1 de relance",
-        "Météore Percutant : -1 PA",
+        "Météore Percutant : +35% Critique",
         "Cycle Élémentaire : ligne de vue désactivée",
-        "Stalagmite : -1 PA",
+        "Stalagmite : Portée modifiable",
         "Tison : Portée modifiable",
         "Lame Tellurique : ligne de vue désactivée",
         "Éclats Glacés : lancer en ligne désactivée",
-        "Comète : -1 PA"
+        "Comète : +35% Critique"
       ],
       "de": [
         "Abdruck: Abklingzeit verringert um –1",
-        "Durchschlagender Meteor: –1 AP",
+        "Durchschlagender Meteor: +35 % Kritische Treffer",
         "Elementarzyklus: Sichtlinie deaktiviert",
-        "Stalagmit: –1 AP",
+        "Stalagmit: Veränderbare Reichweite",
         "Glut: Veränderbare Reichweite",
         "Erdschneide: Sichtlinie deaktiviert",
         "Eissplitter: Lineare Wirkungsweise deaktiviert",
-        "Komet: –1 AP"
+        "Komet: +35 % Kritische Treffer"
       ],
       "es": [
         "Impronta: -1 de reactivación",
-        "Meteoro Golpeador: -1 PA",
+        "Meteoro Golpeador: +35% de crítico",
         "Ciclo Elemental: línea de visión desactivada",
-        "Estalagmita: -1 PA",
+        "Estalagmita: alcance modificable",
         "Tizón: alcance modificable",
         "Hoja Telúrica: línea de visión desactivada",
         "Esquirlas Heladas: lanzamiento en línea desactivado",
-        "Cometa: -1 PA"
+        "Cometa: +35% de crítico"
       ],
       "pt": [
         "Impressão: -1 de relançamento",
-        "Meteoro Percuciente: -1 PA",
+        "Meteoro Percuciente: +35% de crítico",
         "Ciclo Elementar: linha de visão desativada",
-        "Estalagmite: -1 PA",
+        "Estalagmite: alcance modificável",
         "Tição: alcance modificável",
         "Lâmina Telúrica: linha de visão desativada",
         "Fragmentos Gelados: lançamento em linha desativado",
-        "Cometa: -1 PA"
+        "Cometa: +35% de crítico"
       ],
       "it": [
         "Imprint: -1 cooldown",
-        "Striking Meteor: -1 AP",
+        "Striking Meteor: +35% Critical",
         "Elemental Cycle: line of sight off",
-        "Stalagmite: -1 AP",
+        "Stalagmite: modifiable Range",
         "Ember: modifiable Range",
         "Telluric Blade: line of sight off",
         "Icy Shards: straight-line casting off",
-        "Comet: -1 AP"
+        "Comet: +35% Critical"
       ]
     },
     "conditions": {
@@ -113964,8 +114009,8 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Tibia: -1 AP",
-        "Humerus: -1 AP",
+        "Tibia: +25% Critical",
+        "Humerus: +1 Maximum Range",
         "Amarok: line of sight off",
         "Cerberus: -1 AP",
         "Convergence: straight-line casting off",
@@ -113974,8 +114019,8 @@
         "Snuggletooth: +1 cast(s) per turn"
       ],
       "fr": [
-        "Tibia : -1 PA",
-        "Humérus : -1 PA",
+        "Tibia : +25% Critique",
+        "Humérus : +1 Portée maximale",
         "Amarok : ligne de vue désactivée",
         "Cerbère : -1 PA",
         "Convergence : lancer en ligne désactivée",
@@ -113984,8 +114029,8 @@
         "Caninos : +1 lancer(s) par tour"
       ],
       "de": [
-        "Schienbein: –1 AP",
-        "Humbus: –1 AP",
+        "Schienbein: +25 % Kritische Treffer",
+        "Humbus: +1 Maximale Reichweite",
         "Amarok: Sichtlinie deaktiviert",
         "Zerberus: –1 AP",
         "Konvergenz: Lineare Wirkungsweise deaktiviert",
@@ -113994,8 +114039,8 @@
         "Caninos : +1 Zauber pro Runde"
       ],
       "es": [
-        "Tibia: -1 PA",
-        "Húmero: -1 PA",
+        "Tibia: +25% de crítico",
+        "Húmero: +1 de alcance máximo",
         "Amarok: línea de visión desactivada",
         "Cerbero: -1 PA",
         "Convergencia: lanzamiento en línea desactivado",
@@ -114004,8 +114049,8 @@
         "Caninos: +1 lanzamiento(s) por turno"
       ],
       "pt": [
-        "Tíbia: -1 PA",
-        "Úmero: -1 PA",
+        "Tíbia: +25% de crítico",
+        "Úmero: +1 de alcance máximo",
         "Amarok: linha de visão desativada",
         "Cérbero: -1 PA",
         "Convergência: lançamento em linha desativado",
@@ -114014,8 +114059,8 @@
         "Caninos: +1 lançamento(s) por turno"
       ],
       "it": [
-        "Tibia: -1 AP",
-        "Humerus: -1 AP",
+        "Tibia: +25% Critical",
+        "Humerus: +1 Maximum Range",
         "Amarok: line of sight off",
         "Cerberus: -1 AP",
         "Convergence: straight-line casting off",
@@ -114046,7 +114091,7 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Watchdog: -1 AP",
+        "Watchdog: +30% Critical",
         "Jaw: line of sight off",
         "Marrow Bone: +1 cast(s) per target",
         "Muzzle: -1 AP",
@@ -114056,7 +114101,7 @@
         "Carving Up: straight-line casting off"
       ],
       "fr": [
-        "Molosse : -1 PA",
+        "Molosse : +30% Critique",
         "Mâchoire : ligne de vue désactivée",
         "Os à Moelle : +1 lancer(s) par cible",
         "Muselière : -1 PA",
@@ -114066,7 +114111,7 @@
         "Dépeçage : lancer en ligne désactivée"
       ],
       "de": [
-        "Molosser: –1 AP",
+        "Molosser: +30 % Kritische Treffer",
         "Kiefer: Sichtlinie deaktiviert",
         "Markknochen : +1 Zauber pro Ziel",
         "Maulkorb: –1 AP",
@@ -114076,7 +114121,7 @@
         "Zerlegung: Lineare Wirkungsweise deaktiviert"
       ],
       "es": [
-        "Moloso: -1 PA",
+        "Moloso: +30% de crítico",
         "Mandíbula: línea de visión desactivada",
         "Hueso con Tuétano: +1 lanzamiento(s) por objetivo",
         "Bozal: -1 PA",
@@ -114086,7 +114131,7 @@
         "Despiece: lanzamiento en línea desactivado"
       ],
       "pt": [
-        "Molosso: -1 PA",
+        "Molosso: +30% de crítico",
         "Mandíbula: linha de visão desativada",
         "Tutano: +1 lançamento(s) por alvo",
         "Mordaça: -1 PA",
@@ -114096,7 +114141,7 @@
         "Desmembramento: lançamento em linha desativado"
       ],
       "it": [
-        "Watchdog: -1 AP",
+        "Watchdog: +30% Critical",
         "Jaw: line of sight off",
         "Marrow Bone: +1 cast(s) per target",
         "Muzzle: -1 AP",
@@ -116035,15 +116080,15 @@
   {
     "dofusID": "18692",
     "name": {
-      "en": "Precious Shield",
-      "fr": "Bouclier précieux",
-      "de": "Edelsteinschild",
-      "es": "Escudo precioso",
-      "pt": "Escudo Precioso",
-      "it": "Precious Shield"
+      "en": "Shieldtastik",
+      "fr": "Bouclistik",
+      "de": "Schildistik",
+      "es": "Escudístiko",
+      "pt": "Escudístika",
+      "it": "Shieldtastik"
     },
     "itemType": "Shield",
-    "setID": null,
+    "setID": "429",
     "level": 200,
     "stats": [
       {
@@ -116601,7 +116646,7 @@
       "it": "Seven Years Bad Luck"
     },
     "itemType": "Shield",
-    "setID": null,
+    "setID": "973",
     "level": 194,
     "stats": [
       {
@@ -116720,7 +116765,7 @@
       "it": "Bivalve"
     },
     "itemType": "Shield",
-    "setID": null,
+    "setID": "975",
     "level": 197,
     "stats": [
       {
@@ -121238,7 +121283,7 @@
       {
         "stat": "Pushback Resistance",
         "minStat": null,
-        "maxStat": 80
+        "maxStat": 100
       }
     ],
     "customStats": {
@@ -133800,22 +133845,22 @@
     ],
     "customStats": {
       "en": [
-        "Bontarian Shield:\n• When the bearer is unbewitched or hindered, the bearer gains 100% of their level as shield for 1 turn.\n\nBrakmarian Power: \n• Whenever the bearer inflicts or suffers pushback damage, the bearer gain 100 Power for 1 turn. \n\nNightmare Eye:\n• If the bearer triggers Bontarian Shield and Brakmarian Power in the same turn, the damage they suffer and inflict increases by 10% for 1 turn.\n\nThe effects can only be triggered once per turn."
+        "Bontarian Shield:\n• When the bearer is unbewitched or debuffed, the bearer gains 100% of their level as shield for 1 turn.\n\nBrakmarian Power: \n• Whenever the bearer inflicts or suffers pushback damage, the bearer gains 100 Power for 1 turn. \n\nNightmare Eye:\n• If the bearer triggers Bontarian Shield and Brakmarian Power in the same turn, the damage they inflict and suffer increases by 10% for 1 turn.\n\nThe effects can only be triggered once per turn."
       ],
       "fr": [
-        "Bouclier Bontarien :\n• Lorsque le porteur est désenvoûté ou entravé, il gagne 100% de son niveau en bouclier pour 1 tour.\n\nPuissance Brâkmarienne : \n• Lorsque le porteur occasionne ou subit des dommages de poussée, il gagne 100 de Puissance pour 1 tour. \n\nŒil du Cauchemar :\n• Si le porteur déclenche le Bouclier Bontarien et la Puissance Brâkmarienne dans le même tour, les dommages qu'il subit et occasionne sont augmentés de 10% pendant 1 tour.\n\nLes effets ne peuvent être déclenchés qu'une seule fois par tour."
+        "Bouclier Bontarien :\n• Lorsque le porteur est désenvoûté ou entravé, il gagne 100% de son niveau en bouclier pour 1 tour.\n\nPuissance Brâkmarienne : \n• Lorsque le porteur occasionne ou subit des dommages de poussée, il gagne 100 de Puissance pour 1 tour. \n\nŒil du Cauchemar :\n• Si le porteur déclenche le Bouclier Bontarien et la Puissance Brâkmarienne dans le même tour, les dommages qu'il occasionne et subit sont augmentés de 10% pendant 1 tour.\n\nLes effets ne peuvent être déclenchés qu'une seule fois par tour."
       ],
       "de": [
-        "Bonta-Schild:\n• Wenn der Träger entzaubert oder gefesselt ist, erhält er 1 Runde lang 100 % Schildstufe.\n\nBrâk-Schlagkraft: \n• Wenn der Träger Schubsschaden verursacht oder erleidet, erhält er 1 Runde lang 100 Schlagkraft. \n\nAuge des Alptraums:\n• Löst der Träger den Bonta-Schild und die Brâk-Schlagkraft in derselben Runde aus, erhöht sich der von ihm erlittene und verursachte Schaden 1 Runde lang um 10 %.\n\nWirkungen können nur einmal pro Runde ausgelöst werden."
+        "Bonta-Schild:\n• Wenn der Träger entzaubert oder gefesselt ist, erhält er 1 Runde lang 100 % Schildstufe.\n\nBrâk-Schlagkraft: \n• Wenn der Träger Schubsschaden verursacht oder erleidet, erhält er 1 Runde lang 100 Schlagkraft. \n\nAuge des Alptraums:\n• Löst der Träger den Bonta-Schild und die Brâk-Schlagkraft in derselben Runde aus, erhöht sich der von ihm verursachte und erlittene Schaden 1 Runde lang um 10 %.\n\nWirkungen können nur einmal pro Runde ausgelöst werden."
       ],
       "es": [
-        "Escudo Bontariano:\n• Cuando el portador es desembrujado o trabado, gana un escudo del 100% de su nivel durante 1 turno.\n\nPotencia Brakmariana: \n• Cuando el portador ocasiona o sufre daños de empuje, gana 100 de potencia durante 1 turno. \n\nOjo de Pesadilla:\n• Si el portador activa Escudo Bontariano y Potencia Brakmariana en el mismo turno, los daños que sufre y que ocasiona aumentan un 10% durante 1 turno.\n\nLos efectos pueden activarse solo una vez por turno."
+        "Escudo Bontariano:\n• Cuando el portador es desembrujado o trabado, gana un escudo del 100% de su nivel durante 1 turno.\n\nPotencia Brakmariana: \n• Cuando el portador ocasiona o sufre daños de empuje, gana 100 de potencia durante 1 turno. \n\nOjo de Pesadilla:\n• Si el portador activa Escudo Bontariano y Potencia Brakmariana en el mismo turno, los daños que ocasiona y sufre aumentan un 10% durante 1 turno.\n\nLos efectos pueden activarse solo una vez por turno."
       ],
       "pt": [
-        "Escudo Bontariano:\n• Quando o portador é desencantado ou entravado, ele ganha em escudo o equivalente a 100% de seu nível durante 1 turno.\n\nPotência Brakmariana: \n• Quando o portador inflige ou sofre danos de empurrão, ele ganha 100 de potência durante 1 turno. \n\nOlho do Pesadelo:\n• Se o portador aciona o Escudo Bontariano e a Potência Brakmariana no mesmo turno, os danos que ele sofre e inflige aumentam em 10% durante 1 turno.\n\nOs efeitos só podem ser acionados uma vez por turno."
+        "Escudo Bontariano:\n• Quando o portador é desencantado ou entravado, ele ganha em escudo o equivalente a 100% de seu nível durante 1 turno.\n\nPotência Brakmariana: \n• Quando o portador inflige ou sofre danos de empurrão, ele ganha 100 de potência durante 1 turno. \n\nOlho do Pesadelo:\n• Se o portador acionar o Escudo Bontariano e a Potência Brakmariana no mesmo turno, os danos que ele inflige e sofre aumentam em 10% durante 1 turno.\n\nOs efeitos só podem ser acionados uma vez por turno."
       ],
       "it": [
-        "Bontarian Shield:\n• When the bearer is unbewitched or hindered, the bearer gains 100% of their level as shield for 1 turn.\n\nBrakmarian Power: \n• Whenever the bearer inflicts or suffers pushback damage, the bearer gain 100 Power for 1 turn. \n\nNightmare Eye:\n• If the bearer triggers Bontarian Shield and Brakmarian Power in the same turn, the damage they suffer and inflict increases by 10% for 1 turn.\n\nThe effects can only be triggered once per turn."
+        "Bontarian Shield:\n• When the bearer is unbewitched or debuffed, the bearer gains 100% of their level as shield for 1 turn.\n\nBrakmarian Power: \n• Whenever the bearer inflicts or suffers pushback damage, the bearer gains 100 Power for 1 turn. \n\nNightmare Eye:\n• If the bearer triggers Bontarian Shield and Brakmarian Power in the same turn, the damage they inflict and suffer increases by 10% for 1 turn.\n\nThe effects can only be triggered once per turn."
       ]
     },
     "conditions": {
@@ -136055,62 +136100,62 @@
     "customStats": {
       "en": [
         "Lance of the Lake: +3 Maximum Range",
-        "Seismic Pike: -1 AP",
+        "Seismic Pike: +3 Maximum Range",
         "Slingshot: +2 Maximum Range",
-        "Lightning-Javelin: +1 cast(s) per turn",
+        "Lightning-Javelin: +2 Maximum Range",
         "Fire Lance: modifiable Range",
         "Brass Rain: +2 Maximum Range",
-        "No Myr Javelin: -1 AP",
+        "No Myr Javelin: +3 Maximum Range",
         "Spicy Mill: +1 cast(s) per turn"
       ],
       "fr": [
         "Lance du Lac : +3 Portée maximale",
-        "Épieu Sismique : -1 PA",
+        "Épieu Sismique : +3 Portée maximale",
         "Lance-pierre : +2 Portée maximale",
-        "Javelot-foudre : +1 lancer(s) par tour",
+        "Javelot-foudre : +2 Portée maximale",
         "Lance à Incendie : Portée modifiable",
         "Pluie d'Airain : +2 Portée maximale",
-        "Javeline de Myr : -1 PA",
+        "Javeline de Myr : +3 Portée maximale",
         "Moulin Rouge : +1 lancer(s) par tour"
       ],
       "de": [
         "Wurfspeer des Sees: +3 Maximale Reichweite",
-        "Seismischer Speer: –1 AP",
+        "Seismischer Speer: +3 Maximale Reichweite",
         "Steinschleuder: +2 Maximale Reichweite",
-        "Wurfspeer-Blitz : +1 Zauber pro Runde",
+        "Wurfspeer-Blitz: +2 Maximale Reichweite",
         "Flammender Wurfspeer: Veränderbare Reichweite",
         "Bronzeregen: +2 Maximale Reichweite",
-        "Wurfspeer von Myr: –1 AP",
+        "Wurfspeer von Myr: +3 Maximale Reichweite",
         "Rote Mühle : +1 Zauber pro Runde"
       ],
       "es": [
         "Lanza del Lago: +3 de alcance máximo",
-        "Chuzo Sísmico: -1 PA",
+        "Chuzo Sísmico: +3 de alcance máximo",
         "Lanzapiedras: +2 de alcance máximo",
-        "Jabalina Rayo: +1 lanzamiento(s) por turno",
+        "Jabalina Rayo: +2 de alcance máximo",
         "Lanza de Incendios: alcance modificable",
         "Lluvia Dorena: +2 de alcance máximo",
-        "Jabalina Keatina: -1 PA",
+        "Jabalina Keatina: +3 de alcance máximo",
         "Molino Rojo: +1 lanzamiento(s) por turno"
       ],
       "pt": [
         "Lança do Lago: +3 de alcance máximo",
-        "Dardo Sísmico: -1 PA",
+        "Dardo Sísmico: +3 de alcance máximo",
         "Catapulta: +2 de alcance máximo",
-        "Dardo-Relâmpago: +1 lançamento(s) por turno",
+        "Dardo-Relâmpago: +2 de alcance máximo",
         "Lança Incendiária: alcance modificável",
         "Chuva de Bronze: +2 de alcance máximo",
-        "Dardo de Tyro: -1 PA",
+        "Dardo de Tyro: +3 de alcance máximo",
         "Moinho Vermelho: +1 lançamento(s) por turno"
       ],
       "it": [
         "Lance of the Lake: +3 Maximum Range",
-        "Seismic Pike: -1 AP",
+        "Seismic Pike: +3 Maximum Range",
         "Slingshot: +2 Maximum Range",
-        "Lightning-Javelin: +1 cast(s) per turn",
+        "Lightning-Javelin: +2 Maximum Range",
         "Fire Lance: modifiable Range",
         "Brass Rain: +2 Maximum Range",
-        "No Myr Javelin: -1 AP",
+        "No Myr Javelin: +3 Maximum Range",
         "Spicy Mill: +1 cast(s) per turn"
       ]
     },
@@ -136218,9 +136263,9 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Biting Trident: -1 AP",
+        "Biting Trident: +3 Maximum Range",
         "Maelstrom: +2 Maximum Range",
-        "Burning Estoc: -1 AP",
+        "Burning Estoc: +2 Maximum Range",
         "Octave: modifiable Range",
         "Jormun: +1 cast(s) per turn",
         "Hot Iron: +2 Maximum Range",
@@ -136228,9 +136273,9 @@
         "Renown: -1 cooldown"
       ],
       "fr": [
-        "Trident de la Mer : -1 PA",
+        "Trident de la Mer : +3 Portée maximale",
         "Maelstrom : +2 Portée maximale",
-        "Estoc Brûlant : -1 PA",
+        "Estoc Brûlant : +2 Portée maximale",
         "Octave : Portée modifiable",
         "Jormun : +1 lancer(s) par tour",
         "Fer Rouge : +2 Portée maximale",
@@ -136238,9 +136283,9 @@
         "Renommée : -1 de relance"
       ],
       "de": [
-        "Dreizack des Meeres: –1 AP",
+        "Dreizack des Meeres: +3 Maximale Reichweite",
         "Mahlstrom: +2 Maximale Reichweite",
-        "Brennender Stoßdegen: –1 AP",
+        "Brennender Stoßdegen: +2 Maximale Reichweite",
         "Oktave: Veränderbare Reichweite",
         "Jormun : +1 Zauber pro Runde",
         "Glühendes Eisen: +2 Maximale Reichweite",
@@ -136248,9 +136293,9 @@
         "Renommiert: Abklingzeit verringert um –1"
       ],
       "es": [
-        "Al Tridente: -1 PA",
+        "Al Tridente: +3 de alcance máximo",
         "Maelstrom: +2 de alcance máximo",
-        "Estocada Ardiente: -1 PA",
+        "Estocada Ardiente: +2 de alcance máximo",
         "Octava: alcance modificable",
         "Jormun: +1 lanzamiento(s) por turno",
         "Cadena Candente: +2 de alcance máximo",
@@ -136258,9 +136303,9 @@
         "Renombre: -1 de reactivación"
       ],
       "pt": [
-        "Tridente do Mar: -1 PA",
+        "Tridente do Mar: +3 de alcance máximo",
         "Maelstrom: +2 de alcance máximo",
-        "Estoque Ardente: -1 PA",
+        "Estoque Ardente: +2 de alcance máximo",
         "Oitava: alcance modificável",
         "Jormun: +1 lançamento(s) por turno",
         "Ferro Vermelho: +2 de alcance máximo",
@@ -136268,9 +136313,9 @@
         "Fama: -1 de relançamento"
       ],
       "it": [
-        "Biting Trident: -1 AP",
+        "Biting Trident: +3 Maximum Range",
         "Maelstrom: +2 Maximum Range",
-        "Burning Estoc: -1 AP",
+        "Burning Estoc: +2 Maximum Range",
         "Octave: modifiable Range",
         "Jormun: +1 cast(s) per turn",
         "Hot Iron: +2 Maximum Range",
@@ -136306,9 +136351,9 @@
     ],
     "customStats": {
       "en": [
-        "Collapse: -1 AP",
+        "Collapse: +2 Maximum Range",
         "Cyclone Lancer: modifiable Range",
-        "Brass Volley: -1 AP",
+        "Brass Volley: +3 Maximum Range",
         "Upheaval: +1 Maximum Range",
         "Middle Earth: +1 cast(s) per turn",
         "Disengaging: -1 AP",
@@ -136316,9 +136361,9 @@
         "Oriflamme: -1 AP"
       ],
       "fr": [
-        "Effondrement : -1 PA",
+        "Effondrement : +2 Portée maximale",
         "Lance-cyclone : Portée modifiable",
-        "Volée d'Airain : -1 PA",
+        "Volée d'Airain : +3 Portée maximale",
         "Soulèvement : +1 Portée maximale",
         "Terre du Milieu : +1 lancer(s) par tour",
         "Dégagement : -1 PA",
@@ -136326,9 +136371,9 @@
         "Oriflamme : -1 PA"
       ],
       "de": [
-        "Zusammenbruch: –1 AP",
+        "Zusammenbruch: +2 Maximale Reichweite",
         "Wurfspeer-Zyklon: Veränderbare Reichweite",
-        "Einen Schwung Erz: –1 AP",
+        "Einen Schwung Erz: +3 Maximale Reichweite",
         "Erleichterung: +1 Maximale Reichweite",
         "Erde der Mitte : +1 Zauber pro Runde",
         "Freiraum: –1 AP",
@@ -136336,9 +136381,9 @@
         "Oriflamme: –1 AP"
       ],
       "es": [
-        "Colapso: -1 PA",
+        "Colapso: +2 de alcance máximo",
         "Lanza Ciclón: alcance modificable",
-        "Golpiza de Bronce: -1 PA",
+        "Golpiza de Bronce: +3 de alcance máximo",
         "Sublevación: +1 de alcance máximo",
         "Tierra Media: +1 lanzamiento(s) por turno",
         "Despeje: -1 PA",
@@ -136346,9 +136391,9 @@
         "Oriflama: -1 PA"
       ],
       "pt": [
-        "Colapso: -1 PA",
+        "Colapso: +2 de alcance máximo",
         "Lança-Ciclone: alcance modificável",
-        "Saraivada de Bronze: -1 PA",
+        "Saraivada de Bronze: +3 de alcance máximo",
         "Alívio: +1 de alcance máximo",
         "Terra do Meio: +1 lançamento(s) por turno",
         "Desprendimento: -1 PA",
@@ -136356,9 +136401,9 @@
         "Orichama: -1 PA"
       ],
       "it": [
-        "Collapse: -1 AP",
+        "Collapse: +2 Maximum Range",
         "Cyclone Lancer: modifiable Range",
-        "Brass Volley: -1 AP",
+        "Brass Volley: +3 Maximum Range",
         "Upheaval: +1 Maximum Range",
         "Middle Earth: +1 cast(s) per turn",
         "Disengaging: -1 AP",
