@@ -102,6 +102,11 @@ import {
   EquippedItem,
 } from './type-aliases';
 import { prependDe } from './i18n-utils';
+import { classes } from 'graphql/queries/__generated__/classes';
+import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
+
+import classesQuery from '../graphql/queries/classes.graphql';
+import customSetTagsQuery from '../graphql/queries/customSetTags.graphql';
 
 export const getImageUrl = (suffix: string) =>
   suffix.startsWith('https://')
@@ -2016,3 +2021,45 @@ export function slotToUrlString(itemSlot: EquippedItemSlot) {
 
   return name;
 }
+
+export const useProfileQueryParams = (isProfile: boolean) => {
+  const router = useRouter();
+  const {
+    search: routerSearch,
+    tags: routerTags,
+    class: routerClass,
+  } = router.query;
+
+  const { data: classData } = useQuery<classes>(classesQuery);
+  const { data: tagsData } = useQuery<customSetTags>(customSetTagsQuery);
+
+  const search = isProfile ? (routerSearch as string) || '' : '';
+
+  const classId = isProfile
+    ? classData?.classes.find((item) => item.enName === routerClass)?.id
+    : undefined;
+
+  const tagIds =
+    isProfile && routerTags
+      ? decodeURIComponent(routerTags as string)
+          .split(',')
+          .map((item) => {
+            const found = tagsData?.customSetTags.find(
+              (it) => it.enName === item,
+            );
+            if (!found) {
+              return;
+            } else {
+              return tagsData?.customSetTags.find((it) => it.enName === item)
+                ?.id;
+            }
+          })
+          .filter((item) => !!item)
+      : [];
+
+  return {
+    search,
+    class: classId,
+    tags: tagIds,
+  };
+};
