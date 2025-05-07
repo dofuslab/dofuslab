@@ -1,6 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faEyeSlash,
+  faGlobe,
+  faTrashAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import { itemCardStyle, selected } from 'common/mixins';
 import { CardTitleWithLevel } from 'common/wrappers';
 import Card from 'components/common/Card';
@@ -15,13 +19,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export default function BuildCard({
   customSet,
   isEditable,
-  setCustomSetIdToDelete,
+  setSelectedCustomSetId,
   setDeleteModalVisible,
+  setTogglePrivateModalVisible,
 }: {
   customSet: AbbreviatedCustomSet;
   isEditable: boolean;
-  setCustomSetIdToDelete: (customSetId: string) => void;
+  setSelectedCustomSetId: (customSetId: string) => void;
   setDeleteModalVisible: (visible: true) => void;
+  setTogglePrivateModalVisible: (visible: true) => void;
 }) {
   const { t } = useTranslation('common');
   const theme = useTheme();
@@ -64,21 +70,44 @@ export default function BuildCard({
           rightAlignedContent={
             isEditable && (
               <div
-                css={{
-                  padding: '0px 4px 0px 8px',
-                  marginLeft: 4,
-                  opacity: 0.3,
-                  transition: '0.3s opacity ease-in-out',
-                  '&:hover': { opacity: 1 },
-                }}
-                onClick={(e: React.MouseEvent<HTMLDivElement>) => {
-                  e.stopPropagation();
-                  e.preventDefault();
-                  setCustomSetIdToDelete(customSet.id);
-                  setDeleteModalVisible(true);
-                }}
+                css={{ display: 'flex', flexDirection: 'column', gap: '4px' }}
               >
-                <FontAwesomeIcon icon={faTrashAlt} />
+                <div
+                  css={{
+                    padding: '0px 4px 0px 8px',
+                    marginLeft: 4,
+                    opacity: 0.3,
+                    transition: '0.3s opacity ease-in-out',
+                    '&:hover': { opacity: 1 },
+                  }}
+                  onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    setSelectedCustomSetId(customSet.id);
+                    setDeleteModalVisible(true);
+                  }}
+                >
+                  <FontAwesomeIcon icon={faTrashAlt} />
+                </div>
+                <div
+                  css={{
+                    padding: '0px 4px 0px 8px',
+                    marginLeft: 4,
+                    opacity: 0.3,
+                    transition: '0.3s opacity ease-in-out',
+                    '&:hover': { opacity: 1 },
+                  }}
+                  onClick={(e: React.MouseEvent<HTMLDivElement>) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    setSelectedCustomSetId(customSet.id);
+                    setTogglePrivateModalVisible(true);
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={customSet.private ? faEyeSlash : faGlobe}
+                  />
+                </div>
               </div>
             )
           }

@@ -53,6 +53,7 @@ export interface myCustomSets_currentUser_customSets_edges_node_tagAssociations 
 export interface myCustomSets_currentUser_customSets_edges_node {
   __typename: "CustomSet";
   id: any;
+  private: boolean;
   buildGender: BuildGender;
   defaultClass: myCustomSets_currentUser_customSets_edges_node_defaultClass | null;
   name: string | null;

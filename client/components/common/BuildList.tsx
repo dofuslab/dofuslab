@@ -40,6 +40,7 @@ import customSetTagsQuery from 'graphql/queries/customSetTags.graphql';
 import DeleteCustomSetModal from './DeleteCustomSetModal';
 import ClassSelect from './ClassSelect';
 import BuildCard from './BuildCard';
+import TogglePrivateModal from './TogglePrivateModal';
 
 const THRESHOLD = 600;
 const PAGE_SIZE = 20;
@@ -69,13 +70,20 @@ const BuildList: React.FC<Props> = ({
 
   const client = useApolloClient();
 
-  const [deleteModalVisible, setDeleteModalVisible] = React.useState(false);
-  const [customSetIdToDelete, setCustomSetIdToDelete] = React.useState<
+  const [selectedCustomSetId, setSelectedCustomSetId] = React.useState<
     string | null
   >(null);
 
+  const [togglePrivateModalVisible, setTogglePrivateModalVisible] =
+    React.useState(false);
+  const [deleteModalVisible, setDeleteModalVisible] = React.useState(false);
+
   const closeDeleteModal = React.useCallback(() => {
     setDeleteModalVisible(false);
+  }, []);
+
+  const closeTogglePrivateModal = React.useCallback(() => {
+    setTogglePrivateModalVisible(false);
   }, []);
 
   const [search, setSearch] = React.useState('');
@@ -112,7 +120,12 @@ const BuildList: React.FC<Props> = ({
     variables: {
       username,
       first: BUILD_LIST_PAGE_SIZE,
-      filters: { search, defaultClassId: dofusClassId, tagIds },
+      filters: {
+        search,
+        defaultClassId: dofusClassId,
+        tagIds,
+        private: isEditable ? undefined : false,
+      },
     },
   });
 
@@ -353,11 +366,18 @@ const BuildList: React.FC<Props> = ({
           </React.Fragment>
         }
       >
-        {customSetIdToDelete && (
+        {selectedCustomSetId && (
           <DeleteCustomSetModal
-            customSetId={customSetIdToDelete}
+            customSetId={selectedCustomSetId}
             visible={deleteModalVisible}
             onCancel={closeDeleteModal}
+          />
+        )}
+        {selectedCustomSetId && (
+          <TogglePrivateModal
+            customSetId={selectedCustomSetId}
+            visible={togglePrivateModalVisible}
+            onCancel={closeTogglePrivateModal}
           />
         )}
         {userBuilds?.userByName?.customSets.edges.map(({ node }) => (
@@ -366,7 +386,8 @@ const BuildList: React.FC<Props> = ({
               <BuildCard
                 customSet={node}
                 setDeleteModalVisible={setDeleteModalVisible}
-                setCustomSetIdToDelete={setCustomSetIdToDelete}
+                setSelectedCustomSetId={setSelectedCustomSetId}
+                setTogglePrivateModalVisible={setTogglePrivateModalVisible}
                 isEditable={isEditable}
               />
             </a>
