@@ -128,6 +128,7 @@ cache = redis.Redis(
 
 from app.schema import schema
 from app.loaders import (
+    AllItemNameLoader,
     ItemNameLoader,
     ItemStatsLoader,
     ItemStatTranslationLoader,
@@ -169,6 +170,7 @@ from app.loaders import (
 @app.before_request
 def construct_dataloaders():
     g.dataloaders = {
+        "all_item_name_loader": AllItemNameLoader(),
         "item_name_loader": ItemNameLoader(),
         "item_stats_loader": ItemStatsLoader(),
         "item_stat_translation_loader": ItemStatTranslationLoader(),
