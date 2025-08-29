@@ -19,6 +19,8 @@
     "AIR_HEALING": "Curas aire",
     "AIR_STEAL": "Roba PdV aire",
     "AP": "-PA (objetivo)",
+    "ATTRACT_CELLS": "Atrae casillas",
+    "BEST_ELEMENT_DAMAGE": "Daños mejor elemento",
     "EARTH_DAMAGE": "Daños tierra",
     "EARTH_HEALING": "Curas tierra",
     "EARTH_STEAL": "Roba PdV tierra",
@@ -30,6 +32,8 @@
     "NEUTRAL_DAMAGE": "Daños neutrales",
     "NEUTRAL_HEALING": "Curas neutrales",
     "NEUTRAL_STEAL": "Roba PdV neutral",
+    "PUSHBACK_DAMAGE": "Empuje de casillas",
+    "STEALS_MP": "Robo de PM",
     "WATER_DAMAGE": "Daños agua",
     "WATER_HEALING": "Curas agua",
     "WATER_STEAL": "Roba PdV agua"

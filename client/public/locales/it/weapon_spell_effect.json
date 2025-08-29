@@ -19,6 +19,8 @@
     "AIR_HEALING": "Cura Aria",
     "AIR_STEAL": "Furto Aria",
     "AP": "PA (bersaglio)",
+    "ATTRACT_CELLS": "Attrazione caselle",
+    "BEST_ELEMENT_DAMAGE": "Danni elemento migliore",
     "EARTH_DAMAGE": "Danni Terra",
     "EARTH_HEALING": "Cura Terra",
     "EARTH_STEAL": "Furto Terra",
@@ -30,6 +32,8 @@
     "NEUTRAL_DAMAGE": "Danni Neutro",
     "NEUTRAL_HEALING": "Cura Neutra",
     "NEUTRAL_STEAL": "Furto Neutro",
+    "PUSHBACK_DAMAGE": "Spinta caselle",
+    "STEALS_MP": "Furto PM",
     "WATER_DAMAGE": "Danni Acqua",
     "WATER_HEALING": "Cura Acqua",
     "WATER_STEAL": "Furto Acqua"
