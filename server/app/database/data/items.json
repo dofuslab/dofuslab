@@ -34259,7 +34259,7 @@
       ],
       "fr": [
         "Piège Fangeux : +2 Portée maximale",
-        "Épidémie : lancer en ligne désactivée",
+        "Épidémie : lancer en ligne désactivé",
         "Piège Funeste : +2 Portée maximale",
         "Effraction : Portée modifiable",
         "Piège Répulsif : +3 Portée maximale",
@@ -34335,17 +34335,17 @@
         "Frostbite: straight-line casting off",
         "Dust: +1 Maximum Range",
         "Souvenir: line of sight off",
-        "Permutation: straight-line casting off",
+        "Permutation: +1 Maximum Range",
         "Xelor's Punch: +1 Maximum Range",
         "Pendulum: +1 Maximum Range"
       ],
       "fr": [
         "Perturbation : +1 Portée maximale",
         "Rouage : +1 Portée maximale",
-        "Gelure : lancer en ligne désactivée",
+        "Gelure : lancer en ligne désactivé",
         "Poussière : +1 Portée maximale",
         "Souvenir : ligne de vue désactivée",
-        "Permutation : lancer en ligne désactivée",
+        "Permutation : +1 Portée maximale",
         "Frappe de Xélor : +1 Portée maximale",
         "Pendule : +1 Portée maximale"
       ],
@@ -34355,7 +34355,7 @@
         "Einfrieren: Lineare Wirkungsweise deaktiviert",
         "Staub: +1 Maximale Reichweite",
         "Souvenir: Sichtlinie deaktiviert",
-        "Permutation: Lineare Wirkungsweise deaktiviert",
+        "Permutation: +1 Maximale Reichweite",
         "Faust von Xélor: +1 Maximale Reichweite",
         "Pendel: +1 Maximale Reichweite"
       ],
@@ -34365,7 +34365,7 @@
         "Congelación: lanzamiento en línea desactivado",
         "Polvo: +1 de alcance máximo",
         "Recuerdo: línea de visión desactivada",
-        "Permutación: lanzamiento en línea desactivado",
+        "Permutación: +1 de alcance máximo",
         "Golpe de Xelor: +1 de alcance máximo",
         "Péndulo: +1 de alcance máximo"
       ],
@@ -34375,7 +34375,7 @@
         "Enregelamento: lançamento em linha desativado",
         "Poeira: +1 de alcance máximo",
         "Souvenir: linha de visão desativada",
-        "Permutação: lançamento em linha desativado",
+        "Permutação: +1 de alcance máximo",
         "Golpe de Xelor: +1 de alcance máximo",
         "Pêndulo: +1 de alcance máximo"
       ],
@@ -34385,7 +34385,7 @@
         "Frostbite: straight-line casting off",
         "Dust: +1 Maximum Range",
         "Souvenir: line of sight off",
-        "Permutation: straight-line casting off",
+        "Permutation: +1 Maximum Range",
         "Xelor's Punch: +1 Maximum Range",
         "Pendulum: +1 Maximum Range"
       ]
@@ -34658,64 +34658,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Dragonic: +2 Maximum Range",
-        "Sparkmeleon: +2 Maximum Range",
-        "Geyser: +2 Maximum Range",
-        "Aquaculture: +2 Maximum Range",
-        "Scalding Poison: line of sight off",
-        "Aquatic Wave: line of sight off",
-        "Flaming Crow: +1 cast(s) per turn",
-        "Cross Scale: +1 Maximum Range"
+        "Tofu: +2 Maximum Range",
+        "Chtiger Claws: modifiable Range",
+        "Gobball: +2 Maximum Range",
+        "Vulture Talons: +2 Maximum Range",
+        "Sweetoad: +2 Maximum Range",
+        "Golden Fleece: +1 cast(s) per turn",
+        "Dragoone: +2 Maximum Range",
+        "Snake Bite: modifiable Range"
       ],
       "fr": [
-        "Dragonique : +2 Portée maximale",
-        "Reptincelles : +2 Portée maximale",
-        "Geyser : +2 Portée maximale",
-        "Aquaculture : +2 Portée maximale",
-        "Poison Cinglant : ligne de vue désactivée",
-        "Onde Aquatique : ligne de vue désactivée",
-        "Corbeau Embrasé : +1 lancer(s) par tour",
-        "Écaille Transversale : +1 Portée maximale"
+        "Tofu : +2 Portée maximale",
+        "Griffes du Chtigre : Portée modifiable",
+        "Bouftou : +2 Portée maximale",
+        "Serres du Vautour : +2 Portée maximale",
+        "Crapipou : +2 Portée maximale",
+        "Toison d'Or : +1 lancer(s) par tour",
+        "Dragoune : +2 Portée maximale",
+        "Morsure du Serpent : Portée modifiable"
       ],
       "de": [
-        "Geisterklaue: +2 Maximale Reichweite",
-        "Glutrak: +2 Maximale Reichweite",
-        "Geysir: +2 Maximale Reichweite",
-        "Aquakultur: +2 Maximale Reichweite",
-        "Ätzendes Gift: Sichtlinie deaktiviert",
-        "Aquatische Welle: Sichtlinie deaktiviert",
-        "Entflammter Rabe : +1 Zauber pro Runde",
-        "Diagonaler Schuppenangriff: +1 Maximale Reichweite"
+        "Tofu: +2 Maximale Reichweite",
+        "Tiguarkrallen: Veränderbare Reichweite",
+        "Fresssack: +2 Maximale Reichweite",
+        "Geierfänge: +2 Maximale Reichweite",
+        "Krötlein: +2 Maximale Reichweite",
+        "Goldenes Vlies : +1 Zauber pro Runde",
+        "Dragooner: +2 Maximale Reichweite",
+        "Schlangenbiss: Veränderbare Reichweite"
       ],
       "es": [
-        "Dragónico: +2 de alcance máximo",
-        "Chisparmeleon: +2 de alcance máximo",
-        "Géiser: +2 de alcance máximo",
-        "Acuicultura: +2 de alcance máximo",
-        "Veneno Azotador: línea de visión desactivada",
-        "Onda Acuática: línea de visión desactivada",
-        "Cuervo Enardecido: +1 lanzamiento(s) por turno",
-        "Escama Transversal: +1 de alcance máximo"
+        "Tofu: +2 de alcance máximo",
+        "Garras de Chtigre: alcance modificable",
+        "Jalató: +2 de alcance máximo",
+        "Garras de Buitre: +2 de alcance máximo",
+        "Saponito: +2 de alcance máximo",
+        "Vellocino de Oro: +1 lanzamiento(s) por turno",
+        "Dragún: +2 de alcance máximo",
+        "Mordedura de Serpiente: alcance modificable"
       ],
       "pt": [
-        "Dragônico: +2 de alcance máximo",
-        "Chameleon: +2 de alcance máximo",
-        "Gêiser: +2 de alcance máximo",
-        "Aquicultura: +2 de alcance máximo",
-        "Veneno Fustigante: linha de visão desativada",
-        "Onda Aquática: linha de visão desativada",
-        "Corvo Chamejante: +1 lançamento(s) por turno",
-        "Escama Transversal: +1 de alcance máximo"
+        "Tofu: +2 de alcance máximo",
+        "Garras do Tigraxé: alcance modificável",
+        "Papatudo: +2 de alcance máximo",
+        "Garras do Abutre: +2 de alcance máximo",
+        "Sapeca: +2 de alcance máximo",
+        "Tosão de Ouro: +1 lançamento(s) por turno",
+        "Draguna: +2 de alcance máximo",
+        "Mordida da Serpente: alcance modificável"
       ],
       "it": [
-        "Dragonic: +2 Maximum Range",
-        "Sparkmeleon: +2 Maximum Range",
-        "Geyser: +2 Maximum Range",
-        "Aquaculture: +2 Maximum Range",
-        "Scalding Poison: line of sight off",
-        "Aquatic Wave: line of sight off",
-        "Flaming Crow: +1 cast(s) per turn",
-        "Cross Scale: +1 Maximum Range"
+        "Tofu: +2 Maximum Range",
+        "Chtiger Claws: modifiable Range",
+        "Gobball: +2 Maximum Range",
+        "Vulture Talons: +2 Maximum Range",
+        "Sweetoad: +2 Maximum Range",
+        "Golden Fleece: +1 cast(s) per turn",
+        "Dragoone: +2 Maximum Range",
+        "Snake Bite: modifiable Range"
       ]
     },
     "conditions": {
@@ -35084,7 +35084,7 @@
         "Tannée : +2 Portée maximale",
         "Épée Céleste : +2 Portée maximale",
         "Zénith : -1 PA",
-        "Épée du Destin : lancer en ligne désactivée",
+        "Épée du Destin : lancer en ligne désactivé",
         "Tumulte : Portée modifiable"
       ],
       "de": [
@@ -35315,7 +35315,7 @@
     "customStats": {
       "en": [
         "Gear: +1 Maximum Range",
-        "Dropper: straight-line casting off",
+        "Dropper: +3 Maximum Range",
         "Clock: straight-line casting off",
         "Water Clock: modifiable Range",
         "Desynchronisation: -1 AP",
@@ -35325,17 +35325,17 @@
       ],
       "fr": [
         "Engrenage : +1 Portée maximale",
-        "Compte-goutte : lancer en ligne désactivée",
-        "Horloge : lancer en ligne désactivée",
+        "Compte-goutte : +3 Portée maximale",
+        "Horloge : lancer en ligne désactivé",
         "Clepsydre : Portée modifiable",
         "Désynchronisation : -1 PA",
         "Espace-temps : -1 PA",
-        "Rembobinage : lancer en ligne désactivée",
+        "Rembobinage : lancer en ligne désactivé",
         "Rémanence : -1 PA"
       ],
       "de": [
         "Räderwerk: +1 Maximale Reichweite",
-        "Tropfenzähler: Lineare Wirkungsweise deaktiviert",
+        "Tropfenzähler: +3 Maximale Reichweite",
         "Uhrwerk: Lineare Wirkungsweise deaktiviert",
         "Clepsydre: Veränderbare Reichweite",
         "Desynchronisation: –1 AP",
@@ -35345,7 +35345,7 @@
       ],
       "es": [
         "Engranaje: +1 de alcance máximo",
-        "Cuentagotas: lanzamiento en línea desactivado",
+        "Cuentagotas: +3 de alcance máximo",
         "Reloj: lanzamiento en línea desactivado",
         "Reloj de Agua: alcance modificable",
         "Desincronización: -1 PA",
@@ -35355,7 +35355,7 @@
       ],
       "pt": [
         "Engrenagem: +1 de alcance máximo",
-        "Conta-Gotas: lançamento em linha desativado",
+        "Conta-Gotas: +3 de alcance máximo",
         "Relógio: lançamento em linha desativado",
         "Clepsidra: alcance modificável",
         "Dessincronização: -1 PA",
@@ -35365,7 +35365,7 @@
       ],
       "it": [
         "Gear: +1 Maximum Range",
-        "Dropper: straight-line casting off",
+        "Dropper: +3 Maximum Range",
         "Clock: straight-line casting off",
         "Water Clock: modifiable Range",
         "Desynchronisation: -1 AP",
@@ -35489,7 +35489,7 @@
       ],
       "fr": [
         "Tremblement : -1 PA",
-        "Mandragore : lancer en ligne désactivée",
+        "Mandragore : lancer en ligne désactivé",
         "Inoculation : -1 PA",
         "Force de la Nature : Portée modifiable",
         "Puissance Sylvestre : -1 de relance",
@@ -35573,7 +35573,7 @@
         "Décimation : +2 Portée maximale",
         "Attirance : ligne de vue désactivée",
         "Perfusion : -1 de relance",
-        "Ravage : lancer en ligne désactivée",
+        "Ravage : lancer en ligne désactivé",
         "Transfusion : +2 Portée maximale",
         "Liens du Sang : -1 de relance"
       ],
@@ -35636,64 +35636,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Repulsive Fang: straight-line casting off",
-        "Takeoff: +2 Maximum Range",
-        "Woolly Sledgehammer: +2 Maximum Range",
-        "Gobball Fleece: +2 Maximum Range",
-        "Canine: +1 Maximum Range",
-        "Gambol: +1 Maximum Range",
-        "Fossil: +2 Maximum Range",
-        "Sedimentation: +2 Maximum Range"
+        "Crobak Call: +2 Maximum Range",
+        "Fangs of Boowolf: modifiable Range",
+        "Prespic Peaks: +2 Maximum Range",
+        "Plucking: -1 AP",
+        "Piranya Teeth: modifiable Range",
+        "Wild Heart: modifiable Range",
+        "Bear Cry: +2 Maximum Range",
+        "Swamp: -1 AP"
       ],
       "fr": [
-        "Croc Répulsif : lancer en ligne désactivée",
-        "Envol : +2 Portée maximale",
-        "Pilon Laineux : +2 Portée maximale",
-        "Toison Bouffante : +2 Portée maximale",
-        "Canine : +1 Portée maximale",
-        "Gambade : +1 Portée maximale",
-        "Fossile : +2 Portée maximale",
-        "Sédimentation : +2 Portée maximale"
+        "Cri du Corbac : +2 Portée maximale",
+        "Crocs du Mulou : Portée modifiable",
+        "Pics du Prespic : +2 Portée maximale",
+        "Déplumage : -1 PA",
+        "Dents du Piranya : Portée modifiable",
+        "Cœur Sauvage : Portée modifiable",
+        "Cri de l'Ours : +2 Portée maximale",
+        "Marécage : -1 PA"
       ],
       "de": [
-        "Abstoßender Fangzahn: Lineare Wirkungsweise deaktiviert",
-        "Abheben: +2 Maximale Reichweite",
-        "Wolliger Stampfer: +2 Maximale Reichweite",
-        "Bauschiges Fell: +2 Maximale Reichweite",
-        "Reißzahn: +1 Maximale Reichweite",
-        "Luftsprung: +1 Maximale Reichweite",
-        "Fossil: +2 Maximale Reichweite",
-        "Senkung: +2 Maximale Reichweite"
+        "Schrei des Rablings: +2 Maximale Reichweite",
+        "Fangzähne des WuWulfs: Veränderbare Reichweite",
+        "Prespikstacheln: +2 Maximale Reichweite",
+        "Rupfen: –1 AP",
+        "Piranyazähne: Veränderbare Reichweite",
+        "Wildes Herz: Veränderbare Reichweite",
+        "Bärenschrei: +2 Maximale Reichweite",
+        "Sumpf: –1 AP"
       ],
       "es": [
-        "Colmillo Repulsivo: lanzamiento en línea desactivado",
-        "Levanta el Vuelo: +2 de alcance máximo",
-        "Muslo Lanoso: +2 de alcance máximo",
-        "Melena Voluminosa: +2 de alcance máximo",
-        "Colmillo: +1 de alcance máximo",
-        "Brinco: +1 de alcance máximo",
-        "Fósil: +2 de alcance máximo",
-        "Sedimentación: +2 de alcance máximo"
+        "Grito de Cuerbok: +2 de alcance máximo",
+        "Colmillos de Milubo: alcance modificable",
+        "Pinchos de Prespic: +2 de alcance máximo",
+        "Desplume: -1 PA",
+        "Dientes de Piranya: alcance modificable",
+        "Corazón Salvaje: alcance modificable",
+        "Grito del Oso: +2 de alcance máximo",
+        "Pantanal: -1 PA"
       ],
       "pt": [
-        "Presa Repulsiva: lançamento em linha desativado",
-        "Voo: +2 de alcance máximo",
-        "Pilão Lanoso: +2 de alcance máximo",
-        "Lã Farta: +2 de alcance máximo",
-        "Canino: +1 de alcance máximo",
-        "Rondada: +1 de alcance máximo",
-        "Fóssil: +2 de alcance máximo",
-        "Sedimentação: +2 de alcance máximo"
+        "Grito do Corvoc: +2 de alcance máximo",
+        "Presas do Milobo: alcance modificável",
+        "Espinhos de Prespic: +2 de alcance máximo",
+        "Depenagem: -1 PA",
+        "Dentes de Pyranha: alcance modificável",
+        "Coração Selvagem: alcance modificável",
+        "Grito do Urso: +2 de alcance máximo",
+        "Pântano: -1 PA"
       ],
       "it": [
-        "Repulsive Fang: straight-line casting off",
-        "Takeoff: +2 Maximum Range",
-        "Woolly Sledgehammer: +2 Maximum Range",
-        "Gobball Fleece: +2 Maximum Range",
-        "Canine: +1 Maximum Range",
-        "Gambol: +1 Maximum Range",
-        "Fossil: +2 Maximum Range",
-        "Sedimentation: +2 Maximum Range"
+        "Crobak Call: +2 Maximum Range",
+        "Fangs of Boowolf: modifiable Range",
+        "Prespic Peaks: +2 Maximum Range",
+        "Plucking: -1 AP",
+        "Piranya Teeth: modifiable Range",
+        "Wild Heart: modifiable Range",
+        "Bear Cry: +2 Maximum Range",
+        "Swamp: -1 AP"
       ]
     },
     "conditions": {
@@ -36222,7 +36222,7 @@
       "fr": [
         "Extorsion : +2 Portée maximale",
         "Perquisition : Portée modifiable",
-        "Arnaque : lancer en ligne désactivée",
+        "Arnaque : lancer en ligne désactivé",
         "Pillage : Portée modifiable",
         "Larcin : +2 Portée maximale",
         "Attaque Mortelle : +1 Portée maximale",
@@ -36470,7 +36470,7 @@
         "Malédiction Vaudou : -1 PA",
         "Sacrifice Vaudou : +1 lancer(s) par cible",
         "Chardons Ardents : -1 de relance",
-        "Ronce Apaisante : lancer en ligne désactivée",
+        "Ronce Apaisante : lancer en ligne désactivé",
         "Rempotage : Portée modifiable",
         "La Sacrifiée : -1 de relance",
         "La Sacrifiée Transmutée : -1 de relance"
@@ -36620,64 +36620,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Second: +1 Maximum Range",
-        "Natural Defence: line of sight off",
-        "Protective Balm: line of sight off",
-        "Fourth: +1 Maximum Range",
-        "Animal Tandem: line of sight off",
-        "Nature Preserve: -1 AP",
-        "Whip: +1 cast(s) per turn",
-        "Crop: +1 cast(s) per target"
+        "Whip: modifiable Range",
+        "Crop: modifiable Range",
+        "High-Energy Shot: modifiable Range",
+        "Animal Blessing: -1 AP",
+        "Discipline: modifiable Range",
+        "Swift Whip: modifiable Range",
+        "Gluttonous Spirit: +2 Maximum Range",
+        "Mischievous Spirit: +2 Maximum Range"
       ],
       "fr": [
-        "Second : +1 Portée maximale",
-        "Résistance Naturelle : ligne de vue désactivée",
-        "Baume Protecteur : ligne de vue désactivée",
-        "Quart : +1 Portée maximale",
-        "Tandem Animal : ligne de vue désactivée",
-        "Préserve Naturelle : -1 PA",
-        "Fouet : +1 lancer(s) par tour",
-        "Cravache : +1 lancer(s) par cible"
+        "Fouet : Portée modifiable",
+        "Cravache : Portée modifiable",
+        "Piqûre Motivante : Portée modifiable",
+        "Bénédiction Animale : -1 PA",
+        "Discipline : Portée modifiable",
+        "Martinet : Portée modifiable",
+        "Esprit Glouton : +2 Portée maximale",
+        "Esprit Facétieux : +2 Portée maximale"
       ],
       "de": [
-        "Sekunde: +1 Maximale Reichweite",
-        "Natürliche Abwehrkräfte: Sichtlinie deaktiviert",
-        "Schutzbalsam: Sichtlinie deaktiviert",
-        "Quarte: +1 Maximale Reichweite",
-        "Tandemtier: Sichtlinie deaktiviert",
-        "Naturreservat: –1 AP",
-        "Peitsche : +1 Zauber pro Runde",
-        "Reitgerte : +1 Zauber pro Ziel"
+        "Peitsche: Veränderbare Reichweite",
+        "Reitgerte: Veränderbare Reichweite",
+        "Motivationsspritze: Veränderbare Reichweite",
+        "Tiersegen: –1 AP",
+        "Disziplin: Veränderbare Reichweite",
+        "Klopfpeitsche: Veränderbare Reichweite",
+        "Gefräßiger Geist: +2 Maximale Reichweite",
+        "Spaßiger Geist: +2 Maximale Reichweite"
       ],
       "es": [
-        "Segundo: +1 de alcance máximo",
-        "Resistencia Natural: línea de visión desactivada",
-        "Bálsamo Protector: línea de visión desactivada",
-        "Cuarto: +1 de alcance máximo",
-        "Tándem Animal: línea de visión desactivada",
-        "Preserva Natural: -1 PA",
-        "Látigo: +1 lanzamiento(s) por turno",
-        "Fusta: +1 lanzamiento(s) por objetivo"
+        "Látigo: alcance modificable",
+        "Fusta: alcance modificable",
+        "Chute Motivador: alcance modificable",
+        "Bendición Animal: -1 PA",
+        "Disciplina: alcance modificable",
+        "Fuete: alcance modificable",
+        "Espíritu Glotón: +2 de alcance máximo",
+        "Espíritu Burlón: +2 de alcance máximo"
       ],
       "pt": [
-        "Secundo: +1 de alcance máximo",
-        "Resistência Natural: linha de visão desativada",
-        "Bálsamo Protetor: linha de visão desativada",
-        "Quarto: +1 de alcance máximo",
-        "Tandem Animal: linha de visão desativada",
-        "Preservação Natural: -1 PA",
-        "Chicote: +1 lançamento(s) por turno",
-        "Chibata: +1 lançamento(s) por alvo"
+        "Chicote: alcance modificável",
+        "Chibata: alcance modificável",
+        "Picada Motivante: alcance modificável",
+        "Benção Animal: -1 PA",
+        "Disciplina: alcance modificável",
+        "Chicotinho: alcance modificável",
+        "Espírito Glutão: +2 de alcance máximo",
+        "Espírito Travesso: +2 de alcance máximo"
       ],
       "it": [
-        "Second: +1 Maximum Range",
-        "Natural Defence: line of sight off",
-        "Protective Balm: line of sight off",
-        "Fourth: +1 Maximum Range",
-        "Animal Tandem: line of sight off",
-        "Nature Preserve: -1 AP",
-        "Whip: +1 cast(s) per turn",
-        "Crop: +1 cast(s) per target"
+        "Whip: modifiable Range",
+        "Crop: modifiable Range",
+        "High-Energy Shot: modifiable Range",
+        "Animal Blessing: -1 AP",
+        "Discipline: modifiable Range",
+        "Swift Whip: modifiable Range",
+        "Gluttonous Spirit: +2 Maximum Range",
+        "Mischievous Spirit: +2 Maximum Range"
       ]
     },
     "conditions": {
@@ -37042,7 +37042,7 @@
       "fr": [
         "Épée Divine : +2 Portée maximale",
         "Épée du Jugement : Portée modifiable",
-        "Déferlement : lancer en ligne désactivée",
+        "Déferlement : lancer en ligne désactivé",
         "Anneau Destructeur : +2 Portée maximale",
         "Vitalité : -1 PA",
         "Violence : -1 PA",
@@ -37218,7 +37218,7 @@
       "fr": [
         "Truanderie : +35% Critique",
         "Chausse-trappe : Portée modifiable",
-        "Arsenic : lancer en ligne désactivée",
+        "Arsenic : lancer en ligne désactivé",
         "Toxines : -1 PA",
         "Fourvoiement : +1 Portée maximale",
         "Perfidie : +1 Portée maximale",
@@ -37397,7 +37397,7 @@
         "Mot Interdit : Portée modifiable",
         "Mot Exsangue : ligne de vue désactivée",
         "Mot Fleuri : +35% Critique",
-        "Bosquet Enchanté : lancer en ligne désactivée",
+        "Bosquet Enchanté : lancer en ligne désactivé",
         "Cryothérapie : -1 PA",
         "Murmure : +2 Portée maximale"
       ],
@@ -37482,10 +37482,10 @@
       "fr": [
         "Ronce : +3 Portée maximale",
         "Ronce Insolente : -1 PA",
-        "Larme de Sadida : lancer en ligne désactivée",
+        "Larme de Sadida : lancer en ligne désactivé",
         "Montée de Sève : +1 lancer(s) par tour",
         "Fléau : Portée modifiable",
-        "Forêt Hantée : lancer en ligne désactivée",
+        "Forêt Hantée : lancer en ligne désactivé",
         "Arbre : -1 PA",
         "Arbre Feuillu : -1 PA"
       ],
@@ -37646,64 +37646,64 @@
     ],
     "customStats": {
       "en": [
-        "First: +1 Maximum Range",
-        "Favouritism: -1 AP",
-        "High-Energy Shot: -1 cooldown",
-        "Fifth: +1 Maximum Range",
-        "Duster: +1 Maximum Range",
-        "Dragon Heart: -1 AP",
-        "Crackler Punch: +2 Maximum Range",
-        "Batra: -1 AP"
+        "Leap-Froog: +1 Maximum Range",
+        "Feather Tornado: +1 Maximum Range",
+        "Tofurby: +2 Maximum Range",
+        "Crackolossus: +2 Maximum Range",
+        "Sweetoadie: +2 Maximum Range",
+        "Phoenix: +2 Maximum Range",
+        "Bestial Charge: straight-line casting off",
+        "Song of the Phoenix: +2 Maximum Range"
       ],
       "fr": [
-        "Prime : +1 Portée maximale",
-        "Favoritisme : -1 PA",
-        "Piqûre Motivante : -1 de relance",
-        "Quint : +1 Portée maximale",
-        "Plumeau : +1 Portée maximale",
-        "Cœur de Dragon : -1 PA",
-        "Frappe du Craqueleur : +2 Portée maximale",
-        "Batra : -1 PA"
+        "Saute-granouille : +1 Portée maximale",
+        "Tornade de Plumes : +1 Portée maximale",
+        "Ventritofu : +2 Portée maximale",
+        "Craquolosse : +2 Portée maximale",
+        "Crapipaud : +2 Portée maximale",
+        "Phoenix : +2 Portée maximale",
+        "Charge Bestiale : lancer en ligne désactivé",
+        "Chant du Phoenix : +2 Portée maximale"
       ],
       "de": [
-        "Prime: +1 Maximale Reichweite",
-        "Günstlingswirtschaft: –1 AP",
-        "Motivationsspritze: Abklingzeit verringert um –1",
-        "Quinte: +1 Maximale Reichweite",
-        "Staubwedel: +1 Maximale Reichweite",
-        "Herz eines Drachens: –1 AP",
-        "Krachlerfaust: +2 Maximale Reichweite",
-        "Krötenartig: –1 AP"
+        "Hüpffrusch: +1 Maximale Reichweite",
+        "Federtornado: +1 Maximale Reichweite",
+        "Dickbauchtofu: +2 Maximale Reichweite",
+        "Krachloss: +2 Maximale Reichweite",
+        "Kröterich: +2 Maximale Reichweite",
+        "Phönix: +2 Maximale Reichweite",
+        "Bestialischer Ansturm: Lineare Wirkungsweise deaktiviert",
+        "Gesang des Phönix: +2 Maximale Reichweite"
       ],
       "es": [
-        "Primero: +1 de alcance máximo",
-        "Favoritismo: -1 PA",
-        "Chute Motivador: -1 de reactivación",
-        "Quinto: +1 de alcance máximo",
-        "Plumero: +1 de alcance máximo",
-        "Corazón de Dragón: -1 PA",
-        "Golpe del Crujidor: +2 de alcance máximo",
-        "Batra: -1 PA"
+        "Salta la Ranadina: +1 de alcance máximo",
+        "Tornado de Plumas: +1 de alcance máximo",
+        "Gorditofu: +2 de alcance máximo",
+        "Crujintesco: +2 de alcance máximo",
+        "Saponcio: +2 de alcance máximo",
+        "Fénix: +2 de alcance máximo",
+        "Carga Bestial: lanzamiento en línea desactivado",
+        "Canto del Fénix: +2 de alcance máximo"
       ],
       "pt": [
-        "Primo: +1 de alcance máximo",
-        "Favoritismo: -1 PA",
-        "Picada Motivante: -1 de relançamento",
-        "Quinto: +1 de alcance máximo",
-        "Penacho: +1 de alcance máximo",
-        "Coração de Dragão: -1 PA",
-        "Golpe do Smagador: +2 de alcance máximo",
-        "Anfib: -1 PA"
+        "Pulo de Rãgorda: +1 de alcance máximo",
+        "Tornado de Penas: +1 de alcance máximo",
+        "Ventritofu: +2 de alcance máximo",
+        "Smagolosso: +2 de alcance máximo",
+        "Sapudo: +2 de alcance máximo",
+        "Fênix: +2 de alcance máximo",
+        "Carga Bestial: lançamento em linha desativado",
+        "Canto da Fênix: +2 de alcance máximo"
       ],
       "it": [
-        "First: +1 Maximum Range",
-        "Favouritism: -1 AP",
-        "High-Energy Shot: -1 cooldown",
-        "Fifth: +1 Maximum Range",
-        "Duster: +1 Maximum Range",
-        "Dragon Heart: -1 AP",
-        "Crackler Punch: +2 Maximum Range",
-        "Batra: -1 AP"
+        "Leap-Froog: +1 Maximum Range",
+        "Feather Tornado: +1 Maximum Range",
+        "Tofurby: +2 Maximum Range",
+        "Crackolossus: +2 Maximum Range",
+        "Sweetoadie: +2 Maximum Range",
+        "Phoenix: +2 Maximum Range",
+        "Bestial Charge: straight-line casting off",
+        "Song of the Phoenix: +2 Maximum Range"
       ]
     },
     "conditions": {
@@ -37943,7 +37943,7 @@
         "Ivresse : -1 PA",
         "Ébriété : -1 PA",
         "Vague à Lame : +35% Critique",
-        "Nausée : lancer en ligne désactivée"
+        "Nausée : lancer en ligne désactivé"
       ],
       "de": [
         "Pandjiu: Veränderbare Reichweite",
@@ -38023,7 +38023,7 @@
         "Carreaux Destructeurs : +35% Critique",
         "Œil de Taupe : -1 PA",
         "Flèche Écrasante : -1 PA",
-        "Flèche Persécutrice : lancer en ligne désactivée",
+        "Flèche Persécutrice : lancer en ligne désactivé",
         "Flèche Tyrannique : -1 PA",
         "Balise Tactique : +1 lancer(s) par tour"
       ],
@@ -38166,64 +38166,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Third: +1 Maximum Range",
-        "Relay: -1 cooldown",
-        "Call to Order: modifiable Range",
-        "Sixth: +1 Maximum Range",
-        "Dragon's Breath: -1 AP",
-        "Constriction: line of sight off",
-        "Whirlwind: -1 AP",
-        "Plucking: -1 AP"
+        "Draconic Breath: modifiable Range",
+        "Crackler Punch: +2 Maximum Range",
+        "Gobbulky: +2 Maximum Range",
+        "Crocurmudgeon: +2 Maximum Range",
+        "Wyrmling: +2 Maximum Range",
+        "Scarabolt: +2 Maximum Range",
+        "Air Ace: +2 Maximum Range",
+        "Whirlwind: +2 Maximum Range"
       ],
       "fr": [
-        "Tierce : +1 Portée maximale",
-        "Relais : -1 de relance",
-        "Rappel : Portée modifiable",
-        "Sixte : +1 Portée maximale",
-        "Souffle du Dragon : -1 PA",
-        "Constriction : ligne de vue désactivée",
-        "Tourbillon : -1 PA",
-        "Déplumage : -1 PA"
+        "Souffle Draconique : Portée modifiable",
+        "Frappe du Craqueleur : +2 Portée maximale",
+        "Bouflourd : +2 Portée maximale",
+        "Crocoléreux : +2 Portée maximale",
+        "Dragonnet : +2 Portée maximale",
+        "Scarafoudre : +2 Portée maximale",
+        "Aéropique : +2 Portée maximale",
+        "Tourbillon : +2 Portée maximale"
       ],
       "de": [
-        "Terz: +1 Maximale Reichweite",
-        "Relais: Abklingzeit verringert um –1",
-        "Zurückrufen: Veränderbare Reichweite",
-        "Sixte: +1 Maximale Reichweite",
-        "Drachenodem: –1 AP",
-        "Einschnürung: Sichtlinie deaktiviert",
-        "Wirbelwind: –1 AP",
-        "Rupfen: –1 AP"
+        "Drachenhauch: Veränderbare Reichweite",
+        "Krachlerfaust: +2 Maximale Reichweite",
+        "Fressplump: +2 Maximale Reichweite",
+        "Crocoleriker: +2 Maximale Reichweite",
+        "Drachennestling: +2 Maximale Reichweite",
+        "Scarablitz: +2 Maximale Reichweite",
+        "Aero-Ass: +2 Maximale Reichweite",
+        "Wirbelwind: +2 Maximale Reichweite"
       ],
       "es": [
-        "Tercero: +1 de alcance máximo",
-        "Relevo: -1 de reactivación",
-        "Llamada: alcance modificable",
-        "Sexto: +1 de alcance máximo",
-        "Soplido del Dragón: -1 PA",
-        "Constricción: línea de visión desactivada",
-        "Torbellino: -1 PA",
-        "Desplume: -1 PA"
+        "Soplido Dracónico: alcance modificable",
+        "Golpe del Crujidor: +2 de alcance máximo",
+        "Jalatorpe: +2 de alcance máximo",
+        "Cocolérico: +2 de alcance máximo",
+        "Dragonito: +2 de alcance máximo",
+        "Escararrayo: +2 de alcance máximo",
+        "Golpazo Aéreo: +2 de alcance máximo",
+        "Torbellino: +2 de alcance máximo"
       ],
       "pt": [
-        "Tércio: +1 de alcance máximo",
-        "Transmissor: -1 de relançamento",
-        "Retirada: alcance modificável",
-        "Sexto: +1 de alcance máximo",
-        "Sopro do Dragão: -1 PA",
-        "Constrição: linha de visão desativada",
-        "Redemoinho: -1 PA",
-        "Depenagem: -1 PA"
+        "Sopro Dragontino: alcance modificável",
+        "Golpe do Smagador: +2 de alcance máximo",
+        "Papabronco: +2 de alcance máximo",
+        "Crocolérico: +2 de alcance máximo",
+        "Dragoneto: +2 de alcance máximo",
+        "Scararraio: +2 de alcance máximo",
+        "Ás Aéreo: +2 de alcance máximo",
+        "Redemoinho: +2 de alcance máximo"
       ],
       "it": [
-        "Third: +1 Maximum Range",
-        "Relay: -1 cooldown",
-        "Call to Order: modifiable Range",
-        "Sixth: +1 Maximum Range",
-        "Dragon's Breath: -1 AP",
-        "Constriction: line of sight off",
-        "Whirlwind: -1 AP",
-        "Plucking: -1 AP"
+        "Draconic Breath: modifiable Range",
+        "Crackler Punch: +2 Maximum Range",
+        "Gobbulky: +2 Maximum Range",
+        "Crocurmudgeon: +2 Maximum Range",
+        "Wyrmling: +2 Maximum Range",
+        "Scarabolt: +2 Maximum Range",
+        "Air Ace: +2 Maximum Range",
+        "Whirlwind: +2 Maximum Range"
       ]
     },
     "conditions": {
@@ -38259,7 +38259,7 @@
       ],
       "fr": [
         "Couperet : +2 Portée maximale",
-        "Accumulation : lancer en ligne désactivée",
+        "Accumulation : lancer en ligne désactivé",
         "Concentration : +2 Portée maximale",
         "Sentence : ligne de vue désactivée",
         "Vertu : -1 PA",
@@ -38423,7 +38423,7 @@
       ],
       "fr": [
         "Abattement : +2 Portée maximale",
-        "Souterrain : lancer en ligne désactivée",
+        "Souterrain : lancer en ligne désactivé",
         "Bêche des Anciens : Portée modifiable",
         "Pelle des Anciens : +2 Portée maximale",
         "Gisement : Portée modifiable",
@@ -38591,7 +38591,7 @@
         "Eau-de-vie : +2 Portée maximale",
         "Bistouille : +35% Critique",
         "Lait de Bambou : -1 de relance",
-        "Prohibition : lancer en ligne désactivée",
+        "Prohibition : lancer en ligne désactivé",
         "Engourdissement : -1 PA",
         "Souffle Alcoolisé : +40% Critique"
       ],
@@ -38670,9 +38670,9 @@
       "fr": [
         "Piège de Dérive : +3 Portée maximale",
         "Piège Insidieux : +3 Portée maximale",
-        "Piège Mortel : lancer en ligne désactivée",
+        "Piège Mortel : lancer en ligne désactivé",
         "Calamité : -1 PA",
-        "Concentration de Chakra : lancer en ligne désactivée",
+        "Concentration de Chakra : lancer en ligne désactivé",
         "Manigance : -1 PA",
         "Invisibilité : -1 PA",
         "Brume : -1 PA"
@@ -39007,7 +39007,7 @@
         "Pelle Aurifère : +35% Critique",
         "Tourbière : -1 PA",
         "Ruée vers l'Or : -1 de relance",
-        "Déambulation : lancer en ligne désactivée",
+        "Déambulation : lancer en ligne désactivé",
         "Maladresse : +2 Portée maximale",
         "Âge d'Or : -1 de relance"
       ],
@@ -65163,7 +65163,7 @@
       "fr": [
         "Masque du Psychopathe : Portée modifiable",
         "Masque de l'Hystérique : Portée modifiable",
-        "Furia : lancer en ligne désactivée",
+        "Furia : lancer en ligne désactivé",
         "Bocciara : ligne de vue désactivée",
         "Cabriole : +1 Portée maximale",
         "Purgatorio : ligne de vue désactivée",
@@ -65246,8 +65246,8 @@
         "Poudre : ligne de vue désactivée",
         "Bombe Collante : +1 lancer(s) par tour",
         "Resquille : -1 PA",
-        "Arquebuse : lancer en ligne désactivée",
-        "Extraction : lancer en ligne désactivée",
+        "Arquebuse : lancer en ligne désactivé",
+        "Extraction : lancer en ligne désactivé",
         "Cadence : -1 PA",
         "Détonateur : +2 Portée maximale",
         "Étoupille : ligne de vue désactivée"
@@ -65325,7 +65325,7 @@
         "Retention: +2 Maximum Range"
       ],
       "fr": [
-        "Reuche : lancer en ligne désactivée",
+        "Reuche : lancer en ligne désactivé",
         "Scudo : -1 PA",
         "Ponteira : ligne de vue désactivée",
         "Agular : +2 Portée maximale",
@@ -99900,7 +99900,7 @@
         "Affront: line of sight off",
         "Offence: -1 AP",
         "Composure: +2 Maximum Range",
-        "Odyssey: -1 AP",
+        "Odyssey: modifiable Range",
         "Exodus: -1 AP",
         "Mutual Assistance: -1 cooldown",
         "Coalition: -1 AP"
@@ -99910,7 +99910,7 @@
         "Outrage : ligne de vue désactivée",
         "Offense : -1 PA",
         "Aplomb : +2 Portée maximale",
-        "Odyssée : -1 PA",
+        "Odyssée : Portée modifiable",
         "Exode : -1 PA",
         "Entraide : -1 de relance",
         "Coalition : -1 PA"
@@ -99920,7 +99920,7 @@
         "Beleidigung: Sichtlinie deaktiviert",
         "Brüskierung: –1 AP",
         "Dreistigkeit: +2 Maximale Reichweite",
-        "Odyssee: –1 AP",
+        "Odyssee: Veränderbare Reichweite",
         "Exodus: –1 AP",
         "Gegenseitige Hilfe: Abklingzeit verringert um –1",
         "Koalition: –1 AP"
@@ -99930,7 +99930,7 @@
         "Afrenta: línea de visión desactivada",
         "Ofensiva: -1 PA",
         "Aplomo: +2 de alcance máximo",
-        "Odisea: -1 PA",
+        "Odisea: alcance modificable",
         "Éxodo: -1 PA",
         "Ayuda Mutua: -1 de reactivación",
         "Coalición: -1 PA"
@@ -99940,7 +99940,7 @@
         "Injúria: linha de visão desativada",
         "Ofensa: -1 PA",
         "Aprumo: +2 de alcance máximo",
-        "Odisseia: -1 PA",
+        "Odisseia: alcance modificável",
         "Êxodo: -1 PA",
         "Ajuda Mútua: -1 de relançamento",
         "Coalizão: -1 PA"
@@ -99950,7 +99950,7 @@
         "Affront: line of sight off",
         "Offence: -1 AP",
         "Composure: +2 Maximum Range",
-        "Odyssey: -1 AP",
+        "Odyssey: modifiable Range",
         "Exodus: -1 AP",
         "Mutual Assistance: -1 cooldown",
         "Coalition: -1 AP"
@@ -100070,14 +100070,14 @@
         "Cataclysm: straight-line casting off"
       ],
       "fr": [
-        "Brimade : lancer en ligne désactivée",
+        "Brimade : lancer en ligne désactivé",
         "Sermon : -1 PA",
         "Poing Fulgurant : Portée modifiable",
         "Insolence : +2 Portée maximale",
         "Thérapie : +1 Portée maximale",
         "Camouflet : +2 Portée maximale",
         "Extinction : +2 Portée maximale",
-        "Cataclysme : lancer en ligne désactivée"
+        "Cataclysme : lancer en ligne désactivé"
       ],
       "de": [
         "Schikane: Lineare Wirkungsweise deaktiviert",
@@ -105800,7 +105800,7 @@
         "Orage : ligne de vue désactivée",
         "Manifestation : -1 PA",
         "Lance-flamme : +40% Critique",
-        "Onde Céleste : lancer en ligne désactivée",
+        "Onde Céleste : lancer en ligne désactivé",
         "Brèche Tectonique : +1 lancer(s) par tour",
         "Rafale Transperçante : +2 Portée maximale",
         "Stalactite : +1 Portée maximale"
@@ -106044,7 +106044,7 @@
       "fr": [
         "Polarité : +1 Portée maximale",
         "Courant Quadramental : +1 lancer(s) par tour",
-        "Drain Élémentaire : lancer en ligne désactivée",
+        "Drain Élémentaire : lancer en ligne désactivé",
         "Morph : +1 lancer(s) par cible",
         "Traitement Runique : ligne de vue désactivée",
         "Surcharge Runique : +1 Portée maximale",
@@ -106130,7 +106130,7 @@
         "Stalagmite : Portée modifiable",
         "Tison : Portée modifiable",
         "Lame Tellurique : ligne de vue désactivée",
-        "Éclats Glacés : lancer en ligne désactivée",
+        "Éclats Glacés : lancer en ligne désactivé",
         "Comète : +35% Critique"
       ],
       "de": [
@@ -113943,7 +113943,7 @@
         "Pelage Protecteur : -1 PA",
         "Férocité : -1 PA",
         "Flair : -1 PA",
-        "Acharnement : lancer en ligne désactivée",
+        "Acharnement : lancer en ligne désactivé",
         "Aboi : +1 lancer(s) par cible"
       ],
       "de": [
@@ -114023,8 +114023,8 @@
         "Humérus : +1 Portée maximale",
         "Amarok : ligne de vue désactivée",
         "Cerbère : -1 PA",
-        "Convergence : lancer en ligne désactivée",
-        "Pistage : lancer en ligne désactivée",
+        "Convergence : lancer en ligne désactivé",
+        "Pistage : lancer en ligne désactivé",
         "Arcanin : +1 lancer(s) par tour",
         "Caninos : +1 lancer(s) par tour"
       ],
@@ -114107,8 +114107,8 @@
         "Muselière : -1 PA",
         "Charogne : ligne de vue désactivée",
         "Radius : ligne de vue désactivée",
-        "Traque : lancer en ligne désactivée",
-        "Dépeçage : lancer en ligne désactivée"
+        "Traque : lancer en ligne désactivé",
+        "Dépeçage : lancer en ligne désactivé"
       ],
       "de": [
         "Molosser: +30 % Kritische Treffer",
@@ -114185,11 +114185,11 @@
       "fr": [
         "Vertèbre : -1 PA",
         "Cubitus : ligne de vue désactivée",
-        "Calcanéus : lancer en ligne désactivée",
+        "Calcanéus : lancer en ligne désactivé",
         "Apaisement : -1 PA",
         "Affection : -1 PA",
         "Panique : +1 lancer(s) par tour",
-        "Poursuite : lancer en ligne désactivée",
+        "Poursuite : lancer en ligne désactivé",
         "Chasse : ligne de vue désactivée"
       ],
       "de": [
@@ -122977,7 +122977,7 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Memory of Money:\n• When the bearer falls below 20% health, they are healed for 20% of their health at the start of their next turn (once per fight)."
+        "Memory of Silver:\n• When the bearer falls below 20% health, they are healed for 20% of their health at the start of their next turn (once per fight)."
       ],
       "fr": [
         "Souvenir d'Argent :\n• Lorsque le porteur descend sous les 20% de sa vie, il est soigné de 20% de sa vie au début de son prochain tour (1 fois par combat)."
@@ -122992,7 +122992,7 @@
         "Lembrança de Prata:\n• Quando o lançador estiver com menos de 20% de sua vida, ele será curado em 20% da vida no começo do próximo turno dele (1 vez por combate)."
       ],
       "it": [
-        "Memory of Money:\n• When the bearer falls below 20% health, they are healed for 20% of their health at the start of their next turn (once per fight)."
+        "Memory of Silver:\n• When the bearer falls below 20% health, they are healed for 20% of their health at the start of their next turn (once per fight)."
       ]
     },
     "conditions": {
@@ -123767,7 +123767,7 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Promise of Money:\n• When the bearer falls below 20% health, they are healed for 30% of their health and gain 20% final damage for 1 turn at the start of their next turn (once per fight)."
+        "Promise of Silver:\n• When the bearer falls below 20% health, they are healed for 30% of their health and gain 20% final damage for 1 turn at the start of their next turn (once per fight)."
       ],
       "fr": [
         "Promesse d'Argent :\n• Lorsque le porteur descend sous les 20% de sa vie, il est soigné de 30% de sa vie et gagne 20% de dommages finaux pendant 1 tour au début de son prochain tour (1 fois par combat)."
@@ -123782,7 +123782,7 @@
         "Promessa de Prata:\n• Quando o lançador estiver com menos de 20% de sua vida, ele será curado em 30% da vida e ganhará 20% de danos finais durante 1 turno no começo do próximo turno dele (1 vez por combate)."
       ],
       "it": [
-        "Promise of Money:\n• When the bearer falls below 20% health, they are healed for 30% of their health and gain 20% final damage for 1 turn at the start of their next turn (once per fight)."
+        "Promise of Silver:\n• When the bearer falls below 20% health, they are healed for 30% of their health and gain 20% final damage for 1 turn at the start of their next turn (once per fight)."
       ]
     },
     "conditions": {
@@ -128214,7 +128214,7 @@
       "it": "War's Gauntlet"
     },
     "itemType": "Ring",
-    "setID": null,
+    "setID": "475",
     "level": 200,
     "stats": [
       {
@@ -138262,7 +138262,7 @@
       "it": "Dark Vlad's Ring"
     },
     "itemType": "Ring",
-    "setID": null,
+    "setID": "943",
     "level": 200,
     "stats": [
       {
@@ -138317,5 +138317,2153 @@
       "customConditions": {}
     },
     "imageUrl": "item/9387.png"
+  },
+  {
+    "dofusID": "31749",
+    "name": {
+      "en": "Bzzegg Supervisor's Helmet",
+      "fr": "Casque du Supervizœuf",
+      "de": "Helm des Supervizeis",
+      "es": "Casco del Bzupervibzor",
+      "pt": "Capacete do Supervizovo",
+      "it": "Bzzegg Supervisor's Helmet"
+    },
+    "itemType": "Hat",
+    "setID": "1011",
+    "level": 180,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Fire Resistance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Heals",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16858.png"
+  },
+  {
+    "dofusID": "31750",
+    "name": {
+      "en": "Bzzegg Supervisor's Winged Shell",
+      "fr": "Carapace ailée du Supervizœuf",
+      "de": "Geflügelter Panzer des Supervizeis",
+      "es": "Caparazón alado del Bzupervibzor",
+      "pt": "Casco Alado do Supervizovo",
+      "it": "Bzzegg Supervisor's Winged Shell"
+    },
+    "itemType": "Cloak",
+    "setID": "1011",
+    "level": 178,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Agility",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Air Resistance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Heals",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 5
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/17655.png"
+  },
+  {
+    "dofusID": "31751",
+    "name": {
+      "en": "Bzzegg Supervisor's Armour-Plating",
+      "fr": "Blindage du Supervizœuf",
+      "de": "Panzerung des Supervizeis",
+      "es": "Blindaje del Bzupervibzor",
+      "pt": "Blindagem do Supervizovo",
+      "it": "Bzzegg Supervisor's Armour-Plating"
+    },
+    "itemType": "Shield",
+    "setID": "1011",
+    "level": 182,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 131,
+        "maxStat": 180
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Neutral Resistance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Heals",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": 3
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82547.png"
+  },
+  {
+    "dofusID": "31753",
+    "name": {
+      "en": "Bzzegg Supervisor's Fist",
+      "fr": "Poing du Supervizœuf",
+      "de": "Faust des Supervizeis",
+      "es": "Puño del Bzupervibzor",
+      "pt": "Punho do Supervizovo",
+      "it": "Bzzegg Supervisor's Fist"
+    },
+    "itemType": "Ring",
+    "setID": "1011",
+    "level": 179,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Strength",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Power",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Earth Resistance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Damage",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Heals",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9388.png"
+  },
+  {
+    "dofusID": "31756",
+    "name": {
+      "en": "The Ripper's Mane",
+      "fr": "Crinière de la Déchireuse",
+      "de": "Mähne der Reißerin",
+      "es": "Cabello de la Despedazadora",
+      "pt": "Juba da Dilaceradora",
+      "it": "The Ripper's Mane"
+    },
+    "itemType": "Hat",
+    "setID": "1016",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 450
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Chance",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": -1
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 16,
+        "maxStat": 25
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16860.png"
+  },
+  {
+    "dofusID": "31757",
+    "name": {
+      "en": "The Ripper's Trophy",
+      "fr": "Trophée de la Déchireuse",
+      "de": "Trophäe der Reißerin",
+      "es": "Trofeo de la Despedazadora",
+      "pt": "Troféu da Dilaceradora",
+      "it": "The Ripper's Trophy"
+    },
+    "itemType": "Shield",
+    "setID": "1016",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82549.png"
+  },
+  {
+    "dofusID": "31761",
+    "name": {
+      "en": "Rhoarim Necklace",
+      "fr": "Collier Rhoarim",
+      "de": "Rhoarim-Halskette",
+      "es": "Collar rhoarim",
+      "pt": "Colar Reirrim",
+      "it": "Rhoarim Necklace"
+    },
+    "itemType": "Amulet",
+    "setID": "1015",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 201,
+        "maxStat": 300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Lock",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1329.png"
+  },
+  {
+    "dofusID": "31762",
+    "name": {
+      "en": "Rhoarim Loincloth",
+      "fr": "Pagne Rhoarim",
+      "de": "Rhoarim-Lendenschurz",
+      "es": "Taparrabos rhoarim",
+      "pt": "Tanga Reirrim",
+      "it": "Rhoarim Loincloth"
+    },
+    "itemType": "Belt",
+    "setID": "1015",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10358.png"
+  },
+  {
+    "dofusID": "31765",
+    "name": {
+      "en": "Oddniboots",
+      "fr": "Zarbottes",
+      "de": "Kornistiefel",
+      "es": "Raribotas",
+      "pt": "Herbotas",
+      "it": "Oddniboots"
+    },
+    "itemType": "Boots",
+    "setID": "1013",
+    "level": 197,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Lock",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/11380.png"
+  },
+  {
+    "dofusID": "31766",
+    "name": {
+      "en": "Oddnivarness",
+      "fr": "Zarbaudrier",
+      "de": "Karni-Schulterriemen",
+      "es": "Rariarnés",
+      "pt": "Herboldrié",
+      "it": "Oddnivarness"
+    },
+    "itemType": "Belt",
+    "setID": "1013",
+    "level": 197,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Lock",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10359.png"
+  },
+  {
+    "dofusID": "31767",
+    "name": {
+      "en": "Voyager Shield",
+      "fr": "Bouclier des Voyageurs",
+      "de": "Schild der Reisenden",
+      "es": "Escudo de los viajeros",
+      "pt": "Escudo dos Viajantes",
+      "it": "Voyager Shield"
+    },
+    "itemType": "Shield",
+    "setID": "1017",
+    "level": 197,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 21,
+        "maxStat": 25
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 5,
+        "maxStat": 8
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82345.png"
+  },
+  {
+    "dofusID": "31768",
+    "name": {
+      "en": "Voyager Hood",
+      "fr": "Capuche des Voyageurs",
+      "de": "Kapuze der Reisenden",
+      "es": "Capucha de los viajeros",
+      "pt": "Capuz dos Viajantes",
+      "it": "Voyager Hood"
+    },
+    "itemType": "Hat",
+    "setID": "1017",
+    "level": 197,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Power",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16863.png"
+  },
+  {
+    "dofusID": "31769",
+    "name": {
+      "en": "Voyager Portal",
+      "fr": "Portail des Voyageurs",
+      "de": "Portal der Reisenden",
+      "es": "Portal de los viajeros",
+      "pt": "Portal dos Viajantes",
+      "it": "Voyager Portal"
+    },
+    "itemType": "Cloak",
+    "setID": "1017",
+    "level": 197,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Power",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/81075.png"
+  },
+  {
+    "dofusID": "31770",
+    "name": {
+      "en": "Voyager Glove",
+      "fr": "Gant des Voyageurs",
+      "de": "Handschuh der Reisenden",
+      "es": "Guante de los viajeros",
+      "pt": "Luva dos Viajantes",
+      "it": "Voyager Glove"
+    },
+    "itemType": "Ring",
+    "setID": "1017",
+    "level": 197,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Lock",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Damage",
+        "minStat": 5,
+        "maxStat": 8
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9390.png"
+  },
+  {
+    "dofusID": "31771",
+    "name": {
+      "en": "Voyager Boots",
+      "fr": "Bottes des Voyageurs",
+      "de": "Stiefel der Reisenden",
+      "es": "Botas de los viajeros",
+      "pt": "Botas dos Viajantes",
+      "it": "Voyager Boots"
+    },
+    "itemType": "Boots",
+    "setID": "1017",
+    "level": 197,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/11381.png"
+  },
+  {
+    "dofusID": "31772",
+    "name": {
+      "en": "Voyager Belt",
+      "fr": "Ceinture des Voyageurs",
+      "de": "Gürtel der Reisenden",
+      "es": "Cinturón de los viajeros",
+      "pt": "Cinto dos Viajantes",
+      "it": "Voyager Belt"
+    },
+    "itemType": "Belt",
+    "setID": "1017",
+    "level": 197,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Lock",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Damage",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10361.png"
+  },
+  {
+    "dofusID": "31774",
+    "name": {
+      "en": "Oktapodas Helm",
+      "fr": "Heaume Tapodas",
+      "de": "Tapodas-Helm",
+      "es": "Yelmo Tapodas",
+      "pt": "Elmo Tapodas",
+      "it": "Oktapodas Helm"
+    },
+    "itemType": "Hat",
+    "setID": null,
+    "level": 198,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -7
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": -1
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {
+        "or": [
+          {
+            "stat": "AP",
+            "operator": "<",
+            "value": 12
+          },
+          {
+            "stat": "MP",
+            "operator": "<",
+            "value": 6
+          }
+        ]
+      },
+      "customConditions": {}
+    },
+    "imageUrl": "item/16859.png"
+  },
+  {
+    "dofusID": "31788",
+    "name": {
+      "en": "Gargandyas's Ram",
+      "fr": "Écaille de Gargandyas",
+      "de": "Widder des Gargandyas",
+      "es": "Ariete de Gargandias",
+      "pt": "Aríete de Gargandyas",
+      "it": "Gargandyas's Ram"
+    },
+    "itemType": "Shield",
+    "setID": "1018",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 26,
+        "maxStat": 30
+      },
+      {
+        "stat": "% Ranged Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {
+        "stat": "VITALITY",
+        "operator": ">",
+        "value": 3949
+      },
+      "customConditions": {}
+    },
+    "imageUrl": "item/82344.png"
+  },
+  {
+    "dofusID": "31789",
+    "name": {
+      "en": "Gargandyas's Necklace",
+      "fr": "Collier de Gargandyas",
+      "de": "Halskette des Gargandyas",
+      "es": "Collar de Gargandias",
+      "pt": "Colar de Gargandyas",
+      "it": "Gargandyas's Necklace"
+    },
+    "itemType": "Amulet",
+    "setID": "1018",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 451,
+        "maxStat": 500
+      },
+      {
+        "stat": "Power",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 2
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": -1
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 2
+      },
+      {
+        "stat": "% Melee Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Ranged Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1328.png"
+  },
+  {
+    "dofusID": "31792",
+    "name": {
+      "en": "Kabombz Loincloth",
+      "fr": "Pagne de Kabombz",
+      "de": "Kabombz-Lendenschurz",
+      "es": "Taparrabos de kabombz",
+      "pt": "Tanga de Kabombz",
+      "it": "Kabombz Loincloth"
+    },
+    "itemType": "Belt",
+    "setID": "1012",
+    "level": 171,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Heals",
+        "minStat": 5,
+        "maxStat": 8
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10360.png"
+  },
+  {
+    "dofusID": "31793",
+    "name": {
+      "en": "Bzzegg Basket",
+      "fr": "Panier de zœufs",
+      "de": "Zeier-Korb",
+      "es": "Cesta de bzuevos",
+      "pt": "Cesta de Zovos",
+      "it": "Bzzegg Basket"
+    },
+    "itemType": "Cloak",
+    "setID": "1012",
+    "level": 172,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Heals",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Summons",
+        "minStat": 1,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/81074.png"
+  },
+  {
+    "dofusID": "31794",
+    "name": {
+      "en": "Dofzzbz",
+      "fr": "Dofoozbz",
+      "de": "Dsfssbs",
+      "es": "Dofzzbz",
+      "pt": "Dofzzbz",
+      "it": "Dofzzbz"
+    },
+    "itemType": "Dofus",
+    "setID": null,
+    "level": 170,
+    "stats": [
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {
+      "en": [
+        "Explosive Hatching:\n• When one of the bearer's summons is attacked, the bearer gains 1% final damage for 2 turns (stackable 10 times).\n• If it is killed by an enemy, the bearer inflicts 6 to 8 damage in their best element on enemies in a 2-cell circle around the summons."
+      ],
+      "fr": [
+        "Éclosion Explosive :\n• Lorsqu'une invocation du porteur est attaquée, le porteur gagne 1% de dommages finaux pendant 2 tours (cumulable 10 fois).\n• Si elle est achevée par un ennemi, le porteur occasionne 6 à 8 dommages dans son meilleur élément aux ennemis dans un cercle de taille 2 autour d'elle."
+      ],
+      "de": [
+        "Explosives Ausschlüpfen:\n• Wenn eine Beschwörung des Trägers angegriffen wird, erhöht sich der Endschaden des Trägers 2 Runden lang um 1 % (10-mal kumulierbar).\n• Wenn sie von einem Gegner besiegt wurde, fügt der Träger Gegnern im Umkreis von 2 Feldern um sie 6–8 Schaden in seinem besten Element zu."
+      ],
+      "es": [
+        "Eclosión Explosiva:\n• Cuando una invocación del portador es atacada, el portador gana un 1% de daños finales durante 2 turnos (acumulable 10 veces).\n• Si muere a manos de un enemigo, el portador ocasiona 6 a 8 de daño con su mejor elemento a los enemigos en un círculo de tamaño 2 alrededor de esta."
+      ],
+      "pt": [
+        "Eclosão Explosiva:\n• Quando uma invocação do portador é atacada, ele recebe 1% de danos finais por 2 turnos (acumula 10 vezes).\n• Se ela for eliminada por um inimigo, o portador inflige de 6 a 8 de danos em seu melhor elemento aos inimigos em um círculo de tamanho 2 ao redor dela."
+      ],
+      "it": [
+        "Explosive Hatching:\n• When one of the bearer's summons is attacked, the bearer gains 1% final damage for 2 turns (stackable 10 times).\n• If it is killed by an enemy, the bearer inflicts 6 to 8 damage in their best element on enemies in a 2-cell circle around the summons."
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/23039.png"
+  },
+  {
+    "dofusID": "31796",
+    "name": {
+      "en": "Oddnishield",
+      "fr": "Zarbouclier",
+      "de": "Kornischild",
+      "es": "Rariescudo",
+      "pt": "Herbiscudo",
+      "it": "Oddnishield"
+    },
+    "itemType": "Shield",
+    "setID": "1013",
+    "level": 197,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82548.png"
+  },
+  {
+    "dofusID": "31797",
+    "name": {
+      "en": "Sleeping Venerable One's Coat",
+      "fr": "Manteau du Vénérable Endormi",
+      "de": "Mantel des Ehrwürdigen Schläfers",
+      "es": "Abrigo del Venerable Durmiente",
+      "pt": "Casaco do Venerável Adormecido",
+      "it": "Sleeping Venerable One's Coat"
+    },
+    "itemType": "Cloak",
+    "setID": "1014",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": null,
+        "maxStat": -200
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 71,
+        "maxStat": 100
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 26,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Heals",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/17657.png"
+  },
+  {
+    "dofusID": "31798",
+    "name": {
+      "en": "Sleeping Venerable One's Horns",
+      "fr": "Cornes du Vénérable Endormi",
+      "de": "Hörner des Ehrwürdigen Schläfers",
+      "es": "Cuernos del Venerable Durmiente",
+      "pt": "Chifres do Venerável Adormecido",
+      "it": "Sleeping Venerable One's Horns"
+    },
+    "itemType": "Hat",
+    "setID": "1014",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": null,
+        "maxStat": -300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 450
+      },
+      {
+        "stat": "Strength",
+        "minStat": 71,
+        "maxStat": 100
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Heals",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16862.png"
+  },
+  {
+    "dofusID": "31799",
+    "name": {
+      "en": "Sleeping Venerable One's Curse",
+      "fr": "Malédiction du Vénérable Endormi",
+      "de": "Fluch des Ehrwürdigen Schläfers",
+      "es": "Maldición del Venerable Durmiente",
+      "pt": "Maldição do Venerável Adormecido",
+      "it": "Sleeping Venerable One's Curse"
+    },
+    "itemType": "Ring",
+    "setID": "1014",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": null,
+        "maxStat": -300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 71,
+        "maxStat": 100
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9389.png"
   }
 ]
