@@ -19,6 +19,8 @@
     "AIR_HEALING": "Air healing",
     "AIR_STEAL": "Air steal",
     "AP": "AP (target)",
+    "ATTRACT_CELLS": "Cell attraction",
+    "BEST_ELEMENT_DAMAGE": "Best element damage",
     "EARTH_DAMAGE": "Earth damage",
     "EARTH_HEALING": "Earth healing",
     "EARTH_STEAL": "Earth steal",
@@ -30,6 +32,8 @@
     "NEUTRAL_DAMAGE": "Neutral damage",
     "NEUTRAL_HEALING": "Neutral healing",
     "NEUTRAL_STEAL": "Neutral steal",
+    "PUSHBACK_DAMAGE": "Cell pushback",
+    "STEALS_MP": "MP steal",
     "WATER_DAMAGE": "Water damage",
     "WATER_HEALING": "Water healing",
     "WATER_STEAL": "Water steal"
