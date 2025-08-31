@@ -205,7 +205,7 @@ function Layout({ children }: LayoutProps) {
           <MenuOutlined />
         </Button>
         <Drawer
-          visible={showDrawer}
+          open={showDrawer}
           closable
           onClose={closeDrawer}
           css={{
@@ -389,22 +389,22 @@ function Layout({ children }: LayoutProps) {
       </AntdLayout.Content>
 
       <LoginModal
-        visible={showLoginModal}
+        open={showLoginModal}
         onClose={closeLoginModal}
         openSignUpModal={openSignUpModal}
       />
       <SignUpModal
-        visible={showSignUpModal}
+        open={showSignUpModal}
         onClose={closeSignUpModal}
         openLoginModal={openLoginModal}
       />
       <ChangePasswordModal
-        visible={showPasswordModal}
+        open={showPasswordModal}
         onClose={closePasswordModal}
       />
 
       <DefaultBuildSettingsModal
-        visible={showBuildSettings}
+        open={showBuildSettings}
         onClose={closeBuildSettings}
       />
     </AntdLayout>

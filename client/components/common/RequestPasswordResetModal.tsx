@@ -14,11 +14,11 @@ import requestPasswordResetMutation from 'graphql/mutations/requestPasswordReset
 import { inputFontSize } from 'common/mixins';
 
 interface Props {
-  visible: boolean;
+  open: boolean;
   onClose: () => void;
 }
 
-const RequestPasswordResetModal: React.FC<Props> = ({ visible, onClose }) => {
+const RequestPasswordResetModal: React.FC<Props> = ({ open, onClose }) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 
@@ -50,7 +50,7 @@ const RequestPasswordResetModal: React.FC<Props> = ({ visible, onClose }) => {
       title={
         <div css={{ fontSize: '0.9rem' }}>{t('REQUEST_PASSWORD_RESET')}</div>
       }
-      visible={visible}
+      open={open}
       onCancel={onClose}
       bodyStyle={{
         display: 'flex',

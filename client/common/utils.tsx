@@ -659,22 +659,22 @@ export const useCustomSet = (customSetId: string | null) => {
 };
 
 export const useSetModal = () => {
-  const [setModalVisible, setSetModalVisible] = React.useState(false);
+  const [setModalOpen, setSetModalOpen] = React.useState(false);
   const [selectedSet, setSelectedSet] = React.useState<ItemSet | null>(null);
 
   const openSetModal = React.useCallback(
     (set: ItemSet) => {
       setSelectedSet(set);
-      setSetModalVisible(true);
+      setSetModalOpen(true);
     },
-    [setSelectedSet, setSetModalVisible],
+    [setSelectedSet, setSetModalOpen],
   );
 
   const closeSetModal = React.useCallback(() => {
-    setSetModalVisible(false);
-  }, [setSetModalVisible]);
+    setSetModalOpen(false);
+  }, [setSetModalOpen]);
 
-  return { setModalVisible, selectedSet, openSetModal, closeSetModal };
+  return { setModalOpen, selectedSet, openSetModal, closeSetModal };
 };
 
 export const getStatWithDefault = (

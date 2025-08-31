@@ -15,11 +15,11 @@ import { PASSWORD_REGEX } from 'common/constants';
 import { inputFontSize } from 'common/mixins';
 
 interface Props {
-  visible: boolean;
+  open: boolean;
   onClose: () => void;
 }
 
-const ChangePasswordModal: React.FC<Props> = ({ visible, onClose }) => {
+const ChangePasswordModal: React.FC<Props> = ({ open, onClose }) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 
@@ -47,7 +47,7 @@ const ChangePasswordModal: React.FC<Props> = ({ visible, onClose }) => {
   return (
     <Modal
       title={t('CHANGE_PASSWORD')}
-      visible={visible}
+      open={open}
       onCancel={onClose}
       bodyStyle={{
         display: 'flex',

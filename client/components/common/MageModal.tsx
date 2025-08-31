@@ -39,7 +39,7 @@ import MageInputNumber from './MageInputNumber';
 const { Option } = Select;
 
 interface Props {
-  visible: boolean;
+  open: boolean;
   equippedItem: EquippedItem;
   closeMageModal: (e: React.MouseEvent<HTMLElement>) => void;
   customSetId: string;
@@ -124,7 +124,7 @@ const calcStatsDiff = (
 ];
 
 const MageModal: React.FC<Props> = ({
-  visible,
+  open,
   equippedItem,
   closeMageModal,
   customSetId,
@@ -224,7 +224,7 @@ const MageModal: React.FC<Props> = ({
     <ClassNames>
       {({ css }) => (
         <Modal
-          visible={visible}
+          open={open}
           title={t('MAGE_MODAL_TITLE', {
             ns: 'mage',
             itemName: equippedItem.item.name,

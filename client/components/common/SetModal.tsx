@@ -21,7 +21,7 @@ import BasicItemWithStats from '../desktop/BasicItemWithStats';
 interface Props {
   setId: string;
   setName: string;
-  visible: boolean;
+  open: boolean;
   onCancel: () => void;
   customSet?: CustomSet | null;
   shouldRedirect?: boolean;
@@ -61,7 +61,7 @@ function checkIfItemsCanAllBeEquipped(
 const SetModal: React.FC<Props> = ({
   setId,
   setName,
-  visible,
+  open,
   onCancel,
   customSet,
   shouldRedirect,
@@ -103,7 +103,7 @@ const SetModal: React.FC<Props> = ({
 
   React.useEffect(() => {
     const listener = (e: KeyboardEvent) => {
-      if (!data || !visible) return;
+      if (!data || !open) return;
       if (e.key === 'Enter') {
         onOk();
       }
@@ -113,7 +113,7 @@ const SetModal: React.FC<Props> = ({
     return () => {
       window.removeEventListener('keydown', listener);
     };
-  }, [data, visible, onOk]);
+  }, [data, open, onOk]);
 
   let bodyContent = null;
 
@@ -203,7 +203,7 @@ const SetModal: React.FC<Props> = ({
   return (
     <Modal
       title={setName}
-      visible={visible}
+      open={open}
       onCancel={onCancel}
       zIndex={1031}
       confirmLoading={mutationLoading}

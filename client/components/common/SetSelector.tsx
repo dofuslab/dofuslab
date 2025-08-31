@@ -41,15 +41,15 @@ const SetSelector: React.FC<Props> = ({
   const [selectedSet, setSelectedSet] = React.useState<SetWithItems | null>(
     null,
   );
-  const [setModalVisible, setSetModalVisible] = React.useState(false);
+  const [setModalOpen, setSetModalOpen] = React.useState(false);
 
   const openSetModal = React.useCallback((selected: SetWithItems) => {
     setSelectedSet(selected);
-    setSetModalVisible(true);
+    setSetModalOpen(true);
   }, []);
 
   const closeSetModal = React.useCallback(() => {
-    setSetModalVisible(false);
+    setSetModalOpen(false);
   }, []);
 
   const onLoadMore = React.useCallback(async () => {
@@ -82,7 +82,7 @@ const SetSelector: React.FC<Props> = ({
       if (Number.isInteger(keyIndex) && keyIndex >= 0 && keyIndex <= 8) {
         if (keyIndex < data.sets.edges.length) {
           setSelectedSet(data.sets.edges[keyIndex].node);
-          setSetModalVisible(true);
+          setSetModalOpen(true);
         }
       }
     };
@@ -135,7 +135,7 @@ const SetSelector: React.FC<Props> = ({
           setId={selectedSet.id}
           setName={selectedSet.name}
           onCancel={closeSetModal}
-          visible={setModalVisible}
+          open={setModalOpen}
           customSet={customSet}
           shouldRedirect={isMobile || isClassic}
         />

@@ -378,7 +378,7 @@ function Layout({ children, showSwitch }: LayoutProps) {
                     {t('MY_BUILDS', { ns: 'common' })}
                   </Button>
                   <Drawer
-                    visible={drawerVisible}
+                    open={drawerVisible}
                     closable
                     onClose={closeDrawer}
                     width="min(100%, 1000px)"
@@ -560,25 +560,25 @@ function Layout({ children, showSwitch }: LayoutProps) {
       </AntdLayout.Content>
 
       <LoginModal
-        visible={showLoginModal}
+        open={showLoginModal}
         onClose={closeLoginModal}
         openSignUpModal={openSignUpModal}
       />
       <SignUpModal
-        visible={showSignUpModal}
+        open={showSignUpModal}
         onClose={closeSignUpModal}
         openLoginModal={openLoginModal}
       />
       <ChangePasswordModal
-        visible={showPasswordModal}
+        open={showPasswordModal}
         onClose={closePasswordModal}
       />
       <DefaultBuildSettingsModal
-        visible={showBuildSettings}
+        open={showBuildSettings}
         onClose={closeBuildSettings}
       />
       <KeyboardShortcutsModal
-        visible={showKeyboardShortcuts}
+        open={showKeyboardShortcuts}
         onClose={closeKeyboardShortcuts}
       />
     </AntdLayout>

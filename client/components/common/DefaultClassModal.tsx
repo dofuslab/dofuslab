@@ -17,7 +17,7 @@ import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import DefaultClassButton from './DefaultClassButton';
 
 interface Props {
-  visible: boolean;
+  open: boolean;
   closeModal: () => void;
   customSet?: CustomSet | null;
   setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
@@ -34,7 +34,7 @@ const classContainerStyle = {
 };
 
 const DefaultClassModal: React.FC<Props> = ({
-  visible,
+  open,
   closeModal,
   customSet,
   setDofusClassId,
@@ -54,53 +54,66 @@ const DefaultClassModal: React.FC<Props> = ({
     customSet?.buildGender ??
     currentUserData?.currentUser?.settings.buildGender;
 
+  const tabs = [
+    {
+      key: BuildGender.FEMALE,
+      label: t('FEMALE'),
+      children: (
+        <div css={classContainerStyle}>
+          {sortedClasses &&
+            sortedClasses.map((dofusClass) => (
+              <DefaultClassButton
+                key={dofusClass.id}
+                dofusClass={dofusClass}
+                setDofusClassId={setDofusClassId}
+                closeModal={closeModal}
+                customSetId={customSet?.id}
+                isSelected={
+                  customSet?.defaultClass?.id === dofusClass.id &&
+                  customSet?.buildGender === BuildGender.FEMALE
+                }
+                buildGender={BuildGender.FEMALE}
+              />
+            ))}
+        </div>
+      ),
+    },
+    {
+      key: BuildGender.MALE,
+      label: t('MALE'),
+      children: (
+        <div css={classContainerStyle}>
+          {sortedClasses &&
+            sortedClasses.map((dofusClass) => (
+              <DefaultClassButton
+                key={dofusClass.id}
+                dofusClass={dofusClass}
+                setDofusClassId={setDofusClassId}
+                closeModal={closeModal}
+                customSetId={customSet?.id}
+                isSelected={
+                  customSet?.defaultClass?.id === dofusClass.id &&
+                  customSet?.buildGender === BuildGender.MALE
+                }
+                buildGender={BuildGender.MALE}
+              />
+            ))}
+        </div>
+      ),
+    },
+  ];
+
   return (
     <Modal
-      visible={visible}
+      open={open}
       title={t('SELECT_BUILD_CLASS')}
       footer={null}
       onCancel={closeModal}
     >
-      <Tabs defaultActiveKey={defaultBuildGender || BuildGender.FEMALE}>
-        <Tabs.TabPane tab={t('FEMALE')} key={BuildGender.FEMALE}>
-          <div css={classContainerStyle}>
-            {sortedClasses &&
-              sortedClasses.map((dofusClass) => (
-                <DefaultClassButton
-                  key={dofusClass.id}
-                  dofusClass={dofusClass}
-                  setDofusClassId={setDofusClassId}
-                  closeModal={closeModal}
-                  customSetId={customSet?.id}
-                  isSelected={
-                    customSet?.defaultClass?.id === dofusClass.id &&
-                    customSet?.buildGender === BuildGender.FEMALE
-                  }
-                  buildGender={BuildGender.FEMALE}
-                />
-              ))}
-          </div>
-        </Tabs.TabPane>
-        <Tabs.TabPane tab={t('MALE')} key={BuildGender.MALE}>
-          <div css={classContainerStyle}>
-            {sortedClasses &&
-              sortedClasses.map((dofusClass) => (
-                <DefaultClassButton
-                  key={dofusClass.id}
-                  dofusClass={dofusClass}
-                  setDofusClassId={setDofusClassId}
-                  closeModal={closeModal}
-                  customSetId={customSet?.id}
-                  isSelected={
-                    customSet?.defaultClass?.id === dofusClass.id &&
-                    customSet?.buildGender === BuildGender.MALE
-                  }
-                  buildGender={BuildGender.MALE}
-                />
-              ))}
-          </div>
-        </Tabs.TabPane>
-      </Tabs>
+      <Tabs
+        defaultActiveKey={defaultBuildGender || BuildGender.FEMALE}
+        items={tabs}
+      />
       <Divider />
       <div css={{ textAlign: 'center' }}>
         <DefaultClassButton
