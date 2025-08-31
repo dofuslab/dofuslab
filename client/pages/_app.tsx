@@ -30,8 +30,9 @@ import {
 import { AppliedBuffActionType } from 'common/types';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import 'antd/dist/antd.dark.css';
+
 import Head from 'next/head';
+import { ConfigProvider, theme } from 'antd';
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
@@ -106,15 +107,21 @@ const DofusLabApp: React.FC<Props> = ({
     <ApolloProvider client={apolloClient}>
       <MediaContextProvider>
         <ThemeProvider theme={darkTheme}>
-          <CustomSetContext.Provider value={customSetContextValue}>
-            <Head>
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-              />
-            </Head>
-            <Component {...pageProps} />
-          </CustomSetContext.Provider>
+          <ConfigProvider
+            theme={{
+              algorithm: theme.darkAlgorithm,
+            }}
+          >
+            <CustomSetContext.Provider value={customSetContextValue}>
+              <Head>
+                <meta
+                  name="viewport"
+                  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+                />
+              </Head>
+              <Component {...pageProps} />
+            </CustomSetContext.Provider>
+          </ConfigProvider>
         </ThemeProvider>
       </MediaContextProvider>
     </ApolloProvider>

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { BackTop } from 'antd';
+import { FloatButton } from 'antd';
 import { useTheme } from '@emotion/react';
 import uniqWith from 'lodash/uniqWith';
 import isEqual from 'lodash/isEqual';
@@ -199,7 +199,7 @@ const Selector: React.FC<Props> = ({
         )}
       </div>
       <NoSSR>
-        <BackTop
+        <FloatButton.BackTop
           target={() => {
             if (selectorDivRef.current && !isClassic && !isMobile) {
               return selectorDivRef.current;
