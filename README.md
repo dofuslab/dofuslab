@@ -182,7 +182,7 @@ Note that re-running this action can create duplicate items in the database, so 
 $ docker volume rm dofuslab_pgdata
 ```
 
-Once you have your database populated, you should be able to access your development Dofuslab instance at http://host.docker.internal:8080/.
+Once you have your database populated, you should be able to access your development Dofuslab instance at http://host.docker.internal:8080/. Note that if you're running a Docker daemon on Linux, you'll want to add `host.docker.internal` to your localhost definition, as that's a Docker Desktop feature that isn't set up for you.
 
 </p>
 </details>
