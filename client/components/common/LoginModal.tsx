@@ -19,12 +19,12 @@ import { inputFontSize } from 'common/mixins';
 import RequestPasswordResetModal from './RequestPasswordResetModal';
 
 interface Props {
-  visible: boolean;
+  open: boolean;
   onClose: () => void;
   openSignUpModal: () => void;
 }
 
-const LoginModal: React.FC<Props> = ({ visible, onClose, openSignUpModal }) => {
+const LoginModal: React.FC<Props> = ({ open, onClose, openSignUpModal }) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 
@@ -73,7 +73,7 @@ const LoginModal: React.FC<Props> = ({ visible, onClose, openSignUpModal }) => {
     <>
       <Modal
         title={t('LOGIN')}
-        visible={visible}
+        open={open}
         onCancel={onClose}
         bodyStyle={{
           display: 'flex',
@@ -178,7 +178,7 @@ const LoginModal: React.FC<Props> = ({ visible, onClose, openSignUpModal }) => {
         </div>
       </Modal>
       <RequestPasswordResetModal
-        visible={showRequestPasswordResetModal}
+        open={showRequestPasswordResetModal}
         onClose={closeRequestPasswordResetModal}
       />
     </>

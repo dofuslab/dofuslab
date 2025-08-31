@@ -27,7 +27,7 @@ const UserProfile: React.FC<Props> = ({
   isEditable,
   isMobile,
 }) => {
-  const [pictureModalVisible, setPictureModalVisible] = React.useState(false);
+  const [pictureModalOpen, setPictureModalOpen] = React.useState(false);
 
   const { t } = useTranslation('common');
   const theme = useTheme();
@@ -107,7 +107,7 @@ const UserProfile: React.FC<Props> = ({
                 icon={<EditOutlined />}
                 shape="circle"
                 onClick={() => {
-                  setPictureModalVisible(true);
+                  setPictureModalOpen(true);
                 }}
                 css={{
                   position: 'absolute',
@@ -119,8 +119,8 @@ const UserProfile: React.FC<Props> = ({
           </div>
         </div>
         <ProfilePictureModal
-          visible={pictureModalVisible}
-          onCancel={() => setPictureModalVisible(false)}
+          open={pictureModalOpen}
+          onCancel={() => setPictureModalOpen(false)}
           currentlyActive={profilePicture}
         />
         <div
@@ -168,7 +168,7 @@ const UserProfile: React.FC<Props> = ({
           {isMobile && isEditable && (
             <Button
               onClick={() => {
-                setPictureModalVisible(true);
+                setPictureModalOpen(true);
               }}
               css={{ fontSize: '0.75rem' }}
             >

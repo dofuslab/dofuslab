@@ -17,14 +17,14 @@ import { useMutation } from '@apollo/client';
 import { PROFILE_PICTURES, mq } from '../../common/constants';
 
 interface Props {
-  visible: boolean;
+  open: boolean;
   onCancel: () => void;
   currentlyActive: string;
 }
 
 const ProfilePictureModal: React.FC<Props> = ({
   onCancel,
-  visible,
+  open,
   currentlyActive,
 }) => {
   const { t } = useTranslation('common');
@@ -66,7 +66,7 @@ const ProfilePictureModal: React.FC<Props> = ({
 
   return (
     <Modal
-      visible={visible}
+      open={open}
       title={t('CHANGE_PICTURE')}
       centered
       onOk={onChangePicture}

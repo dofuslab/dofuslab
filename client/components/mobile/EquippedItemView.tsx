@@ -29,29 +29,29 @@ const EquippedItemView: React.FC = () => {
     customSetVariables
   >(CustomSetQuery, { variables: { id: customSetId }, skip: !customSetId });
 
-  const [setModalVisible, setSetModalVisible] = React.useState(false);
+  const [setModalOpen, setSetModalOpen] = React.useState(false);
   const [selectedSet, setSelectedSet] = React.useState<ItemSet | null>(null);
 
   const openSetModal = React.useCallback(
     (set: ItemSet) => {
       setSelectedSet(set);
-      setSetModalVisible(true);
+      setSetModalOpen(true);
     },
-    [setSelectedSet, setSetModalVisible],
+    [setSelectedSet, setSetModalOpen],
   );
 
   const closeSetModal = React.useCallback(() => {
-    setSetModalVisible(false);
-  }, [setSetModalVisible]);
+    setSetModalOpen(false);
+  }, [setSetModalOpen]);
 
-  const [mageModalVisible, setMageModalVisible] = React.useState(false);
+  const [mageModalOpen, setMageModalOpen] = React.useState(false);
 
   const openMageModal = React.useCallback(() => {
-    setMageModalVisible(true);
-  }, [setMageModalVisible]);
+    setMageModalOpen(true);
+  }, [setMageModalOpen]);
   const closeMageModal = React.useCallback(() => {
-    setMageModalVisible(false);
-  }, [setMageModalVisible]);
+    setMageModalOpen(false);
+  }, [setMageModalOpen]);
 
   const customSet = customSetData?.customSetById;
 
@@ -98,7 +98,7 @@ const EquippedItemView: React.FC = () => {
         errors={equippedItemErrors}
       />
       <MageModal
-        visible={mageModalVisible}
+        open={mageModalOpen}
         equippedItem={equippedItem}
         closeMageModal={closeMageModal}
         key={`${equippedItem.id}-${equippedItem.item.id}-${equippedItem.exos.length}`}
@@ -106,7 +106,7 @@ const EquippedItemView: React.FC = () => {
       />
       {selectedSet && (
         <SetModal
-          visible={setModalVisible}
+          open={setModalOpen}
           setId={selectedSet.id}
           setName={selectedSet.name}
           onCancel={closeSetModal}

@@ -84,15 +84,15 @@ const SetHeader: React.FC<Props> = ({
 
   const { t } = useTranslation('common');
 
-  const [defaultClassModalVisible, setDefaultClassModalVisible] =
+  const [defaultClassModalOpen, setDefaultClassModalOpen] =
     React.useState(false);
 
   const openDefaultClassModal = React.useCallback(() => {
-    setDefaultClassModalVisible(true);
-  }, [setDefaultClassModalVisible]);
+    setDefaultClassModalOpen(true);
+  }, [setDefaultClassModalOpen]);
   const closeDefaultClassModal = React.useCallback(() => {
-    setDefaultClassModalVisible(false);
-  }, [setDefaultClassModalVisible]);
+    setDefaultClassModalOpen(false);
+  }, [setDefaultClassModalOpen]);
 
   const isOwner = useIsOwnerOfCustomSet(customSet);
 
@@ -270,7 +270,7 @@ const SetHeader: React.FC<Props> = ({
           </div>
           <DefaultClassModal
             closeModal={closeDefaultClassModal}
-            visible={defaultClassModalVisible}
+            open={defaultClassModalOpen}
             setDofusClassId={setDofusClassId}
             customSet={customSet}
           />

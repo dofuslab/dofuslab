@@ -23,8 +23,6 @@ import StatEditor from '../common/StatEditor';
 import EquipmentSlots from '../common/EquipmentSlots';
 import SetHeader from './SetHeader';
 
-const { TabPane } = Tabs;
-
 interface Props {
   customSet?: CustomSet | null;
 }
@@ -60,6 +58,56 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
   const { t } = useTranslation('common');
 
   const theme = useTheme();
+
+  const tabs = [
+    {
+      key: 'characteristics',
+      label: t('CHARACTERISTICS'),
+      children: (
+        <ResponsiveGrid numColumns={[2]} css={{ marginBottom: 20 }}>
+          {classicStatGroups.map((group) => (
+            <StatTable
+              key={group[0]}
+              group={group}
+              openBuffModal={openBuffModal}
+            />
+          ))}
+          <StatEditor key={customSet?.stats.id} customSet={customSet} />
+        </ResponsiveGrid>
+      ),
+    },
+    {
+      key: 'weapon-and-spells',
+      label: t('WEAPON_AND_SPELLS'),
+      children: (
+        <ResponsiveGrid numColumns={[2]} css={{ marginBottom: 20 }}>
+          {weapon &&
+            customSet &&
+            statsFromCustomSet &&
+            weapon.item.weaponStats && (
+              <>
+                <BasicItemCard
+                  item={weapon.item}
+                  showOnlyWeaponStats
+                  weaponElementMage={weapon.weaponElementMage}
+                />
+                <WeaponDamage
+                  weaponStats={weapon.item.weaponStats}
+                  customSet={customSet}
+                  weaponElementMage={weapon.weaponElementMage}
+                />
+              </>
+            )}
+          <ClassSpells
+            key={`${customSet?.id}-${customSet?.level}`}
+            customSet={customSet}
+            dofusClassId={dofusClassId}
+            setDofusClassId={setDofusClassId}
+          />
+        </ResponsiveGrid>
+      ),
+    },
+  ];
 
   return (
     <>
@@ -108,52 +156,13 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                 borderBottom: `1px solid ${theme.border?.default}`,
               },
             }}
-          >
-            <TabPane tab={t('CHARACTERISTICS')} key="characteristics">
-              <ResponsiveGrid numColumns={[2]} css={{ marginBottom: 20 }}>
-                {classicStatGroups.map((group) => (
-                  <StatTable
-                    key={group[0]}
-                    group={group}
-                    openBuffModal={openBuffModal}
-                  />
-                ))}
-                <StatEditor key={customSet?.stats.id} customSet={customSet} />
-              </ResponsiveGrid>
-            </TabPane>
-            <TabPane tab={t('WEAPON_AND_SPELLS')} key="weapon-and-spells">
-              <ResponsiveGrid numColumns={[2]} css={{ marginBottom: 20 }}>
-                {weapon &&
-                  customSet &&
-                  statsFromCustomSet &&
-                  weapon.item.weaponStats && (
-                    <>
-                      <BasicItemCard
-                        item={weapon.item}
-                        showOnlyWeaponStats
-                        weaponElementMage={weapon.weaponElementMage}
-                      />
-                      <WeaponDamage
-                        weaponStats={weapon.item.weaponStats}
-                        customSet={customSet}
-                        weaponElementMage={weapon.weaponElementMage}
-                      />
-                    </>
-                  )}
-                <ClassSpells
-                  key={`${customSet?.id}-${customSet?.level}`}
-                  customSet={customSet}
-                  dofusClassId={dofusClassId}
-                  setDofusClassId={setDofusClassId}
-                />
-              </ResponsiveGrid>
-            </TabPane>
-          </Tabs>
+            items={tabs}
+          />
         </div>
       </div>
       <BuffModal
         key={dofusClassId}
-        visible={buffModalOpen}
+        open={buffModalOpen}
         closeBuffModal={closeBuffModal}
         customSet={customSet}
         dofusClassId={dofusClassId}

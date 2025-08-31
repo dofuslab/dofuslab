@@ -26,8 +26,6 @@ import ClassicEquipmentSlots from './ClassicEquipmentSlots';
 import SetHeader from './SetHeader';
 import ClassicClassSelector from './ClassicClassSelector';
 
-const { TabPane } = Tabs;
-
 interface Props {
   customSet?: CustomSet | null;
 }
@@ -67,6 +65,114 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
     setBuffModalOpen(false);
   }, []);
 
+  const tabItems = [
+    {
+      key: 'characteristics',
+      label: t('CHARACTERISTICS'),
+      children: (
+        <div
+          css={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            marginTop: 8,
+            marginBottom: 60,
+          }}
+        >
+          <ClassicLeftColumnStats openBuffModal={openBuffModal} />
+          <div css={{ flex: '1 1 auto' }}>
+            <ClassicEquipmentSlots
+              customSet={customSet}
+              errors={errors}
+              setDofusClassId={setDofusClassId}
+            />
+            <div
+              css={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gridGap: 12,
+                marginTop: 12,
+                [mq[4]]: { gridGap: 20, marginTop: 20 },
+              }}
+            >
+              <StatTable
+                group={[
+                  Stat.PCT_NEUTRAL_RES,
+                  Stat.PCT_EARTH_RES,
+                  Stat.PCT_FIRE_RES,
+                  Stat.PCT_WATER_RES,
+                  Stat.PCT_AIR_RES,
+                ]}
+                openBuffModal={openBuffModal}
+              />
+              <StatTable
+                group={[
+                  Stat.NEUTRAL_RES,
+                  Stat.EARTH_RES,
+                  Stat.FIRE_RES,
+                  Stat.WATER_RES,
+                  Stat.AIR_RES,
+                ]}
+                openBuffModal={openBuffModal}
+              />
+              <StatTable
+                group={[Stat.PCT_MELEE_RES, Stat.PCT_RANGED_RES]}
+                openBuffModal={openBuffModal}
+              />
+              <StatTable
+                group={[Stat.CRITICAL_RES, Stat.PUSHBACK_RES]}
+                openBuffModal={openBuffModal}
+              />
+            </div>
+          </div>
+          <ClassicRightColumnStats openBuffModal={openBuffModal} />
+        </div>
+      ),
+    },
+    {
+      key: 'weapon-and-spells',
+      label: t('WEAPON_AND_SPELLS'),
+      children: (
+        <div
+          css={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridGap: 12,
+            [mq[4]]: { gridGap: 20 },
+            marginBottom: 60,
+          }}
+        >
+          <ClassicClassSelector
+            dofusClassId={dofusClassId}
+            setDofusClassId={setDofusClassId}
+            buildGender={
+              customSet?.buildGender ||
+              currentUserData?.currentUser?.settings.buildGender ||
+              BuildGender.MALE
+            }
+          />
+          {weapon && customSet && weapon.item.weaponStats && (
+            <>
+              <BasicItemCard
+                item={weapon.item}
+                showOnlyWeaponStats
+                weaponElementMage={weapon.weaponElementMage}
+              />
+              <WeaponDamage
+                weaponStats={weapon.item.weaponStats}
+                customSet={customSet}
+                weaponElementMage={weapon.weaponElementMage}
+              />
+            </>
+          )}
+          <ClassicClassSpells
+            key={`${customSet?.id}-${customSet?.level}`}
+            dofusClassId={dofusClassId}
+          />
+        </div>
+      ),
+    },
+  ];
+
   return (
     <>
       <div
@@ -99,118 +205,17 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
               appliedBuffs={appliedBuffs}
             />
           }
+          items={tabItems}
           css={{
             '&.ant-tabs > .ant-tabs-nav > .ant-tabs-nav-wrap': {
               justifyContent: 'center',
             },
           }}
-        >
-          <TabPane tab={t('CHARACTERISTICS')} key="characteristics">
-            <div
-              css={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                marginTop: 8,
-                marginBottom: 60,
-              }}
-            >
-              <ClassicLeftColumnStats openBuffModal={openBuffModal} />
-              <div css={{ flex: '1 1 auto' }}>
-                <ClassicEquipmentSlots
-                  customSet={customSet}
-                  errors={errors}
-                  setDofusClassId={setDofusClassId}
-                />
-                <div
-                  css={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr',
-                    gridGap: 12,
-                    marginTop: 12,
-                    [mq[4]]: { gridGap: 20, marginTop: 20 },
-                  }}
-                >
-                  <StatTable
-                    group={[
-                      Stat.PCT_NEUTRAL_RES,
-                      Stat.PCT_EARTH_RES,
-                      Stat.PCT_FIRE_RES,
-                      Stat.PCT_WATER_RES,
-                      Stat.PCT_AIR_RES,
-                    ]}
-                    openBuffModal={openBuffModal}
-                  />
-                  <StatTable
-                    group={[
-                      Stat.NEUTRAL_RES,
-                      Stat.EARTH_RES,
-                      Stat.FIRE_RES,
-                      Stat.WATER_RES,
-                      Stat.AIR_RES,
-                    ]}
-                    openBuffModal={openBuffModal}
-                  />
-                  <StatTable
-                    group={[Stat.PCT_MELEE_RES, Stat.PCT_RANGED_RES]}
-                    openBuffModal={openBuffModal}
-                  />
-                  <StatTable
-                    group={[Stat.CRITICAL_RES, Stat.PUSHBACK_RES]}
-                    openBuffModal={openBuffModal}
-                  />
-                </div>
-              </div>
-              <ClassicRightColumnStats openBuffModal={openBuffModal} />
-            </div>
-          </TabPane>
-          <TabPane
-            tab={t('WEAPON_AND_SPELLS')}
-            key="weapon-and-spells"
-            forceRender
-          >
-            <div
-              css={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gridGap: 12,
-                [mq[4]]: { gridGap: 20 },
-                marginBottom: 60,
-              }}
-            >
-              <ClassicClassSelector
-                dofusClassId={dofusClassId}
-                setDofusClassId={setDofusClassId}
-                buildGender={
-                  customSet?.buildGender ||
-                  currentUserData?.currentUser?.settings.buildGender ||
-                  BuildGender.MALE
-                }
-              />
-              {weapon && customSet && weapon.item.weaponStats && (
-                <>
-                  <BasicItemCard
-                    item={weapon.item}
-                    showOnlyWeaponStats
-                    weaponElementMage={weapon.weaponElementMage}
-                  />
-                  <WeaponDamage
-                    weaponStats={weapon.item.weaponStats}
-                    customSet={customSet}
-                    weaponElementMage={weapon.weaponElementMage}
-                  />
-                </>
-              )}
-              <ClassicClassSpells
-                key={`${customSet?.id}-${customSet?.level}`}
-                dofusClassId={dofusClassId}
-              />
-            </div>
-          </TabPane>
-        </Tabs>
+        />
       </div>
       <BuffModal
         key={dofusClassId}
-        visible={buffModalOpen}
+        open={buffModalOpen}
         closeBuffModal={closeBuffModal}
         customSet={customSet}
         dofusClassId={dofusClassId}
