@@ -13,13 +13,13 @@ import {
 import deleteCustomSetMutation from 'graphql/mutations/deleteCustomSet.graphql';
 
 interface Props {
-  visible: boolean;
+  open: boolean;
   onCancel: () => void;
   customSetId: string;
 }
 
 const DeleteCustomSetModal: React.FC<Props> = ({
-  visible,
+  open,
   onCancel,
   customSetId,
 }) => {
@@ -62,7 +62,7 @@ const DeleteCustomSetModal: React.FC<Props> = ({
 
   return (
     <Modal
-      visible={visible}
+      open={open}
       title={t('DELETE_BUILD')}
       onOk={onDelete}
       onCancel={onCancelClick}

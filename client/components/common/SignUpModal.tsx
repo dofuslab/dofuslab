@@ -24,12 +24,12 @@ import { BuildGender } from '__generated__/globalTypes';
 import BuildSettingsForm from './BuildSettingsForm';
 
 interface Props {
-  visible: boolean;
+  open: boolean;
   onClose: () => void;
   openLoginModal: () => void;
 }
 
-const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
+const SignUpModal: React.FC<Props> = ({ open, onClose, openLoginModal }) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 
@@ -68,7 +68,7 @@ const SignUpModal: React.FC<Props> = ({ visible, onClose, openLoginModal }) => {
   return (
     <Modal
       title={t('SIGN_UP')}
-      visible={visible}
+      open={open}
       onCancel={onClose}
       bodyStyle={{
         display: 'flex',

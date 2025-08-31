@@ -37,20 +37,20 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
 
   const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
 
-  const [setModalVisible, setSetModalVisible] = React.useState(false);
+  const [setModalOpen, setSetModalOpen] = React.useState(false);
   const [selectedSet, setSelectedSet] = React.useState<ItemSet | null>(null);
 
   const openSetModal = React.useCallback(
     (set: ItemSet) => {
       setSelectedSet(set);
-      setSetModalVisible(true);
+      setSetModalOpen(true);
     },
-    [setSelectedSet, setSetModalVisible],
+    [setSelectedSet, setSetModalOpen],
   );
 
   const closeSetModal = React.useCallback(() => {
-    setSetModalVisible(false);
-  }, [setSetModalVisible]);
+    setSetModalOpen(false);
+  }, [setSetModalOpen]);
 
   const contentRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -213,7 +213,7 @@ const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
         <SetModal
           setId={selectedSet?.id}
           setName={selectedSet?.name}
-          visible={setModalVisible}
+          open={setModalOpen}
           onCancel={closeSetModal}
           customSet={customSet}
           shouldRedirect={false}

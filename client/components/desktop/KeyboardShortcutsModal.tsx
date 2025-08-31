@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
-  visible: boolean;
+  open: boolean;
   onClose: () => void;
 }
 
@@ -143,7 +143,7 @@ const getColumns: (t: TFunction) => Array<ColumnType<typeof shortcuts[0]>> = (
   },
 ];
 
-const KeyboardShortcutsModal: React.FC<Props> = ({ visible, onClose }) => {
+const KeyboardShortcutsModal: React.FC<Props> = ({ open, onClose }) => {
   const { t } = useTranslation('keyboard_shortcut');
 
   const memoizedExpandableRow = React.useCallback(
@@ -174,7 +174,7 @@ const KeyboardShortcutsModal: React.FC<Props> = ({ visible, onClose }) => {
 
   return (
     <Modal
-      visible={visible}
+      open={open}
       title={t('KEYBOARD_SHORTCUTS')}
       onCancel={onClose}
       footer={null}

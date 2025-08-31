@@ -44,14 +44,14 @@ const getBuffName = (appliedBuff: AppliedBuff) => {
 };
 
 interface Props {
-  visible: boolean;
+  open: boolean;
   closeBuffModal: () => void;
   customSet?: CustomSet | null;
   dofusClassId?: string;
 }
 
 const BuffModal: React.FC<Props> = ({
-  visible,
+  open,
   closeBuffModal,
   customSet,
   dofusClassId,
@@ -98,7 +98,7 @@ const BuffModal: React.FC<Props> = ({
 
   return (
     <Modal
-      visible={visible}
+      open={open}
       onCancel={closeBuffModal}
       footer={null}
       title={t('BUFFS', { ns: 'common' })}

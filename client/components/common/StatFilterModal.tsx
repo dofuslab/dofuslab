@@ -70,12 +70,12 @@ const reducer = (state: Array<StatFilter>, action: StatFilterAction) => {
 };
 
 export default function StatFilterModal({
-  visible,
+  open,
   onClose,
   statFilters: statFiltersProp,
   dispatch: dispatchProp,
 }: {
-  visible: boolean;
+  open: boolean;
   onClose: () => void;
   statFilters: Array<StatFilter>;
   dispatch: React.Dispatch<SharedFilterAction>;
@@ -93,7 +93,7 @@ export default function StatFilterModal({
   return (
     <Modal
       title={t('FILTER_BY_STATS')}
-      visible={visible}
+      open={open}
       onCancel={onClose}
       okText={t('OK')}
       onOk={() => {

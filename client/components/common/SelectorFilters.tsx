@@ -69,7 +69,7 @@ const SelectorFilters: React.FC<Props> = ({
     : customSetIdParam;
   const [search, setSearch] = React.useState('');
   const [maxLevel, setMaxLevel] = React.useState(customSet?.level || 200);
-  const [isStatFilterModalVisible, setIsStatFilterModalVisible] =
+  const [isStatFilterModalOpen, setIsStatFilterModalOpen] =
     React.useState(false);
   const searchRef = React.useRef<InputRef>(null);
   const handleSearchChange = React.useCallback(
@@ -128,11 +128,11 @@ const SelectorFilters: React.FC<Props> = ({
   }, [onReset]);
 
   const openStatFilterModal = React.useCallback(() => {
-    setIsStatFilterModalVisible(true);
+    setIsStatFilterModalOpen(true);
   }, []);
 
   const closeStatFilterModal = React.useCallback(() => {
-    setIsStatFilterModalVisible(false);
+    setIsStatFilterModalOpen(false);
   }, []);
 
   const { t } = useTranslation(['common', 'stat']);
@@ -401,7 +401,7 @@ const SelectorFilters: React.FC<Props> = ({
       </div>
       <StatFilterModal
         key={JSON.stringify(statFilters)}
-        visible={isStatFilterModalVisible}
+        open={isStatFilterModalOpen}
         onClose={closeStatFilterModal}
         dispatch={dispatch}
         statFilters={statFilters}

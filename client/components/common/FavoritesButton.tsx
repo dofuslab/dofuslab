@@ -40,15 +40,15 @@ const FavoritesButton: React.FC<Props> = ({
   selectedItemSlot,
 }) => {
   const { t } = useTranslation('common');
-  const [modalOpen, setModalOpen] = React.useState(false);
+  const [favoritesModalOpen, setFavoritesModalOpen] = React.useState(false);
   const openModal = React.useCallback(() => {
-    setModalOpen(true);
+    setFavoritesModalOpen(true);
   }, []);
   const closeModal = React.useCallback(() => {
-    setModalOpen(false);
+    setFavoritesModalOpen(false);
   }, []);
   const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);
-  const { setModalVisible, selectedSet, openSetModal, closeSetModal } =
+  const { setModalOpen, selectedSet, openSetModal, closeSetModal } =
     useSetModal();
 
   const theme = useTheme();
@@ -91,7 +91,7 @@ const FavoritesButton: React.FC<Props> = ({
       </ClassNames>
 
       <Modal
-        visible={modalOpen}
+        open={favoritesModalOpen}
         title={t('MY_FAVORITES')}
         onCancel={closeModal}
         bodyStyle={{ maxHeight: '65vh', overflow: 'auto' }}
@@ -177,7 +177,7 @@ const FavoritesButton: React.FC<Props> = ({
         <SetModal
           setId={selectedSet.id}
           setName={selectedSet.name}
-          visible={setModalVisible}
+          open={setModalOpen}
           onCancel={closeSetModal}
           customSet={customSet}
           shouldRedirect={shouldRedirect}

@@ -30,15 +30,15 @@ interface Props {
 const BuildActions: React.FC<Props> = ({ customSet }) => {
   const { t } = useTranslation('common');
 
-  const [restartModalVisible, setRestartModalVisible] = React.useState(false);
+  const [restartModalOpen, setRestartModalOpen] = React.useState(false);
   const [shouldResetStats, setShouldResetStats] = React.useState(true);
 
   const openRestartModal = React.useCallback(() => {
-    setRestartModalVisible(true);
+    setRestartModalOpen(true);
   }, []);
 
   const closeRestartModal = React.useCallback(() => {
-    setRestartModalVisible(false);
+    setRestartModalOpen(false);
   }, []);
 
   const onShouldResetStatsChange = React.useCallback(
@@ -48,16 +48,16 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
     [],
   );
 
-  const [deleteModalVisible, setDeleteModalVisible] = React.useState(false);
+  const [deleteModalOpen, setDeleteModalOpen] = React.useState(false);
   const isEditable = React.useContext(EditableContext);
 
   const openDeleteModal = React.useCallback(() => {
     if (!isEditable) return;
-    setDeleteModalVisible(true);
+    setDeleteModalOpen(true);
   }, [isEditable]);
 
   const closeDeleteModal = React.useCallback(() => {
-    setDeleteModalVisible(false);
+    setDeleteModalOpen(false);
   }, []);
 
   const [restartMutate, { loading: restartLoading }] = useMutation<
@@ -101,7 +101,7 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
       </Button>
 
       <Modal
-        visible={restartModalVisible}
+        open={restartModalOpen}
         title={t('RESTART_BUILD')}
         onOk={onRestart}
         onCancel={closeRestartModal}
@@ -124,7 +124,7 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
       <DeleteCustomSetModal
         customSetId={customSet.id}
         onCancel={closeDeleteModal}
-        visible={deleteModalVisible}
+        open={deleteModalOpen}
       />
     </div>
   );

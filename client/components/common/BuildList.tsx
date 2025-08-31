@@ -44,8 +44,6 @@ import BuildCard from './BuildCard';
 const THRESHOLD = 600;
 const PAGE_SIZE = 20;
 
-const { TabPane } = Tabs;
-
 interface Props {
   username: string;
   onClose?: () => void;
@@ -69,13 +67,13 @@ const BuildList: React.FC<Props> = ({
 
   const client = useApolloClient();
 
-  const [deleteModalVisible, setDeleteModalVisible] = React.useState(false);
+  const [deleteModalOpen, setDeleteModalOpen] = React.useState(false);
   const [customSetIdToDelete, setCustomSetIdToDelete] = React.useState<
     string | null
   >(null);
 
   const closeDeleteModal = React.useCallback(() => {
-    setDeleteModalVisible(false);
+    setDeleteModalOpen(false);
   }, []);
 
   const [search, setSearch] = React.useState('');
@@ -205,6 +203,110 @@ const BuildList: React.FC<Props> = ({
     return isEditable ? '/build' : '/view';
   };
 
+  const tabs = [
+    {
+      key: '1',
+      label: `${t('BUILDS')} ${
+        userBuilds?.userByName?.customSets
+          ? `(${userBuilds?.userByName?.customSets.totalCount})`
+          : ''
+      }`,
+      children: (
+        <div
+          css={{
+            display: 'flex',
+            flexDirection: 'column',
+            [mq[1]]: {
+              display: 'grid',
+              marginBottom: 16,
+              gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+              gridGap: 16,
+            },
+          }}
+        >
+          <div css={{ display: 'flex', gridColumn: '1 / 1' }}>
+            {isEditable && (
+              <Button
+                type="primary"
+                onClick={onCreate}
+                disabled={queryLoading || createLoading}
+                css={{ fontSize: '0.75rem', marginRight: 16 }}
+                size={isMobile ? 'large' : 'middle'}
+              >
+                <span css={{ marginRight: 12 }}>
+                  {createLoading ? (
+                    <LoadingOutlined />
+                  ) : (
+                    <FontAwesomeIcon icon={faPlus} />
+                  )}
+                </span>
+                {t('NEW_BUILD')}
+              </Button>
+            )}
+            <Input.Search
+              css={{
+                flex: 1,
+                ...inputFontSize,
+                '.ant-input': inputFontSize,
+                height: 40,
+                [mq[1]]: {
+                  height: 32,
+                },
+              }}
+              onChange={onSearch}
+              placeholder={t('SEARCH')}
+              onKeyDown={(e) => {
+                // prevents triggering SetBuilderKeyboardShortcuts
+                e.nativeEvent.stopPropagation();
+              }}
+              size={isMobile ? 'large' : 'middle'}
+            />
+          </div>
+          {classSelect}
+          {tagsData && (
+            <Select<Array<string>>
+              css={[
+                inputFontSize,
+                {
+                  gridArea: '2/3/3/1',
+                  marginTop: 20,
+                  [mq[1]]: { marginTop: 0 },
+                },
+              ]}
+              showSearch
+              filterOption={antdSelectFilterOption}
+              value={tagIds}
+              onChange={(value: Array<string>) => {
+                setTagIds(value);
+              }}
+              placeholder={t('SELECT_TAGS')}
+              mode="multiple"
+              allowClear
+              onKeyDown={(e) => {
+                // prevents triggering SetBuilderKeyboardShortcuts
+                e.nativeEvent.stopPropagation();
+              }}
+              size={isMobile ? 'large' : undefined}
+            >
+              {[...tagsData.customSetTags]
+                .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
+                .map((tag) => (
+                  <Select.Option key={tag.id} value={tag.id}>
+                    <img
+                      src={getImageUrl(tag.imageUrl)}
+                      alt={tag.name}
+                      css={{ width: 16, marginRight: 8, maxHeight: 16 }}
+                    />
+                    {tag.name}
+                  </Select.Option>
+                ))}
+            </Select>
+          )}
+        </div>
+      ),
+    },
+  ];
+
   return (
     <div
       css={{
@@ -212,109 +314,11 @@ const BuildList: React.FC<Props> = ({
         marginBottom: 60,
       }}
     >
-      <Tabs defaultActiveKey="1" css={{ gridArea: '4/1/4/3', width: '100%' }}>
-        <TabPane
-          tab={`${t('BUILDS')} ${
-            userBuilds?.userByName?.customSets
-              ? `(${userBuilds?.userByName?.customSets.totalCount})`
-              : ''
-          }`}
-          key="1"
-        >
-          <div
-            css={{
-              display: 'flex',
-              flexDirection: 'column',
-              [mq[1]]: {
-                display: 'grid',
-                marginBottom: 16,
-                gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-                gridGap: 16,
-              },
-            }}
-          >
-            <div css={{ display: 'flex', gridColumn: '1 / 1' }}>
-              {isEditable && (
-                <Button
-                  type="primary"
-                  onClick={onCreate}
-                  disabled={queryLoading || createLoading}
-                  css={{ fontSize: '0.75rem', marginRight: 16 }}
-                  size={isMobile ? 'large' : 'middle'}
-                >
-                  <span css={{ marginRight: 12 }}>
-                    {createLoading ? (
-                      <LoadingOutlined />
-                    ) : (
-                      <FontAwesomeIcon icon={faPlus} />
-                    )}
-                  </span>
-                  {t('NEW_BUILD')}
-                </Button>
-              )}
-              <Input.Search
-                css={{
-                  flex: 1,
-                  ...inputFontSize,
-                  '.ant-input': inputFontSize,
-                  height: 40,
-                  [mq[1]]: {
-                    height: 32,
-                  },
-                }}
-                onChange={onSearch}
-                placeholder={t('SEARCH')}
-                onKeyDown={(e) => {
-                  // prevents triggering SetBuilderKeyboardShortcuts
-                  e.nativeEvent.stopPropagation();
-                }}
-                size={isMobile ? 'large' : 'middle'}
-              />
-            </div>
-            {classSelect}
-            {tagsData && (
-              <Select<Array<string>>
-                css={[
-                  inputFontSize,
-                  {
-                    gridArea: '2/3/3/1',
-                    marginTop: 20,
-                    [mq[1]]: { marginTop: 0 },
-                  },
-                ]}
-                showSearch
-                filterOption={antdSelectFilterOption}
-                value={tagIds}
-                onChange={(value: Array<string>) => {
-                  setTagIds(value);
-                }}
-                placeholder={t('SELECT_TAGS')}
-                mode="multiple"
-                allowClear
-                onKeyDown={(e) => {
-                  // prevents triggering SetBuilderKeyboardShortcuts
-                  e.nativeEvent.stopPropagation();
-                }}
-                size={isMobile ? 'large' : undefined}
-              >
-                {[...tagsData.customSetTags]
-                  .sort(({ name: n1 }, { name: n2 }) => n1.localeCompare(n2))
-                  .map((tag) => (
-                    <Select.Option key={tag.id} value={tag.id}>
-                      <img
-                        src={getImageUrl(tag.imageUrl)}
-                        alt={tag.name}
-                        css={{ width: 16, marginRight: 8, maxHeight: 16 }}
-                      />
-                      {tag.name}
-                    </Select.Option>
-                  ))}
-              </Select>
-            )}
-          </div>
-        </TabPane>
-        )
-      </Tabs>
+      <Tabs
+        defaultActiveKey="1"
+        css={{ gridArea: '4/1/4/3', width: '100%' }}
+        items={tabs}
+      />
       <InfiniteScroll
         hasMore={userBuilds?.userByName?.customSets.pageInfo.hasNextPage}
         loadMore={onLoadMore}
@@ -356,7 +360,7 @@ const BuildList: React.FC<Props> = ({
         {customSetIdToDelete && (
           <DeleteCustomSetModal
             customSetId={customSetIdToDelete}
-            visible={deleteModalVisible}
+            open={deleteModalOpen}
             onCancel={closeDeleteModal}
           />
         )}
@@ -365,7 +369,7 @@ const BuildList: React.FC<Props> = ({
             <a>
               <BuildCard
                 customSet={node}
-                setDeleteModalVisible={setDeleteModalVisible}
+                setDeleteModalOpen={setDeleteModalOpen}
                 setCustomSetIdToDelete={setCustomSetIdToDelete}
                 isEditable={isEditable}
               />
