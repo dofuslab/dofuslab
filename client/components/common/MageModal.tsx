@@ -299,7 +299,7 @@ const MageModal: React.FC<Props> = ({
                       <Select<WeaponElementMage>
                         value={weaponElementMage}
                         onChange={setWeaponElementMage}
-                        dropdownClassName={css({ zIndex: 1062 })}
+                        popupClassName={css({ zIndex: 1062 })}
                         css={{ width: '100%', fontSize: '0.75rem' }}
                         onKeyDown={(e) => {
                           // prevents triggering SetBuilderKeyboardShortcuts
@@ -411,7 +411,7 @@ const MageModal: React.FC<Props> = ({
                 css={{ fontSize: '0.75rem', width: '100%', minWidth: 0 }}
                 labelInValue
                 filterOption={antdSelectFilterOption}
-                dropdownClassName={css({ zIndex: 1062 })} // higher than modal (1061)
+                popupClassName={css({ zIndex: 1062 })} // higher than modal (1061)
                 onKeyDown={(e) => {
                   // prevents triggering SetBuilderKeyboardShortcuts
                   e.nativeEvent.stopPropagation();

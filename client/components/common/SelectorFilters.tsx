@@ -342,7 +342,7 @@ const SelectorFilters: React.FC<Props> = ({
                     value: stat,
                   }))}
                   onChange={onChangeStats}
-                  dropdownClassName={css({
+                  popupClassName={css({
                     '.ant-select-item': { fontSize: '0.75rem' },
                   })}
                   filterOption={antdSelectFilterOption}
