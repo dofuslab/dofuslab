@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:22-alpine
 
 # RUN useradd -m -s /bin/bash dofuslab
 # Alpine specific:
@@ -16,10 +16,10 @@ COPY --chown=dofuslab:dofuslab .env.docker .env
 # Default value; will be overridden by build_args, if passed
 # ARG node_env=production
 ARG node_env=development
-ENV NODE_ENV $node_env
+ENV NODE_ENV=$node_env
 
 RUN yarn
 
-CMD yarn dev-docker
+CMD ["yarn", "dev-docker"]
 # Useful if you just want the container to start and wait while you exec into it:
 # CMD /bin/sh -c -- "while true; do sleep 30; done;"
