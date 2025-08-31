@@ -187,19 +187,17 @@ function Layout({ children }: LayoutProps) {
         }}
       >
         <Link href="/" as="/">
-          <a>
-            <div css={{ fontWeight: 500 }}>
-              <img
-                src={getImageUrl(
-                  theme.name === LIGHT_THEME_NAME
-                    ? 'logo/DL-Full_Light.svg'
-                    : 'logo/DL-Full_Dark.svg',
-                )}
-                css={{ width: 120 }}
-                alt="DofusLab"
-              />
-            </div>
-          </a>
+          <div css={{ fontWeight: 500 }}>
+            <img
+              src={getImageUrl(
+                theme.name === LIGHT_THEME_NAME
+                  ? 'logo/DL-Full_Light.svg'
+                  : 'logo/DL-Full_Dark.svg',
+              )}
+              css={{ width: 120 }}
+              alt="DofusLab"
+            />
+          </div>
         </Link>
         <Button onClick={openDrawer} size="large" css={{ fontSize: '0.9rem' }}>
           <MenuOutlined />
@@ -225,7 +223,7 @@ function Layout({ children }: LayoutProps) {
             >
               {t('WELCOME')}
               <Link href={`/user/${data.currentUser.username}`}>
-                <a>{data.currentUser.username}</a>
+                {data.currentUser.username}
               </Link>
             </div>
           )}
@@ -245,7 +243,7 @@ function Layout({ children }: LayoutProps) {
             }}
           >
             <Menu.Item key="home">
-              <Link href="/" as="/">
+              <Link href="/" as="/" legacyBehavior>
                 <div css={{ display: 'flex' }}>
                   <span css={iconWrapper}>
                     <FontAwesomeIcon icon={faHome} />
@@ -258,12 +256,10 @@ function Layout({ children }: LayoutProps) {
             {data?.currentUser && data.currentUser.verified && (
               <Menu.Item key="my-builds">
                 <Link href="/my-builds" as="/my-builds">
-                  <a>
-                    <span css={iconWrapper}>
-                      <FontAwesomeIcon icon={faTshirt} />
-                    </span>
-                    {t('MY_BUILDS', { ns: 'common' })}
-                  </a>
+                  <span css={iconWrapper}>
+                    <FontAwesomeIcon icon={faTshirt} />
+                  </span>
+                  {t('MY_BUILDS', { ns: 'common' })}
                 </Link>
               </Menu.Item>
             )}
@@ -373,7 +369,6 @@ function Layout({ children }: LayoutProps) {
           </Menu>
         </Drawer>
       </AntdLayout.Header>
-
       <AntdLayout.Content
         css={{
           paddingTop: 12,
@@ -387,7 +382,6 @@ function Layout({ children }: LayoutProps) {
       >
         {children}
       </AntdLayout.Content>
-
       <LoginModal
         open={showLoginModal}
         onClose={closeLoginModal}
@@ -402,7 +396,6 @@ function Layout({ children }: LayoutProps) {
         open={showPasswordModal}
         onClose={closePasswordModal}
       />
-
       <DefaultBuildSettingsModal
         open={showBuildSettings}
         onClose={closeBuildSettings}

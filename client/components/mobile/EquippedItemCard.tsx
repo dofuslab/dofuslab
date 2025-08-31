@@ -163,12 +163,10 @@ const EquippedItemCard: React.FC<Props> = ({
     <div css={{ padding: '0 12px', marginTop: 12 }}>
       <Media lessThan="xs">
         <Link href={path} passHref>
-          <a>
-            <Button size="large" css={{ fontSize: '0.75rem' }}>
-              <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
-              {t('BACK')}
-            </Button>
-          </a>
+          <Button size="large" css={{ fontSize: '0.75rem' }}>
+            <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
+            {t('BACK')}
+          </Button>
         </Link>
       </Media>
       <Card
@@ -256,9 +254,7 @@ const EquippedItemCard: React.FC<Props> = ({
               }`}
               passHref
             >
-              <a>
-                <Button>{t('REPLACE')}</Button>
-              </a>
+              <Button>{t('REPLACE')}</Button>
             </Link>
             <Button onClick={onDelete} css={{ marginLeft: 12 }}>
               {t('DELETE')}

@@ -110,18 +110,16 @@ const SetHeader: React.FC<Props> = ({
 
   const editBuildButton = (
     <Link href={customSet?.id ? `/build/${customSet.id}/` : '/'}>
-      <a>
-        <Button css={{ marginBottom: 12 }}>
-          {t('EDIT_BUILD')}
-          <FontAwesomeIcon icon={faPencilAlt} css={{ marginLeft: 8 }} />
-        </Button>
-      </a>
+      <Button css={{ marginBottom: 12 }}>
+        {t('EDIT_BUILD')}
+        <FontAwesomeIcon icon={faPencilAlt} css={{ marginLeft: 8 }} />
+      </Button>
     </Link>
   );
 
   const owner = customSet?.owner?.username ? (
     <Link href={`/user/${customSet.owner.username}`}>
-      <a>{customSet.owner.username}</a>
+      {customSet.owner.username}
     </Link>
   ) : (
     t('ANONYMOUS')

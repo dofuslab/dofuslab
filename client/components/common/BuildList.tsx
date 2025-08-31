@@ -366,14 +366,12 @@ const BuildList: React.FC<Props> = ({
         )}
         {userBuilds?.userByName?.customSets.edges.map(({ node }) => (
           <Link href={`${getCustomSetPathname()}/${node.id}/`} key={node.id}>
-            <a>
-              <BuildCard
-                customSet={node}
-                setDeleteModalOpen={setDeleteModalOpen}
-                setCustomSetIdToDelete={setCustomSetIdToDelete}
-                isEditable={isEditable}
-              />
-            </a>
+            <BuildCard
+              customSet={node}
+              setDeleteModalOpen={setDeleteModalOpen}
+              setCustomSetIdToDelete={setCustomSetIdToDelete}
+              isEditable={isEditable}
+            />
           </Link>
         ))}
         {!queryLoading &&

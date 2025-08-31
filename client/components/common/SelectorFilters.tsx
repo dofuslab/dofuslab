@@ -202,18 +202,16 @@ const SelectorFilters: React.FC<Props> = ({
           >
             {(isMobile || isClassic) && (
               <Link href={customSetId ? `/build/${customSetId}` : '/'} passHref>
-                <a>
-                  <Button
-                    size="large"
-                    css={{ fontSize: '0.75rem', [mq[1]]: { marginRight: 20 } }}
-                  >
-                    <FontAwesomeIcon
-                      icon={faArrowLeft}
-                      css={{ marginRight: 12 }}
-                    />
-                    {t('BACK')}
-                  </Button>
-                </a>
+                <Button
+                  size="large"
+                  css={{ fontSize: '0.75rem', [mq[1]]: { marginRight: 20 } }}
+                >
+                  <FontAwesomeIcon
+                    icon={faArrowLeft}
+                    css={{ marginRight: 12 }}
+                  />
+                  {t('BACK')}
+                </Button>
               </Link>
             )}
             <div css={{ display: 'flex', alignItems: 'center' }}>

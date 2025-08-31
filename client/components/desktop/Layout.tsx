@@ -352,19 +352,17 @@ function Layout({ children, showSwitch }: LayoutProps) {
       >
         <div css={{ display: 'flex', alignItems: 'center' }}>
           <Link href="/" as="/">
-            <a>
-              <div css={{ fontWeight: 500, cursor: 'pointer' }}>
-                <img
-                  src={getImageUrl(
-                    theme.name === LIGHT_THEME_NAME
-                      ? 'logo/DL-Full_Light.svg'
-                      : 'logo/DL-Full_Dark.svg',
-                  )}
-                  css={{ width: 120 }}
-                  alt="DofusLab"
-                />
-              </div>
-            </a>
+            <div css={{ fontWeight: 500, cursor: 'pointer' }}>
+              <img
+                src={getImageUrl(
+                  theme.name === LIGHT_THEME_NAME
+                    ? 'logo/DL-Full_Light.svg'
+                    : 'logo/DL-Full_Dark.svg',
+                )}
+                css={{ width: 120 }}
+                alt="DofusLab"
+              />
+            </div>
           </Link>
         </div>
         <div css={{ display: 'flex', alignItems: 'center' }}>
@@ -404,7 +402,7 @@ function Layout({ children, showSwitch }: LayoutProps) {
                             <span>
                               {t('WELCOME')}{' '}
                               <Link href={`/user/${data.currentUser.username}`}>
-                                <a>{data.currentUser.username}</a>
+                                {data.currentUser.username}
                               </Link>
                             </span>
                           }
@@ -547,7 +545,6 @@ function Layout({ children, showSwitch }: LayoutProps) {
           </div>
         </div>
       </AntdLayout.Header>
-
       <AntdLayout.Content
         css={{
           marginTop: 12,
@@ -558,7 +555,6 @@ function Layout({ children, showSwitch }: LayoutProps) {
       >
         {children}
       </AntdLayout.Content>
-
       <LoginModal
         open={showLoginModal}
         onClose={closeLoginModal}
