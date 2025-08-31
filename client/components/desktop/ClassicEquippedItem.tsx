@@ -92,7 +92,7 @@ const ClassicEquippedItem: React.FC<Props> = ({
               customSet ? customSet.id : ''
             }`}
           >
-            <a>{content}</a>
+            {content}
           </Link>
         ) : (
           content
