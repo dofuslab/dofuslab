@@ -77,33 +77,33 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
       {},
     ) ?? {};
 
-  const [mageModalVisible, setMageModalVisible] = React.useState(false);
+  const [mageModalOpen, setMageModalOpen] = React.useState(false);
   const [equippedItem, setEquippedItem] = React.useState<EquippedItem | null>(
     null,
   );
-  const [defaultClassModalVisible, setDefaultClassModalVisible] =
+  const [defaultClassModalOpen, setDefaultClassModalOpen] =
     React.useState(false);
   const openMageModal = React.useCallback(
     (ei) => {
       setEquippedItem(ei);
-      setMageModalVisible(true);
+      setMageModalOpen(true);
     },
-    [setMageModalVisible],
+    [setMageModalOpen],
   );
   const closeMageModal = React.useCallback(() => {
-    setMageModalVisible(false);
-  }, [setMageModalVisible]);
+    setMageModalOpen(false);
+  }, [setMageModalOpen]);
 
   const openDefaultClassModal = React.useCallback(() => {
-    setDefaultClassModalVisible(true);
+    setDefaultClassModalOpen(true);
   }, []);
   const closeDefaultClassModal = React.useCallback(() => {
-    setDefaultClassModalVisible(false);
+    setDefaultClassModalOpen(false);
   }, []);
 
   const isEditable = React.useContext(EditableContext);
 
-  const { setModalVisible, selectedSet, openSetModal, closeSetModal } =
+  const { setModalOpen, selectedSet, openSetModal, closeSetModal } =
     useSetModal();
 
   const groupedErrors = groupBy(errors, ({ equippedItem: ei }) => ei.id);
@@ -217,7 +217,7 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
       </div>
       {customSet && equippedItem && (
         <MageModal
-          visible={mageModalVisible}
+          open={mageModalOpen}
           equippedItem={equippedItem}
           closeMageModal={closeMageModal}
           key={`${equippedItem.id}-${equippedItem.item.id}-${equippedItem.exos.length}`}
@@ -228,14 +228,14 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
         <SetModal
           setId={selectedSet.id}
           setName={selectedSet.name}
-          visible={setModalVisible}
+          open={setModalOpen}
           onCancel={closeSetModal}
           customSet={customSet}
         />
       )}
       {isEditable && (
         <DefaultClassModal
-          visible={defaultClassModalVisible}
+          open={defaultClassModalOpen}
           closeModal={closeDefaultClassModal}
           setDofusClassId={setDofusClassId}
         />

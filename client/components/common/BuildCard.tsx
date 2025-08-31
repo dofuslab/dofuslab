@@ -16,12 +16,12 @@ export default function BuildCard({
   customSet,
   isEditable,
   setCustomSetIdToDelete,
-  setDeleteModalVisible,
+  setDeleteModalOpen,
 }: {
   customSet: AbbreviatedCustomSet;
   isEditable: boolean;
   setCustomSetIdToDelete: (customSetId: string) => void;
-  setDeleteModalVisible: (visible: true) => void;
+  setDeleteModalOpen: (visible: true) => void;
 }) {
   const { t } = useTranslation('common');
   const theme = useTheme();
@@ -75,7 +75,7 @@ export default function BuildCard({
                   e.stopPropagation();
                   e.preventDefault();
                   setCustomSetIdToDelete(customSet.id);
-                  setDeleteModalVisible(true);
+                  setDeleteModalOpen(true);
                 }}
               >
                 <FontAwesomeIcon icon={faTrashAlt} />

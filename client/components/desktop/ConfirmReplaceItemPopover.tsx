@@ -87,7 +87,7 @@ const ConfirmReplaceItemPopover: React.FC<Props> = ({
             </div>
           }
           title={t('SELECT_ITEM_TO_REPLACE')}
-          visible={visible}
+          open={visible}
           onVisibleChange={setIsVisible}
           trigger="click"
           overlayClassName={css(popoverTitleStyle)}

@@ -25,8 +25,6 @@ import SetHeader from './SetHeader';
 import StatTable from '../common/StatTable';
 import SetBuilderKeyboardShortcuts from './SetBuilderKeyboardShortcuts';
 
-const { TabPane } = Tabs;
-
 const statGroups = [
   ['HP', Stat.AP, Stat.MP, Stat.RANGE],
   [Stat.INITIATIVE, Stat.CRITICAL, Stat.SUMMON, Stat.HEALS, Stat.PROSPECTING],
@@ -118,6 +116,62 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
 
   const theme = useTheme();
 
+  const tabs = [
+    {
+      key: 'characteristics',
+      label: t('CHARACTERISTICS'),
+      children: (
+        <ResponsiveGrid
+          numColumns={[2, 1, 2, 2, 2, 2, 2]}
+          css={{ marginBottom: 20 }}
+        >
+          {statGroups.map((group) => (
+            <StatTable
+              key={`stat-table-${group[0]}`}
+              group={group}
+              openBuffModal={openBuffModal}
+            />
+          ))}
+          <StatEditor key={customSet?.stats.id} customSet={customSet} />
+        </ResponsiveGrid>
+      ),
+    },
+    {
+      key: 'weapon-and-spells',
+      label: t('WEAPON_AND_SPELLS'),
+      children: (
+        <ResponsiveGrid
+          numColumns={[2, 1, 2, 2, 2, 2, 2]}
+          css={{ marginBottom: 20 }}
+        >
+          {weapon &&
+            customSet &&
+            statsFromCustomSet &&
+            weapon.item.weaponStats && (
+              <>
+                <BasicItemCard
+                  item={weapon.item}
+                  showOnlyWeaponStats
+                  weaponElementMage={weapon.weaponElementMage}
+                />
+                <WeaponDamage
+                  weaponStats={weapon.item.weaponStats}
+                  customSet={customSet}
+                  weaponElementMage={weapon.weaponElementMage}
+                />
+              </>
+            )}
+          <ClassSpells
+            key={`${customSet?.id}-${customSet?.level}`}
+            customSet={customSet}
+            dofusClassId={dofusClassId}
+            setDofusClassId={setDofusClassId}
+          />
+        </ResponsiveGrid>
+      ),
+    },
+  ];
+
   return (
     <>
       <SetHeader
@@ -183,57 +237,8 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
                 css={{ display: 'none', [mq[2]]: { display: 'inline' } }}
               />
             }
-          >
-            <TabPane tab={t('CHARACTERISTICS')} key="characteristics">
-              <ResponsiveGrid
-                numColumns={[2, 1, 2, 2, 2, 2, 2]}
-                css={{ marginBottom: 20 }}
-              >
-                {statGroups.map((group) => (
-                  <StatTable
-                    key={`stat-table-${group[0]}`}
-                    group={group}
-                    openBuffModal={openBuffModal}
-                  />
-                ))}
-                <StatEditor key={customSet?.stats.id} customSet={customSet} />
-              </ResponsiveGrid>
-            </TabPane>
-            <TabPane
-              tab={t('WEAPON_AND_SPELLS')}
-              key="weapon-and-spells"
-              forceRender
-            >
-              <ResponsiveGrid
-                numColumns={[2, 1, 2, 2, 2, 2, 2]}
-                css={{ marginBottom: 20 }}
-              >
-                {weapon &&
-                  customSet &&
-                  statsFromCustomSet &&
-                  weapon.item.weaponStats && (
-                    <>
-                      <BasicItemCard
-                        item={weapon.item}
-                        showOnlyWeaponStats
-                        weaponElementMage={weapon.weaponElementMage}
-                      />
-                      <WeaponDamage
-                        weaponStats={weapon.item.weaponStats}
-                        customSet={customSet}
-                        weaponElementMage={weapon.weaponElementMage}
-                      />
-                    </>
-                  )}
-                <ClassSpells
-                  key={`${customSet?.id}-${customSet?.level}`}
-                  customSet={customSet}
-                  dofusClassId={dofusClassId}
-                  setDofusClassId={setDofusClassId}
-                />
-              </ResponsiveGrid>
-            </TabPane>
-          </Tabs>
+            items={tabs}
+          />
         </div>
         <Selector
           key={`selected-item-slot-${selectedItemSlot?.name}-level-${customSet?.level}`}
@@ -247,7 +252,7 @@ const SetBuilder: React.FC<Props> = ({ customSet }) => {
       <BuffModal
         key={dofusClassId}
         dofusClassId={dofusClassId}
-        visible={buffModalOpen}
+        open={buffModalOpen}
         closeBuffModal={closeBuffModal}
         customSet={customSet}
       />

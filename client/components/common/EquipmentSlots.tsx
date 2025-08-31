@@ -44,22 +44,22 @@ const EquipmentSlots: React.FC<Props> = ({
       {},
     ) ?? {};
 
-  const [mageModalVisible, setMageModalVisible] = React.useState(false);
+  const [mageModalOpen, setMageModalOpen] = React.useState(false);
   const [equippedItem, setEquippedItem] = React.useState<EquippedItem | null>(
     null,
   );
   const openMageModal = React.useCallback(
     (ei) => {
       setEquippedItem(ei);
-      setMageModalVisible(true);
+      setMageModalOpen(true);
     },
-    [setMageModalVisible],
+    [setMageModalOpen],
   );
   const closeMageModal = React.useCallback(() => {
-    setMageModalVisible(false);
-  }, [setMageModalVisible]);
+    setMageModalOpen(false);
+  }, [setMageModalOpen]);
 
-  const { setModalVisible, selectedSet, openSetModal, closeSetModal } =
+  const { setModalOpen, selectedSet, openSetModal, closeSetModal } =
     useSetModal();
 
   const groupedErrors = groupBy(errors, ({ equippedItem: ei }) => ei.id);
@@ -125,7 +125,7 @@ const EquipmentSlots: React.FC<Props> = ({
       })}
       {customSet && equippedItem && (
         <MageModal
-          visible={mageModalVisible}
+          open={mageModalOpen}
           equippedItem={equippedItem}
           closeMageModal={closeMageModal}
           key={`${equippedItem.id}-${equippedItem.item.id}-${equippedItem.exos.length}`}
@@ -136,7 +136,7 @@ const EquipmentSlots: React.FC<Props> = ({
         <SetModal
           setId={selectedSet.id}
           setName={selectedSet.name}
-          visible={setModalVisible}
+          open={setModalOpen}
           onCancel={closeSetModal}
           customSet={customSet}
           shouldRedirect={isMobile}

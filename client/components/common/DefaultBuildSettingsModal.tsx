@@ -17,11 +17,11 @@ import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated
 import BuildSettingsForm from './BuildSettingsForm';
 
 interface Props {
-  visible: boolean;
+  open: boolean;
   onClose: () => void;
 }
 
-const DefaultBuildSettingsModal: React.FC<Props> = ({ visible, onClose }) => {
+const DefaultBuildSettingsModal: React.FC<Props> = ({ open, onClose }) => {
   const { t } = useTranslation('common');
 
   const { data: currentUserData } =
@@ -50,7 +50,7 @@ const DefaultBuildSettingsModal: React.FC<Props> = ({ visible, onClose }) => {
 
   return currentUserData?.currentUser ? (
     <Modal
-      visible={visible}
+      open={open}
       title={t('DEFAULT_BUILD_SETTINGS')}
       footer={[
         <Button
