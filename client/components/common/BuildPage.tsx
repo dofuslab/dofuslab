@@ -34,7 +34,7 @@ const BuildPage = () => {
 
   return (
     <ClassicContext.Provider value={contextValue}>
-      <div className="App" css={{ height: '100%' }}>
+      <div className="App" css={{ height: '100%' }} suppressHydrationWarning>
         <Head>
           <style
             type="text/css"

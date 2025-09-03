@@ -18,6 +18,9 @@ COPY --chown=dofuslab:dofuslab .env.docker .env
 ARG node_env=development
 ENV NODE_ENV=$node_env
 
+# Expose debug ports
+EXPOSE 9229 9230
+
 RUN yarn
 
 CMD ["yarn", "dev-docker"]

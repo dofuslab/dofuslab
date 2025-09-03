@@ -10,6 +10,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const { i18n } = require('./next-i18next.config');
 
 module.exports = withBundleAnalyzer({
+  turbopack: {
+    '*.graphql': ['graphql-tag/loader'],
+  },
   webpack: (config) => {
     const env = Object.keys(process.env).reduce((acc, curr) => {
       acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
@@ -28,4 +31,8 @@ module.exports = withBundleAnalyzer({
   },
   i18n,
   trailingSlash: true,
+  experimental: {
+    // Enable better debugging support
+    outputFileTracingRoot: undefined,
+  },
 });

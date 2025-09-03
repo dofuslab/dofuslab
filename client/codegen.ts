@@ -41,6 +41,7 @@ const config: CodegenConfig = {
         },
         'typescript',
         'typescript-operations',
+        'typescript-react-apollo',
       ],
       config: {
         /**
@@ -113,6 +114,7 @@ const config: CodegenConfig = {
         scalars: {
           Long: 'number',
         },
+        withHooks: true,
       },
     },
   },
