@@ -10,7 +10,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: dofuslab
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -24,7 +24,7 @@ services:
     ports:
       - 6379:6379
     healthcheck:
-      test: [ "CMD", "redis-cli", "ping" ]
+      test: ['CMD', 'redis-cli', 'ping']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -32,6 +32,8 @@ services:
     build: ./client/
     ports:
       - 3000:3000
+      - 9229:9229
+      - 9230:9230
     depends_on:
       - server
     restart: always
@@ -58,7 +60,7 @@ services:
           path: ./server
           target: /home/dofuslab
   nginx:
-  # https://hub.docker.com/_/nginx
+    # https://hub.docker.com/_/nginx
     build: ./nginx/
     ports:
       - 8080:80
