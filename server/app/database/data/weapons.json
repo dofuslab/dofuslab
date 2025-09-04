@@ -11999,6 +11999,11 @@
           "stat": "Air damage",
           "minStat": 18,
           "maxStat": 25
+        },
+        {
+          "stat": "Pushback damage",
+          "minStat": null,
+          "maxStat": 1
         }
       ]
     },
@@ -43307,7 +43312,7 @@
       }
     ],
     "weaponStats": {
-      "apCost": 5,
+      "apCost": 4,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
@@ -46845,7 +46850,7 @@
       "it": "Rhineetle Bow"
     },
     "itemType": "Bow",
-    "setID": null,
+    "setID": "460",
     "level": 200,
     "stats": [
       {
@@ -48830,10 +48835,10 @@
         "Fabrication coopérative impossible"
       ],
       "de": [
-        "Kooperatives Craften unmöglich"
+        "Kooperative Herstellung unmöglich"
       ],
       "es": [
-        "Craft cooperativo imposible"
+        "Fabricación cooperativa imposible"
       ],
       "pt": [
         "Fabricação cooperativa impossível"
@@ -48926,10 +48931,10 @@
         "Fabrication coopérative impossible"
       ],
       "de": [
-        "Kooperatives Craften unmöglich"
+        "Kooperative Herstellung unmöglich"
       ],
       "es": [
-        "Craft cooperativo imposible"
+        "Fabricación cooperativa imposible"
       ],
       "pt": [
         "Fabricação cooperativa impossível"
@@ -49022,10 +49027,10 @@
         "Fabrication coopérative impossible"
       ],
       "de": [
-        "Kooperatives Craften unmöglich"
+        "Kooperative Herstellung unmöglich"
       ],
       "es": [
-        "Craft cooperativo imposible"
+        "Fabricación cooperativa imposible"
       ],
       "pt": [
         "Fabricação cooperativa impossível"
@@ -49118,10 +49123,10 @@
         "Fabrication coopérative impossible"
       ],
       "de": [
-        "Kooperatives Craften unmöglich"
+        "Kooperative Herstellung unmöglich"
       ],
       "es": [
-        "Craft cooperativo imposible"
+        "Fabricación cooperativa imposible"
       ],
       "pt": [
         "Fabricação cooperativa impossível"
@@ -49244,10 +49249,10 @@
         "Fabrication coopérative impossible"
       ],
       "de": [
-        "Kooperatives Craften unmöglich"
+        "Kooperative Herstellung unmöglich"
       ],
       "es": [
-        "Craft cooperativo imposible"
+        "Fabricación cooperativa imposible"
       ],
       "pt": [
         "Fabricação cooperativa impossível"
@@ -49345,10 +49350,10 @@
         "Fabrication coopérative impossible"
       ],
       "de": [
-        "Kooperatives Craften unmöglich"
+        "Kooperative Herstellung unmöglich"
       ],
       "es": [
-        "Craft cooperativo imposible"
+        "Fabricación cooperativa imposible"
       ],
       "pt": [
         "Fabricação cooperativa impossível"
@@ -52493,6 +52498,11 @@
           "stat": "Water steal",
           "minStat": 6,
           "maxStat": 8
+        },
+        {
+          "stat": "Steals MP",
+          "minStat": null,
+          "maxStat": 1
         }
       ]
     },
@@ -52590,6 +52600,11 @@
           "stat": "Neutral steal",
           "minStat": 9,
           "maxStat": 12
+        },
+        {
+          "stat": "Pushback damage",
+          "minStat": null,
+          "maxStat": 1
         }
       ]
     },
@@ -52686,6 +52701,11 @@
           "stat": "Fire damage",
           "minStat": 56,
           "maxStat": 66
+        },
+        {
+          "stat": "Pushback damage",
+          "minStat": null,
+          "maxStat": 2
         }
       ]
     },
@@ -52831,5 +52851,1957 @@
       "customConditions": {}
     },
     "imageUrl": "item/7732.png"
+  },
+  {
+    "dofusID": "31752",
+    "name": {
+      "en": "Bzzegg Supervisor's Stinger",
+      "fr": "Dard du Supervizœuf",
+      "de": "Stachel des Supervizeis",
+      "es": "Dardo del Bzupervibzor",
+      "pt": "Dardo do Supervizovo",
+      "it": "Bzzegg Supervisor's Stinger"
+    },
+    "itemType": "Lance",
+    "setID": "1011",
+    "level": 181,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Chance",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Water Resistance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Heals",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": null,
+        "maxStat": -8
+      }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 2,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 10,
+          "maxStat": 12
+        },
+        {
+          "stat": "Fire damage",
+          "minStat": 10,
+          "maxStat": 12
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 10,
+          "maxStat": 12
+        },
+        {
+          "stat": "Air damage",
+          "minStat": 10,
+          "maxStat": 12
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/183010.png"
+  },
+  {
+    "dofusID": "31758",
+    "name": {
+      "en": "The Ripper's Cleaver",
+      "fr": "Hachoir de la Déchireuse",
+      "de": "Fleischwolf der Reißerin",
+      "es": "Hachuela de la Despedazadora",
+      "pt": "Cutelo da Dilaceradora",
+      "it": "The Ripper's Cleaver"
+    },
+    "itemType": "Axe",
+    "setID": "1016",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Chance",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": null,
+        "maxStat": -7
+      },
+      {
+        "stat": "Critical",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 201,
+        "maxStat": 300
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 3,
+      "weapon_effects": [
+        {
+          "stat": "Fire damage",
+          "minStat": 15,
+          "maxStat": 20
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 15,
+          "maxStat": 20
+        },
+        {
+          "stat": "Fire steal",
+          "minStat": 5,
+          "maxStat": 7
+        },
+        {
+          "stat": "Water steal",
+          "minStat": 5,
+          "maxStat": 7
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/20025.png"
+  },
+  {
+    "dofusID": "31759",
+    "name": {
+      "en": "The Ripper's Claws",
+      "fr": "Griffes de la Déchireuse",
+      "de": "Krallen der Reißerin",
+      "es": "Garras de la Despedazadora",
+      "pt": "Garras da Dilaceradora",
+      "it": "The Ripper's Claws"
+    },
+    "itemType": "Dagger",
+    "setID": "1016",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Chance",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 201,
+        "maxStat": 300
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": 2,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 15,
+      "critBonusDamage": 6,
+      "weapon_effects": [
+        {
+          "stat": "Water damage",
+          "minStat": 11,
+          "maxStat": 13
+        },
+        {
+          "stat": "Fire steal",
+          "minStat": 11,
+          "maxStat": 13
+        },
+        {
+          "stat": "Steals MP",
+          "minStat": null,
+          "maxStat": 1
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/5105.png"
+  },
+  {
+    "dofusID": "31760",
+    "name": {
+      "en": "Bony Mace",
+      "fr": "Masse Osseuse",
+      "de": "Knochenhammer",
+      "es": "Maza ósea",
+      "pt": "Maça Óssea",
+      "it": "Bony Mace"
+    },
+    "itemType": "Hammer",
+    "setID": "1015",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 201,
+        "maxStat": 300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 3,
+      "weapon_effects": [
+        {
+          "stat": "Fire damage",
+          "minStat": 14,
+          "maxStat": 17
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 14,
+          "maxStat": 17
+        },
+        {
+          "stat": "Neutral damage",
+          "minStat": 14,
+          "maxStat": 17
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/7093.png"
+  },
+  {
+    "dofusID": "31763",
+    "name": {
+      "en": "Feral Scythe",
+      "fr": "Faux've",
+      "de": "Falschgelb",
+      "es": "Ferhoz",
+      "pt": "Ferocifoice",
+      "it": "Feral Scythe"
+    },
+    "itemType": "Scythe",
+    "setID": "1015",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 201,
+        "maxStat": 300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 10,
+      "critBonusDamage": 4,
+      "weapon_effects": [
+        {
+          "stat": "Earth damage",
+          "minStat": 13,
+          "maxStat": 16
+        },
+        {
+          "stat": "Air damage",
+          "minStat": 13,
+          "maxStat": 16
+        },
+        {
+          "stat": "Neutral damage",
+          "minStat": 13,
+          "maxStat": 16
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/7094.png"
+  },
+  {
+    "dofusID": "31764",
+    "name": {
+      "en": "Oddnicall",
+      "fr": "Zarbappeau",
+      "de": "Kornipfeife",
+      "es": "Rarirreclamo",
+      "pt": "Herbariz",
+      "it": "Oddnicall"
+    },
+    "itemType": "Wand",
+    "setID": "1013",
+    "level": 197,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": 2,
+      "minRange": 2,
+      "maxRange": 6,
+      "baseCritChance": 20,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 19,
+          "maxStat": 22
+        },
+        {
+          "stat": "Attract cells",
+          "minStat": null,
+          "maxStat": 2
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/3093.png"
+  },
+  {
+    "dofusID": "31773",
+    "name": {
+      "en": "Nevark Bow",
+      "fr": "Nev'Arc",
+      "de": "Newabogen",
+      "es": "Nevarko",
+      "pt": "Nev'Arco",
+      "it": "Nevark Bow"
+    },
+    "itemType": "Bow",
+    "setID": "258",
+    "level": 197,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 6,
+        "maxStat": 8
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": -30,
+        "maxStat": -21
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 4,
+      "maxRange": 8,
+      "baseCritChance": 5,
+      "critBonusDamage": 7,
+      "weapon_effects": [
+        {
+          "stat": "Neutral steal",
+          "minStat": 22,
+          "maxStat": 26
+        },
+        {
+          "stat": "Earth damage",
+          "minStat": 11,
+          "maxStat": 13
+        },
+        {
+          "stat": "Air damage",
+          "minStat": 11,
+          "maxStat": 13
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/2094.png"
+  },
+  {
+    "dofusID": "31785",
+    "name": {
+      "en": "Znzzkzoklavzbz",
+      "fr": "Znzzktoglazvzbz",
+      "de": "Ssummssktssummglsfsbs",
+      "es": "Znzzkzokladoobz",
+      "pt": "Glazvzbz Znzztobz",
+      "it": "Znzzkzoklavzbz"
+    },
+    "itemType": "Staff",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Lock",
+        "minStat": null,
+        "maxStat": -30
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 15,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        {
+          "stat": "Neutral steal",
+          "minStat": 16,
+          "maxStat": 20
+        },
+        {
+          "stat": "Air steal",
+          "minStat": 7,
+          "maxStat": 10
+        },
+        {
+          "stat": "Water steal",
+          "minStat": 7,
+          "maxStat": 10
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/20026.png"
+  },
+  {
+    "dofusID": "31786",
+    "name": {
+      "en": "Gargandyas's Claw",
+      "fr": "Griffe de Gargandyas",
+      "de": "Kralle des Gargandyas",
+      "es": "Garra de Gargandias",
+      "pt": "Garra de Gargandyas",
+      "it": "Gargandyas's Claw"
+    },
+    "itemType": "Sword",
+    "setID": "1018",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 451,
+        "maxStat": 500
+      },
+      {
+        "stat": "Power",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 51,
+        "maxStat": 60
+      },
+      {
+        "stat": "Lock",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Melee Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "weaponStats": {
+      "apCost": 7,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 5,
+      "critBonusDamage": 20,
+      "weapon_effects": [
+        {
+          "stat": "Best element damage",
+          "minStat": 76,
+          "maxStat": 90
+        },
+        {
+          "stat": "AP",
+          "minStat": null,
+          "maxStat": -1
+        },
+        {
+          "stat": "Pushback damage",
+          "minStat": null,
+          "maxStat": 2
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {
+        "stat": "VITALITY",
+        "operator": ">",
+        "value": 3949
+      },
+      "customConditions": {}
+    },
+    "imageUrl": "item/6114.png"
+  },
+  {
+    "dofusID": "31787",
+    "name": {
+      "en": "Gargandyas's Fury",
+      "fr": "Fureur de Gargandyas",
+      "de": "Fell des Gargandyas",
+      "es": "Furor de Gargandias",
+      "pt": "Furor de Gargandyas",
+      "it": "Gargandyas's Fury"
+    },
+    "itemType": "Hammer",
+    "setID": "1018",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 451,
+        "maxStat": 500
+      },
+      {
+        "stat": "Power",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 51,
+        "maxStat": 60
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Lock",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Melee Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "weaponStats": {
+      "apCost": 7,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 5,
+      "critBonusDamage": 20,
+      "weapon_effects": [
+        {
+          "stat": "Best element damage",
+          "minStat": 68,
+          "maxStat": 80
+        },
+        {
+          "stat": "MP",
+          "minStat": null,
+          "maxStat": -2
+        },
+        {
+          "stat": "Attract cells",
+          "minStat": null,
+          "maxStat": 1
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {
+        "stat": "VITALITY",
+        "operator": ">",
+        "value": 3949
+      },
+      "customConditions": {}
+    },
+    "imageUrl": "item/7091.png"
+  },
+  {
+    "dofusID": "31790",
+    "name": {
+      "en": "Hunting Horn",
+      "fr": "Corne de Chasse",
+      "de": "Jagdhorn",
+      "es": "Cuerno de caza",
+      "pt": "Chifre de Caça",
+      "it": "Hunting Horn"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Agility",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 26,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Heals",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 15,
+      "weapon_effects": [
+        {
+          "stat": "Air damage",
+          "minStat": 48,
+          "maxStat": 56
+        },
+        {
+          "stat": "Pushback damage",
+          "minStat": null,
+          "maxStat": 2
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/7092.png"
+  },
+  {
+    "dofusID": "31791",
+    "name": {
+      "en": "Kabombz Daggers",
+      "fr": "Dagues de Kabombz",
+      "de": "Kabombz-Dolche",
+      "es": "Dagas de kabombz",
+      "pt": "Adagas de Kabombz",
+      "it": "Kabombz Daggers"
+    },
+    "itemType": "Dagger",
+    "setID": "1012",
+    "level": 170,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 201,
+        "maxStat": 300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Lock",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": 2,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
+      "weapon_effects": [
+        {
+          "stat": "Fire damage",
+          "minStat": 8,
+          "maxStat": 10
+        },
+        {
+          "stat": "Air damage",
+          "minStat": 8,
+          "maxStat": 10
+        },
+        {
+          "stat": "Water steal",
+          "minStat": 3,
+          "maxStat": 5
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/5104.png"
+  },
+  {
+    "dofusID": "31800",
+    "name": {
+      "en": "Sleeping Venerable One's Bow",
+      "fr": "Arc du Vénérable Endormi",
+      "de": "Bogen des Ehrwürdigen Schläfers",
+      "es": "Arco del Venerable Durmiente",
+      "pt": "Arco do Venerável Adormecido",
+      "it": "Sleeping Venerable One's Bow"
+    },
+    "itemType": "Bow",
+    "setID": "1014",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": null,
+        "maxStat": -200
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 450
+      },
+      {
+        "stat": "Strength",
+        "minStat": 71,
+        "maxStat": 100
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 26,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Heals",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 4,
+      "maxRange": 8,
+      "baseCritChance": 10,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "Earth damage",
+          "minStat": 48,
+          "maxStat": 52
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/2093.png"
+  },
+  {
+    "dofusID": "31860",
+    "name": {
+      "en": "Droppznkbz Hornbz",
+      "fr": "Kornzbz Chzazzzbz",
+      "de": "Jagdhszsummbs",
+      "es": "Kzzrnobz kakabz",
+      "pt": "Chzfrzbz Kakazabz",
+      "it": "Droppznkbz Hornbz"
+    },
+    "itemType": "Hammer",
+    "setID": null,
+    "level": 195,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": null,
+        "maxStat": -300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": null,
+        "maxStat": -30
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -20
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Heals",
+        "minStat": null,
+        "maxStat": -25
+      },
+      {
+        "stat": "Critical",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 21,
+        "maxStat": 30
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 5,
+      "weapon_effects": [
+        {
+          "stat": "Neutral steal",
+          "minStat": 26,
+          "maxStat": 29
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 22,
+          "maxStat": 24
+        },
+        {
+          "stat": "Attract cells",
+          "minStat": null,
+          "maxStat": 1
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Hunting weapon"
+      ],
+      "fr": [
+        "Arme de chasse"
+      ],
+      "de": [
+        "Jagdwaffe"
+      ],
+      "es": [
+        "Arma de caza"
+      ],
+      "pt": [
+        "Arma de caça"
+      ],
+      "it": [
+        "Hunting weapon"
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/7095.png"
   }
 ]

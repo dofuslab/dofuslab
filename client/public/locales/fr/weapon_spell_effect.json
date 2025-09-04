@@ -19,6 +19,8 @@
     "AIR_HEALING": "Soins air",
     "AIR_STEAL": "Vol de vie air",
     "AP": "Retrait PA (à la cible)",
+    "ATTRACT_CELLS": "Attraction de cellules",
+    "BEST_ELEMENT_DAMAGE": "Dommage meilleur élément",
     "EARTH_DAMAGE": "Dommage terre",
     "EARTH_HEALING": "Soins terre",
     "EARTH_STEAL": "Vol de vie terre",
@@ -30,6 +32,8 @@
     "NEUTRAL_DAMAGE": "Dommage neutre",
     "NEUTRAL_HEALING": "Soins neutre",
     "NEUTRAL_STEAL": "Vol de vie neutre",
+    "PUSHBACK_DAMAGE": "Empoussement de cellules",
+    "STEALS_MP": "Vol de PM",
     "WATER_DAMAGE": "Dommage eau",
     "WATER_HEALING": "Soins eau",
     "WATER_STEAL": "Vol de vie eau"

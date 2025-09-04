@@ -94,7 +94,8 @@ export type TSimpleEffect =
   | 'heal'
   | 'shield'
   | 'ap'
-  | 'mp';
+  | 'mp'
+  | 'misc';
 
 type TEffectMinMax = { min: number | null; max: number; baseMax: number };
 
