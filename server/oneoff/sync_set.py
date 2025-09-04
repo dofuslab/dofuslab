@@ -356,7 +356,7 @@ def sync_set():
                     continue
                 
                 confirm = input(f"\nProceed with upserting {len(sets_to_create)} new sets and updating {len(sets_to_update)} existing sets? (Y/n): ")
-                if confirm.lower() == 'y' or confirm == '':
+                if confirm.lower() == 'y':
                     created_sets, updated_sets, skipped_sets, errored_sets = execute_upsert_all(db_session, all_sets)
                     db_session.commit()
                     print(f"Successfully upserted {len(created_sets)} new sets and updated {len(updated_sets)} existing sets.")
