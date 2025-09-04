@@ -1,7 +1,25 @@
 #!/usr/bin/env python3
+"""
+Sync Item Script
+
+This script synchronizes items between input JSON files and the database.
+It supports:
+- Creating new items from input files
+- Updating existing items with new data
+- Deleting items that are no longer present in input files (when using 'sync all')
+
+Usage:
+- 'upsert all': Updates all items in the input file, creates missing ones (no deletion)
+- 'add missing items': Only creates items that don't exist in the database
+- 'sync all': Updates all items AND deletes items not found in the input file
+- Individual item ID: Updates/creates a specific item
+
+The script handles both regular items (using dofus_db_id) and mounts (using dofus_db_mount_id).
+"""
 
 import json
 import os
+from sqlalchemy import or_
 from app import session_scope
 from app.database.model_set import ModelSet
 from app.database.model_item import ModelItem
@@ -29,11 +47,12 @@ def update_or_create_item(
     db_session,
     item_id,
     record,
-    should_only_add_missing,
-    create_all=False,
-    new_items_list=[],
 ):
-    print("[{}]: {}".format(item_id, record["name"]["en"]))
+    """
+    Update existing item or create new item.
+    Returns True if item was created, False if item was updated, None if item was skipped.
+    Raises ValueError for error cases (multiple items with same ID).
+    """
     if "mountDofusID" in record:
         database_item = (
             db_session.query(ModelItem)
@@ -44,14 +63,11 @@ def update_or_create_item(
         database_item = (
             db_session.query(ModelItem).filter(ModelItem.dofus_db_id == item_id).all()
         )
+    
     if len(database_item) > 1:
-        print("Error: Multiple items with that ID exist in the database")
-    elif len(database_item) == 1 and not should_only_add_missing:
-        print(
-            "Item [{}]: {} already exists in database. Updating item...".format(
-                item_id, record["name"]["en"]
-            )
-        )
+        raise ValueError(f"Multiple items with ID {item_id} exist in the database")
+    elif len(database_item) == 1:
+        # Update existing item
         item = database_item[0]
         item.dofus_db_id = record.get("dofusID", None)
         item.dofus_db_mount_id = record.get("mountDofusID", None)
@@ -69,40 +85,24 @@ def update_or_create_item(
         )
         if item.set_id != new_set_db_id:
             item.set_id = new_set_db_id
-            print("Updated item set")
         create_item_translations(db_session, record, item)
-        print("Item translations successfully updated")
         db_session.query(ModelItemStat).filter_by(item_id=item.uuid).delete()
         create_item_stats(db_session, record, item)
-        print("Item stats successfully updated")
         if "conditions" in record:
             conditions = {
                 "conditions": record["conditions"].get("conditions", {}),
                 "customConditions": record["conditions"].get("customConditions", {}),
             }
             item.conditions = conditions
-        print("Item conditions successfully updated")
         if "weaponStats" in record:
             create_weapon_stat(db_session, record, item)
-        print("Item weapon stats successfully updated")
+        return False  # Item was updated
     elif len(database_item) == 0:
-        if create_all:
-            create_item(db_session, record)
-            new_items_list.append("[{}]: {}".format(item_id, record["name"]["en"]))
-            return True
-        should_create_response = input(
-            "Item does not exist in database. Would you like to create it? (Y/n/YYY to create all): "
-        )
-        if should_create_response == "Y" or should_create_response == "YYY":
-            result = create_item(db_session, record)
-            if result:
-                new_items_list.append("[{}]: {}".format(item_id, record["name"]["en"]))
-                print("Item successfully created")
-            else:
-                print("Something went wrong, item skipped")
-        if should_create_response == "YYY":
-            return True
-    return create_all
+        # Create new item
+        result = create_item(db_session, record)
+        if not result:
+            return None  # Item was skipped (e.g., Living object)
+        return True  # Item was created successfully
 
 
 def create_item(db_session, record):
@@ -231,107 +231,361 @@ def create_weapon_stat(db_session, record, item):
         db_session.add(weapon_effects)
 
 
-def sync_item():
-    should_prompt_file = True
-    while should_prompt_file:
-        file_name = input(
-            "Enter JSON file name without extension ({}): ".format(
-                ", ".join(allowed_file_names)
+def get_items_to_delete(db_session, input_item_ids, file_name):
+    """
+    Get items from database that are not present in the input file.
+    Uses SQL filtering for better performance.
+    Returns a list of items that should be deleted.
+    """
+    if not input_item_ids:
+        return []
+    
+    if file_name == "all":
+        # For all files, find items not in input_item_ids using SQL NOT IN
+        # This covers both regular items and mounts
+        items_to_delete = db_session.query(ModelItem).filter(
+            or_(
+                ModelItem.dofus_db_id.notin_(input_item_ids),
+                ModelItem.dofus_db_mount_id.notin_(input_item_ids)
             )
-        )
-        if file_name in allowed_file_names:
-            should_prompt_file = False
+        ).all()
+    elif file_name == "mounts":
+        # For mounts, find items not in input_item_ids using SQL NOT IN
+        items_to_delete = db_session.query(ModelItem).filter(
+            ModelItem.dofus_db_mount_id.notin_(input_item_ids)
+        ).all()
+    else:
+        # For regular items, find items not in input_item_ids using SQL NOT IN
+        items_to_delete = db_session.query(ModelItem).filter(
+            ModelItem.dofus_db_id.notin_(input_item_ids)
+        ).all()
+    
+    return items_to_delete
+
+
+def delete_items_not_in_file(db_session, items_to_delete, file_name):
+    """
+    Delete items that are not found in the input file.
+    The cascade relationships will handle deletion of related records.
+    """
+    deleted_items = []
+    
+    for item in items_to_delete:
+        item_id = item.dofus_db_mount_id if file_name == "mounts" else item.dofus_db_id
+        item_name = "Unknown"
+        
+        # Try to get the item name from translations
+        translation = db_session.query(ModelItemTranslation).filter_by(
+            item_id=item.uuid, locale="en"
+        ).first()
+        if translation:
+            item_name = translation.name
+        
+        print("Deleting item [{}]: {}".format(item_id, item_name))
+        deleted_items.append("[{}]: {}".format(item_id, item_name))
+        
+        # Delete the item (cascade will handle related records)
+        db_session.delete(item)
+    
+    return deleted_items
+
+
+def load_all_items():
+    """Load all items from all allowed JSON files into memory."""
+    all_items = {}
+    all_item_ids = set()
+    
+    print("Loading all item files...")
+    for file_name in allowed_file_names:
+        file_path = os.path.join(app_root, "app/database/data/{}.json".format(file_name))
+        if os.path.exists(file_path):
+            print(f"Loading {file_name}...")
+            with open(file_path, "r") as file:
+                data = json.load(file)
+                all_items[file_name] = data
+                
+                # Collect all item IDs
+                for record in data:
+                    if file_name == "mounts":
+                        item_id = record["mountDofusID"]
+                        all_item_ids.add(item_id)
+                    else:
+                        item_id = record["dofusID"]
+                        all_item_ids.add(item_id)
+                        
+            print(f"Loaded {len(data)} items from {file_name}")
         else:
-            print("File name not allowed")
+            print(f"Warning: {file_name}.json not found")
+            all_items[file_name] = []
+    
+    print(f"Total items loaded: {len(all_item_ids)}")
+    return all_items, all_item_ids
 
-    print("Loading and processing file...")
-    with open(
-        os.path.join(app_root, "app/database/data/{}.json".format(file_name)), "r"
-    ) as file:
-        data = json.load(file)
-        id_to_record_map = {}
 
-        for r in data:
+def preview_changes(db_session, all_items, all_item_ids, operation_type):
+    """Preview items that would be created/updated and deleted."""
+    items_to_create = []
+    items_to_update = []
+    items_to_delete = []
+    
+    print(f"\n=== PREVIEW: {operation_type.upper()} ===")
+    
+    # Check what items would be created/updated
+    for file_name, data in all_items.items():
+        for record in data:
+            item_id = record.get("mountDofusID") if file_name == "mounts" else record.get("dofusID")
+            item_name = record["name"]["en"]
+            
+            # Check if item exists in database
             if file_name == "mounts":
-                id_to_record_map[r["mountDofusID"]] = r
+                existing_items = db_session.query(ModelItem).filter(
+                    ModelItem.dofus_db_mount_id == item_id
+                ).all()
             else:
-                id_to_record_map[r["dofusID"]] = r
+                existing_items = db_session.query(ModelItem).filter(
+                    ModelItem.dofus_db_id == item_id
+                ).all()
+            
+            if len(existing_items) == 0:
+                items_to_create.append((item_id, item_name, file_name))
+            else:
+                items_to_update.append((item_id, item_name, file_name))
+    
+    # Check what items would be deleted (only for sync all)
+    if operation_type == "sync all":
+        items_to_delete = get_items_to_delete(db_session, all_item_ids, "all")
+    
+    # Display preview
+    if items_to_create:
+        print(f"\nItems to CREATE ({len(items_to_create)}):")
+        for item_id, item_name, file_name in items_to_create:
+            id_type = "mountDofusID" if file_name == "mounts" else "dofusID"
+            print(f"  [{item_id}] ({id_type}): {item_name}")
+    
+    if items_to_update:
+        print(f"\nItems to UPDATE: {len(items_to_update)} items")
+    
+    if items_to_delete:
+        print(f"\nItems to DELETE ({len(items_to_delete)}):")
+        for item in items_to_delete:
+            # Determine if it's a mount or regular item
+            if item.dofus_db_mount_id:
+                item_id = item.dofus_db_mount_id
+                id_type = "mountDofusID"
+            else:
+                item_id = item.dofus_db_id
+                id_type = "dofusID"
+            
+            item_name = "Unknown"
+            translation = db_session.query(ModelItemTranslation).filter_by(
+                item_id=item.uuid, locale="en"
+            ).first()
+            if translation:
+                item_name = translation.name
+            
+            print(f"  [{item_id}] ({id_type}): {item_name}")
+    
+    return items_to_create, items_to_update, items_to_delete
 
-        should_prompt_item = True
-        create_all = False
-        new_items_list = []
-        while should_prompt_item:
-            item_dofus_id = input(
-                "Enter item Dofus ID, e.g. '12069', type 'update all' to update all items in file, type 'add missing items' to only add items that are missing, or 'q' to quit: "
-            )
-            if item_dofus_id == "q":
-                return
-            with session_scope() as db_session:
-                if item_dofus_id == "update all":
-                    should_prompt_item = False
 
-                    for record in data:
-                        if file_name == "mounts":
-                            create_all = update_or_create_item(
-                                db_session,
-                                record["mountDofusID"],
-                                record,
-                                False,
-                                create_all,
-                                new_items_list,
-                            )
+def execute_upsert_all(db_session, all_items):
+    """Execute upsert all operation."""
+    created_items = []
+    updated_items = []
+    skipped_items = []
+    errored_items = []
+    
+    for file_name, data in all_items.items():
+        for record in data:
+            item_id = record.get("mountDofusID") if file_name == "mounts" else record.get("dofusID")
+            item_name = record["name"]["en"]
+            
+            try:
+                result = update_or_create_item(
+                    db_session,
+                    item_id,
+                    record,
+                )
+                
+                if result is True:
+                    created_items.append(f"[{item_id}]: {item_name}")
+                elif result is False:
+                    updated_items.append(f"[{item_id}]: {item_name}")
+                elif result is None:
+                    skipped_items.append(f"[{item_id}]: {item_name}")
+            except ValueError as e:
+                error_msg = f"[{item_id}]: {item_name} - {e}"
+                errored_items.append(error_msg)
+                print(f"Error processing item {error_msg}")
+                # Continue processing other items
+    
+    return created_items, updated_items, skipped_items, errored_items
 
-                        else:
-                            create_all = update_or_create_item(
-                                db_session,
-                                record["dofusID"],
-                                record,
-                                False,
-                                create_all,
-                                new_items_list,
-                            )
 
-                elif item_dofus_id == "add missing items":
-                    should_prompt_item = False
+def execute_sync_all(db_session, all_items, all_item_ids):
+    """Execute sync all operation (upsert + delete)."""
+    # First do upsert
+    created_items, updated_items, skipped_items, errored_items = execute_upsert_all(db_session, all_items)
+    
+    # Then delete items not in input files
+    items_to_delete = get_items_to_delete(db_session, all_item_ids, "all")
+    deleted_items = []
+    
+    if items_to_delete:
+        deleted_items = delete_items_not_in_file(db_session, items_to_delete, "all")
+    
+    return created_items, updated_items, skipped_items, errored_items, deleted_items
 
-                    for record in data:
-                        if file_name == "mounts":
-                            create_all = update_or_create_item(
-                                db_session,
-                                record["mountDofusID"],
-                                record,
-                                True,
-                                create_all,
-                                new_items_list,
-                            )
 
-                        else:
-                            create_all = update_or_create_item(
-                                db_session,
-                                record["dofusID"],
-                                record,
-                                True,
-                                create_all,
-                                new_items_list,
-                            )
+def execute_individual_upsert(db_session, all_items):
+    """Execute individual upsert operation."""
+    # Let user select file
+    print("\nAvailable files:")
+    for i, file_name in enumerate(allowed_file_names, 1):
+        item_count = len(all_items.get(file_name, []))
+        print(f"  {i}. {file_name} ({item_count} items)")
+    
+    while True:
+        try:
+            file_choice = int(input("Select file number: ")) - 1
+            if 0 <= file_choice < len(allowed_file_names):
+                selected_file = allowed_file_names[file_choice]
+                break
+            else:
+                print("Invalid choice. Please try again.")
+        except ValueError:
+            print("Please enter a valid number.")
+    
+    # Let user enter item ID
+    data = all_items[selected_file]
+    id_to_record_map = {}
+    
+    for record in data:
+        if selected_file == "mounts":
+            id_to_record_map[record["mountDofusID"]] = record
+        else:
+            id_to_record_map[record["dofusID"]] = record
+    
+    print(f"\nAvailable items in {selected_file}:")
+    for item_id, record in list(id_to_record_map.items())[:10]:  # Show first 10
+        print(f"  {item_id}: {record['name']['en']}")
+    if len(id_to_record_map) > 10:
+        print(f"  ... and {len(id_to_record_map) - 10} more items")
+    
+    while True:
+        item_id = input(f"Enter ID ({selected_file}): ")
+        if item_id in id_to_record_map:
+            record = id_to_record_map[item_id]
+            item_name = record["name"]["en"]
+            
+            try:
+                result = update_or_create_item(db_session, item_id, record)
+                
+                if result is True:
+                    return [f"[{item_id}]: {item_name}"], [], [], []
+                elif result is False:
+                    return [], [f"[{item_id}]: {item_name}"], [], []
+                elif result is None:
+                    return [], [], [f"[{item_id}]: {item_name}"], []
+            except ValueError as e:
+                error_msg = f"[{item_id}]: {item_name} - {e}"
+                print(f"Error processing item {error_msg}")
+                print("Please try a different item ID.")
+                return [], [], [], [error_msg]
+        else:
+            print("Item ID not found. Please try again.")
 
-                elif item_dofus_id in id_to_record_map:
-                    record = id_to_record_map[item_dofus_id]
-                    update_or_create_item(
-                        db_session, item_dofus_id, record, False, False, new_items_list
-                    )
 
-                prompt_commit = True if len(new_items_list) > 0 else False
-                while prompt_commit == True:
-                    print(
-                        "The following items were added: \n"
-                        + "\n".join(str(new_item) for new_item in new_items_list)
-                    )
-                    should_commit = input("Commit changes? (Y/n): ")
-                    if should_commit == "Y" or should_commit == "":
-                        prompt_commit = False
-                    elif should_commit == "n":
-                        raise Exception("Aborted changes. No changes were committed.")
+def sync_item():
+    """Main sync function with improved developer experience."""
+    print("=== DOFUS LAB ITEM SYNC ===")
+    
+    # Load all items from all files
+    all_items, all_item_ids = load_all_items()
+    
+    if not any(all_items.values()):
+        print("No items loaded. Exiting.")
+        return
+    
+    # Present options to user
+    print("\nAvailable operations:")
+    print("  1. upsert all - Update existing items and create missing ones (no deletion)")
+    print("  2. sync all - Full sync: upsert all + delete items not in files")
+    print("  3. individual upsert - Select and upsert a specific item")
+    print("  4. quit")
+    
+    while True:
+        choice = input("\nSelect operation (1-4): ").strip()
+        
+        if choice == "4" or choice.lower() == "q":
+            print("Exiting.")
+            return
+        
+        with session_scope() as db_session:
+            if choice == "1":  # upsert all
+                print("\n=== UPSERT ALL ===")
+                items_to_create, items_to_update, _ = preview_changes(db_session, all_items, all_item_ids, "upsert all")
+                
+                if not items_to_create and not items_to_update:
+                    print("No changes needed.")
+                    continue
+                
+                confirm = input(f"\nProceed with upserting {len(items_to_create)} new items and updating {len(items_to_update)} existing items? (Y/n): ")
+                if confirm.lower() == 'y' or confirm == '':
+                    created_items, updated_items, skipped_items, errored_items = execute_upsert_all(db_session, all_items)
+                    db_session.commit()
+                    print(f"Successfully upserted {len(created_items)} new items and updated {len(updated_items)} existing items.")
+                    if skipped_items:
+                        print(f"Skipped {len(skipped_items)} items (e.g., Living objects).")
+                    if errored_items:
+                        print(f"Failed to process {len(errored_items)} items due to errors.")
+                else:
+                    print("Operation cancelled.")
+            
+            elif choice == "2":  # sync all
+                print("\n=== SYNC ALL ===")
+                items_to_create, items_to_update, items_to_delete = preview_changes(db_session, all_items, all_item_ids, "sync all")
+                
+                if not items_to_create and not items_to_update and not items_to_delete:
+                    print("No changes needed.")
+                    continue
+                
+                # Extra confirmation for large deletions
+                if items_to_delete and len(items_to_delete) > 50:
+                    print(f"\nWARNING: You are about to delete {len(items_to_delete)} items.")
+                    confirm_large = input("Type 'DELETE' to confirm large deletion: ")
+                    if confirm_large != "DELETE":
+                        print("Operation cancelled.")
+                        continue
+                
+                confirm = input(f"\nProceed with syncing {len(items_to_create)} new items, updating {len(items_to_update)} existing items, and deleting {len(items_to_delete)} items? (y/N): ")
+                if confirm.lower() == 'y':
+                    created_items, updated_items, skipped_items, errored_items, deleted_items = execute_sync_all(db_session, all_items, all_item_ids)
+                    db_session.commit()
+                    print(f"Successfully synced: {len(created_items)} items created, {len(updated_items)} items updated, {len(deleted_items)} items deleted.")
+                    if skipped_items:
+                        print(f"Skipped {len(skipped_items)} items (e.g., Living objects).")
+                    if errored_items:
+                        print(f"Failed to process {len(errored_items)} items due to errors.")
+                else:
+                    print("Operation cancelled.")
+            
+            elif choice == "3":  # individual upsert
+                print("\n=== INDIVIDUAL UPSERT ===")
+                created_items, updated_items, skipped_items, errored_items = execute_individual_upsert(db_session, all_items)
+                if created_items or updated_items or skipped_items or errored_items:
+                    db_session.commit()
+                    if created_items:
+                        print(f"Successfully created {len(created_items)} items.")
+                    if updated_items:
+                        print(f"Successfully updated {len(updated_items)} items.")
+                    if skipped_items:
+                        print(f"Skipped {len(skipped_items)} items (e.g., Living objects).")
+                    if errored_items:
+                        print(f"Failed to process {len(errored_items)} items due to errors.")
+            
+            else:
+                print("Invalid choice. Please select 1-4.")
 
 
 if __name__ == "__main__":
