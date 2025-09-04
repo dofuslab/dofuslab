@@ -30,6 +30,7 @@ from app.database.model_item_type import ModelItemType
 from app.database.model_item_type_translation import ModelItemTypeTranslation
 from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
+from app.database.model_equipped_item import ModelEquippedItem
 from oneoff.enums import to_stat_enum, to_effect_enum
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -367,6 +368,9 @@ def preview_changes(db_session, all_items, all_item_ids, operation_type):
     
     if items_to_delete:
         print(f"\nItems to DELETE ({len(items_to_delete)}):")
+        print(f"{'dofusID':<12} {'EN Name':<40} {'Equipped Items':<15}")
+        print("-" * 70)
+        
         for item in items_to_delete:
             # Determine if it's a mount or regular item
             if item.dofus_db_mount_id:
@@ -383,7 +387,14 @@ def preview_changes(db_session, all_items, all_item_ids, operation_type):
             if translation:
                 item_name = translation.name
             
-            print(f"  [{item_id}] ({id_type}): {item_name}")
+            # Count equipped items associated with this item
+            equipped_count = db_session.query(ModelEquippedItem).filter_by(
+                item_id=item.uuid
+            ).count()
+            
+            # Truncate long names for table formatting
+            display_name = item_name[:37] + "..." if len(item_name) > 40 else item_name
+            print(f"{item_id:<12} {display_name:<40} {equipped_count:<15}")
     
     return items_to_create, items_to_update, items_to_delete
 
