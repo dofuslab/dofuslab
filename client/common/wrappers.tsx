@@ -270,12 +270,10 @@ export const EffectLine: React.FC<{
     case 'mp':
       content = `${max} ${t(Stat.MP)}`;
       break;
-    case 'misc':
-      break;
     default:
       throw new Error('Unknown simple effect');
   }
-  return content ? (
+  return (
     <div
       css={{
         display: 'flex',
@@ -289,7 +287,7 @@ export const EffectLine: React.FC<{
       />
       {content}
     </div>
-  ) : null;
+  );
 };
 
 export const WeaponEffectsList: React.FC<{
@@ -343,9 +341,9 @@ export const WeaponEffectsList: React.FC<{
   );
 };
 
-export const BrokenImagePlaceholder: React.FC<
-  React.HTMLAttributes<HTMLDivElement>
-> = ({ className, ...restProps }) => (
+export const BrokenImagePlaceholder: React.FC<React.HTMLAttributes<
+  HTMLDivElement
+>> = ({ className, ...restProps }) => (
   <ClassNames>
     {({ css, cx }) => (
       <div

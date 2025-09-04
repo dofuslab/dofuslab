@@ -939,7 +939,6 @@ export const effectToIconUrl = (effect: WeaponEffectType | SpellEffectType) => {
     case SpellEffectType.AP:
       return 'icon/Action_Point.svg';
     case WeaponEffectType.MP:
-    case WeaponEffectType.STEALS_MP:
     case SpellEffectType.MP:
       return 'icon/Movement_Point.svg';
     case SpellEffectType.BEST_ELEMENT_HEALING:
@@ -958,13 +957,7 @@ export const effectToIconUrl = (effect: WeaponEffectType | SpellEffectType) => {
     case SpellEffectType.SHIELD:
       return 'icon/Shield_Point.svg';
     case SpellEffectType.PUSHBACK_DAMAGE:
-    case WeaponEffectType.PUSHBACK_DAMAGE:
       return 'icon/Pushback_Damage.svg';
-    case WeaponEffectType.ATTRACT_CELLS:
-      return 'icon/Melee.svg';
-    case WeaponEffectType.BEST_ELEMENT_DAMAGE:
-      return 'icon/Omni.svg';
-
     default:
       throw new Error('Unknown SpellEffectType');
   }
@@ -984,7 +977,6 @@ export const getSimpleEffect: (
     case WeaponEffectType.WATER_STEAL:
     case WeaponEffectType.NEUTRAL_DAMAGE:
     case WeaponEffectType.NEUTRAL_STEAL:
-    case WeaponEffectType.BEST_ELEMENT_DAMAGE:
     case SpellEffectType.AIR_DAMAGE:
     case SpellEffectType.AIR_STEAL:
     case SpellEffectType.EARTH_DAMAGE:
@@ -1012,7 +1004,6 @@ export const getSimpleEffect: (
       // HP restored is now deprecated in favor of Fire healing
       return 'heal';
     case SpellEffectType.PUSHBACK_DAMAGE:
-    case WeaponEffectType.PUSHBACK_DAMAGE:
       return 'pushback_damage';
     case SpellEffectType.SHIELD:
       return 'shield';
@@ -1021,10 +1012,7 @@ export const getSimpleEffect: (
       return 'ap';
     case WeaponEffectType.MP:
     case SpellEffectType.MP:
-    case WeaponEffectType.STEALS_MP:
       return 'mp';
-    case WeaponEffectType.ATTRACT_CELLS:
-      return 'misc';
     default:
       throw new Error('Unknown SimpleEffect');
   }

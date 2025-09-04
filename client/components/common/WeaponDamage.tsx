@@ -150,13 +150,11 @@ const WeaponDamage: React.FC<Props> = ({
                     weaponSkillPower,
                   ),
                   baseMax:
-                    getSimpleEffect(type) === 'pushback_damage'
-                      ? max
-                      : max +
-                        (getSimpleEffect(type) === 'damage' ||
-                        getSimpleEffect(type) === 'heal'
-                          ? 0
-                          : weaponStats.critBonusDamage),
+                    max +
+                    (getSimpleEffect(type) === 'damage' ||
+                    getSimpleEffect(type) === 'heal'
+                      ? 0
+                      : weaponStats.critBonusDamage),
                 },
         };
       },
@@ -189,36 +187,6 @@ const WeaponDamage: React.FC<Props> = ({
               0,
             ),
             max: healLines.reduce(
-              (acc, curr) => acc + (curr.crit?.max ?? 0),
-              0,
-            ),
-          },
-        }
-      : null;
-
-  const pushbackDamageLines = weaponEffectSummaries.filter(
-    (e) => getSimpleEffect(e.type) === 'pushback_damage',
-  );
-
-  const totalPushbackDamage =
-    pushbackDamageLines.length > 0
-      ? {
-          nonCrit: {
-            min: pushbackDamageLines.reduce(
-              (acc, curr) => acc + (curr.nonCrit.min || curr.nonCrit.max),
-              0,
-            ),
-            max: pushbackDamageLines.reduce(
-              (acc, curr) => acc + curr.nonCrit.max,
-              0,
-            ),
-          },
-          crit: {
-            min: pushbackDamageLines.reduce(
-              (acc, curr) => acc + ((curr.crit?.min || curr.crit?.max) ?? 0),
-              0,
-            ),
-            max: pushbackDamageLines.reduce(
               (acc, curr) => acc + (curr.crit?.max ?? 0),
               0,
             ),
@@ -313,13 +281,6 @@ const WeaponDamage: React.FC<Props> = ({
           totalObj={totalHeal}
           imageUrl="icon/Health_Point.svg"
           imageAlt={t('HEAL')}
-        />
-      )}
-      {totalPushbackDamage && (
-        <TotalDamageLine
-          totalObj={totalPushbackDamage}
-          imageUrl="icon/Pushback_Damage.svg"
-          imageAlt={t('PUSHBACK_DAMAGE')}
         />
       )}
       <Divider css={{ margin: '12px 0' }} />

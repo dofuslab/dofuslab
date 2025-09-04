@@ -74,10 +74,6 @@ to_effect_enum = {
     "Fire healing": enums.WeaponEffectType.FIRE_HEALING,
     "Water healing": enums.WeaponEffectType.WATER_HEALING,
     "Neutral healing": enums.WeaponEffectType.NEUTRAL_HEALING,
-    "Best element damage": enums.WeaponEffectType.BEST_ELEMENT_DAMAGE,
-    "Pushback damage": enums.WeaponEffectType.PUSHBACK_DAMAGE,
-    "Attract cells": enums.WeaponEffectType.ATTRACT_CELLS,
-    "Steals MP": enums.WeaponEffectType.STEALS_MP,
 }
 
 to_spell_enum = {
