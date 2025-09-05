@@ -63,7 +63,7 @@ const EquippedItem: React.FC<Props> = ({
     <Link
       href={`/equip/${slotToUrlString(slot)}/${customSet ? customSet.id : ''}`}
     >
-      <a>{emptyItemSlot}</a>
+      {emptyItemSlot}
     </Link>
   ) : (
     emptyItemSlot
@@ -81,6 +81,7 @@ const EquippedItem: React.FC<Props> = ({
             },
           }}
           as={asPath}
+          legacyBehavior
         >
           <div>
             <EquippedItemWithStats
