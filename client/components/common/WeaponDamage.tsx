@@ -24,6 +24,7 @@ import {
   getTotalDamage,
   getWeightedAverages,
   CustomSetContext,
+  calcEffectType,
 } from 'common/utils';
 
 import {
@@ -287,14 +288,20 @@ const WeaponDamage: React.FC<Props> = ({
             <EffectLine
               min={effect.nonCrit.min}
               max={effect.nonCrit.max}
-              effectType={effect.type}
+              effectType={calcEffectType(
+                effect.type,
+                statsFromCustomSetWithBuffs,
+              )}
               baseMax={effect.nonCrit.baseMax}
             />
             {!!effect.crit && (
               <EffectLine
                 min={effect.crit.min}
                 max={effect.crit.max}
-                effectType={effect.type}
+                effectType={calcEffectType(
+                  effect.type,
+                  statsFromCustomSetWithBuffs,
+                )}
                 baseMax={effect.crit.baseMax}
               />
             )}
