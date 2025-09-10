@@ -28,4 +28,7 @@ module.exports = withBundleAnalyzer({
   },
   i18n,
   trailingSlash: true,
+  experimental: {
+    nextScriptWorkers: true,
+  },
 });
