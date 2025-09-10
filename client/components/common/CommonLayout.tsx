@@ -9,7 +9,7 @@ interface Props {
   showSwitch: boolean;
 }
 
-const CommonLayout: React.FC<Props> = ({ children, showSwitch }) => (
+const CommonLayout = ({ children, showSwitch }: Props) => (
   <>
     <Media lessThan="xs">
       <MobileLayout>{children}</MobileLayout>

@@ -38,11 +38,7 @@ interface Props {
   isMobile: boolean;
 }
 
-const BuildTags: React.FC<Props> = ({
-  customSetId,
-  tagAssociations,
-  isMobile,
-}) => {
+const BuildTags = ({ customSetId, tagAssociations, isMobile }: Props) => {
   const { t } = useTranslation('common');
   const isEditable = React.useContext(EditableContext);
   const { data } = useQuery<customSetTags>(customSetTagsQuery);

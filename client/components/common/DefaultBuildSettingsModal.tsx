@@ -21,7 +21,7 @@ interface Props {
   onClose: () => void;
 }
 
-const DefaultBuildSettingsModal: React.FC<Props> = ({ open, onClose }) => {
+const DefaultBuildSettingsModal = ({ open, onClose }: Props) => {
   const { t } = useTranslation('common');
 
   const { data: currentUserData } =

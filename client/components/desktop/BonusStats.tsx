@@ -25,7 +25,7 @@ interface Props {
   isClassic: boolean;
 }
 
-const BonusStats: React.FC<Props> = ({ customSet, isMobile, isClassic }) => {
+const BonusStats = ({ customSet, isMobile, isClassic }: Props) => {
   const { t } = useTranslation(['stat', 'common']);
   const setBonuses = getBonusesFromCustomSet(customSet);
   const itemOrder = customSet.equippedItems.reduce(

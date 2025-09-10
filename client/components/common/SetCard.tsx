@@ -21,7 +21,7 @@ interface Props {
   onClick: (set: SetWithItems) => void;
 }
 
-const SetCard: React.FC<Props> = ({ set, onClick }) => {
+const SetCard = ({ set, onClick }: Props) => {
   const { t } = useTranslation(['stat', 'common']);
   const maxSetBonusItems = set.bonuses.reduce(
     (currMax, bonus) => Math.max(currMax, bonus.numItems),

@@ -28,12 +28,7 @@ interface Props {
   isClassic: boolean;
 }
 
-const SetSelector: React.FC<Props> = ({
-  filters,
-  customSet,
-  isMobile,
-  isClassic,
-}) => {
+const SetSelector = ({ filters, customSet, isMobile, isClassic }: Props) => {
   const { data, loading, fetchMore } = useQuery<sets, setsVariables>(SetQuery, {
     variables: { first: PAGE_SIZE, filters },
   });

@@ -32,14 +32,14 @@ interface Props {
   originalState: CustomSetMetadata;
 }
 
-const CustomSetHeaderForm: React.FC<Props> = ({
+const CustomSetHeaderForm = ({
   customSet,
   isMobile,
   dispatch,
   metadataState,
   originalState,
   ...restProps
-}) => {
+}: Props) => {
   const isEditable = React.useContext(EditableContext);
 
   const { t } = useTranslation('common');

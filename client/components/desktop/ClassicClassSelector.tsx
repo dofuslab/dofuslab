@@ -20,11 +20,11 @@ interface Props {
   buildGender: BuildGender;
 }
 
-const ClassicClassSelector: React.FC<Props> = ({
+const ClassicClassSelector = ({
   dofusClassId,
   setDofusClassId,
   buildGender,
-}) => {
+}: Props) => {
   const { data } = useQuery<classes>(classesQuery);
 
   const theme = useTheme();

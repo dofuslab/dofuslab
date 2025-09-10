@@ -15,7 +15,7 @@ interface Props {
 
 const margin = { marginBottom: 12, [mq[4]]: { marginBottom: 20 } };
 
-const ClassicLeftColumnStats: React.FC<Props> = ({ openBuffModal }) => {
+const ClassicLeftColumnStats = ({ openBuffModal }: Props) => {
   const { customSet } = React.useContext(CustomSetContext);
 
   return (

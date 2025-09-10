@@ -16,11 +16,7 @@ interface Props {
   setItemTypeIds: React.Dispatch<React.SetStateAction<Set<string>>>;
 }
 
-const ItemTypeFilter: React.FC<Props> = ({
-  itemTypes,
-  itemTypeIds,
-  setItemTypeIds,
-}) => {
+const ItemTypeFilter = ({ itemTypes, itemTypeIds, setItemTypeIds }: Props) => {
   const onChangeItemTypeIds = React.useCallback(
     (newItemTypeIds: Array<CheckboxValueType>) =>
       setItemTypeIds(new Set(newItemTypeIds as Array<string>)),

@@ -38,10 +38,7 @@ interface Props {
   selectedSpellLevelIdx: number;
 }
 
-const SpellCardContent: React.FC<Props> = ({
-  spell,
-  selectedSpellLevelIdx,
-}) => {
+const SpellCardContent = ({ spell, selectedSpellLevelIdx }: Props) => {
   const { customSet, statsFromCustomSetWithBuffs } =
     React.useContext(CustomSetContext);
   const { t } = useTranslation(['weapon_spell_effect', 'stat', 'common']);

@@ -64,7 +64,7 @@ interface Props {
   popoverPlacement?: TooltipPlacement;
 }
 
-const EquippedItemWithStats: React.FC<Props> = ({
+const EquippedItemWithStats = ({
   equippedItem,
   selected,
   customSet,
@@ -74,7 +74,7 @@ const EquippedItemWithStats: React.FC<Props> = ({
   errors,
   className,
   popoverPlacement,
-}) => {
+}: Props) => {
   const deleteItem = useDeleteItemMutation(customSet);
   const stopPropagationCallback = React.useCallback(
     (e: React.MouseEvent<HTMLElement>) => {

@@ -32,7 +32,7 @@ interface Props {
   openBuffModal: () => void;
 }
 
-const StatTable: React.FC<Props> = ({ group, className, openBuffModal }) => {
+const StatTable = ({ group, className, openBuffModal }: Props) => {
   const { customSet, statsFromCustomSet, statsFromAppliedBuffs } =
     React.useContext(CustomSetContext);
   const { t } = useTranslation('stat');

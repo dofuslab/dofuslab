@@ -27,7 +27,7 @@ interface Props {
   customSet: CustomSet;
 }
 
-const BuildActions: React.FC<Props> = ({ customSet }) => {
+const BuildActions = ({ customSet }: Props) => {
   const { t } = useTranslation('common');
 
   const [restartModalOpen, setRestartModalOpen] = React.useState(false);

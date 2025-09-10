@@ -33,7 +33,7 @@ interface Props {
   isSuggestion?: boolean;
 }
 
-const BasicItemCard: React.FC<Props> = ({
+const BasicItemCard = ({
   item,
   equipped,
   openSetModal,
@@ -42,7 +42,7 @@ const BasicItemCard: React.FC<Props> = ({
   weaponElementMage,
   favorite,
   isSuggestion,
-}) => {
+}: Props) => {
   const { t } = useTranslation(['common', 'stat', 'weapon_spell_effect']);
   const theme = useTheme();
   const [brokenImage, setBrokenImage] = React.useState(false);

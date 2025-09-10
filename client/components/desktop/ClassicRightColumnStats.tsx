@@ -12,7 +12,7 @@ interface Props {
 
 const margin = { marginBottom: 12, [mq[4]]: { marginBottom: 20 } };
 
-const ClassicRightColumnStats: React.FC<Props> = ({ openBuffModal }) => {
+const ClassicRightColumnStats = ({ openBuffModal }: Props) => {
   return (
     <div
       css={{

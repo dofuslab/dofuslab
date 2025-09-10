@@ -13,12 +13,12 @@ interface Props {
   customSet: CustomSet;
 }
 
-const ItemWithStats: React.FC<Props> = ({
+const ItemWithStats = ({
   equippedItem,
   selected,
   deletable,
   customSet,
-}) => {
+}: Props) => {
   const deleteItem = useDeleteItemMutation(customSet);
   const onDelete = React.useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {

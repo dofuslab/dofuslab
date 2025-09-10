@@ -58,11 +58,11 @@ const getPopoverPlacement = (slotEnName: string): TooltipPlacement => {
   }
 };
 
-const ClassicEquipmentSlots: React.FC<Props> = ({
+const ClassicEquipmentSlots = ({
   customSet,
   errors,
   setDofusClassId,
-}) => {
+}: Props) => {
   const { data } = useQuery<ItemSlotsQueryType>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
 

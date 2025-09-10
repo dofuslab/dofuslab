@@ -61,14 +61,14 @@ const reducer = (state: CustomSetMetadata, action: CustomSetMetadataAction) => {
   }
 };
 
-const SetHeader: React.FC<Props> = ({
+const SetHeader = ({
   customSet,
   isClassic,
   errors,
   className,
   setDofusClassId,
   customSetLoading,
-}) => {
+}: Props) => {
   const isEditable = React.useContext(EditableContext);
 
   const { data: currentUserData } =

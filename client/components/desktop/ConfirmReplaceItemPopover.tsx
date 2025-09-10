@@ -17,11 +17,7 @@ interface Props {
   customSet: CustomSet;
 }
 
-const ConfirmReplaceItemPopover: React.FC<Props> = ({
-  item,
-  customSet,
-  children,
-}) => {
+const ConfirmReplaceItemPopover = ({ item, customSet, children }: Props) => {
   const { t } = useTranslation('common');
   const [selectedItemSlotId, setSelectedItemSlotId] = React.useState<
     string | null

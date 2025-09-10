@@ -50,7 +50,7 @@ interface Props {
   selectedItemSlot: ItemSlot | null;
 }
 
-const SelectorFilters: React.FC<Props> = ({
+const SelectorFilters = ({
   filters: { stats: statFilters },
   dispatch,
   customSet,
@@ -61,7 +61,7 @@ const SelectorFilters: React.FC<Props> = ({
   isMobile,
   isClassic,
   selectItemSlot,
-}) => {
+}: Props) => {
   const router = useRouter();
   const { customSetId: customSetIdParam } = router.query;
   const customSetId = Array.isArray(customSetIdParam)

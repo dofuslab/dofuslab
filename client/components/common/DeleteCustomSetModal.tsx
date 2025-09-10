@@ -18,11 +18,7 @@ interface Props {
   customSetId: string;
 }
 
-const DeleteCustomSetModal: React.FC<Props> = ({
-  open,
-  onCancel,
-  customSetId,
-}) => {
+const DeleteCustomSetModal = ({ open, onCancel, customSetId }: Props) => {
   const { t } = useTranslation('common');
   const [deleteMutate, { loading: deleteLoading }] = useMutation<
     deleteCustomSet,

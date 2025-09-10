@@ -24,7 +24,7 @@ interface Props {
   openSignUpModal: () => void;
 }
 
-const LoginModal: React.FC<Props> = ({ open, onClose, openSignUpModal }) => {
+const LoginModal = ({ open, onClose, openSignUpModal }: Props) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 

@@ -42,14 +42,14 @@ interface Props {
   overlayCSS?: React.CSSProperties;
 }
 
-const BasicItemWithStats: React.FC<Props> = ({
+const BasicItemWithStats = ({
   item,
   exos,
   deletable,
   onDelete,
   selected,
   overlayCSS,
-}) => {
+}: Props) => {
   const theme = useTheme();
   const [brokenImage, setBrokenImage] = React.useState(false);
   const contentRef = React.useRef<HTMLDivElement | null>(null);

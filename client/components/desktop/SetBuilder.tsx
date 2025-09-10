@@ -83,7 +83,7 @@ interface Props {
   customSet?: CustomSet | null;
 }
 
-const SetBuilder: React.FC<Props> = ({ customSet }) => {
+const SetBuilder = ({ customSet }: Props) => {
   const { appliedBuffs, statsFromCustomSet, customSetLoading } =
     React.useContext(CustomSetContext);
   const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(

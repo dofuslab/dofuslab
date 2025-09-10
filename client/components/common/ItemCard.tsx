@@ -36,7 +36,7 @@ interface Props {
   isSuggestion?: boolean;
 }
 
-const ItemCard: React.FC<Props> = ({
+const ItemCard = ({
   item,
   itemSlotId,
   customSetId,
@@ -47,7 +47,7 @@ const ItemCard: React.FC<Props> = ({
   remainingSlotIds,
   notifyOnEquip,
   isSuggestion,
-}) => {
+}: Props) => {
   const mutate = useEquipItemMutation(item);
   const { t, i18n } = useTranslation('common');
   const client = useApolloClient();

@@ -27,7 +27,7 @@ interface Props {
   errors?: Array<BuildError>;
 }
 
-const EquippedItem: React.FC<Props> = ({
+const EquippedItem = ({
   slot,
   equippedItem,
   selectItemSlot,
@@ -37,7 +37,7 @@ const EquippedItem: React.FC<Props> = ({
   openSetModal,
   errors,
   className,
-}) => {
+}: Props) => {
   const onClick = React.useCallback(() => {
     if (selected) {
       selectItemSlot(null);

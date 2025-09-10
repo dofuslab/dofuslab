@@ -123,12 +123,12 @@ const calcStatsDiff = (
   ...statsState.exos,
 ];
 
-const MageModal: React.FC<Props> = ({
+const MageModal = ({
   open,
   equippedItem,
   closeMageModal,
   customSetId,
-}) => {
+}: Props) => {
   const { statsMap, exoStatsMap, originalStatsMap } = getStatsMaps(
     equippedItem.item.stats,
     equippedItem.exos,

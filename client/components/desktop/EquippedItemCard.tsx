@@ -70,7 +70,7 @@ interface Props {
   errors?: Array<BuildError>;
 }
 
-const EquippedItemCard: React.FC<Props> = ({
+const EquippedItemCard = ({
   equippedItem,
   itemSlotId,
   customSet,
@@ -78,7 +78,7 @@ const EquippedItemCard: React.FC<Props> = ({
   stopPropagationCallback,
   openSetModal,
   errors,
-}) => {
+}: Props) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
   const deleteItem = useDeleteItemMutation(customSet);

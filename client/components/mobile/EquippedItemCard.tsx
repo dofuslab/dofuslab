@@ -63,14 +63,14 @@ interface Props {
   errors?: Array<BuildError>;
 }
 
-const EquippedItemCard: React.FC<Props> = ({
+const EquippedItemCard = ({
   equippedItem,
   itemSlot,
   customSet,
   openMageModal,
   openSetModal,
   errors,
-}) => {
+}: Props) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
   const deleteItem = useDeleteItemMutation(customSet);

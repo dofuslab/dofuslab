@@ -65,7 +65,7 @@ const renderConditions = (conditionsObj: any, t: TFunction, depth = 0) => {
 };
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-const ItemStatsList: React.FC<Props> = ({
+const ItemStatsList = ({
   item,
   className,
   exos,
@@ -74,7 +74,7 @@ const ItemStatsList: React.FC<Props> = ({
   showOnlyWeaponStats,
   weaponElementMage,
   errors,
-}) => {
+}: Props) => {
   const { t, i18n } = useTranslation(['stat', 'weapon_spell_effect', 'common']);
   const theme = useTheme();
 

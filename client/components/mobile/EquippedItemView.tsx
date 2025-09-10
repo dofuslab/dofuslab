@@ -20,7 +20,7 @@ import { BuildError } from 'common/types';
 import { CustomSetHead } from 'common/wrappers';
 import { ItemSet } from 'common/type-aliases';
 
-const EquippedItemView: React.FC = () => {
+const EquippedItemView = () => {
   const router = useRouter();
   const { customSetId, equippedItemId } = router.query;
 

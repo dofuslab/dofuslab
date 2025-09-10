@@ -19,13 +19,7 @@ interface Props {
   shouldNotify?: boolean;
 }
 
-const AddBuffLink: React.FC<Props> = ({
-  buff,
-  isCrit,
-  spell,
-  item,
-  shouldNotify,
-}) => {
+const AddBuffLink = ({ buff, isCrit, spell, item, shouldNotify }: Props) => {
   const buffName = spell?.name || item?.name || '';
   const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
   const key = isCrit ? 'critIncrementBy' : 'incrementBy';

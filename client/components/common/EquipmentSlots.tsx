@@ -26,13 +26,13 @@ interface Props {
   errors: Array<BuildError>;
 }
 
-const EquipmentSlots: React.FC<Props> = ({
+const EquipmentSlots = ({
   customSet,
   selectItemSlot,
   selectedItemSlotId,
   isMobile,
   errors,
-}) => {
+}: Props) => {
   const { data } = useQuery<ItemSlots>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
 

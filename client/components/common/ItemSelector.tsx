@@ -31,7 +31,7 @@ type Props = SharedProps & {
   itemTypeIds: Set<string>;
 };
 
-const ItemSelector: React.FC<Props> = ({
+const ItemSelector = ({
   selectedItemSlot,
   customSet,
   selectItemSlot,
@@ -40,7 +40,7 @@ const ItemSelector: React.FC<Props> = ({
   itemTypeIds,
   isMobile,
   isClassic,
-}) => {
+}: Props) => {
   const itemTypeIdsArr = Array.from(itemTypeIds);
   const queryFilters = {
     ...filters,

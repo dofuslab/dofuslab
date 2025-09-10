@@ -21,7 +21,7 @@ interface Props {
   dofusClassId?: string;
 }
 
-const ClassicClassSpells: React.FC<Props> = ({ dofusClassId }) => {
+const ClassicClassSpells = ({ dofusClassId }: Props) => {
   const { customSet } = React.useContext(CustomSetContext);
   const { data } = useQuery<classes>(classesQuery);
   const theme = useTheme();

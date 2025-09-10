@@ -18,7 +18,7 @@ interface Props {
   onClose: () => void;
 }
 
-const RequestPasswordResetModal: React.FC<Props> = ({ open, onClose }) => {
+const RequestPasswordResetModal = ({ open, onClose }: Props) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 

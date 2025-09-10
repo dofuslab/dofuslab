@@ -19,7 +19,7 @@ interface Props {
   onClose: () => void;
 }
 
-const ChangePasswordModal: React.FC<Props> = ({ open, onClose }) => {
+const ChangePasswordModal = ({ open, onClose }: Props) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 

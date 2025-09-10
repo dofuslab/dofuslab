@@ -33,12 +33,12 @@ const classContainerStyle = {
   },
 };
 
-const DefaultClassModal: React.FC<Props> = ({
+const DefaultClassModal = ({
   open,
   closeModal,
   customSet,
   setDofusClassId,
-}) => {
+}: Props) => {
   const { t } = useTranslation('common');
   const { data } = useQuery<classes>(classesQuery);
   const { data: currentUserData } =

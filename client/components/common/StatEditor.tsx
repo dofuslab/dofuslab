@@ -161,7 +161,7 @@ const getReadonlyStatDisplayStyle = (
   ...(baseKey === 'baseVitality' && getStatDisplayStyle(title, theme)),
 });
 
-const StatEditor: React.FC<Props> = ({ customSet, className }) => {
+const StatEditor = ({ customSet, className }: Props) => {
   const initialState = customSet?.stats
     ? {
         baseVitality: customSet.stats.baseVitality,

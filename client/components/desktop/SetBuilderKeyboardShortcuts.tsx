@@ -30,11 +30,11 @@ const keyToMultiName: Record<string, 'Ring' | 'Dofus'> = {
   d: 'Dofus',
 };
 
-const SetBuilderKeyboardShortcuts: React.FC<Props> = ({
+const SetBuilderKeyboardShortcuts = ({
   selectedItemSlot,
   selectItemSlot,
   customSet,
-}) => {
+}: Props) => {
   const { data } = useQuery<ItemSlots>(ItemSlotsQuery);
   const deleteItem = useDeleteItemMutation(customSet);
   const itemSlots =

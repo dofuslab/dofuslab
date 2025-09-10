@@ -14,7 +14,7 @@ interface Props {
 
 const MAX = 9999;
 
-const MageInputNumber: React.FC<Props> = ({ stat, value, dispatch, isExo }) => {
+const MageInputNumber = ({ stat, value, dispatch, isExo }: Props) => {
   const onChange = React.useCallback(
     (v: number | null) => {
       dispatch({

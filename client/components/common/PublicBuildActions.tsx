@@ -17,7 +17,7 @@ interface Props {
   className?: string;
 }
 
-const PublicBuildActions: React.FC<Props> = ({ customSet, className }) => {
+const PublicBuildActions = ({ customSet, className }: Props) => {
   const { t } = useTranslation('common');
   const { copyLoading, onCopyLink, onCopyBuild, linkTextareaRef } =
     usePublicBuildActions(customSet);

@@ -18,7 +18,7 @@ interface Props {
   level: number;
 }
 
-const SpellBuffCard: React.FC<Props> = ({ spell, level }) => {
+const SpellBuffCard = ({ spell, level }: Props) => {
   const spellLevelIdx = spell.spellStats.reduce((max, curr, idx) => {
     if (!curr) {
       return max;

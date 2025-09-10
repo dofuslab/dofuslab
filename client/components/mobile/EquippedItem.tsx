@@ -25,14 +25,14 @@ interface Props {
   errors?: Array<BuildError>;
 }
 
-const EquippedItem: React.FC<Props> = ({
+const EquippedItem = ({
   slot,
   equippedItem,
   customSet,
   openMageModal,
   openSetModal,
   errors,
-}) => {
+}: Props) => {
   const theme = useTheme();
   const isEditable = React.useContext(EditableContext);
 

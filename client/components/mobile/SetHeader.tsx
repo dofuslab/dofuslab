@@ -59,13 +59,13 @@ const reducer = (state: CustomSetMetadata, action: CustomSetMetadataAction) => {
   }
 };
 
-const SetHeader: React.FC<Props> = ({
+const SetHeader = ({
   customSet,
   errors,
   className,
   setDofusClassId,
   customSetLoading,
-}) => {
+}: Props) => {
   const originalState = {
     isEditing: false,
     name: customSet?.name || '',

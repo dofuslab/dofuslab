@@ -26,7 +26,7 @@ type Props = {
   itemSlotId?: string;
 };
 
-const EquipPage: React.FC<Props> = ({ customSetId, itemSlotId }) => {
+const EquipPage = ({ customSetId, itemSlotId }: Props) => {
   const router = useRouter();
 
   const [isClassic, setIsClassic] = useClassic();

@@ -13,7 +13,7 @@ interface Props {
   className?: string;
 }
 
-const ResetAllButton: React.FC<Props> = ({ onReset, className }) => {
+const ResetAllButton = ({ onReset, className }: Props) => {
   const { t } = useTranslation('common');
   return (
     <Button

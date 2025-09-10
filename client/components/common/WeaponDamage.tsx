@@ -41,11 +41,7 @@ interface Props {
   weaponElementMage: WeaponElementMage | null;
 }
 
-const WeaponDamage: React.FC<Props> = ({
-  weaponStats,
-  customSet,
-  weaponElementMage,
-}) => {
+const WeaponDamage = ({ weaponStats, customSet, weaponElementMage }: Props) => {
   const { statsFromCustomSetWithBuffs } = React.useContext(CustomSetContext);
   const { t } = useTranslation(['weapon_spell_effect', 'stat']);
   const [weaponSkillPower, setWeaponSkillPower] = React.useState(300);

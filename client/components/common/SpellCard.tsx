@@ -17,7 +17,7 @@ interface Props {
   spell: Spell;
 }
 
-const SpellCard: React.FC<Props> = ({ spell, customSet }) => {
+const SpellCard = ({ spell, customSet }: Props) => {
   const customSetLevel = customSet?.level || 200;
   const spellLevelIdx = spell.spellStats.reduce((max, curr, idx) => {
     if (curr.level <= customSetLevel) {

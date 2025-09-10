@@ -143,7 +143,7 @@ const getColumns: (t: TFunction) => Array<ColumnType<typeof shortcuts[0]>> = (
   },
 ];
 
-const KeyboardShortcutsModal: React.FC<Props> = ({ open, onClose }) => {
+const KeyboardShortcutsModal = ({ open, onClose }: Props) => {
   const { t } = useTranslation('keyboard_shortcut');
 
   const memoizedExpandableRow = React.useCallback(

@@ -59,14 +59,14 @@ interface Props {
   isClassic: boolean;
 }
 
-const Selector: React.FC<Props> = ({
+const Selector = ({
   customSet,
   selectedItemSlot,
   selectItemSlot,
   showSets,
   isMobile,
   isClassic,
-}) => {
+}: Props) => {
   const [filters, dispatch] = React.useReducer(reducer, {
     stats: [],
     maxLevel: customSet?.level || 200,

@@ -41,11 +41,7 @@ interface Props extends AppProps {
   apolloClient: ApolloClient<NormalizedCacheObject>;
 }
 
-const DofusLabApp: React.FC<Props> = ({
-  Component,
-  apolloClient,
-  pageProps,
-}) => {
+const DofusLabApp = ({ Component, apolloClient, pageProps }: Props) => {
   const router = useRouter();
   const { customSetId } = router.query;
 

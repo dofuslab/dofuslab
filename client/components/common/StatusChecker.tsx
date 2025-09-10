@@ -57,7 +57,7 @@ function isStatusObj(value: string | StatusObj): value is StatusObj {
   return typeof value === 'object';
 }
 
-const StatusChecker: React.FC = () => {
+const StatusChecker = () => {
   const router = useRouter();
   const { query } = router;
   const { t } = useTranslation('status');

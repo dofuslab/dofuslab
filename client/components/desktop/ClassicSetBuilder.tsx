@@ -30,7 +30,7 @@ interface Props {
   customSet?: CustomSet | null;
 }
 
-const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
+const ClassicSetBuilder = ({ customSet }: Props) => {
   const { appliedBuffs, statsFromCustomSet, customSetLoading } =
     React.useContext(CustomSetContext);
 

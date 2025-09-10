@@ -31,14 +31,14 @@ interface Props {
   selectedItemSlot: ItemSlot | null;
 }
 
-const FavoritesButton: React.FC<Props> = ({
+const FavoritesButton = ({
   className,
   customSet,
   selectItemSlot,
   shouldRedirect,
   showSets,
   selectedItemSlot,
-}) => {
+}: Props) => {
   const { t } = useTranslation('common');
   const [favoritesModalOpen, setFavoritesModalOpen] = React.useState(false);
   const openModal = React.useCallback(() => {

@@ -52,13 +52,13 @@ interface Props {
   isMobile: boolean;
 }
 
-const BuildList: React.FC<Props> = ({
+const BuildList = ({
   username,
   onClose,
   isEditable,
   getScrollParent,
   isMobile,
-}) => {
+}: Props) => {
   const { t } = useTranslation('common');
 
   const [mutate, { loading: createLoading }] = useMutation<createCustomSet>(

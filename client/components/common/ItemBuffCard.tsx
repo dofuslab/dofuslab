@@ -15,7 +15,7 @@ interface Props {
   item: Item;
 }
 
-const ItemBuffCard: React.FC<Props> = ({ item }) => {
+const ItemBuffCard = ({ item }: Props) => {
   const theme = useTheme();
 
   return (

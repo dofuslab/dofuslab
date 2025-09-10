@@ -25,7 +25,7 @@ interface Props {
   isMobile: boolean;
 }
 
-const BuildErrors: React.FC<Props> = ({ customSet, errors, isMobile }) => {
+const BuildErrors = ({ customSet, errors, isMobile }: Props) => {
   const { t } = useTranslation(['common']);
   const theme = useTheme();
 

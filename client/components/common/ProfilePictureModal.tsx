@@ -22,11 +22,7 @@ interface Props {
   currentlyActive: string;
 }
 
-const ProfilePictureModal: React.FC<Props> = ({
-  onCancel,
-  open,
-  currentlyActive,
-}) => {
+const ProfilePictureModal = ({ onCancel, open, currentlyActive }: Props) => {
   const { t } = useTranslation('common');
   const [active, setActive] = useState<string>(currentlyActive);
   const theme = useTheme();

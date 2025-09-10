@@ -17,11 +17,7 @@ const getNumLoaders = (
   mult: number,
 ) => numCols * 2 * mult - ((length || 0) % numCols);
 
-const SkeletonCardsLoader: React.FC<Props> = ({
-  multiplier,
-  length,
-  isClassic,
-}) => {
+const SkeletonCardsLoader = ({ multiplier, length, isClassic }: Props) => {
   const numCols = getSelectorNumCols(isClassic);
   const mult = multiplier || 1;
   return (

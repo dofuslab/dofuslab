@@ -20,13 +20,13 @@ interface Props {
   isMobile?: boolean;
 }
 
-const UserProfile: React.FC<Props> = ({
+const UserProfile = ({
   username,
   creationDate,
   profilePicture,
   isEditable,
   isMobile,
-}) => {
+}: Props) => {
   const [pictureModalOpen, setPictureModalOpen] = React.useState(false);
 
   const { t } = useTranslation('common');

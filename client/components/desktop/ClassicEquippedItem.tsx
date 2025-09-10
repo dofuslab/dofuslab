@@ -28,7 +28,7 @@ interface Props {
   popoverPlacement?: TooltipPlacement;
 }
 
-const ClassicEquippedItem: React.FC<Props> = ({
+const ClassicEquippedItem = ({
   slot,
   equippedItem,
   customSet,
@@ -37,7 +37,7 @@ const ClassicEquippedItem: React.FC<Props> = ({
   errors,
   className,
   popoverPlacement,
-}) => {
+}: Props) => {
   const theme = useTheme();
 
   const isEditable = React.useContext(EditableContext);

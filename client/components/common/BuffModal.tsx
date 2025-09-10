@@ -50,12 +50,12 @@ interface Props {
   dofusClassId?: string;
 }
 
-const BuffModal: React.FC<Props> = ({
+const BuffModal = ({
   open,
   closeBuffModal,
   customSet,
   dofusClassId,
-}) => {
+}: Props) => {
   const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
   const { t } = useTranslation(['stat', 'common']);
   const { data: classData } = useQuery<classes>(classesQuery);

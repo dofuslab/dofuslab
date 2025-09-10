@@ -58,14 +58,14 @@ function checkIfItemsCanAllBeEquipped(
   return result;
 }
 
-const SetModal: React.FC<Props> = ({
+const SetModal = ({
   setId,
   setName,
   open,
   onCancel,
   customSet,
   shouldRedirect,
-}) => {
+}: Props) => {
   const { data, loading, error } = useQuery<set, setVariables>(setQuery, {
     variables: { id: setId },
   });
