@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
+
+import * as React from 'react';
 import {
   useMutation,
   useApolloClient,
@@ -13,7 +15,8 @@ import { useRouter, NextRouter } from 'next/router';
 import { notification } from 'antd';
 import cloneDeep from 'lodash/cloneDeep';
 import groupBy from 'lodash/groupBy';
-import { TFunction, useTranslation, Trans } from 'next-i18next';
+import { useTranslation, Trans } from 'next-i18next';
+import { TFunction } from 'react-i18next';
 import CustomSetFragment from 'graphql/fragments/customSet.graphql';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import ItemFragment from 'graphql/fragments/item.graphql';
@@ -395,7 +398,7 @@ export const findEmptyOrOnlySlotId = (
 export const checkAuthentication = async (
   // eslint-disable-next-line @typescript-eslint/ban-types
   client: ApolloClient<object>,
-  t: TFunction,
+  t: TFunction<'common'>,
   customSet?: CustomSet | null,
 ) => {
   const { data } = await client.query<currentUser>({ query: currentUserQuery });
@@ -1446,12 +1449,11 @@ export const renderErrors = (
     if (reason === BuildErrorType.ConditionNotMet) {
       return (
         <li key={`equipped-item-${equippedItem.id}-${reason}`}>
-          <Trans i18nKey="common:CONDITION_NOT_MET_WITH_ITEM">
-            The conditions for the item{' '}
-            <strong css={{ fontWeight: 500 }}>
-              {{ itemName: equippedItem.item.name }}
-            </strong>{' '}
-            have not been met.
+          <Trans
+            i18nKey="common:CONDITION_NOT_MET_WITH_ITEM"
+            components={{ 1: <strong css={{ fontWeight: 500 }} /> }}
+          >
+            {`The conditions for the item <1>{{ itemName }}</1> have not been met.`}
           </Trans>
         </li>
       );
@@ -1459,12 +1461,11 @@ export const renderErrors = (
     if (reason === BuildErrorType.LevelTooHigh) {
       return (
         <li key={`equipped-item-${equippedItem.id}-${reason}`}>
-          <Trans i18nKey="common:LEVEL_TOO_HIGH_WITH_ITEM">
-            The level of the item{' '}
-            <strong css={{ fontWeight: 500 }}>
-              {{ itemName: equippedItem.item.name }}
-            </strong>{' '}
-            is higher than the build&apos;s.
+          <Trans
+            i18nKey="common:LEVEL_TOO_HIGH_WITH_ITEM"
+            components={{ 1: <strong css={{ fontWeight: 500 }} /> }}
+          >
+            {`The level of the item <1>{{ itemName }}</1> is higher than the build's.`}
           </Trans>
         </li>
       );

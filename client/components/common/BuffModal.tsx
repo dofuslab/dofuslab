@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useContext, useState, useCallback } from 'react';
 import Modal from 'antd/lib/modal/Modal';
 
 import { AppliedBuff, AppliedBuffActionType } from 'common/types';
@@ -56,15 +56,15 @@ const BuffModal = ({
   customSet,
   dofusClassId,
 }: Props) => {
-  const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
+  const { appliedBuffs, dispatch } = useContext(CustomSetContext);
   const { t } = useTranslation(['stat', 'common']);
   const { data: classData } = useQuery<classes>(classesQuery);
   const { data: currentUserData } =
     useQuery<CurrentUserQueryType>(currentUserQuery);
 
-  const [selectedClassId, setSelectedClassId] = React.useState<
-    string | undefined
-  >(dofusClassId);
+  const [selectedClassId, setSelectedClassId] = useState<string | undefined>(
+    dofusClassId,
+  );
   const { data, loading } = useQuery<classBuffs, classBuffsVariables>(
     classBuffsQuery,
     {
@@ -73,11 +73,11 @@ const BuffModal = ({
     },
   );
 
-  const onSelectClass = React.useCallback((newSelectedClassId: string) => {
+  const onSelectClass = useCallback((newSelectedClassId: string) => {
     setSelectedClassId(newSelectedClassId);
   }, []);
 
-  const onResetAll = React.useCallback(() => {
+  const onResetAll = useCallback(() => {
     dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
   }, []);
 

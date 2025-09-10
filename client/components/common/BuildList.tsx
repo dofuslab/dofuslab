@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { ChangeEvent } from 'react';
+
+import { useState, useCallback, Fragment } from 'react';
 
 import { useTheme } from '@emotion/react';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -67,22 +69,22 @@ const BuildList = ({
 
   const client = useApolloClient();
 
-  const [deleteModalOpen, setDeleteModalOpen] = React.useState(false);
-  const [customSetIdToDelete, setCustomSetIdToDelete] = React.useState<
-    string | null
-  >(null);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [customSetIdToDelete, setCustomSetIdToDelete] = useState<string | null>(
+    null,
+  );
 
-  const closeDeleteModal = React.useCallback(() => {
+  const closeDeleteModal = useCallback(() => {
     setDeleteModalOpen(false);
   }, []);
 
-  const [search, setSearch] = React.useState('');
-  const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
+  const [search, setSearch] = useState('');
+  const [dofusClassId, setDofusClassId] = useState<string | undefined>(
     undefined,
   );
-  const [tagIds, setTagIds] = React.useState<Array<string>>([]);
+  const [tagIds, setTagIds] = useState<Array<string>>([]);
 
-  const handleSearchChange = React.useCallback(
+  const handleSearchChange = useCallback(
     (searchValue: string) => {
       setSearch(searchValue);
     },
@@ -94,8 +96,8 @@ const BuildList = ({
     DEBOUNCE_INTERVAL,
   );
 
-  const onSearch = React.useCallback(
-    (changeEvent: React.ChangeEvent<HTMLInputElement>) => {
+  const onSearch = useCallback(
+    (changeEvent: ChangeEvent<HTMLInputElement>) => {
       setSearch(changeEvent.currentTarget.value);
       debouncedSearch(changeEvent.currentTarget.value);
     },
@@ -116,7 +118,7 @@ const BuildList = ({
 
   const { data: tagsData } = useQuery<customSetTags>(customSetTagsQuery);
 
-  const onLoadMore = React.useCallback(async () => {
+  const onLoadMore = useCallback(async () => {
     if (!userBuilds?.userByName?.customSets.pageInfo.hasNextPage) {
       return () => {
         // no-op
@@ -151,7 +153,7 @@ const BuildList = ({
 
   const router = useRouter();
 
-  const onCreate = React.useCallback(async () => {
+  const onCreate = useCallback(async () => {
     const { data: resultData } = await mutate({
       update: (_, { data }) => {
         if (!data?.createCustomSet) return;
@@ -339,7 +341,7 @@ const BuildList = ({
         }}
         getScrollParent={getScrollParent}
         loader={
-          <React.Fragment key="frag">
+          <Fragment key="frag">
             {Array(4)
               .fill(null)
               .map((_, idx) => (
@@ -354,7 +356,7 @@ const BuildList = ({
                   numRows={2}
                 />
               ))}
-          </React.Fragment>
+          </Fragment>
         }
       >
         {customSetIdToDelete && (

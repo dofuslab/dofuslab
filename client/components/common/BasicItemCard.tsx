@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { ReactNode } from 'react';
+
+import { useState } from 'react';
 import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
 import {
   item as Item,
@@ -29,7 +31,7 @@ interface Props {
   onClick?: () => void;
   showOnlyWeaponStats: boolean;
   weaponElementMage?: WeaponElementMage | null;
-  favorite?: React.ReactNode;
+  favorite?: ReactNode;
   isSuggestion?: boolean;
 }
 
@@ -45,7 +47,7 @@ const BasicItemCard = ({
 }: Props) => {
   const { t } = useTranslation(['common', 'stat', 'weapon_spell_effect']);
   const theme = useTheme();
-  const [brokenImage, setBrokenImage] = React.useState(false);
+  const [brokenImage, setBrokenImage] = useState(false);
   return (
     <Card
       hoverable={!!onClick}

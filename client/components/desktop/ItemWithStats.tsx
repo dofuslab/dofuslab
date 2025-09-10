@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { MouseEvent } from 'react';
+
+import { useCallback } from 'react';
 
 import { useDeleteItemMutation } from 'common/utils';
 import { EquippedItem, CustomSet } from 'common/type-aliases';
@@ -20,8 +22,8 @@ const ItemWithStats = ({
   customSet,
 }: Props) => {
   const deleteItem = useDeleteItemMutation(customSet);
-  const onDelete = React.useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
+  const onDelete = useCallback(
+    (e: MouseEvent<HTMLDivElement>) => {
       e.stopPropagation();
       if (deleteItem) {
         deleteItem(equippedItem.slot.id);

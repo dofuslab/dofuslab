@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useContext, useState, useCallback, Fragment } from 'react';
 
 import { Divider, notification, Select, Radio } from 'antd';
 import { useTheme } from '@emotion/react';
@@ -40,7 +40,7 @@ interface Props {
 
 const SpellCardContent = ({ spell, selectedSpellLevelIdx }: Props) => {
   const { customSet, statsFromCustomSetWithBuffs } =
-    React.useContext(CustomSetContext);
+    useContext(CustomSetContext);
   const { t } = useTranslation(['weapon_spell_effect', 'stat', 'common']);
   const customSetLevel = customSet?.level || 200;
 
@@ -52,17 +52,17 @@ const SpellCardContent = ({ spell, selectedSpellLevelIdx }: Props) => {
   const rangedOnly = !!spellStats?.minRange && spellStats?.minRange > 1;
   const meleeOnly = !spellStats?.maxRange || spellStats?.maxRange <= 1;
 
-  const [showRanged, setShowRanged] = React.useState(
+  const [showRanged, setShowRanged] = useState(
     getInitialRangedState(meleeOnly, rangedOnly, statsFromCustomSetWithBuffs),
   );
 
-  const [baseDamageIncreases, setBaseDamageIncreases] = React.useState<
-    Array<number>
-  >([]);
+  const [baseDamageIncreases, setBaseDamageIncreases] = useState<Array<number>>(
+    [],
+  );
 
-  const [selectedCondition, setSelectedCondition] = React.useState<
-    string | null
-  >(spellStats?.spellEffects.find((e) => !!e.condition)?.condition ?? null);
+  const [selectedCondition, setSelectedCondition] = useState<string | null>(
+    spellStats?.spellEffects.find((e) => !!e.condition)?.condition ?? null,
+  );
 
   const totalDamageIncrease = baseDamageIncreases.reduce(
     (acc, curr) => acc + curr,
@@ -80,7 +80,7 @@ const SpellCardContent = ({ spell, selectedSpellLevelIdx }: Props) => {
 
   const theme = useTheme();
 
-  const addDamageIncrease = React.useCallback(
+  const addDamageIncrease = useCallback(
     (damageIncrease: number) => {
       if (!spellStats) {
         return;
@@ -105,14 +105,11 @@ const SpellCardContent = ({ spell, selectedSpellLevelIdx }: Props) => {
     [baseDamageIncreases, spellStats],
   );
 
-  const removeDamageIncrease = React.useCallback(
-    (damageIncreaseIdx: number) => {
-      setBaseDamageIncreases((prevIncreases) =>
-        prevIncreases.filter((_, idx) => idx !== damageIncreaseIdx),
-      );
-    },
-    [],
-  );
+  const removeDamageIncrease = useCallback((damageIncreaseIdx: number) => {
+    setBaseDamageIncreases((prevIncreases) =>
+      prevIncreases.filter((_, idx) => idx !== damageIncreaseIdx),
+    );
+  }, []);
 
   const getSpellEffectSummary = ({
     minDamage,
@@ -176,7 +173,7 @@ const SpellCardContent = ({ spell, selectedSpellLevelIdx }: Props) => {
 
   const renderSpellEffectSummary = (effect: TEffectLine) => {
     return (
-      <React.Fragment key={effect.id}>
+      <Fragment key={effect.id}>
         <EffectLine
           min={effect.nonCrit.min}
           max={effect.nonCrit.max}
@@ -194,7 +191,7 @@ const SpellCardContent = ({ spell, selectedSpellLevelIdx }: Props) => {
             baseMax={effect.crit.baseMax}
           />
         )}
-      </React.Fragment>
+      </Fragment>
     );
   };
 
@@ -454,7 +451,7 @@ const SpellCardContent = ({ spell, selectedSpellLevelIdx }: Props) => {
               {!!selectedConditionalEffects.length &&
                 selectedConditionalEffects.map(renderSpellEffectSummary)}
               {spellStats.buffs?.map((b) => (
-                <React.Fragment key={b.id}>
+                <Fragment key={b.id}>
                   {b.incrementBy ? (
                     <AddBuffLink
                       key={`${b.id}-non-crit`}
@@ -477,7 +474,7 @@ const SpellCardContent = ({ spell, selectedSpellLevelIdx }: Props) => {
                   ) : (
                     <div />
                   )}
-                </React.Fragment>
+                </Fragment>
               ))}
             </div>
           </>

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useState, useCallback, useContext } from 'react';
 
 // import { DownOutlined, LoadingOutlined } from '@ant-design/icons';
 
@@ -30,33 +30,30 @@ interface Props {
 const BuildActions = ({ customSet }: Props) => {
   const { t } = useTranslation('common');
 
-  const [restartModalOpen, setRestartModalOpen] = React.useState(false);
-  const [shouldResetStats, setShouldResetStats] = React.useState(true);
+  const [restartModalOpen, setRestartModalOpen] = useState(false);
+  const [shouldResetStats, setShouldResetStats] = useState(true);
 
-  const openRestartModal = React.useCallback(() => {
+  const openRestartModal = useCallback(() => {
     setRestartModalOpen(true);
   }, []);
 
-  const closeRestartModal = React.useCallback(() => {
+  const closeRestartModal = useCallback(() => {
     setRestartModalOpen(false);
   }, []);
 
-  const onShouldResetStatsChange = React.useCallback(
-    (e: CheckboxChangeEvent) => {
-      setShouldResetStats(e.target.checked);
-    },
-    [],
-  );
+  const onShouldResetStatsChange = useCallback((e: CheckboxChangeEvent) => {
+    setShouldResetStats(e.target.checked);
+  }, []);
 
-  const [deleteModalOpen, setDeleteModalOpen] = React.useState(false);
-  const isEditable = React.useContext(EditableContext);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const isEditable = useContext(EditableContext);
 
-  const openDeleteModal = React.useCallback(() => {
+  const openDeleteModal = useCallback(() => {
     if (!isEditable) return;
     setDeleteModalOpen(true);
   }, [isEditable]);
 
-  const closeDeleteModal = React.useCallback(() => {
+  const closeDeleteModal = useCallback(() => {
     setDeleteModalOpen(false);
   }, []);
 
@@ -67,7 +64,7 @@ const BuildActions = ({ customSet }: Props) => {
     variables: { customSetId: customSet.id, shouldResetStats },
   });
 
-  const onRestart = React.useCallback(async () => {
+  const onRestart = useCallback(async () => {
     if (!isEditable) return;
     await restartMutate();
     closeRestartModal();

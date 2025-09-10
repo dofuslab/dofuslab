@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useEffect } from 'react';
 import { itemSlots as ItemSlots } from 'graphql/queries/__generated__/itemSlots';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { useQuery } from '@apollo/client';
@@ -40,7 +40,7 @@ const SetBuilderKeyboardShortcuts = ({
   const itemSlots =
     data && [...data.itemSlots].sort((s1, s2) => s1.order - s2.order);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const listener = (e: KeyboardEvent) => {
       const searchBar = (document.getElementById(SEARCH_BAR_ID) ||
         document.getElementById(SETS_SEARCH_BAR_ID)) as HTMLInputElement;

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { useContext } from 'react';
+import { useMemo, useContext } from 'react';
 
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -23,7 +23,7 @@ const BuildPage = () => {
 
   const { customSet, customSetLoading } = useContext(CustomSetContext);
 
-  const contextValue = React.useMemo(
+  const contextValue = useMemo(
     () => [isClassic, setIsClassic] as const,
     [isClassic, setIsClassic],
   );

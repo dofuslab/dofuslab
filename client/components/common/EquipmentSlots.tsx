@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { SetStateAction, Dispatch } from 'react';
+
+import { useState, useCallback, Fragment } from 'react';
 
 import { useQuery } from '@apollo/client';
 import groupBy from 'lodash/groupBy';
@@ -20,7 +22,7 @@ import { Media } from './Media';
 
 interface Props {
   customSet?: CustomSet | null;
-  selectItemSlot: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
+  selectItemSlot: Dispatch<SetStateAction<ItemSlot | null>>;
   selectedItemSlotId: string | null;
   isMobile: boolean;
   errors: Array<BuildError>;
@@ -44,18 +46,16 @@ const EquipmentSlots = ({
       {},
     ) ?? {};
 
-  const [mageModalOpen, setMageModalOpen] = React.useState(false);
-  const [equippedItem, setEquippedItem] = React.useState<EquippedItem | null>(
-    null,
-  );
-  const openMageModal = React.useCallback(
-    (ei) => {
+  const [mageModalOpen, setMageModalOpen] = useState(false);
+  const [equippedItem, setEquippedItem] = useState<EquippedItem | null>(null);
+  const openMageModal = useCallback(
+    (ei: EquippedItem) => {
       setEquippedItem(ei);
       setMageModalOpen(true);
     },
     [setMageModalOpen],
   );
-  const closeMageModal = React.useCallback(() => {
+  const closeMageModal = useCallback(() => {
     setMageModalOpen(false);
   }, [setMageModalOpen]);
 
@@ -86,7 +86,7 @@ const EquipmentSlots = ({
         const equippedItemErrors: Array<BuildError> | undefined =
           groupedErrors[ei?.id];
         return (
-          <React.Fragment key={slot.id}>
+          <Fragment key={slot.id}>
             <Media lessThan="xs">
               <MobileEquippedItem
                 slot={slot}
@@ -120,7 +120,7 @@ const EquipmentSlots = ({
                 css={{ marginLeft: 4, [mq[4]]: { marginLeft: 8 } }}
               />
             </Media>
-          </React.Fragment>
+          </Fragment>
         );
       })}
       {customSet && equippedItem && (

@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { SetStateAction, Dispatch, MouseEvent } from 'react';
+
+import { useCallback, memo } from 'react';
 
 import {
   slotToUrlString,
@@ -27,7 +29,7 @@ interface Props {
   item: Item;
   itemSlotId: string | null;
   customSetId: string | null;
-  selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
+  selectItemSlot?: Dispatch<SetStateAction<ItemSlot | null>>;
   equipped: boolean;
   openSetModal: (set: ItemSet) => void;
   shouldRedirect?: boolean;
@@ -60,15 +62,15 @@ const ItemCard = ({
     mutationResult: [toggleFavorite],
   } = useToggleFavoriteMutation(item);
 
-  const onFavoriteToggle = React.useCallback(
-    (e: React.MouseEvent<HTMLSpanElement>) => {
+  const onFavoriteToggle = useCallback(
+    (e: MouseEvent<HTMLSpanElement>) => {
       e.stopPropagation();
       toggleFavorite();
     },
     [toggleFavorite],
   );
 
-  const onClick = React.useCallback(() => {
+  const onClick = useCallback(() => {
     const nextSlotId = remainingSlotIds[0];
     const numRemainingSlots = remainingSlotIds.length;
     if (itemSlotId) {
@@ -144,4 +146,4 @@ const ItemCard = ({
   );
 };
 
-export default React.memo(ItemCard);
+export default memo(ItemCard);

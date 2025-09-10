@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef } from 'react';
 import {
   InMemoryCache,
   NormalizedCacheObject,
@@ -109,7 +109,7 @@ export default (App: NextPage<any>) =>
     const router = useRouter();
     headers['accept-language'] = router.locale;
 
-    const client = React.useRef<ApolloClient<NormalizedCacheObject>>(
+    const client = useRef<ApolloClient<NormalizedCacheObject>>(
       initApollo(props.pageProps.apolloState, headers),
     );
 

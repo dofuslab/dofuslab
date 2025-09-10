@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { SetStateAction, Dispatch } from 'react';
+
+import { useCallback, memo } from 'react';
 import { ClassNames, useTheme } from '@emotion/react';
 
 import { itemBox, itemImageBox, selected as selectedBox } from 'common/mixins';
@@ -18,7 +20,7 @@ import EquippedItemWithStats from '../common/EquippedItemWithStats';
 interface Props {
   slot: ItemSlot;
   equippedItem?: EquippedItemType;
-  selectItemSlot: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
+  selectItemSlot: Dispatch<SetStateAction<ItemSlot | null>>;
   customSet?: CustomSet | null;
   selected: boolean;
   openMageModal: (equippedItem: EquippedItemType) => void;
@@ -38,7 +40,7 @@ const EquippedItem = ({
   errors,
   className,
 }: Props) => {
-  const onClick = React.useCallback(() => {
+  const onClick = useCallback(() => {
     if (selected) {
       selectItemSlot(null);
     } else {
@@ -91,4 +93,4 @@ const EquippedItem = ({
   );
 };
 
-export default React.memo(EquippedItem);
+export default memo(EquippedItem);

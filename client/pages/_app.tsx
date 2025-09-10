@@ -1,4 +1,4 @@
-import React from 'react';
+import { useReducer, useMemo, useEffect } from 'react';
 import { AppProps } from 'next/app';
 import {
   ApolloProvider,
@@ -56,28 +56,28 @@ const DofusLabApp = ({ Component, apolloClient, pageProps }: Props) => {
 
   const customSet = customSetData?.customSetById || null;
 
-  const [appliedBuffs, dispatch] = React.useReducer(appliedBuffsReducer, []);
+  const [appliedBuffs, dispatch] = useReducer(appliedBuffsReducer, []);
 
-  const statsFromCustomSet = React.useMemo(
+  const statsFromCustomSet = useMemo(
     () => getStatsFromCustomSet(customSet),
     [customSet],
   );
 
-  const statsFromAppliedBuffs = React.useMemo(
+  const statsFromAppliedBuffs = useMemo(
     () => getStatsFromAppliedBuffs(appliedBuffs),
     [appliedBuffs],
   );
 
-  const statsFromCustomSetWithBuffs = React.useMemo(
+  const statsFromCustomSetWithBuffs = useMemo(
     () => combineStatsWithBuffs(statsFromCustomSet, statsFromAppliedBuffs),
     [statsFromCustomSet, statsFromAppliedBuffs],
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
   }, [customSetId]);
 
-  const customSetContextValue = React.useMemo(
+  const customSetContextValue = useMemo(
     () => ({
       dispatch,
       appliedBuffs,

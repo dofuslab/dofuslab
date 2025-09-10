@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useCallback } from 'react';
 
 import { Button, Form, Modal } from 'antd';
 import { useMutation, useQuery } from '@apollo/client';
@@ -34,7 +34,7 @@ const DefaultBuildSettingsModal = ({ open, onClose }: Props) => {
     editBuildSettingsVariables
   >(editBuildSettingsMutation);
 
-  const handleOk = React.useCallback(async () => {
+  const handleOk = useCallback(async () => {
     const values = await form.validateFields();
 
     await mutate({

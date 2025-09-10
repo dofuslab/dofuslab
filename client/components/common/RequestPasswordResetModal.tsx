@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useCallback } from 'react';
 
 import { Modal, Input, Form, Button, notification } from 'antd';
 import { useMutation } from '@apollo/client';
@@ -26,7 +26,7 @@ const RequestPasswordResetModal = ({ open, onClose }: Props) => {
     requestPasswordReset,
     requestPasswordResetVariables
   >(requestPasswordResetMutation);
-  const handleOk = React.useCallback(async () => {
+  const handleOk = useCallback(async () => {
     const values = await form.validateFields();
 
     const { data } = await mutate({

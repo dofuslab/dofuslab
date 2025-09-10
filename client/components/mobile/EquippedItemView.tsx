@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useCallback } from 'react';
 import { useQuery } from '@apollo/client';
 
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
@@ -29,10 +29,10 @@ const EquippedItemView = () => {
     customSetVariables
   >(CustomSetQuery, { variables: { id: customSetId }, skip: !customSetId });
 
-  const [setModalOpen, setSetModalOpen] = React.useState(false);
-  const [selectedSet, setSelectedSet] = React.useState<ItemSet | null>(null);
+  const [setModalOpen, setSetModalOpen] = useState(false);
+  const [selectedSet, setSelectedSet] = useState<ItemSet | null>(null);
 
-  const openSetModal = React.useCallback(
+  const openSetModal = useCallback(
     (set: ItemSet) => {
       setSelectedSet(set);
       setSetModalOpen(true);
@@ -40,16 +40,16 @@ const EquippedItemView = () => {
     [setSelectedSet, setSetModalOpen],
   );
 
-  const closeSetModal = React.useCallback(() => {
+  const closeSetModal = useCallback(() => {
     setSetModalOpen(false);
   }, [setSetModalOpen]);
 
-  const [mageModalOpen, setMageModalOpen] = React.useState(false);
+  const [mageModalOpen, setMageModalOpen] = useState(false);
 
-  const openMageModal = React.useCallback(() => {
+  const openMageModal = useCallback(() => {
     setMageModalOpen(true);
   }, [setMageModalOpen]);
-  const closeMageModal = React.useCallback(() => {
+  const closeMageModal = useCallback(() => {
     setMageModalOpen(false);
   }, [setMageModalOpen]);
 

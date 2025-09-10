@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useCallback, useContext } from 'react';
 import { css, useTheme } from '@emotion/react';
 import { Button, Switch, Divider } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/client';
@@ -100,7 +100,7 @@ const EquippedItemCard = ({
     }),
   });
 
-  const onDelete = React.useCallback(() => {
+  const onDelete = useCallback(() => {
     deleteItem(itemSlot.id);
     Router.push(customSet ? `/build/${customSet.id}/` : '/');
   }, [deleteItem, customSet, itemSlot]);
@@ -109,7 +109,7 @@ const EquippedItemCard = ({
 
   const theme = useTheme();
 
-  const onQuickMage = React.useCallback(
+  const onQuickMage = useCallback(
     async (checked: boolean, stat: Stat) => {
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
@@ -146,11 +146,11 @@ const EquippedItemCard = ({
     );
   });
 
-  const onMageClick = React.useCallback(() => {
+  const onMageClick = useCallback(() => {
     openMageModal(equippedItem);
   }, [openMageModal, equippedItem]);
 
-  const isEditable = React.useContext(EditableContext);
+  const isEditable = useContext(EditableContext);
 
   let path = '/';
   if (customSet && isEditable) {

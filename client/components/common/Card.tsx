@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
 import { Card as AntdCard } from 'antd';
 import { CardProps } from 'antd/lib/card';
 import { ClassNames, useTheme } from '@emotion/react';

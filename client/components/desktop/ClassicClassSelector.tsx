@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { SetStateAction, Dispatch } from 'react';
 
 import { useQuery } from '@apollo/client';
 
@@ -16,7 +16,7 @@ import { BuildGender } from '__generated__/globalTypes';
 
 interface Props {
   dofusClassId?: string;
-  setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setDofusClassId: Dispatch<SetStateAction<string | undefined>>;
   buildGender: BuildGender;
 }
 

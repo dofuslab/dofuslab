@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useState, useCallback, useRef, Fragment } from 'react';
 
 import { ClassNames, useTheme } from '@emotion/react';
 import { Popover, Divider } from 'antd';
@@ -35,12 +35,12 @@ const BonusStats = ({ customSet, isMobile, isClassic }: Props) => {
 
   const theme = useTheme();
 
-  const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
+  const [brokenImages, setBrokenImages] = useState<Array<string>>([]);
 
-  const [setModalOpen, setSetModalOpen] = React.useState(false);
-  const [selectedSet, setSelectedSet] = React.useState<ItemSet | null>(null);
+  const [setModalOpen, setSetModalOpen] = useState(false);
+  const [selectedSet, setSelectedSet] = useState<ItemSet | null>(null);
 
-  const openSetModal = React.useCallback(
+  const openSetModal = useCallback(
     (set: ItemSet) => {
       setSelectedSet(set);
       setSetModalOpen(true);
@@ -48,11 +48,11 @@ const BonusStats = ({ customSet, isMobile, isClassic }: Props) => {
     [setSelectedSet, setSetModalOpen],
   );
 
-  const closeSetModal = React.useCallback(() => {
+  const closeSetModal = useCallback(() => {
     setSetModalOpen(false);
   }, [setSetModalOpen]);
 
-  const contentRef = React.useRef<HTMLDivElement | null>(null);
+  const contentRef = useRef<HTMLDivElement | null>(null);
 
   if (Object.values(setBonuses).length === 0) {
     return isMobile || isClassic ? (
@@ -117,7 +117,7 @@ const BonusStats = ({ customSet, isMobile, isClassic }: Props) => {
                     </div>
                   }
                   content={
-                    <SetBonuses count={count} bonuses={filteredBonuses} t={t} />
+                    <SetBonuses count={count} bonuses={filteredBonuses} />
                   }
                   placement={isClassic ? 'bottom' : 'bottomLeft'}
                   trigger={isMobile ? 'click' : 'hover'}
@@ -268,17 +268,13 @@ const BonusStats = ({ customSet, isMobile, isClassic }: Props) => {
                   );
 
                   return (
-                    <React.Fragment key={id}>
+                    <Fragment key={id}>
                       {idx !== 0 && <Divider css={{ margin: '8px 0' }} />}
                       <div>
                         <div css={{ fontWeight: 500 }}>{name}</div>
-                        <SetBonuses
-                          count={count}
-                          bonuses={filteredBonuses}
-                          t={t}
-                        />
+                        <SetBonuses count={count} bonuses={filteredBonuses} />
                       </div>
-                    </React.Fragment>
+                    </Fragment>
                   );
                 },
               )}

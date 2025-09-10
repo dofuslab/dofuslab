@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useContext, useCallback } from 'react';
 
 import { Buff, ClassBuffSpell, Item } from 'common/type-aliases';
 import { useTranslation } from 'next-i18next';
@@ -21,7 +21,7 @@ interface Props {
 
 const AddBuffLink = ({ buff, isCrit, spell, item, shouldNotify }: Props) => {
   const buffName = spell?.name || item?.name || '';
-  const { appliedBuffs, dispatch } = React.useContext(CustomSetContext);
+  const { appliedBuffs, dispatch } = useContext(CustomSetContext);
   const key = isCrit ? 'critIncrementBy' : 'incrementBy';
   const { t } = useTranslation(['stat', 'common', 'weapon_spell_effect']);
 
@@ -32,7 +32,7 @@ const AddBuffLink = ({ buff, isCrit, spell, item, shouldNotify }: Props) => {
     (currentBuff?.numCritStacks ?? 0) + (currentBuff?.numStacks ?? 0) >=
       buff.maxStacks;
 
-  const onAddBuff = React.useCallback(() => {
+  const onAddBuff = useCallback(() => {
     if (maxStacksApplied) {
       notification.error({
         message: t('ERROR', { ns: 'common' }),
@@ -55,7 +55,7 @@ const AddBuffLink = ({ buff, isCrit, spell, item, shouldNotify }: Props) => {
     }
   }, [isCrit, buff, spell, item, maxStacksApplied]);
 
-  const onAddMax = React.useCallback(() => {
+  const onAddMax = useCallback(() => {
     if (maxStacksApplied) {
       notification.error({
         message: t('ERROR', { ns: 'common' }),

@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { MouseEvent } from 'react';
+
+import { useCallback, useContext } from 'react';
 
 import { css } from '@emotion/react';
 import { useMutation, useApolloClient } from '@apollo/client';
@@ -65,7 +67,7 @@ interface Props {
   itemSlotId: string;
   customSet: CustomSet;
   openMageModal: (equippedItem: EquippedItem) => void;
-  stopPropagationCallback?: (e: React.MouseEvent<HTMLElement>) => void;
+  stopPropagationCallback?: (e: MouseEvent<HTMLElement>) => void;
   openSetModal: (set: ItemSet) => void;
   errors?: Array<BuildError>;
 }
@@ -108,14 +110,14 @@ const EquippedItemCard = ({
     }),
   });
 
-  const onDelete = React.useCallback(() => {
+  const onDelete = useCallback(() => {
     deleteItem(itemSlotId);
   }, [deleteItem, itemSlotId]);
 
   const client = useApolloClient();
 
-  const onQuickMage = React.useCallback(
-    async (e: React.MouseEvent<HTMLDivElement>) => {
+  const onQuickMage = useCallback(
+    async (e: MouseEvent<HTMLDivElement>) => {
       const { stat: statToExo } = e.currentTarget.dataset;
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
@@ -155,7 +157,7 @@ const EquippedItemCard = ({
     );
   });
 
-  const onMageClick = React.useCallback(() => {
+  const onMageClick = useCallback(() => {
     openMageModal(equippedItem);
   }, [openMageModal, equippedItem]);
 
@@ -164,11 +166,11 @@ const EquippedItemCard = ({
     mutationResult: [toggleFavorite],
   } = useToggleFavoriteMutation(equippedItem.item);
 
-  const onFavoriteClick = React.useCallback(() => {
+  const onFavoriteClick = useCallback(() => {
     toggleFavorite();
   }, [toggleFavorite]);
 
-  const isEditable = React.useContext(EditableContext);
+  const isEditable = useContext(EditableContext);
 
   return (
     <Card

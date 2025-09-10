@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useContext, useMemo, memo } from 'react';
 import { ClassNames, useTheme } from '@emotion/react';
 import { useTranslation } from 'next-i18next';
 import { List } from 'antd';
@@ -34,11 +34,11 @@ interface Props {
 
 const StatTable = ({ group, className, openBuffModal }: Props) => {
   const { customSet, statsFromCustomSet, statsFromAppliedBuffs } =
-    React.useContext(CustomSetContext);
+    useContext(CustomSetContext);
   const { t } = useTranslation('stat');
   const theme = useTheme();
 
-  const statsFromCustomSetWithBuffs = React.useMemo(
+  const statsFromCustomSetWithBuffs = useMemo(
     () =>
       Object.entries(statsFromAppliedBuffs).reduce((totalStats, [k, v]) => {
         return {
@@ -127,4 +127,4 @@ const StatTable = ({ group, className, openBuffModal }: Props) => {
   );
 };
 
-export default React.memo(StatTable);
+export default memo(StatTable);

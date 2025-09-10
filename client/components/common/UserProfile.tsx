@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useState } from 'react';
 
 import { useTranslation } from 'next-i18next';
 import { useTheme } from '@emotion/react';
@@ -27,7 +27,7 @@ const UserProfile = ({
   isEditable,
   isMobile,
 }: Props) => {
-  const [pictureModalOpen, setPictureModalOpen] = React.useState(false);
+  const [pictureModalOpen, setPictureModalOpen] = useState(false);
 
   const { t } = useTranslation('common');
   const theme = useTheme();

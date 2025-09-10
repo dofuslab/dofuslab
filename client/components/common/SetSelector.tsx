@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 import { useQuery } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -33,21 +33,19 @@ const SetSelector = ({ filters, customSet, isMobile, isClassic }: Props) => {
     variables: { first: PAGE_SIZE, filters },
   });
 
-  const [selectedSet, setSelectedSet] = React.useState<SetWithItems | null>(
-    null,
-  );
-  const [setModalOpen, setSetModalOpen] = React.useState(false);
+  const [selectedSet, setSelectedSet] = useState<SetWithItems | null>(null);
+  const [setModalOpen, setSetModalOpen] = useState(false);
 
-  const openSetModal = React.useCallback((selected: SetWithItems) => {
+  const openSetModal = useCallback((selected: SetWithItems) => {
     setSelectedSet(selected);
     setSetModalOpen(true);
   }, []);
 
-  const closeSetModal = React.useCallback(() => {
+  const closeSetModal = useCallback(() => {
     setSetModalOpen(false);
   }, []);
 
-  const onLoadMore = React.useCallback(async () => {
+  const onLoadMore = useCallback(async () => {
     if (!data || !data.sets.pageInfo.hasNextPage) {
       return () => {
         // no-op
@@ -68,7 +66,7 @@ const SetSelector = ({ filters, customSet, isMobile, isClassic }: Props) => {
     };
   }, [data]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const listener = (e: KeyboardEvent) => {
       const keyIndex = Number(e.key) - 1;
 

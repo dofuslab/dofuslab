@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { SetStateAction, Dispatch } from 'react';
+
+import { useReducer, useState, useRef, useCallback, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { FloatButton } from 'antd';
 import { useTheme } from '@emotion/react';
@@ -53,7 +55,7 @@ const reducer = (state: SharedFilters, action: SharedFilterAction) => {
 interface Props {
   customSet?: CustomSet | null;
   selectedItemSlot: ItemSlot | null;
-  selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
+  selectItemSlot?: Dispatch<SetStateAction<ItemSlot | null>>;
   showSets?: boolean;
   isMobile: boolean;
   isClassic: boolean;
@@ -67,7 +69,7 @@ const Selector = ({
   isMobile,
   isClassic,
 }: Props) => {
-  const [filters, dispatch] = React.useReducer(reducer, {
+  const [filters, dispatch] = useReducer(reducer, {
     stats: [],
     maxLevel: customSet?.level || 200,
     search: '',
@@ -76,18 +78,18 @@ const Selector = ({
   const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
   const slots = itemSlotsData?.itemSlots;
 
-  const [itemTypeIds, setItemTypeIds] = React.useState<Set<string>>(new Set());
+  const [itemTypeIds, setItemTypeIds] = useState<Set<string>>(new Set());
 
-  const [showSetsState, setShowSetsState] = React.useState(showSets || false);
+  const [showSetsState, setShowSetsState] = useState(showSets || false);
 
   const customSetItemIds = new Set<string>();
   (customSet?.equippedItems ?? []).forEach((equippedItem) =>
     customSetItemIds.add(equippedItem.item.id),
   );
 
-  const selectorDivRef = React.useRef<HTMLDivElement>(null);
+  const selectorDivRef = useRef<HTMLDivElement>(null);
 
-  const onReset = React.useCallback(() => {
+  const onReset = useCallback(() => {
     dispatch({ type: 'RESET', maxLevel: customSet?.level || 200 });
     setItemTypeIds(new Set());
     const searchBar = document.getElementById(SEARCH_BAR_ID);
@@ -96,7 +98,7 @@ const Selector = ({
     }
   }, [dispatch, customSet, isMobile]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const listener = (e: KeyboardEvent) => {
       if (e.key === 'i') {
         setShowSetsState((prev) => !prev);

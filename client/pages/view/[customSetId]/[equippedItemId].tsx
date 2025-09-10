@@ -1,4 +1,3 @@
-import React from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 
 import { EditableContext } from 'common/utils';

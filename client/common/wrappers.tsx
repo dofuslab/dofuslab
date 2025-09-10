@@ -1,12 +1,18 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type {
+  HTMLAttributes,
+  ReactNode,
+  SetStateAction,
+  Dispatch,
+  DetailedHTMLProps,
+} from 'react';
 import { CSSObject, ClassNames, useTheme } from '@emotion/react';
 import Head from 'next/head';
 
 import { Skeleton, Switch, Button } from 'antd';
-import { TFunction, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import {
   WeaponEffectType,
   SpellEffectType,
@@ -54,14 +60,14 @@ export const ResponsiveGrid = ({
   ...restProps
 }: {
   numColumns: ReadonlyArray<number>;
-} & React.HTMLAttributes<HTMLDivElement>) => (
+} & HTMLAttributes<HTMLDivElement>) => (
   <div css={getResponsiveGridStyle(numColumns)} {...restProps} />
 );
 
 export const Badge = ({
   children,
   ...restProps
-}: React.HTMLAttributes<HTMLSpanElement>) => {
+}: HTMLAttributes<HTMLSpanElement>) => {
   const theme = useTheme();
   return (
     <span
@@ -87,6 +93,7 @@ export const TruncatableText = ({
   children,
   ...restProps
 }: {
+  children: ReactNode;
   className?: string;
 }) => (
   <span
@@ -131,35 +138,36 @@ export const CardSkeleton = ({
 export const SetBonuses = ({
   bonuses,
   count,
-  t,
   className,
 }: {
   bonuses: Array<SetBonus>;
   count: number;
-  t: TFunction;
   className?: string;
-}) => (
-  <div className={className}>
-    <div css={{ fontSize: '0.75rem', fontWeight: 500 }}>
-      {t('NUM_ITEMS', { ns: 'common', num: count })}
-    </div>
-    {bonuses.length ? (
-      <ul css={{ paddingInlineStart: '16px', marginTop: 8 }}>
-        {bonuses.map((bonus) => (
-          <li key={bonus.id} css={{ fontSize: '0.75rem' }}>
-            {!!bonus.value && !!bonus.stat
-              ? `${bonus.value} ${t(bonus.stat, { ns: 'stat' })}`
-              : bonus.customStat}
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <div css={{ color: gray6, fontStyle: 'italic' }}>
-        {t('NO_BONUS', { ns: 'common' })}
+}) => {
+  const { t } = useTranslation('common');
+  return (
+    <div className={className}>
+      <div css={{ fontSize: '0.75rem', fontWeight: 500 }}>
+        {t('NUM_ITEMS', { ns: 'common', num: count })}
       </div>
-    )}
-  </div>
-);
+      {bonuses.length ? (
+        <ul css={{ paddingInlineStart: '16px', marginTop: 8 }}>
+          {bonuses.map((bonus) => (
+            <li key={bonus.id} css={{ fontSize: '0.75rem' }}>
+              {!!bonus.value && !!bonus.stat
+                ? `${bonus.value} ${t(bonus.stat, { ns: 'stat' })}`
+                : bonus.customStat}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div css={{ color: gray6, fontStyle: 'italic' }}>
+          {t('NO_BONUS', { ns: 'common' })}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export const CardTitleWithLevel = ({
   title,
@@ -175,12 +183,12 @@ export const CardTitleWithLevel = ({
 }: {
   title: string;
   showBadge?: boolean;
-  badgeContent?: React.ReactNode;
+  badgeContent?: ReactNode;
   level?: number;
-  rightAlignedContent?: React.ReactNode;
+  rightAlignedContent?: ReactNode;
   levelClassName?: string;
   className?: string;
-  afterLevel?: React.ReactNode;
+  afterLevel?: ReactNode;
   leftImageUrl?: string;
   leftImageAlt?: string;
 }) => {
@@ -368,7 +376,7 @@ export const WeaponEffectsList = ({
 export const BrokenImagePlaceholder = ({
   className,
   ...restProps
-}: React.HTMLAttributes<HTMLDivElement>) => (
+}: HTMLAttributes<HTMLDivElement>) => (
   <ClassNames>
     {({ css, cx }) => (
       <div
@@ -450,7 +458,7 @@ export const DamageTypeToggle = ({
   meleeOnly,
 }: {
   readonly showRanged: boolean;
-  readonly setShowRanged: React.Dispatch<React.SetStateAction<boolean>>;
+  readonly setShowRanged: Dispatch<SetStateAction<boolean>>;
   readonly rangedOnly: boolean;
   readonly meleeOnly: boolean;
 }) => {
@@ -462,7 +470,7 @@ export const DamageTypeToggle = ({
       <Tooltip
         css={{ textAlign: 'center' }}
         title={meleeOnly ? t('RANGED_NOT_POSSIBLE') : t('MELEE_NOT_POSSIBLE')}
-        arrowPointAtCenter={true}
+        arrowPointAtCenter
       >
         <FontAwesomeIcon icon={faExclamationTriangle} css={{ color: gold5 }} />
       </Tooltip>
@@ -587,12 +595,10 @@ export function BuffButton({
   );
 }
 
-export function EmptyState(
-  props: React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  >,
-) {
+export function EmptyState({
+  children,
+  ...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) {
   const theme = useTheme();
   return (
     <div
@@ -607,6 +613,8 @@ export function EmptyState(
         wordWrap: 'break-word',
       }}
       {...props}
-    ></div>
+    >
+      {children}
+    </div>
   );
 }

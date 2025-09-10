@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useContext, useState, useCallback, memo } from 'react';
 import { Tabs } from 'antd';
 import { useTheme } from '@emotion/react';
 
@@ -85,20 +85,18 @@ interface Props {
 
 const SetBuilder = ({ customSet }: Props) => {
   const { appliedBuffs, statsFromCustomSet, customSetLoading } =
-    React.useContext(CustomSetContext);
-  const [selectedItemSlot, selectItemSlot] = React.useState<ItemSlot | null>(
-    null,
-  );
+    useContext(CustomSetContext);
+  const [selectedItemSlot, selectItemSlot] = useState<ItemSlot | null>(null);
 
-  const [buffModalOpen, setBuffModalOpen] = React.useState(false);
-  const openBuffModal = React.useCallback(() => {
+  const [buffModalOpen, setBuffModalOpen] = useState(false);
+  const openBuffModal = useCallback(() => {
     setBuffModalOpen(true);
   }, []);
-  const closeBuffModal = React.useCallback(() => {
+  const closeBuffModal = useCallback(() => {
     setBuffModalOpen(false);
   }, []);
 
-  const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
+  const [dofusClassId, setDofusClassId] = useState<string | undefined>(
     customSet?.defaultClass?.id,
   );
 
@@ -265,4 +263,4 @@ const SetBuilder = ({ customSet }: Props) => {
   );
 };
 
-export default React.memo(SetBuilder);
+export default memo(SetBuilder);

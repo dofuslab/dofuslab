@@ -1,4 +1,3 @@
-import React from 'react';
 import { ClassNames, useTheme } from '@emotion/react';
 
 import { Tooltip as AntdTooltip } from 'antd';

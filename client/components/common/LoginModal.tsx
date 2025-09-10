@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useCallback, useState } from 'react';
 
 import { Modal, Input, Form, Button, Checkbox, Divider } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/client';
@@ -34,7 +34,7 @@ const LoginModal = ({ open, onClose, openSignUpModal }: Props) => {
     { refetchQueries: [{ query: sessionSettingsQuery }] },
   );
 
-  const handleOk = React.useCallback(async () => {
+  const handleOk = useCallback(async () => {
     const values = await form.validateFields();
 
     const { data } = await login({
@@ -54,18 +54,18 @@ const LoginModal = ({ open, onClose, openSignUpModal }: Props) => {
     }
   }, [login, onClose, client, form]);
 
-  const onSignUp = React.useCallback(() => {
+  const onSignUp = useCallback(() => {
     onClose();
     openSignUpModal();
   }, [onClose, openSignUpModal]);
 
   const [showRequestPasswordResetModal, setRequestPasswordResetModal] =
-    React.useState(false);
-  const openRequestPasswordResetModal = React.useCallback(() => {
+    useState(false);
+  const openRequestPasswordResetModal = useCallback(() => {
     onClose();
     setRequestPasswordResetModal(true);
   }, [onClose]);
-  const closeRequestPasswordResetModal = React.useCallback(() => {
+  const closeRequestPasswordResetModal = useCallback(() => {
     setRequestPasswordResetModal(false);
   }, []);
 

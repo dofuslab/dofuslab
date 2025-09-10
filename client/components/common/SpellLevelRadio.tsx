@@ -1,4 +1,3 @@
-import React from 'react';
 import { Radio } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTranslation } from 'next-i18next';

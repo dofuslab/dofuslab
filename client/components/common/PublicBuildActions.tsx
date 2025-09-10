@@ -1,7 +1,5 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
-
 import { ClassNames } from '@emotion/react';
 import { Button } from 'antd';
 import { useTranslation } from 'next-i18next';

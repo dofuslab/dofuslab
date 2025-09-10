@@ -6,7 +6,7 @@ import { mq } from 'common/constants';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { EditableContext } from 'common/utils';
-import React from 'react';
+import { useContext } from 'react';
 import { Button } from 'antd';
 
 export default function EquipSetLink({
@@ -15,7 +15,7 @@ export default function EquipSetLink({
   customSetId?: string;
 }) {
   const { t } = useTranslation('common');
-  const isEditable = React.useContext(EditableContext);
+  const isEditable = useContext(EditableContext);
 
   if (!isEditable) {
     return null;

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useContext } from 'react';
 
 import { Card, Skeleton } from 'antd';
 import { useQuery } from '@apollo/client';
@@ -22,7 +22,7 @@ interface Props {
 }
 
 const ClassicClassSpells = ({ dofusClassId }: Props) => {
-  const { customSet } = React.useContext(CustomSetContext);
+  const { customSet } = useContext(CustomSetContext);
   const { data } = useQuery<classes>(classesQuery);
   const theme = useTheme();
 

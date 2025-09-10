@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useState, useContext, useCallback, useEffect } from 'react';
 
 import { Modal, Divider, Skeleton, Alert } from 'antd';
 import { useQuery } from '@apollo/client';
@@ -73,7 +73,7 @@ const SetModal = ({
   const router = useRouter();
   const { t } = useTranslation('common');
   const theme = useTheme();
-  const [itemIds, setItemIds] = React.useState<Array<string>>([]);
+  const [itemIds, setItemIds] = useState<Array<string>>([]);
 
   const canAllItemsBeEquipped = checkIfItemsCanAllBeEquipped(data, itemIds);
 
@@ -82,9 +82,9 @@ const SetModal = ({
     customSet,
   );
 
-  const isEditable = React.useContext(EditableContext);
+  const isEditable = useContext(EditableContext);
 
-  const onOk = React.useCallback(async () => {
+  const onOk = useCallback(async () => {
     if (!isEditable) {
       return;
     }
@@ -95,13 +95,13 @@ const SetModal = ({
     }
   }, [mutate, onCancel, customSet, shouldRedirect, router, isEditable]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (data && !loading && isEditable) {
       setItemIds(data.setById.items.map((item) => item.id));
     }
   }, [data, loading, isEditable]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const listener = (e: KeyboardEvent) => {
       if (!data || !open) return;
       if (e.key === 'Enter') {
@@ -184,7 +184,6 @@ const SetModal = ({
             .map(([numItems, bonuses]) => (
               <SetBonuses
                 key={`bonuses-${numItems}`}
-                t={t}
                 count={Number(numItems)}
                 bonuses={bonuses}
                 css={{

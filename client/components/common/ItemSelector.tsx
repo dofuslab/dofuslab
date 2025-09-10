@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useCallback, useState, useEffect } from 'react';
 
 import { useQuery } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -71,7 +71,7 @@ const ItemSelector = ({
 
   const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
 
-  const onLoadMore = React.useCallback(async () => {
+  const onLoadMore = useCallback(async () => {
     if (!data || !data.items.pageInfo.hasNextPage) {
       return () => {
         // no-op
@@ -84,10 +84,10 @@ const ItemSelector = ({
     return fetchMoreResult;
   }, [data, loading]);
 
-  const [setModalOpen, setSetModalOpen] = React.useState(false);
-  const [selectedSet, setSelectedSet] = React.useState<ItemSet | null>(null);
+  const [setModalOpen, setSetModalOpen] = useState(false);
+  const [selectedSet, setSelectedSet] = useState<ItemSet | null>(null);
 
-  const openSetModal = React.useCallback(
+  const openSetModal = useCallback(
     (set: ItemSet) => {
       setSelectedSet(set);
       setSetModalOpen(true);
@@ -95,13 +95,13 @@ const ItemSelector = ({
     [setSelectedSet, setSetModalOpen],
   );
 
-  const closeSetModal = React.useCallback(() => {
+  const closeSetModal = useCallback(() => {
     setSetModalOpen(false);
   }, [setSetModalOpen]);
 
   const mutate = useEquipItemMutation();
 
-  const equipItem = React.useCallback(
+  const equipItem = useCallback(
     (item: Item) => {
       if (isClassic || isMobile) return;
       const remainingSlotIds = selectedItemSlot
@@ -133,7 +133,7 @@ const ItemSelector = ({
     filters.stats.length === 0 &&
     itemTypeIdsArr.length === 0;
 
-  React.useEffect(() => {
+  useEffect(() => {
     const listener = (e: KeyboardEvent) => {
       const keyIndex = Number(e.key) - 1;
 

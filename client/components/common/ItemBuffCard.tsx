@@ -1,7 +1,5 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
-
 import { useTheme } from '@emotion/react';
 
 import { CardTitleWithLevel } from 'common/wrappers';

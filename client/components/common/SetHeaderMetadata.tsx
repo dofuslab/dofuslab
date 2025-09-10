@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { ReactNode } from 'react';
 
 import { useTranslation } from 'next-i18next';
 
@@ -9,9 +9,9 @@ function SetHeaderMetadata({
   value,
 }: {
   translationLabelId: string;
-  value: Date | React.ReactNode;
+  value: Date | ReactNode;
 }) {
-  let node: React.ReactNode = '';
+  let node: ReactNode = '';
   if (value instanceof Date) {
     node = `${value.toLocaleDateString(undefined, {
       month: 'short',

@@ -9,9 +9,18 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const { i18n } = require('./next-i18next.config');
 
+const path = require('path');
+
 module.exports = withBundleAnalyzer({
   turbopack: {
-    '*.graphql': ['graphql-tag/loader'],
+    root: path.join(__dirname, '..'),
+    rules: {
+      '*.{graphql,gql}': {
+        loaders: ['graphql-tag/loader'],
+        exclude: /node_modules/,
+        as: '*.js',
+      },
+    },
   },
   webpack: (config) => {
     const env = Object.keys(process.env).reduce((acc, curr) => {

@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { useState } from 'react';
+import type { MouseEvent } from 'react';
+
+import { useCallback, useState } from 'react';
 
 import { Divider, Modal, notification } from 'antd';
 import { useTheme } from '@emotion/react';
@@ -36,8 +38,8 @@ const ProfilePictureModal = ({ onCancel, open, currentlyActive }: Props) => {
   });
   const router = useRouter();
 
-  const onChangePicture = React.useCallback(
-    async (e: React.MouseEvent<HTMLElement>) => {
+  const onChangePicture = useCallback(
+    async (e: MouseEvent<HTMLElement>) => {
       e.stopPropagation();
       const { data } = await profilePictureMutate();
       onCancel();
@@ -51,8 +53,8 @@ const ProfilePictureModal = ({ onCancel, open, currentlyActive }: Props) => {
     [profilePictureMutate, router, onCancel],
   );
 
-  const onCancelClick = React.useCallback(
-    (e: React.MouseEvent<HTMLElement>) => {
+  const onCancelClick = useCallback(
+    (e: MouseEvent<HTMLElement>) => {
       e.stopPropagation();
       setActive(currentlyActive);
       onCancel();

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useEffect, useCallback } from 'react';
 import { GetStaticProps, NextPage } from 'next';
 import { useQuery, useMutation } from '@apollo/client';
 
@@ -36,7 +36,7 @@ const RequestPasswordResetPage: NextPage = () => {
     resetPasswordVariables
   >(resetPasswordMutation);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (data?.currentUser?.verified) {
       router.replace('/', {
         pathname: '/',
@@ -49,7 +49,7 @@ const RequestPasswordResetPage: NextPage = () => {
 
   const [form] = Form.useForm();
 
-  const onClick = React.useCallback(async () => {
+  const onClick = useCallback(async () => {
     if (typeof token !== 'string') {
       return;
     }

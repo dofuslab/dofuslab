@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useState, useCallback } from 'react';
 
 import { RadioChangeEvent } from 'antd/lib/radio';
 
@@ -30,9 +30,9 @@ const SpellBuffCard = ({ spell, level }: Props) => {
   }, -1);
 
   const [selectedSpellLevelIdx, selectSpellLevelIdx] =
-    React.useState<number>(spellLevelIdx);
+    useState<number>(spellLevelIdx);
 
-  const onChange = React.useCallback(
+  const onChange = useCallback(
     (e: RadioChangeEvent) => {
       selectSpellLevelIdx(e.target.value);
     },

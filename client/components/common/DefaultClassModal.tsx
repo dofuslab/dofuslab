@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { SetStateAction, Dispatch } from 'react';
 
 import { Divider, Modal, Tabs } from 'antd';
 import { useQuery } from '@apollo/client';
@@ -20,7 +20,7 @@ interface Props {
   open: boolean;
   closeModal: () => void;
   customSet?: CustomSet | null;
-  setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setDofusClassId: Dispatch<SetStateAction<string | undefined>>;
 }
 
 const classContainerStyle = {

@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { SetStateAction, Dispatch } from 'react';
+
+import { useContext, useReducer, useState, useCallback } from 'react';
 import { ClassNames } from '@emotion/react';
 import { Button, Popover, Skeleton } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -39,7 +41,7 @@ interface Props {
   errors: Array<BuildError>;
   isClassic: boolean;
   className?: string;
-  setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setDofusClassId: Dispatch<SetStateAction<string | undefined>>;
 }
 
 const reducer = (state: CustomSetMetadata, action: CustomSetMetadataAction) => {
@@ -69,7 +71,7 @@ const SetHeader = ({
   setDofusClassId,
   customSetLoading,
 }: Props) => {
-  const isEditable = React.useContext(EditableContext);
+  const isEditable = useContext(EditableContext);
 
   const { data: currentUserData } =
     useQuery<CurrentUserQueryType>(currentUserQuery);
@@ -80,17 +82,16 @@ const SetHeader = ({
     level: customSet?.level || MAX_LEVEL,
   };
 
-  const [metadataState, dispatch] = React.useReducer(reducer, originalState);
+  const [metadataState, dispatch] = useReducer(reducer, originalState);
 
   const { t } = useTranslation('common');
 
-  const [defaultClassModalOpen, setDefaultClassModalOpen] =
-    React.useState(false);
+  const [defaultClassModalOpen, setDefaultClassModalOpen] = useState(false);
 
-  const openDefaultClassModal = React.useCallback(() => {
+  const openDefaultClassModal = useCallback(() => {
     setDefaultClassModalOpen(true);
   }, [setDefaultClassModalOpen]);
-  const closeDefaultClassModal = React.useCallback(() => {
+  const closeDefaultClassModal = useCallback(() => {
     setDefaultClassModalOpen(false);
   }, [setDefaultClassModalOpen]);
 

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useContext, memo } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { itemBox, itemImageBox } from 'common/mixins';
@@ -34,7 +34,7 @@ const EquippedItem = ({
   errors,
 }: Props) => {
   const theme = useTheme();
-  const isEditable = React.useContext(EditableContext);
+  const isEditable = useContext(EditableContext);
 
   const urlBase = isEditable ? 'build' : 'view';
 
@@ -102,4 +102,4 @@ const EquippedItem = ({
   );
 };
 
-export default React.memo(EquippedItem);
+export default memo(EquippedItem);
