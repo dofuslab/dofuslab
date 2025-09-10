@@ -236,3 +236,7 @@ export type CustomSetMetadataAction =
   | { type: 'EDIT_NAME'; name: string }
   | { type: 'EDIT_LEVEL'; level: number }
   | { type: 'STOP_EDIT' };
+
+export type ProfileQueryParams = {
+  [key: string]: string | undefined;
+};

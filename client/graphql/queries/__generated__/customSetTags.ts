@@ -11,6 +11,7 @@ export interface customSetTags_customSetTags {
   __typename: "CustomSetTag";
   id: any;
   name: string;
+  enName: string;
   imageUrl: string;
 }
 

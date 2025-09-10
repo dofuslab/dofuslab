@@ -21,7 +21,9 @@ import {
   getImageUrl,
   navigateToNewCustomSet,
   antdSelectFilterOption,
+  useProfileQueryParams,
 } from 'common/utils';
+import { ProfileQueryParams } from 'common/types';
 import { createCustomSet } from 'graphql/mutations/__generated__/createCustomSet';
 import createCustomSetMutation from 'graphql/mutations/createCustomSet.graphql';
 import { useQuery, useMutation, useApolloClient } from '@apollo/client';
@@ -37,6 +39,8 @@ import { BUILD_LIST_PAGE_SIZE, DEBOUNCE_INTERVAL, mq } from 'common/constants';
 import { useDebounceCallback } from '@react-hook/debounce';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
 import customSetTagsQuery from 'graphql/queries/customSetTags.graphql';
+import { classes } from 'graphql/queries/__generated__/classes';
+import classesQuery from 'graphql/queries/classes.graphql';
 import DeleteCustomSetModal from './DeleteCustomSetModal';
 import ClassSelect from './ClassSelect';
 import BuildCard from './BuildCard';
@@ -52,6 +56,7 @@ interface Props {
   isEditable: boolean;
   getScrollParent?: () => HTMLElement | null;
   isMobile: boolean;
+  isProfile?: boolean;
 }
 
 const BuildList: React.FC<Props> = ({
@@ -60,8 +65,19 @@ const BuildList: React.FC<Props> = ({
   isEditable,
   getScrollParent,
   isMobile,
+  isProfile = false,
 }) => {
   const { t } = useTranslation('common');
+
+  const router = useRouter();
+
+  const {
+    search: defaultSearch,
+    tags: defaultTagIds,
+    class: defaultClassId,
+  } = useProfileQueryParams(isProfile);
+
+  const didMount = React.useRef(false);
 
   const [mutate, { loading: createLoading }] = useMutation<createCustomSet>(
     createCustomSetMutation,
@@ -78,11 +94,16 @@ const BuildList: React.FC<Props> = ({
     setDeleteModalVisible(false);
   }, []);
 
-  const [search, setSearch] = React.useState('');
+  const { data: classData } = useQuery<classes>(classesQuery);
+  const { data: tagsData } = useQuery<customSetTags>(customSetTagsQuery);
+
+  const [search, setSearch] = React.useState(defaultSearch);
+
   const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
-    undefined,
+    defaultClassId,
   );
-  const [tagIds, setTagIds] = React.useState<Array<string>>([]);
+
+  const [tagIds, setTagIds] = React.useState<Array<string>>(defaultTagIds);
 
   const handleSearchChange = React.useCallback(
     (searchValue: string) => {
@@ -95,6 +116,51 @@ const BuildList: React.FC<Props> = ({
     handleSearchChange,
     DEBOUNCE_INTERVAL,
   );
+
+  // Takes params from the router and filters them out so that the inherent username value is not in the address bar
+  // twice, also when values are undefined or empty strings. Returns a new object to use in formatQueryString.
+  const formatParams = (obj: ProfileQueryParams) =>
+    Object.entries(obj)
+      .filter(([, val]) => val !== undefined && val !== '' && val !== username)
+      .reduce((result, [key, val]) => {
+        const newResult = {
+          ...result,
+          [key]: val,
+        };
+        return newResult;
+      }, {} as ProfileQueryParams);
+
+  const formatQueryString = () => {
+    const params = formatParams({
+      ...router.query,
+      search,
+      class: classData?.classes.find((item) => item.id === dofusClassId)
+        ?.enName,
+      tags: tagIds
+        .map(
+          (tagId) =>
+            tagsData?.customSetTags.find((tag) => tagId === tag.id)?.enName,
+        )
+        .join(','),
+    });
+
+    return !Object.keys(params).length
+      ? ''
+      : `?${Object.entries(params)
+          .map((item) => `${item[0]}=${item[1]}`)
+          .join('&')}`;
+  };
+
+  React.useEffect(() => {
+    if (!isProfile) {
+      return;
+    }
+    if (!didMount.current) {
+      didMount.current = true;
+    } else {
+      router.replace(`${username}${formatQueryString()}`);
+    }
+  }, [search, dofusClassId, tagIds]);
 
   const onSearch = React.useCallback(
     (changeEvent: React.ChangeEvent<HTMLInputElement>) => {
@@ -115,8 +181,6 @@ const BuildList: React.FC<Props> = ({
       filters: { search, defaultClassId: dofusClassId, tagIds },
     },
   });
-
-  const { data: tagsData } = useQuery<customSetTags>(customSetTagsQuery);
 
   const onLoadMore = React.useCallback(async () => {
     if (!userBuilds?.userByName?.customSets.pageInfo.hasNextPage) {
@@ -150,8 +214,6 @@ const BuildList: React.FC<Props> = ({
   );
 
   const theme = useTheme();
-
-  const router = useRouter();
 
   const onCreate = React.useCallback(async () => {
     const { data: resultData } = await mutate({
@@ -264,6 +326,7 @@ const BuildList: React.FC<Props> = ({
                 }}
                 onChange={onSearch}
                 placeholder={t('SEARCH')}
+                defaultValue={search}
                 onKeyDown={(e) => {
                   // prevents triggering SetBuilderKeyboardShortcuts
                   e.nativeEvent.stopPropagation();

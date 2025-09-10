@@ -2,6 +2,7 @@ query customSetTags {
   customSetTags {
     id
     name
+    enName
     imageUrl
   }
 }

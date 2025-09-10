@@ -351,11 +351,21 @@ class CustomSetStats(SQLAlchemyObjectType):
 
 class CustomSetTag(SQLAlchemyObjectType):
     name = graphene.String(required=True)
+    en_name = graphene.String(required=True)
     image_url = graphene.String(required=True)
 
     @tracer.wrap(name="CustomSetTag.resolve_name")
     def resolve_name(self, info):
         return g.dataloaders.get("custom_set_tag_translation_loader").load(self.uuid)
+    
+    def resolve_en_name(self, info):
+        query = db.session.query(ModelCustomSetTagTranslation)
+        return (
+            query.filter(ModelCustomSetTagTranslation.locale == 'en')
+            .filter(ModelCustomSetTagTranslation.custom_set_tag_id == self.uuid)
+            .one()
+            .name
+        )
 
     class Meta:
         model = ModelCustomSetTag
