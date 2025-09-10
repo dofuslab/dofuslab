@@ -4,24 +4,30 @@ import * as React from 'react';
 
 // import { DownOutlined, LoadingOutlined } from '@ant-design/icons';
 
-import { customSet as CustomSet } from 'graphql/fragments/__generated__/customSet';
-import { Button, Modal, Checkbox, Divider } from 'antd';
-import { useTranslation } from 'next-i18next';
 import { useMutation } from '@apollo/client';
+import { Button, Checkbox, Divider, Modal } from 'antd';
+import { customSet as CustomSet } from 'graphql/fragments/__generated__/customSet';
+import { useTranslation } from 'next-i18next';
 
+import { EditableContext } from 'common/utils';
 import {
   restartCustomSet,
   restartCustomSetVariables,
 } from 'graphql/mutations/__generated__/restartCustomSet';
 import restartCustomSetMutation from 'graphql/mutations/restartCustomSet.graphql';
-import { EditableContext } from 'common/utils';
 
-import { mq } from 'common/constants';
-import { CheckboxChangeEvent } from 'antd/lib/checkbox';
+import {
+  faEyeSlash,
+  faGlobe,
+  faRedoAlt,
+  faTrashAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt, faRedoAlt } from '@fortawesome/free-solid-svg-icons';
+import { CheckboxChangeEvent } from 'antd/lib/checkbox';
+import { mq } from 'common/constants';
 import { optionalIconCss } from 'common/mixins';
 import DeleteCustomSetModal from './DeleteCustomSetModal';
+import TogglePrivateModal from './TogglePrivateModal';
 
 interface Props {
   customSet: CustomSet;
@@ -58,6 +64,18 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
 
   const closeDeleteModal = React.useCallback(() => {
     setDeleteModalVisible(false);
+  }, []);
+
+  const [togglePrivateModalVisible, setTogglePrivateModalVisible] =
+    React.useState(false);
+
+  const openTogglePrivateModal = React.useCallback(() => {
+    if (!isEditable) return;
+    setTogglePrivateModalVisible(true);
+  }, [isEditable]);
+
+  const closeTogglePrivateModal = React.useCallback(() => {
+    setTogglePrivateModalVisible(false);
   }, []);
 
   const [restartMutate, { loading: restartLoading }] = useMutation<
@@ -99,6 +117,18 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
         {t('DELETE_BUILD')}
         <FontAwesomeIcon icon={faTrashAlt} css={optionalIconCss} />
       </Button>
+      <Button
+        css={{
+          marginLeft: 12,
+        }}
+        onClick={openTogglePrivateModal}
+      >
+        {customSet.private ? (
+          <FontAwesomeIcon icon={faEyeSlash} />
+        ) : (
+          <FontAwesomeIcon icon={faGlobe} />
+        )}
+      </Button>
 
       <Modal
         visible={restartModalVisible}
@@ -125,6 +155,11 @@ const BuildActions: React.FC<Props> = ({ customSet }) => {
         customSetId={customSet.id}
         onCancel={closeDeleteModal}
         visible={deleteModalVisible}
+      />
+      <TogglePrivateModal
+        customSetId={customSet.id}
+        onCancel={closeTogglePrivateModal}
+        visible={togglePrivateModalVisible}
       />
     </div>
   );

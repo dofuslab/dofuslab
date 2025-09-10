@@ -45,6 +45,7 @@ class ModelCustomSet(Base):
         index=True,
         server_onupdate=func.now(),
     )
+    private = Column("private", sqlalchemy.Boolean, default=False, nullable=False)
     level = Column("level", Integer, server_default=text("200"), nullable=False)
     equipped_items = relationship(
         "ModelEquippedItem",

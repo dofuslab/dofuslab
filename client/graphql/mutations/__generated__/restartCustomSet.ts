@@ -178,6 +178,7 @@ export interface restartCustomSet_restartCustomSet_customSet {
   tagAssociations: restartCustomSet_restartCustomSet_customSet_tagAssociations[];
   hasEditPermission: boolean;
   buildGender: BuildGender;
+  private: boolean;
 }
 
 export interface restartCustomSet_restartCustomSet {

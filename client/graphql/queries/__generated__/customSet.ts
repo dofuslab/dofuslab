@@ -178,6 +178,7 @@ export interface customSet_customSetById {
   tagAssociations: customSet_customSetById_tagAssociations[];
   hasEditPermission: boolean;
   buildGender: BuildGender;
+  private: boolean;
 }
 
 export interface customSet {

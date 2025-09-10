@@ -156,6 +156,7 @@ export interface CustomSetExosInput {
 export interface CustomSetFilters {
   search: string;
   tagIds: any[];
+  private?: boolean | null;
   defaultClassId?: any | null;
 }
 
