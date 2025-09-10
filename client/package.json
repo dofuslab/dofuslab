@@ -37,7 +37,7 @@
     "babel-plugin-import": "^1.13.0",
     "dotenv": "^8.2.0",
     "emotion-theming": "^10.0.27",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "graphql": "15.8",
     "i18next": "^19.5.0",
     "js-cookie": "^3.0.1",
