@@ -15,6 +15,7 @@ module.exports = {
       env_production: {
         NODE_ENV: 'production',
         GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
+        NEXT_PUBLIC_GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
         GA_TRACKING_ID: 'UA-104212417-3',
       },
     },
@@ -32,6 +33,7 @@ module.exports = {
         'cd client && yarn && yarn build && pm2 reload ecosystem.config.js --env production && pm2 save',
       env: {
         GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
+        NEXT_PUBLIC_GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
         GA_TRACKING_ID: 'UA-104212417-3',
       },
     },
@@ -46,6 +48,7 @@ module.exports = {
         'cd client && yarn && yarn build && pm2 reload ecosystem.config.js --env branch && pm2 save',
       env: {
         GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
+        NEXT_PUBLIC_GRAPHQL_URI: 'https://dofuslab.io/api/graphql',
         GA_TRACKING_ID: 'UA-104212417-3',
       },
     },

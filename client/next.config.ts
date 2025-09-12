@@ -8,10 +8,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const { i18n } = require('./next-i18next.config');
-
 const path = require('path');
+import { NextConfig } from 'next';
+import { Configuration } from 'webpack';
 
-module.exports = withBundleAnalyzer({
+const nextConfig: NextConfig = withBundleAnalyzer({
   turbopack: {
     root: path.join(__dirname, '..'),
     rules: {
@@ -21,16 +22,19 @@ module.exports = withBundleAnalyzer({
         as: '*.js',
       },
     },
+    env: {
+      GRAPHQL_URI: process.env.NEXT_PUBLIC_GRAPHQL_URI,
+    },
   },
-  webpack: (config) => {
+  webpack: (config: Configuration) => {
     const env = Object.keys(process.env).reduce((acc, curr) => {
       acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
       return acc;
-    }, {});
+    }, {} as Record<string, string>);
 
-    config.plugins.push(new webpack.DefinePlugin(env));
+    config.plugins?.push(new webpack.DefinePlugin(env));
 
-    config.module.rules.push({
+    config.module?.rules?.push({
       test: /\.(graphql|gql)$/,
       exclude: /node_modules/,
       loader: 'graphql-tag/loader',
@@ -40,8 +44,7 @@ module.exports = withBundleAnalyzer({
   },
   i18n,
   trailingSlash: true,
-  experimental: {
-    // Enable better debugging support
-    outputFileTracingRoot: undefined,
-  },
+  outputFileTracingRoot: undefined,
 });
+
+export default nextConfig;

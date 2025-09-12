@@ -10,7 +10,8 @@ const config: CodegenConfig = {
    * the schema field in your configuration file. You can find the list on the following page:
    * https://the-guild.dev/graphql/codegen/docs/config-reference/schema-field#available-formats
    */
-  schema: process.env.GRAPHQL_URI_FOR_CODEGEN ?? process.env.GRAPHQL_URI,
+  schema:
+    process.env.GRAPHQL_URI_FOR_CODEGEN ?? process.env.NEXT_PUBLIC_GRAPHQL_URI,
   /**
    * The documents field in your configuration file specifies an array of file paths
    * or glob patterns that export GraphQL documents using a gql tag or a plain string.

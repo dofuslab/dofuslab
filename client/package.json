@@ -7,7 +7,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' && yarn && yarn codegen && next dev --turbopack",
+    "dev": "NODE_OPTIONS='--inspect' && yarn && yarn codegen && next dev",
+    "dev-turbopack": "NODE_OPTIONS='--inspect' && yarn && yarn codegen && next dev --turbopack",
     "dev-webpack": "NODE_OPTIONS='--inspect' && yarn && yarn codegen && next dev",
     "dev-docker": "NODE_OPTIONS='--inspect=0.0.0.0:9229' yarn codegen && next dev --turbopack",
     "build": "next build && tsc --project tsconfig.server.json",
@@ -43,6 +44,7 @@
     "eslint-config-next": "15.5.2",
     "express": "^4.17.1",
     "graphql": "15.8",
+    "graphql-tag": "^2.12.6",
     "i18next": "^25.5.2",
     "js-cookie": "^3.0.1",
     "lockr": "^0.8.5",
