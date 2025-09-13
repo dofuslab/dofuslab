@@ -4,24 +4,24 @@ import { GetServerSideProps, NextPage } from 'next';
 
 import { createApolloClient } from 'common/apollo';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.query';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
-import CustomSetTagsQuery from 'graphql/queries/customSetTags.graphql';
+import CustomSetTagsQuery from 'graphql/queries/customSetTags.query';
 import { classes } from 'graphql/queries/__generated__/classes';
-import ClassesQuery from 'graphql/queries/classes.graphql';
+import ClassesQuery from 'graphql/queries/classes.query';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
-import SessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
+import SessionSettingsQuery from 'graphql/queries/sessionSettings.query';
 import { sessionSettings } from 'graphql/queries/__generated__/sessionSettings';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
-import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
+import CurrentUserQuery from 'graphql/queries/currentUser.query';
 import { SSRConfig } from 'next-i18next';
 import { NormalizedCacheObject } from '@apollo/client';
 import {
   customSet as customSetQueryType,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
-import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import CustomSetQuery from 'graphql/queries/customSet.query';
 import { CustomSetContext, EditableContext } from 'common/utils';
 import Head from 'next/head';
 import { Media, mediaStyles } from 'components/common/Media';

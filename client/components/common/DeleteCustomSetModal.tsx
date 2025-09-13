@@ -12,7 +12,7 @@ import {
   deleteCustomSet,
   deleteCustomSetVariables,
 } from 'graphql/mutations/__generated__/deleteCustomSet';
-import deleteCustomSetMutation from 'graphql/mutations/deleteCustomSet.graphql';
+import deleteCustomSetMutation from 'graphql/mutations/deleteCustomSet.mutation';
 
 interface Props {
   open: boolean;

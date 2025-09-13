@@ -8,12 +8,12 @@ import {
   login as ILogin,
   loginVariables as ILoginVariables,
 } from 'graphql/mutations/__generated__/login';
-import loginMutation from 'graphql/mutations/login.graphql';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import loginMutation from 'graphql/mutations/login.mutation';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { useTranslation, Trans } from 'next-i18next';
 import { mq, PASSWORD_REGEX, EMAIL_REGEX } from 'common/constants';
-import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
+import sessionSettingsQuery from 'graphql/queries/sessionSettings.query';
 import { inputFontSize } from 'common/mixins';
 
 import RequestPasswordResetModal from './RequestPasswordResetModal';

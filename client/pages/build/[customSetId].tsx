@@ -6,17 +6,17 @@ import { GetServerSideProps, NextPage } from 'next';
 import { createApolloClient } from 'common/apollo';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
-import SessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
+import SessionSettingsQuery from 'graphql/queries/sessionSettings.query';
 import { sessionSettings } from 'graphql/queries/__generated__/sessionSettings';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
-import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
+import CurrentUserQuery from 'graphql/queries/currentUser.query';
 import { SSRConfig } from 'next-i18next';
 import { NormalizedCacheObject } from '@apollo/client';
 import {
   customSet,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
-import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import CustomSetQuery from 'graphql/queries/customSet.query';
 import { EditableContext } from 'common/utils';
 
 const BuildPage: NextPage = () => {

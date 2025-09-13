@@ -18,7 +18,7 @@ import {
   editCustomSetStats,
   editCustomSetStatsVariables,
 } from 'graphql/mutations/__generated__/editCustomSetStats';
-import editCustomSetStatsMutation from 'graphql/mutations/editCustomSetStats.graphql';
+import editCustomSetStatsMutation from 'graphql/mutations/editCustomSetStats.mutation';
 import {
   checkAuthentication,
   calcPointCost,

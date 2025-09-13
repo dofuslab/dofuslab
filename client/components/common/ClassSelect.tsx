@@ -5,7 +5,7 @@ import { useQuery } from '@apollo/client';
 
 import { useTranslation } from 'next-i18next';
 import { classes } from 'graphql/queries/__generated__/classes';
-import classesQuery from 'graphql/queries/classes.graphql';
+import classesQuery from 'graphql/queries/classes.query';
 import { antdSelectFilterOption, getFaceImageUrl } from 'common/utils';
 import { BuildGender } from '__generated__/globalTypes';
 

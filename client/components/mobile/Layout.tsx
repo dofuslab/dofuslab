@@ -14,8 +14,8 @@ import { LANGUAGES, langToFullName } from 'common/i18n-utils';
 import { useQuery, useMutation, useApolloClient } from '@apollo/client';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import logoutMutation from 'graphql/mutations/logout.graphql';
+import currentUserQuery from 'graphql/queries/currentUser.query';
+import logoutMutation from 'graphql/mutations/logout.mutation';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -36,7 +36,7 @@ import {
   changeLocale,
   changeLocaleVariables,
 } from 'graphql/mutations/__generated__/changeLocale';
-import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
+import changeLocaleMutation from 'graphql/mutations/changeLocale.mutation';
 import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { LIGHT_THEME_NAME } from 'common/themes';
 import {

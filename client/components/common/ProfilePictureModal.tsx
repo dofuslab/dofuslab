@@ -10,7 +10,7 @@ import { useRouter } from 'next/router';
 
 import { useTranslation } from 'next-i18next';
 import { getImageUrl } from 'common/utils';
-import changeProfilePictureMutation from 'graphql/mutations/changeProfilePicture.graphql';
+import changeProfilePictureMutation from 'graphql/mutations/changeProfilePicture.mutation';
 import {
   changeProfilePicture,
   changeProfilePictureVariables,

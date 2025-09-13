@@ -8,7 +8,7 @@ import {
   editCustomSetDefaultClass,
   editCustomSetDefaultClassVariables,
 } from 'graphql/mutations/__generated__/editCustomSetDefaultClass';
-import editCustomSetDefaultClassMutation from 'graphql/mutations/editCustomSetDefaultClass.graphql';
+import editCustomSetDefaultClassMutation from 'graphql/mutations/editCustomSetDefaultClass.mutation';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { BuildGender } from '__generated__/globalTypes';

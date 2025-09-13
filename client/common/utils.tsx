@@ -17,9 +17,9 @@ import cloneDeep from 'lodash/cloneDeep';
 import groupBy from 'lodash/groupBy';
 import { useTranslation, Trans } from 'next-i18next';
 import { TFunction } from 'react-i18next';
-import CustomSetFragment from 'graphql/fragments/customSet.graphql';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
-import ItemFragment from 'graphql/fragments/item.graphql';
+import CustomSetFragment from 'graphql/fragments/customSet.fragment';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.query';
+import ItemFragment from 'graphql/fragments/item.fragment';
 import Lockr from 'lockr';
 
 import {
@@ -33,18 +33,18 @@ import {
   updateCustomSetItem,
   updateCustomSetItemVariables,
 } from 'graphql/mutations/__generated__/updateCustomSetItem';
-import UpdateCustomSetItemMutation from 'graphql/mutations/updateCustomSetItem.graphql';
-import EquipSetMutation from 'graphql/mutations/equipSet.graphql';
+import UpdateCustomSetItemMutation from 'graphql/mutations/updateCustomSetItem.mutation';
+import EquipSetMutation from 'graphql/mutations/equipSet.mutation';
 import {
   deleteCustomSetItem,
   deleteCustomSetItemVariables,
 } from 'graphql/mutations/__generated__/deleteCustomSetItem';
-import DeleteCustomSetItemMutation from 'graphql/mutations/deleteCustomSetItem.graphql';
+import DeleteCustomSetItemMutation from 'graphql/mutations/deleteCustomSetItem.mutation';
 import {
   currentUser,
   currentUser as CurrentUserQueryType,
 } from 'graphql/queries/__generated__/currentUser';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import {
   equipSet,
   equipSetVariables,
@@ -54,24 +54,24 @@ import {
   equipItems,
   equipItemsVariables,
 } from 'graphql/mutations/__generated__/equipItems';
-import EquipItemsMutation from 'graphql/mutations/equipItems.graphql';
+import EquipItemsMutation from 'graphql/mutations/equipItems.mutation';
 import { sessionSettings } from 'graphql/queries/__generated__/sessionSettings';
-import sessionSettingsQuery from 'graphql/queries/sessionSettings.graphql';
+import sessionSettingsQuery from 'graphql/queries/sessionSettings.query';
 import {
   changeClassic,
   changeClassicVariables,
 } from 'graphql/mutations/__generated__/changeClassic';
-import changeClassicMutation from 'graphql/mutations/changeClassic.graphql';
+import changeClassicMutation from 'graphql/mutations/changeClassic.mutation';
 import {
   copyCustomSet,
   copyCustomSetVariables,
 } from 'graphql/mutations/__generated__/copyCustomSet';
-import copyCustomSetMutation from 'graphql/mutations/copyCustomSet.graphql';
+import copyCustomSetMutation from 'graphql/mutations/copyCustomSet.mutation';
 import {
   toggleFavoriteItem,
   toggleFavoriteItemVariables,
 } from 'graphql/mutations/__generated__/toggleFavoriteItem';
-import toggleFavoriteItemMutation from 'graphql/mutations/toggleFavoriteItem.graphql';
+import toggleFavoriteItemMutation from 'graphql/mutations/toggleFavoriteItem.mutation';
 import { DefaultOptionType } from 'antd/lib/select';
 import { customSet_equippedItems_slot as EquippedItemSlot } from 'graphql/fragments/__generated__/customSet';
 import {

@@ -10,7 +10,7 @@ import {
   editCustomSetMetadata,
   editCustomSetMetadataVariables,
 } from 'graphql/mutations/__generated__/editCustomSetMetadata';
-import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdata.graphql';
+import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetdata.mutation';
 import { CustomSet } from 'common/type-aliases';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useApolloClient, useMutation } from '@apollo/client';

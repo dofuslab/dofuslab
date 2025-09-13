@@ -10,7 +10,7 @@ import {
   requestPasswordReset,
   requestPasswordResetVariables,
 } from 'graphql/mutations/__generated__/requestPasswordReset';
-import requestPasswordResetMutation from 'graphql/mutations/requestPasswordReset.graphql';
+import requestPasswordResetMutation from 'graphql/mutations/requestPasswordReset.mutation';
 import { inputFontSize } from 'common/mixins';
 
 interface Props {

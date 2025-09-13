@@ -5,7 +5,7 @@ import { useCallback, useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroller';
 
-import ItemsQuery from 'graphql/queries/items.graphql';
+import ItemsQuery from 'graphql/queries/items.query';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { getResponsiveGridStyle } from 'common/mixins';
 import { SharedFilters } from 'common/types';
@@ -18,7 +18,7 @@ import {
   useEquipItemMutation,
 } from 'common/utils';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.query';
 import SetModal from './SetModal';
 
 import SkeletonCardsLoader from './SkeletonCardsLoader';

@@ -5,7 +5,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroller';
 
-import SetQuery from 'graphql/queries/sets.graphql';
+import SetQuery from 'graphql/queries/sets.query';
 import { SharedFilters } from 'common/types';
 import { sets, setsVariables } from 'graphql/queries/__generated__/sets';
 

@@ -7,7 +7,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import { useRouter } from 'next/router';
 import { Button, Form, Input, notification } from 'antd';
 import { useTranslation } from 'next-i18next';
@@ -15,7 +15,7 @@ import {
   resetPassword,
   resetPasswordVariables,
 } from 'graphql/mutations/__generated__/resetPassword';
-import resetPasswordMutation from 'graphql/mutations/resetPassword.graphql';
+import resetPasswordMutation from 'graphql/mutations/resetPassword.mutation';
 import CommonLayout from 'components/common/CommonLayout';
 import ErrorPage from 'pages/_error';
 import { mq, PASSWORD_REGEX } from 'common/constants';

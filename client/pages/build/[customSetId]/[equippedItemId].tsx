@@ -11,10 +11,10 @@ import {
   customSet as customSetQueryType,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
-import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import CustomSetQuery from 'graphql/queries/customSet.query';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
-import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
+import CurrentUserQuery from 'graphql/queries/currentUser.query';
 
 const EquippedItemPage: NextPage = () => {
   return (

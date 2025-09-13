@@ -5,17 +5,17 @@ import { useQuery } from '@apollo/client';
 import { useTheme } from '@emotion/react';
 
 import { classes } from 'graphql/queries/__generated__/classes';
-import classesQuery from 'graphql/queries/classes.graphql';
+import classesQuery from 'graphql/queries/classes.query';
 import { useTranslation } from 'next-i18next';
 import {
   classById,
   classByIdVariables,
 } from 'graphql/queries/__generated__/classById';
-import classByIdQuery from 'graphql/queries/classById.graphql';
+import classByIdQuery from 'graphql/queries/classById.query';
 import { CustomSet, Spell } from 'common/type-aliases';
 import { itemCardStyle } from 'common/mixins';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import SpellCard from './SpellCard';
 import ClassSelect from './ClassSelect';
 

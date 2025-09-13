@@ -11,11 +11,11 @@ import {
   customSet,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
-import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import CustomSetQuery from 'graphql/queries/customSet.query';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.query';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
-import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
+import CurrentUserQuery from 'graphql/queries/currentUser.query';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ItemSlot } from 'common/type-aliases';
 import { formatNameForUrl, slotToUrlString } from 'common/utils';

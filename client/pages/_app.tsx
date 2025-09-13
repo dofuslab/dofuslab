@@ -12,7 +12,7 @@ import { MediaContextProvider } from 'components/common/Media';
 import Router, { useRouter } from 'next/router';
 import { ThemeProvider } from '@emotion/react';
 
-import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import CustomSetQuery from 'graphql/queries/customSet.query';
 import {
   customSet as CustomSetQueryType,
   customSetVariables,

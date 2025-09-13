@@ -25,20 +25,20 @@ import {
   antdSelectFilterOption,
 } from 'common/utils';
 import { createCustomSet } from 'graphql/mutations/__generated__/createCustomSet';
-import createCustomSetMutation from 'graphql/mutations/createCustomSet.graphql';
+import createCustomSetMutation from 'graphql/mutations/createCustomSet.mutation';
 import { useQuery, useMutation, useApolloClient } from '@apollo/client';
 
-import buildListQuery from 'graphql/queries/buildList.graphql';
+import buildListQuery from 'graphql/queries/buildList.query';
 import {
   myCustomSets,
   myCustomSetsVariables,
 } from 'graphql/queries/__generated__/myCustomSets';
-import myCustomSetsQuery from 'graphql/queries/myCustomSets.graphql';
+import myCustomSetsQuery from 'graphql/queries/myCustomSets.query';
 import { Input, Select, Tabs, Button } from 'antd';
 import { BUILD_LIST_PAGE_SIZE, DEBOUNCE_INTERVAL, mq } from 'common/constants';
 import { useDebounceCallback } from '@react-hook/debounce';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
-import customSetTagsQuery from 'graphql/queries/customSetTags.graphql';
+import customSetTagsQuery from 'graphql/queries/customSetTags.query';
 import DeleteCustomSetModal from './DeleteCustomSetModal';
 import ClassSelect from './ClassSelect';
 import BuildCard from './BuildCard';

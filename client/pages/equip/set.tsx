@@ -7,7 +7,7 @@ import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
 import { createApolloClient } from 'common/apollo';
 import { SSRConfig } from 'next-i18next';
 import { NormalizedCacheObject } from '@apollo/client';
-import SetsQuery from 'graphql/queries/sets.graphql';
+import SetsQuery from 'graphql/queries/sets.query';
 import { sets, setsVariables } from 'graphql/queries/__generated__/sets';
 import { ITEMS_PAGE_SIZE } from 'common/constants';
 

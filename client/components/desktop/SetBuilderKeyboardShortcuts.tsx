@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { itemSlots as ItemSlots } from 'graphql/queries/__generated__/itemSlots';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.query';
 import { useQuery } from '@apollo/client';
 import { CustomSet, ItemSlot } from 'common/type-aliases';
 import { SEARCH_BAR_ID, SETS_SEARCH_BAR_ID } from 'common/constants';

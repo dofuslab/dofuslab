@@ -8,7 +8,7 @@ import { useQuery } from '@apollo/client';
 import groupBy from 'lodash/groupBy';
 
 import { itemSlots as ItemSlots } from 'graphql/queries/__generated__/itemSlots';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.query';
 
 import { mq } from 'common/constants';
 import { useSetModal } from 'common/utils';

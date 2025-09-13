@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { useQuery } from '@apollo/client';
 
-import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import CustomSetQuery from 'graphql/queries/customSet.query';
 import Layout from 'components/mobile/Layout';
 import { useRouter } from 'next/router';
 import {

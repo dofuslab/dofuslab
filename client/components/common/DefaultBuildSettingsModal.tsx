@@ -11,8 +11,8 @@ import {
   editBuildSettings,
   editBuildSettingsVariables,
 } from 'graphql/mutations/__generated__/editBuildSettings';
-import editBuildSettingsMutation from 'graphql/mutations/editBuildSettings.graphql';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import editBuildSettingsMutation from 'graphql/mutations/editBuildSettings.mutation';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import BuildSettingsForm from './BuildSettingsForm';
 

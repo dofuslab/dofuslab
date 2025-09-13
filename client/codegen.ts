@@ -18,7 +18,7 @@ const config: CodegenConfig = {
    * Alternatively, if you're dealing with a single document, you can provide these
    * options as a string instead of an array.
    */
-  documents: ['./graphql/**/*.graphql'],
+  documents: ['./graphql/**/*.(query|mutation|fragment).ts'],
   /**
    * A map where the key represents an output path for the generated code,
    * and the value represents a set of relevant options for that specific file.

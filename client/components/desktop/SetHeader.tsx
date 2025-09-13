@@ -25,7 +25,7 @@ import Link from 'next/link';
 import PublicBuildActions from 'components/common/PublicBuildActions';
 import { useQuery } from '@apollo/client';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import { MAX_LEVEL } from 'common/constants';
 import SetHeaderMetadata from 'components/common/SetHeaderMetadata';
 import BonusStats from './BonusStats';

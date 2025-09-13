@@ -13,7 +13,7 @@ import { SharedFilters, SharedFilterAction } from 'common/types';
 
 import { topMarginStyle } from 'common/mixins';
 import { mq, SEARCH_BAR_ID } from 'common/constants';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.query';
 import { ItemSlot, CustomSet } from 'common/type-aliases';
 import NoSSR from 'react-no-ssr';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';

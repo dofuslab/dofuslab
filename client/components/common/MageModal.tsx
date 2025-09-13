@@ -32,7 +32,7 @@ import {
   mageEquippedItem,
   mageEquippedItemVariables,
 } from 'graphql/mutations/__generated__/mageEquippedItem';
-import MageEquippedItemMutation from 'graphql/mutations/mageEquippedItem.graphql';
+import MageEquippedItemMutation from 'graphql/mutations/mageEquippedItem.mutation';
 import { mq } from 'common/constants';
 import { WeaponEffectsList, TruncatableText } from 'common/wrappers';
 import { EquippedItem } from 'common/type-aliases';

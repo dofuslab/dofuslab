@@ -10,7 +10,7 @@ import {
   changePassword as ChangePassword,
   changePasswordVariables as ChangePasswordVariables,
 } from 'graphql/mutations/__generated__/changePassword';
-import changePasswordMutation from 'graphql/mutations/changePassword.graphql';
+import changePasswordMutation from 'graphql/mutations/changePassword.mutation';
 import { PASSWORD_REGEX } from 'common/constants';
 import { inputFontSize } from 'common/mixins';
 
