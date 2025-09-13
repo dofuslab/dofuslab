@@ -1,5 +1,0 @@
-mutation resendVerificationEmail {
-  resendVerificationEmail {
-    ok
-  }
-}
