@@ -1,0 +1,10 @@
+fragment dofusClass on Class {
+  id
+  name
+  enName
+  allNames
+  maleFaceImageUrl
+  femaleFaceImageUrl
+  maleSpriteImageUrl
+  femaleSpriteImageUrl
+}

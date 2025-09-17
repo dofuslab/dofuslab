@@ -1,0 +1,30 @@
+#import "graphql/fragments/buff.graphql"
+#import "graphql/fragments/spellEffect.graphql"
+
+fragment spellStats on SpellStats {
+  id
+  level
+  apCost
+  castsPerTurn
+  castsPerTarget
+  cooldown
+  isLinear
+  needsLos
+  needsFreeCell
+  baseCritChance
+  minRange
+  maxRange
+  hasModifiableRange
+  spellEffects {
+    ...spellEffect
+  }
+  spellDamageIncrease {
+    id
+    baseIncrease
+    critBaseIncrease
+    maxStacks
+  }
+  buffs {
+    ...buff
+  }
+}

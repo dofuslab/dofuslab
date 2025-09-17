@@ -1,0 +1,10 @@
+fragment itemTypeWithSlots on ItemType {
+  id
+  name
+  enName
+  eligibleItemSlots {
+    id
+    enName
+    order
+  }
+}

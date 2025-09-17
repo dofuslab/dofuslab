@@ -1,0 +1,15 @@
+fragment weaponStats on WeaponStat {
+  id
+  apCost
+  usesPerTurn
+  minRange
+  maxRange
+  baseCritChance
+  critBonusDamage
+  weaponEffects {
+    id
+    minDamage
+    maxDamage
+    effectType
+  }
+}

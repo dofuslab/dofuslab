@@ -5,7 +5,7 @@ import { itemCardStyle, selected } from 'common/mixins';
 import { CardTitleWithLevel } from 'common/wrappers';
 import Card from 'components/common/Card';
 import { getImageUrl, getFaceImageUrl } from 'common/utils';
-import { buildList_userByName_customSets_edges_node as AbbreviatedCustomSet } from 'graphql/queries/__generated__/buildList';
+import { AbbreviatedCustomSet } from 'common/type-aliases';
 import { useTranslation } from 'react-i18next';
 import { mq } from 'common/constants';
 import { useTheme } from '@emotion/react';

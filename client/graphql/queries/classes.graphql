@@ -1,12 +1,7 @@
+#import "graphql/fragments/dofusClass.graphql"
+
 query classes {
   classes {
-    id
-    name
-    enName
-    allNames
-    maleFaceImageUrl
-    femaleFaceImageUrl
-    maleSpriteImageUrl
-    femaleSpriteImageUrl
+    ...dofusClass
   }
 }

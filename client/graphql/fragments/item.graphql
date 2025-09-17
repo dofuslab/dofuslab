@@ -1,4 +1,7 @@
 #import "graphql/fragments/buff.graphql"
+#import "graphql/fragments/weaponStats.graphql"
+#import "graphql/fragments/itemTypeWithSlots.graphql"
+#import "graphql/fragments/itemSet.graphql"
 
 fragment item on Item {
   id
@@ -13,41 +16,14 @@ fragment item on Item {
     customStat
   }
   weaponStats {
-    id
-    apCost
-    usesPerTurn
-    minRange
-    maxRange
-    baseCritChance
-    critBonusDamage
-    weaponEffects {
-      id
-      minDamage
-      maxDamage
-      effectType
-    }
+    ...weaponStats
   }
   conditions
   itemType {
-    id
-    name
-    enName
-    eligibleItemSlots {
-      id
-      enName
-      order
-    }
+    ...itemTypeWithSlots
   }
   set {
-    id
-    name
-    bonuses {
-      id
-      numItems
-      stat
-      value
-      customStat
-    }
+    ...itemSet
   }
   buffs {
     ...buff

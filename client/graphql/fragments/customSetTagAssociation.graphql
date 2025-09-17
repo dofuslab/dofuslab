@@ -1,0 +1,9 @@
+fragment customSetTagAssociation on CustomSetTagAssociation {
+  id
+  associationDate
+  customSetTag {
+    id
+    name
+    imageUrl
+  }
+}

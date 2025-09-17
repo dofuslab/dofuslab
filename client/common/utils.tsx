@@ -73,7 +73,6 @@ import {
 } from 'graphql/mutations/__generated__/toggleFavoriteItem';
 import toggleFavoriteItemMutation from 'graphql/mutations/toggleFavoriteItem.graphql';
 import { DefaultOptionType } from 'antd/lib/select';
-import { customSet_equippedItems_slot as EquippedItemSlot } from 'graphql/fragments/__generated__/customSet';
 import {
   StatsFromCustomSet,
   SetCounter,
@@ -103,6 +102,7 @@ import {
   ItemSlot,
   ItemTypeWithSlots,
   EquippedItem,
+  EquippedItemSlot,
 } from './type-aliases';
 import { prependDe } from './i18n-utils';
 
@@ -1464,6 +1464,7 @@ export const renderErrors = (
           <Trans
             i18nKey="common:LEVEL_TOO_HIGH_WITH_ITEM"
             components={{ 1: <strong css={{ fontWeight: 500 }} /> }}
+            values={{ itemName: equippedItem.item.name }}
           >
             {`The level of the item <1>{{ itemName }}</1> is higher than the build's.`}
           </Trans>

@@ -1,0 +1,5 @@
+fragment equippedItemExo on EquippedItemExo {
+  id
+  stat
+  value
+}
