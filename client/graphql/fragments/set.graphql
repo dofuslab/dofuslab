@@ -1,11 +1,9 @@
+#import "graphql/fragments/setBonus.graphql"
+
 fragment set on Set {
   id
   name
   bonuses {
-    id
-    numItems
-    stat
-    value
-    customStat
+    ...setBonus
   }
 }

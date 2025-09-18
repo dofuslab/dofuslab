@@ -1,30 +1,16 @@
-#import "graphql/fragments/baseStats.graphql"
-#import "graphql/fragments/item.graphql"
+#import "graphql/fragments/equippedItem.graphql"
+#import "graphql/fragments/customSetStats.graphql"
+#import "graphql/fragments/customSetTagAssociation.graphql"
 
 fragment customSet on CustomSet {
   id
   name
   level
   equippedItems {
-    id
-    slot {
-      id
-      enName
-      name
-      order
-    }
-    item {
-      ...item
-    }
-    exos {
-      id
-      stat
-      value
-    }
-    weaponElementMage
+    ...equippedItem
   }
   stats {
-    ...baseStats
+    ...customSetStats
   }
   owner {
     id
@@ -42,13 +28,7 @@ fragment customSet on CustomSet {
   creationDate
   lastModified
   tagAssociations {
-    id
-    associationDate
-    customSetTag {
-      id
-      name
-      imageUrl
-    }
+    ...customSetTagAssociation
   }
   hasEditPermission
   buildGender

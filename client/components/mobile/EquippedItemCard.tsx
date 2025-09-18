@@ -34,9 +34,13 @@ import Link from 'next/link';
 
 import Card from 'components/common/Card';
 import { mq } from 'common/constants';
-import { EquippedItem, ItemSet, CustomSet } from 'common/type-aliases';
+import {
+  EquippedItem,
+  ItemSet,
+  CustomSet,
+  EquippedItemSlot,
+} from 'common/type-aliases';
 import AddBuffLink from 'components/common/AddBuffLink';
-import { customSet_equippedItems_slot as EquippedItemSlot } from 'graphql/fragments/__generated__/customSet';
 import ItemStatsList from '../common/ItemStatsList';
 
 const quickMageStats = [

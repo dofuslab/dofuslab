@@ -1,0 +1,11 @@
+fragment itemSlot on ItemSlot {
+  id
+  enName
+  name
+  order
+  imageUrl
+  itemTypes {
+    id
+    name
+  }
+}

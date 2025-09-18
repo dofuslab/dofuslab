@@ -4,10 +4,7 @@ import type { ReactNode } from 'react';
 
 import { useState } from 'react';
 import { CardTitleWithLevel, BrokenImagePlaceholder } from 'common/wrappers';
-import {
-  item as Item,
-  item_set as ItemSet,
-} from 'graphql/fragments/__generated__/item';
+import { Item, ItemSet } from 'common/type-aliases';
 import { useTranslation } from 'next-i18next';
 import { useTheme } from '@emotion/react';
 import {

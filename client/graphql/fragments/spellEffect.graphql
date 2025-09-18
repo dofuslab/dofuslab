@@ -1,0 +1,9 @@
+fragment spellEffect on SpellEffects {
+  id
+  minDamage
+  maxDamage
+  critMinDamage
+  critMaxDamage
+  effectType
+  condition
+}

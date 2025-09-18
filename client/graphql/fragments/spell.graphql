@@ -1,0 +1,12 @@
+#import "graphql/fragments/spellStats.graphql"
+
+fragment spell on Spell {
+  id
+  name
+  description
+  imageUrl
+  isTrap
+  spellStats {
+    ...spellStats
+  }
+}

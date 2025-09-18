@@ -1,0 +1,7 @@
+fragment setBonus on SetBonus {
+  id
+  numItems
+  stat
+  value
+  customStat
+}

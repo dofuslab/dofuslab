@@ -1,0 +1,6 @@
+fragment equippedItemSlot on ItemSlot {
+  id
+  enName
+  name
+  order
+}

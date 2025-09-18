@@ -7,7 +7,7 @@ import { RadioChangeEvent } from 'antd/lib/radio';
 import { CardTitleWithLevel, damageHeaderStyle } from 'common/wrappers';
 import { itemCardStyle } from 'common/mixins';
 import Card from 'components/common/Card';
-import { classBuffs_classById_spellVariantPairs_spells as ClassBuffSpell } from 'graphql/queries/__generated__/classBuffs';
+import { ClassBuffSpell } from 'common/type-aliases';
 import { useTranslation } from 'next-i18next';
 import { getImageUrl } from 'common/utils';
 import SpellLevelRadio from './SpellLevelRadio';
