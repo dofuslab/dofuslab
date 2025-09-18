@@ -26,7 +26,6 @@ const config: CodegenConfig = {
   generates: {
     './graphql/__generated__/': {
       preset: 'client',
-      plugins: ['typescript', 'typescript-operations'],
     },
     // './graphql/schema.graphql': {
     //   plugins: ['typescript', 'typescript-operations'],
