@@ -45,6 +45,10 @@ const nextConfig: NextConfig = withBundleAnalyzer({
   i18n,
   trailingSlash: true,
   outputFileTracingRoot: undefined,
+  experimental: {
+    webpackMemoryOptimizations: true,
+    webpackBuildWorker: true,
+  },
 });
 
 export default nextConfig;
