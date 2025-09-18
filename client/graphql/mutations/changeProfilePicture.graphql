@@ -1,8 +1,0 @@
-mutation changeProfilePicture($picture: String!) {
-  changeProfilePicture(picture: $picture) {
-    user {
-      id
-      profilePicture
-    }
-  }
-}

@@ -5,8 +5,8 @@ import { useCallback } from 'react';
 import { Button, Divider, Form, Input, Modal } from 'antd';
 
 import { useMutation, useApolloClient } from '@apollo/client';
-import registerMutation from 'graphql/mutations/register.graphql';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import registerMutation from 'graphql/mutations/register.mutation';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { useTranslation, Trans } from 'next-i18next';
 import {

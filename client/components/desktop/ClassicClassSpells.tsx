@@ -7,12 +7,12 @@ import { useQuery } from '@apollo/client';
 import { useTheme } from '@emotion/react';
 
 import { classes } from 'graphql/queries/__generated__/classes';
-import classesQuery from 'graphql/queries/classes.graphql';
+import classesQuery from 'graphql/queries/classes.query';
 import {
   classById,
   classByIdVariables,
 } from 'graphql/queries/__generated__/classById';
-import classByIdQuery from 'graphql/queries/classById.graphql';
+import classByIdQuery from 'graphql/queries/classById.query';
 import { itemCardStyle } from 'common/mixins';
 import { CustomSetContext } from 'common/utils';
 import SpellVariantPairCard from './SpellVariantPairCard';

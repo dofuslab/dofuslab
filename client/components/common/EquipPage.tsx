@@ -10,8 +10,8 @@ import {
   customSet as CustomSetQueryType,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
-import CustomSetQuery from 'graphql/queries/customSet.graphql';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import CustomSetQuery from 'graphql/queries/customSet.query';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.query';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import MobileLayout from 'components/mobile/Layout';
 import DesktopLayout from 'components/desktop/Layout';

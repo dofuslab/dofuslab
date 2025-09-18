@@ -19,7 +19,7 @@ import BuffModal from 'components/common/BuffModal';
 import { BuffButton } from 'common/wrappers';
 import { useQuery } from '@apollo/client';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import ClassicRightColumnStats from './ClassicRightColumnStats';
 import ClassicLeftColumnStats from './ClassicLeftColumnStats';
 import ClassicEquipmentSlots from './ClassicEquipmentSlots';

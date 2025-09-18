@@ -1,9 +1,0 @@
-#import "graphql/fragments/customSet.graphql"
-
-mutation createCustomSet {
-  createCustomSet {
-    customSet {
-      ...customSet
-    }
-  }
-}

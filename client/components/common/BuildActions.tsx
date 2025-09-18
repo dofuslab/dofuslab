@@ -13,7 +13,7 @@ import {
   restartCustomSet,
   restartCustomSetVariables,
 } from 'graphql/mutations/__generated__/restartCustomSet';
-import restartCustomSetMutation from 'graphql/mutations/restartCustomSet.graphql';
+import restartCustomSetMutation from 'graphql/mutations/restartCustomSet.mutation';
 import { EditableContext } from 'common/utils';
 
 import { mq } from 'common/constants';

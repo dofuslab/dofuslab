@@ -1,7 +1,0 @@
-query customSetTags {
-  customSetTags {
-    id
-    name
-    imageUrl
-  }
-}

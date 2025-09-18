@@ -8,7 +8,7 @@ import { useQuery } from '@apollo/client';
 import groupBy from 'lodash/groupBy';
 
 import { itemSlots as ItemSlotsQueryType } from 'graphql/queries/__generated__/itemSlots';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.query';
 
 import { mq } from 'common/constants';
 import { EditableContext, getImageUrl, useSetModal } from 'common/utils';
@@ -17,7 +17,7 @@ import { CustomSet, EquippedItem } from 'common/type-aliases';
 import { TooltipPlacement } from 'antd/lib/tooltip';
 import { BuildGender } from '__generated__/globalTypes';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import DefaultClassModal from 'components/common/DefaultClassModal';
 import EquipSetLink from 'components/common/EquipSetLink';
 import MageModal from '../common/MageModal';

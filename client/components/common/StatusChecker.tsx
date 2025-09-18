@@ -7,7 +7,7 @@ import { useQuery } from '@apollo/client';
 
 import { useTranslation } from 'next-i18next';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import Cookies from 'js-cookie';
 import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
 

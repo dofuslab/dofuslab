@@ -5,12 +5,12 @@ import { NextPage, GetStaticProps } from 'next';
 
 import { createApolloClient } from 'common/apollo';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
-import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import ItemSlotsQuery from 'graphql/queries/itemSlots.query';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
-import CustomSetTagsQuery from 'graphql/queries/customSetTags.graphql';
+import CustomSetTagsQuery from 'graphql/queries/customSetTags.query';
 import { classes } from 'graphql/queries/__generated__/classes';
-import ClassesQuery from 'graphql/queries/classes.graphql';
-import ItemsQuery from 'graphql/queries/items.graphql';
+import ClassesQuery from 'graphql/queries/classes.query';
+import ItemsQuery from 'graphql/queries/items.query';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { ITEMS_PAGE_SIZE } from 'common/constants';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';

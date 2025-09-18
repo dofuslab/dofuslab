@@ -9,7 +9,7 @@ import { useTheme } from '@emotion/react';
 import groupBy from 'lodash/groupBy';
 
 import { set, setVariables } from 'graphql/queries/__generated__/set';
-import setQuery from 'graphql/queries/set.graphql';
+import setQuery from 'graphql/queries/set.query';
 import { useTranslation } from 'next-i18next';
 import { SetBonuses } from 'common/wrappers';
 import { itemBox } from 'common/mixins';

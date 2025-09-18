@@ -8,12 +8,12 @@ import { useQuery } from '@apollo/client';
 import { CustomSet } from 'common/type-aliases';
 import { useTranslation } from 'next-i18next';
 import { classes } from 'graphql/queries/__generated__/classes';
-import classesQuery from 'graphql/queries/classes.graphql';
+import classesQuery from 'graphql/queries/classes.query';
 
 import { mq } from 'common/constants';
 import { BuildGender } from '__generated__/globalTypes';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import DefaultClassButton from './DefaultClassButton';
 
 interface Props {

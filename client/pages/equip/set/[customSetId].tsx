@@ -11,11 +11,11 @@ import {
   customSet,
   customSetVariables,
 } from 'graphql/queries/__generated__/customSet';
-import CustomSetQuery from 'graphql/queries/customSet.graphql';
+import CustomSetQuery from 'graphql/queries/customSet.query';
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
-import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
+import CurrentUserQuery from 'graphql/queries/currentUser.query';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import SetsQuery from 'graphql/queries/sets.graphql';
+import SetsQuery from 'graphql/queries/sets.query';
 import { sets, setsVariables } from 'graphql/queries/__generated__/sets';
 import { ITEMS_PAGE_SIZE } from 'common/constants';
 

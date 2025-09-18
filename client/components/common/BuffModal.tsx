@@ -7,7 +7,7 @@ import { AppliedBuff, AppliedBuffActionType } from 'common/types';
 import { useTranslation } from 'next-i18next';
 import { useQuery } from '@apollo/client';
 import { classes } from 'graphql/queries/__generated__/classes';
-import classesQuery from 'graphql/queries/classes.graphql';
+import classesQuery from 'graphql/queries/classes.query';
 import { Select, Divider, Button } from 'antd';
 import {
   antdSelectFilterOption,
@@ -21,7 +21,7 @@ import {
   classBuffsVariables,
   classBuffs_classById_spellVariantPairs_spells as ClassBuffSpell,
 } from 'graphql/queries/__generated__/classBuffs';
-import classBuffsQuery from 'graphql/queries/classBuffs.graphql';
+import classBuffsQuery from 'graphql/queries/classBuffs.query';
 import { mq, statIcons } from 'common/constants';
 import { CustomSet } from 'common/type-aliases';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -29,7 +29,7 @@ import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '@emotion/react';
 import { getModalStyle, itemCardStyle } from 'common/mixins';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import SpellBuffCard from './SpellBuffCard';
 import ItemBuffCard from './ItemBuffCard';
 import Card from './Card';

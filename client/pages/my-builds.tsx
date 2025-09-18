@@ -7,7 +7,7 @@ import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import Layout from 'components/mobile/Layout';
 import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
-import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
+import CurrentUserQuery from 'graphql/queries/currentUser.query';
 import BuildList from 'components/common/BuildList';
 import { SSRConfig, useTranslation } from 'next-i18next';
 import { getTitle } from 'common/utils';
@@ -15,14 +15,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { createApolloClient } from 'common/apollo';
 import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
-import CustomSetTagsQuery from 'graphql/queries/customSetTags.graphql';
+import CustomSetTagsQuery from 'graphql/queries/customSetTags.query';
 import { classes } from 'graphql/queries/__generated__/classes';
-import ClassesQuery from 'graphql/queries/classes.graphql';
+import ClassesQuery from 'graphql/queries/classes.query';
 import {
   buildList,
   buildListVariables,
 } from 'graphql/queries/__generated__/buildList';
-import BuildListQuery from 'graphql/queries/buildList.graphql';
+import BuildListQuery from 'graphql/queries/buildList.query';
 import { BUILD_LIST_PAGE_SIZE } from 'common/constants';
 
 const MyBuildsPage: NextPage = () => {

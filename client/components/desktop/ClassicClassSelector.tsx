@@ -5,7 +5,7 @@ import type { SetStateAction, Dispatch } from 'react';
 import { useQuery } from '@apollo/client';
 
 import { classes } from 'graphql/queries/__generated__/classes';
-import classesQuery from 'graphql/queries/classes.graphql';
+import classesQuery from 'graphql/queries/classes.query';
 import Tooltip from 'components/common/Tooltip';
 import { Card } from 'antd';
 import { itemCardStyle } from 'common/mixins';

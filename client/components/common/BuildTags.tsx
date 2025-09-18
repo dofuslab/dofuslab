@@ -14,8 +14,8 @@ import {
   addTagToCustomSet,
   addTagToCustomSetVariables,
 } from 'graphql/mutations/__generated__/addTagToCustomSet';
-import addTagToCustomSetMutation from 'graphql/mutations/addTagToCustomSet.graphql';
-import customSetTagsQuery from 'graphql/queries/customSetTags.graphql';
+import addTagToCustomSetMutation from 'graphql/mutations/addTagToCustomSet.mutation';
+import customSetTagsQuery from 'graphql/queries/customSetTags.query';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
 import {
   antdSelectFilterOption,
@@ -28,7 +28,7 @@ import {
   removeTagFromCustomSet,
   removeTagFromCustomSetVariables,
 } from 'graphql/mutations/__generated__/removeTagFromCustomSet';
-import removeTagFromCustomSetMutation from 'graphql/mutations/removeTagFromCustomSet.graphql';
+import removeTagFromCustomSetMutation from 'graphql/mutations/removeTagFromCustomSet.mutation';
 import { useTranslation } from 'next-i18next';
 import { smallInputFontSize } from 'common/mixins';
 

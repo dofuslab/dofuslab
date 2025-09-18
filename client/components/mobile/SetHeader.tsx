@@ -25,7 +25,7 @@ import { CustomSet } from 'common/type-aliases';
 import Link from 'next/link';
 import PublicBuildActions from 'components/common/PublicBuildActions';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
-import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import currentUserQuery from 'graphql/queries/currentUser.query';
 import { useQuery } from '@apollo/client';
 import BuildErrors from '../common/BuildErrors';
 import BuildActions from '../common/BuildActions';

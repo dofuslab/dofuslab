@@ -22,7 +22,7 @@ import {
   slotToUrlString,
 } from 'common/utils';
 import { Stat } from '__generated__/globalTypes';
-import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
+import setEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.mutation';
 import {
   setEquippedItemExo,
   setEquippedItemExoVariables,

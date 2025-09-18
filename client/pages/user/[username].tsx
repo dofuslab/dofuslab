@@ -10,8 +10,8 @@ import { Media } from 'components/common/Media';
 import DesktopLayout from 'components/desktop/Layout';
 import MobileLayout from 'components/mobile/Layout';
 import { NormalizedCacheObject, useQuery } from '@apollo/client';
-import userProfileQuery from 'graphql/queries/userProfile.graphql';
-import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
+import userProfileQuery from 'graphql/queries/userProfile.query';
+import CurrentUserQuery from 'graphql/queries/currentUser.query';
 import {
   userProfile,
   userProfileVariables,
@@ -22,14 +22,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { createApolloClient } from 'common/apollo';
 import { DEFAULT_LANGUAGE, prependDe } from 'common/i18n-utils';
 import { customSetTags } from 'graphql/queries/__generated__/customSetTags';
-import CustomSetTagsQuery from 'graphql/queries/customSetTags.graphql';
+import CustomSetTagsQuery from 'graphql/queries/customSetTags.query';
 import { classes } from 'graphql/queries/__generated__/classes';
-import ClassesQuery from 'graphql/queries/classes.graphql';
+import ClassesQuery from 'graphql/queries/classes.query';
 import {
   buildList,
   buildListVariables,
 } from 'graphql/queries/__generated__/buildList';
-import BuildListQuery from 'graphql/queries/buildList.graphql';
+import BuildListQuery from 'graphql/queries/buildList.query';
 import { BUILD_LIST_PAGE_SIZE } from 'common/constants';
 
 const UserProfilePage: NextPage = () => {
