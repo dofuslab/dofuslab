@@ -1,0 +1,9 @@
+#import "graphql/fragments/setBonus.graphql"
+
+fragment itemSet on Set {
+  id
+  name
+  bonuses {
+    ...setBonus
+  }
+}

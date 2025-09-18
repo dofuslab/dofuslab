@@ -1,22 +1,12 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL mutation operation: changePassword
-// ====================================================
+export type changePasswordVariables = Types.Exact<{
+  oldPassword: Types.Scalars['String']['input'];
+  newPassword: Types.Scalars['String']['input'];
+}>;
 
-export interface changePassword_changePassword {
-  __typename: "ChangePassword";
-  ok: boolean;
-}
-
-export interface changePassword {
-  changePassword: changePassword_changePassword | null;
-}
-
-export interface changePasswordVariables {
-  oldPassword: string;
-  newPassword: string;
-}
+export type changePassword = {
+  changePassword: { __typename: 'ChangePassword'; ok: boolean } | null;
+};

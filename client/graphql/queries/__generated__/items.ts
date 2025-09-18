@@ -1,216 +1,162 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-import { ItemFilters, Stat, WeaponEffectType } from "./../../../__generated__/globalTypes";
+export type itemsVariables = Types.Exact<{
+  first: Types.Scalars['Int']['input'];
+  after?: Types.InputMaybe<Types.Scalars['String']['input']>;
+  filters: Types.ItemFilters;
+  equippedItemIds:
+    | Array<Types.Scalars['UUID']['input']>
+    | Types.Scalars['UUID']['input'];
+  eligibleItemTypeIds?: Types.InputMaybe<
+    Array<Types.Scalars['UUID']['input']> | Types.Scalars['UUID']['input']
+  >;
+  level: Types.Scalars['Int']['input'];
+}>;
 
-// ====================================================
-// GraphQL query operation: items
-// ====================================================
-
-export interface items_items_edges_node_stats {
-  __typename: "ItemStat";
-  id: any;
-  order: number;
-  maxValue: number | null;
-  stat: Stat | null;
-  customStat: string | null;
-}
-
-export interface items_items_edges_node_weaponStats_weaponEffects {
-  __typename: "WeaponEffect";
-  id: any;
-  minDamage: number | null;
-  maxDamage: number;
-  effectType: WeaponEffectType;
-}
-
-export interface items_items_edges_node_weaponStats {
-  __typename: "WeaponStat";
-  id: any;
-  apCost: number;
-  usesPerTurn: number;
-  minRange: number | null;
-  maxRange: number;
-  baseCritChance: number | null;
-  critBonusDamage: number | null;
-  weaponEffects: items_items_edges_node_weaponStats_weaponEffects[];
-}
-
-export interface items_items_edges_node_itemType_eligibleItemSlots {
-  __typename: "ItemSlot";
-  id: any;
-  enName: string;
-  order: number;
-}
-
-export interface items_items_edges_node_itemType {
-  __typename: "ItemType";
-  id: any;
-  name: string;
-  enName: string;
-  eligibleItemSlots: items_items_edges_node_itemType_eligibleItemSlots[];
-}
-
-export interface items_items_edges_node_set_bonuses {
-  __typename: "SetBonus";
-  id: any;
-  numItems: number;
-  stat: Stat | null;
-  value: number | null;
-  customStat: string | null;
-}
-
-export interface items_items_edges_node_set {
-  __typename: "Set";
-  id: any;
-  name: string;
-  bonuses: items_items_edges_node_set_bonuses[];
-}
-
-export interface items_items_edges_node_buffs {
-  __typename: "Buff";
-  id: any;
-  stat: Stat;
-  incrementBy: number | null;
-  critIncrementBy: number | null;
-  maxStacks: number | null;
-}
-
-export interface items_items_edges_node {
-  __typename: "Item";
-  id: any;
-  name: string;
-  level: number;
-  imageUrl: string;
-  stats: items_items_edges_node_stats[];
-  weaponStats: items_items_edges_node_weaponStats | null;
-  conditions: any | null;
-  itemType: items_items_edges_node_itemType;
-  set: items_items_edges_node_set | null;
-  buffs: items_items_edges_node_buffs[] | null;
-}
-
-export interface items_items_edges {
-  __typename: "ItemEdge";
-  node: items_items_edges_node;
-}
-
-export interface items_items_pageInfo {
-  __typename: "PageInfo";
-  /**
-   * When paginating forwards, are there more items?
-   */
-  hasNextPage: boolean;
-  /**
-   * When paginating forwards, the cursor to continue.
-   */
-  endCursor: string | null;
-}
-
-export interface items_items {
-  __typename: "ItemConnection";
-  edges: items_items_edges[];
-  /**
-   * Pagination data for this connection.
-   */
-  pageInfo: items_items_pageInfo;
-}
-
-export interface items_itemSuggestions_stats {
-  __typename: "ItemStat";
-  id: any;
-  order: number;
-  maxValue: number | null;
-  stat: Stat | null;
-  customStat: string | null;
-}
-
-export interface items_itemSuggestions_weaponStats_weaponEffects {
-  __typename: "WeaponEffect";
-  id: any;
-  minDamage: number | null;
-  maxDamage: number;
-  effectType: WeaponEffectType;
-}
-
-export interface items_itemSuggestions_weaponStats {
-  __typename: "WeaponStat";
-  id: any;
-  apCost: number;
-  usesPerTurn: number;
-  minRange: number | null;
-  maxRange: number;
-  baseCritChance: number | null;
-  critBonusDamage: number | null;
-  weaponEffects: items_itemSuggestions_weaponStats_weaponEffects[];
-}
-
-export interface items_itemSuggestions_itemType_eligibleItemSlots {
-  __typename: "ItemSlot";
-  id: any;
-  enName: string;
-  order: number;
-}
-
-export interface items_itemSuggestions_itemType {
-  __typename: "ItemType";
-  id: any;
-  name: string;
-  enName: string;
-  eligibleItemSlots: items_itemSuggestions_itemType_eligibleItemSlots[];
-}
-
-export interface items_itemSuggestions_set_bonuses {
-  __typename: "SetBonus";
-  id: any;
-  numItems: number;
-  stat: Stat | null;
-  value: number | null;
-  customStat: string | null;
-}
-
-export interface items_itemSuggestions_set {
-  __typename: "Set";
-  id: any;
-  name: string;
-  bonuses: items_itemSuggestions_set_bonuses[];
-}
-
-export interface items_itemSuggestions_buffs {
-  __typename: "Buff";
-  id: any;
-  stat: Stat;
-  incrementBy: number | null;
-  critIncrementBy: number | null;
-  maxStacks: number | null;
-}
-
-export interface items_itemSuggestions {
-  __typename: "Item";
-  id: any;
-  name: string;
-  level: number;
-  imageUrl: string;
-  stats: items_itemSuggestions_stats[];
-  weaponStats: items_itemSuggestions_weaponStats | null;
-  conditions: any | null;
-  itemType: items_itemSuggestions_itemType;
-  set: items_itemSuggestions_set | null;
-  buffs: items_itemSuggestions_buffs[] | null;
-}
-
-export interface items {
-  items: items_items;
-  itemSuggestions: items_itemSuggestions[];
-}
-
-export interface itemsVariables {
-  first: number;
-  after?: string | null;
-  filters: ItemFilters;
-  equippedItemIds: any[];
-  eligibleItemTypeIds?: any[] | null;
-  level: number;
-}
+export type items = {
+  items: {
+    __typename: 'ItemConnection';
+    edges: Array<{
+      __typename: 'ItemEdge';
+      node: {
+        __typename: 'Item';
+        id: any;
+        name: string;
+        level: number;
+        imageUrl: string;
+        conditions: any | null;
+        stats: Array<{
+          __typename: 'ItemStat';
+          id: any;
+          order: number;
+          maxValue: number | null;
+          stat: Types.Stat | null;
+          customStat: string | null;
+        }>;
+        weaponStats: {
+          __typename: 'WeaponStat';
+          id: any;
+          apCost: number;
+          usesPerTurn: number;
+          minRange: number | null;
+          maxRange: number;
+          baseCritChance: number | null;
+          critBonusDamage: number | null;
+          weaponEffects: Array<{
+            __typename: 'WeaponEffect';
+            id: any;
+            minDamage: number | null;
+            maxDamage: number;
+            effectType: Types.WeaponEffectType;
+          }>;
+        } | null;
+        itemType: {
+          __typename: 'ItemType';
+          id: any;
+          name: string;
+          enName: string;
+          eligibleItemSlots: Array<{
+            __typename: 'ItemSlot';
+            id: any;
+            enName: string;
+            order: number;
+          }>;
+        };
+        set: {
+          __typename: 'Set';
+          id: any;
+          name: string;
+          bonuses: Array<{
+            __typename: 'SetBonus';
+            id: any;
+            numItems: number;
+            stat: Types.Stat | null;
+            value: number | null;
+            customStat: string | null;
+          }>;
+        } | null;
+        buffs: Array<{
+          __typename: 'Buff';
+          id: any;
+          stat: Types.Stat;
+          incrementBy: number | null;
+          critIncrementBy: number | null;
+          maxStacks: number | null;
+        }> | null;
+      };
+    }>;
+    pageInfo: {
+      __typename: 'PageInfo';
+      hasNextPage: boolean;
+      endCursor: string | null;
+    };
+  };
+  itemSuggestions: Array<{
+    __typename: 'Item';
+    id: any;
+    name: string;
+    level: number;
+    imageUrl: string;
+    conditions: any | null;
+    stats: Array<{
+      __typename: 'ItemStat';
+      id: any;
+      order: number;
+      maxValue: number | null;
+      stat: Types.Stat | null;
+      customStat: string | null;
+    }>;
+    weaponStats: {
+      __typename: 'WeaponStat';
+      id: any;
+      apCost: number;
+      usesPerTurn: number;
+      minRange: number | null;
+      maxRange: number;
+      baseCritChance: number | null;
+      critBonusDamage: number | null;
+      weaponEffects: Array<{
+        __typename: 'WeaponEffect';
+        id: any;
+        minDamage: number | null;
+        maxDamage: number;
+        effectType: Types.WeaponEffectType;
+      }>;
+    } | null;
+    itemType: {
+      __typename: 'ItemType';
+      id: any;
+      name: string;
+      enName: string;
+      eligibleItemSlots: Array<{
+        __typename: 'ItemSlot';
+        id: any;
+        enName: string;
+        order: number;
+      }>;
+    };
+    set: {
+      __typename: 'Set';
+      id: any;
+      name: string;
+      bonuses: Array<{
+        __typename: 'SetBonus';
+        id: any;
+        numItems: number;
+        stat: Types.Stat | null;
+        value: number | null;
+        customStat: string | null;
+      }>;
+    } | null;
+    buffs: Array<{
+      __typename: 'Buff';
+      id: any;
+      stat: Types.Stat;
+      incrementBy: number | null;
+      critIncrementBy: number | null;
+      maxStacks: number | null;
+    }> | null;
+  }>;
+};

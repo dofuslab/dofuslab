@@ -1,21 +1,14 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL mutation operation: requestPasswordReset
-// ====================================================
+export type requestPasswordResetVariables = Types.Exact<{
+  email: Types.Scalars['String']['input'];
+}>;
 
-export interface requestPasswordReset_requestPasswordReset {
-  __typename: "RequestPasswordReset";
-  ok: boolean;
-}
-
-export interface requestPasswordReset {
-  requestPasswordReset: requestPasswordReset_requestPasswordReset | null;
-}
-
-export interface requestPasswordResetVariables {
-  email: string;
-}
+export type requestPasswordReset = {
+  requestPasswordReset: {
+    __typename: 'RequestPasswordReset';
+    ok: boolean;
+  } | null;
+};

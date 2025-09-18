@@ -1,24 +1,19 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL query operation: classes
-// ====================================================
+export type classesVariables = Types.Exact<{ [key: string]: never }>;
 
-export interface classes_classes {
-  __typename: "Class";
-  id: any;
-  name: string;
-  enName: string;
-  allNames: string[];
-  maleFaceImageUrl: string;
-  femaleFaceImageUrl: string;
-  maleSpriteImageUrl: string;
-  femaleSpriteImageUrl: string;
-}
-
-export interface classes {
-  classes: classes_classes[];
-}
+export type classes = {
+  classes: Array<{
+    __typename: 'Class';
+    id: any;
+    name: string;
+    enName: string;
+    allNames: Array<string>;
+    maleFaceImageUrl: string;
+    femaleFaceImageUrl: string;
+    maleSpriteImageUrl: string;
+    femaleSpriteImageUrl: string;
+  }>;
+};

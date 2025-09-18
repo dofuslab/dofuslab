@@ -30,6 +30,7 @@ import {
 import { AppliedBuffActionType } from 'common/types';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import '@ant-design/v5-patch-for-react-19';
 
 import Head from 'next/head';
 import { ConfigProvider, theme } from 'antd';

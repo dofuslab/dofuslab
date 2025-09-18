@@ -1,17 +1,14 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL mutation operation: resendVerificationEmail
-// ====================================================
+export type resendVerificationEmailVariables = Types.Exact<{
+  [key: string]: never;
+}>;
 
-export interface resendVerificationEmail_resendVerificationEmail {
-  __typename: "ResendVerificationEmail";
-  ok: boolean;
-}
-
-export interface resendVerificationEmail {
-  resendVerificationEmail: resendVerificationEmail_resendVerificationEmail | null;
-}
+export type resendVerificationEmail = {
+  resendVerificationEmail: {
+    __typename: 'ResendVerificationEmail';
+    ok: boolean;
+  } | null;
+};

@@ -3,7 +3,7 @@
 import { useMutation } from '@apollo/client';
 
 import { getFaceImageUrl, navigateToNewCustomSet } from 'common/utils';
-import { Class } from 'common/type-aliases';
+import { DofusClass } from 'common/type-aliases';
 import {
   editCustomSetDefaultClass,
   editCustomSetDefaultClassVariables,
@@ -16,7 +16,7 @@ import Tooltip from './Tooltip';
 
 interface Props {
   customSetId?: string;
-  dofusClass: Class | null;
+  dofusClass: DofusClass | null;
   setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
   closeModal: () => void;
   isSelected: boolean;

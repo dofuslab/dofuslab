@@ -1,42 +1,29 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL mutation operation: removeTagFromCustomSet
-// ====================================================
+export type removeTagFromCustomSetVariables = Types.Exact<{
+  customSetId?: Types.InputMaybe<Types.Scalars['UUID']['input']>;
+  customSetTagId: Types.Scalars['UUID']['input'];
+}>;
 
-export interface removeTagFromCustomSet_removeTagFromCustomSet_customSet_tagAssociations_customSetTag {
-  __typename: "CustomSetTag";
-  id: any;
-  name: string;
-  imageUrl: string;
-}
-
-export interface removeTagFromCustomSet_removeTagFromCustomSet_customSet_tagAssociations {
-  __typename: "CustomSetTagAssociation";
-  id: string;
-  associationDate: any;
-  customSetTag: removeTagFromCustomSet_removeTagFromCustomSet_customSet_tagAssociations_customSetTag;
-}
-
-export interface removeTagFromCustomSet_removeTagFromCustomSet_customSet {
-  __typename: "CustomSet";
-  id: any;
-  tagAssociations: removeTagFromCustomSet_removeTagFromCustomSet_customSet_tagAssociations[];
-}
-
-export interface removeTagFromCustomSet_removeTagFromCustomSet {
-  __typename: "RemoveTagFromCustomSet";
-  customSet: removeTagFromCustomSet_removeTagFromCustomSet_customSet;
-}
-
-export interface removeTagFromCustomSet {
-  removeTagFromCustomSet: removeTagFromCustomSet_removeTagFromCustomSet | null;
-}
-
-export interface removeTagFromCustomSetVariables {
-  customSetId?: any | null;
-  customSetTagId: any;
-}
+export type removeTagFromCustomSet = {
+  removeTagFromCustomSet: {
+    __typename: 'RemoveTagFromCustomSet';
+    customSet: {
+      __typename: 'CustomSet';
+      id: any;
+      tagAssociations: Array<{
+        __typename: 'CustomSetTagAssociation';
+        id: string;
+        associationDate: any;
+        customSetTag: {
+          __typename: 'CustomSetTag';
+          id: any;
+          name: string;
+          imageUrl: string;
+        };
+      }>;
+    };
+  } | null;
+};

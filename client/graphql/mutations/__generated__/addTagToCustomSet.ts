@@ -1,42 +1,29 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL mutation operation: addTagToCustomSet
-// ====================================================
+export type addTagToCustomSetVariables = Types.Exact<{
+  customSetId?: Types.InputMaybe<Types.Scalars['UUID']['input']>;
+  customSetTagId: Types.Scalars['UUID']['input'];
+}>;
 
-export interface addTagToCustomSet_addTagToCustomSet_customSet_tagAssociations_customSetTag {
-  __typename: "CustomSetTag";
-  id: any;
-  name: string;
-  imageUrl: string;
-}
-
-export interface addTagToCustomSet_addTagToCustomSet_customSet_tagAssociations {
-  __typename: "CustomSetTagAssociation";
-  id: string;
-  associationDate: any;
-  customSetTag: addTagToCustomSet_addTagToCustomSet_customSet_tagAssociations_customSetTag;
-}
-
-export interface addTagToCustomSet_addTagToCustomSet_customSet {
-  __typename: "CustomSet";
-  id: any;
-  tagAssociations: addTagToCustomSet_addTagToCustomSet_customSet_tagAssociations[];
-}
-
-export interface addTagToCustomSet_addTagToCustomSet {
-  __typename: "AddTagToCustomSet";
-  customSet: addTagToCustomSet_addTagToCustomSet_customSet;
-}
-
-export interface addTagToCustomSet {
-  addTagToCustomSet: addTagToCustomSet_addTagToCustomSet | null;
-}
-
-export interface addTagToCustomSetVariables {
-  customSetId?: any | null;
-  customSetTagId: any;
-}
+export type addTagToCustomSet = {
+  addTagToCustomSet: {
+    __typename: 'AddTagToCustomSet';
+    customSet: {
+      __typename: 'CustomSet';
+      id: any;
+      tagAssociations: Array<{
+        __typename: 'CustomSetTagAssociation';
+        id: string;
+        associationDate: any;
+        customSetTag: {
+          __typename: 'CustomSetTag';
+          id: any;
+          name: string;
+          imageUrl: string;
+        };
+      }>;
+    };
+  } | null;
+};

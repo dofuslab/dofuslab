@@ -165,19 +165,22 @@ const MageModal = ({
         stats: calcStatsDiff(originalStatsMap, statsState),
         weaponElementMage,
       },
-      optimisticResponse: ({ stats }) => ({
-        mageEquippedItem: {
-          equippedItem: {
-            ...equippedItem,
-            exos: stats.map((line, idx) => ({
-              ...line,
-              id: `exo-${idx}`,
-              __typename: 'EquippedItemExo',
-            })),
+      optimisticResponse: ({ stats }) => {
+        const statsArray = Array.isArray(stats) ? stats : [stats];
+        return {
+          mageEquippedItem: {
+            equippedItem: {
+              ...equippedItem,
+              exos: statsArray.map((line, idx) => ({
+                ...line,
+                id: `exo-${idx}`,
+                __typename: 'EquippedItemExo',
+              })),
+            },
+            __typename: 'MageEquippedItem',
           },
-          __typename: 'MageEquippedItem',
-        },
-      }),
+        };
+      },
     },
   );
 

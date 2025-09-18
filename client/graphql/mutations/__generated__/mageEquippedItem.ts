@@ -1,39 +1,26 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-import { CustomSetExosInput, WeaponElementMage, Stat } from "./../../../__generated__/globalTypes";
+export type mageEquippedItemVariables = Types.Exact<{
+  stats: Array<Types.CustomSetExosInput> | Types.CustomSetExosInput;
+  equippedItemId: Types.Scalars['UUID']['input'];
+  weaponElementMage?: Types.InputMaybe<Types.WeaponElementMage>;
+}>;
 
-// ====================================================
-// GraphQL mutation operation: mageEquippedItem
-// ====================================================
-
-export interface mageEquippedItem_mageEquippedItem_equippedItem_exos {
-  __typename: "EquippedItemExo";
-  id: any;
-  stat: Stat;
-  value: number;
-}
-
-export interface mageEquippedItem_mageEquippedItem_equippedItem {
-  __typename: "EquippedItem";
-  id: any;
-  exos: mageEquippedItem_mageEquippedItem_equippedItem_exos[];
-  weaponElementMage: WeaponElementMage | null;
-}
-
-export interface mageEquippedItem_mageEquippedItem {
-  __typename: "MageEquippedItem";
-  equippedItem: mageEquippedItem_mageEquippedItem_equippedItem;
-}
-
-export interface mageEquippedItem {
-  mageEquippedItem: mageEquippedItem_mageEquippedItem | null;
-}
-
-export interface mageEquippedItemVariables {
-  stats: CustomSetExosInput[];
-  equippedItemId: any;
-  weaponElementMage?: WeaponElementMage | null;
-}
+export type mageEquippedItem = {
+  mageEquippedItem: {
+    __typename: 'MageEquippedItem';
+    equippedItem: {
+      __typename: 'EquippedItem';
+      id: any;
+      weaponElementMage: Types.WeaponElementMage | null;
+      exos: Array<{
+        __typename: 'EquippedItemExo';
+        id: any;
+        stat: Types.Stat;
+        value: number;
+      }>;
+    };
+  } | null;
+};

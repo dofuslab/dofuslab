@@ -1,21 +1,11 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL mutation operation: changeClassic
-// ====================================================
+export type changeClassicVariables = Types.Exact<{
+  classic: Types.Scalars['Boolean']['input'];
+}>;
 
-export interface changeClassic_changeClassic {
-  __typename: "ChangeClassic";
-  ok: boolean;
-}
-
-export interface changeClassic {
-  changeClassic: changeClassic_changeClassic | null;
-}
-
-export interface changeClassicVariables {
-  classic: boolean;
-}
+export type changeClassic = {
+  changeClassic: { __typename: 'ChangeClassic'; ok: boolean } | null;
+};

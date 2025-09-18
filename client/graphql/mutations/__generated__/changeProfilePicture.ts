@@ -1,27 +1,14 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL mutation operation: changeProfilePicture
-// ====================================================
+export type changeProfilePictureVariables = Types.Exact<{
+  picture: Types.Scalars['String']['input'];
+}>;
 
-export interface changeProfilePicture_changeProfilePicture_user {
-  __typename: "User";
-  id: any;
-  profilePicture: string;
-}
-
-export interface changeProfilePicture_changeProfilePicture {
-  __typename: "ChangeProfilePicture";
-  user: changeProfilePicture_changeProfilePicture_user;
-}
-
-export interface changeProfilePicture {
-  changeProfilePicture: changeProfilePicture_changeProfilePicture | null;
-}
-
-export interface changeProfilePictureVariables {
-  picture: string;
-}
+export type changeProfilePicture = {
+  changeProfilePicture: {
+    __typename: 'ChangeProfilePicture';
+    user: { __typename: 'User'; id: any; profilePicture: string };
+  } | null;
+};

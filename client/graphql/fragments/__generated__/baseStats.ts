@@ -1,14 +1,9 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL fragment: baseStats
-// ====================================================
-
-export interface baseStats {
-  __typename: "CustomSetStats";
+export type baseStats = {
+  __typename: 'CustomSetStats';
   id: any;
   baseVitality: number;
   baseWisdom: number;
@@ -22,4 +17,4 @@ export interface baseStats {
   scrolledIntelligence: number;
   scrolledChance: number;
   scrolledAgility: number;
-}
+};

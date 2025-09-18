@@ -1,38 +1,25 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-import { Stat } from "./../../../__generated__/globalTypes";
+export type setEquippedItemExoVariables = Types.Exact<{
+  stat: Types.Stat;
+  equippedItemId: Types.Scalars['UUID']['input'];
+  hasStat: Types.Scalars['Boolean']['input'];
+}>;
 
-// ====================================================
-// GraphQL mutation operation: setEquippedItemExo
-// ====================================================
-
-export interface setEquippedItemExo_setEquippedItemExo_equippedItem_exos {
-  __typename: "EquippedItemExo";
-  id: any;
-  stat: Stat;
-  value: number;
-}
-
-export interface setEquippedItemExo_setEquippedItemExo_equippedItem {
-  __typename: "EquippedItem";
-  id: any;
-  exos: setEquippedItemExo_setEquippedItemExo_equippedItem_exos[];
-}
-
-export interface setEquippedItemExo_setEquippedItemExo {
-  __typename: "SetEquippedItemExo";
-  equippedItem: setEquippedItemExo_setEquippedItemExo_equippedItem;
-}
-
-export interface setEquippedItemExo {
-  setEquippedItemExo: setEquippedItemExo_setEquippedItemExo | null;
-}
-
-export interface setEquippedItemExoVariables {
-  stat: Stat;
-  equippedItemId: any;
-  hasStat: boolean;
-}
+export type setEquippedItemExo = {
+  setEquippedItemExo: {
+    __typename: 'SetEquippedItemExo';
+    equippedItem: {
+      __typename: 'EquippedItem';
+      id: any;
+      exos: Array<{
+        __typename: 'EquippedItemExo';
+        id: any;
+        stat: Types.Stat;
+        value: number;
+      }>;
+    };
+  } | null;
+};

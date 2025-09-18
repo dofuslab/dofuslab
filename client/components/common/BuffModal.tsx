@@ -19,11 +19,10 @@ import { CardSkeleton, EmptyState } from 'common/wrappers';
 import {
   classBuffs,
   classBuffsVariables,
-  classBuffs_classById_spellVariantPairs_spells as ClassBuffSpell,
 } from 'graphql/queries/__generated__/classBuffs';
+import { ClassBuffSpell, CustomSet } from 'common/type-aliases';
 import classBuffsQuery from 'graphql/queries/classBuffs.graphql';
 import { mq, statIcons } from 'common/constants';
-import { CustomSet } from 'common/type-aliases';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '@emotion/react';

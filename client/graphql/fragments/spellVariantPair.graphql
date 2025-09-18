@@ -1,0 +1,8 @@
+#import "graphql/fragments/spell.graphql"
+
+fragment spellVariantPair on SpellVariantPair {
+  id
+  spells {
+    ...spell
+  }
+}

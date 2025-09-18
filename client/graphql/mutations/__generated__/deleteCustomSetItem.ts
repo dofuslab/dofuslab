@@ -1,34 +1,20 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL mutation operation: deleteCustomSetItem
-// ====================================================
+export type deleteCustomSetItemVariables = Types.Exact<{
+  itemSlotId: Types.Scalars['UUID']['input'];
+  customSetId: Types.Scalars['UUID']['input'];
+}>;
 
-export interface deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems {
-  __typename: "EquippedItem";
-  id: any;
-}
-
-export interface deleteCustomSetItem_deleteCustomSetItem_customSet {
-  __typename: "CustomSet";
-  id: any;
-  lastModified: any | null;
-  equippedItems: deleteCustomSetItem_deleteCustomSetItem_customSet_equippedItems[];
-}
-
-export interface deleteCustomSetItem_deleteCustomSetItem {
-  __typename: "DeleteCustomSetItem";
-  customSet: deleteCustomSetItem_deleteCustomSetItem_customSet;
-}
-
-export interface deleteCustomSetItem {
-  deleteCustomSetItem: deleteCustomSetItem_deleteCustomSetItem | null;
-}
-
-export interface deleteCustomSetItemVariables {
-  itemSlotId: any;
-  customSetId: any;
-}
+export type deleteCustomSetItem = {
+  deleteCustomSetItem: {
+    __typename: 'DeleteCustomSetItem';
+    customSet: {
+      __typename: 'CustomSet';
+      id: any;
+      lastModified: any | null;
+      equippedItems: Array<{ __typename: 'EquippedItem'; id: any }>;
+    };
+  } | null;
+};

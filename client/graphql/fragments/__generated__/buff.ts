@@ -1,19 +1,12 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-import { Stat } from "./../../../__generated__/globalTypes";
-
-// ====================================================
-// GraphQL fragment: buff
-// ====================================================
-
-export interface buff {
-  __typename: "Buff";
+export type buff = {
+  __typename: 'Buff';
   id: any;
-  stat: Stat;
+  stat: Types.Stat;
   incrementBy: number | null;
   critIncrementBy: number | null;
   maxStacks: number | null;
-}
+};

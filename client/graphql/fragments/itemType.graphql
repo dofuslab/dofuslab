@@ -1,0 +1,4 @@
+fragment itemType on ItemType {
+  id
+  name
+}

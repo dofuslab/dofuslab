@@ -1,17 +1,9 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL mutation operation: logout
-// ====================================================
+export type logoutVariables = Types.Exact<{ [key: string]: never }>;
 
-export interface logout_logoutUser {
-  __typename: "LogoutUser";
-  ok: boolean;
-}
-
-export interface logout {
-  logoutUser: logout_logoutUser | null;
-}
+export type logout = {
+  logoutUser: { __typename: 'LogoutUser'; ok: boolean } | null;
+};

@@ -1,13 +1,7 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL query operation: sessionSettings
-// ====================================================
+export type sessionSettingsVariables = Types.Exact<{ [key: string]: never }>;
 
-export interface sessionSettings {
-  locale: string;
-  classic: boolean;
-}
+export type sessionSettings = { locale: string; classic: boolean };

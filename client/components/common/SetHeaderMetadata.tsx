@@ -3,6 +3,7 @@
 import type { ReactNode } from 'react';
 
 import { useTranslation } from 'next-i18next';
+import NoSSR from 'react-no-ssr';
 
 function SetHeaderMetadata({
   translationLabelId,
@@ -29,7 +30,9 @@ function SetHeaderMetadata({
   return (
     <div css={{ display: 'flex' }}>
       <div css={{ fontWeight: 500 }}>{t(translationLabelId)}</div>
-      <div css={{ marginLeft: 8 }}>{node}</div>
+      <div css={{ marginLeft: 8 }}>
+        <NoSSR>{node}</NoSSR>
+      </div>
     </div>
   );
 }

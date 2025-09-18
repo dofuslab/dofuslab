@@ -1,21 +1,11 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL mutation operation: changeLocale
-// ====================================================
+export type changeLocaleVariables = Types.Exact<{
+  locale: Types.Scalars['String']['input'];
+}>;
 
-export interface changeLocale_changeLocale {
-  __typename: "ChangeLocale";
-  ok: boolean;
-}
-
-export interface changeLocale {
-  changeLocale: changeLocale_changeLocale | null;
-}
-
-export interface changeLocaleVariables {
-  locale: string;
-}
+export type changeLocale = {
+  changeLocale: { __typename: 'ChangeLocale'; ok: boolean } | null;
+};

@@ -1,21 +1,11 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL mutation operation: deleteCustomSet
-// ====================================================
+export type deleteCustomSetVariables = Types.Exact<{
+  customSetId: Types.Scalars['UUID']['input'];
+}>;
 
-export interface deleteCustomSet_deleteCustomSet {
-  __typename: "DeleteCustomSet";
-  ok: boolean;
-}
-
-export interface deleteCustomSet {
-  deleteCustomSet: deleteCustomSet_deleteCustomSet | null;
-}
-
-export interface deleteCustomSetVariables {
-  customSetId: any;
-}
+export type deleteCustomSet = {
+  deleteCustomSet: { __typename: 'DeleteCustomSet'; ok: boolean } | null;
+};

@@ -1,31 +1,22 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL mutation operation: editCustomSetMetadata
-// ====================================================
+export type editCustomSetMetadataVariables = Types.Exact<{
+  customSetId?: Types.InputMaybe<Types.Scalars['UUID']['input']>;
+  name?: Types.InputMaybe<Types.Scalars['String']['input']>;
+  level: Types.Scalars['Int']['input'];
+}>;
 
-export interface editCustomSetMetadata_editCustomSetMetadata_customSet {
-  __typename: "CustomSet";
-  id: any;
-  name: string | null;
-  level: number;
-  lastModified: any | null;
-}
-
-export interface editCustomSetMetadata_editCustomSetMetadata {
-  __typename: "EditCustomSetMetadata";
-  customSet: editCustomSetMetadata_editCustomSetMetadata_customSet;
-}
-
-export interface editCustomSetMetadata {
-  editCustomSetMetadata: editCustomSetMetadata_editCustomSetMetadata | null;
-}
-
-export interface editCustomSetMetadataVariables {
-  customSetId?: any | null;
-  name?: string | null;
-  level: number;
-}
+export type editCustomSetMetadata = {
+  editCustomSetMetadata: {
+    __typename: 'EditCustomSetMetadata';
+    customSet: {
+      __typename: 'CustomSet';
+      id: any;
+      name: string | null;
+      level: number;
+      lastModified: any | null;
+    };
+  } | null;
+};

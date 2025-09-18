@@ -1,13 +1,7 @@
+#import "graphql/fragments/itemSlot.graphql"
+
 query itemSlots {
   itemSlots {
-    id
-    enName
-    name
-    order
-    itemTypes {
-      id
-      name
-    }
-    imageUrl
+    ...itemSlot
   }
 }

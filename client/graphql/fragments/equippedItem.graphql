@@ -1,0 +1,17 @@
+#import "graphql/fragments/item.graphql"
+#import "graphql/fragments/equippedItemExo.graphql"
+#import "graphql/fragments/equippedItemSlot.graphql"
+
+fragment equippedItem on EquippedItem {
+  id
+  weaponElementMage
+  slot {
+    ...equippedItemSlot
+  }
+  item {
+    ...item
+  }
+  exos {
+    ...equippedItemExo
+  }
+}

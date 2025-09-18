@@ -1,19 +1,14 @@
-/* tslint:disable */
-/* eslint-disable */
-// @generated
-// This file was automatically generated and should not be edited.
+/* eslint-disable @typescript-eslint/ban-ts-comment, @typescript-eslint/no-unused-vars */
+// @ts-nocheck
+import * as Types from '../../../__generated__/globalTypes';
 
-// ====================================================
-// GraphQL query operation: customSetTags
-// ====================================================
+export type customSetTagsVariables = Types.Exact<{ [key: string]: never }>;
 
-export interface customSetTags_customSetTags {
-  __typename: "CustomSetTag";
-  id: any;
-  name: string;
-  imageUrl: string;
-}
-
-export interface customSetTags {
-  customSetTags: customSetTags_customSetTags[];
-}
+export type customSetTags = {
+  customSetTags: Array<{
+    __typename: 'CustomSetTag';
+    id: any;
+    name: string;
+    imageUrl: string;
+  }>;
+};

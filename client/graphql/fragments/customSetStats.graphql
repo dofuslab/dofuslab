@@ -1,0 +1,15 @@
+fragment customSetStats on CustomSetStats {
+  id
+  baseVitality
+  baseWisdom
+  baseStrength
+  baseIntelligence
+  baseChance
+  baseAgility
+  scrolledVitality
+  scrolledWisdom
+  scrolledStrength
+  scrolledIntelligence
+  scrolledChance
+  scrolledAgility
+}
