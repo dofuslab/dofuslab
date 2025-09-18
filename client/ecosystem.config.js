@@ -3,9 +3,9 @@ module.exports = {
     {
       name: 'app',
       cwd: '/var/www/production/current/client',
-      script: 'yarn',
+      script: 'node_modules/next/dist/bin/next',
       args: 'start -p 3000',
-      interpreter: '/bin/bash',
+      interpreter: '/home/jeremy/.nvm/versions/node/v22.19.0/bin/node',
 
       // Options reference: https://pm2.keymetrics.io/docs/usage/application-declaration/
       instances: 1,
