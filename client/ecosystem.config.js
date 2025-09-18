@@ -3,6 +3,7 @@ module.exports = {
     {
       name: 'app',
       script: 'yarn start',
+      exec_interpreter: '/home/jeremy/.nvm/versions/node/v22.19.0/bin/node',
       interpreter: '/home/jeremy/.nvm/versions/node/v22.19.0/bin/node',
 
       // Options reference: https://pm2.keymetrics.io/docs/usage/application-declaration/
