@@ -2,7 +2,9 @@ module.exports = {
   apps: [
     {
       name: 'app',
-      script: 'yarn start',
+      cwd: '/var/www/production/current/client',
+      script: 'node_modules/next/dist/bin/next',
+      args: 'start -p 3000',
       exec_interpreter: '/home/jeremy/.nvm/versions/node/v22.19.0/bin/node',
       interpreter: '/home/jeremy/.nvm/versions/node/v22.19.0/bin/node',
 
