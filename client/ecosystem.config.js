@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'app',
       cwd: '/var/www/production/current/client',
-      script: 'node_modules/next/dist/bin/next',
+      script: 'yarn',
       args: 'start -p 3000',
       interpreter: '/bin/bash',
 
