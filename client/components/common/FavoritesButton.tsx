@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { SetStateAction, Dispatch } from 'react';
+
+import { useState, useCallback } from 'react';
 
 import { ClassNames, useTheme } from '@emotion/react';
 import { Button, Modal } from 'antd';
@@ -25,26 +27,26 @@ import SetModal from './SetModal';
 interface Props {
   className?: string;
   customSet?: CustomSet | null;
-  selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
+  selectItemSlot?: Dispatch<SetStateAction<ItemSlot | null>>;
   shouldRedirect: boolean;
   showSets: boolean;
   selectedItemSlot: ItemSlot | null;
 }
 
-const FavoritesButton: React.FC<Props> = ({
+const FavoritesButton = ({
   className,
   customSet,
   selectItemSlot,
   shouldRedirect,
   showSets,
   selectedItemSlot,
-}) => {
+}: Props) => {
   const { t } = useTranslation('common');
-  const [favoritesModalOpen, setFavoritesModalOpen] = React.useState(false);
-  const openModal = React.useCallback(() => {
+  const [favoritesModalOpen, setFavoritesModalOpen] = useState(false);
+  const openModal = useCallback(() => {
     setFavoritesModalOpen(true);
   }, []);
-  const closeModal = React.useCallback(() => {
+  const closeModal = useCallback(() => {
     setFavoritesModalOpen(false);
   }, []);
   const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);

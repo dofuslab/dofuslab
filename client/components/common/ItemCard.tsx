@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { SetStateAction, Dispatch, MouseEvent } from 'react';
+
+import { useCallback, memo } from 'react';
 
 import {
   slotToUrlString,
@@ -27,7 +29,7 @@ interface Props {
   item: Item;
   itemSlotId: string | null;
   customSetId: string | null;
-  selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
+  selectItemSlot?: Dispatch<SetStateAction<ItemSlot | null>>;
   equipped: boolean;
   openSetModal: (set: ItemSet) => void;
   shouldRedirect?: boolean;
@@ -36,7 +38,7 @@ interface Props {
   isSuggestion?: boolean;
 }
 
-const ItemCard: React.FC<Props> = ({
+const ItemCard = ({
   item,
   itemSlotId,
   customSetId,
@@ -47,7 +49,7 @@ const ItemCard: React.FC<Props> = ({
   remainingSlotIds,
   notifyOnEquip,
   isSuggestion,
-}) => {
+}: Props) => {
   const mutate = useEquipItemMutation(item);
   const { t, i18n } = useTranslation('common');
   const client = useApolloClient();
@@ -60,15 +62,15 @@ const ItemCard: React.FC<Props> = ({
     mutationResult: [toggleFavorite],
   } = useToggleFavoriteMutation(item);
 
-  const onFavoriteToggle = React.useCallback(
-    (e: React.MouseEvent<HTMLSpanElement>) => {
+  const onFavoriteToggle = useCallback(
+    (e: MouseEvent<HTMLSpanElement>) => {
       e.stopPropagation();
       toggleFavorite();
     },
     [toggleFavorite],
   );
 
-  const onClick = React.useCallback(() => {
+  const onClick = useCallback(() => {
     const nextSlotId = remainingSlotIds[0];
     const numRemainingSlots = remainingSlotIds.length;
     if (itemSlotId) {
@@ -144,4 +146,4 @@ const ItemCard: React.FC<Props> = ({
   );
 };
 
-export default React.memo(ItemCard);
+export default memo(ItemCard);

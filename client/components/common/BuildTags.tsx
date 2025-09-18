@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useContext } from 'react';
 
 import { Divider, Select, Tag } from 'antd';
 import { useRouter } from 'next/router';
@@ -38,13 +38,9 @@ interface Props {
   isMobile: boolean;
 }
 
-const BuildTags: React.FC<Props> = ({
-  customSetId,
-  tagAssociations,
-  isMobile,
-}) => {
+const BuildTags = ({ customSetId, tagAssociations, isMobile }: Props) => {
   const { t } = useTranslation('common');
-  const isEditable = React.useContext(EditableContext);
+  const isEditable = useContext(EditableContext);
   const { data } = useQuery<customSetTags>(customSetTagsQuery);
   const maxAssociationTime =
     tagAssociations?.reduce(

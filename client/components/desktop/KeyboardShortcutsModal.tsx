@@ -1,11 +1,14 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { ReactNode } from 'react';
+
+import { useCallback } from 'react';
 
 import { Divider, List, Modal, Table } from 'antd';
 import { ColumnType } from 'antd/lib/table';
 
-import { useTranslation, TFunction } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
+import { TFunction } from 'react-i18next';
 import { useTheme } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -28,7 +31,7 @@ const expandableShortcuts = [
   { slot: 'PET', key: 'P' },
 ];
 
-function KeyboardKey({ children }: { children: React.ReactNode }) {
+function KeyboardKey({ children }: { children: ReactNode }) {
   const theme = useTheme();
   return (
     <span
@@ -59,7 +62,7 @@ type Shortcut = {
     | 'DELETE_SELECTED_ITEM';
   shortcuts: {
     keys?: Array<string>;
-    keysElement?: React.ReactNode;
+    keysElement?: ReactNode;
     letterKeys?: Array<string>;
   };
   expandableShortcuts?: typeof expandableShortcuts;
@@ -111,8 +114,10 @@ const shortcuts: Array<Shortcut> = [
   },
 ];
 
-const getColumns: (t: TFunction) => Array<ColumnType<typeof shortcuts[0]>> = (
-  t: TFunction,
+const getColumns: (
+  t: TFunction<'keyboard_shortcut'>,
+) => Array<ColumnType<typeof shortcuts[0]>> = (
+  t: TFunction<'keyboard_shortcut'>,
 ) => [
   {
     dataIndex: 'shortcuts',
@@ -143,10 +148,10 @@ const getColumns: (t: TFunction) => Array<ColumnType<typeof shortcuts[0]>> = (
   },
 ];
 
-const KeyboardShortcutsModal: React.FC<Props> = ({ open, onClose }) => {
+const KeyboardShortcutsModal = ({ open, onClose }: Props) => {
   const { t } = useTranslation('keyboard_shortcut');
 
-  const memoizedExpandableRow = React.useCallback(
+  const memoizedExpandableRow = useCallback(
     (record: Shortcut) => (
       <List
         grid={{ gutter: 8, column: 3 }}

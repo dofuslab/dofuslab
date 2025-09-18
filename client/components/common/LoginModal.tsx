@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useCallback, useState } from 'react';
 
 import { Modal, Input, Form, Button, Checkbox, Divider } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/client';
@@ -24,7 +24,7 @@ interface Props {
   openSignUpModal: () => void;
 }
 
-const LoginModal: React.FC<Props> = ({ open, onClose, openSignUpModal }) => {
+const LoginModal = ({ open, onClose, openSignUpModal }: Props) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 
@@ -34,7 +34,7 @@ const LoginModal: React.FC<Props> = ({ open, onClose, openSignUpModal }) => {
     { refetchQueries: [{ query: sessionSettingsQuery }] },
   );
 
-  const handleOk = React.useCallback(async () => {
+  const handleOk = useCallback(async () => {
     const values = await form.validateFields();
 
     const { data } = await login({
@@ -54,18 +54,18 @@ const LoginModal: React.FC<Props> = ({ open, onClose, openSignUpModal }) => {
     }
   }, [login, onClose, client, form]);
 
-  const onSignUp = React.useCallback(() => {
+  const onSignUp = useCallback(() => {
     onClose();
     openSignUpModal();
   }, [onClose, openSignUpModal]);
 
   const [showRequestPasswordResetModal, setRequestPasswordResetModal] =
-    React.useState(false);
-  const openRequestPasswordResetModal = React.useCallback(() => {
+    useState(false);
+  const openRequestPasswordResetModal = useCallback(() => {
     onClose();
     setRequestPasswordResetModal(true);
   }, [onClose]);
-  const closeRequestPasswordResetModal = React.useCallback(() => {
+  const closeRequestPasswordResetModal = useCallback(() => {
     setRequestPasswordResetModal(false);
   }, []);
 

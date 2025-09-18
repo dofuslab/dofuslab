@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useContext } from 'react';
 
 import { ClassNames } from '@emotion/react';
 import StatTable from 'components/common/StatTable';
@@ -15,8 +15,8 @@ interface Props {
 
 const margin = { marginBottom: 12, [mq[4]]: { marginBottom: 20 } };
 
-const ClassicLeftColumnStats: React.FC<Props> = ({ openBuffModal }) => {
-  const { customSet } = React.useContext(CustomSetContext);
+const ClassicLeftColumnStats = ({ openBuffModal }: Props) => {
+  const { customSet } = useContext(CustomSetContext);
 
   return (
     <div

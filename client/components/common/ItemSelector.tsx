@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useCallback, useState, useEffect } from 'react';
 
 import { useQuery } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -31,7 +31,7 @@ type Props = SharedProps & {
   itemTypeIds: Set<string>;
 };
 
-const ItemSelector: React.FC<Props> = ({
+const ItemSelector = ({
   selectedItemSlot,
   customSet,
   selectItemSlot,
@@ -40,7 +40,7 @@ const ItemSelector: React.FC<Props> = ({
   itemTypeIds,
   isMobile,
   isClassic,
-}) => {
+}: Props) => {
   const itemTypeIdsArr = Array.from(itemTypeIds);
   const queryFilters = {
     ...filters,
@@ -71,7 +71,7 @@ const ItemSelector: React.FC<Props> = ({
 
   const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
 
-  const onLoadMore = React.useCallback(async () => {
+  const onLoadMore = useCallback(async () => {
     if (!data || !data.items.pageInfo.hasNextPage) {
       return () => {
         // no-op
@@ -84,10 +84,10 @@ const ItemSelector: React.FC<Props> = ({
     return fetchMoreResult;
   }, [data, loading]);
 
-  const [setModalOpen, setSetModalOpen] = React.useState(false);
-  const [selectedSet, setSelectedSet] = React.useState<ItemSet | null>(null);
+  const [setModalOpen, setSetModalOpen] = useState(false);
+  const [selectedSet, setSelectedSet] = useState<ItemSet | null>(null);
 
-  const openSetModal = React.useCallback(
+  const openSetModal = useCallback(
     (set: ItemSet) => {
       setSelectedSet(set);
       setSetModalOpen(true);
@@ -95,13 +95,13 @@ const ItemSelector: React.FC<Props> = ({
     [setSelectedSet, setSetModalOpen],
   );
 
-  const closeSetModal = React.useCallback(() => {
+  const closeSetModal = useCallback(() => {
     setSetModalOpen(false);
   }, [setSetModalOpen]);
 
   const mutate = useEquipItemMutation();
 
-  const equipItem = React.useCallback(
+  const equipItem = useCallback(
     (item: Item) => {
       if (isClassic || isMobile) return;
       const remainingSlotIds = selectedItemSlot
@@ -133,7 +133,7 @@ const ItemSelector: React.FC<Props> = ({
     filters.stats.length === 0 &&
     itemTypeIdsArr.length === 0;
 
-  React.useEffect(() => {
+  useEffect(() => {
     const listener = (e: KeyboardEvent) => {
       const keyIndex = Number(e.key) - 1;
 

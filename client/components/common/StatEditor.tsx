@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useReducer, useCallback, useContext, Fragment } from 'react';
 import { ClassNames, useTheme, Theme } from '@emotion/react';
 
 import { StatKey, scrolledStats, baseStats } from 'common/types';
@@ -161,7 +161,7 @@ const getReadonlyStatDisplayStyle = (
   ...(baseKey === 'baseVitality' && getStatDisplayStyle(title, theme)),
 });
 
-const StatEditor: React.FC<Props> = ({ customSet, className }) => {
+const StatEditor = ({ customSet, className }: Props) => {
   const initialState = customSet?.stats
     ? {
         baseVitality: customSet.stats.baseVitality,
@@ -178,7 +178,7 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
         scrolledAgility: customSet.stats.scrolledAgility,
       }
     : defaultInitialState;
-  const [statState, dispatch] = React.useReducer(reducer, initialState);
+  const [statState, dispatch] = useReducer(reducer, initialState);
 
   const [mutate] = useMutation<editCustomSetStats, editCustomSetStatsVariables>(
     editCustomSetStatsMutation,
@@ -199,7 +199,7 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
 
   const router = useRouter();
 
-  const checkAndMutate = React.useCallback(async () => {
+  const checkAndMutate = useCallback(async () => {
     const ok = await checkAuthentication(client, t, customSet);
     if (!ok) return;
     const { data } = await mutate();
@@ -213,24 +213,24 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
     DEBOUNCE_INTERVAL,
   );
 
-  const scrollAll = React.useCallback(() => {
+  const scrollAll = useCallback(() => {
     dispatch({ type: 'scrollAll' });
     checkAndMutate();
   }, [dispatch, checkAndMutate]);
 
-  const resetScroll = React.useCallback(() => {
+  const resetScroll = useCallback(() => {
     dispatch({ type: 'resetScroll' });
     checkAndMutate();
   }, [dispatch, checkAndMutate]);
 
-  const reset = React.useCallback(() => {
+  const reset = useCallback(() => {
     dispatch({ type: 'reset' });
     checkAndMutate();
   }, [dispatch, checkAndMutate]);
 
   const theme = useTheme();
 
-  const isEditable = React.useContext(EditableContext);
+  const isEditable = useContext(EditableContext);
 
   const display100 = scrolledStats.some(
     (scrolledStat) => statState[scrolledStat] < 100,
@@ -274,7 +274,7 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
           )}
         >
           {statDisplayArray.map(({ stat, baseKey, scrolledKey }) => (
-            <React.Fragment key={`stat-editor-${stat}`}>
+            <Fragment key={`stat-editor-${stat}`}>
               <div
                 css={{
                   fontSize: '0.75rem',
@@ -344,7 +344,7 @@ const StatEditor: React.FC<Props> = ({ customSet, className }) => {
                   {statState[scrolledKey]}
                 </div>
               )}
-            </React.Fragment>
+            </Fragment>
           ))}
           {isEditable ? (
             <Button

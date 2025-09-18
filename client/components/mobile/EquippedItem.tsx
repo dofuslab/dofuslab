@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useContext, memo } from 'react';
 import { useTheme } from '@emotion/react';
 
 import { itemBox, itemImageBox } from 'common/mixins';
@@ -25,16 +25,16 @@ interface Props {
   errors?: Array<BuildError>;
 }
 
-const EquippedItem: React.FC<Props> = ({
+const EquippedItem = ({
   slot,
   equippedItem,
   customSet,
   openMageModal,
   openSetModal,
   errors,
-}) => {
+}: Props) => {
   const theme = useTheme();
-  const isEditable = React.useContext(EditableContext);
+  const isEditable = useContext(EditableContext);
 
   const urlBase = isEditable ? 'build' : 'view';
 
@@ -63,7 +63,7 @@ const EquippedItem: React.FC<Props> = ({
     <Link
       href={`/equip/${slotToUrlString(slot)}/${customSet ? customSet.id : ''}`}
     >
-      <a>{emptyItemSlot}</a>
+      {emptyItemSlot}
     </Link>
   ) : (
     emptyItemSlot
@@ -81,6 +81,7 @@ const EquippedItem: React.FC<Props> = ({
             },
           }}
           as={asPath}
+          legacyBehavior
         >
           <div>
             <EquippedItemWithStats
@@ -101,4 +102,4 @@ const EquippedItem: React.FC<Props> = ({
   );
 };
 
-export default React.memo(EquippedItem);
+export default memo(EquippedItem);

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useCallback, useMemo } from 'react';
 import Head from 'next/head';
 import { mediaStyles, Media } from 'components/common/Media';
 import Selector from 'components/common/Selector';
@@ -26,12 +26,12 @@ type Props = {
   itemSlotId?: string;
 };
 
-const EquipPage: React.FC<Props> = ({ customSetId, itemSlotId }) => {
+const EquipPage = ({ customSetId, itemSlotId }: Props) => {
   const router = useRouter();
 
   const [isClassic, setIsClassic] = useClassic();
 
-  const onIsClassicChange = React.useCallback(
+  const onIsClassicChange = useCallback(
     (value: boolean) => {
       setIsClassic(value);
       if (!value) {
@@ -49,7 +49,7 @@ const EquipPage: React.FC<Props> = ({ customSetId, itemSlotId }) => {
     customSetVariables
   >(CustomSetQuery, { variables: { id: customSetId }, skip: !customSetId });
 
-  const contextValue = React.useMemo(
+  const contextValue = useMemo(
     () => [isClassic, onIsClassicChange] as const,
     [isClassic, onIsClassicChange],
   );

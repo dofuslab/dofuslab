@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useCallback, useContext } from 'react';
 import { css, useTheme } from '@emotion/react';
 import { Button, Switch, Divider } from 'antd';
 import { useMutation, useApolloClient } from '@apollo/client';
@@ -63,14 +63,14 @@ interface Props {
   errors?: Array<BuildError>;
 }
 
-const EquippedItemCard: React.FC<Props> = ({
+const EquippedItemCard = ({
   equippedItem,
   itemSlot,
   customSet,
   openMageModal,
   openSetModal,
   errors,
-}) => {
+}: Props) => {
   const { t } = useTranslation(['common', 'mage', 'stat']);
 
   const deleteItem = useDeleteItemMutation(customSet);
@@ -100,7 +100,7 @@ const EquippedItemCard: React.FC<Props> = ({
     }),
   });
 
-  const onDelete = React.useCallback(() => {
+  const onDelete = useCallback(() => {
     deleteItem(itemSlot.id);
     Router.push(customSet ? `/build/${customSet.id}/` : '/');
   }, [deleteItem, customSet, itemSlot]);
@@ -109,7 +109,7 @@ const EquippedItemCard: React.FC<Props> = ({
 
   const theme = useTheme();
 
-  const onQuickMage = React.useCallback(
+  const onQuickMage = useCallback(
     async (checked: boolean, stat: Stat) => {
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
@@ -146,11 +146,11 @@ const EquippedItemCard: React.FC<Props> = ({
     );
   });
 
-  const onMageClick = React.useCallback(() => {
+  const onMageClick = useCallback(() => {
     openMageModal(equippedItem);
   }, [openMageModal, equippedItem]);
 
-  const isEditable = React.useContext(EditableContext);
+  const isEditable = useContext(EditableContext);
 
   let path = '/';
   if (customSet && isEditable) {
@@ -163,12 +163,10 @@ const EquippedItemCard: React.FC<Props> = ({
     <div css={{ padding: '0 12px', marginTop: 12 }}>
       <Media lessThan="xs">
         <Link href={path} passHref>
-          <a>
-            <Button size="large" css={{ fontSize: '0.75rem' }}>
-              <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
-              {t('BACK')}
-            </Button>
-          </a>
+          <Button size="large" css={{ fontSize: '0.75rem' }}>
+            <FontAwesomeIcon icon={faArrowLeft} css={{ marginRight: 12 }} />
+            {t('BACK')}
+          </Button>
         </Link>
       </Media>
       <Card
@@ -256,9 +254,7 @@ const EquippedItemCard: React.FC<Props> = ({
               }`}
               passHref
             >
-              <a>
-                <Button>{t('REPLACE')}</Button>
-              </a>
+              <Button>{t('REPLACE')}</Button>
             </Link>
             <Button onClick={onDelete} css={{ marginLeft: 12 }}>
               {t('DELETE')}

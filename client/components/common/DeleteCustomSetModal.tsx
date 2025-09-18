@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { MouseEvent } from 'react';
+
+import { useCallback } from 'react';
 import { Modal, notification } from 'antd';
 import { useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
@@ -18,11 +20,7 @@ interface Props {
   customSetId: string;
 }
 
-const DeleteCustomSetModal: React.FC<Props> = ({
-  open,
-  onCancel,
-  customSetId,
-}) => {
+const DeleteCustomSetModal = ({ open, onCancel, customSetId }: Props) => {
   const { t } = useTranslation('common');
   const [deleteMutate, { loading: deleteLoading }] = useMutation<
     deleteCustomSet,
@@ -34,8 +32,8 @@ const DeleteCustomSetModal: React.FC<Props> = ({
   });
   const router = useRouter();
 
-  const onDelete = React.useCallback(
-    async (e: React.MouseEvent<HTMLElement>) => {
+  const onDelete = useCallback(
+    async (e: MouseEvent<HTMLElement>) => {
       e.stopPropagation();
       const { data } = await deleteMutate();
       onCancel();
@@ -52,8 +50,8 @@ const DeleteCustomSetModal: React.FC<Props> = ({
     [deleteMutate, router, onCancel, customSetId],
   );
 
-  const onCancelClick = React.useCallback(
-    (e: React.MouseEvent<HTMLElement>) => {
+  const onCancelClick = useCallback(
+    (e: MouseEvent<HTMLElement>) => {
       e.stopPropagation();
       onCancel();
     },

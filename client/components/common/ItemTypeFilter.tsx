@@ -1,10 +1,11 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { SetStateAction, Dispatch } from 'react';
+
+import { useCallback } from 'react';
 
 import { mq } from 'common/constants';
 import { Checkbox } from 'antd';
-import { CheckboxValueType } from 'antd/lib/checkbox/Group';
 import { ItemType } from 'common/type-aliases';
 import { ellipsis } from 'common/mixins';
 
@@ -13,24 +14,19 @@ const { Group: CheckboxGroup } = Checkbox;
 interface Props {
   itemTypes: Array<ItemType>;
   itemTypeIds: Set<string>;
-  setItemTypeIds: React.Dispatch<React.SetStateAction<Set<string>>>;
+  setItemTypeIds: Dispatch<SetStateAction<Set<string>>>;
 }
 
-const ItemTypeFilter: React.FC<Props> = ({
-  itemTypes,
-  itemTypeIds,
-  setItemTypeIds,
-}) => {
-  const onChangeItemTypeIds = React.useCallback(
-    (newItemTypeIds: Array<CheckboxValueType>) =>
-      setItemTypeIds(new Set(newItemTypeIds as Array<string>)),
+const ItemTypeFilter = ({ itemTypes, itemTypeIds, setItemTypeIds }: Props) => {
+  const onChangeItemTypeIds = useCallback(
+    (newItemTypeIds: Array<string>) => setItemTypeIds(new Set(newItemTypeIds)),
     [setItemTypeIds],
   );
   if (itemTypes.length <= 1) {
     return null;
   }
   return (
-    <CheckboxGroup
+    <CheckboxGroup<string>
       value={Array.from(itemTypeIds)}
       onChange={onChangeItemTypeIds}
       options={[...itemTypes]

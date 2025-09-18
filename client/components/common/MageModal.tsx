@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { MouseEvent } from 'react';
+
+import { useReducer, useState, useCallback } from 'react';
 
 import { ClassNames } from '@emotion/react';
 import { Modal, Select, Divider, Button } from 'antd';
@@ -41,7 +43,7 @@ const { Option } = Select;
 interface Props {
   open: boolean;
   equippedItem: EquippedItem;
-  closeMageModal: (e: React.MouseEvent<HTMLElement>) => void;
+  closeMageModal: (e: MouseEvent<HTMLElement>) => void;
   customSetId: string;
 }
 
@@ -123,18 +125,18 @@ const calcStatsDiff = (
   ...statsState.exos,
 ];
 
-const MageModal: React.FC<Props> = ({
+const MageModal = ({
   open,
   equippedItem,
   closeMageModal,
   customSetId,
-}) => {
+}: Props) => {
   const { statsMap, exoStatsMap, originalStatsMap } = getStatsMaps(
     equippedItem.item.stats,
     equippedItem.exos,
   );
 
-  const [statsState, dispatch] = React.useReducer(reducer, {
+  const [statsState, dispatch] = useReducer(reducer, {
     originalStats: equippedItem.item.stats
       .filter(({ stat, maxValue }) => !!stat && !!maxValue)
       .map(({ stat }) => ({
@@ -151,7 +153,7 @@ const MageModal: React.FC<Props> = ({
       })),
   });
 
-  const [weaponElementMage, setWeaponElementMage] = React.useState<
+  const [weaponElementMage, setWeaponElementMage] = useState<
     WeaponElementMage | undefined
   >();
 
@@ -195,7 +197,7 @@ const MageModal: React.FC<Props> = ({
     'common',
   ]);
 
-  const onAddStat = React.useCallback(
+  const onAddStat = useCallback(
     ({ value }: LabeledValue) => {
       dispatch({ type: 'ADD', stat: value as Stat });
     },
@@ -205,8 +207,8 @@ const MageModal: React.FC<Props> = ({
   const client = useApolloClient();
   const customSet = useCustomSet(customSetId);
 
-  const onOk = React.useCallback(
-    async (e: React.MouseEvent<HTMLElement>) => {
+  const onOk = useCallback(
+    async (e: MouseEvent<HTMLElement>) => {
       e.stopPropagation();
       const ok = checkAuthentication(client, t, customSet);
       if (!ok) return;

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useCallback, useEffect, memo } from 'react';
 import { useRouter } from 'next/router';
 import { notification } from 'antd';
 import { useQuery } from '@apollo/client';
@@ -12,7 +12,7 @@ import Cookies from 'js-cookie';
 import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
 
 type StatusObj = {
-  type: 'info' | 'success' | 'warn' | 'error';
+  type: 'info' | 'success' | 'warning' | 'error';
   messageKey: string;
 };
 
@@ -57,13 +57,13 @@ function isStatusObj(value: string | StatusObj): value is StatusObj {
   return typeof value === 'object';
 }
 
-const StatusChecker: React.FC = () => {
+const StatusChecker = () => {
   const router = useRouter();
   const { query } = router;
   const { t } = useTranslation('status');
   const { data } = useQuery<currentUser>(currentUserQuery);
 
-  const processQueryEntry = React.useCallback(
+  const processQueryEntry = useCallback(
     (statusType: string, statusValue: string) => {
       const obj = statusMap[statusType]?.[statusValue];
       if (isStatusObj(obj)) {
@@ -79,7 +79,7 @@ const StatusChecker: React.FC = () => {
     [t],
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (data?.currentUser && !data.currentUser.verified) {
       router.replace('/verify-email');
       return;
@@ -95,7 +95,7 @@ const StatusChecker: React.FC = () => {
     });
   }, [data]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!Cookies.get('NEXT_LOCALE')) {
       Cookies.set(
         'NEXT_LOCALE',
@@ -107,4 +107,4 @@ const StatusChecker: React.FC = () => {
   return null;
 };
 
-export default React.memo(StatusChecker);
+export default memo(StatusChecker);

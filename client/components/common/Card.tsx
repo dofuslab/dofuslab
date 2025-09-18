@@ -1,11 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
 import { Card as AntdCard } from 'antd';
 import { CardProps } from 'antd/lib/card';
 import { ClassNames, useTheme } from '@emotion/react';
 
-const Card: React.FC<CardProps> = ({ className, ...restProps }) => {
+const Card = ({ className, ...restProps }: CardProps) => {
   const theme = useTheme();
   return (
     <ClassNames>

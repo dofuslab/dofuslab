@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useContext, memo } from 'react';
 import { ClassNames, useTheme } from '@emotion/react';
 
 import { itemBox, itemImageBox } from 'common/mixins';
@@ -28,7 +28,7 @@ interface Props {
   popoverPlacement?: TooltipPlacement;
 }
 
-const ClassicEquippedItem: React.FC<Props> = ({
+const ClassicEquippedItem = ({
   slot,
   equippedItem,
   customSet,
@@ -37,10 +37,10 @@ const ClassicEquippedItem: React.FC<Props> = ({
   errors,
   className,
   popoverPlacement,
-}) => {
+}: Props) => {
   const theme = useTheme();
 
-  const isEditable = React.useContext(EditableContext);
+  const isEditable = useContext(EditableContext);
 
   return (
     <ClassNames>
@@ -92,7 +92,7 @@ const ClassicEquippedItem: React.FC<Props> = ({
               customSet ? customSet.id : ''
             }`}
           >
-            <a>{content}</a>
+            {content}
           </Link>
         ) : (
           content
@@ -102,4 +102,4 @@ const ClassicEquippedItem: React.FC<Props> = ({
   );
 };
 
-export default React.memo(ClassicEquippedItem);
+export default memo(ClassicEquippedItem);

@@ -1,7 +1,5 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
-
 import { useTheme } from '@emotion/react';
 
 import { CardTitleWithLevel } from 'common/wrappers';
@@ -15,7 +13,7 @@ interface Props {
   item: Item;
 }
 
-const ItemBuffCard: React.FC<Props> = ({ item }) => {
+const ItemBuffCard = ({ item }: Props) => {
   const theme = useTheme();
 
   return (

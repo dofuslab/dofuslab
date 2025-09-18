@@ -23,14 +23,14 @@ interface Props {
   buildGender: BuildGender;
 }
 
-const DefaultClassButton: React.FC<Props> = ({
+const DefaultClassButton = ({
   dofusClass,
   customSetId,
   setDofusClassId,
   closeModal,
   isSelected,
   buildGender,
-}) => {
+}: Props) => {
   const [mutate] = useMutation<
     editCustomSetDefaultClass,
     editCustomSetDefaultClassVariables

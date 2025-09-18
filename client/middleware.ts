@@ -19,7 +19,7 @@ export function middleware(request: NextRequest) {
     return undefined;
   }
 
-  const suggestedLocale = request.cookies.NEXT_LOCALE;
+  const suggestedLocale = request.cookies.get('NEXT_LOCALE')?.value;
 
   if (!suggestedLocale || request.nextUrl.locale === suggestedLocale) {
     return undefined;

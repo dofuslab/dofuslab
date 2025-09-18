@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { Dispatch } from 'react';
+
+import { useContext, useCallback } from 'react';
 
 import { Button, Input, InputNumber, Form } from 'antd';
 
@@ -28,19 +30,19 @@ interface Props {
   customSet?: CustomSet | null;
   isMobile: boolean;
   metadataState: CustomSetMetadata;
-  dispatch: React.Dispatch<CustomSetMetadataAction>;
+  dispatch: Dispatch<CustomSetMetadataAction>;
   originalState: CustomSetMetadata;
 }
 
-const CustomSetHeaderForm: React.FC<Props> = ({
+const CustomSetHeaderForm = ({
   customSet,
   isMobile,
   dispatch,
   metadataState,
   originalState,
   ...restProps
-}) => {
-  const isEditable = React.useContext(EditableContext);
+}: Props) => {
+  const isEditable = useContext(EditableContext);
 
   const { t } = useTranslation('common');
 
@@ -51,14 +53,14 @@ const CustomSetHeaderForm: React.FC<Props> = ({
 
   const [form] = Form.useForm();
 
-  const onStartEdit = React.useCallback(() => {
+  const onStartEdit = useCallback(() => {
     if (!isEditable) {
       return;
     }
     dispatch({ type: 'START_EDIT', originalState });
   }, [dispatch, customSet?.name, customSet?.level, isEditable]);
 
-  const onStopEdit = React.useCallback(() => {
+  const onStopEdit = useCallback(() => {
     dispatch({ type: 'STOP_EDIT' });
     form.resetFields();
   }, [dispatch, form]);
@@ -67,8 +69,8 @@ const CustomSetHeaderForm: React.FC<Props> = ({
 
   const router = useRouter();
 
-  const handleOk = React.useCallback(
-    async (values) => {
+  const handleOk = useCallback(
+    async (values: { name: string; level: number }) => {
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
       dispatch({ type: 'STOP_EDIT' });

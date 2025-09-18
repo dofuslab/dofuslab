@@ -1,4 +1,3 @@
-import React from 'react';
 import { Radio } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTranslation } from 'next-i18next';
@@ -12,13 +11,13 @@ interface Props {
   className?: string;
 }
 
-const SpellLevelRadio: React.FC<Props> = ({
+const SpellLevelRadio = ({
   spellStats,
   selectedSpellLevelIdx,
   onChange,
   spellLevelIdx,
   className,
-}) => {
+}: Props) => {
   const { t } = useTranslation('weapon_spell_effect');
   return (
     <Radio.Group

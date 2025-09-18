@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { SetStateAction, Dispatch } from 'react';
+
+import { useContext, useReducer, useState, useCallback } from 'react';
 import { ClassNames } from '@emotion/react';
 import { Button, Popover, Skeleton } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -39,7 +41,7 @@ interface Props {
   errors: Array<BuildError>;
   isClassic: boolean;
   className?: string;
-  setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setDofusClassId: Dispatch<SetStateAction<string | undefined>>;
 }
 
 const reducer = (state: CustomSetMetadata, action: CustomSetMetadataAction) => {
@@ -61,15 +63,15 @@ const reducer = (state: CustomSetMetadata, action: CustomSetMetadataAction) => {
   }
 };
 
-const SetHeader: React.FC<Props> = ({
+const SetHeader = ({
   customSet,
   isClassic,
   errors,
   className,
   setDofusClassId,
   customSetLoading,
-}) => {
-  const isEditable = React.useContext(EditableContext);
+}: Props) => {
+  const isEditable = useContext(EditableContext);
 
   const { data: currentUserData } =
     useQuery<CurrentUserQueryType>(currentUserQuery);
@@ -80,17 +82,16 @@ const SetHeader: React.FC<Props> = ({
     level: customSet?.level || MAX_LEVEL,
   };
 
-  const [metadataState, dispatch] = React.useReducer(reducer, originalState);
+  const [metadataState, dispatch] = useReducer(reducer, originalState);
 
   const { t } = useTranslation('common');
 
-  const [defaultClassModalOpen, setDefaultClassModalOpen] =
-    React.useState(false);
+  const [defaultClassModalOpen, setDefaultClassModalOpen] = useState(false);
 
-  const openDefaultClassModal = React.useCallback(() => {
+  const openDefaultClassModal = useCallback(() => {
     setDefaultClassModalOpen(true);
   }, [setDefaultClassModalOpen]);
-  const closeDefaultClassModal = React.useCallback(() => {
+  const closeDefaultClassModal = useCallback(() => {
     setDefaultClassModalOpen(false);
   }, [setDefaultClassModalOpen]);
 
@@ -146,7 +147,7 @@ const SetHeader: React.FC<Props> = ({
 
   const owner = customSet?.owner?.username ? (
     <Link href={`/user/${customSet.owner.username}`}>
-      <a>{customSet.owner.username}</a>
+      {customSet.owner.username}
     </Link>
   ) : (
     t('ANONYMOUS')
@@ -195,19 +196,18 @@ const SetHeader: React.FC<Props> = ({
   }
 
   const editBuildButton = (
-    <Link href={customSet?.id ? `/build/${customSet.id}/` : '/'}>
-      <a
-        css={{
-          alignSelf: 'center',
-          marginLeft: 12,
-          marginBottom: 0,
-        }}
-      >
-        <Button>
-          {t('EDIT_BUILD')}
-          <FontAwesomeIcon icon={faPencilAlt} css={{ marginLeft: 8 }} />
-        </Button>
-      </a>
+    <Link
+      href={customSet?.id ? `/build/${customSet.id}/` : '/'}
+      css={{
+        alignSelf: 'center',
+        marginLeft: 12,
+        marginBottom: 0,
+      }}
+    >
+      <Button>
+        {t('EDIT_BUILD')}
+        <FontAwesomeIcon icon={faPencilAlt} css={{ marginLeft: 8 }} />
+      </Button>
     </Link>
   );
 

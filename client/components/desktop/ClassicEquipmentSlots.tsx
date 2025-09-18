@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { SetStateAction, Dispatch } from 'react';
+
+import { useState, useCallback, useContext } from 'react';
 
 import { useQuery } from '@apollo/client';
 import groupBy from 'lodash/groupBy';
@@ -26,7 +28,7 @@ import ClassicEquippedItem from './ClassicEquippedItem';
 interface Props {
   customSet?: CustomSet | null;
   errors: Array<BuildError>;
-  setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setDofusClassId: Dispatch<SetStateAction<string | undefined>>;
 }
 
 const NO_CLASS_IMG = getImageUrl('class/sprite/No_Class.png');
@@ -58,11 +60,11 @@ const getPopoverPlacement = (slotEnName: string): TooltipPlacement => {
   }
 };
 
-const ClassicEquipmentSlots: React.FC<Props> = ({
+const ClassicEquipmentSlots = ({
   customSet,
   errors,
   setDofusClassId,
-}) => {
+}: Props) => {
   const { data } = useQuery<ItemSlotsQueryType>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
 
@@ -77,31 +79,28 @@ const ClassicEquipmentSlots: React.FC<Props> = ({
       {},
     ) ?? {};
 
-  const [mageModalOpen, setMageModalOpen] = React.useState(false);
-  const [equippedItem, setEquippedItem] = React.useState<EquippedItem | null>(
-    null,
-  );
-  const [defaultClassModalOpen, setDefaultClassModalOpen] =
-    React.useState(false);
-  const openMageModal = React.useCallback(
-    (ei) => {
+  const [mageModalOpen, setMageModalOpen] = useState(false);
+  const [equippedItem, setEquippedItem] = useState<EquippedItem | null>(null);
+  const [defaultClassModalOpen, setDefaultClassModalOpen] = useState(false);
+  const openMageModal = useCallback(
+    (ei: EquippedItem) => {
       setEquippedItem(ei);
       setMageModalOpen(true);
     },
     [setMageModalOpen],
   );
-  const closeMageModal = React.useCallback(() => {
+  const closeMageModal = useCallback(() => {
     setMageModalOpen(false);
   }, [setMageModalOpen]);
 
-  const openDefaultClassModal = React.useCallback(() => {
+  const openDefaultClassModal = useCallback(() => {
     setDefaultClassModalOpen(true);
   }, []);
-  const closeDefaultClassModal = React.useCallback(() => {
+  const closeDefaultClassModal = useCallback(() => {
     setDefaultClassModalOpen(false);
   }, []);
 
-  const isEditable = React.useContext(EditableContext);
+  const isEditable = useContext(EditableContext);
 
   const { setModalOpen, selectedSet, openSetModal, closeSetModal } =
     useSetModal();

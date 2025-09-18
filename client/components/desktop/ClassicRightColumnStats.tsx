@@ -1,7 +1,5 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
-
 import StatTable from 'components/common/StatTable';
 import { Stat } from '__generated__/globalTypes';
 import { mq } from 'common/constants';
@@ -12,7 +10,7 @@ interface Props {
 
 const margin = { marginBottom: 12, [mq[4]]: { marginBottom: 20 } };
 
-const ClassicRightColumnStats: React.FC<Props> = ({ openBuffModal }) => {
+const ClassicRightColumnStats = ({ openBuffModal }: Props) => {
   return (
     <div
       css={{

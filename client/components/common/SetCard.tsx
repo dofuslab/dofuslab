@@ -1,10 +1,9 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useState, useCallback, memo } from 'react';
 
 import { useTheme } from '@emotion/react';
 
-import { useTranslation } from 'next-i18next';
 import {
   SetBonuses,
   CardTitleWithLevel,
@@ -21,8 +20,7 @@ interface Props {
   onClick: (set: SetWithItems) => void;
 }
 
-const SetCard: React.FC<Props> = ({ set, onClick }) => {
-  const { t } = useTranslation(['stat', 'common']);
+const SetCard = ({ set, onClick }: Props) => {
   const maxSetBonusItems = set.bonuses.reduce(
     (currMax, bonus) => Math.max(currMax, bonus.numItems),
     0,
@@ -30,9 +28,9 @@ const SetCard: React.FC<Props> = ({ set, onClick }) => {
 
   const theme = useTheme();
 
-  const [brokenImages, setBrokenImages] = React.useState<Array<string>>([]);
+  const [brokenImages, setBrokenImages] = useState<Array<string>>([]);
 
-  const openSetModal = React.useCallback(() => {
+  const openSetModal = useCallback(() => {
     onClick(set);
   }, [onClick, set]);
 
@@ -106,11 +104,10 @@ const SetCard: React.FC<Props> = ({ set, onClick }) => {
             (bonus) => bonus.numItems === maxSetBonusItems,
           )}
           count={maxSetBonusItems}
-          t={t}
         />
       </div>
     </Card>
   );
 };
 
-export default React.memo(SetCard);
+export default memo(SetCard);

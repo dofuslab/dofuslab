@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useState, useCallback } from 'react';
 
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTheme } from '@emotion/react';
@@ -17,7 +17,7 @@ interface Props {
   spell: Spell;
 }
 
-const SpellCard: React.FC<Props> = ({ spell, customSet }) => {
+const SpellCard = ({ spell, customSet }: Props) => {
   const customSetLevel = customSet?.level || 200;
   const spellLevelIdx = spell.spellStats.reduce((max, curr, idx) => {
     if (curr.level <= customSetLevel) {
@@ -26,9 +26,9 @@ const SpellCard: React.FC<Props> = ({ spell, customSet }) => {
     return max;
   }, -1);
   const [selectedSpellLevelIdx, selectSpellLevelIdx] =
-    React.useState<number>(spellLevelIdx);
+    useState<number>(spellLevelIdx);
 
-  const onChange = React.useCallback(
+  const onChange = useCallback(
     (e: RadioChangeEvent) => {
       selectSpellLevelIdx(e.target.value);
     },

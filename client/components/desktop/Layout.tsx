@@ -1,8 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { ReactNode } from 'react';
 
-import { Global, ClassNames, useTheme } from '@emotion/react';
+import { useState, useCallback, useRef, useEffect } from 'react';
+
+import { Global, useTheme } from '@emotion/react';
 import {
   Layout as AntdLayout,
   Button,
@@ -20,9 +22,8 @@ import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated
 import { logout as LogoutMutationType } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
-import NoSSR from 'react-no-ssr';
 import Link from 'next/link';
-import { TFunction, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import { LANGUAGES, langToFullName } from 'common/i18n-utils';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -59,42 +60,11 @@ import LoginModal from '../common/LoginModal';
 import KeyboardShortcutsModal from './KeyboardShortcutsModal';
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
   showSwitch: boolean;
 }
 
 const { Option } = Select;
-
-const getDonateElement = (t: TFunction) => {
-  return Math.random() < 0.98 ? (
-    <Tooltip
-      placement="bottomLeft"
-      title={t('BUY_US_COFFEE', { ns: 'common' })}
-    >
-      <FontAwesomeIcon icon={faMugHot} />
-    </Tooltip>
-  ) : (
-    <ClassNames>
-      {({ css, cx }) => (
-        <Tooltip
-          placement="bottomLeft"
-          align={{ offset: [0, -1] }}
-          title={t('BUY_US_BUBBLE_TEA', { ns: 'common' })}
-        >
-          <div
-            className={cx(
-              'twicon-tapioca',
-              css({
-                fontSize: '1.75rem',
-                transform: 'translate(-2px, 1px)',
-              }),
-            )}
-          />
-        </Tooltip>
-      )}
-    </ClassNames>
-  );
-};
 
 function Layout({ children, showSwitch }: LayoutProps) {
   const { t, i18n } = useTranslation(['auth', 'common', 'keyboard_shortcut']);
@@ -105,52 +75,51 @@ function Layout({ children, showSwitch }: LayoutProps) {
     changeLocaleMutation,
   );
   const router = useRouter();
-  const [isChangingLocale, setIsChangingLocale] = React.useState(false);
+  const [isChangingLocale, setIsChangingLocale] = useState(false);
   const { pathname, asPath, query } = router;
 
-  const [showLoginModal, setShowLoginModal] = React.useState(false);
-  const openLoginModal = React.useCallback(() => {
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const openLoginModal = useCallback(() => {
     setShowLoginModal(true);
   }, []);
-  const closeLoginModal = React.useCallback(() => {
+  const closeLoginModal = useCallback(() => {
     setShowLoginModal(false);
   }, []);
 
-  const [showSignUpModal, setShowSignUpModal] = React.useState(false);
-  const openSignUpModal = React.useCallback(() => {
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
+  const openSignUpModal = useCallback(() => {
     setShowSignUpModal(true);
   }, []);
-  const closeSignUpModal = React.useCallback(() => {
+  const closeSignUpModal = useCallback(() => {
     setShowSignUpModal(false);
   }, []);
 
-  const [showPasswordModal, setShowPasswordModal] = React.useState(false);
-  const openPasswordModal = React.useCallback(() => {
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const openPasswordModal = useCallback(() => {
     setShowPasswordModal(true);
   }, []);
-  const closePasswordModal = React.useCallback(() => {
+  const closePasswordModal = useCallback(() => {
     setShowPasswordModal(false);
   }, []);
 
-  const [showBuildSettings, setShowBuildSettings] = React.useState(false);
-  const openBuildSettings = React.useCallback(() => {
+  const [showBuildSettings, setShowBuildSettings] = useState(false);
+  const openBuildSettings = useCallback(() => {
     setShowBuildSettings(true);
   }, []);
-  const closeBuildSettings = React.useCallback(() => {
+  const closeBuildSettings = useCallback(() => {
     setShowBuildSettings(false);
   }, []);
 
-  const [isReady, setIsReady] = React.useState(false);
-  const [showKeyboardShortcuts, setShowKeyboardShortcuts] =
-    React.useState(false);
-  const openKeyboardShortcuts = React.useCallback(() => {
+  const [isReady, setIsReady] = useState(false);
+  const [showKeyboardShortcuts, setShowKeyboardShortcuts] = useState(false);
+  const openKeyboardShortcuts = useCallback(() => {
     setShowKeyboardShortcuts(true);
   }, []);
-  const closeKeyboardShortcuts = React.useCallback(() => {
+  const closeKeyboardShortcuts = useCallback(() => {
     setShowKeyboardShortcuts(false);
   }, []);
 
-  const logoutHandler = React.useCallback(async () => {
+  const logoutHandler = useCallback(async () => {
     const { data: logoutData } = await logout();
     if (logoutData?.logoutUser?.ok) {
       await client.resetStore();
@@ -158,7 +127,7 @@ function Layout({ children, showSwitch }: LayoutProps) {
     }
   }, [logout, router]);
 
-  const changeLocaleHandler = React.useCallback(
+  const changeLocaleHandler = useCallback(
     async (locale: string) => {
       setIsChangingLocale(true);
       Cookies.set('NEXT_LOCALE', locale);
@@ -169,12 +138,12 @@ function Layout({ children, showSwitch }: LayoutProps) {
     [changeLocaleMutate, router, client],
   );
 
-  const [drawerVisible, setDrawerVisible] = React.useState(false);
+  const [drawerVisible, setDrawerVisible] = useState(false);
 
-  const openDrawer = React.useCallback(() => {
+  const openDrawer = useCallback(() => {
     setDrawerVisible(true);
   }, [setDrawerVisible]);
-  const closeDrawer = React.useCallback(() => {
+  const closeDrawer = useCallback(() => {
     setDrawerVisible(false);
   }, [setDrawerVisible]);
 
@@ -203,9 +172,9 @@ function Layout({ children, showSwitch }: LayoutProps) {
 
   const theme = useTheme();
 
-  const drawerBody = React.useRef<HTMLDivElement | null>(null);
+  const drawerBody = useRef<HTMLDivElement | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!isReady) {
       drawerBody.current = document.getElementsByClassName(
         'ant-drawer-body',
@@ -352,19 +321,17 @@ function Layout({ children, showSwitch }: LayoutProps) {
       >
         <div css={{ display: 'flex', alignItems: 'center' }}>
           <Link href="/" as="/">
-            <a>
-              <div css={{ fontWeight: 500, cursor: 'pointer' }}>
-                <img
-                  src={getImageUrl(
-                    theme.name === LIGHT_THEME_NAME
-                      ? 'logo/DL-Full_Light.svg'
-                      : 'logo/DL-Full_Dark.svg',
-                  )}
-                  css={{ width: 120 }}
-                  alt="DofusLab"
-                />
-              </div>
-            </a>
+            <div css={{ fontWeight: 500, cursor: 'pointer' }}>
+              <img
+                src={getImageUrl(
+                  theme.name === LIGHT_THEME_NAME
+                    ? 'logo/DL-Full_Light.svg'
+                    : 'logo/DL-Full_Dark.svg',
+                )}
+                css={{ width: 120 }}
+                alt="DofusLab"
+              />
+            </div>
           </Link>
         </div>
         <div css={{ display: 'flex', alignItems: 'center' }}>
@@ -404,7 +371,7 @@ function Layout({ children, showSwitch }: LayoutProps) {
                             <span>
                               {t('WELCOME')}{' '}
                               <Link href={`/user/${data.currentUser.username}`}>
-                                <a>{data.currentUser.username}</a>
+                                {data.currentUser.username}
                               </Link>
                             </span>
                           }
@@ -529,25 +496,21 @@ function Layout({ children, showSwitch }: LayoutProps) {
                 <FontAwesomeIcon icon={faGithub} />
               </Tooltip>
             </a>
-            {/* disable SSR to render based on Math.random() */}
-            <NoSSR>
-              <a
-                href={BUY_ME_COFFEE_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
+            <a
+              href={BUY_ME_COFFEE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Tooltip
+                placement="bottomLeft"
+                title={t('BUY_US_COFFEE', { ns: 'common' })}
               >
-                <Tooltip
-                  placement="bottomLeft"
-                  title={t('BUY_US_COFFEE', { ns: 'common' })}
-                >
-                  {getDonateElement(t)}
-                </Tooltip>
-              </a>
-            </NoSSR>
+                <FontAwesomeIcon icon={faMugHot} />
+              </Tooltip>
+            </a>
           </div>
         </div>
       </AntdLayout.Header>
-
       <AntdLayout.Content
         css={{
           marginTop: 12,
@@ -558,7 +521,6 @@ function Layout({ children, showSwitch }: LayoutProps) {
       >
         {children}
       </AntdLayout.Content>
-
       <LoginModal
         open={showLoginModal}
         onClose={closeLoginModal}

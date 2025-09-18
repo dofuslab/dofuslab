@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 
-import React from 'react';
+import { Fragment } from 'react';
 import { CardSkeleton } from 'common/wrappers';
 import { getSelectorNumCols } from 'common/constants';
 import { Media } from './Media';
@@ -17,15 +17,11 @@ const getNumLoaders = (
   mult: number,
 ) => numCols * 2 * mult - ((length || 0) % numCols);
 
-const SkeletonCardsLoader: React.FC<Props> = ({
-  multiplier,
-  length,
-  isClassic,
-}) => {
+const SkeletonCardsLoader = ({ multiplier, length, isClassic }: Props) => {
   const numCols = getSelectorNumCols(isClassic);
   const mult = multiplier || 1;
   return (
-    <React.Fragment key="frag">
+    <Fragment key="frag">
       <Media lessThan="xs">
         {(mediaClassNames) => (
           <>
@@ -124,7 +120,7 @@ const SkeletonCardsLoader: React.FC<Props> = ({
           </>
         )}
       </Media>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

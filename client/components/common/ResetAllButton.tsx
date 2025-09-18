@@ -1,7 +1,5 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
-
 import { Button } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'next-i18next';
@@ -13,7 +11,7 @@ interface Props {
   className?: string;
 }
 
-const ResetAllButton: React.FC<Props> = ({ onReset, className }) => {
+const ResetAllButton = ({ onReset, className }: Props) => {
   const { t } = useTranslation('common');
   return (
     <Button

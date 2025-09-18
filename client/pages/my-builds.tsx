@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import { NormalizedCacheObject, useQuery } from '@apollo/client';
 import Router from 'next/router';
@@ -29,7 +29,7 @@ const MyBuildsPage: NextPage = () => {
   const { data } = useQuery<currentUser>(CurrentUserQuery);
   const { t } = useTranslation('common');
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!data?.currentUser) {
       Router.push('/');
     }

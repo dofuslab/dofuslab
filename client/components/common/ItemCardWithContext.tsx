@@ -12,13 +12,7 @@ export interface SharedProps {
   isClassic: boolean;
 }
 
-const ItemCardWithContext: React.FC<
-  SharedProps & {
-    item: Item;
-    openSetModal: (set: ItemSet) => void;
-    isSuggestion?: boolean;
-  }
-> = ({
+const ItemCardWithContext = ({
   item,
   customSet,
   selectedItemSlot,
@@ -28,6 +22,10 @@ const ItemCardWithContext: React.FC<
   isClassic,
   openSetModal,
   isSuggestion,
+}: SharedProps & {
+  item: Item;
+  openSetModal: (set: ItemSet) => void;
+  isSuggestion?: boolean;
 }) => {
   const itemSlotId =
     selectedItemSlot?.id || findEmptyOrOnlySlotId(item.itemType, customSet);

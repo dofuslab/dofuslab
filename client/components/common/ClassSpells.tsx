@@ -25,11 +25,7 @@ interface Props {
   setDofusClassId: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
-const ClassSpells: React.FC<Props> = ({
-  customSet,
-  dofusClassId,
-  setDofusClassId,
-}) => {
+const ClassSpells = ({ customSet, dofusClassId, setDofusClassId }: Props) => {
   const { data } = useQuery<classes>(classesQuery);
   const { t } = useTranslation('common');
   const theme = useTheme();

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useContext, useState, useEffect, useCallback, memo } from 'react';
 
 import { Tabs } from 'antd';
 
@@ -30,18 +30,18 @@ interface Props {
   customSet?: CustomSet | null;
 }
 
-const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
+const ClassicSetBuilder = ({ customSet }: Props) => {
   const { appliedBuffs, statsFromCustomSet, customSetLoading } =
-    React.useContext(CustomSetContext);
+    useContext(CustomSetContext);
 
   const { data: currentUserData } =
     useQuery<CurrentUserQueryType>(currentUserQuery);
 
-  const [dofusClassId, setDofusClassId] = React.useState<string | undefined>(
+  const [dofusClassId, setDofusClassId] = useState<string | undefined>(
     customSet?.defaultClass?.id,
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     setDofusClassId(customSet?.defaultClass?.id);
   }, [customSet?.id]);
 
@@ -57,11 +57,11 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
     errors = getErrors(customSet, statsFromCustomSet);
   }
 
-  const [buffModalOpen, setBuffModalOpen] = React.useState(false);
-  const openBuffModal = React.useCallback(() => {
+  const [buffModalOpen, setBuffModalOpen] = useState(false);
+  const openBuffModal = useCallback(() => {
     setBuffModalOpen(true);
   }, []);
-  const closeBuffModal = React.useCallback(() => {
+  const closeBuffModal = useCallback(() => {
     setBuffModalOpen(false);
   }, []);
 
@@ -224,4 +224,4 @@ const ClassicSetBuilder: React.FC<Props> = ({ customSet }) => {
   );
 };
 
-export default React.memo(ClassicSetBuilder);
+export default memo(ClassicSetBuilder);

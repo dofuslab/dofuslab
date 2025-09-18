@@ -1,15 +1,15 @@
-import React from 'react';
+import type { ReactNode } from 'react';
 
 import MobileLayout from 'components/mobile/Layout';
 import DesktopLayout from 'components/desktop/Layout';
 import { Media } from './Media';
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
   showSwitch: boolean;
 }
 
-const CommonLayout: React.FC<Props> = ({ children, showSwitch }) => (
+const CommonLayout = ({ children, showSwitch }: Props) => (
   <>
     <Media lessThan="xs">
       <MobileLayout>{children}</MobileLayout>

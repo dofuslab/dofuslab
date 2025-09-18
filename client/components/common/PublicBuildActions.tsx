@@ -1,7 +1,5 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
-
 import { ClassNames } from '@emotion/react';
 import { Button } from 'antd';
 import { useTranslation } from 'next-i18next';
@@ -17,7 +15,7 @@ interface Props {
   className?: string;
 }
 
-const PublicBuildActions: React.FC<Props> = ({ customSet, className }) => {
+const PublicBuildActions = ({ customSet, className }: Props) => {
   const { t } = useTranslation('common');
   const { copyLoading, onCopyLink, onCopyBuild, linkTextareaRef } =
     usePublicBuildActions(customSet);

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useCallback } from 'react';
 
 import { Button, Form, Modal } from 'antd';
 import { useMutation, useQuery } from '@apollo/client';
@@ -21,7 +21,7 @@ interface Props {
   onClose: () => void;
 }
 
-const DefaultBuildSettingsModal: React.FC<Props> = ({ open, onClose }) => {
+const DefaultBuildSettingsModal = ({ open, onClose }: Props) => {
   const { t } = useTranslation('common');
 
   const { data: currentUserData } =
@@ -34,7 +34,7 @@ const DefaultBuildSettingsModal: React.FC<Props> = ({ open, onClose }) => {
     editBuildSettingsVariables
   >(editBuildSettingsMutation);
 
-  const handleOk = React.useCallback(async () => {
+  const handleOk = useCallback(async () => {
     const values = await form.validateFields();
 
     await mutate({

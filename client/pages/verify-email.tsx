@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useCallback, useEffect } from 'react';
 import { GetStaticProps, NextPage } from 'next';
 import { useQuery, useMutation } from '@apollo/client';
 
@@ -27,13 +27,13 @@ const VerifyEmailPage: NextPage = () => {
     resendVerificationEmailMutation,
   );
 
-  const onClick = React.useCallback(() => {
+  const onClick = useCallback(() => {
     mutate();
   }, [mutate]);
 
   const email = data?.currentUser?.email;
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (data?.currentUser?.verified) {
       router.replace('/', {
         pathname: '/',

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { ReactNode } from 'react';
 import { ClassNames, useTheme } from '@emotion/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
@@ -25,13 +25,13 @@ interface Props {
   isMobile: boolean;
 }
 
-const BuildErrors: React.FC<Props> = ({ customSet, errors, isMobile }) => {
+const BuildErrors = ({ customSet, errors, isMobile }: Props) => {
   const { t } = useTranslation(['common']);
   const theme = useTheme();
 
   const groupedErrors = groupBy(errors, ({ reason }) => reason);
 
-  const errorNodes: Array<React.ReactNode> = [];
+  const errorNodes: Array<ReactNode> = [];
 
   Object.entries(groupedErrors).forEach(([reason, arr]) => {
     if (

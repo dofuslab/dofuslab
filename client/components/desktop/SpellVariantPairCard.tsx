@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import { useState, useCallback } from 'react';
 
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTheme } from '@emotion/react';
@@ -27,32 +27,27 @@ const getSpellLevelIdx = (spell: Spell, customSetLevel: number) =>
 const getLowestSpellLevel = (spell: Spell) =>
   spell.spellStats.reduce((min, curr) => Math.min(min, curr.level), 200);
 
-const SpellVariantPairCard: React.FC<Props> = ({
-  spellVariantPair,
-  customSet,
-}) => {
+const SpellVariantPairCard = ({ spellVariantPair, customSet }: Props) => {
   const theme = useTheme();
 
   const spells = [...spellVariantPair.spells].sort(
     (a, b) => getLowestSpellLevel(a) - getLowestSpellLevel(b),
   );
 
-  const [selectedSpellId, setSelectedSpellId] = React.useState<string>(
-    spells[0].id,
-  );
+  const [selectedSpellId, setSelectedSpellId] = useState<string>(spells[0].id);
   const customSetLevel = customSet?.level || 200;
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const spell = spells.find(({ id }) => id === selectedSpellId)!;
   const spellLevelIdx = getSpellLevelIdx(spell, customSetLevel);
   const [selectedSpellLevelIdx, selectSpellLevelIdx] =
-    React.useState<number>(spellLevelIdx);
+    useState<number>(spellLevelIdx);
 
   const tabList = spells.map((currSpell) => ({
     key: currSpell.id,
     tab: currSpell.name,
   }));
 
-  const onTabChange = React.useCallback(
+  const onTabChange = useCallback(
     (key: string) => {
       setSelectedSpellId(key);
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -62,7 +57,7 @@ const SpellVariantPairCard: React.FC<Props> = ({
     [spells, customSetLevel],
   );
 
-  const onLevelChange = React.useCallback(
+  const onLevelChange = useCallback(
     (e: RadioChangeEvent) => {
       selectSpellLevelIdx(e.target.value);
     },

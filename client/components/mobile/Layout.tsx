@@ -1,12 +1,13 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
-import { Global, ClassNames, useTheme } from '@emotion/react';
+import type { ReactNode } from 'react';
+
+import { useState, useCallback } from 'react';
+import { Global, useTheme } from '@emotion/react';
 import { Layout as AntdLayout, Button, Menu, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
-import NoSSR from 'react-no-ssr';
 import { useRouter } from 'next/router';
-import { TFunction, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import Cookies from 'js-cookie';
 import { LANGUAGES, langToFullName } from 'common/i18n-utils';
 
@@ -49,7 +50,7 @@ import SignUpModal from '../common/SignUpModal';
 import LoginModal from '../common/LoginModal';
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 const { SubMenu } = Menu;
@@ -60,36 +61,6 @@ const iconWrapper = {
   textAlign: 'center' as const,
   display: 'inline-block',
 };
-
-const random = Math.random();
-
-const getDonateElement = (t: TFunction) =>
-  random < 0.98 ? (
-    <>
-      <span css={iconWrapper}>
-        <FontAwesomeIcon icon={faMugHot} />
-      </span>
-      {t('BUY_US_COFFEE', { ns: 'common' })}
-    </>
-  ) : (
-    <ClassNames>
-      {({ css, cx }) => (
-        <>
-          <span
-            className={cx(
-              'twicon-tapioca',
-              css(iconWrapper),
-              css({
-                fontSize: '1.25rem',
-                transform: 'translateY(2px)',
-              }),
-            )}
-          />
-          {t('BUY_US_BUBBLE_TEA', { ns: 'common' })}
-        </>
-      )}
-    </ClassNames>
-  );
 
 function Layout({ children }: LayoutProps) {
   const { t } = useTranslation(['auth', 'common']);
@@ -102,47 +73,47 @@ function Layout({ children }: LayoutProps) {
   const router = useRouter();
   const { pathname, asPath, query } = router;
 
-  const [showDrawer, setShowDrawer] = React.useState(false);
-  const openDrawer = React.useCallback(() => {
+  const [showDrawer, setShowDrawer] = useState(false);
+  const openDrawer = useCallback(() => {
     setShowDrawer(true);
   }, []);
-  const closeDrawer = React.useCallback(() => {
+  const closeDrawer = useCallback(() => {
     setShowDrawer(false);
   }, []);
 
-  const [showLoginModal, setShowLoginModal] = React.useState(false);
-  const openLoginModal = React.useCallback(() => {
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const openLoginModal = useCallback(() => {
     setShowLoginModal(true);
   }, []);
-  const closeLoginModal = React.useCallback(() => {
+  const closeLoginModal = useCallback(() => {
     setShowLoginModal(false);
   }, []);
 
-  const [showSignUpModal, setShowSignUpModal] = React.useState(false);
-  const openSignUpModal = React.useCallback(() => {
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
+  const openSignUpModal = useCallback(() => {
     setShowSignUpModal(true);
   }, []);
-  const closeSignUpModal = React.useCallback(() => {
+  const closeSignUpModal = useCallback(() => {
     setShowSignUpModal(false);
   }, []);
 
-  const [showPasswordModal, setShowPasswordModal] = React.useState(false);
-  const openPasswordModal = React.useCallback(() => {
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const openPasswordModal = useCallback(() => {
     setShowPasswordModal(true);
   }, []);
-  const closePasswordModal = React.useCallback(() => {
+  const closePasswordModal = useCallback(() => {
     setShowPasswordModal(false);
   }, []);
 
-  const [showBuildSettings, setShowBuildSettings] = React.useState(false);
-  const openBuildSettings = React.useCallback(() => {
+  const [showBuildSettings, setShowBuildSettings] = useState(false);
+  const openBuildSettings = useCallback(() => {
     setShowBuildSettings(true);
   }, []);
-  const closeBuildSettings = React.useCallback(() => {
+  const closeBuildSettings = useCallback(() => {
     setShowBuildSettings(false);
   }, []);
 
-  const logoutHandler = React.useCallback(async () => {
+  const logoutHandler = useCallback(async () => {
     const { data: logoutData } = await logout();
     if (logoutData?.logoutUser?.ok) {
       await client.resetStore();
@@ -150,7 +121,7 @@ function Layout({ children }: LayoutProps) {
     }
   }, [logout, router, client]);
 
-  const changeLocaleHandler = React.useCallback(
+  const changeLocaleHandler = useCallback(
     async (locale: string) => {
       Cookies.set('NEXT_LOCALE', locale);
       await router.push({ pathname, query }, asPath, { locale });
@@ -187,19 +158,17 @@ function Layout({ children }: LayoutProps) {
         }}
       >
         <Link href="/" as="/">
-          <a>
-            <div css={{ fontWeight: 500 }}>
-              <img
-                src={getImageUrl(
-                  theme.name === LIGHT_THEME_NAME
-                    ? 'logo/DL-Full_Light.svg'
-                    : 'logo/DL-Full_Dark.svg',
-                )}
-                css={{ width: 120 }}
-                alt="DofusLab"
-              />
-            </div>
-          </a>
+          <div css={{ fontWeight: 500 }}>
+            <img
+              src={getImageUrl(
+                theme.name === LIGHT_THEME_NAME
+                  ? 'logo/DL-Full_Light.svg'
+                  : 'logo/DL-Full_Dark.svg',
+              )}
+              css={{ width: 120 }}
+              alt="DofusLab"
+            />
+          </div>
         </Link>
         <Button onClick={openDrawer} size="large" css={{ fontSize: '0.9rem' }}>
           <MenuOutlined />
@@ -225,7 +194,7 @@ function Layout({ children }: LayoutProps) {
             >
               {t('WELCOME')}
               <Link href={`/user/${data.currentUser.username}`}>
-                <a>{data.currentUser.username}</a>
+                {data.currentUser.username}
               </Link>
             </div>
           )}
@@ -245,7 +214,7 @@ function Layout({ children }: LayoutProps) {
             }}
           >
             <Menu.Item key="home">
-              <Link href="/" as="/">
+              <Link href="/" as="/" legacyBehavior>
                 <div css={{ display: 'flex' }}>
                   <span css={iconWrapper}>
                     <FontAwesomeIcon icon={faHome} />
@@ -258,12 +227,10 @@ function Layout({ children }: LayoutProps) {
             {data?.currentUser && data.currentUser.verified && (
               <Menu.Item key="my-builds">
                 <Link href="/my-builds" as="/my-builds">
-                  <a>
-                    <span css={iconWrapper}>
-                      <FontAwesomeIcon icon={faTshirt} />
-                    </span>
-                    {t('MY_BUILDS', { ns: 'common' })}
-                  </a>
+                  <span css={iconWrapper}>
+                    <FontAwesomeIcon icon={faTshirt} />
+                  </span>
+                  {t('MY_BUILDS', { ns: 'common' })}
                 </Link>
               </Menu.Item>
             )}
@@ -367,13 +334,12 @@ function Layout({ children }: LayoutProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <NoSSR>{getDonateElement(t)}</NoSSR>
+                <FontAwesomeIcon icon={faMugHot} />
               </a>
             </Menu.Item>
           </Menu>
         </Drawer>
       </AntdLayout.Header>
-
       <AntdLayout.Content
         css={{
           paddingTop: 12,
@@ -387,7 +353,6 @@ function Layout({ children }: LayoutProps) {
       >
         {children}
       </AntdLayout.Content>
-
       <LoginModal
         open={showLoginModal}
         onClose={closeLoginModal}
@@ -402,7 +367,6 @@ function Layout({ children }: LayoutProps) {
         open={showPasswordModal}
         onClose={closePasswordModal}
       />
-
       <DefaultBuildSettingsModal
         open={showBuildSettings}
         onClose={closeBuildSettings}

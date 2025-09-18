@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { Dispatch, SetStateAction, ChangeEvent } from 'react';
+
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { ClassNames, useTheme } from '@emotion/react';
 import { Stat } from '__generated__/globalTypes';
 import {
@@ -39,18 +41,18 @@ const { Option } = Select;
 
 interface Props {
   filters: SharedFilters;
-  dispatch: React.Dispatch<SharedFilterAction>;
+  dispatch: Dispatch<SharedFilterAction>;
   customSet?: CustomSet | null;
   showSets: boolean;
-  setShowSets: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowSets: Dispatch<SetStateAction<boolean>>;
   onReset: () => void;
   isMobile: boolean;
   isClassic: boolean;
-  selectItemSlot?: React.Dispatch<React.SetStateAction<ItemSlot | null>>;
+  selectItemSlot?: Dispatch<SetStateAction<ItemSlot | null>>;
   selectedItemSlot: ItemSlot | null;
 }
 
-const SelectorFilters: React.FC<Props> = ({
+const SelectorFilters = ({
   filters: { stats: statFilters },
   dispatch,
   customSet,
@@ -61,18 +63,17 @@ const SelectorFilters: React.FC<Props> = ({
   isMobile,
   isClassic,
   selectItemSlot,
-}) => {
+}: Props) => {
   const router = useRouter();
   const { customSetId: customSetIdParam } = router.query;
   const customSetId = Array.isArray(customSetIdParam)
     ? customSetIdParam[0]
     : customSetIdParam;
-  const [search, setSearch] = React.useState('');
-  const [maxLevel, setMaxLevel] = React.useState(customSet?.level || 200);
-  const [isStatFilterModalOpen, setIsStatFilterModalOpen] =
-    React.useState(false);
-  const searchRef = React.useRef<InputRef>(null);
-  const handleSearchChange = React.useCallback(
+  const [search, setSearch] = useState('');
+  const [maxLevel, setMaxLevel] = useState(customSet?.level || 200);
+  const [isStatFilterModalOpen, setIsStatFilterModalOpen] = useState(false);
+  const searchRef = useRef<InputRef>(null);
+  const handleSearchChange = useCallback(
     (searchValue: string) => {
       dispatch({ type: 'SEARCH', search: searchValue });
     },
@@ -84,15 +85,15 @@ const SelectorFilters: React.FC<Props> = ({
     DEBOUNCE_INTERVAL,
   );
 
-  const onSearch = React.useCallback(
-    (changeEvent: React.ChangeEvent<HTMLInputElement>) => {
+  const onSearch = useCallback(
+    (changeEvent: ChangeEvent<HTMLInputElement>) => {
       setSearch(changeEvent.currentTarget.value);
       debouncedSearch(changeEvent.currentTarget.value);
     },
     [debouncedSearch, setSearch],
   );
 
-  const handleMaxLevelChange = React.useCallback(
+  const handleMaxLevelChange = useCallback(
     (max: number) => {
       dispatch({ type: 'MAX_LEVEL', maxLevel: max });
     },
@@ -104,7 +105,7 @@ const SelectorFilters: React.FC<Props> = ({
     DEBOUNCE_INTERVAL,
   );
 
-  const onChangeMaxLevel = React.useCallback(
+  const onChangeMaxLevel = useCallback(
     (max: number | null) => {
       if (typeof max !== 'number') {
         return;
@@ -115,23 +116,23 @@ const SelectorFilters: React.FC<Props> = ({
     [debouncedUpdateLevel, setMaxLevel],
   );
 
-  const onChangeStats = React.useCallback(
+  const onChangeStats = useCallback(
     (s: Array<{ label: string; value: Stat }>) => {
       dispatch({ type: 'QUICK_STATS', stats: s.map((stat) => stat.value) });
     },
     [dispatch],
   );
 
-  const onResetAll = React.useCallback(() => {
+  const onResetAll = useCallback(() => {
     onReset();
     setSearch('');
   }, [onReset]);
 
-  const openStatFilterModal = React.useCallback(() => {
+  const openStatFilterModal = useCallback(() => {
     setIsStatFilterModalOpen(true);
   }, []);
 
-  const closeStatFilterModal = React.useCallback(() => {
+  const closeStatFilterModal = useCallback(() => {
     setIsStatFilterModalOpen(false);
   }, []);
 
@@ -142,7 +143,7 @@ const SelectorFilters: React.FC<Props> = ({
   let searchId = showSets ? SETS_SEARCH_BAR_ID : SEARCH_BAR_ID;
   if (isMobile) searchId = `${searchId}-mobile`;
 
-  React.useEffect(() => {
+  useEffect(() => {
     const searchBar = searchRef.current?.input;
     const searchOnKeyDown = (e: KeyboardEvent) => {
       e.stopPropagation();
@@ -202,18 +203,16 @@ const SelectorFilters: React.FC<Props> = ({
           >
             {(isMobile || isClassic) && (
               <Link href={customSetId ? `/build/${customSetId}` : '/'} passHref>
-                <a>
-                  <Button
-                    size="large"
-                    css={{ fontSize: '0.75rem', [mq[1]]: { marginRight: 20 } }}
-                  >
-                    <FontAwesomeIcon
-                      icon={faArrowLeft}
-                      css={{ marginRight: 12 }}
-                    />
-                    {t('BACK')}
-                  </Button>
-                </a>
+                <Button
+                  size="large"
+                  css={{ fontSize: '0.75rem', [mq[1]]: { marginRight: 20 } }}
+                >
+                  <FontAwesomeIcon
+                    icon={faArrowLeft}
+                    css={{ marginRight: 12 }}
+                  />
+                  {t('BACK')}
+                </Button>
               </Link>
             )}
             <div css={{ display: 'flex', alignItems: 'center' }}>

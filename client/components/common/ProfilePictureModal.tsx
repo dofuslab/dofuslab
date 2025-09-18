@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { useState } from 'react';
+import type { MouseEvent } from 'react';
+
+import { useCallback, useState } from 'react';
 
 import { Divider, Modal, notification } from 'antd';
 import { useTheme } from '@emotion/react';
@@ -22,11 +24,7 @@ interface Props {
   currentlyActive: string;
 }
 
-const ProfilePictureModal: React.FC<Props> = ({
-  onCancel,
-  open,
-  currentlyActive,
-}) => {
+const ProfilePictureModal = ({ onCancel, open, currentlyActive }: Props) => {
   const { t } = useTranslation('common');
   const [active, setActive] = useState<string>(currentlyActive);
   const theme = useTheme();
@@ -40,8 +38,8 @@ const ProfilePictureModal: React.FC<Props> = ({
   });
   const router = useRouter();
 
-  const onChangePicture = React.useCallback(
-    async (e: React.MouseEvent<HTMLElement>) => {
+  const onChangePicture = useCallback(
+    async (e: MouseEvent<HTMLElement>) => {
       e.stopPropagation();
       const { data } = await profilePictureMutate();
       onCancel();
@@ -55,8 +53,8 @@ const ProfilePictureModal: React.FC<Props> = ({
     [profilePictureMutate, router, onCancel],
   );
 
-  const onCancelClick = React.useCallback(
-    (e: React.MouseEvent<HTMLElement>) => {
+  const onCancelClick = useCallback(
+    (e: MouseEvent<HTMLElement>) => {
       e.stopPropagation();
       setActive(currentlyActive);
       onCancel();

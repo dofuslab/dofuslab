@@ -1,37 +1,42 @@
-import React from 'react';
-import {
-  InMemoryCache,
-  NormalizedCacheObject,
-  ApolloClient,
-  from,
-  HttpLink,
-} from '@apollo/client';
-
+import { useRef } from 'react';
+import { InMemoryCache, ApolloClient } from '@apollo/client';
+import { NormalizedCacheObject } from '@apollo/client/cache/inmemory/types';
+import { from } from '@apollo/client/link/core';
+import { HttpLink } from '@apollo/client/link/http';
 import { onError } from '@apollo/client/link/error';
 import { NextPage } from 'next';
 import { notification } from 'antd';
 import { IncomingHttpHeaders } from 'http';
 import { relayStylePagination } from '@apollo/client/utilities';
 import { useRouter } from 'next/router';
+import { GraphQLError } from 'graphql/error/GraphQLError';
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
-const errorLink = onError(({ graphQLErrors, networkError }) => {
-  if (networkError && process.browser) {
-    notification.error({ message: networkError.message });
-  }
-  if (graphQLErrors) {
-    graphQLErrors.forEach(({ message }) => {
-      if (process.browser) {
-        notification.error({ message });
-      }
-    });
-  }
-});
+const errorLink = onError(
+  ({
+    graphQLErrors,
+    networkError,
+  }: {
+    graphQLErrors?: readonly GraphQLError[];
+    networkError?: Error;
+  }) => {
+    if (networkError && process.browser) {
+      notification.error({ message: networkError.message });
+    }
+    if (graphQLErrors) {
+      graphQLErrors.forEach(({ message }: { message: string }) => {
+        if (process.browser) {
+          notification.error({ message });
+        }
+      });
+    }
+  },
+);
 
 const getHttpLink = (headers?: IncomingHttpHeaders) =>
   new HttpLink({
-    uri: process.env.GRAPHQL_URI,
+    uri: process.env.NEXT_PUBLIC_GRAPHQL_URI ?? process.env.GRAPHQL_URI,
     credentials: 'include',
     headers,
   });
@@ -50,7 +55,7 @@ export function createApolloClient(
         CustomSet: {
           fields: {
             tagAssociations: {
-              merge(_ignored, incoming) {
+              merge(_ignored: unknown, incoming: unknown) {
                 return incoming;
               },
             },
@@ -59,7 +64,7 @@ export function createApolloClient(
         EquippedItem: {
           fields: {
             exos: {
-              merge(_ignored, incoming) {
+              merge(_ignored: unknown, incoming: unknown) {
                 return incoming;
               },
             },
@@ -109,7 +114,7 @@ export default (App: NextPage<any>) =>
     const router = useRouter();
     headers['accept-language'] = router.locale;
 
-    const client = React.useRef<ApolloClient<NormalizedCacheObject>>(
+    const client = useRef<ApolloClient<NormalizedCacheObject>>(
       initApollo(props.pageProps.apolloState, headers),
     );
 

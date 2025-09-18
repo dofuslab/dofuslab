@@ -6,7 +6,8 @@ import { InputNumber, List, Modal, Select } from 'antd';
 import { mq, statIcons } from 'common/constants';
 import { SharedFilterAction } from 'common/types';
 import { antdSelectFilterOption, getImageUrl } from 'common/utils';
-import React, { useReducer } from 'react';
+import type { Dispatch } from 'react';
+import { useMemo, useCallback, useReducer } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Stat, StatFilter } from '__generated__/globalTypes';
 
@@ -78,15 +79,15 @@ export default function StatFilterModal({
   open: boolean;
   onClose: () => void;
   statFilters: Array<StatFilter>;
-  dispatch: React.Dispatch<SharedFilterAction>;
+  dispatch: Dispatch<SharedFilterAction>;
 }) {
   const { t } = useTranslation(['common', 'stat']);
   const [statFilters, dispatch] = useReducer(reducer, statFiltersProp);
-  const statsSet = React.useMemo(() => {
+  const statsSet = useMemo(() => {
     return new Set(statFilters.map(({ stat }) => stat));
   }, [statFilters]);
 
-  const onAddStat = React.useCallback(({ value }: { value: Stat }) => {
+  const onAddStat = useCallback(({ value }: { value: Stat }) => {
     dispatch({ type: 'ADD_STAT', stat: value });
   }, []);
 

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useContext, useState, useCallback, Fragment } from 'react';
 import { Divider, Radio } from 'antd';
 import { RadioChangeEvent } from 'antd/lib/radio';
 import { useTheme } from '@emotion/react';
@@ -41,16 +41,12 @@ interface Props {
   weaponElementMage: WeaponElementMage | null;
 }
 
-const WeaponDamage: React.FC<Props> = ({
-  weaponStats,
-  customSet,
-  weaponElementMage,
-}) => {
-  const { statsFromCustomSetWithBuffs } = React.useContext(CustomSetContext);
+const WeaponDamage = ({ weaponStats, customSet, weaponElementMage }: Props) => {
+  const { statsFromCustomSetWithBuffs } = useContext(CustomSetContext);
   const { t } = useTranslation(['weapon_spell_effect', 'stat']);
-  const [weaponSkillPower, setWeaponSkillPower] = React.useState(300);
+  const [weaponSkillPower, setWeaponSkillPower] = useState(300);
 
-  const onWeaponSkillChange = React.useCallback(
+  const onWeaponSkillChange = useCallback(
     (e: RadioChangeEvent) => {
       setWeaponSkillPower(Number(e.target.value));
     },
@@ -64,7 +60,7 @@ const WeaponDamage: React.FC<Props> = ({
       (equippedItem) => equippedItem.item.itemType.enName === 'Axe',
     );
 
-  const [showRanged, setShowRanged] = React.useState(
+  const [showRanged, setShowRanged] = useState(
     getInitialRangedState(meleeOnly, rangedOnly, statsFromCustomSetWithBuffs),
   );
 
@@ -283,7 +279,7 @@ const WeaponDamage: React.FC<Props> = ({
           </div>
         )}
         {weaponEffectSummaries.map((effect) => (
-          <React.Fragment key={effect.id}>
+          <Fragment key={effect.id}>
             <EffectLine
               min={effect.nonCrit.min}
               max={effect.nonCrit.max}
@@ -298,7 +294,7 @@ const WeaponDamage: React.FC<Props> = ({
                 baseMax={effect.crit.baseMax}
               />
             )}
-          </React.Fragment>
+          </Fragment>
         ))}
       </div>
       <Divider css={{ margin: '12px 0' }} />

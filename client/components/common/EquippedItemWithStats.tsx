@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { MouseEvent, SyntheticEvent } from 'react';
+
+import { useCallback, useState, useRef, useContext } from 'react';
 import { ClassNames, useTheme } from '@emotion/react';
 import { Popover } from 'antd';
 
@@ -64,7 +66,7 @@ interface Props {
   popoverPlacement?: TooltipPlacement;
 }
 
-const EquippedItemWithStats: React.FC<Props> = ({
+const EquippedItemWithStats = ({
   equippedItem,
   selected,
   customSet,
@@ -74,17 +76,14 @@ const EquippedItemWithStats: React.FC<Props> = ({
   errors,
   className,
   popoverPlacement,
-}) => {
+}: Props) => {
   const deleteItem = useDeleteItemMutation(customSet);
-  const stopPropagationCallback = React.useCallback(
-    (e: React.MouseEvent<HTMLElement>) => {
-      // prevent selection of item slot
-      e.stopPropagation();
-    },
-    [],
-  );
-  const onDelete = React.useCallback(
-    (e: React.SyntheticEvent<HTMLElement>) => {
+  const stopPropagationCallback = useCallback((e: MouseEvent<HTMLElement>) => {
+    // prevent selection of item slot
+    e.stopPropagation();
+  }, []);
+  const onDelete = useCallback(
+    (e: SyntheticEvent<HTMLElement>) => {
       e.stopPropagation();
       e.preventDefault();
       if (deleteItem) {
@@ -96,11 +95,11 @@ const EquippedItemWithStats: React.FC<Props> = ({
 
   const { t } = useTranslation('common');
   const theme = useTheme();
-  const [brokenImage, setBrokenImage] = React.useState(false);
-  const contentRef = React.useRef<HTMLDivElement | null>(null);
+  const [brokenImage, setBrokenImage] = useState(false);
+  const contentRef = useRef<HTMLDivElement | null>(null);
 
-  const isEditable = React.useContext(EditableContext);
-  const [isClassic] = React.useContext(ClassicContext);
+  const isEditable = useContext(EditableContext);
+  const [isClassic] = useContext(ClassicContext);
 
   const content = (
     <ClassNames>

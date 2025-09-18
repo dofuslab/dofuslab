@@ -1,12 +1,18 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type {
+  HTMLAttributes,
+  ReactNode,
+  SetStateAction,
+  Dispatch,
+  DetailedHTMLProps,
+} from 'react';
 import { CSSObject, ClassNames, useTheme } from '@emotion/react';
 import Head from 'next/head';
 
 import { Skeleton, Switch, Button } from 'antd';
-import { TFunction, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import {
   WeaponEffectType,
   SpellEffectType,
@@ -49,18 +55,19 @@ import {
 import { SetBonus, WeaponStats, CustomSet } from './type-aliases';
 import { DEFAULT_LANGUAGE } from './i18n-utils';
 
-export const ResponsiveGrid: React.FC<
-  {
-    numColumns: ReadonlyArray<number>;
-  } & React.HTMLAttributes<HTMLDivElement>
-> = ({ numColumns, ...restProps }) => (
+export const ResponsiveGrid = ({
+  numColumns,
+  ...restProps
+}: {
+  numColumns: ReadonlyArray<number>;
+} & HTMLAttributes<HTMLDivElement>) => (
   <div css={getResponsiveGridStyle(numColumns)} {...restProps} />
 );
 
-export const Badge: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
+export const Badge = ({
   children,
   ...restProps
-}) => {
+}: HTMLAttributes<HTMLSpanElement>) => {
   const theme = useTheme();
   return (
     <span
@@ -82,9 +89,12 @@ export const Badge: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
   );
 };
 
-export const TruncatableText: React.FC<{ className?: string }> = ({
+export const TruncatableText = ({
   children,
   ...restProps
+}: {
+  children: ReactNode;
+  className?: string;
 }) => (
   <span
     css={ellipsis}
@@ -95,10 +105,14 @@ export const TruncatableText: React.FC<{ className?: string }> = ({
   </span>
 );
 
-export const CardSkeleton: React.FC<{
+export const CardSkeleton = ({
+  numRows,
+  className,
+  ...restProps
+}: {
   numRows?: number;
   className?: string;
-}> = ({ numRows, className, ...restProps }) => {
+}) => {
   const theme = useTheme();
   return (
     <ClassNames>
@@ -121,46 +135,41 @@ export const CardSkeleton: React.FC<{
   );
 };
 
-export const SetBonuses: React.FC<{
+export const SetBonuses = ({
+  bonuses,
+  count,
+  className,
+}: {
   bonuses: Array<SetBonus>;
   count: number;
-  t: TFunction;
   className?: string;
-}> = ({ bonuses, count, t, className }) => (
-  <div className={className}>
-    <div css={{ fontSize: '0.75rem', fontWeight: 500 }}>
-      {t('NUM_ITEMS', { ns: 'common', num: count })}
-    </div>
-    {bonuses.length ? (
-      <ul css={{ paddingInlineStart: '16px', marginTop: 8 }}>
-        {bonuses.map((bonus) => (
-          <li key={bonus.id} css={{ fontSize: '0.75rem' }}>
-            {!!bonus.value && !!bonus.stat
-              ? `${bonus.value} ${t(bonus.stat, { ns: 'stat' })}`
-              : bonus.customStat}
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <div css={{ color: gray6, fontStyle: 'italic' }}>
-        {t('NO_BONUS', { ns: 'common' })}
+}) => {
+  const { t } = useTranslation('common');
+  return (
+    <div className={className}>
+      <div css={{ fontSize: '0.75rem', fontWeight: 500 }}>
+        {t('NUM_ITEMS', { ns: 'common', num: count })}
       </div>
-    )}
-  </div>
-);
+      {bonuses.length ? (
+        <ul css={{ paddingInlineStart: '16px', marginTop: 8 }}>
+          {bonuses.map((bonus) => (
+            <li key={bonus.id} css={{ fontSize: '0.75rem' }}>
+              {!!bonus.value && !!bonus.stat
+                ? `${bonus.value} ${t(bonus.stat, { ns: 'stat' })}`
+                : bonus.customStat}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div css={{ color: gray6, fontStyle: 'italic' }}>
+          {t('NO_BONUS', { ns: 'common' })}
+        </div>
+      )}
+    </div>
+  );
+};
 
-export const CardTitleWithLevel: React.FC<{
-  title: string;
-  showBadge?: boolean;
-  badgeContent?: React.ReactNode;
-  level?: number;
-  rightAlignedContent?: React.ReactNode;
-  levelClassName?: string;
-  className?: string;
-  afterLevel?: React.ReactNode;
-  leftImageUrl?: string;
-  leftImageAlt?: string;
-}> = ({
+export const CardTitleWithLevel = ({
   title,
   level,
   showBadge,
@@ -171,6 +180,17 @@ export const CardTitleWithLevel: React.FC<{
   afterLevel,
   leftImageUrl,
   leftImageAlt,
+}: {
+  title: string;
+  showBadge?: boolean;
+  badgeContent?: ReactNode;
+  level?: number;
+  rightAlignedContent?: ReactNode;
+  levelClassName?: string;
+  className?: string;
+  afterLevel?: ReactNode;
+  leftImageUrl?: string;
+  leftImageAlt?: string;
 }) => {
   const { t } = useTranslation('common');
 
@@ -242,12 +262,17 @@ export const damageHeaderStyle = {
   marginBottom: 4,
 };
 
-export const EffectLine: React.FC<{
+export const EffectLine = ({
+  min,
+  max,
+  effectType,
+  baseMax,
+}: {
   min: number | null;
   max: number;
   effectType: WeaponEffectType | SpellEffectType;
   baseMax: number;
-}> = ({ min, max, effectType, baseMax }) => {
+}) => {
   const { t } = useTranslation(['stat', 'weapon_spell_effect']);
   let content = null;
   switch (getSimpleEffect(effectType)) {
@@ -292,12 +317,17 @@ export const EffectLine: React.FC<{
   ) : null;
 };
 
-export const WeaponEffectsList: React.FC<{
+export const WeaponEffectsList = ({
+  weaponStats,
+  className,
+  innerDivStyle,
+  elementMage,
+}: {
   weaponStats: WeaponStats;
   className?: string;
   innerDivStyle?: CSSObject;
   elementMage?: WeaponElementMage | null;
-}> = ({ weaponStats, className, innerDivStyle, elementMage }) => {
+}) => {
   const { t } = useTranslation('weapon_spell_effect');
   return (
     <div className={className}>
@@ -343,9 +373,10 @@ export const WeaponEffectsList: React.FC<{
   );
 };
 
-export const BrokenImagePlaceholder: React.FC<
-  React.HTMLAttributes<HTMLDivElement>
-> = ({ className, ...restProps }) => (
+export const BrokenImagePlaceholder = ({
+  className,
+  ...restProps
+}: HTMLAttributes<HTMLDivElement>) => (
   <ClassNames>
     {({ css, cx }) => (
       <div
@@ -367,8 +398,10 @@ export const BrokenImagePlaceholder: React.FC<
   </ClassNames>
 );
 
-export const CustomSetHead: React.FC<{ customSet?: CustomSet | null }> = ({
+export const CustomSetHead = ({
   customSet,
+}: {
+  customSet?: CustomSet | null;
 }) => {
   const { t } = useTranslation('common');
 
@@ -418,12 +451,17 @@ export const CustomSetHead: React.FC<{ customSet?: CustomSet | null }> = ({
   );
 };
 
-export const DamageTypeToggle: React.FC<{
+export const DamageTypeToggle = ({
+  showRanged,
+  setShowRanged,
+  rangedOnly,
+  meleeOnly,
+}: {
   readonly showRanged: boolean;
-  readonly setShowRanged: React.Dispatch<React.SetStateAction<boolean>>;
+  readonly setShowRanged: Dispatch<SetStateAction<boolean>>;
   readonly rangedOnly: boolean;
   readonly meleeOnly: boolean;
-}> = ({ showRanged, setShowRanged, rangedOnly, meleeOnly }) => {
+}) => {
   const { t } = useTranslation('weapon_spell_effect');
   const theme = useTheme();
 
@@ -432,7 +470,7 @@ export const DamageTypeToggle: React.FC<{
       <Tooltip
         css={{ textAlign: 'center' }}
         title={meleeOnly ? t('RANGED_NOT_POSSIBLE') : t('MELEE_NOT_POSSIBLE')}
-        arrowPointAtCenter={true}
+        arrowPointAtCenter
       >
         <FontAwesomeIcon icon={faExclamationTriangle} css={{ color: gold5 }} />
       </Tooltip>
@@ -557,12 +595,10 @@ export function BuffButton({
   );
 }
 
-export function EmptyState(
-  props: React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  >,
-) {
+export function EmptyState({
+  children,
+  ...props
+}: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>) {
   const theme = useTheme();
   return (
     <div
@@ -577,6 +613,8 @@ export function EmptyState(
         wordWrap: 'break-word',
       }}
       {...props}
-    ></div>
+    >
+      {children}
+    </div>
   );
 }

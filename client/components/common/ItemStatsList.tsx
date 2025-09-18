@@ -1,8 +1,11 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import type { MouseEvent } from 'react';
+
+import { useCallback, useState, memo } from 'react';
 import { useTheme } from '@emotion/react';
-import { useTranslation, TFunction } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
+import { TFunction } from 'react-i18next';
 import { Stat, WeaponElementMage } from '__generated__/globalTypes';
 import { Divider } from 'antd';
 import { WeaponEffectsList, BrokenImagePlaceholder } from 'common/wrappers';
@@ -23,7 +26,11 @@ interface Props {
 }
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const renderConditions = (conditionsObj: any, t: TFunction, depth = 0) => {
+const renderConditions = (
+  conditionsObj: any,
+  t: TFunction<'stat'>,
+  depth = 0,
+) => {
   try {
     if (!conditionsObj || Object.keys(conditionsObj).length === 0) {
       return null;
@@ -65,7 +72,7 @@ const renderConditions = (conditionsObj: any, t: TFunction, depth = 0) => {
 };
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-const ItemStatsList: React.FC<Props> = ({
+const ItemStatsList = ({
   item,
   className,
   exos,
@@ -74,7 +81,7 @@ const ItemStatsList: React.FC<Props> = ({
   showOnlyWeaponStats,
   weaponElementMage,
   errors,
-}) => {
+}: Props) => {
   const { t, i18n } = useTranslation(['stat', 'weapon_spell_effect', 'common']);
   const theme = useTheme();
 
@@ -103,8 +110,8 @@ const ItemStatsList: React.FC<Props> = ({
     });
   }
 
-  const onOpenModal = React.useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const onOpenModal = useCallback(
+    (e: MouseEvent<HTMLAnchorElement>) => {
       e.stopPropagation();
       if (!item.set || !openSetModal) {
         return;
@@ -116,7 +123,7 @@ const ItemStatsList: React.FC<Props> = ({
 
   const conditions = JSON.parse(item.conditions);
 
-  const [brokenImage, setBrokenImage] = React.useState(false);
+  const [brokenImage, setBrokenImage] = useState(false);
 
   return (
     <div>
@@ -245,4 +252,4 @@ const ItemStatsList: React.FC<Props> = ({
   );
 };
 
-export default React.memo(ItemStatsList);
+export default memo(ItemStatsList);

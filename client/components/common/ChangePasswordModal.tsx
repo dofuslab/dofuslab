@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import { useCallback } from 'react';
 
 import { Button, Form, Input, Modal, notification } from 'antd';
 
@@ -19,7 +19,7 @@ interface Props {
   onClose: () => void;
 }
 
-const ChangePasswordModal: React.FC<Props> = ({ open, onClose }) => {
+const ChangePasswordModal = ({ open, onClose }: Props) => {
   const { t } = useTranslation(['auth', 'common']);
   const [form] = Form.useForm();
 
@@ -28,7 +28,7 @@ const ChangePasswordModal: React.FC<Props> = ({ open, onClose }) => {
     ChangePassword,
     ChangePasswordVariables
   >(changePasswordMutation);
-  const handleOk = React.useCallback(async () => {
+  const handleOk = useCallback(async () => {
     const values = await form.validateFields();
 
     const { data } = await changePassword({

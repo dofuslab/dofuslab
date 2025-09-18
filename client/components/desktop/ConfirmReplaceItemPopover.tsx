@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import * as React from 'react';
+import type { ReactNode, MouseEvent } from 'react';
+
+import { useState, useCallback } from 'react';
 
 import { ClassNames } from '@emotion/react';
 import { Popover } from 'antd';
@@ -15,24 +17,21 @@ import ItemWithStats from './ItemWithStats';
 interface Props {
   item: Item;
   customSet: CustomSet;
+  children: ReactNode;
 }
 
-const ConfirmReplaceItemPopover: React.FC<Props> = ({
-  item,
-  customSet,
-  children,
-}) => {
+const ConfirmReplaceItemPopover = ({ item, customSet, children }: Props) => {
   const { t } = useTranslation('common');
-  const [selectedItemSlotId, setSelectedItemSlotId] = React.useState<
-    string | null
-  >(null);
+  const [selectedItemSlotId, setSelectedItemSlotId] = useState<string | null>(
+    null,
+  );
 
-  const [visible, setIsVisible] = React.useState(false);
+  const [visible, setIsVisible] = useState(false);
 
   const mutate = useEquipItemMutation(item);
 
-  const onSlotSelect = React.useCallback(
-    async (e: React.MouseEvent<HTMLDivElement>) => {
+  const onSlotSelect = useCallback(
+    async (e: MouseEvent<HTMLDivElement>) => {
       await mutate(e.currentTarget.dataset.slotId);
       setIsVisible(false);
     },

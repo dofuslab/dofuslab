@@ -1,4 +1,5 @@
-import React from 'react';
+import type { Dispatch } from 'react';
+import { useCallback } from 'react';
 import { InputNumber } from 'antd';
 import { Stat } from '__generated__/globalTypes';
 import { MageAction } from 'common/types';
@@ -8,14 +9,14 @@ import { inputFontSize } from 'common/mixins';
 interface Props {
   stat: Stat;
   value: number;
-  dispatch: React.Dispatch<MageAction>;
+  dispatch: Dispatch<MageAction>;
   isExo: boolean;
 }
 
 const MAX = 9999;
 
-const MageInputNumber: React.FC<Props> = ({ stat, value, dispatch, isExo }) => {
-  const onChange = React.useCallback(
+const MageInputNumber = ({ stat, value, dispatch, isExo }: Props) => {
+  const onChange = useCallback(
     (v: number | null) => {
       dispatch({
         type: 'EDIT',
