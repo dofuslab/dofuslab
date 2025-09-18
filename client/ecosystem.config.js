@@ -29,6 +29,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:dofuslab/dofuslab.git',
       path: '/var/www/production',
+      ssh_options: 'StrictHostKeyChecking=no',
       'post-deploy':
         'cd client && yarn && yarn build && pm2 reload ecosystem.config.js --env production && pm2 save',
       env: {
@@ -44,6 +45,7 @@ module.exports = {
       ref: process.env.DEPLOY_BRANCH,
       repo: 'git@github.com:dofuslab/dofuslab.git',
       path: '/var/www/production',
+      ssh_options: 'StrictHostKeyChecking=no',
       'post-deploy':
         'cd client && yarn && yarn build && pm2 reload ecosystem.config.js --env branch && pm2 save',
       env: {
