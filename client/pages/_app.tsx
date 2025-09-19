@@ -35,6 +35,7 @@ import '@ant-design/v5-patch-for-react-19';
 import Head from 'next/head';
 import { App, ConfigProvider, notification, theme } from 'antd';
 import NotificationContext from 'common/notificationContext';
+import StaticFunctions from 'components/common/StaticFunctions';
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
@@ -124,6 +125,7 @@ const DofusLabApp = ({ Component, apolloClient, pageProps }: Props) => {
                     />
                   </Head>
                   {contextHolder}
+                  <StaticFunctions />
                   <Component {...pageProps} />
                 </NotificationContext.Provider>
               </CustomSetContext.Provider>
