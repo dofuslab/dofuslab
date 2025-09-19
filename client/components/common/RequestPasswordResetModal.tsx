@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import { useCallback } from 'react';
+import { useCallback, useContext } from 'react';
 
-import { Modal, Input, Form, Button, notification } from 'antd';
+import { Modal, Input, Form, Button } from 'antd';
 import { useMutation } from '@apollo/client';
 import { useTranslation } from 'next-i18next';
 import { mq } from 'common/constants';
@@ -12,6 +12,7 @@ import {
 } from 'graphql/mutations/__generated__/requestPasswordReset';
 import requestPasswordResetMutation from 'graphql/mutations/requestPasswordReset.graphql';
 import { inputFontSize } from 'common/mixins';
+import NotificationContext from 'common/notificationContext';
 
 interface Props {
   open: boolean;
@@ -26,6 +27,7 @@ const RequestPasswordResetModal = ({ open, onClose }: Props) => {
     requestPasswordReset,
     requestPasswordResetVariables
   >(requestPasswordResetMutation);
+  const notificationApi = useContext(NotificationContext);
   const handleOk = useCallback(async () => {
     const values = await form.validateFields();
 
@@ -36,7 +38,7 @@ const RequestPasswordResetModal = ({ open, onClose }: Props) => {
     });
     if (data?.requestPasswordReset?.ok) {
       onClose();
-      notification.success({
+      notificationApi.success({
         message: t('REQUEST_PASSWORD_RESET_EMAIL_SENT.TITLE'),
         description: t('REQUEST_PASSWORD_RESET_EMAIL_SENT.DESCRIPTION'),
       });

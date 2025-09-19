@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import { useCallback, useEffect, memo } from 'react';
+import { useCallback, useEffect, memo, useContext } from 'react';
 import { useRouter } from 'next/router';
-import { notification } from 'antd';
+import NotificationContext from 'common/notificationContext';
 import { useQuery } from '@apollo/client';
 
 import { useTranslation } from 'next-i18next';
@@ -63,12 +63,14 @@ const StatusChecker = () => {
   const { t } = useTranslation('status');
   const { data } = useQuery<currentUser>(currentUserQuery);
 
+  const notificationApi = useContext(NotificationContext);
+
   const processQueryEntry = useCallback(
     (statusType: string, statusValue: string) => {
       const obj = statusMap[statusType]?.[statusValue];
       if (isStatusObj(obj)) {
         const tKey = `${statusMap[statusType].messageKey}.${obj.messageKey}`;
-        notification[obj.type]({
+        notificationApi[obj.type]({
           message: t(`${tKey}.TITLE`),
           description: t(`${tKey}.DESCRIPTION`),
         });

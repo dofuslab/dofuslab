@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 
-import { useCallback } from 'react';
+import { useCallback, useContext } from 'react';
 
-import { Button, Form, Input, Modal, notification } from 'antd';
+import { Button, Form, Input, Modal } from 'antd';
 
 import { useMutation, useApolloClient } from '@apollo/client';
 import { useTranslation } from 'next-i18next';
@@ -13,6 +13,7 @@ import {
 import changePasswordMutation from 'graphql/mutations/changePassword.graphql';
 import { PASSWORD_REGEX } from 'common/constants';
 import { inputFontSize } from 'common/mixins';
+import NotificationContext from 'common/notificationContext';
 
 interface Props {
   open: boolean;
@@ -28,6 +29,9 @@ const ChangePasswordModal = ({ open, onClose }: Props) => {
     ChangePassword,
     ChangePasswordVariables
   >(changePasswordMutation);
+
+  const notificationApi = useContext(NotificationContext);
+
   const handleOk = useCallback(async () => {
     const values = await form.validateFields();
 
@@ -40,7 +44,7 @@ const ChangePasswordModal = ({ open, onClose }: Props) => {
     if (data?.changePassword?.ok) {
       form.resetFields();
       onClose();
-      notification.success({ message: t('PASSWORD_CHANGE_SUCCESS') });
+      notificationApi.success({ message: t('PASSWORD_CHANGE_SUCCESS') });
     }
   }, [changePassword, onClose, client, form]);
 

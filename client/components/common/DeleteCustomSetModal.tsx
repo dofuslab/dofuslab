@@ -2,8 +2,8 @@
 
 import type { MouseEvent } from 'react';
 
-import { useCallback } from 'react';
-import { Modal, notification } from 'antd';
+import { useCallback, useContext } from 'react';
+import { Modal } from 'antd';
 import { useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
 
@@ -13,6 +13,7 @@ import {
   deleteCustomSetVariables,
 } from 'graphql/mutations/__generated__/deleteCustomSet';
 import deleteCustomSetMutation from 'graphql/mutations/deleteCustomSet.graphql';
+import NotificationContext from 'common/notificationContext';
 
 interface Props {
   open: boolean;
@@ -22,6 +23,7 @@ interface Props {
 
 const DeleteCustomSetModal = ({ open, onCancel, customSetId }: Props) => {
   const { t } = useTranslation('common');
+  const notificationApi = useContext(NotificationContext);
   const [deleteMutate, { loading: deleteLoading }] = useMutation<
     deleteCustomSet,
     deleteCustomSetVariables
@@ -41,7 +43,7 @@ const DeleteCustomSetModal = ({ open, onCancel, customSetId }: Props) => {
         if (customSetId === router.query.customSetId) {
           router.push('/', '/', { shallow: true });
         }
-        notification.success({
+        notificationApi.success({
           message: t('SUCCESS'),
           description: t('DELETE_BUILD_SUCCESS'),
         });

@@ -33,7 +33,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import '@ant-design/v5-patch-for-react-19';
 
 import Head from 'next/head';
-import { ConfigProvider, theme } from 'antd';
+import { App, ConfigProvider, notification, theme } from 'antd';
+import NotificationContext from 'common/notificationContext';
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
@@ -78,6 +79,10 @@ const DofusLabApp = ({ Component, apolloClient, pageProps }: Props) => {
     dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
   }, [customSetId]);
 
+  const [api, contextHolder] = notification.useNotification();
+
+  const notificationContextValue = useMemo(() => api, [api]);
+
   const customSetContextValue = useMemo(
     () => ({
       dispatch,
@@ -109,15 +114,20 @@ const DofusLabApp = ({ Component, apolloClient, pageProps }: Props) => {
               algorithm: theme.darkAlgorithm,
             }}
           >
-            <CustomSetContext.Provider value={customSetContextValue}>
-              <Head>
-                <meta
-                  name="viewport"
-                  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-                />
-              </Head>
-              <Component {...pageProps} />
-            </CustomSetContext.Provider>
+            <App>
+              <CustomSetContext.Provider value={customSetContextValue}>
+                <NotificationContext.Provider value={notificationContextValue}>
+                  <Head>
+                    <meta
+                      name="viewport"
+                      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+                    />
+                  </Head>
+                  {contextHolder}
+                  <Component {...pageProps} />
+                </NotificationContext.Provider>
+              </CustomSetContext.Provider>
+            </App>
           </ConfigProvider>
         </ThemeProvider>
       </MediaContextProvider>
