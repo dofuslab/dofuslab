@@ -2,7 +2,7 @@
 
 import { useContext, useState, useCallback, Fragment } from 'react';
 
-import { Divider, notification, Select, Radio } from 'antd';
+import { Divider, Select, Radio } from 'antd';
 import { useTheme } from '@emotion/react';
 
 import {
@@ -30,6 +30,8 @@ import {
 } from 'common/types';
 import { Stat } from '__generated__/globalTypes';
 import { CustomSet, Spell, SpellEffect } from 'common/type-aliases';
+import NotificationContext from 'common/notificationContext';
+
 import AddBuffLink from './AddBuffLink';
 
 interface Props {
@@ -64,6 +66,8 @@ const SpellCardContent = ({ spell, selectedSpellLevelIdx }: Props) => {
     spellStats?.spellEffects.find((e) => !!e.condition)?.condition ?? null,
   );
 
+  const notificationApi = useContext(NotificationContext);
+
   const totalDamageIncrease = baseDamageIncreases.reduce(
     (acc, curr) => acc + curr,
     0,
@@ -91,7 +95,7 @@ const SpellCardContent = ({ spell, selectedSpellLevelIdx }: Props) => {
           baseDamageIncreases.length >=
             spellStats.spellDamageIncrease.maxStacks)
       ) {
-        notification.error({
+        notificationApi.error({
           message: t('ERROR', { ns: 'common' }),
           description: t('MAX_STACKS_APPLIED'),
         });

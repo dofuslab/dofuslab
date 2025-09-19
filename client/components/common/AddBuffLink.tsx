@@ -9,7 +9,7 @@ import { Badge } from 'common/wrappers';
 import { blue6, blue8 } from 'common/mixins';
 import { statIcons } from 'common/constants';
 import { CustomSetContext, getImageUrl } from 'common/utils';
-import { notification } from 'antd';
+import NotificationContext from 'common/notificationContext';
 
 interface Props {
   buff: Buff;
@@ -22,6 +22,7 @@ interface Props {
 const AddBuffLink = ({ buff, isCrit, spell, item, shouldNotify }: Props) => {
   const buffName = spell?.name || item?.name || '';
   const { appliedBuffs, dispatch } = useContext(CustomSetContext);
+  const notificationApi = useContext(NotificationContext);
   const key = isCrit ? 'critIncrementBy' : 'incrementBy';
   const { t } = useTranslation(['stat', 'common', 'weapon_spell_effect']);
 
@@ -34,7 +35,7 @@ const AddBuffLink = ({ buff, isCrit, spell, item, shouldNotify }: Props) => {
 
   const onAddBuff = useCallback(() => {
     if (maxStacksApplied) {
-      notification.error({
+      notificationApi.error({
         message: t('ERROR', { ns: 'common' }),
         description: t('MAX_STACKS_APPLIED', { ns: 'weapon_spell_effect' }),
       });
@@ -48,7 +49,7 @@ const AddBuffLink = ({ buff, isCrit, spell, item, shouldNotify }: Props) => {
       item,
     });
     if (shouldNotify) {
-      notification.success({
+      notificationApi.success({
         message: t('SUCCESS', { ns: 'common' }),
         description: t('BUFF_APPLY_SUCCESS', { ns: 'common', buffName }),
       });
@@ -57,7 +58,7 @@ const AddBuffLink = ({ buff, isCrit, spell, item, shouldNotify }: Props) => {
 
   const onAddMax = useCallback(() => {
     if (maxStacksApplied) {
-      notification.error({
+      notificationApi.error({
         message: t('ERROR', { ns: 'common' }),
         description: t('MAX_STACKS_APPLIED', { ns: 'weapon_spell_effect' }),
       });
@@ -71,7 +72,7 @@ const AddBuffLink = ({ buff, isCrit, spell, item, shouldNotify }: Props) => {
       item,
     });
     if (shouldNotify) {
-      notification.success({
+      notificationApi.success({
         message: t('SUCCESS', { ns: 'common' }),
         description: t('BUFF_APPLY_SUCCESS', { ns: 'common', buffName }),
       });

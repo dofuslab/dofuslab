@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useContext } from 'react';
 import { GetStaticProps, NextPage } from 'next';
 import { useQuery, useMutation } from '@apollo/client';
 
@@ -9,7 +9,7 @@ import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { useRouter } from 'next/router';
-import { Button, Form, Input, notification } from 'antd';
+import { Button, Form, Input } from 'antd';
 import { useTranslation } from 'next-i18next';
 import {
   resetPassword,
@@ -23,11 +23,12 @@ import { getImageUrl, getTitle } from 'common/utils';
 import { inputFontSize } from 'common/mixins';
 import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import NotificationContext from 'common/notificationContext';
 
 const RequestPasswordResetPage: NextPage = () => {
   const { data } = useQuery<currentUser>(currentUserQuery);
   const router = useRouter();
-
+  const notificationApi = useContext(NotificationContext);
   const { token } = router.query;
 
   const { t } = useTranslation('auth');
@@ -63,7 +64,7 @@ const RequestPasswordResetPage: NextPage = () => {
     });
     if (resetPasswordData?.resetPassword?.ok) {
       form.resetFields();
-      notification.success({
+      notificationApi.success({
         message: t('RESET_PASSWORD_SUCCESS.TITLE'),
         description: t('RESET_PASSWORD_SUCCESS.DESCRIPTION'),
       });

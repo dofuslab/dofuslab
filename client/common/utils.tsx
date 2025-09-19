@@ -12,7 +12,7 @@ import {
 } from '@apollo/client';
 import { useRouter, NextRouter } from 'next/router';
 
-import { notification } from 'antd';
+import { notification } from 'components/common/StaticFunctions';
 import cloneDeep from 'lodash/cloneDeep';
 import groupBy from 'lodash/groupBy';
 import { useTranslation, Trans } from 'next-i18next';
@@ -73,6 +73,7 @@ import {
 } from 'graphql/mutations/__generated__/toggleFavoriteItem';
 import toggleFavoriteItemMutation from 'graphql/mutations/toggleFavoriteItem.graphql';
 import { DefaultOptionType } from 'antd/lib/select';
+
 import {
   StatsFromCustomSet,
   SetCounter,

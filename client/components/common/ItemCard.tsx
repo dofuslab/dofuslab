@@ -2,7 +2,7 @@
 
 import type { SetStateAction, Dispatch, MouseEvent } from 'react';
 
-import { useCallback, memo } from 'react';
+import { useCallback, memo, useContext } from 'react';
 
 import {
   slotToUrlString,
@@ -15,13 +15,13 @@ import { useApolloClient, useQuery } from '@apollo/client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import { ItemSlot, ItemSet, Item } from 'common/type-aliases';
-import { notification } from 'antd';
 import { useTranslation } from 'next-i18next';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
 import { prependDe } from 'common/i18n-utils';
+import NotificationContext from 'common/notificationContext';
 
 import BasicItemCard from './BasicItemCard';
 
@@ -53,7 +53,7 @@ const ItemCard = ({
   const mutate = useEquipItemMutation(item);
   const { t, i18n } = useTranslation('common');
   const client = useApolloClient();
-
+  const notificationApi = useContext(NotificationContext);
   const router = useRouter();
   const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);
 
@@ -85,7 +85,7 @@ const ItemCard = ({
       }
 
       const notify = (slot: ItemSlot | null) =>
-        notification.success({
+        notificationApi.success({
           message: t('SUCCESS'),
           description: slot
             ? t('ITEM_EQUIPPED_WITH_SLOT', {

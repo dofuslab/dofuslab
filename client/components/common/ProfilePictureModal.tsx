@@ -2,9 +2,9 @@
 
 import type { MouseEvent } from 'react';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useContext, useState } from 'react';
 
-import { Divider, Modal, notification } from 'antd';
+import { Divider, Modal } from 'antd';
 import { useTheme } from '@emotion/react';
 import { useRouter } from 'next/router';
 
@@ -16,7 +16,8 @@ import {
   changeProfilePictureVariables,
 } from 'graphql/mutations/__generated__/changeProfilePicture';
 import { useMutation } from '@apollo/client';
-import { PROFILE_PICTURES, mq } from '../../common/constants';
+import { PROFILE_PICTURES, mq } from 'common/constants';
+import NotificationContext from 'common/notificationContext';
 
 interface Props {
   open: boolean;
@@ -37,14 +38,14 @@ const ProfilePictureModal = ({ onCancel, open, currentlyActive }: Props) => {
     awaitRefetchQueries: true,
   });
   const router = useRouter();
-
+  const notificationApi = useContext(NotificationContext);
   const onChangePicture = useCallback(
     async (e: MouseEvent<HTMLElement>) => {
       e.stopPropagation();
       const { data } = await profilePictureMutate();
       onCancel();
       if (data?.changeProfilePicture?.user?.profilePicture) {
-        notification.success({
+        notificationApi.success({
           message: t('SUCCESS'),
           description: t('CHANGE_PICTURE_SUCCESS'),
         });
