@@ -26,16 +26,16 @@ const ConfirmReplaceItemPopover = ({ item, customSet, children }: Props) => {
     null,
   );
 
-  const [visible, setIsVisible] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const mutate = useEquipItemMutation(item);
 
   const onSlotSelect = useCallback(
     async (e: MouseEvent<HTMLDivElement>) => {
       await mutate(e.currentTarget.dataset.slotId);
-      setIsVisible(false);
+      setOpen(false);
     },
-    [setSelectedItemSlotId, item, mutate, setIsVisible],
+    [setSelectedItemSlotId, item, mutate, setOpen],
   );
 
   return (
@@ -86,10 +86,10 @@ const ConfirmReplaceItemPopover = ({ item, customSet, children }: Props) => {
             </div>
           }
           title={t('SELECT_ITEM_TO_REPLACE')}
-          open={visible}
-          onVisibleChange={setIsVisible}
+          open={open}
+          onOpenChange={setOpen}
           trigger="click"
-          overlayClassName={css(popoverTitleStyle)}
+          className={{ root: css(popoverTitleStyle) }}
         >
           <div css={{ display: 'flex', minWidth: 0 }}>{children}</div>
         </Popover>

@@ -3,7 +3,8 @@ import 'dotenv/config';
 
 const config: CodegenConfig = {
   schema:
-    process.env.GRAPHQL_URI_FOR_CODEGEN ?? process.env.NEXT_PUBLIC_GRAPHQL_URI,
+    process.env.NEXT_PUBLIC_GRAPHQL_URI_FOR_CODEGEN ??
+    process.env.NEXT_PUBLIC_GRAPHQL_URI,
 
   documents: ['./graphql/**/*.graphql'],
   config: {
