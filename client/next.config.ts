@@ -63,6 +63,16 @@ const nextConfig: NextConfig = withBundleAnalyzer({
     ignoreBuildErrors: true,
   },
   productionBrowserSourceMaps: false,
+  rewrites: async () => {
+    return [
+      {
+        source: '/api/graphql',
+        destination:
+          process.env.NEXT_PUBLIC_GRAPHQL_URI_FOR_CODEGEN ??
+          process.env.NEXT_PUBLIC_GRAPHQL_URI,
+      },
+    ];
+  },
 });
 
 export default nextConfig;
