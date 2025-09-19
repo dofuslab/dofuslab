@@ -333,6 +333,9 @@ const SelectorFilters = ({
                     '.ant-select-selector': {
                       height: '100%',
                     },
+                    '.ant-select-selector .ant-select-selection-wrap': {
+                      alignSelf: 'center !important',
+                    },
                   }}
                   placeholder={t('STATS_PLACEHOLDER')}
                   value={statFilters.map(({ stat, minValue }) => ({

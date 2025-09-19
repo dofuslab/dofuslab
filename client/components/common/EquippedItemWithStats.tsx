@@ -230,6 +230,9 @@ const EquippedItemWithStats = ({
                   overflow: 'auto',
                 },
                 '.ant-popover-inner-content': { padding: 0 },
+                '.ant-popover-inner': {
+                  padding: 0,
+                },
                 maxWidth: 312,
               })}
               autoAdjustOverflow={{ adjustX: 1, adjustY: 0 }}

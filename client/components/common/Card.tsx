@@ -18,6 +18,9 @@ const Card = ({ className, ...restProps }: CardProps) => {
               '.ant-card-actions': {
                 backgroundColor: theme.card?.background,
               },
+              '.ant-card-head': {
+                padding: 8,
+              },
             }),
             className,
           )}
