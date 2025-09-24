@@ -23,7 +23,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTshirt,
   faDoorOpen,
-  faLanguage,
   faHome,
   faSignInAlt,
   faUserPlus,
@@ -256,22 +255,32 @@ function Layout({ children }: LayoutProps) {
       );
     }
 
-    // Language submenu
-    items.push({
-      key: 'language',
-      label: (
-        <div css={{ display: 'flex' }}>
-          <span css={iconWrapper}>
-            <FontAwesomeIcon icon={faLanguage} />
-          </span>
-          {t('LANGUAGE', { ns: 'common' })}
-        </div>
-      ),
-      children: LANGUAGES.map((lang) => ({
+    // Note: Removing while this causes issues with submenu:
+    // TypeError: Cannot destructure property 'scrollHeight' of 'e' as it is null.
+    // When trying to open submenu
+    // // Language submenu
+    // items.push({
+    //   key: 'language',
+    //   label: (
+    //     <div css={{ display: 'flex' }}>
+    //       <span css={iconWrapper}>
+    //         <FontAwesomeIcon icon={faLanguage} />
+    //       </span>
+    //       {t('LANGUAGE', { ns: 'common' })}
+    //     </div>
+    //   ),
+    //   children: LANGUAGES.map((lang) => ({
+    //     key: lang,
+    //     label: langToFullName(lang),
+    //   })),
+    // });
+
+    items.push(
+      ...LANGUAGES.map((lang) => ({
         key: lang,
-        label: langToFullName(lang),
+        label: <div css={{ display: 'flex' }}>{langToFullName(lang)}</div>,
       })),
-    });
+    );
 
     if (data?.currentUser) {
       items.push({
@@ -338,7 +347,7 @@ function Layout({ children }: LayoutProps) {
             <span css={iconWrapper}>
               <FontAwesomeIcon icon={faMugHot} />
             </span>
-            {t('BUY_ME_COFFEE', { ns: 'common' })}
+            {t('BUY_US_COFFEE', { ns: 'common' })}
           </a>
         ),
       },
@@ -425,11 +434,9 @@ function Layout({ children }: LayoutProps) {
               </div>
             )}
             <Menu
-              forceSubMenuRender
               mode="inline"
               onClick={menuClickHandler}
               items={menuItems}
-              openKeys={['language']} // hardcoded as opening it would cause the app to crash
               css={{
                 border: 'none',
                 '.ant-menu-item, .ant-menu-submenu-title, .ant-menu-item:not(:last-child)':
