@@ -1,4 +1,4 @@
-import { useReducer, useMemo, useEffect } from 'react';
+import React, { useReducer, useMemo, useEffect } from 'react';
 import { AppProps } from 'next/app';
 import {
   ApolloProvider,
@@ -36,6 +36,8 @@ import Head from 'next/head';
 import { App, ConfigProvider, notification, theme } from 'antd';
 import NotificationContext from 'common/notificationContext';
 import StaticFunctions from 'components/common/StaticFunctions';
+import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
+import type Entity from '@ant-design/cssinjs/es/Cache';
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
@@ -105,32 +107,41 @@ const DofusLabApp = ({ Component, apolloClient, pageProps }: Props) => {
     ],
   );
 
+  // SSR Render
+  const cache = React.useMemo<Entity>(() => createCache(), []);
+  const styleText = extractStyle(cache);
+
   /* eslint-disable react/jsx-props-no-spreading */
   return (
     <ApolloProvider client={apolloClient}>
       <MediaContextProvider>
         <ThemeProvider theme={darkTheme}>
-          <ConfigProvider
-            theme={{
-              algorithm: theme.darkAlgorithm,
-            }}
-          >
-            <App>
-              <CustomSetContext.Provider value={customSetContextValue}>
-                <NotificationContext.Provider value={notificationContextValue}>
-                  <Head>
-                    <meta
-                      name="viewport"
-                      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-                    />
-                  </Head>
-                  {contextHolder}
-                  <StaticFunctions />
-                  <Component {...pageProps} />
-                </NotificationContext.Provider>
-              </CustomSetContext.Provider>
-            </App>
-          </ConfigProvider>
+          <StyleProvider cache={cache}>
+            <ConfigProvider
+              theme={{
+                algorithm: theme.darkAlgorithm,
+              }}
+            >
+              <App>
+                <CustomSetContext.Provider value={customSetContextValue}>
+                  <NotificationContext.Provider
+                    value={notificationContextValue}
+                  >
+                    <Head>
+                      <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+                      />
+                      {styleText}
+                    </Head>
+                    {contextHolder}
+                    <StaticFunctions />
+                    <Component {...pageProps} />
+                  </NotificationContext.Provider>
+                </CustomSetContext.Provider>
+              </App>
+            </ConfigProvider>
+          </StyleProvider>
         </ThemeProvider>
       </MediaContextProvider>
     </ApolloProvider>

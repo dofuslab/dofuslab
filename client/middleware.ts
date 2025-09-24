@@ -2,32 +2,26 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const PUBLIC_FILE = /\.(.*)$/;
 
-/**
- * This middleware intercepts a request and redirects the user to
- * their preferred language.
- *
- * @param request
- * @returns redirected url pathname with correct locale appended
- */
-
 // eslint-disable-next-line import/prefer-default-export
-export function middleware(request: NextRequest) {
+export async function middleware(req: NextRequest) {
   if (
-    PUBLIC_FILE.test(request.nextUrl.pathname) ||
-    request.nextUrl.pathname.includes('/api/')
+    req.nextUrl.pathname.startsWith('/_next') ||
+    req.nextUrl.pathname.includes('/api/') ||
+    PUBLIC_FILE.test(req.nextUrl.pathname)
   ) {
     return undefined;
   }
 
-  const suggestedLocale = request.cookies.get('NEXT_LOCALE')?.value;
+  if (req.nextUrl.locale === 'default') {
+    const locale = req.cookies.get('NEXT_LOCALE')?.value || 'en';
 
-  if (!suggestedLocale || request.nextUrl.locale === suggestedLocale) {
-    return undefined;
+    return NextResponse.redirect(
+      new URL(
+        `/${locale}${req.nextUrl.pathname}${req.nextUrl.search}`,
+        req.url,
+      ),
+    );
   }
 
-  return NextResponse.redirect(
-    suggestedLocale === request.nextUrl.defaultLocale
-      ? request.nextUrl.pathname
-      : `/${suggestedLocale}${request.nextUrl.pathname}${request.nextUrl.search}`,
-  );
+  return undefined;
 }
