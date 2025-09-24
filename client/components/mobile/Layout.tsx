@@ -133,7 +133,7 @@ function Layout({ children }: LayoutProps) {
     [changeLocaleMutate, router, client],
   );
 
-  const menuClickHandler: MenuProps['onClick'] = useCallback(
+  const menuClickHandler = useCallback<NonNullable<MenuProps['onClick']>>(
     (e) => {
       const { key } = e;
 

@@ -89,7 +89,7 @@ const ConfirmReplaceItemPopover = ({ item, customSet, children }: Props) => {
           open={open}
           onOpenChange={setOpen}
           trigger="click"
-          className={{ root: css(popoverTitleStyle) }}
+          classNames={{ root: css(popoverTitleStyle) }}
         >
           <div css={{ display: 'flex', minWidth: 0 }}>{children}</div>
         </Popover>
