@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 0f157bb2d68b
-Revises: f175244278d9
-Create Date: 2025-08-29 19:23:34.351988
+Revision ID: 3c596c660380
+Revises: 0f157bb2d68b
+Create Date: 2025-09-23 22:11:20
 
 """
 
@@ -11,12 +11,12 @@ import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
-revision = "0f157bb2d68b"
-down_revision = "f175244278d9"
+revision = "3c596c660380"
+down_revision = "0f157bb2d68b"
 branch_labels = None
 depends_on = None
 
-new_enums = ["BEST_ELEMENT_DAMAGE", "PUSHBACK_DAMAGE", "ATTRACT_CELLS", "STEALS_MP"]
+new_enums = ["BEST_ELEMENT_STEAL"]
 
 
 def upgrade():
