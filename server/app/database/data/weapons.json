@@ -607,8 +607,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -952,8 +952,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -994,8 +994,8 @@
     "weaponStats": {
       "apCost": 2,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 3,
       "weapon_effects": [
@@ -1046,8 +1046,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 3,
       "weapon_effects": [
@@ -1108,8 +1108,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -1169,8 +1169,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 8,
       "weapon_effects": [
@@ -1313,8 +1313,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -2650,8 +2650,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -3119,8 +3119,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 2,
       "weapon_effects": [
@@ -3171,8 +3171,8 @@
     "weaponStats": {
       "apCost": 2,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -3709,8 +3709,8 @@
     "weaponStats": {
       "apCost": 2,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -4286,7 +4286,7 @@
       },
       {
         "stat": "Summons",
-        "minStat": 2,
+        "minStat": null,
         "maxStat": 3
       },
       {
@@ -4298,8 +4298,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -4474,8 +4474,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 8,
       "weapon_effects": [
@@ -4526,8 +4526,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -4786,8 +4786,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 2,
       "weapon_effects": [
@@ -5008,8 +5008,8 @@
     "weaponStats": {
       "apCost": 2,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -5851,8 +5851,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -7995,8 +7995,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -8062,8 +8062,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -8119,8 +8119,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -8196,8 +8196,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 4,
       "weapon_effects": [
@@ -8584,11 +8584,6 @@
       "weapon_effects": [
         {
           "stat": "Air damage",
-          "minStat": 12,
-          "maxStat": 42
-        },
-        {
-          "stat": "Fire healing",
           "minStat": 12,
           "maxStat": 42
         }
@@ -9031,8 +9026,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -9093,8 +9088,8 @@
     "weaponStats": {
       "apCost": 2,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 3,
       "weapon_effects": [
@@ -9145,8 +9140,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 8,
       "weapon_effects": [
@@ -9197,8 +9192,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -9254,8 +9249,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 12,
       "weapon_effects": [
@@ -11826,8 +11821,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -11999,11 +11994,6 @@
           "stat": "Air damage",
           "minStat": 18,
           "maxStat": 25
-        },
-        {
-          "stat": "Pushback damage",
-          "minStat": null,
-          "maxStat": 1
         }
       ]
     },
@@ -13372,8 +13362,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 8,
       "weapon_effects": [
@@ -13938,8 +13928,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 3,
       "weapon_effects": [
@@ -14013,7 +14003,7 @@
       }
     ],
     "weaponStats": {
-      "apCost": 6,
+      "apCost": 5,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
@@ -14926,8 +14916,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 8,
       "weapon_effects": [
@@ -15942,11 +15932,6 @@
           "stat": "Fire steal",
           "minStat": 3,
           "maxStat": 7
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 7,
-          "maxStat": 11
         }
       ]
     },
@@ -15988,7 +15973,7 @@
       },
       {
         "stat": "Summons",
-        "minStat": 2,
+        "minStat": null,
         "maxStat": 3
       },
       {
@@ -16451,11 +16436,6 @@
           "stat": "Neutral damage",
           "minStat": 13,
           "maxStat": 22
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 13,
-          "maxStat": 22
         }
       ]
     },
@@ -16599,11 +16579,6 @@
           "stat": "Neutral damage",
           "minStat": 13,
           "maxStat": 27
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 9,
-          "maxStat": 23
         }
       ]
     },
@@ -16734,8 +16709,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 3,
       "weapon_effects": [
@@ -16806,8 +16781,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -16871,7 +16846,7 @@
       },
       {
         "stat": "Summons",
-        "minStat": 5,
+        "minStat": null,
         "maxStat": 6
       },
       {
@@ -16883,8 +16858,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -16935,8 +16910,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -17017,8 +16992,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -17592,11 +17567,6 @@
           "stat": "Neutral damage",
           "minStat": 21,
           "maxStat": 40
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 1,
-          "maxStat": 80
         }
       ]
     },
@@ -17712,8 +17682,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -18193,8 +18163,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 8,
       "weapon_effects": [
@@ -18433,8 +18403,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -19145,8 +19115,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 20,
       "critBonusDamage": 8,
       "weapon_effects": [
@@ -19227,8 +19197,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -19300,11 +19270,6 @@
       "critBonusDamage": 15,
       "weapon_effects": [
         {
-          "stat": "Fire healing",
-          "minStat": 1,
-          "maxStat": 10
-        },
-        {
           "stat": "Fire damage",
           "minStat": 1,
           "maxStat": 30
@@ -19360,13 +19325,7 @@
       "maxRange": 1,
       "baseCritChance": 30,
       "critBonusDamage": 5,
-      "weapon_effects": [
-        {
-          "stat": "Fire healing",
-          "minStat": 11,
-          "maxStat": 15
-        }
-      ]
+      "weapon_effects": []
     },
     "customStats": {},
     "conditions": {
@@ -19494,11 +19453,6 @@
           "stat": "AP",
           "minStat": -2,
           "maxStat": -1
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 8,
-          "maxStat": 12
         }
       ]
     },
@@ -19726,7 +19680,7 @@
       },
       {
         "stat": "Summons",
-        "minStat": 1,
+        "minStat": null,
         "maxStat": 2
       },
       {
@@ -19747,11 +19701,6 @@
           "stat": "Neutral damage",
           "minStat": 1,
           "maxStat": 20
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 1,
-          "maxStat": 80
         }
       ]
     },
@@ -20835,11 +20784,6 @@
           "maxStat": 15
         },
         {
-          "stat": "Fire healing",
-          "minStat": 1,
-          "maxStat": 100
-        },
-        {
           "stat": "Fire steal",
           "minStat": 1,
           "maxStat": 10
@@ -20953,8 +20897,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -21035,8 +20979,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -21087,8 +21031,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -21164,8 +21108,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 15,
       "weapon_effects": [
@@ -21173,11 +21117,6 @@
           "stat": "Neutral damage",
           "minStat": 11,
           "maxStat": 35
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 1,
-          "maxStat": 100
         }
       ]
     },
@@ -21241,8 +21180,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -21303,8 +21242,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -21365,8 +21304,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -21571,8 +21510,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -22584,8 +22523,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 8,
       "weapon_effects": [
@@ -22641,8 +22580,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 4,
       "weapon_effects": [
@@ -22708,8 +22647,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -22780,8 +22719,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -23233,8 +23172,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -23734,8 +23673,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -24065,8 +24004,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -24156,8 +24095,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 6,
       "weapon_effects": [
@@ -24638,19 +24577,14 @@
       "critBonusDamage": 0,
       "weapon_effects": [
         {
-          "stat": "Water damage",
+          "stat": "Water steal",
           "minStat": 11,
           "maxStat": 14
         },
         {
-          "stat": "Water damage",
+          "stat": "Water steal",
           "minStat": 11,
           "maxStat": 14
-        },
-        {
-          "stat": "MP",
-          "minStat": null,
-          "maxStat": -1
         }
       ]
     },
@@ -25189,13 +25123,7 @@
       "maxRange": 6,
       "baseCritChance": 25,
       "critBonusDamage": 10,
-      "weapon_effects": [
-        {
-          "stat": "Fire healing",
-          "minStat": 11,
-          "maxStat": 30
-        }
-      ]
+      "weapon_effects": []
     },
     "customStats": {},
     "conditions": {
@@ -25592,8 +25520,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -26179,8 +26107,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -27454,8 +27382,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -27521,8 +27449,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -28880,8 +28808,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -28957,8 +28885,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 15,
       "critBonusDamage": 15,
       "weapon_effects": [
@@ -29069,8 +28997,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 5,
       "critBonusDamage": 4,
       "weapon_effects": [
@@ -29186,8 +29114,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 3,
       "weapon_effects": [
@@ -29253,8 +29181,8 @@
     "weaponStats": {
       "apCost": 2,
       "usesPerTurn": 3,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 15,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -29482,7 +29410,7 @@
       },
       {
         "stat": "Summons",
-        "minStat": 2,
+        "minStat": null,
         "maxStat": 3
       }
     ],
@@ -29670,12 +29598,12 @@
       "weapon_effects": [
         {
           "stat": "Air damage",
-          "minStat": 6,
+          "minStat": 15,
           "maxStat": 19
         },
         {
           "stat": "Fire damage",
-          "minStat": 6,
+          "minStat": 15,
           "maxStat": 19
         }
       ]
@@ -29767,21 +29695,21 @@
     ],
     "weaponStats": {
       "apCost": 3,
-      "usesPerTurn": 1,
+      "usesPerTurn": 2,
       "minRange": null,
       "maxRange": 1,
       "baseCritChance": 15,
-      "critBonusDamage": 3,
+      "critBonusDamage": 6,
       "weapon_effects": [
         {
           "stat": "Air damage",
-          "minStat": 8,
-          "maxStat": 13
+          "minStat": 3,
+          "maxStat": 6
         },
         {
           "stat": "Water damage",
-          "minStat": 8,
-          "maxStat": 13
+          "minStat": 3,
+          "maxStat": 6
         },
         {
           "stat": "Neutral steal",
@@ -31876,12 +31804,12 @@
       "weapon_effects": [
         {
           "stat": "Neutral damage",
-          "minStat": 19,
+          "minStat": 26,
           "maxStat": 35
         },
         {
           "stat": "Water steal",
-          "minStat": 2,
+          "minStat": 5,
           "maxStat": 7
         }
       ]
@@ -31958,12 +31886,12 @@
       "weapon_effects": [
         {
           "stat": "Earth damage",
-          "minStat": 10,
+          "minStat": 17,
           "maxStat": 21
         },
         {
           "stat": "Fire damage",
-          "minStat": 10,
+          "minStat": 17,
           "maxStat": 21
         }
       ]
@@ -32047,7 +31975,7 @@
       "apCost": 4,
       "usesPerTurn": 1,
       "minRange": 2,
-      "maxRange": 4,
+      "maxRange": 6,
       "baseCritChance": 10,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -32156,8 +32084,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -32168,12 +32096,12 @@
         },
         {
           "stat": "Earth steal",
-          "minStat": 1,
+          "minStat": 6,
           "maxStat": 8
         },
         {
           "stat": "Water steal",
-          "minStat": 1,
+          "minStat": 6,
           "maxStat": 8
         }
       ]
@@ -32378,7 +32306,7 @@
       "it": "Day'inda Knife"
     },
     "itemType": "Dagger",
-    "setID": "109",
+    "setID": "108",
     "level": 182,
     "stats": [
       {
@@ -32387,12 +32315,12 @@
         "maxStat": 300
       },
       {
-        "stat": "Intelligence",
+        "stat": "Strength",
         "minStat": 31,
         "maxStat": 50
       },
       {
-        "stat": "Chance",
+        "stat": "Agility",
         "minStat": 31,
         "maxStat": 50
       },
@@ -32419,26 +32347,26 @@
     ],
     "weaponStats": {
       "apCost": 3,
-      "usesPerTurn": 1,
+      "usesPerTurn": 2,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 25,
-      "critBonusDamage": 7,
+      "baseCritChance": 10,
+      "critBonusDamage": 3,
       "weapon_effects": [
         {
-          "stat": "Neutral damage",
-          "minStat": 8,
-          "maxStat": 17
+          "stat": "Neutral steal",
+          "minStat": 3,
+          "maxStat": 5
         },
         {
-          "stat": "Water damage",
+          "stat": "Earth damage",
           "minStat": 6,
-          "maxStat": 10
+          "maxStat": 8
         },
         {
-          "stat": "Fire damage",
+          "stat": "Air damage",
           "minStat": 6,
-          "maxStat": 10
+          "maxStat": 8
         }
       ]
     },
@@ -32447,12 +32375,12 @@
       "conditions": {
         "and": [
           {
-            "stat": "INTELLIGENCE",
+            "stat": "STRENGTH",
             "operator": ">",
             "value": 199
           },
           {
-            "stat": "CHANCE",
+            "stat": "AGILITY",
             "operator": ">",
             "value": 199
           }
@@ -32517,12 +32445,12 @@
       "weapon_effects": [
         {
           "stat": "Water damage",
-          "minStat": 12,
+          "minStat": 19,
           "maxStat": 26
         },
         {
           "stat": "Neutral damage",
-          "minStat": 8,
+          "minStat": 12,
           "maxStat": 18
         }
       ]
@@ -32608,12 +32536,12 @@
       "weapon_effects": [
         {
           "stat": "Water damage",
-          "minStat": 6,
+          "minStat": 21,
           "maxStat": 28
         },
         {
           "stat": "Air damage",
-          "minStat": 6,
+          "minStat": 21,
           "maxStat": 28
         }
       ]
@@ -32960,7 +32888,7 @@
       "it": "Hail Sceptre"
     },
     "itemType": "Staff",
-    "setID": null,
+    "setID": "174",
     "level": 192,
     "stats": [
       {
@@ -32969,12 +32897,12 @@
         "maxStat": 350
       },
       {
-        "stat": "Intelligence",
+        "stat": "Strength",
         "minStat": 41,
         "maxStat": 60
       },
       {
-        "stat": "Agility",
+        "stat": "Chance",
         "minStat": 41,
         "maxStat": 60
       },
@@ -33017,8 +32945,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -33028,12 +32956,12 @@
           "maxStat": 15
         },
         {
-          "stat": "Fire damage",
+          "stat": "Earth damage",
           "minStat": 8,
           "maxStat": 12
         },
         {
-          "stat": "Air damage",
+          "stat": "Water damage",
           "minStat": 8,
           "maxStat": 12
         },
@@ -33848,20 +33776,6 @@
       "conditions": {
         "and": [
           {
-            "or": [
-              {
-                "stat": "AP",
-                "operator": "<",
-                "value": 12
-              },
-              {
-                "stat": "MP",
-                "operator": "<",
-                "value": 6
-              }
-            ]
-          },
-          {
             "stat": "STRENGTH",
             "operator": ">",
             "value": 199
@@ -34311,8 +34225,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 5,
       "critBonusDamage": 6,
       "weapon_effects": [
@@ -34422,8 +34336,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 10,
       "weapon_effects": [
@@ -35201,7 +35115,7 @@
           "maxStat": 44
         },
         {
-          "stat": "Earth damage",
+          "stat": "Earth steal",
           "minStat": 6,
           "maxStat": 10
         },
@@ -35435,8 +35349,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -35539,10 +35453,10 @@
       }
     ],
     "weaponStats": {
-      "apCost": 5,
+      "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 20,
       "critBonusDamage": 4,
       "weapon_effects": [
@@ -36100,11 +36014,6 @@
           "stat": "Neutral damage",
           "minStat": 28,
           "maxStat": 44
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 51,
-          "maxStat": 100
         }
       ]
     },
@@ -36796,7 +36705,7 @@
       },
       {
         "stat": "Summons",
-        "minStat": 1,
+        "minStat": null,
         "maxStat": 2
       },
       {
@@ -37022,7 +36931,7 @@
       },
       {
         "stat": "Summons",
-        "minStat": 1,
+        "minStat": null,
         "maxStat": 2
       },
       {
@@ -37187,7 +37096,7 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 5,
+      "baseCritChance": 15,
       "critBonusDamage": 8,
       "weapon_effects": [
         {
@@ -37454,8 +37363,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 2,
       "weapon_effects": [
@@ -37643,8 +37552,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -37652,26 +37561,6 @@
           "stat": "Fire steal",
           "minStat": 11,
           "maxStat": 20
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 8,
-          "maxStat": 12
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 8,
-          "maxStat": 12
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 8,
-          "maxStat": 12
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 8,
-          "maxStat": 12
         }
       ]
     },
@@ -37979,8 +37868,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 5,
       "critBonusDamage": 8,
       "weapon_effects": [
@@ -38224,7 +38113,7 @@
           "maxStat": 21
         },
         {
-          "stat": "Air steal",
+          "stat": "Neutral steal",
           "minStat": 5,
           "maxStat": 7
         },
@@ -38335,23 +38224,23 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 5,
+      "baseCritChance": 10,
       "critBonusDamage": 5,
       "weapon_effects": [
         {
           "stat": "Neutral damage",
-          "minStat": 7,
-          "maxStat": 12
+          "minStat": 9,
+          "maxStat": 14
         },
         {
           "stat": "Neutral damage",
-          "minStat": 7,
-          "maxStat": 12
+          "minStat": 9,
+          "maxStat": 14
         },
         {
           "stat": "Neutral damage",
-          "minStat": 7,
-          "maxStat": 12
+          "minStat": 9,
+          "maxStat": 14
         }
       ]
     },
@@ -38420,8 +38309,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 6,
       "weapon_effects": [
@@ -38596,8 +38485,8 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 10,
-      "critBonusDamage": 10,
+      "baseCritChance": 15,
+      "critBonusDamage": 15,
       "weapon_effects": [
         {
           "stat": "Fire damage",
@@ -38701,8 +38590,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 20,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -38877,7 +38766,7 @@
       },
       {
         "stat": "Summons",
-        "minStat": 1,
+        "minStat": null,
         "maxStat": 2
       },
       {
@@ -39183,12 +39072,12 @@
       }
     ],
     "weaponStats": {
-      "apCost": 4,
-      "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "apCost": 3,
+      "usesPerTurn": 2,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 40,
-      "critBonusDamage": 15,
+      "critBonusDamage": 3,
       "weapon_effects": [
         {
           "stat": "Neutral damage",
@@ -39404,8 +39293,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 20,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -39536,8 +39425,8 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 10,
-      "critBonusDamage": 4,
+      "baseCritChance": 15,
+      "critBonusDamage": 6,
       "weapon_effects": [
         {
           "stat": "Neutral damage",
@@ -39771,12 +39660,12 @@
       "critBonusDamage": 6,
       "weapon_effects": [
         {
-          "stat": "Neutral damage",
+          "stat": "Air damage",
           "minStat": 30,
           "maxStat": 37
         },
         {
-          "stat": "Air damage",
+          "stat": "Air steal",
           "minStat": 9,
           "maxStat": 14
         }
@@ -40111,7 +40000,7 @@
       "minRange": null,
       "maxRange": 1,
       "baseCritChance": 15,
-      "critBonusDamage": 4,
+      "critBonusDamage": 7,
       "weapon_effects": [
         {
           "stat": "Neutral damage",
@@ -40230,8 +40119,8 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 20,
-      "critBonusDamage": 7,
+      "baseCritChance": 25,
+      "critBonusDamage": 11,
       "weapon_effects": [
         {
           "stat": "Neutral damage",
@@ -40594,8 +40483,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -40731,7 +40620,7 @@
       }
     ],
     "weaponStats": {
-      "apCost": 5,
+      "apCost": 4,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
@@ -40863,8 +40752,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 6,
       "weapon_effects": [
@@ -41506,8 +41395,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -41630,7 +41519,7 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 10,
+      "baseCritChance": 15,
       "critBonusDamage": 3,
       "weapon_effects": [
         {
@@ -41742,16 +41631,6 @@
           "stat": "Fire steal",
           "minStat": 9,
           "maxStat": 12
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 12,
-          "maxStat": 17
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 12,
-          "maxStat": 17
         }
       ]
     },
@@ -41840,7 +41719,7 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": 3,
+      "minRange": 2,
       "maxRange": 6,
       "baseCritChance": 25,
       "critBonusDamage": 6,
@@ -41849,16 +41728,6 @@
           "stat": "Fire steal",
           "minStat": 11,
           "maxStat": 15
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 26,
-          "maxStat": 30
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 26,
-          "maxStat": 30
         }
       ]
     },
@@ -41945,22 +41814,22 @@
       }
     ],
     "weaponStats": {
-      "apCost": 5,
+      "apCost": 4,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
       "baseCritChance": 15,
-      "critBonusDamage": 10,
+      "critBonusDamage": 8,
       "weapon_effects": [
         {
           "stat": "Air damage",
-          "minStat": 31,
-          "maxStat": 35
+          "minStat": 26,
+          "maxStat": 31
         },
         {
           "stat": "Fire damage",
-          "minStat": 31,
-          "maxStat": 35
+          "minStat": 26,
+          "maxStat": 31
         }
       ]
     },
@@ -42075,7 +41944,7 @@
       "minRange": null,
       "maxRange": 1,
       "baseCritChance": 15,
-      "critBonusDamage": 3,
+      "critBonusDamage": 6,
       "weapon_effects": [
         {
           "stat": "Neutral damage",
@@ -42199,8 +42068,8 @@
         },
         {
           "stat": "Earth steal",
-          "minStat": 4,
-          "maxStat": 5
+          "minStat": 6,
+          "maxStat": 8
         }
       ]
     },
@@ -42304,8 +42173,8 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 5,
-      "critBonusDamage": 7,
+      "baseCritChance": 15,
+      "critBonusDamage": 10,
       "weapon_effects": [
         {
           "stat": "Air damage",
@@ -42407,7 +42276,7 @@
       "minRange": 4,
       "maxRange": 8,
       "baseCritChance": 15,
-      "critBonusDamage": 4,
+      "critBonusDamage": 8,
       "weapon_effects": [
         {
           "stat": "Fire damage",
@@ -42531,8 +42400,8 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 10,
-      "critBonusDamage": 3,
+      "baseCritChance": 15,
+      "critBonusDamage": 5,
       "weapon_effects": [
         {
           "stat": "Neutral damage",
@@ -42540,9 +42409,9 @@
           "maxStat": 45
         },
         {
-          "stat": "Earth damage",
-          "minStat": 5,
-          "maxStat": 8
+          "stat": "Earth steal",
+          "minStat": 7,
+          "maxStat": 12
         },
         {
           "stat": "Air steal",
@@ -42652,22 +42521,22 @@
       }
     ],
     "weaponStats": {
-      "apCost": 4,
-      "usesPerTurn": 1,
+      "apCost": 3,
+      "usesPerTurn": 2,
       "minRange": 2,
       "maxRange": 5,
-      "baseCritChance": 15,
-      "critBonusDamage": 5,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
       "weapon_effects": [
         {
-          "stat": "Earth damage",
-          "minStat": 24,
-          "maxStat": 30
+          "stat": "Earth steal",
+          "minStat": 11,
+          "maxStat": 14
         },
         {
-          "stat": "Water damage",
-          "minStat": 24,
-          "maxStat": 30
+          "stat": "Water steal",
+          "minStat": 11,
+          "maxStat": 14
         }
       ]
     },
@@ -42916,8 +42785,8 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 0,
-      "critBonusDamage": 0,
+      "baseCritChance": 10,
+      "critBonusDamage": 2,
       "weapon_effects": [
         {
           "stat": "Fire damage",
@@ -43088,8 +42957,8 @@
     "weaponStats": {
       "apCost": 5,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -43421,8 +43290,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 8,
       "weapon_effects": [
@@ -43472,13 +43341,7 @@
       "maxRange": 1,
       "baseCritChance": 5,
       "critBonusDamage": 1,
-      "weapon_effects": [
-        {
-          "stat": "Fire healing",
-          "minStat": 11,
-          "maxStat": 15
-        }
-      ]
+      "weapon_effects": []
     },
     "customStats": {},
     "conditions": {
@@ -43578,12 +43441,12 @@
       }
     ],
     "weaponStats": {
-      "apCost": 6,
+      "apCost": 5,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
       "baseCritChance": 15,
-      "critBonusDamage": 5,
+      "critBonusDamage": 3,
       "weapon_effects": [
         {
           "stat": "Fire damage",
@@ -43817,9 +43680,9 @@
     "weaponStats": {
       "apCost": 5,
       "usesPerTurn": 1,
-      "minRange": 4,
+      "minRange": 3,
       "maxRange": 8,
-      "baseCritChance": 10,
+      "baseCritChance": 20,
       "critBonusDamage": 5,
       "weapon_effects": [
         {
@@ -43919,10 +43782,10 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 20,
-      "critBonusDamage": 6,
+      "critBonusDamage": 10,
       "weapon_effects": [
         {
           "stat": "Water damage",
@@ -44039,7 +43902,7 @@
       "minRange": null,
       "maxRange": 1,
       "baseCritChance": 20,
-      "critBonusDamage": 5,
+      "critBonusDamage": 8,
       "weapon_effects": [
         {
           "stat": "Earth damage",
@@ -44171,10 +44034,10 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
-      "baseCritChance": 15,
-      "critBonusDamage": 5,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 20,
+      "critBonusDamage": 10,
       "weapon_effects": [
         {
           "stat": "Earth damage",
@@ -44409,7 +44272,7 @@
       "minRange": 3,
       "maxRange": 8,
       "baseCritChance": 20,
-      "critBonusDamage": 5,
+      "critBonusDamage": 9,
       "weapon_effects": [
         {
           "stat": "Air steal",
@@ -44706,14 +44569,14 @@
       "critBonusDamage": 7,
       "weapon_effects": [
         {
-          "stat": "Earth damage",
-          "minStat": 23,
-          "maxStat": 28
+          "stat": "Neutral steal",
+          "minStat": 21,
+          "maxStat": 25
         },
         {
-          "stat": "Water damage",
-          "minStat": 23,
-          "maxStat": 28
+          "stat": "Water steal",
+          "minStat": 21,
+          "maxStat": 25
         }
       ]
     },
@@ -45332,7 +45195,7 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": 3,
+      "minRange": 1,
       "maxRange": 6,
       "baseCritChance": 0,
       "critBonusDamage": 0,
@@ -45738,22 +45601,22 @@
       }
     ],
     "weaponStats": {
-      "apCost": 5,
+      "apCost": 4,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 10,
+      "baseCritChance": 20,
       "critBonusDamage": 6,
       "weapon_effects": [
         {
           "stat": "Water damage",
-          "minStat": 36,
-          "maxStat": 40
+          "minStat": 26,
+          "maxStat": 31
         },
         {
           "stat": "Fire damage",
-          "minStat": 36,
-          "maxStat": 40
+          "minStat": 26,
+          "maxStat": 31
         }
       ]
     },
@@ -45858,12 +45721,12 @@
       }
     ],
     "weaponStats": {
-      "apCost": 5,
+      "apCost": 4,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
       "baseCritChance": 20,
-      "critBonusDamage": 10,
+      "critBonusDamage": 3,
       "weapon_effects": [
         {
           "stat": "Fire damage",
@@ -46043,12 +45906,12 @@
       }
     ],
     "weaponStats": {
-      "apCost": 3,
+      "apCost": 4,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 15,
-      "critBonusDamage": 3,
+      "baseCritChance": 0,
+      "critBonusDamage": 0,
       "weapon_effects": [
         {
           "stat": "Neutral damage",
@@ -46057,13 +45920,13 @@
         },
         {
           "stat": "Air steal",
-          "minStat": 6,
-          "maxStat": 8
+          "minStat": 9,
+          "maxStat": 12
         },
         {
           "stat": "Earth steal",
-          "minStat": 6,
-          "maxStat": 8
+          "minStat": 9,
+          "maxStat": 12
         }
       ]
     },
@@ -46167,8 +46030,8 @@
       "usesPerTurn": 2,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 15,
-      "critBonusDamage": 6,
+      "baseCritChance": 20,
+      "critBonusDamage": 10,
       "weapon_effects": [
         {
           "stat": "Neutral damage",
@@ -46176,7 +46039,7 @@
           "maxStat": 12
         },
         {
-          "stat": "Earth damage",
+          "stat": "Earth steal",
           "minStat": 9,
           "maxStat": 12
         }
@@ -46279,8 +46142,8 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 15,
-      "critBonusDamage": 10,
+      "baseCritChance": 20,
+      "critBonusDamage": 12,
       "weapon_effects": [
         {
           "stat": "Fire steal",
@@ -46555,7 +46418,7 @@
       "critBonusDamage": 0,
       "weapon_effects": [
         {
-          "stat": "Earth damage",
+          "stat": "Earth steal",
           "minStat": 12,
           "maxStat": 16
         },
@@ -46563,6 +46426,11 @@
           "stat": "Earth damage",
           "minStat": 12,
           "maxStat": 16
+        },
+        {
+          "stat": "AP",
+          "minStat": null,
+          "maxStat": -1
         }
       ]
     },
@@ -46818,17 +46686,17 @@
       }
     ],
     "weaponStats": {
-      "apCost": 3,
-      "usesPerTurn": 2,
+      "apCost": 5,
+      "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
       "baseCritChance": 25,
-      "critBonusDamage": 10,
+      "critBonusDamage": 15,
       "weapon_effects": [
         {
           "stat": "Air damage",
-          "minStat": 20,
-          "maxStat": 25
+          "minStat": 51,
+          "maxStat": 57
         }
       ]
     },
@@ -46989,19 +46857,9 @@
         "maxStat": 500
       },
       {
-        "stat": "Strength",
+        "stat": "Power",
         "minStat": 71,
         "maxStat": 100
-      },
-      {
-        "stat": "Agility",
-        "minStat": 51,
-        "maxStat": 70
-      },
-      {
-        "stat": "Chance",
-        "minStat": 51,
-        "maxStat": 70
       },
       {
         "stat": "Lock",
@@ -47039,11 +46897,6 @@
         "maxStat": 20
       },
       {
-        "stat": "Intelligence",
-        "minStat": 41,
-        "maxStat": 50
-      },
-      {
         "stat": "MP Parry",
         "minStat": null,
         "maxStat": -30
@@ -47057,16 +46910,11 @@
     "weaponStats": {
       "apCost": 6,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 10,
       "critBonusDamage": 7,
       "weapon_effects": [
-        {
-          "stat": "Neutral damage",
-          "minStat": 41,
-          "maxStat": 60
-        },
         {
           "stat": "Air steal",
           "minStat": 6,
@@ -47081,22 +46929,22 @@
     },
     "customStats": {
       "en": [
-        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 11 to 15 damage on themself in their best attack element to steal 11 to 15 health from adjacent entities at the end of the bearer's turn."
+        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 15 damage on themself in their best attack element to inflict the same amount of health-steal damage on adjacent entities at the end of the bearer's turn. Allies who attack the enemies hit are healed by 7% of damage inflicted until the bearer's next turn (stackable 1 time)."
       ],
       "fr": [
-        "Appétit de Crocobur :\n• À chaque début de tour, le porteur s'inflige 11 à 15 de dommages dans son meilleur élément d'attaque pour voler 11 à 15 de la vie aux entités à son contact à la fin de son tour."
+        "Appétit de Crocobur :\n• À chaque début de tour, le porteur s'inflige 15 de dommages dans son meilleur élément d'attaque pour occasionner les mêmes dommages en vol de vie aux entités à son contact à la fin de son tour. Les alliés qui attaquent les ennemis touchés sont soignés de 7% des dommages occasionnés jusqu'au prochain tour du porteur (cumulable 1 fois)."
       ],
       "de": [
-        "Appetit von Crocobur:\n• Zu Rundenbeginn fügt sich der Träger selbst 11 bis 15 Schaden in seinem besten Angriffselement zu, um Einheiten in Reichweite am Ende seiner Runde 11 bis 15 Leben zu entziehen."
+        "Appetit von Crocobur:\n• Zu Beginn jeder Runde fügt sich der Träger selbst 15 Schaden in seinem besten Angriffselement zu, um Einheiten in Reichweite am Ende seiner Runde durch LP-Diebstahl Schaden in gleicher Höhe zuzufügen. Verbündete, die die getroffenen Gegner angreifen, werden bis zur nächsten Runde des Trägers um 7 % des verursachten Schadens geheilt (1-mal kumulierbar)."
       ],
       "es": [
-        "Apetito de Cocobur:\n• Al principio de cada turno, el portador se inflige 11-15 de daño con su mejor elemento de ataque y roba 11-15 de vida a las entidades en contacto con él al final de su turno."
+        "Apetito de Cocobur:\n• Al principio de cada turno, el portador se inflige 15 de daño con su mejor elemento de ataque y roba vida en la misma cantidad de daño a las entidades en contacto con él al final de su turno. Los aliados que ataquen a los enemigos afectados serán curados un 7% del daño infligido hasta el siguiente turno del portador (acumulable 1 vez)."
       ],
       "pt": [
-        "Apetite da Crocálibur:\n• No início de cada turno, o carregador inflige a si mesmo de 11 a 15 de danos de seu melhor elemento de ataque para roubar de 11 a 15 de vida de todas as entidades em contato no final do turno."
+        "Apetite da Crocálibur:\n• No começo de cada turno, o portador inflige a si mesmo 15 de danos em seu melhor elemento de ataque para infligir os mesmos danos em roubo de vida às entidades em contato com ele ao final do turno. Os aliados que atacam os inimigos atingidos são curados em 7% dos danos infligidos até o próximo turno do portador (acumula 1 vez)."
       ],
       "it": [
-        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 11 to 15 damage on themself in their best attack element to steal 11 to 15 health from adjacent entities at the end of the bearer's turn."
+        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 15 damage on themself in their best attack element to inflict the same amount of health-steal damage on adjacent entities at the end of the bearer's turn. Allies who attack the enemies hit are healed by 7% of damage inflicted until the bearer's next turn (stackable 1 time)."
       ]
     },
     "conditions": {
@@ -47125,7 +46973,7 @@
         "maxStat": 450
       },
       {
-        "stat": "Strength",
+        "stat": "Power",
         "minStat": 81,
         "maxStat": 120
       },
@@ -47172,32 +47020,26 @@
       "maxRange": 1,
       "baseCritChance": 0,
       "critBonusDamage": 0,
-      "weapon_effects": [
-        {
-          "stat": "Neutral steal",
-          "minStat": null,
-          "maxStat": 26
-        }
-      ]
+      "weapon_effects": []
     },
     "customStats": {
       "en": [
-        "Fateful Destiny:\n• At the start of each turn, the bearer gains 20% weapon damage if adjacent to an enemy.\n• When the bearer locks, they become Unmovable until the start of their next turn."
+        "Fateful Destiny:\n• At the end of each turn, the bearer shares damage between enemies in a 1-cell square and increases the damage they suffer by 6% for 2 turns (stackable 1 time). The bearer also gains 10 Lock for 1 turn for each enemy hit."
       ],
       "fr": [
-        "Destin Fatidique :\n• À chaque début de tour, le porteur gagne 20% de dommages d'armes s'il est au contact d'un ennemi.\n• Lorsque le porteur tacle, il devient Indéplaçable jusqu'au début de son prochain tour."
+        "Destin Fatidique :\n• À chaque fin de tour, le porteur partage les dommages entre les ennemis dans un carré de taille 1 et augmente les dommages qu'ils subissent de 6% pendant 2 tours (cumulable 1 fois). Il gagne également 10 de Tacle pendant 1 tour pour chaque ennemi touché."
       ],
       "de": [
-        "Schicksalhafte Bestimmung:\n• Zu Beginn jeder Runde erhält der Träger 20 % Waffenschaden, wenn sich ein Gegner in Reichweite befindet.\n• Wenn der Träger blockiert, wird er bis zu Beginn seiner nächsten Runde unverrückbar."
+        "Schicksalhafte Bestimmung:\n• Am Ende jeder Runde teilt der Träger den Schaden auf die Gegner in einem Quadrat der Größe 1 auf und erhöht den Schaden, den sie erleiden, 2 Runden lang um 6 % (1-mal kumulierbar). Er erhält außerdem 1 Runde lang 10 Blocken pro getroffenem Gegner."
       ],
       "es": [
-        "Destino Fatídico:\n• Al principio de cada turno, el portador gana un 20% de daños de arma si está en contacto con un enemigo.\n• Cuando el portador placa, se vuelve Indesplazable hasta el inicio de su próximo turno."
+        "Destino Fatídico:\n• Al final de cada turno, el portador reparte el daño entre los enemigos en un cuadrado de tamaño 1 y aumenta el daño que reciben en un 6% durante 2 turnos (acumulable 1 vez). También gana 10 de placaje durante 1 turno por cada enemigo alcanzado."
       ],
       "pt": [
-        "Destino Fatídico:\n• No início de cada turno, o portador ganha 20% de danos de arma se estiver em contato com um inimigo.\n• Quando o portador bloqueia, ele fica Irremovível até o início de seu próximo turno."
+        "Destino Fatídico:\n• No fim de cada turno, o portador divide os danos entre os inimigos em um quadrado de tamanho 1 e aumenta os danos que eles sofreram em 6% durante 2 turnos (acumula 1 vez). Ele também ganha 10 de bloqueio durante 1 turno para cada inimigo atingido."
       ],
       "it": [
-        "Fateful Destiny:\n• At the start of each turn, the bearer gains 20% weapon damage if adjacent to an enemy.\n• When the bearer locks, they become Unmovable until the start of their next turn."
+        "Fateful Destiny:\n• At the end of each turn, the bearer shares damage between enemies in a 1-cell square and increases the damage they suffer by 6% for 2 turns (stackable 1 time). The bearer also gains 10 Lock for 1 turn for each enemy hit."
       ]
     },
     "conditions": {
@@ -47272,7 +47114,7 @@
       "minRange": 1,
       "maxRange": 5,
       "baseCritChance": 15,
-      "critBonusDamage": 3,
+      "critBonusDamage": 10,
       "weapon_effects": [
         {
           "stat": "Water damage",
@@ -47288,22 +47130,22 @@
     },
     "customStats": {
       "en": [
-        "Novamaire Cold:\n• At the start of each turn, the bearer gains 20 AP Reduction if adjacent to an enemy. Otherwise, the bearer gains 20 Dodge. \n• When the bearer finishes off an enemy fighter during their turn, they become invisible for 1 turn."
+        "Novamaire Cold:\n• At the end of each turn, the bearer removes 1 AP from adjacent enemies for 1 turn (stackable 1 time).\n• When the bearer finishes off an enemy fighter, they place a glyph-aura that makes allies Invisible for 1 turn in a 3-cell circle."
       ],
       "fr": [
-        "Froid de Novamaire :\n• À chaque début de tour, le porteur gagne 20 de Retrait PA s'il est au contact d'un ennemi. Sinon, il gagne 20 de Fuite. \n• Lorsque le porteur achève un combattant ennemi durant son tour, il devient invisible pendant 1 tour."
+        "Froid de Novamaire :\n• À chaque fin de tour, le porteur retire 1 PA aux ennemis à son contact pendant 1 tour (cumulable 1 fois).\n• Lorsque le porteur achève un combattant ennemi, il pose un glyphe-aura qui rend les alliés invisibles pendant 1 tour dans un cercle de taille 3."
       ],
       "de": [
-        "Kälte von Novamaire:\n• Zu Beginn jeder Runde erhält der Träger 20 AP-Entzug, wenn sich ein Gegner in Reichweite befindet. Wenn nicht, erhält er 20 Flucht. \n• Wenn der Träger während seiner Runde einen gegnerischen Kämpfer besiegt, wird er 1 Runde lang unsichtbar."
+        "Kälte von Novamaire:\n• Am Ende jeder Runde entzieht der Träger 1 Runde lang Gegnern in Reichweite 1 AP (1-mal kumulierbar).\n• Wenn der Träger einen gegnerischen Kämpfer besiegt, platziert er eine Aura-Glyphe, die seine Verbündeten im Umkreis von 3 Feldern 1 Runde lang unsichtbar macht."
       ],
       "es": [
-        "Frío de Novimiembro:\n• Al principio de cada turno, el portador gana 20 de retirada de PA si está en contacto con un enemigo. Si no, gana 20 de huida. \n• Cuando el portador acaba con un luchador enemigo durante su turno, se vuelve invisible durante 1 turno."
+        "Frío de Novimiembro:\n• Al final de cada turno, el portador retira 1 PA a los enemigos en contacto con él durante 1 turno (acumulable 1 vez).\n• Cuando el portador acaba con un luchador enemigo, coloca un glifo aura que vuelve invisibles a los aliados durante 1 turno en un círculo de tamaño 3."
       ],
       "pt": [
-        "Frio de Novemeiro:\n• No início de cada turno, o carregador recebe 20% de retirada de PA se estiver em contato com um inimigo. Do contrário, ganha 20 de fuga. \n• Quando o carregador elimina um combatente inimigo durante seu turno, ele fica invisível por 1 turno."
+        "Frio de Novemeiro:\n• No final de cada turno, o portador retira 1 PA dos inimigos em contato com ele durante 1 turno (acumula 1 vez).\n• Ao derrotar um combatente inimigo, o portador coloca um glifo-aura que deixa os aliados invisíveis durante 1 turno em um círculo de tamanho 3."
       ],
       "it": [
-        "Novamaire Cold:\n• At the start of each turn, the bearer gains 20 AP Reduction if adjacent to an enemy. Otherwise, the bearer gains 20 Dodge. \n• When the bearer finishes off an enemy fighter during their turn, they become invisible for 1 turn."
+        "Novamaire Cold:\n• At the end of each turn, the bearer removes 1 AP from adjacent enemies for 1 turn (stackable 1 time).\n• When the bearer finishes off an enemy fighter, they place a glyph-aura that makes allies Invisible for 1 turn in a 3-cell circle."
       ]
     },
     "conditions": {
@@ -47365,12 +47207,17 @@
         "stat": "Wisdom",
         "minStat": 41,
         "maxStat": 60
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
       }
     ],
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": 4,
+      "minRange": 2,
       "maxRange": 7,
       "baseCritChance": 15,
       "critBonusDamage": 15,
@@ -47568,8 +47415,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 20,
       "weapon_effects": [
@@ -47682,8 +47529,8 @@
         },
         {
           "stat": "Air damage",
-          "minStat": 18,
-          "maxStat": 25
+          "minStat": 23,
+          "maxStat": 30
         },
         {
           "stat": "Neutral steal",
@@ -47970,7 +47817,7 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 15,
+      "baseCritChance": 20,
       "critBonusDamage": 10,
       "weapon_effects": [
         {
@@ -47987,6 +47834,11 @@
           "stat": "Earth damage",
           "minStat": 28,
           "maxStat": 32
+        },
+        {
+          "stat": "Neutral steal",
+          "minStat": 4,
+          "maxStat": 6
         }
       ]
     },
@@ -48070,41 +47922,36 @@
     "weaponStats": {
       "apCost": 5,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
-      "baseCritChance": 10,
-      "critBonusDamage": 15,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 15,
+      "critBonusDamage": 20,
       "weapon_effects": [
         {
           "stat": "Fire damage",
           "minStat": 46,
-          "maxStat": 50
-        },
-        {
-          "stat": "MP",
-          "minStat": null,
-          "maxStat": -2
+          "maxStat": 55
         }
       ]
     },
     "customStats": {
       "en": [
-        "Attrition Warfare:\n• At the start of each turn, the bearer gains 20 MP Reduction if adjacent to an enemy. Otherwise, the bearer gains 30 Lock. \n• When the bearer finishes off an enemy fighter during their turn, they gain 1 MP until the end of the fight (stackable 5 times)."
+        "Attrition Warfare:\n• At the end of each turn, the bearer removes 2 MP from adjacent enemies for 1 turn (stackable 1 time).\n• When the bearer finishes off an enemy fighter, they gain 1 MP until the end of the fight (stackable 5 times)."
       ],
       "fr": [
-        "Guerre de positions :\n• À chaque début de tour, le porteur gagne 20 de Retrait PM s'il est au contact d'un ennemi. Sinon, il gagne 30 de Tacle. \n• Lorsque le porteur achève un combattant ennemi durant son tour, il gagne 1 PM jusqu'à la fin du combat (cumulable 5 fois)."
+        "Guerre de positions :\n• À chaque fin de tour, le porteur retire 2 PM aux ennemis à son contact pendant 1 tour (cumulable 1 fois).\n• Lorsque le porteur achève un combattant ennemi, il gagne 1 PM jusqu'à la fin du combat (cumulable 5 fois)."
       ],
       "de": [
-        "Stellungskrieg:\n• Zu Beginn jeder Runde erhält der Träger 20 BP-Entzug, wenn sich ein Gegner in Reichweite befindet. Wenn nicht, erhält er 30 Blockieren. \n• Wenn der Träger in seiner Runde einen gegnerischen Kämpfer besiegt, erhält er bis zum Ende des Kampfes 1 BP. (5-mal kumulierbar)"
+        "Stellungskrieg:\n• Am Ende jeder Runde entzieht der Träger 1 Runde lang Gegnern in Reichweite 2 BP (1-mal kumulierbar).\n• Wenn der Träger einen gegnerischen Kämpfer besiegt, erhält er bis zum Ende des Kampfes 1 BP (5-mal kumulierbar)."
       ],
       "es": [
-        "Guerra de Desgaste:\n• Al principio de cada turno, el portador gana 20 de retirada de PM si está en contacto con un enemigo. Si no, gana 30 de placaje. \n• Cuando el portador acaba con un luchador enemigo durante su turno, gana 1 PM hasta el final del combate (acumulable 5 veces)."
+        "Guerra de Desgaste:\n• Al final de cada turno, el portador retira 2 PM a los enemigos en contacto con él durante 1 turno (acumulable 1 vez).\n• Cuando el portador acaba con un luchador enemigo, gana 1 PM hasta el final del combate (acumulable 5 veces)."
       ],
       "pt": [
-        "Guerra de Posição:\n• No início de cada turno, o carregador recebe 20% de retirada de PM se estiver em contato com um inimigo. Do contrário, ganha 30 de bloqueio. \n• Quando o carregador elimina um combatente inimigo durante seu turno, ele ganha 1 PM até o final do combate (acumula 5 vezes)."
+        "Guerra de Posição:\n• No final de cada turno, o portador retira 2 PM dos inimigos em contato com ele durante 1 turno (acumula 1 vez).\n• Ao derrotar um combatente inimigo, o portador ganha 1 PM até o final do combate (acumula até 5 vezes)."
       ],
       "it": [
-        "Attrition Warfare:\n• At the start of each turn, the bearer gains 20 MP Reduction if adjacent to an enemy. Otherwise, the bearer gains 30 Lock. \n• When the bearer finishes off an enemy fighter during their turn, they gain 1 MP until the end of the fight (stackable 5 times)."
+        "Attrition Warfare:\n• At the end of each turn, the bearer removes 2 MP from adjacent enemies for 1 turn (stackable 1 time).\n• When the bearer finishes off an enemy fighter, they gain 1 MP until the end of the fight (stackable 5 times)."
       ]
     },
     "conditions": {
@@ -48163,11 +48010,6 @@
         "maxStat": 5
       },
       {
-        "stat": "% Water Resistance",
-        "minStat": null,
-        "maxStat": -5
-      },
-      {
         "stat": "Range",
         "minStat": null,
         "maxStat": -1
@@ -48193,7 +48035,7 @@
       "usesPerTurn": 1,
       "minRange": 1,
       "maxRange": 5,
-      "baseCritChance": 10,
+      "baseCritChance": 15,
       "critBonusDamage": 2,
       "weapon_effects": [
         {
@@ -48223,16 +48065,16 @@
         "Trial of the Scales:\n• When the bearer suffers an attempted AP, MP or Range removal, they steal 2% resistance from their attacker for 2 turns (stackable 5 times)."
       ],
       "fr": [
-        "Épreuve de la Balance :\n• Lorsque le porteur subit une tentative de retrait de PA, de PM ou de Portée, il vole 2% de résistances à son attaquant pour 2 tours (cumulable 5 fois)."
+        "Épreuve de la Balance :\n• Lorsque le porteur subit une tentative de retrait de PA, de PM ou de Portée, il vole 2% de résistances à son attaquant pendant 2 tours (cumulable 5 fois)."
       ],
       "de": [
-        "Prüfung der Waage:\n• Wenn versucht wird, dem Träger AP, BP oder Reichweite zu entziehen, verringert er die Resistenzen seines Angreifers 2 Runden lang um 2 % (5-mal kumulierbar)."
+        "Prüfung der Waage:\n• Wenn versucht wird, dem Träger AP, BP oder Reichweite zu entziehen, stiehlt er 2 Runden lang 2 % der Resistenzen seines Angreifers (5-mal kumulierbar)."
       ],
       "es": [
         "Prueba de la Balanza:\n• Cuando el portador sufre un intento de retirada de PA, PM o alcance, roba un 2% de resistencias a su atacante durante 2 turnos (acumulable 5 veces)."
       ],
       "pt": [
-        "Prova da Balança:\n• Quando o portador sofre uma tentativa de retirada de PA, PM ou AL, ele rouba 2% de resistência a seu atacante por 2 turnos (acumula 5 vezes)."
+        "Prova da Balança:\n• Quando o portador sofre uma tentativa de retirada de PA, PM ou AL, ele rouba 2% de resistência de seu atacante por 2 turnos (acumula 5 vezes)."
       ],
       "it": [
         "Trial of the Scales:\n• When the bearer suffers an attempted AP, MP or Range removal, they steal 2% resistance from their attacker for 2 turns (stackable 5 times)."
@@ -48427,8 +48269,8 @@
     "weaponStats": {
       "apCost": 3,
       "usesPerTurn": 2,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 15,
       "critBonusDamage": 7,
       "weapon_effects": [
@@ -48636,8 +48478,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 25,
       "critBonusDamage": 4,
       "weapon_effects": [
@@ -49330,8 +49172,8 @@
     "weaponStats": {
       "apCost": 5,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 30,
       "critBonusDamage": 6,
       "weapon_effects": [
@@ -49917,14 +49759,14 @@
       "apCost": 5,
       "usesPerTurn": 1,
       "minRange": 4,
-      "maxRange": 7,
-      "baseCritChance": 10,
-      "critBonusDamage": 10,
+      "maxRange": 8,
+      "baseCritChance": 15,
+      "critBonusDamage": 15,
       "weapon_effects": [
         {
           "stat": "Water damage",
-          "minStat": 44,
-          "maxStat": 50
+          "minStat": 47,
+          "maxStat": 54
         }
       ]
     },
@@ -50440,21 +50282,6 @@
           "stat": "Neutral damage",
           "minStat": 15,
           "maxStat": 18
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 15,
-          "maxStat": 18
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 15,
-          "maxStat": 18
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 15,
-          "maxStat": 18
         }
       ]
     },
@@ -50667,8 +50494,8 @@
       "usesPerTurn": 1,
       "minRange": 1,
       "maxRange": 2,
-      "baseCritChance": 10,
-      "critBonusDamage": 5,
+      "baseCritChance": 20,
+      "critBonusDamage": 8,
       "weapon_effects": [
         {
           "stat": "Water damage",
@@ -50677,8 +50504,8 @@
         },
         {
           "stat": "Water steal",
-          "minStat": 4,
-          "maxStat": 5
+          "minStat": 8,
+          "maxStat": 10
         },
         {
           "stat": "AP",
@@ -50779,8 +50606,8 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 10,
-      "critBonusDamage": 5,
+      "baseCritChance": 20,
+      "critBonusDamage": 8,
       "weapon_effects": [
         {
           "stat": "Fire damage",
@@ -50789,8 +50616,8 @@
         },
         {
           "stat": "Fire steal",
-          "minStat": 4,
-          "maxStat": 5
+          "minStat": 8,
+          "maxStat": 10
         },
         {
           "stat": "MP",
@@ -51000,28 +50827,7 @@
       "maxRange": 2,
       "baseCritChance": 10,
       "critBonusDamage": 2,
-      "weapon_effects": [
-        {
-          "stat": "Fire healing",
-          "minStat": 7,
-          "maxStat": 10
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 7,
-          "maxStat": 10
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 7,
-          "maxStat": 10
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 7,
-          "maxStat": 10
-        }
-      ]
+      "weapon_effects": []
     },
     "customStats": {},
     "conditions": {
@@ -51461,7 +51267,7 @@
           "maxStat": 18
         },
         {
-          "stat": "Neutral damage",
+          "stat": "Neutral steal",
           "minStat": 15,
           "maxStat": 18
         },
@@ -51680,18 +51486,7 @@
       "maxRange": 1,
       "baseCritChance": 0,
       "critBonusDamage": 0,
-      "weapon_effects": [
-        {
-          "stat": "Fire healing",
-          "minStat": 8,
-          "maxStat": 12
-        },
-        {
-          "stat": "Fire healing",
-          "minStat": 8,
-          "maxStat": 12
-        }
-      ]
+      "weapon_effects": []
     },
     "customStats": {},
     "conditions": {
@@ -52298,8 +52093,8 @@
     "weaponStats": {
       "apCost": 5,
       "usesPerTurn": 1,
-      "minRange": 4,
-      "maxRange": 7,
+      "minRange": 3,
+      "maxRange": 8,
       "baseCritChance": 15,
       "critBonusDamage": 6,
       "weapon_effects": [
@@ -52498,11 +52293,6 @@
           "stat": "Water steal",
           "minStat": 6,
           "maxStat": 8
-        },
-        {
-          "stat": "Steals MP",
-          "minStat": null,
-          "maxStat": 1
         }
       ]
     },
@@ -52600,11 +52390,6 @@
           "stat": "Neutral steal",
           "minStat": 9,
           "maxStat": 12
-        },
-        {
-          "stat": "Pushback damage",
-          "minStat": null,
-          "maxStat": 1
         }
       ]
     },
@@ -52701,11 +52486,6 @@
           "stat": "Fire damage",
           "minStat": 56,
           "maxStat": 66
-        },
-        {
-          "stat": "Pushback damage",
-          "minStat": null,
-          "maxStat": 2
         }
       ]
     },
@@ -52826,7 +52606,7 @@
       "minRange": null,
       "maxRange": 1,
       "baseCritChance": 15,
-      "critBonusDamage": 6,
+      "critBonusDamage": 9,
       "weapon_effects": [
         {
           "stat": "Neutral steal",
@@ -53236,11 +53016,6 @@
           "stat": "Fire steal",
           "minStat": 11,
           "maxStat": 13
-        },
-        {
-          "stat": "Steals MP",
-          "minStat": null,
-          "maxStat": 1
         }
       ]
     },
@@ -53379,7 +53154,7 @@
           "maxStat": 17
         },
         {
-          "stat": "Neutral damage",
+          "stat": "Neutral steal",
           "minStat": 14,
           "maxStat": 17
         }
@@ -53520,7 +53295,7 @@
           "maxStat": 16
         },
         {
-          "stat": "Neutral damage",
+          "stat": "Neutral steal",
           "minStat": 13,
           "maxStat": 16
         }
@@ -53649,11 +53424,6 @@
           "stat": "Neutral damage",
           "minStat": 19,
           "maxStat": 22
-        },
-        {
-          "stat": "Attract cells",
-          "minStat": null,
-          "maxStat": 2
         }
       ]
     },
@@ -53912,8 +53682,8 @@
     "weaponStats": {
       "apCost": 4,
       "usesPerTurn": 1,
-      "minRange": null,
-      "maxRange": 1,
+      "minRange": 1,
+      "maxRange": 2,
       "baseCritChance": 15,
       "critBonusDamage": 5,
       "weapon_effects": [
@@ -54069,19 +53839,9 @@
       "critBonusDamage": 20,
       "weapon_effects": [
         {
-          "stat": "Best element damage",
-          "minStat": 76,
-          "maxStat": 90
-        },
-        {
           "stat": "AP",
           "minStat": null,
           "maxStat": -1
-        },
-        {
-          "stat": "Pushback damage",
-          "minStat": null,
-          "maxStat": 2
         }
       ]
     },
@@ -54224,19 +53984,9 @@
       "critBonusDamage": 20,
       "weapon_effects": [
         {
-          "stat": "Best element damage",
-          "minStat": 68,
-          "maxStat": 80
-        },
-        {
           "stat": "MP",
           "minStat": null,
           "maxStat": -2
-        },
-        {
-          "stat": "Attract cells",
-          "minStat": null,
-          "maxStat": 1
         }
       ]
     },
@@ -54355,18 +54105,13 @@
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 10,
-      "critBonusDamage": 15,
+      "baseCritChance": 20,
+      "critBonusDamage": 20,
       "weapon_effects": [
         {
           "stat": "Air damage",
           "minStat": 48,
           "maxStat": 56
-        },
-        {
-          "stat": "Pushback damage",
-          "minStat": null,
-          "maxStat": 2
         }
       ]
     },
@@ -54622,13 +54367,13 @@
       "usesPerTurn": 1,
       "minRange": 4,
       "maxRange": 8,
-      "baseCritChance": 10,
-      "critBonusDamage": 10,
+      "baseCritChance": 20,
+      "critBonusDamage": 20,
       "weapon_effects": [
         {
           "stat": "Earth damage",
-          "minStat": 48,
-          "maxStat": 52
+          "minStat": 49,
+          "maxStat": 55
         }
       ]
     },
@@ -54754,7 +54499,7 @@
       }
     ],
     "weaponStats": {
-      "apCost": 5,
+      "apCost": 4,
       "usesPerTurn": 1,
       "minRange": null,
       "maxRange": 1,
@@ -54770,11 +54515,6 @@
           "stat": "Water damage",
           "minStat": 22,
           "maxStat": 24
-        },
-        {
-          "stat": "Attract cells",
-          "minStat": null,
-          "maxStat": 1
         }
       ]
     },
@@ -54803,5 +54543,1187 @@
       "customConditions": {}
     },
     "imageUrl": "item/7095.png"
+  },
+  {
+    "dofusID": "32116",
+    "name": {
+      "en": "Menalt's Lightning Spear",
+      "fr": "Lance-Éclair de Menalt",
+      "de": "Menalts Blitzwurfspeer",
+      "es": "Lanzarrayos de Menalt",
+      "pt": "Lança-Relâmpago de Menalt",
+      "it": "Menalt's Lightning Spear"
+    },
+    "itemType": "Lance",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 451,
+        "maxStat": 500
+      },
+      {
+        "stat": "Power",
+        "minStat": 81,
+        "maxStat": 100
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -40
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "% Melee Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 4,
+      "baseCritChance": 15,
+      "critBonusDamage": 15,
+      "weapon_effects": []
+    },
+    "customStats": {
+      "en": [
+        "Order of Thunder:\n• At the end of each turn, the bearer gives 1 MP to all allies in their line of sight for 1 turn (stackable 1 time).\n• When an allied fighter dies, the bearer increases the final damage of all others by 4% until the end of the fight (stackable 2 times).\n• When the bearer inflicts weapon damage, they gain 25 Pushback Damage for 2 turns.\n• The effects are removed when the bearer dies."
+      ],
+      "fr": [
+        "Ordre du Tonnerre :\n• À chaque fin de tour, le porteur donne 1 PM pendant 1 tour à tous les alliés dans sa ligne de vue (cumulable 1 fois).\n• Lorsqu'un combattant allié meurt, le porteur augmente les dommages finaux de tous les autres de 4% jusqu'à la fin du combat (cumulable 2 fois).\n• Lorsque le porteur occasionne des dommages d'armes, il gagne 25 de Dommages Poussée pendant 2 tours.\n• Les effets sont retirés à la mort du porteur."
+      ],
+      "de": [
+        "Orden des Donners:\n• Am Ende jeder Runde gewährt der Träger allen Verbündeten in seiner Sichtlinie 1 Runde lang 1 BP (1-mal kumulierbar).\n• Wenn ein verbündeter Kämpfer stirbt, erhöht der Träger den Endschaden aller anderen bis zum Ende des Kampfes um 4 % (2-mal kumulierbar).\n• Wenn der Träger Waffenschaden verursacht, erhält er 2 Runden lang 25 Schubsschaden.\n• Die Effekte werden aufgehoben, wenn der Träger stirbt."
+      ],
+      "es": [
+        "Orden del Trueno:\n• Al final de cada turno, el portador da 1 PM durante 1 turno a todos los aliados en su línea de visión (acumulable 1 vez).\n• Cuando muere un luchador aliado, el portador aumenta los daños finales de todos los demás en un 4% hasta el final del combate (acumulable 2 veces).\n• Cuando el portador ocasiona daños con armas, gana 25 de daños de empuje durante 2 turnos.\n• Los efectos se eliminan al morir el portador."
+      ],
+      "pt": [
+        "Ordem do Trovão:\n• No fim de cada turno, o portador concede 1 PM durante 1 turno a todos os aliados em sua linha de visão (acumula 1 vez).\n• Quando um combatente aliado morre, o portador aumenta os danos finais de todos os outros em 4% até o fim do combate (acumula até 2 vezes).\n• Quando o portador inflige danos de armas, ele ganha 25 de danos de empurrão durante 2 turnos.\n• Os efeitos são retirados quando o portador morre."
+      ],
+      "it": [
+        "Order of Thunder:\n• At the end of each turn, the bearer gives 1 MP to all allies in their line of sight for 1 turn (stackable 1 time).\n• When an allied fighter dies, the bearer increases the final damage of all others by 4% until the end of the fight (stackable 2 times).\n• When the bearer inflicts weapon damage, they gain 25 Pushback Damage for 2 turns.\n• The effects are removed when the bearer dies."
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/183011.png"
+  },
+  {
+    "dofusID": "32117",
+    "name": {
+      "en": "Thanatena's Judgement",
+      "fr": "Jugement de Thanatena",
+      "de": "Thanatenas Urteil",
+      "es": "Juicio de Thanatena",
+      "pt": "Julgamento de Tanatena",
+      "it": "Thanatena's Judgement"
+    },
+    "itemType": "Scythe",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Power",
+        "minStat": 81,
+        "maxStat": 120
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Lock",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Melee Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Ranged Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": -1
+      },
+      {
+        "stat": "Heals",
+        "minStat": null,
+        "maxStat": -40
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 3,
+      "baseCritChance": 20,
+      "critBonusDamage": 4,
+      "weapon_effects": []
+    },
+    "customStats": {
+      "en": [
+        "Thanatena's Judgement:\n• At the start of each turn, the bearer erodes and increases damage suffered by everyone by 4% for 1 turn (stackable 1 time).\n• When they finish off an enemy, they are healed for 20% of their health and gain 10% final damage for 1 turn. The effects are halved if it's a summons."
+      ],
+      "fr": [
+        "Jugement de Thanatena :\n• À chaque début de tour, le porteur érode et augmente les dommages subis par tout le monde de 4% pendant 1 tour (cumulable 1 fois).\n• Lorsqu'il achève un ennemi, il est soigné de 20% de sa vie et gagne 10% dommages finaux pendant 1 tour. Les effets sont réduits de moitié si c'est une invocation."
+      ],
+      "de": [
+        "Thanatenas Urteil:\n• Zu Beginn jeder Runde erodiert der Träger alle und erhöht den von ihnen erlittenen Schaden 1 Runde lang um 4 % (1-mal kumulierbar).\n• Wenn er einen Gegner besiegt, wird er um 20 % seiner LP geheilt und sein Endschaden erhöht sich 1 Runde lang um 10 %. Handelt es sich um eine Beschwörung, werden die Wirkungen um die Hälfte verringert."
+      ],
+      "es": [
+        "Juicio de Thanatena:\n• Al inicio de cada turno, el portador erosiona y aumenta los daños recibidos por todos en un 4% durante 1 turno (acumulable 1 vez).\n• Cuando elimina a un enemigo, se cura un 20% de su vida y gana un 10% de daños finales durante 1 turno. Los efectos se reducen a la mitad si se trata de una invocación."
+      ],
+      "pt": [
+        "Julgamento de Tanatena:\n• No começo de cada turno, o portador erode e aumenta os danos sofridos por todo mundo em 4% durante 1 turno (acumula 1 vez).\n• Ao derrotar um inimigo, ele cura 20% da própria vida e ganha 10% de danos finais durante 1 turno. Os efeitos são reduzidos pela metade se for uma invocação."
+      ],
+      "it": [
+        "Thanatena's Judgement:\n• At the start of each turn, the bearer erodes and increases damage suffered by everyone by 4% for 1 turn (stackable 1 time).\n• When they finish off an enemy, they are healed for 20% of their health and gain 10% final damage for 1 turn. The effects are halved if it's a summons."
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/22014.png"
+  },
+  {
+    "dofusID": "32163",
+    "name": {
+      "en": "Amayiro's Fervour",
+      "fr": "Ferveur d'Amayiro",
+      "de": "Amayiros Eifer",
+      "es": "Fervor de Amayiro",
+      "pt": "Fervor de Amayiro",
+      "it": "Amayiro's Fervour"
+    },
+    "itemType": "Sword",
+    "setID": null,
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 451,
+        "maxStat": 500
+      },
+      {
+        "stat": "Power",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Lock",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": -20
+      }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 15,
+      "critBonusDamage": 15,
+      "weapon_effects": [
+        {
+          "stat": "AP",
+          "minStat": null,
+          "maxStat": -1
+        }
+      ]
+    },
+    "customStats": {
+      "en": [
+        "Fervour of the White City:\n• At the start of each turn, the bearer and their allies gain 1% Resistance for 1 turn for each enemy fighter alive (stackable 4 times)."
+      ],
+      "fr": [
+        "Ferveur de la Cité Blanche :\n• À chaque début de tour, le porteur et ses alliés gagnent 1% de résistance pendant 1 tour pour chaque combattant ennemi en vie (cumulable 4 fois)."
+      ],
+      "de": [
+        "Eifer der Weißen Stadt:\n• Zu Beginn jeder Runde erhöht sich die Resistenz des Trägers und seiner Verbündeten 1 Runde lang um 1 % pro am Leben befindlichem gegnerischen Kämpfer (4-mal kumulierbar)."
+      ],
+      "es": [
+        "Fervor de la Ciudad Blanca:\n• Al inicio de cada turno, el portador y sus aliados ganan un 1% de resistencia durante 1 turno por cada luchador enemigo vivo (acumulable hasta 4 veces)."
+      ],
+      "pt": [
+        "Fervor da Cidade Branca:\n• No começo de cada turno, o portador e seus aliados ganham 1% de resistência durante 1 turno para cada combatente inimigo vivo (acumula até 4 vezes)."
+      ],
+      "it": [
+        "Fervour of the White City:\n• At the start of each turn, the bearer and their allies gain 1% Resistance for 1 turn for each enemy fighter alive (stackable 4 times)."
+      ]
+    },
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/6760.png"
+  },
+  {
+    "dofusID": "32221",
+    "name": {
+      "en": "San Jifu Scythe",
+      "fr": "Faux de San Jifu",
+      "de": "Sense von San Jifu",
+      "es": "Guadaña de San Jifu",
+      "pt": "Foice de San Jifu",
+      "it": "San Jifu Scythe"
+    },
+    "itemType": "Scythe",
+    "setID": "1040",
+    "level": 194,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 4,
+        "maxStat": 5
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 15,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "AP",
+          "minStat": null,
+          "maxStat": -1
+        },
+        {
+          "stat": "Fire steal",
+          "minStat": 18,
+          "maxStat": 24
+        },
+        {
+          "stat": "Water steal",
+          "minStat": 18,
+          "maxStat": 24
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/22015.png"
+  },
+  {
+    "dofusID": "32223",
+    "name": {
+      "en": "Flaschythe",
+      "fr": "Flashaux",
+      "de": "Sturmsense von Daxoflash",
+      "es": "Guadashña",
+      "pt": "Foishugo",
+      "it": "Flaschythe"
+    },
+    "itemType": "Scythe",
+    "setID": "1041",
+    "level": 190,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Power",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 15,
+      "critBonusDamage": 8,
+      "weapon_effects": [
+        {
+          "stat": "AP",
+          "minStat": null,
+          "maxStat": -1
+        },
+        {
+          "stat": "Neutral damage",
+          "minStat": 43,
+          "maxStat": 49
+        },
+        {
+          "stat": "Fire steal",
+          "minStat": 6,
+          "maxStat": 8
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/22016.png"
+  },
+  {
+    "dofusID": "32227",
+    "name": {
+      "en": "Doctor Gobotnegg Flail",
+      "fr": "Fléau du Docteur Eggob",
+      "de": "Geißel von Doktor Eggob",
+      "es": "Mangual del doctor Eggob",
+      "pt": "Flagelo do Goblotnik",
+      "it": "Doctor Gobotnegg Flail"
+    },
+    "itemType": "Wand",
+    "setID": "1042",
+    "level": 195,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 3,
+      "baseCritChance": 10,
+      "critBonusDamage": 8,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 15,
+          "maxStat": 20
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 13,
+          "maxStat": 17
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/3095.png"
+  },
+  {
+    "dofusID": "32232",
+    "name": {
+      "en": "Ice Knight's Frozen Blade",
+      "fr": "Lame givrée du Chevalier de Glace",
+      "de": "Frostige Klinge des Eisritters",
+      "es": "Hoja helada del Caballero de Hielo",
+      "pt": "Lâmina Gélida do Cavaleiro de Gelo",
+      "it": "Ice Knight's Frozen Blade"
+    },
+    "itemType": "Sword",
+    "setID": "1044",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 450
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Power",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 5,
+        "maxStat": 8
+      }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "MP",
+          "minStat": null,
+          "maxStat": -1
+        },
+        {
+          "stat": "Neutral damage",
+          "minStat": 38,
+          "maxStat": 46
+        },
+        {
+          "stat": "Water steal",
+          "minStat": 11,
+          "maxStat": 13
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/6761.png"
+  },
+  {
+    "dofusID": "32235",
+    "name": {
+      "en": "Erotegg Bow",
+      "fr": "Arc de Culbutœuf",
+      "de": "Bogen von Kuhklebei",
+      "es": "Arco de Tentenhuevo",
+      "pt": "Arco do Estrovo",
+      "it": "Erotegg Bow"
+    },
+    "itemType": "Bow",
+    "setID": "1045",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 400
+      },
+      {
+        "stat": "Strength",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Chance",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Agility",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 3,
+      "maxRange": 7,
+      "baseCritChance": 20,
+      "critBonusDamage": 6,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 34,
+          "maxStat": 41
+        },
+        {
+          "stat": "Water steal",
+          "minStat": 7,
+          "maxStat": 9
+        },
+        {
+          "stat": "Air steal",
+          "minStat": 7,
+          "maxStat": 9
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/2096.png"
+  },
+  {
+    "dofusID": "32238",
+    "name": {
+      "en": "Bearendizer Mace",
+      "fr": "Masse de Glourdorak",
+      "de": "Barbärdizers Vorschlaghammer",
+      "es": "Maza de Golosorak",
+      "pt": "Maça do Glurdorak",
+      "it": "Bearendizer Mace"
+    },
+    "itemType": "Hammer",
+    "setID": "1046",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 451,
+        "maxStat": 500
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Critical",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Heals",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 4,
+        "maxStat": 6
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 4,
+      "weapon_effects": [
+        {
+          "stat": "Neutral steal",
+          "minStat": 9,
+          "maxStat": 14
+        },
+        {
+          "stat": "Neutral steal",
+          "minStat": 9,
+          "maxStat": 14
+        },
+        {
+          "stat": "Neutral steal",
+          "minStat": 9,
+          "maxStat": 14
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/7749.png"
+  },
+  {
+    "dofusID": "32242",
+    "name": {
+      "en": "Mekstagob Spade",
+      "fr": "Bêche de Mekamouth",
+      "de": "Mechmuts Spaten",
+      "es": "Pala de Mecanimut",
+      "pt": "Pá do Mekamute",
+      "it": "Mekstagob Spade"
+    },
+    "itemType": "Shovel",
+    "setID": "1047",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 450
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Lock",
+        "minStat": null,
+        "maxStat": -15
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 15,
+      "critBonusDamage": 7,
+      "weapon_effects": [
+        {
+          "stat": "AP",
+          "minStat": null,
+          "maxStat": -1
+        },
+        {
+          "stat": "Neutral damage",
+          "minStat": 39,
+          "maxStat": 45
+        },
+        {
+          "stat": "Fire steal",
+          "minStat": 6,
+          "maxStat": 8
+        },
+        {
+          "stat": "Water steal",
+          "minStat": 6,
+          "maxStat": 8
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/8080.png"
+  },
+  {
+    "dofusID": "32244",
+    "name": {
+      "en": "Psychopump Needle",
+      "fr": "Aiguille de Psikopompe",
+      "de": "Psychopomps' Nadel",
+      "es": "Aguja de Psikopomzopato",
+      "pt": "Agulha do Psikopompo",
+      "it": "Psychopump Needle"
+    },
+    "itemType": "Lance",
+    "setID": "1048",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 450
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Power",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "MP",
+          "minStat": null,
+          "maxStat": -1
+        },
+        {
+          "stat": "Neutral damage",
+          "minStat": 45,
+          "maxStat": 53
+        },
+        {
+          "stat": "Air steal",
+          "minStat": 14,
+          "maxStat": 18
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/183012.png"
   }
 ]
