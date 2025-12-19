@@ -1453,6 +1453,7 @@ export const renderErrors = (
           <Trans
             i18nKey="common:CONDITION_NOT_MET_WITH_ITEM"
             components={{ 1: <strong css={{ fontWeight: 500 }} /> }}
+            values={{ itemName: equippedItem.item.name }}
           >
             {`The conditions for the item <1>{{ itemName }}</1> have not been met.`}
           </Trans>
