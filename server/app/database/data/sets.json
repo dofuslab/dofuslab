@@ -15106,6 +15106,18 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Agility",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
                     "stat": "Strength",
                     "value": 30,
                     "altStat": null
@@ -15113,18 +15125,6 @@
                 {
                     "stat": "Agility",
                     "value": 30,
-                    "altStat": null
-                }
-            ],
-            "3": [
-                {
-                    "stat": "AP",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "Prospecting",
-                    "value": 20,
                     "altStat": null
                 },
                 {
@@ -15133,13 +15133,40 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Agility",
-                    "value": 30,
+                    "stat": "Prospecting",
+                    "value": 20,
                     "altStat": null
                 },
                 {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                }
+            ],
+            "4": [
+                {
                     "stat": "Strength",
-                    "value": 30,
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 8,
+                    "altStat": null
+                },
+                {
+                    "stat": "Prospecting",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 }
             ]
@@ -15168,25 +15195,25 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Prospecting",
-                    "value": 20,
+                    "stat": "Critical",
+                    "value": 5,
                     "altStat": null
                 },
                 {
-                    "stat": "Critical",
-                    "value": 5,
+                    "stat": "Prospecting",
+                    "value": 20,
                     "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "Intelligence",
+                    "value": 30,
                     "altStat": null
                 },
                 {
-                    "stat": "Prospecting",
-                    "value": 20,
+                    "stat": "Chance",
+                    "value": 30,
                     "altStat": null
                 },
                 {
@@ -15195,30 +15222,20 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Chance",
-                    "value": 30,
+                    "stat": "Prospecting",
+                    "value": 20,
                     "altStat": null
                 },
                 {
-                    "stat": "Intelligence",
-                    "value": 30,
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 }
             ],
             "4": [
                 {
-                    "stat": "AP",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "Prospecting",
-                    "value": 20,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical",
-                    "value": 8,
+                    "stat": "Intelligence",
+                    "value": 50,
                     "altStat": null
                 },
                 {
@@ -15227,15 +15244,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Intelligence",
-                    "value": 50,
-                    "altStat": null
-                }
-            ],
-            "5": [
-                {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "Critical",
+                    "value": 8,
                     "altStat": null
                 },
                 {
@@ -15244,22 +15254,7 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Critical",
-                    "value": 8,
-                    "altStat": null
-                },
-                {
-                    "stat": "Chance",
-                    "value": 50,
-                    "altStat": null
-                },
-                {
-                    "stat": "Intelligence",
-                    "value": 50,
-                    "altStat": null
-                },
-                {
-                    "stat": "Range",
+                    "stat": "AP",
                     "value": 1,
                     "altStat": null
                 }
@@ -16550,6 +16545,16 @@
                     "altStat": null
                 },
                 {
+                    "stat": "% Air Resistance",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
                     "stat": "Neutral Damage",
                     "value": 10,
                     "altStat": null
@@ -16573,9 +16578,24 @@
                     "stat": "Prospecting",
                     "value": 20,
                     "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 10,
+                    "altStat": null
                 }
             ],
             "3": [
+                {
+                    "stat": "% Air Resistance",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 7,
+                    "altStat": null
+                },
                 {
                     "stat": "Strength",
                     "value": 30,
@@ -16614,6 +16634,73 @@
                 {
                     "stat": "AP",
                     "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "4": [
+                {
+                    "stat": "% Air Resistance",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 300,
+                    "altStat": null
+                },
+                {
+                    "stat": "Prospecting",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 20,
                     "altStat": null
                 }
             ]
@@ -16778,40 +16865,20 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Dodge",
-                    "value": -5,
+                    "stat": "Critical Resistance",
+                    "value": 10,
                     "altStat": null
                 },
                 {
                     "stat": "Lock",
                     "value": 5,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Resistance",
-                    "value": 10,
                     "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "AP",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "Dodge",
-                    "value": -5,
-                    "altStat": null
-                },
-                {
-                    "stat": "Lock",
-                    "value": 5,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Resistance",
-                    "value": 10,
+                    "stat": "Agility",
+                    "value": 30,
                     "altStat": null
                 },
                 {
@@ -16820,30 +16887,25 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Agility",
-                    "value": 30,
+                    "stat": "Critical Resistance",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 }
             ],
             "4": [
                 {
-                    "stat": "Critical",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Agility",
-                    "value": 40,
-                    "altStat": null
-                },
-                {
-                    "stat": "Intelligence",
-                    "value": 40,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Resistance",
-                    "value": 10,
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 },
                 {
@@ -16852,13 +16914,23 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Dodge",
-                    "value": -5,
+                    "stat": "Critical Resistance",
+                    "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "Intelligence",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 10,
                     "altStat": null
                 }
             ]
@@ -19434,8 +19506,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Agility",
-                    "value": 30,
+                    "stat": "Initiative",
+                    "value": 300,
                     "altStat": null
                 },
                 {
@@ -19444,62 +19516,67 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Initiative",
-                    "value": 300,
+                    "stat": "Agility",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 7,
                     "altStat": null
                 }
             ],
             "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 300,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                },
                 {
                     "stat": "Vitality",
                     "value": 100,
                     "altStat": null
                 },
                 {
-                    "stat": "Strength",
-                    "value": 30,
+                    "stat": "Lock",
+                    "value": 7,
                     "altStat": null
                 },
                 {
-                    "stat": "Agility",
-                    "value": 30,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Damage",
-                    "value": 15,
-                    "altStat": null
-                },
-                {
-                    "stat": "Initiative",
-                    "value": 300,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "MP Reduction",
+                    "value": 7,
                     "altStat": null
                 }
             ],
             "4": [
                 {
-                    "stat": "Vitality",
-                    "value": 200,
-                    "altStat": null
-                },
-                {
-                    "stat": "Strength",
-                    "value": 40,
-                    "altStat": null
-                },
-                {
-                    "stat": "Agility",
-                    "value": 40,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Damage",
-                    "value": 25,
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 },
                 {
@@ -19508,8 +19585,33 @@
                     "altStat": null
                 },
                 {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "Critical Damage",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Vitality",
+                    "value": 200,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 12,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 12,
                     "altStat": null
                 }
             ]
@@ -22433,27 +22535,7 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Initiative",
-                    "value": 500,
-                    "altStat": null
-                },
-                {
-                    "stat": "Lock",
-                    "value": 20,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP Reduction",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Vitality",
-                    "value": 200,
-                    "altStat": null
-                },
-                {
-                    "stat": "Neutral Damage",
+                    "stat": "Water Damage",
                     "value": 15,
                     "altStat": null
                 },
@@ -22463,25 +22545,13 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Water Damage",
+                    "stat": "Neutral Damage",
                     "value": 15,
                     "altStat": null
-                }
-            ],
-            "3": [
-                {
-                    "stat": "AP",
-                    "value": 1,
-                    "altStat": null
                 },
                 {
-                    "stat": "Initiative",
-                    "value": 500,
-                    "altStat": null
-                },
-                {
-                    "stat": "Lock",
-                    "value": 20,
+                    "stat": "Vitality",
+                    "value": 200,
                     "altStat": null
                 },
                 {
@@ -22490,8 +22560,40 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Chance",
-                    "value": 30,
+                    "stat": "Lock",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 500,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Earth Resistance",
+                    "value": 15,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Water Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Vitality",
+                    "value": 200,
                     "altStat": null
                 },
                 {
@@ -22500,22 +22602,32 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Vitality",
-                    "value": 200,
+                    "stat": "Chance",
+                    "value": 30,
                     "altStat": null
                 },
                 {
-                    "stat": "Neutral Damage",
-                    "value": 15,
+                    "stat": "AP Reduction",
+                    "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "Earth Damage",
-                    "value": 15,
+                    "stat": "Lock",
+                    "value": 20,
                     "altStat": null
                 },
                 {
-                    "stat": "Water Damage",
+                    "stat": "Initiative",
+                    "value": 500,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Earth Resistance",
                     "value": 15,
                     "altStat": null
                 }
@@ -22649,28 +22761,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Water Damage",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Fire Damage",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Vitality",
-                    "value": 150,
-                    "altStat": null
-                },
-                {
-                    "stat": "Heals",
-                    "value": 40,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical",
-                    "value": -20,
+                    "stat": "% Air Resistance",
+                    "value": 8,
                     "altStat": null
                 },
                 {
@@ -22679,20 +22771,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Air Resistance",
-                    "value": 8,
-                    "altStat": null
-                }
-            ],
-            "3": [
-                {
-                    "stat": "Water Damage",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Fire Damage",
-                    "value": 10,
+                    "stat": "Heals",
+                    "value": 40,
                     "altStat": null
                 },
                 {
@@ -22701,23 +22781,25 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Intelligence",
-                    "value": 30,
+                    "stat": "Fire Damage",
+                    "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "Chance",
-                    "value": 30,
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "% Air Resistance",
+                    "value": 8,
                     "altStat": null
                 },
                 {
-                    "stat": "Heals",
-                    "value": 40,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical",
-                    "value": -20,
+                    "stat": "% Earth Resistance",
+                    "value": 10,
                     "altStat": null
                 },
                 {
@@ -22726,13 +22808,33 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Earth Resistance",
+                    "stat": "Heals",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Vitality",
+                    "value": 150,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
                     "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "% Air Resistance",
-                    "value": 8,
+                    "stat": "Water Damage",
+                    "value": 10,
                     "altStat": null
                 }
             ]
@@ -23707,25 +23809,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Critical Damage",
-                    "value": 15,
-                    "altStat": null
-                },
-                {
                     "stat": "Lock",
                     "value": 15,
-                    "altStat": null
-                }
-            ],
-            "3": [
-                {
-                    "stat": "Critical",
-                    "value": 5,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP",
-                    "value": 1,
                     "altStat": null
                 },
                 {
@@ -23734,8 +23819,15 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Power",
-                    "value": 50,
+                    "stat": "Vitality",
+                    "value": 100,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Lock",
+                    "value": 15,
                     "altStat": null
                 },
                 {
@@ -23744,8 +23836,28 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Lock",
-                    "value": 15,
+                    "stat": "Power",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Vitality",
+                    "value": 100,
                     "altStat": null
                 }
             ]
@@ -23846,8 +23958,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "MP",
-                    "value": 1,
+                    "stat": "Range",
+                    "value": -1,
                     "altStat": null
                 },
                 {
@@ -23856,14 +23968,12 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Range",
-                    "value": -1,
+                    "stat": "MP",
+                    "value": 1,
                     "altStat": null
-                }
-            ],
-            "3": [
+                },
                 {
-                    "stat": "% Air Resistance",
+                    "stat": "% Fire Resistance",
                     "value": 8,
                     "altStat": null
                 },
@@ -23873,28 +23983,20 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Fire Resistance",
+                    "stat": "% Air Resistance",
                     "value": 8,
                     "altStat": null
                 },
                 {
-                    "stat": "Agility",
-                    "value": 60,
+                    "stat": "Vitality",
+                    "value": 100,
                     "altStat": null
-                },
+                }
+            ],
+            "3": [
                 {
-                    "stat": "Lock",
-                    "value": 15,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "MP",
-                    "value": 1,
+                    "stat": "Range",
+                    "value": -1,
                     "altStat": null
                 },
                 {
@@ -23903,8 +24005,43 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Range",
-                    "value": -1,
+                    "stat": "MP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 8,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 8,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Air Resistance",
+                    "value": 8,
+                    "altStat": null
+                },
+                {
+                    "stat": "Vitality",
+                    "value": 200,
                     "altStat": null
                 }
             ]
@@ -23933,70 +24070,70 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Neutral Damage",
+                    "value": 45,
+                    "altStat": null
+                },
+                {
+                    "stat": "Vitality",
+                    "value": 100,
+                    "altStat": null
+                },
+                {
                     "stat": "Prospecting",
                     "value": 20,
                     "altStat": null
                 },
                 {
-                    "stat": "Neutral Resistance",
-                    "value": 20,
-                    "altStat": null
-                },
-                {
-                    "stat": "Fire Resistance",
-                    "value": 20,
-                    "altStat": null
-                },
-                {
                     "stat": "Agility",
-                    "value": 30,
+                    "value": 60,
                     "altStat": null
                 },
                 {
                     "stat": "Chance",
-                    "value": 30,
+                    "value": 60,
                     "altStat": null
                 },
                 {
                     "stat": "Strength",
-                    "value": 30,
+                    "value": 60,
                     "altStat": null
                 },
                 {
                     "stat": "Air Damage",
                     "value": 30,
                     "altStat": null
+                },
+                {
+                    "stat": "% Earth Resistance",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Air Resistance",
+                    "value": 7,
+                    "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "Air Resistance",
-                    "value": 10,
+                    "stat": "Neutral Damage",
+                    "value": 65,
                     "altStat": null
                 },
                 {
-                    "stat": "Water Resistance",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Earth Resistance",
-                    "value": 10,
+                    "stat": "Vitality",
+                    "value": 150,
                     "altStat": null
                 },
                 {
                     "stat": "Prospecting",
                     "value": 20,
-                    "altStat": null
-                },
-                {
-                    "stat": "Neutral Resistance",
-                    "value": 30,
-                    "altStat": null
-                },
-                {
-                    "stat": "Fire Resistance",
-                    "value": 30,
                     "altStat": null
                 },
                 {
@@ -24006,17 +24143,17 @@
                 },
                 {
                     "stat": "Agility",
-                    "value": 50,
+                    "value": 100,
                     "altStat": null
                 },
                 {
                     "stat": "Chance",
-                    "value": 50,
+                    "value": 100,
                     "altStat": null
                 },
                 {
                     "stat": "Strength",
-                    "value": 50,
+                    "value": 100,
                     "altStat": null
                 },
                 {
@@ -24047,6 +24184,21 @@
                 {
                     "stat": "Critical Damage",
                     "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Earth Resistance",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Air Resistance",
+                    "value": 7,
                     "altStat": null
                 }
             ]
@@ -24341,23 +24493,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Water Damage",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Chance",
-                    "value": 60,
-                    "altStat": null
-                },
-                {
-                    "stat": "Fire Damage",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Intelligence",
-                    "value": 60,
+                    "stat": "% Water Resistance",
+                    "value": 7,
                     "altStat": null
                 },
                 {
@@ -24366,20 +24503,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Water Resistance",
-                    "value": 7,
-                    "altStat": null
-                }
-            ],
-            "3": [
-                {
-                    "stat": "AP",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "Water Damage",
-                    "value": 10,
+                    "stat": "Intelligence",
+                    "value": 60,
                     "altStat": null
                 },
                 {
@@ -24393,13 +24518,20 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Intelligence",
-                    "value": 60,
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "% Water Resistance",
+                    "value": 7,
                     "altStat": null
                 },
                 {
-                    "stat": "Strength",
-                    "value": 30,
+                    "stat": "% Earth Resistance",
+                    "value": 7,
                     "altStat": null
                 },
                 {
@@ -24408,13 +24540,33 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Earth Resistance",
-                    "value": 7,
+                    "stat": "Strength",
+                    "value": 30,
                     "altStat": null
                 },
                 {
-                    "stat": "% Water Resistance",
-                    "value": 7,
+                    "stat": "Intelligence",
+                    "value": 100,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 100,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 }
             ]
@@ -25628,12 +25780,24 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Water Damage",
-                    "value": 15,
+                    "stat": "MP Reduction",
+                    "value": 7,
                     "altStat": null
                 },
                 {
                     "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 15,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
                     "value": 1,
                     "altStat": null
                 },
@@ -25643,14 +25807,12 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Dodge",
-                    "value": -5,
+                    "stat": "Range",
+                    "value": 1,
                     "altStat": null
-                }
-            ],
-            "3": [
+                },
                 {
-                    "stat": "Neutral Damage",
+                    "stat": "Water Damage",
                     "value": 15,
                     "altStat": null
                 },
@@ -25660,28 +25822,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Water Damage",
+                    "stat": "Neutral Damage",
                     "value": 15,
-                    "altStat": null
-                },
-                {
-                    "stat": "Range",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "MP Reduction",
-                    "value": 7,
-                    "altStat": null
-                },
-                {
-                    "stat": "Dodge",
-                    "value": -5,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP",
-                    "value": 1,
                     "altStat": null
                 }
             ]
@@ -25969,13 +26111,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Critical",
-                    "value": 5,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP Parry",
-                    "value": 10,
+                    "stat": "Chance",
+                    "value": 30,
                     "altStat": null
                 },
                 {
@@ -25984,45 +26121,60 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Chance",
-                    "value": 30,
+                    "stat": "AP Parry",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 10,
                     "altStat": null
                 }
             ],
             "3": [
+                {
+                    "stat": "Strength",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Parry",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 8,
+                    "altStat": null
+                },
                 {
                     "stat": "AP",
                     "value": 1,
                     "altStat": null
                 },
                 {
-                    "stat": "Critical",
-                    "value": 5,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP Parry",
+                    "stat": "% Water Resistance",
                     "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Dodge",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Chance",
-                    "value": 30,
-                    "altStat": null
-                },
-                {
-                    "stat": "Intelligence",
-                    "value": 30,
-                    "altStat": null
-                },
-                {
-                    "stat": "Strength",
-                    "value": 30,
                     "altStat": null
                 }
             ]
@@ -26398,13 +26550,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Pushback Damage",
-                    "value": 30,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP Reduction",
-                    "value": 15,
+                    "stat": "% Air Resistance",
+                    "value": 7,
                     "altStat": null
                 },
                 {
@@ -26413,30 +26560,35 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Air Resistance",
-                    "value": 7,
+                    "stat": "AP Reduction",
+                    "value": 15,
                     "altStat": null
-                }
-            ],
-            "3": [
+                },
                 {
                     "stat": "Pushback Damage",
                     "value": 30,
                     "altStat": null
                 },
                 {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "Water Damage",
+                    "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "AP Reduction",
-                    "value": 15,
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "% Air Resistance",
+                    "value": 7,
                     "altStat": null
                 },
                 {
-                    "stat": "Chance",
-                    "value": 40,
+                    "stat": "% Water Resistance",
+                    "value": 7,
                     "altStat": null
                 },
                 {
@@ -26445,13 +26597,33 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Water Resistance",
-                    "value": 7,
+                    "stat": "Chance",
+                    "value": 40,
                     "altStat": null
                 },
                 {
-                    "stat": "% Air Resistance",
-                    "value": 7,
+                    "stat": "AP Reduction",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
                     "altStat": null
                 }
             ]
@@ -26480,18 +26652,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Fire Resistance",
+                    "stat": "% Air Resistance",
                     "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Range",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "MP Reduction",
-                    "value": 15,
                     "altStat": null
                 },
                 {
@@ -26500,15 +26662,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Air Resistance",
-                    "value": 10,
-                    "altStat": null
-                }
-            ],
-            "3": [
-                {
-                    "stat": "% Fire Resistance",
-                    "value": 10,
+                    "stat": "MP Reduction",
+                    "value": 15,
                     "altStat": null
                 },
                 {
@@ -26517,18 +26672,25 @@
                     "altStat": null
                 },
                 {
-                    "stat": "MP Reduction",
-                    "value": 15,
+                    "stat": "% Fire Resistance",
+                    "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "% Air Resistance",
+                    "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "Heals",
-                    "value": 30,
+                    "stat": "Intelligence",
+                    "value": 60,
                     "altStat": null
                 },
                 {
@@ -26537,12 +26699,32 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Intelligence",
-                    "value": 60,
+                    "stat": "Heals",
+                    "value": 30,
                     "altStat": null
                 },
                 {
-                    "stat": "% Air Resistance",
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
                     "value": 10,
                     "altStat": null
                 }
@@ -26806,17 +26988,12 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Water Resistance",
-                    "value": 10,
+                    "stat": "Range",
+                    "value": 1,
                     "altStat": null
                 },
                 {
-                    "stat": "Initiative",
-                    "value": 800,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Resistance",
+                    "stat": "MP Reduction",
                     "value": 10,
                     "altStat": null
                 },
@@ -26826,45 +27003,45 @@
                     "altStat": null
                 },
                 {
-                    "stat": "MP Reduction",
+                    "stat": "Critical Resistance",
                     "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "Range",
-                    "value": 1,
+                    "stat": "Initiative",
+                    "value": 800,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 5,
                     "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "% Water Resistance",
-                    "value": 10,
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 },
                 {
-                    "stat": "Initiative",
-                    "value": 800,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Resistance",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP Parry",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "MP Reduction",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Strength",
-                    "value": 40,
+                    "stat": "Range",
+                    "value": 1,
                     "altStat": null
                 },
                 {
@@ -26873,13 +27050,48 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Range",
-                    "value": 1,
+                    "stat": "Strength",
+                    "value": 40,
                     "altStat": null
                 },
                 {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "MP Reduction",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Parry",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Resistance",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 800,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 5,
                     "altStat": null
                 }
             ]
@@ -27191,7 +27403,7 @@
             "2": [
                 {
                     "stat": "Initiative",
-                    "value": 500,
+                    "value": 1000,
                     "altStat": null
                 },
                 {
@@ -27200,8 +27412,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "AP Reduction",
-                    "value": 10,
+                    "stat": "Lock",
+                    "value": 15,
                     "altStat": null
                 },
                 {
@@ -27210,24 +27422,19 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Lock",
-                    "value": 10,
+                    "stat": "AP Reduction",
+                    "value": 15,
                     "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "Initiative",
-                    "value": 500,
+                    "stat": "Lock",
+                    "value": 15,
                     "altStat": null
                 },
                 {
-                    "stat": "Strength",
-                    "value": 60,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP Reduction",
+                    "stat": "Critical",
                     "value": 10,
                     "altStat": null
                 },
@@ -27237,13 +27444,18 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Critical",
-                    "value": 10,
+                    "stat": "AP Reduction",
+                    "value": 15,
                     "altStat": null
                 },
                 {
-                    "stat": "Lock",
-                    "value": 10,
+                    "stat": "Strength",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 1000,
                     "altStat": null
                 }
             ]
@@ -27272,30 +27484,25 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Critical Damage",
-                    "value": 40,
+                    "stat": "Dodge",
+                    "value": 15,
                     "altStat": null
                 },
                 {
-                    "stat": "Dodge",
-                    "value": 15,
+                    "stat": "Critical Damage",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
                     "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "Strength",
-                    "value": 40,
-                    "altStat": null
-                },
-                {
-                    "stat": "Intelligence",
-                    "value": 40,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Damage",
-                    "value": 40,
+                    "stat": "Dodge",
+                    "value": 15,
                     "altStat": null
                 },
                 {
@@ -27304,8 +27511,28 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Dodge",
-                    "value": 15,
+                    "stat": "Critical Damage",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 7,
                     "altStat": null
                 }
             ]
@@ -27446,17 +27673,7 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Water Resistance",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "% Fire Resistance",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Chance",
+                    "stat": "Pushback Damage",
                     "value": 30,
                     "altStat": null
                 },
@@ -27466,15 +27683,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Pushback Damage",
+                    "stat": "Chance",
                     "value": 30,
-                    "altStat": null
-                }
-            ],
-            "3": [
-                {
-                    "stat": "% Water Resistance",
-                    "value": 10,
                     "altStat": null
                 },
                 {
@@ -27483,7 +27693,44 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Intelligence",
+                    "stat": "% Water Resistance",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 12,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
                     "value": 60,
                     "altStat": null
                 },
@@ -27493,23 +27740,33 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Chance",
+                    "stat": "Intelligence",
                     "value": 60,
                     "altStat": null
                 },
                 {
-                    "stat": "Critical",
-                    "value": 12,
+                    "stat": "% Fire Resistance",
+                    "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "Pushback Damage",
-                    "value": 30,
+                    "stat": "% Water Resistance",
+                    "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
                     "altStat": null
                 }
             ]
@@ -28211,33 +28468,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Summons",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "Range",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "Heals",
-                    "value": 35,
-                    "altStat": null
-                },
-                {
-                    "stat": "MP Parry",
-                    "value": 35,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP Parry",
-                    "value": 35,
-                    "altStat": null
-                },
-                {
-                    "stat": "Lock",
-                    "value": 20,
+                    "stat": "Power",
+                    "value": 120,
                     "altStat": null
                 },
                 {
@@ -28246,15 +28478,23 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Power",
-                    "value": 80,
+                    "stat": "Lock",
+                    "value": 20,
                     "altStat": null
-                }
-            ],
-            "3": [
+                },
                 {
-                    "stat": "Summons",
-                    "value": 1,
+                    "stat": "AP Parry",
+                    "value": 35,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Parry",
+                    "value": 35,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 35,
                     "altStat": null
                 },
                 {
@@ -28263,7 +28503,39 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Heals",
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Power",
+                    "value": 200,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 2,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Parry",
                     "value": 50,
                     "altStat": null
                 },
@@ -28273,33 +28545,18 @@
                     "altStat": null
                 },
                 {
-                    "stat": "AP Parry",
+                    "stat": "Heals",
                     "value": 50,
                     "altStat": null
                 },
                 {
-                    "stat": "Lock",
-                    "value": 30,
-                    "altStat": null
-                },
-                {
-                    "stat": "Dodge",
-                    "value": 40,
-                    "altStat": null
-                },
-                {
-                    "stat": "MP",
+                    "stat": "Range",
                     "value": 1,
                     "altStat": null
                 },
                 {
-                    "stat": "AP",
-                    "value": 2,
-                    "altStat": null
-                },
-                {
-                    "stat": "Power",
-                    "value": 120,
+                    "stat": "Summons",
+                    "value": 1,
                     "altStat": null
                 }
             ]
@@ -28328,13 +28585,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Water Resistance",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "% Fire Resistance",
-                    "value": 10,
+                    "stat": "Heals",
+                    "value": 25,
                     "altStat": null
                 },
                 {
@@ -28343,24 +28595,29 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Heals",
-                    "value": 20,
-                    "altStat": null
-                }
-            ],
-            "3": [
-                {
-                    "stat": "% Water Resistance",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
                     "stat": "% Fire Resistance",
                     "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "Intelligence",
+                    "stat": "% Water Resistance",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
                     "value": 40,
                     "altStat": null
                 },
@@ -28370,18 +28627,18 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Pushback Damage",
-                    "value": 25,
+                    "stat": "Intelligence",
+                    "value": 40,
                     "altStat": null
                 },
                 {
-                    "stat": "Heals",
-                    "value": 20,
+                    "stat": "% Fire Resistance",
+                    "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "% Water Resistance",
+                    "value": 10,
                     "altStat": null
                 }
             ]
@@ -29001,17 +29258,7 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Dodge",
-                    "value": 5,
-                    "altStat": null
-                },
-                {
-                    "stat": "Fire Damage",
-                    "value": 20,
-                    "altStat": null
-                },
-                {
-                    "stat": "Earth Damage",
+                    "stat": "Pushback Resistance",
                     "value": 20,
                     "altStat": null
                 },
@@ -29021,19 +29268,44 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Pushback Resistance",
+                    "stat": "Earth Damage",
                     "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 5,
                     "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "Dodge",
-                    "value": 5,
+                    "stat": "Pushback Resistance",
+                    "value": 20,
                     "altStat": null
                 },
                 {
-                    "stat": "Air Damage",
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
                     "value": 20,
                     "altStat": null
                 },
@@ -29043,28 +29315,13 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Fire Damage",
+                    "stat": "Air Damage",
                     "value": 20,
                     "altStat": null
                 },
                 {
-                    "stat": "Earth Damage",
-                    "value": 20,
-                    "altStat": null
-                },
-                {
-                    "stat": "Neutral Damage",
-                    "value": 20,
-                    "altStat": null
-                },
-                {
-                    "stat": "MP",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "Pushback Resistance",
-                    "value": 20,
+                    "stat": "Dodge",
+                    "value": 5,
                     "altStat": null
                 }
             ]
@@ -30829,17 +31086,17 @@
                     "stat": "MP Parry",
                     "value": 10,
                     "altStat": null
+                },
+                {
+                    "stat": "Pushback Resistance",
+                    "value": 15,
+                    "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "MP Parry",
+                    "stat": "Air Damage",
                     "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP",
-                    "value": 1,
                     "altStat": null
                 },
                 {
@@ -30848,8 +31105,18 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Air Damage",
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Parry",
                     "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Resistance",
+                    "value": 15,
                     "altStat": null
                 }
             ]
@@ -31392,18 +31659,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Critical",
-                    "value": 7,
-                    "altStat": null
-                },
-                {
-                    "stat": "Heals",
-                    "value": 30,
-                    "altStat": null
-                },
-                {
-                    "stat": "MP Reduction",
-                    "value": 15,
+                    "stat": "% Fire Resistance",
+                    "value": 10,
                     "altStat": null
                 },
                 {
@@ -31412,15 +31669,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Fire Resistance",
-                    "value": 10,
-                    "altStat": null
-                }
-            ],
-            "3": [
-                {
-                    "stat": "Critical",
-                    "value": 7,
+                    "stat": "MP Reduction",
+                    "value": 15,
                     "altStat": null
                 },
                 {
@@ -31429,12 +31679,24 @@
                     "altStat": null
                 },
                 {
-                    "stat": "AP",
+                    "stat": "Critical",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
                     "value": 1,
                     "altStat": null
                 },
                 {
-                    "stat": "MP Reduction",
+                    "stat": "Fire Damage",
                     "value": 15,
                     "altStat": null
                 },
@@ -31444,17 +31706,22 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Fire Damage",
+                    "stat": "MP Reduction",
                     "value": 15,
                     "altStat": null
                 },
                 {
-                    "stat": "Range",
+                    "stat": "AP",
                     "value": 1,
                     "altStat": null
                 },
                 {
-                    "stat": "% Fire Resistance",
+                    "stat": "Heals",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
                     "value": 10,
                     "altStat": null
                 }
@@ -33933,49 +34200,34 @@
             "2": [
                 {
                     "stat": "Air Damage",
-                    "value": 10,
+                    "value": 15,
                     "altStat": null
                 },
                 {
                     "stat": "Water Damage",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Heals",
-                    "value": 80,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical",
-                    "value": -10,
+                    "value": 15,
                     "altStat": null
                 },
                 {
                     "stat": "MP Parry",
                     "value": 10,
                     "altStat": null
-                }
-            ],
-            "3": [
-                {
-                    "stat": "Air Damage",
-                    "value": 10,
-                    "altStat": null
                 },
                 {
-                    "stat": "Water Damage",
-                    "value": 10,
+                    "stat": "Critical",
+                    "value": -10,
                     "altStat": null
                 },
                 {
                     "stat": "Heals",
                     "value": 80,
                     "altStat": null
-                },
+                }
+            ],
+            "3": [
                 {
-                    "stat": "Critical",
-                    "value": -10,
+                    "stat": "MP Parry",
+                    "value": 10,
                     "altStat": null
                 },
                 {
@@ -33984,8 +34236,23 @@
                     "altStat": null
                 },
                 {
-                    "stat": "MP Parry",
-                    "value": 10,
+                    "stat": "Critical",
+                    "value": -10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 80,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 15,
                     "altStat": null
                 }
             ]
@@ -34451,6 +34718,21 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Water Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
                     "stat": "Summons",
                     "value": 1,
                     "altStat": null
@@ -34471,17 +34753,27 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Lock",
-                    "value": -10,
-                    "altStat": null
-                },
-                {
                     "stat": "% Earth Resistance",
                     "value": 10,
                     "altStat": null
                 }
             ],
             "3": [
+                {
+                    "stat": "Water Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 5,
+                    "altStat": null
+                },
                 {
                     "stat": "Summons",
                     "value": 1,
@@ -34515,11 +34807,6 @@
                 {
                     "stat": "Dodge",
                     "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Lock",
-                    "value": -10,
                     "altStat": null
                 },
                 {
@@ -34635,8 +34922,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "AP Parry",
-                    "value": 10,
+                    "stat": "Agility",
+                    "value": 40,
                     "altStat": null
                 },
                 {
@@ -34645,25 +34932,30 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Agility",
-                    "value": 40,
-                    "altStat": null
-                }
-            ],
-            "3": [
-                {
                     "stat": "AP Parry",
                     "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "Dodge",
-                    "value": 10,
+                    "stat": "Fire Damage",
+                    "value": 5,
                     "altStat": null
                 },
                 {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Agility",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 40,
                     "altStat": null
                 },
                 {
@@ -34672,13 +34964,28 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Intelligence",
-                    "value": 40,
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 },
                 {
-                    "stat": "Agility",
-                    "value": 40,
+                    "stat": "Dodge",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Parry",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 5,
                     "altStat": null
                 }
             ]
@@ -35590,18 +35897,8 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Critical Damage",
-                    "value": 20,
-                    "altStat": null
-                },
-                {
-                    "stat": "MP Parry",
-                    "value": 20,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP Parry",
-                    "value": 20,
+                    "stat": "Critical",
+                    "value": 5,
                     "altStat": null
                 },
                 {
@@ -35610,35 +35907,40 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Critical",
-                    "value": 5,
-                    "altStat": null
-                }
-            ],
-            "3": [
-                {
-                    "stat": "Chance",
-                    "value": 20,
-                    "altStat": null
-                },
-                {
-                    "stat": "Agility",
+                    "stat": "AP Parry",
                     "value": 20,
                     "altStat": null
                 },
                 {
                     "stat": "MP Parry",
-                    "value": 40,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP Parry",
-                    "value": 40,
+                    "value": 20,
                     "altStat": null
                 },
                 {
                     "stat": "Critical Damage",
                     "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 2,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 2,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 30,
                     "altStat": null
                 },
                 {
@@ -35647,13 +35949,48 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Power",
-                    "value": 30,
+                    "stat": "Critical Damage",
+                    "value": 20,
                     "altStat": null
                 },
                 {
-                    "stat": "Critical",
+                    "stat": "AP Parry",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Parry",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
                     "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 3,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 3,
                     "altStat": null
                 }
             ]
@@ -35776,40 +36113,30 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Chance",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Parry",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "Lock",
                     "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "MP Parry",
+                    "stat": "Water Damage",
                     "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Chance",
-                    "value": 60,
                     "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "MP Parry",
+                    "stat": "Lock",
                     "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Chance",
-                    "value": 60,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "Pushback Resistance",
-                    "value": 50,
                     "altStat": null
                 },
                 {
@@ -35818,7 +36145,27 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Lock",
+                    "stat": "Pushback Resistance",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Parry",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
                     "value": 10,
                     "altStat": null
                 }
@@ -39145,7 +39492,7 @@
             ],
             "4": [
                 {
-                    "stat": "MP",
+                    "stat": "AP",
                     "value": 1,
                     "altStat": null
                 },
@@ -39192,6 +39539,11 @@
                 {
                     "stat": "AP Parry",
                     "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 200,
                     "altStat": null
                 }
             ]
@@ -41493,7 +41845,7 @@
         "name": {
             "en": "Imako Set",
             "fr": "Panokami",
-            "de": "Okami-Set",
+            "de": "Okamimikry-Set",
             "es": "Setokami",
             "pt": "Conjuntokami",
             "it": "Imako Set"
@@ -42402,7 +42754,7 @@
             "2": [
                 {
                     "stat": "Power",
-                    "value": 100,
+                    "value": 60,
                     "altStat": null
                 },
                 {
@@ -42411,13 +42763,18 @@
                     "altStat": null
                 },
                 {
+                    "stat": "% Water Resistance",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
                     "stat": "Critical",
                     "value": 5,
                     "altStat": null
                 },
                 {
-                    "stat": "% Water Resistance",
-                    "value": 7,
+                    "stat": "Critical Damage",
+                    "value": 30,
                     "altStat": null
                 }
             ]
@@ -42866,13 +43223,18 @@
                     "altStat": null
                 },
                 {
+                    "stat": "Lock",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
                     "stat": "% Air Resistance",
                     "value": 7,
                     "altStat": null
                 },
                 {
-                    "stat": "Lock",
-                    "value": 10,
+                    "stat": "Damage",
+                    "value": 25,
                     "altStat": null
                 }
             ]
@@ -44322,17 +44684,17 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Water Resistance",
-                    "value": 10,
+                    "stat": "Intelligence",
+                    "value": 40,
                     "altStat": null
                 },
                 {
-                    "stat": "% Fire Resistance",
-                    "value": 10,
+                    "stat": "Fire Damage",
+                    "value": 16,
                     "altStat": null
                 },
                 {
-                    "stat": "Critical Damage",
+                    "stat": "Critical",
                     "value": 10,
                     "altStat": null
                 },
@@ -44342,70 +44704,20 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Critical",
+                    "stat": "% Fire Resistance",
                     "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "Fire Damage",
-                    "value": 16,
-                    "altStat": null
-                },
-                {
-                    "stat": "Intelligence",
-                    "value": 40,
+                    "stat": "% Water Resistance",
+                    "value": 10,
                     "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "AP",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "Lock",
-                    "value": 15,
-                    "altStat": null
-                },
-                {
-                    "stat": "Initiative",
-                    "value": 400,
-                    "altStat": null
-                },
-                {
-                    "stat": "% Water Resistance",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "% Fire Resistance",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Damage",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Pushback Damage",
-                    "value": 25,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical",
-                    "value": 15,
-                    "altStat": null
-                },
-                {
-                    "stat": "Fire Damage",
-                    "value": 16,
-                    "altStat": null
-                },
-                {
-                    "stat": "Intelligence",
-                    "value": 100,
+                    "stat": "Power",
+                    "value": 50,
                     "altStat": null
                 },
                 {
@@ -44414,8 +44726,43 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Power",
-                    "value": 50,
+                    "stat": "Intelligence",
+                    "value": 100,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 16,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 }
             ]
@@ -45995,6 +46342,1366 @@
                 {
                     "stat": "Damage",
                     "value": 10,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1034",
+        "name": {
+            "en": "Mastoslob Set",
+            "fr": "Panoplie de Bouflouth",
+            "de": "Ausrüstungsset von Fressglut",
+            "es": "Set de Jalalut",
+            "pt": "Conjunto do Papodonte",
+            "it": "Mastoslob Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Strength",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1035",
+        "name": {
+            "en": "Mister Penguin Set",
+            "fr": "Panoplie de Monsieur Pingouin",
+            "de": "Ausrüstungsset von Mister Ping",
+            "es": "Set de Elpin Güino",
+            "pt": "Conjunto do Senhor Pinguim",
+            "it": "Mister Penguin Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Strength",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Resistance",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 2,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Intelligence",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Resistance",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 2,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1036",
+        "name": {
+            "en": "Katigger Set",
+            "fr": "Panoplie de Katigrou",
+            "de": "Ausrüstungsset von Katigger",
+            "es": "Set de Katigrú",
+            "pt": "Conjunto do Katigre",
+            "it": "Katigger Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Strength",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Air Resistance",
+                    "value": 3,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 3,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 3,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Earth Resistance",
+                    "value": 3,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 40,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Critical",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Air Resistance",
+                    "value": 6,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 6,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 6,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Earth Resistance",
+                    "value": 6,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 80,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 80,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 80,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 80,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1037",
+        "name": {
+            "en": "Pirate Bhey Set",
+            "fr": "Panoplie de Fantômayte",
+            "de": "Ausrüstungsset von Phantomaytje",
+            "es": "Set de Phantomeyt",
+            "pt": "Conjunto do Fantomaite",
+            "it": "Pirate Bhey Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Power",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 500,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 12,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 12,
+                    "altStat": null
+                },
+                {
+                    "stat": "Wisdom",
+                    "value": 30,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "MP Reduction",
+                    "value": 12,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 12,
+                    "altStat": null
+                },
+                {
+                    "stat": "Wisdom",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 500,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1038",
+        "name": {
+            "en": "Masked Avenger Set",
+            "fr": "Panoplie de Vengeuse Masquée",
+            "de": "Ausrüstungsset der Maskierten Rächerin",
+            "es": "Set de Vengadora Enmascarada",
+            "pt": "Conjunto da Vingadora Mascarada",
+            "it": "Masked Avenger Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1039",
+        "name": {
+            "en": "YeCh'Ti Set",
+            "fr": "Panoplie du YeCh'Ti",
+            "de": "Ausrüstungsset von YeCh'Ti",
+            "es": "Set de YeCh'Ti",
+            "pt": "Conjunto do YeCh'Ti",
+            "it": "YeCh'Ti Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Vitality",
+                    "value": 100,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Parry",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Parry",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Vitality",
+                    "value": 200,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Parry",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Parry",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 10,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1040",
+        "name": {
+            "en": "San Jifu Set",
+            "fr": "Panoplie de San Jifu",
+            "de": "Ausrüstungsset von San Jifu",
+            "es": "Set de San Jifu",
+            "pt": "Conjunto do San Jifu",
+            "it": "San Jifu Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 7,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 7,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1041",
+        "name": {
+            "en": "Flasho Set",
+            "fr": "Panoplie de Flasho",
+            "de": "Ausrüstungsset von Daxoflash",
+            "es": "Set de Tejash",
+            "pt": "Conjunto do Flashugo",
+            "it": "Flasho Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Vitality",
+                    "value": 150,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 12,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 7,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Vitality",
+                    "value": 150,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 12,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 7,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1042",
+        "name": {
+            "en": "Doctor Gobotnegg Set",
+            "fr": "Panoplie du Docteur Eggob",
+            "de": "Ausrüstungsset von Doktor Eggob",
+            "es": "Set del doctor Eggob",
+            "pt": "Conjunto do Goblotnik",
+            "it": "Doctor Gobotnegg Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Initiative",
+                    "value": 500,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 20,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 500,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 20,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1043",
+        "name": {
+            "en": "Vinnie the Bearbarian Set",
+            "fr": "Panoplie de Viti Glourson",
+            "de": "Ausrüstungsset von Wini Barbär",
+            "es": "Set de Huini Golosote",
+            "pt": "Conjunto do Viti Glurso",
+            "it": "Vinnie the Bearbarian Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 20,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 60,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1044",
+        "name": {
+            "en": "Ice Knight Set",
+            "fr": "Panoplie du Chevalier de Glace",
+            "de": "Ausrüstungsset des Eisritters",
+            "es": "Set del Caballero de Hielo",
+            "pt": "Conjunto do Cavaleiro de Gelo",
+            "it": "Ice Knight Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Parry",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Parry",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 10,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1045",
+        "name": {
+            "en": "Erotegg Set",
+            "fr": "Panoplie de Culbutœuf",
+            "de": "Ausrüstungsset von Kuhklebei",
+            "es": "Set de Tentenhuevo",
+            "pt": "Conjunto do Estrovo",
+            "it": "Erotegg Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 12,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 18,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1046",
+        "name": {
+            "en": "Bearendizer Set",
+            "fr": "Panoplie de Glourdorak",
+            "de": "Ausrüstungsset von Barbärdizer",
+            "es": "Set de Golosorak",
+            "pt": "Conjunto do Glurdorak",
+            "it": "Bearendizer Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Initiative",
+                    "value": 1000,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 1000,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1047",
+        "name": {
+            "en": "Mekstagob Set",
+            "fr": "Panoplie de Mekamouth",
+            "de": "Ausrüstungsset von Mechmut",
+            "es": "Set de Mecanimut",
+            "pt": "Conjunto do Mekamute",
+            "it": "Mekstagob Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Strength",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 40,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 8,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 70,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 70,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 70,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1048",
+        "name": {
+            "en": "Psychopump Set",
+            "fr": "Panoplie de Psikopompe",
+            "de": "Ausrüstungsset von Psychopomps",
+            "es": "Set de Psikopomzopato",
+            "pt": "Conjunto do Psikopompo",
+            "it": "Psychopump Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Agility",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Resistance",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Critical Resistance",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 }
             ]
