@@ -32,6 +32,7 @@ import {
   setEquippedItemExoVariables,
 } from 'graphql/mutations/__generated__/setEquippedItemExo';
 import { BuildError } from 'common/types';
+import { CardTitleWithLevel } from 'common/wrappers';
 import Card from 'components/common/Card';
 import Tooltip from 'components/common/Tooltip';
 import { EquippedItem, CustomSet, ItemSet } from 'common/type-aliases';
@@ -175,6 +176,12 @@ const EquippedItemCard = ({
   return (
     <Card
       size="small"
+      title={
+        <CardTitleWithLevel
+          title={equippedItem.item.name}
+          level={equippedItem.item.level}
+        />
+      }
       css={css({
         ...itemCardStyle,
         display: 'flex',

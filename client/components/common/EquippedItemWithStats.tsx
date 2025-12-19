@@ -5,6 +5,7 @@ import type { MouseEvent, SyntheticEvent } from 'react';
 import { useCallback, useState, useRef, useContext } from 'react';
 import { ClassNames, useTheme } from '@emotion/react';
 import { Popover } from 'antd';
+import merge from 'lodash/merge';
 
 import {
   popoverTitleStyle,
@@ -26,7 +27,6 @@ import {
   ClassicContext,
   getImageUrl,
 } from 'common/utils';
-import { useTranslation } from 'next-i18next';
 import { mq } from 'common/constants';
 import { Media } from 'components/common/Media';
 import { BuildError } from 'common/types';
@@ -93,7 +93,6 @@ const EquippedItemWithStats = ({
     [deleteItem, equippedItem],
   );
 
-  const { t } = useTranslation('common');
   const theme = useTheme();
   const [brokenImage, setBrokenImage] = useState(false);
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -181,29 +180,6 @@ const EquippedItemWithStats = ({
           {({ css }) => (
             <Popover
               placement={popoverPlacement || 'bottomLeft'}
-              title={
-                <div
-                  css={{
-                    display: 'flex',
-                    alignItems: 'baseline',
-                    justifyContent: 'space-between',
-                    fontSize: '0.75rem',
-                  }}
-                  onClick={stopPropagationCallback}
-                >
-                  <div>{equippedItem.item.name}</div>
-                  <div
-                    css={{
-                      marginLeft: 16,
-                      [mq[1]]: { marginLeft: 8 },
-                      fontWeight: 400,
-                      fontSize: '0.75rem',
-                    }}
-                  >
-                    {t('LEVEL_ABBREVIATION')} {equippedItem.item.level}
-                  </div>
-                </div>
-              }
               content={
                 <EquippedItemCard
                   equippedItem={equippedItem}
@@ -216,7 +192,12 @@ const EquippedItemWithStats = ({
                 />
               }
               overlayClassName={css({
-                ...popoverTitleStyle,
+                ...merge(
+                  {
+                    '.ant-popover-title': { marginBottom: 0 },
+                  },
+                  popoverTitleStyle,
+                ),
                 '.ant-popover-content': {
                   boxShadow: popoverShadow,
                   maxHeight:

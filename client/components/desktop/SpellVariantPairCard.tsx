@@ -69,6 +69,7 @@ const SpellVariantPairCard = ({ spellVariantPair, customSet }: Props) => {
       key={spellVariantPair.id}
       size="small"
       tabList={tabList}
+      activeTabKey={selectedSpellId}
       tabBarExtraContent={
         <SpellLevelRadio
           selectedSpellLevelIdx={selectedSpellLevelIdx}

@@ -6,7 +6,7 @@ import { ClassNames, useTheme } from '@emotion/react';
 import { Popover, Divider } from 'antd';
 import { useTranslation } from 'next-i18next';
 
-import { popoverTitleStyle, popoverShadow } from 'common/mixins';
+import { popoverShadow } from 'common/mixins';
 import { getBonusesFromCustomSet, getImageUrl } from 'common/utils';
 import { SetBonuses, BrokenImagePlaceholder } from 'common/wrappers';
 import { mq } from 'common/constants';
@@ -102,7 +102,6 @@ const BonusStats = ({ customSet, isMobile, isClassic }: Props) => {
                 <Popover
                   key={id}
                   overlayClassName={css({
-                    ...popoverTitleStyle,
                     maxWidth: 288,
                   })}
                   title={
@@ -241,7 +240,6 @@ const BonusStats = ({ customSet, isMobile, isClassic }: Props) => {
           {({ css, cx }) => (
             <Popover
               overlayClassName={cx(
-                css(popoverTitleStyle),
                 css({
                   fontSize: '0.75rem',
                   maxWidth: 288,

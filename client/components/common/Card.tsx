@@ -4,7 +4,7 @@ import { Card as AntdCard } from 'antd';
 import { CardProps } from 'antd/lib/card';
 import { ClassNames, useTheme } from '@emotion/react';
 
-const Card = ({ className, ...restProps }: CardProps) => {
+const Card = ({ className, tabList, ...restProps }: CardProps) => {
   const theme = useTheme();
   return (
     <ClassNames>
@@ -12,6 +12,7 @@ const Card = ({ className, ...restProps }: CardProps) => {
         <AntdCard
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...restProps}
+          tabList={tabList}
           className={cx(
             css({
               backgroundColor: theme.card?.background,
@@ -20,6 +21,9 @@ const Card = ({ className, ...restProps }: CardProps) => {
               },
               '.ant-card-head': {
                 padding: 8,
+                ...(tabList && {
+                  borderBottom: 'none',
+                }),
               },
             }),
             className,
