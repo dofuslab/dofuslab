@@ -1434,6 +1434,7 @@ class SetFilters(graphene.InputObjectType):
     stats = graphene.NonNull(graphene.List(graphene.NonNull(StatFilter)))
     max_level = graphene.NonNull(graphene.Int)
     search = graphene.String(required=True)
+    item_type_ids = graphene.NonNull(graphene.List(graphene.NonNull(graphene.UUID)))
 
 
 class ItemNameObject(graphene.InputObjectType):
@@ -1483,20 +1484,28 @@ class Query(graphene.ObjectType):
                                 ModelItemStat.stat == Stat(stat_filter.stat).name,
                                 or_(
                                     ModelItemStat.max_value.between(
-                                        stat_filter.min_value
-                                        if stat_filter.min_value != None
-                                        else float(-inf),
-                                        stat_filter.max_value
-                                        if stat_filter.max_value != None
-                                        else float(inf),
+                                        (
+                                            stat_filter.min_value
+                                            if stat_filter.min_value != None
+                                            else float(-inf)
+                                        ),
+                                        (
+                                            stat_filter.max_value
+                                            if stat_filter.max_value != None
+                                            else float(inf)
+                                        ),
                                     ),
                                     ModelItemStat.min_value.between(
-                                        stat_filter.min_value
-                                        if stat_filter.min_value != None
-                                        else float(-inf),
-                                        stat_filter.max_value
-                                        if stat_filter.max_value != None
-                                        else float(inf),
+                                        (
+                                            stat_filter.min_value
+                                            if stat_filter.min_value != None
+                                            else float(-inf)
+                                        ),
+                                        (
+                                            stat_filter.max_value
+                                            if stat_filter.max_value != None
+                                            else float(inf)
+                                        ),
                                     ),
                                 ),
                             )
@@ -1570,12 +1579,16 @@ class Query(graphene.ObjectType):
                             and_(
                                 ModelSetBonus.stat == Stat(stat_filter.stat).name,
                                 ModelSetBonus.value.between(
-                                    stat_filter.min_value
-                                    if stat_filter.min_value != None
-                                    else float(-inf),
-                                    stat_filter.max_value
-                                    if stat_filter.max_value != None
-                                    else float(inf),
+                                    (
+                                        stat_filter.min_value
+                                        if stat_filter.min_value != None
+                                        else float(-inf)
+                                    ),
+                                    (
+                                        stat_filter.max_value
+                                        if stat_filter.max_value != None
+                                        else float(inf)
+                                    ),
                                 ),
                             )
                             for stat_filter in filters.stats
@@ -1614,6 +1627,17 @@ class Query(graphene.ObjectType):
                             func.upper(filters.search.strip())
                         )
                     )
+                    .group_by(
+                        ModelSet.uuid,
+                        level_sq.c.level,
+                        current_locale_translations.name,
+                    )
+                )
+
+            if filters.item_type_ids:
+                set_query = (
+                    set_query.join(ModelItem)
+                    .filter(ModelItem.item_type_id.in_(filters.item_type_ids))
                     .group_by(
                         ModelSet.uuid,
                         level_sq.c.level,

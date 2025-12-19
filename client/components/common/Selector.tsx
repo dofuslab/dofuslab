@@ -41,11 +41,14 @@ const reducer = (state: SharedFilters, action: SharedFilterAction) => {
           maxValue: null,
         })),
       };
+    case 'ITEM_TYPE_IDS':
+      return { ...state, itemTypeIds: action.itemTypeIds };
     case 'RESET':
       return {
         search: '',
         stats: [],
         maxLevel: action.maxLevel,
+        itemTypeIds: [],
       };
     default:
       throw new Error('Invalid action type');
@@ -73,6 +76,7 @@ const Selector = ({
     stats: [],
     maxLevel: customSet?.level || 200,
     search: '',
+    itemTypeIds: [],
   });
 
   const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);

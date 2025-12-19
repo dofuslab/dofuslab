@@ -38,9 +38,9 @@ const getHttpLink = (headers?: IncomingHttpHeaders) =>
   new HttpLink({
     uri:
       typeof window === 'undefined'
-        ? process.env.NEXT_PUBLIC_GRAPHQL_URI_FOR_CODEGEN ??
-          process.env.NEXT_PUBLIC_GRAPHQL_URI
-        : process.env.NEXT_PUBLIC_GRAPHQL_URI ?? process.env.GRAPHQL_URI,
+        ? (process.env.NEXT_PUBLIC_GRAPHQL_URI_FOR_CODEGEN ??
+          process.env.NEXT_PUBLIC_GRAPHQL_URI)
+        : (process.env.NEXT_PUBLIC_GRAPHQL_URI ?? process.env.GRAPHQL_URI),
     credentials: 'include',
     headers,
   });
