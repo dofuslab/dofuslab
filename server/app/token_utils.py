@@ -23,7 +23,7 @@ def generate_verify_email_url(token):
     Uses base_url from environment instead of url_for to avoid issues
     when called from background jobs without request context.
     """
-    base_url = os.getenv("HOME_PAGE", "")
+    base_url = os.getenv("HOME_PAGE", "https://dofuslab.io/")
     # Remove trailing slash from base_url if present
     base_url = base_url.rstrip("/")
     # Construct the URL manually
