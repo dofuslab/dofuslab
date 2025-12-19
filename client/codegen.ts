@@ -2,9 +2,7 @@ import { type CodegenConfig } from '@graphql-codegen/cli';
 import 'dotenv/config';
 
 const config: CodegenConfig = {
-  schema:
-    process.env.NEXT_PUBLIC_GRAPHQL_URI_FOR_CODEGEN ??
-    process.env.NEXT_PUBLIC_GRAPHQL_URI,
+  schema: 'http://host.docker.internal:5000/api/graphql',
 
   documents: ['./graphql/**/*.graphql'],
   config: {

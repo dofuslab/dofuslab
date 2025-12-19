@@ -40,12 +40,15 @@ const StatTable = ({ group, className, openBuffModal }: Props) => {
 
   const statsFromCustomSetWithBuffs = useMemo(
     () =>
-      Object.entries(statsFromAppliedBuffs).reduce((totalStats, [k, v]) => {
-        return {
-          ...totalStats,
-          [k]: (totalStats[k] || 0) + v,
-        } as StatsFromCustomSet;
-      }, statsFromCustomSet || ({} as StatsFromCustomSet)),
+      Object.entries(statsFromAppliedBuffs).reduce(
+        (totalStats, [k, v]) => {
+          return {
+            ...totalStats,
+            [k]: (totalStats[k] || 0) + v,
+          } as StatsFromCustomSet;
+        },
+        statsFromCustomSet || ({} as StatsFromCustomSet),
+      ),
     [statsFromAppliedBuffs, statsFromCustomSet],
   );
 

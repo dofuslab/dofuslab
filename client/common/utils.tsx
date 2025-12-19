@@ -722,31 +722,34 @@ const getBestStat = (statsFromCustomSet: StatsFromCustomSet | null) =>
       value: getStatWithDefault(statsFromCustomSet, s),
       stat: s,
     }))
-    .reduce((currMax, curr) => {
-      if (!currMax) {
-        return curr;
-      }
-      if (curr.value > currMax.value) {
-        return curr;
-      }
-      if (curr.value === currMax.value) {
-        // if main stat (STR/INT/CHA/AGI) values are the same,
-        // use damage as tiebreaker
-        if (
-          getStatWithDefault(
-            statsFromCustomSet,
-            getCorrespondingDamage(curr.stat),
-          ) >
-          getStatWithDefault(
-            statsFromCustomSet,
-            getCorrespondingDamage(currMax.stat),
-          )
-        ) {
+    .reduce(
+      (currMax, curr) => {
+        if (!currMax) {
           return curr;
         }
-      }
-      return currMax;
-    }, null as { value: number; stat: Stat } | null)?.stat ?? Stat.STRENGTH;
+        if (curr.value > currMax.value) {
+          return curr;
+        }
+        if (curr.value === currMax.value) {
+          // if main stat (STR/INT/CHA/AGI) values are the same,
+          // use damage as tiebreaker
+          if (
+            getStatWithDefault(
+              statsFromCustomSet,
+              getCorrespondingDamage(curr.stat),
+            ) >
+            getStatWithDefault(
+              statsFromCustomSet,
+              getCorrespondingDamage(currMax.stat),
+            )
+          ) {
+            return curr;
+          }
+        }
+        return currMax;
+      },
+      null as { value: number; stat: Stat } | null,
+    )?.stat ?? Stat.STRENGTH;
 
 export const calcEffectType = (
   effectType: SpellEffectType | WeaponEffectType,
@@ -1808,13 +1811,16 @@ export const getWeightedAverages = (
 
   const averageCritDamage = summaries
     .filter(({ type }) => getSimpleEffect(type) === 'damage')
-    .reduce((acc, { crit }) => {
-      if (acc === null || crit === null) {
-        return null;
-      }
-      const average = crit.min ? (crit.min + crit.max) / 2 : crit.max;
-      return acc + average;
-    }, 0 as number | null);
+    .reduce(
+      (acc, { crit }) => {
+        if (acc === null || crit === null) {
+          return null;
+        }
+        const average = crit.min ? (crit.min + crit.max) / 2 : crit.max;
+        return acc + average;
+      },
+      0 as number | null,
+    );
 
   const weightedAverageDamage =
     averageCritDamage !== null && critRate
@@ -1833,13 +1839,16 @@ export const getWeightedAverages = (
 
   const averageCritHeal = summaries
     .filter(({ type }) => getSimpleEffect(type) === 'heal')
-    .reduce((acc, { crit }) => {
-      if (acc === null || crit === null) {
-        return null;
-      }
-      const average = crit.min ? (crit.min + crit.max) / 2 : crit.max;
-      return acc + average;
-    }, 0 as number | null);
+    .reduce(
+      (acc, { crit }) => {
+        if (acc === null || crit === null) {
+          return null;
+        }
+        const average = crit.min ? (crit.min + crit.max) / 2 : crit.max;
+        return acc + average;
+      },
+      0 as number | null,
+    );
 
   const weightedAverageHeal =
     averageCritHeal !== null && critRate
@@ -1970,12 +1979,15 @@ export const combineStatsWithBuffs = (
 ) => {
   const statsFromCustomSetWithBuffs = Object.entries(
     statsFromAppliedBuffs,
-  ).reduce((totalStats, [k, v]) => {
-    return {
-      ...totalStats,
-      [k]: (totalStats[k] || 0) + v,
-    } as StatsFromCustomSet;
-  }, statsFromCustomSet || ({} as StatsFromCustomSet));
+  ).reduce(
+    (totalStats, [k, v]) => {
+      return {
+        ...totalStats,
+        [k]: (totalStats[k] || 0) + v,
+      } as StatsFromCustomSet;
+    },
+    statsFromCustomSet || ({} as StatsFromCustomSet),
+  );
   return statsFromCustomSetWithBuffs;
 };
 

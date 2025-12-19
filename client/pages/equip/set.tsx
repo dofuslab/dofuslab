@@ -33,6 +33,7 @@ export const getStaticProps: GetStaticProps<
         stats: [],
         maxLevel: 200,
         search: '',
+        itemTypeIds: [],
       },
     },
   });
