@@ -106,7 +106,6 @@ const SetSelector = ({ filters, customSet, isMobile, isClassic }: Props) => {
         minWidth: 0,
         [mq[1]]: { gridGap: 12 },
       }}
-      useWindow={isMobile || isClassic}
       threshold={THRESHOLD}
     >
       {loading ? (
