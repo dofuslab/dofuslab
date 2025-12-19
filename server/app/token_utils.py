@@ -1,5 +1,6 @@
 from itsdangerous import URLSafeTimedSerializer
-from flask import current_app, url_for
+from flask import current_app
+import os
 
 
 def encode_token(email, salt):
@@ -16,5 +17,14 @@ def decode_token(token, salt, expiration=3600):
         return False
 
 
-def generate_url(endpoint, token):
-    return url_for(endpoint, token=token, _external=True)
+def generate_verify_email_url(token):
+    """
+    Generate an external URL for the verify email endpoint.
+    Uses base_url from environment instead of url_for to avoid issues
+    when called from background jobs without request context.
+    """
+    base_url = os.getenv("HOME_PAGE", "")
+    # Remove trailing slash from base_url if present
+    base_url = base_url.rstrip("/")
+    # Construct the URL manually
+    return f"{base_url}/api/verify-email/{token}"

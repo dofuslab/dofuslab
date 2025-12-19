@@ -75,7 +75,7 @@ from app.database.enums import (
     WeaponElementMage,
     BuildGender,
 )
-from app.token_utils import decode_token, encode_token, generate_url
+from app.token_utils import decode_token, encode_token, generate_verify_email_url
 import app.mutation_validation_utils as validation
 import graphene
 import pytz
@@ -1117,7 +1117,7 @@ class RegisterUser(graphene.Mutation):
                     profile_picture=(random.choice(DEFAULT_PROFILE_PICTURE_URLS)),
                 )
                 token = encode_token(user.email, verify_email_salt)
-                verify_url = generate_url("verify_email.verify_email", token)
+                verify_url = generate_verify_email_url(token)
                 template = template_env.get_template("verify_email.html")
                 content = template.render(display_name=username, verify_url=verify_url)
                 db_session.add(user)
@@ -1201,7 +1201,7 @@ class ResendVerificationEmail(graphene.Mutation):
             if user.verified:
                 raise GraphQLError(_("Your account is already verified."))
             token = encode_token(user.email, verify_email_salt)
-            verify_url = generate_url("verify_email.verify_email", token)
+            verify_url = generate_verify_email_url(token)
             template = template_env.get_template("verify_email.html")
             content = template.render(display_name=user.username, verify_url=verify_url)
             q.enqueue(
