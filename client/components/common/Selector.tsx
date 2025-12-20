@@ -25,6 +25,19 @@ import ResetAllButton from './ResetAllButton';
 import FavoritesButton from './FavoritesButton';
 import { ItemFilters } from '__generated__/globalTypes';
 
+const makeItemTypesFromSlots = (slots: Array<ItemSlot>, showSets: boolean, selectedItemSlot: ItemSlot | null) => {
+  const filteredSlots = showSets
+    ? slots
+    : slots.filter((slot: ItemSlot) => !selectedItemSlot || selectedItemSlot.id === slot.id);
+
+  return uniqWith(
+    filteredSlots
+      .map((slot: ItemSlot) => slot.itemTypes)
+      .reduce((acc, curr) => [...acc, ...curr], []),
+    isEqual,
+  );
+};
+
 const reducer = (state: ItemFilters, action: FilterAction) => {
   switch (action.type) {
     case 'SEARCH':
@@ -156,16 +169,8 @@ const Selector = ({
           <ItemTypeFilter
             setItemTypeIds={setItemTypeIds}
             itemTypeIds={itemTypeIds}
-            itemTypes={uniqWith(
-              slots
-                .filter(
-                  (slot: ItemSlot) =>
-                    !selectedItemSlot || selectedItemSlot.id === slot.id,
-                )
-                .map((slot: ItemSlot) => slot.itemTypes)
-                .reduce((acc, curr) => [...acc, ...curr], []),
-              isEqual,
-            )}
+            itemTypes={makeItemTypesFromSlots(slots, showSetsState, selectedItemSlot)}
+            isShowingSets={showSetsState}
           />
         )}
         <ResetAllButton
