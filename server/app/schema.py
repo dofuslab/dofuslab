@@ -1635,15 +1635,19 @@ class Query(graphene.ObjectType):
                 )
 
             if filters.item_type_ids:
-                set_query = (
-                    set_query.join(ModelItem)
-                    .filter(ModelItem.item_type_id.in_(filters.item_type_ids))
-                    .group_by(
-                        ModelSet.uuid,
-                        level_sq.c.level,
-                        current_locale_translations.name,
+                item_type_sq = (
+                    db.session.query(
+                        ModelItem.set_id,
+                        func.count(distinct(ModelItem.item_type_id)).label("num_item_types_matched"),
                     )
+                    .filter(ModelItem.item_type_id.in_(filters.item_type_ids))
+                    .group_by(ModelItem.set_id)
+                    .subquery()
                 )
+
+                set_query = set_query.join(
+                    item_type_sq, ModelSet.uuid == item_type_sq.c.set_id
+                ).filter(item_type_sq.c.num_item_types_matched == len(filters.item_type_ids))
 
         return set_query.order_by(
             level_sq.c.level.desc(), current_locale_translations.name.asc()
