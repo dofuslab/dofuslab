@@ -8,7 +8,6 @@ import InfiniteScroll from 'react-infinite-scroller';
 import ItemsQuery from 'graphql/queries/items.graphql';
 import { items, itemsVariables } from 'graphql/queries/__generated__/items';
 import { getResponsiveGridStyle } from 'common/mixins';
-import { SharedFilters } from 'common/types';
 import { mq, getSelectorNumCols, ITEMS_PAGE_SIZE } from 'common/constants';
 import { Item, ItemSet } from 'common/type-aliases';
 import {
@@ -23,11 +22,12 @@ import SetModal from './SetModal';
 
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 import ItemCardWithContext, { SharedProps } from './ItemCardWithContext';
+import { ItemFilters } from '__generated__/globalTypes';
 
 const THRESHOLD = 600;
 
 type Props = SharedProps & {
-  filters: SharedFilters;
+  filters: ItemFilters;
   itemTypeIds: Set<string>;
 };
 

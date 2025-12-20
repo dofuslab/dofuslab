@@ -1,6 +1,5 @@
 import {
   Stat,
-  ItemFilters,
   WeaponEffectType,
   SpellEffectType,
   StatFilter,
@@ -42,7 +41,7 @@ export type SetCounter = {
   };
 };
 
-export type SharedFilterAction =
+export type FilterAction =
   | { type: 'SEARCH'; search: string }
   | { type: 'MAX_LEVEL'; maxLevel: number }
   | { type: 'QUICK_STATS'; stats: Array<Stat> }
@@ -66,8 +65,6 @@ export interface ExoStatLine {
   stat: Stat;
   value: number;
 }
-
-export type SharedFilters = ItemFilters
 
 const mobileScreenTypesArr = [
   'HOME',

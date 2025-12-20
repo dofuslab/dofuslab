@@ -9,7 +9,7 @@ import { useTheme } from '@emotion/react';
 import uniqWith from 'lodash/uniqWith';
 import isEqual from 'lodash/isEqual';
 
-import { SharedFilters, SharedFilterAction } from 'common/types';
+import { FilterAction } from 'common/types';
 
 import { topMarginStyle } from 'common/mixins';
 import { mq, SEARCH_BAR_ID } from 'common/constants';
@@ -23,8 +23,9 @@ import SetSelector from './SetSelector';
 import ItemTypeFilter from './ItemTypeFilter';
 import ResetAllButton from './ResetAllButton';
 import FavoritesButton from './FavoritesButton';
+import { ItemFilters } from '__generated__/globalTypes';
 
-const reducer = (state: SharedFilters, action: SharedFilterAction) => {
+const reducer = (state: ItemFilters, action: FilterAction) => {
   switch (action.type) {
     case 'SEARCH':
       return { ...state, search: action.search };
@@ -151,7 +152,7 @@ const Selector = ({
           selectedItemSlot={selectedItemSlot}
           selectItemSlot={selectItemSlot}
         />
-        {slots && !showSetsState && (
+        {slots && (
           <ItemTypeFilter
             setItemTypeIds={setItemTypeIds}
             itemTypeIds={itemTypeIds}
@@ -186,6 +187,7 @@ const Selector = ({
         {showSetsState ? (
           <SetSelector
             filters={filters}
+            itemTypeIds={itemTypeIds}
             customSet={customSet}
             isClassic={isClassic}
             isMobile={isMobile}

@@ -6,7 +6,6 @@ import { useQuery } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import SetQuery from 'graphql/queries/sets.graphql';
-import { SharedFilters } from 'common/types';
 import { sets, setsVariables } from 'graphql/queries/__generated__/sets';
 
 import { mq, getSelectorNumCols } from 'common/constants';
@@ -16,21 +15,28 @@ import SetCard from './SetCard';
 
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 import SetModal from './SetModal';
+import { ItemFilters } from '__generated__/globalTypes';
 
 const PAGE_SIZE = 12;
 
 const THRESHOLD = 600;
 
 interface Props {
-  filters: SharedFilters;
+  filters: ItemFilters;
+  itemTypeIds: Set<string>;
   customSet?: CustomSet | null;
   isMobile: boolean;
   isClassic: boolean;
 }
 
-const SetSelector = ({ filters, customSet, isMobile, isClassic }: Props) => {
+const SetSelector = ({ filters, itemTypeIds, customSet, isMobile, isClassic }: Props) => {
+  const itemTypeIdsArr = Array.from(itemTypeIds);
+  const queryFilters = {
+    ...filters,
+    itemTypeIds: itemTypeIdsArr,
+  };
   const { data, loading, fetchMore } = useQuery<sets, setsVariables>(SetQuery, {
-    variables: { first: PAGE_SIZE, filters },
+    variables: { first: PAGE_SIZE, filters: queryFilters },
   });
 
   const [selectedSet, setSelectedSet] = useState<SetWithItems | null>(null);
