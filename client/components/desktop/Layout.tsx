@@ -250,8 +250,7 @@ function Layout({ children, showSwitch }: LayoutProps) {
     <AntdRegistry>
       <AntdLayout
         css={{
-          height: '100%',
-          minHeight: '100vh',
+          height: '100vh',
           backgroundColor: theme.body?.background,
         }}
         suppressHydrationWarning
@@ -529,6 +528,9 @@ function Layout({ children, showSwitch }: LayoutProps) {
             display: 'flex',
             flexDirection: 'column',
             padding: 0,
+            flex: 1,
+            minHeight: 0,
+            overflow: 'hidden',
           }}
         >
           {children}

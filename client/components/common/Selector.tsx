@@ -120,11 +120,12 @@ const Selector = ({
         css={[
           {
             padding: '0 12px',
+            overflowY: 'auto',
+            overflowAnchor: 'none',
+            flex: 1,
+            minHeight: 0,
             [mq[1]]: {
               padding: '0 14px',
-              overflowY: 'auto',
-              overflowAnchor: 'none',
-              flex: 1,
             },
             [mq[4]]: {
               padding: '0 20px',

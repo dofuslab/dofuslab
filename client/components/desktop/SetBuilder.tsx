@@ -171,7 +171,15 @@ const SetBuilder = ({ customSet }: Props) => {
   ];
 
   return (
-    <>
+    <div
+      css={{
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'hidden',
+        flex: 1,
+        minHeight: 0,
+      }}
+    >
       <SetHeader
         key={customSet?.id}
         customSet={customSet}
@@ -196,8 +204,9 @@ const SetBuilder = ({ customSet }: Props) => {
       <div
         css={{
           flex: '1 1 auto',
-          overflowX: 'hidden',
+          overflow: 'hidden',
           display: 'flex',
+          minHeight: 0,
           [mq[1]]: {
             paddingLeft: 14,
           },
@@ -208,7 +217,8 @@ const SetBuilder = ({ customSet }: Props) => {
       >
         <div
           css={{
-            overflow: 'auto',
+            overflowY: 'auto',
+            overflowX: 'hidden',
             flex: '0 1 296px',
             paddingRight: 12,
             ...(topMarginStyle[mq[1]] as Record<string, unknown>),
@@ -259,7 +269,7 @@ const SetBuilder = ({ customSet }: Props) => {
         customSet={customSet}
         selectedItemSlot={selectedItemSlot}
       />
-    </>
+    </div>
   );
 };
 
