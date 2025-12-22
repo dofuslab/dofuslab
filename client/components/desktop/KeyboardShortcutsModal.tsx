@@ -116,7 +116,7 @@ const shortcuts: Array<Shortcut> = [
 
 const getColumns: (
   t: TFunction<'keyboard_shortcut'>,
-) => Array<ColumnType<typeof shortcuts[0]>> = (
+) => Array<ColumnType<(typeof shortcuts)[0]>> = (
   t: TFunction<'keyboard_shortcut'>,
 ) => [
   {

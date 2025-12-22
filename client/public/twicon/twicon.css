@@ -9,11 +9,12 @@
   font-family: twicon;
   font-weight: 400;
   font-style: Regular;
-  src: url(twicon.woff2) format("woff2"),
-    url(twicon.woff) format("woff");
+  src:
+    url(twicon.woff2) format('woff2'),
+    url(twicon.woff) format('woff');
 }
-[class*=" twicon-"],
-[class^="twicon-"] {
+[class*=' twicon-'],
+[class^='twicon-'] {
   font-family: twicon !important;
   speak: none;
   font-style: normal;
@@ -24,309 +25,309 @@
   word-wrap: normal;
   direction: ltr;
   line-height: 1;
-  -webkit-font-feature-settings: "liga";
+  -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
 
 .twicon-td-flag:before {
-  content: "\a000";
+  content: '\a000';
 }
 .twicon-roc-flag:before {
-  content: "\a001";
+  content: '\a001';
 }
 .twicon-main-island:before {
-  content: "\a002";
+  content: '\a002';
 }
 .twicon-penghu-islands:before {
-  content: "\a003";
+  content: '\a003';
 }
 .twicon-kinmen-island:before {
-  content: "\a004";
+  content: '\a004';
 }
 .twicon-green-island:before {
-  content: "\a005";
+  content: '\a005';
 }
 .twicon-lamay-island:before {
-  content: "\a006";
+  content: '\a006';
 }
 .twicon-gueishan-island:before {
-  content: "\a007";
+  content: '\a007';
 }
 .twicon-orchid-island:before {
-  content: "\a008";
+  content: '\a008';
 }
 .twicon-grave-sense:before {
-  content: "\a009";
+  content: '\a009';
 }
 .twicon-cks-hall:before {
-  content: "\a00a";
+  content: '\a00a';
 }
 .twicon-gate-cks:before {
-  content: "\a00b";
+  content: '\a00b';
 }
 .twicon-president-office:before {
-  content: "\a00c";
+  content: '\a00c';
 }
 .twicon-taipei101:before {
-  content: "\a00d";
+  content: '\a00d';
 }
 .twicon-np-mus:before {
-  content: "\a00e";
+  content: '\a00e';
 }
 .twicon-shrine-tp:before {
-  content: "\a00f";
+  content: '\a00f';
 }
 .twicon-longshan-tmp:before {
-  content: "\a010";
+  content: '\a010';
 }
 .twicon-sys-hall:before {
-  content: "\a011";
+  content: '\a011';
 }
 .twicon-confucius-tmp:before {
-  content: "\a012";
+  content: '\a012';
 }
 .twicon-xingtian-tmp:before {
-  content: "\a013";
+  content: '\a013';
 }
 .twicon-nt-mus:before {
-  content: "\a014";
+  content: '\a014';
 }
 .twicon-grand-hotel:before {
-  content: "\a015";
+  content: '\a015';
 }
 .twicon-228-park:before {
-  content: "\a016";
+  content: '\a016';
 }
 .twicon-san-domingo:before {
-  content: "\a017";
+  content: '\a017';
 }
 .twicon-raohe-nm:before {
-  content: "\a018";
+  content: '\a018';
 }
 .twicon-red-house:before {
-  content: "\a019";
+  content: '\a019';
 }
 .twicon-beimen:before {
-  content: "\a01a";
+  content: '\a01a';
 }
 .twicon-xiaonanmen:before {
-  content: "\a01b";
+  content: '\a01b';
 }
 .twicon-taipei-stn:before {
-  content: "\a01c";
+  content: '\a01c';
 }
 .twicon-zeelandia:before {
-  content: "\a01d";
+  content: '\a01d';
 }
 .twicon-eg-castle:before {
-  content: "\a01e";
+  content: '\a01e';
 }
 .twicon-provintia:before {
-  content: "\a01f";
+  content: '\a01f';
 }
 .twicon-hy-statue:before {
-  content: "\a020";
+  content: '\a020';
 }
 .twicon-85tower:before {
-  content: "\a021";
+  content: '\a021';
 }
 .twicon-fb-stn:before {
-  content: "\a022";
+  content: '\a022';
 }
 .twicon-dt-pagoda:before {
-  content: "\a023";
+  content: '\a023';
 }
 .twicon-rosary-church:before {
-  content: "\a024";
+  content: '\a024';
 }
 .twicon-longteng-brg:before {
-  content: "\a025";
+  content: '\a025';
 }
 .twicon-ly-mus:before {
-  content: "\a026";
+  content: '\a026';
 }
 .twicon-lovers-brg:before {
-  content: "\a027";
+  content: '\a027';
 }
 .twicon-hotspring-mus:before {
-  content: "\a028";
+  content: '\a028';
 }
 .twicon-tunghai-uni:before {
-  content: "\a029";
+  content: '\a029';
 }
 .twicon-taichung-park:before {
-  content: "\a02a";
+  content: '\a02a';
 }
 .twicon-queens-head:before {
-  content: "\a02b";
+  content: '\a02b';
 }
 .twicon-ntc-theater:before {
-  content: "\a02c";
+  content: '\a02c';
 }
 .twicon-bagua:before {
-  content: "\a02d";
+  content: '\a02d';
 }
 .twicon-foguangshan:before {
-  content: "\a02e";
+  content: '\a02e';
 }
 .twicon-vase-rock:before {
-  content: "\a02f";
+  content: '\a02f';
 }
 .twicon-tropic-cancer:before {
-  content: "\a030";
+  content: '\a030';
 }
 .twicon-fuguijiao-lh:before {
-  content: "\a031";
+  content: '\a031';
 }
 .twicon-yuweng-lh:before {
-  content: "\a032";
+  content: '\a032';
 }
 .twicon-eluanbi-lh:before {
-  content: "\a033";
+  content: '\a033';
 }
 .twicon-kano-staue:before {
-  content: "\a034";
+  content: '\a034';
 }
 .twicon-ershawan:before {
-  content: "\a035";
+  content: '\a035';
 }
 .twicon-dahu-park:before {
-  content: "\a036";
+  content: '\a036';
 }
 .twicon-balloon:before {
-  content: "\a037";
+  content: '\a037';
 }
 .twicon-taiwan-rw:before {
-  content: "\a038";
+  content: '\a038';
 }
 .twicon-taipei-mrt:before {
-  content: "\a039";
+  content: '\a039';
 }
 .twicon-alishan-rw:before {
-  content: "\a03a";
+  content: '\a03a';
 }
 .twicon-high-speed-rail:before {
-  content: "\a03b";
+  content: '\a03b';
 }
 .twicon-gondola:before {
-  content: "\a03c";
+  content: '\a03c';
 }
 .twicon-youbike:before {
-  content: "\a03d";
+  content: '\a03d';
 }
 .twicon-yami-boat:before {
-  content: "\a03e";
+  content: '\a03e';
 }
 .twicon-dragon-boat:before {
-  content: "\a03f";
+  content: '\a03f';
 }
 .twicon-lantern1:before {
-  content: "\a040";
+  content: '\a040';
 }
 .twicon-lantern2:before {
-  content: "\a041";
+  content: '\a041';
 }
 .twicon-sky-lantern:before {
-  content: "\a042";
+  content: '\a042';
 }
 .twicon-taiwanese-bag:before {
-  content: "\a043";
+  content: '\a043';
 }
 .twicon-postbox1:before {
-  content: "\a044";
+  content: '\a044';
 }
 .twicon-postbox2:before {
-  content: "\a045";
+  content: '\a045';
 }
 .twicon-jug:before {
-  content: "\a046";
+  content: '\a046';
 }
 .twicon-tea-pot:before {
-  content: "\a047";
+  content: '\a047';
 }
 .twicon-tapioca:before {
-  content: "\a048";
+  content: '\a048';
 }
 .twicon-beer:before {
-  content: "\a049";
+  content: '\a049';
 }
 .twicon-apple-cider:before {
-  content: "\a04a";
+  content: '\a04a';
 }
 .twicon-couplets:before {
-  content: "\a04b";
+  content: '\a04b';
 }
 .twicon-fortune:before {
-  content: "\a04c";
+  content: '\a04c';
 }
 .twicon-electric-pot:before {
-  content: "\a04d";
+  content: '\a04d';
 }
 .twicon-slipper:before {
-  content: "\a04e";
+  content: '\a04e';
 }
 .twicon-flying-fish:before {
-  content: "\a04f";
+  content: '\a04f';
 }
 .twicon-black-bear:before {
-  content: "\a050";
+  content: '\a050';
 }
 .twicon-trash:before {
-  content: "\a052";
+  content: '\a052';
 }
 .twicon-recycling:before {
-  content: "\a051";
+  content: '\a051';
 }
 .twicon-queue-box:before {
-  content: "\a053";
+  content: '\a053';
 }
 .twicon-bicycle-lane:before {
-  content: "\a054";
+  content: '\a054';
 }
 .twicon-red-man:before {
-  content: "\a055";
+  content: '\a055';
 }
 .twicon-green-man:before {
-  content: "\a056";
+  content: '\a056';
 }
 .twicon-l-nh-insurance:before {
-  content: "\a057";
+  content: '\a057';
 }
 .twicon-l-pixnet:before {
-  content: "\a058";
+  content: '\a058';
 }
 .twicon-l-17live:before {
-  content: "\a059";
+  content: '\a059';
 }
 .twicon-l-wemo:before {
-  content: "\a05a";
+  content: '\a05a';
 }
 .twicon-l-dcard:before {
-  content: "\a05b";
+  content: '\a05b';
 }
 .twicon-l-easy-card:before {
-  content: "\a05c";
+  content: '\a05c';
 }
 .twicon-l-ipass:before {
-  content: "\a05d";
+  content: '\a05d';
 }
 .twicon-l-youbike:before {
-  content: "\a05e";
+  content: '\a05e';
 }
 .twicon-l-luxgen:before {
-  content: "\a05f";
+  content: '\a05f';
 }
 .twicon-l-post:before {
-  content: "\a060";
+  content: '\a060';
 }
 .twicon-l-taiwan-rw:before {
-  content: "\a061";
+  content: '\a061';
 }
 .twicon-l-taipei-mrt:before {
-  content: "\a062";
+  content: '\a062';
 }
 .twicon-l-kaoxiong-mrt:before {
-  content: "\a063";
+  content: '\a063';
 }
 .twicon-xs {
   font-size: 0.5em;
@@ -511,7 +512,6 @@
 .navigation .user {
   flex: 1;
 }
-
 
 /* HEADER */
 

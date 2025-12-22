@@ -1,6 +1,5 @@
 import {
   Stat,
-  ItemFilters,
   WeaponEffectType,
   SpellEffectType,
   StatFilter,
@@ -42,12 +41,13 @@ export type SetCounter = {
   };
 };
 
-export type SharedFilterAction =
+export type FilterAction =
   | { type: 'SEARCH'; search: string }
   | { type: 'MAX_LEVEL'; maxLevel: number }
   | { type: 'QUICK_STATS'; stats: Array<Stat> }
   | { type: 'STATS'; stats: Array<StatFilter> }
-  | { type: 'RESET'; maxLevel: number };
+  | { type: 'RESET'; maxLevel: number }
+  | { type: 'ITEM_TYPE_IDS'; itemTypeIds: Array<string> };
 
 export type MageAction =
   | { type: 'ADD'; stat: Stat }
@@ -66,8 +66,6 @@ export interface ExoStatLine {
   value: number;
 }
 
-export type SharedFilters = Omit<ItemFilters, 'itemTypeIds'>;
-
 const mobileScreenTypesArr = [
   'HOME',
   'EQUIPPED_ITEM',
@@ -75,7 +73,7 @@ const mobileScreenTypesArr = [
   'SET_SELECTOR',
 ] as const;
 
-export type MobileScreen = typeof mobileScreenTypesArr[number];
+export type MobileScreen = (typeof mobileScreenTypesArr)[number];
 
 export const mobileScreenTypes = mobileScreenTypesArr.reduce(
   (acc, curr) => ({ ...acc, [curr]: curr }),
@@ -168,9 +166,9 @@ export const scrolledStats = [
 
 export const stats = [...baseStats, ...scrolledStats] as const;
 
-export type BaseStatKey = typeof baseStats[number];
+export type BaseStatKey = (typeof baseStats)[number];
 
-export type StatKey = typeof stats[number];
+export type StatKey = (typeof stats)[number];
 
 export interface AppliedBuff {
   buff: Buff;
