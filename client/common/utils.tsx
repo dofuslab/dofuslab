@@ -748,36 +748,67 @@ const getBestStat = (statsFromCustomSet: StatsFromCustomSet | null) =>
       return currMax;
     }, null as { value: number; stat: Stat } | null)?.stat ?? Stat.STRENGTH;
 
+// Mapping from stat to corresponding element effects
+const STAT_TO_ELEMENT_EFFECTS = {
+  [Stat.STRENGTH]: {
+    damage: SpellEffectType.EARTH_DAMAGE,
+    steal: SpellEffectType.EARTH_STEAL,
+  },
+  [Stat.INTELLIGENCE]: {
+    damage: SpellEffectType.FIRE_DAMAGE,
+    steal: SpellEffectType.FIRE_STEAL,
+  },
+  [Stat.CHANCE]: {
+    damage: SpellEffectType.WATER_DAMAGE,
+    steal: SpellEffectType.WATER_STEAL,
+  },
+  [Stat.AGILITY]: {
+    damage: SpellEffectType.AIR_DAMAGE,
+    steal: SpellEffectType.AIR_STEAL,
+  },
+} as const;
+
+// Mapping from weapon effect types to their corresponding spell effect types
+const WEAPON_TO_SPELL_EFFECT_MAP = {
+  [WeaponEffectType.BEST_ELEMENT_DAMAGE]: SpellEffectType.BEST_ELEMENT_DAMAGE,
+  [WeaponEffectType.BEST_ELEMENT_STEAL]: SpellEffectType.BEST_ELEMENT_STEAL,
+} as const;
+
 export const calcEffectType = (
   effectType: SpellEffectType | WeaponEffectType,
   statsFromCustomSet: StatsFromCustomSet | null,
 ) => {
-  if (
-    effectType !== SpellEffectType.BEST_ELEMENT_DAMAGE &&
-    effectType !== SpellEffectType.BEST_ELEMENT_STEAL
-  ) {
+  const isBestElementType =
+    effectType === SpellEffectType.BEST_ELEMENT_DAMAGE ||
+    effectType === SpellEffectType.BEST_ELEMENT_STEAL ||
+    effectType === WeaponEffectType.BEST_ELEMENT_DAMAGE ||
+    effectType === WeaponEffectType.BEST_ELEMENT_STEAL;
+
+  if (!isBestElementType) {
     return effectType;
   }
+
   const bestStat = getBestStat(statsFromCustomSet);
-  switch (bestStat) {
-    case Stat.STRENGTH:
-      return effectType === SpellEffectType.BEST_ELEMENT_DAMAGE
-        ? SpellEffectType.EARTH_DAMAGE
-        : SpellEffectType.EARTH_STEAL;
-    case Stat.INTELLIGENCE:
-      return effectType === SpellEffectType.BEST_ELEMENT_DAMAGE
-        ? SpellEffectType.FIRE_DAMAGE
-        : SpellEffectType.FIRE_STEAL;
-    case Stat.CHANCE:
-      return effectType === SpellEffectType.BEST_ELEMENT_DAMAGE
-        ? SpellEffectType.WATER_DAMAGE
-        : SpellEffectType.WATER_STEAL;
-    case Stat.AGILITY:
-      return effectType === SpellEffectType.BEST_ELEMENT_DAMAGE
-        ? SpellEffectType.AIR_DAMAGE
-        : SpellEffectType.AIR_STEAL;
+  const elementEffects =
+    STAT_TO_ELEMENT_EFFECTS[bestStat as keyof typeof STAT_TO_ELEMENT_EFFECTS];
+
+  if (!elementEffects) {
+    throw new Error('Invalid best stat');
+  }
+
+  // Convert weapon effect types to spell effect types for consistent handling
+  const normalizedEffectType =
+    WEAPON_TO_SPELL_EFFECT_MAP[
+      effectType as keyof typeof WEAPON_TO_SPELL_EFFECT_MAP
+    ] || effectType;
+
+  switch (normalizedEffectType) {
+    case SpellEffectType.BEST_ELEMENT_DAMAGE:
+      return elementEffects.damage;
+    case SpellEffectType.BEST_ELEMENT_STEAL:
+      return elementEffects.steal;
     default:
-      throw new Error('Invalid best stat');
+      throw new Error('Invalid best element effect type');
   }
 };
 
@@ -789,6 +820,8 @@ const getStats = (
     case SpellEffectType.BEST_ELEMENT_DAMAGE:
     case SpellEffectType.BEST_ELEMENT_STEAL:
     case SpellEffectType.BEST_ELEMENT_HEALING:
+    case WeaponEffectType.BEST_ELEMENT_DAMAGE:
+    case WeaponEffectType.BEST_ELEMENT_STEAL:
       return getDamageObjectFromElement(getBestStat(statsFromCustomSet));
     case WeaponEffectType.AIR_DAMAGE:
     case WeaponEffectType.AIR_STEAL:

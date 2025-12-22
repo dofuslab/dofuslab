@@ -83,6 +83,7 @@ class WeaponEffectType(Enum):
     WATER_HEALING = auto()
     NEUTRAL_HEALING = auto()
     BEST_ELEMENT_DAMAGE = auto()
+    BEST_ELEMENT_STEAL = auto()
     PUSHBACK_DAMAGE = auto()
     ATTRACT_CELLS = auto()
     STEALS_MP = auto()
