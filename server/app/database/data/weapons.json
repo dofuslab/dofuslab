@@ -46929,22 +46929,22 @@
     },
     "customStats": {
       "en": [
-        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 15 damage on themself in their best attack element to inflict the same amount of health-steal damage on adjacent entities at the end of the bearer's turn. Allies who attack the enemies hit are healed by 7% of damage inflicted until the bearer's next turn (stackable 1 time)."
+        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 15 damage on themself in their best attack element to inflict the same amount of health-steal damage on adjacent entities at the end of the bearer's turn. Also heals attackers by 7% of damage inflicted on enemies hit until the bearer's next turn (stackable 1 time)."
       ],
       "fr": [
         "Appétit de Crocobur :\n• À chaque début de tour, le porteur s'inflige 15 de dommages dans son meilleur élément d'attaque pour occasionner les mêmes dommages en vol de vie aux entités à son contact à la fin de son tour. Les alliés qui attaquent les ennemis touchés sont soignés de 7% des dommages occasionnés jusqu'au prochain tour du porteur (cumulable 1 fois)."
       ],
       "de": [
-        "Appetit von Crocobur:\n• Zu Beginn jeder Runde fügt sich der Träger selbst 15 Schaden in seinem besten Angriffselement zu, um Einheiten in Reichweite am Ende seiner Runde durch LP-Diebstahl Schaden in gleicher Höhe zuzufügen. Verbündete, die die getroffenen Gegner angreifen, werden bis zur nächsten Runde des Trägers um 7 % des verursachten Schadens geheilt (1-mal kumulierbar)."
+        "Appetit von Crocobur:\n• Zu Beginn jeder Runde fügt sich der Träger selbst 15 Schaden in seinem besten Angriffselement zu, um Einheiten in Reichweite am Ende seiner Runde durch LP-Diebstahl Schaden in gleicher Höhe zuzufügen. Außerdem werden Angreifer bis zur nächsten Runde des Trägers um 7 % des getroffenen Gegnern zugefügten Schadens geheilt (1-mal kumulierbar)."
       ],
       "es": [
-        "Apetito de Cocobur:\n• Al principio de cada turno, el portador se inflige 15 de daño con su mejor elemento de ataque y roba vida en la misma cantidad de daño a las entidades en contacto con él al final de su turno. Los aliados que ataquen a los enemigos afectados serán curados un 7% del daño infligido hasta el siguiente turno del portador (acumulable 1 vez)."
+        "Apetito de Cocobur:\n• Al principio de cada turno, el portador se inflige 15 de daño con su mejor elemento de ataque e inflige el mismo daño con robo de vida a las entidades en contacto con él al final de su turno. Cura también a los atacantes un 7% de los daños ocasionados a los enemigos alcanzados hasta el siguiente turno del portador (acumulable 1 vez)."
       ],
       "pt": [
-        "Apetite da Crocálibur:\n• No começo de cada turno, o portador inflige a si mesmo 15 de danos em seu melhor elemento de ataque para infligir os mesmos danos em roubo de vida às entidades em contato com ele ao final do turno. Os aliados que atacam os inimigos atingidos são curados em 7% dos danos infligidos até o próximo turno do portador (acumula 1 vez)."
+        "Apetite da Crocálibur:\n• No começo de cada turno, o portador inflige a si mesmo 15 de danos em seu melhor elemento de ataque para infligir os mesmos danos em roubo de vida às entidades em contato com ele ao final do turno. Também cura os atacantes em 7% dos danos infligidos aos inimigos atingidos até o próximo turno do portador (acumula 1 vez)."
       ],
       "it": [
-        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 15 damage on themself in their best attack element to inflict the same amount of health-steal damage on adjacent entities at the end of the bearer's turn. Allies who attack the enemies hit are healed by 7% of damage inflicted until the bearer's next turn (stackable 1 time)."
+        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 15 damage on themself in their best attack element to inflict the same amount of health-steal damage on adjacent entities at the end of the bearer's turn. Also heals attackers by 7% of damage inflicted on enemies hit until the bearer's next turn (stackable 1 time)."
       ]
     },
     "conditions": {

@@ -20897,22 +20897,22 @@
     ],
     "customStats": {
       "en": [
-        "Ebony Black:\n• When the bearer attacks in close combat during their turn, they gain 1% ranged damage for 3 turns (stackable 10 times).\n• When they attack from long range, they gain 1% close-combat damage for 3 turns (stackable 10 times).\n• Triggering both effects during the turn allows the next attack to apply a 16 poison in its element for 2 turns (stackable 2 times, once every 2 turns)."
+        "Ebony Black:\n• When the bearer attacks in close combat during their turn, they gain 2% ranged damage, and if they attack from range, they gain 2% close-combat damage, for 3 turns (stackable 5 times).\n• Triggering both effects during the turn allows the next attack to apply a 16 poison in its element for 2 turns (stackable 2 times).\n• The poison's cooldown period is 2 turns but can be reset if the target is killed."
       ],
       "fr": [
         "Noir Ébène :\n• Lorsque le porteur attaque en mêlée durant son tour, il gagne 1% de dommages à distance pendant 3 tours (cumulable 10 fois).\n• Lorsqu'il attaque à distance, il gagne 1% de dommages en mêlée pendant 3 tours (cumulable 10 fois).\n• Déclencher les 2 effets dans le tour permet à la prochaine attaque d'appliquer un poison de 16 dans son élément pendant 2 tours (cumulable 2 fois, une fois tous les 2 tours)."
       ],
       "de": [
-        "Ebenholzschwarz:\n• Wenn der Träger während seiner Runde einen Nahkampfangriff ausführt, erhöht sich sein Fernkampfschaden 3 Runden lang um 1 % (10-mal kumulierbar).\n• Wenn er einen Fernkampfangriff ausführt, erhöht sich sein Nahkampfschaden 3 Runden lang um 1 % (10-mal kumulierbar).\n• Werden beide Wirkungen in derselben Runde ausgelöst, kann der Träger beim nächsten Angriff ein Gift anwenden, das 2 Runden lang 16 Schaden in seinem Element verursacht (2-mal kumulierbar, einmal alle 2 Runden)."
+        "Ebenholzschwarz:\n• Wenn der Träger während seiner Runde einen Nahkampfangriff ausführt, erhöht sich sein Fernkampfschaden 3 Runden lang um 2 %, und wenn er einen Fernkampfangriff ausführt, erhöht sich sein Nahkampfschaden 3 Runden lang um 2 % (5-mal kumulierbar).\n• Werden beide Wirkungen in derselben Runde ausgelöst, kann der Träger beim nächsten Angriff ein Gift anwenden, das 2 Runden lang 16 Schaden in seinem Element verursacht (2-mal kumulierbar).\n• Die Abklingzeit des Gifts beträgt 2 Runden, sie kann aber zurückgesetzt werden, wenn das Ziel besiegt wird."
       ],
       "es": [
-        "Negro Ébano:\n• Cuando el portador ataca en cuerpo a cuerpo durante su turno, gana un 1% de daños a distancia durante 3 turnos (acumulable 10 veces).\n• Cuando ataca a distancia, gana un 1% de daños en cuerpo a cuerpo durante 3 turnos (acumulable 10 veces).\n• Activar los 2 efectos en el turno permite aplicar en el siguiente ataque un veneno de 16 con su elemento durante 2 turnos (acumulable 2 veces, una vez cada 2 turnos)."
+        "Negro Ébano:\n• El portador gana un 2% de daños a distancia si ataca en cuerpo a cuerpo durante su turno y un 2% de daños en cuerpo a cuerpo durante 3 turnos si ataca a distancia (acumulable 5 veces).\n• Activar los 2 efectos en el turno permite que el siguiente ataque aplique un veneno de 16 con su elemento durante 2 turnos (acumulable 2 veces).\n• El tiempo de espera del veneno es de 2 turnos, pero puede reiniciarse si se acaba con el objetivo."
       ],
       "pt": [
-        "Negro Ébano:\n• Quando o portador efetua um ataque no corpo a corpo durante seu turno, ele recebe 1% de danos a distância por 3 turnos (acumula 10 vezes).\n• Quando ataca a distância, ele ganha 1% de danos no corpo a corpo durante 3 turnos (acumula 10 vezes).\n• Acionar os 2 efeitos em um turno permite que o próximo ataque aplique um veneno de 16 em seu elemento durante 2 turnos (acumula 2 vezes, uma vez a cada 2 turnos)."
+        "Negro Ébano:\n• Quando o portador efetua um ataque corpo a corpo durante seu turno, ele recebe 2% de danos à distância, e, quando ataca à distância, ele recebe 2% de danos corpo a corpo durante 3 turnos (acumula 5 vezes).\n• Acionar os 2 efeitos em um turno permite que o próximo ataque aplique um veneno de 16 em seu elemento durante 2 turnos (acumula 2 vezes).\n• O intervalo de relançamento do veneno é de 2 turnos, mas pode ser reinicializado se o alvo for derrotado."
       ],
       "it": [
-        "Ebony Black:\n• When the bearer attacks in close combat during their turn, they gain 1% ranged damage for 3 turns (stackable 10 times).\n• When they attack from long range, they gain 1% close-combat damage for 3 turns (stackable 10 times).\n• Triggering both effects during the turn allows the next attack to apply a 16 poison in its element for 2 turns (stackable 2 times, once every 2 turns)."
+        "Ebony Black:\n• When the bearer attacks in close combat during their turn, they gain 2% ranged damage, and if they attack from range, they gain 2% close-combat damage, for 3 turns (stackable 5 times).\n• Triggering both effects during the turn allows the next attack to apply a 16 poison in its element for 2 turns (stackable 2 times).\n• The poison's cooldown period is 2 turns but can be reset if the target is killed."
       ]
     },
     "conditions": {
