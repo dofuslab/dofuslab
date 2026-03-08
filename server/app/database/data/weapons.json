@@ -8586,6 +8586,11 @@
           "stat": "Air damage",
           "minStat": 12,
           "maxStat": 42
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 12,
+          "maxStat": 42
         }
       ]
     },
@@ -15932,6 +15937,11 @@
           "stat": "Fire steal",
           "minStat": 3,
           "maxStat": 7
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 7,
+          "maxStat": 11
         }
       ]
     },
@@ -16436,6 +16446,11 @@
           "stat": "Neutral damage",
           "minStat": 13,
           "maxStat": 22
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 13,
+          "maxStat": 22
         }
       ]
     },
@@ -16579,6 +16594,11 @@
           "stat": "Neutral damage",
           "minStat": 13,
           "maxStat": 27
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 9,
+          "maxStat": 23
         }
       ]
     },
@@ -17567,6 +17587,11 @@
           "stat": "Neutral damage",
           "minStat": 21,
           "maxStat": 40
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 1,
+          "maxStat": 80
         }
       ]
     },
@@ -19270,6 +19295,11 @@
       "critBonusDamage": 15,
       "weapon_effects": [
         {
+          "stat": "Fire healing",
+          "minStat": 1,
+          "maxStat": 10
+        },
+        {
           "stat": "Fire damage",
           "minStat": 1,
           "maxStat": 30
@@ -19325,7 +19355,13 @@
       "maxRange": 1,
       "baseCritChance": 30,
       "critBonusDamage": 5,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "Fire healing",
+          "minStat": 11,
+          "maxStat": 15
+        }
+      ]
     },
     "customStats": {},
     "conditions": {
@@ -19453,6 +19489,11 @@
           "stat": "AP",
           "minStat": -2,
           "maxStat": -1
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 8,
+          "maxStat": 12
         }
       ]
     },
@@ -19701,6 +19742,11 @@
           "stat": "Neutral damage",
           "minStat": 1,
           "maxStat": 20
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 1,
+          "maxStat": 80
         }
       ]
     },
@@ -20784,6 +20830,11 @@
           "maxStat": 15
         },
         {
+          "stat": "Fire healing",
+          "minStat": 1,
+          "maxStat": 100
+        },
+        {
           "stat": "Fire steal",
           "minStat": 1,
           "maxStat": 10
@@ -21117,6 +21168,11 @@
           "stat": "Neutral damage",
           "minStat": 11,
           "maxStat": 35
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 1,
+          "maxStat": 100
         }
       ]
     },
@@ -25123,7 +25179,13 @@
       "maxRange": 6,
       "baseCritChance": 25,
       "critBonusDamage": 10,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "Fire healing",
+          "minStat": 11,
+          "maxStat": 30
+        }
+      ]
     },
     "customStats": {},
     "conditions": {
@@ -36014,6 +36076,11 @@
           "stat": "Neutral damage",
           "minStat": 28,
           "maxStat": 44
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 51,
+          "maxStat": 100
         }
       ]
     },
@@ -37561,6 +37628,26 @@
           "stat": "Fire steal",
           "minStat": 11,
           "maxStat": 20
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 8,
+          "maxStat": 12
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 8,
+          "maxStat": 12
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 8,
+          "maxStat": 12
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 8,
+          "maxStat": 12
         }
       ]
     },
@@ -41631,6 +41718,16 @@
           "stat": "Fire steal",
           "minStat": 9,
           "maxStat": 12
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 12,
+          "maxStat": 17
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 12,
+          "maxStat": 17
         }
       ]
     },
@@ -41728,6 +41825,16 @@
           "stat": "Fire steal",
           "minStat": 11,
           "maxStat": 15
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 26,
+          "maxStat": 30
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 26,
+          "maxStat": 30
         }
       ]
     },
@@ -43341,7 +43448,13 @@
       "maxRange": 1,
       "baseCritChance": 5,
       "critBonusDamage": 1,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "Fire healing",
+          "minStat": 11,
+          "maxStat": 15
+        }
+      ]
     },
     "customStats": {},
     "conditions": {
@@ -46916,6 +47029,11 @@
       "critBonusDamage": 7,
       "weapon_effects": [
         {
+          "stat": "Best element damage",
+          "minStat": 41,
+          "maxStat": 60
+        },
+        {
           "stat": "Air steal",
           "minStat": 6,
           "maxStat": 9
@@ -50282,6 +50400,21 @@
           "stat": "Neutral damage",
           "minStat": 15,
           "maxStat": 18
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 15,
+          "maxStat": 18
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 15,
+          "maxStat": 18
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 15,
+          "maxStat": 18
         }
       ]
     },
@@ -50827,7 +50960,28 @@
       "maxRange": 2,
       "baseCritChance": 10,
       "critBonusDamage": 2,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "Fire healing",
+          "minStat": 7,
+          "maxStat": 10
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 7,
+          "maxStat": 10
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 7,
+          "maxStat": 10
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 7,
+          "maxStat": 10
+        }
+      ]
     },
     "customStats": {},
     "conditions": {
@@ -51486,7 +51640,18 @@
       "maxRange": 1,
       "baseCritChance": 0,
       "critBonusDamage": 0,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "Fire healing",
+          "minStat": 8,
+          "maxStat": 12
+        },
+        {
+          "stat": "Fire healing",
+          "minStat": 8,
+          "maxStat": 12
+        }
+      ]
     },
     "customStats": {},
     "conditions": {
@@ -53424,6 +53589,11 @@
           "stat": "Neutral damage",
           "minStat": 19,
           "maxStat": 22
+        },
+        {
+          "stat": "Attract cells",
+          "minStat": null,
+          "maxStat": 2
         }
       ]
     },
@@ -53839,6 +54009,11 @@
       "critBonusDamage": 10,
       "weapon_effects": [
         {
+          "stat": "Best element damage",
+          "minStat": 76,
+          "maxStat": 90
+        },
+        {
           "stat": "AP",
           "minStat": null,
           "maxStat": -1
@@ -53984,9 +54159,19 @@
       "critBonusDamage": 10,
       "weapon_effects": [
         {
+          "stat": "Best element damage",
+          "minStat": 68,
+          "maxStat": 80
+        },
+        {
           "stat": "MP",
           "minStat": null,
           "maxStat": -2
+        },
+        {
+          "stat": "Attract cells",
+          "minStat": null,
+          "maxStat": 1
         }
       ]
     },
@@ -54515,6 +54700,11 @@
           "stat": "Water damage",
           "minStat": 22,
           "maxStat": 24
+        },
+        {
+          "stat": "Attract cells",
+          "minStat": null,
+          "maxStat": 1
         }
       ]
     },
@@ -54616,7 +54806,13 @@
       "maxRange": 4,
       "baseCritChance": 15,
       "critBonusDamage": 15,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "Best element damage",
+          "minStat": 47,
+          "maxStat": 52
+        }
+      ]
     },
     "customStats": {
       "en": [
@@ -54721,7 +54917,18 @@
       "maxRange": 3,
       "baseCritChance": 20,
       "critBonusDamage": 4,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "Best element damage",
+          "minStat": null,
+          "maxStat": 44
+        },
+        {
+          "stat": "Attract cells",
+          "minStat": null,
+          "maxStat": 2
+        }
+      ]
     },
     "customStats": {
       "en": [
@@ -54832,6 +55039,11 @@
       "baseCritChance": 15,
       "critBonusDamage": 15,
       "weapon_effects": [
+        {
+          "stat": "Best element damage",
+          "minStat": 44,
+          "maxStat": 50
+        },
         {
           "stat": "AP",
           "minStat": null,
