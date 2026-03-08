@@ -46932,7 +46932,7 @@
         "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 15 damage on themself in their best attack element to inflict the same amount of health-steal damage on adjacent entities at the end of the bearer's turn. Also heals attackers by 7% of damage inflicted on enemies hit until the bearer's next turn (stackable 1 time)."
       ],
       "fr": [
-        "Appétit de Crocobur :\n• À chaque début de tour, le porteur s'inflige 15 de dommages dans son meilleur élément d'attaque pour occasionner les mêmes dommages en vol de vie aux entités à son contact à la fin de son tour. Les alliés qui attaquent les ennemis touchés sont soignés de 7% des dommages occasionnés jusqu'au prochain tour du porteur (cumulable 1 fois)."
+        "Appétit de Crocobur :\n• À chaque début de tour, le porteur s'inflige 15 de dommages dans son meilleur élément d'attaque pour infliger les mêmes dommages en vol de vie aux entités à son contact à la fin de son tour. Soigne également les attaquants de 7% des dommages occasionnés aux ennemis touchés jusqu'au prochain tour du porteur (cumulable 1 fois)."
       ],
       "de": [
         "Appetit von Crocobur:\n• Zu Beginn jeder Runde fügt sich der Träger selbst 15 Schaden in seinem besten Angriffselement zu, um Einheiten in Reichweite am Ende seiner Runde durch LP-Diebstahl Schaden in gleicher Höhe zuzufügen. Außerdem werden Angreifer bis zur nächsten Runde des Trägers um 7 % des getroffenen Gegnern zugefügten Schadens geheilt (1-mal kumulierbar)."
@@ -53836,7 +53836,7 @@
       "minRange": 1,
       "maxRange": 2,
       "baseCritChance": 5,
-      "critBonusDamage": 20,
+      "critBonusDamage": 10,
       "weapon_effects": [
         {
           "stat": "AP",
@@ -53981,7 +53981,7 @@
       "minRange": 1,
       "maxRange": 2,
       "baseCritChance": 5,
-      "critBonusDamage": 20,
+      "critBonusDamage": 10,
       "weapon_effects": [
         {
           "stat": "MP",
@@ -55725,5 +55725,957 @@
       "customConditions": {}
     },
     "imageUrl": "item/183012.png"
+  },
+  {
+    "dofusID": "33561",
+    "name": {
+      "en": "Scalarcin Daggeribones",
+      "fr": "Dagu'os des Scalarcin",
+      "de": "Knochendolche der Scalarcin",
+      "es": "Dagüesos de los Scarratero",
+      "pt": "Adagossa dos Scafurtado",
+      "it": "Scalarcin Daggeribones"
+    },
+    "itemType": "Dagger",
+    "setID": "1061",
+    "level": 55,
+    "stats": [
+      {
+        "stat": "Strength",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Power",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 16,
+        "maxStat": 25
+      }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": 2,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 4,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 7,
+          "maxStat": 11
+        },
+        {
+          "stat": "Neutral steal",
+          "minStat": 5,
+          "maxStat": 6
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/5107.png"
+  },
+  {
+    "dofusID": "33564",
+    "name": {
+      "en": "Marzwel Javelin",
+      "fr": "Javeline de Marzwel",
+      "de": "Marzwel-Wurfspeer",
+      "es": "Jabalina de Marzwelo",
+      "pt": "Dardo de Marzwel",
+      "it": "Marzwel Javelin"
+    },
+    "itemType": "Lance",
+    "setID": "1062",
+    "level": 66,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Agility",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 30,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "Fire damage",
+          "minStat": 21,
+          "maxStat": 25
+        },
+        {
+          "stat": "Air damage",
+          "minStat": 21,
+          "maxStat": 25
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/183014.png"
+  },
+  {
+    "dofusID": "33567",
+    "name": {
+      "en": "Qil Bil Tonfas",
+      "fr": "Tonfas de Qil Bil",
+      "de": "Tonfas von Qil Bil",
+      "es": "Tonfas de Qil Bil",
+      "pt": "Tonfas de Qil Bil",
+      "it": "Qil Bil Tonfas"
+    },
+    "itemType": "Dagger",
+    "setID": "1063",
+    "level": 77,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 51,
+        "maxStat": 80
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "weaponStats": {
+      "apCost": 3,
+      "usesPerTurn": 2,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 40,
+      "critBonusDamage": 10,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 18,
+          "maxStat": 21
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/5109.png"
+  },
+  {
+    "dofusID": "33581",
+    "name": {
+      "en": "The Rok Gnorok",
+      "fr": "Le Rok Gnorok",
+      "de": "Der Rok Gnorok",
+      "es": "El Rok Gnorok",
+      "pt": "O Rok Gnorok",
+      "it": "The Rok Gnorok"
+    },
+    "itemType": "Hammer",
+    "setID": "1068",
+    "level": 96,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 71,
+        "maxStat": 90
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 1,
+        "maxStat": 2
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 2,
+      "weapon_effects": [
+        {
+          "stat": "AP",
+          "minStat": null,
+          "maxStat": -1
+        },
+        {
+          "stat": "MP",
+          "minStat": null,
+          "maxStat": -1
+        },
+        {
+          "stat": "Earth damage",
+          "minStat": 4,
+          "maxStat": 6
+        },
+        {
+          "stat": "Fire damage",
+          "minStat": 4,
+          "maxStat": 6
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 4,
+          "maxStat": 6
+        },
+        {
+          "stat": "Air damage",
+          "minStat": 4,
+          "maxStat": 6
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/7751.png"
+  },
+  {
+    "dofusID": "33585",
+    "name": {
+      "en": "Carlita Blunderbuss",
+      "fr": "Tromblon de Carlita",
+      "de": "Büchse von Carlita",
+      "es": "Trabuco de Carlita",
+      "pt": "Mosquete de Carlita",
+      "it": "Carlita Blunderbuss"
+    },
+    "itemType": "Hammer",
+    "setID": "1069",
+    "level": 106,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 81,
+        "maxStat": 100
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 12,
+      "weapon_effects": [
+        {
+          "stat": "MP",
+          "minStat": null,
+          "maxStat": -1
+        },
+        {
+          "stat": "Earth damage",
+          "minStat": 21,
+          "maxStat": 25
+        },
+        {
+          "stat": "Fire damage",
+          "minStat": 21,
+          "maxStat": 25
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/183016.png"
+  },
+  {
+    "dofusID": "33588",
+    "name": {
+      "en": "Naganita Naginata",
+      "fr": "Naginata de Naganita",
+      "de": "Naginata von Naganita",
+      "es": "Naginata de Naganita",
+      "pt": "Naginata de Naganita",
+      "it": "Naganita Naginata"
+    },
+    "itemType": "Lance",
+    "setID": "1070",
+    "level": 109,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 130
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Heals",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": 5,
+        "maxStat": 8
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 20,
+      "critBonusDamage": 7,
+      "weapon_effects": [
+        {
+          "stat": "Water damage",
+          "minStat": 34,
+          "maxStat": 40
+        },
+        {
+          "stat": "Water steal",
+          "minStat": 2,
+          "maxStat": 3
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/183015.png"
+  },
+  {
+    "dofusID": "33590",
+    "name": {
+      "en": "Spykhammer",
+      "fr": "Martokipik",
+      "de": "Vor- und Nachschlaghammer",
+      "es": "Martillokepika",
+      "pt": "Martelkispeta",
+      "it": "Spykhammer"
+    },
+    "itemType": "Hammer",
+    "setID": "1071",
+    "level": 104,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 130
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 30,
+      "critBonusDamage": 4,
+      "weapon_effects": [
+        {
+          "stat": "Neutral damage",
+          "minStat": 13,
+          "maxStat": 17
+        },
+        {
+          "stat": "Neutral damage",
+          "minStat": 13,
+          "maxStat": 17
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/7752.png"
+  },
+  {
+    "dofusID": "33594",
+    "name": {
+      "en": "War T Scythe",
+      "fr": "Nenufaur",
+      "de": "Nelumsens",
+      "es": "Nenufoz",
+      "pt": "Nenufoice",
+      "it": "War T Scythe"
+    },
+    "itemType": "Scythe",
+    "setID": "1072",
+    "level": 129,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 101,
+        "maxStat": 200
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": 1,
+      "maxRange": 2,
+      "baseCritChance": 30,
+      "critBonusDamage": 3,
+      "weapon_effects": [
+        {
+          "stat": "Fire damage",
+          "minStat": 14,
+          "maxStat": 17
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 14,
+          "maxStat": 17
+        },
+        {
+          "stat": "Air damage",
+          "minStat": 14,
+          "maxStat": 17
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/22017.png"
+  },
+  {
+    "dofusID": "33597",
+    "name": {
+      "en": "Transplent Sword",
+      "fr": "Épée des Demoël",
+      "de": "Schwert der Kainsdaff Ürmisch",
+      "es": "Espada de los Aludem",
+      "pt": "Espada dos Dula",
+      "it": "Transplent Sword"
+    },
+    "itemType": "Sword",
+    "setID": "1073",
+    "level": 139,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 41,
+        "maxStat": 70
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 5,
+        "maxStat": 8
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 5,
+      "critBonusDamage": 3,
+      "weapon_effects": [
+        {
+          "stat": "Earth damage",
+          "minStat": 21,
+          "maxStat": 25
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 7,
+          "maxStat": 10
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 7,
+          "maxStat": 10
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/6764.png"
+  },
+  {
+    "dofusID": "33600",
+    "name": {
+      "en": "Buddy Dubble Sword",
+      "fr": "Épée de Fojumo",
+      "de": "Schwert von Dizigota",
+      "es": "Espada de Gemalo",
+      "pt": "Espada de Dizigoto",
+      "it": "Buddy Dubble Sword"
+    },
+    "itemType": "Sword",
+    "setID": "1074",
+    "level": 146,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 101,
+        "maxStat": 200
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 26,
+        "maxStat": 35
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 25,
+      "critBonusDamage": 15,
+      "weapon_effects": [
+        {
+          "stat": "Air damage",
+          "minStat": 36,
+          "maxStat": 43
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/6763.png"
+  },
+  {
+    "dofusID": "33607",
+    "name": {
+      "en": "Karkanik Bow",
+      "fr": "Arc du Karkanik",
+      "de": "Bogen von Barkanogen",
+      "es": "Arco de dantartánico",
+      "pt": "Arco do Misteriark",
+      "it": "Karkanik Bow"
+    },
+    "itemType": "Bow",
+    "setID": "1077",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 451,
+        "maxStat": 500
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": null,
+        "maxStat": -15
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 2
+      },
+      {
+        "stat": "Power",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "weaponStats": {
+      "apCost": 4,
+      "usesPerTurn": 1,
+      "minRange": 3,
+      "maxRange": 8,
+      "baseCritChance": 20,
+      "critBonusDamage": 15,
+      "weapon_effects": [
+        {
+          "stat": "Air steal",
+          "minStat": 25,
+          "maxStat": 30
+        },
+        {
+          "stat": "Neutral steal",
+          "minStat": 4,
+          "maxStat": 6
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/2098.png"
   }
 ]

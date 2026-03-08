@@ -2180,22 +2180,22 @@
     ],
     "customStats": {
       "en": [
-        "Emerald Green:\n• At the end of their turn, the bearer gains 100% of their level as shield for 1 turn for each adjacent enemy fighter."
+        "Emerald Green:\n• At the end of their turn, the bearer gains 100% of their level as shield for 1 turn for each adjacent enemy fighter. The effects are halved if the enemy is a summons."
       ],
       "fr": [
-        "Vert Émeraude :\n• Lorsque le porteur termine son tour, il gagne 100% de son niveau en bouclier pendant 1 tour pour chaque combattant ennemi à son contact."
+        "Vert Émeraude :\n• Lorsque le porteur termine son tour, il gagne 100% de son niveau en bouclier pendant 1 tour pour chaque ennemi à son contact. Les effets sont réduits de moitié si l'ennemi est une invocation."
       ],
       "de": [
-        "Smaragdgrün:\n• Am Rundenende erhält der Träger 1 Runde lang für jeden Gegner in Nahkampfentfernung 100 % seiner Stufe als Schildpunkte."
+        "Smaragdgrün:\n• Am Rundenende erhält der Träger 1 Runde lang für jeden Gegner in Nahkampfentfernung 100 % seiner Stufe als Schildpunkte. Handelt es sich beim Gegner um eine Beschwörung, werden die Wirkungen um die Hälfte verringert."
       ],
       "es": [
-        "Verde Esmeralda:\n• Cuando el portador termina su turno, gana un 100% de su nivel en escudo durante 1 turno por cada luchador enemigo en contacto con él."
+        "Verde Esmeralda:\n• Cuando el portador termina su turno, gana un 100% de su nivel en escudo durante 1 turno por cada enemigo en contacto con él. Los efectos se reducen a la mitad si el enemigo es una invocación."
       ],
       "pt": [
-        "Verde-esmeralda:\n• Quando o portador termina seu turno, ele ganha 100% de seu nível em escudo durante 1 turno por combatente inimigo em contato com ele."
+        "Verde-esmeralda:\n• Quando o portador termina seu turno, ele ganha 100% de seu nível em escudo durante 1 turno por inimigo em contato com ele. Os efeitos são reduzidos pela metade se o inimigo for uma invocação."
       ],
       "it": [
-        "Emerald Green:\n• At the end of their turn, the bearer gains 100% of their level as shield for 1 turn for each adjacent enemy fighter."
+        "Emerald Green:\n• At the end of their turn, the bearer gains 100% of their level as shield for 1 turn for each adjacent enemy fighter. The effects are halved if the enemy is a summons."
       ]
     },
     "conditions": {
@@ -20824,22 +20824,22 @@
     ],
     "customStats": {
       "en": [
-        "Harmony of Pandala:\n• When the bearer inflicts damage during their turn, they and their allies carrying the {{item,23408::Dorigami}} gain 20 Damage for 1 turn.\n• If the bearer does not inflict damage, they and their allies carrying the {{item,23237::Domakuro}} gain 150% of the bearer's level as shield for 1 turn."
+        "Harmony of Pandala:\n• When the bearer inflicts damage during their turn, they and their allies carrying the {{item,23408::Dorigami}} gain 20 Damage for 1 turn (stackable 1 time).\n• If the bearer does not inflict damage, they and their allies carrying the {{item,23237::Domakuro}} gain 150% of the bearer's level as shield for 1 turn."
       ],
       "fr": [
-        "Harmonie de Pandala :\n• Lorsque le porteur occasionne des dommages durant son tour de jeu, lui et ses alliés porteurs du {{item,23408::Dorigami}} gagnent 20 de Dommages pendant 1 tour.\n• S'il n'occasionne aucun dommages, lui et ses alliés porteurs du {{item,23237::Domakuro}} gagnent 150% du niveau du porteur en bouclier pendant 1 tour."
+        "Harmonie de Pandala :\n• Lorsque le porteur occasionne des dommages durant son tour de jeu, lui et ses alliés porteurs du {{item,23408::Dorigami}} gagnent 20 de Dommages pendant 1 tour (cumulable 1 fois).\n• S'il n'en occasionne pas, lui et ses alliés porteurs du {{item,23237::Domakuro}} gagnent 150% de son niveau en bouclier pendant 1 tour."
       ],
       "de": [
-        "Harmonie von Pandala:\n• Wenn der Träger während seiner Runde Schaden verursacht, erhalten er und seine Verbündeten, die einen {{item,23408::Dorigami}} bei sich tragen, 1 Runde lang 20 Schaden.\n• Wenn er keinen Schaden verursacht, erhalten er und seine Verbündeten, die einen {{item,23237::Domakuro}} bei sich tragen, 1 Runde lang 150 % der Stufe des Trägers als Schild."
+        "Harmonie von Pandala:\n• Wenn der Träger während seiner Runde Schaden verursacht, erhalten er und seine Verbündeten, die einen {{item,23408::Dorigami}} bei sich tragen, 1 Runde lang 20 Schaden (1-mal kumulierbar).\n• Wenn er keinen Schaden verursacht, erhalten er und seine Verbündeten, die einen {{item,23237::Domakuro}} bei sich tragen, 1 Runde lang 150 % seiner Stufe als Schild."
       ],
       "es": [
-        "Armonía de Pandala:\n• Cuando el portador ocasiona daños durante su turno, él y sus aliados portadores del {{item,23408::dorigami}} ganan 20 de daño durante 1 turno.\n• Si no ocasiona daños, él y sus aliados portadores del {{item,23237::domakuro}} ganan un 150% del nivel del portador en escudo durante 1 turno."
+        "Armonía de Pandala:\n• Cuando el portador ocasiona daños durante su turno, él y sus aliados portadores del {{item,23408::dorigami}} ganan 20 de daño durante 1 turno (acumulable 1 vez).\n• Si no ocasiona daños, gana, al igual que sus aliados portadores del {{item,23237::domakuro}}, el 150% de su nivel en escudo durante 1 turno."
       ],
       "pt": [
-        "Harmonia de Pandala:\n• Quando o portador causa dano durante seu turno de jogo, ele e seus aliados que estiverem portando o {{item,23408::Dorigami}} ganham 20 de danos por 1 turno.\n• Se não infligir danos, ele e seus aliados portadores do {{item,23237::Domakuro}} ganharão 150% do nível do portador em escudo durante 1 turno."
+        "Harmonia de Pandala:\n• Quando o portador causa dano durante seu turno de jogo, ele e seus aliados que estiverem portando o {{item,23408::Dorigami}} ganham 20 de danos por 1 turno (acumula 1 vez).\n• Se não causar dano, ele e seus aliados portadores do {{item,23237::Domakuro}} ganharão 150% de seu nível em escudo durante 1 turno."
       ],
       "it": [
-        "Harmony of Pandala:\n• When the bearer inflicts damage during their turn, they and their allies carrying the {{item,23408::Dorigami}} gain 20 Damage for 1 turn.\n• If the bearer does not inflict damage, they and their allies carrying the {{item,23237::Domakuro}} gain 150% of the bearer's level as shield for 1 turn."
+        "Harmony of Pandala:\n• When the bearer inflicts damage during their turn, they and their allies carrying the {{item,23408::Dorigami}} gain 20 Damage for 1 turn (stackable 1 time).\n• If the bearer does not inflict damage, they and their allies carrying the {{item,23237::Domakuro}} gain 150% of the bearer's level as shield for 1 turn."
       ]
     },
     "conditions": {
@@ -20900,7 +20900,7 @@
         "Ebony Black:\n• When the bearer attacks in close combat during their turn, they gain 2% ranged damage, and if they attack from range, they gain 2% close-combat damage, for 3 turns (stackable 5 times).\n• Triggering both effects during the turn allows the next attack to apply a 16 poison in its element for 2 turns (stackable 2 times).\n• The poison's cooldown period is 2 turns but can be reset if the target is killed."
       ],
       "fr": [
-        "Noir Ébène :\n• Lorsque le porteur attaque en mêlée durant son tour, il gagne 1% de dommages à distance pendant 3 tours (cumulable 10 fois).\n• Lorsqu'il attaque à distance, il gagne 1% de dommages en mêlée pendant 3 tours (cumulable 10 fois).\n• Déclencher les 2 effets dans le tour permet à la prochaine attaque d'appliquer un poison de 16 dans son élément pendant 2 tours (cumulable 2 fois, une fois tous les 2 tours)."
+        "Noir Ébène :\n• Lorsque le porteur attaque en mêlée durant son tour, il gagne 2% de dommages à distance, et s'il attaque à distance, il gagne 2% de dommages en mêlée pendant 3 tours (cumulable 5 fois).\n• Déclencher les 2 effets dans le tour permet à la prochaine attaque d'appliquer un poison de 16 dans son élément pendant 2 tours (cumulable 2 fois).\n• Le temps de relance du poison est de 2 tours, mais peut être réinitialisé si la cible est achevée."
       ],
       "de": [
         "Ebenholzschwarz:\n• Wenn der Träger während seiner Runde einen Nahkampfangriff ausführt, erhöht sich sein Fernkampfschaden 3 Runden lang um 2 %, und wenn er einen Fernkampfangriff ausführt, erhöht sich sein Nahkampfschaden 3 Runden lang um 2 % (5-mal kumulierbar).\n• Werden beide Wirkungen in derselben Runde ausgelöst, kann der Träger beim nächsten Angriff ein Gift anwenden, das 2 Runden lang 16 Schaden in seinem Element verursacht (2-mal kumulierbar).\n• Die Abklingzeit des Gifts beträgt 2 Runden, sie kann aber zurückgesetzt werden, wenn das Ziel besiegt wird."
@@ -36291,7 +36291,7 @@
         "Shrivelling: +2 Maximum Range",
         "Hand: +1 cast(s) per turn",
         "Slow Down: line of sight off",
-        "Xelor's Sandglass: +1 cast(s) per target",
+        "Xelor's Sandglass: +1 cast(s) per turn",
         "Regulator: +2 Maximum Range",
         "Petrification: +1 cast(s) per target",
         "Harmpit: +1 cast(s) per target",
@@ -36301,7 +36301,7 @@
         "Flétrissement : +2 Portée maximale",
         "Aiguille : +1 lancer(s) par tour",
         "Ralentissement : ligne de vue désactivée",
-        "Sablier de Xélor : +1 lancer(s) par cible",
+        "Sablier de Xélor : +1 lancer(s) par tour",
         "Régulateur : +2 Portée maximale",
         "Pétrification : +1 lancer(s) par cible",
         "Gousset : +1 lancer(s) par cible",
@@ -36311,7 +36311,7 @@
         "Verwelken: +2 Maximale Reichweite",
         "Zeiger : +1 Zauber pro Runde",
         "Verlangsamen: Sichtlinie deaktiviert",
-        "Sanduhr von Xélor : +1 Zauber pro Ziel",
+        "Sanduhr von Xélor : +1 Zauber pro Runde",
         "Regulator: +2 Maximale Reichweite",
         "Versteinerung : +1 Zauber pro Ziel",
         "Taschenzauber : +1 Zauber pro Ziel",
@@ -36321,7 +36321,7 @@
         "Marchitación: +2 de alcance máximo",
         "Aguja: +1 lanzamiento(s) por turno",
         "Ralentización: línea de visión desactivada",
-        "Reloj de Arena de Xelor: +1 lanzamiento(s) por objetivo",
+        "Reloj de Arena de Xelor: +1 lanzamiento(s) por turno",
         "Regulador: +2 de alcance máximo",
         "Petrificación: +1 lanzamiento(s) por objetivo",
         "Reloj de Bolsillo: +1 lanzamiento(s) por objetivo",
@@ -36331,7 +36331,7 @@
         "Murchidão: +2 de alcance máximo",
         "Ponteiro: +1 lançamento(s) por turno",
         "Desaceleração: linha de visão desativada",
-        "Ampulheta de Xelor: +1 lançamento(s) por alvo",
+        "Ampulheta de Xelor: +1 lançamento(s) por turno",
         "Regulador: +2 de alcance máximo",
         "Petrificação: +1 lançamento(s) por alvo",
         "Relógio de Bolso: +1 lançamento(s) por alvo",
@@ -36341,7 +36341,7 @@
         "Shrivelling: +2 Maximum Range",
         "Hand: +1 cast(s) per turn",
         "Slow Down: line of sight off",
-        "Xelor's Sandglass: +1 cast(s) per target",
+        "Xelor's Sandglass: +1 cast(s) per turn",
         "Regulator: +2 Maximum Range",
         "Petrification: +1 cast(s) per target",
         "Harmpit: +1 cast(s) per target",
@@ -36619,7 +36619,7 @@
         "Whip: modifiable Range",
         "Crop: modifiable Range",
         "High-Energy Shot: modifiable Range",
-        "Animal Blessing: -1 AP",
+        "Animal Communion: -1 AP",
         "Discipline: modifiable Range",
         "Swift Whip: modifiable Range",
         "Gluttonous Spirit: +2 Maximum Range",
@@ -36629,7 +36629,7 @@
         "Fouet : Portée modifiable",
         "Cravache : Portée modifiable",
         "Piqûre Motivante : Portée modifiable",
-        "Bénédiction Animale : -1 PA",
+        "Communion Animale : -1 PA",
         "Discipline : Portée modifiable",
         "Martinet : Portée modifiable",
         "Esprit Glouton : +2 Portée maximale",
@@ -36639,7 +36639,7 @@
         "Peitsche: Veränderbare Reichweite",
         "Reitgerte: Veränderbare Reichweite",
         "Motivationsspritze: Veränderbare Reichweite",
-        "Tiersegen: –1 AP",
+        "Gemeinschaft der Tiere: –1 AP",
         "Disziplin: Veränderbare Reichweite",
         "Klopfpeitsche: Veränderbare Reichweite",
         "Gefräßiger Geist: +2 Maximale Reichweite",
@@ -36649,7 +36649,7 @@
         "Látigo: alcance modificable",
         "Fusta: alcance modificable",
         "Chute Motivador: alcance modificable",
-        "Bendición Animal: -1 PA",
+        "Comunión Animal: -1 PA",
         "Disciplina: alcance modificable",
         "Fuete: alcance modificable",
         "Espíritu Glotón: +2 de alcance máximo",
@@ -36659,7 +36659,7 @@
         "Chicote: alcance modificável",
         "Chibata: alcance modificável",
         "Picada Motivante: alcance modificável",
-        "Benção Animal: -1 PA",
+        "Comunhão Animal: -1 PA",
         "Disciplina: alcance modificável",
         "Chicotinho: alcance modificável",
         "Espírito Glutão: +2 de alcance máximo",
@@ -36669,7 +36669,7 @@
         "Whip: modifiable Range",
         "Crop: modifiable Range",
         "High-Energy Shot: modifiable Range",
-        "Animal Blessing: -1 AP",
+        "Animal Communion: -1 AP",
         "Discipline: modifiable Range",
         "Swift Whip: modifiable Range",
         "Gluttonous Spirit: +2 Maximum Range",
@@ -37724,22 +37724,22 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Nebulous Dream:\n• On odd turns, the bearer gains 20% final damage but loses 10% final healing.\n• On even turns, the bearer gains 20% final healing but loses 10% final damage."
+        "Nebulous Dream:\n• On odd turns, the bearer sacrifices 10% final healing to gain 20% final damage.\n• On even turns, the bearer sacrifices 10% final damage to gain 20% final healing."
       ],
       "fr": [
-        "Rêve Nébuleux :\n• Les tours impairs, le porteur gagne 20% de dommages finaux mais perd 10% de soins finaux.\n• Les tours pairs, il gagne 20% de soins finaux mais perd 10% de dommages finaux."
+        "Rêve Nébuleux :\n• Les tours impairs, le porteur sacrifie 10% de soins finaux pour gagner 20% de dommages finaux.\n• Les tours pairs, il sacrifie 10% de dommages finaux pour gagner 20% de soins finaux."
       ],
       "de": [
-        "Nebulöser Traum:\n• In ungeraden Runden erhält der Träger 20 % Endschaden zusätzlich, dafür reduziert sich seine Endheilung um 10 %.\n• In geraden Runden erhält er 20 % Endheilung zusätzlich, dafür reduziert sich sein Endschaden um 10 %."
+        "Nebulöser Traum:\n• In ungeraden Runden opfert der Träger 10 % Endheilung und erhält dafür 20 % Endschaden zusätzlich.\n• In geraden Runden opfert er 10 % Endschaden und erhält dafür 20 % Endheilung zusätzlich."
       ],
       "es": [
-        "Sueño Nebuloso:\n• Los turnos impares el portador gana un 20% de daños finales pero pierde un 10% de curas finales.\n• Los turnos pares gana un 20% de curas finales pero pierde un 10% de daños finales."
+        "Sueño Nebuloso:\n• Los turnos impares, el portador sacrifica un 10% de curas finales para ganar un 20% de daños finales.\n• Los turnos pares, sacrifica un 10% de daños finales para ganar un 20% de curas finales."
       ],
       "pt": [
-        "Sonho Nebuloso:\n• Nos turnos ímpares, o portador ganha 20% de danos finais, mas perde 10% de curas finais.\n• Nos turnos pares, ele ganha 20% de curas finais, mas perde 10% de danos finais."
+        "Sonho Nebuloso:\n• Nos turnos ímpares, o portador sacrifica 10% de curas finais para ganhar 20% de danos finais.\n• Nos turnos pares, ele sacrifica 10% de danos finais para ganhar 20% de curas finais."
       ],
       "it": [
-        "Nebulous Dream:\n• On odd turns, the bearer gains 20% final damage but loses 10% final healing.\n• On even turns, the bearer gains 20% final healing but loses 10% final damage."
+        "Nebulous Dream:\n• On odd turns, the bearer sacrifices 10% final healing to gain 20% final damage.\n• On even turns, the bearer sacrifices 10% final damage to gain 20% final healing."
       ]
     },
     "conditions": {
@@ -38086,58 +38086,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Roulette: +1 cast(s) per turn",
         "Second Chance: -1 cooldown",
         "Nine Lives: -1 AP",
         "All or Nothing: +2 Maximum Range",
         "Trickery: +1 cast(s) per target",
         "Bluff: +40% Critical",
-        "Rekop: +40% Critical"
+        "Rekop: +40% Critical",
+        "Smell: -1 AP",
+        "Wheel of Fortune: -1 AP"
       ],
       "fr": [
-        "Roulette : +1 lancer(s) par tour",
         "Seconde Chance : -1 de relance",
         "Neuf Vies : -1 PA",
         "Tout ou Rien : +2 Portée maximale",
         "Tromperie : +1 lancer(s) par cible",
         "Bluff : +40% Critique",
-        "Rekop : +40% Critique"
+        "Rekop : +40% Critique",
+        "Odorat : -1 PA",
+        "Roue de la Fortune : -1 PA"
       ],
       "de": [
-        "Roulette : +1 Zauber pro Runde",
         "Zweite Chance: Abklingzeit verringert um –1",
         "Neun Leben: –1 AP",
         "Alles oder nichts: +2 Maximale Reichweite",
         "Blendwerk : +1 Zauber pro Ziel",
         "Bluff: +40 % Kritische Treffer",
-        "Rekop: +40 % Kritische Treffer"
+        "Rekop: +40 % Kritische Treffer",
+        "Geruchssinn: –1 AP",
+        "Glücksrad: –1 AP"
       ],
       "es": [
-        "Ruleta: +1 lanzamiento(s) por turno",
         "Segunda Oportunidad: -1 de reactivación",
         "Nueve Vidas: -1 PA",
         "Todo o Nada: +2 de alcance máximo",
         "Truco: +1 lanzamiento(s) por objetivo",
         "Farol: +40% de crítico",
-        "Rekop: +40% de crítico"
+        "Rekop: +40% de crítico",
+        "Olfato: -1 PA",
+        "Rueda de la Fortuna: -1 PA"
       ],
       "pt": [
-        "Roleta: +1 lançamento(s) por turno",
         "Segunda Chance: -1 de relançamento",
         "Sete Vidas: -1 PA",
         "Tudo ou Nada: +2 de alcance máximo",
         "Enganação: +1 lançamento(s) por alvo",
         "Blefe: +40% de crítico",
-        "Rekop: +40% de crítico"
+        "Rekop: +40% de crítico",
+        "Olfato: -1 PA",
+        "Roda da Fortuna: -1 PA"
       ],
       "it": [
-        "Roulette: +1 cast(s) per turn",
         "Second Chance: -1 cooldown",
         "Nine Lives: -1 AP",
         "All or Nothing: +2 Maximum Range",
         "Trickery: +1 cast(s) per target",
         "Bluff: +40% Critical",
-        "Rekop: +40% Critical"
+        "Rekop: +40% Critical",
+        "Smell: -1 AP",
+        "Wheel of Fortune: -1 AP"
       ]
     },
     "conditions": {
@@ -75768,10 +75774,10 @@
     "dofusID": "13643",
     "name": {
       "en": "Nomarow's Getas",
-      "fr": "Getas de Padgref",
-      "de": "Getas des Knöchernen Marks",
+      "fr": "Geta de Padgref",
+      "de": "Geta des Knöchernen Marks",
       "es": "Getas de Noai Aludem",
-      "pt": "Getas de Nondome",
+      "pt": "Geta de Nondome",
       "it": "Nomarow's Getas"
     },
     "itemType": "Boots",
@@ -99711,7 +99717,7 @@
         "Convulsion: modifiable Range",
         "Wakfu Ray: +3 Maximum Range",
         "Lazybeam: +3 Maximum Range",
-        "Insult: modifiable Range",
+        "Insult: +2 Maximum Range",
         "Contempt: -1 AP",
         "Audacious: modifiable Range",
         "Tribulation: -1 AP"
@@ -99721,7 +99727,7 @@
         "Convulsion : Portée modifiable",
         "Rayon de Wakfu : +3 Portée maximale",
         "Faisceau : +3 Portée maximale",
-        "Affront : Portée modifiable",
+        "Affront : +2 Portée maximale",
         "Mépris : -1 PA",
         "Audace : Portée modifiable",
         "Tribulation : -1 PA"
@@ -99731,7 +99737,7 @@
         "Krampf: Veränderbare Reichweite",
         "Wakfu-Strahl: +3 Maximale Reichweite",
         "Zwielichtstrahl: +3 Maximale Reichweite",
-        "Affront: Veränderbare Reichweite",
+        "Affront: +2 Maximale Reichweite",
         "Verachtung: –1 AP",
         "Tollkühn: Veränderbare Reichweite",
         "Leiden: –1 AP"
@@ -99741,7 +99747,7 @@
         "Convulsión: alcance modificable",
         "Rayo de Wakfu: +3 de alcance máximo",
         "Resplandor: +3 de alcance máximo",
-        "Insulto: alcance modificable",
+        "Insulto: +2 de alcance máximo",
         "Desprecio: -1 PA",
         "Audacia: alcance modificable",
         "Tribulación: -1 PA"
@@ -99751,7 +99757,7 @@
         "Convulsão: alcance modificável",
         "Raio de Wakfu: +3 de alcance máximo",
         "Feixe: +3 de alcance máximo",
-        "Afronta: alcance modificável",
+        "Afronta: +2 de alcance máximo",
         "Desprezo: -1 PA",
         "Audácia: alcance modificável",
         "Tribulação: -1 PA"
@@ -99761,7 +99767,7 @@
         "Convulsion: modifiable Range",
         "Wakfu Ray: +3 Maximum Range",
         "Lazybeam: +3 Maximum Range",
-        "Insult: modifiable Range",
+        "Insult: +2 Maximum Range",
         "Contempt: -1 AP",
         "Audacious: modifiable Range",
         "Tribulation: -1 AP"
@@ -99792,7 +99798,7 @@
         "Neutral: line of sight off",
         "Interruption: +1 cast(s) per turn",
         "Portal: +1 Maximum Range",
-        "Wandering: +1 cast(s) per turn",
+        "Wandering: +1 Maximum Range",
         "Transcendence: -1 cooldown",
         "Exile: +2 Maximum Range",
         "Stupor: +1 Maximum Range",
@@ -99802,7 +99808,7 @@
         "Neutral : ligne de vue désactivée",
         "Interruption : +1 lancer(s) par tour",
         "Portail : +1 Portée maximale",
-        "Errance : +1 lancer(s) par tour",
+        "Errance : +1 Portée maximale",
         "Transcendance : -1 de relance",
         "Exil : +2 Portée maximale",
         "Stupeur : +1 Portée maximale",
@@ -99812,7 +99818,7 @@
         "Neutral: Sichtlinie deaktiviert",
         "Unterbrechung : +1 Zauber pro Runde",
         "Portal: +1 Maximale Reichweite",
-        "Irrfahrt : +1 Zauber pro Runde",
+        "Irrfahrt: +1 Maximale Reichweite",
         "Transzendenz: Abklingzeit verringert um –1",
         "Exil: +2 Maximale Reichweite",
         "Stupor: +1 Maximale Reichweite",
@@ -99822,7 +99828,7 @@
         "Neutral: línea de visión desactivada",
         "Interrupción: +1 lanzamiento(s) por turno",
         "Portal: +1 de alcance máximo",
-        "Errancia: +1 lanzamiento(s) por turno",
+        "Errancia: +1 de alcance máximo",
         "Trascendencia: -1 de reactivación",
         "Exilio: +2 de alcance máximo",
         "Estupor: +1 de alcance máximo",
@@ -99832,7 +99838,7 @@
         "Neutral: linha de visão desativada",
         "Interrupção: +1 lançamento(s) por turno",
         "Portal: +1 de alcance máximo",
-        "Errância: +1 lançamento(s) por turno",
+        "Errância: +1 de alcance máximo",
         "Transcendência: -1 de relançamento",
         "Exílio: +2 de alcance máximo",
         "Estupor: +1 de alcance máximo",
@@ -99842,7 +99848,7 @@
         "Neutral: line of sight off",
         "Interruption: +1 cast(s) per turn",
         "Portal: +1 Maximum Range",
-        "Wandering: +1 cast(s) per turn",
+        "Wandering: +1 Maximum Range",
         "Transcendence: -1 cooldown",
         "Exile: +2 Maximum Range",
         "Stupor: +1 Maximum Range",
@@ -99960,7 +99966,7 @@
     "customStats": {
       "en": [
         "Distribution: -1 cooldown",
-        "Resonance: -1 cooldown",
+        "Conjuration: modifiable Range",
         "Sinecure: +1 Maximum Range",
         "Persiflage: +2 Maximum Range",
         "Sarcasm: modifiable Range",
@@ -99970,7 +99976,7 @@
       ],
       "fr": [
         "Distribution : -1 de relance",
-        "Résonance : -1 de relance",
+        "Conjuration : Portée modifiable",
         "Sinécure : +1 Portée maximale",
         "Persiflage : +2 Portée maximale",
         "Sarcasme : Portée modifiable",
@@ -99980,7 +99986,7 @@
       ],
       "de": [
         "Verteilung: Abklingzeit verringert um –1",
-        "Resonanz: Abklingzeit verringert um –1",
+        "Beschwörung: Veränderbare Reichweite",
         "Zuckerschlecken: +1 Maximale Reichweite",
         "Persiflage: +2 Maximale Reichweite",
         "Sarkasmus: Veränderbare Reichweite",
@@ -99990,7 +99996,7 @@
       ],
       "es": [
         "Distribución: -1 de reactivación",
-        "Resonancia: -1 de reactivación",
+        "Conjuro: alcance modificable",
         "Sinecura: +1 de alcance máximo",
         "Mofa: +2 de alcance máximo",
         "Sarcasmo: alcance modificable",
@@ -100000,7 +100006,7 @@
       ],
       "pt": [
         "Distribuição: -1 de relançamento",
-        "Ressonância: -1 de relançamento",
+        "Conjuração: alcance modificável",
         "Mamata: +1 de alcance máximo",
         "Galhofa: +2 de alcance máximo",
         "Sarcasmo: alcance modificável",
@@ -100010,7 +100016,7 @@
       ],
       "it": [
         "Distribution: -1 cooldown",
-        "Resonance: -1 cooldown",
+        "Conjuration: modifiable Range",
         "Sinecure: +1 Maximum Range",
         "Persiflage: +2 Maximum Range",
         "Sarcasm: modifiable Range",
@@ -105767,64 +105773,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Runification: -1 AP",
-        "Storm: line of sight off",
-        "Manifestation: -1 AP",
-        "Flamethrower: +40% Critical",
-        "Celestial Wave: straight-line casting off",
-        "Tectonic Breach: +1 cast(s) per turn",
-        "Transfixing Gust: +2 Maximum Range",
-        "Stalactite: +1 Maximum Range"
+        "Ether: +2 Maximum Range",
+        "Cataract: +3 Maximum Range",
+        "Seismic Shockwave: +2 Maximum Range",
+        "Celestial Wave: +2 Maximum Range",
+        "Flamethrower: +2 Maximum Range",
+        "Telluric Lances: +2 Maximum Range",
+        "Stalagmite: +3 Maximum Range",
+        "Ember: line of sight off"
       ],
       "fr": [
-        "Runification : -1 PA",
-        "Orage : ligne de vue désactivée",
-        "Manifestation : -1 PA",
-        "Lance-flamme : +40% Critique",
-        "Onde Céleste : lancer en ligne désactivé",
-        "Brèche Tectonique : +1 lancer(s) par tour",
-        "Rafale Transperçante : +2 Portée maximale",
-        "Stalactite : +1 Portée maximale"
+        "Éther : +2 Portée maximale",
+        "Cataracte : +3 Portée maximale",
+        "Onde Sismique : +2 Portée maximale",
+        "Onde Céleste : +2 Portée maximale",
+        "Lance-flamme : +2 Portée maximale",
+        "Lances Telluriques : +2 Portée maximale",
+        "Stalagmite : +3 Portée maximale",
+        "Tison : ligne de vue désactivée"
       ],
       "de": [
-        "Runifizierung: –1 AP",
-        "Gewitter: Sichtlinie deaktiviert",
-        "Erscheinung: –1 AP",
-        "Flammenwerfer: +40 % Kritische Treffer",
-        "Himmlische Welle: Lineare Wirkungsweise deaktiviert",
-        "Tektonische Bresche : +1 Zauber pro Runde",
-        "Stechende Böe: +2 Maximale Reichweite",
-        "Stalaktit: +1 Maximale Reichweite"
+        "Äther: +2 Maximale Reichweite",
+        "Katarakt: +3 Maximale Reichweite",
+        "Seismische Schockwelle: +2 Maximale Reichweite",
+        "Himmlische Welle: +2 Maximale Reichweite",
+        "Flammenwerfer: +2 Maximale Reichweite",
+        "Tellurische Wurfspeere: +2 Maximale Reichweite",
+        "Stalagmit: +3 Maximale Reichweite",
+        "Glut: Sichtlinie deaktiviert"
       ],
       "es": [
-        "Runificación: -1 PA",
-        "Tormenta: línea de visión desactivada",
-        "Manifestación: -1 PA",
-        "Lanzallamas: +40% de crítico",
-        "Onda Celeste: lanzamiento en línea desactivado",
-        "Brecha Tectónica: +1 lanzamiento(s) por turno",
-        "Ráfaga Traspasadora: +2 de alcance máximo",
-        "Estalactita: +1 de alcance máximo"
+        "Éter: +2 de alcance máximo",
+        "Catarata: +3 de alcance máximo",
+        "Onda Sísmica: +2 de alcance máximo",
+        "Onda Celeste: +2 de alcance máximo",
+        "Lanzallamas: +2 de alcance máximo",
+        "Lanzas Telúricas: +2 de alcance máximo",
+        "Estalagmita: +3 de alcance máximo",
+        "Tizón: línea de visión desactivada"
       ],
       "pt": [
-        "Runificação: -1 PA",
-        "Tormenta: linha de visão desativada",
-        "Manifestação: -1 PA",
-        "Lança-Chamas: +40% de crítico",
-        "Onda Celestial: lançamento em linha desativado",
-        "Brecha Tectônica: +1 lançamento(s) por turno",
-        "Rajada Trespassante: +2 de alcance máximo",
-        "Estalactite: +1 de alcance máximo"
+        "Éter: +2 de alcance máximo",
+        "Catarata: +3 de alcance máximo",
+        "Onda Sísmica: +2 de alcance máximo",
+        "Onda Celestial: +2 de alcance máximo",
+        "Lança-Chamas: +2 de alcance máximo",
+        "Lanças Telúricas: +2 de alcance máximo",
+        "Estalagmite: +3 de alcance máximo",
+        "Tição: linha de visão desativada"
       ],
       "it": [
-        "Runification: -1 AP",
-        "Storm: line of sight off",
-        "Manifestation: -1 AP",
-        "Flamethrower: +40% Critical",
-        "Celestial Wave: straight-line casting off",
-        "Tectonic Breach: +1 cast(s) per turn",
-        "Transfixing Gust: +2 Maximum Range",
-        "Stalactite: +1 Maximum Range"
+        "Ether: +2 Maximum Range",
+        "Cataract: +3 Maximum Range",
+        "Seismic Shockwave: +2 Maximum Range",
+        "Celestial Wave: +2 Maximum Range",
+        "Flamethrower: +2 Maximum Range",
+        "Telluric Lances: +2 Maximum Range",
+        "Stalagmite: +3 Maximum Range",
+        "Ember: line of sight off"
       ]
     },
     "conditions": {
@@ -105849,58 +105855,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Volcano: line of sight off",
-        "Ether: +40% Critical",
-        "Stinger: +45% Critical",
-        "Deflagration: +1 Maximum Range",
-        "Elemental Shield: -1 AP",
-        "Elemental Guardian: -1 cooldown",
-        "Astral Blade: +1 Maximum Range"
+        "Meteor: +2 Maximum Range",
+        "Avalanche: line of sight off",
+        "Astral Blade: line of sight off",
+        "Deflagration: +2 Maximum Range",
+        "Sun Lance: line of sight off",
+        "Comet: +2 Maximum Range",
+        "Flood: line of sight off",
+        "Asteroid: +2 Maximum Range"
       ],
       "fr": [
-        "Volcan : ligne de vue désactivée",
-        "Éther : +40% Critique",
-        "Dard : +45% Critique",
-        "Déflagration : +1 Portée maximale",
-        "Bouclier Élémentaire : -1 PA",
-        "Gardien Élémentaire : -1 de relance",
-        "Lame Astrale : +1 Portée maximale"
+        "Météore : +2 Portée maximale",
+        "Avalanche : ligne de vue désactivée",
+        "Lame Astrale : ligne de vue désactivée",
+        "Déflagration : +2 Portée maximale",
+        "Lance Solaire : ligne de vue désactivée",
+        "Comète : +2 Portée maximale",
+        "Déluge : ligne de vue désactivée",
+        "Astéroïde : +2 Portée maximale"
       ],
       "de": [
-        "Vulkan: Sichtlinie deaktiviert",
-        "Äther: +40 % Kritische Treffer",
-        "Stachel: +45 % Kritische Treffer",
-        "Detonation: +1 Maximale Reichweite",
-        "Elementar-Schild: –1 AP",
-        "Elementarwächter: Abklingzeit verringert um –1",
-        "Astralklinge: +1 Maximale Reichweite"
+        "„Meteor“: +2 Maximale Reichweite",
+        "Lawine: Sichtlinie deaktiviert",
+        "Astralklinge: Sichtlinie deaktiviert",
+        "Detonation: +2 Maximale Reichweite",
+        "Sonnenspeer: Sichtlinie deaktiviert",
+        "Komet: +2 Maximale Reichweite",
+        "Sintflut: Sichtlinie deaktiviert",
+        "Asteroid: +2 Maximale Reichweite"
       ],
       "es": [
-        "Volcán: línea de visión desactivada",
-        "Éter: +40% de crítico",
-        "Dardo: +45% de crítico",
-        "Deflagración: +1 de alcance máximo",
-        "Escudo Elemental: -1 PA",
-        "Guardián Elemental: -1 de reactivación",
-        "Hoja Astral: +1 de alcance máximo"
+        "Meteoro: +2 de alcance máximo",
+        "Avalancha: línea de visión desactivada",
+        "Hoja Astral: línea de visión desactivada",
+        "Deflagración: +2 de alcance máximo",
+        "Lanza Solar: línea de visión desactivada",
+        "Cometa: +2 de alcance máximo",
+        "Diluvio: línea de visión desactivada",
+        "Asteroide: +2 de alcance máximo"
       ],
       "pt": [
-        "Vulcão: linha de visão desativada",
-        "Éter: +40% de crítico",
-        "Dardo: +45% de crítico",
-        "Deflagração: +1 de alcance máximo",
-        "Escudo Elementar: -1 PA",
-        "Guardião Elementar: -1 de relançamento",
-        "Lâmina Astral: +1 de alcance máximo"
+        "Meteoro: +2 de alcance máximo",
+        "Avalanche: linha de visão desativada",
+        "Lâmina Astral: linha de visão desativada",
+        "Deflagração: +2 de alcance máximo",
+        "Lança Solar: linha de visão desativada",
+        "Cometa: +2 de alcance máximo",
+        "Dilúvio: linha de visão desativada",
+        "Asteroide: +2 de alcance máximo"
       ],
       "it": [
-        "Volcano: line of sight off",
-        "Ether: +40% Critical",
-        "Stinger: +45% Critical",
-        "Deflagration: +1 Maximum Range",
-        "Elemental Shield: -1 AP",
-        "Elemental Guardian: -1 cooldown",
-        "Astral Blade: +1 Maximum Range"
+        "Meteor: +2 Maximum Range",
+        "Avalanche: line of sight off",
+        "Astral Blade: line of sight off",
+        "Deflagration: +2 Maximum Range",
+        "Sun Lance: line of sight off",
+        "Comet: +2 Maximum Range",
+        "Flood: line of sight off",
+        "Asteroid: +2 Maximum Range"
       ]
     },
     "conditions": {
@@ -105931,64 +105943,64 @@
     ],
     "customStats": {
       "en": [
-        "Burning Stroke: modifiable Range",
-        "Propagation: line of sight off",
-        "Elemental Trap: +1 cast(s) per turn",
-        "Telluric Wave: +40% Critical",
-        "Cataract: line of sight off",
-        "Hurricane: +1 Maximum Range",
-        "Sun Lance: line of sight off",
-        "Flood: +35% Critical"
+        "Burning Stroke: -1 AP",
+        "Stalactite: +1 cast(s) per target",
+        "Glacier: -1 AP",
+        "Hurricane: +1 cast(s) per target",
+        "Flurry: -1 AP",
+        "Breach: +1 cast(s) per target",
+        "Storm: -1 AP",
+        "Volcano: +1 cast(s) per target"
       ],
       "fr": [
-        "Trait Ardent : Portée modifiable",
-        "Propagation : ligne de vue désactivée",
-        "Piège Élémentaire : +1 lancer(s) par tour",
-        "Onde Tellurique : +40% Critique",
-        "Cataracte : ligne de vue désactivée",
-        "Ouragan : +1 Portée maximale",
-        "Lance Solaire : ligne de vue désactivée",
-        "Déluge : +35% Critique"
+        "Trait Ardent : -1 PA",
+        "Stalactite : +1 lancer(s) par cible",
+        "Glacier : -1 PA",
+        "Ouragan : +1 lancer(s) par cible",
+        "Rafale : -1 PA",
+        "Brèche : +1 lancer(s) par cible",
+        "Orage : -1 PA",
+        "Volcan : +1 lancer(s) par cible"
       ],
       "de": [
-        "Feuriger Zug: Veränderbare Reichweite",
-        "Ausbreitung: Sichtlinie deaktiviert",
-        "Elementarfalle : +1 Zauber pro Runde",
-        "Tellurwelle: +40 % Kritische Treffer",
-        "Katarakt: Sichtlinie deaktiviert",
-        "Orkan: +1 Maximale Reichweite",
-        "Sonnenspeer: Sichtlinie deaktiviert",
-        "Sintflut: +35 % Kritische Treffer"
+        "Feuriger Zug: –1 AP",
+        "Stalaktit : +1 Zauber pro Ziel",
+        "Gletscher: –1 AP",
+        "Orkan : +1 Zauber pro Ziel",
+        "Rattschlag: –1 AP",
+        "Bresche : +1 Zauber pro Ziel",
+        "Gewitter: –1 AP",
+        "Vulkan : +1 Zauber pro Ziel"
       ],
       "es": [
-        "Trazo Flamígero: alcance modificable",
-        "Propagación: línea de visión desactivada",
-        "Trampa Elemental: +1 lanzamiento(s) por turno",
-        "Onda Telúrica: +40% de crítico",
-        "Catarata: línea de visión desactivada",
-        "Huracán: +1 de alcance máximo",
-        "Lanza Solar: línea de visión desactivada",
-        "Diluvio: +35% de crítico"
+        "Trazo Flamígero: -1 PA",
+        "Estalactita: +1 lanzamiento(s) por objetivo",
+        "Glaciar: -1 PA",
+        "Huracán: +1 lanzamiento(s) por objetivo",
+        "Ráfaga: -1 PA",
+        "Brecha: +1 lanzamiento(s) por objetivo",
+        "Tormenta: -1 PA",
+        "Volcán: +1 lanzamiento(s) por objetivo"
       ],
       "pt": [
-        "Tiro Ardente: alcance modificável",
-        "Propagação: linha de visão desativada",
-        "Armadilha Elementar: +1 lançamento(s) por turno",
-        "Onda Telúrica: +40% de crítico",
-        "Catarata: linha de visão desativada",
-        "Furacão: +1 de alcance máximo",
-        "Lança Solar: linha de visão desativada",
-        "Dilúvio: +35% de crítico"
+        "Tiro Ardente: -1 PA",
+        "Estalactite: +1 lançamento(s) por alvo",
+        "Geleira: -1 PA",
+        "Furacão: +1 lançamento(s) por alvo",
+        "Rajada: -1 PA",
+        "Violação: +1 lançamento(s) por alvo",
+        "Tormenta: -1 PA",
+        "Vulcão: +1 lançamento(s) por alvo"
       ],
       "it": [
-        "Burning Stroke: modifiable Range",
-        "Propagation: line of sight off",
-        "Elemental Trap: +1 cast(s) per turn",
-        "Telluric Wave: +40% Critical",
-        "Cataract: line of sight off",
-        "Hurricane: +1 Maximum Range",
-        "Sun Lance: line of sight off",
-        "Flood: +35% Critical"
+        "Burning Stroke: -1 AP",
+        "Stalactite: +1 cast(s) per target",
+        "Glacier: -1 AP",
+        "Hurricane: +1 cast(s) per target",
+        "Flurry: -1 AP",
+        "Breach: +1 cast(s) per target",
+        "Storm: -1 AP",
+        "Volcano: +1 cast(s) per target"
       ]
     },
     "conditions": {
@@ -106013,64 +106025,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Polarity: +1 Maximum Range",
-        "Quadramental Current: +1 cast(s) per turn",
-        "Elemental Drain: straight-line casting off",
-        "Morph: +1 cast(s) per target",
-        "Runic Treatment: line of sight off",
-        "Runic Overcharge: +1 Maximum Range",
-        "Contribution: line of sight off",
-        "Creation: +2 Maximum Range"
+        "Elemental Drain: line of sight off",
+        "Quadramental Current: line of sight off",
+        "Elemental Cycle: line of sight off",
+        "Tribute: +1 cast(s) per turn",
+        "Propagation: +1 cast(s) per turn",
+        "Runic Prism: -1 cooldown",
+        "Supernova: modifiable Range",
+        "Arcane Torrent: straight-line casting off"
       ],
       "fr": [
-        "Polarité : +1 Portée maximale",
-        "Courant Quadramental : +1 lancer(s) par tour",
-        "Drain Élémentaire : lancer en ligne désactivé",
-        "Morph : +1 lancer(s) par cible",
-        "Traitement Runique : ligne de vue désactivée",
-        "Surcharge Runique : +1 Portée maximale",
-        "Contribution : ligne de vue désactivée",
-        "Création : +2 Portée maximale"
+        "Drain Élémentaire : ligne de vue désactivée",
+        "Courant Quadramental : ligne de vue désactivée",
+        "Cycle Élémentaire : ligne de vue désactivée",
+        "Tribut : +1 lancer(s) par tour",
+        "Propagation : +1 lancer(s) par tour",
+        "Prisme Runique : -1 de relance",
+        "Supernova : Portée modifiable",
+        "Torrent Arcanique : lancer en ligne désactivé"
       ],
       "de": [
-        "Polarität: +1 Maximale Reichweite",
-        "Quadrelementarströmung : +1 Zauber pro Runde",
-        "Elementar-Raub: Lineare Wirkungsweise deaktiviert",
-        "Morph : +1 Zauber pro Ziel",
-        "Runische Behandlung: Sichtlinie deaktiviert",
-        "Runenüberladung: +1 Maximale Reichweite",
-        "Abgabe: Sichtlinie deaktiviert",
-        "Erstellen: +2 Maximale Reichweite"
+        "Elementar-Raub: Sichtlinie deaktiviert",
+        "Quadrelementarströmung: Sichtlinie deaktiviert",
+        "Elementarzyklus: Sichtlinie deaktiviert",
+        "Tribut : +1 Zauber pro Runde",
+        "Ausbreitung : +1 Zauber pro Runde",
+        "Runenprisma: Abklingzeit verringert um –1",
+        "Supernova: Veränderbare Reichweite",
+        "Arkaner Strom: Lineare Wirkungsweise deaktiviert"
       ],
       "es": [
-        "Polaridad: +1 de alcance máximo",
-        "Corriente Cuadramental: +1 lanzamiento(s) por turno",
-        "Drenaje Elemental: lanzamiento en línea desactivado",
-        "Morph: +1 lanzamiento(s) por objetivo",
-        "Tratamiento Rúnico: línea de visión desactivada",
-        "Sobrecarga Rúnica: +1 de alcance máximo",
-        "Contribución: línea de visión desactivada",
-        "Creación: +2 de alcance máximo"
+        "Drenaje Elemental: línea de visión desactivada",
+        "Corriente Cuadramental: línea de visión desactivada",
+        "Ciclo Elemental: línea de visión desactivada",
+        "Tributo: +1 lanzamiento(s) por turno",
+        "Propagación: +1 lanzamiento(s) por turno",
+        "Prisma Rúnico: -1 de reactivación",
+        "Supernova: alcance modificable",
+        "Torrente Arcano: lanzamiento en línea desactivado"
       ],
       "pt": [
-        "Polaridade: +1 de alcance máximo",
-        "Corrente Quadramental: +1 lançamento(s) por turno",
-        "Dreno Elementar: lançamento em linha desativado",
-        "Morf: +1 lançamento(s) por alvo",
-        "Tratamento Rúnico: linha de visão desativada",
-        "Sobrecarga Rúnica: +1 de alcance máximo",
-        "Contribuição: linha de visão desativada",
-        "Criação: +2 de alcance máximo"
+        "Dreno Elementar: linha de visão desativada",
+        "Corrente Quadramental: linha de visão desativada",
+        "Ciclo Elementar: linha de visão desativada",
+        "Tributo: +1 lançamento(s) por turno",
+        "Propagação: +1 lançamento(s) por turno",
+        "Prisma Rúnico: -1 de relançamento",
+        "Supernova: alcance modificável",
+        "Torrente Arcana: lançamento em linha desativado"
       ],
       "it": [
-        "Polarity: +1 Maximum Range",
-        "Quadramental Current: +1 cast(s) per turn",
-        "Elemental Drain: straight-line casting off",
-        "Morph: +1 cast(s) per target",
-        "Runic Treatment: line of sight off",
-        "Runic Overcharge: +1 Maximum Range",
-        "Contribution: line of sight off",
-        "Creation: +2 Maximum Range"
+        "Elemental Drain: line of sight off",
+        "Quadramental Current: line of sight off",
+        "Elemental Cycle: line of sight off",
+        "Tribute: +1 cast(s) per turn",
+        "Propagation: +1 cast(s) per turn",
+        "Runic Prism: -1 cooldown",
+        "Supernova: modifiable Range",
+        "Arcane Torrent: straight-line casting off"
       ]
     },
     "conditions": {
@@ -106095,64 +106107,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Imprint: -1 cooldown",
-        "Striking Meteor: +35% Critical",
-        "Elemental Cycle: line of sight off",
-        "Stalagmite: modifiable Range",
-        "Ember: modifiable Range",
-        "Telluric Blade: line of sight off",
-        "Icy Shards: straight-line casting off",
-        "Comet: +35% Critical"
+        "Runification: +2 Maximum Range",
+        "Manifestation: +2 Maximum Range",
+        "Elemental Shield: -1 AP",
+        "Elemental Guardian: -1 cooldown",
+        "Polarity: +1 Maximum Range",
+        "Convection: +1 Maximum Range",
+        "Sublimation: modifiable Range",
+        "Runic Overcharge: -1 AP"
       ],
       "fr": [
-        "Empreinte : -1 de relance",
-        "Météore Percutant : +35% Critique",
-        "Cycle Élémentaire : ligne de vue désactivée",
-        "Stalagmite : Portée modifiable",
-        "Tison : Portée modifiable",
-        "Lame Tellurique : ligne de vue désactivée",
-        "Éclats Glacés : lancer en ligne désactivé",
-        "Comète : +35% Critique"
+        "Runification : +2 Portée maximale",
+        "Manifestation : +2 Portée maximale",
+        "Bouclier Élémentaire : -1 PA",
+        "Gardien Élémentaire : -1 de relance",
+        "Polarité : +1 Portée maximale",
+        "Convection : +1 Portée maximale",
+        "Sublimation : Portée modifiable",
+        "Surcharge Runique : -1 PA"
       ],
       "de": [
-        "Abdruck: Abklingzeit verringert um –1",
-        "Durchschlagender Meteor: +35 % Kritische Treffer",
-        "Elementarzyklus: Sichtlinie deaktiviert",
-        "Stalagmit: Veränderbare Reichweite",
-        "Glut: Veränderbare Reichweite",
-        "Erdschneide: Sichtlinie deaktiviert",
-        "Eissplitter: Lineare Wirkungsweise deaktiviert",
-        "Komet: +35 % Kritische Treffer"
+        "Runifizierung: +2 Maximale Reichweite",
+        "Erscheinung: +2 Maximale Reichweite",
+        "Elementar-Schild: –1 AP",
+        "Elementarwächter: Abklingzeit verringert um –1",
+        "Polarität: +1 Maximale Reichweite",
+        "Konvektion: +1 Maximale Reichweite",
+        "Sublimierung: Veränderbare Reichweite",
+        "Runenüberladung: –1 AP"
       ],
       "es": [
-        "Impronta: -1 de reactivación",
-        "Meteoro Golpeador: +35% de crítico",
-        "Ciclo Elemental: línea de visión desactivada",
-        "Estalagmita: alcance modificable",
-        "Tizón: alcance modificable",
-        "Hoja Telúrica: línea de visión desactivada",
-        "Esquirlas Heladas: lanzamiento en línea desactivado",
-        "Cometa: +35% de crítico"
+        "Runificación: +2 de alcance máximo",
+        "Manifestación: +2 de alcance máximo",
+        "Escudo Elemental: -1 PA",
+        "Guardián Elemental: -1 de reactivación",
+        "Polaridad: +1 de alcance máximo",
+        "Convección: +1 de alcance máximo",
+        "Sublimación: alcance modificable",
+        "Sobrecarga Rúnica: -1 PA"
       ],
       "pt": [
-        "Impressão: -1 de relançamento",
-        "Meteoro Percuciente: +35% de crítico",
-        "Ciclo Elementar: linha de visão desativada",
-        "Estalagmite: alcance modificável",
-        "Tição: alcance modificável",
-        "Lâmina Telúrica: linha de visão desativada",
-        "Fragmentos Gelados: lançamento em linha desativado",
-        "Cometa: +35% de crítico"
+        "Runificação: +2 de alcance máximo",
+        "Manifestação: +2 de alcance máximo",
+        "Escudo Elementar: -1 PA",
+        "Guardião Elementar: -1 de relançamento",
+        "Polaridade: +1 de alcance máximo",
+        "Convecção: +1 de alcance máximo",
+        "Sublimação: alcance modificável",
+        "Sobrecarga Rúnica: -1 PA"
       ],
       "it": [
-        "Imprint: -1 cooldown",
-        "Striking Meteor: +35% Critical",
-        "Elemental Cycle: line of sight off",
-        "Stalagmite: modifiable Range",
-        "Ember: modifiable Range",
-        "Telluric Blade: line of sight off",
-        "Icy Shards: straight-line casting off",
-        "Comet: +35% Critical"
+        "Runification: +2 Maximum Range",
+        "Manifestation: +2 Maximum Range",
+        "Elemental Shield: -1 AP",
+        "Elemental Guardian: -1 cooldown",
+        "Polarity: +1 Maximum Range",
+        "Convection: +1 Maximum Range",
+        "Sublimation: modifiable Range",
+        "Runic Overcharge: -1 AP"
       ]
     },
     "conditions": {
@@ -117155,7 +117167,7 @@
       "it": "Stalak Shield"
     },
     "itemType": "Shield",
-    "setID": null,
+    "setID": "1077",
     "level": 200,
     "stats": [
       {
@@ -126644,22 +126656,22 @@
     ],
     "customStats": {
       "en": [
-        "The bearer is Unlockable as long as they have not inflicted any damage. If they inflict damage, the duration of the state changes to 1 turn."
+        "The bearer is Unlockable as long as they have not inflicted any damage.\nIf they inflict damage, the duration of the state changes to 1 turn."
       ],
       "fr": [
-        "Le porteur est Intaclable tant qu'il n'a pas occasionné de dommages. S'il en occasionne, la durée de l'état passe à 1 tour."
+        "Le porteur est Intaclable tant qu'il n'a pas occasionné de dommages.\nS'il en occasionne, la durée de l'état passe à 1 tour."
       ],
       "de": [
-        "Der Träger ist unblockbar, solange er keinen Schaden verursacht. Wenn er Schaden verursacht, wird die Dauer des Zustands auf 1 Runde gesetzt."
+        "Der Träger ist unblockbar, solange er keinen Schaden verursacht.\nWenn er Schaden verursacht, wird die Dauer des Zustands auf 1 Runde gesetzt."
       ],
       "es": [
-        "El portador es no placable mientras no haya recibido daños. Si los ocasiona, el estado dura 1 turno."
+        "El portador es no placable mientras no haya recibido daños.\nSi los ocasiona, el estado dura 1 turno."
       ],
       "pt": [
-        "O portador fica Imbloqueável contanto que não tenha infligido danos. Se infligir, a duração do estado passará a ser de 1 turno."
+        "O portador fica Imbloqueável contanto que não tenha infligido danos.\nSe infligir, a duração do estado passará a ser de 1 turno."
       ],
       "it": [
-        "The bearer is Unlockable as long as they have not inflicted any damage. If they inflict damage, the duration of the state changes to 1 turn."
+        "The bearer is Unlockable as long as they have not inflicted any damage.\nIf they inflict damage, the duration of the state changes to 1 turn."
       ]
     },
     "conditions": {
@@ -126950,22 +126962,22 @@
     ],
     "customStats": {
       "en": [
-        "The bearer gains 1 MP for 3 turns for each enemy fighter more than 9 cells away from them at the start of the fight."
+        "The bearer gains 1 MP for 1 turn for each enemy fighter more than 9 cells away from them at the start of the first 3 turns (stackable 3 times)."
       ],
       "fr": [
-        "Le porteur gagne 1 PM pendant 3 tours pour chaque combattant ennemi à plus de 9 cases de lui au début du combat."
+        "Le porteur gagne 1 PM pendant 1 tour pour chaque combattant ennemi à plus de 9 cases de lui au début des 3 premiers tours de jeu (cumulable 3 fois)."
       ],
       "de": [
-        "Der Träger erhält 3 Runden lang 1 BP pro gegnerischem Kämpfer, der zu Beginn des Kampfes mehr als 9 Felder von ihm entfernt ist."
+        "Der Träger erhält 1 Runde lang 1 BP pro gegnerischem Kämpfer, der zu Beginn der ersten drei Spielrunden (3-mal kumulierbar) mehr als 9 Felder von ihm entfernt ist."
       ],
       "es": [
-        "El portador gana 1 PM durante 3 turnos por cada luchador enemigo a más de 9 casillas de él al inicio del combate."
+        "El portador gana 1 PM durante 1 turno por cada luchador enemigo a más de 9 casillas de él al inicio de los 3 primeros turnos de juego (acumulable 3 veces)."
       ],
       "pt": [
-        "O portador ganha 1 PM durante 3 turnos para cada combatente inimigo a mais de 9 células de distância dele no começo do combate."
+        "O portador ganha 1 PM durante 1 turno para cada combatente inimigo a mais de 9 células de distância dele no começo dos 3 primeiros turnos de jogo (acumula até 3 vezes)."
       ],
       "it": [
-        "The bearer gains 1 MP for 3 turns for each enemy fighter more than 9 cells away from them at the start of the fight."
+        "The bearer gains 1 MP for 1 turn for each enemy fighter more than 9 cells away from them at the start of the first 3 turns (stackable 3 times)."
       ]
     },
     "conditions": {
@@ -127052,22 +127064,22 @@
     ],
     "customStats": {
       "en": [
-        "The bearer gains +2 AP for their first turn."
+        "The bearer gains 2 AP on their first turn."
       ],
       "fr": [
-        "Le porteur gagne 2 PA pendant son premier tour."
+        "Le porteur gagne 2 PA au premier tour."
       ],
       "de": [
-        "Der Träger erhält während seiner ersten Spielrunde 2 AP."
+        "Der Träger erhält in der ersten Runde 2 AP."
       ],
       "es": [
-        "El portador gana 2 PA durante su primer turno."
+        "El portador gana 2 PA en el primer turno."
       ],
       "pt": [
-        "O portador ganha 2 PA durante seu primeiro turno."
+        "O portador ganha 2 PA no primeiro turno."
       ],
       "it": [
-        "The bearer gains +2 AP for their first turn."
+        "The bearer gains 2 AP on their first turn."
       ]
     },
     "conditions": {
@@ -127103,22 +127115,22 @@
     ],
     "customStats": {
       "en": [
-        "The bearer sacrifices 2 MP to gain 3 AP for their first turn."
+        "The bearer sacrifices 2 MP to gain 3 AP on their first turn."
       ],
       "fr": [
-        "Le porteur sacrifie 2 PM pour gagner 3 PA pendant son premier tour."
+        "Le porteur sacrifie 2 PM pour gagner 3 PA au premier tour."
       ],
       "de": [
-        "Der Träger opfert 2 BP, um während seiner ersten Runde 3 AP zu erhalten."
+        "Der Träger opfert 2 BP, um in der ersten Runde 3 AP zu erhalten."
       ],
       "es": [
-        "El portador sacrifica 2 PM para ganar 3 PA durante su primer turno."
+        "El portador sacrifica 2 PM para ganar 3 PA en el primer turno."
       ],
       "pt": [
-        "O portador sacrifica 2 PM para ganhar 3 PA durante seu primeiro turno."
+        "O portador sacrifica 2 PM para ganhar 3 PA no primeiro turno."
       ],
       "it": [
-        "The bearer sacrifices 2 MP to gain 3 AP for their first turn."
+        "The bearer sacrifices 2 MP to gain 3 AP on their first turn."
       ]
     },
     "conditions": {
@@ -127154,22 +127166,22 @@
     ],
     "customStats": {
       "en": [
-        "The bearer sacrifices 4 MP to gain 4 AP for their first turn."
+        "The bearer sacrifices 4 MP to gain 4 AP on their first turn."
       ],
       "fr": [
-        "Le porteur sacrifie 4 PM pour gagner 4 PA pendant son premier tour."
+        "Le porteur sacrifie 4 PM pour gagner 4 PA au premier tour."
       ],
       "de": [
-        "Der Träger opfert 4 BP, um während seiner ersten Runde 4 AP zu erhalten."
+        "Der Träger opfert 4 BP, um in der ersten Runde 4 AP zu erhalten."
       ],
       "es": [
-        "El portador sacrifica 4 PM para ganar 4 PA durante su primer turno."
+        "El portador sacrifica 4 PM para ganar 4 PA en el primer turno."
       ],
       "pt": [
-        "O portador sacrifica 4 PM para ganhar 4 PA durante seu primeiro turno."
+        "O portador sacrifica 4 PM para ganhar 4 PA no primeiro turno."
       ],
       "it": [
-        "The bearer sacrifices 4 MP to gain 4 AP for their first turn."
+        "The bearer sacrifices 4 MP to gain 4 AP on their first turn."
       ]
     },
     "conditions": {
@@ -127366,9 +127378,9 @@
     "level": 200,
     "stats": [
       {
-        "stat": "Dodge",
+        "stat": "Initiative",
         "minStat": null,
-        "maxStat": 40
+        "maxStat": 1000
       },
       {
         "stat": "AP Parry",
@@ -127383,22 +127395,22 @@
     ],
     "customStats": {
       "en": [
-        "The bearer becomes Invisible for 1 turn at the start of their first turn."
+        "The bearer becomes Invisible for 1 turn at the start of their first turn.\nThe invisibility does not wear off when the bearer attacks, but it is removed if they suffer any damage."
       ],
       "fr": [
-        "Le porteur devient invisible pendant 1 tour au début de son premier tour de jeu."
+        "Le porteur devient invisible pendant 1 tour au début de son premier tour de jeu.\nL'invisibilité ne se dissipe pas lorsqu'il attaque, mais elle est retirée s'il subit des dommages."
       ],
       "de": [
-        "Der Träger wird zu Beginn seiner ersten Spielrunde 1 Runde lang unsichtbar."
+        "Der Träger wird zu Beginn seiner ersten Spielrunde 1 Runde lang unsichtbar.\nDie Unsichtbarkeit verfliegt nicht, wenn er angreift, aber sie wird aufgehoben, wenn er Schaden erleidet."
       ],
       "es": [
-        "El portador se vuelve invisible durante 1 turno al principio de su primer turno de juego."
+        "El portador se vuelve invisible durante 1 turno al principio de su primer turno de juego.\nLa invisibilidad no se disipa cuando este ataca, pero sí se le retira si sufre daños."
       ],
       "pt": [
-        "O portador fica invisível durante 1 turno no começo de seu primeiro turno de jogo."
+        "O portador fica invisível durante 1 turno no começo de seu primeiro turno de jogo.\nA invisibilidade não se dissipa quando ele ataca, mas é retirada quando ele sofre danos."
       ],
       "it": [
-        "The bearer becomes Invisible for 1 turn at the start of their first turn."
+        "The bearer becomes Invisible for 1 turn at the start of their first turn.\nThe invisibility does not wear off when the bearer attacks, but it is removed if they suffer any damage."
       ]
     },
     "conditions": {
@@ -127437,13 +127449,13 @@
         "The bearer reduces the duration of active effects on themself by 4 turns at the start of their first turn."
       ],
       "fr": [
-        "Le porteur réduit de 4 tours la durée des effets actifs sur lui au début de son premier tour de jeu."
+        "Le porteur réduit la durée des effets actifs sur lui de 4 tours au début de son premier tour de jeu."
       ],
       "de": [
         "Der Träger verringert die Dauer der Effekte, die auf ihn einwirken, zu Beginn seiner ersten Spielrunde um 4 Runden."
       ],
       "es": [
-        "El portador reduce en 4 turnos la duración de los efectos activos en sí mismo al principio de su primer turno de juego."
+        "El portador reduce la duración de los efectos activos en sí mismo 4 turnos al principio de su primer turno de juego."
       ],
       "pt": [
         "O portador reduz em 4 turnos a duração dos efeitos ativos sobre ele no começo de seu primeiro turno de jogo."
@@ -127556,22 +127568,22 @@
     ],
     "customStats": {
       "en": [
-        "The bearer gains 200% of their level as shield for an infinite duration at the start of turn of each enemy fighter that plays before them."
+        "The bearer gains 200% of their level as shield until the end of the fight at the start of the first turn of each enemy fighter that plays before them."
       ],
       "fr": [
-        "Le porteur gagne 200% de son niveau en bouclier à durée infinie au début du tour de chaque combattant ennemi qui joue avant lui."
+        "Le porteur gagne 200% de son niveau en bouclier jusqu'à la fin du combat au début du premier tour de jeu de chaque combattant ennemi qui joue avant lui."
       ],
       "de": [
-        "Der Träger erhält zu Beginn der Runde jedes gegnerischen Kämpfers, der vor ihm an der Reihe ist, auf unbestimmte Zeit 200 % seiner Stufe als Schild."
+        "Der Träger erhält zu Beginn der ersten Spielrunde jedes gegnerischen Kämpfers, der vor ihm an der Reihe ist, bis zum Ende des Kampfes 200 % seiner Stufe als Schild."
       ],
       "es": [
-        "El portador gana un 200% de su nivel en puntos de escudo de duración infinita al inicio del turno de cada luchador enemigo que juegue antes que él."
+        "El portador gana un 200% de su nivel en escudo hasta el final del combate al inicio del primer turno de juego de cada luchador enemigo que juegue antes que él."
       ],
       "pt": [
-        "O portador ganha 200% de seu nível em escudo com duração infinita no começo do turno de cada combatente inimigo que joga antes dele."
+        "O portador ganha 200% de seu nível em escudo até o fim do combate no começo do primeiro turno de jogo de cada combatente inimigo que jogar antes dele."
       ],
       "it": [
-        "The bearer gains 200% of their level as shield for an infinite duration at the start of turn of each enemy fighter that plays before them."
+        "The bearer gains 200% of their level as shield until the end of the fight at the start of the first turn of each enemy fighter that plays before them."
       ]
     },
     "conditions": {
@@ -127729,22 +127741,22 @@
     ],
     "customStats": {
       "en": [
-        "The bearer is in the Gravity state as long as they have not suffered any damage. If they suffer damage, the duration of the state changes to 1 turn."
+        "The bearer is in the Gravity state as long as they have not suffered any damage.\nIf they suffer damage, the duration of the state changes to 1 turn."
       ],
       "fr": [
-        "Le porteur est dans l'état Pesanteur tant qu'il n'a pas subi de dommages. S'il en subit, la durée de l'état passe à 1 tour."
+        "Le porteur est dans l'état Pesanteur tant qu'il n'a pas subi de dommages.\nS'il en subit, la durée de l'état passe à 1 tour."
       ],
       "de": [
-        "Der Träger befindet sich im Zustand „Schwerkraft“, solange er keinen Schaden erleidet. Wenn er Schaden erleidet, wird die Dauer des Zustands auf 1 Runde gesetzt."
+        "Der Träger befindet sich im Zustand „Schwerkraft“, solange er keinen Schaden erleidet.\nWenn er Schaden erleidet, wird die Dauer des Zustands auf 1 Runde gesetzt."
       ],
       "es": [
-        "El portador permanece en el estado Pesante mientras no sufra daños. Si los sufre, el estado dura 1 turno."
+        "El portador permanece en el estado Pesante mientras no sufra daños.\nSi los sufre, el estado dura 1 turno."
       ],
       "pt": [
-        "O portador fica no estado Gravidade contanto que não tenha sofrido danos. Se tiver sofrido, a duração do estado passa a ser de 1 turno."
+        "O portador fica no estado Gravidade contanto que não tenha sofrido danos.\nSe tiver sofrido, a duração do estado passa a ser de 1 turno."
       ],
       "it": [
-        "The bearer is in the Gravity state as long as they have not suffered any damage. If they suffer damage, the duration of the state changes to 1 turn."
+        "The bearer is in the Gravity state as long as they have not suffered any damage.\nIf they suffer damage, the duration of the state changes to 1 turn."
       ]
     },
     "conditions": {
@@ -133877,22 +133889,22 @@
     ],
     "customStats": {
       "en": [
-        "Bontarian Shield:\n• When the bearer is unbewitched or debuffed, the bearer gains 100% of their level as shield for 1 turn.\n\nBrakmarian Power: \n• Whenever the bearer inflicts or suffers pushback damage, the bearer gains 100 Power for 1 turn. \n\nNightmare Eye:\n• If the bearer triggers Bontarian Shield and Brakmarian Power in the same turn, the damage they inflict and suffer increases by 10% for 1 turn.\n\nThe effects can only be triggered once per turn."
+        "Nightmare Eternal:\n• Bontarian Shield: when the bearer is unbewitched or hindered, the bearer gains 100% of their level as shield for 1 turn.\n• Brakmarian Power: when the bearer inflicts or suffers pushback damage, the bearer gains 100 Power for 1 turn. \n• Nightmare Eye: if the bearer triggers 2 effects in the same turn, the damage they inflict and suffer increases by 10% for 1 turn.\n• The effects can only be triggered once per turn."
       ],
       "fr": [
-        "Bouclier Bontarien :\n• Lorsque le porteur est désenvoûté ou entravé, il gagne 100% de son niveau en bouclier pour 1 tour.\n\nPuissance Brâkmarienne : \n• Lorsque le porteur occasionne ou subit des dommages de poussée, il gagne 100 de Puissance pour 1 tour. \n\nŒil du Cauchemar :\n• Si le porteur déclenche le Bouclier Bontarien et la Puissance Brâkmarienne dans le même tour, les dommages qu'il occasionne et subit sont augmentés de 10% pendant 1 tour.\n\nLes effets ne peuvent être déclenchés qu'une seule fois par tour."
+        "Éternel Cauchemar :\n• Bouclier Bontarien : lorsque le porteur est désenvoûté ou entravé, il gagne 100% de son niveau en bouclier pour 1 tour.\n• Puissance Brâkmarienne : lorsque le porteur occasionne ou subit des dommages de poussée, il gagne 100 de Puissance pour 1 tour. \n• Œil du Cauchemar : si le porteur déclenche les 2 effets dans le même tour, les dommages qu'il occasionne et subit sont augmentés de 10% pendant 1 tour.\n• Les effets ne peuvent être déclenchés qu'une seule fois par tour."
       ],
       "de": [
-        "Bonta-Schild:\n• Wenn der Träger entzaubert oder gefesselt ist, erhält er 1 Runde lang 100 % Schildstufe.\n\nBrâk-Schlagkraft: \n• Wenn der Träger Schubsschaden verursacht oder erleidet, erhält er 1 Runde lang 100 Schlagkraft. \n\nAuge des Alptraums:\n• Löst der Träger den Bonta-Schild und die Brâk-Schlagkraft in derselben Runde aus, erhöht sich der von ihm verursachte und erlittene Schaden 1 Runde lang um 10 %.\n\nWirkungen können nur einmal pro Runde ausgelöst werden."
+        "Ewiger Alptraum:\n• Bonta-Schild: Wenn der Träger entzaubert oder gefesselt wird, erhält er 1 Runde lang 100 % seiner Stufe als Schild.\n• Brâk-Schlagkraft: Wenn der Träger Schubsschaden verursacht oder erleidet, erhält er 1 Runde lang 100 Schlagkraft. \n• Auge des Alptraums: Löst der Träger beide Wirkungen in derselben Runde aus, erhöht sich der von ihm verursachte und erlittene Schaden 1 Runde lang um 10 %.\n• Die Wirkungen können nur einmal pro Runde ausgelöst werden."
       ],
       "es": [
-        "Escudo Bontariano:\n• Cuando el portador es desembrujado o trabado, gana un escudo del 100% de su nivel durante 1 turno.\n\nPotencia Brakmariana: \n• Cuando el portador ocasiona o sufre daños de empuje, gana 100 de potencia durante 1 turno. \n\nOjo de Pesadilla:\n• Si el portador activa Escudo Bontariano y Potencia Brakmariana en el mismo turno, los daños que ocasiona y sufre aumentan un 10% durante 1 turno.\n\nLos efectos pueden activarse solo una vez por turno."
+        "Pesadilla Eterna:\n• Escudo Bontariano: cuando el portador es desembrujado o trabado, gana un escudo del 100% de su nivel durante 1 turno.\n• Potencia Brakmariana: cuando el portador ocasiona o sufre daños de empuje, gana 100 de potencia durante 1 turno. \n• Ojo de Pesadilla: si el portador activa los 2 efectos en el mismo turno, los daños que ocasiona y sufre aumentan un 10% durante 1 turno.\n• Los efectos pueden activarse solo una vez por turno."
       ],
       "pt": [
-        "Escudo Bontariano:\n• Quando o portador é desencantado ou entravado, ele ganha em escudo o equivalente a 100% de seu nível durante 1 turno.\n\nPotência Brakmariana: \n• Quando o portador inflige ou sofre danos de empurrão, ele ganha 100 de potência durante 1 turno. \n\nOlho do Pesadelo:\n• Se o portador acionar o Escudo Bontariano e a Potência Brakmariana no mesmo turno, os danos que ele inflige e sofre aumentam em 10% durante 1 turno.\n\nOs efeitos só podem ser acionados uma vez por turno."
+        "Eterno Pesadelo:\n• Escudo Bontariano: quando o portador é desencantado ou entravado, ele ganha em escudo o equivalente a 100% de seu nível durante 1 turno.\n• Potência Brakmariana: quando o portador inflige ou sofre danos de empurrão, ele ganha 100 de potência durante 1 turno. \n• Olho do Pesadelo: se o portador acionar os 2 efeitos no mesmo turno, os danos que ele infligir e sofrer aumentarão em 10% durante 1 turno.\n• Os efeitos só podem ser acionados uma vez por turno."
       ],
       "it": [
-        "Bontarian Shield:\n• When the bearer is unbewitched or debuffed, the bearer gains 100% of their level as shield for 1 turn.\n\nBrakmarian Power: \n• Whenever the bearer inflicts or suffers pushback damage, the bearer gains 100 Power for 1 turn. \n\nNightmare Eye:\n• If the bearer triggers Bontarian Shield and Brakmarian Power in the same turn, the damage they inflict and suffer increases by 10% for 1 turn.\n\nThe effects can only be triggered once per turn."
+        "Nightmare Eternal:\n• Bontarian Shield: when the bearer is unbewitched or hindered, the bearer gains 100% of their level as shield for 1 turn.\n• Brakmarian Power: when the bearer inflicts or suffers pushback damage, the bearer gains 100 Power for 1 turn. \n• Nightmare Eye: if the bearer triggers 2 effects in the same turn, the damage they inflict and suffer increases by 10% for 1 turn.\n• The effects can only be triggered once per turn."
       ]
     },
     "conditions": {
@@ -136553,22 +136565,22 @@
     ],
     "customStats": {
       "en": [
-        "Country Ranger:\n• The bearer gains 8 Power for 2 turns for each MP they use (stackable 20 times).\n• If the bearer doesn't use any MP during their turn, they are healed for 10% of their health."
+        "Country Ranger:\n• The bearer gains 8 Power for 2 turns for each MP they use.\n• If the bearer doesn't use any MP during their turn, they are healed for 10% of their health."
       ],
       "fr": [
-        "Garde Champêtre :\n• Le porteur gagne 8 de Puissance pendant 2 tours pour chaque PM qu'il utilise (cumulable 20 fois).\n• S'il n'a utilisé aucun PM durant son tour, il est soigné de 10% de sa vie."
+        "Garde Champêtre :\n• Le porteur gagne 8 de Puissance pendant 2 tours pour chaque PM qu'il utilise.\n• S'il n'a utilisé aucun PM durant son tour, il est soigné de 10% de sa vie."
       ],
       "de": [
-        "Feldschütz:\n• Der Träger erhält 2 Runden lang für jeden von ihm verwendeten BP 8 Schlagkraft (20-mal kumulierbar).\n• Hat er in seiner Runde keinen BP verwendet, wird er um 10 % seiner LP geheilt."
+        "Feldschütz:\n• Der Träger erhält 2 Runden lang für jeden von ihm verwendeten BP 8 Schlagkraft.\n• Hat er in seiner Runde keinen BP verwendet, wird er um 10 % seiner LP geheilt."
       ],
       "es": [
-        "Guarda Campestre:\n• El portador gana 8 de potencia durante 2 turnos por cada PM que utiliza (acumulable 20 veces).\n• Si no ha utilizado ningún PM durante su turno, se cura un 10% de su vida."
+        "Guarda Campestre:\n• El portador gana 8 de potencia durante 2 turnos por cada PM que utilice.\n• Si no ha utilizado ningún PM durante su turno, se cura un 10% de su vida."
       ],
       "pt": [
-        "Guarda Campestre:\n• O portador ganha 8 de potência durante 2 turnos para cada PM que ele utilizar (acumula 20 vezes).\n• Se ele não tiver usado PM durante seu turno, ele será curado em 10% da vida."
+        "Guarda Campestre:\n• O portador ganha 8 de potência durante 2 turnos para cada PM que ele utilizar.\n• Se ele não tiver usado PM durante seu turno, ele será curado em 10% da vida."
       ],
       "it": [
-        "Country Ranger:\n• The bearer gains 8 Power for 2 turns for each MP they use (stackable 20 times).\n• If the bearer doesn't use any MP during their turn, they are healed for 10% of their health."
+        "Country Ranger:\n• The bearer gains 8 Power for 2 turns for each MP they use.\n• If the bearer doesn't use any MP during their turn, they are healed for 10% of their health."
       ]
     },
     "conditions": {
@@ -144104,5 +144116,2855 @@
       "customConditions": {}
     },
     "imageUrl": "item/9391.png"
+  },
+  {
+    "dofusID": "33559",
+    "name": {
+      "en": "Scalarcin Glove",
+      "fr": "Mitaine des Scalarcin",
+      "de": "Handschuh der Scalarcin",
+      "es": "Mitón de los Scarratero",
+      "pt": "Luvas dos Scafurtado",
+      "it": "Scalarcin Glove"
+    },
+    "itemType": "Ring",
+    "setID": "1061",
+    "level": 51,
+    "stats": [
+      {
+        "stat": "Chance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Power",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 1,
+        "maxStat": 2
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9410.png"
+  },
+  {
+    "dofusID": "33560",
+    "name": {
+      "en": "Scalarcin Socks",
+      "fr": "Chaussettes des Scalarcin",
+      "de": "Socken der Scalarcin",
+      "es": "Calcetines de los Scarratero",
+      "pt": "Meias dos Scafurtado",
+      "it": "Scalarcin Socks"
+    },
+    "itemType": "Boots",
+    "setID": "1061",
+    "level": 53,
+    "stats": [
+      {
+        "stat": "Agility",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Power",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/11385.png"
+  },
+  {
+    "dofusID": "33562",
+    "name": {
+      "en": "Marzwel Ears",
+      "fr": "Oreilles de Marzwel",
+      "de": "Marzwel-Ohren",
+      "es": "Orejas de Marzwelo",
+      "pt": "Orelhas de Marzwel",
+      "it": "Marzwel Ears"
+    },
+    "itemType": "Hat",
+    "setID": "1062",
+    "level": 62,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Agility",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16887.png"
+  },
+  {
+    "dofusID": "33563",
+    "name": {
+      "en": "Marzwel Bracelet",
+      "fr": "Bracelet de Marzwel",
+      "de": "Marzwel-Armband",
+      "es": "Brazalete de Marzwelo",
+      "pt": "Bracelete de Marzwel",
+      "it": "Marzwel Bracelet"
+    },
+    "itemType": "Ring",
+    "setID": "1062",
+    "level": 64,
+    "stats": [
+      {
+        "stat": "Intelligence",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Agility",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9411.png"
+  },
+  {
+    "dofusID": "33565",
+    "name": {
+      "en": "Qil Bil Helmet",
+      "fr": "Casque de Qil Bil",
+      "de": "Helm von Qil Bil",
+      "es": "Casco de Qil Bil",
+      "pt": "Capacete de Qil Bil",
+      "it": "Qil Bil Helmet"
+    },
+    "itemType": "Hat",
+    "setID": "1063",
+    "level": 73,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Power",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16892.png"
+  },
+  {
+    "dofusID": "33566",
+    "name": {
+      "en": "Qil Bil Ring",
+      "fr": "Anneau de Qil Bil",
+      "de": "Ring von Qil Bil",
+      "es": "Anillo de Qil Bil",
+      "pt": "Anel de Qil Bil",
+      "it": "Qil Bil Ring"
+    },
+    "itemType": "Ring",
+    "setID": "1063",
+    "level": 75,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Power",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9413.png"
+  },
+  {
+    "dofusID": "33568",
+    "name": {
+      "en": "Tyranna Hood",
+      "fr": "Capuche de Tyranne",
+      "de": "Kapuze von Tyrana",
+      "es": "Capucha de Tirana",
+      "pt": "Capuz de Tyrana",
+      "it": "Tyranna Hood"
+    },
+    "itemType": "Hat",
+    "setID": "1064",
+    "level": 81,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 51,
+        "maxStat": 90
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16888.png"
+  },
+  {
+    "dofusID": "33569",
+    "name": {
+      "en": "Tyranna Belt",
+      "fr": "Ceinture de Tyranne",
+      "de": "Gürtel von Tyrana",
+      "es": "Cinturón de Tirana",
+      "pt": "Cinto de Tyrana",
+      "it": "Tyranna Belt"
+    },
+    "itemType": "Belt",
+    "setID": "1064",
+    "level": 83,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 51,
+        "maxStat": 90
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10366.png"
+  },
+  {
+    "dofusID": "33570",
+    "name": {
+      "en": "Tyranna Glove",
+      "fr": "Gant de Tyranne",
+      "de": "Handschuh von Tyrana",
+      "es": "Guante de Tirana",
+      "pt": "Luvas de Tyrana",
+      "it": "Tyranna Glove"
+    },
+    "itemType": "Ring",
+    "setID": "1064",
+    "level": 85,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9412.png"
+  },
+  {
+    "dofusID": "33571",
+    "name": {
+      "en": "Scalptaras Ring",
+      "fr": "Bague des Scalptaras",
+      "de": "Ring der Scalptaras",
+      "es": "Anillo de los Scalptaras",
+      "pt": "Anel dos Scalptaras",
+      "it": "Scalptaras Ring"
+    },
+    "itemType": "Ring",
+    "setID": "1065",
+    "level": 82,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Strength",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Chance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9414.png"
+  },
+  {
+    "dofusID": "33572",
+    "name": {
+      "en": "Scalptaras Apron",
+      "fr": "Tablier des Scalptaras",
+      "de": "Schürze der Scalptaras",
+      "es": "Delantal de los Scalptaras",
+      "pt": "Avental dos Scalptaras",
+      "it": "Scalptaras Apron"
+    },
+    "itemType": "Belt",
+    "setID": "1065",
+    "level": 84,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Strength",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Chance",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 101,
+        "maxStat": 150
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10367.png"
+  },
+  {
+    "dofusID": "33573",
+    "name": {
+      "en": "Scalptaras Boots",
+      "fr": "Bottines des Scalptaras",
+      "de": "Stiefeletten der Scalptaras",
+      "es": "Botines de los Scalptaras",
+      "pt": "Botinas dos Scalptaras",
+      "it": "Scalptaras Boots"
+    },
+    "itemType": "Boots",
+    "setID": "1065",
+    "level": 86,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Strength",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Chance",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Initiative",
+        "minStat": 151,
+        "maxStat": 200
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/11386.png"
+  },
+  {
+    "dofusID": "33574",
+    "name": {
+      "en": "Musha Hood",
+      "fr": "Capuche de Musha",
+      "de": "Kapuze von Musha",
+      "es": "Capucha de Musha",
+      "pt": "Capuz de Musha",
+      "it": "Musha Hood"
+    },
+    "itemType": "Hat",
+    "setID": "1066",
+    "level": 83,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Lock",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16893.png"
+  },
+  {
+    "dofusID": "33575",
+    "name": {
+      "en": "Musha Veil",
+      "fr": "Voile de Musha",
+      "de": "Schleier von Musha",
+      "es": "Velo de Musha",
+      "pt": "Véu de Musha",
+      "it": "Musha Veil"
+    },
+    "itemType": "Cloak",
+    "setID": "1066",
+    "level": 85,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/17681.png"
+  },
+  {
+    "dofusID": "33576",
+    "name": {
+      "en": "Musha Sheyeld",
+      "fr": "Boucliœil de Musha",
+      "de": "Augenschild von Musha",
+      "es": "Escudojo de Musha",
+      "pt": "Escudolho de Musha",
+      "it": "Musha Sheyeld"
+    },
+    "itemType": "Shield",
+    "setID": "1066",
+    "level": 87,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 2
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82572.png"
+  },
+  {
+    "dofusID": "33577",
+    "name": {
+      "en": "Simbadas Cage",
+      "fr": "Cage de Simbadas",
+      "de": "Käfig von Simbadas",
+      "es": "Jaula de Simbadás",
+      "pt": "Gaiola de Simbadas",
+      "it": "Simbadas Cage"
+    },
+    "itemType": "Amulet",
+    "setID": "1067",
+    "level": 92,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1341.png"
+  },
+  {
+    "dofusID": "33578",
+    "name": {
+      "en": "Simbadas Barrier",
+      "fr": "Barrière de Simbadas",
+      "de": "Barriere von Simbadas",
+      "es": "Barrera de Simbadás",
+      "pt": "Barreira de Simbadas",
+      "it": "Simbadas Barrier"
+    },
+    "itemType": "Shield",
+    "setID": "1067",
+    "level": 94,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82578.png"
+  },
+  {
+    "dofusID": "33579",
+    "name": {
+      "en": "Simbadas Paw",
+      "fr": "Patte de Simbadas",
+      "de": "Tatze von Simbadas",
+      "es": "Pata de Simbadás",
+      "pt": "Pata de Simbadas",
+      "it": "Simbadas Paw"
+    },
+    "itemType": "Ring",
+    "setID": "1067",
+    "level": 96,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": -20
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9416.png"
+  },
+  {
+    "dofusID": "33580",
+    "name": {
+      "en": "Rok Gnorok Lucky Charm",
+      "fr": "Porte-bonheur de Rok Gnorok",
+      "de": "Glücksbringer von Rok Gnorok",
+      "es": "Amuleto de Rok Gnorok",
+      "pt": "Amuleto da Sorte de Rok Gnorok",
+      "it": "Rok Gnorok Lucky Charm"
+    },
+    "itemType": "Amulet",
+    "setID": "1068",
+    "level": 94,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 71,
+        "maxStat": 90
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1339.png"
+  },
+  {
+    "dofusID": "33582",
+    "name": {
+      "en": "Rok Gnorok Bastione",
+      "fr": "Rempierre de Rok Gnorok",
+      "de": "Felsfestung von Rok Gnorok",
+      "es": "Rocadarga de Rok Gnorok",
+      "pt": "Pedralha de Rok Gnorok",
+      "it": "Rok Gnorok Bastione"
+    },
+    "itemType": "Shield",
+    "setID": "1068",
+    "level": 98,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 81,
+        "maxStat": 100
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82573.png"
+  },
+  {
+    "dofusID": "33583",
+    "name": {
+      "en": "Carlita Headband",
+      "fr": "Bandeau de Carlita",
+      "de": "Stirnband von Carlita",
+      "es": "Pañuelo de Carlita",
+      "pt": "Faixa de Carlita",
+      "it": "Carlita Headband"
+    },
+    "itemType": "Hat",
+    "setID": "1069",
+    "level": 102,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 130
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16894.png"
+  },
+  {
+    "dofusID": "33584",
+    "name": {
+      "en": "Carlita Belt",
+      "fr": "Sangle de Carlita",
+      "de": "Gurt von Carlita",
+      "es": "Correa de Carlita",
+      "pt": "Cinta de Carlita",
+      "it": "Carlita Belt"
+    },
+    "itemType": "Belt",
+    "setID": "1069",
+    "level": 104,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 120
+      },
+      {
+        "stat": "Strength",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 3,
+        "maxStat": 5
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10368.png"
+  },
+  {
+    "dofusID": "33586",
+    "name": {
+      "en": "Naganita Cape",
+      "fr": "Cape de Naganita",
+      "de": "Umhang von Naganita",
+      "es": "Capa de Naganita",
+      "pt": "Capa de Naganita",
+      "it": "Naganita Cape"
+    },
+    "itemType": "Cloak",
+    "setID": "1070",
+    "level": 105,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 120
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Heals",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 4
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/17679.png"
+  },
+  {
+    "dofusID": "33587",
+    "name": {
+      "en": "Naganita Necklace",
+      "fr": "Collier de Naganita",
+      "de": "Halskette von Naganita",
+      "es": "Collar de Naganita",
+      "pt": "Colar de Naganita",
+      "it": "Naganita Necklace"
+    },
+    "itemType": "Amulet",
+    "setID": "1070",
+    "level": 107,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 130
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Heals",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 4
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1338.png"
+  },
+  {
+    "dofusID": "33589",
+    "name": {
+      "en": "Spykhat",
+      "fr": "Chapokipik",
+      "de": "Piekshut",
+      "es": "Caskokepika",
+      "pt": "Chapeukispeta",
+      "it": "Spykhat"
+    },
+    "itemType": "Hat",
+    "setID": "1071",
+    "level": 102,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 120
+      },
+      {
+        "stat": "Power",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Damage",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16895.png"
+  },
+  {
+    "dofusID": "33591",
+    "name": {
+      "en": "Spykutcheon",
+      "fr": "Ékukipik",
+      "de": "Pieksschild",
+      "es": "Eskukepika",
+      "pt": "Escukispeta",
+      "it": "Spykutcheon"
+    },
+    "itemType": "Shield",
+    "setID": "1071",
+    "level": 106,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 120
+      },
+      {
+        "stat": "Power",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82574.png"
+  },
+  {
+    "dofusID": "33592",
+    "name": {
+      "en": "War T Lily",
+      "fr": "Nénuphar de Nenufor",
+      "de": "Seerose von Nelumbor",
+      "es": "Nenúfar de Nenúflor",
+      "pt": "Nenúfar de Nenufor",
+      "it": "War T Lily"
+    },
+    "itemType": "Hat",
+    "setID": "1072",
+    "level": 125,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 301,
+        "maxStat": 400
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Agility",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Heals",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16897.png"
+  },
+  {
+    "dofusID": "33593",
+    "name": {
+      "en": "War T Lotus",
+      "fr": "Lotus de Nenufor",
+      "de": "Lotus von Nelumbor",
+      "es": "Loto de Nenúflor",
+      "pt": "Lótus de Nenufor",
+      "it": "War T Lotus"
+    },
+    "itemType": "Shield",
+    "setID": "1072",
+    "level": 127,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 101,
+        "maxStat": 130
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 26,
+        "maxStat": 35
+      },
+      {
+        "stat": "Chance",
+        "minStat": 26,
+        "maxStat": 35
+      },
+      {
+        "stat": "Agility",
+        "minStat": 26,
+        "maxStat": 35
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Heals",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82576.png"
+  },
+  {
+    "dofusID": "33595",
+    "name": {
+      "en": "Transplent Belt",
+      "fr": "Ceinture des Demoël",
+      "de": "Gürtel der Kainsdaff Ürmisch",
+      "es": "Cinturón de los Aludem",
+      "pt": "Cinto dos Dula",
+      "it": "Transplent Belt"
+    },
+    "itemType": "Belt",
+    "setID": "1073",
+    "level": 135,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 31,
+        "maxStat": 60
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10369.png"
+  },
+  {
+    "dofusID": "33596",
+    "name": {
+      "en": "Transplent Shield",
+      "fr": "Bouclier des Demoël",
+      "de": "Schild der Kainsdaff Ürmisch",
+      "es": "Escudo de los Aludem",
+      "pt": "Escudo dos Dula",
+      "it": "Transplent Shield"
+    },
+    "itemType": "Shield",
+    "setID": "1073",
+    "level": 137,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 31,
+        "maxStat": 60
+      },
+      {
+        "stat": "Strength",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Chance",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Air Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Fire Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82577.png"
+  },
+  {
+    "dofusID": "33598",
+    "name": {
+      "en": "Buddy Dubble Mask",
+      "fr": "Masque de Fojumo",
+      "de": "Maske von Dizigota",
+      "es": "Máscara de Gemalo",
+      "pt": "Máscara do Dizigoto",
+      "it": "Buddy Dubble Mask"
+    },
+    "itemType": "Hat",
+    "setID": "1074",
+    "level": 142,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 201,
+        "maxStat": 300
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Range",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16898.png"
+  },
+  {
+    "dofusID": "33599",
+    "name": {
+      "en": "Buddy Dubble Getas",
+      "fr": "Geta de Fojumo",
+      "de": "Geta von Dizigota",
+      "es": "Geta de Gemalo",
+      "pt": "Getas de Dizigoto",
+      "it": "Buddy Dubble Getas"
+    },
+    "itemType": "Boots",
+    "setID": "1074",
+    "level": 144,
+    "stats": [
+      {
+        "stat": "Initiative",
+        "minStat": 51,
+        "maxStat": 150
+      },
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Agility",
+        "minStat": 51,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/11387.png"
+  },
+  {
+    "dofusID": "33601",
+    "name": {
+      "en": "Ptidoop Cape",
+      "fr": "Cape Debruk'Sayl",
+      "de": "Umhang von Shushu Nakol",
+      "es": "Capbru'Selas",
+      "pt": "Capa Shushu Rasco",
+      "it": "Ptidoop Cape"
+    },
+    "itemType": "Cloak",
+    "setID": "1075",
+    "level": 183,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -5
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/17683.png"
+  },
+  {
+    "dofusID": "33602",
+    "name": {
+      "en": "Ptidoop Collar",
+      "fr": "Collier Debruk'Sayl",
+      "de": "Halskette von Shushu Nakol",
+      "es": "Colla'rdbru'Selas",
+      "pt": "Colar Shushu Rasco",
+      "it": "Ptidoop Collar"
+    },
+    "itemType": "Amulet",
+    "setID": "1075",
+    "level": 185,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Lock",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -5
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1340.png"
+  },
+  {
+    "dofusID": "33603",
+    "name": {
+      "en": "Ptidoop Ring",
+      "fr": "Anneau Debruk'Sayl",
+      "de": "Ring von Shushu Nakol",
+      "es": "Any'oldbru'Selas",
+      "pt": "Anel Shushu Rasco",
+      "it": "Ptidoop Ring"
+    },
+    "itemType": "Ring",
+    "setID": "1075",
+    "level": 187,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Strength",
+        "minStat": 41,
+        "maxStat": 60
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Critical",
+        "minStat": 1,
+        "maxStat": 2
+      },
+      {
+        "stat": "Neutral Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "AP Reduction",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 2,
+        "maxStat": 3
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9415.png"
+  },
+  {
+    "dofusID": "33604",
+    "name": {
+      "en": "Predagob Wig",
+      "fr": "Perruque de Predagob",
+      "de": "Perücke von Predagob",
+      "es": "Peluca de Predagob",
+      "pt": "Peruca do Predagob",
+      "it": "Predagob Wig"
+    },
+    "itemType": "Hat",
+    "setID": "1076",
+    "level": 190,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 301,
+        "maxStat": 350
+      },
+      {
+        "stat": "Chance",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Agility",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Lock",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 4,
+        "maxStat": 7
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16899.png"
+  },
+  {
+    "dofusID": "33605",
+    "name": {
+      "en": "Predagob Bracelet",
+      "fr": "Bracelet de Predagob",
+      "de": "Armband von Predagob",
+      "es": "Brazalete de Predagob",
+      "pt": "Bracelete de Predagob",
+      "it": "Predagob Bracelet"
+    },
+    "itemType": "Ring",
+    "setID": "1076",
+    "level": 192,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 201,
+        "maxStat": 250
+      },
+      {
+        "stat": "Chance",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Agility",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 5,
+        "maxStat": 8
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 6
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/9417.png"
+  },
+  {
+    "dofusID": "33606",
+    "name": {
+      "en": "Predagob Loincloth",
+      "fr": "Pagne de Predagob",
+      "de": "Lendenschurz von Predagob",
+      "es": "Taparrabos de Predagob",
+      "pt": "Tanga de Predagob",
+      "it": "Predagob Loincloth"
+    },
+    "itemType": "Belt",
+    "setID": "1076",
+    "level": 194,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
+        "stat": "Chance",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Agility",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Dodge",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": 4,
+        "maxStat": 6
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/10370.png"
+  },
+  {
+    "dofusID": "33608",
+    "name": {
+      "en": "Potbellion Collar",
+      "fr": "Col du Ventrublion",
+      "de": "Kragen von Störfridick",
+      "es": "Cuello de barrilicoso",
+      "pt": "Gola do Pancerigoso",
+      "it": "Potbellion Collar"
+    },
+    "itemType": "Amulet",
+    "setID": "1077",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 451,
+        "maxStat": 500
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "Power",
+        "minStat": 41,
+        "maxStat": 50
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Pushback Damage",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Pushback Resistance",
+        "minStat": null,
+        "maxStat": -40
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 9,
+        "maxStat": 12
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1342.png"
+  },
+  {
+    "dofusID": "34252",
+    "name": {
+      "en": "Seemyool Hat",
+      "fr": "Chapomuldo",
+      "de": "Quaggahut",
+      "es": "Gorrulagua",
+      "pt": "Chapermula",
+      "it": "Seemyool Hat"
+    },
+    "itemType": "Hat",
+    "setID": "1086",
+    "level": 55,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 21,
+        "maxStat": 30
+      },
+      {
+        "stat": "% Neutral Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16904.png"
+  },
+  {
+    "dofusID": "34253",
+    "name": {
+      "en": "Seemyool Boots",
+      "fr": "Botomuldo",
+      "de": "Quaggastiefel",
+      "es": "Mulaguatines",
+      "pt": "Botamarmula",
+      "it": "Seemyool Boots"
+    },
+    "itemType": "Boots",
+    "setID": "1086",
+    "level": 55,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/11389.png"
+  },
+  {
+    "dofusID": "34254",
+    "name": {
+      "en": "Seemyool Cloak",
+      "fr": "Capomuldo",
+      "de": "Quaggaumhang",
+      "es": "Capulagua",
+      "pt": "Caparmula",
+      "it": "Seemyool Cloak"
+    },
+    "itemType": "Cloak",
+    "setID": "1086",
+    "level": 55,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 3,
+        "maxStat": 4
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/17689.png"
+  },
+  {
+    "dofusID": "34255",
+    "name": {
+      "en": "Rhineetle Boots",
+      "fr": "Botovolko",
+      "de": "Naskstiefel",
+      "es": "Boticeronte",
+      "pt": "Botakórnio",
+      "it": "Rhineetle Boots"
+    },
+    "itemType": "Boots",
+    "setID": "1087",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 26,
+        "maxStat": 30
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": -1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/11388.png"
+  },
+  {
+    "dofusID": "34256",
+    "name": {
+      "en": "Rhineetle Cloak",
+      "fr": "Capovolko",
+      "de": "Naskumhang",
+      "es": "Capiceronte",
+      "pt": "Capokórnio",
+      "it": "Rhineetle Cloak"
+    },
+    "itemType": "Cloak",
+    "setID": "1087",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 26,
+        "maxStat": 30
+      },
+      {
+        "stat": "Strength",
+        "minStat": 26,
+        "maxStat": 30
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 26,
+        "maxStat": 30
+      },
+      {
+        "stat": "Chance",
+        "minStat": 26,
+        "maxStat": 30
+      },
+      {
+        "stat": "Agility",
+        "minStat": 26,
+        "maxStat": 30
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/17688.png"
+  },
+  {
+    "dofusID": "34257",
+    "name": {
+      "en": "Rhineetle Shield",
+      "fr": "Bouclovolko",
+      "de": "Naskschild",
+      "es": "Escuceronte",
+      "pt": "Escudokórnio",
+      "it": "Rhineetle Shield"
+    },
+    "itemType": "Shield",
+    "setID": "1087",
+    "level": 60,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 51,
+        "maxStat": 60
+      },
+      {
+        "stat": "Strength",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Intelligence",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Chance",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Agility",
+        "minStat": 16,
+        "maxStat": 20
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/82583.png"
   }
 ]

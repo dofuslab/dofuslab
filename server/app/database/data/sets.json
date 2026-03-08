@@ -5741,12 +5741,12 @@
     {
         "id": "42",
         "name": {
-            "en": "Turko Set",
-            "fr": "Panoplie Dindo",
+            "en": "Turkoset",
+            "fr": "Panodindo",
             "de": "Truter-Set",
-            "es": "Set Pavuesco",
-            "pt": "Conjunto Perueiro",
-            "it": "Turko Set"
+            "es": "Set dragopavil",
+            "pt": "Conjuperueiro",
+            "it": "Turkoset"
         },
         "bonuses": {
             "2": [
@@ -5761,7 +5761,12 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Strength",
+                    "stat": "Prospecting",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
                     "value": 20,
                     "altStat": null
                 },
@@ -5771,25 +5776,25 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Chance",
+                    "stat": "Strength",
                     "value": 20,
-                    "altStat": null
-                },
-                {
-                    "stat": "Prospecting",
-                    "value": 10,
                     "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "Agility",
+                    "stat": "Chance",
                     "value": 25,
                     "altStat": null
                 },
                 {
-                    "stat": "Prospecting",
-                    "value": 15,
+                    "stat": "Intelligence",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 25,
                     "altStat": null
                 },
                 {
@@ -5798,35 +5803,30 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Strength",
-                    "value": 25,
+                    "stat": "Prospecting",
+                    "value": 15,
                     "altStat": null
                 },
                 {
-                    "stat": "Intelligence",
-                    "value": 25,
-                    "altStat": null
-                },
-                {
-                    "stat": "Chance",
+                    "stat": "Agility",
                     "value": 25,
                     "altStat": null
                 }
             ],
             "4": [
                 {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "Chance",
+                    "value": 30,
                     "altStat": null
                 },
                 {
-                    "stat": "Prospecting",
-                    "value": 20,
+                    "stat": "Intelligence",
+                    "value": 30,
                     "altStat": null
                 },
                 {
-                    "stat": "Vitality",
-                    "value": 60,
+                    "stat": "Strength",
+                    "value": 30,
                     "altStat": null
                 },
                 {
@@ -5835,18 +5835,18 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Strength",
-                    "value": 30,
+                    "stat": "Vitality",
+                    "value": 60,
                     "altStat": null
                 },
                 {
-                    "stat": "Intelligence",
-                    "value": 30,
+                    "stat": "Prospecting",
+                    "value": 20,
                     "altStat": null
                 },
                 {
-                    "stat": "Chance",
-                    "value": 30,
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 }
             ]
@@ -21801,12 +21801,12 @@
     {
         "id": "245",
         "name": {
-            "en": "Ogivol Scalarcin Set",
-            "fr": "Panoplie d'Ogivol Scalarcin",
-            "de": "Ausrüstungsset von Ogivol Scalarcin",
-            "es": "Set de Ogivol Scarratero",
-            "pt": "Conjunto de Ogivol Scafurtado",
-            "it": "Ogivol Scalarcin Set"
+            "en": "Ogivol Set",
+            "fr": "Panoplie d'Ogivol",
+            "de": "Ogivol-Set",
+            "es": "Set de Ogivol",
+            "pt": "Conjunto de Ogivol",
+            "it": "Ogivol Set"
         },
         "bonuses": {
             "2": [
@@ -21821,42 +21821,27 @@
                     "altStat": null
                 },
                 {
-                    "stat": "% Air Resistance",
-                    "value": 7,
+                    "stat": "Prospecting",
+                    "value": 20,
                     "altStat": null
                 },
                 {
-                    "stat": "% Fire Resistance",
-                    "value": 7,
+                    "stat": "Initiative",
+                    "value": 300,
                     "altStat": null
                 },
                 {
-                    "stat": "Critical Resistance",
-                    "value": 30,
+                    "stat": "Summons",
+                    "value": 1,
                     "altStat": null
                 },
                 {
-                    "stat": "Critical",
-                    "value": 10,
+                    "stat": "Range",
+                    "value": 1,
                     "altStat": null
                 },
                 {
-                    "stat": "Agility",
-                    "value": 30,
-                    "altStat": null
-                },
-                {
-                    "stat": "Vitality",
-                    "value": 100,
-                    "altStat": null
-                },
-                {
-                    "stat": "Neutral Damage",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Earth Damage",
+                    "stat": "Air Damage",
                     "value": 10,
                     "altStat": null
                 },
@@ -21866,49 +21851,22 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Air Damage",
+                    "stat": "Earth Damage",
                     "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "Range",
-                    "value": 1,
+                    "stat": "Neutral Damage",
+                    "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "Summons",
-                    "value": 1,
+                    "stat": "Vitality",
+                    "value": 100,
                     "altStat": null
                 },
                 {
-                    "stat": "Initiative",
-                    "value": 300,
-                    "altStat": null
-                },
-                {
-                    "stat": "Prospecting",
-                    "value": 20,
-                    "altStat": null
-                }
-            ],
-            "3": [
-                {
-                    "stat": "% Air Resistance",
-                    "value": 7,
-                    "altStat": null
-                },
-                {
-                    "stat": "% Fire Resistance",
-                    "value": 7,
-                    "altStat": null
-                },
-                {
-                    "stat": "AP",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Resistance",
+                    "stat": "Agility",
                     "value": 30,
                     "altStat": null
                 },
@@ -21918,7 +21876,69 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Agility",
+                    "stat": "Critical Resistance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Air Resistance",
+                    "value": 7,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Prospecting",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 300,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Vitality",
+                    "value": 100,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
                     "value": 60,
                     "altStat": null
                 },
@@ -21928,53 +21948,33 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Strength",
+                    "stat": "Agility",
                     "value": 60,
                     "altStat": null
                 },
                 {
-                    "stat": "Vitality",
-                    "value": 100,
+                    "stat": "Critical",
+                    "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "Neutral Damage",
-                    "value": 15,
+                    "stat": "Critical Resistance",
+                    "value": 30,
                     "altStat": null
                 },
                 {
-                    "stat": "Earth Damage",
-                    "value": 15,
-                    "altStat": null
-                },
-                {
-                    "stat": "Water Damage",
-                    "value": 15,
-                    "altStat": null
-                },
-                {
-                    "stat": "Air Damage",
-                    "value": 15,
-                    "altStat": null
-                },
-                {
-                    "stat": "Range",
+                    "stat": "AP",
                     "value": 1,
                     "altStat": null
                 },
                 {
-                    "stat": "Summons",
-                    "value": 1,
+                    "stat": "% Fire Resistance",
+                    "value": 7,
                     "altStat": null
                 },
                 {
-                    "stat": "Initiative",
-                    "value": 300,
-                    "altStat": null
-                },
-                {
-                    "stat": "Prospecting",
-                    "value": 20,
+                    "stat": "% Air Resistance",
+                    "value": 7,
                     "altStat": null
                 }
             ]
@@ -22843,12 +22843,12 @@
     {
         "id": "260",
         "name": {
-            "en": "Nomarow Transplent Set",
-            "fr": "Panoplie de Padgref Demoël",
-            "de": "Ausrüstungsset vom Knöchernen Mark von Kainsdaff Ürmisch",
+            "en": "Nomarow Set",
+            "fr": "Panoplie de Padgref",
+            "de": "Set des Knöchernen Marks",
             "es": "Set de Noai Aludem",
-            "pt": "Conjunto de Nondome Dula",
-            "it": "Nomarow Transplent Set"
+            "pt": "Conjunto de Nondome",
+            "it": "Nomarow Set"
         },
         "bonuses": {
             "2": [
@@ -22863,30 +22863,20 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Critical Damage",
-                    "value": 10,
+                    "stat": "Critical",
+                    "value": 8,
                     "altStat": null
                 },
                 {
-                    "stat": "Critical",
-                    "value": 8,
+                    "stat": "Critical Damage",
+                    "value": 10,
                     "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "AP",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Damage",
-                    "value": 10,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical",
-                    "value": 8,
+                    "stat": "Intelligence",
+                    "value": 30,
                     "altStat": null
                 },
                 {
@@ -22895,8 +22885,18 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Intelligence",
-                    "value": 30,
+                    "stat": "Critical",
+                    "value": 8,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
                     "altStat": null
                 }
             ]
@@ -39361,12 +39361,12 @@
     {
         "id": "513",
         "name": {
-            "en": "Berylbell Copperbeard Set",
-            "fr": "Panoplie de Barbéryl Clochecuivre",
-            "de": "Ausrüstungsset von Barberyl Glockenleder",
-            "es": "Set de Demena Decobre",
-            "pt": "Conjunto de Barberila Sinocobre",
-            "it": "Berylbell Copperbeard Set"
+            "en": "Berylbell Set",
+            "fr": "Panoplie de Barbéryl",
+            "de": "Barberyl-Set",
+            "es": "Set de Demena",
+            "pt": "Conjunto de Barberila",
+            "it": "Berylbell Set"
         },
         "bonuses": {
             "2": [
@@ -39388,13 +39388,8 @@
             ],
             "3": [
                 {
-                    "stat": "Dodge",
-                    "value": 7,
-                    "altStat": null
-                },
-                {
-                    "stat": "Critical Damage",
-                    "value": 10,
+                    "stat": "Chance",
+                    "value": 40,
                     "altStat": null
                 },
                 {
@@ -39403,8 +39398,13 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Chance",
-                    "value": 40,
+                    "stat": "Critical Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 7,
                     "altStat": null
                 }
             ]
@@ -46316,32 +46316,22 @@
                     "stat": "Initiative",
                     "value": 500,
                     "altStat": null
-                },
-                {
-                    "stat": "Vitality",
-                    "value": 200,
-                    "altStat": null
                 }
             ],
             "3": [
                 {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
                     "stat": "Power",
-                    "value": 80,
+                    "value": 40,
                     "altStat": null
                 },
                 {
                     "stat": "Initiative",
                     "value": 500,
-                    "altStat": null
-                },
-                {
-                    "stat": "Vitality",
-                    "value": 200,
-                    "altStat": null
-                },
-                {
-                    "stat": "Damage",
-                    "value": 10,
                     "altStat": null
                 }
             ]
@@ -47697,6 +47687,1429 @@
                 {
                     "stat": "Agility",
                     "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1061",
+        "name": {
+            "en": "Scalarcin Set",
+            "fr": "Panoplie des Scalarcin",
+            "de": "Ausrüstungsset der Scalarcin",
+            "es": "Set de los Scarratero",
+            "pt": "Conjunto dos Scafurtado",
+            "it": "Scalarcin Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Power",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Power",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 2,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1062",
+        "name": {
+            "en": "Marzwel Set",
+            "fr": "Panoplie de Marzwel",
+            "de": "Ausrüstungsset von Marzwel",
+            "es": "Set de Marzwelo",
+            "pt": "Conjunto de Marzwel",
+            "it": "Marzwel Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 5,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1063",
+        "name": {
+            "en": "Qil Bil Set",
+            "fr": "Panoplie de Qil Bil",
+            "de": "Ausrüstungsset von Qil Bil",
+            "es": "Set de Qil Bil",
+            "pt": "Conjunto de Qil Bil",
+            "it": "Qil Bil Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Power",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Power",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1064",
+        "name": {
+            "en": "The Terrible Set",
+            "fr": "Panoplie de la Terrible",
+            "de": "Ausrüstungsset der Schrecklichen",
+            "es": "Set de la Terrible",
+            "pt": "Conjunto da Terrível",
+            "it": "The Terrible Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1065",
+        "name": {
+            "en": "Scalptaras Set",
+            "fr": "Panoplie des Scalptaras",
+            "de": "Ausrüstungsset der Scalptaras",
+            "es": "Set de los Scalptaras",
+            "pt": "Conjunto dos Scalptaras",
+            "it": "Scalptaras Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Initiative",
+                    "value": 300,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 300,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 5,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1066",
+        "name": {
+            "en": "Musha Set",
+            "fr": "Panoplie de Musha",
+            "de": "Ausrüstungsset von Musha",
+            "es": "Set de Musha",
+            "pt": "Conjunto de Musha",
+            "it": "Musha Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Range",
+                    "value": 2,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": -10,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Earth Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Neutral Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Damage",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Neutral Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Earth Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": -10,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 2,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1067",
+        "name": {
+            "en": "Simbadas Set",
+            "fr": "Panoplie de Simbadas",
+            "de": "Ausrüstungsset von Simbadas",
+            "es": "Set de Simbadás",
+            "pt": "Conjunto de Simbadas",
+            "it": "Simbadas Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Power",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1068",
+        "name": {
+            "en": "Rok Gnorok Set",
+            "fr": "Panoplie de Rok Gnorok",
+            "de": "Ausrüstungsset von Rok Gnorok",
+            "es": "Set de Rok Gnorok",
+            "pt": "Conjunto de Rok Gnorok",
+            "it": "Rok Gnorok Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Strength",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 5,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1069",
+        "name": {
+            "en": "Augerfeld Set",
+            "fr": "Panoplie de l'Aguerfelde",
+            "de": "Ausrüstungsset von La Garfield",
+            "es": "Set de La Guerfeld",
+            "pt": "Conjunto da Largafelde",
+            "it": "Augerfeld Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Strength",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Reduction",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 20,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1070",
+        "name": {
+            "en": "Naganita Set",
+            "fr": "Panoplie de Naganita",
+            "de": "Ausrüstungsset von Naganita",
+            "es": "Set de Naganita",
+            "pt": "Conjunto de Naganita",
+            "it": "Naganita Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 8,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 8,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1071",
+        "name": {
+            "en": "Stingset",
+            "fr": "Panokipik",
+            "de": "Piksiges Set",
+            "es": "Setkepika",
+            "pt": "Conjundor",
+            "it": "Stingset"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Power",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Resistance",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Resistance",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Vitality",
+                    "value": 100,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Resistance",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Resistance",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Vitality",
+                    "value": 100,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1072",
+        "name": {
+            "en": "War T'Lillyput Set",
+            "fr": "Panoplie de Nenufor Tilotus",
+            "de": "Ausrüstungsset von Nelumbor Klotus",
+            "es": "Set de Nenúflor Deloto",
+            "pt": "Conjunto de Nenufor Tilótus",
+            "it": "War T'Lillyput Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Intelligence",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 2,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 300,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 2,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 300,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1073",
+        "name": {
+            "en": "Transplent Set",
+            "fr": "Panoplie des Demoël",
+            "de": "Ausrüstungsset der Kainsdaff Ürmisch",
+            "es": "Set de los Aludem",
+            "pt": "Conjunto dos Dula",
+            "it": "Transplent Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Critical Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Dodge",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1074",
+        "name": {
+            "en": "Buddy Dubble Set",
+            "fr": "Panoplie de Fojumo",
+            "de": "Ausrüstungsset von Dizigota",
+            "es": "Set de Gemalo",
+            "pt": "Conjunto de Dizigoto",
+            "it": "Buddy Dubble Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Initiative",
+                    "value": 400,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Parry",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Parry",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Parry",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Parry",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "Initiative",
+                    "value": 400,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 5,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1075",
+        "name": {
+            "en": "Shushu Ptidoop Set",
+            "fr": "Panoplie du Shushu Debruk'Sayl",
+            "de": "Ausrüstungsset von Shushu Nakol",
+            "es": "Set del fab'huritu Coldbru'Selas",
+            "pt": "Conjunto do Shushu Rasco",
+            "it": "Shushu Ptidoop Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Neutral Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Parry",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 30,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 12,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Reduction",
+                    "value": 12,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP Parry",
+                    "value": 12,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Strength",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Intelligence",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Agility",
+                    "value": 50,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1076",
+        "name": {
+            "en": "Predagob Set",
+            "fr": "Panoplie de Predagob",
+            "de": "Ausrüstungsset von Predagob",
+            "es": "Set de Predagob",
+            "pt": "Conjunto de Predagob",
+            "it": "Predagob Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Pushback Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 25,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 15,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1077",
+        "name": {
+            "en": "Armarines Set",
+            "fr": "Panoplie des Armutins",
+            "de": "Ausrüstungsset der Rüstebellen",
+            "es": "Set de los armadutinados",
+            "pt": "Conjunto dos Armutinados",
+            "it": "Armarines Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Fire Damage",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Parry",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 30,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Power",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Pushback Damage",
+                    "value": 40,
+                    "altStat": null
+                },
+                {
+                    "stat": "MP Parry",
+                    "value": 30,
+                    "altStat": null
+                },
+                {
+                    "stat": "Dodge",
+                    "value": 20,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1086",
+        "name": {
+            "en": "Seemyoolset",
+            "fr": "Panomuldo",
+            "de": "Quaggset",
+            "es": "Set mulacuoso",
+            "pt": "Marmujunto",
+            "it": "Seemyoolset"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Neutral Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "Neutral Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Earth Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Fire Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Water Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Air Damage",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1087",
+        "name": {
+            "en": "Rhineetleset",
+            "fr": "Panovolko",
+            "de": "Naskset",
+            "es": "Set vueloceróntico",
+            "pt": "Vulkonjunto",
+            "it": "Rhineetleset"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "% Neutral Resistance",
+                    "value": 4,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Earth Resistance",
+                    "value": 4,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 4,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 4,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Air Resistance",
+                    "value": 4,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "% Neutral Resistance",
+                    "value": 4,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Earth Resistance",
+                    "value": 4,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 4,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 4,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Air Resistance",
+                    "value": 4,
                     "altStat": null
                 },
                 {
