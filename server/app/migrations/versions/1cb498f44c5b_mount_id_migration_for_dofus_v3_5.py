@@ -14,9 +14,9 @@ down_revision = '3c596c660380'
 branch_labels = None
 depends_on = None
 
-# The mapping from our generated mount_map.json
+# The mapping from our generated mount_map.json, used to create the dict below it
 # note: name is technically unneeded, but included for potential validation
-MOUNT_MAP = [
+MOUNT_DATA = [
     {"name": "Almond and Crimson Dragoturkey", "old_id": 41, "new_id": 33008},
     {"name": "Almond and Ebony Dragoturkey", "old_id": 34, "new_id": 33003},
     {"name": "Almond and Emerald Dragoturkey", "old_id": 35, "new_id": 33004},
@@ -270,17 +270,8 @@ MOUNT_MAP = [
     {"name": "Turquoise Rhineetle", "old_id": 183, "new_id": 33250},
 ]
 
-
-def get_new_id(id: int):
-    for entry in MOUNT_MAP:
-        if entry["old_id"] == id:
-            return entry["new_id"]
-
-
-def get_old_id(id: int):
-    for entry in MOUNT_MAP:
-        if entry["new_id"] == id:
-            return entry["old_id"]
+MOUNT_UPGRADE_DICT = {item["old_id"]: item["new_id"] for item in MOUNT_DATA}
+MOUNT_DOWNGRADE_DICT = {v: k for k, v in MOUNT_UPGRADE_DICT.items()}
 
 
 def upgrade():
@@ -297,8 +288,12 @@ def upgrade():
 
     # update mount IDs:
     for mount in mounts:
-        new_id = get_new_id(mount.dofus_db_mount_id)
-        assert new_id is not None
+        try:
+            new_id = MOUNT_UPGRADE_DICT[int(mount.dofus_db_mount_id)]
+        except KeyError:
+            print("Failed to find new ID for mount", mount.dofus_db_mount_id)
+            continue
+        print(f"Mount: {mount.dofus_db_mount_id} -> {new_id}")
 
         conn.execute(
             "UPDATE item "
@@ -325,8 +320,12 @@ def downgrade():
 
     # update mount IDs:
     for mount in mounts:
-        old_id = get_old_id(mount.dofus_db_mount_id)
-        assert old_id is not None
+        try:
+            old_id = MOUNT_DOWNGRADE_DICT[int(mount.dofus_db_mount_id)]
+        except KeyError:
+            print("Failed to find old ID for mount", mount.dofus_db_mount_id)
+            continue
+        print(f"Mount: {mount.dofus_db_mount_id} -> {old_id}")
 
         conn.execute(
             "UPDATE item "
