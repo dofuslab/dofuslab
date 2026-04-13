@@ -168,6 +168,7 @@ const ItemSelector = ({
     <InfiniteScroll
       hasMore={data?.items.pageInfo.hasNextPage}
       loadMore={onLoadMore}
+      useWindow={isMobile}
       threshold={THRESHOLD}
       css={{
         ...getResponsiveGridStyle(getSelectorNumCols(isClassic)),

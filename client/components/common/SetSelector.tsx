@@ -89,6 +89,7 @@ const SetSelector = ({ filters, customSet, isMobile, isClassic }: Props) => {
   return (
     <InfiniteScroll
       hasMore={data?.sets.pageInfo.hasNextPage}
+      useWindow={isMobile}
       loader={
         <SkeletonCardsLoader
           key="loader"
