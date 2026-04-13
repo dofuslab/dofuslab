@@ -34,7 +34,17 @@ const BuildPage = () => {
 
   return (
     <ClassicContext.Provider value={contextValue}>
-      <div className="App" css={{ height: '100%' }} suppressHydrationWarning>
+      <div
+        className="App"
+        css={{
+          height: '100%',
+          minHeight: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden',
+        }}
+        suppressHydrationWarning
+      >
         <Head>
           <style
             type="text/css"
@@ -49,7 +59,16 @@ const BuildPage = () => {
             <MobileSetBuilder customSet={customSet} />
           </MobileLayout>
         </Media>
-        <Media greaterThanOrEqual="xs" css={{ height: '100%' }}>
+        <Media
+          greaterThanOrEqual="xs"
+          css={{
+            flex: 1,
+            minHeight: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            overflow: 'hidden',
+          }}
+        >
           <DesktopLayout showSwitch>
             {isClassic ? (
               <ClassicSetBuilder customSet={customSet} />
