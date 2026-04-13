@@ -9,7 +9,7 @@ import { useTheme } from '@emotion/react';
 import uniqWith from 'lodash/uniqWith';
 import isEqual from 'lodash/isEqual';
 
-import { SharedFilters, SharedFilterAction } from 'common/types';
+import { FilterAction } from 'common/types';
 
 import { topMarginStyle } from 'common/mixins';
 import { mq, SEARCH_BAR_ID } from 'common/constants';
@@ -23,8 +23,22 @@ import SetSelector from './SetSelector';
 import ItemTypeFilter from './ItemTypeFilter';
 import ResetAllButton from './ResetAllButton';
 import FavoritesButton from './FavoritesButton';
+import { ItemFilters } from '__generated__/globalTypes';
 
-const reducer = (state: SharedFilters, action: SharedFilterAction) => {
+const makeItemTypesFromSlots = (slots: Array<ItemSlot>, showSets: boolean, selectedItemSlot: ItemSlot | null) => {
+  const filteredSlots = showSets
+    ? slots
+    : slots.filter((slot: ItemSlot) => !selectedItemSlot || selectedItemSlot.id === slot.id);
+
+  return uniqWith(
+    filteredSlots
+      .map((slot: ItemSlot) => slot.itemTypes)
+      .reduce((acc, curr) => [...acc, ...curr], []),
+    isEqual,
+  );
+};
+
+const reducer = (state: ItemFilters, action: FilterAction) => {
   switch (action.type) {
     case 'SEARCH':
       return { ...state, search: action.search };
@@ -41,11 +55,14 @@ const reducer = (state: SharedFilters, action: SharedFilterAction) => {
           maxValue: null,
         })),
       };
+    case 'ITEM_TYPE_IDS':
+      return { ...state, itemTypeIds: action.itemTypeIds };
     case 'RESET':
       return {
         search: '',
         stats: [],
         maxLevel: action.maxLevel,
+        itemTypeIds: [],
       };
     default:
       throw new Error('Invalid action type');
@@ -73,6 +90,7 @@ const Selector = ({
     stats: [],
     maxLevel: customSet?.level || 200,
     search: '',
+    itemTypeIds: [],
   });
 
   const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
@@ -148,20 +166,12 @@ const Selector = ({
           selectedItemSlot={selectedItemSlot}
           selectItemSlot={selectItemSlot}
         />
-        {slots && !showSetsState && (
+        {slots && (
           <ItemTypeFilter
             setItemTypeIds={setItemTypeIds}
             itemTypeIds={itemTypeIds}
-            itemTypes={uniqWith(
-              slots
-                .filter(
-                  (slot: ItemSlot) =>
-                    !selectedItemSlot || selectedItemSlot.id === slot.id,
-                )
-                .map((slot: ItemSlot) => slot.itemTypes)
-                .reduce((acc, curr) => [...acc, ...curr], []),
-              isEqual,
-            )}
+            itemTypes={makeItemTypesFromSlots(slots, showSetsState, selectedItemSlot)}
+            isShowingSets={showSetsState}
           />
         )}
         <ResetAllButton
@@ -183,6 +193,7 @@ const Selector = ({
         {showSetsState ? (
           <SetSelector
             filters={filters}
+            itemTypeIds={itemTypeIds}
             customSet={customSet}
             isClassic={isClassic}
             isMobile={isMobile}

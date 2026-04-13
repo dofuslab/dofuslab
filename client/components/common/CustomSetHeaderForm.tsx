@@ -231,7 +231,7 @@ const CustomSetHeaderForm = ({
               />
             </Form.Item>
           ) : (
-            customSet?.level ?? 200
+            (customSet?.level ?? 200)
           )}
         </div>
         {isEditable &&

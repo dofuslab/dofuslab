@@ -4,7 +4,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { InputNumber, List, Modal, Select } from 'antd';
 import { mq, statIcons } from 'common/constants';
-import { SharedFilterAction } from 'common/types';
+import { FilterAction } from 'common/types';
 import { antdSelectFilterOption, getImageUrl } from 'common/utils';
 import type { Dispatch } from 'react';
 import { useMemo, useCallback, useReducer } from 'react';
@@ -79,7 +79,7 @@ export default function StatFilterModal({
   open: boolean;
   onClose: () => void;
   statFilters: Array<StatFilter>;
-  dispatch: Dispatch<SharedFilterAction>;
+  dispatch: Dispatch<FilterAction>;
 }) {
   const { t } = useTranslation(['common', 'stat']);
   const [statFilters, dispatch] = useReducer(reducer, statFiltersProp);

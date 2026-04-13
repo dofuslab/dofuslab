@@ -5,7 +5,7 @@ const OTHER_LANGUAGES = ['fr', 'it', 'es', 'pt'];
 export const LANGUAGES = [DEFAULT_LANGUAGE, ...OTHER_LANGUAGES] as const;
 // export const LANGUAGES = [DEFAULT_LANGUAGE] as const;
 
-export type TLanguage = typeof LANGUAGES[number];
+export type TLanguage = (typeof LANGUAGES)[number];
 
 export const langToFullName = (language: TLanguage) => {
   switch (language) {

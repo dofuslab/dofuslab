@@ -80,6 +80,7 @@ export const getServerSideProps: GetServerSideProps<
         stats: [],
         maxLevel: customSet.level,
         search: '',
+        itemTypeIds: [],
       },
     },
   });
