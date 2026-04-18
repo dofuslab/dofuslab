@@ -220,7 +220,6 @@ const SetBuilder = ({ customSet }: Props) => {
             overflowY: 'auto',
             overflowX: 'hidden',
             flex: '0 1 296px',
-            minHeight: 0,
             paddingRight: 12,
             ...(topMarginStyle[mq[1]] as Record<string, unknown>),
             [mq[2]]: { flex: '0 1 576px' },
