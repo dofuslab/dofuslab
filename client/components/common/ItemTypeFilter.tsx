@@ -15,16 +15,19 @@ interface Props {
   itemTypes: Array<ItemType>;
   itemTypeIds: Set<string>;
   setItemTypeIds: Dispatch<SetStateAction<Set<string>>>;
+  isShowingSets: boolean;
 }
 
-const ItemTypeFilter = ({ itemTypes, itemTypeIds, setItemTypeIds }: Props) => {
+const ItemTypeFilter = ({ itemTypes, itemTypeIds, setItemTypeIds, isShowingSets }: Props) => {
   const onChangeItemTypeIds = useCallback(
     (newItemTypeIds: Array<string>) => setItemTypeIds(new Set(newItemTypeIds)),
     [setItemTypeIds],
   );
-  if (itemTypes.length <= 1) {
+  
+  if (itemTypes.length <= 1 && !isShowingSets) {
     return null;
   }
+  
   return (
     <CheckboxGroup<string>
       value={Array.from(itemTypeIds)}
