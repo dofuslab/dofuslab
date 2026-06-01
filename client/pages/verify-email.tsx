@@ -35,7 +35,7 @@ const VerifyEmailPage: NextPage = () => {
 
   useEffect(() => {
     if (data?.currentUser?.verified) {
-      router.replace('/', {
+      router.replace({
         pathname: '/',
         query: { verify_email: 'already_verified' },
       });

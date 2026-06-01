@@ -39,12 +39,12 @@ const RequestPasswordResetPage: NextPage = () => {
 
   useEffect(() => {
     if (data?.currentUser?.verified) {
-      router.replace('/', {
+      router.replace({
         pathname: '/',
         query: { reset_password: 'already_logged_in' },
       });
     } else if (data?.currentUser) {
-      router.replace('/verify-email', '/verify-email');
+      router.replace('/verify-email');
     }
   }, [data, router]);
 
@@ -71,7 +71,7 @@ const RequestPasswordResetPage: NextPage = () => {
 
       router.replace('/');
     }
-  }, [mutate, t]);
+  }, [mutate, t, token, form, notificationApi, router]);
 
   if (typeof token !== 'string') {
     return <ErrorPage statusCode={404} />;
