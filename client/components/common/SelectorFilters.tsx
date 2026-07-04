@@ -4,7 +4,7 @@ import type { Dispatch, SetStateAction, ChangeEvent } from 'react';
 
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { ClassNames, useTheme } from '@emotion/react';
-import { ItemFilters, Stat } from '__generated__/globalTypes';
+import { Stat } from '__generated__/globalTypes';
 import {
   mq,
   DEBOUNCE_INTERVAL,
@@ -23,7 +23,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useDebounceCallback } from '@react-hook/debounce';
 
-import { FilterAction } from 'common/types';
+import { FilterAction, FilterState } from 'common/types';
 import { useTranslation } from 'next-i18next';
 import Tooltip from 'components/common/Tooltip';
 import { antdSelectFilterOption } from 'common/utils';
@@ -40,7 +40,7 @@ const { Search } = Input;
 const { Option } = Select;
 
 interface Props {
-  filters: ItemFilters;
+  filters: FilterState;
   dispatch: Dispatch<FilterAction>;
   customSet?: CustomSet | null;
   showSets: boolean;

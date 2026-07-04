@@ -84,7 +84,7 @@ from flask import session, render_template, g
 from flask_babel import _, get_locale, refresh
 from flask_login import login_required, login_user, current_user, logout_user
 from functools import lru_cache
-from sqlalchemy import func, distinct, or_, and_
+from sqlalchemy import func, distinct, or_, and_, case
 from sqlalchemy.orm import aliased
 from sqlalchemy.sql.expression import true
 from datetime import datetime
@@ -1434,7 +1434,9 @@ class SetFilters(graphene.InputObjectType):
     stats = graphene.NonNull(graphene.List(graphene.NonNull(StatFilter)))
     max_level = graphene.NonNull(graphene.Int)
     search = graphene.String(required=True)
-    item_type_ids = graphene.NonNull(graphene.List(graphene.NonNull(graphene.UUID)))
+    item_type_id_groups = graphene.NonNull(
+        graphene.List(graphene.NonNull(graphene.List(graphene.NonNull(graphene.UUID))))
+    )
 
 
 class ItemNameObject(graphene.InputObjectType):
@@ -1634,20 +1636,36 @@ class Query(graphene.ObjectType):
                     )
                 )
 
-            if filters.item_type_ids:
+            if filters.item_type_id_groups:
+                group_case = case(
+                    [
+                        (ModelItem.item_type_id.in_(group), index)
+                        for index, group in enumerate(filters.item_type_id_groups)
+                    ]
+                )
                 item_type_sq = (
                     db.session.query(
                         ModelItem.set_id,
-                        func.count(distinct(ModelItem.item_type_id)).label("num_item_types_matched"),
+                        func.count(distinct(group_case)).label("num_groups_matched"),
                     )
-                    .filter(ModelItem.item_type_id.in_(filters.item_type_ids))
+                    .filter(
+                        or_(
+                            *[
+                                ModelItem.item_type_id.in_(group)
+                                for group in filters.item_type_id_groups
+                            ]
+                        )
+                    )
                     .group_by(ModelItem.set_id)
                     .subquery()
                 )
 
                 set_query = set_query.join(
                     item_type_sq, ModelSet.uuid == item_type_sq.c.set_id
-                ).filter(item_type_sq.c.num_item_types_matched == len(filters.item_type_ids))
+                ).filter(
+                    item_type_sq.c.num_groups_matched
+                    == len(filters.item_type_id_groups)
+                )
 
         return set_query.order_by(
             level_sq.c.level.desc(), current_locale_translations.name.asc()

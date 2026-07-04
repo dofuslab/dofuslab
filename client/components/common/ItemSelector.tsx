@@ -18,16 +18,16 @@ import {
 } from 'common/utils';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
+import { FilterState } from 'common/types';
 import SetModal from './SetModal';
 
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 import ItemCardWithContext, { SharedProps } from './ItemCardWithContext';
-import { ItemFilters } from '__generated__/globalTypes';
 
 const THRESHOLD = 600;
 
 type Props = SharedProps & {
-  filters: ItemFilters;
+  filters: FilterState;
   itemTypeIds: Set<string>;
 };
 

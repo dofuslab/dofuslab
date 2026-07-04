@@ -3,6 +3,7 @@ import {
   WeaponEffectType,
   SpellEffectType,
   StatFilter,
+  ItemFilters,
 } from '__generated__/globalTypes';
 import {
   ItemSet,
@@ -46,8 +47,11 @@ export type FilterAction =
   | { type: 'MAX_LEVEL'; maxLevel: number }
   | { type: 'QUICK_STATS'; stats: Array<Stat> }
   | { type: 'STATS'; stats: Array<StatFilter> }
-  | { type: 'RESET'; maxLevel: number }
-  | { type: 'ITEM_TYPE_IDS'; itemTypeIds: Array<string> };
+  | { type: 'RESET'; maxLevel: number };
+
+// item type ids are tracked separately (see Selector.tsx's itemTypeIds state) -
+// itemTypeIds is omitted here since the reducer never carries a real value for it
+export type FilterState = Omit<ItemFilters, 'itemTypeIds'>;
 
 export type MageAction =
   | { type: 'ADD'; stat: Stat }
@@ -73,7 +77,7 @@ const mobileScreenTypesArr = [
   'SET_SELECTOR',
 ] as const;
 
-export type MobileScreen = (typeof mobileScreenTypesArr)[number];
+export type MobileScreen = typeof mobileScreenTypesArr[number];
 
 export const mobileScreenTypes = mobileScreenTypesArr.reduce(
   (acc, curr) => ({ ...acc, [curr]: curr }),
@@ -166,9 +170,9 @@ export const scrolledStats = [
 
 export const stats = [...baseStats, ...scrolledStats] as const;
 
-export type BaseStatKey = (typeof baseStats)[number];
+export type BaseStatKey = typeof baseStats[number];
 
-export type StatKey = (typeof stats)[number];
+export type StatKey = typeof stats[number];
 
 export interface AppliedBuff {
   buff: Buff;
