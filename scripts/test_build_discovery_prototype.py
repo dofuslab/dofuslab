@@ -4,7 +4,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 
-from oneoff.build_discovery_prototype import BuildState, add_item_to_state, final_score_state, score_state
+from oneoff.build_discovery_prototype import BuildState, add_item_to_state, has_negative_action_stat
 
 
 class BuildDiscoveryPrototypeTest(unittest.TestCase):
@@ -68,22 +68,41 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         duplicate = add_item_to_state(state, "ring_2", item, {})
         self.assertIsNone(duplicate)
 
-    def test_seventh_mp_lowers_score(self):
-        six_mp = BuildState()
-        six_mp.stats["MP"] = 6
-        seven_mp = BuildState()
-        seven_mp.stats["MP"] = 7
+    def test_over_target_mp_is_rejected(self):
+        state = BuildState()
+        state.stats["MP"] = 6
+        item = {
+            "dofusID": "1",
+            "setID": None,
+            "stats": [{"stat": "MP", "maxStat": 1}],
+        }
 
-        self.assertGreater(score_state(six_mp, {}, final=False), score_state(seven_mp, {}, final=False))
-        self.assertGreater(final_score_state(six_mp), final_score_state(seven_mp))
+        self.assertIsNone(add_item_to_state(state, "boots", item, {}))
 
-    def test_thirteenth_ap_lowers_score(self):
-        twelve_ap = BuildState()
-        twelve_ap.stats["AP"] = 12
-        thirteen_ap = BuildState()
-        thirteen_ap.stats["AP"] = 13
+    def test_over_target_ap_is_rejected(self):
+        state = BuildState()
+        state.stats["AP"] = 11
+        item = {
+            "dofusID": "1",
+            "setID": None,
+            "stats": [{"stat": "AP", "maxStat": 1}],
+        }
 
-        self.assertGreater(score_state(twelve_ap, {}, final=False), score_state(thirteen_ap, {}, final=False))
+        self.assertIsNone(add_item_to_state(state, "amulet", item, {}))
+
+    def test_negative_ap_mp_items_are_identified(self):
+        self.assertTrue(
+            has_negative_action_stat(
+                {
+                    "stats": [
+                        {"stat": "Summons", "maxStat": 2},
+                        {"stat": "MP", "maxStat": -1},
+                    ]
+                }
+            )
+        )
+
+        self.assertFalse(has_negative_action_stat({"stats": [{"stat": "Strength", "maxStat": 80}]}))
 
 
 if __name__ == "__main__":

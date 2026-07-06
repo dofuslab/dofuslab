@@ -17,7 +17,7 @@ from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_custom_set import MAX_NAME_LENGTH, ModelCustomSet
 from app.database.model_custom_set_stat import ModelCustomSetStat
 from app.database.model_item import ModelItem
-from oneoff.build_discovery_prototype import TARGET_LEVEL, find_builds
+from oneoff.build_discovery_prototype import DEFAULT_TARGET, TARGET_LEVEL, BuildTarget, find_builds
 
 
 DEFAULT_BASE_URL = "http://localhost:8080"
@@ -95,13 +95,18 @@ def main() -> None:
     parser.add_argument("--name-prefix", default="Prototype Strength Iop")
     parser.add_argument("--top-k", type=int, default=25)
     parser.add_argument("--beam-width", type=int, default=250)
+    parser.add_argument("--target-ap", type=int, default=DEFAULT_TARGET.ap)
+    parser.add_argument("--target-mp", type=int, default=DEFAULT_TARGET.mp)
+    parser.add_argument("--target-range", type=int, default=DEFAULT_TARGET.range)
     args = parser.parse_args()
 
+    target = BuildTarget(ap=args.target_ap, mp=args.target_mp, range=args.target_range)
     builds = find_builds(
         top_k=args.top_k,
         beam_width=args.beam_width,
         per_signature_cap=40,
         relevant_set_limit=60,
+        target=target,
     )[: args.limit]
 
     if not builds:

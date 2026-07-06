@@ -40,8 +40,6 @@ REQUIRED_MP = 6
 REQUIRED_RANGE = 0
 MAX_AP = 12
 MAX_MP = 6
-WASTED_AP_MP_PENALTY = 150
-TARGET_CONDITION_STATS = {"AP": REQUIRED_AP, "MP": REQUIRED_MP, "Range": REQUIRED_RANGE}
 BASE_STATS = {
     "AP": BASE_AP,
     "MP": BASE_MP,
@@ -80,9 +78,6 @@ STAT_WEIGHTS = {
     "Damage": 6.0,
     "Critical Damage": 4.0,
     "Critical": 6.0,
-    "AP": 120.0,
-    "MP": 90.0,
-    "Range": 35.0,
     "Vitality": 0.3,
     "Wisdom": 0.15,
     "% Earth Resistance": 2.0,
@@ -93,6 +88,26 @@ STAT_WEIGHTS = {
 }
 
 EXCLUDED_SET_NAME_PARTS = ("Khardboard",)
+
+
+@dataclass(frozen=True)
+class BuildTarget:
+    ap: int = REQUIRED_AP
+    mp: int = REQUIRED_MP
+    range: int = REQUIRED_RANGE
+
+    def __post_init__(self) -> None:
+        if self.ap > MAX_AP:
+            raise ValueError(f"Target AP cannot exceed {MAX_AP}.")
+        if self.mp > MAX_MP:
+            raise ValueError(f"Target MP cannot exceed {MAX_MP}.")
+
+    @property
+    def condition_stats(self) -> dict[str, int]:
+        return {"AP": self.ap, "MP": self.mp, "Range": self.range}
+
+
+DEFAULT_TARGET = BuildTarget()
 
 
 @dataclass
@@ -141,13 +156,6 @@ def score_stats(stats: dict[str, int]) -> float:
     return sum(stats.get(stat, 0) * weight for stat, weight in STAT_WEIGHTS.items())
 
 
-def cap_stats_for_scoring(stats: dict[str, int]) -> dict[str, int]:
-    capped = dict(stats)
-    capped["AP"] = min(capped.get("AP", 0), MAX_AP)
-    capped["MP"] = min(capped.get("MP", 0), MAX_MP)
-    return capped
-
-
 def item_score(item: dict[str, Any]) -> float:
     return score_stats(normalize_stats(item.get("stats", [])))
 
@@ -159,15 +167,21 @@ def set_bonus_score(set_obj: dict[str, Any]) -> float:
     )
 
 
-def load_items() -> list[dict[str, Any]]:
+def has_negative_action_stat(item: dict[str, Any]) -> bool:
+    stats = normalize_stats(item.get("stats", []))
+    return stats.get("AP", 0) < 0 or stats.get("MP", 0) < 0
+
+
+def load_items(target: BuildTarget = DEFAULT_TARGET) -> list[dict[str, Any]]:
     items = load_json("items.json") + load_json("weapons.json") + load_json("pets.json")
     candidates = [
         item
         for item in items
         if item.get("level", 0) <= TARGET_LEVEL
+        and not has_negative_action_stat(item)
         and condition_can_pass_at_target(
             item.get("conditions", {}).get("conditions", {}),
-            TARGET_CONDITION_STATS,
+            target.condition_stats,
         )
     ]
     for item in candidates:
@@ -233,6 +247,7 @@ def add_item_to_state(
     slot_name: str,
     item: dict[str, Any],
     sets: dict[str, dict[str, Any]],
+    target: BuildTarget = DEFAULT_TARGET,
 ) -> BuildState | None:
     if item["dofusID"] in state.used_item_ids:
         return None
@@ -252,8 +267,11 @@ def add_item_to_state(
         apply_stat_delta(next_state.stats, previous_bonus, multiplier=-1)
         apply_stat_delta(next_state.stats, bonus)
 
-    next_state.score = score_state(next_state, sets, final=False)
-    if not target_forced_conditions_hold(next_state, TARGET_CONDITION_STATS):
+    if next_state.stats.get("AP", 0) > target.ap or next_state.stats.get("MP", 0) > target.mp:
+        return None
+
+    next_state.score = score_state(next_state, sets, target, final=False)
+    if not target_forced_conditions_hold(next_state, target.condition_stats):
         return None
     return next_state
 
@@ -267,13 +285,16 @@ def potential_set_bonus_score(state: BuildState, sets: dict[str, dict[str, Any]]
     return potential
 
 
-def score_state(state: BuildState, sets: dict[str, dict[str, Any]], final: bool) -> float:
-    score = score_stats(cap_stats_for_scoring(state.stats))
-    score -= max(state.stats.get("AP", 0) - MAX_AP, 0) * WASTED_AP_MP_PENALTY
-    score -= max(state.stats.get("MP", 0) - MAX_MP, 0) * WASTED_AP_MP_PENALTY
-    ap_gap = max(REQUIRED_AP - state.stats.get("AP", 0), 0)
-    mp_gap = max(REQUIRED_MP - state.stats.get("MP", 0), 0)
-    range_gap = max(REQUIRED_RANGE - state.stats.get("Range", 0), 0)
+def score_state(
+    state: BuildState,
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget = DEFAULT_TARGET,
+    final: bool = False,
+) -> float:
+    score = score_stats(state.stats)
+    ap_gap = max(target.ap - state.stats.get("AP", 0), 0)
+    mp_gap = max(target.mp - state.stats.get("MP", 0), 0)
+    range_gap = max(target.range - state.stats.get("Range", 0), 0)
     score -= ap_gap * 500
     score -= mp_gap * 450
     score -= range_gap * 150
@@ -295,12 +316,7 @@ def survivability_score(stats: dict[str, int]) -> float:
 
 def final_score_state(state: BuildState) -> float:
     damage = profile_damage(STRENGTH_PVM_PROFILE, state.stats)
-    comfort = state.stats.get("Range", 0) * 20 + min(state.stats.get("MP", 0), MAX_MP) * 25
-    wasted_penalty = (
-        max(state.stats.get("AP", 0) - MAX_AP, 0)
-        + max(state.stats.get("MP", 0) - MAX_MP, 0)
-    ) * WASTED_AP_MP_PENALTY
-    return damage * 2.0 + survivability_score(state.stats) + comfort - wasted_penalty
+    return damage * 2.0 + survivability_score(state.stats)
 
 
 def set_signature(state: BuildState) -> tuple[tuple[str, int], ...]:
@@ -330,8 +346,14 @@ def dedupe_builds(states: list[BuildState]) -> list[BuildState]:
     return unique
 
 
-def find_builds(top_k: int, beam_width: int, per_signature_cap: int, relevant_set_limit: int) -> list[BuildState]:
-    items = load_items()
+def find_builds(
+    top_k: int,
+    beam_width: int,
+    per_signature_cap: int,
+    relevant_set_limit: int,
+    target: BuildTarget = DEFAULT_TARGET,
+) -> list[BuildState]:
+    items = load_items(target)
     sets = load_sets()
     items = [
         item
@@ -349,7 +371,7 @@ def find_builds(top_k: int, beam_width: int, per_signature_cap: int, relevant_se
         next_states: list[BuildState] = []
         for state in beam:
             for item in pools[slot_name]:
-                next_state = add_item_to_state(state, slot_name, item, sets)
+                next_state = add_item_to_state(state, slot_name, item, sets, target)
                 if next_state:
                     next_states.append(next_state)
         beam = trim_beam(next_states, beam_width, per_signature_cap)
@@ -357,8 +379,9 @@ def find_builds(top_k: int, beam_width: int, per_signature_cap: int, relevant_se
     final_states = [
         state
         for state in beam
-        if REQUIRED_AP <= state.stats.get("AP", 0) <= MAX_AP
-        and REQUIRED_MP <= state.stats.get("MP", 0) <= MAX_MP
+        if state.stats.get("AP", 0) == target.ap
+        and state.stats.get("MP", 0) == target.mp
+        and state.stats.get("Range", 0) >= target.range
     ]
     valid_final_states = []
     for state in final_states:
@@ -413,21 +436,26 @@ def main() -> None:
     parser.add_argument("--beam-width", type=int, default=250)
     parser.add_argument("--per-signature-cap", type=int, default=40)
     parser.add_argument("--relevant-set-limit", type=int, default=60)
+    parser.add_argument("--target-ap", type=int, default=DEFAULT_TARGET.ap)
+    parser.add_argument("--target-mp", type=int, default=DEFAULT_TARGET.mp)
+    parser.add_argument("--target-range", type=int, default=DEFAULT_TARGET.range)
     args = parser.parse_args()
 
+    target = BuildTarget(ap=args.target_ap, mp=args.target_mp, range=args.target_range)
     start = time.perf_counter()
     builds = find_builds(
         top_k=args.top_k,
         beam_width=args.beam_width,
         per_signature_cap=args.per_signature_cap,
         relevant_set_limit=args.relevant_set_limit,
+        target=target,
     )
     elapsed_ms = round((time.perf_counter() - start) * 1000, 1)
     sets = load_sets()
 
     output = {
         "prototype": "level_200_strength_pvm_generalist",
-        "target": {"level": TARGET_LEVEL, "AP": REQUIRED_AP, "MP": REQUIRED_MP, "Range": REQUIRED_RANGE},
+        "target": {"level": TARGET_LEVEL, "AP": target.ap, "MP": target.mp, "Range": target.range},
         "elapsedMs": elapsed_ms,
         "resultCount": len(builds),
         "builds": [serialize_build(build, sets) for build in builds[: args.limit]],
