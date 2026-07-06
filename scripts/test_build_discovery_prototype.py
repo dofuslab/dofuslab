@@ -2,9 +2,9 @@ import unittest
 from pathlib import Path
 import sys
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 
-from build_discovery_prototype import BuildState, add_item_to_state
+from oneoff.build_discovery_prototype import BuildState, add_item_to_state
 
 
 class BuildDiscoveryPrototypeTest(unittest.TestCase):
