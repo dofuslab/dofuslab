@@ -21,6 +21,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
 
+from oneoff.condition_evaluator import unmet_item_conditions
 from oneoff.damage_calculator import STRENGTH_PVM_PROFILE, profile_damage
 
 
@@ -93,6 +94,7 @@ class BuildState:
     set_counts: dict[str, int] = field(default_factory=dict)
     used_item_ids: set[str] = field(default_factory=set)
     score: float = 0.0
+    condition_failures: list[dict[str, Any]] = field(default_factory=list)
 
     def clone(self) -> "BuildState":
         return BuildState(
@@ -101,6 +103,7 @@ class BuildState:
             set_counts=dict(self.set_counts),
             used_item_ids=set(self.used_item_ids),
             score=self.score,
+            condition_failures=list(self.condition_failures),
         )
 
 
@@ -327,9 +330,14 @@ def find_builds(top_k: int, beam_width: int, per_signature_cap: int, relevant_se
         for state in beam
         if state.stats.get("AP", 0) >= REQUIRED_AP and state.stats.get("MP", 0) >= REQUIRED_MP
     ]
+    valid_final_states = []
     for state in final_states:
+        state.condition_failures = unmet_item_conditions(state)
+        if state.condition_failures:
+            continue
         state.score = final_score_state(state)
-    return dedupe_builds(sorted(final_states, key=lambda s: s.score, reverse=True))
+        valid_final_states.append(state)
+    return dedupe_builds(sorted(valid_final_states, key=lambda s: s.score, reverse=True))
 
 
 def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[str, Any]:
@@ -341,6 +349,7 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
     return {
         "score": round(state.score, 2),
         "damageProfileScore": round(profile_damage(STRENGTH_PVM_PROFILE, state.stats), 2),
+        "conditionFailures": state.condition_failures,
         "totals": {
             "AP": state.stats.get("AP", 0),
             "MP": state.stats.get("MP", 0),
