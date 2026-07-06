@@ -21,8 +21,6 @@ services:
     # https://hub.docker.com/_/redis
     image: redis:6.2
     restart: always
-    ports:
-      - 6379:6379
     healthcheck:
       test: ['CMD', 'redis-cli', 'ping']
       interval: 10s
