@@ -29,11 +29,11 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         state = add_item_to_state(BuildState(), "ring_1", first, sets)
         self.assertIsNotNone(state)
-        self.assertEqual(state.stats["AP"], 6)
+        self.assertEqual(state.stats["AP"], 7)
 
         state = add_item_to_state(state, "ring_2", second, sets)
         self.assertIsNotNone(state)
-        self.assertEqual(state.stats["AP"], 7)
+        self.assertEqual(state.stats["AP"], 8)
 
     def test_set_bonus_uses_exact_item_count_not_cumulative_thresholds(self):
         sets = {
@@ -54,7 +54,7 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         for idx, item in enumerate(items):
             state = add_item_to_state(state, f"slot_{idx}", item, sets)
 
-        self.assertEqual(state.stats["AP"], 8)
+        self.assertEqual(state.stats["AP"], 9)
 
     def test_duplicate_items_are_rejected(self):
         item = {

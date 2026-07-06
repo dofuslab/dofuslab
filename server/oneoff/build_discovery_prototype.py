@@ -21,7 +21,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
 
-from oneoff.condition_evaluator import unmet_item_conditions
+from oneoff.condition_evaluator import condition_can_pass_at_target, unmet_item_conditions
 from oneoff.damage_calculator import STRENGTH_PVM_PROFILE, profile_damage
 
 
@@ -29,11 +29,12 @@ SERVER_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = SERVER_ROOT / "app" / "database" / "data"
 
 TARGET_LEVEL = 200
-BASE_AP = 6
+BASE_AP = 7 if TARGET_LEVEL >= 100 else 6
 BASE_MP = 3
 REQUIRED_AP = 11
 REQUIRED_MP = 6
 REQUIRED_RANGE = 0
+TARGET_CONDITION_STATS = {"AP": REQUIRED_AP, "MP": REQUIRED_MP, "Range": REQUIRED_RANGE}
 BASE_STATS = {
     "AP": BASE_AP,
     "MP": BASE_MP,
@@ -146,7 +147,15 @@ def set_bonus_score(set_obj: dict[str, Any]) -> float:
 
 def load_items() -> list[dict[str, Any]]:
     items = load_json("items.json") + load_json("weapons.json") + load_json("pets.json")
-    candidates = [item for item in items if item.get("level", 0) <= TARGET_LEVEL]
+    candidates = [
+        item
+        for item in items
+        if item.get("level", 0) <= TARGET_LEVEL
+        and condition_can_pass_at_target(
+            item.get("conditions", {}).get("conditions", {}),
+            TARGET_CONDITION_STATS,
+        )
+    ]
     for item in candidates:
         item["_name"] = get_name(item)
         item["_stats"] = normalize_stats(item.get("stats", []))

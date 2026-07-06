@@ -111,3 +111,40 @@ def unmet_item_conditions(state) -> list[dict[str, Any]]:
                 }
             )
     return failures
+
+
+def condition_can_pass_at_target(
+    condition_obj: dict[str, Any],
+    target_stats: dict[str, int],
+) -> bool:
+    """Return whether a condition is compatible with required final stats.
+
+    This is intentionally conservative and only reasons about explicit target
+    minimums such as AP/MP/range. If a stat is not part of the target, the
+    condition is allowed through for normal final-state evaluation.
+    """
+    if not condition_obj:
+        return True
+    if is_leaf_condition(condition_obj):
+        stat_name = CONDITION_STAT_TO_STAT_NAME.get(condition_obj["stat"])
+        if not stat_name or stat_name not in target_stats:
+            return True
+        target_value = target_stats[stat_name]
+        operator = condition_obj["operator"]
+        condition_value = condition_obj["value"]
+        if operator == "<":
+            return target_value < condition_value
+        if operator == ">":
+            return target_value > condition_value
+        return True
+    if condition_obj.get("and"):
+        return all(
+            condition_can_pass_at_target(child, target_stats)
+            for child in condition_obj["and"]
+        )
+    if condition_obj.get("or"):
+        return any(
+            condition_can_pass_at_target(child, target_stats)
+            for child in condition_obj["or"]
+        )
+    return True

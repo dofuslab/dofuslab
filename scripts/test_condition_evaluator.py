@@ -4,7 +4,11 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 
-from oneoff.condition_evaluator import traverse_conditions, unmet_item_conditions
+from oneoff.condition_evaluator import (
+    condition_can_pass_at_target,
+    traverse_conditions,
+    unmet_item_conditions,
+)
 from oneoff.build_discovery_prototype import BuildState
 
 
@@ -64,6 +68,21 @@ class ConditionEvaluatorTest(unittest.TestCase):
 
         self.assertEqual(len(failures), 1)
         self.assertEqual(failures[0]["itemName"], "Dazzling Cloak")
+
+    def test_target_compatibility_rejects_impossible_ap_mp_condition(self):
+        condition = {
+            "or": [
+                {"stat": "AP", "operator": "<", "value": 12},
+                {"stat": "MP", "operator": "<", "value": 6},
+            ]
+        }
+
+        self.assertFalse(
+            condition_can_pass_at_target(condition, {"AP": 12, "MP": 6})
+        )
+        self.assertTrue(
+            condition_can_pass_at_target(condition, {"AP": 11, "MP": 6})
+        )
 
 
 if __name__ == "__main__":
