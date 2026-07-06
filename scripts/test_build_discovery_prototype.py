@@ -4,7 +4,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 
-from oneoff.build_discovery_prototype import BuildState, add_item_to_state
+from oneoff.build_discovery_prototype import BuildState, add_item_to_state, final_score_state, score_state
 
 
 class BuildDiscoveryPrototypeTest(unittest.TestCase):
@@ -67,6 +67,23 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertIsNotNone(state)
         duplicate = add_item_to_state(state, "ring_2", item, {})
         self.assertIsNone(duplicate)
+
+    def test_seventh_mp_lowers_score(self):
+        six_mp = BuildState()
+        six_mp.stats["MP"] = 6
+        seven_mp = BuildState()
+        seven_mp.stats["MP"] = 7
+
+        self.assertGreater(score_state(six_mp, {}, final=False), score_state(seven_mp, {}, final=False))
+        self.assertGreater(final_score_state(six_mp), final_score_state(seven_mp))
+
+    def test_thirteenth_ap_lowers_score(self):
+        twelve_ap = BuildState()
+        twelve_ap.stats["AP"] = 12
+        thirteen_ap = BuildState()
+        thirteen_ap.stats["AP"] = 13
+
+        self.assertGreater(score_state(twelve_ap, {}, final=False), score_state(thirteen_ap, {}, final=False))
 
 
 if __name__ == "__main__":

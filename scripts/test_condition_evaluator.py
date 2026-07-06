@@ -6,6 +6,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 
 from oneoff.condition_evaluator import (
     condition_can_pass_at_target,
+    forced_target_condition_holds,
     traverse_conditions,
     unmet_item_conditions,
 )
@@ -82,6 +83,31 @@ class ConditionEvaluatorTest(unittest.TestCase):
         )
         self.assertTrue(
             condition_can_pass_at_target(condition, {"AP": 11, "MP": 6})
+        )
+
+    def test_target_forces_ap_branch_when_mp_target_makes_mp_branch_impossible(self):
+        condition = {
+            "or": [
+                {"stat": "AP", "operator": "<", "value": 12},
+                {"stat": "MP", "operator": "<", "value": 6},
+            ]
+        }
+
+        self.assertTrue(
+            forced_target_condition_holds(
+                condition,
+                {"AP": 11, "MP": 6},
+                {},
+                {"AP": 11, "MP": 6},
+            )
+        )
+        self.assertFalse(
+            forced_target_condition_holds(
+                condition,
+                {"AP": 12, "MP": 6},
+                {},
+                {"AP": 11, "MP": 6},
+            )
         )
 
 

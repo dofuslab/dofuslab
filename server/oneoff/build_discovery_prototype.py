@@ -21,7 +21,11 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
 
-from oneoff.condition_evaluator import condition_can_pass_at_target, unmet_item_conditions
+from oneoff.condition_evaluator import (
+    condition_can_pass_at_target,
+    target_forced_conditions_hold,
+    unmet_item_conditions,
+)
 from oneoff.damage_calculator import STRENGTH_PVM_PROFILE, profile_damage
 
 
@@ -34,6 +38,9 @@ BASE_MP = 3
 REQUIRED_AP = 11
 REQUIRED_MP = 6
 REQUIRED_RANGE = 0
+MAX_AP = 12
+MAX_MP = 6
+WASTED_AP_MP_PENALTY = 150
 TARGET_CONDITION_STATS = {"AP": REQUIRED_AP, "MP": REQUIRED_MP, "Range": REQUIRED_RANGE}
 BASE_STATS = {
     "AP": BASE_AP,
@@ -132,6 +139,13 @@ def get_name(entity: dict[str, Any]) -> str:
 
 def score_stats(stats: dict[str, int]) -> float:
     return sum(stats.get(stat, 0) * weight for stat, weight in STAT_WEIGHTS.items())
+
+
+def cap_stats_for_scoring(stats: dict[str, int]) -> dict[str, int]:
+    capped = dict(stats)
+    capped["AP"] = min(capped.get("AP", 0), MAX_AP)
+    capped["MP"] = min(capped.get("MP", 0), MAX_MP)
+    return capped
 
 
 def item_score(item: dict[str, Any]) -> float:
@@ -239,6 +253,8 @@ def add_item_to_state(
         apply_stat_delta(next_state.stats, bonus)
 
     next_state.score = score_state(next_state, sets, final=False)
+    if not target_forced_conditions_hold(next_state, TARGET_CONDITION_STATS):
+        return None
     return next_state
 
 
@@ -252,9 +268,9 @@ def potential_set_bonus_score(state: BuildState, sets: dict[str, dict[str, Any]]
 
 
 def score_state(state: BuildState, sets: dict[str, dict[str, Any]], final: bool) -> float:
-    score = score_stats(state.stats)
-    score -= max(state.stats.get("AP", 0) - REQUIRED_AP, 0) * 80
-    score -= max(state.stats.get("MP", 0) - REQUIRED_MP, 0) * 70
+    score = score_stats(cap_stats_for_scoring(state.stats))
+    score -= max(state.stats.get("AP", 0) - MAX_AP, 0) * WASTED_AP_MP_PENALTY
+    score -= max(state.stats.get("MP", 0) - MAX_MP, 0) * WASTED_AP_MP_PENALTY
     ap_gap = max(REQUIRED_AP - state.stats.get("AP", 0), 0)
     mp_gap = max(REQUIRED_MP - state.stats.get("MP", 0), 0)
     range_gap = max(REQUIRED_RANGE - state.stats.get("Range", 0), 0)
@@ -279,8 +295,12 @@ def survivability_score(stats: dict[str, int]) -> float:
 
 def final_score_state(state: BuildState) -> float:
     damage = profile_damage(STRENGTH_PVM_PROFILE, state.stats)
-    comfort = state.stats.get("Range", 0) * 20 + state.stats.get("MP", 0) * 25
-    return damage * 2.0 + survivability_score(state.stats) + comfort
+    comfort = state.stats.get("Range", 0) * 20 + min(state.stats.get("MP", 0), MAX_MP) * 25
+    wasted_penalty = (
+        max(state.stats.get("AP", 0) - MAX_AP, 0)
+        + max(state.stats.get("MP", 0) - MAX_MP, 0)
+    ) * WASTED_AP_MP_PENALTY
+    return damage * 2.0 + survivability_score(state.stats) + comfort - wasted_penalty
 
 
 def set_signature(state: BuildState) -> tuple[tuple[str, int], ...]:
@@ -337,7 +357,8 @@ def find_builds(top_k: int, beam_width: int, per_signature_cap: int, relevant_se
     final_states = [
         state
         for state in beam
-        if state.stats.get("AP", 0) >= REQUIRED_AP and state.stats.get("MP", 0) >= REQUIRED_MP
+        if REQUIRED_AP <= state.stats.get("AP", 0) <= MAX_AP
+        and REQUIRED_MP <= state.stats.get("MP", 0) <= MAX_MP
     ]
     valid_final_states = []
     for state in final_states:

@@ -148,3 +148,50 @@ def condition_can_pass_at_target(
             for child in condition_obj["or"]
         )
     return True
+
+
+def forced_target_condition_holds(
+    condition_obj: dict[str, Any],
+    stats: dict[str, int],
+    set_counts: dict[str, int],
+    target_stats: dict[str, int],
+) -> bool:
+    """Check target-forced condition branches against the current state.
+
+    Example: for an item condition `AP < 12 OR MP < 6`, a target of 11/6
+    makes `MP < 6` impossible in the final build, so `AP < 12` becomes a
+    mandatory branch. If a partial build with that item reaches 12 AP, it can
+    be pruned immediately.
+    """
+    if not condition_obj:
+        return True
+    if is_leaf_condition(condition_obj):
+        return True
+    if condition_obj.get("and"):
+        return all(
+            forced_target_condition_holds(child, stats, set_counts, target_stats)
+            for child in condition_obj["and"]
+        )
+    if condition_obj.get("or"):
+        compatible_children = [
+            child
+            for child in condition_obj["or"]
+            if condition_can_pass_at_target(child, target_stats)
+        ]
+        if len(compatible_children) == 1:
+            return traverse_conditions(compatible_children[0], stats, set_counts)
+        return True
+    return True
+
+
+def target_forced_conditions_hold(state, target_stats: dict[str, int]) -> bool:
+    for item in state.slots.values():
+        conditions = item.get("conditions", {}).get("conditions", {})
+        if not forced_target_condition_holds(
+            conditions,
+            state.stats,
+            state.set_counts,
+            target_stats,
+        ):
+            return False
+    return True
