@@ -17,7 +17,13 @@ from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_custom_set import MAX_NAME_LENGTH, ModelCustomSet
 from app.database.model_custom_set_stat import ModelCustomSetStat
 from app.database.model_item import ModelItem
-from oneoff.build_discovery_prototype import DEFAULT_TARGET, TARGET_LEVEL, BuildTarget, find_builds
+from oneoff.build_discovery_prototype import (
+    DEFAULT_MAX_SHARED_ITEMS,
+    DEFAULT_TARGET,
+    TARGET_LEVEL,
+    BuildTarget,
+    find_diverse_builds,
+)
 
 
 DEFAULT_BASE_URL = "http://localhost:8080"
@@ -43,6 +49,12 @@ def get_items_by_dofus_id(db_session, dofus_ids: Iterable[str]) -> dict[str, Mod
         .all()
     )
     return {item.dofus_db_id: item for item in items}
+
+
+def missing_item_ids_for_build(db_session, build) -> list[str]:
+    dofus_ids = item_ids_for_build(build)
+    items_by_dofus_id = get_items_by_dofus_id(db_session, dofus_ids)
+    return [dofus_id for dofus_id in dofus_ids if dofus_id not in items_by_dofus_id]
 
 
 def create_custom_set_from_build(db_session, build, index: int, name_prefix: str):
@@ -98,28 +110,37 @@ def main() -> None:
     parser.add_argument("--target-ap", type=int, default=DEFAULT_TARGET.ap)
     parser.add_argument("--target-mp", type=int, default=DEFAULT_TARGET.mp)
     parser.add_argument("--target-range", type=int, default=DEFAULT_TARGET.range)
+    parser.add_argument("--max-shared-items", type=int, default=DEFAULT_MAX_SHARED_ITEMS)
     args = parser.parse_args()
 
     target = BuildTarget(ap=args.target_ap, mp=args.target_mp, range=args.target_range)
-    builds = find_builds(
+    builds = find_diverse_builds(
+        limit=args.limit + 5,
         top_k=args.top_k,
         beam_width=args.beam_width,
         per_signature_cap=40,
         relevant_set_limit=60,
         target=target,
-    )[: args.limit]
+        max_shared_items=args.max_shared_items,
+    )
 
     if not builds:
         raise RuntimeError("No prototype builds were generated.")
 
     base_url = args.base_url.rstrip("/")
     created = []
+    skipped = []
     with session_scope() as db_session:
-        for index, build in enumerate(builds, start=1):
+        for build in builds:
+            missing_ids = missing_item_ids_for_build(db_session, build)
+            if missing_ids:
+                skipped.append(missing_ids)
+                continue
+
             custom_set = create_custom_set_from_build(
                 db_session,
                 build,
-                index,
+                len(created) + 1,
                 args.name_prefix,
             )
             created.append(
@@ -130,12 +151,21 @@ def main() -> None:
                     "view_url": f"{base_url}/view/{custom_set.uuid}/",
                 }
             )
+            if len(created) >= args.limit:
+                break
+
+    if not created:
+        raise RuntimeError("No generated builds could be imported with the local database items.")
 
     print("Created prototype builds:")
     for build in created:
         print(f"- {build['name']}")
         print(f"  Build: {build['build_url']}")
         print(f"  View:  {build['view_url']}")
+    if skipped:
+        print("Skipped generated builds with missing local item ids:")
+        for missing_ids in skipped:
+            print(f"- {', '.join(missing_ids)}")
 
 
 if __name__ == "__main__":

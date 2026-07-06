@@ -108,6 +108,7 @@ class BuildTarget:
 
 
 DEFAULT_TARGET = BuildTarget()
+DEFAULT_MAX_SHARED_ITEMS = 10
 
 
 @dataclass
@@ -172,12 +173,17 @@ def has_negative_action_stat(item: dict[str, Any]) -> bool:
     return stats.get("AP", 0) < 0 or stats.get("MP", 0) < 0
 
 
-def load_items(target: BuildTarget = DEFAULT_TARGET) -> list[dict[str, Any]]:
+def load_items(
+    target: BuildTarget = DEFAULT_TARGET,
+    excluded_item_ids: set[str] | None = None,
+) -> list[dict[str, Any]]:
+    excluded_item_ids = excluded_item_ids or set()
     items = load_json("items.json") + load_json("weapons.json") + load_json("pets.json")
     candidates = [
         item
         for item in items
         if item.get("level", 0) <= TARGET_LEVEL
+        and item.get("dofusID") not in excluded_item_ids
         and not has_negative_action_stat(item)
         and condition_can_pass_at_target(
             item.get("conditions", {}).get("conditions", {}),
@@ -346,14 +352,30 @@ def dedupe_builds(states: list[BuildState]) -> list[BuildState]:
     return unique
 
 
+def diversify_builds(states: list[BuildState], max_shared_items: int | None) -> list[BuildState]:
+    if max_shared_items is None:
+        return states
+
+    diverse: list[BuildState] = []
+    for state in states:
+        if all(
+            len(state.used_item_ids & selected.used_item_ids) <= max_shared_items
+            for selected in diverse
+        ):
+            diverse.append(state)
+    return diverse
+
+
 def find_builds(
     top_k: int,
     beam_width: int,
     per_signature_cap: int,
     relevant_set_limit: int,
     target: BuildTarget = DEFAULT_TARGET,
+    max_shared_items: int | None = DEFAULT_MAX_SHARED_ITEMS,
+    excluded_item_ids: set[str] | None = None,
 ) -> list[BuildState]:
-    items = load_items(target)
+    items = load_items(target, excluded_item_ids)
     sets = load_sets()
     items = [
         item
@@ -390,7 +412,86 @@ def find_builds(
             continue
         state.score = final_score_state(state)
         valid_final_states.append(state)
-    return dedupe_builds(sorted(valid_final_states, key=lambda s: s.score, reverse=True))
+    ranked_states = dedupe_builds(sorted(valid_final_states, key=lambda s: s.score, reverse=True))
+    return diversify_builds(ranked_states, max_shared_items)
+
+
+def approach_item_ids(state: BuildState) -> set[str]:
+    key_slots = ("amulet", "weapon", "shield")
+    return {
+        state.slots[slot]["dofusID"]
+        for slot in key_slots
+        if slot in state.slots
+    }
+
+
+def approach_key(state: BuildState) -> tuple[str | None, ...]:
+    key_slots = ("amulet", "weapon", "shield")
+    return tuple(state.slots.get(slot, {}).get("dofusID") for slot in key_slots)
+
+
+def find_diverse_builds(
+    limit: int,
+    top_k: int,
+    beam_width: int,
+    per_signature_cap: int,
+    relevant_set_limit: int,
+    target: BuildTarget = DEFAULT_TARGET,
+    max_shared_items: int | None = DEFAULT_MAX_SHARED_ITEMS,
+) -> list[BuildState]:
+    selected: list[BuildState] = []
+    exclusion_batches: list[set[str]] = [set()]
+    seen_exclusion_batches: set[tuple[str, ...]] = {tuple()}
+
+    while len(selected) < limit:
+        made_progress = False
+        for excluded_item_ids in list(exclusion_batches):
+            if len(selected) >= limit:
+                break
+            if selected and not excluded_item_ids:
+                continue
+
+            candidates = find_builds(
+                top_k=top_k,
+                beam_width=beam_width,
+                per_signature_cap=per_signature_cap,
+                relevant_set_limit=relevant_set_limit,
+                target=target,
+                max_shared_items=None,
+                excluded_item_ids=excluded_item_ids,
+            )
+            next_build = next(
+                (
+                    candidate
+                    for candidate in candidates
+                    if all(candidate.used_item_ids != existing.used_item_ids for existing in selected)
+                    and all(approach_key(candidate) != approach_key(existing) for existing in selected)
+                    and (
+                        not selected
+                        or max_shared_items is None
+                        or all(
+                            len(candidate.used_item_ids & existing.used_item_ids) <= max_shared_items
+                            for existing in selected
+                        )
+                    )
+                ),
+                None,
+            )
+            if next_build is None:
+                continue
+
+            selected.append(next_build)
+            new_exclusion = approach_item_ids(next_build)
+            exclusion_key = tuple(sorted(new_exclusion))
+            if exclusion_key not in seen_exclusion_batches:
+                exclusion_batches.append(new_exclusion)
+                seen_exclusion_batches.add(exclusion_key)
+            made_progress = True
+
+        if not made_progress:
+            break
+
+    return sorted(selected, key=lambda state: state.score, reverse=True)
 
 
 def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[str, Any]:
@@ -439,16 +540,19 @@ def main() -> None:
     parser.add_argument("--target-ap", type=int, default=DEFAULT_TARGET.ap)
     parser.add_argument("--target-mp", type=int, default=DEFAULT_TARGET.mp)
     parser.add_argument("--target-range", type=int, default=DEFAULT_TARGET.range)
+    parser.add_argument("--max-shared-items", type=int, default=DEFAULT_MAX_SHARED_ITEMS)
     args = parser.parse_args()
 
     target = BuildTarget(ap=args.target_ap, mp=args.target_mp, range=args.target_range)
     start = time.perf_counter()
-    builds = find_builds(
+    builds = find_diverse_builds(
+        limit=args.limit,
         top_k=args.top_k,
         beam_width=args.beam_width,
         per_signature_cap=args.per_signature_cap,
         relevant_set_limit=args.relevant_set_limit,
         target=target,
+        max_shared_items=args.max_shared_items,
     )
     elapsed_ms = round((time.perf_counter() - start) * 1000, 1)
     sets = load_sets()
@@ -458,7 +562,7 @@ def main() -> None:
         "target": {"level": TARGET_LEVEL, "AP": target.ap, "MP": target.mp, "Range": target.range},
         "elapsedMs": elapsed_ms,
         "resultCount": len(builds),
-        "builds": [serialize_build(build, sets) for build in builds[: args.limit]],
+        "builds": [serialize_build(build, sets) for build in builds],
     }
     print(json.dumps(output, indent=2, ensure_ascii=False))
 

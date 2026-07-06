@@ -4,7 +4,12 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 
-from oneoff.build_discovery_prototype import BuildState, add_item_to_state, has_negative_action_stat
+from oneoff.build_discovery_prototype import (
+    BuildState,
+    add_item_to_state,
+    diversify_builds,
+    has_negative_action_stat,
+)
 
 
 class BuildDiscoveryPrototypeTest(unittest.TestCase):
@@ -103,6 +108,16 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         )
 
         self.assertFalse(has_negative_action_stat({"stats": [{"stat": "Strength", "maxStat": 80}]}))
+
+    def test_diversify_builds_rejects_near_duplicates(self):
+        first = BuildState(used_item_ids={str(i) for i in range(16)}, score=100)
+        near_duplicate = BuildState(used_item_ids={str(i) for i in range(10)} | {"a", "b", "c", "d", "e", "f"}, score=90)
+        different = BuildState(used_item_ids={str(i) for i in range(6)} | {"g", "h", "i", "j", "k", "l", "m", "n", "o", "p"}, score=80)
+
+        self.assertEqual(
+            diversify_builds([first, near_duplicate, different], max_shared_items=9),
+            [first, different],
+        )
 
 
 if __name__ == "__main__":
