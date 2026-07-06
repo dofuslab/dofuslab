@@ -73,7 +73,7 @@ SLOTS: list[tuple[str, tuple[str, ...]]] = [
 STAT_WEIGHTS = {
     "Strength": 1.0,
     "Power": 0.85,
-    "Earth Damage": 8.0,
+    "Earth Damage": 4.0,
     "Neutral Damage": 1.0,
     "Damage": 6.0,
     "Critical Damage": 4.0,
