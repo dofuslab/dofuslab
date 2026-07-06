@@ -71,8 +71,6 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: dofuslab@dofuslab.io
       PGADMIN_DEFAULT_PASSWORD: dofuslab
-    ports:
-      - '15432:80'
     volumes:
       - pgadmin:/var/lib/pgadmin
 
