@@ -21,6 +21,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
 
+from oneoff.damage_calculator import STRENGTH_PVM_PROFILE, profile_damage
+
 
 SERVER_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = SERVER_ROOT / "app" / "database" / "data"
@@ -31,6 +33,16 @@ BASE_MP = 3
 REQUIRED_AP = 11
 REQUIRED_MP = 6
 REQUIRED_RANGE = 0
+BASE_STATS = {
+    "AP": BASE_AP,
+    "MP": BASE_MP,
+    "Vitality": 495,
+    "Wisdom": 100,
+    "Strength": 400,
+    "Intelligence": 100,
+    "Chance": 100,
+    "Agility": 100,
+}
 
 SLOTS: list[tuple[str, tuple[str, ...]]] = [
     ("amulet", ("Amulet",)),
@@ -55,15 +67,15 @@ STAT_WEIGHTS = {
     "Strength": 1.0,
     "Power": 0.85,
     "Earth Damage": 8.0,
-    "Neutral Damage": 5.0,
+    "Neutral Damage": 1.0,
     "Damage": 6.0,
     "Critical Damage": 4.0,
     "Critical": 6.0,
     "AP": 120.0,
     "MP": 90.0,
     "Range": 35.0,
-    "Vitality": 0.08,
-    "Wisdom": 0.05,
+    "Vitality": 0.3,
+    "Wisdom": 0.15,
     "% Earth Resistance": 2.0,
     "% Neutral Resistance": 1.5,
     "% Fire Resistance": 1.0,
@@ -77,7 +89,7 @@ EXCLUDED_SET_NAME_PARTS = ("Khardboard",)
 @dataclass
 class BuildState:
     slots: dict[str, dict[str, Any]] = field(default_factory=dict)
-    stats: dict[str, int] = field(default_factory=lambda: {"AP": BASE_AP, "MP": BASE_MP})
+    stats: dict[str, int] = field(default_factory=lambda: dict(BASE_STATS))
     set_counts: dict[str, int] = field(default_factory=dict)
     used_item_ids: set[str] = field(default_factory=set)
     score: float = 0.0
@@ -242,6 +254,23 @@ def score_state(state: BuildState, sets: dict[str, dict[str, Any]], final: bool)
     return score
 
 
+def survivability_score(stats: dict[str, int]) -> float:
+    elemental_res = [
+        stats.get("% Earth Resistance", 0),
+        stats.get("% Fire Resistance", 0),
+        stats.get("% Water Resistance", 0),
+        stats.get("% Air Resistance", 0),
+        stats.get("% Neutral Resistance", 0) * 0.7,
+    ]
+    return stats.get("Vitality", 0) * 0.25 + sum(elemental_res) * 12
+
+
+def final_score_state(state: BuildState) -> float:
+    damage = profile_damage(STRENGTH_PVM_PROFILE, state.stats)
+    comfort = state.stats.get("Range", 0) * 20 + state.stats.get("MP", 0) * 25
+    return damage * 2.0 + survivability_score(state.stats) + comfort
+
+
 def set_signature(state: BuildState) -> tuple[tuple[str, int], ...]:
     return tuple(sorted((set_id, count) for set_id, count in state.set_counts.items() if count > 0))
 
@@ -299,7 +328,7 @@ def find_builds(top_k: int, beam_width: int, per_signature_cap: int, relevant_se
         if state.stats.get("AP", 0) >= REQUIRED_AP and state.stats.get("MP", 0) >= REQUIRED_MP
     ]
     for state in final_states:
-        state.score = score_state(state, sets, final=True)
+        state.score = final_score_state(state)
     return dedupe_builds(sorted(final_states, key=lambda s: s.score, reverse=True))
 
 
@@ -311,6 +340,7 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
     }
     return {
         "score": round(state.score, 2),
+        "damageProfileScore": round(profile_damage(STRENGTH_PVM_PROFILE, state.stats), 2),
         "totals": {
             "AP": state.stats.get("AP", 0),
             "MP": state.stats.get("MP", 0),
