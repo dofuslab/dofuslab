@@ -10,7 +10,9 @@ from oneoff.build_discovery_prototype import (
     ACTION_STAT_SOURCE_LIMIT,
     DOFUS_ACTION_STAT_SOURCE_LIMIT,
     DOFUS_ZERO_SCORE_FILLER_LIMIT,
+    ApStrategy,
     add_item_to_state,
+    ap_strategy_matches,
     apply_missing_exos,
     candidate_pool_for_slot,
     diversify_builds,
@@ -18,6 +20,7 @@ from oneoff.build_discovery_prototype import (
     exo_search_target,
     has_negative_action_stat,
     prune_dominated_items,
+    secondary_ap_source_count,
 )
 
 
@@ -28,6 +31,61 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(target.ap, 10)
         self.assertEqual(target.mp, 5)
         self.assertEqual(target.range, 3)
+
+    def test_ap_strategy_counts_expected_payment_sources(self):
+        state = BuildState()
+        state.slots = {
+            "amulet": {
+                "dofusID": "amulet",
+                "itemType": "Amulet",
+                "_stats": {"AP": 1},
+            },
+            "hat": {
+                "dofusID": "hat",
+                "itemType": "Hat",
+                "_stats": {"AP": 1},
+            },
+            "cloak": {
+                "dofusID": "cloak",
+                "itemType": "Cloak",
+                "_stats": {},
+            },
+            "dofus_1": {
+                "dofusID": "7754",
+                "itemType": "Dofus",
+                "_stats": {"AP": 1},
+            },
+        }
+        state.used_item_ids = {"amulet", "hat", "cloak", "7754"}
+        state.exos = {"AP": "cloak"}
+        state.stats["AP"] = 11
+
+        self.assertEqual(secondary_ap_source_count(state), 2)
+        self.assertTrue(ap_strategy_matches(state, ApStrategy(name="test", require_ochre=True)))
+
+    def test_ap_strategy_requires_ap_exo(self):
+        state = BuildState()
+        state.slots = {
+            "amulet": {
+                "dofusID": "amulet",
+                "itemType": "Amulet",
+                "_stats": {"AP": 1},
+            },
+            "hat": {
+                "dofusID": "hat",
+                "itemType": "Hat",
+                "_stats": {"AP": 1},
+            },
+            "ring": {
+                "dofusID": "ring",
+                "itemType": "Ring",
+                "_stats": {"AP": 1},
+            },
+        }
+        state.used_item_ids = {"amulet", "hat", "ring"}
+        state.stats["AP"] = 10
+
+        self.assertFalse(ap_strategy_matches(state, ApStrategy(name="test")))
 
     def test_prune_dominated_items_removes_strictly_inferior_boots(self):
         weak_boots = {

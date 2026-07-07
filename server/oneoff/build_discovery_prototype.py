@@ -204,6 +204,25 @@ DEFAULT_TARGET = BuildTarget()
 DEFAULT_MAX_SHARED_ITEMS = 10
 
 
+@dataclass(frozen=True)
+class ApStrategy:
+    name: str
+    require_amulet_ap: bool = True
+    require_ap_exo: bool = True
+    require_ochre: bool = False
+    disallow_ochre: bool = False
+    min_secondary_ap_sources: int = 2
+
+
+OCHRE_DOFUS_ID = "7754"
+SHAKER_TROPHY_ID = "16333"
+DEFAULT_AP_STRATEGIES = (
+    ApStrategy(name="ochre_plus_one", require_ochre=True, min_secondary_ap_sources=2),
+    ApStrategy(name="no_ochre", disallow_ochre=True, min_secondary_ap_sources=2),
+    ApStrategy(name="flexible_two_sources", min_secondary_ap_sources=2),
+)
+
+
 def exo_search_target(final_target: BuildTarget) -> BuildTarget:
     return BuildTarget(
         ap=max(BASE_AP, final_target.ap - 1),
@@ -219,6 +238,7 @@ class BuildState:
     set_counts: dict[str, int] = field(default_factory=dict)
     used_item_ids: set[str] = field(default_factory=set)
     exos: dict[str, str] = field(default_factory=dict)
+    ap_strategy: str | None = None
     score: float = 0.0
     condition_failures: list[dict[str, Any]] = field(default_factory=list)
 
@@ -229,6 +249,7 @@ class BuildState:
             set_counts=dict(self.set_counts),
             used_item_ids=set(self.used_item_ids),
             exos=dict(self.exos),
+            ap_strategy=self.ap_strategy,
             score=self.score,
             condition_failures=list(self.condition_failures),
         )
@@ -612,6 +633,52 @@ def final_score_state(state: BuildState) -> float:
     return damage * 2.0 + survivability_score(state.stats)
 
 
+def item_stat_total(state: BuildState, stat: str) -> int:
+    return sum(item["_stats"].get(stat, 0) for item in state.slots.values())
+
+
+def set_stat_total(state: BuildState, stat: str) -> int:
+    exo_total = 1 if stat in state.exos else 0
+    return state.stats.get(stat, 0) - BASE_STATS.get(stat, 0) - item_stat_total(state, stat) - exo_total
+
+
+def has_amulet_ap(state: BuildState) -> bool:
+    return state.slots.get("amulet", {}).get("_stats", {}).get("AP", 0) > 0
+
+
+def uncommon_ap_gear_slots(state: BuildState) -> set[str]:
+    return {
+        slot
+        for slot, item in state.slots.items()
+        if slot != "amulet"
+        and not slot.startswith("dofus_")
+        and item["_stats"].get("AP", 0) > 0
+    }
+
+
+def secondary_ap_source_count(state: BuildState) -> int:
+    count = len(uncommon_ap_gear_slots(state))
+    if OCHRE_DOFUS_ID in state.used_item_ids:
+        count += 1
+    if SHAKER_TROPHY_ID in state.used_item_ids:
+        count += 1
+    if set_stat_total(state, "AP") > 0:
+        count += 1
+    return count
+
+
+def ap_strategy_matches(state: BuildState, strategy: ApStrategy) -> bool:
+    if strategy.require_amulet_ap and not has_amulet_ap(state):
+        return False
+    if strategy.require_ap_exo and "AP" not in state.exos:
+        return False
+    if strategy.require_ochre and OCHRE_DOFUS_ID not in state.used_item_ids:
+        return False
+    if strategy.disallow_ochre and OCHRE_DOFUS_ID in state.used_item_ids:
+        return False
+    return secondary_ap_source_count(state) >= strategy.min_secondary_ap_sources
+
+
 def set_signature(state: BuildState) -> tuple[tuple[str, int], ...]:
     return tuple(sorted((set_id, count) for set_id, count in state.set_counts.items() if count > 0))
 
@@ -642,6 +709,7 @@ def dedupe_builds(states: list[BuildState]) -> list[BuildState]:
 def completed_valid_builds(
     beam: list[BuildState],
     target: BuildTarget,
+    ap_strategy: ApStrategy | None = None,
 ) -> list[BuildState]:
     valid_final_states = []
     for state in beam:
@@ -657,6 +725,10 @@ def completed_valid_builds(
         state_with_exos.condition_failures = unmet_item_conditions(state_with_exos)
         if state_with_exos.condition_failures:
             continue
+        if ap_strategy and not ap_strategy_matches(state_with_exos, ap_strategy):
+            continue
+        if ap_strategy:
+            state_with_exos.ap_strategy = ap_strategy.name
         state_with_exos.score = final_score_state(state_with_exos)
         valid_final_states.append(state_with_exos)
     return valid_final_states
@@ -670,6 +742,7 @@ def search_slot_order(
     search_target: BuildTarget,
     beam_width: int,
     per_signature_cap: int,
+    ap_strategy: ApStrategy | None = None,
 ) -> list[BuildState]:
     beam = [BuildState()]
     for slot_name in slot_order:
@@ -689,7 +762,7 @@ def search_slot_order(
                     next_states.append(next_state)
         beam = trim_beam(next_states, beam_width, per_signature_cap)
 
-    return completed_valid_builds(beam, target)
+    return completed_valid_builds(beam, target, ap_strategy)
 
 
 def diversify_builds(states: list[BuildState], max_shared_items: int | None) -> list[BuildState]:
@@ -715,6 +788,7 @@ def find_builds(
     max_shared_items: int | None = DEFAULT_MAX_SHARED_ITEMS,
     excluded_item_ids: set[str] | None = None,
     slot_orders: list[tuple[str, ...]] = DEFAULT_SLOT_ORDERS,
+    ap_strategies: tuple[ApStrategy, ...] = DEFAULT_AP_STRATEGIES,
 ) -> list[BuildState]:
     items = load_items(target, excluded_item_ids)
     sets = load_sets()
@@ -731,18 +805,20 @@ def find_builds(
     }
 
     valid_final_states = []
-    for slot_order in slot_orders:
-        valid_final_states.extend(
-            search_slot_order(
-                slot_order=slot_order,
-                pools=pools,
-                sets=sets,
-                target=target,
-                search_target=search_target,
-                beam_width=beam_width,
-                per_signature_cap=per_signature_cap,
+    for ap_strategy in ap_strategies:
+        for slot_order in slot_orders:
+            valid_final_states.extend(
+                search_slot_order(
+                    slot_order=slot_order,
+                    pools=pools,
+                    sets=sets,
+                    target=target,
+                    search_target=search_target,
+                    beam_width=beam_width,
+                    per_signature_cap=per_signature_cap,
+                    ap_strategy=ap_strategy,
+                )
             )
-        )
     ranked_states = dedupe_builds(sorted(valid_final_states, key=lambda s: s.score, reverse=True))
     return diversify_builds(ranked_states, max_shared_items)
 
@@ -834,6 +910,7 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
     return {
         "score": round(state.score, 2),
         "damageProfileScore": round(profile_damage(STRENGTH_PVM_PROFILE, state.stats), 2),
+        "apStrategy": state.ap_strategy,
         "conditionFailures": state.condition_failures,
         "totals": {
             "AP": state.stats.get("AP", 0),
