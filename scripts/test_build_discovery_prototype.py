@@ -18,8 +18,10 @@ from oneoff.build_discovery_prototype import (
     diversify_builds,
     dominates_item,
     exo_search_target,
+    exo_natural_cap_target,
     has_negative_action_stat,
     prune_dominated_items,
+    score_state,
     secondary_ap_source_count,
 )
 
@@ -31,6 +33,22 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(target.ap, 10)
         self.assertEqual(target.mp, 5)
         self.assertEqual(target.range, 3)
+
+    def test_exo_natural_cap_target_reserves_ap_exo(self):
+        target = exo_natural_cap_target(BuildTarget(ap=11, mp=6, range=4))
+
+        self.assertEqual(target.ap, 10)
+        self.assertEqual(target.mp, 6)
+        self.assertEqual(target.range, 4)
+
+    def test_score_state_treats_mp_and_range_as_small_feasibility_hints(self):
+        target = BuildTarget(ap=7, mp=6, range=4)
+        baseline = BuildState()
+        with_mp_range = BuildState()
+        with_mp_range.stats["MP"] = 6
+        with_mp_range.stats["Range"] = 4
+
+        self.assertEqual(score_state(with_mp_range, {}, target) - score_state(baseline, {}, target), 325)
 
     def test_ap_strategy_counts_expected_payment_sources(self):
         state = BuildState()
@@ -330,7 +348,7 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
     def test_search_target_can_score_lower_than_final_cap(self):
         search_target = BuildTarget(ap=10, mp=5)
-        final_target = BuildTarget(ap=11, mp=6)
+        natural_cap_target = BuildTarget(ap=11, mp=6)
         state = BuildState()
         state.stats["AP"] = 10
         item = {
@@ -345,11 +363,33 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             item,
             {},
             search_target,
-            cap_target=final_target,
+            cap_target=natural_cap_target,
         )
 
         self.assertIsNotNone(next_state)
         self.assertEqual(next_state.stats["AP"], 11)
+
+    def test_reserved_exo_cap_rejects_native_mp_at_final_target(self):
+        search_target = BuildTarget(ap=10, mp=5)
+        natural_cap_target = BuildTarget(ap=10, mp=5)
+        state = BuildState()
+        state.stats["MP"] = 5
+        item = {
+            "dofusID": "1",
+            "setID": None,
+            "stats": [{"stat": "MP", "maxStat": 1}],
+        }
+
+        self.assertIsNone(
+            add_item_to_state(
+                state,
+                "ring_1",
+                item,
+                {},
+                search_target,
+                cap_target=natural_cap_target,
+            )
+        )
 
     def test_ap_exo_can_fill_missing_ap_on_completed_build(self):
         target = BuildTarget(ap=8, mp=3)

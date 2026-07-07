@@ -231,6 +231,14 @@ def exo_search_target(final_target: BuildTarget) -> BuildTarget:
     )
 
 
+def exo_natural_cap_target(final_target: BuildTarget) -> BuildTarget:
+    return BuildTarget(
+        ap=max(BASE_AP, final_target.ap - 1),
+        mp=final_target.mp,
+        range=final_target.range,
+    )
+
+
 @dataclass
 class BuildState:
     slots: dict[str, dict[str, Any]] = field(default_factory=dict)
@@ -610,8 +618,8 @@ def score_state(
     mp_gap = max(target.mp - state.stats.get("MP", 0), 0)
     range_gap = max(target.range - state.stats.get("Range", 0), 0)
     score -= ap_gap * 500
-    score -= mp_gap * 450
-    score -= range_gap * 150
+    score -= mp_gap * 75
+    score -= range_gap * 25
     if not final:
         score += potential_set_bonus_score(state, sets)
     return score
@@ -740,6 +748,7 @@ def search_slot_order(
     sets: dict[str, dict[str, Any]],
     target: BuildTarget,
     search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
     beam_width: int,
     per_signature_cap: int,
     ap_strategy: ApStrategy | None = None,
@@ -756,7 +765,7 @@ def search_slot_order(
                     sets,
                     search_target,
                     condition_target=target,
-                    cap_target=target,
+                    cap_target=natural_cap_target,
                 )
                 if next_state:
                     next_states.append(next_state)
@@ -799,6 +808,7 @@ def find_builds(
     ]
     relevant_sets = relevant_set_ids(items, sets, relevant_set_limit)
     search_target = exo_search_target(target)
+    natural_cap_target = exo_natural_cap_target(target)
     pools = {
         slot_name: candidate_pool_for_slot(slot_types, items, relevant_sets, top_k)
         for slot_name, slot_types in SLOTS
@@ -814,6 +824,7 @@ def find_builds(
                     sets=sets,
                     target=target,
                     search_target=search_target,
+                    natural_cap_target=natural_cap_target,
                     beam_width=beam_width,
                     per_signature_cap=per_signature_cap,
                     ap_strategy=ap_strategy,
