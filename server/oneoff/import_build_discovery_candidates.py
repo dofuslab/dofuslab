@@ -115,7 +115,7 @@ def main() -> None:
 
     target = BuildTarget(ap=args.target_ap, mp=args.target_mp, range=args.target_range)
     builds = find_diverse_builds(
-        limit=args.limit + 5,
+        limit=args.limit,
         top_k=args.top_k,
         beam_width=args.beam_width,
         per_signature_cap=40,

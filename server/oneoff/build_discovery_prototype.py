@@ -1,12 +1,10 @@
 """Narrow build-discovery prototype for DofusLab.
 
-This is intentionally standalone: it reads the static game-data JSON files and
-prints candidate Level 200 Strength PvM builds without touching Flask, GraphQL,
-or the database. The goal is to make the search/ranking loop easy to inspect
-before wiring it into product code.
+This reads the local database and prints candidate Level 200 Strength PvM builds
+without touching GraphQL. The goal is to make the search/ranking loop easy to
+inspect before wiring it into product code.
 
 Known prototype limitations:
-- item conditions are ignored
 - trophy/dofus exclusivity rules are not modeled
 - scoring is a rough stat proxy, not real spell/weapon damage
 """
@@ -18,7 +16,6 @@ import json
 import time
 from collections import defaultdict
 from dataclasses import dataclass, field
-from pathlib import Path
 from typing import Any, Iterable
 
 from oneoff.condition_evaluator import (
@@ -27,10 +24,6 @@ from oneoff.condition_evaluator import (
     unmet_item_conditions,
 )
 from oneoff.damage_calculator import STRENGTH_PVM_PROFILE, profile_damage
-
-
-SERVER_ROOT = Path(__file__).resolve().parents[1]
-DATA_DIR = SERVER_ROOT / "app" / "database" / "data"
 
 TARGET_LEVEL = 200
 BASE_AP = 7 if TARGET_LEVEL >= 100 else 6
@@ -89,6 +82,61 @@ STAT_WEIGHTS = {
 
 EXCLUDED_SET_NAME_PARTS = ("Khardboard",)
 
+DB_STAT_NAMES = {
+    "VITALITY": "Vitality",
+    "AP": "AP",
+    "MP": "MP",
+    "INITIATIVE": "Initiative",
+    "PROSPECTING": "Prospecting",
+    "RANGE": "Range",
+    "SUMMON": "Summons",
+    "WISDOM": "Wisdom",
+    "STRENGTH": "Strength",
+    "INTELLIGENCE": "Intelligence",
+    "CHANCE": "Chance",
+    "AGILITY": "Agility",
+    "AP_PARRY": "AP Parry",
+    "AP_REDUCTION": "AP Reduction",
+    "MP_PARRY": "MP Parry",
+    "MP_REDUCTION": "MP Reduction",
+    "CRITICAL": "Critical",
+    "HEALS": "Heals",
+    "LOCK": "Lock",
+    "DODGE": "Dodge",
+    "PCT_FINAL_DAMAGE": "% Final Damage",
+    "POWER": "Power",
+    "DAMAGE": "Damage",
+    "CRITICAL_DAMAGE": "Critical Damage",
+    "NEUTRAL_DAMAGE": "Neutral Damage",
+    "EARTH_DAMAGE": "Earth Damage",
+    "FIRE_DAMAGE": "Fire Damage",
+    "WATER_DAMAGE": "Water Damage",
+    "AIR_DAMAGE": "Air Damage",
+    "REFLECT": "Reflect",
+    "TRAP_DAMAGE": "Trap Damage",
+    "TRAP_POWER": "Trap Power",
+    "PUSHBACK_DAMAGE": "Pushback Damage",
+    "PCT_SPELL_DAMAGE": "% Spell Damage",
+    "PCT_WEAPON_DAMAGE": "% Weapon Damage",
+    "PCT_RANGED_DAMAGE": "% Ranged Damage",
+    "PCT_MELEE_DAMAGE": "% Melee Damage",
+    "NEUTRAL_RES": "Neutral Resistance",
+    "PCT_NEUTRAL_RES": "% Neutral Resistance",
+    "EARTH_RES": "Earth Resistance",
+    "PCT_EARTH_RES": "% Earth Resistance",
+    "FIRE_RES": "Fire Resistance",
+    "PCT_FIRE_RES": "% Fire Resistance",
+    "WATER_RES": "Water Resistance",
+    "PCT_WATER_RES": "% Water Resistance",
+    "AIR_RES": "Air Resistance",
+    "PCT_AIR_RES": "% Air Resistance",
+    "CRITICAL_RES": "Critical Resistance",
+    "PUSHBACK_RES": "Pushback Resistance",
+    "PCT_RANGED_RES": "% Ranged Resistance",
+    "PCT_MELEE_RES": "% Melee Resistance",
+    "PODS": "Pods",
+}
+
 
 @dataclass(frozen=True)
 class BuildTarget:
@@ -131,11 +179,6 @@ class BuildState:
         )
 
 
-def load_json(filename: str) -> Any:
-    with (DATA_DIR / filename).open(encoding="utf-8") as f:
-        return json.load(f)
-
-
 def normalize_stats(lines: Iterable[dict[str, Any]]) -> dict[str, int]:
     stats: dict[str, int] = defaultdict(int)
     for line in lines:
@@ -151,6 +194,50 @@ def get_name(entity: dict[str, Any]) -> str:
     if isinstance(name, dict):
         return name.get("en") or next(iter(name.values()))
     return str(name)
+
+
+def db_stat_name(stat: Any) -> str | None:
+    if stat is None:
+        return None
+    stat_key = getattr(stat, "name", str(stat))
+    if "." in stat_key:
+        stat_key = stat_key.rsplit(".", 1)[-1]
+    return DB_STAT_NAMES.get(stat_key, stat_key)
+
+
+def translated_name(translations: Iterable[Any], default: str) -> str:
+    translations = list(translations)
+    english = next((translation for translation in translations if translation.locale == "en"), None)
+    return (english or translations[0]).name if translations else default
+
+
+def item_stats_from_db(stats: Iterable[Any]) -> list[dict[str, Any]]:
+    stat_lines = []
+    for stat in sorted(stats, key=lambda item_stat: item_stat.order):
+        stat_name = db_stat_name(stat.stat)
+        if stat_name:
+            stat_lines.append(
+                {
+                    "stat": stat_name,
+                    "minStat": stat.min_value,
+                    "maxStat": stat.max_value,
+                }
+            )
+    return stat_lines
+
+
+def set_bonuses_from_db(bonuses: Iterable[Any]) -> dict[str, list[dict[str, Any]]]:
+    bonus_lines_by_count: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for bonus in sorted(bonuses, key=lambda set_bonus: set_bonus.num_items):
+        stat_name = db_stat_name(bonus.stat)
+        if stat_name:
+            bonus_lines_by_count[str(bonus.num_items)].append(
+                {
+                    "stat": stat_name,
+                    "value": bonus.value,
+                }
+            )
+    return dict(bonus_lines_by_count)
 
 
 def score_stats(stats: dict[str, int]) -> float:
@@ -178,7 +265,37 @@ def load_items(
     excluded_item_ids: set[str] | None = None,
 ) -> list[dict[str, Any]]:
     excluded_item_ids = excluded_item_ids or set()
-    items = load_json("items.json") + load_json("weapons.json") + load_json("pets.json")
+    from sqlalchemy.orm import joinedload
+
+    from app import session_scope
+    from app.database.model_item import ModelItem
+    from app.database.model_item_type import ModelItemType
+
+    with session_scope() as db_session:
+        db_items = (
+            db_session.query(ModelItem)
+            .join(ModelItem.item_type)
+            .options(
+                joinedload(ModelItem.item_translations),
+                joinedload(ModelItem.stats),
+                joinedload(ModelItem.item_type).joinedload(ModelItemType.item_type_translation),
+            )
+            .filter(ModelItem.level <= TARGET_LEVEL)
+            .filter(ModelItem.dofus_db_id.isnot(None))
+            .all()
+        )
+        items = [
+            {
+                "dofusID": item.dofus_db_id,
+                "name": translated_name(item.item_translations, item.dofus_db_id),
+                "itemType": translated_name(item.item_type.item_type_translation, str(item.item_type_id)),
+                "setID": str(item.set_id) if item.set_id else None,
+                "level": item.level,
+                "stats": item_stats_from_db(item.stats),
+                "conditions": item.conditions or {"conditions": {}, "customConditions": {}},
+            }
+            for item in db_items
+        ]
     candidates = [
         item
         for item in items
@@ -198,7 +315,25 @@ def load_items(
 
 
 def load_sets() -> dict[str, dict[str, Any]]:
-    sets = {set_obj["id"]: set_obj for set_obj in load_json("sets.json")}
+    from sqlalchemy.orm import joinedload
+
+    from app import session_scope
+    from app.database.model_set import ModelSet
+
+    with session_scope() as db_session:
+        db_sets = (
+            db_session.query(ModelSet)
+            .options(joinedload(ModelSet.set_translation), joinedload(ModelSet.bonuses))
+            .all()
+        )
+        sets = {
+            str(set_obj.uuid): {
+                "id": str(set_obj.uuid),
+                "name": translated_name(set_obj.set_translation, set_obj.dofus_db_id),
+                "bonuses": set_bonuses_from_db(set_obj.bonuses),
+            }
+            for set_obj in db_sets
+        }
     for set_obj in sets.values():
         set_obj["_name"] = get_name(set_obj)
         set_obj["_excluded"] = any(part in set_obj["_name"] for part in EXCLUDED_SET_NAME_PARTS)
