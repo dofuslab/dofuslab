@@ -9,12 +9,15 @@ from oneoff.build_discovery_prototype import (
     BuildTarget,
     ACTION_STAT_SOURCE_LIMIT,
     ACTION_STAT_SOURCE_MIN_LEVEL,
+    DOFUS_AP_SOURCE_LIMIT,
     DOFUS_ACTION_STAT_SOURCE_LIMIT,
     DOFUS_ZERO_SCORE_FILLER_LIMIT,
     RELEVANT_SET_ITEM_MIN_LEVEL,
     ApStrategy,
+    DEFAULT_AP_STRATEGIES,
     add_item_to_state,
     ap_strategy_matches,
+    approach_item_ids,
     apply_missing_exos,
     candidate_pool_for_slot,
     diversify_builds,
@@ -106,6 +109,32 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         state.stats["AP"] = 10
 
         self.assertFalse(ap_strategy_matches(state, ApStrategy(name="test")))
+
+    def test_no_ochre_strategy_accepts_one_secondary_ap_source(self):
+        no_ochre = next(strategy for strategy in DEFAULT_AP_STRATEGIES if strategy.name == "no_ochre")
+        state = BuildState()
+        state.slots = {
+            "amulet": {
+                "dofusID": "amulet",
+                "itemType": "Amulet",
+                "_stats": {"AP": 1},
+            },
+            "cloak": {
+                "dofusID": "cloak",
+                "itemType": "Cloak",
+                "_stats": {},
+            },
+            "belt": {
+                "dofusID": "belt",
+                "itemType": "Belt",
+                "_stats": {"AP": 1},
+            },
+        }
+        state.used_item_ids = {"amulet", "cloak", "belt"}
+        state.exos = {"AP": "cloak"}
+        state.stats["AP"] = 10
+
+        self.assertTrue(ap_strategy_matches(state, no_ochre))
 
     def test_prune_dominated_items_removes_strictly_inferior_boots(self):
         weak_boots = {
@@ -311,6 +340,29 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         action_count = sum(1 for item in pool if item["_stats"].get("MP", 0) > 0)
         self.assertEqual(action_count, DOFUS_ACTION_STAT_SOURCE_LIMIT)
         self.assertIn(stat_item, pool)
+
+    def test_candidate_pool_keeps_ochre_and_shaker_for_ap_strategies(self):
+        action_items = [
+            {
+                "dofusID": f"ap_{idx}",
+                "itemType": "Trophy",
+                "setID": None,
+                "level": DOFUS_AP_SOURCE_LIMIT + 3 - idx,
+                "_stats": {"AP": 1},
+                "_score": idx,
+            }
+            for idx in range(DOFUS_AP_SOURCE_LIMIT + 3)
+        ]
+
+        pool = candidate_pool_for_slot(
+            ("Dofus", "Trophy", "Prysmaradite"),
+            action_items,
+            relevant_sets=set(),
+            top_k=0,
+        )
+
+        action_count = sum(1 for item in pool if item["_stats"].get("AP", 0) > 0)
+        self.assertEqual(action_count, DOFUS_AP_SOURCE_LIMIT)
 
     def test_candidate_pool_allows_limited_zero_score_dofus_fillers(self):
         zero_score_items = [{
@@ -590,6 +642,18 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             diversify_builds([first, near_duplicate, different], max_shared_items=9),
             [first, different],
         )
+
+    def test_approach_item_ids_include_completed_set_items(self):
+        state = BuildState()
+        state.slots = {
+            "hat": {"dofusID": "hat", "setID": "set_a"},
+            "cloak": {"dofusID": "cloak", "setID": "set_a"},
+            "ring_1": {"dofusID": "ring", "setID": "set_a"},
+            "pet": {"dofusID": "pet", "setID": None},
+        }
+        state.set_counts = {"set_a": 3}
+
+        self.assertEqual(approach_item_ids(state), {"hat", "cloak", "ring"})
 
 
 if __name__ == "__main__":

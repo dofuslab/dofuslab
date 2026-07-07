@@ -38,6 +38,7 @@ ACTION_STATS = ("AP", "MP", "Range")
 ACTION_STAT_SOURCE_LIMIT = 4
 ACTION_STAT_SOURCE_MIN_LEVEL = 180
 DOFUS_ACTION_STAT_SOURCE_LIMIT = 1
+DOFUS_AP_SOURCE_LIMIT = 2
 DOFUS_ZERO_SCORE_FILLER_LIMIT = 4
 EXO_ELIGIBLE_ITEM_TYPES = {
     "Hat",
@@ -220,7 +221,7 @@ OCHRE_DOFUS_ID = "7754"
 SHAKER_TROPHY_ID = "16333"
 DEFAULT_AP_STRATEGIES = (
     ApStrategy(name="ochre_plus_one", require_ochre=True, min_secondary_ap_sources=2),
-    ApStrategy(name="no_ochre", disallow_ochre=True, min_secondary_ap_sources=2),
+    ApStrategy(name="no_ochre", disallow_ochre=True, min_secondary_ap_sources=1),
     ApStrategy(name="flexible_two_sources", min_secondary_ap_sources=2),
 )
 
@@ -516,6 +517,9 @@ def candidate_pool_for_slot(
         else ACTION_STAT_SOURCE_LIMIT
     )
     for stat in ACTION_STATS:
+        stat_source_limit = action_source_limit
+        if is_dofus_slot and stat == "AP":
+            stat_source_limit = DOFUS_AP_SOURCE_LIMIT
         stat_sources = [
             item
             for item in search_compatible
@@ -526,7 +530,7 @@ def candidate_pool_for_slot(
             stat_sources,
             key=lambda i: (i["_score"], i.get("level", 0)),
             reverse=True,
-        )[:action_source_limit]:
+        )[:stat_source_limit]:
             selected[item["dofusID"]] = item
 
     for item in relevant_set_items:
@@ -847,17 +851,25 @@ def find_builds(
 
 
 def approach_item_ids(state: BuildState) -> set[str]:
-    key_slots = ("amulet", "weapon", "shield")
+    key_slots = ("amulet", "belt", "weapon", "shield", "hat", "cloak")
     return {
         state.slots[slot]["dofusID"]
         for slot in key_slots
         if slot in state.slots
+    } | {
+        item["dofusID"]
+        for item in state.slots.values()
+        if item.get("setID")
+        and state.set_counts.get(item["setID"], 0) >= 2
     }
 
 
 def approach_key(state: BuildState) -> tuple[str | None, ...]:
-    key_slots = ("amulet", "weapon", "shield")
-    return tuple(state.slots.get(slot, {}).get("dofusID") for slot in key_slots)
+    key_slots = ("amulet", "belt", "weapon", "shield", "hat", "cloak")
+    used_sets = tuple(
+        sorted(set_id for set_id, count in state.set_counts.items() if count >= 2)
+    )
+    return tuple(state.slots.get(slot, {}).get("dofusID") for slot in key_slots) + used_sets
 
 
 def find_diverse_builds(
