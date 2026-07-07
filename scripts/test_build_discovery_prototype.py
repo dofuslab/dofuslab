@@ -7,8 +7,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 from oneoff.build_discovery_prototype import (
     BuildState,
     BuildTarget,
+    ACTION_STAT_SOURCE_LIMIT,
+    DOFUS_ACTION_STAT_SOURCE_LIMIT,
+    DOFUS_ZERO_SCORE_FILLER_LIMIT,
     add_item_to_state,
     apply_missing_exos,
+    candidate_pool_for_slot,
     diversify_builds,
     dominates_item,
     exo_search_target,
@@ -80,6 +84,109 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertTrue(dominates_item(strong_boots, weak_boots))
         self.assertEqual(prune_dominated_items([weak_boots, strong_boots]), [strong_boots])
+
+    def test_candidate_pool_caps_gear_action_stat_sources(self):
+        action_items = [
+            {
+                "dofusID": f"mp_{idx}",
+                "itemType": "Boots",
+                "setID": None,
+                "level": ACTION_STAT_SOURCE_LIMIT + 3 - idx,
+                "_stats": {"MP": 1},
+                "_score": idx,
+            }
+            for idx in range(ACTION_STAT_SOURCE_LIMIT + 3)
+        ]
+        stat_item = {
+            "dofusID": "stat_item",
+            "itemType": "Boots",
+            "setID": None,
+            "level": 150,
+            "_stats": {"Strength": 100},
+            "_score": 100,
+        }
+
+        pool = candidate_pool_for_slot(
+            ("Boots",),
+            [*action_items, stat_item],
+            relevant_sets=set(),
+            top_k=1,
+        )
+
+        action_count = sum(1 for item in pool if item["_stats"].get("MP", 0) > 0)
+        self.assertEqual(action_count, ACTION_STAT_SOURCE_LIMIT)
+        self.assertIn(stat_item, pool)
+
+    def test_candidate_pool_caps_dofus_action_stat_sources_more_tightly(self):
+        action_items = [
+            {
+                "dofusID": f"mp_{idx}",
+                "itemType": "Trophy",
+                "setID": None,
+                "level": DOFUS_ACTION_STAT_SOURCE_LIMIT + 3 - idx,
+                "_stats": {"MP": 1},
+                "_score": idx,
+            }
+            for idx in range(DOFUS_ACTION_STAT_SOURCE_LIMIT + 3)
+        ]
+        stat_item = {
+            "dofusID": "stat_item",
+            "itemType": "Dofus",
+            "setID": None,
+            "level": 150,
+            "_stats": {"Strength": 100},
+            "_score": 100,
+        }
+
+        pool = candidate_pool_for_slot(
+            ("Dofus", "Trophy", "Prysmaradite"),
+            [*action_items, stat_item],
+            relevant_sets=set(),
+            top_k=1,
+        )
+
+        action_count = sum(1 for item in pool if item["_stats"].get("MP", 0) > 0)
+        self.assertEqual(action_count, DOFUS_ACTION_STAT_SOURCE_LIMIT)
+        self.assertIn(stat_item, pool)
+
+    def test_candidate_pool_allows_limited_zero_score_dofus_fillers(self):
+        zero_score_items = [{
+            "dofusID": f"zero_{idx}",
+            "itemType": "Dofus",
+            "setID": None,
+            "level": idx,
+            "_stats": {},
+            "_score": 0,
+        } for idx in range(DOFUS_ZERO_SCORE_FILLER_LIMIT + 2)]
+        zero_score_action_item = {
+            "dofusID": "zero",
+            "itemType": "Dofus",
+            "setID": None,
+            "level": 180,
+            "_stats": {"MP": 1},
+            "_score": 0,
+        }
+        stat_item = {
+            "dofusID": "stat_item",
+            "itemType": "Dofus",
+            "setID": None,
+            "level": 150,
+            "_stats": {"Strength": 100},
+            "_score": 100,
+        }
+
+        pool = candidate_pool_for_slot(
+            ("Dofus", "Trophy", "Prysmaradite"),
+            [*zero_score_items, zero_score_action_item, stat_item],
+            relevant_sets=set(),
+            top_k=2,
+        )
+
+        zero_score_filler_count = sum(
+            1 for item in pool if item["_score"] == 0 and not item["_stats"]
+        )
+        self.assertEqual(zero_score_filler_count, DOFUS_ZERO_SCORE_FILLER_LIMIT)
+        self.assertIn(stat_item, pool)
 
     def test_ap_set_bonus_applies_when_threshold_is_reached(self):
         sets = {

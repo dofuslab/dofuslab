@@ -33,6 +33,10 @@ REQUIRED_MP = 6
 REQUIRED_RANGE = 0
 MAX_AP = 12
 MAX_MP = 6
+ACTION_STATS = ("AP", "MP", "Range")
+ACTION_STAT_SOURCE_LIMIT = 4
+DOFUS_ACTION_STAT_SOURCE_LIMIT = 1
+DOFUS_ZERO_SCORE_FILLER_LIMIT = 4
 EXO_ELIGIBLE_ITEM_TYPES = {
     "Hat",
     "Cloak",
@@ -442,16 +446,49 @@ def candidate_pool_for_slot(
     relevant_sets: set[str],
     top_k: int,
 ) -> list[dict[str, Any]]:
-    compatible = prune_dominated_items([item for item in items if item.get("itemType") in slot_types])
+    is_dofus_slot = all(slot_type in {"Dofus", "Trophy", "Prysmaradite"} for slot_type in slot_types)
+    compatible = [item for item in items if item.get("itemType") in slot_types]
+    if not is_dofus_slot:
+        compatible = prune_dominated_items(compatible)
     selected: dict[str, dict[str, Any]] = {}
 
-    for item in sorted(compatible, key=lambda i: i["_score"], reverse=True)[:top_k]:
+    top_score_candidates = compatible
+    if is_dofus_slot:
+        top_score_candidates = [item for item in compatible if item["_score"] > 0]
+    for item in sorted(top_score_candidates, key=lambda i: i["_score"], reverse=True)[:top_k]:
         selected[item["dofusID"]] = item
 
-    for item in compatible:
-        stats = item["_stats"]
-        if stats.get("AP") or stats.get("MP") or stats.get("Range"):
+    if is_dofus_slot:
+        zero_score_fillers = [
+            item
+            for item in compatible
+            if item["_score"] == 0
+            and all(item["_stats"].get(stat, 0) == 0 for stat in ACTION_STATS)
+        ]
+        for item in sorted(zero_score_fillers, key=lambda i: i.get("level", 0), reverse=True)[
+            :DOFUS_ZERO_SCORE_FILLER_LIMIT
+        ]:
             selected[item["dofusID"]] = item
+
+    action_source_limit = (
+        DOFUS_ACTION_STAT_SOURCE_LIMIT
+        if is_dofus_slot
+        else ACTION_STAT_SOURCE_LIMIT
+    )
+    for stat in ACTION_STATS:
+        stat_sources = [
+            item
+            for item in compatible
+            if item["_stats"].get(stat, 0) > 0
+        ]
+        for item in sorted(
+            stat_sources,
+            key=lambda i: (i["_score"], i.get("level", 0)),
+            reverse=True,
+        )[:action_source_limit]:
+            selected[item["dofusID"]] = item
+
+    for item in compatible:
         if item.get("setID") in relevant_sets:
             selected[item["dofusID"]] = item
 
