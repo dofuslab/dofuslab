@@ -110,6 +110,26 @@ class ConditionEvaluatorTest(unittest.TestCase):
             )
         )
 
+    def test_target_forced_conditions_prune_impossible_set_bonus_trophy(self):
+        condition = {"stat": "SET_BONUS", "operator": "<", "value": 3}
+
+        self.assertTrue(
+            forced_target_condition_holds(
+                condition,
+                {},
+                {"set_a": 2, "set_b": 1},
+                {},
+            )
+        )
+        self.assertFalse(
+            forced_target_condition_holds(
+                condition,
+                {},
+                {"set_a": 3, "set_b": 2},
+                {},
+            )
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

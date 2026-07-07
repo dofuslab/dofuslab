@@ -166,6 +166,8 @@ def forced_target_condition_holds(
     if not condition_obj:
         return True
     if is_leaf_condition(condition_obj):
+        if condition_obj["stat"] == "SET_BONUS" and condition_obj["operator"] == "<":
+            return traverse_conditions(condition_obj, stats, set_counts)
         return True
     if condition_obj.get("and"):
         return all(

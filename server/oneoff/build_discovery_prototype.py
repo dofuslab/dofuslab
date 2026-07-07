@@ -16,6 +16,7 @@ import json
 import time
 from collections import defaultdict
 from dataclasses import dataclass, field
+from itertools import combinations, product
 from typing import Any, Iterable
 
 from oneoff.condition_evaluator import (
@@ -40,6 +41,8 @@ ACTION_STAT_SOURCE_MIN_LEVEL = 180
 DOFUS_ACTION_STAT_SOURCE_LIMIT = 1
 DOFUS_AP_SOURCE_LIMIT = 2
 DOFUS_ZERO_SCORE_FILLER_LIMIT = 4
+AP_SET_BONUS_SEED_LIMIT = 80
+AP_SET_BONUS_SEED_LIMIT_PER_SET = 12
 EXO_ELIGIBLE_ITEM_TYPES = {
     "Hat",
     "Cloak",
@@ -214,6 +217,9 @@ class ApStrategy:
     require_ap_exo: bool = True
     require_ochre: bool = False
     disallow_ochre: bool = False
+    require_ap_set_bonus: bool = False
+    disallow_ap_set_bonus: bool = False
+    disallow_ap_weapon: bool = False
     min_secondary_ap_sources: int = 2
 
 
@@ -221,6 +227,17 @@ OCHRE_DOFUS_ID = "7754"
 SHAKER_TROPHY_ID = "16333"
 DEFAULT_AP_STRATEGIES = (
     ApStrategy(name="ochre_plus_one", require_ochre=True, min_secondary_ap_sources=2),
+    ApStrategy(
+        name="set_bonus_ap",
+        require_ap_set_bonus=True,
+        disallow_ap_weapon=True,
+        min_secondary_ap_sources=1,
+    ),
+    ApStrategy(
+        name="no_set_bonus_ap",
+        disallow_ap_set_bonus=True,
+        min_secondary_ap_sources=1,
+    ),
     ApStrategy(name="no_ochre", disallow_ochre=True, min_secondary_ap_sources=1),
     ApStrategy(name="flexible_two_sources", min_secondary_ap_sources=2),
 )
@@ -670,6 +687,14 @@ def has_amulet_ap(state: BuildState) -> bool:
     return state.slots.get("amulet", {}).get("_stats", {}).get("AP", 0) > 0
 
 
+def has_ap_weapon(state: BuildState) -> bool:
+    return state.slots.get("weapon", {}).get("_stats", {}).get("AP", 0) > 0
+
+
+def has_ap_set_bonus(state: BuildState) -> bool:
+    return set_stat_total(state, "AP") > 0
+
+
 def uncommon_ap_gear_slots(state: BuildState) -> set[str]:
     return {
         slot
@@ -686,7 +711,7 @@ def secondary_ap_source_count(state: BuildState) -> int:
         count += 1
     if SHAKER_TROPHY_ID in state.used_item_ids:
         count += 1
-    if set_stat_total(state, "AP") > 0:
+    if has_ap_set_bonus(state):
         count += 1
     return count
 
@@ -699,6 +724,12 @@ def ap_strategy_matches(state: BuildState, strategy: ApStrategy) -> bool:
     if strategy.require_ochre and OCHRE_DOFUS_ID not in state.used_item_ids:
         return False
     if strategy.disallow_ochre and OCHRE_DOFUS_ID in state.used_item_ids:
+        return False
+    if strategy.require_ap_set_bonus and not has_ap_set_bonus(state):
+        return False
+    if strategy.disallow_ap_set_bonus and has_ap_set_bonus(state):
+        return False
+    if strategy.disallow_ap_weapon and has_ap_weapon(state):
         return False
     return secondary_ap_source_count(state) >= strategy.min_secondary_ap_sources
 
@@ -758,6 +789,75 @@ def completed_valid_builds(
     return valid_final_states
 
 
+def ap_set_bonus_seed_states(
+    pools: dict[str, list[dict[str, Any]]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+    limit: int = AP_SET_BONUS_SEED_LIMIT,
+    limit_per_set: int = AP_SET_BONUS_SEED_LIMIT_PER_SET,
+) -> list[BuildState]:
+    seeds: list[BuildState] = []
+    slot_order = tuple(slot_name for slot_name, _ in SLOTS)
+
+    items_by_set: dict[str, dict[str, tuple[dict[str, Any], set[str]]]] = defaultdict(dict)
+    for slot_name, pool in pools.items():
+        for item in pool:
+            set_id = item.get("setID")
+            if not set_id:
+                continue
+            item_entry = items_by_set[set_id].setdefault(item["dofusID"], (item, set()))
+            item_entry[1].add(slot_name)
+
+    for set_id, set_data in sets.items():
+        ap_thresholds = [
+            int(count)
+            for count, bonuses in set_data.get("bonuses", {}).items()
+            if any(bonus.get("stat") == "AP" and bonus.get("value", 0) > 0 for bonus in bonuses)
+        ]
+        if not ap_thresholds or set_id not in items_by_set:
+            continue
+
+        threshold = min(ap_thresholds)
+        set_items = [entry for entry in items_by_set[set_id].values()]
+        if len(set_items) < threshold:
+            continue
+
+        set_seeds: list[BuildState] = []
+        for item_entries in combinations(set_items, threshold):
+            items = [entry[0] for entry in item_entries]
+            slot_options = [
+                sorted(entry[1], key=slot_order.index)
+                for entry in item_entries
+            ]
+            for slots in product(*slot_options):
+                if len(set(slots)) != len(slots):
+                    continue
+
+                state = BuildState()
+                for slot_name, item in sorted(zip(slots, items), key=lambda pair: slot_order.index(pair[0])):
+                    state = add_item_to_state(
+                        state,
+                        slot_name,
+                        item,
+                        sets,
+                        search_target,
+                        condition_target=target,
+                        cap_target=natural_cap_target,
+                    )
+                    if state is None:
+                        break
+                if state is None or not has_ap_set_bonus(state):
+                    continue
+                set_seeds.append(state)
+
+        set_seeds = dedupe_builds(sorted(set_seeds, key=lambda state: state.score, reverse=True))
+        seeds.extend(set_seeds[:limit_per_set])
+
+    return dedupe_builds(sorted(seeds, key=lambda state: state.score, reverse=True))[:limit]
+
+
 def search_slot_order(
     slot_order: tuple[str, ...],
     pools: dict[str, list[dict[str, Any]]],
@@ -769,10 +869,23 @@ def search_slot_order(
     per_signature_cap: int,
     ap_strategy: ApStrategy | None = None,
 ) -> list[BuildState]:
-    beam = [BuildState()]
+    beam = (
+        ap_set_bonus_seed_states(
+            pools,
+            sets,
+            target,
+            search_target,
+            natural_cap_target,
+        )
+        if ap_strategy and ap_strategy.require_ap_set_bonus
+        else [BuildState()]
+    )
     for slot_name in slot_order:
         next_states: list[BuildState] = []
         for state in beam:
+            if slot_name in state.slots:
+                next_states.append(state)
+                continue
             for item in pools[slot_name]:
                 next_state = add_item_to_state(
                     state,
@@ -869,7 +982,10 @@ def approach_key(state: BuildState) -> tuple[str | None, ...]:
     used_sets = tuple(
         sorted(set_id for set_id, count in state.set_counts.items() if count >= 2)
     )
-    return tuple(state.slots.get(slot, {}).get("dofusID") for slot in key_slots) + used_sets
+    return (
+        state.ap_strategy,
+        "ap_set_bonus" if has_ap_set_bonus(state) else "no_ap_set_bonus",
+    ) + tuple(state.slots.get(slot, {}).get("dofusID") for slot in key_slots) + used_sets
 
 
 def find_diverse_builds(
