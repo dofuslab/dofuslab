@@ -26,6 +26,7 @@ from oneoff.condition_evaluator import (
 from oneoff.damage_calculator import STRENGTH_PVM_PROFILE, profile_damage
 
 TARGET_LEVEL = 200
+RELEVANT_SET_ITEM_MIN_LEVEL = 180
 BASE_AP = 7 if TARGET_LEVEL >= 100 else 6
 BASE_MP = 3
 REQUIRED_AP = 11
@@ -35,6 +36,7 @@ MAX_AP = 12
 MAX_MP = 6
 ACTION_STATS = ("AP", "MP", "Range")
 ACTION_STAT_SOURCE_LIMIT = 4
+ACTION_STAT_SOURCE_MIN_LEVEL = 180
 DOFUS_ACTION_STAT_SOURCE_LIMIT = 1
 DOFUS_ZERO_SCORE_FILLER_LIMIT = 4
 EXO_ELIGIBLE_ITEM_TYPES = {
@@ -477,20 +479,29 @@ def candidate_pool_for_slot(
 ) -> list[dict[str, Any]]:
     is_dofus_slot = all(slot_type in {"Dofus", "Trophy", "Prysmaradite"} for slot_type in slot_types)
     compatible = [item for item in items if item.get("itemType") in slot_types]
+    relevant_set_items = [
+        item
+        for item in compatible
+        if item.get("setID") in relevant_sets
+        and item.get("level", 0) >= RELEVANT_SET_ITEM_MIN_LEVEL
+    ]
+    search_compatible = compatible
     if not is_dofus_slot:
-        compatible = prune_dominated_items(compatible)
+        search_compatible = prune_dominated_items(
+            [item for item in compatible if item.get("setID") not in relevant_sets]
+        ) + relevant_set_items
     selected: dict[str, dict[str, Any]] = {}
 
-    top_score_candidates = compatible
+    top_score_candidates = search_compatible
     if is_dofus_slot:
-        top_score_candidates = [item for item in compatible if item["_score"] > 0]
+        top_score_candidates = [item for item in search_compatible if item["_score"] > 0]
     for item in sorted(top_score_candidates, key=lambda i: i["_score"], reverse=True)[:top_k]:
         selected[item["dofusID"]] = item
 
     if is_dofus_slot:
         zero_score_fillers = [
             item
-            for item in compatible
+            for item in search_compatible
             if item["_score"] == 0
             and all(item["_stats"].get(stat, 0) == 0 for stat in ACTION_STATS)
         ]
@@ -507,8 +518,9 @@ def candidate_pool_for_slot(
     for stat in ACTION_STATS:
         stat_sources = [
             item
-            for item in compatible
+            for item in search_compatible
             if item["_stats"].get(stat, 0) > 0
+            and (is_dofus_slot or item.get("level", 0) >= ACTION_STAT_SOURCE_MIN_LEVEL)
         ]
         for item in sorted(
             stat_sources,
@@ -517,9 +529,8 @@ def candidate_pool_for_slot(
         )[:action_source_limit]:
             selected[item["dofusID"]] = item
 
-    for item in compatible:
-        if item.get("setID") in relevant_sets:
-            selected[item["dofusID"]] = item
+    for item in relevant_set_items:
+        selected[item["dofusID"]] = item
 
     return sorted(selected.values(), key=lambda i: i["_score"], reverse=True)
 
@@ -586,6 +597,7 @@ def apply_missing_exos(state: BuildState, target: BuildTarget) -> BuildState | N
                 item
                 for item in next_state.slots.values()
                 if eligible_for_exo(item, stat)
+                and item["dofusID"] not in next_state.exos.values()
             ),
             None,
         )

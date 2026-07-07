@@ -8,8 +8,10 @@ from oneoff.build_discovery_prototype import (
     BuildState,
     BuildTarget,
     ACTION_STAT_SOURCE_LIMIT,
+    ACTION_STAT_SOURCE_MIN_LEVEL,
     DOFUS_ACTION_STAT_SOURCE_LIMIT,
     DOFUS_ZERO_SCORE_FILLER_LIMIT,
+    RELEVANT_SET_ITEM_MIN_LEVEL,
     ApStrategy,
     add_item_to_state,
     ap_strategy_matches,
@@ -161,13 +163,98 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertTrue(dominates_item(strong_boots, weak_boots))
         self.assertEqual(prune_dominated_items([weak_boots, strong_boots]), [strong_boots])
 
+    def test_candidate_pool_keeps_relevant_set_item_that_is_individually_dominated(self):
+        weak_set_ring = {
+            "dofusID": "weak_set",
+            "itemType": "Ring",
+            "setID": "important_set",
+            "level": 200,
+            "_stats": {"Strength": 20},
+            "_score": 20,
+        }
+        strong_ring = {
+            "dofusID": "strong",
+            "itemType": "Ring",
+            "setID": None,
+            "level": 200,
+            "_stats": {"Strength": 80},
+            "_score": 80,
+        }
+
+        self.assertTrue(dominates_item(strong_ring, weak_set_ring))
+        pool = candidate_pool_for_slot(
+            ("Ring",),
+            [weak_set_ring, strong_ring],
+            relevant_sets={"important_set"},
+            top_k=1,
+        )
+
+        self.assertIn(weak_set_ring, pool)
+        self.assertIn(strong_ring, pool)
+
+    def test_candidate_pool_does_not_protect_low_level_relevant_set_item(self):
+        weak_set_weapon = {
+            "dofusID": "weak_set",
+            "itemType": "Sword",
+            "setID": "important_set",
+            "level": RELEVANT_SET_ITEM_MIN_LEVEL - 1,
+            "_stats": {"Strength": 20},
+            "_score": 20,
+        }
+        strong_weapon = {
+            "dofusID": "strong",
+            "itemType": "Sword",
+            "setID": None,
+            "level": 200,
+            "_stats": {"Strength": 80},
+            "_score": 80,
+        }
+
+        pool = candidate_pool_for_slot(
+            ("Sword",),
+            [weak_set_weapon, strong_weapon],
+            relevant_sets={"important_set"},
+            top_k=1,
+        )
+
+        self.assertNotIn(weak_set_weapon, pool)
+        self.assertIn(strong_weapon, pool)
+
+    def test_candidate_pool_does_not_force_low_level_action_stat_gear(self):
+        weak_ap_weapon = {
+            "dofusID": "weak_ap",
+            "itemType": "Sword",
+            "setID": None,
+            "level": ACTION_STAT_SOURCE_MIN_LEVEL - 1,
+            "_stats": {"AP": 1},
+            "_score": 0,
+        }
+        strong_weapon = {
+            "dofusID": "strong",
+            "itemType": "Sword",
+            "setID": None,
+            "level": 200,
+            "_stats": {"Strength": 100},
+            "_score": 100,
+        }
+
+        pool = candidate_pool_for_slot(
+            ("Sword",),
+            [weak_ap_weapon, strong_weapon],
+            relevant_sets=set(),
+            top_k=1,
+        )
+
+        self.assertNotIn(weak_ap_weapon, pool)
+        self.assertIn(strong_weapon, pool)
+
     def test_candidate_pool_caps_gear_action_stat_sources(self):
         action_items = [
             {
                 "dofusID": f"mp_{idx}",
                 "itemType": "Boots",
                 "setID": None,
-                "level": ACTION_STAT_SOURCE_LIMIT + 3 - idx,
+                "level": ACTION_STAT_SOURCE_MIN_LEVEL + ACTION_STAT_SOURCE_LIMIT + 3 - idx,
                 "_stats": {"MP": 1},
                 "_score": idx,
             }
@@ -406,6 +493,19 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertIsNotNone(state)
         self.assertEqual(state.stats["AP"], 8)
         self.assertEqual(state.exos, {"AP": "1"})
+
+    def test_missing_exos_are_not_stacked_on_one_item(self):
+        target = BuildTarget(ap=8, mp=4)
+        item = {
+            "dofusID": "1",
+            "itemType": "Hat",
+            "setID": None,
+            "stats": [{"stat": "Strength", "maxStat": 50}],
+        }
+
+        state = add_item_to_state(BuildState(), "hat", item, {}, target)
+
+        self.assertIsNone(apply_missing_exos(state, target))
 
     def test_two_missing_ap_cannot_be_filled_by_exos(self):
         target = BuildTarget(ap=9, mp=3)
