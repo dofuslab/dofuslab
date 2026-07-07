@@ -42,6 +42,21 @@ def item_ids_for_build(build) -> list[str]:
     return [item["dofusID"] for item in build.slots.values()]
 
 
+def item_payloads_for_build(build, items_by_dofus_id: dict[str, ModelItem]) -> list[dict]:
+    payloads = []
+    for item in build.slots.values():
+        dofus_id = item["dofusID"]
+        payloads.append(
+            {
+                "item": items_by_dofus_id[dofus_id],
+                "ap_exo": build.exos.get("AP") == dofus_id,
+                "mp_exo": build.exos.get("MP") == dofus_id,
+                "range_exo": build.exos.get("Range") == dofus_id,
+            }
+        )
+    return payloads
+
+
 def get_items_by_dofus_id(db_session, dofus_ids: Iterable[str]) -> dict[str, ModelItem]:
     items = (
         db_session.query(ModelItem)
@@ -92,10 +107,7 @@ def create_custom_set_from_build(db_session, build, index: int, name_prefix: str
     db_session.add(stats)
     db_session.flush()
 
-    custom_set.equip_items(
-        [{"item": items_by_dofus_id[dofus_id]} for dofus_id in dofus_ids],
-        db_session,
-    )
+    custom_set.equip_items(item_payloads_for_build(build, items_by_dofus_id), db_session)
     custom_set.last_modified = datetime.utcnow()
     return custom_set
 

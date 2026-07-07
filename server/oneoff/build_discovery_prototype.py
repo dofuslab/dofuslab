@@ -33,6 +33,25 @@ REQUIRED_MP = 6
 REQUIRED_RANGE = 0
 MAX_AP = 12
 MAX_MP = 6
+EXO_ELIGIBLE_ITEM_TYPES = {
+    "Hat",
+    "Cloak",
+    "Amulet",
+    "Ring",
+    "Belt",
+    "Boots",
+    "Sword",
+    "Hammer",
+    "Staff",
+    "Dagger",
+    "Wand",
+    "Bow",
+    "Axe",
+    "Shovel",
+    "Lance",
+    "Scythe",
+    "Shield",
+}
 BASE_STATS = {
     "AP": BASE_AP,
     "MP": BASE_MP,
@@ -61,6 +80,27 @@ SLOTS: list[tuple[str, tuple[str, ...]]] = [
     ("dofus_4", ("Dofus", "Trophy", "Prysmaradite")),
     ("dofus_5", ("Dofus", "Trophy", "Prysmaradite")),
     ("dofus_6", ("Dofus", "Trophy", "Prysmaradite")),
+]
+DEFAULT_SLOT_ORDERS: list[tuple[str, ...]] = [
+    tuple(slot_name for slot_name, _ in SLOTS),
+    (
+        "dofus_1",
+        "dofus_2",
+        "dofus_3",
+        "dofus_4",
+        "dofus_5",
+        "dofus_6",
+        "amulet",
+        "ring_1",
+        "ring_2",
+        "belt",
+        "boots",
+        "weapon",
+        "shield",
+        "hat",
+        "cloak",
+        "pet",
+    ),
 ]
 
 STAT_WEIGHTS = {
@@ -165,6 +205,7 @@ class BuildState:
     stats: dict[str, int] = field(default_factory=lambda: dict(BASE_STATS))
     set_counts: dict[str, int] = field(default_factory=dict)
     used_item_ids: set[str] = field(default_factory=set)
+    exos: dict[str, str] = field(default_factory=dict)
     score: float = 0.0
     condition_failures: list[dict[str, Any]] = field(default_factory=list)
 
@@ -174,6 +215,7 @@ class BuildState:
             stats=dict(self.stats),
             set_counts=dict(self.set_counts),
             used_item_ids=set(self.used_item_ids),
+            exos=dict(self.exos),
             score=self.score,
             condition_failures=list(self.condition_failures),
         )
@@ -417,6 +459,37 @@ def add_item_to_state(
     return next_state
 
 
+def eligible_for_exo(item: dict[str, Any], stat: str) -> bool:
+    item_stats = item.get("_stats") or normalize_stats(item.get("stats", []))
+    return item.get("itemType") in EXO_ELIGIBLE_ITEM_TYPES and item_stats.get(stat, 0) == 0
+
+
+def apply_missing_exos(state: BuildState, target: BuildTarget) -> BuildState | None:
+    next_state = state.clone()
+    for stat, target_value in (("AP", target.ap), ("MP", target.mp), ("Range", target.range)):
+        missing = target_value - next_state.stats.get(stat, 0)
+        if missing <= 0:
+            continue
+        if missing > 1:
+            return None
+
+        exo_item = next(
+            (
+                item
+                for item in next_state.slots.values()
+                if eligible_for_exo(item, stat)
+            ),
+            None,
+        )
+        if exo_item is None:
+            return None
+
+        next_state.stats[stat] = next_state.stats.get(stat, 0) + 1
+        next_state.exos[stat] = exo_item["dofusID"]
+
+    return next_state
+
+
 def potential_set_bonus_score(state: BuildState, sets: dict[str, dict[str, Any]]) -> float:
     potential = 0.0
     for set_id, count in state.set_counts.items():
@@ -487,6 +560,50 @@ def dedupe_builds(states: list[BuildState]) -> list[BuildState]:
     return unique
 
 
+def completed_valid_builds(
+    beam: list[BuildState],
+    target: BuildTarget,
+) -> list[BuildState]:
+    valid_final_states = []
+    for state in beam:
+        state_with_exos = apply_missing_exos(state, target)
+        if state_with_exos is None:
+            continue
+        if (
+            state_with_exos.stats.get("AP", 0) != target.ap
+            or state_with_exos.stats.get("MP", 0) != target.mp
+            or state_with_exos.stats.get("Range", 0) < target.range
+        ):
+            continue
+        state_with_exos.condition_failures = unmet_item_conditions(state_with_exos)
+        if state_with_exos.condition_failures:
+            continue
+        state_with_exos.score = final_score_state(state_with_exos)
+        valid_final_states.append(state_with_exos)
+    return valid_final_states
+
+
+def search_slot_order(
+    slot_order: tuple[str, ...],
+    pools: dict[str, list[dict[str, Any]]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    beam_width: int,
+    per_signature_cap: int,
+) -> list[BuildState]:
+    beam = [BuildState()]
+    for slot_name in slot_order:
+        next_states: list[BuildState] = []
+        for state in beam:
+            for item in pools[slot_name]:
+                next_state = add_item_to_state(state, slot_name, item, sets, target)
+                if next_state:
+                    next_states.append(next_state)
+        beam = trim_beam(next_states, beam_width, per_signature_cap)
+
+    return completed_valid_builds(beam, target)
+
+
 def diversify_builds(states: list[BuildState], max_shared_items: int | None) -> list[BuildState]:
     if max_shared_items is None:
         return states
@@ -509,6 +626,7 @@ def find_builds(
     target: BuildTarget = DEFAULT_TARGET,
     max_shared_items: int | None = DEFAULT_MAX_SHARED_ITEMS,
     excluded_item_ids: set[str] | None = None,
+    slot_orders: list[tuple[str, ...]] = DEFAULT_SLOT_ORDERS,
 ) -> list[BuildState]:
     items = load_items(target, excluded_item_ids)
     sets = load_sets()
@@ -523,30 +641,18 @@ def find_builds(
         for slot_name, slot_types in SLOTS
     }
 
-    beam = [BuildState()]
-    for slot_name, _ in SLOTS:
-        next_states: list[BuildState] = []
-        for state in beam:
-            for item in pools[slot_name]:
-                next_state = add_item_to_state(state, slot_name, item, sets, target)
-                if next_state:
-                    next_states.append(next_state)
-        beam = trim_beam(next_states, beam_width, per_signature_cap)
-
-    final_states = [
-        state
-        for state in beam
-        if state.stats.get("AP", 0) == target.ap
-        and state.stats.get("MP", 0) == target.mp
-        and state.stats.get("Range", 0) >= target.range
-    ]
     valid_final_states = []
-    for state in final_states:
-        state.condition_failures = unmet_item_conditions(state)
-        if state.condition_failures:
-            continue
-        state.score = final_score_state(state)
-        valid_final_states.append(state)
+    for slot_order in slot_orders:
+        valid_final_states.extend(
+            search_slot_order(
+                slot_order=slot_order,
+                pools=pools,
+                sets=sets,
+                target=target,
+                beam_width=beam_width,
+                per_signature_cap=per_signature_cap,
+            )
+        )
     ranked_states = dedupe_builds(sorted(valid_final_states, key=lambda s: s.score, reverse=True))
     return diversify_builds(ranked_states, max_shared_items)
 
@@ -652,6 +758,16 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
             "Critical Damage": state.stats.get("Critical Damage", 0),
         },
         "sets": used_sets,
+        "exos": {
+            stat: {
+                "itemId": item_id,
+                "slot": next(
+                    (slot for slot, item in state.slots.items() if item["dofusID"] == item_id),
+                    None,
+                ),
+            }
+            for stat, item_id in sorted(state.exos.items())
+        },
         "items": {
             slot: {
                 "id": item["dofusID"],

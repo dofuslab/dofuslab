@@ -6,7 +6,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 
 from oneoff.build_discovery_prototype import (
     BuildState,
+    BuildTarget,
     add_item_to_state,
+    apply_missing_exos,
     diversify_builds,
     has_negative_action_stat,
 )
@@ -94,6 +96,72 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         }
 
         self.assertIsNone(add_item_to_state(state, "amulet", item, {}))
+
+    def test_ap_exo_can_fill_missing_ap_on_completed_build(self):
+        target = BuildTarget(ap=8, mp=3)
+        item = {
+            "dofusID": "1",
+            "itemType": "Hat",
+            "setID": None,
+            "stats": [{"stat": "Strength", "maxStat": 50}],
+        }
+
+        state = add_item_to_state(BuildState(), "hat", item, {}, target)
+        state = apply_missing_exos(state, target)
+
+        self.assertIsNotNone(state)
+        self.assertEqual(state.stats["AP"], 8)
+        self.assertEqual(state.exos, {"AP": "1"})
+
+    def test_two_missing_ap_cannot_be_filled_by_exos(self):
+        target = BuildTarget(ap=9, mp=3)
+        first = {
+            "dofusID": "1",
+            "itemType": "Hat",
+            "setID": None,
+            "stats": [{"stat": "Strength", "maxStat": 50}],
+        }
+        second = {
+            "dofusID": "2",
+            "itemType": "Cloak",
+            "setID": None,
+            "stats": [{"stat": "Vitality", "maxStat": 100}],
+        }
+
+        state = add_item_to_state(BuildState(), "hat", first, {}, target)
+        self.assertIsNotNone(state)
+
+        state = add_item_to_state(state, "cloak", second, {}, target)
+        self.assertIsNotNone(state)
+        self.assertIsNone(apply_missing_exos(state, target))
+
+    def test_exo_is_not_added_to_ineligible_item_type(self):
+        target = BuildTarget(ap=8, mp=3)
+        item = {
+            "dofusID": "1",
+            "itemType": "Dofus",
+            "setID": None,
+            "stats": [{"stat": "Strength", "maxStat": 50}],
+        }
+
+        state = add_item_to_state(BuildState(), "dofus_1", item, {}, target)
+        state = apply_missing_exos(state, target)
+
+        self.assertIsNone(state)
+
+    def test_exo_is_not_added_when_item_already_gives_stat(self):
+        target = BuildTarget(ap=9, mp=3)
+        item = {
+            "dofusID": "1",
+            "itemType": "Amulet",
+            "setID": None,
+            "stats": [{"stat": "AP", "maxStat": 1}],
+        }
+
+        state = add_item_to_state(BuildState(), "amulet", item, {}, target)
+        state = apply_missing_exos(state, target)
+
+        self.assertIsNone(state)
 
     def test_negative_ap_mp_items_are_identified(self):
         self.assertTrue(
