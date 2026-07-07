@@ -119,6 +119,7 @@ STAT_WEIGHTS = {
     "% Water Resistance": 1.0,
     "% Air Resistance": 1.0,
 }
+DOMINANCE_STATS = ("AP", "MP", "Range")
 
 EXCLUDED_SET_NAME_PARTS = ("Khardboard",)
 
@@ -197,6 +198,14 @@ class BuildTarget:
 
 DEFAULT_TARGET = BuildTarget()
 DEFAULT_MAX_SHARED_ITEMS = 10
+
+
+def exo_search_target(final_target: BuildTarget) -> BuildTarget:
+    return BuildTarget(
+        ap=max(BASE_AP, final_target.ap - 1),
+        mp=max(BASE_MP, final_target.mp - 1),
+        range=max(0, final_target.range - 1),
+    )
 
 
 @dataclass
@@ -297,9 +306,39 @@ def set_bonus_score(set_obj: dict[str, Any]) -> float:
     )
 
 
+def dominance_value(item: dict[str, Any], stat: str) -> int:
+    if stat == "level":
+        return item.get("level", 0)
+    return item["_stats"].get(stat, 0)
+
+
+def dominates_item(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    if left.get("itemType") != right.get("itemType"):
+        return False
+
+    dimensions = DOMINANCE_STATS + ("level",)
+    return (
+        left["_score"] >= right["_score"]
+        and all(dominance_value(left, stat) >= dominance_value(right, stat) for stat in dimensions)
+        and (
+            left["_score"] > right["_score"]
+            or any(dominance_value(left, stat) > dominance_value(right, stat) for stat in dimensions)
+        )
+    )
+
+
+def prune_dominated_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    kept = []
+    for item in items:
+        if any(dominates_item(other, item) for other in items if other is not item):
+            continue
+        kept.append(item)
+    return kept
+
+
 def has_negative_action_stat(item: dict[str, Any]) -> bool:
     stats = normalize_stats(item.get("stats", []))
-    return stats.get("AP", 0) < 0 or stats.get("MP", 0) < 0
+    return stats.get("AP", 0) < 0 or stats.get("MP", 0) < 0 or stats.get("Range", 0) < 0
 
 
 def load_items(
@@ -343,7 +382,6 @@ def load_items(
         for item in items
         if item.get("level", 0) <= TARGET_LEVEL
         and item.get("dofusID") not in excluded_item_ids
-        and not has_negative_action_stat(item)
         and condition_can_pass_at_target(
             item.get("conditions", {}).get("conditions", {}),
             target.condition_stats,
@@ -404,7 +442,7 @@ def candidate_pool_for_slot(
     relevant_sets: set[str],
     top_k: int,
 ) -> list[dict[str, Any]]:
-    compatible = [item for item in items if item.get("itemType") in slot_types]
+    compatible = prune_dominated_items([item for item in items if item.get("itemType") in slot_types])
     selected: dict[str, dict[str, Any]] = {}
 
     for item in sorted(compatible, key=lambda i: i["_score"], reverse=True)[:top_k]:
@@ -431,7 +469,11 @@ def add_item_to_state(
     item: dict[str, Any],
     sets: dict[str, dict[str, Any]],
     target: BuildTarget = DEFAULT_TARGET,
+    condition_target: BuildTarget | None = None,
+    cap_target: BuildTarget | None = None,
 ) -> BuildState | None:
+    condition_target = condition_target or target
+    cap_target = cap_target or target
     if item["dofusID"] in state.used_item_ids:
         return None
 
@@ -450,11 +492,11 @@ def add_item_to_state(
         apply_stat_delta(next_state.stats, previous_bonus, multiplier=-1)
         apply_stat_delta(next_state.stats, bonus)
 
-    if next_state.stats.get("AP", 0) > target.ap or next_state.stats.get("MP", 0) > target.mp:
+    if next_state.stats.get("AP", 0) > cap_target.ap or next_state.stats.get("MP", 0) > cap_target.mp:
         return None
 
     next_state.score = score_state(next_state, sets, target, final=False)
-    if not target_forced_conditions_hold(next_state, target.condition_stats):
+    if not target_forced_conditions_hold(next_state, condition_target.condition_stats):
         return None
     return next_state
 
@@ -588,6 +630,7 @@ def search_slot_order(
     pools: dict[str, list[dict[str, Any]]],
     sets: dict[str, dict[str, Any]],
     target: BuildTarget,
+    search_target: BuildTarget,
     beam_width: int,
     per_signature_cap: int,
 ) -> list[BuildState]:
@@ -596,7 +639,15 @@ def search_slot_order(
         next_states: list[BuildState] = []
         for state in beam:
             for item in pools[slot_name]:
-                next_state = add_item_to_state(state, slot_name, item, sets, target)
+                next_state = add_item_to_state(
+                    state,
+                    slot_name,
+                    item,
+                    sets,
+                    search_target,
+                    condition_target=target,
+                    cap_target=target,
+                )
                 if next_state:
                     next_states.append(next_state)
         beam = trim_beam(next_states, beam_width, per_signature_cap)
@@ -636,6 +687,7 @@ def find_builds(
         if not item.get("setID") or not sets.get(item["setID"], {}).get("_excluded")
     ]
     relevant_sets = relevant_set_ids(items, sets, relevant_set_limit)
+    search_target = exo_search_target(target)
     pools = {
         slot_name: candidate_pool_for_slot(slot_types, items, relevant_sets, top_k)
         for slot_name, slot_types in SLOTS
@@ -649,6 +701,7 @@ def find_builds(
                 pools=pools,
                 sets=sets,
                 target=target,
+                search_target=search_target,
                 beam_width=beam_width,
                 per_signature_cap=per_signature_cap,
             )

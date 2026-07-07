@@ -10,11 +10,77 @@ from oneoff.build_discovery_prototype import (
     add_item_to_state,
     apply_missing_exos,
     diversify_builds,
+    dominates_item,
+    exo_search_target,
     has_negative_action_stat,
+    prune_dominated_items,
 )
 
 
 class BuildDiscoveryPrototypeTest(unittest.TestCase):
+    def test_exo_search_target_uses_one_lower_action_stat_targets(self):
+        target = exo_search_target(BuildTarget(ap=11, mp=6, range=4))
+
+        self.assertEqual(target.ap, 10)
+        self.assertEqual(target.mp, 5)
+        self.assertEqual(target.range, 3)
+
+    def test_prune_dominated_items_removes_strictly_inferior_boots(self):
+        weak_boots = {
+            "dofusID": "weak",
+            "itemType": "Boots",
+            "level": 44,
+            "_stats": {"MP": 1},
+            "_score": 0,
+        }
+        strong_boots = {
+            "dofusID": "strong",
+            "itemType": "Boots",
+            "level": 200,
+            "_stats": {"MP": 1, "Strength": 80, "Vitality": 300},
+            "_score": 170,
+        }
+
+        self.assertTrue(dominates_item(strong_boots, weak_boots))
+        self.assertEqual(prune_dominated_items([weak_boots, strong_boots]), [strong_boots])
+
+    def test_dominance_does_not_cross_item_types(self):
+        boots = {
+            "dofusID": "boots",
+            "itemType": "Boots",
+            "level": 200,
+            "_stats": {"MP": 1, "Strength": 80},
+            "_score": 80,
+        }
+        amulet = {
+            "dofusID": "amulet",
+            "itemType": "Amulet",
+            "level": 200,
+            "_stats": {"AP": 1, "Strength": 80},
+            "_score": 80,
+        }
+
+        self.assertFalse(dominates_item(boots, amulet))
+
+    def test_score_based_dominance_removes_bad_negative_range_boots(self):
+        weak_boots = {
+            "dofusID": "weak",
+            "itemType": "Boots",
+            "level": 41,
+            "_stats": {"Strength": 40, "Range": -3},
+            "_score": 52,
+        }
+        strong_boots = {
+            "dofusID": "strong",
+            "itemType": "Boots",
+            "level": 200,
+            "_stats": {"Strength": 90, "Vitality": 350, "MP": 1, "Range": 1},
+            "_score": 347,
+        }
+
+        self.assertTrue(dominates_item(strong_boots, weak_boots))
+        self.assertEqual(prune_dominated_items([weak_boots, strong_boots]), [strong_boots])
+
     def test_ap_set_bonus_applies_when_threshold_is_reached(self):
         sets = {
             "toy": {
@@ -97,6 +163,29 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertIsNone(add_item_to_state(state, "amulet", item, {}))
 
+    def test_search_target_can_score_lower_than_final_cap(self):
+        search_target = BuildTarget(ap=10, mp=5)
+        final_target = BuildTarget(ap=11, mp=6)
+        state = BuildState()
+        state.stats["AP"] = 10
+        item = {
+            "dofusID": "1",
+            "setID": None,
+            "stats": [{"stat": "AP", "maxStat": 1}],
+        }
+
+        next_state = add_item_to_state(
+            state,
+            "amulet",
+            item,
+            {},
+            search_target,
+            cap_target=final_target,
+        )
+
+        self.assertIsNotNone(next_state)
+        self.assertEqual(next_state.stats["AP"], 11)
+
     def test_ap_exo_can_fill_missing_ap_on_completed_build(self):
         target = BuildTarget(ap=8, mp=3)
         item = {
@@ -170,6 +259,16 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
                     "stats": [
                         {"stat": "Summons", "maxStat": 2},
                         {"stat": "MP", "maxStat": -1},
+                    ]
+                }
+            )
+        )
+        self.assertTrue(
+            has_negative_action_stat(
+                {
+                    "stats": [
+                        {"stat": "Strength", "maxStat": 40},
+                        {"stat": "Range", "maxStat": -3},
                     ]
                 }
             )
