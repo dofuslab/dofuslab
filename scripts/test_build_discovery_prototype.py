@@ -29,6 +29,7 @@ from oneoff.build_discovery_prototype import (
     exo_search_target,
     exo_natural_cap_target,
     final_score_state,
+    final_utility_score,
     find_diverse_builds,
     has_negative_action_stat,
     has_ap_set_bonus,
@@ -72,13 +73,29 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertEqual(score_state(with_mp_range, {}, target) - score_state(baseline, {}, target), 325)
 
-    def test_final_score_adds_generic_damage_to_weighted_stats(self):
-        state = BuildState()
-        state.stats["Strength"] = 500
-        state.stats["Power"] = 100
-        state.stats["Critical Damage"] = 20
+    def test_final_score_uses_generic_damage_profile(self):
+        low_damage = BuildState()
+        high_damage = BuildState()
+        high_damage.stats["Strength"] = 500
+        high_damage.stats["Power"] = 100
+        high_damage.stats["Critical Damage"] = 20
 
-        self.assertGreater(final_score_state(state), score_stats(state.stats))
+        self.assertGreater(final_score_state(high_damage), final_score_state(low_damage))
+
+    def test_final_utility_score_excludes_damage_stats(self):
+        utility_only = {"Vitality": 100, "% Earth Resistance": 10}
+        with_damage = {
+            **utility_only,
+            "Strength": 500,
+            "Power": 100,
+            "Earth Damage": 80,
+            "Critical": 40,
+            "Critical Damage": 100,
+            "% Final Damage": 10,
+        }
+
+        self.assertEqual(final_utility_score(with_damage), final_utility_score(utility_only))
+        self.assertGreater(score_stats(with_damage), score_stats(utility_only))
 
     def test_percent_resistances_are_equal_and_above_strength(self):
         resistance_weights = [

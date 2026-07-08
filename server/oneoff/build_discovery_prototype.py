@@ -194,6 +194,28 @@ STAT_WEIGHTS = {
     "% Ranged Resistance": 7.0,
     "% Melee Resistance": 3.0,
 }
+DAMAGE_SCORING_STATS = {
+    "Strength",
+    "Power",
+    "Earth Damage",
+    "Neutral Damage",
+    "Fire Damage",
+    "Water Damage",
+    "Air Damage",
+    "Damage",
+    "Critical Damage",
+    "Critical",
+    "% Final Damage",
+    "% Spell Damage",
+    "% Weapon Damage",
+    "% Melee Damage",
+    "% Ranged Damage",
+}
+FINAL_UTILITY_STAT_WEIGHTS = {
+    stat: weight
+    for stat, weight in STAT_WEIGHTS.items()
+    if stat not in DAMAGE_SCORING_STATS
+}
 DOMINANCE_STATS = ("AP", "MP", "Range")
 
 EXCLUDED_SET_NAME_PARTS = ("Khardboard",)
@@ -441,11 +463,19 @@ def set_bonuses_from_db(bonuses: Iterable[Any]) -> dict[str, list[dict[str, Any]
     return dict(bonus_lines_by_count)
 
 
-def score_stats(stats: dict[str, int]) -> float:
+def score_stats_with_weights(stats: dict[str, int], weights: dict[str, float]) -> float:
     return sum(
         min(stats.get(stat, 0), STAT_SCORE_CAPS.get(stat, float("inf"))) * weight
-        for stat, weight in STAT_WEIGHTS.items()
+        for stat, weight in weights.items()
     )
+
+
+def score_stats(stats: dict[str, int]) -> float:
+    return score_stats_with_weights(stats, STAT_WEIGHTS)
+
+
+def final_utility_score(stats: dict[str, int]) -> float:
+    return score_stats_with_weights(stats, FINAL_UTILITY_STAT_WEIGHTS)
 
 
 def item_score(item: dict[str, Any]) -> float:
@@ -815,7 +845,7 @@ def final_score_state(
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
 ) -> float:
     return (
-        score_stats(state.stats)
+        final_utility_score(state.stats)
         + profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, state.stats) * generic_damage_weight
         + state_weapon_damage(state) * weapon_damage_weight
         + balanced_resistance_score(state.stats)
@@ -1210,6 +1240,7 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
     return {
         "score": round(state.score, 2),
         "weightedStatScore": round(score_stats(state.stats), 2),
+        "utilityStatScore": round(final_utility_score(state.stats), 2),
         "genericDamageScore": round(profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, state.stats), 2),
         "weaponDamageScore": round(state_weapon_damage(state), 2),
         "balancedResistanceScore": round(balanced_resistance_score(state.stats), 2),
