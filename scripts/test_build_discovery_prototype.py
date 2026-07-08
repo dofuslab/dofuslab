@@ -133,6 +133,79 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(tuple(build_discovery_prototype.GENERIC_STRENGTH_DAMAGE_PROFILE), profile)
         self.assertGreater(strength_spell_damage({"Strength": 400, "Earth Damage": 20}), 0)
 
+    def test_target_count_condition_parses_target_conditions(self):
+        self.assertEqual(build_discovery_prototype.target_count_condition(["1 target"]), 1)
+        self.assertEqual(build_discovery_prototype.target_count_condition(["5 targets"]), 5)
+        self.assertIsNone(build_discovery_prototype.target_count_condition(["On critical hit"]))
+
+    def test_select_variant_spells_keeps_best_spell_per_variant_pair(self):
+        weak = build_discovery_prototype.SpellDamageCandidate(
+            name="Weak",
+            variant_pair_id="pair",
+            ap_cost=2,
+            cooldown=None,
+            casts_per_turn=None,
+            casts_per_target=None,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 10, 10),),
+        )
+        strong = build_discovery_prototype.SpellDamageCandidate(
+            name="Strong",
+            variant_pair_id="pair",
+            ap_cost=2,
+            cooldown=None,
+            casts_per_turn=None,
+            casts_per_target=None,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 20, 20),),
+        )
+
+        selected = build_discovery_prototype.select_variant_spells(
+            (weak, strong),
+            {"Strength": 100},
+        )
+
+        self.assertEqual([spell.name for spell in selected], ["Strong"])
+
+    def test_wrath_rotation_values_scheduled_boosted_casts(self):
+        filler = build_discovery_prototype.SpellDamageCandidate(
+            name="Filler",
+            variant_pair_id="filler",
+            ap_cost=2,
+            cooldown=None,
+            casts_per_turn=None,
+            casts_per_target=None,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 10, 10),),
+        )
+        wrath = build_discovery_prototype.SpellDamageCandidate(
+            name=build_discovery_prototype.IOP_WRATH_SPELL_NAME,
+            variant_pair_id="wrath",
+            ap_cost=7,
+            cooldown=3,
+            casts_per_turn=None,
+            casts_per_target=None,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 50, 50),),
+            damage_increase=50,
+            crit_damage_increase=50,
+            max_damage_increase_stacks=2,
+        )
+        with patch.object(
+            build_discovery_prototype,
+            "strength_spell_candidates",
+            return_value=(filler, wrath),
+        ):
+            with_wrath = build_discovery_prototype.strength_iop_rotation_damage({"AP": 12})
+        with patch.object(
+            build_discovery_prototype,
+            "strength_spell_candidates",
+            return_value=(filler,),
+        ):
+            without_wrath = build_discovery_prototype.strength_iop_rotation_damage({"AP": 12})
+
+        self.assertGreater(with_wrath, without_wrath)
+
     def test_final_score_uses_item_damage_buffs_as_expected_stats(self):
         baseline = BuildState()
         crimson = BuildState()

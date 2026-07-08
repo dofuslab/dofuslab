@@ -74,6 +74,9 @@ GENERIC_DAMAGE_PROFILE_LINES = (
 )
 SPELL_PROFILE_CLASS_NAME = "Iop"
 SPELL_DAMAGE_PROFILE_TURN_AP = 10
+SPELL_DAMAGE_PROFILE_TURNS = 7
+IOP_WRATH_SPELL_NAME = "Iop's Wrath"
+IOP_WRATH_CAST_TURNS = (1, 4, 7)
 WEAPON_EFFECT_ELEMENTS = {
     "NEUTRAL_DAMAGE": "neutral",
     "NEUTRAL_STEAL": "neutral",
@@ -307,6 +310,7 @@ def configure_damage_profile(profile_name: str) -> DamageProfile:
     for stat, weight in profile.secondary_damage_weights.items():
         next_weights[stat] = weight
     STAT_WEIGHTS = next_weights
+    strength_spell_candidates.cache_clear()
     strength_spell_damage_profile.cache_clear()
     return profile
 
@@ -571,6 +575,21 @@ class PackageIndex:
         for package in self.packages:
             buckets[package_group_set_signature((package,))].append(package)
         return buckets
+
+
+@dataclass(frozen=True)
+class SpellDamageCandidate:
+    name: str
+    variant_pair_id: str
+    ap_cost: int
+    cooldown: int | None
+    casts_per_turn: int | None
+    casts_per_target: int | None
+    base_crit_chance: int
+    damage_lines: tuple[DamageLine, ...]
+    damage_increase: int = 0
+    crit_damage_increase: int = 0
+    max_damage_increase_stacks: int = 0
 
 
 def normalize_stats(lines: Iterable[dict[str, Any]]) -> dict[str, int]:
@@ -1101,8 +1120,174 @@ def state_weapon_damage(state: BuildState, stats: dict[str, float] | None = None
     return profile_damage(weapon_damage_lines(weapon), stats or state.stats) / ap_cost
 
 
+def english_conditions(effect: Any) -> tuple[str, ...]:
+    return tuple(
+        condition.condition
+        for condition in getattr(effect, "condition", [])
+        if getattr(condition, "locale", None) == "en"
+    )
+
+
+def target_count_condition(conditions: Iterable[str]) -> int | None:
+    for condition in conditions:
+        words = condition.strip().lower().split()
+        if len(words) >= 2 and words[1].startswith("target"):
+            try:
+                return int(words[0])
+            except ValueError:
+                continue
+    return None
+
+
+def collapse_single_target_spell_effects(
+    effects: Iterable[Any],
+    profile_elements: dict[str, str],
+    base_crit_chance: int,
+    is_trap: bool = False,
+) -> tuple[DamageLine, ...]:
+    lines_by_order: dict[int, tuple[int | None, DamageLine]] = {}
+    for effect in effects:
+        element = profile_elements.get(effect_type_key(effect.effect_type))
+        if not element or effect.min_damage is None:
+            continue
+        target_count = target_count_condition(english_conditions(effect))
+        if target_count is not None and target_count != 1:
+            continue
+
+        line = DamageLine(
+            element=element,
+            base_min=int_or_zero(effect.min_damage),
+            base_max=int_or_zero(effect.max_damage),
+            crit_base_min=(
+                int_or_zero(effect.crit_min_damage)
+                if effect.crit_min_damage is not None
+                else None
+            ),
+            crit_base_max=(
+                int_or_zero(effect.crit_max_damage)
+                if effect.crit_max_damage is not None
+                else None
+            ),
+            crit_chance=base_crit_chance,
+            is_trap=is_trap,
+            weight=1.0,
+        )
+        order = int_or_zero(effect.order)
+        existing = lines_by_order.get(order)
+        if existing is None or (existing[0] is not None and target_count is None):
+            lines_by_order[order] = (target_count, line)
+
+    return tuple(line for _, line in sorted(lines_by_order.values(), key=lambda entry: entry[1].base_min))
+
+
+def spell_damage_per_cast(spell: SpellDamageCandidate, stats: dict[str, int], stacks: int = 0) -> float:
+    stack_count = min(max(stacks, 0), spell.max_damage_increase_stacks)
+    lines = [
+        DamageLine(
+            element=line.element,
+            base_min=line.base_min + spell.damage_increase * stack_count,
+            base_max=line.base_max + spell.damage_increase * stack_count,
+            crit_base_min=(
+                line.crit_base_min + spell.crit_damage_increase * stack_count
+                if line.crit_base_min is not None
+                else None
+            ),
+            crit_base_max=(
+                line.crit_base_max + spell.crit_damage_increase * stack_count
+                if line.crit_base_max is not None
+                else None
+            ),
+            crit_chance=line.crit_chance,
+            crit_bonus_damage=line.crit_bonus_damage,
+            is_weapon=line.is_weapon,
+            is_trap=line.is_trap,
+            weight=line.weight,
+        )
+        for line in spell.damage_lines
+    ]
+    return profile_damage(lines, stats)
+
+
+def spell_damage_per_ap(spell: SpellDamageCandidate, stats: dict[str, int], stacks: int = 0) -> float:
+    return spell_damage_per_cast(spell, stats, stacks=stacks) / max(spell.ap_cost, 1)
+
+
+def select_variant_spells(
+    candidates: Iterable[SpellDamageCandidate],
+    stats: dict[str, int],
+) -> tuple[SpellDamageCandidate, ...]:
+    best_by_variant_pair: dict[str, SpellDamageCandidate] = {}
+    for spell in candidates:
+        current = best_by_variant_pair.get(spell.variant_pair_id)
+        if current is None or spell_damage_per_ap(spell, stats) > spell_damage_per_ap(current, stats):
+            best_by_variant_pair[spell.variant_pair_id] = spell
+    return tuple(best_by_variant_pair.values())
+
+
+def filler_cast_count_for_turn(spell: SpellDamageCandidate, turn_cast_counts: dict[str, int]) -> int:
+    cast_limits = [limit for limit in (spell.casts_per_turn, spell.casts_per_target) if limit]
+    max_casts = min(cast_limits) if cast_limits else 99
+    used_casts = turn_cast_counts.get(spell.name, 0)
+    return max(max_casts - used_casts, 0)
+
+
+def best_filler_spell(
+    filler_spells: Iterable[SpellDamageCandidate],
+    stats: dict[str, int],
+    remaining_ap: int,
+    turn_cast_counts: dict[str, int],
+) -> SpellDamageCandidate | None:
+    affordable = [
+        spell
+        for spell in filler_spells
+        if spell.ap_cost <= remaining_ap and filler_cast_count_for_turn(spell, turn_cast_counts) > 0
+    ]
+    if not affordable:
+        return None
+    return max(affordable, key=lambda spell: spell_damage_per_ap(spell, stats))
+
+
+def strength_iop_rotation_damage(stats: dict[str, int]) -> float:
+    candidates = strength_spell_candidates()
+    if not candidates:
+        return profile_damage(list(strength_spell_damage_profile()), stats)
+
+    selected_spells = select_variant_spells(candidates, stats)
+    wrath = next((spell for spell in selected_spells if spell.name == IOP_WRATH_SPELL_NAME), None)
+    filler_spells = tuple(
+        spell
+        for spell in selected_spells
+        if spell.name != IOP_WRATH_SPELL_NAME and not spell.cooldown
+    )
+    if not filler_spells:
+        return profile_damage(list(strength_spell_damage_profile()), stats)
+
+    target_ap = min(max(stats.get("AP", REQUIRED_AP), REQUIRED_AP), MAX_AP)
+    total_ap_budget = SPELL_DAMAGE_PROFILE_TURNS * target_ap
+    total_damage = 0.0
+
+    for turn in range(1, SPELL_DAMAGE_PROFILE_TURNS + 1):
+        remaining_ap = target_ap
+        turn_cast_counts: dict[str, int] = {}
+        if wrath and turn in IOP_WRATH_CAST_TURNS and wrath.ap_cost <= remaining_ap:
+            stacks = min(IOP_WRATH_CAST_TURNS.index(turn), wrath.max_damage_increase_stacks)
+            total_damage += spell_damage_per_cast(wrath, stats, stacks=stacks)
+            remaining_ap -= wrath.ap_cost
+            turn_cast_counts[wrath.name] = turn_cast_counts.get(wrath.name, 0) + 1
+
+        while remaining_ap > 0:
+            filler = best_filler_spell(filler_spells, stats, remaining_ap, turn_cast_counts)
+            if filler is None:
+                break
+            total_damage += spell_damage_per_cast(filler, stats)
+            remaining_ap -= filler.ap_cost
+            turn_cast_counts[filler.name] = turn_cast_counts.get(filler.name, 0) + 1
+
+    return total_damage / max(total_ap_budget, 1) * SPELL_DAMAGE_PROFILE_TURN_AP
+
+
 @lru_cache(maxsize=1)
-def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
+def strength_spell_candidates() -> tuple[SpellDamageCandidate, ...]:
     try:
         from sqlalchemy.orm import joinedload
 
@@ -1110,22 +1295,26 @@ def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
         from app.database.model_class import ModelClass
         from app.database.model_class_translation import ModelClassTranslation
         from app.database.model_spell import ModelSpell
+        from app.database.model_spell_effect import ModelSpellEffect
         from app.database.model_spell_stats import ModelSpellStats
         from app.database.model_spell_translation import ModelSpellTranslation
         from app.database.model_spell_variant_pair import ModelSpellVariantPair
     except Exception:
-        return generic_damage_profile()
+        return tuple()
 
     try:
         with session_scope() as db_session:
             spell_stats = (
-                db_session.query(ModelSpellStats)
+                db_session.query(ModelSpellStats, ModelSpellTranslation.name, ModelSpell.spell_variant_pair_id, ModelSpell.is_trap)
                 .join(ModelSpell, ModelSpellStats.spell_id == ModelSpell.uuid)
                 .join(ModelSpellVariantPair, ModelSpell.spell_variant_pair_id == ModelSpellVariantPair.uuid)
                 .join(ModelClass, ModelSpellVariantPair.class_id == ModelClass.uuid)
                 .join(ModelClassTranslation, ModelClassTranslation.class_id == ModelClass.uuid)
                 .join(ModelSpellTranslation, ModelSpellTranslation.spell_id == ModelSpell.uuid)
-                .options(joinedload(ModelSpellStats.spell_effects))
+                .options(
+                    joinedload(ModelSpellStats.spell_effects).joinedload(ModelSpellEffect.condition),
+                    joinedload(ModelSpellStats.spell_damage_increase),
+                )
                 .filter(
                     ModelClassTranslation.locale == "en",
                     ModelClassTranslation.name == SPELL_PROFILE_CLASS_NAME,
@@ -1136,49 +1325,54 @@ def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
                 .all()
             )
     except Exception:
-        return generic_damage_profile()
+        return tuple()
 
-    highest_stats_by_spell_id: dict[str, Any] = {}
-    for spell_stat in spell_stats:
+    highest_stats_by_spell_id: dict[str, tuple[Any, str, Any, bool]] = {}
+    for spell_stat, spell_name, variant_pair_id, is_trap in spell_stats:
         spell_id = str(spell_stat.spell_id)
         if spell_id not in highest_stats_by_spell_id:
-            highest_stats_by_spell_id[spell_id] = spell_stat
+            highest_stats_by_spell_id[spell_id] = (spell_stat, spell_name, variant_pair_id, is_trap)
 
-    lines: list[DamageLine] = []
-    spell_count = 0
     profile_elements = spell_profile_elements()
-    for spell_stat in highest_stats_by_spell_id.values():
-        spell_lines: list[DamageLine] = []
-        for effect in spell_stat.spell_effects:
-            element = profile_elements.get(effect_type_key(effect.effect_type))
-            if not element or effect.min_damage is None:
-                continue
-            spell_lines.append(
-                DamageLine(
-                    element=element,
-                    base_min=int_or_zero(effect.min_damage),
-                    base_max=int_or_zero(effect.max_damage),
-                    crit_base_min=(
-                        int_or_zero(effect.crit_min_damage)
-                        if effect.crit_min_damage is not None
-                        else None
-                    ),
-                    crit_base_max=(
-                        int_or_zero(effect.crit_max_damage)
-                        if effect.crit_max_damage is not None
-                        else None
-                    ),
-                    crit_chance=int_or_zero(spell_stat.base_crit_chance),
-                    weight=1 / max(spell_stat.ap_cost or 1, 1),
-                )
+    candidates = []
+    for spell_stat, spell_name, variant_pair_id, is_trap in highest_stats_by_spell_id.values():
+        spell_lines = collapse_single_target_spell_effects(
+            spell_stat.spell_effects,
+            profile_elements,
+            int_or_zero(spell_stat.base_crit_chance),
+            is_trap=is_trap,
+        )
+        if not spell_lines:
+            continue
+        damage_increase = spell_stat.spell_damage_increase
+        candidates.append(
+            SpellDamageCandidate(
+                name=spell_name,
+                variant_pair_id=str(variant_pair_id),
+                ap_cost=max(spell_stat.ap_cost or 1, 1),
+                cooldown=spell_stat.cooldown,
+                casts_per_turn=spell_stat.casts_per_turn,
+                casts_per_target=spell_stat.casts_per_target,
+                base_crit_chance=int_or_zero(spell_stat.base_crit_chance),
+                damage_lines=spell_lines,
+                damage_increase=int_or_zero(getattr(damage_increase, "base_increase", 0)),
+                crit_damage_increase=int_or_zero(getattr(damage_increase, "crit_base_increase", 0)),
+                max_damage_increase_stacks=int_or_zero(getattr(damage_increase, "max_stacks", 0)),
             )
-        if spell_lines:
-            spell_count += 1
-            lines.extend(spell_lines)
+        )
 
-    if not lines or spell_count == 0:
+    return tuple(candidates)
+
+
+@lru_cache(maxsize=1)
+def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
+    candidates = strength_spell_candidates()
+    if not candidates:
         return generic_damage_profile()
-
+    selected = select_variant_spells(candidates, BASE_STATS)
+    filler_spells = [spell for spell in selected if spell.name != IOP_WRATH_SPELL_NAME]
+    if not filler_spells:
+        return generic_damage_profile()
     return tuple(
         DamageLine(
             element=line.element,
@@ -1190,13 +1384,16 @@ def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
             crit_bonus_damage=line.crit_bonus_damage,
             is_weapon=line.is_weapon,
             is_trap=line.is_trap,
-            weight=line.weight * SPELL_DAMAGE_PROFILE_TURN_AP / spell_count,
+            weight=line.weight / max(spell.ap_cost, 1),
         )
-        for line in lines
+        for spell in filler_spells
+        for line in spell.damage_lines
     )
 
 
 def strength_spell_damage(stats: dict[str, int]) -> float:
+    if ACTIVE_DAMAGE_PROFILE.name == "strength":
+        return strength_iop_rotation_damage(stats)
     return profile_damage(list(strength_spell_damage_profile()), stats)
 
 
