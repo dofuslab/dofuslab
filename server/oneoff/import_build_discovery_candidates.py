@@ -95,8 +95,8 @@ def create_custom_set_from_build(db_session, build, index: int, name_prefix: str
 
     stats = ModelCustomSetStat(
         custom_set_id=custom_set.uuid,
-        base_strength=300,
-        base_vitality=395,
+        base_strength=build.base_allocation.get("Strength", 300),
+        base_vitality=build.base_allocation.get("Vitality", 395),
         scrolled_strength=100,
         scrolled_vitality=100,
         scrolled_wisdom=100,

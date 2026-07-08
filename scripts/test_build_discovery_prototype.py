@@ -36,11 +36,14 @@ from oneoff.build_discovery_prototype import (
     has_ap_set_bonus,
     has_ap_weapon,
     generate_set_core_packages,
+    optimize_base_allocation,
     package_seed_states,
     packages_compatible,
     pending_dofus_search_target,
     prune_dominated_items,
     ranked_dofus_combinations,
+    base_stats_for_strength_allocation,
+    strength_point_cost,
     score_stats,
     score_state,
     secondary_ap_source_count,
@@ -96,6 +99,29 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         high_damage.stats["Critical Damage"] = 20
 
         self.assertGreater(final_score_state(high_damage), final_score_state(low_damage))
+
+    def test_strength_point_cost_uses_dofus_soft_caps(self):
+        self.assertEqual(strength_point_cost(100), 100)
+        self.assertEqual(strength_point_cost(200), 300)
+        self.assertEqual(strength_point_cost(300), 600)
+        self.assertEqual(strength_point_cost(398), 992)
+
+    def test_base_stats_for_strength_allocation_puts_remainder_in_vitality(self):
+        stats = base_stats_for_strength_allocation(398)
+
+        self.assertEqual(stats["Strength"], 498)
+        self.assertEqual(stats["Vitality"], 103)
+
+    def test_optimize_base_allocation_can_choose_glass_cannon_strength(self):
+        state = BuildState()
+        optimized = optimize_base_allocation(
+            state,
+            generic_damage_weight=10,
+            weapon_damage_weight=0,
+        )
+
+        self.assertEqual(optimized.base_allocation["Strength"], 398)
+        self.assertEqual(optimized.stats["Strength"], 498)
 
     def test_strength_spell_damage_profile_falls_back_to_generic_profile(self):
         strength_spell_damage_profile.cache_clear()

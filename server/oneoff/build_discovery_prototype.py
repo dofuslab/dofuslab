@@ -120,6 +120,11 @@ BASE_STATS = {
     "Chance": 100,
     "Agility": 100,
 }
+BASE_CHARACTERISTIC_POINTS = 995
+SCROLLED_BASE_STAT = 100
+BASE_STRENGTH_ALLOCATION_OPTIONS = tuple(
+    sorted({*range(0, 399, 25), 300, 350, 375, 398})
+)
 
 SLOTS: list[tuple[str, tuple[str, ...]]] = [
     ("amulet", ("Amulet",)),
@@ -427,6 +432,7 @@ class BuildState:
     set_counts: dict[str, int] = field(default_factory=dict)
     used_item_ids: set[str] = field(default_factory=set)
     exos: dict[str, str] = field(default_factory=dict)
+    base_allocation: dict[str, int] = field(default_factory=lambda: {"Strength": 300, "Vitality": 395})
     ap_strategy: str | None = None
     score: float = 0.0
     condition_failures: list[dict[str, Any]] = field(default_factory=list)
@@ -438,6 +444,7 @@ class BuildState:
             set_counts=dict(self.set_counts),
             used_item_ids=set(self.used_item_ids),
             exos=dict(self.exos),
+            base_allocation=dict(self.base_allocation),
             ap_strategy=self.ap_strategy,
             score=self.score,
             condition_failures=list(self.condition_failures),
@@ -1101,6 +1108,61 @@ def survivability_score(stats: dict[str, int]) -> float:
     return weighted_ehp * SURVIVABILITY_SCORE_WEIGHT
 
 
+def strength_point_cost(base_strength: int) -> int:
+    if base_strength < 0:
+        raise ValueError("Base strength cannot be negative.")
+    first = min(base_strength, 100)
+    second = min(max(base_strength - 100, 0), 100) * 2
+    third = min(max(base_strength - 200, 0), 100) * 3
+    fourth = max(base_strength - 300, 0) * 4
+    return first + second + third + fourth
+
+
+def base_stats_for_strength_allocation(base_strength: int) -> dict[str, int]:
+    cost = strength_point_cost(base_strength)
+    if cost > BASE_CHARACTERISTIC_POINTS:
+        raise ValueError(f"Base strength allocation exceeds available points: {base_strength}")
+    base_vitality = BASE_CHARACTERISTIC_POINTS - cost
+    return {
+        **BASE_STATS,
+        "Strength": SCROLLED_BASE_STAT + base_strength,
+        "Vitality": SCROLLED_BASE_STAT + base_vitality,
+    }
+
+
+def state_with_base_allocation(state: BuildState, base_strength: int) -> BuildState:
+    allocated_base_stats = base_stats_for_strength_allocation(base_strength)
+    next_state = state.clone()
+    next_state.base_allocation = {
+        "Strength": base_strength,
+        "Vitality": allocated_base_stats["Vitality"] - SCROLLED_BASE_STAT,
+    }
+    for stat, allocated_value in allocated_base_stats.items():
+        current_base_value = BASE_STATS.get(stat, 0)
+        next_state.stats[stat] = next_state.stats.get(stat, 0) - current_base_value + allocated_value
+    return next_state
+
+
+def optimize_base_allocation(
+    state: BuildState,
+    generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
+    weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+) -> BuildState:
+    best_state: BuildState | None = None
+    for base_strength in BASE_STRENGTH_ALLOCATION_OPTIONS:
+        allocated_state = state_with_base_allocation(state, base_strength)
+        allocated_state.score = final_score_state(
+            allocated_state,
+            generic_damage_weight=generic_damage_weight,
+            weapon_damage_weight=weapon_damage_weight,
+        )
+        if best_state is None or allocated_state.score > best_state.score:
+            best_state = allocated_state
+    if best_state is None:
+        raise RuntimeError("No legal base stat allocation found.")
+    return best_state
+
+
 def final_score_state(
     state: BuildState,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
@@ -1227,7 +1289,7 @@ def completed_valid_builds(
             continue
         if ap_strategy:
             state_with_exos.ap_strategy = ap_strategy.name
-        state_with_exos.score = final_score_state(
+        state_with_exos = optimize_base_allocation(
             state_with_exos,
             generic_damage_weight=generic_damage_weight,
             weapon_damage_weight=weapon_damage_weight,
@@ -1601,7 +1663,7 @@ def direct_valid_completed_state(
         return None
 
     state_with_exos.ap_strategy = matched_strategy.name
-    state_with_exos.score = final_score_state(
+    state_with_exos = optimize_base_allocation(
         state_with_exos,
         generic_damage_weight=generic_damage_weight,
         weapon_damage_weight=weapon_damage_weight,
@@ -1975,6 +2037,7 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
         "survivabilityScore": round(survivability_score(scoring_stats), 2),
         "weakestElementEhp": round(min(elemental_effective_hp(scoring_stats)), 2),
         "apStrategy": state.ap_strategy,
+        "baseAllocation": state.base_allocation,
         "conditionFailures": state.condition_failures,
         "totals": {
             "AP": state.stats.get("AP", 0),
