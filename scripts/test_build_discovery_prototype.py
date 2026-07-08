@@ -1,9 +1,11 @@
 import unittest
 from pathlib import Path
 import sys
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 
+import oneoff.build_discovery_prototype as build_discovery_prototype
 from oneoff.build_discovery_prototype import (
     BuildState,
     BuildTarget,
@@ -24,6 +26,7 @@ from oneoff.build_discovery_prototype import (
     dominates_item,
     exo_search_target,
     exo_natural_cap_target,
+    find_diverse_builds,
     has_negative_action_stat,
     has_ap_set_bonus,
     has_ap_weapon,
@@ -720,6 +723,44 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         state.set_counts = {"set_a": 3}
 
         self.assertEqual(approach_item_ids(state), {"hat", "cloak", "ring"})
+
+    def test_find_diverse_builds_selects_from_one_ranked_search_pass(self):
+        def state_with_items(prefix: str, score: int, shared: set[str] | None = None) -> BuildState:
+            shared_ids = shared or set()
+            item_ids = set(shared_ids) | {
+                f"{prefix}_{idx}" for idx in range(16 - len(shared_ids))
+            }
+            state = BuildState(used_item_ids=item_ids, score=score, ap_strategy=prefix)
+            state.slots = {
+                "amulet": {"dofusID": f"{prefix}_amulet", "setID": None, "_stats": {}},
+                "belt": {"dofusID": f"{prefix}_belt", "setID": None, "_stats": {}},
+                "weapon": {"dofusID": f"{prefix}_weapon", "setID": None, "_stats": {}},
+                "shield": {"dofusID": f"{prefix}_shield", "setID": None, "_stats": {}},
+                "hat": {"dofusID": f"{prefix}_hat", "setID": None, "_stats": {}},
+                "cloak": {"dofusID": f"{prefix}_cloak", "setID": None, "_stats": {}},
+            }
+            return state
+
+        first = state_with_items("first", 100)
+        too_similar = state_with_items("similar", 90, shared=set(first.used_item_ids) - {"first_15"})
+        different = state_with_items("different", 80)
+
+        with patch.object(
+            build_discovery_prototype,
+            "find_builds",
+            return_value=[first, too_similar, different],
+        ) as find_builds:
+            builds = find_diverse_builds(
+                limit=2,
+                top_k=1,
+                beam_width=1,
+                per_signature_cap=1,
+                relevant_set_limit=1,
+                max_shared_items=9,
+            )
+
+        find_builds.assert_called_once()
+        self.assertEqual(builds, [first, different])
 
 
 if __name__ == "__main__":

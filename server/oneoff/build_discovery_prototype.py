@@ -997,59 +997,38 @@ def find_diverse_builds(
     target: BuildTarget = DEFAULT_TARGET,
     max_shared_items: int | None = DEFAULT_MAX_SHARED_ITEMS,
 ) -> list[BuildState]:
+    candidates = find_builds(
+        top_k=top_k,
+        beam_width=beam_width,
+        per_signature_cap=per_signature_cap,
+        relevant_set_limit=relevant_set_limit,
+        target=target,
+        max_shared_items=None,
+    )
+
     selected: list[BuildState] = []
-    exclusion_batches: list[set[str]] = [set()]
-    seen_exclusion_batches: set[tuple[str, ...]] = {tuple()}
+    seen_item_signatures: set[tuple[str, ...]] = set()
+    seen_approaches: set[tuple[str | None, ...]] = set()
+    for candidate in candidates:
+        item_signature = tuple(sorted(candidate.used_item_ids))
+        if item_signature in seen_item_signatures:
+            continue
+        candidate_approach = approach_key(candidate)
+        if candidate_approach in seen_approaches:
+            continue
+        if max_shared_items is not None and any(
+            len(candidate.used_item_ids & existing.used_item_ids) > max_shared_items
+            for existing in selected
+        ):
+            continue
 
-    while len(selected) < limit:
-        made_progress = False
-        for excluded_item_ids in list(exclusion_batches):
-            if len(selected) >= limit:
-                break
-            if selected and not excluded_item_ids:
-                continue
-
-            candidates = find_builds(
-                top_k=top_k,
-                beam_width=beam_width,
-                per_signature_cap=per_signature_cap,
-                relevant_set_limit=relevant_set_limit,
-                target=target,
-                max_shared_items=None,
-                excluded_item_ids=excluded_item_ids,
-            )
-            next_build = next(
-                (
-                    candidate
-                    for candidate in candidates
-                    if all(candidate.used_item_ids != existing.used_item_ids for existing in selected)
-                    and all(approach_key(candidate) != approach_key(existing) for existing in selected)
-                    and (
-                        not selected
-                        or max_shared_items is None
-                        or all(
-                            len(candidate.used_item_ids & existing.used_item_ids) <= max_shared_items
-                            for existing in selected
-                        )
-                    )
-                ),
-                None,
-            )
-            if next_build is None:
-                continue
-
-            selected.append(next_build)
-            new_exclusion = approach_item_ids(next_build)
-            exclusion_key = tuple(sorted(new_exclusion))
-            if exclusion_key not in seen_exclusion_batches:
-                exclusion_batches.append(new_exclusion)
-                seen_exclusion_batches.add(exclusion_key)
-            made_progress = True
-
-        if not made_progress:
+        selected.append(candidate)
+        seen_item_signatures.add(item_signature)
+        seen_approaches.add(candidate_approach)
+        if len(selected) >= limit:
             break
 
-    return sorted(selected, key=lambda state: state.score, reverse=True)
+    return selected
 
 
 def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[str, Any]:
