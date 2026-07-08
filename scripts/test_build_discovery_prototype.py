@@ -39,6 +39,8 @@ from oneoff.build_discovery_prototype import (
     score_stats,
     score_state,
     secondary_ap_source_count,
+    strength_spell_damage,
+    strength_spell_damage_profile,
     state_weapon_damage,
 )
 
@@ -82,6 +84,15 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         high_damage.stats["Critical Damage"] = 20
 
         self.assertGreater(final_score_state(high_damage), final_score_state(low_damage))
+
+    def test_strength_spell_damage_profile_falls_back_to_generic_profile(self):
+        strength_spell_damage_profile.cache_clear()
+        with patch("builtins.__import__", side_effect=ImportError):
+            profile = strength_spell_damage_profile()
+        strength_spell_damage_profile.cache_clear()
+
+        self.assertEqual(tuple(build_discovery_prototype.GENERIC_STRENGTH_DAMAGE_PROFILE), profile)
+        self.assertGreater(strength_spell_damage({"Strength": 400, "Earth Damage": 20}), 0)
 
     def test_final_score_uses_item_damage_buffs_as_expected_stats(self):
         baseline = BuildState()

@@ -6,7 +6,7 @@ inspect before wiring it into product code.
 
 Known prototype limitations:
 - trophy/dofus exclusivity rules are not modeled
-- scoring is a rough stat proxy, not real spell/weapon damage
+- scoring uses old local spell data where available and a generic fallback
 """
 
 from __future__ import annotations
@@ -16,6 +16,7 @@ import json
 import time
 from collections import defaultdict
 from dataclasses import dataclass, field
+from functools import lru_cache
 from itertools import combinations, product
 from typing import Any, Iterable
 
@@ -50,6 +51,16 @@ GENERIC_STRENGTH_DAMAGE_PROFILE = [
     DamageLine(element="earth", base_min=42, base_max=48, crit_chance=15, weight=0.75),
     DamageLine(element="earth", base_min=18, base_max=22, crit_chance=25, weight=1.25),
 ]
+SPELL_PROFILE_CLASS_NAME = "Iop"
+SPELL_DAMAGE_PROFILE_TURN_AP = 10
+SPELL_PROFILE_ELEMENTS = {
+    "NEUTRAL_DAMAGE": "neutral",
+    "NEUTRAL_STEAL": "neutral",
+    "EARTH_DAMAGE": "earth",
+    "EARTH_STEAL": "earth",
+    "BEST_ELEMENT_DAMAGE": "earth",
+    "BEST_ELEMENT_STEAL": "earth",
+}
 WEAPON_EFFECT_ELEMENTS = {
     "NEUTRAL_DAMAGE": "neutral",
     "NEUTRAL_STEAL": "neutral",
@@ -916,6 +927,104 @@ def state_weapon_damage(state: BuildState, stats: dict[str, float] | None = None
     return profile_damage(weapon_damage_lines(weapon), stats or state.stats) / ap_cost
 
 
+@lru_cache(maxsize=1)
+def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
+    try:
+        from sqlalchemy.orm import joinedload
+
+        from app import session_scope
+        from app.database.model_class import ModelClass
+        from app.database.model_class_translation import ModelClassTranslation
+        from app.database.model_spell import ModelSpell
+        from app.database.model_spell_stats import ModelSpellStats
+        from app.database.model_spell_translation import ModelSpellTranslation
+        from app.database.model_spell_variant_pair import ModelSpellVariantPair
+    except Exception:
+        return tuple(GENERIC_STRENGTH_DAMAGE_PROFILE)
+
+    try:
+        with session_scope() as db_session:
+            spell_stats = (
+                db_session.query(ModelSpellStats)
+                .join(ModelSpell, ModelSpellStats.spell_id == ModelSpell.uuid)
+                .join(ModelSpellVariantPair, ModelSpell.spell_variant_pair_id == ModelSpellVariantPair.uuid)
+                .join(ModelClass, ModelSpellVariantPair.class_id == ModelClass.uuid)
+                .join(ModelClassTranslation, ModelClassTranslation.class_id == ModelClass.uuid)
+                .join(ModelSpellTranslation, ModelSpellTranslation.spell_id == ModelSpell.uuid)
+                .options(joinedload(ModelSpellStats.spell_effects))
+                .filter(
+                    ModelClassTranslation.locale == "en",
+                    ModelClassTranslation.name == SPELL_PROFILE_CLASS_NAME,
+                    ModelSpellTranslation.locale == "en",
+                    ModelSpellStats.level <= TARGET_LEVEL,
+                )
+                .order_by(ModelSpellTranslation.name, ModelSpellStats.level.desc())
+                .all()
+            )
+    except Exception:
+        return tuple(GENERIC_STRENGTH_DAMAGE_PROFILE)
+
+    highest_stats_by_spell_id: dict[str, Any] = {}
+    for spell_stat in spell_stats:
+        spell_id = str(spell_stat.spell_id)
+        if spell_id not in highest_stats_by_spell_id:
+            highest_stats_by_spell_id[spell_id] = spell_stat
+
+    lines: list[DamageLine] = []
+    spell_count = 0
+    for spell_stat in highest_stats_by_spell_id.values():
+        spell_lines: list[DamageLine] = []
+        for effect in spell_stat.spell_effects:
+            element = SPELL_PROFILE_ELEMENTS.get(effect_type_key(effect.effect_type))
+            if not element or effect.min_damage is None:
+                continue
+            spell_lines.append(
+                DamageLine(
+                    element=element,
+                    base_min=int_or_zero(effect.min_damage),
+                    base_max=int_or_zero(effect.max_damage),
+                    crit_base_min=(
+                        int_or_zero(effect.crit_min_damage)
+                        if effect.crit_min_damage is not None
+                        else None
+                    ),
+                    crit_base_max=(
+                        int_or_zero(effect.crit_max_damage)
+                        if effect.crit_max_damage is not None
+                        else None
+                    ),
+                    crit_chance=int_or_zero(spell_stat.base_crit_chance),
+                    weight=1 / max(spell_stat.ap_cost or 1, 1),
+                )
+            )
+        if spell_lines:
+            spell_count += 1
+            lines.extend(spell_lines)
+
+    if not lines or spell_count == 0:
+        return tuple(GENERIC_STRENGTH_DAMAGE_PROFILE)
+
+    return tuple(
+        DamageLine(
+            element=line.element,
+            base_min=line.base_min,
+            base_max=line.base_max,
+            crit_base_min=line.crit_base_min,
+            crit_base_max=line.crit_base_max,
+            crit_chance=line.crit_chance,
+            crit_bonus_damage=line.crit_bonus_damage,
+            is_weapon=line.is_weapon,
+            is_trap=line.is_trap,
+            weight=line.weight * SPELL_DAMAGE_PROFILE_TURN_AP / spell_count,
+        )
+        for line in lines
+    )
+
+
+def strength_spell_damage(stats: dict[str, int]) -> float:
+    return profile_damage(list(strength_spell_damage_profile()), stats)
+
+
 def expected_incoming_damage(stats: dict[str, int], percent_res_stat: str, flat_res_stat: str) -> float:
     base_hit = GENERIC_INCOMING_HIT
     flat_reduction = (
@@ -962,7 +1071,7 @@ def final_score_state(
     stats = effective_scoring_stats(state)
     return (
         final_utility_score(stats)
-        + profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, stats) * generic_damage_weight
+        + strength_spell_damage(stats) * generic_damage_weight
         + state_weapon_damage(state, stats) * weapon_damage_weight
         + survivability_score(stats)
     )
@@ -1358,7 +1467,7 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
         "score": round(state.score, 2),
         "weightedStatScore": round(score_stats(state.stats), 2),
         "utilityStatScore": round(final_utility_score(scoring_stats), 2),
-        "genericDamageScore": round(profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, scoring_stats), 2),
+        "genericDamageScore": round(strength_spell_damage(scoring_stats), 2),
         "weaponDamageScore": round(state_weapon_damage(state, scoring_stats), 2),
         "survivabilityScore": round(survivability_score(scoring_stats), 2),
         "weakestElementEhp": round(min(elemental_effective_hp(scoring_stats)), 2),

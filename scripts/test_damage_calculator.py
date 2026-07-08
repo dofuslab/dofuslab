@@ -68,6 +68,21 @@ class DamageCalculatorTest(unittest.TestCase):
         self.assertEqual(noncrit["ranged"], 170)
         self.assertEqual(crit["ranged"], 185)
 
+    def test_damage_line_can_use_spell_specific_crit_bases(self):
+        stats = {"Strength": 400, "Earth Damage": 20}
+        profile = [
+            DamageLine(
+                "earth",
+                30,
+                30,
+                crit_base_min=40,
+                crit_base_max=40,
+                crit_chance=100,
+            )
+        ]
+
+        self.assertEqual(profile_damage(profile, stats), 220)
+
 
 if __name__ == "__main__":
     unittest.main()

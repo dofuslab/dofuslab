@@ -25,6 +25,8 @@ class DamageLine:
     element: str
     base_min: int
     base_max: int
+    crit_base_min: int | None = None
+    crit_base_max: int | None = None
     crit_chance: int = 15
     crit_bonus_damage: int = 0
     is_weapon: bool = False
@@ -80,6 +82,8 @@ def calc_damage(
 
 
 def average_line_damage(line: DamageLine, stats: dict[str, int]) -> float:
+    crit_base_min = line.crit_base_min if line.crit_base_min is not None else line.base_min
+    crit_base_max = line.crit_base_max if line.crit_base_max is not None else line.base_max
     noncrit_min = calc_damage(
         line.base_min,
         line.element,
@@ -95,7 +99,7 @@ def average_line_damage(line: DamageLine, stats: dict[str, int]) -> float:
         is_weapon=line.is_weapon,
     )
     crit_min = calc_damage(
-        line.base_min,
+        crit_base_min,
         line.element,
         stats,
         is_crit=True,
@@ -104,7 +108,7 @@ def average_line_damage(line: DamageLine, stats: dict[str, int]) -> float:
         crit_bonus_damage=line.crit_bonus_damage,
     )
     crit_max = calc_damage(
-        line.base_max,
+        crit_base_max,
         line.element,
         stats,
         is_crit=True,
