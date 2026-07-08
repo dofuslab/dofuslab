@@ -169,9 +169,12 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
     def test_generic_pvm_pushback_exposure_is_low(self):
         self.assertLess(build_discovery_prototype.GENERIC_INCOMING_PUSHBACK_RATE, 0.05)
 
-    def test_generic_pvm_survivability_blends_weakest_element_lightly(self):
-        self.assertEqual(build_discovery_prototype.WEAKEST_ELEMENT_EHP_WEIGHT, 0.3)
-        self.assertEqual(build_discovery_prototype.AVERAGE_ELEMENT_EHP_WEIGHT, 0.7)
+    def test_generic_pvm_survivability_weights_weaker_elements_more(self):
+        self.assertEqual(
+            build_discovery_prototype.SORTED_ELEMENT_EHP_WEIGHTS,
+            (0.4, 0.25, 0.15, 0.1, 0.1),
+        )
+        self.assertAlmostEqual(sum(build_discovery_prototype.SORTED_ELEMENT_EHP_WEIGHTS), 1.0)
 
     def test_strength_profile_does_not_directly_value_off_element_damage(self):
         self.assertGreater(build_discovery_prototype.STAT_WEIGHTS["Earth Damage"], 0)
@@ -189,7 +192,7 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
     def test_score_stats_does_not_cap_uncapped_stats(self):
         self.assertGreater(score_stats({"Strength": 80}), score_stats({"Strength": 50}))
 
-    def test_survivability_score_blends_weakest_and_average_element_ehp(self):
+    def test_survivability_score_weights_sorted_element_ehp(self):
         stats = {
             "Vitality": 4000,
             "% Neutral Resistance": 0,
@@ -198,11 +201,13 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             "% Water Resistance": 40,
             "% Air Resistance": 40,
         }
-        effective_hp_values = build_discovery_prototype.elemental_effective_hp(stats)
-        expected_score = (
-            min(effective_hp_values) * build_discovery_prototype.WEAKEST_ELEMENT_EHP_WEIGHT
-            + (sum(effective_hp_values) / len(effective_hp_values))
-            * build_discovery_prototype.AVERAGE_ELEMENT_EHP_WEIGHT
+        sorted_effective_hp_values = sorted(build_discovery_prototype.elemental_effective_hp(stats))
+        expected_score = sum(
+            ehp * weight
+            for ehp, weight in zip(
+                sorted_effective_hp_values,
+                build_discovery_prototype.SORTED_ELEMENT_EHP_WEIGHTS,
+            )
         ) * build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT
 
         self.assertAlmostEqual(survivability_score(stats), expected_score)

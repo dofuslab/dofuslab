@@ -136,8 +136,7 @@ DEFAULT_SLOT_ORDERS: list[tuple[str, ...]] = [
 
 PERCENT_RESISTANCE_WEIGHT = 2.0
 SURVIVABILITY_SCORE_WEIGHT = 0.22
-WEAKEST_ELEMENT_EHP_WEIGHT = 0.3
-AVERAGE_ELEMENT_EHP_WEIGHT = 0.7
+SORTED_ELEMENT_EHP_WEIGHTS = (0.4, 0.25, 0.15, 0.1, 0.1)
 GENERIC_INCOMING_HIT = 350
 GENERIC_INCOMING_CRIT_RATE = 0.2
 GENERIC_INCOMING_PUSHBACK_RATE = 0.02
@@ -884,12 +883,11 @@ def survivability_score(stats: dict[str, int]) -> float:
     effective_hp_values = elemental_effective_hp(stats)
     if not effective_hp_values:
         return 0.0
-    weakest_element_ehp = min(effective_hp_values)
-    average_element_ehp = sum(effective_hp_values) / len(effective_hp_values)
-    return (
-        weakest_element_ehp * WEAKEST_ELEMENT_EHP_WEIGHT
-        + average_element_ehp * AVERAGE_ELEMENT_EHP_WEIGHT
-    ) * SURVIVABILITY_SCORE_WEIGHT
+    sorted_ehp_values = sorted(effective_hp_values)
+    weighted_ehp = sum(
+        ehp * weight for ehp, weight in zip(sorted_ehp_values, SORTED_ELEMENT_EHP_WEIGHTS)
+    )
+    return weighted_ehp * SURVIVABILITY_SCORE_WEIGHT
 
 
 def final_score_state(
