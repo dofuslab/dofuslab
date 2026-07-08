@@ -21,6 +21,7 @@ from oneoff.build_discovery_prototype import (
     ap_strategy_matches,
     approach_item_ids,
     apply_missing_exos,
+    balanced_resistance_score,
     candidate_pool_for_slot,
     diversify_builds,
     dominates_item,
@@ -99,6 +100,42 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
     def test_score_stats_does_not_cap_uncapped_stats(self):
         self.assertGreater(score_stats({"Strength": 80}), score_stats({"Strength": 50}))
+
+    def test_balanced_resistance_rewards_covering_weak_elements(self):
+        spiky = {
+            "% Neutral Resistance": 0,
+            "% Earth Resistance": 0,
+            "% Fire Resistance": 40,
+            "% Water Resistance": 40,
+            "% Air Resistance": 40,
+        }
+        balanced = {
+            "% Neutral Resistance": 24,
+            "% Earth Resistance": 24,
+            "% Fire Resistance": 24,
+            "% Water Resistance": 24,
+            "% Air Resistance": 24,
+        }
+
+        self.assertGreater(balanced_resistance_score(balanced), balanced_resistance_score(spiky))
+
+    def test_balanced_resistance_caps_each_element(self):
+        capped = {
+            "% Neutral Resistance": 50,
+            "% Earth Resistance": 50,
+            "% Fire Resistance": 50,
+            "% Water Resistance": 50,
+            "% Air Resistance": 50,
+        }
+        over_cap = {
+            "% Neutral Resistance": 80,
+            "% Earth Resistance": 80,
+            "% Fire Resistance": 80,
+            "% Water Resistance": 80,
+            "% Air Resistance": 80,
+        }
+
+        self.assertEqual(balanced_resistance_score(over_cap), balanced_resistance_score(capped))
 
     def test_weapon_damage_is_optional_so_stat_sticks_are_not_penalized(self):
         stat_stick = BuildState()

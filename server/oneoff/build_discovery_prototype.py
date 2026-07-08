@@ -135,6 +135,14 @@ DEFAULT_SLOT_ORDERS: list[tuple[str, ...]] = [
 ]
 
 PERCENT_RESISTANCE_WEIGHT = 2.0
+BALANCED_RESISTANCE_WEIGHT = 5.0
+PERCENT_RESISTANCE_STATS = (
+    "% Neutral Resistance",
+    "% Earth Resistance",
+    "% Fire Resistance",
+    "% Water Resistance",
+    "% Air Resistance",
+)
 
 STAT_SCORE_CAPS = {
     "AP": 12,
@@ -770,6 +778,14 @@ def state_weapon_damage(state: BuildState) -> float:
     return profile_damage(weapon_damage_lines(weapon), state.stats) / ap_cost
 
 
+def balanced_resistance_score(stats: dict[str, int]) -> float:
+    capped_resistances = sorted(
+        min(stats.get(stat, 0), STAT_SCORE_CAPS[stat])
+        for stat in PERCENT_RESISTANCE_STATS
+    )
+    return sum(capped_resistances[:2]) / 2 * BALANCED_RESISTANCE_WEIGHT
+
+
 def final_score_state(
     state: BuildState,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
@@ -779,6 +795,7 @@ def final_score_state(
         score_stats(state.stats)
         + profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, state.stats) * generic_damage_weight
         + state_weapon_damage(state) * weapon_damage_weight
+        + balanced_resistance_score(state.stats)
     )
 
 
@@ -1172,6 +1189,7 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
         "weightedStatScore": round(score_stats(state.stats), 2),
         "genericDamageScore": round(profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, state.stats), 2),
         "weaponDamageScore": round(state_weapon_damage(state), 2),
+        "balancedResistanceScore": round(balanced_resistance_score(state.stats), 2),
         "apStrategy": state.ap_strategy,
         "conditionFailures": state.condition_failures,
         "totals": {
