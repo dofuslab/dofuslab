@@ -13,8 +13,6 @@ import EquippedItemCard from 'components/mobile/EquippedItemCard';
 import ErrorPage from 'pages/_error';
 import MageModal from 'components/common/MageModal';
 import SetModal from 'components/common/SetModal';
-import { mediaStyles } from 'components/common/Media';
-import Head from 'next/head';
 import { getErrors, getStatsFromCustomSet } from 'common/utils';
 import { BuildError } from 'common/types';
 import { CustomSetHead } from 'common/wrappers';
@@ -81,13 +79,6 @@ const EquippedItemView = () => {
 
   return (
     <Layout>
-      <Head>
-        <style
-          type="text/css"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: mediaStyles }}
-        />
-      </Head>
       <CustomSetHead customSet={customSet} />
       <EquippedItemCard
         equippedItem={equippedItem}

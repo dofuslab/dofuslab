@@ -9,12 +9,18 @@ import Document, {
 import { extractStyle, createCache, StyleProvider } from '@ant-design/cssinjs';
 
 import { GA_TRACKING_ID } from '../gtag';
+import { mediaStyles } from '../components/common/Media';
 
 const DofusLabDocument = ({ __NEXT_DATA__ }: DocumentProps) => {
   return (
     // eslint-disable-next-line no-underscore-dangle
     <Html lang={__NEXT_DATA__.props.initialLanguage}>
       <Head>
+        <style
+          type="text/css"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: mediaStyles }}
+        />
         <meta property="og:type" content="website" />
         <meta property="twitter:card" content="summary_large_image" />
         <link

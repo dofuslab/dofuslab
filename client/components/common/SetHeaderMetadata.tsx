@@ -31,7 +31,9 @@ function SetHeaderMetadata({
     <div css={{ display: 'flex' }}>
       <div css={{ fontWeight: 500 }}>{t(translationLabelId)}</div>
       <div css={{ marginLeft: 8 }}>
-        <NoSSR>{node}</NoSSR>
+        <NoSSR onSSR={<span css={{ display: 'inline-block', minWidth: 132 }} />}>
+          {node}
+        </NoSSR>
       </div>
     </div>
   );

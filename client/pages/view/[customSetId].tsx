@@ -23,8 +23,7 @@ import {
 } from 'graphql/queries/__generated__/customSet';
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import { CustomSetContext, EditableContext } from 'common/utils';
-import Head from 'next/head';
-import { Media, mediaStyles } from 'components/common/Media';
+import { Media } from 'components/common/Media';
 import MobileSetBuilder from 'components/mobile/SetBuilder';
 import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
 import { CustomSetHead } from 'common/wrappers';
@@ -51,13 +50,6 @@ const ViewPage: NextPage = () => {
 
   return (
     <div className="App" css={{ height: '100%' }}>
-      <Head>
-        <style
-          type="text/css"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: mediaStyles }}
-        />
-      </Head>
       <CustomSetHead customSet={customSet} />
       <EditableContext.Provider value={false}>
         <Media lessThan="xs">

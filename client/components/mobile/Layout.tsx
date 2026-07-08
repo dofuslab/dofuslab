@@ -3,6 +3,7 @@
 import type { ReactNode } from 'react';
 
 import { useState, useCallback, useMemo } from 'react';
+import dynamic from 'next/dynamic';
 import { Global, useTheme } from '@emotion/react';
 import { Layout as AntdLayout, Button, Menu, Drawer } from 'antd';
 import type { MenuProps } from 'antd';
@@ -38,7 +39,6 @@ import {
   changeLocaleVariables,
 } from 'graphql/mutations/__generated__/changeLocale';
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
-import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { LIGHT_THEME_NAME } from 'common/themes';
 import {
   DISCORD_SERVER_LINK,
@@ -46,9 +46,21 @@ import {
   BUY_ME_COFFEE_LINK,
 } from 'common/constants';
 import { getImageUrl } from 'common/utils';
-import DefaultBuildSettingsModal from 'components/common/DefaultBuildSettingsModal';
-import SignUpModal from '../common/SignUpModal';
-import LoginModal from '../common/LoginModal';
+
+const SignUpModal = dynamic(() => import('../common/SignUpModal'), {
+  ssr: false,
+});
+const LoginModal = dynamic(() => import('../common/LoginModal'), {
+  ssr: false,
+});
+const ChangePasswordModal = dynamic(
+  () => import('components/common/ChangePasswordModal'),
+  { ssr: false },
+);
+const DefaultBuildSettingsModal = dynamic(
+  () => import('components/common/DefaultBuildSettingsModal'),
+  { ssr: false },
+);
 
 interface LayoutProps {
   children: ReactNode;
@@ -396,6 +408,8 @@ function Layout({ children }: LayoutProps) {
                     ? 'logo/DL-Full_Light.svg'
                     : 'logo/DL-Full_Dark.svg',
                 )}
+                width={120}
+                height={36}
                 css={{ width: 120 }}
                 alt="DofusLab"
               />
@@ -470,24 +484,32 @@ function Layout({ children }: LayoutProps) {
         >
           {children}
         </AntdLayout.Content>
-        <LoginModal
-          open={showLoginModal}
-          onClose={closeLoginModal}
-          openSignUpModal={openSignUpModal}
-        />
-        <SignUpModal
-          open={showSignUpModal}
-          onClose={closeSignUpModal}
-          openLoginModal={openLoginModal}
-        />
-        <ChangePasswordModal
-          open={showPasswordModal}
-          onClose={closePasswordModal}
-        />
-        <DefaultBuildSettingsModal
-          open={showBuildSettings}
-          onClose={closeBuildSettings}
-        />
+        {showLoginModal && (
+          <LoginModal
+            open={showLoginModal}
+            onClose={closeLoginModal}
+            openSignUpModal={openSignUpModal}
+          />
+        )}
+        {showSignUpModal && (
+          <SignUpModal
+            open={showSignUpModal}
+            onClose={closeSignUpModal}
+            openLoginModal={openLoginModal}
+          />
+        )}
+        {showPasswordModal && (
+          <ChangePasswordModal
+            open={showPasswordModal}
+            onClose={closePasswordModal}
+          />
+        )}
+        {showBuildSettings && (
+          <DefaultBuildSettingsModal
+            open={showBuildSettings}
+            onClose={closeBuildSettings}
+          />
+        )}
       </AntdLayout>
     </AntdRegistry>
   );
