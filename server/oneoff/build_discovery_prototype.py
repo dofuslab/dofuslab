@@ -24,7 +24,6 @@ from oneoff.condition_evaluator import (
     target_forced_conditions_hold,
     unmet_item_conditions,
 )
-from oneoff.damage_calculator import STRENGTH_PVM_PROFILE, profile_damage
 
 TARGET_LEVEL = 200
 RELEVANT_SET_ITEM_MIN_LEVEL = 180
@@ -663,20 +662,8 @@ def score_state(
     return score
 
 
-def survivability_score(stats: dict[str, int]) -> float:
-    elemental_res = [
-        stats.get("% Earth Resistance", 0),
-        stats.get("% Fire Resistance", 0),
-        stats.get("% Water Resistance", 0),
-        stats.get("% Air Resistance", 0),
-        stats.get("% Neutral Resistance", 0),
-    ]
-    return stats.get("Vitality", 0) * 0.25 + sum(elemental_res) * 12
-
-
 def final_score_state(state: BuildState) -> float:
-    damage = profile_damage(STRENGTH_PVM_PROFILE, state.stats)
-    return damage * 2.0 + survivability_score(state.stats)
+    return score_stats(state.stats)
 
 
 def item_stat_total(state: BuildState, stat: str) -> int:
@@ -1044,7 +1031,7 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
     }
     return {
         "score": round(state.score, 2),
-        "damageProfileScore": round(profile_damage(STRENGTH_PVM_PROFILE, state.stats), 2),
+        "weightedStatScore": round(score_stats(state.stats), 2),
         "apStrategy": state.ap_strategy,
         "conditionFailures": state.condition_failures,
         "totals": {

@@ -27,11 +27,13 @@ from oneoff.build_discovery_prototype import (
     db_item_dofus_id,
     exo_search_target,
     exo_natural_cap_target,
+    final_score_state,
     find_diverse_builds,
     has_negative_action_stat,
     has_ap_set_bonus,
     has_ap_weapon,
     prune_dominated_items,
+    score_stats,
     score_state,
     secondary_ap_source_count,
 )
@@ -67,6 +69,14 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         with_mp_range.stats["Range"] = 4
 
         self.assertEqual(score_state(with_mp_range, {}, target) - score_state(baseline, {}, target), 325)
+
+    def test_final_score_uses_weighted_stats_for_v0(self):
+        state = BuildState()
+        state.stats["Strength"] = 500
+        state.stats["Power"] = 100
+        state.stats["Critical Damage"] = 20
+
+        self.assertEqual(final_score_state(state), score_stats(state.stats))
 
     def test_ap_strategy_counts_expected_payment_sources(self):
         state = BuildState()
