@@ -92,6 +92,39 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(len(set(resistance_weights)), 1)
         self.assertGreater(resistance_weights[0], build_discovery_prototype.STAT_WEIGHTS["Strength"])
 
+    def test_missing_combat_utility_stats_have_nonzero_weights(self):
+        expected_weighted_stats = [
+            "% Final Damage",
+            "% Spell Damage",
+            "% Weapon Damage",
+            "% Melee Damage",
+            "% Ranged Damage",
+            "Initiative",
+            "Prospecting",
+            "AP Parry",
+            "MP Parry",
+            "Lock",
+            "Dodge",
+            "Neutral Resistance",
+            "Earth Resistance",
+            "Fire Resistance",
+            "Water Resistance",
+            "Air Resistance",
+            "Critical Resistance",
+            "Pushback Resistance",
+            "% Ranged Resistance",
+            "% Melee Resistance",
+        ]
+
+        for stat in expected_weighted_stats:
+            self.assertGreater(build_discovery_prototype.STAT_WEIGHTS[stat], 0, stat)
+
+    def test_percent_final_damage_is_valued_above_strength(self):
+        self.assertGreater(
+            build_discovery_prototype.STAT_WEIGHTS["% Final Damage"],
+            build_discovery_prototype.STAT_WEIGHTS["Strength"],
+        )
+
     def test_score_stats_caps_hard_capped_stats(self):
         capped = score_stats({"% Earth Resistance": 50, "AP": 12, "MP": 6, "Range": 6})
         over_cap = score_stats({"% Earth Resistance": 80, "AP": 13, "MP": 7, "Range": 8})
