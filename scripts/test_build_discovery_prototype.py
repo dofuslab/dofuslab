@@ -38,7 +38,9 @@ from oneoff.build_discovery_prototype import (
     generate_set_core_packages,
     package_seed_states,
     packages_compatible,
+    pending_dofus_search_target,
     prune_dominated_items,
+    ranked_dofus_combinations,
     score_stats,
     score_state,
     secondary_ap_source_count,
@@ -69,6 +71,13 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(target.ap, 10)
         self.assertEqual(target.mp, 6)
         self.assertEqual(target.range, 4)
+
+    def test_pending_dofus_search_target_reserves_dofus_and_exo_action_stats(self):
+        target = pending_dofus_search_target(BuildTarget(ap=12, mp=6, range=4))
+
+        self.assertEqual(target.ap, 10)
+        self.assertEqual(target.mp, 4)
+        self.assertEqual(target.range, 3)
 
     def test_score_state_treats_mp_and_range_as_small_feasibility_hints(self):
         target = BuildTarget(ap=7, mp=6, range=4)
@@ -848,6 +857,23 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         )
 
         self.assertFalse(packages_compatible((first, second)))
+
+    def test_ranked_dofus_combinations_keeps_special_dofus_under_cap(self):
+        pool = [
+            {"dofusID": "high_1", "_score": 100},
+            {"dofusID": "high_2", "_score": 90},
+            {"dofusID": "high_3", "_score": 80},
+            {"dofusID": "7754", "_score": 0},
+            {"dofusID": "8698", "_score": 0},
+        ]
+
+        combos = ranked_dofus_combinations(pool, 2)
+
+        self.assertLessEqual(
+            len(combos),
+            build_discovery_prototype.DIRECT_COMPLETION_DOFUS_COMBO_LIMIT,
+        )
+        self.assertIn(("7754", "8698"), [tuple(sorted(item["dofusID"] for item in combo)) for combo in combos])
 
     def test_candidate_pool_does_not_force_low_level_action_stat_gear(self):
         weak_ap_weapon = {

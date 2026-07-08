@@ -52,6 +52,14 @@ SET_PACKAGE_TRIPLE_SOURCE_LIMIT = 250
 SET_PACKAGE_TRIPLE_SEED_LIMIT = 300
 SET_PACKAGE_DIVERSE_TRIPLE_SEED_LIMIT = 700
 SET_PACKAGE_TOTAL_SEED_LIMIT = 1500
+DIRECT_COMPLETION_MIN_FILLED_GEAR_SLOTS = 8
+DIRECT_COMPLETION_SEED_LIMIT = 700
+DIRECT_COMPLETION_NON_DOFUS_BEAM_WIDTH = 20
+DIRECT_COMPLETION_DOFUS_POOL_LIMIT = 22
+DIRECT_COMPLETION_GEAR_STATE_LIMIT = 300
+DIRECT_COMPLETION_GEAR_STATE_PER_SIGNATURE_CAP = 6
+DIRECT_COMPLETION_DOFUS_COMBO_LIMIT = 500
+DIRECT_COMPLETION_SPECIAL_DOFUS_IDS = {"7754", "8698", "6980"}
 GENERIC_DAMAGE_WEIGHT = 0.45
 WEAPON_DAMAGE_WEIGHT = 0.20
 GENERIC_STRENGTH_DAMAGE_PROFILE = [
@@ -401,6 +409,14 @@ def exo_natural_cap_target(final_target: BuildTarget) -> BuildTarget:
         ap=max(BASE_AP, final_target.ap - 1),
         mp=final_target.mp,
         range=final_target.range,
+    )
+
+
+def pending_dofus_search_target(final_target: BuildTarget) -> BuildTarget:
+    return BuildTarget(
+        ap=max(BASE_AP, final_target.ap - 2),
+        mp=max(BASE_MP, final_target.mp - 2),
+        range=max(0, final_target.range - 1),
     )
 
 
@@ -1415,6 +1431,253 @@ def package_seed_states(
     return dedupe_builds(sorted(seeds, key=lambda state: state.score, reverse=True))
 
 
+def is_dofus_slot(slot_name: str) -> bool:
+    return slot_name.startswith("dofus_")
+
+
+def direct_completion_seed_candidates(seeds: list[BuildState]) -> list[BuildState]:
+    gear_slots = {slot_name for slot_name, _ in SLOTS if not is_dofus_slot(slot_name)}
+    candidates = [
+        seed
+        for seed in seeds
+        if len(gear_slots & set(seed.slots)) >= DIRECT_COMPLETION_MIN_FILLED_GEAR_SLOTS
+    ]
+    diverse_by_signature: dict[tuple[tuple[str, int], ...], BuildState] = {}
+    for seed in sorted(candidates, key=lambda state: state.score, reverse=True):
+        diverse_by_signature.setdefault(set_signature(seed), seed)
+    return list(diverse_by_signature.values())[:DIRECT_COMPLETION_SEED_LIMIT]
+
+
+def direct_non_dofus_completions(
+    seed: BuildState,
+    pools: dict[str, list[dict[str, Any]]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+) -> list[BuildState]:
+    remaining_slots = [
+        slot_name
+        for slot_name, _ in SLOTS
+        if not is_dofus_slot(slot_name) and slot_name not in seed.slots
+    ]
+    beam = [seed]
+    for slot_name in remaining_slots:
+        next_states: list[BuildState] = []
+        for state in beam:
+            for item in pools[slot_name]:
+                next_state = add_item_to_state(
+                    state,
+                    slot_name,
+                    item,
+                    sets,
+                    search_target,
+                    condition_target=target,
+                    cap_target=natural_cap_target,
+                )
+                if next_state:
+                    next_states.append(next_state)
+        beam = dedupe_builds(sorted(next_states, key=lambda state: state.score, reverse=True))[
+            :DIRECT_COMPLETION_NON_DOFUS_BEAM_WIDTH
+        ]
+        if not beam:
+            break
+    return beam
+
+
+def dofus_completion_pool(pools: dict[str, list[dict[str, Any]]]) -> list[dict[str, Any]]:
+    dofus_items: dict[str, dict[str, Any]] = {}
+    for slot_name, _ in SLOTS:
+        if not is_dofus_slot(slot_name):
+            continue
+        for item in pools[slot_name]:
+            dofus_items[item["dofusID"]] = item
+
+    sorted_items = sorted(dofus_items.values(), key=lambda item: item["_score"], reverse=True)
+    selected = {item["dofusID"]: item for item in sorted_items[:DIRECT_COMPLETION_DOFUS_POOL_LIMIT]}
+    for item in sorted_items:
+        if item["dofusID"] in MANDATORY_DOFUS_CANDIDATE_IDS:
+            selected[item["dofusID"]] = item
+        if item["dofusID"] in DIRECT_COMPLETION_SPECIAL_DOFUS_IDS:
+            selected[item["dofusID"]] = item
+    return sorted(selected.values(), key=lambda item: item["_score"], reverse=True)
+
+
+def ranked_dofus_combinations(
+    dofus_pool: list[dict[str, Any]],
+    combo_size: int,
+) -> list[tuple[dict[str, Any], ...]]:
+    if combo_size == 0:
+        return [()]
+
+    scored_combinations = [
+        (sum(item["_score"] for item in combo), combo)
+        for combo in combinations(dofus_pool, combo_size)
+    ]
+    sorted_combinations = sorted(scored_combinations, key=lambda entry: entry[0], reverse=True)
+    multi_special_combinations = [
+        combo
+        for _, combo in sorted_combinations
+        if sum(item["dofusID"] in DIRECT_COMPLETION_SPECIAL_DOFUS_IDS for item in combo) >= 2
+    ][:DIRECT_COMPLETION_DOFUS_COMBO_LIMIT]
+    special_combinations = [
+        combo
+        for _, combo in sorted_combinations
+        if any(item["dofusID"] in DIRECT_COMPLETION_SPECIAL_DOFUS_IDS for item in combo)
+    ][:DIRECT_COMPLETION_DOFUS_COMBO_LIMIT]
+    top_combinations = [
+        combo
+        for _, combo in sorted_combinations[:DIRECT_COMPLETION_DOFUS_COMBO_LIMIT]
+    ]
+
+    seen: set[tuple[str, ...]] = set()
+    ranked = []
+    for combo in multi_special_combinations + special_combinations + top_combinations:
+        signature = tuple(sorted(item["dofusID"] for item in combo))
+        if signature in seen:
+            continue
+        seen.add(signature)
+        ranked.append(combo)
+        if len(ranked) >= DIRECT_COMPLETION_DOFUS_COMBO_LIMIT:
+            break
+    return ranked
+
+
+def complete_dofus_combination(
+    state: BuildState,
+    dofus_items: tuple[dict[str, Any], ...],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    natural_cap_target: BuildTarget,
+) -> BuildState | None:
+    next_state = state
+    open_slots = [slot_name for slot_name, _ in SLOTS if is_dofus_slot(slot_name) and slot_name not in state.slots]
+    if len(open_slots) != len(dofus_items):
+        return None
+    for slot_name, item in zip(open_slots, dofus_items):
+        next_state = add_item_to_state(
+            next_state,
+            slot_name,
+            item,
+            sets,
+            target,
+            condition_target=target,
+            cap_target=natural_cap_target,
+        )
+        if next_state is None:
+            return None
+    return next_state
+
+
+def direct_valid_completed_state(
+    state: BuildState,
+    target: BuildTarget,
+    ap_strategies: tuple[ApStrategy, ...],
+    generic_damage_weight: float,
+    weapon_damage_weight: float,
+) -> BuildState | None:
+    state_with_exos = apply_missing_exos(state, target)
+    if state_with_exos is None:
+        return None
+    if (
+        state_with_exos.stats.get("AP", 0) != target.ap
+        or state_with_exos.stats.get("MP", 0) != target.mp
+        or state_with_exos.stats.get("Range", 0) < target.range
+    ):
+        return None
+    state_with_exos.condition_failures = unmet_item_conditions(state_with_exos)
+    if state_with_exos.condition_failures:
+        return None
+
+    matched_strategy = next(
+        (
+            ap_strategy
+            for ap_strategy in ap_strategies
+            if ap_strategy_matches(state_with_exos, ap_strategy)
+        ),
+        None,
+    )
+    if matched_strategy is None:
+        return None
+
+    state_with_exos.ap_strategy = matched_strategy.name
+    state_with_exos.score = final_score_state(
+        state_with_exos,
+        generic_damage_weight=generic_damage_weight,
+        weapon_damage_weight=weapon_damage_weight,
+    )
+    return state_with_exos
+
+
+def direct_complete_package_seeds(
+    seeds: list[BuildState],
+    pools: dict[str, list[dict[str, Any]]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+    ap_strategies: tuple[ApStrategy, ...],
+    generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
+    weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+) -> list[BuildState]:
+    dofus_pool = dofus_completion_pool(pools)
+    ranked_combinations_by_size: dict[int, list[tuple[dict[str, Any], ...]]] = {}
+    completed_gear_states: list[BuildState] = []
+    valid_final_states: list[BuildState] = []
+    for seed in direct_completion_seed_candidates(seeds):
+        completed_gear_states.extend(
+            direct_non_dofus_completions(
+                seed,
+                pools,
+                sets,
+                target,
+                pending_dofus_search_target(target),
+                natural_cap_target,
+            )
+        )
+
+    completed_gear_states = trim_beam(
+        completed_gear_states,
+        DIRECT_COMPLETION_GEAR_STATE_LIMIT,
+        DIRECT_COMPLETION_GEAR_STATE_PER_SIGNATURE_CAP,
+    )
+    for non_dofus_state in completed_gear_states:
+        open_dofus_slots = [
+            slot_name
+            for slot_name, _ in SLOTS
+            if is_dofus_slot(slot_name) and slot_name not in non_dofus_state.slots
+        ]
+        combo_size = len(open_dofus_slots)
+        if combo_size not in ranked_combinations_by_size:
+            ranked_combinations_by_size[combo_size] = ranked_dofus_combinations(
+                dofus_pool,
+                combo_size,
+            )
+        for dofus_items in ranked_combinations_by_size[combo_size]:
+            if any(item["dofusID"] in non_dofus_state.used_item_ids for item in dofus_items):
+                continue
+            completed = complete_dofus_combination(
+                non_dofus_state,
+                dofus_items,
+                sets,
+                target,
+                natural_cap_target,
+            )
+            if completed is None:
+                continue
+            valid_state = direct_valid_completed_state(
+                completed,
+                target,
+                ap_strategies,
+                generic_damage_weight,
+                weapon_damage_weight,
+            )
+            if valid_state is not None:
+                valid_final_states.append(valid_state)
+
+    return dedupe_builds(sorted(valid_final_states, key=lambda state: state.score, reverse=True))
+
+
 def ap_set_bonus_seed_states(
     pools: dict[str, list[dict[str, Any]]],
     sets: dict[str, dict[str, Any]],
@@ -1589,6 +1852,19 @@ def find_builds(
     )
 
     valid_final_states = []
+    valid_final_states.extend(
+        direct_complete_package_seeds(
+            initial_seeds,
+            pools,
+            sets,
+            target,
+            search_target,
+            natural_cap_target,
+            ap_strategies,
+            generic_damage_weight=generic_damage_weight,
+            weapon_damage_weight=weapon_damage_weight,
+        )
+    )
     for ap_strategy in ap_strategies:
         for slot_order in slot_orders:
             valid_final_states.extend(
