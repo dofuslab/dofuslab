@@ -124,6 +124,11 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             build_discovery_prototype.STAT_WEIGHTS["% Final Damage"],
             build_discovery_prototype.STAT_WEIGHTS["Strength"],
         )
+        self.assertLess(build_discovery_prototype.STAT_WEIGHTS["% Final Damage"], 10)
+
+    def test_prospecting_is_tiny_but_nonzero(self):
+        self.assertGreater(build_discovery_prototype.STAT_WEIGHTS["Prospecting"], 0)
+        self.assertLess(build_discovery_prototype.STAT_WEIGHTS["Prospecting"], 0.05)
 
     def test_score_stats_caps_hard_capped_stats(self):
         capped = score_stats({"% Earth Resistance": 50, "AP": 12, "MP": 6, "Range": 6})
