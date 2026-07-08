@@ -101,6 +101,15 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertGreater(final_score_state(high_damage), final_score_state(low_damage))
 
+    def test_reference_profile_damage_normalizes_to_reference_score(self):
+        build_discovery_prototype.configure_damage_profile("strength")
+        reference_stats = build_discovery_prototype.profile_damage_reference_stats()
+
+        self.assertAlmostEqual(
+            build_discovery_prototype.normalized_profile_damage_score(reference_stats),
+            build_discovery_prototype.PROFILE_DAMAGE_REFERENCE_SCORE,
+        )
+
     def test_strength_point_cost_uses_dofus_soft_caps(self):
         self.assertEqual(strength_point_cost(100), 100)
         self.assertEqual(strength_point_cost(200), 300)
@@ -205,6 +214,51 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             without_wrath = build_discovery_prototype.strength_iop_rotation_damage({"AP": 12})
 
         self.assertGreater(with_wrath, without_wrath)
+
+    def test_weapon_is_used_in_rotation_only_when_it_beats_spell_filler(self):
+        filler = build_discovery_prototype.SpellDamageCandidate(
+            name="Filler",
+            variant_pair_id="filler",
+            ap_cost=2,
+            cooldown=None,
+            casts_per_turn=None,
+            casts_per_target=None,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 20, 20),),
+        )
+        weak_weapon = BuildState()
+        strong_weapon = BuildState()
+        for state, damage in ((weak_weapon, 5), (strong_weapon, 100)):
+            state.slots["weapon"] = {
+                "dofusID": f"weapon_{damage}",
+                "_name": f"Weapon {damage}",
+                "_stats": {},
+                "weaponStats": {
+                    "apCost": 4,
+                    "usesPerTurn": 1,
+                    "baseCritChance": 0,
+                    "critBonusDamage": 0,
+                    "weaponEffects": [
+                        {
+                            "effectType": "EARTH_DAMAGE",
+                            "minDamage": damage,
+                            "maxDamage": damage,
+                        }
+                    ],
+                },
+            }
+
+        with patch.object(
+            build_discovery_prototype,
+            "strength_spell_candidates",
+            return_value=(filler,),
+        ):
+            spell_only = build_discovery_prototype.iop_rotation_damage({"AP": 12})
+            with_weak_weapon = build_discovery_prototype.iop_rotation_damage({"AP": 12}, weak_weapon)
+            with_strong_weapon = build_discovery_prototype.iop_rotation_damage({"AP": 12}, strong_weapon)
+
+        self.assertEqual(with_weak_weapon, spell_only)
+        self.assertGreater(with_strong_weapon, spell_only)
 
     def test_final_score_uses_item_damage_buffs_as_expected_stats(self):
         baseline = BuildState()

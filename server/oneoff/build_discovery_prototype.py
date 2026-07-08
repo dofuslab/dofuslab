@@ -62,6 +62,12 @@ DIRECT_COMPLETION_DOFUS_COMBO_LIMIT = 500
 DIRECT_COMPLETION_SPECIAL_DOFUS_IDS = {"7754", "8698", "6980"}
 GENERIC_DAMAGE_WEIGHT = 0.45
 WEAPON_DAMAGE_WEIGHT = 0.20
+PROFILE_DAMAGE_REFERENCE_SCORE = 3000
+PROFILE_DAMAGE_REFERENCE_PRIMARY_STAT = 1000
+PROFILE_DAMAGE_REFERENCE_POWER = 200
+PROFILE_DAMAGE_REFERENCE_ELEMENTAL_DAMAGE = 100
+PROFILE_DAMAGE_REFERENCE_CRITICAL = 50
+PROFILE_DAMAGE_REFERENCE_CRITICAL_DAMAGE = 100
 GENERIC_STRENGTH_DAMAGE_PROFILE = [
     DamageLine(element="earth", base_min=30, base_max=34, crit_chance=15, weight=1.0),
     DamageLine(element="earth", base_min=42, base_max=48, crit_chance=15, weight=0.75),
@@ -312,6 +318,7 @@ def configure_damage_profile(profile_name: str) -> DamageProfile:
     STAT_WEIGHTS = next_weights
     strength_spell_candidates.cache_clear()
     strength_spell_damage_profile.cache_clear()
+    active_profile_spell_damage_baseline.cache_clear()
     return profile
 
 
@@ -590,6 +597,14 @@ class SpellDamageCandidate:
     damage_increase: int = 0
     crit_damage_increase: int = 0
     max_damage_increase_stacks: int = 0
+    is_weapon: bool = False
+
+
+@dataclass(frozen=True)
+class RotationDamageResult:
+    normalized_damage: float
+    total_damage: float
+    weakest_filler_damage_per_ap: float
 
 
 def normalize_stats(lines: Iterable[dict[str, Any]]) -> dict[str, int]:
@@ -1120,6 +1135,29 @@ def state_weapon_damage(state: BuildState, stats: dict[str, float] | None = None
     return profile_damage(weapon_damage_lines(weapon), stats or state.stats) / ap_cost
 
 
+def weapon_rotation_candidate(state: BuildState | None) -> SpellDamageCandidate | None:
+    if state is None:
+        return None
+    weapon = state.slots.get("weapon")
+    if not weapon:
+        return None
+    weapon_stats = weapon.get("weaponStats") or {}
+    damage_lines = tuple(weapon_damage_lines(weapon))
+    if not damage_lines:
+        return None
+    return SpellDamageCandidate(
+        name=f"Weapon: {weapon.get('_name', weapon.get('name', 'Weapon'))}",
+        variant_pair_id=f"weapon:{weapon.get('dofusID', 'unknown')}",
+        ap_cost=max(weapon_stats.get("apCost") or 1, 1),
+        cooldown=None,
+        casts_per_turn=weapon_stats.get("usesPerTurn") or 1,
+        casts_per_target=None,
+        base_crit_chance=int_or_zero(weapon_stats.get("baseCritChance")),
+        damage_lines=damage_lines,
+        is_weapon=True,
+    )
+
+
 def english_conditions(effect: Any) -> tuple[str, ...]:
     return tuple(
         condition.condition
@@ -1261,26 +1299,35 @@ def best_filler_spell(
     )
 
 
-def iop_rotation_damage(stats: dict[str, int]) -> float:
+def iop_spell_rotation_result(stats: dict[str, int]) -> RotationDamageResult:
     candidates = strength_spell_candidates()
     if not candidates:
-        return profile_damage(list(strength_spell_damage_profile()), stats)
+        fallback_damage = profile_damage(list(strength_spell_damage_profile()), stats)
+        return RotationDamageResult(
+            normalized_damage=fallback_damage,
+            total_damage=fallback_damage,
+            weakest_filler_damage_per_ap=fallback_damage / max(SPELL_DAMAGE_PROFILE_TURN_AP, 1),
+        )
 
     selected_spells = select_variant_spells(candidates, stats)
     wrath = next((spell for spell in selected_spells if spell.name == IOP_WRATH_SPELL_NAME), None)
     filler_spells = tuple(
-        spell
-        for spell in selected_spells
-        if spell.name != IOP_WRATH_SPELL_NAME
+        spell for spell in selected_spells if spell.name != IOP_WRATH_SPELL_NAME
     )
     if not filler_spells:
-        return profile_damage(list(strength_spell_damage_profile()), stats)
+        fallback_damage = profile_damage(list(strength_spell_damage_profile()), stats)
+        return RotationDamageResult(
+            normalized_damage=fallback_damage,
+            total_damage=fallback_damage,
+            weakest_filler_damage_per_ap=fallback_damage / max(SPELL_DAMAGE_PROFILE_TURN_AP, 1),
+        )
 
     target_ap = min(max(stats.get("AP", REQUIRED_AP), REQUIRED_AP), MAX_AP)
     total_ap_budget = SPELL_DAMAGE_PROFILE_TURNS * target_ap
     total_damage = 0.0
     last_cast_turns: dict[str, int] = {}
     stack_counts: dict[str, int] = defaultdict(int)
+    weakest_filler_damage_per_ap = float("inf")
 
     for turn in range(1, SPELL_DAMAGE_PROFILE_TURNS + 1):
         remaining_ap = target_ap
@@ -1310,6 +1357,10 @@ def iop_rotation_damage(stats: dict[str, int]) -> float:
                 stats,
                 stacks=stack_counts.get(filler.name, 0),
             )
+            weakest_filler_damage_per_ap = min(
+                weakest_filler_damage_per_ap,
+                spell_damage_per_ap(filler, stats, stacks=stack_counts.get(filler.name, 0)),
+            )
             remaining_ap -= filler.ap_cost
             turn_cast_counts[filler.name] = turn_cast_counts.get(filler.name, 0) + 1
             last_cast_turns[filler.name] = turn
@@ -1319,7 +1370,42 @@ def iop_rotation_damage(stats: dict[str, int]) -> float:
                     filler.max_damage_increase_stacks,
                 )
 
-    return total_damage / max(total_ap_budget, 1) * SPELL_DAMAGE_PROFILE_TURN_AP
+    normalized_damage = total_damage / max(total_ap_budget, 1) * SPELL_DAMAGE_PROFILE_TURN_AP
+    if weakest_filler_damage_per_ap == float("inf"):
+        weakest_filler_damage_per_ap = normalized_damage / max(SPELL_DAMAGE_PROFILE_TURN_AP, 1)
+    return RotationDamageResult(
+        normalized_damage=normalized_damage,
+        total_damage=total_damage,
+        weakest_filler_damage_per_ap=weakest_filler_damage_per_ap,
+    )
+
+
+def weapon_rotation_uplift(
+    state: BuildState | None,
+    stats: dict[str, int],
+    spell_rotation: RotationDamageResult,
+) -> float:
+    weapon_action = weapon_rotation_candidate(state)
+    if weapon_action is None:
+        return 0.0
+    weapon_damage_per_ap = spell_damage_per_ap(weapon_action, stats)
+    if weapon_damage_per_ap <= spell_rotation.weakest_filler_damage_per_ap:
+        return 0.0
+    uses_per_turn = weapon_action.casts_per_turn or 1
+    weapon_ap_over_profile = min(
+        weapon_action.ap_cost * uses_per_turn * SPELL_DAMAGE_PROFILE_TURNS,
+        SPELL_DAMAGE_PROFILE_TURNS * min(max(stats.get("AP", REQUIRED_AP), REQUIRED_AP), MAX_AP),
+    )
+    total_uplift = (
+        weapon_damage_per_ap - spell_rotation.weakest_filler_damage_per_ap
+    ) * weapon_ap_over_profile
+    total_ap_budget = SPELL_DAMAGE_PROFILE_TURNS * min(max(stats.get("AP", REQUIRED_AP), REQUIRED_AP), MAX_AP)
+    return total_uplift / max(total_ap_budget, 1) * SPELL_DAMAGE_PROFILE_TURN_AP
+
+
+def iop_rotation_damage(stats: dict[str, int], state: BuildState | None = None) -> float:
+    spell_rotation = iop_spell_rotation_result(stats)
+    return spell_rotation.normalized_damage + weapon_rotation_uplift(state, stats, spell_rotation)
 
 
 def strength_iop_rotation_damage(stats: dict[str, int]) -> float:
@@ -1433,6 +1519,31 @@ def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
 
 def strength_spell_damage(stats: dict[str, int]) -> float:
     return iop_rotation_damage(stats)
+
+
+def profile_damage_reference_stats() -> dict[str, int]:
+    return {
+        **BASE_STATS,
+        "AP": MAX_AP,
+        ACTIVE_DAMAGE_PROFILE.primary_stat: PROFILE_DAMAGE_REFERENCE_PRIMARY_STAT,
+        "Power": PROFILE_DAMAGE_REFERENCE_POWER,
+        ACTIVE_DAMAGE_PROFILE.damage_stat: PROFILE_DAMAGE_REFERENCE_ELEMENTAL_DAMAGE,
+        "Critical": PROFILE_DAMAGE_REFERENCE_CRITICAL,
+        "Critical Damage": PROFILE_DAMAGE_REFERENCE_CRITICAL_DAMAGE,
+    }
+
+
+@lru_cache(maxsize=1)
+def active_profile_spell_damage_baseline() -> float:
+    return max(iop_rotation_damage(profile_damage_reference_stats()), 1.0)
+
+
+def normalized_profile_damage_score(stats: dict[str, int], state: BuildState | None = None) -> float:
+    return (
+        iop_rotation_damage(stats, state)
+        / active_profile_spell_damage_baseline()
+        * PROFILE_DAMAGE_REFERENCE_SCORE
+    )
 
 
 def expected_incoming_damage(stats: dict[str, int], percent_res_stat: str, flat_res_stat: str) -> float:
@@ -1550,8 +1661,7 @@ def final_score_state(
     stats = effective_scoring_stats(state)
     return (
         final_utility_score(stats)
-        + strength_spell_damage(stats) * generic_damage_weight
-        + state_weapon_damage(state, stats) * weapon_damage_weight
+        + normalized_profile_damage_score(stats, state) * generic_damage_weight
         + survivability_score(stats)
     )
 
@@ -2495,11 +2605,18 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
         for set_id, count in sorted(state.set_counts.items())
         if count > 1 and set_id in sets
     }
+    raw_rotation_damage = iop_rotation_damage(scoring_stats, state)
+    spell_only_damage = strength_spell_damage(scoring_stats)
+    profile_baseline_damage = active_profile_spell_damage_baseline()
     return {
         "score": round(state.score, 2),
         "weightedStatScore": round(score_stats(state.stats), 2),
         "utilityStatScore": round(final_utility_score(scoring_stats), 2),
-        "genericDamageScore": round(strength_spell_damage(scoring_stats), 2),
+        "genericDamageScore": round(normalized_profile_damage_score(scoring_stats, state), 2),
+        "rawRotationDamageScore": round(raw_rotation_damage, 2),
+        "spellDamageScore": round(spell_only_damage, 2),
+        "profileBaselineDamageScore": round(profile_baseline_damage, 2),
+        "profileRelativeDamage": round(raw_rotation_damage / profile_baseline_damage, 4),
         "weaponDamageScore": round(state_weapon_damage(state, scoring_stats), 2),
         "survivabilityScore": round(survivability_score(scoring_stats), 2),
         "weakestElementEhp": round(min(elemental_effective_hp(scoring_stats)), 2),
