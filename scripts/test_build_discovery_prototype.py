@@ -82,6 +82,12 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertGreater(final_score_state(high_damage), final_score_state(low_damage))
 
+    def test_strength_iop_profile_weights_damage_over_survivability(self):
+        self.assertGreater(
+            build_discovery_prototype.GENERIC_DAMAGE_WEIGHT,
+            build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT,
+        )
+
     def test_final_utility_score_excludes_damage_stats(self):
         utility_only = {"Wisdom": 100, "Dodge": 10}
         with_damage = {
