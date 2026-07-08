@@ -113,12 +113,14 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             survivability_score(effective_scoring_stats(baseline)),
         )
 
-    def test_strength_iop_profile_weights_damage_and_survivability_similarly(self):
+    def test_strength_iop_profile_weights_damage_above_survivability(self):
         self.assertGreater(
             build_discovery_prototype.GENERIC_DAMAGE_WEIGHT,
             build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT,
         )
-        self.assertEqual(build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT, 0.07)
+        self.assertEqual(build_discovery_prototype.GENERIC_DAMAGE_WEIGHT, 0.40)
+        self.assertEqual(build_discovery_prototype.WEAPON_DAMAGE_WEIGHT, 0.18)
+        self.assertEqual(build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT, 0.05)
 
     def test_final_utility_score_excludes_damage_stats(self):
         utility_only = {"Wisdom": 100, "Dodge": 10}
