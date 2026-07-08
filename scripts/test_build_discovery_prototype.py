@@ -169,6 +169,10 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
     def test_generic_pvm_pushback_exposure_is_low(self):
         self.assertLess(build_discovery_prototype.GENERIC_INCOMING_PUSHBACK_RATE, 0.05)
 
+    def test_generic_pvm_survivability_blends_weakest_element_lightly(self):
+        self.assertEqual(build_discovery_prototype.WEAKEST_ELEMENT_EHP_WEIGHT, 0.3)
+        self.assertEqual(build_discovery_prototype.AVERAGE_ELEMENT_EHP_WEIGHT, 0.7)
+
     def test_strength_profile_does_not_directly_value_off_element_damage(self):
         self.assertGreater(build_discovery_prototype.STAT_WEIGHTS["Earth Damage"], 0)
         self.assertGreater(build_discovery_prototype.STAT_WEIGHTS["Neutral Damage"], 0)
@@ -185,8 +189,8 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
     def test_score_stats_does_not_cap_uncapped_stats(self):
         self.assertGreater(score_stats({"Strength": 80}), score_stats({"Strength": 50}))
 
-    def test_survivability_score_weights_the_weakest_element(self):
-        weak_hole = {
+    def test_survivability_score_blends_weakest_and_average_element_ehp(self):
+        stats = {
             "Vitality": 4000,
             "% Neutral Resistance": 0,
             "% Earth Resistance": 40,
@@ -194,16 +198,14 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             "% Water Resistance": 40,
             "% Air Resistance": 40,
         }
-        balanced = {
-            "Vitality": 4000,
-            "% Neutral Resistance": 24,
-            "% Earth Resistance": 24,
-            "% Fire Resistance": 24,
-            "% Water Resistance": 24,
-            "% Air Resistance": 24,
-        }
+        effective_hp_values = build_discovery_prototype.elemental_effective_hp(stats)
+        expected_score = (
+            min(effective_hp_values) * build_discovery_prototype.WEAKEST_ELEMENT_EHP_WEIGHT
+            + (sum(effective_hp_values) / len(effective_hp_values))
+            * build_discovery_prototype.AVERAGE_ELEMENT_EHP_WEIGHT
+        ) * build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT
 
-        self.assertGreater(survivability_score(balanced), survivability_score(weak_hole))
+        self.assertAlmostEqual(survivability_score(stats), expected_score)
 
     def test_survivability_score_caps_each_element(self):
         capped = {
