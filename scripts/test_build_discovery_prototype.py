@@ -663,6 +663,62 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertNotIn(weak_set_weapon, pool)
         self.assertIn(strong_weapon, pool)
 
+    def test_candidate_pool_keeps_pet_damage_alternatives(self):
+        crit_pet = {
+            "dofusID": "crit_pet",
+            "itemType": "Pet",
+            "setID": None,
+            "level": 20,
+            "_stats": {"Strength": 120, "Critical Damage": 40},
+            "_score": 280,
+        }
+        earth_damage_pet = {
+            "dofusID": "earth_damage_pet",
+            "itemType": "Pet",
+            "setID": None,
+            "level": 20,
+            "_stats": {"Strength": 120, "Earth Damage": 20},
+            "_score": 200,
+        }
+
+        pool = candidate_pool_for_slot(
+            ("Pet", "Petsmount", "Mount"),
+            [crit_pet, earth_damage_pet],
+            relevant_sets=set(),
+            top_k=10,
+        )
+
+        self.assertIn(crit_pet, pool)
+        self.assertIn(earth_damage_pet, pool)
+
+    def test_candidate_pool_always_keeps_ochre(self):
+        high_score_dofus = {
+            "dofusID": "high_score",
+            "itemType": "Dofus",
+            "setID": None,
+            "level": 200,
+            "_stats": {"Earth Damage": 25},
+            "_score": 125,
+        }
+        ochre = {
+            "dofusID": build_discovery_prototype.OCHRE_DOFUS_ID,
+            "itemType": "Dofus",
+            "setID": None,
+            "level": 160,
+            "_stats": {"AP": 1},
+            "_score": 0,
+        }
+
+        pool = candidate_pool_for_slot(
+            ("Dofus", "Trophy", "Prysmaradite"),
+            [high_score_dofus, ochre],
+            relevant_sets=set(),
+            top_k=1,
+        )
+
+        self.assertIn(high_score_dofus, pool)
+        self.assertIn(ochre, pool)
+
     def test_candidate_pool_does_not_force_low_level_action_stat_gear(self):
         weak_ap_weapon = {
             "dofusID": "weak_ap",

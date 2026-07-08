@@ -350,6 +350,7 @@ class ApStrategy:
 
 OCHRE_DOFUS_ID = "7754"
 SHAKER_TROPHY_ID = "16333"
+MANDATORY_DOFUS_CANDIDATE_IDS = {OCHRE_DOFUS_ID}
 DEFAULT_AP_STRATEGIES = (
     ApStrategy(name="ochre_plus_one", require_ochre=True, min_secondary_ap_sources=2),
     ApStrategy(
@@ -713,6 +714,7 @@ def candidate_pool_for_slot(
     top_k: int,
 ) -> list[dict[str, Any]]:
     is_dofus_slot = all(slot_type in {"Dofus", "Trophy", "Prysmaradite"} for slot_type in slot_types)
+    is_pet_slot = any(slot_type in {"Pet", "Petsmount", "Mount"} for slot_type in slot_types)
     compatible = [item for item in items if item.get("itemType") in slot_types]
     relevant_set_items = [
         item
@@ -721,7 +723,7 @@ def candidate_pool_for_slot(
         and item.get("level", 0) >= RELEVANT_SET_ITEM_MIN_LEVEL
     ]
     search_compatible = compatible
-    if not is_dofus_slot:
+    if not is_dofus_slot and not is_pet_slot:
         search_compatible = prune_dominated_items(
             [item for item in compatible if item.get("setID") not in relevant_sets]
         ) + relevant_set_items
@@ -744,6 +746,10 @@ def candidate_pool_for_slot(
             :DOFUS_ZERO_SCORE_FILLER_LIMIT
         ]:
             selected[item["dofusID"]] = item
+
+        for item in search_compatible:
+            if item["dofusID"] in MANDATORY_DOFUS_CANDIDATE_IDS:
+                selected[item["dofusID"]] = item
 
     action_source_limit = (
         DOFUS_ACTION_STAT_SOURCE_LIMIT
