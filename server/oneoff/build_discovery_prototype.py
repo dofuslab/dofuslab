@@ -16,7 +16,7 @@ import json
 import time
 from collections import defaultdict
 from dataclasses import dataclass, field
-from functools import lru_cache
+from functools import cached_property, lru_cache
 from itertools import combinations, product
 from typing import Any, Iterable
 
@@ -552,11 +552,11 @@ class PackageCandidate:
     entries: tuple[tuple[str, dict[str, Any]], ...]
     score: float
 
-    @property
+    @cached_property
     def slots(self) -> frozenset[str]:
         return frozenset(slot_name for slot_name, _ in self.entries)
 
-    @property
+    @cached_property
     def item_ids(self) -> frozenset[str]:
         return frozenset(item["dofusID"] for _, item in self.entries)
 
@@ -965,6 +965,7 @@ def add_item_to_state(
     target: BuildTarget = DEFAULT_TARGET,
     condition_target: BuildTarget | None = None,
     cap_target: BuildTarget | None = None,
+    include_potential_score: bool = True,
 ) -> BuildState | None:
     condition_target = condition_target or target
     cap_target = cap_target or target
@@ -989,7 +990,13 @@ def add_item_to_state(
     if next_state.stats.get("AP", 0) > cap_target.ap or next_state.stats.get("MP", 0) > cap_target.mp:
         return None
 
-    next_state.score = score_state(next_state, sets, target, final=False)
+    next_state.score = score_state(
+        next_state,
+        sets,
+        target,
+        final=False,
+        include_potential=include_potential_score,
+    )
     if not target_forced_conditions_hold(next_state, condition_target.condition_stats):
         return None
     return next_state
@@ -1041,6 +1048,7 @@ def score_state(
     sets: dict[str, dict[str, Any]],
     target: BuildTarget = DEFAULT_TARGET,
     final: bool = False,
+    include_potential: bool = True,
 ) -> float:
     score = score_stats(state.stats)
     ap_gap = max(target.ap - state.stats.get("AP", 0), 0)
@@ -1049,7 +1057,7 @@ def score_state(
     score -= ap_gap * 500
     score -= mp_gap * 75
     score -= range_gap * 25
-    if not final:
+    if include_potential and not final:
         score += potential_set_bonus_score(state, sets)
     return score
 
@@ -1404,6 +1412,7 @@ def completed_valid_builds(
     beam: list[BuildState],
     target: BuildTarget,
     ap_strategy: ApStrategy | None = None,
+    ap_strategies: tuple[ApStrategy, ...] | None = None,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
 ) -> list[BuildState]:
@@ -1425,6 +1434,18 @@ def completed_valid_builds(
             continue
         if ap_strategy:
             state_with_exos.ap_strategy = ap_strategy.name
+        elif ap_strategies:
+            matched_strategy = next(
+                (
+                    candidate_strategy
+                    for candidate_strategy in ap_strategies
+                    if ap_strategy_matches(state_with_exos, candidate_strategy)
+                ),
+                None,
+            )
+            if matched_strategy is None:
+                continue
+            state_with_exos.ap_strategy = matched_strategy.name
         state_with_exos = optimize_base_allocation(
             state_with_exos,
             generic_damage_weight=generic_damage_weight,
@@ -1697,6 +1718,7 @@ def direct_non_dofus_completions(
                     search_target,
                     condition_target=target,
                     cap_target=natural_cap_target,
+                    include_potential_score=False,
                 )
                 if next_state:
                     next_states.append(next_state)
@@ -1773,22 +1795,20 @@ def complete_dofus_combination(
     target: BuildTarget,
     natural_cap_target: BuildTarget,
 ) -> BuildState | None:
-    next_state = state
     open_slots = [slot_name for slot_name, _ in SLOTS if is_dofus_slot(slot_name) and slot_name not in state.slots]
     if len(open_slots) != len(dofus_items):
         return None
+    next_state = state.clone()
     for slot_name, item in zip(open_slots, dofus_items):
-        next_state = add_item_to_state(
-            next_state,
-            slot_name,
-            item,
-            sets,
-            target,
-            condition_target=target,
-            cap_target=natural_cap_target,
-        )
-        if next_state is None:
+        item_id = item["dofusID"]
+        if item_id in next_state.used_item_ids:
             return None
+        next_state.slots[slot_name] = item
+        next_state.used_item_ids.add(item_id)
+        apply_stat_delta(next_state.stats, item.get("stats", []))
+    if next_state.stats.get("AP", 0) > natural_cap_target.ap or next_state.stats.get("MP", 0) > natural_cap_target.mp:
+        return None
+    next_state.score = state.score + sum(item["_score"] for item in dofus_items)
     return next_state
 
 
@@ -1980,21 +2000,12 @@ def search_slot_order(
     beam_width: int,
     per_signature_cap: int,
     ap_strategy: ApStrategy | None = None,
+    ap_strategies: tuple[ApStrategy, ...] | None = None,
     initial_seeds: list[BuildState] | None = None,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
 ) -> list[BuildState]:
-    strategy_seeds = (
-        ap_set_bonus_seed_states(
-            pools,
-            sets,
-            target,
-            search_target,
-            natural_cap_target,
-        )
-        if ap_strategy and ap_strategy.require_ap_set_bonus
-        else [BuildState()]
-    )
+    strategy_seeds = [BuildState()]
     beam = dedupe_builds(sorted(strategy_seeds + (initial_seeds or []), key=lambda state: state.score, reverse=True))
     for slot_name in slot_order:
         next_states: list[BuildState] = []
@@ -2020,6 +2031,7 @@ def search_slot_order(
         beam,
         target,
         ap_strategy,
+        ap_strategies=ap_strategies,
         generic_damage_weight=generic_damage_weight,
         weapon_damage_weight=weapon_damage_weight,
     )
@@ -2092,6 +2104,20 @@ def find_builds(
         natural_cap_target,
         package_index=package_index,
     )
+    ap_set_bonus_seeds = ap_set_bonus_seed_states(
+        pools,
+        sets,
+        target,
+        search_target,
+        natural_cap_target,
+    )
+    initial_seeds = dedupe_builds(
+        sorted(
+            initial_seeds + ap_set_bonus_seeds,
+            key=lambda state: state.score,
+            reverse=True,
+        )
+    )
     timings["packageSeedsMs"] = (time.perf_counter() - phase_started) * 1000
 
     valid_final_states = []
@@ -2112,24 +2138,23 @@ def find_builds(
     timings["directCompletionMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
-    for ap_strategy in ap_strategies:
-        for slot_order in slot_orders:
-            valid_final_states.extend(
-                search_slot_order(
-                    slot_order=slot_order,
-                    pools=pools,
-                    sets=sets,
-                    target=target,
-                    search_target=search_target,
-                    natural_cap_target=natural_cap_target,
-                    beam_width=beam_width,
-                    per_signature_cap=per_signature_cap,
-                    ap_strategy=ap_strategy,
-                    initial_seeds=initial_seeds,
-                    generic_damage_weight=generic_damage_weight,
-                    weapon_damage_weight=weapon_damage_weight,
-                )
+    for slot_order in slot_orders:
+        valid_final_states.extend(
+            search_slot_order(
+                slot_order=slot_order,
+                pools=pools,
+                sets=sets,
+                target=target,
+                search_target=search_target,
+                natural_cap_target=natural_cap_target,
+                beam_width=beam_width,
+                per_signature_cap=per_signature_cap,
+                ap_strategies=ap_strategies,
+                initial_seeds=initial_seeds,
+                generic_damage_weight=generic_damage_weight,
+                weapon_damage_weight=weapon_damage_weight,
             )
+        )
     timings["beamSearchMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
