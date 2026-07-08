@@ -122,9 +122,7 @@ BASE_STATS = {
 }
 BASE_CHARACTERISTIC_POINTS = 995
 SCROLLED_BASE_STAT = 100
-BASE_STRENGTH_ALLOCATION_OPTIONS = tuple(
-    sorted({*range(0, 399, 25), 300, 350, 375, 398})
-)
+BASE_STRENGTH_ALLOCATION_OPTIONS = (0, 100, 200, 250, 300, 350, 375, 398)
 
 SLOTS: list[tuple[str, tuple[str, ...]]] = [
     ("amulet", ("Amulet",)),
@@ -365,6 +363,7 @@ class BuildTarget:
 
 DEFAULT_TARGET = BuildTarget()
 DEFAULT_MAX_SHARED_ITEMS = 10
+LAST_FIND_BUILD_TIMINGS: dict[str, float] = {}
 
 
 @dataclass(frozen=True)
@@ -463,6 +462,18 @@ class PackageCandidate:
     @property
     def item_ids(self) -> frozenset[str]:
         return frozenset(item["dofusID"] for _, item in self.entries)
+
+
+@dataclass(frozen=True)
+class PackageIndex:
+    packages: tuple[PackageCandidate, ...]
+
+    @property
+    def by_set_signature(self) -> dict[tuple[str, ...], list[PackageCandidate]]:
+        buckets: dict[tuple[str, ...], list[PackageCandidate]] = defaultdict(list)
+        for package in self.packages:
+            buckets[package_group_set_signature((package,))].append(package)
+        return buckets
 
 
 def normalize_stats(lines: Iterable[dict[str, Any]]) -> dict[str, int]:
@@ -662,11 +673,8 @@ def has_negative_action_stat(item: dict[str, Any]) -> bool:
     return stats.get("AP", 0) < 0 or stats.get("MP", 0) < 0 or stats.get("Range", 0) < 0
 
 
-def load_items(
-    target: BuildTarget = DEFAULT_TARGET,
-    excluded_item_ids: set[str] | None = None,
-) -> list[dict[str, Any]]:
-    excluded_item_ids = excluded_item_ids or set()
+@lru_cache(maxsize=1)
+def load_all_item_records() -> tuple[dict[str, Any], ...]:
     from sqlalchemy import or_
     from sqlalchemy.orm import joinedload
 
@@ -690,7 +698,7 @@ def load_items(
             .filter(or_(ModelItem.dofus_db_id.isnot(None), ModelItem.dofus_db_mount_id.isnot(None)))
             .all()
         )
-        items = [
+        items = tuple(
             {
                 "dofusID": db_item_dofus_id(item),
                 "name": translated_name(item.item_translations, db_item_dofus_id(item) or ""),
@@ -703,7 +711,20 @@ def load_items(
                 "conditions": item.conditions or {"conditions": {}, "customConditions": {}},
             }
             for item in db_items
-        ]
+        )
+    for item in items:
+        item["_name"] = get_name(item)
+        item["_stats"] = normalize_stats(item.get("stats", []))
+        item["_score"] = score_stats(item["_stats"])
+    return items
+
+
+def load_items(
+    target: BuildTarget = DEFAULT_TARGET,
+    excluded_item_ids: set[str] | None = None,
+) -> list[dict[str, Any]]:
+    excluded_item_ids = excluded_item_ids or set()
+    items = load_all_item_records()
     candidates = [
         item
         for item in items
@@ -714,13 +735,10 @@ def load_items(
             target.condition_stats,
         )
     ]
-    for item in candidates:
-        item["_name"] = get_name(item)
-        item["_stats"] = normalize_stats(item.get("stats", []))
-        item["_score"] = score_stats(item["_stats"])
     return candidates
 
 
+@lru_cache(maxsize=1)
 def load_sets() -> dict[str, dict[str, Any]]:
     from sqlalchemy.orm import joinedload
 
@@ -1331,7 +1349,7 @@ def package_delta_score(state: BuildState) -> float:
     return score_stats(delta_stats)
 
 
-def generate_set_core_packages(
+def build_package_index(
     pools: dict[str, list[dict[str, Any]]],
     sets: dict[str, dict[str, Any]],
     target: BuildTarget,
@@ -1390,7 +1408,29 @@ def generate_set_core_packages(
     for package in sorted(packages, key=lambda candidate: candidate.score, reverse=True):
         signature = tuple(sorted((slot, item["dofusID"]) for slot, item in package.entries))
         deduped.setdefault(signature, package)
-    return list(deduped.values())[:global_limit]
+    return PackageIndex(tuple(deduped.values())[:global_limit])
+
+
+def generate_set_core_packages(
+    pools: dict[str, list[dict[str, Any]]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+    keep_per_set_size: int = SET_PACKAGE_KEEP_PER_SET_SIZE,
+    global_limit: int = SET_PACKAGE_GLOBAL_LIMIT,
+) -> list[PackageCandidate]:
+    return list(
+        build_package_index(
+            pools,
+            sets,
+            target,
+            search_target,
+            natural_cap_target,
+            keep_per_set_size=keep_per_set_size,
+            global_limit=global_limit,
+        ).packages
+    )
 
 
 def packages_compatible(packages: Iterable[PackageCandidate]) -> bool:
@@ -1430,8 +1470,11 @@ def package_seed_states(
     target: BuildTarget,
     search_target: BuildTarget,
     natural_cap_target: BuildTarget,
+    package_index: PackageIndex | None = None,
 ) -> list[BuildState]:
-    packages = generate_set_core_packages(pools, sets, target, search_target, natural_cap_target)
+    if package_index is None:
+        package_index = build_package_index(pools, sets, target, search_target, natural_cap_target)
+    packages = list(package_index.packages)
     seed_entries: list[tuple[float, tuple[tuple[str, dict[str, Any]], ...]]] = [
         (package.score, package.entries) for package in packages
     ]
@@ -1891,8 +1934,13 @@ def find_builds(
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
 ) -> list[BuildState]:
+    timings: dict[str, float] = {}
+    started_at = time.perf_counter()
     items = load_items(target, excluded_item_ids)
     sets = load_sets()
+    timings["loadDataMs"] = (time.perf_counter() - started_at) * 1000
+
+    phase_started = time.perf_counter()
     items = [
         item
         for item in items
@@ -1905,15 +1953,31 @@ def find_builds(
         slot_name: candidate_pool_for_slot(slot_types, items, relevant_sets, top_k)
         for slot_name, slot_types in SLOTS
     }
-    initial_seeds = package_seed_states(
+    timings["candidatePoolsMs"] = (time.perf_counter() - phase_started) * 1000
+
+    phase_started = time.perf_counter()
+    package_index = build_package_index(
         pools,
         sets,
         target,
         search_target,
         natural_cap_target,
     )
+    timings["packageIndexMs"] = (time.perf_counter() - phase_started) * 1000
+
+    phase_started = time.perf_counter()
+    initial_seeds = package_seed_states(
+        pools,
+        sets,
+        target,
+        search_target,
+        natural_cap_target,
+        package_index=package_index,
+    )
+    timings["packageSeedsMs"] = (time.perf_counter() - phase_started) * 1000
 
     valid_final_states = []
+    phase_started = time.perf_counter()
     valid_final_states.extend(
         direct_complete_package_seeds(
             initial_seeds,
@@ -1927,6 +1991,9 @@ def find_builds(
             weapon_damage_weight=weapon_damage_weight,
         )
     )
+    timings["directCompletionMs"] = (time.perf_counter() - phase_started) * 1000
+
+    phase_started = time.perf_counter()
     for ap_strategy in ap_strategies:
         for slot_order in slot_orders:
             valid_final_states.extend(
@@ -1945,8 +2012,16 @@ def find_builds(
                     weapon_damage_weight=weapon_damage_weight,
                 )
             )
+    timings["beamSearchMs"] = (time.perf_counter() - phase_started) * 1000
+
+    phase_started = time.perf_counter()
     ranked_states = dedupe_builds(sorted(valid_final_states, key=lambda s: s.score, reverse=True))
-    return diversify_builds(ranked_states, max_shared_items)
+    diversified = diversify_builds(ranked_states, max_shared_items)
+    timings["rankAndDiversifyMs"] = (time.perf_counter() - phase_started) * 1000
+    timings["totalFindBuildsMs"] = (time.perf_counter() - started_at) * 1000
+    LAST_FIND_BUILD_TIMINGS.clear()
+    LAST_FIND_BUILD_TIMINGS.update(timings)
+    return diversified
 
 
 def approach_item_ids(state: BuildState) -> set[str]:
@@ -2114,6 +2189,7 @@ def main() -> None:
             "weaponDamageWeight": args.weapon_damage_weight,
         },
         "elapsedMs": elapsed_ms,
+        "timings": {key: round(value, 1) for key, value in LAST_FIND_BUILD_TIMINGS.items()},
         "resultCount": len(builds),
         "builds": [serialize_build(build, sets) for build in builds],
     }

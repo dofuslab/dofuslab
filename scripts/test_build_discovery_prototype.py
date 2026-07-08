@@ -43,6 +43,7 @@ from oneoff.build_discovery_prototype import (
     prune_dominated_items,
     ranked_dofus_combinations,
     base_stats_for_strength_allocation,
+    build_package_index,
     strength_point_cost,
     score_stats,
     score_state,
@@ -871,6 +872,50 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertTrue(
             any({"amulet", "belt", "hat", "cloak"} <= seed.used_item_ids for seed in seeds)
         )
+
+    def test_package_seed_states_can_reuse_package_index(self):
+        target = BuildTarget(ap=7, mp=3, range=0)
+        set_id = "indexed_set"
+        first = {
+            "dofusID": "first",
+            "itemType": "Ring",
+            "setID": set_id,
+            "level": 200,
+            "stats": [{"stat": "Strength", "value": 50}],
+            "_stats": {"Strength": 50},
+            "_score": 50,
+        }
+        second = {
+            "dofusID": "second",
+            "itemType": "Belt",
+            "setID": set_id,
+            "level": 200,
+            "stats": [{"stat": "Strength", "value": 50}],
+            "_stats": {"Strength": 50},
+            "_score": 50,
+        }
+        pools = {"ring_1": [first], "belt": [second]}
+        sets = {set_id: {"bonuses": {"2": [{"stat": "Strength", "value": 20}]}, "_name": "Indexed"}}
+        package_index = build_package_index(
+            pools,
+            sets,
+            target,
+            build_discovery_prototype.exo_search_target(target),
+            build_discovery_prototype.exo_natural_cap_target(target),
+        )
+
+        seeds = package_seed_states(
+            pools,
+            sets,
+            target,
+            build_discovery_prototype.exo_search_target(target),
+            build_discovery_prototype.exo_natural_cap_target(target),
+            package_index=package_index,
+        )
+
+        self.assertEqual(len(package_index.packages), 1)
+        self.assertEqual(len(seeds), 1)
+        self.assertEqual(seeds[0].stats["Strength"], build_discovery_prototype.BASE_STATS["Strength"] + 120)
 
     def test_packages_compatible_rejects_slot_conflicts(self):
         first = build_discovery_prototype.PackageCandidate(
