@@ -135,7 +135,9 @@ DEFAULT_SLOT_ORDERS: list[tuple[str, ...]] = [
 ]
 
 PERCENT_RESISTANCE_WEIGHT = 2.0
-BALANCED_RESISTANCE_WEIGHT = 5.0
+SURVIVABILITY_SCORE_WEIGHT = 0.3
+WEAKEST_ELEMENT_EHP_WEIGHT = 0.8
+AVERAGE_ELEMENT_EHP_WEIGHT = 0.2
 PERCENT_RESISTANCE_STATS = (
     "% Neutral Resistance",
     "% Earth Resistance",
@@ -211,10 +213,14 @@ DAMAGE_SCORING_STATS = {
     "% Melee Damage",
     "% Ranged Damage",
 }
+SURVIVABILITY_SCORING_STATS = {
+    "Vitality",
+    *PERCENT_RESISTANCE_STATS,
+}
 FINAL_UTILITY_STAT_WEIGHTS = {
     stat: weight
     for stat, weight in STAT_WEIGHTS.items()
-    if stat not in DAMAGE_SCORING_STATS
+    if stat not in DAMAGE_SCORING_STATS and stat not in SURVIVABILITY_SCORING_STATS
 }
 DOMINANCE_STATS = ("AP", "MP", "Range")
 
@@ -831,12 +837,24 @@ def state_weapon_damage(state: BuildState) -> float:
     return profile_damage(weapon_damage_lines(weapon), state.stats) / ap_cost
 
 
-def balanced_resistance_score(stats: dict[str, int]) -> float:
-    capped_resistances = sorted(
-        min(stats.get(stat, 0), STAT_SCORE_CAPS[stat])
+def elemental_effective_hp(stats: dict[str, int]) -> list[float]:
+    vitality = max(stats.get("Vitality", 0), 0)
+    return [
+        vitality / (1 - min(stats.get(stat, 0), STAT_SCORE_CAPS[stat]) / 100)
         for stat in PERCENT_RESISTANCE_STATS
-    )
-    return sum(capped_resistances[:2]) / 2 * BALANCED_RESISTANCE_WEIGHT
+    ]
+
+
+def survivability_score(stats: dict[str, int]) -> float:
+    effective_hp_values = elemental_effective_hp(stats)
+    if not effective_hp_values:
+        return 0.0
+    weakest_element_ehp = min(effective_hp_values)
+    average_element_ehp = sum(effective_hp_values) / len(effective_hp_values)
+    return (
+        weakest_element_ehp * WEAKEST_ELEMENT_EHP_WEIGHT
+        + average_element_ehp * AVERAGE_ELEMENT_EHP_WEIGHT
+    ) * SURVIVABILITY_SCORE_WEIGHT
 
 
 def final_score_state(
@@ -848,7 +866,7 @@ def final_score_state(
         final_utility_score(state.stats)
         + profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, state.stats) * generic_damage_weight
         + state_weapon_damage(state) * weapon_damage_weight
-        + balanced_resistance_score(state.stats)
+        + survivability_score(state.stats)
     )
 
 
@@ -1243,7 +1261,8 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
         "utilityStatScore": round(final_utility_score(state.stats), 2),
         "genericDamageScore": round(profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, state.stats), 2),
         "weaponDamageScore": round(state_weapon_damage(state), 2),
-        "balancedResistanceScore": round(balanced_resistance_score(state.stats), 2),
+        "survivabilityScore": round(survivability_score(state.stats), 2),
+        "weakestElementEhp": round(min(elemental_effective_hp(state.stats)), 2),
         "apStrategy": state.ap_strategy,
         "conditionFailures": state.condition_failures,
         "totals": {

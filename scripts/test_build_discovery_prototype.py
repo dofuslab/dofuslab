@@ -21,7 +21,7 @@ from oneoff.build_discovery_prototype import (
     ap_strategy_matches,
     approach_item_ids,
     apply_missing_exos,
-    balanced_resistance_score,
+    survivability_score,
     candidate_pool_for_slot,
     diversify_builds,
     dominates_item,
@@ -83,7 +83,7 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertGreater(final_score_state(high_damage), final_score_state(low_damage))
 
     def test_final_utility_score_excludes_damage_stats(self):
-        utility_only = {"Vitality": 100, "% Earth Resistance": 10}
+        utility_only = {"Wisdom": 100, "Dodge": 10}
         with_damage = {
             **utility_only,
             "Strength": 500,
@@ -96,6 +96,9 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertEqual(final_utility_score(with_damage), final_utility_score(utility_only))
         self.assertGreater(score_stats(with_damage), score_stats(utility_only))
+
+    def test_final_utility_score_excludes_survivability_stats(self):
+        self.assertEqual(final_utility_score({"Vitality": 1000, "% Earth Resistance": 50}), 0)
 
     def test_percent_resistances_are_equal_and_above_strength(self):
         resistance_weights = [
@@ -163,15 +166,17 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
     def test_score_stats_does_not_cap_uncapped_stats(self):
         self.assertGreater(score_stats({"Strength": 80}), score_stats({"Strength": 50}))
 
-    def test_balanced_resistance_rewards_covering_weak_elements(self):
-        spiky = {
+    def test_survivability_score_weights_the_weakest_element(self):
+        weak_hole = {
+            "Vitality": 4000,
             "% Neutral Resistance": 0,
-            "% Earth Resistance": 0,
+            "% Earth Resistance": 40,
             "% Fire Resistance": 40,
             "% Water Resistance": 40,
             "% Air Resistance": 40,
         }
         balanced = {
+            "Vitality": 4000,
             "% Neutral Resistance": 24,
             "% Earth Resistance": 24,
             "% Fire Resistance": 24,
@@ -179,10 +184,11 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             "% Air Resistance": 24,
         }
 
-        self.assertGreater(balanced_resistance_score(balanced), balanced_resistance_score(spiky))
+        self.assertGreater(survivability_score(balanced), survivability_score(weak_hole))
 
-    def test_balanced_resistance_caps_each_element(self):
+    def test_survivability_score_caps_each_element(self):
         capped = {
+            "Vitality": 4000,
             "% Neutral Resistance": 50,
             "% Earth Resistance": 50,
             "% Fire Resistance": 50,
@@ -190,6 +196,7 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             "% Air Resistance": 50,
         }
         over_cap = {
+            "Vitality": 4000,
             "% Neutral Resistance": 80,
             "% Earth Resistance": 80,
             "% Fire Resistance": 80,
@@ -197,7 +204,25 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             "% Air Resistance": 80,
         }
 
-        self.assertEqual(balanced_resistance_score(over_cap), balanced_resistance_score(capped))
+        self.assertEqual(survivability_score(over_cap), survivability_score(capped))
+
+    def test_survivability_score_has_increasing_resistance_marginal_value(self):
+        baseline = {
+            "Vitality": 4000,
+            "% Neutral Resistance": 0,
+            "% Earth Resistance": 0,
+            "% Fire Resistance": 0,
+            "% Water Resistance": 0,
+            "% Air Resistance": 0,
+        }
+        ten_res = {stat: (10 if stat.startswith("%") else value) for stat, value in baseline.items()}
+        forty_res = {stat: (40 if stat.startswith("%") else value) for stat, value in baseline.items()}
+        fifty_res = {stat: (50 if stat.startswith("%") else value) for stat, value in baseline.items()}
+
+        low_gain = survivability_score(ten_res) - survivability_score(baseline)
+        high_gain = survivability_score(fifty_res) - survivability_score(forty_res)
+
+        self.assertGreater(high_gain, low_gain)
 
     def test_weapon_damage_is_optional_so_stat_sticks_are_not_penalized(self):
         stat_stick = BuildState()
