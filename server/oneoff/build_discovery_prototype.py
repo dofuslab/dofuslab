@@ -1236,18 +1236,32 @@ def best_filler_spell(
     stats: dict[str, int],
     remaining_ap: int,
     turn_cast_counts: dict[str, int],
+    turn: int | None = None,
+    last_cast_turns: dict[str, int] | None = None,
+    stack_counts: dict[str, int] | None = None,
 ) -> SpellDamageCandidate | None:
+    last_cast_turns = last_cast_turns or {}
+    stack_counts = stack_counts or {}
     affordable = [
         spell
         for spell in filler_spells
         if spell.ap_cost <= remaining_ap and filler_cast_count_for_turn(spell, turn_cast_counts) > 0
+        and (
+            not spell.cooldown
+            or turn is None
+            or spell.name not in last_cast_turns
+            or turn - last_cast_turns[spell.name] >= spell.cooldown
+        )
     ]
     if not affordable:
         return None
-    return max(affordable, key=lambda spell: spell_damage_per_ap(spell, stats))
+    return max(
+        affordable,
+        key=lambda spell: spell_damage_per_ap(spell, stats, stacks=stack_counts.get(spell.name, 0)),
+    )
 
 
-def strength_iop_rotation_damage(stats: dict[str, int]) -> float:
+def iop_rotation_damage(stats: dict[str, int]) -> float:
     candidates = strength_spell_candidates()
     if not candidates:
         return profile_damage(list(strength_spell_damage_profile()), stats)
@@ -1257,7 +1271,7 @@ def strength_iop_rotation_damage(stats: dict[str, int]) -> float:
     filler_spells = tuple(
         spell
         for spell in selected_spells
-        if spell.name != IOP_WRATH_SPELL_NAME and not spell.cooldown
+        if spell.name != IOP_WRATH_SPELL_NAME
     )
     if not filler_spells:
         return profile_damage(list(strength_spell_damage_profile()), stats)
@@ -1265,6 +1279,8 @@ def strength_iop_rotation_damage(stats: dict[str, int]) -> float:
     target_ap = min(max(stats.get("AP", REQUIRED_AP), REQUIRED_AP), MAX_AP)
     total_ap_budget = SPELL_DAMAGE_PROFILE_TURNS * target_ap
     total_damage = 0.0
+    last_cast_turns: dict[str, int] = {}
+    stack_counts: dict[str, int] = defaultdict(int)
 
     for turn in range(1, SPELL_DAMAGE_PROFILE_TURNS + 1):
         remaining_ap = target_ap
@@ -1274,16 +1290,40 @@ def strength_iop_rotation_damage(stats: dict[str, int]) -> float:
             total_damage += spell_damage_per_cast(wrath, stats, stacks=stacks)
             remaining_ap -= wrath.ap_cost
             turn_cast_counts[wrath.name] = turn_cast_counts.get(wrath.name, 0) + 1
+            last_cast_turns[wrath.name] = turn
+            stack_counts[wrath.name] = stacks
 
         while remaining_ap > 0:
-            filler = best_filler_spell(filler_spells, stats, remaining_ap, turn_cast_counts)
+            filler = best_filler_spell(
+                filler_spells,
+                stats,
+                remaining_ap,
+                turn_cast_counts,
+                turn=turn,
+                last_cast_turns=last_cast_turns,
+                stack_counts=stack_counts,
+            )
             if filler is None:
                 break
-            total_damage += spell_damage_per_cast(filler, stats)
+            total_damage += spell_damage_per_cast(
+                filler,
+                stats,
+                stacks=stack_counts.get(filler.name, 0),
+            )
             remaining_ap -= filler.ap_cost
             turn_cast_counts[filler.name] = turn_cast_counts.get(filler.name, 0) + 1
+            last_cast_turns[filler.name] = turn
+            if filler.damage_increase and filler.max_damage_increase_stacks:
+                stack_counts[filler.name] = min(
+                    stack_counts.get(filler.name, 0) + 1,
+                    filler.max_damage_increase_stacks,
+                )
 
     return total_damage / max(total_ap_budget, 1) * SPELL_DAMAGE_PROFILE_TURN_AP
+
+
+def strength_iop_rotation_damage(stats: dict[str, int]) -> float:
+    return iop_rotation_damage(stats)
 
 
 @lru_cache(maxsize=1)
@@ -1392,9 +1432,7 @@ def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
 
 
 def strength_spell_damage(stats: dict[str, int]) -> float:
-    if ACTIVE_DAMAGE_PROFILE.name == "strength":
-        return strength_iop_rotation_damage(stats)
-    return profile_damage(list(strength_spell_damage_profile()), stats)
+    return iop_rotation_damage(stats)
 
 
 def expected_incoming_damage(stats: dict[str, int], percent_res_stat: str, flat_res_stat: str) -> float:
