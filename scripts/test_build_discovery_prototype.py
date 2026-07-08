@@ -215,7 +215,7 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertGreater(with_wrath, without_wrath)
 
-    def test_weapon_is_used_in_rotation_only_when_it_beats_spell_filler(self):
+    def test_weapon_uplift_only_counts_when_it_beats_spell_filler(self):
         filler = build_discovery_prototype.SpellDamageCandidate(
             name="Filler",
             variant_pair_id="filler",
