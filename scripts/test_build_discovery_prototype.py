@@ -118,7 +118,7 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             build_discovery_prototype.GENERIC_DAMAGE_WEIGHT,
             build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT,
         )
-        self.assertEqual(build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT, 0.11)
+        self.assertEqual(build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT, 0.07)
 
     def test_final_utility_score_excludes_damage_stats(self):
         utility_only = {"Wisdom": 100, "Dodge": 10}
