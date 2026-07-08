@@ -765,7 +765,9 @@ def state_weapon_damage(state: BuildState) -> float:
     weapon = state.slots.get("weapon")
     if not weapon:
         return 0.0
-    return profile_damage(weapon_damage_lines(weapon), state.stats)
+    weapon_stats = weapon.get("weaponStats") or {}
+    ap_cost = weapon_stats.get("apCost") or 1
+    return profile_damage(weapon_damage_lines(weapon), state.stats) / ap_cost
 
 
 def final_score_state(

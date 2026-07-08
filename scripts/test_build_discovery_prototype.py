@@ -107,6 +107,7 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             "dofusID": "weapon",
             "_stats": {},
             "weaponStats": {
+                "apCost": 4,
                 "baseCritChance": 0,
                 "critBonusDamage": 0,
                 "weaponEffects": [
@@ -125,6 +126,72 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             final_score_state(damaging_weapon, weapon_damage_weight=0),
             final_score_state(stat_stick, weapon_damage_weight=0),
         )
+
+    def test_weapon_damage_is_normalized_by_ap_cost(self):
+        cheap_weapon = BuildState()
+        expensive_weapon = BuildState()
+        cheap_weapon.slots["weapon"] = {
+            "dofusID": "cheap_weapon",
+            "_stats": {},
+            "weaponStats": {
+                "apCost": 3,
+                "baseCritChance": 0,
+                "critBonusDamage": 0,
+                "weaponEffects": [
+                    {
+                        "effectType": "EARTH_DAMAGE",
+                        "minDamage": 30,
+                        "maxDamage": 30,
+                    }
+                ],
+            },
+        }
+        expensive_weapon.slots["weapon"] = {
+            "dofusID": "expensive_weapon",
+            "_stats": {},
+            "weaponStats": {
+                "apCost": 6,
+                "baseCritChance": 0,
+                "critBonusDamage": 0,
+                "weaponEffects": [
+                    {
+                        "effectType": "EARTH_DAMAGE",
+                        "minDamage": 30,
+                        "maxDamage": 30,
+                    }
+                ],
+            },
+        }
+
+        self.assertEqual(
+            state_weapon_damage(cheap_weapon),
+            state_weapon_damage(expensive_weapon) * 2,
+        )
+
+    def test_weapon_damage_uses_critical_weighted_average(self):
+        noncrit_weapon = BuildState()
+        crit_weapon = BuildState()
+        for state in (noncrit_weapon, crit_weapon):
+            state.stats["Critical Damage"] = 50
+            state.slots["weapon"] = {
+                "dofusID": "weapon",
+                "_stats": {},
+                "weaponStats": {
+                    "apCost": 4,
+                    "baseCritChance": 0,
+                    "critBonusDamage": 0,
+                    "weaponEffects": [
+                        {
+                            "effectType": "EARTH_DAMAGE",
+                            "minDamage": 30,
+                            "maxDamage": 30,
+                        }
+                    ],
+                },
+            }
+        crit_weapon.stats["Critical"] = 100
+
+        self.assertGreater(state_weapon_damage(crit_weapon), state_weapon_damage(noncrit_weapon))
 
     def test_ap_strategy_counts_expected_payment_sources(self):
         state = BuildState()
