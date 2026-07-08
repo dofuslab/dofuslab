@@ -104,7 +104,7 @@ SLOTS: list[tuple[str, tuple[str, ...]]] = [
     ("boots", ("Boots",)),
     ("hat", ("Hat",)),
     ("cloak", ("Cloak",)),
-    ("pet", ("Pet",)),
+    ("pet", ("Pet", "Petsmount", "Mount")),
     ("dofus_1", ("Dofus", "Trophy", "Prysmaradite")),
     ("dofus_2", ("Dofus", "Trophy", "Prysmaradite")),
     ("dofus_3", ("Dofus", "Trophy", "Prysmaradite")),

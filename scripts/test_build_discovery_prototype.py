@@ -122,6 +122,11 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(build_discovery_prototype.WEAPON_DAMAGE_WEIGHT, 0.18)
         self.assertEqual(build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT, 0.05)
 
+    def test_pet_slot_allows_pets_petsmounts_and_mounts(self):
+        pet_slot_types = dict(build_discovery_prototype.SLOTS)["pet"]
+
+        self.assertEqual(pet_slot_types, ("Pet", "Petsmount", "Mount"))
+
     def test_final_utility_score_excludes_damage_stats(self):
         utility_only = {"Wisdom": 100, "Dodge": 10}
         with_damage = {
