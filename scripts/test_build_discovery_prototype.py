@@ -118,9 +118,9 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             build_discovery_prototype.GENERIC_DAMAGE_WEIGHT,
             build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT,
         )
-        self.assertEqual(build_discovery_prototype.GENERIC_DAMAGE_WEIGHT, 0.40)
-        self.assertEqual(build_discovery_prototype.WEAPON_DAMAGE_WEIGHT, 0.18)
-        self.assertEqual(build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT, 0.05)
+        self.assertEqual(build_discovery_prototype.GENERIC_DAMAGE_WEIGHT, 0.45)
+        self.assertEqual(build_discovery_prototype.WEAPON_DAMAGE_WEIGHT, 0.20)
+        self.assertEqual(build_discovery_prototype.SURVIVABILITY_SCORE_WEIGHT, 0.03)
 
     def test_pet_slot_allows_pets_petsmounts_and_mounts(self):
         pet_slot_types = dict(build_discovery_prototype.SLOTS)["pet"]
