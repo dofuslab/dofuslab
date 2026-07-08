@@ -130,6 +130,13 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertGreater(build_discovery_prototype.STAT_WEIGHTS["Prospecting"], 0)
         self.assertLess(build_discovery_prototype.STAT_WEIGHTS["Prospecting"], 0.05)
 
+    def test_strength_profile_does_not_directly_value_off_element_damage(self):
+        self.assertGreater(build_discovery_prototype.STAT_WEIGHTS["Earth Damage"], 0)
+        self.assertGreater(build_discovery_prototype.STAT_WEIGHTS["Neutral Damage"], 0)
+        self.assertEqual(build_discovery_prototype.STAT_WEIGHTS["Fire Damage"], 0)
+        self.assertEqual(build_discovery_prototype.STAT_WEIGHTS["Water Damage"], 0)
+        self.assertEqual(build_discovery_prototype.STAT_WEIGHTS["Air Damage"], 0)
+
     def test_score_stats_caps_hard_capped_stats(self):
         capped = score_stats({"% Earth Resistance": 50, "AP": 12, "MP": 6, "Range": 6})
         over_cap = score_stats({"% Earth Resistance": 80, "AP": 13, "MP": 7, "Range": 8})
