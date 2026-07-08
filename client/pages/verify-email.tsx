@@ -5,7 +5,6 @@ import { GetStaticProps, NextPage } from 'next';
 import { useQuery, useMutation } from '@apollo/client';
 
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
-import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import { useRouter } from 'next/router';
@@ -48,11 +47,6 @@ const VerifyEmailPage: NextPage = () => {
   return (
     <CommonLayout showSwitch={false}>
       <Head>
-        <style
-          type="text/css"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: mediaStyles }}
-        />
         <title>DofusLab</title>
       </Head>
       <div

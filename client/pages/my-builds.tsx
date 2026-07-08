@@ -5,7 +5,6 @@ import Router from 'next/router';
 
 import { currentUser } from 'graphql/queries/__generated__/currentUser';
 import Layout from 'components/mobile/Layout';
-import { mediaStyles } from 'components/common/Media';
 import Head from 'next/head';
 import CurrentUserQuery from 'graphql/queries/currentUser.graphql';
 import BuildList from 'components/common/BuildList';
@@ -38,11 +37,6 @@ const MyBuildsPage: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <style
-          type="text/css"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: mediaStyles }}
-        />
         <title>{getTitle(t('MY_BUILDS'))}</title>
       </Head>
       {data?.currentUser && (

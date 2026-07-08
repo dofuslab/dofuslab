@@ -1,8 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { useCallback, useMemo } from 'react';
-import Head from 'next/head';
-import { mediaStyles, Media } from 'components/common/Media';
+import { Media } from 'components/common/Media';
 import Selector from 'components/common/Selector';
 import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/client';
@@ -60,13 +59,6 @@ const EquipPage = ({ customSetId, itemSlotId }: Props) => {
     <>
       <Media lessThan="xs">
         <MobileLayout>
-          <Head>
-            <style
-              type="text/css"
-              // eslint-disable-next-line react/no-danger
-              dangerouslySetInnerHTML={{ __html: mediaStyles }}
-            />
-          </Head>
           {customSet ? (
             <CustomSetHead customSet={customSet} />
           ) : (
@@ -84,13 +76,6 @@ const EquipPage = ({ customSetId, itemSlotId }: Props) => {
       <Media greaterThanOrEqual="xs">
         <ClassicContext.Provider value={contextValue}>
           <DesktopLayout showSwitch>
-            <Head>
-              <style
-                type="text/css"
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{ __html: mediaStyles }}
-              />
-            </Head>
             <CustomSetHead customSet={customSet} />
             <Selector
               customSet={customSet}

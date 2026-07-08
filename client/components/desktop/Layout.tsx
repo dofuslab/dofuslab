@@ -3,6 +3,7 @@
 import type { ReactNode } from 'react';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 
 import { Global, useTheme } from '@emotion/react';
 import {
@@ -47,18 +48,32 @@ import {
   changeLocaleVariables,
 } from 'graphql/mutations/__generated__/changeLocale';
 import changeLocaleMutation from 'graphql/mutations/changeLocale.graphql';
-import ChangePasswordModal from 'components/common/ChangePasswordModal';
 import { LIGHT_THEME_NAME } from 'common/themes';
 import Tooltip from 'components/common/Tooltip';
 import { switchStyle } from 'common/mixins';
 import { ClassicContext, getImageUrl } from 'common/utils';
 import { DownOutlined } from '@ant-design/icons';
 import { Media } from 'components/common/Media';
-import DefaultBuildSettingsModal from 'components/common/DefaultBuildSettingsModal';
-import BuildList from '../common/BuildList';
-import SignUpModal from '../common/SignUpModal';
-import LoginModal from '../common/LoginModal';
-import KeyboardShortcutsModal from './KeyboardShortcutsModal';
+
+const BuildList = dynamic(() => import('../common/BuildList'), { ssr: false });
+const SignUpModal = dynamic(() => import('../common/SignUpModal'), {
+  ssr: false,
+});
+const LoginModal = dynamic(() => import('../common/LoginModal'), {
+  ssr: false,
+});
+const ChangePasswordModal = dynamic(
+  () => import('components/common/ChangePasswordModal'),
+  { ssr: false },
+);
+const DefaultBuildSettingsModal = dynamic(
+  () => import('components/common/DefaultBuildSettingsModal'),
+  { ssr: false },
+);
+const KeyboardShortcutsModal = dynamic(
+  () => import('./KeyboardShortcutsModal'),
+  { ssr: false },
+);
 
 interface LayoutProps {
   children: ReactNode;
@@ -337,6 +352,8 @@ function Layout({ children, showSwitch }: LayoutProps) {
                       ? 'logo/DL-Full_Light.svg'
                       : 'logo/DL-Full_Dark.svg',
                   )}
+                  width={120}
+                  height={36}
                   css={{ width: 120 }}
                   alt="DofusLab"
                 />
@@ -534,28 +551,38 @@ function Layout({ children, showSwitch }: LayoutProps) {
         >
           {children}
         </AntdLayout.Content>
-        <LoginModal
-          open={showLoginModal}
-          onClose={closeLoginModal}
-          openSignUpModal={openSignUpModal}
-        />
-        <SignUpModal
-          open={showSignUpModal}
-          onClose={closeSignUpModal}
-          openLoginModal={openLoginModal}
-        />
-        <ChangePasswordModal
-          open={showPasswordModal}
-          onClose={closePasswordModal}
-        />
-        <DefaultBuildSettingsModal
-          open={showBuildSettings}
-          onClose={closeBuildSettings}
-        />
-        <KeyboardShortcutsModal
-          open={showKeyboardShortcuts}
-          onClose={closeKeyboardShortcuts}
-        />
+        {showLoginModal && (
+          <LoginModal
+            open={showLoginModal}
+            onClose={closeLoginModal}
+            openSignUpModal={openSignUpModal}
+          />
+        )}
+        {showSignUpModal && (
+          <SignUpModal
+            open={showSignUpModal}
+            onClose={closeSignUpModal}
+            openLoginModal={openLoginModal}
+          />
+        )}
+        {showPasswordModal && (
+          <ChangePasswordModal
+            open={showPasswordModal}
+            onClose={closePasswordModal}
+          />
+        )}
+        {showBuildSettings && (
+          <DefaultBuildSettingsModal
+            open={showBuildSettings}
+            onClose={closeBuildSettings}
+          />
+        )}
+        {showKeyboardShortcuts && (
+          <KeyboardShortcutsModal
+            open={showKeyboardShortcuts}
+            onClose={closeKeyboardShortcuts}
+          />
+        )}
       </AntdLayout>
     </AntdRegistry>
   );

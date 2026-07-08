@@ -313,7 +313,19 @@ const SelectorFilters = ({
           <ClassNames>
             {({ css }) => (
               // https://github.com/ant-design/ant-design/issues/30396
-              <NoSSR>
+              <NoSSR
+                onSSR={
+                  <div
+                    css={{
+                      flex: '1 1 0%',
+                      height: 42,
+                      [mq[1]]: {
+                        height: isClassic ? 40 : 32,
+                      },
+                    }}
+                  />
+                }
+              >
                 <Select
                   getPopupContainer={(node: HTMLElement) => {
                     if (node.parentElement) {
