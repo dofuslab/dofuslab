@@ -1,6 +1,6 @@
 """Narrow build-discovery prototype for DofusLab.
 
-This reads the local database and prints candidate Level 200 Strength PvM builds
+This reads the local database and prints candidate Level 200 PvM builds
 without touching GraphQL. The goal is to make the search/ranking loop easy to
 inspect before wiring it into product code.
 
@@ -67,16 +67,13 @@ GENERIC_STRENGTH_DAMAGE_PROFILE = [
     DamageLine(element="earth", base_min=42, base_max=48, crit_chance=15, weight=0.75),
     DamageLine(element="earth", base_min=18, base_max=22, crit_chance=25, weight=1.25),
 ]
+GENERIC_DAMAGE_PROFILE_LINES = (
+    (30, 34, 15, 1.0),
+    (42, 48, 15, 0.75),
+    (18, 22, 25, 1.25),
+)
 SPELL_PROFILE_CLASS_NAME = "Iop"
 SPELL_DAMAGE_PROFILE_TURN_AP = 10
-SPELL_PROFILE_ELEMENTS = {
-    "NEUTRAL_DAMAGE": "neutral",
-    "NEUTRAL_STEAL": "neutral",
-    "EARTH_DAMAGE": "earth",
-    "EARTH_STEAL": "earth",
-    "BEST_ELEMENT_DAMAGE": "earth",
-    "BEST_ELEMENT_STEAL": "earth",
-}
 WEAPON_EFFECT_ELEMENTS = {
     "NEUTRAL_DAMAGE": "neutral",
     "NEUTRAL_STEAL": "neutral",
@@ -253,6 +250,15 @@ STAT_WEIGHTS = {
     "% Ranged Resistance": 7.0,
     "% Melee Resistance": 3.0,
 }
+BASE_STAT_WEIGHTS = dict(STAT_WEIGHTS)
+PRIMARY_STAT_NAMES = ("Strength", "Intelligence", "Chance", "Agility")
+ELEMENT_DAMAGE_STAT_NAMES = (
+    "Neutral Damage",
+    "Earth Damage",
+    "Fire Damage",
+    "Water Damage",
+    "Air Damage",
+)
 DAMAGE_SCORING_STATS = {
     "Strength",
     "Power",
@@ -285,6 +291,56 @@ FINAL_UTILITY_STAT_WEIGHTS = {
     if stat not in DAMAGE_SCORING_STATS and stat not in SURVIVABILITY_SCORING_STATS
 }
 DOMINANCE_STATS = ("AP", "MP", "Range")
+
+
+def configure_damage_profile(profile_name: str) -> DamageProfile:
+    global ACTIVE_DAMAGE_PROFILE, STAT_WEIGHTS
+
+    profile = ELEMENT_PROFILES[profile_name]
+    ACTIVE_DAMAGE_PROFILE = profile
+    next_weights = dict(BASE_STAT_WEIGHTS)
+    for stat in PRIMARY_STAT_NAMES:
+        next_weights[stat] = 1.0 if stat == profile.primary_stat else 0.0
+    for stat in ELEMENT_DAMAGE_STAT_NAMES:
+        next_weights[stat] = 0.0
+    next_weights[profile.damage_stat] = 4.0
+    for stat, weight in profile.secondary_damage_weights.items():
+        next_weights[stat] = weight
+    STAT_WEIGHTS = next_weights
+    strength_spell_damage_profile.cache_clear()
+    return profile
+
+
+def generic_damage_profile() -> tuple[DamageLine, ...]:
+    if ACTIVE_DAMAGE_PROFILE.name == "strength":
+        return tuple(GENERIC_STRENGTH_DAMAGE_PROFILE)
+    return tuple(
+        DamageLine(
+            element=ACTIVE_DAMAGE_PROFILE.element,
+            base_min=base_min,
+            base_max=base_max,
+            crit_chance=crit_chance,
+            weight=weight,
+        )
+        for base_min, base_max, crit_chance, weight in GENERIC_DAMAGE_PROFILE_LINES
+    )
+
+
+def spell_profile_elements() -> dict[str, str]:
+    return {
+        "NEUTRAL_DAMAGE": "neutral" if ACTIVE_DAMAGE_PROFILE.name == "strength" else "",
+        "NEUTRAL_STEAL": "neutral" if ACTIVE_DAMAGE_PROFILE.name == "strength" else "",
+        "EARTH_DAMAGE": "earth" if ACTIVE_DAMAGE_PROFILE.element == "earth" else "",
+        "EARTH_STEAL": "earth" if ACTIVE_DAMAGE_PROFILE.element == "earth" else "",
+        "FIRE_DAMAGE": "fire" if ACTIVE_DAMAGE_PROFILE.element == "fire" else "",
+        "FIRE_STEAL": "fire" if ACTIVE_DAMAGE_PROFILE.element == "fire" else "",
+        "WATER_DAMAGE": "water" if ACTIVE_DAMAGE_PROFILE.element == "water" else "",
+        "WATER_STEAL": "water" if ACTIVE_DAMAGE_PROFILE.element == "water" else "",
+        "AIR_DAMAGE": "air" if ACTIVE_DAMAGE_PROFILE.element == "air" else "",
+        "AIR_STEAL": "air" if ACTIVE_DAMAGE_PROFILE.element == "air" else "",
+        "BEST_ELEMENT_DAMAGE": ACTIVE_DAMAGE_PROFILE.element,
+        "BEST_ELEMENT_STEAL": ACTIVE_DAMAGE_PROFILE.element,
+    }
 
 EXCLUDED_SET_NAME_PARTS = ("Khardboard",)
 
@@ -342,6 +398,45 @@ DB_STAT_NAMES = {
     "PCT_MELEE_RES": "% Melee Resistance",
     "PODS": "Pods",
 }
+
+
+@dataclass(frozen=True)
+class DamageProfile:
+    name: str
+    primary_stat: str
+    element: str
+    damage_stat: str
+    secondary_damage_weights: dict[str, float] = field(default_factory=dict)
+
+
+ELEMENT_PROFILES = {
+    "strength": DamageProfile(
+        name="strength",
+        primary_stat="Strength",
+        element="earth",
+        damage_stat="Earth Damage",
+        secondary_damage_weights={"Neutral Damage": 1.0},
+    ),
+    "intelligence": DamageProfile(
+        name="intelligence",
+        primary_stat="Intelligence",
+        element="fire",
+        damage_stat="Fire Damage",
+    ),
+    "chance": DamageProfile(
+        name="chance",
+        primary_stat="Chance",
+        element="water",
+        damage_stat="Water Damage",
+    ),
+    "agility": DamageProfile(
+        name="agility",
+        primary_stat="Agility",
+        element="air",
+        damage_stat="Air Damage",
+    ),
+}
+ACTIVE_DAMAGE_PROFILE = ELEMENT_PROFILES["strength"]
 
 
 @dataclass(frozen=True)
@@ -431,7 +526,9 @@ class BuildState:
     set_counts: dict[str, int] = field(default_factory=dict)
     used_item_ids: set[str] = field(default_factory=set)
     exos: dict[str, str] = field(default_factory=dict)
-    base_allocation: dict[str, int] = field(default_factory=lambda: {"Strength": 300, "Vitality": 395})
+    base_allocation: dict[str, int] = field(
+        default_factory=lambda: {ACTIVE_DAMAGE_PROFILE.primary_stat: 300, "Vitality": 395}
+    )
     ap_strategy: str | None = None
     score: float = 0.0
     condition_failures: list[dict[str, Any]] = field(default_factory=list)
@@ -725,6 +822,8 @@ def load_items(
 ) -> list[dict[str, Any]]:
     excluded_item_ids = excluded_item_ids or set()
     items = load_all_item_records()
+    for item in items:
+        item["_score"] = score_stats(item["_stats"])
     candidates = [
         item
         for item in items
@@ -964,7 +1063,11 @@ def weapon_damage_lines(item: dict[str, Any]) -> list[DamageLine]:
     crit_bonus_damage = weapon_stats.get("critBonusDamage") or 0
     lines = []
     for effect in weapon_stats.get("weaponEffects", []):
-        element = WEAPON_EFFECT_ELEMENTS.get(effect.get("effectType"))
+        effect_type = effect.get("effectType")
+        if effect_type in {"BEST_ELEMENT_DAMAGE", "BEST_ELEMENT_STEAL"}:
+            element = ACTIVE_DAMAGE_PROFILE.element
+        else:
+            element = WEAPON_EFFECT_ELEMENTS.get(effect_type)
         if not element:
             continue
         lines.append(
@@ -1003,7 +1106,7 @@ def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
         from app.database.model_spell_translation import ModelSpellTranslation
         from app.database.model_spell_variant_pair import ModelSpellVariantPair
     except Exception:
-        return tuple(GENERIC_STRENGTH_DAMAGE_PROFILE)
+        return generic_damage_profile()
 
     try:
         with session_scope() as db_session:
@@ -1025,7 +1128,7 @@ def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
                 .all()
             )
     except Exception:
-        return tuple(GENERIC_STRENGTH_DAMAGE_PROFILE)
+        return generic_damage_profile()
 
     highest_stats_by_spell_id: dict[str, Any] = {}
     for spell_stat in spell_stats:
@@ -1035,10 +1138,11 @@ def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
 
     lines: list[DamageLine] = []
     spell_count = 0
+    profile_elements = spell_profile_elements()
     for spell_stat in highest_stats_by_spell_id.values():
         spell_lines: list[DamageLine] = []
         for effect in spell_stat.spell_effects:
-            element = SPELL_PROFILE_ELEMENTS.get(effect_type_key(effect.effect_type))
+            element = profile_elements.get(effect_type_key(effect.effect_type))
             if not element or effect.min_damage is None:
                 continue
             spell_lines.append(
@@ -1065,7 +1169,7 @@ def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
             lines.extend(spell_lines)
 
     if not lines or spell_count == 0:
-        return tuple(GENERIC_STRENGTH_DAMAGE_PROFILE)
+        return generic_damage_profile()
 
     return tuple(
         DamageLine(
@@ -1126,33 +1230,47 @@ def survivability_score(stats: dict[str, int]) -> float:
     return weighted_ehp * SURVIVABILITY_SCORE_WEIGHT
 
 
-def strength_point_cost(base_strength: int) -> int:
-    if base_strength < 0:
-        raise ValueError("Base strength cannot be negative.")
-    first = min(base_strength, 100)
-    second = min(max(base_strength - 100, 0), 100) * 2
-    third = min(max(base_strength - 200, 0), 100) * 3
-    fourth = max(base_strength - 300, 0) * 4
+def characteristic_point_cost(base_points: int) -> int:
+    if base_points < 0:
+        raise ValueError("Base characteristic allocation cannot be negative.")
+    first = min(base_points, 100)
+    second = min(max(base_points - 100, 0), 100) * 2
+    third = min(max(base_points - 200, 0), 100) * 3
+    fourth = max(base_points - 300, 0) * 4
     return first + second + third + fourth
 
 
-def base_stats_for_strength_allocation(base_strength: int) -> dict[str, int]:
-    cost = strength_point_cost(base_strength)
+def strength_point_cost(base_strength: int) -> int:
+    return characteristic_point_cost(base_strength)
+
+
+def base_stats_for_primary_allocation(base_points: int, primary_stat: str | None = None) -> dict[str, int]:
+    primary_stat = primary_stat or ACTIVE_DAMAGE_PROFILE.primary_stat
+    cost = characteristic_point_cost(base_points)
     if cost > BASE_CHARACTERISTIC_POINTS:
-        raise ValueError(f"Base strength allocation exceeds available points: {base_strength}")
+        raise ValueError(f"Base {primary_stat} allocation exceeds available points: {base_points}")
     base_vitality = BASE_CHARACTERISTIC_POINTS - cost
     return {
         **BASE_STATS,
-        "Strength": SCROLLED_BASE_STAT + base_strength,
+        primary_stat: SCROLLED_BASE_STAT + base_points,
         "Vitality": SCROLLED_BASE_STAT + base_vitality,
     }
 
 
-def state_with_base_allocation(state: BuildState, base_strength: int) -> BuildState:
-    allocated_base_stats = base_stats_for_strength_allocation(base_strength)
+def base_stats_for_strength_allocation(base_strength: int) -> dict[str, int]:
+    return base_stats_for_primary_allocation(base_strength, "Strength")
+
+
+def state_with_base_allocation(
+    state: BuildState,
+    base_points: int,
+    primary_stat: str | None = None,
+) -> BuildState:
+    primary_stat = primary_stat or ACTIVE_DAMAGE_PROFILE.primary_stat
+    allocated_base_stats = base_stats_for_primary_allocation(base_points, primary_stat)
     next_state = state.clone()
     next_state.base_allocation = {
-        "Strength": base_strength,
+        primary_stat: base_points,
         "Vitality": allocated_base_stats["Vitality"] - SCROLLED_BASE_STAT,
     }
     for stat, allocated_value in allocated_base_stats.items():
@@ -1167,8 +1285,8 @@ def optimize_base_allocation(
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
 ) -> BuildState:
     best_state: BuildState | None = None
-    for base_strength in BASE_STRENGTH_ALLOCATION_OPTIONS:
-        allocated_state = state_with_base_allocation(state, base_strength)
+    for base_points in BASE_STRENGTH_ALLOCATION_OPTIONS:
+        allocated_state = state_with_base_allocation(state, base_points)
         allocated_state.score = final_score_state(
             allocated_state,
             generic_damage_weight=generic_damage_weight,
@@ -2098,6 +2216,20 @@ def find_diverse_builds(
 
 def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[str, Any]:
     scoring_stats = effective_scoring_stats(state)
+    total_stats = {
+        "AP": state.stats.get("AP", 0),
+        "MP": state.stats.get("MP", 0),
+        "Range": state.stats.get("Range", 0),
+        ACTIVE_DAMAGE_PROFILE.primary_stat: state.stats.get(ACTIVE_DAMAGE_PROFILE.primary_stat, 0),
+        "Power": state.stats.get("Power", 0),
+        "Vitality": state.stats.get("Vitality", 0),
+        "Damage": state.stats.get("Damage", 0),
+        ACTIVE_DAMAGE_PROFILE.damage_stat: state.stats.get(ACTIVE_DAMAGE_PROFILE.damage_stat, 0),
+        "Critical": state.stats.get("Critical", 0),
+        "Critical Damage": state.stats.get("Critical Damage", 0),
+    }
+    for stat in ACTIVE_DAMAGE_PROFILE.secondary_damage_weights:
+        total_stats[stat] = state.stats.get(stat, 0)
     used_sets = {
         sets[set_id]["_name"]: count
         for set_id, count in sorted(state.set_counts.items())
@@ -2114,18 +2246,7 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
         "apStrategy": state.ap_strategy,
         "baseAllocation": state.base_allocation,
         "conditionFailures": state.condition_failures,
-        "totals": {
-            "AP": state.stats.get("AP", 0),
-            "MP": state.stats.get("MP", 0),
-            "Range": state.stats.get("Range", 0),
-            "Strength": state.stats.get("Strength", 0),
-            "Power": state.stats.get("Power", 0),
-            "Vitality": state.stats.get("Vitality", 0),
-            "Damage": state.stats.get("Damage", 0),
-            "Earth Damage": state.stats.get("Earth Damage", 0),
-            "Critical": state.stats.get("Critical", 0),
-            "Critical Damage": state.stats.get("Critical Damage", 0),
-        },
+        "totals": total_stats,
         "sets": used_sets,
         "exos": {
             stat: {
@@ -2160,11 +2281,13 @@ def main() -> None:
     parser.add_argument("--target-ap", type=int, default=DEFAULT_TARGET.ap)
     parser.add_argument("--target-mp", type=int, default=DEFAULT_TARGET.mp)
     parser.add_argument("--target-range", type=int, default=DEFAULT_TARGET.range)
+    parser.add_argument("--element", choices=sorted(ELEMENT_PROFILES), default="strength")
     parser.add_argument("--max-shared-items", type=int, default=DEFAULT_MAX_SHARED_ITEMS)
     parser.add_argument("--generic-damage-weight", type=float, default=GENERIC_DAMAGE_WEIGHT)
     parser.add_argument("--weapon-damage-weight", type=float, default=WEAPON_DAMAGE_WEIGHT)
     args = parser.parse_args()
 
+    profile = configure_damage_profile(args.element)
     target = BuildTarget(ap=args.target_ap, mp=args.target_mp, range=args.target_range)
     start = time.perf_counter()
     builds = find_diverse_builds(
@@ -2182,7 +2305,13 @@ def main() -> None:
     sets = load_sets()
 
     output = {
-        "prototype": "level_200_strength_pvm_generalist",
+        "prototype": f"level_200_{profile.name}_pvm_generalist",
+        "profile": {
+            "name": profile.name,
+            "primaryStat": profile.primary_stat,
+            "element": profile.element,
+            "damageStat": profile.damage_stat,
+        },
         "target": {"level": TARGET_LEVEL, "AP": target.ap, "MP": target.mp, "Range": target.range},
         "scoring": {
             "genericDamageWeight": args.generic_damage_weight,
