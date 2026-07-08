@@ -1,9 +1,9 @@
 import {
   Stat,
-  ItemFilters,
   WeaponEffectType,
   SpellEffectType,
   StatFilter,
+  ItemFilters,
 } from '__generated__/globalTypes';
 import {
   ItemSet,
@@ -42,12 +42,16 @@ export type SetCounter = {
   };
 };
 
-export type SharedFilterAction =
+export type FilterAction =
   | { type: 'SEARCH'; search: string }
   | { type: 'MAX_LEVEL'; maxLevel: number }
   | { type: 'QUICK_STATS'; stats: Array<Stat> }
   | { type: 'STATS'; stats: Array<StatFilter> }
   | { type: 'RESET'; maxLevel: number };
+
+// item type ids are tracked separately (see Selector.tsx's itemTypeIds state) -
+// itemTypeIds is omitted here since the reducer never carries a real value for it
+export type FilterState = Omit<ItemFilters, 'itemTypeIds'>;
 
 export type MageAction =
   | { type: 'ADD'; stat: Stat }
@@ -65,8 +69,6 @@ export interface ExoStatLine {
   stat: Stat;
   value: number;
 }
-
-export type SharedFilters = Omit<ItemFilters, 'itemTypeIds'>;
 
 const mobileScreenTypesArr = [
   'HOME',

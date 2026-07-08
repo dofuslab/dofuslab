@@ -27,10 +27,13 @@ const nextConfig: NextConfig = withBundleAnalyzer({
     },
   },
   webpack: (config: Configuration) => {
-    const env = Object.keys(process.env).reduce((acc, curr) => {
-      acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
-      return acc;
-    }, {} as Record<string, string>);
+    const env = Object.keys(process.env).reduce(
+      (acc, curr) => {
+        acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
+        return acc;
+      },
+      {} as Record<string, string>,
+    );
 
     config.plugins?.push(new webpack.DefinePlugin(env));
 

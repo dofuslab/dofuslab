@@ -9,7 +9,7 @@ import { useTheme } from '@emotion/react';
 import uniqWith from 'lodash/uniqWith';
 import isEqual from 'lodash/isEqual';
 
-import { SharedFilters, SharedFilterAction } from 'common/types';
+import { FilterAction, FilterState } from 'common/types';
 
 import { topMarginStyle } from 'common/mixins';
 import { mq, SEARCH_BAR_ID } from 'common/constants';
@@ -24,7 +24,57 @@ import ItemTypeFilter from './ItemTypeFilter';
 import ResetAllButton from './ResetAllButton';
 import FavoritesButton from './FavoritesButton';
 
-const reducer = (state: SharedFilters, action: SharedFilterAction) => {
+const makeItemTypesFromSlots = (
+  slots: Array<ItemSlot>,
+  showSets: boolean,
+  selectedItemSlot: ItemSlot | null,
+) => {
+  const filteredSlots = showSets
+    ? slots
+    : slots.filter(
+        (slot: ItemSlot) =>
+          !selectedItemSlot || selectedItemSlot.id === slot.id,
+      );
+
+  return uniqWith(
+    filteredSlots
+      .map((slot: ItemSlot) => slot.itemTypes)
+      .reduce((acc, curr) => [...acc, ...curr], []),
+    isEqual,
+  );
+};
+
+export interface SlotGroup {
+  key: string;
+  name: string;
+  imageUrl: string;
+  order: number;
+  itemTypes: ItemSlot['itemTypes'];
+}
+
+// physical item slots can be duplicated (e.g. 6 Dofus slots, 2 Ring slots) -
+// collapse those into a single logical group per distinct set of item types
+const makeSlotGroups = (slots: Array<ItemSlot>): Array<SlotGroup> => {
+  const groupsByKey = new Map<string, SlotGroup>();
+  slots.forEach((slot) => {
+    const key = slot.itemTypes
+      .map((type) => type.id)
+      .sort()
+      .join(',');
+    if (!groupsByKey.has(key)) {
+      groupsByKey.set(key, {
+        key,
+        name: slot.name,
+        imageUrl: slot.imageUrl,
+        order: slot.order,
+        itemTypes: slot.itemTypes,
+      });
+    }
+  });
+  return Array.from(groupsByKey.values()).sort((a, b) => a.order - b.order);
+};
+
+const reducer = (state: FilterState, action: FilterAction) => {
   switch (action.type) {
     case 'SEARCH':
       return { ...state, search: action.search };
@@ -77,6 +127,7 @@ const Selector = ({
 
   const { data: itemSlotsData } = useQuery<itemSlots>(ItemSlotsQuery);
   const slots = itemSlotsData?.itemSlots;
+  const slotGroups = slots ? makeSlotGroups(slots) : [];
 
   const [itemTypeIds, setItemTypeIds] = useState<Set<string>>(new Set());
 
@@ -148,20 +199,17 @@ const Selector = ({
           selectedItemSlot={selectedItemSlot}
           selectItemSlot={selectItemSlot}
         />
-        {slots && !showSetsState && (
+        {slots && (
           <ItemTypeFilter
             setItemTypeIds={setItemTypeIds}
             itemTypeIds={itemTypeIds}
-            itemTypes={uniqWith(
-              slots
-                .filter(
-                  (slot: ItemSlot) =>
-                    !selectedItemSlot || selectedItemSlot.id === slot.id,
-                )
-                .map((slot: ItemSlot) => slot.itemTypes)
-                .reduce((acc, curr) => [...acc, ...curr], []),
-              isEqual,
+            itemTypes={makeItemTypesFromSlots(
+              slots,
+              showSetsState,
+              selectedItemSlot,
             )}
+            slotGroups={slotGroups}
+            groupBySlot={showSetsState || !selectedItemSlot}
           />
         )}
         <ResetAllButton
@@ -183,6 +231,8 @@ const Selector = ({
         {showSetsState ? (
           <SetSelector
             filters={filters}
+            itemTypeIds={itemTypeIds}
+            slotGroups={slotGroups}
             customSet={customSet}
             isClassic={isClassic}
             isMobile={isMobile}

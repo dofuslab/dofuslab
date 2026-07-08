@@ -6,31 +6,54 @@ import { useQuery } from '@apollo/client';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import SetQuery from 'graphql/queries/sets.graphql';
-import { SharedFilters } from 'common/types';
 import { sets, setsVariables } from 'graphql/queries/__generated__/sets';
 
 import { mq, getSelectorNumCols } from 'common/constants';
 import { getResponsiveGridStyle } from 'common/mixins';
 import { SetWithItems, CustomSet } from 'common/type-aliases';
+import { FilterState } from 'common/types';
 import SetCard from './SetCard';
 
 import SkeletonCardsLoader from './SkeletonCardsLoader';
 import SetModal from './SetModal';
+import type { SlotGroup } from './Selector';
 
 const PAGE_SIZE = 12;
 
 const THRESHOLD = 600;
 
 interface Props {
-  filters: SharedFilters;
+  filters: FilterState;
+  itemTypeIds: Set<string>;
+  slotGroups: Array<SlotGroup>;
   customSet?: CustomSet | null;
   isMobile: boolean;
   isClassic: boolean;
 }
 
-const SetSelector = ({ filters, customSet, isMobile, isClassic }: Props) => {
+const SetSelector = ({
+  filters,
+  itemTypeIds,
+  slotGroups,
+  customSet,
+  isMobile,
+  isClassic,
+}: Props) => {
+  // OR the checked types within a slot group, AND across groups - a set only
+  // needs one matching item per selected slot, not one of every checked type
+  const itemTypeIdGroups = slotGroups
+    .map((group) =>
+      group.itemTypes
+        .map((type) => type.id)
+        .filter((id) => itemTypeIds.has(id)),
+    )
+    .filter((group) => group.length > 0);
+  const queryFilters = {
+    ...filters,
+    itemTypeIdGroups,
+  };
   const { data, loading, fetchMore } = useQuery<sets, setsVariables>(SetQuery, {
-    variables: { first: PAGE_SIZE, filters },
+    variables: { first: PAGE_SIZE, filters: queryFilters },
   });
 
   const [selectedSet, setSelectedSet] = useState<SetWithItems | null>(null);

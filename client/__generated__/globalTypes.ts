@@ -699,6 +699,7 @@ export type SetEquippedItemExo = {
 };
 
 export type SetFilters = {
+  itemTypeIdGroups: Array<Array<Scalars['UUID']['input']>>;
   maxLevel: Scalars['Int']['input'];
   search: Scalars['String']['input'];
   stats: Array<StatFilter>;

@@ -23,7 +23,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useDebounceCallback } from '@react-hook/debounce';
 
-import { SharedFilterAction, SharedFilters } from 'common/types';
+import { FilterAction, FilterState } from 'common/types';
 import { useTranslation } from 'next-i18next';
 import Tooltip from 'components/common/Tooltip';
 import { antdSelectFilterOption } from 'common/utils';
@@ -40,8 +40,8 @@ const { Search } = Input;
 const { Option } = Select;
 
 interface Props {
-  filters: SharedFilters;
-  dispatch: Dispatch<SharedFilterAction>;
+  filters: FilterState;
+  dispatch: Dispatch<FilterAction>;
   customSet?: CustomSet | null;
   showSets: boolean;
   setShowSets: Dispatch<SetStateAction<boolean>>;
