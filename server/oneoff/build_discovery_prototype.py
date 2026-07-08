@@ -134,6 +134,8 @@ DEFAULT_SLOT_ORDERS: list[tuple[str, ...]] = [
     ),
 ]
 
+PERCENT_RESISTANCE_WEIGHT = 2.0
+
 STAT_WEIGHTS = {
     "Strength": 1.0,
     "Power": 1.0,
@@ -144,11 +146,11 @@ STAT_WEIGHTS = {
     "Critical": 6.0,
     "Vitality": 0.3,
     "Wisdom": 0.15,
-    "% Earth Resistance": 1.0,
-    "% Neutral Resistance": 1.0,
-    "% Fire Resistance": 1.0,
-    "% Water Resistance": 1.0,
-    "% Air Resistance": 1.0,
+    "% Earth Resistance": PERCENT_RESISTANCE_WEIGHT,
+    "% Neutral Resistance": PERCENT_RESISTANCE_WEIGHT,
+    "% Fire Resistance": PERCENT_RESISTANCE_WEIGHT,
+    "% Water Resistance": PERCENT_RESISTANCE_WEIGHT,
+    "% Air Resistance": PERCENT_RESISTANCE_WEIGHT,
 }
 DOMINANCE_STATS = ("AP", "MP", "Range")
 

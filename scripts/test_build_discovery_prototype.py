@@ -79,6 +79,18 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertGreater(final_score_state(state), score_stats(state.stats))
 
+    def test_percent_resistances_are_equal_and_above_strength(self):
+        resistance_weights = [
+            build_discovery_prototype.STAT_WEIGHTS["% Earth Resistance"],
+            build_discovery_prototype.STAT_WEIGHTS["% Neutral Resistance"],
+            build_discovery_prototype.STAT_WEIGHTS["% Fire Resistance"],
+            build_discovery_prototype.STAT_WEIGHTS["% Water Resistance"],
+            build_discovery_prototype.STAT_WEIGHTS["% Air Resistance"],
+        ]
+
+        self.assertEqual(len(set(resistance_weights)), 1)
+        self.assertGreater(resistance_weights[0], build_discovery_prototype.STAT_WEIGHTS["Strength"])
+
     def test_weapon_damage_is_optional_so_stat_sticks_are_not_penalized(self):
         stat_stick = BuildState()
         damaging_weapon = BuildState()
