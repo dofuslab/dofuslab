@@ -24,6 +24,7 @@ from oneoff.condition_evaluator import (
     target_forced_conditions_hold,
     unmet_item_conditions,
 )
+from oneoff.damage_calculator import DamageLine, profile_damage
 
 TARGET_LEVEL = 200
 RELEVANT_SET_ITEM_MIN_LEVEL = 180
@@ -42,6 +43,27 @@ DOFUS_AP_SOURCE_LIMIT = 2
 DOFUS_ZERO_SCORE_FILLER_LIMIT = 4
 AP_SET_BONUS_SEED_LIMIT = 80
 AP_SET_BONUS_SEED_LIMIT_PER_SET = 12
+GENERIC_DAMAGE_WEIGHT = 0.25
+WEAPON_DAMAGE_WEIGHT = 0.15
+GENERIC_STRENGTH_DAMAGE_PROFILE = [
+    DamageLine(element="earth", base_min=30, base_max=34, crit_chance=15, weight=1.0),
+    DamageLine(element="earth", base_min=42, base_max=48, crit_chance=15, weight=0.75),
+    DamageLine(element="earth", base_min=18, base_max=22, crit_chance=25, weight=1.25),
+]
+WEAPON_EFFECT_ELEMENTS = {
+    "NEUTRAL_DAMAGE": "neutral",
+    "NEUTRAL_STEAL": "neutral",
+    "EARTH_DAMAGE": "earth",
+    "EARTH_STEAL": "earth",
+    "FIRE_DAMAGE": "fire",
+    "FIRE_STEAL": "fire",
+    "WATER_DAMAGE": "water",
+    "WATER_STEAL": "water",
+    "AIR_DAMAGE": "air",
+    "AIR_STEAL": "air",
+    "BEST_ELEMENT_DAMAGE": "earth",
+    "BEST_ELEMENT_STEAL": "earth",
+}
 EXO_ELIGIBLE_ITEM_TYPES = {
     "Hat",
     "Cloak",
@@ -329,6 +351,38 @@ def item_stats_from_db(stats: Iterable[Any]) -> list[dict[str, Any]]:
     return stat_lines
 
 
+def int_or_zero(value: Any) -> int:
+    if isinstance(value, tuple):
+        value = value[0] if value else 0
+    return int(value or 0)
+
+
+def effect_type_key(effect_type: Any) -> str:
+    key = getattr(effect_type, "name", str(effect_type))
+    return key.rsplit(".", 1)[-1]
+
+
+def weapon_stats_from_db(weapon_stats: Any) -> dict[str, Any] | None:
+    if not weapon_stats:
+        return None
+    return {
+        "apCost": weapon_stats.ap_cost,
+        "usesPerTurn": weapon_stats.uses_per_turn,
+        "minRange": weapon_stats.min_range,
+        "maxRange": weapon_stats.max_range,
+        "baseCritChance": int_or_zero(weapon_stats.base_crit_chance),
+        "critBonusDamage": int_or_zero(weapon_stats.crit_bonus_damage),
+        "weaponEffects": [
+            {
+                "effectType": effect_type_key(effect.effect_type),
+                "minDamage": int_or_zero(effect.min_damage),
+                "maxDamage": int_or_zero(effect.max_damage),
+            }
+            for effect in weapon_stats.weapon_effects
+        ],
+    }
+
+
 def set_bonuses_from_db(bonuses: Iterable[Any]) -> dict[str, list[dict[str, Any]]]:
     bonus_lines_by_count: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for bonus in sorted(bonuses, key=lambda set_bonus: set_bonus.num_items):
@@ -408,6 +462,7 @@ def load_items(
     from app import session_scope
     from app.database.model_item import ModelItem
     from app.database.model_item_type import ModelItemType
+    from app.database.model_weapon_stat import ModelWeaponStat
 
     with session_scope() as db_session:
         db_items = (
@@ -417,6 +472,7 @@ def load_items(
                 joinedload(ModelItem.item_translations),
                 joinedload(ModelItem.stats),
                 joinedload(ModelItem.item_type).joinedload(ModelItemType.item_type_translation),
+                joinedload(ModelItem.weapon_stats).joinedload(ModelWeaponStat.weapon_effects),
             )
             .filter(ModelItem.level <= TARGET_LEVEL)
             .filter(or_(ModelItem.dofus_db_id.isnot(None), ModelItem.dofus_db_mount_id.isnot(None)))
@@ -430,6 +486,7 @@ def load_items(
                 "setID": str(item.set_id) if item.set_id else None,
                 "level": item.level,
                 "stats": item_stats_from_db(item.stats),
+                "weaponStats": weapon_stats_from_db(item.weapon_stats),
                 "conditions": item.conditions or {"conditions": {}, "customConditions": {}},
             }
             for item in db_items
@@ -662,8 +719,49 @@ def score_state(
     return score
 
 
-def final_score_state(state: BuildState) -> float:
-    return score_stats(state.stats)
+def weapon_damage_lines(item: dict[str, Any]) -> list[DamageLine]:
+    weapon_stats = item.get("weaponStats")
+    if not weapon_stats:
+        return []
+
+    crit_chance = weapon_stats.get("baseCritChance") or 0
+    crit_bonus_damage = weapon_stats.get("critBonusDamage") or 0
+    lines = []
+    for effect in weapon_stats.get("weaponEffects", []):
+        element = WEAPON_EFFECT_ELEMENTS.get(effect.get("effectType"))
+        if not element:
+            continue
+        lines.append(
+            DamageLine(
+                element=element,
+                base_min=effect.get("minDamage") or effect.get("maxDamage") or 0,
+                base_max=effect.get("maxDamage") or 0,
+                crit_chance=crit_chance,
+                crit_bonus_damage=crit_bonus_damage,
+                is_weapon=True,
+                weight=1.0,
+            )
+        )
+    return lines
+
+
+def state_weapon_damage(state: BuildState) -> float:
+    weapon = state.slots.get("weapon")
+    if not weapon:
+        return 0.0
+    return profile_damage(weapon_damage_lines(weapon), state.stats)
+
+
+def final_score_state(
+    state: BuildState,
+    generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
+    weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+) -> float:
+    return (
+        score_stats(state.stats)
+        + profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, state.stats) * generic_damage_weight
+        + state_weapon_damage(state) * weapon_damage_weight
+    )
 
 
 def item_stat_total(state: BuildState, stat: str) -> int:
@@ -757,6 +855,8 @@ def completed_valid_builds(
     beam: list[BuildState],
     target: BuildTarget,
     ap_strategy: ApStrategy | None = None,
+    generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
+    weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
 ) -> list[BuildState]:
     valid_final_states = []
     for state in beam:
@@ -776,7 +876,11 @@ def completed_valid_builds(
             continue
         if ap_strategy:
             state_with_exos.ap_strategy = ap_strategy.name
-        state_with_exos.score = final_score_state(state_with_exos)
+        state_with_exos.score = final_score_state(
+            state_with_exos,
+            generic_damage_weight=generic_damage_weight,
+            weapon_damage_weight=weapon_damage_weight,
+        )
         valid_final_states.append(state_with_exos)
     return valid_final_states
 
@@ -860,6 +964,8 @@ def search_slot_order(
     beam_width: int,
     per_signature_cap: int,
     ap_strategy: ApStrategy | None = None,
+    generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
+    weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
 ) -> list[BuildState]:
     beam = (
         ap_set_bonus_seed_states(
@@ -892,7 +998,13 @@ def search_slot_order(
                     next_states.append(next_state)
         beam = trim_beam(next_states, beam_width, per_signature_cap)
 
-    return completed_valid_builds(beam, target, ap_strategy)
+    return completed_valid_builds(
+        beam,
+        target,
+        ap_strategy,
+        generic_damage_weight=generic_damage_weight,
+        weapon_damage_weight=weapon_damage_weight,
+    )
 
 
 def diversify_builds(states: list[BuildState], max_shared_items: int | None) -> list[BuildState]:
@@ -919,6 +1031,8 @@ def find_builds(
     excluded_item_ids: set[str] | None = None,
     slot_orders: list[tuple[str, ...]] = DEFAULT_SLOT_ORDERS,
     ap_strategies: tuple[ApStrategy, ...] = DEFAULT_AP_STRATEGIES,
+    generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
+    weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
 ) -> list[BuildState]:
     items = load_items(target, excluded_item_ids)
     sets = load_sets()
@@ -949,6 +1063,8 @@ def find_builds(
                     beam_width=beam_width,
                     per_signature_cap=per_signature_cap,
                     ap_strategy=ap_strategy,
+                    generic_damage_weight=generic_damage_weight,
+                    weapon_damage_weight=weapon_damage_weight,
                 )
             )
     ranked_states = dedupe_builds(sorted(valid_final_states, key=lambda s: s.score, reverse=True))
@@ -988,6 +1104,8 @@ def find_diverse_builds(
     relevant_set_limit: int,
     target: BuildTarget = DEFAULT_TARGET,
     max_shared_items: int | None = DEFAULT_MAX_SHARED_ITEMS,
+    generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
+    weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
 ) -> list[BuildState]:
     candidates = find_builds(
         top_k=top_k,
@@ -996,6 +1114,8 @@ def find_diverse_builds(
         relevant_set_limit=relevant_set_limit,
         target=target,
         max_shared_items=None,
+        generic_damage_weight=generic_damage_weight,
+        weapon_damage_weight=weapon_damage_weight,
     )
 
     selected: list[BuildState] = []
@@ -1032,6 +1152,8 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
     return {
         "score": round(state.score, 2),
         "weightedStatScore": round(score_stats(state.stats), 2),
+        "genericDamageScore": round(profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, state.stats), 2),
+        "weaponDamageScore": round(state_weapon_damage(state), 2),
         "apStrategy": state.ap_strategy,
         "conditionFailures": state.condition_failures,
         "totals": {
@@ -1081,6 +1203,8 @@ def main() -> None:
     parser.add_argument("--target-mp", type=int, default=DEFAULT_TARGET.mp)
     parser.add_argument("--target-range", type=int, default=DEFAULT_TARGET.range)
     parser.add_argument("--max-shared-items", type=int, default=DEFAULT_MAX_SHARED_ITEMS)
+    parser.add_argument("--generic-damage-weight", type=float, default=GENERIC_DAMAGE_WEIGHT)
+    parser.add_argument("--weapon-damage-weight", type=float, default=WEAPON_DAMAGE_WEIGHT)
     args = parser.parse_args()
 
     target = BuildTarget(ap=args.target_ap, mp=args.target_mp, range=args.target_range)
@@ -1093,6 +1217,8 @@ def main() -> None:
         relevant_set_limit=args.relevant_set_limit,
         target=target,
         max_shared_items=args.max_shared_items,
+        generic_damage_weight=args.generic_damage_weight,
+        weapon_damage_weight=args.weapon_damage_weight,
     )
     elapsed_ms = round((time.perf_counter() - start) * 1000, 1)
     sets = load_sets()
@@ -1100,6 +1226,10 @@ def main() -> None:
     output = {
         "prototype": "level_200_strength_pvm_generalist",
         "target": {"level": TARGET_LEVEL, "AP": target.ap, "MP": target.mp, "Range": target.range},
+        "scoring": {
+            "genericDamageWeight": args.generic_damage_weight,
+            "weaponDamageWeight": args.weapon_damage_weight,
+        },
         "elapsedMs": elapsed_ms,
         "resultCount": len(builds),
         "builds": [serialize_build(build, sets) for build in builds],

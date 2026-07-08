@@ -26,6 +26,7 @@ class DamageLine:
     base_min: int
     base_max: int
     crit_chance: int = 15
+    crit_bonus_damage: int = 0
     is_weapon: bool = False
     is_trap: bool = False
     weight: float = 1.0
@@ -44,6 +45,7 @@ def calc_damage(
     is_trap: bool = False,
     is_weapon: bool = False,
     weapon_skill_power: int = 0,
+    crit_bonus_damage: int = 0,
 ) -> dict[str, int]:
     multiplier_stat, damage_stat = ELEMENT_STATS[element]
     multiplier_value = get_stat(stats, multiplier_stat) + get_stat(stats, "Power")
@@ -53,7 +55,7 @@ def calc_damage(
         multiplier_value += get_stat(stats, "Trap Power")
         damage_value += get_stat(stats, "Trap Damage")
     if is_crit:
-        damage_value += get_stat(stats, "Critical Damage")
+        damage_value += get_stat(stats, "Critical Damage") + crit_bonus_damage
     if is_weapon:
         multiplier_value += weapon_skill_power
 
@@ -99,6 +101,7 @@ def average_line_damage(line: DamageLine, stats: dict[str, int]) -> float:
         is_crit=True,
         is_trap=line.is_trap,
         is_weapon=line.is_weapon,
+        crit_bonus_damage=line.crit_bonus_damage,
     )
     crit_max = calc_damage(
         line.base_max,
@@ -107,6 +110,7 @@ def average_line_damage(line: DamageLine, stats: dict[str, int]) -> float:
         is_crit=True,
         is_trap=line.is_trap,
         is_weapon=line.is_weapon,
+        crit_bonus_damage=line.crit_bonus_damage,
     )
 
     noncrit_average = (noncrit_min["ranged"] + noncrit_max["ranged"]) / 2

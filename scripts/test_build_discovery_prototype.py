@@ -36,6 +36,7 @@ from oneoff.build_discovery_prototype import (
     score_stats,
     score_state,
     secondary_ap_source_count,
+    state_weapon_damage,
 )
 
 
@@ -70,13 +71,39 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertEqual(score_state(with_mp_range, {}, target) - score_state(baseline, {}, target), 325)
 
-    def test_final_score_uses_weighted_stats_for_v0(self):
+    def test_final_score_adds_generic_damage_to_weighted_stats(self):
         state = BuildState()
         state.stats["Strength"] = 500
         state.stats["Power"] = 100
         state.stats["Critical Damage"] = 20
 
-        self.assertEqual(final_score_state(state), score_stats(state.stats))
+        self.assertGreater(final_score_state(state), score_stats(state.stats))
+
+    def test_weapon_damage_is_optional_so_stat_sticks_are_not_penalized(self):
+        stat_stick = BuildState()
+        damaging_weapon = BuildState()
+        damaging_weapon.slots["weapon"] = {
+            "dofusID": "weapon",
+            "_stats": {},
+            "weaponStats": {
+                "baseCritChance": 0,
+                "critBonusDamage": 0,
+                "weaponEffects": [
+                    {
+                        "effectType": "EARTH_DAMAGE",
+                        "minDamage": 30,
+                        "maxDamage": 30,
+                    }
+                ],
+            },
+        }
+
+        self.assertEqual(state_weapon_damage(stat_stick), 0)
+        self.assertGreater(state_weapon_damage(damaging_weapon), 0)
+        self.assertEqual(
+            final_score_state(damaging_weapon, weapon_damage_weight=0),
+            final_score_state(stat_stick, weapon_damage_weight=0),
+        )
 
     def test_ap_strategy_counts_expected_payment_sources(self):
         state = BuildState()

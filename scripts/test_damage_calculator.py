@@ -59,6 +59,15 @@ class DamageCalculatorTest(unittest.TestCase):
 
         self.assertGreater(profile_damage(profile, high_crit), profile_damage(profile, low_crit))
 
+    def test_weapon_crit_bonus_damage_only_applies_on_crit(self):
+        stats = {"Strength": 400, "Earth Damage": 20}
+
+        noncrit = calc_damage(30, "earth", stats, is_weapon=True)
+        crit = calc_damage(30, "earth", stats, is_weapon=True, is_crit=True, crit_bonus_damage=15)
+
+        self.assertEqual(noncrit["ranged"], 170)
+        self.assertEqual(crit["ranged"], 185)
+
 
 if __name__ == "__main__":
     unittest.main()
