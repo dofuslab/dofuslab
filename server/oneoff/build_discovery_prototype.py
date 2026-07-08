@@ -136,6 +136,17 @@ DEFAULT_SLOT_ORDERS: list[tuple[str, ...]] = [
 
 PERCENT_RESISTANCE_WEIGHT = 2.0
 
+STAT_SCORE_CAPS = {
+    "AP": 12,
+    "MP": 6,
+    "Range": 6,
+    "% Earth Resistance": 50,
+    "% Neutral Resistance": 50,
+    "% Fire Resistance": 50,
+    "% Water Resistance": 50,
+    "% Air Resistance": 50,
+}
+
 STAT_WEIGHTS = {
     "Strength": 1.0,
     "Power": 1.0,
@@ -400,7 +411,10 @@ def set_bonuses_from_db(bonuses: Iterable[Any]) -> dict[str, list[dict[str, Any]
 
 
 def score_stats(stats: dict[str, int]) -> float:
-    return sum(stats.get(stat, 0) * weight for stat, weight in STAT_WEIGHTS.items())
+    return sum(
+        min(stats.get(stat, 0), STAT_SCORE_CAPS.get(stat, float("inf"))) * weight
+        for stat, weight in STAT_WEIGHTS.items()
+    )
 
 
 def item_score(item: dict[str, Any]) -> float:

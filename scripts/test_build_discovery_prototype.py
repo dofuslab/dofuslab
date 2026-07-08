@@ -91,6 +91,15 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(len(set(resistance_weights)), 1)
         self.assertGreater(resistance_weights[0], build_discovery_prototype.STAT_WEIGHTS["Strength"])
 
+    def test_score_stats_caps_hard_capped_stats(self):
+        capped = score_stats({"% Earth Resistance": 50, "AP": 12, "MP": 6, "Range": 6})
+        over_cap = score_stats({"% Earth Resistance": 80, "AP": 13, "MP": 7, "Range": 8})
+
+        self.assertEqual(over_cap, capped)
+
+    def test_score_stats_does_not_cap_uncapped_stats(self):
+        self.assertGreater(score_stats({"Strength": 80}), score_stats({"Strength": 50}))
+
     def test_weapon_damage_is_optional_so_stat_sticks_are_not_penalized(self):
         stat_stick = BuildState()
         damaging_weapon = BuildState()
