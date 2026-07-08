@@ -115,7 +115,7 @@ DEFAULT_SLOT_ORDERS: list[tuple[str, ...]] = [
 
 STAT_WEIGHTS = {
     "Strength": 1.0,
-    "Power": 0.85,
+    "Power": 1.0,
     "Earth Damage": 4.0,
     "Neutral Damage": 1.0,
     "Damage": 6.0,
@@ -123,8 +123,8 @@ STAT_WEIGHTS = {
     "Critical": 6.0,
     "Vitality": 0.3,
     "Wisdom": 0.15,
-    "% Earth Resistance": 2.0,
-    "% Neutral Resistance": 1.5,
+    "% Earth Resistance": 1.0,
+    "% Neutral Resistance": 1.0,
     "% Fire Resistance": 1.0,
     "% Water Resistance": 1.0,
     "% Air Resistance": 1.0,
@@ -669,7 +669,7 @@ def survivability_score(stats: dict[str, int]) -> float:
         stats.get("% Fire Resistance", 0),
         stats.get("% Water Resistance", 0),
         stats.get("% Air Resistance", 0),
-        stats.get("% Neutral Resistance", 0) * 0.7,
+        stats.get("% Neutral Resistance", 0),
     ]
     return stats.get("Vitality", 0) * 0.25 + sum(elemental_res) * 12
 
