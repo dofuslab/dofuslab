@@ -138,12 +138,23 @@ PERCENT_RESISTANCE_WEIGHT = 2.0
 SURVIVABILITY_SCORE_WEIGHT = 0.3
 WEAKEST_ELEMENT_EHP_WEIGHT = 0.8
 AVERAGE_ELEMENT_EHP_WEIGHT = 0.2
+GENERIC_INCOMING_HIT = 350
+GENERIC_INCOMING_CRIT_RATE = 0.2
+GENERIC_INCOMING_PUSHBACK_RATE = 0.1
+GENERIC_INCOMING_RANGED_RATE = 0.7
 PERCENT_RESISTANCE_STATS = (
     "% Neutral Resistance",
     "% Earth Resistance",
     "% Fire Resistance",
     "% Water Resistance",
     "% Air Resistance",
+)
+FLAT_RESISTANCE_STATS = (
+    "Neutral Resistance",
+    "Earth Resistance",
+    "Fire Resistance",
+    "Water Resistance",
+    "Air Resistance",
 )
 
 STAT_SCORE_CAPS = {
@@ -216,6 +227,11 @@ DAMAGE_SCORING_STATS = {
 SURVIVABILITY_SCORING_STATS = {
     "Vitality",
     *PERCENT_RESISTANCE_STATS,
+    *FLAT_RESISTANCE_STATS,
+    "Critical Resistance",
+    "Pushback Resistance",
+    "% Ranged Resistance",
+    "% Melee Resistance",
 }
 FINAL_UTILITY_STAT_WEIGHTS = {
     stat: weight
@@ -837,11 +853,30 @@ def state_weapon_damage(state: BuildState) -> float:
     return profile_damage(weapon_damage_lines(weapon), state.stats) / ap_cost
 
 
+def expected_incoming_damage(stats: dict[str, int], percent_res_stat: str, flat_res_stat: str) -> float:
+    base_hit = GENERIC_INCOMING_HIT
+    flat_reduction = (
+        stats.get(flat_res_stat, 0)
+        + stats.get("Critical Resistance", 0) * GENERIC_INCOMING_CRIT_RATE
+        + stats.get("Pushback Resistance", 0) * GENERIC_INCOMING_PUSHBACK_RATE
+    )
+    damage_after_flat = max(base_hit - flat_reduction, 1)
+    element_res = min(stats.get(percent_res_stat, 0), STAT_SCORE_CAPS[percent_res_stat])
+    ranged_res = stats.get("% Ranged Resistance", 0)
+    melee_res = stats.get("% Melee Resistance", 0)
+    positional_res = (
+        ranged_res * GENERIC_INCOMING_RANGED_RATE
+        + melee_res * (1 - GENERIC_INCOMING_RANGED_RATE)
+    )
+    total_percent_res = min(element_res + positional_res, 50)
+    return damage_after_flat * (1 - total_percent_res / 100)
+
+
 def elemental_effective_hp(stats: dict[str, int]) -> list[float]:
     vitality = max(stats.get("Vitality", 0), 0)
     return [
-        vitality / (1 - min(stats.get(stat, 0), STAT_SCORE_CAPS[stat]) / 100)
-        for stat in PERCENT_RESISTANCE_STATS
+        vitality / expected_incoming_damage(stats, percent_res_stat, flat_res_stat) * GENERIC_INCOMING_HIT
+        for percent_res_stat, flat_res_stat in zip(PERCENT_RESISTANCE_STATS, FLAT_RESISTANCE_STATS)
     ]
 
 

@@ -98,7 +98,17 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertGreater(score_stats(with_damage), score_stats(utility_only))
 
     def test_final_utility_score_excludes_survivability_stats(self):
-        self.assertEqual(final_utility_score({"Vitality": 1000, "% Earth Resistance": 50}), 0)
+        survivability_stats = {
+            "Vitality": 1000,
+            "% Earth Resistance": 50,
+            "Earth Resistance": 40,
+            "Critical Resistance": 40,
+            "Pushback Resistance": 40,
+            "% Ranged Resistance": 5,
+            "% Melee Resistance": 5,
+        }
+
+        self.assertEqual(final_utility_score(survivability_stats), 0)
 
     def test_percent_resistances_are_equal_and_above_strength(self):
         resistance_weights = [
@@ -223,6 +233,23 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         high_gain = survivability_score(fifty_res) - survivability_score(forty_res)
 
         self.assertGreater(high_gain, low_gain)
+
+    def test_survivability_score_includes_generic_defensive_resistances(self):
+        baseline = {"Vitality": 4000}
+        defended = {
+            "Vitality": 4000,
+            "Neutral Resistance": 30,
+            "Earth Resistance": 30,
+            "Fire Resistance": 30,
+            "Water Resistance": 30,
+            "Air Resistance": 30,
+            "Critical Resistance": 50,
+            "Pushback Resistance": 50,
+            "% Ranged Resistance": 5,
+            "% Melee Resistance": 5,
+        }
+
+        self.assertGreater(survivability_score(defended), survivability_score(baseline))
 
     def test_weapon_damage_is_optional_so_stat_sticks_are_not_penalized(self):
         stat_stick = BuildState()
