@@ -24,6 +24,7 @@ from oneoff.build_discovery_prototype import (
     candidate_pool_for_slot,
     diversify_builds,
     dominates_item,
+    db_item_dofus_id,
     exo_search_target,
     exo_natural_cap_target,
     find_diverse_builds,
@@ -43,6 +44,13 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(target.ap, 10)
         self.assertEqual(target.mp, 5)
         self.assertEqual(target.range, 3)
+
+    def test_db_item_dofus_id_uses_mount_id_for_mounts(self):
+        class Item:
+            dofus_db_id = None
+            dofus_db_mount_id = "33008"
+
+        self.assertEqual(db_item_dofus_id(Item()), "33008")
 
     def test_exo_natural_cap_target_reserves_ap_exo(self):
         target = exo_natural_cap_target(BuildTarget(ap=11, mp=6, range=4))

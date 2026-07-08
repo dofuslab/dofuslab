@@ -352,6 +352,10 @@ def item_score(item: dict[str, Any]) -> float:
     return score_stats(normalize_stats(item.get("stats", [])))
 
 
+def db_item_dofus_id(item: Any) -> str | None:
+    return item.dofus_db_id or item.dofus_db_mount_id
+
+
 def set_bonus_score(set_obj: dict[str, Any]) -> float:
     return max(
         (score_stats(normalize_stats(bonus_lines)) for bonus_lines in set_obj.get("bonuses", {}).values()),
@@ -399,6 +403,7 @@ def load_items(
     excluded_item_ids: set[str] | None = None,
 ) -> list[dict[str, Any]]:
     excluded_item_ids = excluded_item_ids or set()
+    from sqlalchemy import or_
     from sqlalchemy.orm import joinedload
 
     from app import session_scope
@@ -415,13 +420,13 @@ def load_items(
                 joinedload(ModelItem.item_type).joinedload(ModelItemType.item_type_translation),
             )
             .filter(ModelItem.level <= TARGET_LEVEL)
-            .filter(ModelItem.dofus_db_id.isnot(None))
+            .filter(or_(ModelItem.dofus_db_id.isnot(None), ModelItem.dofus_db_mount_id.isnot(None)))
             .all()
         )
         items = [
             {
-                "dofusID": item.dofus_db_id,
-                "name": translated_name(item.item_translations, item.dofus_db_id),
+                "dofusID": db_item_dofus_id(item),
+                "name": translated_name(item.item_translations, db_item_dofus_id(item) or ""),
                 "itemType": translated_name(item.item_type.item_type_translation, str(item.item_type_id)),
                 "setID": str(item.set_id) if item.set_id else None,
                 "level": item.level,
