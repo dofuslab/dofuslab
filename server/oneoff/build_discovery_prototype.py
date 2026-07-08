@@ -44,6 +44,14 @@ DOFUS_AP_SOURCE_LIMIT = 2
 DOFUS_ZERO_SCORE_FILLER_LIMIT = 4
 AP_SET_BONUS_SEED_LIMIT = 80
 AP_SET_BONUS_SEED_LIMIT_PER_SET = 12
+SET_PACKAGE_SIZES = (2, 3)
+SET_PACKAGE_KEEP_PER_SET_SIZE = 10
+SET_PACKAGE_GLOBAL_LIMIT = 500
+SET_PACKAGE_PAIR_SEED_LIMIT = 800
+SET_PACKAGE_TRIPLE_SOURCE_LIMIT = 250
+SET_PACKAGE_TRIPLE_SEED_LIMIT = 300
+SET_PACKAGE_DIVERSE_TRIPLE_SEED_LIMIT = 700
+SET_PACKAGE_TOTAL_SEED_LIMIT = 1500
 GENERIC_DAMAGE_WEIGHT = 0.45
 WEAPON_DAMAGE_WEIGHT = 0.20
 GENERIC_STRENGTH_DAMAGE_PROFILE = [
@@ -418,6 +426,20 @@ class BuildState:
             score=self.score,
             condition_failures=list(self.condition_failures),
         )
+
+
+@dataclass(frozen=True)
+class PackageCandidate:
+    entries: tuple[tuple[str, dict[str, Any]], ...]
+    score: float
+
+    @property
+    def slots(self) -> frozenset[str]:
+        return frozenset(slot_name for slot_name, _ in self.entries)
+
+    @property
+    def item_ids(self) -> frozenset[str]:
+        return frozenset(item["dofusID"] for _, item in self.entries)
 
 
 def normalize_stats(lines: Iterable[dict[str, Any]]) -> dict[str, int]:
@@ -1198,6 +1220,201 @@ def completed_valid_builds(
     return valid_final_states
 
 
+def state_from_entries(
+    entries: Iterable[tuple[str, dict[str, Any]]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+) -> BuildState | None:
+    state = BuildState()
+    slot_order = tuple(slot_name for slot_name, _ in SLOTS)
+    for slot_name, item in sorted(entries, key=lambda entry: slot_order.index(entry[0])):
+        state = add_item_to_state(
+            state,
+            slot_name,
+            item,
+            sets,
+            search_target,
+            condition_target=target,
+            cap_target=natural_cap_target,
+        )
+        if state is None:
+            return None
+    return state
+
+
+def package_delta_score(state: BuildState) -> float:
+    delta_stats = {
+        stat: value - BASE_STATS.get(stat, 0)
+        for stat, value in state.stats.items()
+        if value != BASE_STATS.get(stat, 0)
+    }
+    return score_stats(delta_stats)
+
+
+def generate_set_core_packages(
+    pools: dict[str, list[dict[str, Any]]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+    keep_per_set_size: int = SET_PACKAGE_KEEP_PER_SET_SIZE,
+    global_limit: int = SET_PACKAGE_GLOBAL_LIMIT,
+) -> list[PackageCandidate]:
+    slot_order = tuple(slot_name for slot_name, _ in SLOTS)
+    items_by_set: dict[str, dict[str, tuple[dict[str, Any], set[str]]]] = defaultdict(dict)
+    for slot_name, pool in pools.items():
+        for item in pool:
+            set_id = item.get("setID")
+            if not set_id or item.get("level", 0) < RELEVANT_SET_ITEM_MIN_LEVEL:
+                continue
+            item_entry = items_by_set[set_id].setdefault(item["dofusID"], (item, set()))
+            item_entry[1].add(slot_name)
+
+    packages: list[PackageCandidate] = []
+    for set_id, item_entries_by_id in items_by_set.items():
+        set_items = list(item_entries_by_id.values())
+        for package_size in SET_PACKAGE_SIZES:
+            if len(set_items) < package_size:
+                continue
+
+            set_size_packages: list[PackageCandidate] = []
+            for item_entries in combinations(set_items, package_size):
+                slot_options = [
+                    sorted(entry[1], key=slot_order.index)
+                    for entry in item_entries
+                ]
+                for slots in product(*slot_options):
+                    if len(set(slots)) != len(slots):
+                        continue
+                    entries = tuple(zip(slots, (entry[0] for entry in item_entries)))
+                    state = state_from_entries(
+                        entries,
+                        sets,
+                        target,
+                        search_target,
+                        natural_cap_target,
+                    )
+                    if state is None:
+                        continue
+                    set_size_packages.append(
+                        PackageCandidate(entries=entries, score=package_delta_score(state))
+                    )
+
+            packages.extend(
+                sorted(set_size_packages, key=lambda package: package.score, reverse=True)[
+                    :keep_per_set_size
+                ]
+            )
+
+    deduped: dict[tuple[tuple[str, str], ...], PackageCandidate] = {}
+    for package in sorted(packages, key=lambda candidate: candidate.score, reverse=True):
+        signature = tuple(sorted((slot, item["dofusID"]) for slot, item in package.entries))
+        deduped.setdefault(signature, package)
+    return list(deduped.values())[:global_limit]
+
+
+def packages_compatible(packages: Iterable[PackageCandidate]) -> bool:
+    used_slots: set[str] = set()
+    used_item_ids: set[str] = set()
+    for package in packages:
+        if used_slots & package.slots or used_item_ids & package.item_ids:
+            return False
+        used_slots.update(package.slots)
+        used_item_ids.update(package.item_ids)
+    return True
+
+
+def combine_package_entries(packages: Iterable[PackageCandidate]) -> tuple[tuple[str, dict[str, Any]], ...]:
+    entries = []
+    for package in packages:
+        entries.extend(package.entries)
+    return tuple(entries)
+
+
+def package_group_set_signature(packages: Iterable[PackageCandidate]) -> tuple[str, ...]:
+    return tuple(
+        sorted(
+            {
+                item["setID"]
+                for package in packages
+                for _, item in package.entries
+                if item.get("setID")
+            }
+        )
+    )
+
+
+def package_seed_states(
+    pools: dict[str, list[dict[str, Any]]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+) -> list[BuildState]:
+    packages = generate_set_core_packages(pools, sets, target, search_target, natural_cap_target)
+    seed_entries: list[tuple[float, tuple[tuple[str, dict[str, Any]], ...]]] = [
+        (package.score, package.entries) for package in packages
+    ]
+    priority_seed_entries: list[tuple[float, tuple[tuple[str, dict[str, Any]], ...]]] = []
+
+    pair_entries = []
+    for left, right in combinations(packages, 2):
+        if not packages_compatible((left, right)):
+            continue
+        pair_entries.append((left.score + right.score, combine_package_entries((left, right))))
+    seed_entries.extend(
+        sorted(pair_entries, key=lambda entry: entry[0], reverse=True)[:SET_PACKAGE_PAIR_SEED_LIMIT]
+    )
+
+    triple_entries = []
+    for package_group in combinations(packages[:SET_PACKAGE_TRIPLE_SOURCE_LIMIT], 3):
+        if not packages_compatible(package_group):
+            continue
+        triple_entries.append(
+            (
+                sum(package.score for package in package_group),
+                combine_package_entries(package_group),
+                package_group_set_signature(package_group),
+            )
+        )
+    seed_entries.extend(
+        (score, entries)
+        for score, entries, _ in sorted(triple_entries, key=lambda entry: entry[0], reverse=True)[
+            :SET_PACKAGE_TRIPLE_SEED_LIMIT
+        ]
+    )
+
+    diverse_triples_by_signature: dict[tuple[str, ...], tuple[float, tuple[tuple[str, dict[str, Any]], ...]]] = {}
+    for score, entries, signature in sorted(triple_entries, key=lambda entry: entry[0], reverse=True):
+        diverse_triples_by_signature.setdefault(signature, (score, entries))
+    priority_seed_entries.extend(
+        sorted(diverse_triples_by_signature.values(), key=lambda entry: entry[0], reverse=True)[
+            :SET_PACKAGE_DIVERSE_TRIPLE_SEED_LIMIT
+        ]
+    )
+
+    seeds = []
+    seen_entry_signatures: set[tuple[tuple[str, str], ...]] = set()
+    ordered_seed_entries = priority_seed_entries + sorted(
+        seed_entries,
+        key=lambda entry: entry[0],
+        reverse=True,
+    )
+    for _, entries in ordered_seed_entries:
+        signature = tuple(sorted((slot, item["dofusID"]) for slot, item in entries))
+        if signature in seen_entry_signatures:
+            continue
+        seen_entry_signatures.add(signature)
+        state = state_from_entries(entries, sets, target, search_target, natural_cap_target)
+        if state is not None:
+            seeds.append(state)
+        if len(seeds) >= SET_PACKAGE_TOTAL_SEED_LIMIT:
+            break
+    return dedupe_builds(sorted(seeds, key=lambda state: state.score, reverse=True))
+
+
 def ap_set_bonus_seed_states(
     pools: dict[str, list[dict[str, Any]]],
     sets: dict[str, dict[str, Any]],
@@ -1277,10 +1494,11 @@ def search_slot_order(
     beam_width: int,
     per_signature_cap: int,
     ap_strategy: ApStrategy | None = None,
+    initial_seeds: list[BuildState] | None = None,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
 ) -> list[BuildState]:
-    beam = (
+    strategy_seeds = (
         ap_set_bonus_seed_states(
             pools,
             sets,
@@ -1291,6 +1509,7 @@ def search_slot_order(
         if ap_strategy and ap_strategy.require_ap_set_bonus
         else [BuildState()]
     )
+    beam = dedupe_builds(sorted(strategy_seeds + (initial_seeds or []), key=lambda state: state.score, reverse=True))
     for slot_name in slot_order:
         next_states: list[BuildState] = []
         for state in beam:
@@ -1361,6 +1580,13 @@ def find_builds(
         slot_name: candidate_pool_for_slot(slot_types, items, relevant_sets, top_k)
         for slot_name, slot_types in SLOTS
     }
+    initial_seeds = package_seed_states(
+        pools,
+        sets,
+        target,
+        search_target,
+        natural_cap_target,
+    )
 
     valid_final_states = []
     for ap_strategy in ap_strategies:
@@ -1376,6 +1602,7 @@ def find_builds(
                     beam_width=beam_width,
                     per_signature_cap=per_signature_cap,
                     ap_strategy=ap_strategy,
+                    initial_seeds=initial_seeds,
                     generic_damage_weight=generic_damage_weight,
                     weapon_damage_weight=weapon_damage_weight,
                 )

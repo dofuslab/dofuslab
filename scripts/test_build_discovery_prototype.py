@@ -35,6 +35,9 @@ from oneoff.build_discovery_prototype import (
     has_negative_action_stat,
     has_ap_set_bonus,
     has_ap_weapon,
+    generate_set_core_packages,
+    package_seed_states,
+    packages_compatible,
     prune_dominated_items,
     score_stats,
     score_state,
@@ -729,6 +732,122 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertIn(high_score_dofus, pool)
         self.assertIn(ochre, pool)
+
+    def test_generate_set_core_packages_applies_set_bonus(self):
+        target = BuildTarget(ap=7, mp=3, range=0)
+        set_id = "damage_set"
+        ring = {
+            "dofusID": "ring",
+            "itemType": "Ring",
+            "setID": set_id,
+            "level": 200,
+            "stats": [{"stat": "Strength", "value": 50}],
+            "_stats": {"Strength": 50},
+            "_score": 50,
+        }
+        belt = {
+            "dofusID": "belt",
+            "itemType": "Belt",
+            "setID": set_id,
+            "level": 200,
+            "stats": [{"stat": "Strength", "value": 60}],
+            "_stats": {"Strength": 60},
+            "_score": 60,
+        }
+        pools = {"ring_1": [ring], "belt": [belt]}
+        sets = {
+            set_id: {
+                "bonuses": {"2": [{"stat": "Strength", "value": 40}]},
+                "_name": "Damage Set",
+            }
+        }
+
+        packages = generate_set_core_packages(
+            pools,
+            sets,
+            target,
+            build_discovery_prototype.exo_search_target(target),
+            build_discovery_prototype.exo_natural_cap_target(target),
+        )
+
+        self.assertEqual(len(packages), 1)
+        self.assertEqual(packages[0].item_ids, frozenset({"ring", "belt"}))
+        self.assertEqual(packages[0].score, score_stats({"Strength": 150}))
+
+    def test_package_seed_states_combines_compatible_packages(self):
+        target = BuildTarget(ap=7, mp=3, range=0)
+        left_set = "left_set"
+        right_set = "right_set"
+        amulet = {
+            "dofusID": "amulet",
+            "itemType": "Amulet",
+            "setID": left_set,
+            "level": 200,
+            "stats": [{"stat": "Strength", "value": 90}],
+            "_stats": {"Strength": 90},
+            "_score": 90,
+        }
+        belt = {
+            "dofusID": "belt",
+            "itemType": "Belt",
+            "setID": left_set,
+            "level": 200,
+            "stats": [{"stat": "Strength", "value": 100}],
+            "_stats": {"Strength": 100},
+            "_score": 100,
+        }
+        hat = {
+            "dofusID": "hat",
+            "itemType": "Hat",
+            "setID": right_set,
+            "level": 200,
+            "stats": [{"stat": "Strength", "value": 80}],
+            "_stats": {"Strength": 80},
+            "_score": 80,
+        }
+        cloak = {
+            "dofusID": "cloak",
+            "itemType": "Cloak",
+            "setID": right_set,
+            "level": 200,
+            "stats": [{"stat": "Strength", "value": 70}],
+            "_stats": {"Strength": 70},
+            "_score": 70,
+        }
+        pools = {
+            "amulet": [amulet],
+            "belt": [belt],
+            "hat": [hat],
+            "cloak": [cloak],
+        }
+        sets = {
+            left_set: {"bonuses": {"2": [{"stat": "Strength", "value": 20}]}, "_name": "Left"},
+            right_set: {"bonuses": {"2": [{"stat": "Strength", "value": 30}]}, "_name": "Right"},
+        }
+
+        seeds = package_seed_states(
+            pools,
+            sets,
+            target,
+            build_discovery_prototype.exo_search_target(target),
+            build_discovery_prototype.exo_natural_cap_target(target),
+        )
+
+        self.assertTrue(
+            any({"amulet", "belt", "hat", "cloak"} <= seed.used_item_ids for seed in seeds)
+        )
+
+    def test_packages_compatible_rejects_slot_conflicts(self):
+        first = build_discovery_prototype.PackageCandidate(
+            entries=(("ring_1", {"dofusID": "a"}),),
+            score=1,
+        )
+        second = build_discovery_prototype.PackageCandidate(
+            entries=(("ring_1", {"dofusID": "b"}),),
+            score=1,
+        )
+
+        self.assertFalse(packages_compatible((first, second)))
 
     def test_candidate_pool_does_not_force_low_level_action_stat_gear(self):
         weak_ap_weapon = {
