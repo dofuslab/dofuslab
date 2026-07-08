@@ -141,6 +141,21 @@ GENERIC_INCOMING_HIT = 350
 GENERIC_INCOMING_CRIT_RATE = 0.2
 GENERIC_INCOMING_PUSHBACK_RATE = 0.02
 GENERIC_INCOMING_RANGED_RATE = 0.7
+DAMAGE_BUFF_EXPECTED_STACK_RATIO = 0.4
+SPECIAL_EFFECT_EXPECTED_STATS_BY_DOFUS_ID = {
+    # Ochre Yellow: if untouched, +1 AP for the turn; otherwise +20 Dodge.
+    # AP is target-constrained in v0, so only the fallback mobility is modeled.
+    "7754": {"Dodge": 10},
+    # Elemental Assimilation: repeated elemental hits build resistance in that element.
+    # Model the generic PvM expectation as one shared stack spread across each element.
+    "20362": {
+        "% Neutral Resistance": 4,
+        "% Earth Resistance": 4,
+        "% Fire Resistance": 4,
+        "% Water Resistance": 4,
+        "% Air Resistance": 4,
+    },
+}
 PERCENT_RESISTANCE_STATS = (
     "% Neutral Resistance",
     "% Earth Resistance",
@@ -438,6 +453,21 @@ def item_stats_from_db(stats: Iterable[Any]) -> list[dict[str, Any]]:
     return stat_lines
 
 
+def item_buffs_from_db(buffs: Iterable[Any]) -> list[dict[str, Any]]:
+    buff_lines = []
+    for buff in buffs:
+        stat_name = db_stat_name(buff.stat)
+        if stat_name:
+            buff_lines.append(
+                {
+                    "stat": stat_name,
+                    "incrementBy": buff.increment_by or 0,
+                    "maxStacks": buff.max_stacks or 1,
+                }
+            )
+    return buff_lines
+
+
 def int_or_zero(value: Any) -> int:
     if isinstance(value, tuple):
         value = value[0] if value else 0
@@ -501,6 +531,30 @@ def final_utility_score(stats: dict[str, int]) -> float:
 
 def item_score(item: dict[str, Any]) -> float:
     return score_stats(normalize_stats(item.get("stats", [])))
+
+
+def expected_item_effect_stats(item: dict[str, Any]) -> dict[str, float]:
+    stats: dict[str, float] = defaultdict(float)
+    for buff in item.get("buffs", []):
+        stat = buff.get("stat")
+        if not stat:
+            continue
+        stats[stat] += (
+            (buff.get("incrementBy") or 0)
+            * (buff.get("maxStacks") or 1)
+            * DAMAGE_BUFF_EXPECTED_STACK_RATIO
+        )
+    for stat, value in SPECIAL_EFFECT_EXPECTED_STATS_BY_DOFUS_ID.get(item.get("dofusID"), {}).items():
+        stats[stat] += value
+    return dict(stats)
+
+
+def effective_scoring_stats(state: BuildState) -> dict[str, float]:
+    stats: dict[str, float] = defaultdict(float, state.stats)
+    for item in state.slots.values():
+        for stat, value in expected_item_effect_stats(item).items():
+            stats[stat] += value
+    return dict(stats)
 
 
 def db_item_dofus_id(item: Any) -> str | None:
@@ -569,6 +623,7 @@ def load_items(
             .options(
                 joinedload(ModelItem.item_translations),
                 joinedload(ModelItem.stats),
+                joinedload(ModelItem.buffs),
                 joinedload(ModelItem.item_type).joinedload(ModelItemType.item_type_translation),
                 joinedload(ModelItem.weapon_stats).joinedload(ModelWeaponStat.weapon_effects),
             )
@@ -584,6 +639,7 @@ def load_items(
                 "setID": str(item.set_id) if item.set_id else None,
                 "level": item.level,
                 "stats": item_stats_from_db(item.stats),
+                "buffs": item_buffs_from_db(item.buffs),
                 "weaponStats": weapon_stats_from_db(item.weapon_stats),
                 "conditions": item.conditions or {"conditions": {}, "customConditions": {}},
             }
@@ -843,13 +899,13 @@ def weapon_damage_lines(item: dict[str, Any]) -> list[DamageLine]:
     return lines
 
 
-def state_weapon_damage(state: BuildState) -> float:
+def state_weapon_damage(state: BuildState, stats: dict[str, float] | None = None) -> float:
     weapon = state.slots.get("weapon")
     if not weapon:
         return 0.0
     weapon_stats = weapon.get("weaponStats") or {}
     ap_cost = weapon_stats.get("apCost") or 1
-    return profile_damage(weapon_damage_lines(weapon), state.stats) / ap_cost
+    return profile_damage(weapon_damage_lines(weapon), stats or state.stats) / ap_cost
 
 
 def expected_incoming_damage(stats: dict[str, int], percent_res_stat: str, flat_res_stat: str) -> float:
@@ -895,11 +951,12 @@ def final_score_state(
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
 ) -> float:
+    stats = effective_scoring_stats(state)
     return (
-        final_utility_score(state.stats)
-        + profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, state.stats) * generic_damage_weight
-        + state_weapon_damage(state) * weapon_damage_weight
-        + survivability_score(state.stats)
+        final_utility_score(stats)
+        + profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, stats) * generic_damage_weight
+        + state_weapon_damage(state, stats) * weapon_damage_weight
+        + survivability_score(stats)
     )
 
 
@@ -1283,6 +1340,7 @@ def find_diverse_builds(
 
 
 def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[str, Any]:
+    scoring_stats = effective_scoring_stats(state)
     used_sets = {
         sets[set_id]["_name"]: count
         for set_id, count in sorted(state.set_counts.items())
@@ -1291,11 +1349,11 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
     return {
         "score": round(state.score, 2),
         "weightedStatScore": round(score_stats(state.stats), 2),
-        "utilityStatScore": round(final_utility_score(state.stats), 2),
-        "genericDamageScore": round(profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, state.stats), 2),
-        "weaponDamageScore": round(state_weapon_damage(state), 2),
-        "survivabilityScore": round(survivability_score(state.stats), 2),
-        "weakestElementEhp": round(min(elemental_effective_hp(state.stats)), 2),
+        "utilityStatScore": round(final_utility_score(scoring_stats), 2),
+        "genericDamageScore": round(profile_damage(GENERIC_STRENGTH_DAMAGE_PROFILE, scoring_stats), 2),
+        "weaponDamageScore": round(state_weapon_damage(state, scoring_stats), 2),
+        "survivabilityScore": round(survivability_score(scoring_stats), 2),
+        "weakestElementEhp": round(min(elemental_effective_hp(scoring_stats)), 2),
         "apStrategy": state.ap_strategy,
         "conditionFailures": state.condition_failures,
         "totals": {

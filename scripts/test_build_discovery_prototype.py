@@ -26,6 +26,7 @@ from oneoff.build_discovery_prototype import (
     diversify_builds,
     dominates_item,
     db_item_dofus_id,
+    effective_scoring_stats,
     exo_search_target,
     exo_natural_cap_target,
     final_score_state,
@@ -81,6 +82,34 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         high_damage.stats["Critical Damage"] = 20
 
         self.assertGreater(final_score_state(high_damage), final_score_state(low_damage))
+
+    def test_final_score_uses_item_damage_buffs_as_expected_stats(self):
+        baseline = BuildState()
+        crimson = BuildState()
+        crimson.slots["dofus_1"] = {
+            "dofusID": "694",
+            "buffs": [{"stat": "% Final Damage", "incrementBy": 1, "maxStacks": 10}],
+        }
+
+        self.assertGreater(final_score_state(crimson), final_score_state(baseline))
+        self.assertEqual(effective_scoring_stats(crimson)["% Final Damage"], 4)
+
+    def test_special_effects_adjust_scoring_stats_without_changing_real_stats(self):
+        ochre = BuildState()
+        ochre.slots["dofus_1"] = {"dofusID": "7754"}
+
+        self.assertEqual(ochre.stats.get("Dodge", 0), 0)
+        self.assertEqual(effective_scoring_stats(ochre)["Dodge"], 10)
+
+    def test_jahash_effect_improves_survivability_scoring(self):
+        baseline = BuildState()
+        jahash = BuildState()
+        jahash.slots["cloak"] = {"dofusID": "20362"}
+
+        self.assertGreater(
+            survivability_score(effective_scoring_stats(jahash)),
+            survivability_score(effective_scoring_stats(baseline)),
+        )
 
     def test_strength_iop_profile_weights_damage_and_survivability_similarly(self):
         self.assertGreater(
