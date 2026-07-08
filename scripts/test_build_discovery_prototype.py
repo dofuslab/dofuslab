@@ -166,6 +166,9 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertGreater(build_discovery_prototype.STAT_WEIGHTS["Prospecting"], 0)
         self.assertLess(build_discovery_prototype.STAT_WEIGHTS["Prospecting"], 0.05)
 
+    def test_generic_pvm_pushback_exposure_is_low(self):
+        self.assertLess(build_discovery_prototype.GENERIC_INCOMING_PUSHBACK_RATE, 0.05)
+
     def test_strength_profile_does_not_directly_value_off_element_damage(self):
         self.assertGreater(build_discovery_prototype.STAT_WEIGHTS["Earth Damage"], 0)
         self.assertGreater(build_discovery_prototype.STAT_WEIGHTS["Neutral Damage"], 0)
