@@ -144,8 +144,8 @@ GENERIC_INCOMING_RANGED_RATE = 0.7
 DAMAGE_BUFF_EXPECTED_STACK_RATIO = 0.4
 SPECIAL_EFFECT_EXPECTED_STATS_BY_DOFUS_ID = {
     # Ochre Yellow: if untouched, +1 AP for the turn; otherwise +20 Dodge.
-    # AP is target-constrained in v0, so only the fallback mobility is modeled.
-    "7754": {"Dodge": 10},
+    # Temporary AP happens after static AP targets, so score it separately from real AP.
+    "7754": {"Temporary AP": 1, "Dodge": 10},
     # Elemental Assimilation: repeated elemental hits build resistance in that element.
     # Model the generic PvM expectation as one shared stack spread across each element.
     "20362": {
@@ -175,6 +175,7 @@ STAT_SCORE_CAPS = {
     "AP": 12,
     "MP": 6,
     "Range": 6,
+    "Temporary AP": 1,
     "% Earth Resistance": 50,
     "% Neutral Resistance": 50,
     "% Fire Resistance": 50,
@@ -191,6 +192,7 @@ STAT_WEIGHTS = {
     "Water Damage": 0.0,
     "Air Damage": 0.0,
     "Damage": 6.0,
+    "Temporary AP": 60.0,
     "Critical Damage": 4.0,
     "Critical": 6.0,
     "Vitality": 0.3,
@@ -199,8 +201,8 @@ STAT_WEIGHTS = {
     "Prospecting": 0.033,
     "AP Parry": 0.167,
     "MP Parry": 0.167,
-    "Lock": 0.667,
-    "Dodge": 0.667,
+    "Lock": 0.5,
+    "Dodge": 1.0,
     "% Final Damage": 8.0,
     "% Spell Damage": 6.0,
     "% Weapon Damage": 2.0,

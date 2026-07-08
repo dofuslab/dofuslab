@@ -99,7 +99,9 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         ochre.slots["dofus_1"] = {"dofusID": "7754"}
 
         self.assertEqual(ochre.stats.get("Dodge", 0), 0)
+        self.assertEqual(ochre.stats.get("AP"), build_discovery_prototype.BASE_AP)
         self.assertEqual(effective_scoring_stats(ochre)["Dodge"], 10)
+        self.assertEqual(effective_scoring_stats(ochre)["Temporary AP"], 1)
 
     def test_jahash_effect_improves_survivability_scoring(self):
         baseline = BuildState()
@@ -195,6 +197,12 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
     def test_prospecting_is_tiny_but_nonzero(self):
         self.assertGreater(build_discovery_prototype.STAT_WEIGHTS["Prospecting"], 0)
         self.assertLess(build_discovery_prototype.STAT_WEIGHTS["Prospecting"], 0.05)
+
+    def test_dodge_is_valued_above_lock_for_generic_pvm(self):
+        self.assertGreater(
+            build_discovery_prototype.STAT_WEIGHTS["Dodge"],
+            build_discovery_prototype.STAT_WEIGHTS["Lock"],
+        )
 
     def test_generic_pvm_pushback_exposure_is_low(self):
         self.assertLess(build_discovery_prototype.GENERIC_INCOMING_PUSHBACK_RATE, 0.05)
