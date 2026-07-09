@@ -80,6 +80,38 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
                         self.assertEqual(identity["mpTarget"], mp)
                         self.assertEqual(identity["rangeTarget"], range_target)
 
+    def test_query_contract_accepts_full_level_200_action_target_grid(self):
+        seen = 0
+        for element in ("strength", "intelligence", "chance", "agility"):
+            for budget_tier in range(1, 5):
+                for ap in range(MIN_AP, MAX_AP + 1):
+                    for mp in range(MIN_MP, MAX_MP + 1):
+                        for range_target in range(MIN_RANGE, MAX_RANGE + 1):
+                            query = BuildDiscoveryQuery(
+                                elements=(element,),
+                                budget_tier=budget_tier,
+                                ap_target=ap,
+                                mp_target=mp,
+                                range_target=range_target,
+                            )
+                            query.validate()
+                            identity = query_cache_identity(query)
+                            self.assertEqual(identity["elements"], [element])
+                            self.assertEqual(identity["budgetTier"], budget_tier)
+                            self.assertEqual(identity["apTarget"], ap)
+                            self.assertEqual(identity["mpTarget"], mp)
+                            self.assertEqual(identity["rangeTarget"], range_target)
+                            seen += 1
+
+        self.assertEqual(
+            seen,
+            4
+            * 4
+            * (MAX_AP - MIN_AP + 1)
+            * (MAX_MP - MIN_MP + 1)
+            * (MAX_RANGE - MIN_RANGE + 1),
+        )
+
     def test_low_budget_forces_no_exo_policy(self):
         for budget_tier in (1, 2):
             for exo_policy in ("allow", "opti"):

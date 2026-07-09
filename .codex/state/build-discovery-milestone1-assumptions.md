@@ -89,6 +89,9 @@ acceptance claim.
 
 - Prove every supported element/budget/AP/MP/Range family with benchmarks or
   diagnostic coverage before calling Milestone 1 done.
+- Cheap query-contract tests cover the full level 200 Iop AP/MP/Range input
+  grid for all supported elements and budget tiers. This proves acceptance,
+  validation, and cache identity, but not generation success for every row.
 - Add production-derived benchmarks only after local correctness coverage is
   broad enough to interpret misses.
 - Keep this document current when assumptions move from hardcoded prototype
