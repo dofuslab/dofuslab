@@ -24,6 +24,7 @@ from typing import Any, Iterable
 
 from oneoff.condition_evaluator import (
     condition_can_pass_at_target,
+    set_bonus_count,
     target_forced_conditions_hold,
     unmet_item_conditions,
 )
@@ -739,6 +740,26 @@ DEFAULT_AP_STRATEGIES = (
     ),
     ApStrategy(name="no_ochre", disallow_ochre=True, min_secondary_ap_sources=1),
     ApStrategy(name="flexible_two_sources", min_secondary_ap_sources=2),
+)
+DEFAULT_NO_EXO_AP_STRATEGIES = (
+    ApStrategy(
+        name="budget_no_exo_set_bonus",
+        require_ap_exo=False,
+        require_ap_set_bonus=True,
+        disallow_ochre=True,
+        min_secondary_ap_sources=2,
+    ),
+    ApStrategy(
+        name="budget_no_exo_no_ochre",
+        require_ap_exo=False,
+        disallow_ochre=True,
+        min_secondary_ap_sources=2,
+    ),
+    ApStrategy(
+        name="budget_no_exo_flexible",
+        require_ap_exo=False,
+        min_secondary_ap_sources=2,
+    ),
 )
 
 
@@ -2351,6 +2372,33 @@ def trim_beam(states: list[BuildState], beam_width: int, per_signature_cap: int)
     return sorted(diversified, key=lambda s: s.score, reverse=True)[:beam_width]
 
 
+def budget_beam_signature(state: BuildState, target: BuildTarget) -> tuple[Any, ...]:
+    return (
+        min(state.stats.get("AP", 0), target.ap),
+        min(state.stats.get("MP", 0), target.mp),
+        min(state.stats.get("Range", 0), max(target.range, 1)),
+        min(set_bonus_count(state.set_counts), 3),
+        set_signature(state),
+    )
+
+
+def trim_budget_beam(
+    states: list[BuildState],
+    target: BuildTarget,
+    beam_width: int,
+    per_signature_cap: int,
+) -> list[BuildState]:
+    buckets: dict[tuple[Any, ...], list[BuildState]] = defaultdict(list)
+    budget_signature_cap = min(per_signature_cap, 2)
+    for state in sorted(states, key=lambda s: s.score, reverse=True):
+        bucket = buckets[budget_beam_signature(state, target)]
+        if len(bucket) < budget_signature_cap:
+            bucket.append(state)
+
+    diversified = [state for bucket in buckets.values() for state in bucket]
+    return sorted(diversified, key=lambda s: s.score, reverse=True)[:beam_width]
+
+
 def trim_full_item_signatures(states: list[BuildState], limit: int) -> list[BuildState]:
     selected = []
     seen: set[tuple[str, ...]] = set()
@@ -2784,6 +2832,16 @@ def ranked_dofus_combinations(
         for _, combo in sorted_combinations
         if any(item["dofusID"] in DIRECT_COMPLETION_SPECIAL_DOFUS_IDS for item in combo)
     ][:limit]
+    multi_mandatory_combinations = [
+        combo
+        for _, combo in sorted_combinations
+        if sum(item["dofusID"] in MANDATORY_DOFUS_CANDIDATE_IDS for item in combo) >= 2
+    ][:limit]
+    mandatory_combinations = [
+        combo
+        for _, combo in sorted_combinations
+        if any(item["dofusID"] in MANDATORY_DOFUS_CANDIDATE_IDS for item in combo)
+    ][:limit]
     top_combinations = [
         combo
         for _, combo in sorted_combinations[:limit]
@@ -2795,6 +2853,8 @@ def ranked_dofus_combinations(
         condition_light_combinations
         + multi_special_combinations
         + special_combinations
+        + multi_mandatory_combinations
+        + mandatory_combinations
         + top_combinations
     ):
         signature = tuple(sorted(item["dofusID"] for item in combo))
@@ -3112,7 +3172,12 @@ def search_slot_order(
     exo_policy: str = "allow",
 ) -> list[BuildState]:
     strategy_seeds = [BuildState()]
-    beam = dedupe_builds(sorted(strategy_seeds + (initial_seeds or []), key=lambda state: state.score, reverse=True))
+    seed_states = (
+        strategy_seeds
+        if exo_policy == "none"
+        else strategy_seeds + (initial_seeds or [])
+    )
+    beam = dedupe_builds(sorted(seed_states, key=lambda state: state.score, reverse=True))
     for slot_name in slot_order:
         next_states: list[BuildState] = []
         for state in beam:
@@ -3131,7 +3196,10 @@ def search_slot_order(
                 )
                 if next_state:
                     next_states.append(next_state)
-        beam = trim_beam(next_states, beam_width, per_signature_cap)
+        if exo_policy == "none":
+            beam = trim_budget_beam(next_states, target, beam_width, per_signature_cap)
+        else:
+            beam = trim_beam(next_states, beam_width, per_signature_cap)
 
     return completed_valid_builds(
         beam,
@@ -3176,6 +3244,8 @@ def find_builds(
 ) -> list[BuildState]:
     if budget_tier < 3 and exo_policy in {"allow", "opti"}:
         exo_policy = "none"
+    if exo_policy == "none" and ap_strategies == DEFAULT_AP_STRATEGIES:
+        ap_strategies = DEFAULT_NO_EXO_AP_STRATEGIES
     completion_target = completion_target or top_k
 
     timings: dict[str, float] = {}
