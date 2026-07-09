@@ -14,6 +14,8 @@ from oneoff.generate_build_discovery_index import (
     build_item_indexes,
     item_flags,
     level_bucket_name,
+    load_db_item_records,
+    load_db_sets,
     normalize_source_item,
     normalize_source_weapon_stats,
 )
@@ -175,10 +177,44 @@ class GenerateBuildDiscoveryIndexTest(unittest.TestCase):
 
         with patch("oneoff.generate_build_discovery_index.load_source_json", side_effect=source_data.get):
             with patch("oneoff.generate_build_discovery_index.load_db_item_records") as db_items:
-                index = build_index()
+                with patch("oneoff.generate_build_discovery_index.load_db_sets") as db_sets:
+                    index = build_index()
 
         db_items.assert_not_called()
+        db_sets.assert_not_called()
         self.assertEqual(index["items"], [])
+
+    def test_db_item_loader_disables_generated_index_path_during_call(self):
+        original_path = "existing-generated-index.json"
+
+        def load_items_from_db():
+            self.assertEqual(build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH, "")
+            return ({"dofusID": "1"},)
+
+        with patch.object(build_discovery_prototype, "BUILD_DISCOVERY_INDEX_PATH", original_path):
+            with patch.object(
+                build_discovery_prototype,
+                "load_all_item_records",
+                side_effect=load_items_from_db,
+            ):
+                self.assertEqual(load_db_item_records(), ({"dofusID": "1"},))
+            self.assertEqual(build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH, original_path)
+
+    def test_db_set_loader_disables_generated_index_path_during_call(self):
+        original_path = "existing-generated-index.json"
+
+        def load_sets_from_db():
+            self.assertEqual(build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH, "")
+            return {"1": {"id": "1"}}
+
+        with patch.object(build_discovery_prototype, "BUILD_DISCOVERY_INDEX_PATH", original_path):
+            with patch.object(
+                build_discovery_prototype,
+                "load_sets",
+                side_effect=load_sets_from_db,
+            ):
+                self.assertEqual(load_db_sets(), {"1": {"id": "1"}})
+            self.assertEqual(build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH, original_path)
 
     def test_normalize_source_item_uses_mount_dofus_id(self):
         item = normalize_source_item(

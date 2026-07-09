@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from typing import Any
 
@@ -200,16 +201,36 @@ def load_source_sets() -> dict[str, dict[str, Any]]:
     }
 
 
-def load_db_item_records() -> tuple[dict[str, Any], ...]:
-    from oneoff.build_discovery_prototype import load_all_item_records
+def clear_prototype_data_caches(prototype: Any) -> None:
+    for function_name in ("load_build_discovery_index", "load_all_item_records", "load_sets"):
+        cache_clear = getattr(getattr(prototype, function_name, None), "cache_clear", None)
+        if cache_clear:
+            cache_clear()
 
-    return load_all_item_records()
+
+@contextmanager
+def prototype_db_source() -> Any:
+    from oneoff import build_discovery_prototype as prototype
+
+    original_index_path = prototype.BUILD_DISCOVERY_INDEX_PATH
+    prototype.BUILD_DISCOVERY_INDEX_PATH = ""
+    clear_prototype_data_caches(prototype)
+    try:
+        yield prototype
+    finally:
+        prototype.BUILD_DISCOVERY_INDEX_PATH = original_index_path
+        clear_prototype_data_caches(prototype)
+
+
+def load_db_item_records() -> tuple[dict[str, Any], ...]:
+    with prototype_db_source() as prototype:
+        return prototype.load_all_item_records()
 
 
 def load_db_sets() -> dict[str, dict[str, Any]]:
-    from oneoff.build_discovery_prototype import load_sets
+    with prototype_db_source() as prototype:
+        return prototype.load_sets()
 
-    return load_sets()
 
 
 def item_flags(item: dict[str, Any]) -> dict[str, Any]:

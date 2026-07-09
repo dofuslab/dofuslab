@@ -159,7 +159,7 @@ def main() -> None:
     )
 
     print("\nRegenerating build discovery index...")
-    write_index()
+    write_index(source="db")
 
 
 if __name__ == "__main__":

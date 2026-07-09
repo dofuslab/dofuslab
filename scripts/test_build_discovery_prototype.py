@@ -1865,6 +1865,20 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
                 self.assertEqual(response["profile"]["element"], damage_element)
                 self.assertEqual(response["profile"]["damageStat"], damage_stat)
 
+    def test_find_diverse_builds_uses_limit_as_completion_target(self):
+        with patch.object(build_discovery_prototype, "find_builds", return_value=[]) as find_builds:
+            builds = find_diverse_builds(
+                limit=3,
+                top_k=25,
+                beam_width=250,
+                per_signature_cap=40,
+                relevant_set_limit=60,
+            )
+
+        self.assertEqual(builds, [])
+        self.assertEqual(find_builds.call_args.kwargs["top_k"], 25)
+        self.assertEqual(find_builds.call_args.kwargs["completion_target"], 30)
+
     def test_build_discovery_query_rejects_out_of_scope_inputs(self):
         with self.assertRaises(ValueError):
             BuildDiscoveryQuery(class_name="Cra").validate()

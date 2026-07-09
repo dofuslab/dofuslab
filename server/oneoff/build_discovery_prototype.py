@@ -2638,7 +2638,10 @@ def is_dofus_slot(slot_name: str) -> bool:
     return slot_name.startswith("dofus_")
 
 
-def direct_completion_seed_candidates(seeds: list[BuildState]) -> list[BuildState]:
+def direct_completion_seed_candidates(
+    seeds: list[BuildState],
+    limit: int = DIRECT_COMPLETION_SEED_LIMIT,
+) -> list[BuildState]:
     gear_slots = {slot_name for slot_name, _ in SLOTS if not is_dofus_slot(slot_name)}
     candidates = [
         seed
@@ -2648,7 +2651,7 @@ def direct_completion_seed_candidates(seeds: list[BuildState]) -> list[BuildStat
     diverse_by_signature: dict[tuple[tuple[str, int], ...], BuildState] = {}
     for seed in sorted(candidates, key=lambda state: state.score, reverse=True):
         diverse_by_signature.setdefault(set_signature(seed), seed)
-    return list(diverse_by_signature.values())[:DIRECT_COMPLETION_SEED_LIMIT]
+    return list(diverse_by_signature.values())[:limit]
 
 
 def direct_non_dofus_completions(
@@ -2710,6 +2713,7 @@ def dofus_completion_pool(pools: dict[str, list[dict[str, Any]]]) -> list[dict[s
 def ranked_dofus_combinations(
     dofus_pool: list[dict[str, Any]],
     combo_size: int,
+    limit: int = DIRECT_COMPLETION_DOFUS_COMBO_LIMIT,
 ) -> list[DofusCombinationCandidate]:
     def candidate(combo: tuple[dict[str, Any], ...]) -> DofusCombinationCandidate:
         stats: dict[str, int] = defaultdict(int)
@@ -2735,15 +2739,15 @@ def ranked_dofus_combinations(
         combo
         for _, combo in sorted_combinations
         if sum(item["dofusID"] in DIRECT_COMPLETION_SPECIAL_DOFUS_IDS for item in combo) >= 2
-    ][:DIRECT_COMPLETION_DOFUS_COMBO_LIMIT]
+    ][:limit]
     special_combinations = [
         combo
         for _, combo in sorted_combinations
         if any(item["dofusID"] in DIRECT_COMPLETION_SPECIAL_DOFUS_IDS for item in combo)
-    ][:DIRECT_COMPLETION_DOFUS_COMBO_LIMIT]
+    ][:limit]
     top_combinations = [
         combo
-        for _, combo in sorted_combinations[:DIRECT_COMPLETION_DOFUS_COMBO_LIMIT]
+        for _, combo in sorted_combinations[:limit]
     ]
 
     seen: set[tuple[str, ...]] = set()
@@ -2754,7 +2758,7 @@ def ranked_dofus_combinations(
             continue
         seen.add(signature)
         ranked.append(combo)
-        if len(ranked) >= DIRECT_COMPLETION_DOFUS_COMBO_LIMIT:
+        if len(ranked) >= limit:
             break
     return [candidate(combo) for combo in ranked]
 
@@ -2885,12 +2889,17 @@ def direct_complete_package_seeds(
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
     exo_policy: str = "allow",
+    seed_limit: int = DIRECT_COMPLETION_SEED_LIMIT,
+    gear_state_limit: int = DIRECT_COMPLETION_GEAR_STATE_LIMIT,
+    gear_state_per_signature_cap: int = DIRECT_COMPLETION_GEAR_STATE_PER_SIGNATURE_CAP,
+    dofus_combo_limit: int = DIRECT_COMPLETION_DOFUS_COMBO_LIMIT,
+    final_score_limit: int = DIRECT_COMPLETION_FINAL_SCORE_LIMIT,
 ) -> list[BuildState]:
     dofus_pool = dofus_completion_pool(pools)
     ranked_combinations_by_size: dict[int, list[tuple[dict[str, Any], ...]]] = {}
     completed_gear_states: list[BuildState] = []
     cheap_valid_states: list[BuildState] = []
-    for seed in direct_completion_seed_candidates(seeds):
+    for seed in direct_completion_seed_candidates(seeds, seed_limit):
         completed_gear_states.extend(
             direct_non_dofus_completions(
                 seed,
@@ -2904,8 +2913,8 @@ def direct_complete_package_seeds(
 
     completed_gear_states = trim_beam(
         completed_gear_states,
-        DIRECT_COMPLETION_GEAR_STATE_LIMIT,
-        DIRECT_COMPLETION_GEAR_STATE_PER_SIGNATURE_CAP,
+        gear_state_limit,
+        gear_state_per_signature_cap,
     )
     for non_dofus_state in completed_gear_states:
         open_dofus_slots = [
@@ -2918,6 +2927,7 @@ def direct_complete_package_seeds(
             ranked_combinations_by_size[combo_size] = ranked_dofus_combinations(
                 dofus_pool,
                 combo_size,
+                dofus_combo_limit,
             )
         for dofus_candidate in ranked_combinations_by_size[combo_size]:
             if dofus_candidate.item_ids & non_dofus_state.used_item_ids:
@@ -2950,7 +2960,7 @@ def direct_complete_package_seeds(
 
     cheap_valid_states = trim_full_item_signatures(
         cheap_valid_states,
-        DIRECT_COMPLETION_FINAL_SCORE_LIMIT,
+        final_score_limit,
     )
     valid_final_states = [
         valid_state
@@ -3117,9 +3127,11 @@ def find_builds(
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
     exo_policy: str = "allow",
+    completion_target: int | None = None,
 ) -> list[BuildState]:
     if budget_tier < 3 and exo_policy in {"allow", "opti"}:
         exo_policy = "none"
+    completion_target = completion_target or top_k
 
     timings: dict[str, float] = {}
     started_at = time.perf_counter()
@@ -3175,6 +3187,23 @@ def find_builds(
             reverse=True,
         )
     )
+    direct_seed_limit = min(
+        DIRECT_COMPLETION_SEED_LIMIT,
+        max(top_k * 12, beam_width),
+    )
+    direct_gear_state_limit = min(
+        DIRECT_COMPLETION_GEAR_STATE_LIMIT,
+        max(top_k * 10, beam_width),
+    )
+    direct_dofus_combo_limit = min(
+        DIRECT_COMPLETION_DOFUS_COMBO_LIMIT,
+        max(top_k * 8, 80),
+    )
+    direct_final_score_limit = min(
+        DIRECT_COMPLETION_FINAL_SCORE_LIMIT,
+        max(top_k * 3, 30),
+    )
+    initial_seeds = initial_seeds[: max(direct_seed_limit, top_k * 20)]
     timings["packageSeedsMs"] = (time.perf_counter() - phase_started) * 1000
 
     valid_final_states = []
@@ -3191,12 +3220,16 @@ def find_builds(
             generic_damage_weight=generic_damage_weight,
             weapon_damage_weight=weapon_damage_weight,
             exo_policy=exo_policy,
+            seed_limit=direct_seed_limit,
+            gear_state_limit=direct_gear_state_limit,
+            dofus_combo_limit=direct_dofus_combo_limit,
+            final_score_limit=direct_final_score_limit,
         )
     )
     timings["directCompletionMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
-    if len(valid_final_states) < top_k:
+    if len(valid_final_states) < completion_target:
         for slot_order in slot_orders:
             valid_final_states.extend(
                 search_slot_order(
@@ -3215,6 +3248,8 @@ def find_builds(
                     exo_policy=exo_policy,
                 )
             )
+            if len(valid_final_states) >= completion_target:
+                break
     timings["beamSearchMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
@@ -3283,6 +3318,7 @@ def find_diverse_builds(
         generic_damage_weight=generic_damage_weight,
         weapon_damage_weight=weapon_damage_weight,
         exo_policy=exo_policy,
+        completion_target=max(top_k, limit * 10),
     )
 
     selected: list[BuildState] = []
