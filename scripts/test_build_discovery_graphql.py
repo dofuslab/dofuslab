@@ -1,14 +1,23 @@
 import unittest
 import importlib
+import uuid
+from contextlib import contextmanager
 from pathlib import Path
 import sys
+from types import SimpleNamespace
 from unittest.mock import Mock, patch
 from dogpile.cache.api import NO_VALUE
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 
 schema_module = importlib.import_module("app.schema")
+utils_module = importlib.import_module("app.utils")
 schema = schema_module.schema
+
+
+@contextmanager
+def mocked_session_scope(db_session):
+    yield db_session
 
 
 class BuildDiscoveryGraphQLTest(unittest.TestCase):
@@ -61,6 +70,171 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
         self.assertEqual(query.locked_item_ids, ("100",))
         self.assertEqual(query.avoided_item_ids, ("200",))
         self.assertEqual(query.limit, 3)
+
+    def test_import_generated_custom_set_creates_build_and_provenance_atomically(self):
+        custom_set_id = uuid.uuid4()
+        item_id = uuid.uuid4()
+        item = SimpleNamespace(uuid=item_id)
+        custom_set = SimpleNamespace(uuid=custom_set_id, equip_items=Mock())
+        db_session = Mock()
+        db_session.query.return_value.filter.return_value.one.return_value = item
+
+        with patch.object(
+            schema_module, "session_scope", return_value=mocked_session_scope(db_session)
+        ), patch.object(
+            schema_module, "get_or_create_custom_set", return_value=custom_set
+        ) as get_custom_set, patch.object(
+            schema_module, "edit_custom_set_metadata"
+        ) as edit_metadata, patch.object(
+            utils_module, "current_user", SimpleNamespace(is_authenticated=False)
+        ):
+            result = schema.execute(
+                """
+                mutation ImportGeneratedCustomSet($items: [CustomSetImportedItemInput!]!, $payload: GenericScalar) {
+                  importGeneratedCustomSet(
+                    items: $items
+                    name: "Generated Build Discovery #100"
+                    level: 200
+                    source: "build_discovery"
+                    datasetVersion: "dataset-v1"
+                    solverVersion: "solver-v1"
+                    requestPayload: $payload
+                  ) {
+                    generationRequest {
+                      source
+                      datasetVersion
+                      solverVersion
+                      requestPayload
+                    }
+                  }
+                }
+                """,
+                variables={
+                    "items": [{"id": str(item_id), "apExo": True}],
+                    "payload": {"query": {"element": "strength"}},
+                },
+            )
+
+        self.assertIsNone(result.errors)
+        get_custom_set.assert_called_once_with(None, db_session)
+        edit_metadata.assert_called_once_with(
+            custom_set,
+            "Generated Build Discovery #100",
+            200,
+        )
+        custom_set.equip_items.assert_called_once_with(
+            [
+                {
+                    "item": item,
+                    "ap_exo": True,
+                    "mp_exo": None,
+                    "range_exo": None,
+                }
+            ],
+            db_session,
+        )
+        generation_request = db_session.add.call_args.args[0]
+        self.assertEqual(generation_request.custom_set_id, custom_set_id)
+        self.assertEqual(generation_request.source, "build_discovery")
+        self.assertEqual(generation_request.dataset_version, "dataset-v1")
+        self.assertEqual(generation_request.solver_version, "solver-v1")
+        self.assertEqual(generation_request.request_payload, {"query": {"element": "strength"}})
+        self.assertEqual(
+            result.data["importGeneratedCustomSet"]["generationRequest"]["source"],
+            "build_discovery",
+        )
+        self.assertEqual(
+            result.data["importGeneratedCustomSet"]["generationRequest"]["requestPayload"],
+            {"query": {"element": "strength"}},
+        )
+
+    def test_import_generated_custom_set_rejects_invalid_provenance_metadata(self):
+        cases = [
+            ("source", "a" * 81, "Generation source is too long"),
+            ("datasetVersion", "a" * 121, "Generation version is too long"),
+            ("solverVersion", "a" * 121, "Generation version is too long"),
+        ]
+        for argument, value, expected_error in cases:
+            with self.subTest(argument=argument):
+                arguments = {
+                    "source": '"build_discovery"',
+                    "datasetVersion": '"dataset-v1"',
+                    "solverVersion": '"solver-v1"',
+                }
+                arguments[argument] = f'"{value}"'
+                with patch.object(utils_module, "current_user", SimpleNamespace(is_authenticated=False)):
+                    result = schema.execute(
+                        f"""
+                    mutation ImportGeneratedCustomSet($items: [CustomSetImportedItemInput!]!) {{
+                      importGeneratedCustomSet(
+                        items: $items
+                        name: "Generated Build Discovery"
+                        level: 200
+                        source: {arguments["source"]}
+                            datasetVersion: {arguments["datasetVersion"]}
+                            solverVersion: {arguments["solverVersion"]}
+                          ) {{
+                            generationRequest {{
+                              source
+                            }}
+                          }}
+                        }}
+                        """,
+                        variables={"items": [{"id": str(uuid.uuid4())}]},
+                    )
+
+                self.assertIsNotNone(result.errors)
+                self.assertIn(expected_error, str(result.errors[0]))
+
+    def test_import_generated_custom_set_rejects_empty_items(self):
+        with patch.object(utils_module, "current_user", SimpleNamespace(is_authenticated=False)):
+            result = schema.execute(
+                """
+                mutation ImportGeneratedCustomSet($items: [CustomSetImportedItemInput!]!) {
+                  importGeneratedCustomSet(
+                    items: $items
+                    name: "Generated Build Discovery"
+                    level: 200
+                    source: "build_discovery"
+                  ) {
+                    generationRequest {
+                      source
+                    }
+                  }
+                }
+                """,
+                variables={"items": []},
+            )
+
+        self.assertIsNotNone(result.errors)
+        self.assertIn("Generated builds must include at least one item", str(result.errors[0]))
+
+    def test_import_generated_custom_set_rejects_large_request_payload(self):
+        with patch.object(utils_module, "current_user", SimpleNamespace(is_authenticated=False)):
+            result = schema.execute(
+                """
+                mutation ImportGeneratedCustomSet($items: [CustomSetImportedItemInput!]!, $payload: GenericScalar) {
+                  importGeneratedCustomSet(
+                    items: $items
+                    name: "Generated Build Discovery"
+                    level: 200
+                    source: "build_discovery"
+                    requestPayload: $payload
+                  ) {
+                    generationRequest {
+                      source
+                    }
+                  }
+                }
+                """,
+                variables={
+                    "items": [{"id": str(uuid.uuid4())}],
+                    "payload": {"notes": "x" * 20000},
+                },
+            )
+
+        self.assertIsNotNone(result.errors)
+        self.assertIn("Generation request payload is too large", str(result.errors[0]))
 
     def test_build_discovery_query_omitted_args_match_client_contract_defaults(self):
         cache_region = Mock()

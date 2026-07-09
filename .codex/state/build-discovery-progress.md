@@ -420,3 +420,27 @@ Run the initial evaluator pass:
   - `cd client; npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
   - `cd client; yarn type-check`
   - `git diff --check`
+
+### 2026-07-09 Generation Request Model
+
+- Created stacked branch `codex/build-discovery-generation-request-model` on top of `codex/build-discovery-generated-build-label`.
+- Added durable generated-build provenance groundwork:
+  - new `generation_request` table/model linked one-to-one to `custom_set`
+  - `CustomSet.generationRequest` GraphQL field
+  - atomic `importGeneratedCustomSet` GraphQL mutation that creates the custom set, equips generated items/exos, and writes provenance in one server transaction
+  - provenance fields for source, dataset version, solver version, request payload, and creation date
+- Added mocked GraphQL tests for atomic generated import and provenance metadata validation.
+- Reviewer findings fixed before commit:
+  - replaced the separate post-create provenance mutation with an atomic generated import mutation
+  - removed client-authoritative provenance overwrite behavior
+  - added source/version length validation and request-payload size validation
+  - changed the atomic import input to `CustomSetImportedItemInput` so generated AP/MP/Range exos can be persisted in the same transaction
+  - rejected empty generated imports before creating a custom set
+  - exposed `GenerationRequest.requestPayload` as `GenericScalar` so clients read an object instead of Graphene's default JSON string
+- Verification passed:
+  - Docker inline GraphQL assertions for atomic import, exo handoff, and provenance validation behavior
+  - Docker inline GraphQL assertion that `generationRequest.requestPayload` reads back as an object
+  - `docker exec dofuslab-server-1 python -m py_compile app/database/model_generation_request.py app/database/model_custom_set.py app/schema.py`
+  - `python -m py_compile scripts/test_build_discovery_graphql.py`
+  - `git diff --check`
+- Host `python -m unittest scripts.test_build_discovery_graphql...` is blocked by missing `dogpile`; Docker's `/home/dofuslab/scripts` does not see the repo-level edited test file, so the equivalent mutation checks were run inline in Docker.

@@ -65,6 +65,12 @@ class ModelCustomSet(Base):
     )
     children_custom_sets = relationship("ModelCustomSet")
     default_class = relationship("ModelClass")
+    generation_request = relationship(
+        "ModelGenerationRequest",
+        back_populates="custom_set",
+        cascade="all, delete-orphan",
+        uselist=False,
+    )
 
     tags = relationship(
         "ModelCustomSetTag",

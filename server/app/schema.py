@@ -1,6 +1,7 @@
 from json.encoder import INFINITY
 from math import inf
 from copy import deepcopy
+import json
 import random
 from app import (
     db,
@@ -36,6 +37,7 @@ from app.database.model_custom_set_tag_association import ModelCustomSetTagAssoc
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_custom_set import ModelCustomSet, MAX_NAME_LENGTH
+from app.database.model_generation_request import ModelGenerationRequest
 from app.database.model_user import ModelUserAccount
 from app.database.model_spell_effect import ModelSpellEffect
 from app.database.model_spell_effect_condition_translation import (
@@ -501,6 +503,7 @@ class CustomSetTagAssociation(SQLAlchemyObjectType):
 
 class CustomSet(SQLAlchemyObjectType):
     equipped_items = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItem)))
+    generation_request = graphene.Field(lambda: GenerationRequest)
 
     def resolve_equipped_items(self, info):
         return g.dataloaders.get("equipped_item_loader").load(self.uuid)
@@ -531,8 +534,20 @@ class CustomSet(SQLAlchemyObjectType):
             return False
         return True
 
+    @tracer.wrap(name="CustomSet.resolve_generation_request")
+    def resolve_generation_request(self, info):
+        return self.generation_request
+
     class Meta:
         model = ModelCustomSet
+        interfaces = (GlobalNode,)
+
+
+class GenerationRequest(SQLAlchemyObjectType):
+    request_payload = GenericScalar()
+
+    class Meta:
+        model = ModelGenerationRequest
         interfaces = (GlobalNode,)
 
 
@@ -972,6 +987,88 @@ class EquipMultipleItems(graphene.Mutation):
             custom_set.equip_items(items, db_session)
 
         return EquipMultipleItems(custom_set=custom_set)
+
+
+MAX_GENERATION_SOURCE_LENGTH = 80
+MAX_GENERATION_VERSION_LENGTH = 120
+MAX_GENERATION_REQUEST_PAYLOAD_BYTES = 20000
+
+
+def validate_generation_metadata(source, dataset_version, solver_version, request_payload):
+    if len(source) > MAX_GENERATION_SOURCE_LENGTH:
+        raise GraphQLError(_("Generation source is too long."))
+    for version in (dataset_version, solver_version):
+        if version is not None and len(version) > MAX_GENERATION_VERSION_LENGTH:
+            raise GraphQLError(_("Generation version is too long."))
+    if request_payload is not None:
+        try:
+            encoded_payload = json.dumps(request_payload, sort_keys=True)
+        except TypeError:
+            raise GraphQLError(_("Generation request payload is invalid."))
+        if len(encoded_payload.encode("utf-8")) > MAX_GENERATION_REQUEST_PAYLOAD_BYTES:
+            raise GraphQLError(_("Generation request payload is too large."))
+
+
+class ImportGeneratedCustomSet(graphene.Mutation):
+    class Arguments:
+        items = graphene.NonNull(
+            graphene.List(graphene.NonNull(CustomSetImportedItemInput))
+        )
+        name = graphene.NonNull(graphene.String)
+        level = graphene.NonNull(graphene.Int)
+        source = graphene.String(required=True)
+        dataset_version = graphene.String()
+        solver_version = graphene.String()
+        request_payload = GenericScalar()
+
+    custom_set = graphene.Field(CustomSet, required=True)
+    generation_request = graphene.Field(GenerationRequest, required=True)
+
+    @tracer.wrap(name="ImportGeneratedCustomSet.mutate")
+    @anonymous_or_verified
+    def mutate(self, info, **kwargs):
+        source = kwargs.get("source")
+        dataset_version = kwargs.get("dataset_version")
+        solver_version = kwargs.get("solver_version")
+        request_payload = kwargs.get("request_payload")
+        validate_generation_metadata(
+            source,
+            dataset_version,
+            solver_version,
+            request_payload,
+        )
+        item_objs = kwargs.get("items")
+        if not item_objs:
+            raise GraphQLError(_("Generated builds must include at least one item."))
+
+        with session_scope() as db_session:
+            custom_set = get_or_create_custom_set(None, db_session)
+            edit_custom_set_metadata(custom_set, kwargs.get("name"), kwargs.get("level"))
+            items = [
+                {
+                    "item": db_session.query(ModelItem)
+                    .filter(ModelItem.uuid == item_obj.id)
+                    .one(),
+                    "ap_exo": item_obj.ap_exo,
+                    "mp_exo": item_obj.mp_exo,
+                    "range_exo": item_obj.range_exo,
+                }
+                for item_obj in item_objs
+            ]
+            custom_set.equip_items(items, db_session)
+            generation_request = ModelGenerationRequest(
+                custom_set_id=custom_set.uuid,
+                source=source,
+                dataset_version=dataset_version,
+                solver_version=solver_version,
+                request_payload=request_payload,
+            )
+            db_session.add(generation_request)
+
+        return ImportGeneratedCustomSet(
+            custom_set=custom_set,
+            generation_request=generation_request,
+        )
 
 
 class MageEquippedItem(graphene.Mutation):
@@ -1969,6 +2066,7 @@ class Mutation(graphene.ObjectType):
     edit_custom_set_stats = EditCustomSetStats.Field()
     equip_set = EquipSet.Field()
     equip_multiple_items = EquipMultipleItems.Field()
+    import_generated_custom_set = ImportGeneratedCustomSet.Field()
     create_custom_set = CreateCustomSet.Field()
     resend_verification_email = ResendVerificationEmail.Field()
     change_locale = ChangeLocale.Field()
