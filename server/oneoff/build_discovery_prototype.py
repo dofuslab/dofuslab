@@ -58,7 +58,8 @@ MAX_RANGE = 6
 ACTION_STATS = ("AP", "MP", "Range")
 ACTION_STAT_SOURCE_LIMIT = 4
 ACTION_STAT_SOURCE_MIN_LEVEL = 180
-DOFUS_ACTION_STAT_SOURCE_LIMIT = 1
+ACTION_STAT_VECTOR_SOURCE_LIMIT = 3
+DOFUS_ACTION_STAT_SOURCE_LIMIT = 2
 DOFUS_AP_SOURCE_LIMIT = 2
 DOFUS_ZERO_SCORE_FILLER_LIMIT = 4
 UNCOMMON_AP_SOURCE_IDS = frozenset(
@@ -149,6 +150,10 @@ DIRECT_COMPLETION_GEAR_STATE_LIMIT = 300
 DIRECT_COMPLETION_GEAR_STATE_PER_SIGNATURE_CAP = 6
 DIRECT_COMPLETION_DOFUS_COMBO_LIMIT = 500
 DIRECT_COMPLETION_FINAL_SCORE_LIMIT = 1000
+BUDGET_ACTION_TROPHY_COMBO_SEED_LIMIT = 40
+BUDGET_ACTION_GEAR_SEED_LIMIT = 160
+BUDGET_ACTION_GEAR_SLOT_LIMIT = 6
+BUDGET_ACTION_GEAR_VECTOR_CAP = 4
 DIRECT_COMPLETION_SPECIAL_DOFUS_IDS = {"7754", "8698", "6980"}
 DIRECT_COMPLETION_CORE_DOFUS_IDS = {
     "694",  # Crimson Dofus
@@ -1499,6 +1504,21 @@ def candidate_pool_for_slot(
         )[:stat_source_limit]:
             selected[item["dofusID"]] = item
 
+    if not is_dofus_slot:
+        vector_representatives: dict[tuple[int, int, int], list[dict[str, Any]]] = defaultdict(list)
+        for item in search_compatible:
+            vector = tuple(max(0, item["_stats"].get(stat, 0)) for stat in ACTION_STATS)
+            if not any(vector):
+                continue
+            vector_representatives[vector].append(item)
+        for vector_items in vector_representatives.values():
+            for item in sorted(
+                vector_items,
+                key=lambda i: (i["_score"], i.get("level", 0)),
+                reverse=True,
+            )[:ACTION_STAT_VECTOR_SOURCE_LIMIT]:
+                selected[item["dofusID"]] = item
+
     for item in relevant_set_items:
         selected[item["dofusID"]] = item
 
@@ -1643,7 +1663,117 @@ def budget_action_trophy_seed_states(
                 natural_cap_target,
             )
         )
+    action_dofus_items = [
+        item
+        for item in items
+        if item.get("itemType") in {"Dofus", "Trophy", "Prysmaradite"}
+        and (
+            item["dofusID"] in MANDATORY_DOFUS_CANDIDATE_IDS
+            or any(item["_stats"].get(stat, 0) for stat in ACTION_STATS)
+        )
+    ]
+    for combo in ranked_dofus_combinations(
+        action_dofus_items,
+        len([slot_name for slot_name, _ in SLOTS if is_dofus_slot(slot_name)]),
+        BUDGET_ACTION_TROPHY_COMBO_SEED_LIMIT,
+    ):
+        completed = complete_dofus_combination(
+            BuildState(),
+            combo,
+            sets,
+            target,
+            natural_cap_target,
+        )
+        if completed is not None:
+            seeds.append(completed)
     return dedupe_builds(sorted(seeds, key=lambda state: state.score, reverse=True))
+
+
+def action_gear_seed_signature(state: BuildState, target: BuildTarget) -> tuple[Any, ...]:
+    return (
+        min(state.stats.get("AP", 0), target.ap),
+        min(state.stats.get("MP", 0), target.mp),
+        min(state.stats.get("Range", 0), target.range),
+        tuple(sorted(state.slots)),
+    )
+
+
+def trim_action_gear_seeds(
+    states: list[BuildState],
+    target: BuildTarget,
+    limit: int,
+) -> list[BuildState]:
+    buckets: dict[tuple[Any, ...], list[BuildState]] = defaultdict(list)
+    for state in sorted(states, key=lambda s: s.score, reverse=True):
+        bucket = buckets[action_gear_seed_signature(state, target)]
+        if len(bucket) < BUDGET_ACTION_GEAR_VECTOR_CAP:
+            bucket.append(state)
+    diversified = [state for bucket in buckets.values() for state in bucket]
+    return sorted(diversified, key=lambda state: state.score, reverse=True)[:limit]
+
+
+def budget_action_gear_seed_states(
+    pools: dict[str, list[dict[str, Any]]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+    limit: int = BUDGET_ACTION_GEAR_SEED_LIMIT,
+) -> list[BuildState]:
+    action_slots: list[tuple[str, list[dict[str, Any]]]] = []
+    for slot_name, slot_types in SLOTS:
+        if is_dofus_slot(slot_name):
+            continue
+        candidates = [
+            item
+            for item in pools.get(slot_name, [])
+            if any(item["_stats"].get(stat, 0) > 0 for stat in ACTION_STATS)
+        ]
+        if not candidates:
+            continue
+        action_slots.append(
+            (
+                slot_name,
+                sorted(
+                    candidates,
+                    key=lambda item: (
+                        item["_stats"].get("AP", 0),
+                        item["_stats"].get("MP", 0),
+                        item["_stats"].get("Range", 0),
+                        item["_score"],
+                        item.get("level", 0),
+                    ),
+                    reverse=True,
+                )[:BUDGET_ACTION_GEAR_SLOT_LIMIT],
+            )
+        )
+
+    seeds = [BuildState()]
+    for slot_name, candidates in action_slots:
+        next_states = list(seeds)
+        for state in seeds:
+            if slot_name in state.slots:
+                continue
+            for item in candidates:
+                next_state = add_item_to_state(
+                    state,
+                    slot_name,
+                    item,
+                    sets,
+                    search_target,
+                    condition_target=target,
+                    cap_target=natural_cap_target,
+                )
+                if next_state is not None:
+                    next_states.append(next_state)
+        seeds = trim_action_gear_seeds(next_states, target, limit)
+
+    seeds = [
+        seed
+        for seed in seeds
+        if seed.used_item_ids and any(seed.stats.get(stat, 0) > BASE_STATS.get(stat, 0) for stat in ACTION_STATS)
+    ]
+    return dedupe_builds(sorted(seeds, key=lambda state: state.score, reverse=True))[:limit]
 
 
 def eligible_for_exo(item: dict[str, Any], stat: str) -> bool:
@@ -2983,6 +3113,8 @@ def dofus_completion_pool(pools: dict[str, list[dict[str, Any]]]) -> list[dict[s
             selected[item["dofusID"]] = item
         if item["dofusID"] in DIRECT_COMPLETION_SPECIAL_DOFUS_IDS:
             selected[item["dofusID"]] = item
+        if any(item["_stats"].get(stat, 0) for stat in ACTION_STATS):
+            selected[item["dofusID"]] = item
     return sorted(selected.values(), key=lambda item: item["_score"], reverse=True)
 
 
@@ -3034,6 +3166,20 @@ def ranked_dofus_combinations(
         key=lambda combo: sum(item["_score"] for item in combo),
         reverse=True,
     )
+    action_combinations = sorted(
+        (
+            combo
+            for combo in combinations(dofus_pool, combo_size)
+            if any(item["_stats"].get(stat, 0) for item in combo for stat in ACTION_STATS)
+        ),
+        key=lambda combo: (
+            sum(item["_stats"].get("AP", 0) for item in combo),
+            sum(item["_stats"].get("MP", 0) for item in combo),
+            sum(item["_stats"].get("Range", 0) for item in combo),
+            sum(item["_score"] for item in combo),
+        ),
+        reverse=True,
+    )[:priority_combination_limit]
     multi_special_combinations = [
         combo
         for _, combo in sorted_combinations
@@ -3069,6 +3215,7 @@ def ranked_dofus_combinations(
         top_combinations
         + condition_light_combinations
         + core_combinations
+        + action_combinations
         + multi_special_combinations
         + special_combinations
         + multi_mandatory_combinations
@@ -3512,6 +3659,17 @@ def find_builds(
             natural_cap_target,
         )
     )
+    budget_action_gear_seeds = (
+        []
+        if required_seeds
+        else budget_action_gear_seed_states(
+            pools,
+            sets,
+            target,
+            search_target,
+            natural_cap_target,
+        )
+    )
     timings["candidatePoolsMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
@@ -3542,7 +3700,11 @@ def find_builds(
     )
     initial_seeds = dedupe_builds(
         sorted(
-            initial_seeds + ap_set_bonus_seeds + required_seeds + budget_action_trophy_seeds,
+            initial_seeds
+            + ap_set_bonus_seeds
+            + required_seeds
+            + budget_action_trophy_seeds
+            + budget_action_gear_seeds,
             key=lambda state: state.score,
             reverse=True,
         )
@@ -3588,7 +3750,7 @@ def find_builds(
             beam_seed_groups = (
                 [required_seeds]
                 if required_seeds
-                else [[], budget_action_trophy_seeds]
+                else [[], budget_action_trophy_seeds, budget_action_gear_seeds]
             )
         else:
             beam_seed_groups = [initial_seeds]

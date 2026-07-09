@@ -5,6 +5,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from oneoff.build_discovery_prototype import (  # noqa: E402
+    BASE_AP,
     MAX_AP,
     MAX_MP,
     MAX_RANGE,
@@ -24,6 +25,10 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
 
 
 class BuildDiscoveryQueryContractTest(unittest.TestCase):
+    def test_milestone_one_base_ap_uses_level_100_plus_baseline(self):
+        self.assertEqual(BASE_AP, 7)
+        self.assertEqual(MIN_AP, BASE_AP)
+
     def test_level_200_milestone_one_action_stat_bounds_are_supported(self):
         lower = BuildDiscoveryQuery(
             ap_target=MIN_AP,

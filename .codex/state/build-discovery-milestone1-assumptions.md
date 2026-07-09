@@ -18,10 +18,10 @@ acceptance claim.
 ## AP / MP / Range
 
 - AP, MP, and Range are minimum targets with hard caps, not exact targets.
+- Character baseline AP is 6 from levels 1-99 and 7 from level 100 onward.
 - For level 200 / level 100+ characters, Milestone 1 valid query bounds are
   AP 7-12, MP 3-6, Range 0-6.
-- Characters below level 100 normally start at 6 AP, but non-200 generation is
-  outside Milestone 1.
+- Sub-100 generation is outside Milestone 1.
 - Surplus AP/MP/Range is valid if it does not exceed the cap, but should only
   receive small marginal score.
 - Defaults remain 11 AP, 6 MP, 0 Range for level 200 Iop.
