@@ -1401,3 +1401,29 @@ Run the initial evaluator pass:
 - Verification passed:
   - `docker compose config`
   - `git diff --check`
+
+### 2026-07-09 Prod Benchmark Review Packet
+
+- Created stacked branch `codex/build-discovery-prod-benchmark-review-packet` on top of `codex/build-discovery-prod-readonly-compose-env`.
+- Added `server/scripts/build_discovery_prod_benchmark_review_packet.py`.
+- The packet converts aggregate prod discovery profiles into a compact review artifact:
+  - supported generated benchmark prompts
+  - future benchmark prompts that are currently unsupported
+  - generated query payloads where supported
+  - unsupported reasons where not supported
+  - common aggregate items per profile
+- The packet does not connect to prod and does not expose custom set IDs, names, or owners.
+- Extended `server/scripts/build_discovery_prod_benchmark_pipeline.py` so prod pipeline runs now write:
+  - `prod_benchmark_discovery.json`
+  - `prod_candidate_generated_results.json`
+  - `prod_benchmark_review_packet.json`
+  - `prod_benchmark_pipeline_summary.json`
+- Pipeline summaries now include supported/future benchmark prompt counts.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_prod_benchmark_review_packet.py`
+  - `python server\scripts\test_build_discovery_prod_benchmark_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_prod_benchmark_review_packet.py scripts/test_build_discovery_prod_benchmark_review_packet.py scripts/build_discovery_prod_benchmark_pipeline.py scripts/test_build_discovery_prod_benchmark_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_prod_benchmark_review_packet.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_prod_benchmark_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_prod_benchmark_pipeline.py --check-env`
+  - `git diff --check`

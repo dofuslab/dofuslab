@@ -22,10 +22,14 @@ from scripts.build_discovery_prod_candidate_generated_results import (  # noqa: 
     DEFAULT_CANDIDATE_LIMIT,
     build_prod_candidate_generated_results,
 )
+from scripts.build_discovery_prod_benchmark_review_packet import (  # noqa: E402
+    build_review_packet,
+)
 
 REPORT_VERSION = "build-discovery-prod-benchmark-pipeline-v1"
 DISCOVERY_FILENAME = "prod_benchmark_discovery.json"
 GENERATED_RESULTS_FILENAME = "prod_candidate_generated_results.json"
+REVIEW_PACKET_FILENAME = "prod_benchmark_review_packet.json"
 SUMMARY_FILENAME = "prod_benchmark_pipeline_summary.json"
 
 
@@ -39,6 +43,7 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
 def build_summary(
     discovery_report: dict[str, Any],
     generated_results: dict[str, Any],
+    review_packet: dict[str, Any],
     output_dir: Path,
 ) -> dict[str, Any]:
     return {
@@ -46,12 +51,20 @@ def build_summary(
         "artifacts": {
             "discoveryReport": str(output_dir / DISCOVERY_FILENAME),
             "generatedResults": str(output_dir / GENERATED_RESULTS_FILENAME),
+            "reviewPacket": str(output_dir / REVIEW_PACKET_FILENAME),
         },
         "sourceReportVersion": discovery_report.get("reportVersion"),
         "candidateResultsVersion": generated_results.get("reportVersion"),
+        "reviewPacketVersion": review_packet.get("reportVersion"),
         "profileCount": generated_results.get("profileCount", 0),
         "generatedCount": generated_results.get("generatedCount", 0),
         "skippedCount": generated_results.get("skippedCount", 0),
+        "supportedBenchmarkPromptCount": len(
+            review_packet.get("supportedGeneratedBenchmarkPrompts", [])
+        ),
+        "futureBenchmarkPromptCount": len(
+            review_packet.get("futureBenchmarkPrompts", [])
+        ),
         "supportedGeneratedCandidateIds": [
             candidate.get("id")
             for candidate in generated_results.get("generatedCandidates", [])
@@ -77,6 +90,7 @@ def run_pipeline(
     statement_timeout_ms: int = DEFAULT_STATEMENT_TIMEOUT_MS,
     discovery_fn: Callable[..., dict[str, Any]] = discover_prod_benchmarks,
     candidate_results_fn: Callable[..., dict[str, Any]] = build_prod_candidate_generated_results,
+    review_packet_fn: Callable[..., dict[str, Any]] = build_review_packet,
 ) -> dict[str, Any]:
     output_path = Path(output_dir)
     discovery_report = discovery_fn(
@@ -90,10 +104,12 @@ def run_pipeline(
         discovery_report,
         candidate_limit=candidate_limit,
     )
-    summary = build_summary(discovery_report, generated_results, output_path)
+    review_packet = review_packet_fn(discovery_report)
+    summary = build_summary(discovery_report, generated_results, review_packet, output_path)
 
     write_json(output_path / DISCOVERY_FILENAME, discovery_report)
     write_json(output_path / GENERATED_RESULTS_FILENAME, generated_results)
+    write_json(output_path / REVIEW_PACKET_FILENAME, review_packet)
     write_json(output_path / SUMMARY_FILENAME, summary)
     return summary
 

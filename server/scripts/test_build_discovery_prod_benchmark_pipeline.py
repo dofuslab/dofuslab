@@ -7,6 +7,7 @@ from unittest.mock import patch
 from build_discovery_prod_benchmark_pipeline import (
     DISCOVERY_FILENAME,
     GENERATED_RESULTS_FILENAME,
+    REVIEW_PACKET_FILENAME,
     SUMMARY_FILENAME,
     build_summary,
     run_pipeline,
@@ -46,18 +47,37 @@ def generated_results():
     }
 
 
+def review_packet():
+    return {
+        "reportVersion": "build-discovery-prod-benchmark-review-packet-v1",
+        "supportedGeneratedBenchmarkPrompts": [{"prompt": "200 strength Iop 11/6/0"}],
+        "futureBenchmarkPrompts": [{"prompt": "200 intelligence Cra 11/6/6"}],
+    }
+
+
 class BuildDiscoveryProdBenchmarkPipelineTest(unittest.TestCase):
     def test_build_summary_records_artifact_paths_and_counts(self):
         output_dir = Path("/tmp/prod-pipeline")
 
-        summary = build_summary(discovery_report(), generated_results(), output_dir)
+        summary = build_summary(
+            discovery_report(),
+            generated_results(),
+            review_packet(),
+            output_dir,
+        )
 
         self.assertEqual(summary["profileCount"], 2)
         self.assertEqual(summary["generatedCount"], 1)
         self.assertEqual(summary["skippedCount"], 1)
+        self.assertEqual(summary["supportedBenchmarkPromptCount"], 1)
+        self.assertEqual(summary["futureBenchmarkPromptCount"], 1)
         self.assertEqual(
             summary["artifacts"]["discoveryReport"],
             str(output_dir / DISCOVERY_FILENAME),
+        )
+        self.assertEqual(
+            summary["artifacts"]["reviewPacket"],
+            str(output_dir / REVIEW_PACKET_FILENAME),
         )
         self.assertEqual(summary["supportedGeneratedCandidateIds"], ["iop_strength_11_6_0"])
         self.assertEqual(summary["skippedCandidateStatuses"][0]["status"], "unsupported")
@@ -75,11 +95,13 @@ class BuildDiscoveryProdBenchmarkPipelineTest(unittest.TestCase):
                     candidate_limit=2,
                     discovery_fn=lambda *args, **kwargs: discovery_report(),
                     candidate_results_fn=lambda report, candidate_limit: generated_results(),
+                    review_packet_fn=lambda report: review_packet(),
                 )
 
             output_path = Path(temp_dir)
             self.assertTrue((output_path / DISCOVERY_FILENAME).exists())
             self.assertTrue((output_path / GENERATED_RESULTS_FILENAME).exists())
+            self.assertTrue((output_path / REVIEW_PACKET_FILENAME).exists())
             self.assertTrue((output_path / SUMMARY_FILENAME).exists())
             self.assertEqual(
                 json.loads((output_path / SUMMARY_FILENAME).read_text()),
