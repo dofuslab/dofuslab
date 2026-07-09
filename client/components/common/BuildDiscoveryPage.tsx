@@ -131,19 +131,35 @@ function buildResultKey(build: BuildDiscoveryBuild) {
   return `${build.score ?? 'score'}:${itemIds}`;
 }
 
-function generatedBuildName(build: BuildDiscoveryBuild) {
-  const scoreLabel =
-    typeof build.score === 'number' ? ` #${Math.round(build.score)}` : '';
-
-  return `Generated Build Discovery${scoreLabel}`;
-}
-
 type BuildDiscoveryImportContext = {
   datasetVersion?: string;
   solverVersion?: string;
   query?: Record<string, unknown>;
   input: BuildDiscoveryQueryInput;
 };
+
+function generatedBuildName(
+  build: BuildDiscoveryBuild,
+  context: BuildDiscoveryImportContext,
+) {
+  const scoreLabel =
+    typeof build.score === 'number' ? ` #${Math.round(build.score)}` : '';
+  const query = context.query ?? context.input;
+  const className =
+    typeof query.className === 'string'
+      ? query.className
+      : context.input.className;
+  const element =
+    Array.isArray(query.elements) && typeof query.elements[0] === 'string'
+      ? query.elements[0]
+      : context.input.element;
+  const buildLabel =
+    element && className
+      ? `${formatBuildDiscoveryLabel(element)} ${className}`
+      : 'Build Discovery';
+
+  return `Generated ${buildLabel}${scoreLabel}`;
+}
 
 function buildDiscoveryImportItems(build: BuildDiscoveryBuild) {
   const items: CustomSetImportedItemInput[] = [];
@@ -301,7 +317,7 @@ function useOpenBuildDiscoveryBuild(
       const { data } = await importGeneratedCustomSetMutate({
         variables: {
           items: importInput.items,
-          name: generatedBuildName(build),
+          name: generatedBuildName(build, context),
           level: 200,
           source: 'build_discovery',
           datasetVersion: context.datasetVersion,

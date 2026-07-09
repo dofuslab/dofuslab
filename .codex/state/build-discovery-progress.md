@@ -545,3 +545,15 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 python -m py_compile app/schema.py`
   - Docker inline mutation assertion for generated default-class assignment and non-Build-Discovery source gating
   - `git diff --check`
+
+### 2026-07-09 Descriptive Generated Names
+
+- Created stacked branch `codex/build-discovery-descriptive-generated-names` on top of `codex/build-discovery-generated-import-default-class`.
+- Made imported generated build names include query context:
+  - `Generated Strength Iop #123` when element/class context exists
+  - `Generated Build Discovery #123` fallback when context is missing
+- Reviewer finding: no issues.
+- Verification passed:
+  - `cd client; yarn type-check`
+  - `cd client; npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
+  - `git diff --check`
