@@ -26,13 +26,53 @@ The v1 goal is not perfect optimization, PvP meta modeling, a chatbot, or LLM-dr
 
 ## Major Milestones
 
-1. Productize current prototype inputs.
-2. Performance v1.
-3. Availability v0.
-4. Build quality benchmarks.
-5. Minimal UI.
-6. Expand beyond Iop.
-Future: Level Bracket Expansion for non-200 generation if not pulled forward deliberately.
+These milestones supersede the earlier implementation-order plan. The product
+should advance by proving correctness over a bounded surface and remembering the
+best builds found at each step. Performance, API, UI, and polish come after the
+correctness surface is trustworthy.
+
+Current confidence boundary:
+
+- Availability v0 is considered done as hardcoded rules for now.
+- The only scoring model currently trusted is the steered level 200 melee
+  Strength Iop scoring path.
+- Other elements/classes/levels are untrusted until they have benchmark fixtures
+  and review.
+
+1. Availability v0.
+   - Keep rule-based availability tiers hardcoded.
+   - Maintain tests for tier assignments and budget enablers.
+   - Do not spend more effort on market/production-derived availability until
+     core build quality is stable.
+2. Level 200 Iop correctness surface.
+   - Support all combinations of supported Iop elements, playstyle/range
+     preference, AP/MP/Range targets, budget tiers, exo policy, locked items,
+     and avoided items.
+   - Start from the trusted melee Strength Iop scoring model.
+   - Add/keep expensive no-cache regressions for the best known builds found.
+   - For every supported query family, remember the top scoring generated build
+     and any better human benchmark build.
+3. Extend to all classes at level 200.
+   - Add class-specific scoring defaults and damage baselines before enabling
+     each class.
+   - Establish at least one trusted benchmark path per class before broad query
+     support.
+   - Continue remembering top scoring generated and human benchmark builds at
+     each expansion step.
+4. Extend to all supported levels.
+   - Add level brackets only after level 200 class quality is understood.
+   - Define bracket-specific AP/MP/Range defaults, budget assumptions,
+     survivability baselines, and benchmark fixtures.
+   - Remember top scoring builds per class/element/playstyle/level bracket.
+5. Optimization.
+   - Only after correctness milestones are stable, optimize cache misses and
+     beam/search paths.
+   - Preserve expensive correctness regressions while optimizing.
+6. Product/API/UI.
+   - Productize API, persistence, generated build provenance, and UI after core
+     quality is defensible.
+   - Async/cache can exist as infrastructure, but should not distract from
+     benchmark-led correctness.
 
 ## Acceptance Criteria
 
@@ -58,6 +98,9 @@ Future: Level Bracket Expansion for non-200 generation if not pulled forward del
 ## Current PRD Facts To Verify In Code
 
 - Existing prototype reportedly generates valid, plausible Strength Iop builds.
+- Current trusted scoring is limited to steered melee level 200 Strength Iop.
+- Other element/class/level scoring should be treated as untrusted until
+  benchmarked.
 - Data loading is reportedly sub-second after a generated build discovery index.
 - Normal 11/6/0 Strength Iop generation reportedly improved from about 84s to about 24s.
 - Beam search reportedly remains the bottleneck.
