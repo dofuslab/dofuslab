@@ -38,6 +38,9 @@ BENCHMARK_GENERATED_RESULTS_FILENAME = "benchmark_generated_results.json"
 BENCHMARK_COMPARISON_FILENAME = "benchmark_comparison_report.json"
 READINESS_FILENAME = "local_readiness_report.json"
 SUMMARY_FILENAME = "local_readiness_pipeline_summary.json"
+READINESS_CHECKLIST_FILENAME = "build-discovery-readiness-checklist.md"
+GAMEPLAY_REVIEW_PACKET_FILENAME = "build-discovery-gameplay-review-packet.md"
+ASSUMPTIONS_LEDGER_FILENAME = "build-discovery-assumptions.md"
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
@@ -45,6 +48,14 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
     with open(path, "w", encoding="utf-8") as file:
         file.write(json.dumps(payload, indent=2, ensure_ascii=False))
         file.write("\n")
+
+
+def state_paths_from_dir(state_dir: Path) -> dict[str, Path]:
+    return {
+        "readiness_checklist_path": state_dir / READINESS_CHECKLIST_FILENAME,
+        "gameplay_review_packet_path": state_dir / GAMEPLAY_REVIEW_PACKET_FILENAME,
+        "assumptions_ledger_path": state_dir / ASSUMPTIONS_LEDGER_FILENAME,
+    }
 
 
 def default_cache_prewarm_report(
@@ -200,11 +211,20 @@ def run_pipeline(
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", default="/tmp/build_discovery_local_readiness_pipeline")
+    parser.add_argument(
+        "--state-dir",
+        type=Path,
+        help=(
+            "Directory containing build-discovery-readiness-checklist.md, "
+            "build-discovery-gameplay-review-packet.md, and build-discovery-assumptions.md. "
+            "Explicit file path flags override this directory."
+        ),
+    )
     parser.add_argument("--max-hit-p95-ms", type=float, default=500.0)
     parser.add_argument("--max-hit-elapsed-ms", type=float, default=500.0)
-    parser.add_argument("--readiness-checklist", type=Path, default=DEFAULT_READINESS_CHECKLIST)
-    parser.add_argument("--gameplay-review-packet", type=Path, default=DEFAULT_GAMEPLAY_REVIEW_PACKET)
-    parser.add_argument("--assumptions-ledger", type=Path, default=DEFAULT_ASSUMPTIONS_LEDGER)
+    parser.add_argument("--readiness-checklist", type=Path)
+    parser.add_argument("--gameplay-review-packet", type=Path)
+    parser.add_argument("--assumptions-ledger", type=Path)
     parser.add_argument("--benchmark-fixture", type=Path, default=DEFAULT_FIXTURE_PATH)
     parser.add_argument(
         "--skip-benchmark-comparison",
@@ -212,14 +232,18 @@ def main() -> None:
         help="Skip local benchmark generated-result and comparison artifacts.",
     )
     args = parser.parse_args()
+    state_paths = state_paths_from_dir(args.state_dir) if args.state_dir else {}
 
     summary = run_pipeline(
         output_dir=args.output_dir,
         max_hit_p95_ms=args.max_hit_p95_ms,
         max_hit_elapsed_ms=args.max_hit_elapsed_ms,
-        readiness_checklist_path=args.readiness_checklist,
-        gameplay_review_packet_path=args.gameplay_review_packet,
-        assumptions_ledger_path=args.assumptions_ledger,
+        readiness_checklist_path=args.readiness_checklist
+        or state_paths.get("readiness_checklist_path", DEFAULT_READINESS_CHECKLIST),
+        gameplay_review_packet_path=args.gameplay_review_packet
+        or state_paths.get("gameplay_review_packet_path", DEFAULT_GAMEPLAY_REVIEW_PACKET),
+        assumptions_ledger_path=args.assumptions_ledger
+        or state_paths.get("assumptions_ledger_path", DEFAULT_ASSUMPTIONS_LEDGER),
         benchmark_fixture_path=args.benchmark_fixture,
         include_benchmark_comparison=not args.skip_benchmark_comparison,
     )

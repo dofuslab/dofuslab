@@ -12,6 +12,7 @@ from build_discovery_local_readiness_pipeline import (
     WARM_CACHE_FILENAME,
     build_summary,
     run_pipeline,
+    state_paths_from_dir,
 )
 
 
@@ -79,6 +80,24 @@ def benchmark_fixture() -> dict:
 
 
 class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
+    def test_state_paths_from_dir_uses_expected_filenames(self):
+        state_dir = Path("/tmp/build-discovery-state")
+
+        paths = state_paths_from_dir(state_dir)
+
+        self.assertEqual(
+            paths["readiness_checklist_path"],
+            state_dir / "build-discovery-readiness-checklist.md",
+        )
+        self.assertEqual(
+            paths["gameplay_review_packet_path"],
+            state_dir / "build-discovery-gameplay-review-packet.md",
+        )
+        self.assertEqual(
+            paths["assumptions_ledger_path"],
+            state_dir / "build-discovery-assumptions.md",
+        )
+
     def test_build_summary_records_artifact_paths_and_statuses(self):
         output_dir = Path("/tmp/local-readiness")
 

@@ -1301,3 +1301,31 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_report.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_local_readiness_pipeline.py --output-dir /tmp/build_discovery_local_readiness_pipeline_full --readiness-checklist /tmp/build_discovery_local_readiness_state/build-discovery-readiness-checklist.md --gameplay-review-packet /tmp/build_discovery_local_readiness_state/build-discovery-gameplay-review-packet.md --assumptions-ledger /tmp/build_discovery_local_readiness_state/build-discovery-assumptions.md`
   - `git diff --check`
+
+### 2026-07-09 Local Readiness State Directory
+
+- Created stacked branch `codex/build-discovery-local-readiness-state-dir` on top of `codex/build-discovery-local-benchmark-readiness-pipeline`.
+- Added `--state-dir` to `server/scripts/build_discovery_local_readiness_pipeline.py`.
+- A state directory can now provide:
+  - `build-discovery-readiness-checklist.md`
+  - `build-discovery-gameplay-review-packet.md`
+  - `build-discovery-assumptions.md`
+- Explicit file path flags still override the state directory.
+- Added focused test coverage for the expected state-directory filenames.
+- Docker full pipeline result using `--state-dir /tmp/build_discovery_local_readiness_state`:
+  - warm cache status: `pass`
+  - strict cache status: `pass`
+  - strict cache hits: 8
+  - strict cache misses: 0
+  - strict cache-hit p95: `0.8ms`
+  - benchmark generated status: `pass`
+  - benchmark comparison status: `pass`
+  - benchmark validation failures: 0
+  - readiness status: `incomplete`
+- Verification passed:
+  - `python server\scripts\test_build_discovery_local_readiness_pipeline.py`
+  - `python server\scripts\test_build_discovery_local_readiness_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_local_readiness_pipeline.py scripts/test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_local_readiness_pipeline.py --output-dir /tmp/build_discovery_local_readiness_pipeline_state_dir --state-dir /tmp/build_discovery_local_readiness_state`
+  - `git diff --check`
