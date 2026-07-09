@@ -572,3 +572,19 @@ Run the initial evaluator pass:
   - nearby utility/cap tests for score caps and damage/survivability exclusion
   - `docker exec dofuslab-server-1 python -m py_compile oneoff/build_discovery_prototype.py`
   - `git diff --check`
+
+### 2026-07-09 Generated Build List Filter UI
+
+- Created stacked branch `codex/build-discovery-generated-build-list-filter-ui` on top of `codex/build-discovery-action-stat-surplus-score`.
+- Added a generated-build filter to the existing build list controls:
+  - All builds
+  - Generated builds
+  - User-created builds
+- Wired the control to `CustomSetFilters.generated` and made pagination carry the full current filter set.
+- Added locale keys for the filter labels to all common locale files using English fallback labels.
+- Reviewer finding: no issues.
+- Verification passed:
+  - `cd client; yarn type-check`
+  - `cd client; npx eslint --fix-dry-run components/common/BuildList.tsx`
+  - parsed all `client/public/locales/*/common.json` files and asserted filter keys are present
+  - `git diff --check`

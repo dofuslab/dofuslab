@@ -45,6 +45,19 @@ import BuildCard from './BuildCard';
 
 const THRESHOLD = 600;
 const PAGE_SIZE = 20;
+type GeneratedFilterValue = 'all' | 'generated' | 'user';
+
+function generatedFilterValue(value: GeneratedFilterValue) {
+  if (value === 'generated') {
+    return true;
+  }
+
+  if (value === 'user') {
+    return false;
+  }
+
+  return undefined;
+}
 
 interface Props {
   username: string;
@@ -83,6 +96,9 @@ const BuildList = ({
     undefined,
   );
   const [tagIds, setTagIds] = useState<Array<string>>([]);
+  const [generatedFilter, setGeneratedFilter] =
+    useState<GeneratedFilterValue>('all');
+  const generated = generatedFilterValue(generatedFilter);
 
   const handleSearchChange = useCallback(
     (searchValue: string) => {
@@ -112,7 +128,7 @@ const BuildList = ({
     variables: {
       username,
       first: BUILD_LIST_PAGE_SIZE,
-      filters: { search, defaultClassId: dofusClassId, tagIds },
+      filters: { search, defaultClassId: dofusClassId, generated, tagIds },
     },
   });
 
@@ -128,11 +144,11 @@ const BuildList = ({
     const fetchMoreResult = await fetchMore({
       variables: {
         after: userBuilds.userByName.customSets.pageInfo.endCursor,
-        search,
+        filters: { search, defaultClassId: dofusClassId, generated, tagIds },
       },
     });
     return fetchMoreResult;
-  }, [userBuilds, search]);
+  }, [dofusClassId, fetchMore, generated, search, tagIds, userBuilds]);
 
   const classSelect = (
     <ClassSelect
@@ -265,14 +281,41 @@ const BuildList = ({
             />
           </div>
           {classSelect}
+          <Select<GeneratedFilterValue>
+            css={[
+              inputFontSize,
+              {
+                marginTop: 20,
+                [mq[1]]: {
+                  gridArea: '2 / 1 / 3 / 2',
+                  marginTop: 0,
+                },
+              },
+            ]}
+            value={generatedFilter}
+            onChange={(value) => {
+              setGeneratedFilter(value);
+            }}
+            size={isMobile ? 'large' : undefined}
+          >
+            <Select.Option value="all">{t('ALL_BUILDS')}</Select.Option>
+            <Select.Option value="generated">
+              {t('GENERATED_BUILDS')}
+            </Select.Option>
+            <Select.Option value="user">
+              {t('USER_CREATED_BUILDS')}
+            </Select.Option>
+          </Select>
           {tagsData && (
             <Select<Array<string>>
               css={[
                 inputFontSize,
                 {
-                  gridArea: '2/3/3/1',
                   marginTop: 20,
-                  [mq[1]]: { marginTop: 0 },
+                  [mq[1]]: {
+                    gridArea: '2 / 2 / 3 / 3',
+                    marginTop: 0,
+                  },
                 },
               ]}
               showSearch
