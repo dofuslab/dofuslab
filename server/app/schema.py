@@ -156,6 +156,7 @@ BUILD_DISCOVERY_MAX_TOP_K = 100
 BUILD_DISCOVERY_MAX_BEAM_WIDTH = 1000
 BUILD_DISCOVERY_MAX_PER_SIGNATURE_CAP = 200
 BUILD_DISCOVERY_MAX_RELEVANT_SET_LIMIT = 200
+BUILD_DISCOVERY_SYNC_THRESHOLD_MS = 5000.0
 
 
 def bounded_int_arg(name, value, minimum, maximum):
@@ -263,6 +264,52 @@ def build_discovery_cached_response(query):
     response = mark_build_discovery_app_cache_miss(response)
     cache_region.set(cache_key, response)
     return response
+
+
+def build_discovery_job_result(query, response):
+    diagnostics = response.get("diagnostics") or {}
+    elapsed_ms = diagnostics.get("elapsedMs")
+    cache_hit = bool(diagnostics.get("appCacheHit") or diagnostics.get("cacheHit"))
+    sync_recommended = cache_hit or (
+        elapsed_ms is not None and elapsed_ms <= BUILD_DISCOVERY_SYNC_THRESHOLD_MS
+    )
+    status = "succeeded" if response.get("status", "complete") == "complete" else "failed"
+    return {
+        "id": response.get("cacheKey") or query_cache_key(query, dataset_version()),
+        "status": status,
+        "progress": 100 if status == "succeeded" else 0,
+        "fresh_threshold_ms": BUILD_DISCOVERY_SYNC_THRESHOLD_MS,
+        "elapsed_ms": elapsed_ms,
+        "cache_hit": cache_hit,
+        "sync_recommended": sync_recommended,
+        "async_recommended": not sync_recommended,
+        "generation_request": None,
+        "generation_request_source": "build_discovery",
+        "dataset_version": response.get("datasetVersion"),
+        "solver_version": response.get("solverVersion"),
+        "request_payload": {
+            "query": response.get("query"),
+            "resultKey": response.get("cacheKey"),
+        },
+        "result": response,
+    }
+
+
+class BuildDiscoveryJob(graphene.ObjectType):
+    id = graphene.String(required=True)
+    status = graphene.String(required=True)
+    progress = graphene.Int(required=True)
+    fresh_threshold_ms = graphene.Float(required=True)
+    elapsed_ms = graphene.Float()
+    cache_hit = graphene.Boolean(required=True)
+    sync_recommended = graphene.Boolean(required=True)
+    async_recommended = graphene.Boolean(required=True)
+    generation_request = graphene.Field(lambda: GenerationRequest)
+    generation_request_source = graphene.String(required=True)
+    dataset_version = graphene.String()
+    solver_version = graphene.String()
+    request_payload = GenericScalar()
+    result = GenericScalar()
 
 
 class ItemStat(SQLAlchemyObjectType):
@@ -1108,6 +1155,44 @@ class ImportGeneratedCustomSet(graphene.Mutation):
             custom_set=custom_set,
             generation_request=generation_request,
         )
+
+
+class StartBuildDiscovery(graphene.Mutation):
+    class Arguments:
+        class_name = graphene.String()
+        level = graphene.Int()
+        elements = graphene.List(graphene.NonNull(graphene.String))
+        mode = graphene.String()
+        ap_target = graphene.Int()
+        mp_target = graphene.Int()
+        range_target = graphene.Int()
+        damage_survivability_preset = graphene.Int()
+        budget_tier = graphene.Int()
+        exo_policy = graphene.String()
+        weapon_policy = graphene.String()
+        locked_item_ids = graphene.List(graphene.NonNull(graphene.String))
+        avoided_item_ids = graphene.List(graphene.NonNull(graphene.String))
+        limit = graphene.Int()
+        top_k = graphene.Int()
+        beam_width = graphene.Int()
+        per_signature_cap = graphene.Int()
+        relevant_set_limit = graphene.Int()
+        max_shared_items = graphene.Int()
+
+    job = graphene.Field(BuildDiscoveryJob, required=True)
+
+    @tracer.wrap(name="StartBuildDiscovery.mutate")
+    def mutate(self, info, **kwargs):
+        try:
+            query = build_discovery_query_from_args(kwargs)
+            query.validate()
+            require_build_discovery_index()
+            response = build_discovery_cached_response(query)
+            return StartBuildDiscovery(
+                job=build_discovery_job_result(query, response),
+            )
+        except ValueError as error:
+            raise GraphQLError(str(error))
 
 
 class MageEquippedItem(graphene.Mutation):
@@ -2106,6 +2191,7 @@ class Mutation(graphene.ObjectType):
     equip_set = EquipSet.Field()
     equip_multiple_items = EquipMultipleItems.Field()
     import_generated_custom_set = ImportGeneratedCustomSet.Field()
+    start_build_discovery = StartBuildDiscovery.Field()
     create_custom_set = CreateCustomSet.Field()
     resend_verification_email = ResendVerificationEmail.Field()
     change_locale = ChangeLocale.Field()

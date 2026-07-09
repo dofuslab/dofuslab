@@ -652,3 +652,29 @@ Run the initial evaluator pass:
   - `python scripts\test_build_discovery_query_perf.py`
   - `docker exec dofuslab-server-1 python -m py_compile oneoff/build_discovery_query_perf.py`
   - `git diff --check`
+
+### 2026-07-09 Async Contract Skeleton
+
+- Created stacked branch `codex/build-discovery-async-contract-skeleton` on top of `codex/build-discovery-local-query-contract-fixture`.
+- Added a typed `BuildDiscoveryJob` GraphQL contract and `startBuildDiscovery` mutation.
+- The mutation still executes through the existing cached synchronous path, but now exposes the product decision surface needed for async UI/workers:
+  - `status`
+  - `progress`
+  - `freshThresholdMs`
+  - `elapsedMs`
+  - `cacheHit`
+  - `syncRecommended`
+  - `asyncRecommended`
+  - nullable future `generationRequest`
+  - `generationRequestSource`
+  - dataset/solver versions
+  - compact request payload
+  - existing result payload
+- This keeps the current `buildDiscovery` query intact while giving the client a stable contract for slow fresh queries.
+- Reviewer finding: no issues.
+- Verification passed:
+  - `docker exec dofuslab-server-1 python -m py_compile app/schema.py`
+  - Docker inline GraphQL assertions for slow fresh result -> `asyncRecommended` and cached result -> `syncRecommended`
+  - `python -m py_compile scripts\test_build_discovery_graphql.py`
+  - `git diff --check`
+- Host unittest execution is blocked by missing host dependency `dogpile`; Docker's checked-out `scripts` package is stale, so representative GraphQL assertions were run inline against Docker's current `app.schema`.

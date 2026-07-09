@@ -95,6 +95,123 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
         self.assertEqual(query.avoided_item_ids, ("200",))
         self.assertEqual(query.limit, 3)
 
+    def test_start_build_discovery_reports_async_recommendation_for_slow_fresh_result(self):
+        response = {
+            "datasetVersion": "dataset-v1",
+            "solverVersion": "solver-v1",
+            "cacheKey": "slow-cache-key",
+            "status": "complete",
+            "query": {"className": "Iop", "elements": ["strength"], "apTarget": 12},
+            "builds": [{"score": 100}],
+            "diagnostics": {
+                "elapsedMs": 6100.0,
+                "cacheHit": False,
+                "resultCount": 1,
+            },
+        }
+        cache_region = Mock()
+        cache_region.get.return_value = None
+
+        with patch.object(schema_module, "load_build_discovery_index", return_value={}):
+            with patch.object(schema_module, "dataset_version", return_value="dataset-v1"):
+                with patch.object(schema_module, "cache_region", cache_region):
+                    with patch.object(schema_module, "build_discovery_response", return_value=response) as build_discovery:
+                        result = schema.execute(
+                            """
+                            mutation {
+                              startBuildDiscovery(elements: ["strength"], apTarget: 12, limit: 1) {
+                                job {
+                                  id
+                                  status
+                                  progress
+                                  freshThresholdMs
+                                  elapsedMs
+                                  cacheHit
+                                  syncRecommended
+                                  asyncRecommended
+                                  generationRequest {
+                                    id
+                                  }
+                                  generationRequestSource
+                                  datasetVersion
+                                  solverVersion
+                                  requestPayload
+                                  result
+                                }
+                              }
+                            }
+                            """
+                        )
+
+        self.assertIsNone(result.errors)
+        build_discovery.assert_called_once()
+        job = result.data["startBuildDiscovery"]["job"]
+        self.assertEqual(job["id"], "slow-cache-key")
+        self.assertEqual(job["status"], "succeeded")
+        self.assertEqual(job["progress"], 100)
+        self.assertEqual(job["freshThresholdMs"], 5000.0)
+        self.assertEqual(job["elapsedMs"], 6100.0)
+        self.assertFalse(job["cacheHit"])
+        self.assertFalse(job["syncRecommended"])
+        self.assertTrue(job["asyncRecommended"])
+        self.assertIsNone(job["generationRequest"])
+        self.assertEqual(job["generationRequestSource"], "build_discovery")
+        self.assertEqual(job["datasetVersion"], "dataset-v1")
+        self.assertEqual(job["solverVersion"], "solver-v1")
+        self.assertEqual(job["requestPayload"]["query"], response["query"])
+        self.assertEqual(job["requestPayload"]["resultKey"], "slow-cache-key")
+        self.assertEqual(job["result"]["builds"], response["builds"])
+
+    def test_start_build_discovery_reports_sync_recommendation_for_cached_result(self):
+        cached_response = {
+            "datasetVersion": "dataset-v1",
+            "solverVersion": "solver-v1",
+            "cacheKey": "cached-key",
+            "status": "complete",
+            "query": {"className": "Iop"},
+            "builds": [],
+            "cache": {"status": "miss", "storage": "app_cache"},
+            "diagnostics": {
+                "elapsedMs": 4500.0,
+                "cacheHit": False,
+                "appCacheHit": False,
+                "resultCount": 0,
+            },
+        }
+        cache_region = Mock()
+        cache_region.get.return_value = cached_response
+
+        with patch.object(schema_module, "load_build_discovery_index", return_value={}):
+            with patch.object(schema_module, "dataset_version", return_value="dataset-v1"):
+                with patch.object(schema_module, "cache_region", cache_region):
+                    with patch.object(schema_module, "build_discovery_response") as build_discovery:
+                        result = schema.execute(
+                            """
+                            mutation {
+                              startBuildDiscovery(elements: ["strength"], limit: 1) {
+                                job {
+                                  id
+                                  elapsedMs
+                                  cacheHit
+                                  syncRecommended
+                                  asyncRecommended
+                                  result
+                                }
+                              }
+                            }
+                            """
+                        )
+
+        self.assertIsNone(result.errors)
+        build_discovery.assert_not_called()
+        job = result.data["startBuildDiscovery"]["job"]
+        self.assertEqual(job["id"], "cached-key")
+        self.assertEqual(job["elapsedMs"], 0.0)
+        self.assertTrue(job["cacheHit"])
+        self.assertTrue(job["syncRecommended"])
+        self.assertFalse(job["asyncRecommended"])
+        self.assertEqual(job["result"]["cache"]["status"], "hit")
+
     def test_import_generated_custom_set_creates_build_and_provenance_atomically(self):
         custom_set_id = uuid.uuid4()
         first_item_id = uuid.uuid4()
