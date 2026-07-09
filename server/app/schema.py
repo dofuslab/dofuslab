@@ -38,6 +38,7 @@ from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_custom_set import ModelCustomSet, MAX_NAME_LENGTH
 from app.database.model_generation_request import ModelGenerationRequest
+from app.database.model_build_discovery_job import ModelBuildDiscoveryJob
 from app.database.model_user import ModelUserAccount
 from app.database.model_spell_effect import ModelSpellEffect
 from app.database.model_spell_effect_condition_translation import (
@@ -101,7 +102,9 @@ from oneoff.build_discovery_prototype import (
     build_discovery_response,
     dataset_version,
     load_build_discovery_index,
+    query_cache_identity,
     query_cache_key,
+    query_summary,
 )
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
@@ -266,7 +269,17 @@ def build_discovery_cached_response(query):
     return response
 
 
-def build_discovery_job_result(query, response):
+def build_discovery_request_payload(query, result_key=None):
+    payload = {
+        "query": query_summary(query),
+        "queryIdentity": query_cache_identity(query),
+    }
+    if result_key:
+        payload["resultKey"] = result_key
+    return payload
+
+
+def build_discovery_job_result(query, response, job_id=None, request_payload=None):
     diagnostics = response.get("diagnostics") or {}
     elapsed_ms = diagnostics.get("elapsedMs")
     cache_hit = bool(diagnostics.get("appCacheHit") or diagnostics.get("cacheHit"))
@@ -274,8 +287,9 @@ def build_discovery_job_result(query, response):
         elapsed_ms is not None and elapsed_ms <= BUILD_DISCOVERY_SYNC_THRESHOLD_MS
     )
     status = "succeeded" if response.get("status", "complete") == "complete" else "failed"
+    result_key = response.get("cacheKey")
     return {
-        "id": response.get("cacheKey") or query_cache_key(query, dataset_version()),
+        "id": job_id or result_key or query_cache_key(query, dataset_version()),
         "status": status,
         "progress": 100 if status == "succeeded" else 0,
         "fresh_threshold_ms": BUILD_DISCOVERY_SYNC_THRESHOLD_MS,
@@ -287,12 +301,26 @@ def build_discovery_job_result(query, response):
         "generation_request_source": "build_discovery",
         "dataset_version": response.get("datasetVersion"),
         "solver_version": response.get("solverVersion"),
-        "request_payload": {
-            "query": response.get("query"),
-            "resultKey": response.get("cacheKey"),
-        },
+        "request_payload": request_payload
+        or build_discovery_request_payload(query, result_key=result_key),
         "result": response,
     }
+
+
+def persist_build_discovery_job(query, response, db_session):
+    job_payload = build_discovery_job_result(query, response)
+    job_model = ModelBuildDiscoveryJob(
+        status=job_payload["status"],
+        progress=job_payload["progress"],
+        request_payload=job_payload["request_payload"],
+        result_payload=response,
+        dataset_version=job_payload["dataset_version"],
+        solver_version=job_payload["solver_version"],
+        elapsed_ms=job_payload["elapsed_ms"],
+    )
+    db_session.add(job_model)
+    db_session.flush()
+    return job_model
 
 
 class BuildDiscoveryJob(graphene.ObjectType):
@@ -1269,8 +1297,16 @@ class StartBuildDiscovery(graphene.Mutation):
             query.validate()
             require_build_discovery_index()
             response = build_discovery_cached_response(query)
+            with session_scope() as db_session:
+                job_model = persist_build_discovery_job(query, response, db_session)
+                job = build_discovery_job_result(
+                    query,
+                    response,
+                    job_id=str(job_model.uuid),
+                    request_payload=job_model.request_payload,
+                )
             return StartBuildDiscovery(
-                job=build_discovery_job_result(query, response),
+                job=job,
             )
         except ValueError as error:
             raise GraphQLError(str(error))

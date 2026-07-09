@@ -767,3 +767,20 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_job_model.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile app/database/model_build_discovery_job.py app/migrations/versions/395c1a10243a_add_build_discovery_job.py scripts/test_build_discovery_job_model.py`
   - `git diff --check`
+
+### 2026-07-09 Persist Start Build Discovery Jobs
+
+- Created stacked branch `codex/build-discovery-persist-start-job` on top of `codex/build-discovery-job-model-skeleton`.
+- Wired successful `startBuildDiscovery` executions to persist a `build_discovery_job` row:
+  - persisted job UUID is returned as the GraphQL job id
+  - request payload stores display query, full cache identity query, and result key
+  - result payload stores the full current solver response
+  - dataset version, solver version, elapsed time, status, and progress are copied to indexed job metadata
+- Kept validation/index errors on the existing GraphQL error path; failed job persistence is intentionally out of scope for this checkpoint.
+- Reviewer finding: no issues.
+- Residual risk:
+  - `startBuildDiscovery` requires the new migration to be applied before the mutation is exercised.
+- Verification passed:
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_job_persistence.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile app/schema.py scripts/test_build_discovery_job_persistence.py`
+  - `git diff --check`
