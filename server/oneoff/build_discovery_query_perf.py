@@ -21,6 +21,7 @@ from oneoff.build_discovery_prototype import (
 )
 
 REPORT_VERSION = "build-discovery-local-query-validation-v1"
+SUITE_REPORT_VERSION = "build-discovery-local-query-regression-suite-v1"
 MAX_RUNS = 20
 MAX_LIMIT = 20
 MAX_TOP_K = 100
@@ -42,6 +43,20 @@ LOCAL_VALIDATION_QUERY = BuildDiscoveryQuery(
     beam_width=75,
     per_signature_cap=20,
     relevant_set_limit=60,
+)
+LOCAL_VALIDATION_SUITE_ID = "iop_element_matrix_11_6_0_and_12_6_0_budget4_exo_allow"
+LOCAL_VALIDATION_SUITE_LABEL = "Iop element matrix 11/6/0 and 12/6/0 budget tier 4 exo allow"
+LOCAL_VALIDATION_SUITE_PROFILES = (
+    {
+        "id": LOCAL_VALIDATION_PROFILE_ID,
+        "label": LOCAL_VALIDATION_PROFILE_LABEL,
+        "query": LOCAL_VALIDATION_QUERY,
+    },
+    {
+        "id": "iop_element_matrix_12_6_0_budget4_exo_allow",
+        "label": "Iop element matrix 12/6/0 budget tier 4 exo allow",
+        "query": replace(LOCAL_VALIDATION_QUERY, ap_target=12),
+    },
 )
 
 
@@ -136,6 +151,8 @@ def validate_local_element_matrix(
     use_cache: bool = False,
     p95_threshold_ms: float = DEFAULT_P95_THRESHOLD_MS,
     elements: tuple[str, ...] = SUPPORTED_IOP_ELEMENTS,
+    profile_id: str = LOCAL_VALIDATION_PROFILE_ID,
+    profile_label: str = LOCAL_VALIDATION_PROFILE_LABEL,
 ) -> dict[str, Any]:
     matrix = measure_element_matrix(query, runs, use_cache, elements=elements)
     rows_by_element = {row["element"]: row for row in matrix["results"]}
@@ -176,8 +193,8 @@ def validate_local_element_matrix(
         "reportVersion": REPORT_VERSION,
         "status": status,
         "profile": {
-            "id": LOCAL_VALIDATION_PROFILE_ID,
-            "label": LOCAL_VALIDATION_PROFILE_LABEL,
+            "id": profile_id,
+            "label": profile_label,
             "source": "generated_json_index_local_smoke",
             "assumption": "All supported Iop elements should return at least one build for this bounded profile.",
         },
@@ -196,6 +213,48 @@ def validate_local_element_matrix(
         "runs": runs,
         "cacheEnabled": use_cache,
         "results": results,
+    }
+
+
+def validate_local_query_suite(
+    runs: int = 1,
+    use_cache: bool = False,
+    p95_threshold_ms: float = DEFAULT_P95_THRESHOLD_MS,
+    elements: tuple[str, ...] = SUPPORTED_IOP_ELEMENTS,
+) -> dict[str, Any]:
+    profile_reports = [
+        validate_local_element_matrix(
+            query=profile["query"],
+            runs=runs,
+            use_cache=use_cache,
+            p95_threshold_ms=p95_threshold_ms,
+            elements=elements,
+            profile_id=profile["id"],
+            profile_label=profile["label"],
+        )
+        for profile in LOCAL_VALIDATION_SUITE_PROFILES
+    ]
+    status = "fail" if any(profile["status"] != "pass" for profile in profile_reports) else "pass"
+    return {
+        "reportVersion": SUITE_REPORT_VERSION,
+        "status": status,
+        "suite": {
+            "id": LOCAL_VALIDATION_SUITE_ID,
+            "label": LOCAL_VALIDATION_SUITE_LABEL,
+            "source": "generated_json_index_local_smoke",
+            "assumption": "Supported Iop 11/6/0 and 12/6/0 element profiles should return at least one build under the fresh-query threshold.",
+        },
+        "index": {
+            "path": build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH,
+            "source": "generated_json_index",
+        },
+        "thresholds": {
+            "p95Ms": p95_threshold_ms,
+        },
+        "runs": runs,
+        "cacheEnabled": use_cache,
+        "elements": list(elements),
+        "profiles": profile_reports,
     }
 
 
@@ -233,16 +292,23 @@ def validate_cli_bounds(parser: argparse.ArgumentParser, args: argparse.Namespac
             parser.error(f"{flag} must be between {minimum} and {maximum}.")
 
 
-def validate_index_source(parser: argparse.ArgumentParser, allow_db: bool) -> None:
+def validate_index_source(
+    parser: argparse.ArgumentParser,
+    allow_db: bool,
+    show_allow_db_hint: bool = True,
+) -> None:
     index_path = build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH
     if index_path and os.path.exists(index_path):
         return
     if allow_db:
         return
-    parser.error(
+    message = (
         "No build discovery index exists at BUILD_DISCOVERY_INDEX_PATH "
-        f"({index_path or '<empty>'}). Generate a local JSON index or pass --allow-db."
+        f"({index_path or '<empty>'}). Generate a local JSON index"
     )
+    if show_allow_db_hint:
+        message += " or pass --allow-db"
+    parser.error(f"{message}.")
 
 
 def main() -> None:
@@ -262,6 +328,11 @@ def main() -> None:
         "--validate-local-profile",
         action="store_true",
         help="Validate the deterministic local Iop element matrix profile against a generated JSON index.",
+    )
+    parser.add_argument(
+        "--validate-local-suite",
+        action="store_true",
+        help="Validate the deterministic local Iop 11/6/0 and 12/6/0 element matrix suite against a generated JSON index.",
     )
     parser.add_argument(
         "--p95-threshold-ms",
@@ -286,11 +357,24 @@ def main() -> None:
     parser.add_argument("--per-signature-cap", type=int, default=40)
     parser.add_argument("--relevant-set-limit", type=int, default=60)
     args = parser.parse_args()
+    if args.validate_local_profile and args.validate_local_suite:
+        parser.error("--validate-local-profile and --validate-local-suite are mutually exclusive.")
     configure_index_path(args.index_path)
     validate_cli_bounds(parser, args)
-    validate_index_source(parser, args.allow_db and not args.validate_local_profile)
+    local_validation_mode = args.validate_local_profile or args.validate_local_suite
+    validate_index_source(
+        parser,
+        args.allow_db and not local_validation_mode,
+        show_allow_db_hint=not local_validation_mode,
+    )
 
-    if args.validate_local_profile:
+    if args.validate_local_suite:
+        report = validate_local_query_suite(
+            runs=args.runs,
+            use_cache=not args.no_cache,
+            p95_threshold_ms=args.p95_threshold_ms,
+        )
+    elif args.validate_local_profile:
         report = validate_local_element_matrix(
             runs=args.runs,
             use_cache=not args.no_cache,
@@ -315,7 +399,7 @@ def main() -> None:
         else:
             report = measure_query(query, args.runs, not args.no_cache)
     print(json.dumps(report, indent=2))
-    if args.validate_local_profile and report["status"] != "pass":
+    if local_validation_mode and report["status"] != "pass":
         sys.exit(1)
 
 

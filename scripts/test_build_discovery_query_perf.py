@@ -11,14 +11,19 @@ from oneoff.build_discovery_query_perf import (
     DEFAULT_P95_THRESHOLD_MS,
     LOCAL_VALIDATION_PROFILE_ID,
     LOCAL_VALIDATION_QUERY,
+    LOCAL_VALIDATION_SUITE_ID,
+    LOCAL_VALIDATION_SUITE_PROFILES,
     REPORT_VERSION,
+    SUITE_REPORT_VERSION,
     SUPPORTED_IOP_ELEMENTS,
     configure_index_path,
+    main,
     measure_element_matrix,
     measure_query,
     percentile,
     timing_summary,
     validate_local_element_matrix,
+    validate_local_query_suite,
     validate_cli_bounds,
     validate_index_source,
 )
@@ -267,6 +272,60 @@ class BuildDiscoveryQueryPerfTest(unittest.TestCase):
             ["missing_element_result"],
         )
 
+    def test_local_validation_suite_records_two_ap_profiles(self):
+        profile_reports = []
+
+        def fake_validate(query, runs, use_cache, p95_threshold_ms, elements, profile_id, profile_label):
+            profile_reports.append((query, runs, use_cache, p95_threshold_ms, elements, profile_id, profile_label))
+            return {
+                "reportVersion": REPORT_VERSION,
+                "status": "pass",
+                "profile": {"id": profile_id, "label": profile_label},
+                "queryParams": {"apTarget": query.ap_target, "elements": list(elements)},
+                "results": [],
+            }
+
+        with patch(
+            "oneoff.build_discovery_query_perf.validate_local_element_matrix",
+            side_effect=fake_validate,
+        ):
+            report = validate_local_query_suite(
+                runs=2,
+                use_cache=False,
+                p95_threshold_ms=DEFAULT_P95_THRESHOLD_MS,
+            )
+
+        self.assertEqual(report["reportVersion"], SUITE_REPORT_VERSION)
+        self.assertEqual(report["status"], "pass")
+        self.assertEqual(report["suite"]["id"], LOCAL_VALIDATION_SUITE_ID)
+        self.assertEqual(report["thresholds"]["p95Ms"], DEFAULT_P95_THRESHOLD_MS)
+        self.assertEqual(report["runs"], 2)
+        self.assertFalse(report["cacheEnabled"])
+        self.assertEqual(len(report["profiles"]), 2)
+        self.assertEqual(
+            [profile["query"].ap_target for profile in LOCAL_VALIDATION_SUITE_PROFILES],
+            [11, 12],
+        )
+        self.assertEqual([call[0].ap_target for call in profile_reports], [11, 12])
+        self.assertEqual([call[1] for call in profile_reports], [2, 2])
+        self.assertEqual([call[4] for call in profile_reports], [SUPPORTED_IOP_ELEMENTS, SUPPORTED_IOP_ELEMENTS])
+
+    def test_local_validation_suite_fails_if_any_profile_fails(self):
+        with patch(
+            "oneoff.build_discovery_query_perf.validate_local_element_matrix",
+            side_effect=[
+                {"status": "pass", "profile": {"id": "ok"}, "results": []},
+                {"status": "fail", "profile": {"id": "bad"}, "results": []},
+            ],
+        ):
+            report = validate_local_query_suite(runs=1, use_cache=False)
+
+        self.assertEqual(report["status"], "fail")
+        self.assertEqual(
+            [profile["status"] for profile in report["profiles"]],
+            ["pass", "fail"],
+        )
+
     def test_configure_index_path_updates_prototype_and_clears_caches(self):
         from oneoff import build_discovery_prototype
 
@@ -311,6 +370,29 @@ class BuildDiscoveryQueryPerfTest(unittest.TestCase):
 
         with patch("oneoff.build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH", ""):
             validate_index_source(parser, allow_db=True)
+
+    def test_validate_local_suite_refuses_db_fallback_even_when_allow_db_is_passed(self):
+        argv = ["build_discovery_query_perf.py", "--validate-local-suite", "--allow-db"]
+
+        with patch.object(sys, "argv", argv):
+            with patch("oneoff.build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH", ""):
+                with patch("oneoff.build_discovery_query_perf.validate_local_query_suite") as validate_suite:
+                    with self.assertRaises(SystemExit):
+                        main()
+
+        validate_suite.assert_not_called()
+
+    def test_validate_local_modes_are_mutually_exclusive(self):
+        argv = ["build_discovery_query_perf.py", "--validate-local-profile", "--validate-local-suite"]
+
+        with patch.object(sys, "argv", argv):
+            with patch("oneoff.build_discovery_query_perf.validate_local_query_suite") as validate_suite:
+                with patch("oneoff.build_discovery_query_perf.validate_local_element_matrix") as validate_profile:
+                    with self.assertRaises(SystemExit):
+                        main()
+
+        validate_suite.assert_not_called()
+        validate_profile.assert_not_called()
 
 
 if __name__ == "__main__":
