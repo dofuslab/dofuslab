@@ -301,3 +301,21 @@ Run the initial evaluator pass:
 - Verification passed:
   - `cd client && npx eslint --fix-dry-run common/buildDiscoveryContract.ts components/common/BuildDiscoveryPage.tsx`
   - `cd client && yarn type-check`
+
+### 2026-07-09 Preserve Exos In Builder Import
+
+- Created stacked branch `codex/build-discovery-preserve-exos` on top of `codex/build-discovery-open-in-builder`.
+- Changed `Open in builder` from a no-exo-safe import into an exo-preserving import:
+  - equips the discovered item IDs into a normal DofusLab build
+  - matches generated AP/MP/Range exos back to returned equipped items by item ID
+  - applies supported exos with the existing `setEquippedItemExo` mutation before navigating to the builder
+  - keeps the action disabled for unsupported exo stats
+- Reviewer findings fixed before commit:
+  - duplicate item IDs are preserved instead of deduped
+  - generated exos match by item ID and serialized slot name
+  - numbered discovery slots such as `ring_1` match generic returned slots such as `Ring` by slot family and slot order
+  - exos are applied sequentially
+  - if exo application fails after build creation, navigation still opens the created build rather than leaving it orphaned
+- Verification passed:
+  - `cd client && npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
+  - `cd client && yarn type-check`

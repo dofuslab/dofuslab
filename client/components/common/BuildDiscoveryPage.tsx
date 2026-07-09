@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+import { useApolloClient, useMutation } from '@apollo/client';
 import { useTheme } from '@emotion/react';
 import {
   Alert,
@@ -22,7 +23,20 @@ import {
   useBuildDiscoveryQuery,
 } from 'common/buildDiscovery';
 import { mq } from 'common/constants';
-import { useEquipItemsMutation } from 'common/utils';
+import { checkAuthentication, navigateToNewCustomSet } from 'common/utils';
+import { Stat } from '__generated__/globalTypes';
+import EquipItemsMutation from 'graphql/mutations/equipItems.graphql';
+import {
+  equipItems,
+  equipItemsVariables,
+} from 'graphql/mutations/__generated__/equipItems';
+import SetEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
+import {
+  setEquippedItemExo,
+  setEquippedItemExoVariables,
+} from 'graphql/mutations/__generated__/setEquippedItemExo';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
 const elementOptions: Array<{
   label: string;
@@ -75,6 +89,12 @@ const statOrder = [
   'prospecting',
 ];
 
+const exoStatMap: Record<string, Stat> = {
+  AP: Stat.AP,
+  MP: Stat.MP,
+  Range: Stat.RANGE,
+};
+
 function numberValue(value: number | null, fallback: number) {
   return typeof value === 'number' ? value : fallback;
 }
@@ -118,17 +138,149 @@ function buildResultKey(build: BuildDiscoveryBuild) {
 }
 
 function buildItemIds(build: BuildDiscoveryBuild) {
-  return Array.from(
-    new Set(
-      Object.values(build.items ?? {})
-        .map((item) => item.id)
-        .filter((id): id is string => typeof id === 'string' && id.length > 0),
-    ),
-  );
+  return Object.values(build.items ?? {})
+    .map((item) => item.id)
+    .filter((id): id is string => typeof id === 'string' && id.length > 0);
 }
 
 function buildHasExos(build: BuildDiscoveryBuild) {
   return Object.keys(build.exos ?? {}).length > 0;
+}
+
+function buildHasUnsupportedExos(build: BuildDiscoveryBuild) {
+  return Object.keys(build.exos ?? {}).some((stat) => !exoStatMap[stat]);
+}
+
+function normalizeSlotName(value: string | null | undefined) {
+  return value?.toLowerCase().replace(/[^a-z0-9]/g, '') ?? null;
+}
+
+function numberedSlotParts(value: string | null | undefined) {
+  const normalized = normalizeSlotName(value);
+  const match = normalized?.match(/^([a-z]+)([0-9]+)$/);
+
+  if (!match) {
+    return { family: normalized, index: null };
+  }
+
+  return {
+    family: match[1],
+    index: Number(match[2]) - 1,
+  };
+}
+
+function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
+  const router = useRouter();
+  const client = useApolloClient();
+  const { t } = useTranslation('common');
+  const itemIds = useMemo(() => buildItemIds(build), [build]);
+  const hasExos = buildHasExos(build);
+  const hasUnsupportedExos = buildHasUnsupportedExos(build);
+  const [error, setError] = useState<string | null>(null);
+  const [equipItemsMutate, { loading: isEquipping }] = useMutation<
+    equipItems,
+    equipItemsVariables
+  >(EquipItemsMutation, {
+    refetchQueries: () => ['buildList'],
+  });
+  const [setEquippedItemExoMutate, { loading: isSettingExos }] = useMutation<
+    setEquippedItemExo,
+    setEquippedItemExoVariables
+  >(SetEquippedItemExoMutation);
+
+  const openInBuilder = useCallback(async () => {
+    setError(null);
+    const ok = await checkAuthentication(client, t);
+
+    if (!ok || itemIds.length === 0 || hasUnsupportedExos) {
+      return;
+    }
+
+    let createdCustomSetId: string | null = null;
+
+    try {
+      const { data } = await equipItemsMutate({ variables: { itemIds } });
+      const customSet = data?.equipMultipleItems?.customSet;
+
+      if (!customSet) {
+        throw new Error('Could not create build.');
+      }
+
+      createdCustomSetId = customSet.id;
+
+      await Object.entries(build.exos ?? {}).reduce(
+        async (previous, [stat, exo]) => {
+          await previous;
+
+          const mappedStat = exoStatMap[stat];
+          const exoSlot = numberedSlotParts(exo.slot);
+          const matchingItems = customSet.equippedItems
+            .filter((entry) => entry.item.id === exo.itemId)
+            .sort((left, right) => left.slot.order - right.slot.order);
+          const exactSlotMatch =
+            exoSlot.index === null
+              ? matchingItems.find(
+                  (entry) =>
+                    normalizeSlotName(entry.slot.enName) === exoSlot.family,
+                )
+              : undefined;
+          const familySlotMatches = matchingItems.filter(
+            (entry) =>
+              numberedSlotParts(entry.slot.enName).family === exoSlot.family,
+          );
+          const numberedSlotMatch =
+            typeof exoSlot.index === 'number'
+              ? familySlotMatches[exoSlot.index]
+              : undefined;
+
+          const equippedItem =
+            exactSlotMatch ?? numberedSlotMatch ?? matchingItems[0];
+
+          if (!mappedStat || !equippedItem) {
+            throw new Error('Could not apply generated exos to the build.');
+          }
+
+          await setEquippedItemExoMutate({
+            variables: {
+              equippedItemId: equippedItem.id,
+              stat: mappedStat,
+              hasStat: true,
+            },
+          });
+        },
+        Promise.resolve(),
+      );
+
+      navigateToNewCustomSet(router, customSet.id);
+    } catch (caughtError) {
+      setError(
+        caughtError instanceof Error
+          ? caughtError.message
+          : 'Could not open build.',
+      );
+      if (createdCustomSetId !== null) {
+        navigateToNewCustomSet(router, createdCustomSetId);
+      }
+    }
+  }, [
+    build.exos,
+    client,
+    equipItemsMutate,
+    hasUnsupportedExos,
+    itemIds,
+    router,
+    setEquippedItemExoMutate,
+    t,
+  ]);
+
+  return {
+    error,
+    hasExos,
+    hasUnsupportedExos,
+    itemIds,
+    loading: isEquipping || isSettingExos,
+    openInBuilder,
+  };
 }
 
 function BuildDiscoveryResult({
@@ -140,10 +292,14 @@ function BuildDiscoveryResult({
 }) {
   const itemEntries = Object.entries(build.items ?? {});
   const totalEntries = sortedTotals(build.totals);
-  const itemIds = useMemo(() => buildItemIds(build), [build]);
-  const hasExos = buildHasExos(build);
-  const [openInBuilder, { loading: isOpening, error: openError }] =
-    useEquipItemsMutation(itemIds);
+  const {
+    error: openError,
+    hasExos,
+    hasUnsupportedExos,
+    itemIds,
+    loading: isOpening,
+    openInBuilder,
+  } = useOpenBuildDiscoveryBuild(build);
 
   return (
     <article
@@ -173,7 +329,7 @@ function BuildDiscoveryResult({
       </div>
       <div css={{ marginBottom: 12 }}>
         <Button
-          disabled={itemIds.length === 0 || hasExos}
+          disabled={itemIds.length === 0 || hasUnsupportedExos}
           loading={isOpening}
           onClick={openInBuilder}
         >
@@ -182,8 +338,12 @@ function BuildDiscoveryResult({
       </div>
       {hasExos && (
         <Alert
-          type="warning"
-          message="Open in builder is disabled for results with generated exos."
+          type={hasUnsupportedExos ? 'warning' : 'info'}
+          message={
+            hasUnsupportedExos
+              ? 'Open in builder is disabled for unsupported generated exos.'
+              : 'Generated AP/MP/Range exos will be applied after opening this build.'
+          }
           showIcon
           css={{ marginBottom: 12 }}
         />
@@ -191,7 +351,7 @@ function BuildDiscoveryResult({
       {openError && (
         <Alert
           type="error"
-          message={openError.message}
+          message={openError}
           showIcon
           css={{ marginBottom: 12 }}
         />
