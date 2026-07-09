@@ -23,7 +23,10 @@ from scripts.build_discovery_prod_candidate_generated_results import (  # noqa: 
     build_prod_candidate_generated_results,
 )
 from scripts.build_discovery_prod_benchmark_review_packet import (  # noqa: E402
+    DEFAULT_FUTURE_LIMIT,
+    DEFAULT_SUPPORTED_LIMIT,
     build_review_packet,
+    enforce_review_packet_bounds,
 )
 
 REPORT_VERSION = "build-discovery-prod-benchmark-pipeline-v1"
@@ -86,12 +89,15 @@ def run_pipeline(
     sample_limit: int = DEFAULT_SAMPLE_LIMIT,
     top_items: int = DEFAULT_TOP_ITEMS,
     candidate_limit: int = DEFAULT_CANDIDATE_LIMIT,
+    review_supported_limit: int = DEFAULT_SUPPORTED_LIMIT,
+    review_future_limit: int = DEFAULT_FUTURE_LIMIT,
     locale: str = "en",
     statement_timeout_ms: int = DEFAULT_STATEMENT_TIMEOUT_MS,
     discovery_fn: Callable[..., dict[str, Any]] = discover_prod_benchmarks,
     candidate_results_fn: Callable[..., dict[str, Any]] = build_prod_candidate_generated_results,
     review_packet_fn: Callable[..., dict[str, Any]] = build_review_packet,
 ) -> dict[str, Any]:
+    enforce_review_packet_bounds(review_supported_limit, review_future_limit)
     output_path = Path(output_dir)
     discovery_report = discovery_fn(
         prod_database_url(),
@@ -104,7 +110,11 @@ def run_pipeline(
         discovery_report,
         candidate_limit=candidate_limit,
     )
-    review_packet = review_packet_fn(discovery_report)
+    review_packet = review_packet_fn(
+        discovery_report,
+        supported_limit=review_supported_limit,
+        future_limit=review_future_limit,
+    )
     summary = build_summary(discovery_report, generated_results, review_packet, output_path)
 
     write_json(output_path / DISCOVERY_FILENAME, discovery_report)
@@ -120,6 +130,8 @@ def main() -> None:
     parser.add_argument("--sample-limit", type=int, default=DEFAULT_SAMPLE_LIMIT)
     parser.add_argument("--top-items", type=int, default=DEFAULT_TOP_ITEMS)
     parser.add_argument("--candidate-limit", type=int, default=DEFAULT_CANDIDATE_LIMIT)
+    parser.add_argument("--review-supported-limit", type=int, default=DEFAULT_SUPPORTED_LIMIT)
+    parser.add_argument("--review-future-limit", type=int, default=DEFAULT_FUTURE_LIMIT)
     parser.add_argument("--locale", default="en")
     parser.add_argument("--statement-timeout-ms", type=int, default=DEFAULT_STATEMENT_TIMEOUT_MS)
     parser.add_argument(
@@ -134,11 +146,17 @@ def main() -> None:
         return
 
     try:
+        enforce_review_packet_bounds(
+            args.review_supported_limit,
+            args.review_future_limit,
+        )
         summary = run_pipeline(
             output_dir=args.output_dir,
             sample_limit=args.sample_limit,
             top_items=args.top_items,
             candidate_limit=args.candidate_limit,
+            review_supported_limit=args.review_supported_limit,
+            review_future_limit=args.review_future_limit,
             locale=args.locale,
             statement_timeout_ms=args.statement_timeout_ms,
         )

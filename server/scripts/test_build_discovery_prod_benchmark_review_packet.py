@@ -1,7 +1,9 @@
 import unittest
 
 from build_discovery_prod_benchmark_review_packet import (
+    MAX_REVIEW_PROMPT_LIMIT,
     build_review_packet,
+    enforce_review_packet_bounds,
     prompt_for_profile,
 )
 
@@ -114,6 +116,14 @@ class BuildDiscoveryProdBenchmarkReviewPacketTest(unittest.TestCase):
             "supports Iop only",
             " ".join(packet["futureBenchmarkPrompts"][0]["unsupportedReasons"]),
         )
+
+    def test_review_packet_limits_are_bounded(self):
+        enforce_review_packet_bounds(0, MAX_REVIEW_PROMPT_LIMIT)
+
+        with self.assertRaises(ValueError):
+            enforce_review_packet_bounds(-1, 1)
+        with self.assertRaises(ValueError):
+            enforce_review_packet_bounds(1, MAX_REVIEW_PROMPT_LIMIT + 1)
 
 
 if __name__ == "__main__":

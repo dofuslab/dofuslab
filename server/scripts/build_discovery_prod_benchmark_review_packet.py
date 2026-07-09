@@ -10,6 +10,7 @@ from typing import Any
 REPORT_VERSION = "build-discovery-prod-benchmark-review-packet-v1"
 DEFAULT_SUPPORTED_LIMIT = 10
 DEFAULT_FUTURE_LIMIT = 10
+MAX_REVIEW_PROMPT_LIMIT = 50
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -52,11 +53,23 @@ def sorted_profiles(discovery_report: dict[str, Any]) -> list[dict[str, Any]]:
     )
 
 
+def enforce_review_packet_bounds(supported_limit: int, future_limit: int) -> None:
+    if supported_limit < 0 or supported_limit > MAX_REVIEW_PROMPT_LIMIT:
+        raise ValueError(
+            f"--supported-limit must be between 0 and {MAX_REVIEW_PROMPT_LIMIT}."
+        )
+    if future_limit < 0 or future_limit > MAX_REVIEW_PROMPT_LIMIT:
+        raise ValueError(
+            f"--future-limit must be between 0 and {MAX_REVIEW_PROMPT_LIMIT}."
+        )
+
+
 def build_review_packet(
     discovery_report: dict[str, Any],
     supported_limit: int = DEFAULT_SUPPORTED_LIMIT,
     future_limit: int = DEFAULT_FUTURE_LIMIT,
 ) -> dict[str, Any]:
+    enforce_review_packet_bounds(supported_limit, future_limit)
     profiles = [profile_summary(profile) for profile in sorted_profiles(discovery_report)]
     supported = [profile for profile in profiles if profile["supported"]]
     future = [profile for profile in profiles if not profile["supported"]]
@@ -88,11 +101,14 @@ def main() -> None:
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
 
-    packet = build_review_packet(
-        load_json(args.discovery_report),
-        supported_limit=args.supported_limit,
-        future_limit=args.future_limit,
-    )
+    try:
+        packet = build_review_packet(
+            load_json(args.discovery_report),
+            supported_limit=args.supported_limit,
+            future_limit=args.future_limit,
+        )
+    except ValueError as error:
+        parser.error(str(error))
     output = json.dumps(packet, indent=2, ensure_ascii=False)
     if args.output:
         args.output.write_text(output + "\n", encoding="utf-8")

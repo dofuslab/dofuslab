@@ -939,6 +939,22 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_local_readiness_pipeline.py --output-dir /tmp/build_discovery_prod_packet_summary_smoke --state-dir /tmp/build_discovery_local_readiness_state --prod-benchmark-review-packet /tmp/prod_review_packet_summary_smoke.json --skip-benchmark-comparison`
   - `git diff --check`
 
+### 2026-07-09 Prod Review Packet Limits
+
+- Created stacked branch `codex/build-discovery-prod-review-packet-limits` on top of `codex/build-discovery-prod-review-packet-summary`.
+- Added hard bounds to prod benchmark review packet prompt limits.
+- Added `--review-supported-limit` and `--review-future-limit` to `server/scripts/build_discovery_prod_benchmark_pipeline.py`.
+- The prod pipeline now passes those review limits through to `prod_benchmark_review_packet.json`.
+- `--check-env` remains connection-free and accepts the new limit flags without opening prod.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_prod_benchmark_review_packet.py`
+  - `python server\scripts\test_build_discovery_prod_benchmark_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_prod_benchmark_review_packet.py scripts/test_build_discovery_prod_benchmark_review_packet.py scripts/build_discovery_prod_benchmark_pipeline.py scripts/test_build_discovery_prod_benchmark_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_prod_benchmark_review_packet.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_prod_benchmark_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_prod_benchmark_pipeline.py --check-env --review-supported-limit 1 --review-future-limit 1`
+  - `git diff --check`
+
 ### 2026-07-09 Async Job Docker Smoke
 
 - Created stacked branch `codex/build-discovery-async-smoke` on top of `codex/build-discovery-assumptions-refresh`.

@@ -93,9 +93,17 @@ class BuildDiscoveryProdBenchmarkPipelineTest(unittest.TestCase):
                     sample_limit=25,
                     top_items=3,
                     candidate_limit=2,
+                    review_supported_limit=4,
+                    review_future_limit=5,
                     discovery_fn=lambda *args, **kwargs: discovery_report(),
                     candidate_results_fn=lambda report, candidate_limit: generated_results(),
-                    review_packet_fn=lambda report: review_packet(),
+                    review_packet_fn=lambda report, supported_limit, future_limit: {
+                        **review_packet(),
+                        "limits": {
+                            "supportedLimit": supported_limit,
+                            "futureLimit": future_limit,
+                        },
+                    },
                 )
 
             output_path = Path(temp_dir)
@@ -107,6 +115,24 @@ class BuildDiscoveryProdBenchmarkPipelineTest(unittest.TestCase):
                 json.loads((output_path / SUMMARY_FILENAME).read_text()),
                 summary,
             )
+            self.assertEqual(
+                json.loads((output_path / REVIEW_PACKET_FILENAME).read_text())["limits"],
+                {"supportedLimit": 4, "futureLimit": 5},
+            )
+
+    def test_run_pipeline_rejects_review_limits_before_prod_url_lookup(self):
+        with patch(
+            "build_discovery_prod_benchmark_pipeline.prod_database_url",
+            side_effect=AssertionError("prod URL should not be read"),
+        ):
+            with self.assertRaises(ValueError):
+                run_pipeline(
+                    output_dir="/tmp/prod-pipeline",
+                    review_supported_limit=999,
+                    discovery_fn=lambda *args, **kwargs: discovery_report(),
+                    candidate_results_fn=lambda report, candidate_limit: generated_results(),
+                    review_packet_fn=lambda report, supported_limit, future_limit: review_packet(),
+                )
 
 
 if __name__ == "__main__":
