@@ -32,7 +32,7 @@ This is the current working checklist for deciding whether Build Discovery is sh
 - [ ] Fresh synchronous p95 is still above 5s for most local suite rows; keep app-cache misses on async path or optimize slow rows before serving fresh sync.
 - [x] Warmed app-cache suite pass returns all supported rows as hits with nonempty results.
 - [x] Accepted benchmark artifact exists for current Strength Iop DofusLab refs, including generated comparisons.
-- [ ] Promote benchmark comparisons to compact regression fixtures with explicit drift thresholds.
+- [x] Benchmark comparisons have a compact regression fixture with explicit drift thresholds.
 - [ ] Non-Iop generated queries remain unsupported until class modeling expands.
 
 ## Generated Build Data Cleanliness

@@ -1008,3 +1008,18 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile app/schema.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -c "import app.schema; print('schema import ok')"`
   - `git diff --check`
+
+### 2026-07-09 Benchmark Regression Fixture
+
+- Created stacked branch `codex/build-discovery-benchmark-regression-fixture` on top of `codex/build-discovery-deprecate-direct-query`.
+- Added a compact generated-vs-human benchmark comparison fixture:
+  - `server/oneoff/fixtures/build_discovery_benchmark_comparison_fixture.json`
+  - records accepted statuses and scores for the current five Strength Iop benchmark refs
+  - uses a 1.0 score tolerance to make drift explicit without committing full live report payloads
+- Added `server/scripts/check_build_discovery_benchmark_comparison.py` to validate a full comparison report against the compact fixture.
+- Added focused checker tests in `server/scripts/test_build_discovery_benchmark_comparison_fixture.py`.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_benchmark_comparison_fixture.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/check_build_discovery_benchmark_comparison.py scripts/test_build_discovery_benchmark_comparison_fixture.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/check_build_discovery_benchmark_comparison.py /tmp/build_discovery_benchmark_comparison_report.json`
+  - `git diff --check`
