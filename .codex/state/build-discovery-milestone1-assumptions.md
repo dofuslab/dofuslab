@@ -152,6 +152,10 @@ python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
   harness samples more than low/default/high AP/MP/Range rows. Strength budget
   tier 1 passed both new profiles in Docker. Runtime was about 194s for two
   generation rows.
+- 2026-07-09: interior smoke profiles `9/4/3` and `10/5/6`, budget tier 1,
+  all four elements (`strength,intelligence,chance,agility`) passed the
+  bounded smoke test in Docker. Runtime was about 709s for eight generation
+  rows.
 - 2026-07-09: low profile `7/3/0`, budget tiers 2-4 and all four elements
   exceeded a 20-minute iterative timeout. Keep broad smoke runs sliced by
   budget tier until performance work makes broader local runs practical.
