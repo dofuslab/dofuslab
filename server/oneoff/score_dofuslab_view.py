@@ -29,6 +29,7 @@ from oneoff.build_discovery_prototype import (
     add_item_to_state,
     ap_strategy_matches,
     final_score_state,
+    hard_cap_target,
     load_items,
     load_sets,
     unmet_item_conditions,
@@ -150,6 +151,15 @@ def local_items_by_name_and_type(target: BuildTarget) -> dict[tuple[str, str], d
     return items_by_key
 
 
+def action_stats_within_hard_caps(state: BuildState) -> bool:
+    hard_caps = hard_cap_target()
+    return (
+        state.stats.get("AP", 0) <= hard_caps.ap
+        and state.stats.get("MP", 0) <= hard_caps.mp
+        and state.stats.get("Range", 0) <= hard_caps.range
+    )
+
+
 def build_state_from_entries(
     entries: list[dict[str, Any]],
     base_stats: dict[str, int],
@@ -176,7 +186,7 @@ def build_state_from_entries(
             sets,
             target,
             condition_target=target,
-            cap_target=target,
+            cap_target=hard_cap_target(),
         )
         if state is None:
             raise RuntimeError(f"Could not equip {entry['name']} in {entry['slot']}")
@@ -189,6 +199,10 @@ def build_state_from_entries(
             state.stats[stat] = state.stats.get(stat, 0) + value
             if stat in ACTION_STATS:
                 state.exos[stat] = item_id
+                if not action_stats_within_hard_caps(state):
+                    raise RuntimeError(
+                        f"{entry['name']} {stat} exo exceeds build discovery hard caps"
+                    )
 
     state.condition_failures = unmet_item_conditions(state)
     matched_strategy = next(

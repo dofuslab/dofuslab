@@ -12,6 +12,7 @@ from oneoff.build_discovery_benchmark_report import (
     build_report,
     generated_score_comparison,
 )
+from oneoff.score_dofuslab_view import build_state_from_entries
 
 
 def state(score: float, ap: int, mp: int, range_: int) -> BuildState:
@@ -168,6 +169,56 @@ class BuildDiscoveryBenchmarkReportTest(unittest.TestCase):
         self.assertEqual(report["benchmarks"][0]["status"], "error")
         self.assertEqual(report["benchmarks"][0]["error"]["type"], "RuntimeError")
         self.assertEqual(report["benchmarks"][0]["generatedComparison"]["status"], "not_compared")
+
+    def test_benchmark_scoring_allows_surplus_action_stats_up_to_hard_caps(self):
+        item = {
+            "dofusID": "surplus-ap-item",
+            "itemType": "Amulet",
+            "_stats": {"AP": 1, "Strength": 100},
+        }
+
+        result = build_state_from_entries(
+            entries=[
+                {
+                    "slot": "amulet",
+                    "name": "Surplus AP Amulet",
+                    "itemType": "Amulet",
+                    "exos": [],
+                },
+            ],
+            base_stats={"AP": 11, "MP": 6, "Range": 0},
+            include_all_mages=False,
+            target=BENCHMARKS[0].target,
+            items_by_key={("Surplus AP Amulet", "Amulet"): item},
+            sets={},
+        )
+
+        self.assertIsNotNone(result)
+        self.assertEqual(result.stats["AP"], 12)
+
+    def test_benchmark_scoring_rejects_action_stat_exos_over_hard_caps(self):
+        item = {
+            "dofusID": "over-cap-exo-item",
+            "itemType": "Amulet",
+            "_stats": {"Strength": 100},
+        }
+
+        with self.assertRaisesRegex(RuntimeError, "exceeds build discovery hard caps"):
+            build_state_from_entries(
+                entries=[
+                    {
+                        "slot": "amulet",
+                        "name": "Over Cap Exo Amulet",
+                        "itemType": "Amulet",
+                        "exos": [{"stat": "AP", "value": 1}],
+                    },
+                ],
+                base_stats={"AP": 12, "MP": 6, "Range": 0},
+                include_all_mages=False,
+                target=BENCHMARKS[0].target,
+                items_by_key={("Over Cap Exo Amulet", "Amulet"): item},
+                sets={},
+            )
 
 
 if __name__ == "__main__":

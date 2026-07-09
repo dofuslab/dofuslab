@@ -957,3 +957,22 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_cache_prewarm.py --output /tmp/build_discovery_cache_prewarm_report.json`
   - second prewarm run against warmed cache reported `status=pass`, `cacheHits=8`, `cacheMisses=0`, `emptyResults=0`, and max observed row elapsed `137.1ms`
   - `git diff --check`
+
+### 2026-07-09 Benchmark Artifact Scoring
+
+- Created stacked branch `codex/build-discovery-benchmark-artifact-scoring` on top of `codex/build-discovery-cache-prewarm`.
+- Fixed benchmark view scoring to use the solver hard caps for equip caps instead of the requested AP/MP/Range target:
+  - the requested target remains the condition target
+  - surplus AP/MP/Range up to hard caps is allowed during benchmark ingestion
+  - this matches the current product assumption that surplus action stats are useful but lightly weighted
+- Added a regression test that a benchmark item can carry AP above the requested AP target when still within hard caps.
+- Produced a compact accepted human-reference artifact in `.codex/state/build-discovery-benchmark-artifact.md`.
+- Current Docker benchmark report result:
+  - 5 benchmarks
+  - 0 errors
+  - generated-vs-benchmark comparison not yet included
+- Verification passed:
+  - `python scripts\test_build_discovery_benchmark_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile oneoff/score_dofuslab_view.py oneoff/build_discovery_benchmark_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m oneoff.build_discovery_benchmark_report --allow-errors --output /tmp/build_discovery_benchmark_report_current.json`
+  - `git diff --check`
