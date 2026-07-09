@@ -288,3 +288,16 @@ Run the initial evaluator pass:
 - Verification passed:
   - `cd client && npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
   - `cd client && yarn type-check`
+
+### 2026-07-09 Open In Builder Checkpoint
+
+- Created stacked branch `codex/build-discovery-open-in-builder` on top of `codex/build-discovery-manual-run-page`.
+- Added a result-level `Open in builder` action:
+  - extracts and deduplicates item IDs from the Build Discovery GenericScalar result
+  - reuses the existing `useEquipItemsMutation` flow
+  - creates/opens a normal DofusLab build via existing navigation after mutation success
+  - disables the action when a result does not contain usable item IDs
+  - disables the action when a result includes generated exos, because the existing equip-items mutation cannot yet preserve them
+- Verification passed:
+  - `cd client && npx eslint --fix-dry-run common/buildDiscoveryContract.ts components/common/BuildDiscoveryPage.tsx`
+  - `cd client && yarn type-check`

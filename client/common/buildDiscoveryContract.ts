@@ -47,6 +47,13 @@ export type BuildDiscoveryResponse = {
 export type BuildDiscoveryBuild = {
   score?: number;
   totals?: Record<string, number>;
+  exos?: Record<
+    string,
+    {
+      itemId?: string;
+      slot?: string | null;
+    }
+  >;
   items?: Record<
     string,
     {

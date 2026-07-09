@@ -22,6 +22,7 @@ import {
   useBuildDiscoveryQuery,
 } from 'common/buildDiscovery';
 import { mq } from 'common/constants';
+import { useEquipItemsMutation } from 'common/utils';
 
 const elementOptions: Array<{
   label: string;
@@ -116,6 +117,20 @@ function buildResultKey(build: BuildDiscoveryBuild) {
   return `${build.score ?? 'score'}:${itemIds}`;
 }
 
+function buildItemIds(build: BuildDiscoveryBuild) {
+  return Array.from(
+    new Set(
+      Object.values(build.items ?? {})
+        .map((item) => item.id)
+        .filter((id): id is string => typeof id === 'string' && id.length > 0),
+    ),
+  );
+}
+
+function buildHasExos(build: BuildDiscoveryBuild) {
+  return Object.keys(build.exos ?? {}).length > 0;
+}
+
 function BuildDiscoveryResult({
   build,
   index,
@@ -125,6 +140,10 @@ function BuildDiscoveryResult({
 }) {
   const itemEntries = Object.entries(build.items ?? {});
   const totalEntries = sortedTotals(build.totals);
+  const itemIds = useMemo(() => buildItemIds(build), [build]);
+  const hasExos = buildHasExos(build);
+  const [openInBuilder, { loading: isOpening, error: openError }] =
+    useEquipItemsMutation(itemIds);
 
   return (
     <article
@@ -152,6 +171,31 @@ function BuildDiscoveryResult({
           <Tag color="blue">Score {Math.round(build.score)}</Tag>
         )}
       </div>
+      <div css={{ marginBottom: 12 }}>
+        <Button
+          disabled={itemIds.length === 0 || hasExos}
+          loading={isOpening}
+          onClick={openInBuilder}
+        >
+          Open in builder
+        </Button>
+      </div>
+      {hasExos && (
+        <Alert
+          type="warning"
+          message="Open in builder is disabled for results with generated exos."
+          showIcon
+          css={{ marginBottom: 12 }}
+        />
+      )}
+      {openError && (
+        <Alert
+          type="error"
+          message={openError.message}
+          showIcon
+          css={{ marginBottom: 12 }}
+        />
+      )}
       <div
         css={{
           display: 'grid',
