@@ -1078,3 +1078,19 @@ Run the initial evaluator pass:
 - Verification passed:
   - `python scripts\test_build_discovery_prototype.py`
   - `git diff --check`
+
+### 2026-07-09 Prod Query Candidates
+
+- Created stacked branch `codex/build-discovery-prod-query-candidates` on top of `codex/build-discovery-action-stat-score-test`.
+- Extended the bounded read-only prod benchmark discovery report so each popular aggregate profile includes `generatedQueryCandidate`:
+  - supported v1 profiles include the exact generated query shape to run
+  - unsupported profiles include explicit reasons, such as non-Iop class or AP/MP/Range bounds
+- Fixed prod aggregate AP/MP interpretation for query candidates:
+  - discovery SQL reports equipped item/exo AP and MP bonuses
+  - profile buckets and generated-query targets now add base 7 AP and 3 MP before comparing to Build Discovery bounds
+- This does not connect to prod without `DOFUSLAB_READONLY_DATABASE_URL`; it makes the eventual prod aggregate output directly actionable for generated comparisons once access is available.
+- Verification passed:
+  - `python scripts\test_build_discovery_prod_benchmark_discovery.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile oneoff/build_discovery_prod_benchmark_discovery.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python oneoff/build_discovery_prod_benchmark_discovery.py --check-env`
+  - `git diff --check`

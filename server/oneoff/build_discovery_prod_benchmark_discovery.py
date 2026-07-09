@@ -28,6 +28,12 @@ MAX_TOP_ITEMS = 50
 MIN_PROFILE_SAMPLE_COUNT = 3
 DEFAULT_STATEMENT_TIMEOUT_MS = 5000
 TARGET_STATS = ("AP", "MP", "RANGE", "STRENGTH", "INTELLIGENCE", "CHANCE", "AGILITY")
+BASE_AP = 7
+BASE_MP = 3
+SUPPORTED_CLASS_NAME = "Iop"
+SUPPORTED_LEVEL = 200
+SUPPORTED_MODE = "pvm"
+SUPPORTED_ELEMENTS = ("strength", "intelligence", "chance", "agility")
 
 
 def preflight_status() -> dict[str, Any]:
@@ -208,10 +214,46 @@ def bucket_key(row: dict[str, Any]) -> tuple[str, str, int, int, int]:
     return (
         row.get("class_name") or "unknown",
         dominant_element(row),
-        int(row.get("ap") or 0),
-        int(row.get("mp") or 0),
+        BASE_AP + int(row.get("ap") or 0),
+        BASE_MP + int(row.get("mp") or 0),
         int(row.get("range") or 0),
     )
+
+
+def generated_query_candidate(
+    class_name: str,
+    element: str,
+    ap: int,
+    mp: int,
+    range_value: int,
+) -> dict[str, Any]:
+    unsupported_reasons = []
+    if class_name != SUPPORTED_CLASS_NAME:
+        unsupported_reasons.append("Build Discovery v1 currently supports Iop only.")
+    if element not in SUPPORTED_ELEMENTS:
+        unsupported_reasons.append(f"Unsupported element: {element}.")
+    if ap < 1 or ap > 12:
+        unsupported_reasons.append("AP target is outside Build Discovery hard bounds.")
+    if mp < 0 or mp > 6:
+        unsupported_reasons.append("MP target is outside Build Discovery hard bounds.")
+    if range_value < 0 or range_value > 6:
+        unsupported_reasons.append("Range target is outside Build Discovery hard bounds.")
+
+    candidate = {
+        "supported": not unsupported_reasons,
+        "unsupportedReasons": unsupported_reasons,
+    }
+    if candidate["supported"]:
+        candidate["query"] = {
+            "className": class_name,
+            "level": SUPPORTED_LEVEL,
+            "mode": SUPPORTED_MODE,
+            "elements": [element],
+            "apTarget": ap,
+            "mpTarget": mp,
+            "rangeTarget": range_value,
+        }
+    return candidate
 
 
 def summarize_rows(rows: list[dict[str, Any]], top_items: int) -> dict[str, Any]:
@@ -235,6 +277,13 @@ def summarize_rows(rows: list[dict[str, Any]], top_items: int) -> dict[str, Any]
                 "mp": mp,
                 "range": range_value,
                 "sampleCount": count,
+                "generatedQueryCandidate": generated_query_candidate(
+                    class_name,
+                    element,
+                    ap,
+                    mp,
+                    range_value,
+                ),
                 "commonItems": [
                     {"name": name, "sampleCount": item_count}
                     for name, item_count in item_counts_by_profile[key].most_common(top_items)
@@ -277,8 +326,10 @@ def discover_prod_benchmarks(
         "assumptions": [
             "custom_set has no explicit popularity metric in the local model, so sampleCount means frequency within the bounded recent level-200 sample.",
             "dominant element is inferred from base/scrolled points plus equipped item primary stats.",
-            "AP/MP/Range totals use equipped item max stats plus recorded exos; set bonuses are not included in this discovery report.",
+            "AP/MP buckets add base character AP/MP to equipped item max stats plus recorded exos; Range buckets use equipped item max stats plus recorded exos.",
+            "Set bonuses are not included in AP/MP/Range discovery buckets.",
             "Report output is aggregate-only and intentionally omits custom set IDs, names, and owner identifiers.",
+            "generatedQueryCandidate marks whether the aggregate profile can be compared with the current v1 generator.",
         ],
         "limits": {
             "sampleLimit": sample_limit,

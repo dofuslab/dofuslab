@@ -16,6 +16,7 @@ from oneoff.build_discovery_prod_benchmark_discovery import (
     discover_prod_benchmarks,
     dominant_element,
     enforce_bounds,
+    generated_query_candidate,
     prod_database_url,
     preflight_status,
     recent_build_rows,
@@ -72,8 +73,8 @@ class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
             "agility_points": 0,
             "item_agility": 100,
             "class_name": "Iop",
-            "ap": 11,
-            "mp": 6,
+            "ap": 4,
+            "mp": 3,
             "range": 0,
         }
 
@@ -86,8 +87,8 @@ class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
                 "custom_set_id": f"set-{index}",
                 "last_modified": datetime(2026, 7, 8),
                 "class_name": "Iop",
-                "ap": 11,
-                "mp": 6,
+                "ap": 4,
+                "mp": 3,
                 "range": 0,
                 "strength_points": 995,
                 "intelligence_points": 0,
@@ -109,6 +110,22 @@ class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
         self.assertEqual(summary["profiles"][0]["element"], "strength")
         self.assertEqual(summary["profiles"][0]["sampleCount"], 3)
         self.assertEqual(
+            summary["profiles"][0]["generatedQueryCandidate"],
+            {
+                "supported": True,
+                "unsupportedReasons": [],
+                "query": {
+                    "className": "Iop",
+                    "level": 200,
+                    "mode": "pvm",
+                    "elements": ["strength"],
+                    "apTarget": 11,
+                    "mpTarget": 6,
+                    "rangeTarget": 0,
+                },
+            },
+        )
+        self.assertEqual(
             summary["profiles"][0]["commonItems"],
             [
                 {"name": "Crimson Dofus", "sampleCount": 3},
@@ -122,8 +139,8 @@ class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
                 "custom_set_id": "set-1",
                 "last_modified": datetime(2026, 7, 7),
                 "class_name": "Iop",
-                "ap": 11,
-                "mp": 6,
+                "ap": 4,
+                "mp": 3,
                 "range": 0,
                 "strength_points": 398,
                 "intelligence_points": 0,
@@ -142,6 +159,14 @@ class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
         self.assertEqual(summary["classDistribution"], [{"className": "Iop", "sampleCount": 1}])
         self.assertEqual(summary["profiles"], [])
 
+    def test_generated_query_candidate_marks_unsupported_prod_profiles(self):
+        candidate = generated_query_candidate("Cra", "intelligence", 11, 6, 7)
+
+        self.assertFalse(candidate["supported"])
+        self.assertNotIn("query", candidate)
+        self.assertIn("supports Iop only", " ".join(candidate["unsupportedReasons"]))
+        self.assertIn("Range target", " ".join(candidate["unsupportedReasons"]))
+
     def test_discover_prod_benchmarks_uses_readonly_connection_and_limits(self):
         connection = Mock()
         engine = Mock()
@@ -155,8 +180,8 @@ class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
                 "custom_set_id": "set-1",
                 "last_modified": datetime(2026, 7, 8),
                 "class_name": "Iop",
-                "ap": 12,
-                "mp": 6,
+                "ap": 5,
+                "mp": 3,
                 "range": 0,
                 "strength_points": 0,
                 "intelligence_points": 995,
@@ -225,8 +250,8 @@ class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
                 "intelligence_points": 0,
                 "chance_points": 0,
                 "agility_points": 0,
-                "ap": 11,
-                "mp": 6,
+                "ap": 4,
+                "mp": 3,
                 "range": 0,
                 "item_strength": 0,
                 "item_intelligence": 0,
