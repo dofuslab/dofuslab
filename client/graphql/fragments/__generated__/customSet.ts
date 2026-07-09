@@ -11,6 +11,11 @@ export type customSet = {
   lastModified: any | null;
   hasEditPermission: boolean;
   buildGender: Types.BuildGender;
+  generationRequest: {
+    __typename: 'GenerationRequest';
+    id: any;
+    source: string;
+  } | null;
   equippedItems: Array<{
     __typename: 'EquippedItem';
     id: any;

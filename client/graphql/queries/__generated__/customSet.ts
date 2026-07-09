@@ -32,6 +32,11 @@ export type customSet = {
       scrolledChance: number;
       scrolledAgility: number;
     };
+    generationRequest: {
+      __typename: 'GenerationRequest';
+      id: any;
+      source: string;
+    } | null;
     equippedItems: Array<{
       __typename: 'EquippedItem';
       id: any;

@@ -536,7 +536,7 @@ class CustomSet(SQLAlchemyObjectType):
 
     @tracer.wrap(name="CustomSet.resolve_generation_request")
     def resolve_generation_request(self, info):
-        return self.generation_request
+        return g.dataloaders.get("generation_request_loader").load(self.uuid)
 
     class Meta:
         model = ModelCustomSet

@@ -6,6 +6,10 @@ fragment customSet on CustomSet {
   id
   name
   level
+  generationRequest {
+    id
+    source
+  }
   equippedItems {
     ...equippedItem
   }

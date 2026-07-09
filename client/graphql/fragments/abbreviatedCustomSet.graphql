@@ -9,6 +9,10 @@ fragment abbreviatedCustomSet on CustomSet {
   }
   name
   level
+  generationRequest {
+    id
+    source
+  }
   equippedItems {
     id
     slot {

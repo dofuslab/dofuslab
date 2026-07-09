@@ -470,3 +470,20 @@ Run the initial evaluator pass:
   - `python -m unittest scripts.test_generate_build_discovery_index.GenerateBuildDiscoveryIndexTest`
   - `python -m unittest scripts.test_generate_build_discovery_index.GenerateBuildDiscoveryIndexTest.test_serializable_item_includes_internal_id_for_generated_imports scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_indexed_item_record_preserves_internal_item_id_for_imports scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_serialize_build_exposes_internal_item_id_for_imports`
   - `git diff --check`
+
+### 2026-07-09 Generated Build Badge
+
+- Created stacked branch `codex/build-discovery-generated-build-badge` on top of `codex/build-discovery-atomic-generated-import-client`.
+- Made generated persisted builds visible in existing build lists:
+  - abbreviated and full `CustomSet` fragments now request `generationRequest { id source }`
+  - build cards render a compact `Generated` badge when provenance exists
+  - `GenerationRequest` is resolved through a dataloader to avoid list-card N+1 queries
+- Reviewer finding fixed before commit:
+  - added the `GENERATED` locale key to every common locale file so non-English locales do not render the raw key
+- Verification passed:
+  - `cd client; yarn generate`
+  - `cd client; yarn type-check`
+  - `cd client; npx eslint --fix-dry-run components/common/BuildCard.tsx`
+  - `docker exec dofuslab-server-1 python -m py_compile app/__init__.py app/loaders.py app/schema.py`
+  - parsed all `client/public/locales/*/common.json` files and asserted `GENERATED` is present
+  - `git diff --check`
