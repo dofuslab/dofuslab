@@ -1,12 +1,15 @@
 import sys
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from uuid import uuid4
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from app.schema import (  # noqa: E402
+    Query,
     build_discovery_job_result,
+    build_discovery_job_from_model,
     build_discovery_request_payload,
     persist_build_discovery_job,
 )
@@ -96,6 +99,44 @@ class BuildDiscoveryJobPersistenceTest(unittest.TestCase):
         self.assertTrue(job["sync_recommended"])
         self.assertFalse(job["async_recommended"])
         self.assertIs(job["result"], response)
+
+    def test_job_model_adapter_returns_persisted_job_payload(self):
+        generation_request = object()
+        job_id = uuid4()
+        job_model = SimpleNamespace(
+            uuid=job_id,
+            status="succeeded",
+            progress=100,
+            elapsed_ms=5100.25,
+            generation_request=generation_request,
+            dataset_version="dataset-v1",
+            solver_version="solver-v1",
+            request_payload={"query": {"className": "Iop"}},
+            result_payload={
+                "status": "complete",
+                "diagnostics": {"elapsedMs": 5100.25, "appCacheHit": False},
+            },
+        )
+
+        job = build_discovery_job_from_model(job_model)
+
+        self.assertEqual(job["id"], str(job_id))
+        self.assertEqual(job["status"], "succeeded")
+        self.assertEqual(job["progress"], 100)
+        self.assertEqual(job["elapsed_ms"], 5100.25)
+        self.assertFalse(job["sync_recommended"])
+        self.assertTrue(job["async_recommended"])
+        self.assertIs(job["generation_request"], generation_request)
+        self.assertEqual(job["dataset_version"], "dataset-v1")
+        self.assertEqual(job["solver_version"], "solver-v1")
+        self.assertEqual(job["request_payload"], {"query": {"className": "Iop"}})
+        self.assertEqual(job["result"]["status"], "complete")
+
+    def test_schema_exposes_build_discovery_job_lookup(self):
+        query_fields = Query._meta.fields
+
+        self.assertIn("build_discovery_job", query_fields)
+        self.assertIn("id", query_fields["build_discovery_job"].args)
 
 
 if __name__ == "__main__":

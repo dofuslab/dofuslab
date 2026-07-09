@@ -323,6 +323,32 @@ def persist_build_discovery_job(query, response, db_session):
     return job_model
 
 
+def build_discovery_job_from_model(job_model):
+    response = job_model.result_payload or {}
+    diagnostics = response.get("diagnostics") or {}
+    elapsed_ms = job_model.elapsed_ms
+    cache_hit = bool(diagnostics.get("appCacheHit") or diagnostics.get("cacheHit"))
+    sync_recommended = cache_hit or (
+        elapsed_ms is not None and elapsed_ms <= BUILD_DISCOVERY_SYNC_THRESHOLD_MS
+    )
+    return {
+        "id": str(job_model.uuid),
+        "status": job_model.status,
+        "progress": job_model.progress,
+        "fresh_threshold_ms": BUILD_DISCOVERY_SYNC_THRESHOLD_MS,
+        "elapsed_ms": elapsed_ms,
+        "cache_hit": cache_hit,
+        "sync_recommended": sync_recommended,
+        "async_recommended": not sync_recommended,
+        "generation_request": job_model.generation_request,
+        "generation_request_source": "build_discovery",
+        "dataset_version": job_model.dataset_version,
+        "solver_version": job_model.solver_version,
+        "request_payload": job_model.request_payload,
+        "result": response or None,
+    }
+
+
 class BuildDiscoveryJob(graphene.ObjectType):
     id = graphene.String(required=True)
     status = graphene.String(required=True)
@@ -1906,6 +1932,10 @@ class ItemNameObject(graphene.InputObjectType):
 
 class Query(graphene.ObjectType):
     current_user = graphene.Field(User)
+    build_discovery_job = graphene.Field(
+        BuildDiscoveryJob,
+        id=graphene.UUID(required=True),
+    )
     build_discovery = graphene.Field(
         GenericScalar,
         class_name=graphene.String(),
@@ -1934,6 +1964,13 @@ class Query(graphene.ObjectType):
         if current_user.is_authenticated:
             return current_user._get_current_object()
         return None
+
+    @tracer.wrap(name="Query.resolve_build_discovery_job")
+    def resolve_build_discovery_job(self, info, id):
+        job_model = db.session.query(ModelBuildDiscoveryJob).get(id)
+        if job_model is None:
+            return None
+        return build_discovery_job_from_model(job_model)
 
     @tracer.wrap(name="Query.resolve_build_discovery")
     def resolve_build_discovery(self, info, **kwargs):

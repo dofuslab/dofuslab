@@ -784,3 +784,16 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_job_persistence.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile app/schema.py scripts/test_build_discovery_job_persistence.py`
   - `git diff --check`
+
+### 2026-07-09 Build Discovery Job Lookup
+
+- Created stacked branch `codex/build-discovery-job-lookup` on top of `codex/build-discovery-persist-start-job`.
+- Added backend `buildDiscoveryJob(id)` GraphQL lookup for persisted Build Discovery jobs:
+  - nullable lookup for unknown ids
+  - explicit row-to-contract adapter instead of exposing the table as a SQLAlchemy GraphQL type
+  - supports future partial jobs with nullable result/timing fields while keeping status/progress required
+- Reviewer finding: no issues.
+- Verification passed:
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_job_persistence.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile app/schema.py scripts/test_build_discovery_job_persistence.py`
+  - `git diff --check`
