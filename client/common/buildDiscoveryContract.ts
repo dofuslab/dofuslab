@@ -7,6 +7,13 @@ export type BuildDiscoveryElement =
   | 'agility';
 
 export type BuildDiscoveryCacheStatus = 'hit' | 'miss';
+export type BuildDiscoveryActionStat = 'AP' | 'MP' | 'Range';
+export type BuildDiscoveryTargetSemantics = {
+  type?: 'minimum_with_hard_caps';
+  targets?: Partial<Record<BuildDiscoveryActionStat, 'minimum'>>;
+  caps?: Partial<Record<BuildDiscoveryActionStat, number>>;
+  surplusScoring?: 'light_reward_with_cap';
+};
 
 export type BuildDiscoveryQueryInput = Omit<
   buildDiscoveryVariables,
@@ -29,7 +36,7 @@ export type BuildDiscoveryResponse = {
   };
   status?: string;
   query?: Record<string, unknown>;
-  targetSemantics?: Record<string, unknown>;
+  targetSemantics?: BuildDiscoveryTargetSemantics;
   profile?: Record<string, unknown>;
   target?: Record<string, unknown>;
   scoring?: Record<string, unknown>;
@@ -206,6 +213,51 @@ function optionalBoolean(value: unknown): boolean | undefined {
   return typeof value === 'boolean' ? value : undefined;
 }
 
+function isBuildDiscoveryActionStat(
+  value: string,
+): value is BuildDiscoveryActionStat {
+  return Object.prototype.hasOwnProperty.call(
+    BUILD_DISCOVERY_EXO_STAT_MAP,
+    value,
+  );
+}
+
+function parseTargetSemantics(
+  value: unknown,
+): BuildDiscoveryTargetSemantics | undefined {
+  if (!isRecord(value)) {
+    return undefined;
+  }
+
+  const targets = isRecord(value.targets)
+    ? Object.fromEntries(
+        Object.entries(value.targets).filter(
+          (entry): entry is [BuildDiscoveryActionStat, 'minimum'] =>
+            isBuildDiscoveryActionStat(entry[0]) && entry[1] === 'minimum',
+        ),
+      )
+    : undefined;
+  const caps = isRecord(value.caps)
+    ? Object.fromEntries(
+        Object.entries(value.caps).filter(
+          (entry): entry is [BuildDiscoveryActionStat, number] =>
+            isBuildDiscoveryActionStat(entry[0]) &&
+            typeof entry[1] === 'number',
+        ),
+      )
+    : undefined;
+
+  return {
+    type: value.type === 'minimum_with_hard_caps' ? value.type : undefined,
+    targets,
+    caps,
+    surplusScoring:
+      value.surplusScoring === 'light_reward_with_cap'
+        ? value.surplusScoring
+        : undefined,
+  };
+}
+
 function parseDiagnostics(
   value: unknown,
 ): BuildDiscoveryResponse['diagnostics'] {
@@ -252,7 +304,7 @@ export function parseBuildDiscoveryResponse(
       : undefined,
     status: optionalString(value.status),
     query: optionalRecord(value.query),
-    targetSemantics: optionalRecord(value.targetSemantics),
+    targetSemantics: parseTargetSemantics(value.targetSemantics),
     profile: optionalRecord(value.profile),
     target: optionalRecord(value.target),
     scoring: optionalRecord(value.scoring),

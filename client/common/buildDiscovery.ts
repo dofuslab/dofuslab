@@ -25,11 +25,13 @@ export {
   parseBuildDiscoveryResponse,
 } from 'common/buildDiscoveryContract';
 export type {
+  BuildDiscoveryActionStat,
   BuildDiscoveryBuild,
   BuildDiscoveryCacheStatus,
   BuildDiscoveryElement,
   BuildDiscoveryQueryInput,
   BuildDiscoveryResponse,
+  BuildDiscoveryTargetSemantics,
 } from 'common/buildDiscoveryContract';
 
 export function useBuildDiscoveryQuery(

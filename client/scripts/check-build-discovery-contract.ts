@@ -77,6 +77,22 @@ const parsed = parseBuildDiscoveryResponse({
   solverVersion: 'solver-v1',
   cacheKey: 'cache-key',
   cache: { status: 'hit', storage: 'app_cache' },
+  targetSemantics: {
+    type: 'minimum_with_hard_caps',
+    targets: {
+      AP: 'minimum',
+      MP: 'minimum',
+      Range: 'minimum',
+      Wisdom: 'minimum',
+    },
+    caps: {
+      AP: 12,
+      MP: 6,
+      Range: 6,
+      Wisdom: 999,
+    },
+    surplusScoring: 'light_reward_with_cap',
+  },
   warnings: ['kept', 100],
   diagnostics: {
     elapsedMs: 0,
@@ -95,7 +111,20 @@ assert.deepStrictEqual(parsed, {
   cache: { status: 'hit', storage: 'app_cache' },
   status: undefined,
   query: undefined,
-  targetSemantics: undefined,
+  targetSemantics: {
+    type: 'minimum_with_hard_caps',
+    targets: {
+      AP: 'minimum',
+      MP: 'minimum',
+      Range: 'minimum',
+    },
+    caps: {
+      AP: 12,
+      MP: 6,
+      Range: 6,
+    },
+    surplusScoring: 'light_reward_with_cap',
+  },
   profile: undefined,
   target: undefined,
   scoring: undefined,

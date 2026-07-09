@@ -390,3 +390,18 @@ Run the initial evaluator pass:
   - `cd client; npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
   - `cd client; yarn type-check`
   - `git diff --check`
+
+### 2026-07-09 Target Semantics Client Contract
+
+- Created stacked branch `codex/build-discovery-target-semantics-client-contract` on top of `codex/build-discovery-target-copy`.
+- Narrowed the client parser for `targetSemantics` instead of exposing it as an arbitrary record:
+  - preserves `minimum_with_hard_caps`
+  - preserves AP/MP/Range `minimum` target semantics
+  - preserves AP/MP/Range caps
+  - preserves `light_reward_with_cap`
+  - filters unsupported stat keys from the defensive GenericScalar parser
+- Reviewer finding: no issues. Note: the AP/MP/Range key set currently reuses the exo stat map; split to a dedicated action-stat set if those universes diverge.
+- Verification passed:
+  - `cd client; yarn type-check`
+  - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts common/buildDiscoveryContract.ts scripts/check-build-discovery-contract.ts` (existing `no-console` warning in the contract check script)
+  - `git diff --check`
