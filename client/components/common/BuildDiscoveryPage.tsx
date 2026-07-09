@@ -16,10 +16,18 @@ import {
 import { ReloadOutlined } from '@ant-design/icons';
 
 import {
+  BUILD_DISCOVERY_EXO_STAT_MAP,
   BuildDiscoveryBuild,
   BuildDiscoveryElement,
   BuildDiscoveryQueryInput,
   DEFAULT_BUILD_DISCOVERY_INPUT,
+  buildDiscoveryExoLabels,
+  buildDiscoveryHasExos,
+  buildDiscoveryHasUnsupportedExos,
+  buildDiscoveryItemIds,
+  buildDiscoveryNumberedSlotParts,
+  formatBuildDiscoveryLabel,
+  normalizeBuildDiscoverySlotName,
   useBuildDiscoveryQuery,
 } from 'common/buildDiscovery';
 import { mq } from 'common/constants';
@@ -89,21 +97,27 @@ const statOrder = [
   'prospecting',
 ];
 
-const exoStatMap: Record<string, Stat> = {
+const exoStatMap: Record<keyof typeof BUILD_DISCOVERY_EXO_STAT_MAP, Stat> = {
   AP: Stat.AP,
   MP: Stat.MP,
   Range: Stat.RANGE,
 };
+
+function isSupportedExoStat(
+  stat: string,
+): stat is keyof typeof BUILD_DISCOVERY_EXO_STAT_MAP {
+  return Object.prototype.hasOwnProperty.call(
+    BUILD_DISCOVERY_EXO_STAT_MAP,
+    stat,
+  );
+}
 
 function numberValue(value: number | null, fallback: number) {
   return typeof value === 'number' ? value : fallback;
 }
 
 function formatStatName(stat: string) {
-  return stat
-    .split('_')
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ');
+  return formatBuildDiscoveryLabel(stat);
 }
 
 function sortedTotals(totals: Record<string, number> = {}) {
@@ -137,59 +151,13 @@ function buildResultKey(build: BuildDiscoveryBuild) {
   return `${build.score ?? 'score'}:${itemIds}`;
 }
 
-function buildItemIds(build: BuildDiscoveryBuild) {
-  return Object.values(build.items ?? {})
-    .map((item) => item.id)
-    .filter((id): id is string => typeof id === 'string' && id.length > 0);
-}
-
-function buildHasExos(build: BuildDiscoveryBuild) {
-  return Object.keys(build.exos ?? {}).length > 0;
-}
-
-function buildHasUnsupportedExos(build: BuildDiscoveryBuild) {
-  return Object.keys(build.exos ?? {}).some((stat) => !exoStatMap[stat]);
-}
-
-function buildExoLabels(build: BuildDiscoveryBuild) {
-  return Object.entries(build.exos ?? {}).map(([stat, exo]) => {
-    const slotLabel = exo.slot ? formatStatName(exo.slot) : 'Unknown slot';
-    const itemName = Object.values(build.items ?? {}).find(
-      (item) => item.id === exo.itemId,
-    )?.name;
-
-    return {
-      key: `${stat}:${exo.itemId ?? slotLabel}`,
-      label: `${stat} exo - ${itemName ?? exo.itemId ?? slotLabel}`,
-    };
-  });
-}
-
-function normalizeSlotName(value: string | null | undefined) {
-  return value?.toLowerCase().replace(/[^a-z0-9]/g, '') ?? null;
-}
-
-function numberedSlotParts(value: string | null | undefined) {
-  const normalized = normalizeSlotName(value);
-  const match = normalized?.match(/^([a-z]+)([0-9]+)$/);
-
-  if (!match) {
-    return { family: normalized, index: null };
-  }
-
-  return {
-    family: match[1],
-    index: Number(match[2]) - 1,
-  };
-}
-
 function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
   const router = useRouter();
   const client = useApolloClient();
   const { t } = useTranslation('common');
-  const itemIds = useMemo(() => buildItemIds(build), [build]);
-  const hasExos = buildHasExos(build);
-  const hasUnsupportedExos = buildHasUnsupportedExos(build);
+  const itemIds = useMemo(() => buildDiscoveryItemIds(build), [build]);
+  const hasExos = buildDiscoveryHasExos(build);
+  const hasUnsupportedExos = buildDiscoveryHasUnsupportedExos(build);
   const [error, setError] = useState<string | null>(null);
   const [equipItemsMutate, { loading: isEquipping }] = useMutation<
     equipItems,
@@ -226,8 +194,10 @@ function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
         async (previous, [stat, exo]) => {
           await previous;
 
-          const mappedStat = exoStatMap[stat];
-          const exoSlot = numberedSlotParts(exo.slot);
+          const mappedStat = isSupportedExoStat(stat)
+            ? exoStatMap[stat]
+            : undefined;
+          const exoSlot = buildDiscoveryNumberedSlotParts(exo.slot);
           const matchingItems = customSet.equippedItems
             .filter((entry) => entry.item.id === exo.itemId)
             .sort((left, right) => left.slot.order - right.slot.order);
@@ -235,12 +205,14 @@ function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
             exoSlot.index === null
               ? matchingItems.find(
                   (entry) =>
-                    normalizeSlotName(entry.slot.enName) === exoSlot.family,
+                    normalizeBuildDiscoverySlotName(entry.slot.enName) ===
+                    exoSlot.family,
                 )
               : undefined;
           const familySlotMatches = matchingItems.filter(
             (entry) =>
-              numberedSlotParts(entry.slot.enName).family === exoSlot.family,
+              buildDiscoveryNumberedSlotParts(entry.slot.enName).family ===
+              exoSlot.family,
           );
           const numberedSlotMatch =
             typeof exoSlot.index === 'number'
@@ -306,7 +278,7 @@ function BuildDiscoveryResult({
 }) {
   const itemEntries = Object.entries(build.items ?? {});
   const totalEntries = sortedTotals(build.totals);
-  const exoLabels = buildExoLabels(build);
+  const exoLabels = buildDiscoveryExoLabels(build);
   const {
     error: openError,
     hasExos,

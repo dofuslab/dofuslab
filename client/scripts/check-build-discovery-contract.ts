@@ -1,8 +1,15 @@
 import assert from 'assert';
 
 import {
+  BUILD_DISCOVERY_EXO_STAT_MAP,
+  buildDiscoveryExoLabels,
+  buildDiscoveryHasExos,
+  buildDiscoveryHasUnsupportedExos,
+  buildDiscoveryItemIds,
+  buildDiscoveryNumberedSlotParts,
   buildDiscoveryVariablesFromInput,
   DEFAULT_BUILD_DISCOVERY_INPUT,
+  normalizeBuildDiscoverySlotName,
   parseBuildDiscoveryResponse,
 } from '../common/buildDiscoveryContract';
 
@@ -102,5 +109,49 @@ assert.deepStrictEqual(parsed, {
   },
   builds: [{ score: 10, totals: { ap: 11 } }],
 });
+
+const buildWithExos = {
+  exos: {
+    AP: { itemId: 'ring-a', slot: 'ring_1' },
+    Range: { itemId: 'shield-a', slot: 'shield' },
+  },
+  items: {
+    ring_1: { id: 'ring-a', name: 'Long Ring Name', type: 'Ring' },
+    ring_2: { id: 'ring-a', name: 'Long Ring Name', type: 'Ring' },
+    shield: { id: 'shield-a', name: 'Shield Name', type: 'Shield' },
+  },
+};
+
+assert.deepStrictEqual(buildDiscoveryItemIds(buildWithExos), [
+  'ring-a',
+  'ring-a',
+  'shield-a',
+]);
+assert.strictEqual(buildDiscoveryHasExos(buildWithExos), true);
+assert.strictEqual(buildDiscoveryHasUnsupportedExos(buildWithExos), false);
+assert.deepStrictEqual(BUILD_DISCOVERY_EXO_STAT_MAP, {
+  AP: 'AP',
+  MP: 'MP',
+  Range: 'RANGE',
+});
+assert.deepStrictEqual(buildDiscoveryExoLabels(buildWithExos), [
+  { key: 'AP:ring-a', label: 'AP exo - Long Ring Name' },
+  { key: 'Range:shield-a', label: 'Range exo - Shield Name' },
+]);
+assert.deepStrictEqual(buildDiscoveryNumberedSlotParts('ring_2'), {
+  family: 'ring',
+  index: 1,
+});
+assert.deepStrictEqual(buildDiscoveryNumberedSlotParts('Ring'), {
+  family: 'ring',
+  index: null,
+});
+assert.strictEqual(normalizeBuildDiscoverySlotName('Dofus 6'), 'dofus6');
+assert.strictEqual(
+  buildDiscoveryHasUnsupportedExos({
+    exos: { Wisdom: { itemId: 'hat-a', slot: 'hat' } },
+  }),
+  true,
+);
 
 console.log('Build Discovery client contract check passed.');

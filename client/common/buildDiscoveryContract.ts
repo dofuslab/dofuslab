@@ -67,6 +67,74 @@ export type BuildDiscoveryBuild = {
   [key: string]: unknown;
 };
 
+export const BUILD_DISCOVERY_EXO_STAT_MAP = {
+  AP: 'AP',
+  MP: 'MP',
+  Range: 'RANGE',
+} as const;
+
+export function formatBuildDiscoveryLabel(value: string) {
+  return value
+    .split('_')
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
+export function buildDiscoveryItemIds(build: BuildDiscoveryBuild) {
+  return Object.values(build.items ?? {})
+    .map((item) => item.id)
+    .filter((id): id is string => typeof id === 'string' && id.length > 0);
+}
+
+export function buildDiscoveryHasExos(build: BuildDiscoveryBuild) {
+  return Object.keys(build.exos ?? {}).length > 0;
+}
+
+export function buildDiscoveryHasUnsupportedExos(build: BuildDiscoveryBuild) {
+  return Object.keys(build.exos ?? {}).some(
+    (stat) =>
+      !Object.prototype.hasOwnProperty.call(BUILD_DISCOVERY_EXO_STAT_MAP, stat),
+  );
+}
+
+export function buildDiscoveryExoLabels(build: BuildDiscoveryBuild) {
+  return Object.entries(build.exos ?? {}).map(([stat, exo]) => {
+    const slotLabel = exo.slot
+      ? formatBuildDiscoveryLabel(exo.slot)
+      : 'Unknown slot';
+    const itemName = Object.values(build.items ?? {}).find(
+      (item) => item.id === exo.itemId,
+    )?.name;
+
+    return {
+      key: `${stat}:${exo.itemId ?? slotLabel}`,
+      label: `${stat} exo - ${itemName ?? exo.itemId ?? slotLabel}`,
+    };
+  });
+}
+
+export function normalizeBuildDiscoverySlotName(
+  value: string | null | undefined,
+) {
+  return value?.toLowerCase().replace(/[^a-z0-9]/g, '') ?? null;
+}
+
+export function buildDiscoveryNumberedSlotParts(
+  value: string | null | undefined,
+) {
+  const normalized = normalizeBuildDiscoverySlotName(value);
+  const match = normalized?.match(/^([a-z]+)([0-9]+)$/);
+
+  if (!match) {
+    return { family: normalized, index: null };
+  }
+
+  return {
+    family: match[1],
+    index: Number(match[2]) - 1,
+  };
+}
+
 export const DEFAULT_BUILD_DISCOVERY_INPUT: Required<
   Pick<
     BuildDiscoveryQueryInput,

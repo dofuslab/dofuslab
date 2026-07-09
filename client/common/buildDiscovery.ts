@@ -12,8 +12,16 @@ import {
 } from 'common/buildDiscoveryContract';
 
 export {
+  BUILD_DISCOVERY_EXO_STAT_MAP,
+  buildDiscoveryExoLabels,
+  buildDiscoveryHasExos,
+  buildDiscoveryHasUnsupportedExos,
+  buildDiscoveryItemIds,
+  buildDiscoveryNumberedSlotParts,
   buildDiscoveryVariablesFromInput,
   DEFAULT_BUILD_DISCOVERY_INPUT,
+  formatBuildDiscoveryLabel,
+  normalizeBuildDiscoverySlotName,
   parseBuildDiscoveryResponse,
 } from 'common/buildDiscoveryContract';
 export type {

@@ -331,3 +331,16 @@ Run the initial evaluator pass:
 - Verification passed:
   - `cd client && npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
   - `cd client && yarn type-check`
+
+### 2026-07-09 Exo Import Contract Guards
+
+- Created stacked branch `codex/build-discovery-exo-import-guards` on top of `codex/build-discovery-exo-result-details`.
+- Extracted Build Discovery result helper logic into the pure client contract module:
+  - item ID extraction preserves duplicates
+  - generated exo labels are derived from `build.exos` and `build.items`
+  - unsupported exo detection shares the same supported AP/MP/Range map
+  - numbered slot parsing covers discovery slots such as `ring_2`
+- Extended `yarn check-build-discovery-contract` with executable assertions for those helpers.
+- Verification passed:
+  - `cd client && npx eslint --fix-dry-run common/buildDiscovery.ts common/buildDiscoveryContract.ts components/common/BuildDiscoveryPage.tsx`
+  - `cd client && yarn type-check`
