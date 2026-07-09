@@ -147,6 +147,7 @@ export type CustomSetExosInput = {
 
 export type CustomSetFilters = {
   defaultClassId?: InputMaybe<Scalars['UUID']['input']>;
+  generated?: InputMaybe<Scalars['Boolean']['input']>;
   search: Scalars['String']['input'];
   tagIds: Array<Scalars['UUID']['input']>;
 };

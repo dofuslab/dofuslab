@@ -514,3 +514,19 @@ Run the initial evaluator pass:
   - focused unittest coverage for Strength allocation, Chance allocation baseline, Chance optimizer allocation, and all-element response contract
   - `docker exec dofuslab-server-1 python -m py_compile oneoff/build_discovery_prototype.py`
   - `git diff --check`
+
+### 2026-07-09 Generated Build Filter
+
+- Created stacked branch `codex/build-discovery-generated-build-filter` on top of `codex/build-discovery-primary-stat-allocation`.
+- Added an optional `generated` field to `CustomSetFilters`:
+  - omitted keeps existing build-list behavior
+  - `generated: true` returns custom sets with `GenerationRequest` provenance
+  - `generated: false` returns custom sets without generation provenance
+- Regenerated client GraphQL global types.
+- Reviewer finding: no issues.
+- Verification passed:
+  - `cd client; yarn generate`
+  - `cd client; yarn type-check`
+  - `docker exec dofuslab-server-1 python -m py_compile app/schema.py`
+  - Docker schema assertion that `CustomSetFilters.generated` exists as `Boolean`
+  - `git diff --check`

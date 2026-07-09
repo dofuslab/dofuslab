@@ -560,6 +560,7 @@ class CustomSetFilters(graphene.InputObjectType):
     search = graphene.String(required=True)
     tag_ids = graphene.NonNull(graphene.List(graphene.NonNull(graphene.UUID)))
     default_class_id = graphene.UUID()
+    generated = graphene.Boolean()
 
 
 class UserSetting(SQLAlchemyObjectType):
@@ -592,6 +593,13 @@ class User(SQLAlchemyObjectType):
 
         if filters.default_class_id:
             query = query.filter_by(default_class_id=filters.default_class_id)
+
+        if filters.generated is True:
+            query = query.join(ModelGenerationRequest)
+        elif filters.generated is False:
+            query = query.outerjoin(ModelGenerationRequest).filter(
+                ModelGenerationRequest.uuid.is_(None)
+            )
 
         if filters.tag_ids:
             tag_sq = (
