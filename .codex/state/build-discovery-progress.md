@@ -319,3 +319,15 @@ Run the initial evaluator pass:
 - Verification passed:
   - `cd client && npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
   - `cd client && yarn type-check`
+
+### 2026-07-09 Exo Result Details
+
+- Created stacked branch `codex/build-discovery-exo-result-details` on top of `codex/build-discovery-preserve-exos`.
+- Added visible generated-exo tags to Build Discovery result cards:
+  - labels AP/MP/Range exos with the matched item name when available
+  - keeps exo details visible before using `Open in builder`
+- Reviewer finding fixed before commit:
+  - capped exo tag width with ellipsis to avoid narrow viewport overflow
+- Verification passed:
+  - `cd client && npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
+  - `cd client && yarn type-check`

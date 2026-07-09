@@ -151,6 +151,20 @@ function buildHasUnsupportedExos(build: BuildDiscoveryBuild) {
   return Object.keys(build.exos ?? {}).some((stat) => !exoStatMap[stat]);
 }
 
+function buildExoLabels(build: BuildDiscoveryBuild) {
+  return Object.entries(build.exos ?? {}).map(([stat, exo]) => {
+    const slotLabel = exo.slot ? formatStatName(exo.slot) : 'Unknown slot';
+    const itemName = Object.values(build.items ?? {}).find(
+      (item) => item.id === exo.itemId,
+    )?.name;
+
+    return {
+      key: `${stat}:${exo.itemId ?? slotLabel}`,
+      label: `${stat} exo - ${itemName ?? exo.itemId ?? slotLabel}`,
+    };
+  });
+}
+
 function normalizeSlotName(value: string | null | undefined) {
   return value?.toLowerCase().replace(/[^a-z0-9]/g, '') ?? null;
 }
@@ -292,6 +306,7 @@ function BuildDiscoveryResult({
 }) {
   const itemEntries = Object.entries(build.items ?? {});
   const totalEntries = sortedTotals(build.totals);
+  const exoLabels = buildExoLabels(build);
   const {
     error: openError,
     hasExos,
@@ -336,6 +351,25 @@ function BuildDiscoveryResult({
           Open in builder
         </Button>
       </div>
+      {exoLabels.length > 0 && (
+        <div
+          css={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 12 }}
+        >
+          {exoLabels.map((exo) => (
+            <Tag
+              key={exo.key}
+              color="purple"
+              css={{
+                maxWidth: '100%',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+              }}
+            >
+              {exo.label}
+            </Tag>
+          ))}
+        </div>
+      )}
       {hasExos && (
         <Alert
           type={hasUnsupportedExos ? 'warning' : 'info'}
