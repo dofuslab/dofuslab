@@ -78,6 +78,7 @@ from app.database.enums import (
 from app.token_utils import decode_token, encode_token, generate_verify_email_url
 import app.mutation_validation_utils as validation
 import graphene
+from graphene.types.generic import GenericScalar
 import pytz
 from graphql import GraphQLError
 from flask import session, render_template, g
@@ -89,6 +90,12 @@ from sqlalchemy.orm import aliased
 from sqlalchemy.sql.expression import true
 from datetime import datetime
 from ddtrace import tracer
+from oneoff.build_discovery_prototype import (
+    BuildDiscoveryQuery,
+    DEFAULT_MAX_SHARED_ITEMS,
+    build_discovery_response,
+    load_build_discovery_index,
+)
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
 # without this workaround, graphene complains that there are multiple
@@ -136,6 +143,79 @@ WeaponEffectEnum = graphene.Enum.from_enum(WeaponEffectType)
 SpellEffectEnum = graphene.Enum.from_enum(SpellEffectType)
 WeaponElementMageEnum = graphene.Enum.from_enum(WeaponElementMage)
 BuildGenderEnum = graphene.Enum.from_enum(BuildGender)
+
+BUILD_DISCOVERY_MAX_LIMIT = 5
+BUILD_DISCOVERY_MAX_TOP_K = 100
+BUILD_DISCOVERY_MAX_BEAM_WIDTH = 1000
+BUILD_DISCOVERY_MAX_PER_SIGNATURE_CAP = 200
+BUILD_DISCOVERY_MAX_RELEVANT_SET_LIMIT = 200
+
+
+def bounded_int_arg(name, value, minimum, maximum):
+    if value < minimum or value > maximum:
+        raise GraphQLError(f"{name} must be between {minimum} and {maximum}.")
+    return value
+
+
+def optional_arg(kwargs, name, default):
+    value = kwargs.get(name)
+    if value is None:
+        return default
+    return value
+
+
+def build_discovery_query_from_args(kwargs):
+    return BuildDiscoveryQuery(
+        class_name=optional_arg(kwargs, "class_name", "Iop"),
+        level=optional_arg(kwargs, "level", 200),
+        elements=tuple(optional_arg(kwargs, "elements", ("strength",))),
+        mode=optional_arg(kwargs, "mode", "pvm"),
+        ap_target=optional_arg(kwargs, "ap_target", 11),
+        mp_target=optional_arg(kwargs, "mp_target", 6),
+        range_target=optional_arg(kwargs, "range_target", 0),
+        damage_survivability_preset=optional_arg(kwargs, "damage_survivability_preset", 3),
+        budget_tier=optional_arg(kwargs, "budget_tier", 2),
+        exo_policy=optional_arg(kwargs, "exo_policy", "allow"),
+        weapon_policy=optional_arg(kwargs, "weapon_policy", "stat_stick_allowed"),
+        locked_item_ids=tuple(optional_arg(kwargs, "locked_item_ids", ())),
+        avoided_item_ids=tuple(optional_arg(kwargs, "avoided_item_ids", ())),
+        limit=bounded_int_arg(
+            "limit",
+            optional_arg(kwargs, "limit", 5),
+            1,
+            BUILD_DISCOVERY_MAX_LIMIT,
+        ),
+        top_k=bounded_int_arg(
+            "topK",
+            optional_arg(kwargs, "top_k", 25),
+            1,
+            BUILD_DISCOVERY_MAX_TOP_K,
+        ),
+        beam_width=bounded_int_arg(
+            "beamWidth",
+            optional_arg(kwargs, "beam_width", 250),
+            1,
+            BUILD_DISCOVERY_MAX_BEAM_WIDTH,
+        ),
+        per_signature_cap=bounded_int_arg(
+            "perSignatureCap",
+            optional_arg(kwargs, "per_signature_cap", 40),
+            1,
+            BUILD_DISCOVERY_MAX_PER_SIGNATURE_CAP,
+        ),
+        relevant_set_limit=bounded_int_arg(
+            "relevantSetLimit",
+            optional_arg(kwargs, "relevant_set_limit", 60),
+            1,
+            BUILD_DISCOVERY_MAX_RELEVANT_SET_LIMIT,
+        ),
+        max_shared_items=optional_arg(kwargs, "max_shared_items", DEFAULT_MAX_SHARED_ITEMS),
+    )
+
+
+def require_build_discovery_index():
+    if load_build_discovery_index() is None:
+        raise GraphQLError("Build Discovery index is not available.")
 
 
 class ItemStat(SQLAlchemyObjectType):
@@ -1443,12 +1523,44 @@ class ItemNameObject(graphene.InputObjectType):
 
 class Query(graphene.ObjectType):
     current_user = graphene.Field(User)
+    build_discovery = graphene.Field(
+        GenericScalar,
+        class_name=graphene.String(),
+        level=graphene.Int(),
+        elements=graphene.List(graphene.NonNull(graphene.String)),
+        mode=graphene.String(),
+        ap_target=graphene.Int(),
+        mp_target=graphene.Int(),
+        range_target=graphene.Int(),
+        damage_survivability_preset=graphene.Int(),
+        budget_tier=graphene.Int(),
+        exo_policy=graphene.String(),
+        weapon_policy=graphene.String(),
+        locked_item_ids=graphene.List(graphene.NonNull(graphene.String)),
+        avoided_item_ids=graphene.List(graphene.NonNull(graphene.String)),
+        limit=graphene.Int(),
+        top_k=graphene.Int(),
+        beam_width=graphene.Int(),
+        per_signature_cap=graphene.Int(),
+        relevant_set_limit=graphene.Int(),
+        max_shared_items=graphene.Int(),
+    )
 
     @tracer.wrap(name="Query.resolve_current_user")
     def resolve_current_user(self, info):
         if current_user.is_authenticated:
             return current_user._get_current_object()
         return None
+
+    @tracer.wrap(name="Query.resolve_build_discovery")
+    def resolve_build_discovery(self, info, **kwargs):
+        try:
+            query = build_discovery_query_from_args(kwargs)
+            query.validate()
+            require_build_discovery_index()
+            return build_discovery_response(query)
+        except ValueError as error:
+            raise GraphQLError(str(error))
 
     # Get list of data
     items = relay.ConnectionField(
