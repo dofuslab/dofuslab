@@ -123,3 +123,13 @@ runs 48 no-cache solver calls:
 BUILD_DISCOVERY_MILESTONE_ONE_SMOKE=1 \
 python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
 ```
+
+Slice the smoke while iterating:
+
+```sh
+BUILD_DISCOVERY_MILESTONE_ONE_SMOKE=1 \
+BUILD_DISCOVERY_MILESTONE_ONE_SMOKE_ELEMENTS=strength,chance \
+BUILD_DISCOVERY_MILESTONE_ONE_SMOKE_BUDGET_TIERS=1,4 \
+BUILD_DISCOVERY_MILESTONE_ONE_SMOKE_PROFILES=low \
+python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
+```
