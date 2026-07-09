@@ -62,6 +62,48 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
         self.assertEqual(query.avoided_item_ids, ("200",))
         self.assertEqual(query.limit, 3)
 
+    def test_build_discovery_query_omitted_args_match_client_contract_defaults(self):
+        cache_region = Mock()
+        cache_region.get.return_value = None
+
+        with patch.object(schema_module, "load_build_discovery_index", return_value={}):
+            with patch.object(schema_module, "dataset_version", return_value="dataset-v1"):
+                with patch.object(schema_module, "cache_region", cache_region):
+                    with patch.object(
+                        schema_module,
+                        "build_discovery_response",
+                        return_value={
+                            "query": {"className": "Iop"},
+                            "builds": [],
+                            "diagnostics": {"resultCount": 0},
+                        },
+                    ) as build_discovery:
+                        result = schema.execute(
+                            """
+                            query {
+                              buildDiscovery
+                            }
+                            """
+                        )
+
+        self.assertIsNone(result.errors)
+        query = build_discovery.call_args.args[0]
+        self.assertEqual(query.class_name, "Iop")
+        self.assertEqual(query.level, 200)
+        self.assertEqual(query.mode, "pvm")
+        self.assertEqual(query.elements, ("strength",))
+        self.assertEqual(query.ap_target, 11)
+        self.assertEqual(query.mp_target, 6)
+        self.assertEqual(query.range_target, 0)
+        self.assertEqual(query.damage_survivability_preset, 3)
+        self.assertEqual(query.budget_tier, 2)
+        self.assertEqual(query.exo_policy, "allow")
+        self.assertEqual(query.weapon_policy, "stat_stick_allowed")
+        self.assertEqual(query.locked_item_ids, ())
+        self.assertEqual(query.avoided_item_ids, ())
+        self.assertEqual(query.limit, 5)
+        self.assertFalse(build_discovery.call_args.kwargs["use_cache"])
+
     def test_build_discovery_query_uses_app_cache_for_identical_requests(self):
         cache_store = {}
         response = {

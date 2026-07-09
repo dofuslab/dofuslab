@@ -15,6 +15,7 @@
     "start": "next start",
     "type-check": "tsc",
     "generate": "graphql-codegen && npx prettier --write ./__generated__/globalTypes.ts && npx prettier --write ./graphql/**/__generated__/*.ts",
+    "check-build-discovery-contract": "ts-node --project tsconfig.server.json scripts/check-build-discovery-contract.ts",
     "codegen": "yarn generate",
     "codegen-local": "yarn cross-env GRAPHQL_URI_FOR_CODEGEN=http://dev.localhost:5000/api/graphql yarn generate",
     "publish-heroku": "cd ../ && git subtree push --prefix client heroku-client master || true",

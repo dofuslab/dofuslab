@@ -217,3 +217,22 @@ Run the initial evaluator pass:
   - `cd client && yarn type-check`
   - `git diff --check`
 - Residual risk: client defaults intentionally mirror backend defaults until the UI has explicit controls; future backend default changes should update this bridge or gain a contract test.
+
+### 2026-07-08 Contract Drift Guard Checkpoint
+
+- Created stacked branch `codex/build-discovery-contract-drift-guard` on top of `codex/build-discovery-client-contract`.
+- Added executable default/shape drift guards:
+  - split pure client contract code into `client/common/buildDiscoveryContract.ts`
+  - kept `client/common/buildDiscovery.ts` as the Apollo hook facade and public re-export surface
+  - added `client/scripts/check-build-discovery-contract.ts`
+  - added `yarn check-build-discovery-contract`
+  - added a backend GraphQL omitted-args test asserting the server defaults match the client defaults
+- Verification passed:
+  - `cd client && yarn check-build-discovery-contract`
+  - `cd client && yarn type-check`
+  - `git diff --check`
+  - server-container inline GraphQL omitted-args default check
+- Reviewer finding fixed before commit:
+  - restored `BuildDiscoveryQueryInput` re-export from `client/common/buildDiscovery.ts`
+- Residual risk:
+  - the new client drift check is a standalone script and is not yet wired into build or CI.
