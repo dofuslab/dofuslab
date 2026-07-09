@@ -154,6 +154,9 @@ python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
 - 2026-07-09: default profile `11/6/0`, budget tier 1, all four elements
   (`strength,intelligence,chance,agility`) passed the bounded smoke test in
   Docker. Runtime was about 434s for four generation rows.
+- 2026-07-09: default profile `11/6/0`, budget tier 2, all four elements
+  (`strength,intelligence,chance,agility`) passed the bounded smoke test in
+  Docker. Runtime was about 427s for four generation rows.
 - 2026-07-09: default profile `11/6/0`, all budget tiers and all four elements
   exceeded a 20-minute iterative timeout. Keep Milestone 1 smoke runs sliced by
   budget tier until performance work makes broader local runs practical.
