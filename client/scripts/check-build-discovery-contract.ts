@@ -12,10 +12,12 @@ import {
   buildDiscoveryResultKey,
   buildDiscoveryVariablesFromInput,
   DEFAULT_BUILD_DISCOVERY_INPUT,
+  generationRequestDisplaySummary,
   generatedBuildName,
   generatedImportBlockMessage,
   normalizeBuildDiscoverySlotName,
   parseBuildDiscoveryResponse,
+  readableGenerationSource,
 } from '../common/buildDiscoveryContract';
 
 const expectedDefaults = {
@@ -328,6 +330,42 @@ assert.deepStrictEqual(
       },
     },
   },
+);
+assert.strictEqual(
+  readableGenerationSource('build_discovery', 'Build Discovery'),
+  'Build Discovery',
+);
+assert.strictEqual(
+  readableGenerationSource('build_discovery_oneoff_import'),
+  'Build Discovery Oneoff Import',
+);
+assert.strictEqual(
+  generationRequestDisplaySummary(
+    {
+      source: 'build_discovery',
+      sourceLabel: 'Build Discovery',
+      datasetVersion: 'dataset-v1',
+      solverVersion: 'solver-v1',
+      displaySummary:
+        'Build Discovery - Iop chance 12/6/0 - dataset dataset-v1 - solver solver-v1',
+    },
+    'Build Discovery',
+  ),
+  'Build Discovery - Iop chance 12/6/0 - dataset dataset-v1 - solver solver-v1',
+);
+assert.strictEqual(
+  generationRequestDisplaySummary({
+    source: 'build_discovery_oneoff_import',
+    sourceLabel: 'Build Discovery Oneoff Import',
+  }),
+  'Build Discovery Oneoff Import',
+);
+assert.strictEqual(
+  generationRequestDisplaySummary({
+    source: 'build_discovery_oneoff_import',
+    datasetVersion: 'dataset-v1',
+  }),
+  'Build Discovery Oneoff Import - dataset dataset-v1',
 );
 
 console.log('Build Discovery client contract check passed.');

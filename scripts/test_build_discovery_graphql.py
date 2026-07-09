@@ -45,6 +45,56 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
         )
         db_session.query.assert_not_called()
 
+    def test_generation_request_display_summary_uses_safe_query_metadata(self):
+        generation_request = SimpleNamespace(
+            source="build_discovery",
+            dataset_version="dataset-v1",
+            solver_version="solver-v1",
+            request_payload={
+                "query": {
+                    "className": "Iop",
+                    "elements": ["chance", 123],
+                    "apTarget": 12,
+                    "mpTarget": 6,
+                    "rangeTarget": 0,
+                },
+                "ignored": {"raw": "payload"},
+            },
+        )
+
+        self.assertEqual(
+            schema_module.generation_request_query_metadata(generation_request),
+            generation_request.request_payload["query"],
+        )
+        self.assertEqual(
+            schema_module.GenerationRequest.resolve_source_label(generation_request, None),
+            "Build Discovery",
+        )
+        self.assertEqual(
+            schema_module.GenerationRequest.resolve_query_class_name(generation_request, None),
+            "Iop",
+        )
+        self.assertEqual(
+            schema_module.GenerationRequest.resolve_query_elements(generation_request, None),
+            ["chance"],
+        )
+        self.assertEqual(
+            schema_module.GenerationRequest.resolve_query_ap_target(generation_request, None),
+            12,
+        )
+        self.assertEqual(
+            schema_module.GenerationRequest.resolve_query_mp_target(generation_request, None),
+            6,
+        )
+        self.assertEqual(
+            schema_module.GenerationRequest.resolve_query_range_target(generation_request, None),
+            0,
+        )
+        self.assertEqual(
+            schema_module.GenerationRequest.resolve_display_summary(generation_request, None),
+            "Build Discovery - Iop chance 12/6/0 - dataset dataset-v1 - solver solver-v1",
+        )
+
     def test_build_discovery_query_exposes_product_contract(self):
         response = {
             "query": {"className": "Iop", "elements": ["intelligence"], "limit": 3},

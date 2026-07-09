@@ -678,3 +678,26 @@ Run the initial evaluator pass:
   - `python -m py_compile scripts\test_build_discovery_graphql.py`
   - `git diff --check`
 - Host unittest execution is blocked by missing host dependency `dogpile`; Docker's checked-out `scripts` package is stale, so representative GraphQL assertions were run inline against Docker's current `app.schema`.
+
+### 2026-07-09 Generated Provenance Display
+
+- Created stacked branch `codex/build-discovery-generated-provenance-display` on top of `codex/build-discovery-async-contract-skeleton`.
+- Added server-derived `GenerationRequest` display fields:
+  - source label
+  - safe query class/elements/AP/MP/Range fields
+  - compact display summary
+- Updated custom-set fragments and generated client types so build cards can show generated provenance without fetching raw `requestPayload`.
+- Updated the generated build badge tooltip to show compact provenance such as:
+  - `Build Discovery - Iop chance 12/6/0 - dataset dataset-v1 - solver solver-v1`
+- Added client contract coverage for generation source/display summary formatting.
+- Added backend regression coverage for the derived GenerationRequest metadata/display summary helpers.
+- Reviewer finding fixed before commit:
+  - removed raw `requestPayload` from list/detail fragments and moved parsing/minimization to server-derived fields
+- Verification passed:
+  - `cd client; yarn generate`
+  - `cd client; yarn type-check`
+  - `cd client; npx eslint --fix-dry-run common/buildDiscoveryContract.ts components/common/BuildCard.tsx scripts/check-build-discovery-contract.ts` (existing `no-console` warning in the contract check script)
+  - `docker exec dofuslab-server-1 python -m py_compile app/schema.py`
+  - Docker inline GenerationRequest display assertions
+  - `python -m py_compile scripts\test_build_discovery_graphql.py`
+  - `git diff --check`

@@ -590,8 +590,89 @@ class CustomSet(SQLAlchemyObjectType):
         interfaces = (GlobalNode,)
 
 
+def generation_request_query_metadata(generation_request):
+    payload = generation_request.request_payload
+    if not isinstance(payload, dict):
+        return {}
+    query = payload.get("query")
+    return query if isinstance(query, dict) else {}
+
+
+def readable_generation_source(source):
+    if source == "build_discovery":
+        return "Build Discovery"
+    return " ".join(
+        part.capitalize()
+        for part in source.split("_")
+        if part
+    )
+
+
 class GenerationRequest(SQLAlchemyObjectType):
     request_payload = GenericScalar()
+    source_label = graphene.String(required=True)
+    query_class_name = graphene.String()
+    query_elements = graphene.List(graphene.NonNull(graphene.String), required=True)
+    query_ap_target = graphene.Int()
+    query_mp_target = graphene.Int()
+    query_range_target = graphene.Int()
+    display_summary = graphene.String(required=True)
+
+    def resolve_source_label(self, info):
+        return readable_generation_source(self.source)
+
+    def resolve_query_class_name(self, info):
+        query = generation_request_query_metadata(self)
+        class_name = query.get("className")
+        return class_name if isinstance(class_name, str) else None
+
+    def resolve_query_elements(self, info):
+        query = generation_request_query_metadata(self)
+        elements = query.get("elements")
+        if not isinstance(elements, list):
+            return []
+        return [element for element in elements if isinstance(element, str)]
+
+    def resolve_query_ap_target(self, info):
+        query = generation_request_query_metadata(self)
+        value = query.get("apTarget")
+        return value if isinstance(value, int) else None
+
+    def resolve_query_mp_target(self, info):
+        query = generation_request_query_metadata(self)
+        value = query.get("mpTarget")
+        return value if isinstance(value, int) else None
+
+    def resolve_query_range_target(self, info):
+        query = generation_request_query_metadata(self)
+        value = query.get("rangeTarget")
+        return value if isinstance(value, int) else None
+
+    def resolve_display_summary(self, info):
+        context = [
+            GenerationRequest.resolve_query_class_name(self, info),
+            "/".join(GenerationRequest.resolve_query_elements(self, info)),
+        ]
+        action_stats = (
+            GenerationRequest.resolve_query_ap_target(self, info),
+            GenerationRequest.resolve_query_mp_target(self, info),
+            GenerationRequest.resolve_query_range_target(self, info),
+        )
+        if all(value is not None for value in action_stats):
+            context.append("{}/{}/{}".format(*action_stats))
+        versions = [
+            f"dataset {self.dataset_version}" if self.dataset_version else None,
+            f"solver {self.solver_version}" if self.solver_version else None,
+        ]
+        return " - ".join(
+            part
+            for part in [
+                GenerationRequest.resolve_source_label(self, info),
+                " ".join(part for part in context if part),
+                " - ".join(part for part in versions if part),
+            ]
+            if part
+        )
 
     class Meta:
         model = ModelGenerationRequest

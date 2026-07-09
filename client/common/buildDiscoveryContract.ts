@@ -246,6 +246,62 @@ export function buildDiscoveryRequestPayload(
   };
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+export type GenerationRequestSummary = {
+  source: string;
+  sourceLabel?: string | null;
+  datasetVersion?: string | null;
+  solverVersion?: string | null;
+  displaySummary?: string | null;
+};
+
+export function readableGenerationSource(
+  source: string,
+  buildDiscoveryLabel = 'Build Discovery',
+) {
+  if (source === 'build_discovery') {
+    return buildDiscoveryLabel;
+  }
+
+  return source
+    .split('_')
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
+export function generationRequestDisplaySummary(
+  generationRequest: GenerationRequestSummary | null | undefined,
+  buildDiscoveryLabel = 'Build Discovery',
+) {
+  if (!generationRequest) {
+    return undefined;
+  }
+  if (generationRequest.displaySummary) {
+    return generationRequest.displaySummary;
+  }
+
+  const versions = [
+    generationRequest.datasetVersion
+      ? `dataset ${generationRequest.datasetVersion}`
+      : null,
+    generationRequest.solverVersion
+      ? `solver ${generationRequest.solverVersion}`
+      : null,
+  ].filter(Boolean);
+
+  return [
+    generationRequest.sourceLabel ??
+      readableGenerationSource(generationRequest.source, buildDiscoveryLabel),
+    versions.join(' - '),
+  ]
+    .filter(Boolean)
+    .join(' - ');
+}
+
 export function generatedExoImportMessage(
   hasUnsupportedExos: boolean,
   hasUnmatchedExos: boolean,
@@ -342,10 +398,6 @@ export function buildDiscoveryVariablesFromInput(
     ...variables,
     elements,
   };
-}
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
 function optionalRecord(value: unknown): Record<string, unknown> | undefined {

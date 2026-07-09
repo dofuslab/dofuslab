@@ -12,6 +12,10 @@ fragment abbreviatedCustomSet on CustomSet {
   generationRequest {
     id
     source
+    sourceLabel
+    datasetVersion
+    solverVersion
+    displaySummary
   }
   equippedItems {
     id

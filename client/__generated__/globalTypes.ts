@@ -50,6 +50,24 @@ export type Buff = GlobalNode & {
   uuid: Scalars['String']['output'];
 };
 
+export type BuildDiscoveryJob = {
+  __typename: 'BuildDiscoveryJob';
+  asyncRecommended: Scalars['Boolean']['output'];
+  cacheHit: Scalars['Boolean']['output'];
+  datasetVersion: Maybe<Scalars['String']['output']>;
+  elapsedMs: Maybe<Scalars['Float']['output']>;
+  freshThresholdMs: Scalars['Float']['output'];
+  generationRequest: Maybe<GenerationRequest>;
+  generationRequestSource: Scalars['String']['output'];
+  id: Scalars['String']['output'];
+  progress: Scalars['Int']['output'];
+  requestPayload: Maybe<Scalars['GenericScalar']['output']>;
+  result: Maybe<Scalars['GenericScalar']['output']>;
+  solverVersion: Maybe<Scalars['String']['output']>;
+  status: Scalars['String']['output'];
+  syncRecommended: Scalars['Boolean']['output'];
+};
+
 /** An enumeration. */
 export enum BuildGender {
   FEMALE = 'FEMALE',
@@ -277,10 +295,17 @@ export type GenerationRequest = GlobalNode & {
   customSet: Maybe<CustomSet>;
   customSetId: Scalars['String']['output'];
   datasetVersion: Maybe<Scalars['String']['output']>;
+  displaySummary: Scalars['String']['output'];
   id: Scalars['UUID']['output'];
+  queryApTarget: Maybe<Scalars['Int']['output']>;
+  queryClassName: Maybe<Scalars['String']['output']>;
+  queryElements: Array<Scalars['String']['output']>;
+  queryMpTarget: Maybe<Scalars['Int']['output']>;
+  queryRangeTarget: Maybe<Scalars['Int']['output']>;
   requestPayload: Maybe<Scalars['GenericScalar']['output']>;
   solverVersion: Maybe<Scalars['String']['output']>;
   source: Scalars['String']['output'];
+  sourceLabel: Scalars['String']['output'];
   uuid: Scalars['String']['output'];
 };
 
@@ -424,6 +449,7 @@ export type Mutation = {
   resetPassword: Maybe<ResetPassword>;
   restartCustomSet: Maybe<RestartCustomSet>;
   setEquippedItemExo: Maybe<SetEquippedItemExo>;
+  startBuildDiscovery: Maybe<StartBuildDiscovery>;
   toggleFavoriteItem: Maybe<ToggleFavoriteItem>;
   updateCustomSetItem: Maybe<UpdateCustomSetItem>;
 };
@@ -555,6 +581,28 @@ export type MutationsetEquippedItemExoArgs = {
   equippedItemId: Scalars['UUID']['input'];
   hasStat: Scalars['Boolean']['input'];
   stat: Stat;
+};
+
+export type MutationstartBuildDiscoveryArgs = {
+  apTarget?: InputMaybe<Scalars['Int']['input']>;
+  avoidedItemIds?: InputMaybe<Array<Scalars['String']['input']>>;
+  beamWidth?: InputMaybe<Scalars['Int']['input']>;
+  budgetTier?: InputMaybe<Scalars['Int']['input']>;
+  className?: InputMaybe<Scalars['String']['input']>;
+  damageSurvivabilityPreset?: InputMaybe<Scalars['Int']['input']>;
+  elements?: InputMaybe<Array<Scalars['String']['input']>>;
+  exoPolicy?: InputMaybe<Scalars['String']['input']>;
+  level?: InputMaybe<Scalars['Int']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  lockedItemIds?: InputMaybe<Array<Scalars['String']['input']>>;
+  maxSharedItems?: InputMaybe<Scalars['Int']['input']>;
+  mode?: InputMaybe<Scalars['String']['input']>;
+  mpTarget?: InputMaybe<Scalars['Int']['input']>;
+  perSignatureCap?: InputMaybe<Scalars['Int']['input']>;
+  rangeTarget?: InputMaybe<Scalars['Int']['input']>;
+  relevantSetLimit?: InputMaybe<Scalars['Int']['input']>;
+  topK?: InputMaybe<Scalars['Int']['input']>;
+  weaponPolicy?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationtoggleFavoriteItemArgs = {
@@ -857,6 +905,11 @@ export type SpellVariantPair = GlobalNode & {
   id: Scalars['UUID']['output'];
   spells: Array<Spell>;
   uuid: Scalars['String']['output'];
+};
+
+export type StartBuildDiscovery = {
+  __typename: 'StartBuildDiscovery';
+  job: BuildDiscoveryJob;
 };
 
 /** An enumeration. */

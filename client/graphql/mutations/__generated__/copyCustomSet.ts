@@ -22,6 +22,10 @@ export type copyCustomSet = {
         __typename: 'GenerationRequest';
         id: any;
         source: string;
+        sourceLabel: string;
+        datasetVersion: string | null;
+        solverVersion: string | null;
+        displaySummary: string;
       } | null;
       equippedItems: Array<{
         __typename: 'EquippedItem';
