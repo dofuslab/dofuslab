@@ -1394,7 +1394,9 @@ def candidate_pool_for_slot(
     items: list[dict[str, Any]],
     relevant_sets: set[str],
     top_k: int,
+    required_item_ids: set[str] | None = None,
 ) -> list[dict[str, Any]]:
+    required_item_ids = required_item_ids or set()
     is_dofus_slot = all(slot_type in {"Dofus", "Trophy", "Prysmaradite"} for slot_type in slot_types)
     is_pet_slot = any(slot_type in {"Pet", "Petsmount", "Mount"} for slot_type in slot_types)
     compatible = [item for item in items if item.get("itemType") in slot_types]
@@ -1435,6 +1437,10 @@ def candidate_pool_for_slot(
 
     for item in search_compatible:
         if item["dofusID"] in UNCOMMON_ACTION_STAT_SOURCE_IDS:
+            selected[item["dofusID"]] = item
+
+    for item in search_compatible:
+        if item["dofusID"] in required_item_ids:
             selected[item["dofusID"]] = item
 
     action_source_limit = (
@@ -1518,6 +1524,65 @@ def add_item_to_state(
     if not target_forced_conditions_hold(next_state, condition_target.condition_stats):
         return None
     return next_state
+
+
+def compatible_slots_for_item(item: dict[str, Any]) -> list[str]:
+    item_type = item.get("itemType")
+    return [
+        slot_name
+        for slot_name, slot_types in SLOTS
+        if item_type in slot_types
+    ]
+
+
+def required_item_seed_states(
+    required_item_ids: set[str],
+    items: list[dict[str, Any]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+) -> list[BuildState]:
+    if not required_item_ids:
+        return []
+
+    items_by_id = {
+        item["dofusID"]: item
+        for item in items
+        if item["dofusID"] in required_item_ids
+    }
+    if set(items_by_id) != required_item_ids:
+        return []
+
+    ordered_items = sorted(
+        items_by_id.values(),
+        key=lambda item: len(compatible_slots_for_item(item)),
+    )
+    seeds: list[BuildState] = []
+
+    def place_required_item(index: int, state: BuildState) -> None:
+        if index >= len(ordered_items):
+            seeds.append(state)
+            return
+
+        item = ordered_items[index]
+        for slot_name in compatible_slots_for_item(item):
+            if slot_name in state.slots:
+                continue
+            next_state = add_item_to_state(
+                state,
+                slot_name,
+                item,
+                sets,
+                search_target,
+                condition_target=target,
+                cap_target=natural_cap_target,
+            )
+            if next_state is not None:
+                place_required_item(index + 1, next_state)
+
+    place_required_item(0, BuildState())
+    return dedupe_builds(sorted(seeds, key=lambda state: state.score, reverse=True))
 
 
 def eligible_for_exo(item: dict[str, Any], stat: str) -> bool:
@@ -3246,11 +3311,10 @@ def search_slot_order(
     exo_policy: str = "allow",
 ) -> list[BuildState]:
     strategy_seeds = [BuildState()]
-    seed_states = (
-        strategy_seeds
-        if exo_policy == "none"
-        else strategy_seeds + (initial_seeds or [])
-    )
+    if exo_policy == "none":
+        seed_states = initial_seeds or strategy_seeds
+    else:
+        seed_states = strategy_seeds + (initial_seeds or [])
     beam = dedupe_builds(sorted(seed_states, key=lambda state: state.score, reverse=True))
     for slot_name in slot_order:
         next_states: list[BuildState] = []
@@ -3308,6 +3372,7 @@ def find_builds(
     target: BuildTarget = DEFAULT_TARGET,
     max_shared_items: int | None = DEFAULT_MAX_SHARED_ITEMS,
     excluded_item_ids: set[str] | None = None,
+    required_item_ids: set[str] | None = None,
     budget_tier: int = 4,
     slot_orders: list[tuple[str, ...]] = DEFAULT_SLOT_ORDERS,
     ap_strategies: tuple[ApStrategy, ...] = DEFAULT_AP_STRATEGIES,
@@ -3316,6 +3381,7 @@ def find_builds(
     exo_policy: str = "allow",
     completion_target: int | None = None,
 ) -> list[BuildState]:
+    required_item_ids = required_item_ids or set()
     if budget_tier < 3 and exo_policy in {"allow", "opti"}:
         exo_policy = "none"
     if exo_policy == "none" and ap_strategies == DEFAULT_AP_STRATEGIES:
@@ -3338,9 +3404,23 @@ def find_builds(
     search_target = exo_search_target(target)
     natural_cap_target = exo_natural_cap_target(target)
     pools = {
-        slot_name: candidate_pool_for_slot(slot_types, items, relevant_sets, top_k)
+        slot_name: candidate_pool_for_slot(
+            slot_types,
+            items,
+            relevant_sets,
+            top_k,
+            required_item_ids=required_item_ids,
+        )
         for slot_name, slot_types in SLOTS
     }
+    required_seeds = required_item_seed_states(
+        required_item_ids,
+        items,
+        sets,
+        target,
+        search_target,
+        natural_cap_target,
+    )
     timings["candidatePoolsMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
@@ -3371,7 +3451,7 @@ def find_builds(
     )
     initial_seeds = dedupe_builds(
         sorted(
-            initial_seeds + ap_set_bonus_seeds,
+            initial_seeds + ap_set_bonus_seeds + required_seeds,
             key=lambda state: state.score,
             reverse=True,
         )
@@ -3419,6 +3499,11 @@ def find_builds(
 
     phase_started = time.perf_counter()
     if len(valid_final_states) < completion_target:
+        beam_initial_seeds = (
+            required_seeds
+            if exo_policy == "none" and required_seeds
+            else initial_seeds
+        )
         for slot_order in slot_orders:
             valid_final_states.extend(
                 search_slot_order(
@@ -3431,7 +3516,7 @@ def find_builds(
                     beam_width=beam_width,
                     per_signature_cap=per_signature_cap,
                     ap_strategies=ap_strategies,
-                    initial_seeds=initial_seeds,
+                    initial_seeds=beam_initial_seeds,
                     generic_damage_weight=generic_damage_weight,
                     weapon_damage_weight=weapon_damage_weight,
                     exo_policy=exo_policy,
@@ -3503,6 +3588,7 @@ def find_diverse_builds(
         target=target,
         max_shared_items=None,
         excluded_item_ids=excluded_item_ids,
+        required_item_ids=required_item_ids,
         budget_tier=budget_tier,
         generic_damage_weight=generic_damage_weight,
         weapon_damage_weight=weapon_damage_weight,
@@ -3540,7 +3626,7 @@ def find_diverse_builds(
 def query_warnings(query: BuildDiscoveryQuery) -> list[str]:
     warnings = []
     if query.locked_item_ids:
-        warnings.append("lockedItemIds are enforced as final result requirements and may reduce result count.")
+        warnings.append("lockedItemIds are used as search seeds and enforced as final result requirements.")
     if query.budget_tier < 3 and query.exo_policy in {"allow", "opti"}:
         warnings.append("Generated exos require budget tier 3 or higher; effective exo behavior is none.")
     if query.budget_tier != 4 and query.exo_policy == "opti":
