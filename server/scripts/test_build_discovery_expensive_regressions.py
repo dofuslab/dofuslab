@@ -15,6 +15,19 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
 
 
 RUN_EXPENSIVE_REGRESSIONS = os.getenv("BUILD_DISCOVERY_EXPENSIVE_REGRESSION") == "1"
+EXPENSIVE_REGRESSION_SCOPE = os.getenv("BUILD_DISCOVERY_EXPENSIVE_SCOPE", "all")
+
+# Examples:
+#   BUILD_DISCOVERY_EXPENSIVE_REGRESSION=1 python -m unittest scripts.test_build_discovery_expensive_regressions
+#   BUILD_DISCOVERY_EXPENSIVE_REGRESSION=1 BUILD_DISCOVERY_EXPENSIVE_SCOPE=str-opti python -m unittest scripts.test_build_discovery_expensive_regressions
+#   BUILD_DISCOVERY_EXPENSIVE_REGRESSION=1 BUILD_DISCOVERY_EXPENSIVE_SCOPE=budget python -m unittest scripts.test_build_discovery_expensive_regressions
+
+
+def expensive_scope(*scopes: str):
+    return unittest.skipUnless(
+        EXPENSIVE_REGRESSION_SCOPE == "all" or EXPENSIVE_REGRESSION_SCOPE in scopes,
+        "set BUILD_DISCOVERY_EXPENSIVE_SCOPE=all or one of: " + ", ".join(scopes),
+    )
 
 
 @unittest.skipUnless(
@@ -59,6 +72,7 @@ class BuildDiscoveryExpensiveRegressionTest(unittest.TestCase):
                 {item["id"] for item in best["items"].values()},
             )
 
+    @expensive_scope("budget")
     def test_tier_one_strength_iop_11_6_no_exo_still_generates(self):
         response = build_discovery_response(
             BuildDiscoveryQuery(
@@ -98,6 +112,7 @@ class BuildDiscoveryExpensiveRegressionTest(unittest.TestCase):
             },
         )
 
+    @expensive_scope("budget")
     def test_tier_one_chance_iop_11_6_no_exo_still_generates(self):
         response = build_discovery_response(
             BuildDiscoveryQuery(
@@ -137,6 +152,7 @@ class BuildDiscoveryExpensiveRegressionTest(unittest.TestCase):
             },
         )
 
+    @expensive_scope("budget")
     def test_tier_one_chance_iop_locked_shaker_still_generates(self):
         response = build_discovery_response(
             BuildDiscoveryQuery(
@@ -178,6 +194,7 @@ class BuildDiscoveryExpensiveRegressionTest(unittest.TestCase):
             required_item_id=SHAKER_TROPHY_ID,
         )
 
+    @expensive_scope("str-opti")
     def test_opti_strength_iop_11_6_still_finds_benchmark_build(self):
         response = build_discovery_response(
             BuildDiscoveryQuery(
@@ -221,6 +238,7 @@ class BuildDiscoveryExpensiveRegressionTest(unittest.TestCase):
             },
         )
 
+    @expensive_scope("str-opti")
     def test_opti_strength_iop_12_6_still_finds_benchmark_build(self):
         response = build_discovery_response(
             BuildDiscoveryQuery(
