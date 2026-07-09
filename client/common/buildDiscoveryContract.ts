@@ -65,6 +65,7 @@ export type BuildDiscoveryJob = {
   datasetVersion?: string;
   solverVersion?: string;
   requestPayload?: Record<string, unknown>;
+  errorPayload?: Record<string, unknown>;
   result: BuildDiscoveryResponse | null;
 };
 
@@ -561,6 +562,7 @@ export function parseBuildDiscoveryJob(
     datasetVersion: optionalString(value.datasetVersion),
     solverVersion: optionalString(value.solverVersion),
     requestPayload: optionalRecord(value.requestPayload),
+    errorPayload: optionalRecord(value.errorPayload),
     result: parseBuildDiscoveryResponse(value.result),
   };
 }

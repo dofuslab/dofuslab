@@ -53,6 +53,7 @@ mutation startBuildDiscovery(
       datasetVersion
       solverVersion
       requestPayload
+      errorPayload
       result
     }
   }

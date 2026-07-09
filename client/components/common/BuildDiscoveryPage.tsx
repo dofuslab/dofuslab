@@ -130,6 +130,18 @@ function sortedTotals(totals: Record<string, number> = {}) {
     });
 }
 
+function buildDiscoveryJobErrorMessage(job: BuildDiscoveryJob | undefined) {
+  if (job?.status !== 'failed') {
+    return null;
+  }
+
+  const message = job.errorPayload?.message;
+
+  return typeof message === 'string' && message.length > 0
+    ? message
+    : 'Build Discovery job failed.';
+}
+
 function useOpenBuildDiscoveryBuild(
   build: BuildDiscoveryBuild,
   context: BuildDiscoveryImportContext,
@@ -470,6 +482,7 @@ export default function BuildDiscoveryPage() {
   });
   const buildDiscovery = displayedJob?.job.result;
   const hasBuilds = Boolean(buildDiscovery?.builds.length);
+  const jobErrorMessage = buildDiscoveryJobErrorMessage(buildDiscoveryJob);
   const showInitialLoading =
     (loading || shouldPollJob || isJobLookupLoading) &&
     !buildDiscovery &&
@@ -759,6 +772,9 @@ export default function BuildDiscoveryPage() {
       {jobLookupError && (
         <Alert type="error" message={jobLookupError.message} showIcon />
       )}
+      {jobErrorMessage && (
+        <Alert type="error" message={jobErrorMessage} showIcon />
+      )}
       {buildDiscovery?.warnings.map((warning) => (
         <Alert key={warning} type="warning" message={warning} showIcon />
       ))}
@@ -779,9 +795,10 @@ export default function BuildDiscoveryPage() {
               index={index}
             />
           ))}
-        {!showInitialLoading && submittedInput !== null && !hasBuilds && (
-          <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
-        )}
+        {!showInitialLoading &&
+          submittedInput !== null &&
+          !hasBuilds &&
+          !jobErrorMessage && <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />}
       </section>
     </main>
   );

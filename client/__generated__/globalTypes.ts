@@ -56,6 +56,7 @@ export type BuildDiscoveryJob = {
   cacheHit: Scalars['Boolean']['output'];
   datasetVersion: Maybe<Scalars['String']['output']>;
   elapsedMs: Maybe<Scalars['Float']['output']>;
+  errorPayload: Maybe<Scalars['GenericScalar']['output']>;
   freshThresholdMs: Scalars['Float']['output'];
   generationRequest: Maybe<GenerationRequest>;
   generationRequestSource: Scalars['String']['output'];

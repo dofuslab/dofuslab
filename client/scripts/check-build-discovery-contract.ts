@@ -164,6 +164,7 @@ assert.deepStrictEqual(
       query: { className: 'Iop', elements: ['strength'] },
       resultKey: 'job-key',
     },
+    errorPayload: { message: 'kept' },
     result: {
       datasetVersion: 'dataset-v1',
       solverVersion: 'solver-v1',
@@ -193,6 +194,7 @@ assert.deepStrictEqual(
       query: { className: 'Iop', elements: ['strength'] },
       resultKey: 'job-key',
     },
+    errorPayload: { message: 'kept' },
     result: {
       datasetVersion: 'dataset-v1',
       solverVersion: 'solver-v1',

@@ -21,6 +21,7 @@ export type buildDiscoveryJob = {
     datasetVersion: string | null;
     solverVersion: string | null;
     requestPayload: any | null;
+    errorPayload: any | null;
     result: any | null;
   } | null;
 };

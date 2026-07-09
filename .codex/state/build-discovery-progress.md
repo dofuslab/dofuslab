@@ -825,3 +825,29 @@ Run the initial evaluator pass:
   - `cd client; yarn type-check`
   - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts components/common/BuildDiscoveryPage.tsx`
   - `git diff --check`
+
+### 2026-07-09 Build Discovery Worker Task Skeleton
+
+- Created stacked branch `codex/build-discovery-worker-task-skeleton` on top of `codex/build-discovery-page-job-polling`.
+- Changed `startBuildDiscovery` to cache-first async behavior:
+  - app-cache hits persist and return a succeeded job synchronously
+  - app-cache misses persist a queued job, enqueue an RQ worker task, and return the queued job immediately
+- Added `run_build_discovery_job` worker task:
+  - marks queued jobs running
+  - rebuilds the query from stored `requestPayload.queryIdentity`
+  - computes with prototype process cache bypassed
+  - writes the result to app cache and persists terminal job metadata
+  - persists worker failures to `errorPayload`
+- Exposed `errorPayload` through the backend/client job contract and page UI.
+- Reviewer findings fixed before commit:
+  - enqueue failures now mark the persisted row failed and return a reachable failed job contract
+  - worker failures render as page errors instead of empty results
+- Verification passed:
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_job_persistence.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile app/schema.py app/tasks.py scripts/test_build_discovery_job_persistence.py`
+  - `cd client; yarn generate`
+  - `cd client; yarn type-check`
+  - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts common/buildDiscoveryContract.ts components/common/BuildDiscoveryPage.tsx scripts/check-build-discovery-contract.ts`
+  - `git diff --check`
+- Residual note:
+  - the client contract script still has the pre-existing `no-console` lint warning.

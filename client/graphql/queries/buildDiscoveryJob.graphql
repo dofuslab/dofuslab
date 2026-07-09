@@ -12,6 +12,7 @@ query buildDiscoveryJob($id: UUID!) {
     datasetVersion
     solverVersion
     requestPayload
+    errorPayload
     result
   }
 }

@@ -54,7 +54,7 @@ from app.database.model_user_setting import ModelUserSetting
 from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_class import ModelClass
 from app.suggester.suggester import get_ordered_suggestions
-from app.tasks import send_email
+from app.tasks import run_build_discovery_job, send_email
 from app.utils import (
     get_or_create_custom_set,
     save_custom_sets,
@@ -99,6 +99,7 @@ from dogpile.cache.api import NO_VALUE
 from oneoff.build_discovery_prototype import (
     BuildDiscoveryQuery,
     DEFAULT_MAX_SHARED_ITEMS,
+    SOLVER_VERSION,
     build_discovery_response,
     dataset_version,
     load_build_discovery_index,
@@ -269,6 +270,13 @@ def build_discovery_cached_response(query):
     return response
 
 
+def build_discovery_cached_response_hit(query):
+    cached_response = cache_region.get(build_discovery_app_cache_key(query))
+    if cached_response is None or cached_response is NO_VALUE:
+        return None
+    return mark_build_discovery_app_cache_hit(cached_response)
+
+
 def build_discovery_request_payload(query, result_key=None):
     payload = {
         "query": query_summary(query),
@@ -323,6 +331,33 @@ def persist_build_discovery_job(query, response, db_session):
     return job_model
 
 
+def create_queued_build_discovery_job(query, db_session):
+    job_model = ModelBuildDiscoveryJob(
+        status="queued",
+        progress=0,
+        request_payload=build_discovery_request_payload(query),
+        dataset_version=dataset_version(),
+        solver_version=SOLVER_VERSION,
+    )
+    db_session.add(job_model)
+    db_session.flush()
+    return job_model
+
+
+def mark_build_discovery_enqueue_failed(job_id, error):
+    with session_scope() as db_session:
+        job_model = db_session.query(ModelBuildDiscoveryJob).get(job_id)
+        if job_model is None:
+            return None
+        job_model.status = "failed"
+        job_model.progress = 0
+        job_model.error_payload = {
+            "message": str(error),
+            "phase": "enqueue",
+        }
+        return build_discovery_job_from_model(job_model)
+
+
 def build_discovery_job_from_model(job_model):
     response = job_model.result_payload or {}
     diagnostics = response.get("diagnostics") or {}
@@ -345,6 +380,7 @@ def build_discovery_job_from_model(job_model):
         "dataset_version": job_model.dataset_version,
         "solver_version": job_model.solver_version,
         "request_payload": job_model.request_payload,
+        "error_payload": job_model.error_payload,
         "result": response or None,
     }
 
@@ -363,6 +399,7 @@ class BuildDiscoveryJob(graphene.ObjectType):
     dataset_version = graphene.String()
     solver_version = graphene.String()
     request_payload = GenericScalar()
+    error_payload = GenericScalar()
     result = GenericScalar()
 
 
@@ -1322,15 +1359,26 @@ class StartBuildDiscovery(graphene.Mutation):
             query = build_discovery_query_from_args(kwargs)
             query.validate()
             require_build_discovery_index()
-            response = build_discovery_cached_response(query)
+            response = build_discovery_cached_response_hit(query)
+            queued_job_id = None
             with session_scope() as db_session:
-                job_model = persist_build_discovery_job(query, response, db_session)
-                job = build_discovery_job_result(
-                    query,
-                    response,
-                    job_id=str(job_model.uuid),
-                    request_payload=job_model.request_payload,
-                )
+                if response is not None:
+                    job_model = persist_build_discovery_job(query, response, db_session)
+                    job = build_discovery_job_result(
+                        query,
+                        response,
+                        job_id=str(job_model.uuid),
+                        request_payload=job_model.request_payload,
+                    )
+                else:
+                    job_model = create_queued_build_discovery_job(query, db_session)
+                    queued_job_id = str(job_model.uuid)
+                    job = build_discovery_job_from_model(job_model)
+            if queued_job_id is not None:
+                try:
+                    q.enqueue(run_build_discovery_job, queued_job_id)
+                except Exception as error:
+                    job = mark_build_discovery_enqueue_failed(queued_job_id, error)
             return StartBuildDiscovery(
                 job=job,
             )
