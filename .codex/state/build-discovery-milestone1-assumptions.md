@@ -133,3 +133,9 @@ BUILD_DISCOVERY_MILESTONE_ONE_SMOKE_BUDGET_TIERS=1,4 \
 BUILD_DISCOVERY_MILESTONE_ONE_SMOKE_PROFILES=low \
 python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
 ```
+
+## Verified Smoke Slices
+
+- 2026-07-09: low profile `7/3/0`, budget tier 1, all four elements
+  (`strength,intelligence,chance,agility`) passed the bounded smoke test in
+  Docker. Runtime was about 437s for four generation rows.
