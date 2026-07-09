@@ -140,6 +140,8 @@ python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
   (`strength,intelligence,chance,agility`) passed the bounded smoke test in
   Docker. Runtime was about 437s for four generation rows.
 - 2026-07-09: high profile `12/6/6`, Strength, budget tier 1 and tier 2
-  returned zero builds. Tier 3 and tier 4 returned valid builds. Treat tier
-  1/2 max-target rows as a current Milestone 1 gap until proven infeasible by
-  stronger diagnostics or fixed by search/availability changes.
+  passed after preserving action-stat trophy and gear seed paths. Tier 1
+  Strength runtime was about 85s for one generation row.
+- 2026-07-09: high profile `12/6/6`, budget tier 1, all four elements
+  (`strength,intelligence,chance,agility`) passed the bounded smoke test in
+  Docker. Runtime was about 356s for four generation rows.
