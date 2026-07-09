@@ -976,3 +976,20 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile oneoff/score_dofuslab_view.py oneoff/build_discovery_benchmark_report.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m oneoff.build_discovery_benchmark_report --allow-errors --output /tmp/build_discovery_benchmark_report_current.json`
   - `git diff --check`
+
+### 2026-07-09 Generated Benchmark Comparisons
+
+- Created stacked branch `codex/build-discovery-generated-benchmark-comparison` on top of `codex/build-discovery-benchmark-artifact-scoring`.
+- Updated benchmark report tooling so generated outputs can be keyed per benchmark id instead of applying one generated result file to every benchmark.
+- Added `server/scripts/build_discovery_benchmark_generated_results.py` to produce benchmark-keyed generated outputs from the benchmark catalog.
+- Produced a current generated-vs-human comparison artifact:
+  - 5 benchmarks
+  - 0 scoring errors
+  - budget tier 4, `exoPolicy=opti`
+  - generated output beat 3 references and trailed 2 references under current scoring
+- Verification passed:
+  - `python scripts\test_build_discovery_benchmark_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile oneoff/build_discovery_benchmark_report.py scripts/build_discovery_benchmark_generated_results.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_benchmark_generated_results.py --output /tmp/build_discovery_benchmark_generated_results.json`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m oneoff.build_discovery_benchmark_report --generated-results /tmp/build_discovery_benchmark_generated_results.json --allow-errors --output /tmp/build_discovery_benchmark_comparison_report.json`
+  - `git diff --check`

@@ -10,6 +10,7 @@ from oneoff.build_discovery_benchmark_report import (
     ELEMENT_VALIDATION_PROFILES,
     REPORT_VERSION,
     build_report,
+    generated_builds_for_benchmark,
     generated_score_comparison,
 )
 from oneoff.score_dofuslab_view import build_state_from_entries
@@ -151,6 +152,34 @@ class BuildDiscoveryBenchmarkReportTest(unittest.TestCase):
         comparison = generated_score_comparison(1200, [])
 
         self.assertEqual(comparison["status"], "not_compared")
+
+    def test_generated_builds_for_benchmark_supports_benchmark_keyed_results(self):
+        benchmark = BENCHMARKS[0]
+        other_benchmark = BENCHMARKS[1]
+        generated_results = {
+            "benchmarks": {
+                benchmark.id: {
+                    "builds": [{"id": "matching-generated", "score": 1000}],
+                },
+                other_benchmark.id: {
+                    "builds": [{"id": "other-generated", "score": 2000}],
+                },
+            },
+        }
+
+        builds = list(generated_builds_for_benchmark(generated_results, benchmark))
+
+        self.assertEqual(builds, [{"id": "matching-generated", "score": 1000}])
+
+    def test_generated_builds_for_benchmark_keeps_single_result_file_compatibility(self):
+        benchmark = BENCHMARKS[0]
+        generated_results = {
+            "builds": [{"id": "legacy-generated", "score": 1000}],
+        }
+
+        builds = list(generated_builds_for_benchmark(generated_results, benchmark))
+
+        self.assertEqual(builds, [{"id": "legacy-generated", "score": 1000}])
 
     def test_build_report_can_capture_per_benchmark_errors(self):
         benchmark = BENCHMARKS[0]

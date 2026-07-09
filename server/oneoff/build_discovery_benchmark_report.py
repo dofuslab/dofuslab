@@ -190,6 +190,18 @@ def generated_score_comparison(
     }
 
 
+def generated_builds_for_benchmark(
+    generated_results: dict[str, Any] | None,
+    benchmark: BenchmarkDefinition,
+) -> Iterable[dict[str, Any]]:
+    if not generated_results:
+        return ()
+    benchmark_results = generated_results.get("benchmarks")
+    if isinstance(benchmark_results, dict):
+        return benchmark_results.get(benchmark.id, {}).get("builds", [])
+    return generated_results.get("builds", [])
+
+
 def score_benchmark(
     benchmark: BenchmarkDefinition,
     scorer: Callable[[str, BuildTarget], dict[str, Any]] = score_view,
@@ -235,11 +247,16 @@ def build_report(
     generated_results: dict[str, Any] | None = None,
     allow_errors: bool = False,
 ) -> dict[str, Any]:
-    generated_builds = (generated_results or {}).get("builds", [])
     benchmark_reports = []
     for benchmark in benchmarks:
         try:
-            benchmark_reports.append(score_benchmark(benchmark, scorer, generated_builds))
+            benchmark_reports.append(
+                score_benchmark(
+                    benchmark,
+                    scorer,
+                    generated_builds_for_benchmark(generated_results, benchmark),
+                )
+            )
         except Exception as error:
             if not allow_errors:
                 raise
@@ -269,7 +286,10 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--generated-results",
-        help="Optional JSON output from oneoff.build_discovery_prototype for generated-vs-benchmark comparison.",
+        help=(
+            "Optional JSON output from oneoff.build_discovery_prototype, or a benchmark-keyed "
+            "output from scripts/build_discovery_benchmark_generated_results.py."
+        ),
     )
     parser.add_argument("--output", help="Write report JSON to this path instead of stdout.")
     parser.add_argument(
