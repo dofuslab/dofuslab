@@ -37,6 +37,11 @@ def readiness_report(status: str = "incomplete") -> dict:
             "ledgerAssumptionCount": 181,
             "gameplayReviewQuestionCount": 15,
         },
+        "prodBenchmarkReviewPacket": {
+            "status": "pass",
+            "supportedPromptCount": 1,
+            "futurePromptCount": 1,
+        },
         "blockers": ["prod readonly database URL is not available"],
     }
 
@@ -119,6 +124,8 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
         self.assertEqual(summary["strictCacheStatus"], "fail")
         self.assertEqual(summary["benchmarkGeneratedStatus"], "pass")
         self.assertEqual(summary["benchmarkComparisonStatus"], "pass")
+        self.assertEqual(summary["prodBenchmarkReviewPacket"]["status"], "pass")
+        self.assertEqual(summary["prodBenchmarkReviewPacket"]["futurePromptCount"], 1)
         self.assertEqual(summary["readinessStatus"], "incomplete")
         self.assertEqual(summary["assumptionsReview"]["ledgerAssumptionCount"], 181)
         self.assertEqual(

@@ -137,6 +137,10 @@ def build_summary(
         if benchmark_comparison_report is None
         else "pass" if not benchmark_validation_failures else "fail",
         "benchmarkValidationFailures": benchmark_validation_failures,
+        "prodBenchmarkReviewPacket": readiness_report.get(
+            "prodBenchmarkReviewPacket",
+            {"status": "not_checked"},
+        ),
         "readinessStatus": readiness_report.get("status"),
         "assumptionsReview": readiness_report.get("assumptionsReview", {}),
         "blockers": readiness_report.get("blockers", []),

@@ -916,6 +916,29 @@ Run the initial evaluator pass:
   - `python server\scripts\build_discovery_local_readiness_report.py --prod-benchmark-review-packet $env:TEMP\build_discovery_prod_review_packet_smoke.json --output .codex/state/build-discovery-local-readiness-report.json`
   - `git diff --check`
 
+### 2026-07-09 Prod Review Packet Summary
+
+- Created stacked branch `codex/build-discovery-prod-review-packet-summary` on top of `codex/build-discovery-prod-review-packet-readiness-gate`.
+- Extended `server/scripts/build_discovery_local_readiness_pipeline.py` so compact pipeline summaries surface `prodBenchmarkReviewPacket` status and prompt counts from the nested readiness report.
+- Added focused test coverage for the summary field.
+- Docker pipeline smoke with a synthetic prod review packet and `--skip-benchmark-comparison`:
+  - strict cache status: `pass`
+  - strict cache hits: 8
+  - strict cache misses: 0
+  - strict cache-hit p95: `0.8ms`
+  - prod benchmark review packet status: `pass`
+  - supported prompt count: 1
+  - future prompt count: 1
+  - readiness status: `incomplete`
+- Verification passed:
+  - `python server\scripts\test_build_discovery_local_readiness_pipeline.py`
+  - `python server\scripts\test_build_discovery_local_readiness_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_local_readiness_pipeline.py scripts/test_build_discovery_local_readiness_pipeline.py scripts/build_discovery_local_readiness_report.py scripts/test_build_discovery_local_readiness_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_local_readiness_pipeline.py --output-dir /tmp/build_discovery_prod_packet_summary_smoke --state-dir /tmp/build_discovery_local_readiness_state --prod-benchmark-review-packet /tmp/prod_review_packet_summary_smoke.json --skip-benchmark-comparison`
+  - `git diff --check`
+
 ### 2026-07-09 Async Job Docker Smoke
 
 - Created stacked branch `codex/build-discovery-async-smoke` on top of `codex/build-discovery-assumptions-refresh`.
