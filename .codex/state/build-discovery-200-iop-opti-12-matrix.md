@@ -2,6 +2,16 @@
 
 Generated from current solver on 2026-07-09 with `budget_tier=4`, `exo_policy=opti`, `ap=12`, `mp=6`, `range=0`, `limit=1`.
 
+Important: this is a current generated-output snapshot, not an accepted "best known build" list. The Strength balanced generated row is already superseded by a stronger human benchmark:
+
+- https://dofuslab.io/view/7f8e3294-71c5-42a0-80c4-05197286f86b/
+- Normalized prototype score: `2364.64`
+- Generated Strength balanced score in this matrix: `2320.43`
+- Delta: `+44.21` for the human benchmark
+- Core: Corruption / Bleeding Heart / Sleeping Venerable path with AP and MP exos on Corruption rings.
+
+This means the solver currently misses a better Strength opti path; do not treat the Gein/Brouce generated row as accepted.
+
 Profiles:
 - damage: `generic_damage_weight=0.65`, `weapon_damage_weight=0.25`
 - balanced: `generic_damage_weight=0.45`, `weapon_damage_weight=0.20`
