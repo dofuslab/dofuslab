@@ -18,6 +18,7 @@ import { ReloadOutlined } from '@ant-design/icons';
 import {
   BuildDiscoveryBuild,
   BuildDiscoveryElement,
+  BuildDiscoveryJob,
   BuildDiscoveryImportContext,
   BuildDiscoveryQueryInput,
   DEFAULT_BUILD_DISCOVERY_INPUT,
@@ -32,7 +33,8 @@ import {
   generatedBuildName,
   generatedExoImportMessage,
   generatedImportBlockMessage,
-  useBuildDiscoveryQuery,
+  parseBuildDiscoveryJob,
+  useStartBuildDiscoveryMutation,
 } from 'common/buildDiscovery';
 import { mq } from 'common/constants';
 import { checkAuthentication, navigateToNewCustomSet } from 'common/utils';
@@ -433,6 +435,11 @@ export default function BuildDiscoveryPage() {
   });
   const [submittedInput, setSubmittedInput] =
     useState<BuildDiscoveryQueryInput | null>(null);
+  const [displayedJob, setDisplayedJob] = useState<{
+    input: BuildDiscoveryQueryInput;
+    job: BuildDiscoveryJob;
+  } | null>(null);
+  const latestRunId = useRef(0);
 
   const queryInput = useMemo<BuildDiscoveryQueryInput>(
     () => ({
@@ -444,13 +451,44 @@ export default function BuildDiscoveryPage() {
     [submittedInput],
   );
 
-  const { buildDiscovery, loading, error, refetch } = useBuildDiscoveryQuery(
-    queryInput,
-    { skip: submittedInput === null },
-  );
+  const { error, loading, startBuildDiscovery } =
+    useStartBuildDiscoveryMutation();
+  const buildDiscoveryJob = displayedJob?.job;
+  const buildDiscovery = displayedJob?.job.result;
   const hasBuilds = Boolean(buildDiscovery?.builds.length);
   const showInitialLoading = loading && !buildDiscovery;
   const lastTrackedResultsKey = useRef<string | null>(null);
+
+  const runBuildDiscovery = useCallback(
+    async (nextInput: BuildDiscoveryQueryInput) => {
+      const runId = latestRunId.current + 1;
+      latestRunId.current = runId;
+      setSubmittedInput(nextInput);
+      setDisplayedJob(null);
+      try {
+        const result = await startBuildDiscovery({
+          ...nextInput,
+          className: 'Iop',
+          level: 200,
+          mode: 'pvm',
+        });
+        if (latestRunId.current !== runId) {
+          return;
+        }
+        const job = parseBuildDiscoveryJob(
+          result.data?.startBuildDiscovery?.job,
+        );
+        if (job) {
+          setDisplayedJob({ input: nextInput, job });
+        }
+      } catch {
+        if (latestRunId.current === runId) {
+          setDisplayedJob(null);
+        }
+      }
+    },
+    [startBuildDiscovery],
+  );
 
   useEffect(() => {
     if (submittedInput === null || !buildDiscovery) {
@@ -521,6 +559,12 @@ export default function BuildDiscoveryPage() {
           {typeof buildDiscovery?.diagnostics.elapsedMs === 'number' && (
             <Tag>{Math.round(buildDiscovery.diagnostics.elapsedMs)} ms</Tag>
           )}
+          {buildDiscoveryJob?.asyncRecommended && (
+            <Tag color="orange">async recommended</Tag>
+          )}
+          {buildDiscoveryJob?.syncRecommended && (
+            <Tag color="green">sync ready</Tag>
+          )}
           <Button
             aria-label="Refresh build discovery"
             disabled={submittedInput === null}
@@ -532,7 +576,7 @@ export default function BuildDiscoveryPage() {
                 category: 'Build Discovery',
                 label: submittedInput?.element,
               });
-              refetch();
+              runBuildDiscovery(queryInput);
             }}
           />
         </Space>
@@ -668,7 +712,7 @@ export default function BuildDiscoveryPage() {
               label: input.element,
               value: input.budgetTier ?? undefined,
             });
-            setSubmittedInput(input);
+            runBuildDiscovery(input);
           }}
           css={{
             gridColumn: 'span 2',
@@ -696,7 +740,7 @@ export default function BuildDiscoveryPage() {
                 datasetVersion: buildDiscovery.datasetVersion,
                 solverVersion: buildDiscovery.solverVersion,
                 query: buildDiscovery.query,
-                input: submittedInput ?? queryInput,
+                input: displayedJob?.input ?? queryInput,
               }}
               index={index}
             />

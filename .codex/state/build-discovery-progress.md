@@ -736,3 +736,20 @@ Run the initial evaluator pass:
   - `cd client; yarn type-check`
   - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts common/buildDiscoveryContract.ts scripts/check-build-discovery-contract.ts` (existing `no-console` warning in the contract check script)
   - `git diff --check`
+
+### 2026-07-09 Build Discovery Page Job Contract
+
+- Created stacked branch `codex/build-discovery-page-start-job` on top of `codex/build-discovery-start-job-client-bridge`.
+- Switched the Build Discovery page run/refresh path to `startBuildDiscovery`.
+- Continued rendering the returned job result with the existing result-card UI and generated import flow.
+- Added small job metadata tags:
+  - `async recommended`
+  - `sync ready`
+- Made the mutation helper callback stable for page use.
+- Reviewer finding fixed before commit:
+  - page now clears previous results at the start of a new run and stores displayed results paired with the input that produced them, preventing stale builds from importing with a newer request payload
+  - out-of-order mutation completions are ignored
+- Verification passed:
+  - `cd client; yarn type-check`
+  - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts components/common/BuildDiscoveryPage.tsx`
+  - `git diff --check`

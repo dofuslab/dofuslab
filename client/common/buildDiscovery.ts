@@ -4,6 +4,7 @@ import {
   useMutation,
   useQuery,
 } from '@apollo/client';
+import { useCallback } from 'react';
 
 import buildDiscoveryQuery from 'graphql/queries/buildDiscovery.graphql';
 import startBuildDiscoveryMutation from 'graphql/mutations/startBuildDiscovery.graphql';
@@ -85,15 +86,19 @@ export function useStartBuildDiscoveryMutation(
     startBuildDiscovery,
     startBuildDiscoveryVariables
   >(startBuildDiscoveryMutation, options);
-
-  return {
-    ...result,
-    startBuildDiscovery: (input: BuildDiscoveryQueryInput = {}) =>
+  const start = useCallback(
+    (input: BuildDiscoveryQueryInput = {}) =>
       mutate({
         variables: buildDiscoveryVariablesFromInput(
           input,
         ) as startBuildDiscoveryVariables,
       }),
+    [mutate],
+  );
+
+  return {
+    ...result,
+    startBuildDiscovery: start,
     buildDiscoveryJob: parseBuildDiscoveryJob(
       result.data?.startBuildDiscovery?.job,
     ),
