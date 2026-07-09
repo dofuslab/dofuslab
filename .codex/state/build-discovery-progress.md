@@ -1208,3 +1208,29 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_local_readiness_report.py scripts/test_build_discovery_local_readiness_report.py`
   - `git diff --check`
 - Generated `.codex/state/build-discovery-local-readiness-report.json` was not committed because it contains machine-specific absolute paths.
+
+### 2026-07-09 Local Readiness Pipeline
+
+- Created stacked branch `codex/build-discovery-local-readiness-pipeline` on top of `codex/build-discovery-local-readiness-report`.
+- Added `server/scripts/build_discovery_local_readiness_pipeline.py`.
+- The pipeline writes stable local readiness artifacts:
+  - warm cache prewarm report
+  - strict warmed-cache prewarm report with p95 and max-hit gates
+  - local readiness report using the strict cache artifact
+  - compact summary with artifact paths, cache status, readiness status, and blockers
+- Added focused tests in `server/scripts/test_build_discovery_local_readiness_pipeline.py`.
+- Docker pipeline result with `.codex/state` files copied into `/tmp` because the server container does not mount repo-level `.codex` by default:
+  - warm cache status: `pass`
+  - strict cache status: `pass`
+  - strict cache hits: 8
+  - strict cache misses: 0
+  - strict cache-hit p95: `0.7ms`
+  - readiness status: `incomplete`
+  - remaining blockers: gameplay review and prod benchmark access/work
+- Verification passed:
+  - `python server\scripts\test_build_discovery_local_readiness_pipeline.py`
+  - `python server\scripts\test_build_discovery_local_readiness_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_local_readiness_pipeline.py scripts/test_build_discovery_local_readiness_pipeline.py scripts/build_discovery_local_readiness_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_local_readiness_pipeline.py --output-dir /tmp/build_discovery_local_readiness_pipeline --readiness-checklist /tmp/build_discovery_local_readiness_state/build-discovery-readiness-checklist.md --gameplay-review-packet /tmp/build_discovery_local_readiness_state/build-discovery-gameplay-review-packet.md`
+  - `git diff --check`
