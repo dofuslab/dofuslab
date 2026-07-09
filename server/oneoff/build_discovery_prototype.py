@@ -2710,6 +2710,11 @@ def dofus_completion_pool(pools: dict[str, list[dict[str, Any]]]) -> list[dict[s
     return sorted(selected.values(), key=lambda item: item["_score"], reverse=True)
 
 
+def has_item_conditions(item: dict[str, Any]) -> bool:
+    conditions = item.get("conditions") or {}
+    return bool(conditions.get("conditions") or conditions.get("customConditions"))
+
+
 def ranked_dofus_combinations(
     dofus_pool: list[dict[str, Any]],
     combo_size: int,
@@ -2735,6 +2740,12 @@ def ranked_dofus_combinations(
         for combo in combinations(dofus_pool, combo_size)
     ]
     sorted_combinations = sorted(scored_combinations, key=lambda entry: entry[0], reverse=True)
+    condition_light_limit = max(1, min(limit // 4, 10))
+    condition_light_combinations = [
+        combo
+        for _, combo in sorted_combinations
+        if all(not has_item_conditions(item) for item in combo)
+    ][:condition_light_limit]
     multi_special_combinations = [
         combo
         for _, combo in sorted_combinations
@@ -2752,7 +2763,12 @@ def ranked_dofus_combinations(
 
     seen: set[tuple[str, ...]] = set()
     ranked = []
-    for combo in multi_special_combinations + special_combinations + top_combinations:
+    for combo in (
+        condition_light_combinations
+        + multi_special_combinations
+        + special_combinations
+        + top_combinations
+    ):
         signature = tuple(sorted(item["dofusID"] for item in combo))
         if signature in seen:
             continue

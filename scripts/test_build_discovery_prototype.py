@@ -1468,6 +1468,48 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             [tuple(sorted(item["dofusID"] for item in combo.items)) for combo in combos],
         )
 
+    def test_ranked_dofus_combinations_keeps_condition_light_combo_under_cap(self):
+        special_ids = tuple(sorted(build_discovery_prototype.DIRECT_COMPLETION_SPECIAL_DOFUS_IDS))[:2]
+        constrained = [
+            {
+                "dofusID": f"constrained_{idx}",
+                "_score": 100 - idx,
+                "_stats": {"Agility": 100 - idx},
+                "conditions": {"conditions": {"operator": "<", "stat": "SET_BONUS", "value": 3}},
+            }
+            for idx in range(6)
+        ]
+        special = [
+            {
+                "dofusID": special_id,
+                "_score": 20 - idx,
+                "_stats": {"Agility": 20 - idx},
+                "conditions": {"conditions": {}, "customConditions": {}},
+            }
+            for idx, special_id in enumerate(special_ids)
+        ]
+        condition_light = [
+            {
+                "dofusID": f"safe_{idx}",
+                "_score": 10 - idx,
+                "_stats": {"Air Damage": 10 - idx},
+                "conditions": {"conditions": {}, "customConditions": {}},
+            }
+            for idx in range(3)
+        ]
+
+        combos = ranked_dofus_combinations(
+            constrained + special + condition_light,
+            3,
+            limit=4,
+        )
+
+        signatures = [tuple(sorted(item["dofusID"] for item in combo.items)) for combo in combos]
+        self.assertTrue(
+            any(all(not build_discovery_prototype.has_item_conditions(item) for item in combo.items) for combo in combos)
+        )
+        self.assertTrue(any(all(special_id in signature for special_id in special_ids) for signature in signatures))
+
     def test_candidate_pool_does_not_force_low_level_action_stat_gear(self):
         weak_ap_weapon = {
             "dofusID": "weak_ap",
