@@ -35,8 +35,8 @@ The v1 goal is not perfect optimization, PvP meta modeling, a chatbot, or LLM-dr
 - No condition-invalid builds are shown.
 - AP/MP/range targets are met or exceeded without exceeding caps, and surplus AP/MP/range is only lightly rewarded.
 - At least 3 meaningfully different builds are shown for common queries where possible.
-- Budget tier 1 sticks to mounts and normal equipment not assigned to higher availability tiers.
-- Budget tier 2 can use pets, petsmounts, common trophies, and accessible Dofuses such as Crimson, Turquoise, Ice, and likely Dolmanax.
+- Budget tier 1 can use mounts, trophies, and normal equipment not assigned to higher availability tiers.
+- Budget tier 2 can use pets, petsmounts, and accessible Dofuses such as Crimson, Turquoise, Ice, and likely Dolmanax.
 - Budget tier 3 can use exos and Prysmaradites when allowed by exo policy, with warnings or penalties where appropriate.
 - Budget tier 4 can use Ochre, Vulbis, legendary items, and other opti assumptions.
 - Crimson, Turquoise, and Ice Dofus are not incorrectly treated as opti-only.

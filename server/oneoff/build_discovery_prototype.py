@@ -670,7 +670,7 @@ def availability_tier_for_item(item: dict[str, Any]) -> int:
     if item_type == "Dofus":
         return 2 if item_id in ACCESSIBLE_DOFUS_IDS else 3
     if item_type == "Trophy":
-        return 2
+        return 1
     if item_type in {"Pet", "Petsmount"}:
         return 2
     if item_type == "Mount":

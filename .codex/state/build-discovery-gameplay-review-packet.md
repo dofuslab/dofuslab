@@ -21,14 +21,15 @@ Current working model:
 
 | Tier | Meaning |
 | --- | --- |
-| 1 | Mounts and normal equipment not assigned to higher tiers |
-| 2 | Pets, petsmounts, common trophies, and accessible Dofuses |
+| 1 | Mounts, trophies, and normal equipment not assigned to higher tiers |
+| 2 | Pets, petsmounts, and accessible Dofuses |
 | 3 | Exos, Prysmaradites, unclassified Dofuses |
 | 4 | Ochre, Vulbis, legendary/special-effect items, opti assumptions |
 
 Review questions:
 
 - Should Dolmanax, Ice, Crimson, and Turquoise remain tier 2?
+- Should any trophies be excluded from tier 1, or are trophies acceptable budget enablers by default?
 - Should Prysmaradites be tier 3 by default?
 - Should any special-effect/legendary items be tier 3 instead of tier 4?
 - Should `exoPolicy=opti` differ from `allow` before release?

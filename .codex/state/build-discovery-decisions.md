@@ -18,7 +18,7 @@
 - Solver is deterministic and owns item selection.
 - AP/MP/range are minimum constraints with hard caps, not ordinary heavily weighted stats. Extra AP/MP/range is valid and usually good, but should receive only a small marginal score.
 - Budget means availability/accessibility, not exact kama price.
-- Initial budget/availability priors use 4 coarse tiers: tier 1 mounts and normal equipment not assigned higher; tier 2 pets/petsmounts/common trophies/accessibile Dofuses; tier 3 exos and Prysmaradites; tier 4 Ochre, Vulbis, legendary items, and opti assumptions.
+- Initial budget/availability priors use 4 coarse tiers: tier 1 mounts/trophies and normal equipment not assigned higher; tier 2 pets/petsmounts/accessibile Dofuses; tier 3 exos and Prysmaradites; tier 4 Ochre, Vulbis, legendary items, and opti assumptions.
 - Exos are a separate user-facing policy where possible.
 - Async job flow is acceptable if fresh generation remains above 5s.
 - OR-Tools is out of scope as the primary solver.

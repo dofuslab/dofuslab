@@ -47,8 +47,8 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 
 - Budget means availability/accessibility, not exact kama price.
 - Initial budget tiers are coarse and based on current working assumptions, not fresh market data.
-- Tier 1: mounts and normal equipment not assigned to higher tiers.
-- Tier 2: pets, petsmounts, common trophies, and accessible Dofuses.
+- Tier 1: mounts, trophies, and normal equipment not assigned to higher tiers.
+- Tier 2: pets, petsmounts, and accessible Dofuses.
 - Tier 3: exos and Prysmaradites.
 - Tier 4: Ochre, Vulbis, legendary/special-effect items, and opti assumptions.
 - Exos should remain a user-facing policy separate from budget if possible.
@@ -67,7 +67,7 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Vulbis Dofus is opti-tier.
 - Prysmaradites are tier 3 by default.
 - Unclassified Dofuses are tier 3 by default.
-- Trophies are tier 2 by default.
+- Trophies are tier 1 by default because they are budget enablers.
 - Pets and petsmounts are tier 2 by default.
 - Mounts are tier 1 by default.
 - Normal equipment is tier 1 by default unless it has special-effect `buffs`.
