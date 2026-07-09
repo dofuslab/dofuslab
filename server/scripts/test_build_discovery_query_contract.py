@@ -11,7 +11,11 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     MIN_AP,
     MIN_MP,
     MIN_RANGE,
+    BASE_AP_STRATEGIES,
     BuildDiscoveryQuery,
+    DEFAULT_AP_STRATEGIES,
+    BuildTarget,
+    effective_ap_strategies_for_target,
     effective_exo_policy,
     query_cache_identity,
     target_semantics_response,
@@ -88,6 +92,26 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
             effective_exo_policy(BuildDiscoveryQuery(budget_tier=4, exo_policy="opti")),
             "opti",
         )
+
+    def test_base_ap_target_allows_base_ap_strategy(self):
+        strategies = effective_ap_strategies_for_target(
+            BuildTarget(ap=MIN_AP, mp=MIN_MP, range=MIN_RANGE),
+            DEFAULT_AP_STRATEGIES,
+        )
+
+        self.assertEqual(strategies[0], BASE_AP_STRATEGIES[0])
+        self.assertEqual(strategies[0].name, "base_ap")
+        self.assertFalse(strategies[0].require_amulet_ap)
+        self.assertFalse(strategies[0].require_ap_exo)
+        self.assertEqual(strategies[0].min_secondary_ap_sources, 0)
+
+    def test_high_ap_target_keeps_default_ap_strategy_shape(self):
+        strategies = effective_ap_strategies_for_target(
+            BuildTarget(ap=MIN_AP + 1, mp=MIN_MP, range=MIN_RANGE),
+            DEFAULT_AP_STRATEGIES,
+        )
+
+        self.assertEqual(strategies, DEFAULT_AP_STRATEGIES)
 
     def test_target_semantics_are_minimum_with_hard_caps(self):
         semantics = target_semantics_response()

@@ -845,6 +845,23 @@ DEFAULT_NO_EXO_AP_STRATEGIES = (
         min_secondary_ap_sources=2,
     ),
 )
+BASE_AP_STRATEGIES = (
+    ApStrategy(
+        name="base_ap",
+        require_amulet_ap=False,
+        require_ap_exo=False,
+        min_secondary_ap_sources=0,
+    ),
+)
+
+
+def effective_ap_strategies_for_target(
+    target: BuildTarget,
+    ap_strategies: tuple[ApStrategy, ...],
+) -> tuple[ApStrategy, ...]:
+    if target.ap <= BASE_AP:
+        return BASE_AP_STRATEGIES + ap_strategies
+    return ap_strategies
 
 
 def exo_search_target(final_target: BuildTarget) -> BuildTarget:
@@ -3448,6 +3465,7 @@ def find_builds(
         exo_policy = "none"
     if exo_policy == "none" and ap_strategies == DEFAULT_AP_STRATEGIES:
         ap_strategies = DEFAULT_NO_EXO_AP_STRATEGIES
+    ap_strategies = effective_ap_strategies_for_target(target, ap_strategies)
     completion_target = completion_target or top_k
 
     timings: dict[str, float] = {}

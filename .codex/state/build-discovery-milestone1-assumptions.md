@@ -93,3 +93,33 @@ acceptance claim.
   broad enough to interpret misses.
 - Keep this document current when assumptions move from hardcoded prototype
   behavior into reviewed product behavior.
+
+## Verification Commands
+
+Cheap query-contract and helper checks:
+
+```sh
+python -m unittest \
+  scripts.test_build_discovery_query_contract \
+  scripts.test_build_discovery_uncommon_action_sources \
+  scripts.test_build_discovery_availability_tiers \
+  scripts.test_build_discovery_action_stat_scoring \
+  scripts.test_build_discovery_expensive_regressions \
+  scripts.test_build_discovery_milestone_one_generation_smoke
+```
+
+Focused STR opti expensive regressions:
+
+```sh
+BUILD_DISCOVERY_EXPENSIVE_REGRESSION=1 \
+BUILD_DISCOVERY_EXPENSIVE_SCOPE=str-opti \
+python -m unittest scripts.test_build_discovery_expensive_regressions
+```
+
+Bounded Milestone 1 generation smoke. This is intentionally opt-in because it
+runs 48 no-cache solver calls:
+
+```sh
+BUILD_DISCOVERY_MILESTONE_ONE_SMOKE=1 \
+python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
+```
