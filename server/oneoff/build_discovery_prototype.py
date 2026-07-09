@@ -3723,6 +3723,28 @@ def query_warnings(query: BuildDiscoveryQuery) -> list[str]:
     return warnings
 
 
+def result_warnings(query: BuildDiscoveryQuery, builds: list[BuildState]) -> list[str]:
+    warnings = query_warnings(query)
+    if builds:
+        return warnings
+
+    if (
+        effective_exo_policy(query) == "none"
+        and query.ap_target == MAX_AP
+        and query.mp_target == MAX_MP
+        and query.range_target == MAX_RANGE
+    ):
+        warnings.append(
+            "No builds found for max AP/MP/Range under no-exo constraints; this may be infeasible "
+            "for the selected budget or a remaining search coverage gap."
+        )
+    else:
+        warnings.append(
+            "No builds found; this may be infeasible for the selected constraints or a remaining search coverage gap."
+        )
+    return warnings
+
+
 def build_discovery_response(
     query: BuildDiscoveryQuery,
     use_cache: bool = True,
@@ -3783,7 +3805,7 @@ def build_discovery_response(
             "genericDamageWeight": query.generic_damage_weight,
             "weaponDamageWeight": query.weapon_damage_weight,
         },
-        "warnings": query_warnings(query),
+        "warnings": result_warnings(query, builds),
         "diagnostics": {
             "elapsedMs": elapsed_ms,
             "cacheHit": False,

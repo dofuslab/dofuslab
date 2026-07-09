@@ -18,6 +18,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     effective_ap_strategies_for_target,
     effective_exo_policy,
     query_cache_identity,
+    result_warnings,
     target_semantics_response,
 )
 
@@ -119,6 +120,20 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         self.assertEqual(semantics["targets"], {"AP": "minimum", "MP": "minimum", "Range": "minimum"})
         self.assertEqual(semantics["caps"], {"AP": MAX_AP, "MP": MAX_MP, "Range": MAX_RANGE})
         self.assertEqual(semantics["surplusScoring"], "light_reward_with_cap")
+
+    def test_no_build_result_warns_for_max_no_exo_constraints(self):
+        warnings = result_warnings(
+            BuildDiscoveryQuery(
+                budget_tier=1,
+                exo_policy="none",
+                ap_target=MAX_AP,
+                mp_target=MAX_MP,
+                range_target=MAX_RANGE,
+            ),
+            [],
+        )
+
+        self.assertTrue(any("No builds found for max AP/MP/Range" in warning for warning in warnings))
 
     def test_rejects_action_stat_targets_outside_level_200_bounds(self):
         invalid_queries = (
