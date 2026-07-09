@@ -133,3 +133,21 @@ Run the initial evaluator pass:
 - Use the readonly prod database cautiously to discover representative real-user benchmark queries once local validation remains stable.
 - Produce accepted benchmark artifacts for representative queries and convert them into regression fixtures.
 - Expand beyond Iop only after the Iop element matrix and benchmark artifacts are stable enough to review.
+
+### 2026-07-08 Local Query Regression Suite Checkpoint
+
+- Created stacked branch `codex/build-discovery-local-query-regression-suite` on top of `codex/build-discovery-local-benchmark-fixtures`.
+- Added `--validate-local-suite` to the query perf harness:
+  - validates Iop Strength, Intelligence, Chance, and Agility for both 11/6/0 and 12/6/0
+  - uses budget tier 4, `exoPolicy=allow`, generated JSON index only
+  - fails on missing element rows, empty result sets, or p95 above 5000ms
+  - refuses DB fallback in validation modes, even when `--allow-db` is passed
+  - rejects ambiguous simultaneous `--validate-local-profile` and `--validate-local-suite`
+- Verification passed:
+  - `python -m unittest scripts.test_build_discovery_query_perf` (15 tests)
+  - `git diff --check`
+  - generated JSON index smoke with `python scripts\build_discovery_query_perf.py --index-path <temp-index> --validate-local-suite --runs 1 --no-cache`
+  - smoke result: all 8 element/profile rows returned nonempty results under the 5s p95 threshold; slowest observed row was about 3.57s
+- PR creation remains blocked by GitHub connector permissions:
+  - `_create_pull_request` returns `403 Resource not accessible by integration`
+  - pushed branch URL: `https://github.com/dofuslab/dofuslab/pull/new/codex/build-discovery-local-query-regression-suite`
