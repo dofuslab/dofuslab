@@ -109,3 +109,27 @@ Run the initial evaluator pass:
 - Replace or supplement process-memory cache with the intended app cache storage.
 - Validate generated build quality for Intelligence, Chance, and Agility Iop, not just query/profile contract support.
 - Produce accepted benchmark report artifacts and convert them into regression fixtures.
+
+### 2026-07-08 Local Validation Checkpoint
+
+- Created stacked branch `codex/build-discovery-local-benchmark-fixtures` on top of `codex/build-discovery-agility-quality`.
+- Added deterministic local query validation for the supported Iop element matrix:
+  - fixed profile: level 200 Iop, 11/6/0, budget tier 4, `exoPolicy=allow`
+  - generated JSON index only; validation mode refuses DB fallback
+  - fails on missing element rows, empty result sets, or p95 above 5000ms
+  - report includes profile, query, index, threshold, expected element profile, timing, cache, and per-element validation metadata
+- Verification passed:
+  - `python -m unittest scripts.test_build_discovery_query_perf` (11 tests)
+  - `git diff --check`
+  - generated JSON index smoke with `python scripts\build_discovery_query_perf.py --index-path <temp-index> --validate-local-profile --runs 1 --no-cache`
+  - smoke result: Strength, Intelligence, Chance, and Agility all returned nonempty results under the 5s p95 threshold
+- PR creation remains blocked by GitHub connector permissions:
+  - `_create_pull_request` returns `403 Resource not accessible by integration`
+  - pushed branch URL: `https://github.com/dofuslab/dofuslab/pull/new/codex/build-discovery-local-benchmark-fixtures`
+
+## Remaining After Local Validation Checkpoint
+
+- Update or add app-level cache behavior if the product path should depend on a cache beyond the current process-memory prototype cache.
+- Use the readonly prod database cautiously to discover representative real-user benchmark queries once local validation remains stable.
+- Produce accepted benchmark artifacts for representative queries and convert them into regression fixtures.
+- Expand beyond Iop only after the Iop element matrix and benchmark artifacts are stable enough to review.
