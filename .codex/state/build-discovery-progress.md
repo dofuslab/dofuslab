@@ -202,3 +202,18 @@ Run the initial evaluator pass:
   - `git diff --check`
   - server-container inline GraphQL checks for identical-request hit, changed-query miss, dataset-version miss, `NO_VALUE` miss, prototype-cache bypass, missing-index no-cache-access, and cached-object immutability
 - Host GraphQL unit test execution is blocked by missing host Flask dependencies; GraphQL behavior was verified inside `dofuslab-server-1`.
+
+### 2026-07-08 Client Contract Bridge Checkpoint
+
+- Created stacked branch `codex/build-discovery-client-contract` on top of `codex/build-discovery-app-cache`.
+- Added a client-side Build Discovery contract bridge without visible UI:
+  - canonical GraphQL document `client/graphql/queries/buildDiscovery.graphql`
+  - generated operation types for the `buildDiscovery` GenericScalar query
+  - defensive `client/common/buildDiscovery.ts` facade for parsing the GenericScalar response
+  - typed v1 input helper/hook with server-aligned defaults: Iop, level 200, PvM, Strength, 11/6/0, budget tier 2, limit 5
+  - preserves cache observability fields for future UI/debugging
+- Verification passed:
+  - `cd client && yarn generate`
+  - `cd client && yarn type-check`
+  - `git diff --check`
+- Residual risk: client defaults intentionally mirror backend defaults until the UI has explicit controls; future backend default changes should update this bridge or gain a contract test.

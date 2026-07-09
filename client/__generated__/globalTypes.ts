@@ -26,6 +26,7 @@ export type Scalars = {
   Int: { input: number; output: number };
   Float: { input: number; output: number };
   DateTime: { input: any; output: any };
+  GenericScalar: { input: any; output: any };
   JSONString: { input: any; output: any };
   UUID: { input: any; output: any };
 };
@@ -550,6 +551,7 @@ export type PageInfo = {
 
 export type Query = {
   __typename: 'Query';
+  buildDiscovery: Maybe<Scalars['GenericScalar']['output']>;
   classById: Maybe<Class>;
   classes: Array<Class>;
   classic: Scalars['Boolean']['output'];
@@ -567,6 +569,28 @@ export type Query = {
   sets: SetConnection;
   userById: Maybe<User>;
   userByName: Maybe<User>;
+};
+
+export type QuerybuildDiscoveryArgs = {
+  apTarget?: InputMaybe<Scalars['Int']['input']>;
+  avoidedItemIds?: InputMaybe<Array<Scalars['String']['input']>>;
+  beamWidth?: InputMaybe<Scalars['Int']['input']>;
+  budgetTier?: InputMaybe<Scalars['Int']['input']>;
+  className?: InputMaybe<Scalars['String']['input']>;
+  damageSurvivabilityPreset?: InputMaybe<Scalars['Int']['input']>;
+  elements?: InputMaybe<Array<Scalars['String']['input']>>;
+  exoPolicy?: InputMaybe<Scalars['String']['input']>;
+  level?: InputMaybe<Scalars['Int']['input']>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  lockedItemIds?: InputMaybe<Array<Scalars['String']['input']>>;
+  maxSharedItems?: InputMaybe<Scalars['Int']['input']>;
+  mode?: InputMaybe<Scalars['String']['input']>;
+  mpTarget?: InputMaybe<Scalars['Int']['input']>;
+  perSignatureCap?: InputMaybe<Scalars['Int']['input']>;
+  rangeTarget?: InputMaybe<Scalars['Int']['input']>;
+  relevantSetLimit?: InputMaybe<Scalars['Int']['input']>;
+  topK?: InputMaybe<Scalars['Int']['input']>;
+  weaponPolicy?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type QueryclassByIdArgs = {
