@@ -2,12 +2,11 @@
 
 import { useMemo, useContext } from 'react';
 
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import DesktopSetBuilder from 'components/desktop/SetBuilder';
 import MobileSetBuilder from 'components/mobile/SetBuilder';
-import { mediaStyles, Media } from 'components/common/Media';
+import { Media } from 'components/common/Media';
 
 import { CustomSetHead } from 'common/wrappers';
 import ClassicSetBuilder from 'components/desktop/ClassicSetBuilder';
@@ -35,13 +34,6 @@ const BuildPage = () => {
   return (
     <ClassicContext.Provider value={contextValue}>
       <div className="App" css={{ height: '100%' }} suppressHydrationWarning>
-        <Head>
-          <style
-            type="text/css"
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: mediaStyles }}
-          />
-        </Head>
         <CustomSetHead customSet={customSet} />
 
         <Media lessThan="xs">
