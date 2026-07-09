@@ -277,3 +277,14 @@ Run the initial evaluator pass:
   - desktop navigation uses a compact icon-only `Button href` with tooltip instead of a wide nested `Link > Button`
   - desktop and mobile labels use the `common:BUILD_DISCOVERY` translation key
   - locale files include `BUILD_DISCOVERY`
+
+### 2026-07-09 Manual Run Page Checkpoint
+
+- Created stacked branch `codex/build-discovery-manual-run-page` on top of `codex/build-discovery-ui-visual-smoke`.
+- Changed the Build Discovery page to avoid solver requests on initial page load:
+  - query hook is skipped until the user presses `Run`
+  - refresh is disabled until a query has been submitted
+  - empty results are shown only after a submitted query returns no builds
+- Verification passed:
+  - `cd client && npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
+  - `cd client && yarn type-check`

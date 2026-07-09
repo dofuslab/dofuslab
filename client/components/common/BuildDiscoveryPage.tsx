@@ -237,13 +237,11 @@ export default function BuildDiscoveryPage() {
     ...DEFAULT_BUILD_DISCOVERY_INPUT,
   });
   const [submittedInput, setSubmittedInput] =
-    useState<BuildDiscoveryQueryInput>({
-      ...DEFAULT_BUILD_DISCOVERY_INPUT,
-    });
+    useState<BuildDiscoveryQueryInput | null>(null);
 
   const queryInput = useMemo<BuildDiscoveryQueryInput>(
     () => ({
-      ...submittedInput,
+      ...(submittedInput ?? DEFAULT_BUILD_DISCOVERY_INPUT),
       className: 'Iop',
       level: 200,
       mode: 'pvm',
@@ -251,8 +249,10 @@ export default function BuildDiscoveryPage() {
     [submittedInput],
   );
 
-  const { buildDiscovery, loading, error, refetch } =
-    useBuildDiscoveryQuery(queryInput);
+  const { buildDiscovery, loading, error, refetch } = useBuildDiscoveryQuery(
+    queryInput,
+    { skip: submittedInput === null },
+  );
   const hasBuilds = Boolean(buildDiscovery?.builds.length);
   const showInitialLoading = loading && !buildDiscovery;
 
@@ -298,6 +298,7 @@ export default function BuildDiscoveryPage() {
           )}
           <Button
             aria-label="Refresh build discovery"
+            disabled={submittedInput === null}
             icon={<ReloadOutlined />}
             loading={loading}
             onClick={() => refetch()}
@@ -454,7 +455,7 @@ export default function BuildDiscoveryPage() {
               index={index}
             />
           ))}
-        {!showInitialLoading && !hasBuilds && (
+        {!showInitialLoading && submittedInput !== null && !hasBuilds && (
           <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
         )}
       </section>
