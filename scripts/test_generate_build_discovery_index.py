@@ -14,6 +14,8 @@ from oneoff.generate_build_discovery_index import (
     build_item_indexes,
     item_flags,
     level_bucket_name,
+    normalize_source_item,
+    normalize_source_weapon_stats,
 )
 
 
@@ -154,13 +156,136 @@ class GenerateBuildDiscoveryIndexTest(unittest.TestCase):
             build_discovery_prototype.load_build_discovery_index.cache_clear()
 
     def test_generated_index_includes_dataset_version(self):
-        with patch("oneoff.generate_build_discovery_index.load_all_item_records", return_value=[]):
-            with patch("oneoff.generate_build_discovery_index.load_sets", return_value={}):
-                index = build_index()
+        with patch("oneoff.generate_build_discovery_index.load_db_item_records", return_value=[]):
+            with patch("oneoff.generate_build_discovery_index.load_db_sets", return_value={}):
+                index = build_index(source="db")
 
         self.assertEqual(index["schemaVersion"], 1)
         self.assertIn("generatedAt", index)
         self.assertEqual(index["datasetVersion"], index["generatedAt"])
+
+    def test_build_index_defaults_to_json_source(self):
+        source_data = {
+            "items.json": [],
+            "weapons.json": [],
+            "pets.json": [],
+            "mounts.json": [],
+            "sets.json": [],
+        }
+
+        with patch("oneoff.generate_build_discovery_index.load_source_json", side_effect=source_data.get):
+            with patch("oneoff.generate_build_discovery_index.load_db_item_records") as db_items:
+                index = build_index()
+
+        db_items.assert_not_called()
+        self.assertEqual(index["items"], [])
+
+    def test_normalize_source_item_uses_mount_dofus_id(self):
+        item = normalize_source_item(
+            {
+                "mountDofusID": "33000",
+                "name": {"en": "Feathered Dragoturkey"},
+                "itemType": "Mount",
+                "level": 60,
+                "stats": [],
+            },
+            "mounts.json",
+        )
+
+        self.assertEqual(item["dofusID"], "33000")
+        self.assertIsNone(item["setID"])
+        self.assertEqual(item["buffs"], [])
+        self.assertEqual(item["conditions"], {"conditions": {}, "customConditions": {}})
+
+    def test_normalize_source_item_stringifies_set_id(self):
+        item = normalize_source_item(
+            {
+                "dofusID": 123,
+                "name": {"en": "Set Hat"},
+                "itemType": "Hat",
+                "setID": 456,
+                "level": 200,
+                "stats": [],
+            },
+            "items.json",
+        )
+
+        self.assertEqual(item["dofusID"], "123")
+        self.assertEqual(item["setID"], "456")
+
+    def test_normalize_source_weapon_stats_uses_runtime_weapon_effects(self):
+        weapon_stats = normalize_source_weapon_stats(
+            {
+                "apCost": 4,
+                "weapon_effects": [
+                    {"stat": "Neutral damage", "minStat": 10, "maxStat": 14},
+                    {"stat": "Unsupported", "minStat": 1, "maxStat": 2},
+                ],
+            }
+        )
+
+        self.assertEqual(
+            weapon_stats["weaponEffects"],
+            [{"effectType": "NEUTRAL_DAMAGE", "minDamage": 10, "maxDamage": 14}],
+        )
+
+    def test_build_index_from_json_source_uses_patched_local_loader(self):
+        source_data = {
+            "items.json": [
+                {
+                    "dofusID": 100,
+                    "name": {"en": "Indexed Hat"},
+                    "itemType": "Hat",
+                    "setID": 200,
+                    "level": 200,
+                    "stats": [{"stat": "Strength", "maxStat": 100}],
+                }
+            ],
+            "weapons.json": [
+                {
+                    "dofusID": "300",
+                    "name": {"en": "Indexed Sword"},
+                    "itemType": "Sword",
+                    "setID": None,
+                    "level": 200,
+                    "stats": [],
+                    "weaponStats": {
+                        "apCost": 4,
+                        "weapon_effects": [
+                            {"stat": "Earth steal", "minStat": None, "maxStat": 12}
+                        ],
+                    },
+                }
+            ],
+            "pets.json": [],
+            "mounts.json": [
+                {
+                    "mountDofusID": "33000",
+                    "name": {"en": "Indexed Mount"},
+                    "itemType": "Mount",
+                    "level": 60,
+                    "stats": [],
+                }
+            ],
+            "sets.json": [
+                {
+                    "id": 200,
+                    "name": {"en": "Indexed Set"},
+                    "bonuses": {},
+                }
+            ],
+        }
+
+        with patch("oneoff.generate_build_discovery_index.load_source_json", side_effect=source_data.get):
+            index = build_index(source="json")
+
+        items_by_id = {item["id"]: item for item in index["items"]}
+        self.assertEqual(items_by_id["100"]["setID"], "200")
+        self.assertEqual(items_by_id["33000"]["itemType"], "Mount")
+        self.assertEqual(items_by_id["300"]["weaponStats"]["weaponEffects"], [
+            {"effectType": "EARTH_STEAL", "minDamage": 0, "maxDamage": 12}
+        ])
+        self.assertEqual(index["sets"]["200"]["id"], "200")
 
 
 if __name__ == "__main__":

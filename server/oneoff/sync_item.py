@@ -51,7 +51,7 @@ def regenerate_build_discovery_index():
     from oneoff.generate_build_discovery_index import write_index
 
     print("\nRegenerating build discovery index...")
-    write_index()
+    write_index(source="db")
 
 
 def update_or_create_item(

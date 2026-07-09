@@ -4,15 +4,24 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import time
 from statistics import mean
 from typing import Any
 
+from oneoff import build_discovery_prototype
 from oneoff.build_discovery_prototype import (
     BuildDiscoveryQuery,
     build_discovery_response,
     clear_build_discovery_response_cache,
 )
+
+MAX_RUNS = 20
+MAX_LIMIT = 20
+MAX_TOP_K = 100
+MAX_BEAM_WIDTH = 1000
+MAX_PER_SIGNATURE_CAP = 200
+MAX_RELEVANT_SET_LIMIT = 200
 
 
 def percentile(values: list[float], percentile_value: float) -> float:
@@ -56,10 +65,41 @@ def measure_query(query: BuildDiscoveryQuery, runs: int, use_cache: bool) -> dic
     }
 
 
+def validate_cli_bounds(parser: argparse.ArgumentParser, args: argparse.Namespace) -> None:
+    bounded_values = (
+        ("--runs", args.runs, 1, MAX_RUNS),
+        ("--limit", args.limit, 1, MAX_LIMIT),
+        ("--top-k", args.top_k, 1, MAX_TOP_K),
+        ("--beam-width", args.beam_width, 1, MAX_BEAM_WIDTH),
+        ("--per-signature-cap", args.per_signature_cap, 1, MAX_PER_SIGNATURE_CAP),
+        ("--relevant-set-limit", args.relevant_set_limit, 1, MAX_RELEVANT_SET_LIMIT),
+    )
+    for flag, value, minimum, maximum in bounded_values:
+        if value < minimum or value > maximum:
+            parser.error(f"{flag} must be between {minimum} and {maximum}.")
+
+
+def validate_index_source(parser: argparse.ArgumentParser, allow_db: bool) -> None:
+    index_path = build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH
+    if index_path and os.path.exists(index_path):
+        return
+    if allow_db:
+        return
+    parser.error(
+        "No build discovery index exists at BUILD_DISCOVERY_INDEX_PATH "
+        f"({index_path or '<empty>'}). Generate a local JSON index or pass --allow-db."
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--runs", type=int, default=3)
     parser.add_argument("--no-cache", action="store_true")
+    parser.add_argument(
+        "--allow-db",
+        action="store_true",
+        help="Allow prototype DB fallback when no generated index is available.",
+    )
     parser.add_argument("--element", default="strength")
     parser.add_argument("--target-ap", type=int, default=11)
     parser.add_argument("--target-mp", type=int, default=6)
@@ -72,6 +112,8 @@ def main() -> None:
     parser.add_argument("--per-signature-cap", type=int, default=40)
     parser.add_argument("--relevant-set-limit", type=int, default=60)
     args = parser.parse_args()
+    validate_cli_bounds(parser, args)
+    validate_index_source(parser, args.allow_db)
 
     query = BuildDiscoveryQuery(
         elements=(args.element,),

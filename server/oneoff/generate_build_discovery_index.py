@@ -2,8 +2,11 @@
 """
 Generate a search-oriented build discovery index from the synced database.
 
-Run this after sync_set and sync_item:
+Generate from local synced JSON by default:
     python -m oneoff.generate_build_discovery_index
+
+Generate from the database only when explicitly requested:
+    python -m oneoff.generate_build_discovery_index --source db
 """
 
 from __future__ import annotations
@@ -23,8 +26,6 @@ from oneoff.build_discovery_prototype import (
     BUILD_DISCOVERY_INDEX_SCHEMA_VERSION,
     EXO_ELIGIBLE_ITEM_TYPES,
     get_name,
-    load_all_item_records,
-    load_sets,
     normalize_stats,
 )
 
@@ -114,7 +115,7 @@ def sorted_unique(values: list[str]) -> list[str]:
 
 
 def item_id(item: dict[str, Any]) -> str:
-    return item["dofusID"]
+    return str(item["dofusID"])
 
 
 def source_data_dir() -> str:
@@ -127,6 +128,30 @@ def load_source_json(filename: str) -> Any:
         return json.load(file)
 
 
+def normalize_source_conditions(conditions: dict[str, Any] | None) -> dict[str, Any]:
+    if not conditions:
+        return {"conditions": {}, "customConditions": {}}
+
+    return {
+        "conditions": conditions.get("conditions") or {},
+        "customConditions": conditions.get("customConditions") or {},
+    }
+
+
+def normalize_source_weapon_effect(effect: dict[str, Any]) -> dict[str, Any] | None:
+    effect_type = effect.get("effectType")
+    if not effect_type:
+        effect_type = SOURCE_WEAPON_EFFECT_TYPES.get(str(effect.get("stat", "")).lower())
+    if not effect_type:
+        return None
+
+    return {
+        "effectType": effect_type,
+        "minDamage": effect.get("minDamage", effect.get("minStat")) or 0,
+        "maxDamage": effect.get("maxDamage", effect.get("maxStat")) or 0,
+    }
+
+
 def normalize_source_weapon_stats(weapon_stats: dict[str, Any] | None) -> dict[str, Any] | None:
     if not weapon_stats:
         return weapon_stats
@@ -134,13 +159,9 @@ def normalize_source_weapon_stats(weapon_stats: dict[str, Any] | None) -> dict[s
     normalized = dict(weapon_stats)
     raw_effects = normalized.pop("weapon_effects", normalized.get("weaponEffects", []))
     normalized["weaponEffects"] = [
-        {
-            "effectType": SOURCE_WEAPON_EFFECT_TYPES.get(str(effect.get("stat", "")).lower()),
-            "minDamage": effect.get("minStat") or 0,
-            "maxDamage": effect.get("maxStat") or 0,
-        }
-        for effect in raw_effects
-        if SOURCE_WEAPON_EFFECT_TYPES.get(str(effect.get("stat", "")).lower())
+        effect
+        for effect in (normalize_source_weapon_effect(effect) for effect in raw_effects)
+        if effect is not None
     ]
     return normalized
 
@@ -148,13 +169,16 @@ def normalize_source_weapon_stats(weapon_stats: dict[str, Any] | None) -> dict[s
 def normalize_source_item(item: dict[str, Any], source_filename: str) -> dict[str, Any]:
     normalized = dict(item)
     if source_filename == "mounts.json":
-        normalized["dofusID"] = normalized.get("mountDofusID")
+        normalized["dofusID"] = str(normalized.get("mountDofusID"))
         normalized.setdefault("setID", None)
-    elif normalized.get("setID") is not None:
+    elif normalized.get("dofusID") is not None:
+        normalized["dofusID"] = str(normalized["dofusID"])
+
+    if normalized.get("setID") is not None:
         normalized["setID"] = str(normalized["setID"])
 
-    normalized.setdefault("buffs", [])
-    normalized.setdefault("conditions", {"conditions": {}, "customConditions": {}})
+    normalized["buffs"] = normalized.get("buffs") or []
+    normalized["conditions"] = normalize_source_conditions(normalized.get("conditions"))
     normalized["weaponStats"] = normalize_source_weapon_stats(normalized.get("weaponStats"))
     return normalized
 
@@ -174,6 +198,18 @@ def load_source_sets() -> dict[str, dict[str, Any]]:
         str(set_obj["id"]): set_obj
         for set_obj in load_source_json("sets.json")
     }
+
+
+def load_db_item_records() -> tuple[dict[str, Any], ...]:
+    from oneoff.build_discovery_prototype import load_all_item_records
+
+    return load_all_item_records()
+
+
+def load_db_sets() -> dict[str, dict[str, Any]]:
+    from oneoff.build_discovery_prototype import load_sets
+
+    return load_sets()
 
 
 def item_flags(item: dict[str, Any]) -> dict[str, Any]:
@@ -252,20 +288,20 @@ def build_item_indexes(items: list[dict[str, Any]]) -> dict[str, Any]:
 
 def serializable_set(set_obj: dict[str, Any]) -> dict[str, Any]:
     return {
-        "id": set_obj["id"],
+        "id": str(set_obj["id"]),
         "name": get_name(set_obj),
         "bonuses": set_obj.get("bonuses", {}),
         "excluded": bool(set_obj.get("_excluded")),
     }
 
 
-def build_index(source: str = "db") -> dict[str, Any]:
+def build_index(source: str = "json") -> dict[str, Any]:
     if source == "json":
         items = load_source_item_records()
         sets = load_source_sets()
     elif source == "db":
-        items = list(load_all_item_records())
-        sets = load_sets()
+        items = list(load_db_item_records())
+        sets = load_db_sets()
     else:
         raise ValueError(f"Unsupported build discovery index source: {source}")
 
@@ -295,13 +331,13 @@ def default_output_path() -> str:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default=default_output_path())
-    parser.add_argument("--source", choices=("db", "json"), default="db")
+    parser.add_argument("--source", choices=("db", "json"), default="json")
     args = parser.parse_args()
 
     write_index(args.output, source=args.source)
 
 
-def write_index(output_path: str | None = None, source: str = "db") -> dict[str, Any]:
+def write_index(output_path: str | None = None, source: str = "json") -> dict[str, Any]:
     output_path = output_path or default_output_path()
     index = build_index(source=source)
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
