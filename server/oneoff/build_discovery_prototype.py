@@ -58,6 +58,75 @@ ACTION_STAT_SOURCE_MIN_LEVEL = 180
 DOFUS_ACTION_STAT_SOURCE_LIMIT = 1
 DOFUS_AP_SOURCE_LIMIT = 2
 DOFUS_ZERO_SCORE_FILLER_LIMIT = 4
+UNCOMMON_AP_SOURCE_IDS = frozenset(
+    {
+        "11738",  # Awmigawd Band
+        "12108",  # Professor Xa's Cloak
+        "12110",  # Professor Xa's Boots
+        "12112",  # Professor Xa's Shovel
+        "13194",  # Mad Chatter
+        "13657",  # Cushtycloak
+        "13658",  # Slothful Slippers
+        "13659",  # Shabby Shoes
+        "14063",  # Creaking Tree Hat
+        "14130",  # Jolly Good Belt
+        "14937",  # Vigilante Cape
+        "15692",  # Baleenaboots
+        "15693",  # Pathogastrics
+        "15694",  # Kideebonnet
+        "15696",  # Whailtail
+        "15699",  # Belteen
+        "18000",  # Koutoulou Mask
+        "18002",  # Merdiodon Cloak
+        "18006",  # Ockloth
+        "18009",  # Menobelt
+        "18439",  # The Dorado
+        "19595",  # Scapu Helm
+        "19596",  # Suspender Belt
+        "19607",  # Absoluti Cape
+        "19610",  # Boot Boots
+        "20360",  # Ganymede's Diadem
+        "21223",  # Crocoring
+        "21996",  # Pryssure-O-Mat
+        "21997",  # Shiny Pryssure
+        "21998",  # Iridescent Pryssure
+        "22011",  # Prysipitate-O-Mat
+        "22012",  # Shiny Prysipitate
+        "22013",  # Iridescent Prysipitate
+        "25221",  # Wings of Chaos
+        "31774",  # Oktapodas Helm
+        "32121",  # Meriana's Clairvoyance
+    }
+)
+UNCOMMON_MP_SOURCE_IDS = frozenset(
+    {
+        "11720",  # Celestial Bearbarian Amulet
+        "12109",  # Professor Xa's Ring
+        "12111",  # Professor Xa's Amulet
+        "12117",  # Fuji Snowfoux Cloak
+        "13127",  # Lethaline's Cloak
+        "14162",  # Epeni's Belt
+        "14168",  # Cloak of a Thousand Excuses
+        "14170",  # Bzzzinga Headband
+        "15496",  # Queen of Thieves' Sword
+        "15695",  # Maskrobial
+        "15697",  # Kapmeba
+        "15698",  # Pawl Ouatnos' Ring
+        "15700",  # Protozash
+        "15701",  # Pawl Ouatnos' Amulet
+        "19608",  # Celebring
+        "19609",  # Hirofant Necklace
+        "20956",  # Chokao Mask
+        "21995",  # Sprynt
+        "22007",  # Prycapture
+        "22215",  # Vulture's Finery
+        "26011",  # Chaotic Scythe
+        "30858",  # Mama Ayuto's Parasail
+        "32116",  # Menalt's Lightning Spear
+        "32229",  # Vinnie the Bearbarian Amulet
+    }
+)
+UNCOMMON_ACTION_STAT_SOURCE_IDS = UNCOMMON_AP_SOURCE_IDS | UNCOMMON_MP_SOURCE_IDS
 AP_SET_BONUS_SEED_LIMIT = 80
 AP_SET_BONUS_SEED_LIMIT_PER_SET = 12
 SET_PACKAGE_SIZES = (2, 3)
@@ -1363,6 +1432,10 @@ def candidate_pool_for_slot(
         for item in search_compatible:
             if item["dofusID"] in MANDATORY_DOFUS_CANDIDATE_IDS:
                 selected[item["dofusID"]] = item
+
+    for item in search_compatible:
+        if item["dofusID"] in UNCOMMON_ACTION_STAT_SOURCE_IDS:
+            selected[item["dofusID"]] = item
 
     action_source_limit = (
         DOFUS_ACTION_STAT_SOURCE_LIMIT
