@@ -21,6 +21,7 @@ This is the current working checklist for deciding whether Build Discovery is sh
 - [x] `startBuildDiscovery` queues app-cache misses as persisted async jobs.
 - [x] Local Compose has an RQ worker service for the default queue.
 - [x] Docker smoke proves cache miss -> queued job -> enqueue intent -> direct worker-task success -> polling result after migrations are applied.
+- [x] Bounded cache prewarm tool exists for the supported Iop local suite.
 - [ ] Decide whether direct `buildDiscovery` should remain public/used, or become dev/legacy once async path is stable.
 
 ## Result Quality
@@ -29,6 +30,7 @@ This is the current working checklist for deciding whether Build Discovery is sh
 - [x] First-build contract fixture checks importable item IDs, internal UUIDs, exos, base allocation, and AP/MP/Range targets.
 - [x] Fresh local suite p95 remeasured against the latest Docker DB generated index.
 - [ ] Fresh synchronous p95 is still above 5s for most local suite rows; keep app-cache misses on async path or optimize slow rows before serving fresh sync.
+- [x] Warmed app-cache suite pass returns all supported rows as hits with nonempty results.
 - [ ] Accepted benchmark artifacts still need to be produced and promoted to regression fixtures.
 - [ ] Non-Iop generated queries remain unsupported until class modeling expands.
 

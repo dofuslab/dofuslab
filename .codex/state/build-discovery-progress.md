@@ -942,3 +942,18 @@ Run the initial evaluator pass:
 - Confirmed current runtime state:
   - host shell: `DOFUSLAB_READONLY_DATABASE_URL` missing
   - running `dofuslab-server-1` container: `DOFUSLAB_READONLY_DATABASE_URL` missing
+
+### 2026-07-09 Cache Prewarm Tool
+
+- Created stacked branch `codex/build-discovery-cache-prewarm` on top of `codex/build-discovery-prod-env-preflight`.
+- Added Docker-runnable cache prewarm tooling for the supported local Iop suite:
+  - `server/scripts/build_discovery_cache_prewarm.py`
+  - warms 11/6/0 and 12/6/0 Strength, Intelligence, Chance, and Agility queries through the real app-cache path
+  - writes a compact JSON report when `--output` is provided
+- Added focused prewarm report tests in `server/scripts/test_build_discovery_cache_prewarm.py`.
+- Verification passed:
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_cache_prewarm.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_cache_prewarm.py scripts/test_build_discovery_cache_prewarm.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_cache_prewarm.py --output /tmp/build_discovery_cache_prewarm_report.json`
+  - second prewarm run against warmed cache reported `status=pass`, `cacheHits=8`, `cacheMisses=0`, `emptyResults=0`, and max observed row elapsed `137.1ms`
+  - `git diff --check`
