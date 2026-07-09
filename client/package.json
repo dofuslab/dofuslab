@@ -13,7 +13,7 @@
     "dev-docker": "NODE_OPTIONS='--inspect=0.0.0.0:9229' yarn codegen && next dev",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "next start",
-    "type-check": "tsc",
+    "type-check": "tsc && yarn check-build-discovery-contract",
     "generate": "graphql-codegen && npx prettier --write ./__generated__/globalTypes.ts && npx prettier --write ./graphql/**/__generated__/*.ts",
     "check-build-discovery-contract": "ts-node --project tsconfig.server.json scripts/check-build-discovery-contract.ts",
     "codegen": "yarn generate",

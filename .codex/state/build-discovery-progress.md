@@ -236,3 +236,11 @@ Run the initial evaluator pass:
   - restored `BuildDiscoveryQueryInput` re-export from `client/common/buildDiscovery.ts`
 - Residual risk:
   - the new client drift check is a standalone script and is not yet wired into build or CI.
+
+### 2026-07-08 Contract Guard Type-Check Wiring
+
+- Created stacked branch `codex/build-discovery-contract-ci-check` on top of `codex/build-discovery-contract-drift-guard`.
+- Wired the client contract drift guard into the normal client type-check path:
+  - `yarn type-check` now runs `tsc && yarn check-build-discovery-contract`
+- Verification passed:
+  - `cd client && yarn type-check`
