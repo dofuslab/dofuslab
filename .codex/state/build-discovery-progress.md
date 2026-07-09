@@ -810,3 +810,18 @@ Run the initial evaluator pass:
   - `cd client; yarn type-check`
   - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts`
   - `git diff --check`
+
+### 2026-07-09 Build Discovery Page Job Polling
+
+- Created stacked branch `codex/build-discovery-page-job-polling` on top of `codex/build-discovery-client-job-lookup`.
+- Wired the Build Discovery page to refresh the currently displayed persisted job by id:
+  - polls only while the displayed job is non-terminal
+  - updates displayed results only when the refreshed id matches the displayed job id
+  - preserves the submitted input paired with the displayed job for generated import provenance
+- Memoized parsed job lookup results in the client bridge to avoid fresh parsed objects on each render.
+- Reviewer finding fixed before commit:
+  - job lookup errors now render visibly and are not hidden behind the initial loading skeleton.
+- Verification passed:
+  - `cd client; yarn type-check`
+  - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts components/common/BuildDiscoveryPage.tsx`
+  - `git diff --check`

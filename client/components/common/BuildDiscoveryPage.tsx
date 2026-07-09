@@ -34,6 +34,7 @@ import {
   generatedExoImportMessage,
   generatedImportBlockMessage,
   parseBuildDiscoveryJob,
+  useBuildDiscoveryJobQuery,
   useStartBuildDiscoveryMutation,
 } from 'common/buildDiscovery';
 import { mq } from 'common/constants';
@@ -453,10 +454,26 @@ export default function BuildDiscoveryPage() {
 
   const { error, loading, startBuildDiscovery } =
     useStartBuildDiscoveryMutation();
+  const buildDiscoveryJobId = displayedJob?.job.id;
   const buildDiscoveryJob = displayedJob?.job;
+  const shouldPollJob =
+    Boolean(buildDiscoveryJobId) &&
+    buildDiscoveryJob?.status !== 'succeeded' &&
+    buildDiscoveryJob?.status !== 'failed';
+  const {
+    buildDiscoveryJob: refreshedJob,
+    error: jobLookupError,
+    loading: isJobLookupLoading,
+  } = useBuildDiscoveryJobQuery(buildDiscoveryJobId, {
+    fetchPolicy: 'cache-and-network',
+    pollInterval: shouldPollJob ? 2000 : 0,
+  });
   const buildDiscovery = displayedJob?.job.result;
   const hasBuilds = Boolean(buildDiscovery?.builds.length);
-  const showInitialLoading = loading && !buildDiscovery;
+  const showInitialLoading =
+    (loading || shouldPollJob || isJobLookupLoading) &&
+    !buildDiscovery &&
+    !jobLookupError;
   const lastTrackedResultsKey = useRef<string | null>(null);
 
   const runBuildDiscovery = useCallback(
@@ -489,6 +506,20 @@ export default function BuildDiscoveryPage() {
     },
     [startBuildDiscovery],
   );
+
+  useEffect(() => {
+    if (!refreshedJob?.id) {
+      return;
+    }
+
+    setDisplayedJob((current) => {
+      if (!current || current.job.id !== refreshedJob.id) {
+        return current;
+      }
+
+      return { ...current, job: refreshedJob };
+    });
+  }, [refreshedJob]);
 
   useEffect(() => {
     if (submittedInput === null || !buildDiscovery) {
@@ -569,7 +600,7 @@ export default function BuildDiscoveryPage() {
             aria-label="Refresh build discovery"
             disabled={submittedInput === null}
             icon={<ReloadOutlined />}
-            loading={loading}
+            loading={loading || isJobLookupLoading}
             onClick={() => {
               gtag.event({
                 action: 'build_discovery_refresh',
@@ -725,6 +756,9 @@ export default function BuildDiscoveryPage() {
         </Button>
       </section>
       {error && <Alert type="error" message={error.message} showIcon />}
+      {jobLookupError && (
+        <Alert type="error" message={jobLookupError.message} showIcon />
+      )}
       {buildDiscovery?.warnings.map((warning) => (
         <Alert key={warning} type="warning" message={warning} showIcon />
       ))}

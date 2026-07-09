@@ -4,7 +4,7 @@ import {
   useMutation,
   useQuery,
 } from '@apollo/client';
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import buildDiscoveryQuery from 'graphql/queries/buildDiscovery.graphql';
 import buildDiscoveryJobQuery from 'graphql/queries/buildDiscoveryJob.graphql';
@@ -97,12 +97,15 @@ export function useBuildDiscoveryJobQuery(
       variables: { id: id ?? '' },
     },
   );
+  const parsedJob = useMemo(
+    () =>
+      skip ? null : parseBuildDiscoveryJob(result.data?.buildDiscoveryJob),
+    [result.data?.buildDiscoveryJob, skip],
+  );
 
   return {
     ...result,
-    buildDiscoveryJob: skip
-      ? null
-      : parseBuildDiscoveryJob(result.data?.buildDiscoveryJob),
+    buildDiscoveryJob: parsedJob,
   };
 }
 
