@@ -1162,3 +1162,25 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_cache_prewarm.py --output /tmp/build_discovery_cache_prewarm_readiness_warm.json`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_cache_prewarm.py --require-all-hits --max-hit-elapsed-ms 500 --output /tmp/build_discovery_cache_prewarm_readiness_strict.json`
   - `git diff --check`
+
+### 2026-07-09 Cache Prewarm p95 Reporting
+
+- Created stacked branch `codex/build-discovery-cache-prewarm-p95` on top of `codex/build-discovery-cache-prewarm-readiness`.
+- Extended cache prewarm reports with elapsed summaries:
+  - all rows: count, min, average, nearest-rank p95, max
+  - cache-hit rows: count, min, average, nearest-rank p95, max
+- Added `--max-hit-p95-ms` to fail strict warmed-cache checks when cache-hit p95 exceeds a threshold.
+- Added focused tests for elapsed summary and p95 gating.
+- Strict warmed-cache p95 gate result:
+  - `status=pass`
+  - `cacheHits=8`
+  - `cacheMisses=0`
+  - `emptyResults=0`
+  - cache-hit p95 `156.4ms`
+  - cache-hit max `156.4ms`
+- Verification passed:
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_cache_prewarm.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_cache_prewarm.py scripts/test_build_discovery_cache_prewarm.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_cache_prewarm.py --output /tmp/build_discovery_cache_prewarm_p95_warm.json`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_cache_prewarm.py --require-all-hits --max-hit-p95-ms 500 --max-hit-elapsed-ms 500 --output /tmp/build_discovery_cache_prewarm_p95_strict.json`
+  - `git diff --check`
