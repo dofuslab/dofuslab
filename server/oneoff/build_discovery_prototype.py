@@ -3499,11 +3499,10 @@ def find_builds(
 
     phase_started = time.perf_counter()
     if len(valid_final_states) < completion_target:
-        beam_initial_seeds = (
-            required_seeds
-            if exo_policy == "none" and required_seeds
-            else initial_seeds
-        )
+        if exo_policy == "none":
+            beam_initial_seeds = required_seeds or []
+        else:
+            beam_initial_seeds = initial_seeds
         for slot_order in slot_orders:
             valid_final_states.extend(
                 search_slot_order(
