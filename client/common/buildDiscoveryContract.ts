@@ -52,6 +52,22 @@ export type BuildDiscoveryResponse = {
   builds: BuildDiscoveryBuild[];
 };
 
+export type BuildDiscoveryJob = {
+  id?: string;
+  status?: string;
+  progress?: number;
+  freshThresholdMs?: number;
+  elapsedMs?: number;
+  cacheHit?: boolean;
+  syncRecommended?: boolean;
+  asyncRecommended?: boolean;
+  generationRequestSource?: string;
+  datasetVersion?: string;
+  solverVersion?: string;
+  requestPayload?: Record<string, unknown>;
+  result: BuildDiscoveryResponse | null;
+};
+
 export type BuildDiscoveryImportContext = {
   datasetVersion?: string;
   solverVersion?: string;
@@ -522,5 +538,29 @@ export function parseBuildDiscoveryResponse(
           .filter(isRecord)
           .map((build) => build as BuildDiscoveryBuild)
       : [],
+  };
+}
+
+export function parseBuildDiscoveryJob(
+  value: unknown,
+): BuildDiscoveryJob | null {
+  if (!isRecord(value)) {
+    return null;
+  }
+
+  return {
+    id: optionalString(value.id),
+    status: optionalString(value.status),
+    progress: optionalNumber(value.progress),
+    freshThresholdMs: optionalNumber(value.freshThresholdMs),
+    elapsedMs: optionalNumber(value.elapsedMs),
+    cacheHit: optionalBoolean(value.cacheHit),
+    syncRecommended: optionalBoolean(value.syncRecommended),
+    asyncRecommended: optionalBoolean(value.asyncRecommended),
+    generationRequestSource: optionalString(value.generationRequestSource),
+    datasetVersion: optionalString(value.datasetVersion),
+    solverVersion: optionalString(value.solverVersion),
+    requestPayload: optionalRecord(value.requestPayload),
+    result: parseBuildDiscoveryResponse(value.result),
   };
 }

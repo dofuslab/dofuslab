@@ -1,0 +1,59 @@
+mutation startBuildDiscovery(
+  $className: String
+  $level: Int
+  $elements: [String!]
+  $mode: String
+  $apTarget: Int
+  $mpTarget: Int
+  $rangeTarget: Int
+  $damageSurvivabilityPreset: Int
+  $budgetTier: Int
+  $exoPolicy: String
+  $weaponPolicy: String
+  $lockedItemIds: [String!]
+  $avoidedItemIds: [String!]
+  $limit: Int
+  $topK: Int
+  $beamWidth: Int
+  $perSignatureCap: Int
+  $relevantSetLimit: Int
+  $maxSharedItems: Int
+) {
+  startBuildDiscovery(
+    className: $className
+    level: $level
+    elements: $elements
+    mode: $mode
+    apTarget: $apTarget
+    mpTarget: $mpTarget
+    rangeTarget: $rangeTarget
+    damageSurvivabilityPreset: $damageSurvivabilityPreset
+    budgetTier: $budgetTier
+    exoPolicy: $exoPolicy
+    weaponPolicy: $weaponPolicy
+    lockedItemIds: $lockedItemIds
+    avoidedItemIds: $avoidedItemIds
+    limit: $limit
+    topK: $topK
+    beamWidth: $beamWidth
+    perSignatureCap: $perSignatureCap
+    relevantSetLimit: $relevantSetLimit
+    maxSharedItems: $maxSharedItems
+  ) {
+    job {
+      id
+      status
+      progress
+      freshThresholdMs
+      elapsedMs
+      cacheHit
+      syncRecommended
+      asyncRecommended
+      generationRequestSource
+      datasetVersion
+      solverVersion
+      requestPayload
+      result
+    }
+  }
+}

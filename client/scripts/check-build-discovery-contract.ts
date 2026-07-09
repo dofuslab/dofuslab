@@ -16,6 +16,7 @@ import {
   generatedBuildName,
   generatedImportBlockMessage,
   normalizeBuildDiscoverySlotName,
+  parseBuildDiscoveryJob,
   parseBuildDiscoveryResponse,
   readableGenerationSource,
 } from '../common/buildDiscoveryContract';
@@ -145,6 +146,76 @@ assert.deepStrictEqual(parsed, {
   },
   builds: [{ score: 10, totals: { ap: 11 } }],
 });
+assert.strictEqual(parseBuildDiscoveryJob(null), null);
+assert.deepStrictEqual(
+  parseBuildDiscoveryJob({
+    id: 'job-key',
+    status: 'succeeded',
+    progress: 100,
+    freshThresholdMs: 5000,
+    elapsedMs: 6100,
+    cacheHit: false,
+    syncRecommended: false,
+    asyncRecommended: true,
+    generationRequestSource: 'build_discovery',
+    datasetVersion: 'dataset-v1',
+    solverVersion: 'solver-v1',
+    requestPayload: {
+      query: { className: 'Iop', elements: ['strength'] },
+      resultKey: 'job-key',
+    },
+    result: {
+      datasetVersion: 'dataset-v1',
+      solverVersion: 'solver-v1',
+      cacheKey: 'job-key',
+      diagnostics: {
+        elapsedMs: 6100,
+        cacheHit: false,
+        resultCount: 1,
+      },
+      warnings: [123, 'kept'],
+      builds: [{ score: 42 }, null],
+    },
+  }),
+  {
+    id: 'job-key',
+    status: 'succeeded',
+    progress: 100,
+    freshThresholdMs: 5000,
+    elapsedMs: 6100,
+    cacheHit: false,
+    syncRecommended: false,
+    asyncRecommended: true,
+    generationRequestSource: 'build_discovery',
+    datasetVersion: 'dataset-v1',
+    solverVersion: 'solver-v1',
+    requestPayload: {
+      query: { className: 'Iop', elements: ['strength'] },
+      resultKey: 'job-key',
+    },
+    result: {
+      datasetVersion: 'dataset-v1',
+      solverVersion: 'solver-v1',
+      cacheKey: 'job-key',
+      cache: undefined,
+      status: undefined,
+      query: undefined,
+      targetSemantics: undefined,
+      profile: undefined,
+      target: undefined,
+      scoring: undefined,
+      warnings: ['kept'],
+      diagnostics: {
+        elapsedMs: 6100,
+        cacheHit: false,
+        appCacheHit: undefined,
+        resultCount: 1,
+        timings: undefined,
+      },
+      builds: [{ score: 42 }],
+    },
+  },
+);
 
 const buildWithExos = {
   exos: {

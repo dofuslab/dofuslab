@@ -1,13 +1,24 @@
-import { QueryHookOptions, useQuery } from '@apollo/client';
+import {
+  MutationHookOptions,
+  QueryHookOptions,
+  useMutation,
+  useQuery,
+} from '@apollo/client';
 
 import buildDiscoveryQuery from 'graphql/queries/buildDiscovery.graphql';
+import startBuildDiscoveryMutation from 'graphql/mutations/startBuildDiscovery.graphql';
 import {
   buildDiscovery,
   buildDiscoveryVariables,
 } from 'graphql/queries/__generated__/buildDiscovery';
 import {
+  startBuildDiscovery,
+  startBuildDiscoveryVariables,
+} from 'graphql/mutations/__generated__/startBuildDiscovery';
+import {
   buildDiscoveryVariablesFromInput,
   BuildDiscoveryQueryInput,
+  parseBuildDiscoveryJob,
   parseBuildDiscoveryResponse,
 } from 'common/buildDiscoveryContract';
 
@@ -18,6 +29,7 @@ export {
   buildDiscoveryHasUnsupportedExos,
   buildDiscoveryImportItems,
   buildDiscoveryItemIds,
+  parseBuildDiscoveryJob,
   buildDiscoveryNumberedSlotParts,
   buildDiscoveryRequestPayload,
   buildDiscoveryResultKey,
@@ -36,6 +48,7 @@ export type {
   BuildDiscoveryCacheStatus,
   BuildDiscoveryElement,
   BuildDiscoveryImportContext,
+  BuildDiscoveryJob,
   BuildDiscoveryQueryInput,
   BuildDiscoveryResponse,
   BuildDiscoveryTargetSemantics,
@@ -59,5 +72,30 @@ export function useBuildDiscoveryQuery(
   return {
     ...result,
     buildDiscovery: parseBuildDiscoveryResponse(result.data?.buildDiscovery),
+  };
+}
+
+export function useStartBuildDiscoveryMutation(
+  options: Omit<
+    MutationHookOptions<startBuildDiscovery, startBuildDiscoveryVariables>,
+    'variables'
+  > = {},
+) {
+  const [mutate, result] = useMutation<
+    startBuildDiscovery,
+    startBuildDiscoveryVariables
+  >(startBuildDiscoveryMutation, options);
+
+  return {
+    ...result,
+    startBuildDiscovery: (input: BuildDiscoveryQueryInput = {}) =>
+      mutate({
+        variables: buildDiscoveryVariablesFromInput(
+          input,
+        ) as startBuildDiscoveryVariables,
+      }),
+    buildDiscoveryJob: parseBuildDiscoveryJob(
+      result.data?.startBuildDiscovery?.job,
+    ),
   };
 }

@@ -722,3 +722,17 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 python -m py_compile oneoff/generated_build_data_audit.py`
   - local Docker audit run completed with `generation_request_table_missing`
   - `git diff --check`
+
+### 2026-07-09 Start Job Client Bridge
+
+- Created stacked branch `codex/build-discovery-start-job-client-bridge` on top of `codex/build-discovery-generated-data-audit`.
+- Added the `startBuildDiscovery` GraphQL mutation document and generated client types.
+- Added `BuildDiscoveryJob` and `parseBuildDiscoveryJob` to the client Build Discovery contract.
+- Added `useStartBuildDiscoveryMutation` as a behavior-neutral client bridge; the existing Build Discovery page still uses the old query path in this checkpoint.
+- Extended the client contract script to assert job parser behavior, including async/sync recommendation fields and defensive nested result parsing.
+- Reviewer finding: no issues.
+- Verification passed:
+  - `cd client; yarn generate`
+  - `cd client; yarn type-check`
+  - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts common/buildDiscoveryContract.ts scripts/check-build-discovery-contract.ts` (existing `no-console` warning in the contract check script)
+  - `git diff --check`
