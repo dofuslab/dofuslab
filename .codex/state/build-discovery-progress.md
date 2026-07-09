@@ -405,3 +405,18 @@ Run the initial evaluator pass:
   - `cd client; yarn type-check`
   - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts common/buildDiscoveryContract.ts scripts/check-build-discovery-contract.ts` (existing `no-console` warning in the contract check script)
   - `git diff --check`
+
+### 2026-07-09 Generated Build Label
+
+- Created stacked branch `codex/build-discovery-generated-build-label` on top of `codex/build-discovery-target-semantics-client-contract`.
+- Made `Open in builder` visibly mark persisted generated builds:
+  - after `equipItems` creates the custom set, the client calls `editCustomSetMetadata`
+  - generated rows are named `Generated Build Discovery #<rounded score>` when a score is available
+  - metadata save is best-effort so labeling failures do not prevent exo application or opening the generated build
+- Reviewer finding fixed before commit:
+  - metadata save failure no longer hard-stops generated exo application or navigation
+- Recorded the longer-term data cleanliness decision: if Build Discovery generated rows remain persisted artifacts, add a durable generation/source model such as `GenerationRequest` linked to `custom_set`.
+- Verification passed:
+  - `cd client; npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
+  - `cd client; yarn type-check`
+  - `git diff --check`

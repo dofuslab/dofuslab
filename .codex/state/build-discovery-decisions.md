@@ -22,3 +22,4 @@
 - Exos are a separate user-facing policy where possible.
 - Async job flow is acceptable if fresh generation remains above 5s.
 - OR-Tools is out of scope as the primary solver.
+- Persisted builds created from Build Discovery must be distinguishable from ordinary user-authored builds. Short term: generated imports should carry an explicit generated name. Longer term: if generated custom sets remain persisted artifacts, add a durable generation/source model such as `GenerationRequest` linked to created `custom_set` rows so cleanup, analytics, and provenance do not depend on display copy.

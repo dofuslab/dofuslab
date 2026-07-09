@@ -38,6 +38,11 @@ import {
   equipItems,
   equipItemsVariables,
 } from 'graphql/mutations/__generated__/equipItems';
+import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetadata.graphql';
+import {
+  editCustomSetMetadata,
+  editCustomSetMetadataVariables,
+} from 'graphql/mutations/__generated__/editCustomSetMetadata';
 import SetEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
 import {
   setEquippedItemExo,
@@ -152,6 +157,13 @@ function buildResultKey(build: BuildDiscoveryBuild) {
   return `${build.score ?? 'score'}:${itemIds}`;
 }
 
+function generatedBuildName(build: BuildDiscoveryBuild) {
+  const scoreLabel =
+    typeof build.score === 'number' ? ` #${Math.round(build.score)}` : '';
+
+  return `Generated Build Discovery${scoreLabel}`;
+}
+
 function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
   const router = useRouter();
   const client = useApolloClient();
@@ -166,6 +178,11 @@ function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
   >(EquipItemsMutation, {
     refetchQueries: () => ['buildList'],
   });
+  const [editCustomSetMetadataMutate, { loading: isSavingMetadata }] =
+    useMutation<editCustomSetMetadata, editCustomSetMetadataVariables>(
+      EditCustomSetMetadataMutation,
+      { refetchQueries: () => ['buildList'] },
+    );
   const [setEquippedItemExoMutate, { loading: isSettingExos }] = useMutation<
     setEquippedItemExo,
     setEquippedItemExoVariables
@@ -196,6 +213,23 @@ function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
       }
 
       createdCustomSetId = customSet.id;
+
+      try {
+        await editCustomSetMetadataMutate({
+          variables: {
+            customSetId: customSet.id,
+            level: 200,
+            name: generatedBuildName(build),
+          },
+        });
+      } catch {
+        gtag.event({
+          action: 'build_discovery_generated_label_error',
+          category: 'Build Discovery',
+          label: customSet.id,
+          value: itemIds.length,
+        });
+      }
 
       await Object.entries(build.exos ?? {}).reduce(
         async (previous, [stat, exo]) => {
@@ -278,6 +312,7 @@ function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
     build,
     build.exos,
     client,
+    editCustomSetMetadataMutate,
     equipItemsMutate,
     hasUnsupportedExos,
     itemIds,
@@ -291,7 +326,7 @@ function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
     hasExos,
     hasUnsupportedExos,
     itemIds,
-    loading: isEquipping || isSettingExos,
+    loading: isEquipping || isSavingMetadata || isSettingExos,
     openInBuilder,
   };
 }
