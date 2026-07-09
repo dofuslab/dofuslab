@@ -20,7 +20,7 @@ This is the current working checklist for deciding whether Build Discovery is sh
 - [x] `startBuildDiscovery` returns app-cache hits synchronously as succeeded jobs.
 - [x] `startBuildDiscovery` queues app-cache misses as persisted async jobs.
 - [x] Local Compose has an RQ worker service for the default queue.
-- [ ] End-to-end Docker smoke proves cache miss -> queued job -> worker success -> polling result after migrations are applied.
+- [x] Docker smoke proves cache miss -> queued job -> enqueue intent -> direct worker-task success -> polling result after migrations are applied.
 - [ ] Decide whether direct `buildDiscovery` should remain public/used, or become dev/legacy once async path is stable.
 
 ## Result Quality

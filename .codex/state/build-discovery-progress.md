@@ -880,3 +880,33 @@ Run the initial evaluator pass:
   - `cd client; yarn type-check`
   - `cd client; npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
   - `git diff --check`
+
+### 2026-07-09 Assumptions And Readiness Refresh
+
+- Created stacked branch `codex/build-discovery-assumptions-refresh` on top of `codex/build-discovery-job-status-ui`.
+- Refreshed `.codex/state/build-discovery-assumptions.md` for the current async job/cache/product path.
+- Added `.codex/state/build-discovery-readiness-checklist.md` with explicit checked/open items for query contract, performance path, result quality, generated data cleanliness, assumptions, and prod benchmarks.
+- Reviewer finding: no issues.
+- Verification passed:
+  - `git diff --check`
+
+### 2026-07-09 Async Job Docker Smoke
+
+- Created stacked branch `codex/build-discovery-async-smoke` on top of `codex/build-discovery-assumptions-refresh`.
+- Added Docker-runnable async smoke script:
+  - clears the app-cache key for a bounded Strength Iop query
+  - calls `startBuildDiscovery`
+  - asserts a queued job is returned on cache miss
+  - captures the intended enqueue call without leaving an RQ job behind
+  - runs the captured worker task against that job id
+  - calls `buildDiscoveryJob(id)`
+  - asserts the job succeeds with nonempty builds
+- Applied local Docker migrations through `395c1a10243a` before the smoke.
+- Verification passed:
+  - `docker exec -w /home/dofuslab dofuslab-server-1 flask db current` reported `395c1a10243a (head)`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_async_smoke.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_job_persistence.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_async_smoke.py app/schema.py app/tasks.py`
+  - `git diff --check`
+- Residual note:
+  - local Docker emitted Datadog trace-send warnings because no local intake is running; the smoke itself passed.
