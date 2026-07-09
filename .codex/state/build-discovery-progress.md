@@ -753,3 +753,17 @@ Run the initial evaluator pass:
   - `cd client; yarn type-check`
   - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts components/common/BuildDiscoveryPage.tsx`
   - `git diff --check`
+
+### 2026-07-09 Build Discovery Job Model Skeleton
+
+- Created stacked branch `codex/build-discovery-job-model-skeleton` on top of `codex/build-discovery-page-start-job`.
+- Added durable backend job persistence groundwork:
+  - SQLAlchemy `ModelBuildDiscoveryJob`
+  - Alembic migration stacked after `generation_request`
+  - nullable provenance link to `GenerationRequest`
+  - status/progress, request/result/error payloads, dataset/solver versions, elapsed timing, and lookup indexes
+- Reviewer finding: no issues.
+- Verification passed:
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_job_model.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile app/database/model_build_discovery_job.py app/migrations/versions/395c1a10243a_add_build_discovery_job.py scripts/test_build_discovery_job_model.py`
+  - `git diff --check`
