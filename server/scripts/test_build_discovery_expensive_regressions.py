@@ -29,10 +29,13 @@ class BuildDiscoveryExpensiveRegressionTest(unittest.TestCase):
         self,
         response,
         *,
+        min_ap: int = 11,
+        min_mp: int = 6,
         min_primary_stat: int,
         primary_stat: str,
         min_score: float,
         expected_item_ids: set,
+        expected_exos: Optional[dict] = None,
         required_item_id: Optional[str] = None,
     ):
         builds = response["builds"]
@@ -40,10 +43,10 @@ class BuildDiscoveryExpensiveRegressionTest(unittest.TestCase):
 
         best = builds[0]
         self.assertGreaterEqual(best["score"], min_score)
-        self.assertGreaterEqual(best["totals"]["AP"], 11)
-        self.assertGreaterEqual(best["totals"]["MP"], 6)
+        self.assertGreaterEqual(best["totals"]["AP"], min_ap)
+        self.assertGreaterEqual(best["totals"]["MP"], min_mp)
         self.assertGreaterEqual(best["totals"][primary_stat], min_primary_stat)
-        self.assertEqual(best["exos"], {})
+        self.assertEqual(best["exos"], expected_exos or {})
         self.assertEqual(best["conditionFailures"], [])
         self.assertEqual(
             {item["id"] for item in best["items"].values()},
@@ -173,6 +176,92 @@ class BuildDiscoveryExpensiveRegressionTest(unittest.TestCase):
                 "16335",
             },
             required_item_id=SHAKER_TROPHY_ID,
+        )
+
+    def test_opti_strength_iop_11_6_still_finds_benchmark_build(self):
+        response = build_discovery_response(
+            BuildDiscoveryQuery(
+                elements=("strength",),
+                ap_target=11,
+                mp_target=6,
+                range_target=0,
+                budget_tier=4,
+                exo_policy="opti",
+                limit=2,
+            ),
+            use_cache=False,
+        )
+
+        self.assert_has_budget_build(
+            response,
+            primary_stat="Strength",
+            min_primary_stat=1400,
+            min_score=2279.35,
+            expected_item_ids={
+                "15433",
+                "15432",
+                "18018",
+                "18693",
+                "13115",
+                "17998",
+                "13116",
+                "15431",
+                "14168",
+                "33044",
+                "7043",
+                "22004",
+                "694",
+                "22020",
+                "13344",
+                "739",
+            },
+            expected_exos={
+                "AP": {"itemId": "15432", "slot": "belt"},
+                "MP": {"itemId": "15433", "slot": "amulet"},
+            },
+        )
+
+    def test_opti_strength_iop_12_6_still_finds_benchmark_build(self):
+        response = build_discovery_response(
+            BuildDiscoveryQuery(
+                elements=("strength",),
+                ap_target=12,
+                mp_target=6,
+                range_target=0,
+                budget_tier=4,
+                exo_policy="opti",
+                limit=2,
+            ),
+            use_cache=False,
+        )
+
+        self.assert_has_budget_build(
+            response,
+            min_ap=12,
+            primary_stat="Strength",
+            min_primary_stat=1400,
+            min_score=2320.43,
+            expected_item_ids={
+                "15433",
+                "15432",
+                "18018",
+                "18693",
+                "13115",
+                "17998",
+                "13116",
+                "15431",
+                "14168",
+                "33044",
+                "7043",
+                "22004",
+                "694",
+                "22020",
+                "7754",
+                "6980",
+            },
+            expected_exos={
+                "AP": {"itemId": "15432", "slot": "belt"},
+            },
         )
 
 
