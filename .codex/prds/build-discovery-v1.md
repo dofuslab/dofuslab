@@ -68,11 +68,45 @@ Current confidence boundary:
    - Only after correctness milestones are stable, optimize cache misses and
      beam/search paths.
    - Preserve expensive correctness regressions while optimizing.
+   - Precompute reusable set package indexes, including strong cross-set
+     package pairs/triples such as Corruption + Bleeding Heart. Keep
+     correctness by using these packages as seeds/shortcuts, not exclusive
+     replacements for single-set packages, partial-set packages, locked-item
+     seeds, and fallback search. A build that uses Corruption without Bleeding
+     Heart must still be discoverable.
+   - Precompute Dofus/trophy/prysmaradite combination packages by level,
+     budget tier, exo policy, and broad element/scoring profile. There are far
+     fewer viable combinations than gear combinations, and these items are
+     reused across many high-scoring builds. Preserve correctness by including
+     core staples, action-point enablers, special-effect Dofuses, and
+     benchmark-required combinations even when cheap pre-score ranks them low.
+   - Cache package indexes with `datasetVersion` and `solverVersion`, and make
+     pruning auditable: every dropped benchmark path should have a diagnostic
+     reason.
 6. Product/API/UI.
    - Productize API, persistence, generated build provenance, and UI after core
      quality is defensible.
    - Async/cache can exist as infrastructure, but should not distract from
      benchmark-led correctness.
+
+## Regression Test Tiers
+
+- Tier 0: cheap unit tests for availability tiers, action stat scoring, item
+  condition helpers, package scoring helpers, and Dofus/trophy combo selection.
+  Run on every solver edit.
+- Tier 1: focused expensive no-cache benchmark tests for the query family being
+  touched, for example only STR opti 11/6 and 12/6 when changing opti STR
+  search. Run before committing search/scoring changes.
+- Tier 2: full expensive regression suite across remembered best builds. Run
+  before pushing larger solver checkpoints, after broad pruning changes, and
+  occasionally as a guardrail during long loops.
+- Tier 3: full representative matrix generation. Run only at milestone
+  checkpoints or when explicitly updating generated benchmark artifacts.
+
+The full expensive suite should remain available, but the loop should not spend
+most of its time running every benchmark after every small change. Use focused
+tests while iterating, then run the broader tiers when the change is ready to
+checkpoint.
 
 ## Acceptance Criteria
 
