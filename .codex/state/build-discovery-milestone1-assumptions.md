@@ -139,6 +139,12 @@ python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
 - 2026-07-09: low profile `7/3/0`, budget tier 1, all four elements
   (`strength,intelligence,chance,agility`) passed the bounded smoke test in
   Docker. Runtime was about 437s for four generation rows.
+- 2026-07-09: low profile `7/3/0`, budget tier 2, all four elements
+  (`strength,intelligence,chance,agility`) passed the bounded smoke test in
+  Docker. Runtime was about 471s for four generation rows.
+- 2026-07-09: low profile `7/3/0`, budget tiers 2-4 and all four elements
+  exceeded a 20-minute iterative timeout. Keep broad smoke runs sliced by
+  budget tier until performance work makes broader local runs practical.
 - 2026-07-09: high profile `12/6/6`, Strength, budget tier 1 and tier 2
   passed after preserving action-stat trophy and gear seed paths. Tier 1
   Strength runtime was about 85s for one generation row.
