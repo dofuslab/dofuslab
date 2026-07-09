@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useApolloClient, useMutation } from '@apollo/client';
 import { useTheme } from '@emotion/react';
 import {
@@ -45,6 +45,7 @@ import {
 } from 'graphql/mutations/__generated__/setEquippedItemExo';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
+import * as gtag from 'gtag';
 
 const elementOptions: Array<{
   label: string;
@@ -172,6 +173,12 @@ function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
 
   const openInBuilder = useCallback(async () => {
     setError(null);
+    gtag.event({
+      action: 'build_discovery_open_builder_attempt',
+      category: 'Build Discovery',
+      label: buildResultKey(build),
+      value: itemIds.length,
+    });
     const ok = await checkAuthentication(client, t);
 
     if (!ok || itemIds.length === 0 || hasUnsupportedExos) {
@@ -237,6 +244,12 @@ function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
         Promise.resolve(),
       );
 
+      gtag.event({
+        action: 'build_discovery_open_builder_success',
+        category: 'Build Discovery',
+        label: customSet.id,
+        value: itemIds.length,
+      });
       navigateToNewCustomSet(router, customSet.id);
     } catch (caughtError) {
       setError(
@@ -245,10 +258,24 @@ function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
           : 'Could not open build.',
       );
       if (createdCustomSetId !== null) {
+        gtag.event({
+          action: 'build_discovery_open_builder_partial',
+          category: 'Build Discovery',
+          label: createdCustomSetId,
+          value: itemIds.length,
+        });
         navigateToNewCustomSet(router, createdCustomSetId);
+      } else {
+        gtag.event({
+          action: 'build_discovery_open_builder_error',
+          category: 'Build Discovery',
+          label: 'open_failed_before_build_created',
+          value: itemIds.length,
+        });
       }
     }
   }, [
+    build,
     build.exos,
     client,
     equipItemsMutate,
@@ -465,6 +492,36 @@ export default function BuildDiscoveryPage() {
   );
   const hasBuilds = Boolean(buildDiscovery?.builds.length);
   const showInitialLoading = loading && !buildDiscovery;
+  const lastTrackedResultsKey = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (submittedInput === null || !buildDiscovery) {
+      return;
+    }
+
+    const resultsKey = `${buildDiscovery.cacheKey ?? 'no-cache-key'}:${
+      buildDiscovery.builds.length
+    }:${buildDiscovery.cache?.status ?? 'unknown'}`;
+
+    if (resultsKey === lastTrackedResultsKey.current) {
+      return;
+    }
+
+    lastTrackedResultsKey.current = resultsKey;
+    gtag.event({
+      action: 'build_discovery_results_shown',
+      category: 'Build Discovery',
+      label: `${submittedInput.element}:${
+        buildDiscovery.cache?.status ?? 'unknown'
+      }`,
+      value: buildDiscovery.builds.length,
+    });
+  }, [
+    buildDiscovery?.cache?.status,
+    buildDiscovery?.cacheKey,
+    buildDiscovery?.builds.length,
+    submittedInput,
+  ]);
 
   return (
     <main
@@ -511,7 +568,14 @@ export default function BuildDiscoveryPage() {
             disabled={submittedInput === null}
             icon={<ReloadOutlined />}
             loading={loading}
-            onClick={() => refetch()}
+            onClick={() => {
+              gtag.event({
+                action: 'build_discovery_refresh',
+                category: 'Build Discovery',
+                label: submittedInput?.element,
+              });
+              refetch();
+            }}
           />
         </Space>
       </section>
@@ -639,7 +703,15 @@ export default function BuildDiscoveryPage() {
         <Button
           type="primary"
           loading={loading}
-          onClick={() => setSubmittedInput(input)}
+          onClick={() => {
+            gtag.event({
+              action: 'build_discovery_run',
+              category: 'Build Discovery',
+              label: input.element,
+              value: input.budgetTier ?? undefined,
+            });
+            setSubmittedInput(input);
+          }}
           css={{
             gridColumn: 'span 2',
             [mq[2]]: {

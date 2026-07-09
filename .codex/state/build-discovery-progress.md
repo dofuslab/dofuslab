@@ -344,3 +344,21 @@ Run the initial evaluator pass:
 - Verification passed:
   - `cd client && npx eslint --fix-dry-run common/buildDiscovery.ts common/buildDiscoveryContract.ts components/common/BuildDiscoveryPage.tsx`
   - `cd client && yarn type-check`
+
+### 2026-07-09 Client Analytics Instrumentation
+
+- Created stacked branch `codex/build-discovery-client-analytics` on top of `codex/build-discovery-exo-import-guards`.
+- Added Build Discovery client analytics events:
+  - query run
+  - refresh
+  - results shown
+  - open-in-builder attempt
+  - open-in-builder success
+  - open-in-builder partial exo failure with created-build navigation
+  - open-in-builder error before build creation
+- Hardened the shared `gtag` helper so missing `window.gtag` does not crash local/dev sessions.
+- Reviewer finding fixed before commit:
+  - analytics uses a bounded error label instead of sending raw exception messages to GA
+- Verification passed:
+  - `cd client && npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx gtag.ts`
+  - `cd client && yarn type-check`
