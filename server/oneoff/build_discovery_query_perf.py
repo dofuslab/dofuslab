@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import sys
 import time
 from dataclasses import replace
 from statistics import mean
@@ -13,17 +14,35 @@ from typing import Any
 from oneoff import build_discovery_prototype
 from oneoff.build_discovery_prototype import (
     BuildDiscoveryQuery,
+    ELEMENT_PROFILES,
     build_discovery_response,
     clear_build_discovery_response_cache,
+    query_cache_identity,
 )
 
+REPORT_VERSION = "build-discovery-local-query-validation-v1"
 MAX_RUNS = 20
 MAX_LIMIT = 20
 MAX_TOP_K = 100
 MAX_BEAM_WIDTH = 1000
 MAX_PER_SIGNATURE_CAP = 200
 MAX_RELEVANT_SET_LIMIT = 200
+DEFAULT_P95_THRESHOLD_MS = 5000.0
 SUPPORTED_IOP_ELEMENTS = ("strength", "intelligence", "chance", "agility")
+LOCAL_VALIDATION_PROFILE_ID = "iop_element_matrix_11_6_0_budget4_exo_allow"
+LOCAL_VALIDATION_PROFILE_LABEL = "Iop element matrix 11/6/0 budget tier 4 exo allow"
+LOCAL_VALIDATION_QUERY = BuildDiscoveryQuery(
+    ap_target=11,
+    mp_target=6,
+    range_target=0,
+    budget_tier=4,
+    exo_policy="allow",
+    limit=3,
+    top_k=10,
+    beam_width=75,
+    per_signature_cap=20,
+    relevant_set_limit=60,
+)
 
 
 def percentile(values: list[float], percentile_value: float) -> float:
@@ -45,6 +64,21 @@ def timing_summary(values: list[float]) -> dict[str, float]:
     }
 
 
+def clear_prototype_data_caches() -> None:
+    for function_name in ("load_build_discovery_index", "load_all_item_records", "load_sets"):
+        cache_clear = getattr(getattr(build_discovery_prototype, function_name, None), "cache_clear", None)
+        if cache_clear:
+            cache_clear()
+    clear_build_discovery_response_cache()
+
+
+def configure_index_path(index_path: str | None) -> None:
+    if index_path is None:
+        return
+    build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH = index_path
+    clear_prototype_data_caches()
+
+
 def measure_query(query: BuildDiscoveryQuery, runs: int, use_cache: bool) -> dict[str, Any]:
     clear_build_discovery_response_cache()
     timings = []
@@ -64,6 +98,104 @@ def measure_query(query: BuildDiscoveryQuery, runs: int, use_cache: bool) -> dic
         "timings": timing_summary(timings),
         "resultCount": (last_response or {}).get("diagnostics", {}).get("resultCount", 0),
         "cacheKey": (last_response or {}).get("cacheKey"),
+    }
+
+
+def expected_element_profile(element: str) -> dict[str, Any]:
+    profile = ELEMENT_PROFILES[element]
+    return {
+        "primaryStat": profile.primary_stat,
+        "damageStat": profile.damage_stat,
+        "damageElement": profile.element,
+        "secondaryDamageStats": sorted(profile.secondary_damage_weights),
+    }
+
+
+def local_validation_query_summary(
+    query: BuildDiscoveryQuery,
+    elements: tuple[str, ...] = SUPPORTED_IOP_ELEMENTS,
+) -> dict[str, Any]:
+    summary = query_cache_identity(query)
+    summary["elements"] = list(elements)
+    return summary
+
+
+def validation_failures(row: dict[str, Any], p95_threshold_ms: float) -> list[str]:
+    failures = []
+    if row.get("resultCount", 0) <= 0:
+        failures.append("empty_results")
+    p95_ms = row.get("timings", {}).get("p95Ms", 0.0)
+    if p95_ms > p95_threshold_ms:
+        failures.append("p95_threshold_exceeded")
+    return failures
+
+
+def validate_local_element_matrix(
+    query: BuildDiscoveryQuery = LOCAL_VALIDATION_QUERY,
+    runs: int = 1,
+    use_cache: bool = False,
+    p95_threshold_ms: float = DEFAULT_P95_THRESHOLD_MS,
+    elements: tuple[str, ...] = SUPPORTED_IOP_ELEMENTS,
+) -> dict[str, Any]:
+    matrix = measure_element_matrix(query, runs, use_cache, elements=elements)
+    rows_by_element = {row["element"]: row for row in matrix["results"]}
+    results = []
+    for element in elements:
+        row = rows_by_element.get(element)
+        if row is None:
+            results.append(
+                {
+                    "element": element,
+                    "runs": runs,
+                    "cacheEnabled": use_cache,
+                    "cacheHits": 0,
+                    "timings": {},
+                    "resultCount": 0,
+                    "expectedProfile": expected_element_profile(element),
+                    "validation": {
+                        "status": "fail",
+                        "failures": ["missing_element_result"],
+                    },
+                }
+            )
+            continue
+        failures = validation_failures(row, p95_threshold_ms)
+        results.append(
+            {
+                **row,
+                "expectedProfile": expected_element_profile(element),
+                "validation": {
+                    "status": "fail" if failures else "pass",
+                    "failures": failures,
+                },
+            }
+        )
+
+    status = "fail" if any(row["validation"]["failures"] for row in results) else "pass"
+    return {
+        "reportVersion": REPORT_VERSION,
+        "status": status,
+        "profile": {
+            "id": LOCAL_VALIDATION_PROFILE_ID,
+            "label": LOCAL_VALIDATION_PROFILE_LABEL,
+            "source": "generated_json_index_local_smoke",
+            "assumption": "All supported Iop elements should return at least one build for this bounded profile.",
+        },
+        "index": {
+            "path": build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH,
+            "source": "generated_json_index",
+        },
+        "thresholds": {
+            "p95Ms": p95_threshold_ms,
+        },
+        "queryParams": local_validation_query_summary(query, elements=elements),
+        "expectedProfiles": {
+            element: expected_element_profile(element)
+            for element in elements
+        },
+        "runs": runs,
+        "cacheEnabled": use_cache,
+        "results": results,
     }
 
 
@@ -116,11 +248,26 @@ def validate_index_source(parser: argparse.ArgumentParser, allow_db: bool) -> No
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--runs", type=int, default=3)
+    parser.add_argument(
+        "--index-path",
+        help="Generated JSON index path to use for local query validation or measurement.",
+    )
     parser.add_argument("--no-cache", action="store_true")
     parser.add_argument(
         "--element-matrix",
         action="store_true",
         help="Measure the bounded supported Iop element matrix.",
+    )
+    parser.add_argument(
+        "--validate-local-profile",
+        action="store_true",
+        help="Validate the deterministic local Iop element matrix profile against a generated JSON index.",
+    )
+    parser.add_argument(
+        "--p95-threshold-ms",
+        type=float,
+        default=DEFAULT_P95_THRESHOLD_MS,
+        help="Fail local validation when any element p95 exceeds this threshold.",
     )
     parser.add_argument(
         "--allow-db",
@@ -139,27 +286,37 @@ def main() -> None:
     parser.add_argument("--per-signature-cap", type=int, default=40)
     parser.add_argument("--relevant-set-limit", type=int, default=60)
     args = parser.parse_args()
+    configure_index_path(args.index_path)
     validate_cli_bounds(parser, args)
-    validate_index_source(parser, args.allow_db)
+    validate_index_source(parser, args.allow_db and not args.validate_local_profile)
 
-    query = BuildDiscoveryQuery(
-        elements=(args.element,),
-        ap_target=args.target_ap,
-        mp_target=args.target_mp,
-        range_target=args.target_range,
-        budget_tier=args.budget_tier,
-        exo_policy=args.exo_policy,
-        limit=args.limit,
-        top_k=args.top_k,
-        beam_width=args.beam_width,
-        per_signature_cap=args.per_signature_cap,
-        relevant_set_limit=args.relevant_set_limit,
-    )
-    if args.element_matrix:
-        report = measure_element_matrix(query, args.runs, not args.no_cache)
+    if args.validate_local_profile:
+        report = validate_local_element_matrix(
+            runs=args.runs,
+            use_cache=not args.no_cache,
+            p95_threshold_ms=args.p95_threshold_ms,
+        )
     else:
-        report = measure_query(query, args.runs, not args.no_cache)
+        query = BuildDiscoveryQuery(
+            elements=(args.element,),
+            ap_target=args.target_ap,
+            mp_target=args.target_mp,
+            range_target=args.target_range,
+            budget_tier=args.budget_tier,
+            exo_policy=args.exo_policy,
+            limit=args.limit,
+            top_k=args.top_k,
+            beam_width=args.beam_width,
+            per_signature_cap=args.per_signature_cap,
+            relevant_set_limit=args.relevant_set_limit,
+        )
+        if args.element_matrix:
+            report = measure_element_matrix(query, args.runs, not args.no_cache)
+        else:
+            report = measure_query(query, args.runs, not args.no_cache)
     print(json.dumps(report, indent=2))
+    if args.validate_local_profile and report["status"] != "pass":
+        sys.exit(1)
 
 
 if __name__ == "__main__":
