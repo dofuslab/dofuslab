@@ -1329,3 +1329,18 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_pipeline.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_local_readiness_pipeline.py --output-dir /tmp/build_discovery_local_readiness_pipeline_state_dir --state-dir /tmp/build_discovery_local_readiness_state`
   - `git diff --check`
+
+### 2026-07-09 Assumptions Review Index
+
+- Created stacked branch `codex/build-discovery-assumptions-review-index` on top of `codex/build-discovery-local-readiness-state-dir`.
+- Added `.codex/state/build-discovery-assumptions-review-index.md`.
+- The index extracts the highest-risk assumptions into a short review surface:
+  - budget tier boundaries
+  - exo policy semantics
+  - AP/MP/Range surplus semantics
+  - Iop element quality
+  - special-effect modeling
+  - benchmark representativeness
+- It also lists shippability watch items for fresh synchronous performance, generated data cleanliness, v1 scope boundary, and prod benchmark safety.
+- Verification passed:
+  - `git diff --check`
