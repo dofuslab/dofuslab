@@ -148,3 +148,6 @@ python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
 - 2026-07-09: high profile `12/6/6`, budget tier 2, all four elements
   (`strength,intelligence,chance,agility`) passed the bounded smoke test in
   Docker. Runtime was about 364s for four generation rows.
+- 2026-07-09: high profile `12/6/6`, budget tiers 3 and 4, all four elements
+  (`strength,intelligence,chance,agility`) passed the bounded smoke test in
+  Docker. Runtime was about 448s for eight generation rows.
