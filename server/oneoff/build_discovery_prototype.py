@@ -706,6 +706,7 @@ OCHRE_DOFUS_ID = "7754"
 VULBIS_DOFUS_ID = "6980"
 ACCESSIBLE_DOFUS_IDS = {
     "694",  # Crimson Dofus
+    "737",  # Emerald Dofus
     "739",  # Turquoise Dofus
     "7043",  # Ice Dofus
     "13344",  # Dolmanax

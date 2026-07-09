@@ -32,6 +32,10 @@ class BuildDiscoveryAvailabilityTierTest(unittest.TestCase):
             2,
         )
         self.assertEqual(
+            availability_tier_for_item({"itemType": "Dofus", "dofusID": "737"}),
+            2,
+        )
+        self.assertEqual(
             availability_tier_for_item({"itemType": "Dofus", "dofusID": "7754"}),
             4,
         )
