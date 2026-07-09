@@ -21,6 +21,30 @@ def mocked_session_scope(db_session):
 
 
 class BuildDiscoveryGraphQLTest(unittest.TestCase):
+    def test_generated_request_class_name_reads_query_class_name(self):
+        self.assertEqual(
+            schema_module.generated_request_class_name(
+                {"query": {"className": "Iop"}}
+            ),
+            "Iop",
+        )
+        self.assertIsNone(schema_module.generated_request_class_name({}))
+        self.assertIsNone(
+            schema_module.generated_request_class_name({"query": {"className": ""}})
+        )
+
+    def test_generated_default_class_id_ignores_non_build_discovery_sources(self):
+        db_session = Mock()
+
+        self.assertIsNone(
+            schema_module.generated_default_class_id(
+                db_session,
+                "other_source",
+                {"query": {"className": "Iop"}},
+            )
+        )
+        db_session.query.assert_not_called()
+
     def test_build_discovery_query_exposes_product_contract(self):
         response = {
             "query": {"className": "Iop", "elements": ["intelligence"], "limit": 3},
@@ -147,6 +171,60 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
             result.data["importGeneratedCustomSet"]["generationRequest"]["requestPayload"],
             {"query": {"element": "strength"}},
         )
+
+    def test_import_generated_custom_set_sets_generated_default_class(self):
+        custom_set_id = uuid.uuid4()
+        item_id = uuid.uuid4()
+        class_id = uuid.uuid4()
+        item = SimpleNamespace(uuid=item_id)
+        custom_set = SimpleNamespace(
+            uuid=custom_set_id,
+            default_class_id=None,
+            equip_items=Mock(),
+        )
+        db_session = Mock()
+        db_session.query.return_value.filter.return_value.one.return_value = item
+
+        with patch.object(
+            schema_module, "session_scope", return_value=mocked_session_scope(db_session)
+        ), patch.object(
+            schema_module, "get_or_create_custom_set", return_value=custom_set
+        ), patch.object(
+            schema_module, "edit_custom_set_metadata"
+        ), patch.object(
+            schema_module, "generated_default_class_id", return_value=class_id
+        ) as generated_class, patch.object(
+            utils_module, "current_user", SimpleNamespace(is_authenticated=False)
+        ):
+            result = schema.execute(
+                """
+                mutation ImportGeneratedCustomSet($items: [CustomSetImportedItemInput!]!, $payload: GenericScalar) {
+                  importGeneratedCustomSet(
+                    items: $items
+                    name: "Generated Build Discovery"
+                    level: 200
+                    source: "build_discovery"
+                    requestPayload: $payload
+                  ) {
+                    generationRequest {
+                      source
+                    }
+                  }
+                }
+                """,
+                variables={
+                    "items": [{"id": str(item_id)}],
+                    "payload": {"query": {"className": "Iop"}},
+                },
+            )
+
+        self.assertIsNone(result.errors)
+        generated_class.assert_called_once_with(
+            db_session,
+            "build_discovery",
+            {"query": {"className": "Iop"}},
+        )
+        self.assertEqual(custom_set.default_class_id, class_id)
 
     def test_import_generated_custom_set_rejects_invalid_provenance_metadata(self):
         cases = [

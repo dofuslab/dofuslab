@@ -1017,6 +1017,30 @@ def validate_generation_metadata(source, dataset_version, solver_version, reques
             raise GraphQLError(_("Generation request payload is too large."))
 
 
+def generated_request_class_name(request_payload):
+    if not isinstance(request_payload, dict):
+        return None
+    query = request_payload.get("query")
+    if not isinstance(query, dict):
+        return None
+    class_name = query.get("className")
+    return class_name if isinstance(class_name, str) and class_name else None
+
+
+def generated_default_class_id(db_session, source, request_payload):
+    if source != "build_discovery":
+        return None
+    class_name = generated_request_class_name(request_payload)
+    if not class_name:
+        return None
+    translation = (
+        db_session.query(ModelClassTranslation)
+        .filter_by(locale="en", name=class_name)
+        .one_or_none()
+    )
+    return translation.class_id if translation else None
+
+
 class ImportGeneratedCustomSet(graphene.Mutation):
     class Arguments:
         items = graphene.NonNull(
@@ -1052,6 +1076,13 @@ class ImportGeneratedCustomSet(graphene.Mutation):
         with session_scope() as db_session:
             custom_set = get_or_create_custom_set(None, db_session)
             edit_custom_set_metadata(custom_set, kwargs.get("name"), kwargs.get("level"))
+            default_class_id = generated_default_class_id(
+                db_session,
+                source,
+                request_payload,
+            )
+            if default_class_id:
+                custom_set.default_class_id = default_class_id
             items = [
                 {
                     "item": db_session.query(ModelItem)

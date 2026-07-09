@@ -530,3 +530,18 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 python -m py_compile app/schema.py`
   - Docker schema assertion that `CustomSetFilters.generated` exists as `Boolean`
   - `git diff --check`
+
+### 2026-07-09 Generated Import Default Class
+
+- Created stacked branch `codex/build-discovery-generated-import-default-class` on top of `codex/build-discovery-generated-build-filter`.
+- Made Build Discovery generated imports open with the generated class context:
+  - `ImportGeneratedCustomSet` reads `requestPayload.query.className`
+  - for `source == "build_discovery"` only, the mutation maps that class name through English class translations and sets `custom_set.default_class_id`
+  - unknown/missing class names keep existing default-class behavior
+- Reviewer finding fixed before commit:
+  - gated class derivation on `source == "build_discovery"` so other generated import sources are not affected by client-controlled provenance fields
+- Verification passed:
+  - `python -m py_compile scripts/test_build_discovery_graphql.py`
+  - `docker exec dofuslab-server-1 python -m py_compile app/schema.py`
+  - Docker inline mutation assertion for generated default-class assignment and non-Build-Discovery source gating
+  - `git diff --check`
