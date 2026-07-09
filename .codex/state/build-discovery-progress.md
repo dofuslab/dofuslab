@@ -866,3 +866,17 @@ Run the initial evaluator pass:
   - `git diff --check`
 - Residual note:
   - the worker consumes the existing default RQ queue, so it also handles non-Build-Discovery jobs such as email tasks in local Compose.
+
+### 2026-07-09 Build Discovery Job Status UI
+
+- Created stacked branch `codex/build-discovery-job-status-ui` on top of `codex/build-discovery-docker-worker-service`.
+- Added a compact job status tag to the Build Discovery page:
+  - queued/running/default states use a gold/blue status tag
+  - succeeded uses green
+  - failed uses red
+  - progress is shown when between 1 and 99 percent
+- Reviewer finding: no issues.
+- Verification passed:
+  - `cd client; yarn type-check`
+  - `cd client; npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
+  - `git diff --check`

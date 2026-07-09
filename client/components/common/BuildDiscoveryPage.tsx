@@ -142,6 +142,33 @@ function buildDiscoveryJobErrorMessage(job: BuildDiscoveryJob | undefined) {
     : 'Build Discovery job failed.';
 }
 
+function buildDiscoveryJobStatusColor(status: string | undefined) {
+  if (status === 'succeeded') {
+    return 'green';
+  }
+  if (status === 'failed') {
+    return 'red';
+  }
+  if (status === 'running') {
+    return 'blue';
+  }
+  return 'gold';
+}
+
+function buildDiscoveryJobStatusLabel(job: BuildDiscoveryJob | undefined) {
+  if (!job?.status) {
+    return null;
+  }
+
+  const status = formatBuildDiscoveryLabel(job.status);
+
+  return typeof job.progress === 'number' &&
+    job.progress > 0 &&
+    job.progress < 100
+    ? `${status} ${job.progress}%`
+    : status;
+}
+
 function useOpenBuildDiscoveryBuild(
   build: BuildDiscoveryBuild,
   context: BuildDiscoveryImportContext,
@@ -483,6 +510,7 @@ export default function BuildDiscoveryPage() {
   const buildDiscovery = displayedJob?.job.result;
   const hasBuilds = Boolean(buildDiscovery?.builds.length);
   const jobErrorMessage = buildDiscoveryJobErrorMessage(buildDiscoveryJob);
+  const jobStatusLabel = buildDiscoveryJobStatusLabel(buildDiscoveryJob);
   const showInitialLoading =
     (loading || shouldPollJob || isJobLookupLoading) &&
     !buildDiscovery &&
@@ -592,6 +620,13 @@ export default function BuildDiscoveryPage() {
           </div>
         </div>
         <Space wrap>
+          {jobStatusLabel && (
+            <Tag
+              color={buildDiscoveryJobStatusColor(buildDiscoveryJob?.status)}
+            >
+              {jobStatusLabel}
+            </Tag>
+          )}
           {buildDiscovery?.cache?.status && (
             <Tag
               color={buildDiscovery.cache.status === 'hit' ? 'green' : 'gold'}
