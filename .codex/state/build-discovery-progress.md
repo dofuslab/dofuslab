@@ -1184,3 +1184,27 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_cache_prewarm.py --output /tmp/build_discovery_cache_prewarm_p95_warm.json`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_cache_prewarm.py --require-all-hits --max-hit-p95-ms 500 --max-hit-elapsed-ms 500 --output /tmp/build_discovery_cache_prewarm_p95_strict.json`
   - `git diff --check`
+
+### 2026-07-09 Local Readiness Report
+
+- Created stacked branch `codex/build-discovery-local-readiness-report` on top of `codex/build-discovery-cache-prewarm-p95`.
+- Added `server/scripts/build_discovery_local_readiness_report.py`.
+- The report summarizes:
+  - open readiness checklist items
+  - gameplay review packet presence
+  - cache prewarm report status and cache-hit p95 threshold
+  - optional benchmark comparison fixture validation
+  - prod preflight without opening a prod connection
+- The report status remains `incomplete` while prod access and gameplay review are unresolved.
+- Added focused tests in `server/scripts/test_build_discovery_local_readiness_report.py`.
+- Host report result:
+  - `status=incomplete`
+  - open readiness items: 4
+  - gameplay review packet exists
+  - prod readonly database URL is unavailable
+- Verification passed:
+  - `python server\scripts\test_build_discovery_local_readiness_report.py`
+  - `python server\scripts\build_discovery_local_readiness_report.py --output .codex/state/build-discovery-local-readiness-report.json`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_local_readiness_report.py scripts/test_build_discovery_local_readiness_report.py`
+  - `git diff --check`
+- Generated `.codex/state/build-discovery-local-readiness-report.json` was not committed because it contains machine-specific absolute paths.
