@@ -12,6 +12,9 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     MIN_MP,
     MIN_RANGE,
     BuildDiscoveryQuery,
+    effective_exo_policy,
+    query_cache_identity,
+    target_semantics_response,
 )
 
 
@@ -36,6 +39,62 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         self.assertEqual(upper.target.ap, 12)
         self.assertEqual(upper.target.mp, 6)
         self.assertEqual(upper.target.range, 6)
+
+    def test_query_contract_accepts_supported_elements_budgets_and_bounds(self):
+        for element in ("strength", "intelligence", "chance", "agility"):
+            for budget_tier in range(1, 5):
+                for ap, mp, range_target in (
+                    (MIN_AP, MIN_MP, MIN_RANGE),
+                    (11, 6, 0),
+                    (MAX_AP, MAX_MP, MAX_RANGE),
+                ):
+                    with self.subTest(
+                        element=element,
+                        budget_tier=budget_tier,
+                        ap=ap,
+                        mp=mp,
+                        range=range_target,
+                    ):
+                        query = BuildDiscoveryQuery(
+                            elements=(element,),
+                            budget_tier=budget_tier,
+                            ap_target=ap,
+                            mp_target=mp,
+                            range_target=range_target,
+                        )
+                        query.validate()
+                        identity = query_cache_identity(query)
+                        self.assertEqual(identity["elements"], [element])
+                        self.assertEqual(identity["budgetTier"], budget_tier)
+                        self.assertEqual(identity["apTarget"], ap)
+                        self.assertEqual(identity["mpTarget"], mp)
+                        self.assertEqual(identity["rangeTarget"], range_target)
+
+    def test_low_budget_forces_no_exo_policy(self):
+        for budget_tier in (1, 2):
+            for exo_policy in ("allow", "opti"):
+                with self.subTest(budget_tier=budget_tier, exo_policy=exo_policy):
+                    query = BuildDiscoveryQuery(
+                        budget_tier=budget_tier,
+                        exo_policy=exo_policy,
+                    )
+                    self.assertEqual(effective_exo_policy(query), "none")
+
+        self.assertEqual(
+            effective_exo_policy(BuildDiscoveryQuery(budget_tier=3, exo_policy="allow")),
+            "allow",
+        )
+        self.assertEqual(
+            effective_exo_policy(BuildDiscoveryQuery(budget_tier=4, exo_policy="opti")),
+            "opti",
+        )
+
+    def test_target_semantics_are_minimum_with_hard_caps(self):
+        semantics = target_semantics_response()
+        self.assertEqual(semantics["type"], "minimum_with_hard_caps")
+        self.assertEqual(semantics["targets"], {"AP": "minimum", "MP": "minimum", "Range": "minimum"})
+        self.assertEqual(semantics["caps"], {"AP": MAX_AP, "MP": MAX_MP, "Range": MAX_RANGE})
+        self.assertEqual(semantics["surplusScoring"], "light_reward_with_cap")
 
     def test_rejects_action_stat_targets_outside_level_200_bounds(self):
         invalid_queries = (
