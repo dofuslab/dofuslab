@@ -1,7 +1,7 @@
 {
   "fixtureVersion": "build-discovery-local-query-suite-fixture-v1",
   "reportVersion": "build-discovery-local-query-regression-suite-v1",
-  "status": "pass",
+  "status": "fail",
   "suite": {
     "id": "iop_element_matrix_11_6_0_and_12_6_0_budget4_exo_allow",
     "label": "Iop element matrix 11/6/0 and 12/6/0 budget tier 4 exo allow",
@@ -22,7 +22,7 @@
   "profiles": [
     {
       "reportVersion": "build-discovery-local-query-validation-v1",
-      "status": "pass",
+      "status": "fail",
       "profile": {
         "id": "iop_element_matrix_11_6_0_budget4_exo_allow",
         "label": "Iop element matrix 11/6/0 budget tier 4 exo allow",
@@ -94,9 +94,175 @@
             "cacheHits": true,
             "cacheKey": true
           },
+          "firstBuildContract": {
+            "itemCount": 16,
+            "allItemsHaveIds": true,
+            "allItemIdsLookLikeDofusIds": true,
+            "allItemsHaveInternalIds": true,
+            "allInternalIdsLookLikeUuids": true,
+            "allExosTargetKnownItems": true,
+            "allExosTargetKnownSlots": true,
+            "itemSlots": [
+              {
+                "slot": "amulet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Amulet"
+              },
+              {
+                "slot": "belt",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Belt"
+              },
+              {
+                "slot": "boots",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Boots"
+              },
+              {
+                "slot": "cloak",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Cloak"
+              },
+              {
+                "slot": "dofus_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_3",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_4",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_5",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_6",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "hat",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Hat"
+              },
+              {
+                "slot": "pet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Mount"
+              },
+              {
+                "slot": "ring_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "ring_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "shield",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Shield"
+              },
+              {
+                "slot": "weapon",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Bow"
+              }
+            ],
+            "exoStats": [
+              {
+                "stat": "AP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "belt"
+              },
+              {
+                "stat": "MP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "amulet"
+              }
+            ],
+            "baseAllocation": {
+              "Strength": 398,
+              "Vitality": 3
+            },
+            "actionStats": {
+              "AP": 11,
+              "MP": 6,
+              "Range": 5
+            }
+          },
           "validation": {
-            "status": "pass",
-            "failures": []
+            "status": "fail",
+            "failures": [
+              "p95_threshold_exceeded"
+            ]
           },
           "expectedProfile": {
             "primaryStat": "Strength",
@@ -115,9 +281,182 @@
             "cacheHits": true,
             "cacheKey": true
           },
+          "firstBuildContract": {
+            "itemCount": 16,
+            "allItemsHaveIds": true,
+            "allItemIdsLookLikeDofusIds": true,
+            "allItemsHaveInternalIds": true,
+            "allInternalIdsLookLikeUuids": true,
+            "allExosTargetKnownItems": true,
+            "allExosTargetKnownSlots": true,
+            "itemSlots": [
+              {
+                "slot": "amulet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Amulet"
+              },
+              {
+                "slot": "belt",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Belt"
+              },
+              {
+                "slot": "boots",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Boots"
+              },
+              {
+                "slot": "cloak",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Cloak"
+              },
+              {
+                "slot": "dofus_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_3",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_4",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_5",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_6",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "hat",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Hat"
+              },
+              {
+                "slot": "pet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Mount"
+              },
+              {
+                "slot": "ring_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "ring_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "shield",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Shield"
+              },
+              {
+                "slot": "weapon",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Wand"
+              }
+            ],
+            "exoStats": [
+              {
+                "stat": "AP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "belt"
+              },
+              {
+                "stat": "MP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "amulet"
+              },
+              {
+                "stat": "Range",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "ring_1"
+              }
+            ],
+            "baseAllocation": {
+              "Intelligence": 398,
+              "Vitality": 3
+            },
+            "actionStats": {
+              "AP": 11,
+              "MP": 6,
+              "Range": 0
+            }
+          },
           "validation": {
-            "status": "pass",
-            "failures": []
+            "status": "fail",
+            "failures": [
+              "p95_threshold_exceeded"
+            ]
           },
           "expectedProfile": {
             "primaryStat": "Intelligence",
@@ -133,6 +472,170 @@
             "cacheEnabled": true,
             "cacheHits": true,
             "cacheKey": true
+          },
+          "firstBuildContract": {
+            "itemCount": 16,
+            "allItemsHaveIds": true,
+            "allItemIdsLookLikeDofusIds": true,
+            "allItemsHaveInternalIds": true,
+            "allInternalIdsLookLikeUuids": true,
+            "allExosTargetKnownItems": true,
+            "allExosTargetKnownSlots": true,
+            "itemSlots": [
+              {
+                "slot": "amulet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Amulet"
+              },
+              {
+                "slot": "belt",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Belt"
+              },
+              {
+                "slot": "boots",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Boots"
+              },
+              {
+                "slot": "cloak",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Cloak"
+              },
+              {
+                "slot": "dofus_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_3",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_4",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_5",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_6",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "hat",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Hat"
+              },
+              {
+                "slot": "pet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Mount"
+              },
+              {
+                "slot": "ring_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "ring_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "shield",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Shield"
+              },
+              {
+                "slot": "weapon",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Sword"
+              }
+            ],
+            "exoStats": [
+              {
+                "stat": "AP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "belt"
+              },
+              {
+                "stat": "MP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "amulet"
+              }
+            ],
+            "baseAllocation": {
+              "Chance": 398,
+              "Vitality": 3
+            },
+            "actionStats": {
+              "AP": 11,
+              "MP": 6,
+              "Range": 2
+            }
           },
           "validation": {
             "status": "pass",
@@ -153,9 +656,175 @@
             "cacheHits": true,
             "cacheKey": true
           },
+          "firstBuildContract": {
+            "itemCount": 16,
+            "allItemsHaveIds": true,
+            "allItemIdsLookLikeDofusIds": true,
+            "allItemsHaveInternalIds": true,
+            "allInternalIdsLookLikeUuids": true,
+            "allExosTargetKnownItems": true,
+            "allExosTargetKnownSlots": true,
+            "itemSlots": [
+              {
+                "slot": "amulet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Amulet"
+              },
+              {
+                "slot": "belt",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Belt"
+              },
+              {
+                "slot": "boots",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Boots"
+              },
+              {
+                "slot": "cloak",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Cloak"
+              },
+              {
+                "slot": "dofus_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_3",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_4",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_5",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_6",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "hat",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Hat"
+              },
+              {
+                "slot": "pet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Pet"
+              },
+              {
+                "slot": "ring_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "ring_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "shield",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Shield"
+              },
+              {
+                "slot": "weapon",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Axe"
+              }
+            ],
+            "exoStats": [
+              {
+                "stat": "AP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "belt"
+              },
+              {
+                "stat": "MP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "amulet"
+              }
+            ],
+            "baseAllocation": {
+              "Agility": 398,
+              "Vitality": 3
+            },
+            "actionStats": {
+              "AP": 11,
+              "MP": 6,
+              "Range": 4
+            }
+          },
           "validation": {
-            "status": "pass",
-            "failures": []
+            "status": "fail",
+            "failures": [
+              "p95_threshold_exceeded"
+            ]
           },
           "expectedProfile": {
             "primaryStat": "Agility",
@@ -168,7 +837,7 @@
     },
     {
       "reportVersion": "build-discovery-local-query-validation-v1",
-      "status": "pass",
+      "status": "fail",
       "profile": {
         "id": "iop_element_matrix_12_6_0_budget4_exo_allow",
         "label": "Iop element matrix 12/6/0 budget tier 4 exo allow",
@@ -240,9 +909,175 @@
             "cacheHits": true,
             "cacheKey": true
           },
+          "firstBuildContract": {
+            "itemCount": 16,
+            "allItemsHaveIds": true,
+            "allItemIdsLookLikeDofusIds": true,
+            "allItemsHaveInternalIds": true,
+            "allInternalIdsLookLikeUuids": true,
+            "allExosTargetKnownItems": true,
+            "allExosTargetKnownSlots": true,
+            "itemSlots": [
+              {
+                "slot": "amulet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Amulet"
+              },
+              {
+                "slot": "belt",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Belt"
+              },
+              {
+                "slot": "boots",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Boots"
+              },
+              {
+                "slot": "cloak",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Cloak"
+              },
+              {
+                "slot": "dofus_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_3",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_4",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_5",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_6",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "hat",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Hat"
+              },
+              {
+                "slot": "pet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Mount"
+              },
+              {
+                "slot": "ring_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "ring_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "shield",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Shield"
+              },
+              {
+                "slot": "weapon",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Bow"
+              }
+            ],
+            "exoStats": [
+              {
+                "stat": "AP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "belt"
+              },
+              {
+                "stat": "MP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "amulet"
+              }
+            ],
+            "baseAllocation": {
+              "Strength": 398,
+              "Vitality": 3
+            },
+            "actionStats": {
+              "AP": 12,
+              "MP": 6,
+              "Range": 3
+            }
+          },
           "validation": {
-            "status": "pass",
-            "failures": []
+            "status": "fail",
+            "failures": [
+              "p95_threshold_exceeded"
+            ]
           },
           "expectedProfile": {
             "primaryStat": "Strength",
@@ -261,9 +1096,175 @@
             "cacheHits": true,
             "cacheKey": true
           },
+          "firstBuildContract": {
+            "itemCount": 16,
+            "allItemsHaveIds": true,
+            "allItemIdsLookLikeDofusIds": true,
+            "allItemsHaveInternalIds": true,
+            "allInternalIdsLookLikeUuids": true,
+            "allExosTargetKnownItems": true,
+            "allExosTargetKnownSlots": true,
+            "itemSlots": [
+              {
+                "slot": "amulet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Amulet"
+              },
+              {
+                "slot": "belt",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Belt"
+              },
+              {
+                "slot": "boots",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Boots"
+              },
+              {
+                "slot": "cloak",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Cloak"
+              },
+              {
+                "slot": "dofus_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_3",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_4",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_5",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_6",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "hat",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Hat"
+              },
+              {
+                "slot": "pet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Mount"
+              },
+              {
+                "slot": "ring_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "ring_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "shield",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Shield"
+              },
+              {
+                "slot": "weapon",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Bow"
+              }
+            ],
+            "exoStats": [
+              {
+                "stat": "AP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "weapon"
+              },
+              {
+                "stat": "MP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "amulet"
+              }
+            ],
+            "baseAllocation": {
+              "Intelligence": 398,
+              "Vitality": 3
+            },
+            "actionStats": {
+              "AP": 12,
+              "MP": 6,
+              "Range": 0
+            }
+          },
           "validation": {
-            "status": "pass",
-            "failures": []
+            "status": "fail",
+            "failures": [
+              "p95_threshold_exceeded"
+            ]
           },
           "expectedProfile": {
             "primaryStat": "Intelligence",
@@ -280,9 +1281,175 @@
             "cacheHits": true,
             "cacheKey": true
           },
+          "firstBuildContract": {
+            "itemCount": 16,
+            "allItemsHaveIds": true,
+            "allItemIdsLookLikeDofusIds": true,
+            "allItemsHaveInternalIds": true,
+            "allInternalIdsLookLikeUuids": true,
+            "allExosTargetKnownItems": true,
+            "allExosTargetKnownSlots": true,
+            "itemSlots": [
+              {
+                "slot": "amulet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Amulet"
+              },
+              {
+                "slot": "belt",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Belt"
+              },
+              {
+                "slot": "boots",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Boots"
+              },
+              {
+                "slot": "cloak",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Cloak"
+              },
+              {
+                "slot": "dofus_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_3",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_4",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_5",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_6",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "hat",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Hat"
+              },
+              {
+                "slot": "pet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Pet"
+              },
+              {
+                "slot": "ring_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "ring_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "shield",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Shield"
+              },
+              {
+                "slot": "weapon",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Sword"
+              }
+            ],
+            "exoStats": [
+              {
+                "stat": "AP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "belt"
+              },
+              {
+                "stat": "MP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "amulet"
+              }
+            ],
+            "baseAllocation": {
+              "Chance": 398,
+              "Vitality": 3
+            },
+            "actionStats": {
+              "AP": 12,
+              "MP": 6,
+              "Range": 1
+            }
+          },
           "validation": {
-            "status": "pass",
-            "failures": []
+            "status": "fail",
+            "failures": [
+              "p95_threshold_exceeded"
+            ]
           },
           "expectedProfile": {
             "primaryStat": "Chance",
@@ -299,9 +1466,175 @@
             "cacheHits": true,
             "cacheKey": true
           },
+          "firstBuildContract": {
+            "itemCount": 16,
+            "allItemsHaveIds": true,
+            "allItemIdsLookLikeDofusIds": true,
+            "allItemsHaveInternalIds": true,
+            "allInternalIdsLookLikeUuids": true,
+            "allExosTargetKnownItems": true,
+            "allExosTargetKnownSlots": true,
+            "itemSlots": [
+              {
+                "slot": "amulet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Amulet"
+              },
+              {
+                "slot": "belt",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Belt"
+              },
+              {
+                "slot": "boots",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Boots"
+              },
+              {
+                "slot": "cloak",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Cloak"
+              },
+              {
+                "slot": "dofus_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_3",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_4",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "dofus_5",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Prysmaradite"
+              },
+              {
+                "slot": "dofus_6",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Dofus"
+              },
+              {
+                "slot": "hat",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Hat"
+              },
+              {
+                "slot": "pet",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Mount"
+              },
+              {
+                "slot": "ring_1",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "ring_2",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Ring"
+              },
+              {
+                "slot": "shield",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Shield"
+              },
+              {
+                "slot": "weapon",
+                "idPresent": true,
+                "idLooksLikeDofusId": true,
+                "internalIdPresent": true,
+                "internalIdLooksLikeUuid": true,
+                "type": "Axe"
+              }
+            ],
+            "exoStats": [
+              {
+                "stat": "AP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "weapon"
+              },
+              {
+                "stat": "MP",
+                "itemIdPresent": true,
+                "targetsKnownItemId": true,
+                "targetsKnownSlot": true,
+                "slot": "amulet"
+              }
+            ],
+            "baseAllocation": {
+              "Agility": 398,
+              "Vitality": 3
+            },
+            "actionStats": {
+              "AP": 12,
+              "MP": 6,
+              "Range": 4
+            }
+          },
           "validation": {
-            "status": "pass",
-            "failures": []
+            "status": "fail",
+            "failures": [
+              "p95_threshold_exceeded"
+            ]
           },
           "expectedProfile": {
             "primaryStat": "Agility",

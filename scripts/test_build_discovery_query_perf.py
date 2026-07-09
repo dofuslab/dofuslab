@@ -24,6 +24,7 @@ from oneoff.build_discovery_query_perf import (
     measure_query,
     normalized_local_suite_fixture,
     percentile,
+    summarize_first_build_contract,
     timing_summary,
     validate_local_element_matrix,
     validate_local_query_suite,
@@ -44,9 +45,9 @@ class BuildDiscoveryQueryPerfTest(unittest.TestCase):
 
     def test_measure_query_reports_cache_hits(self):
         responses = [
-            {"diagnostics": {"cacheHit": False, "resultCount": 2}, "cacheKey": "key"},
-            {"diagnostics": {"cacheHit": True, "resultCount": 2}, "cacheKey": "key"},
-            {"diagnostics": {"cacheHit": True, "resultCount": 2}, "cacheKey": "key"},
+            {"diagnostics": {"cacheHit": False, "resultCount": 2}, "cacheKey": "key", "builds": []},
+            {"diagnostics": {"cacheHit": True, "resultCount": 2}, "cacheKey": "key", "builds": []},
+            {"diagnostics": {"cacheHit": True, "resultCount": 2}, "cacheKey": "key", "builds": []},
         ]
 
         with patch(
@@ -59,6 +60,84 @@ class BuildDiscoveryQueryPerfTest(unittest.TestCase):
         self.assertEqual(report["cacheHits"], 2)
         self.assertEqual(report["resultCount"], 2)
         self.assertEqual(report["cacheKey"], "key")
+        self.assertIsNone(report["firstBuildContract"])
+
+    def test_summarize_first_build_contract_preserves_import_relevant_shape(self):
+        contract = summarize_first_build_contract(
+            {
+                "builds": [
+                    {
+                        "baseAllocation": {"Chance": 395, "Strength": 101},
+                        "totals": {"AP": 12, "MP": 6, "Range": 1},
+                        "exos": {
+                            "AP": {"itemId": "1001", "slot": "ring1"},
+                            "Range": {"itemId": "1002", "slot": "belt"},
+                        },
+                        "items": {
+                            "ring1": {
+                                "id": "1001",
+                                "internalId": "00000000-0000-0000-0000-000000000001",
+                                "type": "Ring",
+                            },
+                            "belt": {
+                                "id": "1002",
+                                "internalId": "00000000-0000-0000-0000-000000000002",
+                                "type": "Belt",
+                            },
+                        },
+                    }
+                ]
+            }
+        )
+
+        self.assertEqual(
+            contract,
+            {
+                "itemCount": 2,
+                "allItemsHaveIds": True,
+                "allItemIdsLookLikeDofusIds": True,
+                "allItemsHaveInternalIds": True,
+                "allInternalIdsLookLikeUuids": True,
+                "allExosTargetKnownItems": True,
+                "allExosTargetKnownSlots": True,
+                "itemSlots": [
+                    {
+                        "slot": "belt",
+                        "idPresent": True,
+                        "idLooksLikeDofusId": True,
+                        "internalIdPresent": True,
+                        "internalIdLooksLikeUuid": True,
+                        "type": "Belt",
+                    },
+                    {
+                        "slot": "ring1",
+                        "idPresent": True,
+                        "idLooksLikeDofusId": True,
+                        "internalIdPresent": True,
+                        "internalIdLooksLikeUuid": True,
+                        "type": "Ring",
+                    },
+                ],
+                "exoStats": [
+                    {
+                        "stat": "AP",
+                        "itemIdPresent": True,
+                        "targetsKnownItemId": True,
+                        "targetsKnownSlot": True,
+                        "slot": "ring1",
+                    },
+                    {
+                        "stat": "Range",
+                        "itemIdPresent": True,
+                        "targetsKnownItemId": True,
+                        "targetsKnownSlot": True,
+                        "slot": "belt",
+                    },
+                ],
+                "baseAllocation": {"Chance": 395, "Strength": 101},
+                "actionStats": {"AP": 12, "MP": 6, "Range": 1},
+            },
+        )
 
     def test_measure_element_matrix_reports_supported_element_rows(self):
         seen_elements = []
@@ -331,12 +410,36 @@ class BuildDiscoveryQueryPerfTest(unittest.TestCase):
             ["pass", "fail"],
         )
 
-    def test_normalized_local_suite_fixture_matches_committed_shape(self):
-        report = self.fake_local_suite_report()
+    def test_committed_local_suite_fixture_records_real_contract_shape(self):
         fixture_path = Path(__file__).resolve().parent / "fixtures" / "build_discovery_local_query_suite_fixture.json"
-        expected_fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
+        fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
 
-        self.assertEqual(normalized_local_suite_fixture(report), expected_fixture)
+        self.assertEqual(fixture["fixtureVersion"], LOCAL_SUITE_FIXTURE_VERSION)
+        self.assertEqual(fixture["status"], "fail")
+        self.assertEqual(fixture["thresholds"]["p95Ms"], DEFAULT_P95_THRESHOLD_MS)
+        self.assertEqual(
+            [profile["queryParams"]["apTarget"] for profile in fixture["profiles"]],
+            [11, 12],
+        )
+        threshold_failures = 0
+        for profile in fixture["profiles"]:
+            self.assertEqual([row["element"] for row in profile["results"]], list(SUPPORTED_IOP_ELEMENTS))
+            for row in profile["results"]:
+                contract = row["firstBuildContract"]
+                self.assertTrue(row["resultPresent"])
+                self.assertNotIn("empty_results", row["validation"]["failures"])
+                threshold_failures += row["validation"]["failures"].count("p95_threshold_exceeded")
+                self.assertGreaterEqual(contract["itemCount"], 1)
+                self.assertTrue(contract["allItemsHaveIds"])
+                self.assertTrue(contract["allItemIdsLookLikeDofusIds"])
+                self.assertTrue(contract["allItemsHaveInternalIds"])
+                self.assertTrue(contract["allInternalIdsLookLikeUuids"])
+                self.assertTrue(contract["allExosTargetKnownItems"])
+                self.assertTrue(contract["allExosTargetKnownSlots"])
+                self.assertGreaterEqual(contract["actionStats"]["AP"], profile["queryParams"]["apTarget"])
+                self.assertGreaterEqual(contract["actionStats"]["MP"], profile["queryParams"]["mpTarget"])
+                self.assertGreaterEqual(contract["actionStats"]["Range"], profile["queryParams"]["rangeTarget"])
+        self.assertGreater(threshold_failures, 0)
 
     def test_normalized_local_suite_fixture_strips_volatile_timings_and_counts(self):
         report = self.fake_local_suite_report()
@@ -551,6 +654,7 @@ class BuildDiscoveryQueryPerfTest(unittest.TestCase):
                     "timings": {"minMs": 1, "avgMs": 1, "p95Ms": 1, "maxMs": 1},
                     "resultCount": 1,
                     "cacheKey": f"volatile-{profile_id}-{element}",
+                    "firstBuildContract": self.fake_first_build_contract(element, ap_target),
                     "expectedProfile": {
                         "primaryStat": {
                             "strength": "Strength",
@@ -618,6 +722,59 @@ class BuildDiscoveryQueryPerfTest(unittest.TestCase):
             "runs": 1,
             "cacheEnabled": False,
             "results": rows,
+        }
+
+    def fake_first_build_contract(self, element, ap_target):
+        primary_stat = {
+            "strength": "Strength",
+            "intelligence": "Intelligence",
+            "chance": "Chance",
+            "agility": "Agility",
+        }[element]
+        return {
+            "itemCount": 2,
+            "allItemsHaveIds": True,
+            "allItemIdsLookLikeDofusIds": True,
+            "allItemsHaveInternalIds": True,
+            "allInternalIdsLookLikeUuids": True,
+            "allExosTargetKnownItems": True,
+            "allExosTargetKnownSlots": True,
+            "itemSlots": [
+                {
+                    "slot": "amulet",
+                    "idPresent": True,
+                    "idLooksLikeDofusId": True,
+                    "internalIdPresent": True,
+                    "internalIdLooksLikeUuid": True,
+                    "type": "Amulet",
+                },
+                {
+                    "slot": "ring1",
+                    "idPresent": True,
+                    "idLooksLikeDofusId": True,
+                    "internalIdPresent": True,
+                    "internalIdLooksLikeUuid": True,
+                    "type": "Ring",
+                },
+            ],
+            "exoStats": [
+                {
+                    "stat": "AP",
+                    "itemIdPresent": True,
+                    "targetsKnownItemId": True,
+                    "targetsKnownSlot": True,
+                    "slot": "ring1",
+                },
+            ],
+            "baseAllocation": {
+                primary_stat: 395,
+                "Vitality": 301,
+            },
+            "actionStats": {
+                "AP": ap_target,
+                "MP": 6,
+                "Range": 0,
+            },
         }
 
 

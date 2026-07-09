@@ -114,6 +114,65 @@ def measure_query(query: BuildDiscoveryQuery, runs: int, use_cache: bool) -> dic
         "timings": timing_summary(timings),
         "resultCount": (last_response or {}).get("diagnostics", {}).get("resultCount", 0),
         "cacheKey": (last_response or {}).get("cacheKey"),
+        "firstBuildContract": summarize_first_build_contract(last_response or {}),
+    }
+
+
+def summarize_first_build_contract(response: dict[str, Any]) -> dict[str, Any] | None:
+    builds = response.get("builds") or []
+    if not builds:
+        return None
+
+    build = builds[0]
+    items = []
+    item_ids = set()
+    item_slots = set()
+    for slot, item in sorted((build.get("items") or {}).items()):
+        item_id = item.get("id")
+        internal_id = item.get("internalId")
+        if item_id is not None:
+            item_ids.add(str(item_id))
+        item_slots.add(slot)
+        items.append(
+            {
+                "slot": slot,
+                "idPresent": item_id is not None and str(item_id) != "",
+                "idLooksLikeDofusId": str(item_id).isdigit() if item_id is not None else False,
+                "internalIdPresent": internal_id is not None and str(internal_id) != "",
+                "internalIdLooksLikeUuid": "-" in str(internal_id) if internal_id is not None else False,
+                "type": item.get("type"),
+            }
+        )
+
+    exos = []
+    for stat, exo in sorted((build.get("exos") or {}).items()):
+        exos.append(
+            {
+                "stat": stat,
+                "itemIdPresent": exo.get("itemId") is not None and str(exo.get("itemId")) != "",
+                "targetsKnownItemId": str(exo.get("itemId")) in item_ids,
+                "targetsKnownSlot": exo.get("slot") in item_slots,
+                "slot": exo.get("slot"),
+            }
+        )
+
+    totals = build.get("totals") or {}
+    return {
+        "itemCount": len(items),
+        "allItemsHaveIds": all(item["idPresent"] for item in items),
+        "allItemIdsLookLikeDofusIds": all(item["idLooksLikeDofusId"] for item in items),
+        "allItemsHaveInternalIds": all(item["internalIdPresent"] for item in items),
+        "allInternalIdsLookLikeUuids": all(item["internalIdLooksLikeUuid"] for item in items),
+        "allExosTargetKnownItems": all(exo["targetsKnownItemId"] for exo in exos),
+        "allExosTargetKnownSlots": all(exo["targetsKnownSlot"] for exo in exos),
+        "itemSlots": items,
+        "exoStats": exos,
+        "baseAllocation": build.get("baseAllocation") or {},
+        "actionStats": {
+            "AP": totals.get("AP"),
+            "MP": totals.get("MP"),
+            "Range": totals.get("Range"),
+        },
     }
 
 
@@ -273,6 +332,7 @@ def normalized_local_suite_fixture(report: dict[str, Any]) -> dict[str, Any]:
                         "cacheHits": "cacheHits" in row,
                         "cacheKey": "cacheKey" in row,
                     },
+                    "firstBuildContract": row.get("firstBuildContract"),
                     "validation": row.get("validation", {}),
                     "expectedProfile": row.get("expectedProfile", {}),
                 }

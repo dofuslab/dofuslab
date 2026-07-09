@@ -629,3 +629,26 @@ Run the initial evaluator pass:
   - Docker inline assertions equivalent to the strengthened atomic import path
   - `git diff --check`
 - Docker's checked-out `scripts` package is stale in this environment, so direct Docker unittest could not see this edited test file.
+
+### 2026-07-09 Local Query Contract Fixture
+
+- Created stacked branch `codex/build-discovery-local-query-contract-fixture` on top of `codex/build-discovery-atomic-import-regression`.
+- Extended local query validation reports with a compact first-build contract summary:
+  - item count and slot/type shape
+  - Dofus item ID presence/shape
+  - internal UUID presence/shape
+  - exo references targeting known item IDs and slots
+  - base allocation
+  - AP/MP/Range action stats
+- Regenerated the committed local query suite fixture from a real Docker/local DB generated index, not fake data.
+- Kept the 5s fresh-query threshold intact; the fixture intentionally records `p95_threshold_exceeded` rows while proving every supported Iop element/profile still returns an importable first-build contract.
+- Reviewer findings fixed before commit:
+  - removed fake-data fixture comparison and replaced it with structural assertions over the committed real fixture
+  - kept the PRD sync/async threshold signal instead of relaxing the pass bar to 15s
+  - asserted AP/MP/Range values meet profile targets
+- Verification passed:
+  - `docker exec dofuslab-server-1 python -m oneoff.generate_build_discovery_index --output /tmp/build_discovery_index.json --source db`
+  - `docker exec dofuslab-server-1 python -m oneoff.build_discovery_query_perf --index-path /tmp/build_discovery_index.json --validate-local-suite --runs 1 --no-cache --fixture-output /tmp/build_discovery_local_query_suite_fixture.json --output /tmp/build_discovery_local_query_suite_report.json` (exited nonzero after writing artifacts because the 5s performance threshold is intentionally exceeded)
+  - `python scripts\test_build_discovery_query_perf.py`
+  - `docker exec dofuslab-server-1 python -m py_compile oneoff/build_discovery_query_perf.py`
+  - `git diff --check`
