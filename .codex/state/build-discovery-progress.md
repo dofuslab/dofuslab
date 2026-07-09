@@ -1427,3 +1427,11 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_prod_benchmark_pipeline.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_prod_benchmark_pipeline.py --check-env`
   - `git diff --check`
+
+### 2026-07-09 Prod Review Packet Readiness
+
+- Created stacked branch `codex/build-discovery-prod-review-packet-readiness` on top of `codex/build-discovery-prod-benchmark-review-packet`.
+- Updated `.codex/state/build-discovery-readiness-checklist.md` to mark aggregate prod benchmark review packet tooling as present.
+- Kept actual prod access, prod aggregate selection, and discovered-build scoring/comparison open.
+- Verification passed:
+  - `git diff --check`

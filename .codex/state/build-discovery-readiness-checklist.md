@@ -55,6 +55,7 @@ This is the current working checklist for deciding whether Build Discovery is sh
 ## Prod Benchmarks
 
 - [x] Bounded read-only prod benchmark discovery helper exists.
+- [x] Aggregate prod benchmark review packet tooling exists.
 - [ ] Environment access to `DOFUSLAB_READONLY_DATABASE_URL` is still missing in the host shell and running server container used here; use `--check-env` before prod discovery.
 - [ ] Use prod aggregates to pick representative benchmark classes/levels/build profiles.
 - [ ] Score discovered builds and compare generated outputs once supported classes are available.
