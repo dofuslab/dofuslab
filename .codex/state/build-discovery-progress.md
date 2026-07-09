@@ -1094,3 +1094,20 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile oneoff/build_discovery_prod_benchmark_discovery.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python oneoff/build_discovery_prod_benchmark_discovery.py --check-env`
   - `git diff --check`
+
+### 2026-07-09 Prod Candidate Generated Results
+
+- Created stacked branch `codex/build-discovery-prod-candidate-results` on top of `codex/build-discovery-prod-query-candidates`.
+- Added `server/scripts/build_discovery_prod_candidate_generated_results.py`.
+- The script consumes a prod discovery JSON report and:
+  - runs generated Build Discovery outputs for supported `generatedQueryCandidate` profiles
+  - keeps unsupported prod profiles visible as skipped candidates with reasons
+  - skips malformed supported candidates instead of defaulting missing query fields
+  - enforces a bounded candidate limit
+  - does not connect to prod itself
+- Added focused tests in `server/scripts/test_build_discovery_prod_candidate_generated_results.py`.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_prod_candidate_generated_results.py`
+  - `python scripts\test_build_discovery_prod_benchmark_discovery.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_prod_candidate_generated_results.py scripts/test_build_discovery_prod_candidate_generated_results.py`
+  - `git diff --check`
