@@ -1585,6 +1585,33 @@ def required_item_seed_states(
     return dedupe_builds(sorted(seeds, key=lambda state: state.score, reverse=True))
 
 
+def budget_action_trophy_seed_states(
+    items: list[dict[str, Any]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+) -> list[BuildState]:
+    seeds: list[BuildState] = []
+    available_mandatory_ids = {
+        item["dofusID"]
+        for item in items
+        if item["dofusID"] in MANDATORY_DOFUS_CANDIDATE_IDS
+    }
+    for item_id in available_mandatory_ids:
+        seeds.extend(
+            required_item_seed_states(
+                {item_id},
+                items,
+                sets,
+                target,
+                search_target,
+                natural_cap_target,
+            )
+        )
+    return dedupe_builds(sorted(seeds, key=lambda state: state.score, reverse=True))
+
+
 def eligible_for_exo(item: dict[str, Any], stat: str) -> bool:
     item_stats = item.get("_stats") or normalize_stats(item.get("stats", []))
     return item.get("itemType") in EXO_ELIGIBLE_ITEM_TYPES and item_stats.get(stat, 0) == 0
@@ -3421,6 +3448,17 @@ def find_builds(
         search_target,
         natural_cap_target,
     )
+    budget_action_trophy_seeds = (
+        []
+        if required_seeds
+        else budget_action_trophy_seed_states(
+            items,
+            sets,
+            target,
+            search_target,
+            natural_cap_target,
+        )
+    )
     timings["candidatePoolsMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
@@ -3451,7 +3489,7 @@ def find_builds(
     )
     initial_seeds = dedupe_builds(
         sorted(
-            initial_seeds + ap_set_bonus_seeds + required_seeds,
+            initial_seeds + ap_set_bonus_seeds + required_seeds + budget_action_trophy_seeds,
             key=lambda state: state.score,
             reverse=True,
         )
@@ -3500,28 +3538,33 @@ def find_builds(
     phase_started = time.perf_counter()
     if len(valid_final_states) < completion_target:
         if exo_policy == "none":
-            beam_initial_seeds = required_seeds or []
-        else:
-            beam_initial_seeds = initial_seeds
-        for slot_order in slot_orders:
-            valid_final_states.extend(
-                search_slot_order(
-                    slot_order=slot_order,
-                    pools=pools,
-                    sets=sets,
-                    target=target,
-                    search_target=search_target,
-                    natural_cap_target=natural_cap_target,
-                    beam_width=beam_width,
-                    per_signature_cap=per_signature_cap,
-                    ap_strategies=ap_strategies,
-                    initial_seeds=beam_initial_seeds,
-                    generic_damage_weight=generic_damage_weight,
-                    weapon_damage_weight=weapon_damage_weight,
-                    exo_policy=exo_policy,
-                )
+            beam_seed_groups = (
+                [required_seeds]
+                if required_seeds
+                else [[], budget_action_trophy_seeds]
             )
-            if len(valid_final_states) >= completion_target:
+        else:
+            beam_seed_groups = [initial_seeds]
+        for slot_order in slot_orders:
+            for beam_initial_seeds in beam_seed_groups:
+                valid_final_states.extend(
+                    search_slot_order(
+                        slot_order=slot_order,
+                        pools=pools,
+                        sets=sets,
+                        target=target,
+                        search_target=search_target,
+                        natural_cap_target=natural_cap_target,
+                        beam_width=beam_width,
+                        per_signature_cap=per_signature_cap,
+                        ap_strategies=ap_strategies,
+                        initial_seeds=beam_initial_seeds,
+                        generic_damage_weight=generic_damage_weight,
+                        weapon_damage_weight=weapon_damage_weight,
+                        exo_policy=exo_policy,
+                    )
+                )
+            if len(valid_final_states) >= completion_target and exo_policy != "none":
                 break
     timings["beamSearchMs"] = (time.perf_counter() - phase_started) * 1000
 
