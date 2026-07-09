@@ -378,3 +378,15 @@ Run the initial evaluator pass:
   - `python -m unittest scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_target_semantics_response_declares_minimum_targets_with_hard_caps scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_build_discovery_response_exposes_product_query_contract scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_action_stats_meet_target_allows_surplus_within_caps scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_action_stats_meet_target_rejects_missing_or_over_cap_stats scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_surplus_range_is_allowed_up_to_hard_cap scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_over_hard_range_cap_is_rejected scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_build_discovery_query_rejects_out_of_scope_inputs`
   - `git diff --check`
 - Full Docker `python -m unittest scripts.test_build_discovery_prototype` still has unrelated pre-existing failures in completion-target and strength-profile tests.
+
+### 2026-07-09 Target Copy Clarity
+
+- Created stacked branch `codex/build-discovery-target-copy` on top of `codex/build-discovery-target-semantics-guard`.
+- Renamed Build Discovery AP/MP/Range input labels and aria labels to make the minimum-target semantics visible at the control:
+  - `Min AP`
+  - `Min MP`
+  - `Min Range`
+- Verification passed:
+  - `cd client; npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
+  - `cd client; yarn type-check`
+  - `git diff --check`

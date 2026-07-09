@@ -607,9 +607,9 @@ export default function BuildDiscoveryPage() {
           />
         </div>
         <div>
-          <div css={{ fontSize: '0.7rem', marginBottom: 4 }}>AP</div>
+          <div css={{ fontSize: '0.7rem', marginBottom: 4 }}>Min AP</div>
           <InputNumber
-            aria-label="AP target"
+            aria-label="Minimum AP target"
             css={{ width: '100%' }}
             min={6}
             max={12}
@@ -623,9 +623,9 @@ export default function BuildDiscoveryPage() {
           />
         </div>
         <div>
-          <div css={{ fontSize: '0.7rem', marginBottom: 4 }}>MP</div>
+          <div css={{ fontSize: '0.7rem', marginBottom: 4 }}>Min MP</div>
           <InputNumber
-            aria-label="MP target"
+            aria-label="Minimum MP target"
             css={{ width: '100%' }}
             min={3}
             max={6}
@@ -639,9 +639,9 @@ export default function BuildDiscoveryPage() {
           />
         </div>
         <div>
-          <div css={{ fontSize: '0.7rem', marginBottom: 4 }}>Range</div>
+          <div css={{ fontSize: '0.7rem', marginBottom: 4 }}>Min Range</div>
           <InputNumber
-            aria-label="Range target"
+            aria-label="Minimum Range target"
             css={{ width: '100%' }}
             min={0}
             max={6}
