@@ -993,3 +993,18 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_benchmark_generated_results.py --output /tmp/build_discovery_benchmark_generated_results.json`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m oneoff.build_discovery_benchmark_report --generated-results /tmp/build_discovery_benchmark_generated_results.json --allow-errors --output /tmp/build_discovery_benchmark_comparison_report.json`
   - `git diff --check`
+
+### 2026-07-09 Direct Query Deprecation
+
+- Created stacked branch `codex/build-discovery-deprecate-direct-query` on top of `codex/build-discovery-generated-benchmark-comparison`.
+- Removed the unused frontend direct `buildDiscovery` query operation and `useBuildDiscoveryQuery` hook.
+- Switched the shared query-input helper type to the async `startBuildDiscovery` mutation variables.
+- Marked the backend `buildDiscovery` GraphQL field deprecated with guidance to use `startBuildDiscovery` plus `buildDiscoveryJob`.
+- Decision:
+  - product/client flow is async-first
+  - direct `buildDiscovery` remains only as a legacy/dev GraphQL path for now
+- Verification passed:
+  - `cd client; yarn type-check`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile app/schema.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -c "import app.schema; print('schema import ok')"`
+  - `git diff --check`

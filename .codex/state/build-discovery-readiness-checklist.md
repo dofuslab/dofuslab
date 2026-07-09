@@ -22,7 +22,7 @@ This is the current working checklist for deciding whether Build Discovery is sh
 - [x] Local Compose has an RQ worker service for the default queue.
 - [x] Docker smoke proves cache miss -> queued job -> enqueue intent -> direct worker-task success -> polling result after migrations are applied.
 - [x] Bounded cache prewarm tool exists for the supported Iop local suite.
-- [ ] Decide whether direct `buildDiscovery` should remain public/used, or become dev/legacy once async path is stable.
+- [x] Direct `buildDiscovery` is deprecated as a legacy/dev GraphQL field; client code uses async `startBuildDiscovery` and `buildDiscoveryJob`.
 
 ## Result Quality
 

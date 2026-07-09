@@ -6,13 +6,8 @@ import {
 } from '@apollo/client';
 import { useCallback, useMemo } from 'react';
 
-import buildDiscoveryQuery from 'graphql/queries/buildDiscovery.graphql';
 import buildDiscoveryJobQuery from 'graphql/queries/buildDiscoveryJob.graphql';
 import startBuildDiscoveryMutation from 'graphql/mutations/startBuildDiscovery.graphql';
-import {
-  buildDiscovery,
-  buildDiscoveryVariables,
-} from 'graphql/queries/__generated__/buildDiscovery';
 import {
   buildDiscoveryJob,
   buildDiscoveryJobVariables,
@@ -25,7 +20,6 @@ import {
   buildDiscoveryVariablesFromInput,
   BuildDiscoveryQueryInput,
   parseBuildDiscoveryJob,
-  parseBuildDiscoveryResponse,
 } from 'common/buildDiscoveryContract';
 
 export {
@@ -59,27 +53,6 @@ export type {
   BuildDiscoveryResponse,
   BuildDiscoveryTargetSemantics,
 } from 'common/buildDiscoveryContract';
-
-export function useBuildDiscoveryQuery(
-  input: BuildDiscoveryQueryInput = {},
-  options: Omit<
-    QueryHookOptions<buildDiscovery, buildDiscoveryVariables>,
-    'variables'
-  > = {},
-) {
-  const result = useQuery<buildDiscovery, buildDiscoveryVariables>(
-    buildDiscoveryQuery,
-    {
-      ...options,
-      variables: buildDiscoveryVariablesFromInput(input),
-    },
-  );
-
-  return {
-    ...result,
-    buildDiscovery: parseBuildDiscoveryResponse(result.data?.buildDiscovery),
-  };
-}
 
 export function useBuildDiscoveryJobQuery(
   id: string | undefined,

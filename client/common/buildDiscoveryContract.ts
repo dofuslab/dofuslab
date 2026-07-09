@@ -1,4 +1,4 @@
-import type { buildDiscoveryVariables } from 'graphql/queries/__generated__/buildDiscovery';
+import type { startBuildDiscoveryVariables } from 'graphql/mutations/__generated__/startBuildDiscovery';
 import type { CustomSetImportedItemInput } from '__generated__/globalTypes';
 
 export type BuildDiscoveryElement =
@@ -17,7 +17,7 @@ export type BuildDiscoveryTargetSemantics = {
 };
 
 export type BuildDiscoveryQueryInput = Omit<
-  buildDiscoveryVariables,
+  startBuildDiscoveryVariables,
   'className' | 'level' | 'mode' | 'elements'
 > & {
   className?: 'Iop';
@@ -403,7 +403,7 @@ export const DEFAULT_BUILD_DISCOVERY_INPUT: Required<
 
 export function buildDiscoveryVariablesFromInput(
   input: BuildDiscoveryQueryInput = {},
-): buildDiscoveryVariables {
+): startBuildDiscoveryVariables {
   const merged = {
     ...DEFAULT_BUILD_DISCOVERY_INPUT,
     ...input,

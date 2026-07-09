@@ -1986,6 +1986,10 @@ class Query(graphene.ObjectType):
     )
     build_discovery = graphene.Field(
         GenericScalar,
+        deprecation_reason=(
+            "Use startBuildDiscovery and buildDiscoveryJob. Direct buildDiscovery "
+            "may run slow fresh searches and is retained only as a legacy/dev path."
+        ),
         class_name=graphene.String(),
         level=graphene.Int(),
         elements=graphene.List(graphene.NonNull(graphene.String)),
