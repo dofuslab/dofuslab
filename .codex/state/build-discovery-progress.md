@@ -1111,3 +1111,22 @@ Run the initial evaluator pass:
   - `python scripts\test_build_discovery_prod_benchmark_discovery.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_prod_candidate_generated_results.py scripts/test_build_discovery_prod_candidate_generated_results.py`
   - `git diff --check`
+
+### 2026-07-09 Prod Benchmark Pipeline
+
+- Created stacked branch `codex/build-discovery-prod-benchmark-pipeline` on top of `codex/build-discovery-prod-candidate-results`.
+- Added `server/scripts/build_discovery_prod_benchmark_pipeline.py`.
+- The pipeline:
+  - prints non-secret preflight status with `--check-env` without opening a prod connection
+  - runs bounded prod aggregate discovery when `DOFUSLAB_READONLY_DATABASE_URL` is available
+  - runs generated results for supported prod candidates
+  - writes stable artifact names under an output directory
+  - writes a compact summary with generated/skipped counts and artifact paths
+- Added focused tests in `server/scripts/test_build_discovery_prod_benchmark_pipeline.py`.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_prod_benchmark_pipeline.py`
+  - `python server\scripts\test_build_discovery_prod_candidate_generated_results.py`
+  - `python scripts\test_build_discovery_prod_benchmark_discovery.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_prod_benchmark_pipeline.py scripts/test_build_discovery_prod_benchmark_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_prod_benchmark_pipeline.py --check-env`
+  - `git diff --check`
