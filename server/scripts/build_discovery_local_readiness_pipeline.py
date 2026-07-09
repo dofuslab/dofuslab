@@ -26,6 +26,7 @@ from scripts.check_build_discovery_benchmark_comparison import (  # noqa: E402
 )
 from scripts.build_discovery_local_readiness_report import (  # noqa: E402
     DEFAULT_ASSUMPTIONS_LEDGER,
+    DEFAULT_ASSUMPTIONS_REVIEW_INDEX,
     DEFAULT_GAMEPLAY_REVIEW_PACKET,
     DEFAULT_READINESS_CHECKLIST,
     build_readiness_report,
@@ -41,6 +42,7 @@ SUMMARY_FILENAME = "local_readiness_pipeline_summary.json"
 READINESS_CHECKLIST_FILENAME = "build-discovery-readiness-checklist.md"
 GAMEPLAY_REVIEW_PACKET_FILENAME = "build-discovery-gameplay-review-packet.md"
 ASSUMPTIONS_LEDGER_FILENAME = "build-discovery-assumptions.md"
+ASSUMPTIONS_REVIEW_INDEX_FILENAME = "build-discovery-assumptions-review-index.md"
 
 
 def write_json(path: Path, payload: dict[str, Any]) -> None:
@@ -55,6 +57,7 @@ def state_paths_from_dir(state_dir: Path) -> dict[str, Path]:
         "readiness_checklist_path": state_dir / READINESS_CHECKLIST_FILENAME,
         "gameplay_review_packet_path": state_dir / GAMEPLAY_REVIEW_PACKET_FILENAME,
         "assumptions_ledger_path": state_dir / ASSUMPTIONS_LEDGER_FILENAME,
+        "assumptions_review_index_path": state_dir / ASSUMPTIONS_REVIEW_INDEX_FILENAME,
     }
 
 
@@ -147,6 +150,7 @@ def run_pipeline(
     readiness_checklist_path: Path = DEFAULT_READINESS_CHECKLIST,
     gameplay_review_packet_path: Path = DEFAULT_GAMEPLAY_REVIEW_PACKET,
     assumptions_ledger_path: Path = DEFAULT_ASSUMPTIONS_LEDGER,
+    assumptions_review_index_path: Path = DEFAULT_ASSUMPTIONS_REVIEW_INDEX,
     benchmark_fixture_path: Path = DEFAULT_FIXTURE_PATH,
     include_benchmark_comparison: bool = True,
     cache_prewarm_fn: Callable[[bool, float | None, float | None], dict[str, Any]] = default_cache_prewarm_report,
@@ -186,6 +190,7 @@ def run_pipeline(
         readiness_checklist_path=readiness_checklist_path,
         gameplay_review_packet_path=gameplay_review_packet_path,
         assumptions_ledger_path=assumptions_ledger_path,
+        assumptions_review_index_path=assumptions_review_index_path,
         cache_prewarm_report_path=strict_cache_path,
         benchmark_comparison_report_path=benchmark_comparison_path
         if include_benchmark_comparison
@@ -216,7 +221,8 @@ def main() -> None:
         type=Path,
         help=(
             "Directory containing build-discovery-readiness-checklist.md, "
-            "build-discovery-gameplay-review-packet.md, and build-discovery-assumptions.md. "
+            "build-discovery-gameplay-review-packet.md, build-discovery-assumptions.md, "
+            "and build-discovery-assumptions-review-index.md. "
             "Explicit file path flags override this directory."
         ),
     )
@@ -225,6 +231,7 @@ def main() -> None:
     parser.add_argument("--readiness-checklist", type=Path)
     parser.add_argument("--gameplay-review-packet", type=Path)
     parser.add_argument("--assumptions-ledger", type=Path)
+    parser.add_argument("--assumptions-review-index", type=Path)
     parser.add_argument("--benchmark-fixture", type=Path, default=DEFAULT_FIXTURE_PATH)
     parser.add_argument(
         "--skip-benchmark-comparison",
@@ -244,6 +251,8 @@ def main() -> None:
         or state_paths.get("gameplay_review_packet_path", DEFAULT_GAMEPLAY_REVIEW_PACKET),
         assumptions_ledger_path=args.assumptions_ledger
         or state_paths.get("assumptions_ledger_path", DEFAULT_ASSUMPTIONS_LEDGER),
+        assumptions_review_index_path=args.assumptions_review_index
+        or state_paths.get("assumptions_review_index_path", DEFAULT_ASSUMPTIONS_REVIEW_INDEX),
         benchmark_fixture_path=args.benchmark_fixture,
         include_benchmark_comparison=not args.skip_benchmark_comparison,
     )

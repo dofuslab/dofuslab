@@ -97,6 +97,10 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
             paths["assumptions_ledger_path"],
             state_dir / "build-discovery-assumptions.md",
         )
+        self.assertEqual(
+            paths["assumptions_review_index_path"],
+            state_dir / "build-discovery-assumptions-review-index.md",
+        )
 
     def test_build_summary_records_artifact_paths_and_statuses(self):
         output_dir = Path("/tmp/local-readiness")
@@ -146,6 +150,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
             checklist_path = Path(temp_dir) / "checklist.md"
             gameplay_path = Path(temp_dir) / "gameplay.md"
             assumptions_path = Path(temp_dir) / "assumptions.md"
+            review_index_path = Path(temp_dir) / "review-index.md"
             fixture_path = Path(temp_dir) / "fixture.json"
             fixture_path.write_text(json.dumps(benchmark_fixture()), encoding="utf-8")
             calls = []
@@ -166,6 +171,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
                 readiness_checklist_path=checklist_path,
                 gameplay_review_packet_path=gameplay_path,
                 assumptions_ledger_path=assumptions_path,
+                assumptions_review_index_path=review_index_path,
                 benchmark_fixture_path=fixture_path,
                 cache_prewarm_fn=fake_cache_prewarm,
                 benchmark_generated_results_fn=benchmark_generated_results,
@@ -186,6 +192,10 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
                 output_path / STRICT_CACHE_FILENAME,
             )
             self.assertEqual(readiness_kwargs["assumptions_ledger_path"], assumptions_path)
+            self.assertEqual(
+                readiness_kwargs["assumptions_review_index_path"],
+                review_index_path,
+            )
             self.assertEqual(
                 readiness_kwargs["benchmark_comparison_report_path"],
                 output_path / BENCHMARK_COMPARISON_FILENAME,

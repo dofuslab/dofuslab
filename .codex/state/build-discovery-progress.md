@@ -1344,3 +1344,34 @@ Run the initial evaluator pass:
 - It also lists shippability watch items for fresh synchronous performance, generated data cleanliness, v1 scope boundary, and prod benchmark safety.
 - Verification passed:
   - `git diff --check`
+
+### 2026-07-09 Review Index Readiness
+
+- Created stacked branch `codex/build-discovery-review-index-readiness` on top of `codex/build-discovery-assumptions-review-index`.
+- Extended `server/scripts/build_discovery_local_readiness_report.py` so `assumptionsReview` includes the compact review index:
+  - review index path and existence
+  - release blocker count
+  - shippability watch item count
+- The readiness report now blocks on a missing assumptions review index.
+- Extended `server/scripts/build_discovery_local_readiness_pipeline.py` so `--state-dir` includes `build-discovery-assumptions-review-index.md`.
+- Added focused tests for section item counting and review-index state-dir path resolution.
+- Docker full pipeline result with review index in `--state-dir`:
+  - warm cache status: `pass`
+  - strict cache status: `pass`
+  - strict cache hits: 8
+  - strict cache misses: 0
+  - strict cache-hit p95: `0.7ms`
+  - benchmark generated status: `pass`
+  - benchmark comparison status: `pass`
+  - benchmark validation failures: 0
+  - review index release blockers: 6
+  - review index watch items: 4
+  - readiness status: `incomplete`
+- Verification passed:
+  - `python server\scripts\test_build_discovery_local_readiness_report.py`
+  - `python server\scripts\test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_local_readiness_report.py scripts/test_build_discovery_local_readiness_report.py scripts/build_discovery_local_readiness_pipeline.py scripts/test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_local_readiness_pipeline.py --output-dir /tmp/build_discovery_review_index_readiness --state-dir /tmp/build_discovery_local_readiness_state`
+  - `git diff --check`

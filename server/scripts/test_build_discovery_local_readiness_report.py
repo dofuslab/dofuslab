@@ -11,6 +11,7 @@ from build_discovery_local_readiness_report import (
     cache_report_status,
     checklist_open_items,
     find_repo_root,
+    numbered_items_in_section,
 )
 
 
@@ -46,6 +47,7 @@ class BuildDiscoveryLocalReadinessReportTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             ledger_path = Path(temp_dir) / "assumptions.md"
             gameplay_path = Path(temp_dir) / "gameplay.md"
+            index_path = Path(temp_dir) / "review-index.md"
             ledger_path.write_text(
                 "## Budget\n- Budget assumption\n## Classes\n- Class assumption\n",
                 encoding="utf-8",
@@ -54,13 +56,42 @@ class BuildDiscoveryLocalReadinessReportTest(unittest.TestCase):
                 "- Should this be reviewed?\n- This is context.\n",
                 encoding="utf-8",
             )
+            index_path.write_text(
+                (
+                    "## Release Blockers\n"
+                    "1. Budget\n"
+                    "2. Exos\n"
+                    "## Shippability Watch Items\n"
+                    "1. Performance\n"
+                ),
+                encoding="utf-8",
+            )
 
-            status = assumptions_review_status(ledger_path, gameplay_path)
+            status = assumptions_review_status(ledger_path, gameplay_path, index_path)
 
             self.assertTrue(status["ledgerExists"])
             self.assertEqual(status["ledgerSectionCount"], 2)
             self.assertEqual(status["ledgerAssumptionCount"], 2)
             self.assertEqual(status["gameplayReviewQuestionCount"], 1)
+            self.assertTrue(status["reviewIndex"]["exists"])
+            self.assertEqual(status["reviewIndex"]["releaseBlockerCount"], 2)
+            self.assertEqual(status["reviewIndex"]["watchItemCount"], 1)
+
+    def test_numbered_items_in_section_ignores_other_sections(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "index.md"
+            path.write_text(
+                (
+                    "## Release Blockers\n"
+                    "1. Budget\n"
+                    "2. Exos\n"
+                    "## Other Section\n"
+                    "1. Not counted\n"
+                ),
+                encoding="utf-8",
+            )
+
+            self.assertEqual(numbered_items_in_section(path, "## Release Blockers"), 2)
 
     def test_cache_report_status_passes_strict_warmed_cache_report(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -155,9 +186,11 @@ class BuildDiscoveryLocalReadinessReportTest(unittest.TestCase):
             checklist_path = Path(temp_dir) / "checklist.md"
             gameplay_path = Path(temp_dir) / "gameplay.md"
             assumptions_path = Path(temp_dir) / "assumptions.md"
+            review_index_path = Path(temp_dir) / "review-index.md"
             checklist_path.write_text("- [ ] User review needed\n", encoding="utf-8")
             gameplay_path.write_text("# Packet\n", encoding="utf-8")
             assumptions_path.write_text("- Assumption\n", encoding="utf-8")
+            review_index_path.write_text("## Release Blockers\n1. Budget\n", encoding="utf-8")
 
             with patch(
                 "build_discovery_local_readiness_report.preflight_status",
@@ -170,6 +203,7 @@ class BuildDiscoveryLocalReadinessReportTest(unittest.TestCase):
                     readiness_checklist_path=checklist_path,
                     gameplay_review_packet_path=gameplay_path,
                     assumptions_ledger_path=assumptions_path,
+                    assumptions_review_index_path=review_index_path,
                 )
 
             self.assertEqual(report["status"], "incomplete")
@@ -181,12 +215,14 @@ class BuildDiscoveryLocalReadinessReportTest(unittest.TestCase):
             checklist_path = Path(temp_dir) / "checklist.md"
             gameplay_path = Path(temp_dir) / "gameplay.md"
             assumptions_path = Path(temp_dir) / "assumptions.md"
+            review_index_path = Path(temp_dir) / "review-index.md"
             cache_path = Path(temp_dir) / "cache.json"
             benchmark_path = Path(temp_dir) / "benchmark.json"
             fixture_path = Path(temp_dir) / "fixture.json"
             checklist_path.write_text("- [x] Done\n", encoding="utf-8")
             gameplay_path.write_text("# Packet\n", encoding="utf-8")
             assumptions_path.write_text("- Assumption\n", encoding="utf-8")
+            review_index_path.write_text("## Release Blockers\n1. Budget\n", encoding="utf-8")
             cache_path.write_text(
                 json.dumps(
                     {
@@ -237,6 +273,7 @@ class BuildDiscoveryLocalReadinessReportTest(unittest.TestCase):
                     readiness_checklist_path=checklist_path,
                     gameplay_review_packet_path=gameplay_path,
                     assumptions_ledger_path=assumptions_path,
+                    assumptions_review_index_path=review_index_path,
                     cache_prewarm_report_path=cache_path,
                     benchmark_comparison_report_path=benchmark_path,
                     benchmark_fixture_path=fixture_path,

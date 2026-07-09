@@ -34,6 +34,9 @@ REPO_ROOT = find_repo_root(Path(__file__).resolve())
 DEFAULT_READINESS_CHECKLIST = REPO_ROOT / ".codex" / "state" / "build-discovery-readiness-checklist.md"
 DEFAULT_GAMEPLAY_REVIEW_PACKET = REPO_ROOT / ".codex" / "state" / "build-discovery-gameplay-review-packet.md"
 DEFAULT_ASSUMPTIONS_LEDGER = REPO_ROOT / ".codex" / "state" / "build-discovery-assumptions.md"
+DEFAULT_ASSUMPTIONS_REVIEW_INDEX = (
+    REPO_ROOT / ".codex" / "state" / "build-discovery-assumptions-review-index.md"
+)
 
 
 def checklist_open_items(path: Path) -> list[str]:
@@ -76,9 +79,24 @@ def review_question_count(path: Path) -> int:
     )
 
 
+def numbered_items_in_section(path: Path, section_heading: str) -> int:
+    if not path.exists():
+        return 0
+    in_section = False
+    count = 0
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.startswith("## "):
+            in_section = line.strip() == section_heading
+            continue
+        if in_section and line[:1].isdigit() and ". " in line[:4]:
+            count += 1
+    return count
+
+
 def assumptions_review_status(
     assumptions_ledger_path: Path,
     gameplay_review_packet_path: Path,
+    assumptions_review_index_path: Path,
 ) -> dict[str, Any]:
     return {
         "ledgerPath": str(assumptions_ledger_path),
@@ -86,6 +104,18 @@ def assumptions_review_status(
         "ledgerSectionCount": markdown_section_count(assumptions_ledger_path),
         "ledgerAssumptionCount": markdown_bullet_count(assumptions_ledger_path),
         "gameplayReviewQuestionCount": review_question_count(gameplay_review_packet_path),
+        "reviewIndex": {
+            "path": str(assumptions_review_index_path),
+            "exists": assumptions_review_index_path.exists(),
+            "releaseBlockerCount": numbered_items_in_section(
+                assumptions_review_index_path,
+                "## Release Blockers",
+            ),
+            "watchItemCount": numbered_items_in_section(
+                assumptions_review_index_path,
+                "## Shippability Watch Items",
+            ),
+        },
     }
 
 
@@ -146,6 +176,7 @@ def build_readiness_report(
     readiness_checklist_path: Path = DEFAULT_READINESS_CHECKLIST,
     gameplay_review_packet_path: Path = DEFAULT_GAMEPLAY_REVIEW_PACKET,
     assumptions_ledger_path: Path = DEFAULT_ASSUMPTIONS_LEDGER,
+    assumptions_review_index_path: Path = DEFAULT_ASSUMPTIONS_REVIEW_INDEX,
     cache_prewarm_report_path: Path | None = None,
     benchmark_comparison_report_path: Path | None = None,
     benchmark_fixture_path: Path = DEFAULT_FIXTURE_PATH,
@@ -158,6 +189,7 @@ def build_readiness_report(
     assumptions_status = assumptions_review_status(
         assumptions_ledger_path,
         gameplay_review_packet_path,
+        assumptions_review_index_path,
     )
     gameplay_packet_exists = gameplay_review_packet_path.exists()
     blockers = list(open_items)
@@ -165,6 +197,8 @@ def build_readiness_report(
         blockers.append(f"missing gameplay review packet: {gameplay_review_packet_path}")
     if not assumptions_status["ledgerExists"]:
         blockers.append(f"missing assumptions ledger: {assumptions_ledger_path}")
+    if not assumptions_status["reviewIndex"]["exists"]:
+        blockers.append(f"missing assumptions review index: {assumptions_review_index_path}")
     if not prod_preflight["environment"]["readonlyDatabaseUrlPresent"]:
         blockers.append("prod readonly database URL is not available")
     if cache_status["status"] in {"fail", "missing"}:
@@ -197,6 +231,11 @@ def main() -> None:
     parser.add_argument("--readiness-checklist", type=Path, default=DEFAULT_READINESS_CHECKLIST)
     parser.add_argument("--gameplay-review-packet", type=Path, default=DEFAULT_GAMEPLAY_REVIEW_PACKET)
     parser.add_argument("--assumptions-ledger", type=Path, default=DEFAULT_ASSUMPTIONS_LEDGER)
+    parser.add_argument(
+        "--assumptions-review-index",
+        type=Path,
+        default=DEFAULT_ASSUMPTIONS_REVIEW_INDEX,
+    )
     parser.add_argument("--cache-prewarm-report", type=Path)
     parser.add_argument("--benchmark-comparison-report", type=Path)
     parser.add_argument("--benchmark-fixture", type=Path, default=DEFAULT_FIXTURE_PATH)
@@ -208,6 +247,7 @@ def main() -> None:
         readiness_checklist_path=args.readiness_checklist,
         gameplay_review_packet_path=args.gameplay_review_packet,
         assumptions_ledger_path=args.assumptions_ledger,
+        assumptions_review_index_path=args.assumptions_review_index,
         cache_prewarm_report_path=args.cache_prewarm_report,
         benchmark_comparison_report_path=args.benchmark_comparison_report,
         benchmark_fixture_path=args.benchmark_fixture,
