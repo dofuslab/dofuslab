@@ -47,6 +47,8 @@ services:
     restart: always
     ports:
       - 5000:5000
+    environment:
+      DOFUSLAB_READONLY_DATABASE_URL: ${DOFUSLAB_READONLY_DATABASE_URL:-}
     # healthcheck:
     #   test: curl -s http://localhost:5000/
     #   interval: 150s
@@ -64,6 +66,8 @@ services:
     depends_on:
       - postgres
       - redis
+    environment:
+      DOFUSLAB_READONLY_DATABASE_URL: ${DOFUSLAB_READONLY_DATABASE_URL:-}
     develop:
       watch:
         - action: sync

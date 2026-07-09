@@ -1391,3 +1391,13 @@ Run the initial evaluator pass:
   - `python server\scripts\test_build_discovery_action_stat_scoring.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_action_stat_scoring.py`
   - `git diff --check`
+
+### 2026-07-09 Prod Readonly Compose Env
+
+- Created stacked branch `codex/build-discovery-prod-readonly-compose-env` on top of `codex/build-discovery-action-stat-scoring-guard`.
+- Updated `docker-compose.yml` to pass `DOFUSLAB_READONLY_DATABASE_URL` through to the `server` and `worker` containers when the variable exists in the host environment.
+- No secret value is committed; the Compose default is empty.
+- This keeps prod benchmark discovery blocked by default, but makes the intended readonly env wiring explicit for local Docker runs.
+- Verification passed:
+  - `docker compose config`
+  - `git diff --check`
