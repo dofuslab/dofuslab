@@ -31,6 +31,8 @@ ELEMENTS = ("strength", "intelligence", "chance", "agility")
 BUDGET_TIERS = (1, 2, 3, 4)
 TARGET_PROFILES = (
     ("low", MIN_AP, MIN_MP, MIN_RANGE),
+    ("mid_range", 9, 4, 3),
+    ("range_cap", 10, 5, MAX_RANGE),
     ("default", REQUIRED_AP, REQUIRED_MP, REQUIRED_RANGE),
     ("high", MAX_AP, MAX_MP, MAX_RANGE),
 )
@@ -92,7 +94,7 @@ class BuildDiscoveryMilestoneOneGenerationSmokeShapeTest(unittest.TestCase):
     def test_smoke_matrix_samples_elements_budgets_and_action_stat_bounds(self):
         rows = list(milestone_one_smoke_queries())
 
-        self.assertEqual(len(rows), 48)
+        self.assertEqual(len(rows), 80)
         self.assertEqual({query.primary_element for _, query in rows}, set(ELEMENTS))
         self.assertEqual({query.budget_tier for _, query in rows}, set(BUDGET_TIERS))
         self.assertEqual(
