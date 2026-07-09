@@ -33,7 +33,7 @@ This is the current working checklist for deciding whether Build Discovery is sh
 - [x] Warmed app-cache suite pass returns all supported rows as hits with nonempty results.
 - [x] Accepted benchmark artifact exists for current Strength Iop DofusLab refs, including generated comparisons.
 - [x] Benchmark comparisons have a compact regression fixture with explicit drift thresholds.
-- [ ] Non-Iop generated queries remain unsupported until class modeling expands.
+- [x] Non-Iop generated queries are explicitly rejected and documented as a v1 scope boundary until class modeling expands.
 
 ## Generated Build Data Cleanliness
 

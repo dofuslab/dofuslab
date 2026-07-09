@@ -1048,3 +1048,22 @@ Run the initial evaluator pass:
   - direct fresh synchronous `buildDiscovery` remains legacy/dev and should not be treated as shippable
 - Verification passed:
   - `git diff --check`
+
+### 2026-07-09 v1 Scope Boundary
+
+- Created stacked branch `codex/build-discovery-v1-scope-boundary` on top of `codex/build-discovery-async-performance-acceptance`.
+- Documented the v1 Iop-only support boundary in `.codex/state/build-discovery-v1-scope-boundary.md`.
+- Decision:
+  - non-Iop generated queries are not supported in v1
+  - unsupported classes should continue to be rejected instead of returning low-confidence builds
+  - adding another class requires a separate modeling milestone with class assumptions, benchmarks, validation, and product review
+- Existing coverage noted:
+  - `BuildDiscoveryQuery(class_name="Cra").validate()` rejection
+  - GraphQL `buildDiscovery(className: "Cra", ...)` rejection
+  - client query input narrows `className` to `Iop`
+- Verification passed:
+  - `python scripts\test_build_discovery_prototype.py BuildDiscoveryPrototypeTest.test_build_discovery_query_rejects_out_of_scope_inputs`
+  - `cd client; yarn type-check`
+  - `git diff --check`
+- Verification note:
+  - host `scripts\test_build_discovery_graphql.py BuildDiscoveryGraphQLTest.test_build_discovery_query_rejects_out_of_scope_class` could not run because host Python is missing `dogpile`; the test remains present in the suite.
