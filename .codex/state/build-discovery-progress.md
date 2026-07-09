@@ -910,3 +910,23 @@ Run the initial evaluator pass:
   - `git diff --check`
 - Residual note:
   - local Docker emitted Datadog trace-send warnings because no local intake is running; the smoke itself passed.
+
+### 2026-07-09 Fresh Local Suite Measurement
+
+- Created stacked branch `codex/build-discovery-fresh-suite-measurement` on top of `codex/build-discovery-async-smoke`.
+- Regenerated a current Docker DB-backed Build Discovery index:
+  - 3753 items
+  - 519 sets
+- Re-ran the local Iop element/profile fresh suite with `--runs 1 --no-cache`.
+- Recorded compact timing evidence in `.codex/state/build-discovery-fresh-suite-measurement.md`.
+- Result:
+  - overall status remains `fail` at the 5000ms p95 threshold
+  - every row returned at least one build
+  - 7 of 8 rows exceeded 5000ms
+  - worst row was 12/6/0 Intelligence at 12558.5ms
+- Interpretation:
+  - fresh synchronous serving is not currently shippable for the supported matrix
+  - app-cache misses should stay on the async job path unless slow rows are optimized substantially
+- Verification passed:
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m oneoff.generate_build_discovery_index --output /tmp/build_discovery_index_current.json --source db`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m oneoff.build_discovery_query_perf --index-path /tmp/build_discovery_index_current.json --validate-local-suite --runs 1 --no-cache --output /tmp/build_discovery_fresh_suite_report.json --fixture-output /tmp/build_discovery_fresh_suite_fixture.json` wrote artifacts and exited nonzero due to expected threshold failures
