@@ -1800,6 +1800,14 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertFalse(action_stats_meet_target(missing_ap, BuildTarget(ap=11, mp=6, range=0)))
         self.assertFalse(action_stats_meet_target(over_range, BuildTarget(ap=11, mp=6, range=0)))
 
+    def test_target_semantics_response_declares_minimum_targets_with_hard_caps(self):
+        semantics = build_discovery_prototype.target_semantics_response()
+
+        self.assertEqual(semantics["type"], "minimum_with_hard_caps")
+        self.assertEqual(semantics["targets"], {"AP": "minimum", "MP": "minimum", "Range": "minimum"})
+        self.assertEqual(semantics["caps"], {"AP": 12, "MP": 6, "Range": 6})
+        self.assertEqual(semantics["surplusScoring"], "light_reward_with_cap")
+
     def test_build_discovery_response_exposes_product_query_contract(self):
         clear_build_discovery_response_cache()
         query = BuildDiscoveryQuery(
@@ -1828,6 +1836,11 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(response["query"]["budgetTier"], 2)
         self.assertEqual(response["query"]["exoPolicy"], "allow")
         self.assertEqual(response["targetSemantics"]["type"], "minimum_with_hard_caps")
+        self.assertEqual(
+            response["targetSemantics"]["targets"],
+            {"AP": "minimum", "MP": "minimum", "Range": "minimum"},
+        )
+        self.assertEqual(response["targetSemantics"]["surplusScoring"], "light_reward_with_cap")
         self.assertEqual(response["diagnostics"]["resultCount"], 0)
         self.assertIn("lockedItemIds", response["warnings"][0])
 
@@ -1928,6 +1941,18 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             BuildDiscoveryQuery(elements=("strength", "chance")).validate()
         with self.assertRaises(ValueError):
             BuildDiscoveryQuery(budget_tier=5).validate()
+        with self.assertRaises(ValueError):
+            BuildDiscoveryQuery(ap_target=13).validate()
+        with self.assertRaises(ValueError):
+            BuildDiscoveryQuery(mp_target=7).validate()
+        with self.assertRaises(ValueError):
+            BuildDiscoveryQuery(range_target=7).validate()
+        with self.assertRaises(ValueError):
+            BuildDiscoveryQuery(ap_target=-1).validate()
+        with self.assertRaises(ValueError):
+            BuildDiscoveryQuery(mp_target=-1).validate()
+        with self.assertRaises(ValueError):
+            BuildDiscoveryQuery(range_target=-1).validate()
         with self.assertRaises(ValueError):
             BuildDiscoveryQuery(locked_item_ids=("same",), avoided_item_ids=("same",)).validate()
 

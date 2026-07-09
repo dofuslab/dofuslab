@@ -497,6 +497,12 @@ class BuildTarget:
     range: int = REQUIRED_RANGE
 
     def __post_init__(self) -> None:
+        if self.ap < 0:
+            raise ValueError("Target AP cannot be negative.")
+        if self.mp < 0:
+            raise ValueError("Target MP cannot be negative.")
+        if self.range < 0:
+            raise ValueError("Target Range cannot be negative.")
         if self.ap > MAX_AP:
             raise ValueError(f"Target AP cannot exceed {MAX_AP}.")
         if self.mp > MAX_MP:
@@ -568,6 +574,7 @@ class BuildDiscoveryQuery:
             raise ValueError("budget_tier must be between 1 and 4.")
         if self.exo_policy not in {"none", "allow", "opti"}:
             raise ValueError("exo_policy must be one of: none, allow, opti.")
+        self.target
         overlap = set(self.locked_item_ids) & set(self.avoided_item_ids)
         if overlap:
             raise ValueError(f"Items cannot be both locked and avoided: {', '.join(sorted(overlap))}.")
@@ -621,6 +628,15 @@ def effective_exo_policy(query: BuildDiscoveryQuery) -> str:
     if query.budget_tier < 3 and query.exo_policy in {"allow", "opti"}:
         return "none"
     return query.exo_policy
+
+
+def target_semantics_response() -> dict[str, Any]:
+    return {
+        "type": "minimum_with_hard_caps",
+        "targets": {"AP": "minimum", "MP": "minimum", "Range": "minimum"},
+        "caps": {"AP": MAX_AP, "MP": MAX_MP, "Range": MAX_RANGE},
+        "surplusScoring": "light_reward_with_cap",
+    }
 
 
 def query_cache_key(query: BuildDiscoveryQuery, current_dataset_version: str) -> str:
@@ -3422,11 +3438,7 @@ def build_discovery_response(
         },
         "status": "complete",
         "query": query_summary(query),
-        "targetSemantics": {
-            "type": "minimum_with_hard_caps",
-            "caps": {"AP": MAX_AP, "MP": MAX_MP, "Range": MAX_RANGE},
-            "surplusScoring": "light",
-        },
+        "targetSemantics": target_semantics_response(),
         "prototype": f"level_200_{profile.name}_pvm_generalist",
         "profile": {
             "name": profile.name,

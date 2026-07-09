@@ -362,3 +362,19 @@ Run the initial evaluator pass:
 - Verification passed:
   - `cd client && npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx gtag.ts`
   - `cd client && yarn type-check`
+
+### 2026-07-09 Target Semantics Contract Guard
+
+- Created stacked branch `codex/build-discovery-target-semantics-guard` on top of `codex/build-discovery-client-analytics`.
+- Made the AP/MP/Range target semantics explicit in the backend response:
+  - targets are minimums, not exact equality requirements
+  - AP/MP/Range remain bounded by hard caps
+  - surplus remains a light capped scoring reward
+- Added focused tests for the semantics helper and response contract.
+- Reviewer finding fixed before commit:
+  - `BuildDiscoveryQuery.validate()` now rejects AP/MP/Range targets below zero or above hard caps instead of accepting impossible solver requests.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "python - <<'PY' ... PY"` inline assertions for `target_semantics_response()` and mocked `build_discovery_response()`
+  - `python -m unittest scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_target_semantics_response_declares_minimum_targets_with_hard_caps scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_build_discovery_response_exposes_product_query_contract scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_action_stats_meet_target_allows_surplus_within_caps scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_action_stats_meet_target_rejects_missing_or_over_cap_stats scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_surplus_range_is_allowed_up_to_hard_cap scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_over_hard_range_cap_is_rejected scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_build_discovery_query_rejects_out_of_scope_inputs`
+  - `git diff --check`
+- Full Docker `python -m unittest scripts.test_build_discovery_prototype` still has unrelated pre-existing failures in completion-target and strength-profile tests.
