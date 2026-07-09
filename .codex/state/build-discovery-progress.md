@@ -1375,3 +1375,19 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_pipeline.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_local_readiness_pipeline.py --output-dir /tmp/build_discovery_review_index_readiness --state-dir /tmp/build_discovery_local_readiness_state`
   - `git diff --check`
+
+### 2026-07-09 Action Stat Scoring Guard
+
+- Created stacked branch `codex/build-discovery-action-stat-scoring-guard` on top of `codex/build-discovery-review-index-readiness`.
+- Added `server/scripts/test_build_discovery_action_stat_scoring.py`.
+- The guard covers the user-facing AP/MP/Range target semantics:
+  - AP/MP/Range are minimum targets, not exact targets
+  - surplus inside hard caps is valid
+  - over-cap action stats are invalid
+  - surplus AP/MP/Range utility is capped and remains a light score delta
+- Current scored surplus delta from 11/6/0 to 12/6/6 is `60`.
+- Over-cap action stats do not add more utility score than capped action stats.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_action_stat_scoring.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_action_stat_scoring.py`
+  - `git diff --check`
