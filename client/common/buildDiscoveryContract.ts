@@ -65,6 +65,7 @@ export type BuildDiscoveryBuild = {
     string,
     {
       id?: string;
+      internalId?: string;
       name?: string;
       type?: string;
       level?: number;

@@ -2,11 +2,12 @@
 """
 Generate a search-oriented build discovery index from the synced database.
 
-Generate from local synced JSON by default:
+Generate from the database by default so generated build imports can carry
+internal item IDs:
     python -m oneoff.generate_build_discovery_index
 
-Generate from the database only when explicitly requested:
-    python -m oneoff.generate_build_discovery_index --source db
+Generate from local synced JSON only for development smoke checks:
+    python -m oneoff.generate_build_discovery_index --source json
 """
 
 from __future__ import annotations
@@ -259,6 +260,7 @@ def serializable_item(item: dict[str, Any]) -> dict[str, Any]:
     stats = item.get("_stats") or normalize_stats(item.get("stats", []))
     return {
         "id": item_id(item),
+        "internalId": item.get("uuid"),
         "name": get_name(item),
         "itemType": item.get("itemType"),
         "level": item.get("level"),
@@ -316,7 +318,7 @@ def serializable_set(set_obj: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def build_index(source: str = "json") -> dict[str, Any]:
+def build_index(source: str = "db") -> dict[str, Any]:
     if source == "json":
         items = load_source_item_records()
         sets = load_source_sets()
@@ -352,13 +354,13 @@ def default_output_path() -> str:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default=default_output_path())
-    parser.add_argument("--source", choices=("db", "json"), default="json")
+    parser.add_argument("--source", choices=("db", "json"), default="db")
     args = parser.parse_args()
 
     write_index(args.output, source=args.source)
 
 
-def write_index(output_path: str | None = None, source: str = "json") -> dict[str, Any]:
+def write_index(output_path: str | None = None, source: str = "db") -> dict[str, Any]:
     output_path = output_path or default_output_path()
     index = build_index(source=source)
     os.makedirs(os.path.dirname(output_path), exist_ok=True)

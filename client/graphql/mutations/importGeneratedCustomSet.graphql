@@ -1,0 +1,32 @@
+#import "graphql/fragments/customSet.graphql"
+
+mutation importGeneratedCustomSet(
+  $items: [CustomSetImportedItemInput!]!
+  $name: String!
+  $level: Int!
+  $source: String!
+  $datasetVersion: String
+  $solverVersion: String
+  $requestPayload: GenericScalar
+) {
+  importGeneratedCustomSet(
+    items: $items
+    name: $name
+    level: $level
+    source: $source
+    datasetVersion: $datasetVersion
+    solverVersion: $solverVersion
+    requestPayload: $requestPayload
+  ) {
+    customSet {
+      ...customSet
+    }
+    generationRequest {
+      id
+      source
+      datasetVersion
+      solverVersion
+      requestPayload
+    }
+  }
+}

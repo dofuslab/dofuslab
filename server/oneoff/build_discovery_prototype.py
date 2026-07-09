@@ -1103,6 +1103,7 @@ def dataset_version() -> str:
 
 def item_record_from_index(item: dict[str, Any]) -> dict[str, Any]:
     record = {
+        "uuid": item.get("internalId") or item.get("uuid"),
         "dofusID": item["id"],
         "name": item.get("name") or item["id"],
         "itemType": item.get("itemType"),
@@ -1198,6 +1199,7 @@ def load_all_item_records() -> tuple[dict[str, Any], ...]:
         )
         items = tuple(
             {
+                "uuid": str(item.uuid),
                 "dofusID": db_item_dofus_id(item),
                 "name": translated_name(item.item_translations, db_item_dofus_id(item) or ""),
                 "itemType": translated_name(item.item_type.item_type_translation, str(item.item_type_id)),
@@ -3519,6 +3521,7 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
         "items": {
             slot: {
                 "id": item["dofusID"],
+                "internalId": item.get("uuid"),
                 "name": item["_name"],
                 "type": item["itemType"],
                 "level": item.get("level"),

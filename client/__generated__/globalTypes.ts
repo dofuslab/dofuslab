@@ -110,6 +110,7 @@ export type CustomSet = GlobalNode & {
   defaultClassId: Maybe<Scalars['String']['output']>;
   description: Maybe<Scalars['String']['output']>;
   equippedItems: Array<EquippedItem>;
+  generationRequest: Maybe<GenerationRequest>;
   hasEditPermission: Scalars['Boolean']['output'];
   id: Scalars['UUID']['output'];
   lastModified: Maybe<Scalars['DateTime']['output']>;
@@ -269,6 +270,19 @@ export type EquippedItemExo = GlobalNode & {
   value: Scalars['Int']['output'];
 };
 
+export type GenerationRequest = GlobalNode & {
+  __typename: 'GenerationRequest';
+  creationDate: Maybe<Scalars['DateTime']['output']>;
+  customSet: Maybe<CustomSet>;
+  customSetId: Scalars['String']['output'];
+  datasetVersion: Maybe<Scalars['String']['output']>;
+  id: Scalars['UUID']['output'];
+  requestPayload: Maybe<Scalars['GenericScalar']['output']>;
+  solverVersion: Maybe<Scalars['String']['output']>;
+  source: Scalars['String']['output'];
+  uuid: Scalars['String']['output'];
+};
+
 export type GlobalNode = {
   id: Scalars['UUID']['output'];
 };
@@ -276,6 +290,12 @@ export type GlobalNode = {
 export type ImportCustomSet = {
   __typename: 'ImportCustomSet';
   customSet: CustomSet;
+};
+
+export type ImportGeneratedCustomSet = {
+  __typename: 'ImportGeneratedCustomSet';
+  customSet: CustomSet;
+  generationRequest: GenerationRequest;
 };
 
 export type Item = GlobalNode & {
@@ -392,6 +412,7 @@ export type Mutation = {
   equipMultipleItems: Maybe<EquipMultipleItems>;
   equipSet: Maybe<EquipSet>;
   importCustomSet: Maybe<ImportCustomSet>;
+  importGeneratedCustomSet: Maybe<ImportGeneratedCustomSet>;
   loginUser: Maybe<LoginUser>;
   logoutUser: Maybe<LogoutUser>;
   mageEquippedItem: Maybe<MageEquippedItem>;
@@ -478,6 +499,16 @@ export type MutationimportCustomSetArgs = {
   level: Scalars['Int']['input'];
   name: Scalars['String']['input'];
   stats: CustomSetStatsInput;
+};
+
+export type MutationimportGeneratedCustomSetArgs = {
+  datasetVersion?: InputMaybe<Scalars['String']['input']>;
+  items: Array<CustomSetImportedItemInput>;
+  level: Scalars['Int']['input'];
+  name: Scalars['String']['input'];
+  requestPayload?: InputMaybe<Scalars['GenericScalar']['input']>;
+  solverVersion?: InputMaybe<Scalars['String']['input']>;
+  source: Scalars['String']['input'];
 };
 
 export type MutationloginUserArgs = {

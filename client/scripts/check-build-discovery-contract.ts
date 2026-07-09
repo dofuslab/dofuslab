@@ -145,9 +145,24 @@ const buildWithExos = {
     Range: { itemId: 'shield-a', slot: 'shield' },
   },
   items: {
-    ring_1: { id: 'ring-a', name: 'Long Ring Name', type: 'Ring' },
-    ring_2: { id: 'ring-a', name: 'Long Ring Name', type: 'Ring' },
-    shield: { id: 'shield-a', name: 'Shield Name', type: 'Shield' },
+    ring_1: {
+      id: 'ring-a',
+      internalId: 'uuid-ring-a',
+      name: 'Long Ring Name',
+      type: 'Ring',
+    },
+    ring_2: {
+      id: 'ring-a',
+      internalId: 'uuid-ring-a-2',
+      name: 'Long Ring Name',
+      type: 'Ring',
+    },
+    shield: {
+      id: 'shield-a',
+      internalId: 'uuid-shield-a',
+      name: 'Shield Name',
+      type: 'Shield',
+    },
   },
 };
 

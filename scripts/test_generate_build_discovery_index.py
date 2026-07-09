@@ -18,6 +18,7 @@ from oneoff.generate_build_discovery_index import (
     load_db_sets,
     normalize_source_item,
     normalize_source_weapon_stats,
+    serializable_item,
 )
 
 
@@ -86,6 +87,21 @@ class GenerateBuildDiscoveryIndexTest(unittest.TestCase):
         self.assertTrue(flags["hasNegativeMP"])
         self.assertTrue(flags["isExoEligible"])
         self.assertEqual(flags["actionStats"], {"AP": 1, "MP": -1, "Range": 2})
+
+    def test_serializable_item_includes_internal_id_for_generated_imports(self):
+        item = serializable_item(
+            {
+                "uuid": "internal-hat-uuid",
+                "dofusID": "hat",
+                "name": {"en": "Indexed Hat"},
+                "itemType": "Hat",
+                "level": 200,
+                "stats": [],
+            }
+        )
+
+        self.assertEqual(item["id"], "hat")
+        self.assertEqual(item["internalId"], "internal-hat-uuid")
 
     def test_runtime_indexed_candidate_ids_use_target_bucket_and_special_pools(self):
         index = {
@@ -166,7 +182,27 @@ class GenerateBuildDiscoveryIndexTest(unittest.TestCase):
         self.assertIn("generatedAt", index)
         self.assertEqual(index["datasetVersion"], index["generatedAt"])
 
-    def test_build_index_defaults_to_json_source(self):
+    def test_build_index_defaults_to_db_source_for_importable_generated_builds(self):
+        db_item = {
+            "uuid": "internal-hat-uuid",
+            "dofusID": "100",
+            "name": {"en": "Indexed Hat"},
+            "itemType": "Hat",
+            "level": 200,
+            "stats": [],
+        }
+
+        with patch("oneoff.generate_build_discovery_index.load_db_item_records", return_value=[db_item]) as db_items:
+            with patch("oneoff.generate_build_discovery_index.load_db_sets", return_value={}) as db_sets:
+                with patch("oneoff.generate_build_discovery_index.load_source_json") as source_json:
+                    index = build_index()
+
+        db_items.assert_called_once_with()
+        db_sets.assert_called_once_with()
+        source_json.assert_not_called()
+        self.assertEqual(index["items"][0]["internalId"], "internal-hat-uuid")
+
+    def test_build_index_can_use_json_source_for_local_smoke_checks(self):
         source_data = {
             "items.json": [],
             "weapons.json": [],
@@ -178,7 +214,7 @@ class GenerateBuildDiscoveryIndexTest(unittest.TestCase):
         with patch("oneoff.generate_build_discovery_index.load_source_json", side_effect=source_data.get):
             with patch("oneoff.generate_build_discovery_index.load_db_item_records") as db_items:
                 with patch("oneoff.generate_build_discovery_index.load_db_sets") as db_sets:
-                    index = build_index()
+                    index = build_index(source="json")
 
         db_items.assert_not_called()
         db_sets.assert_not_called()

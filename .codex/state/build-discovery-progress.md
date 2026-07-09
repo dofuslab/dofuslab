@@ -444,3 +444,29 @@ Run the initial evaluator pass:
   - `python -m py_compile scripts/test_build_discovery_graphql.py`
   - `git diff --check`
 - Host `python -m unittest scripts.test_build_discovery_graphql...` is blocked by missing `dogpile`; Docker's `/home/dofuslab/scripts` does not see the repo-level edited test file, so the equivalent mutation checks were run inline in Docker.
+
+### 2026-07-09 Atomic Generated Import Client
+
+- Created stacked branch `codex/build-discovery-atomic-generated-import-client` on top of `codex/build-discovery-generation-request-model`.
+- Added client mutation document `importGeneratedCustomSet`.
+- Rewired Build Discovery `Open in builder` to use the atomic generated import mutation:
+  - sends generated item inputs, including AP/MP/Range exo flags
+  - sends generated build name, dataset version, solver version, and compact request payload
+  - removes separate generated label mutation and client-side exo follow-up mutations
+- Reviewer findings fixed before commit:
+  - import now disables when a generated exo cannot be matched to exactly one returned item slot
+  - unknown-slot exos no longer fan out across duplicate item IDs
+  - Build Discovery results now expose `item.internalId` from `ModelItem.uuid`; the client uses that UUID for generated import while keeping `item.id` as the Dofus DB ID for display/exo matching
+  - generated indexes now preserve the internal item UUID and the runtime indexed item loader restores it for generated imports
+  - the generated index now defaults to the DB source so normal/generated artifacts carry internal item UUIDs; JSON remains an explicit smoke/dev source
+  - `Open in builder` now disables visibly when generated results are missing internal import IDs instead of authenticating and silently returning
+  - generated import rows are sorted by numbered slot family/index before sending to the server
+- Codegen exposed a backend mapper registration issue; fixed `ModelCustomSet` by explicitly importing `ModelGenerationRequest`, then restarted `dofuslab-server-1` and reran `cd client; yarn generate`.
+- Verification passed:
+  - `cd client; yarn generate`
+  - `cd client; npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx common/buildDiscoveryContract.ts scripts/check-build-discovery-contract.ts` (existing `no-console` warning in the contract check script)
+  - `cd client; yarn type-check`
+  - `docker exec dofuslab-server-1 python -m py_compile app/database/model_generation_request.py app/database/model_custom_set.py app/schema.py oneoff/build_discovery_prototype.py oneoff/generate_build_discovery_index.py`
+  - `python -m unittest scripts.test_generate_build_discovery_index.GenerateBuildDiscoveryIndexTest`
+  - `python -m unittest scripts.test_generate_build_discovery_index.GenerateBuildDiscoveryIndexTest.test_serializable_item_includes_internal_id_for_generated_imports scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_indexed_item_record_preserves_internal_item_id_for_imports scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_serialize_build_exposes_internal_item_id_for_imports`
+  - `git diff --check`

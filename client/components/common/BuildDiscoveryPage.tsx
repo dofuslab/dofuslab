@@ -27,27 +27,16 @@ import {
   buildDiscoveryItemIds,
   buildDiscoveryNumberedSlotParts,
   formatBuildDiscoveryLabel,
-  normalizeBuildDiscoverySlotName,
   useBuildDiscoveryQuery,
 } from 'common/buildDiscovery';
 import { mq } from 'common/constants';
 import { checkAuthentication, navigateToNewCustomSet } from 'common/utils';
-import { Stat } from '__generated__/globalTypes';
-import EquipItemsMutation from 'graphql/mutations/equipItems.graphql';
+import { CustomSetImportedItemInput } from '__generated__/globalTypes';
+import ImportGeneratedCustomSetMutation from 'graphql/mutations/importGeneratedCustomSet.graphql';
 import {
-  equipItems,
-  equipItemsVariables,
-} from 'graphql/mutations/__generated__/equipItems';
-import EditCustomSetMetadataMutation from 'graphql/mutations/editCustomSetMetadata.graphql';
-import {
-  editCustomSetMetadata,
-  editCustomSetMetadataVariables,
-} from 'graphql/mutations/__generated__/editCustomSetMetadata';
-import SetEquippedItemExoMutation from 'graphql/mutations/setEquippedItemExo.graphql';
-import {
-  setEquippedItemExo,
-  setEquippedItemExoVariables,
-} from 'graphql/mutations/__generated__/setEquippedItemExo';
+  importGeneratedCustomSet,
+  importGeneratedCustomSetVariables,
+} from 'graphql/mutations/__generated__/importGeneratedCustomSet';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import * as gtag from 'gtag';
@@ -103,21 +92,6 @@ const statOrder = [
   'prospecting',
 ];
 
-const exoStatMap: Record<keyof typeof BUILD_DISCOVERY_EXO_STAT_MAP, Stat> = {
-  AP: Stat.AP,
-  MP: Stat.MP,
-  Range: Stat.RANGE,
-};
-
-function isSupportedExoStat(
-  stat: string,
-): stat is keyof typeof BUILD_DISCOVERY_EXO_STAT_MAP {
-  return Object.prototype.hasOwnProperty.call(
-    BUILD_DISCOVERY_EXO_STAT_MAP,
-    stat,
-  );
-}
-
 function numberValue(value: number | null, fallback: number) {
   return typeof value === 'number' ? value : fallback;
 }
@@ -164,29 +138,144 @@ function generatedBuildName(build: BuildDiscoveryBuild) {
   return `Generated Build Discovery${scoreLabel}`;
 }
 
-function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
+type BuildDiscoveryImportContext = {
+  datasetVersion?: string;
+  solverVersion?: string;
+  query?: Record<string, unknown>;
+  input: BuildDiscoveryQueryInput;
+};
+
+function buildDiscoveryImportItems(build: BuildDiscoveryBuild) {
+  const items: CustomSetImportedItemInput[] = [];
+  const matchedExoKeys = new Set<string>();
+  const exoEntries = Object.entries(build.exos ?? {});
+  let hasMissingInternalIds = false;
+
+  Object.entries(build.items ?? {})
+    .sort(([leftSlot], [rightSlot]) => {
+      const left = buildDiscoveryNumberedSlotParts(leftSlot);
+      const right = buildDiscoveryNumberedSlotParts(rightSlot);
+      const familyOrder = (left.family ?? '').localeCompare(right.family ?? '');
+
+      if (familyOrder !== 0) {
+        return familyOrder;
+      }
+
+      return (left.index ?? 0) - (right.index ?? 0);
+    })
+    .forEach(([slot, item]) => {
+      if (typeof item.id !== 'string' || item.id.length === 0) {
+        return;
+      }
+
+      if (typeof item.internalId !== 'string' || item.internalId.length === 0) {
+        hasMissingInternalIds = true;
+        return;
+      }
+
+      const hasGeneratedExo = (
+        stat: keyof typeof BUILD_DISCOVERY_EXO_STAT_MAP,
+      ) =>
+        exoEntries.some(([exoStat, exo]) => {
+          if (exoStat !== stat || exo.itemId !== item.id) {
+            return false;
+          }
+
+          const exoSlot = buildDiscoveryNumberedSlotParts(exo.slot);
+          const itemSlot = buildDiscoveryNumberedSlotParts(slot);
+
+          if (
+            exoSlot.family !== itemSlot.family ||
+            exoSlot.index !== itemSlot.index
+          ) {
+            return false;
+          }
+
+          matchedExoKeys.add(exoStat);
+          return true;
+        });
+
+      items.push({
+        id: item.internalId,
+        apExo: hasGeneratedExo('AP') || undefined,
+        mpExo: hasGeneratedExo('MP') || undefined,
+        rangeExo: hasGeneratedExo('Range') || undefined,
+      });
+    });
+
+  return {
+    items,
+    hasMissingInternalIds,
+    hasUnmatchedExos: matchedExoKeys.size !== exoEntries.length,
+  };
+}
+
+function buildDiscoveryRequestPayload(
+  build: BuildDiscoveryBuild,
+  context: BuildDiscoveryImportContext,
+) {
+  return {
+    query: context.query ?? context.input,
+    build: {
+      key: buildResultKey(build),
+      score: build.score,
+      itemIds: buildDiscoveryItemIds(build),
+      exos: build.exos ?? {},
+    },
+  };
+}
+
+function generatedExoImportMessage(
+  hasUnsupportedExos: boolean,
+  hasUnmatchedExos: boolean,
+) {
+  if (hasUnsupportedExos) {
+    return 'Open in builder is disabled for unsupported generated exos.';
+  }
+
+  if (hasUnmatchedExos) {
+    return 'Open in builder is disabled because generated exos could not be matched to one item slot.';
+  }
+
+  return 'Generated AP/MP/Range exos will be imported with this build.';
+}
+
+function generatedImportBlockMessage(
+  hasMissingInternalIds: boolean,
+  hasUnsupportedExos: boolean,
+  hasUnmatchedExos: boolean,
+) {
+  if (hasMissingInternalIds) {
+    return 'Open in builder is disabled because this result is missing generated item import IDs.';
+  }
+
+  if (hasUnsupportedExos || hasUnmatchedExos) {
+    return generatedExoImportMessage(hasUnsupportedExos, hasUnmatchedExos);
+  }
+
+  return null;
+}
+
+function useOpenBuildDiscoveryBuild(
+  build: BuildDiscoveryBuild,
+  context: BuildDiscoveryImportContext,
+) {
   const router = useRouter();
   const client = useApolloClient();
   const { t } = useTranslation('common');
   const itemIds = useMemo(() => buildDiscoveryItemIds(build), [build]);
+  const importInput = useMemo(() => buildDiscoveryImportItems(build), [build]);
   const hasExos = buildDiscoveryHasExos(build);
   const hasUnsupportedExos = buildDiscoveryHasUnsupportedExos(build);
+  const hasMissingInternalIds = importInput.hasMissingInternalIds;
+  const hasUnmatchedExos = importInput.hasUnmatchedExos;
+  const importItemCount = importInput.items.length;
   const [error, setError] = useState<string | null>(null);
-  const [equipItemsMutate, { loading: isEquipping }] = useMutation<
-    equipItems,
-    equipItemsVariables
-  >(EquipItemsMutation, {
-    refetchQueries: () => ['buildList'],
-  });
-  const [editCustomSetMetadataMutate, { loading: isSavingMetadata }] =
-    useMutation<editCustomSetMetadata, editCustomSetMetadataVariables>(
-      EditCustomSetMetadataMutation,
+  const [importGeneratedCustomSetMutate, { loading: isImporting }] =
+    useMutation<importGeneratedCustomSet, importGeneratedCustomSetVariables>(
+      ImportGeneratedCustomSetMutation,
       { refetchQueries: () => ['buildList'] },
     );
-  const [setEquippedItemExoMutate, { loading: isSettingExos }] = useMutation<
-    setEquippedItemExo,
-    setEquippedItemExoVariables
-  >(SetEquippedItemExoMutation);
 
   const openInBuilder = useCallback(async () => {
     setError(null);
@@ -198,85 +287,33 @@ function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
     });
     const ok = await checkAuthentication(client, t);
 
-    if (!ok || itemIds.length === 0 || hasUnsupportedExos) {
+    if (
+      !ok ||
+      importItemCount === 0 ||
+      hasMissingInternalIds ||
+      hasUnsupportedExos ||
+      hasUnmatchedExos
+    ) {
       return;
     }
 
-    let createdCustomSetId: string | null = null;
-
     try {
-      const { data } = await equipItemsMutate({ variables: { itemIds } });
-      const customSet = data?.equipMultipleItems?.customSet;
+      const { data } = await importGeneratedCustomSetMutate({
+        variables: {
+          items: importInput.items,
+          name: generatedBuildName(build),
+          level: 200,
+          source: 'build_discovery',
+          datasetVersion: context.datasetVersion,
+          solverVersion: context.solverVersion,
+          requestPayload: buildDiscoveryRequestPayload(build, context),
+        },
+      });
+      const customSet = data?.importGeneratedCustomSet?.customSet;
 
       if (!customSet) {
         throw new Error('Could not create build.');
       }
-
-      createdCustomSetId = customSet.id;
-
-      try {
-        await editCustomSetMetadataMutate({
-          variables: {
-            customSetId: customSet.id,
-            level: 200,
-            name: generatedBuildName(build),
-          },
-        });
-      } catch {
-        gtag.event({
-          action: 'build_discovery_generated_label_error',
-          category: 'Build Discovery',
-          label: customSet.id,
-          value: itemIds.length,
-        });
-      }
-
-      await Object.entries(build.exos ?? {}).reduce(
-        async (previous, [stat, exo]) => {
-          await previous;
-
-          const mappedStat = isSupportedExoStat(stat)
-            ? exoStatMap[stat]
-            : undefined;
-          const exoSlot = buildDiscoveryNumberedSlotParts(exo.slot);
-          const matchingItems = customSet.equippedItems
-            .filter((entry) => entry.item.id === exo.itemId)
-            .sort((left, right) => left.slot.order - right.slot.order);
-          const exactSlotMatch =
-            exoSlot.index === null
-              ? matchingItems.find(
-                  (entry) =>
-                    normalizeBuildDiscoverySlotName(entry.slot.enName) ===
-                    exoSlot.family,
-                )
-              : undefined;
-          const familySlotMatches = matchingItems.filter(
-            (entry) =>
-              buildDiscoveryNumberedSlotParts(entry.slot.enName).family ===
-              exoSlot.family,
-          );
-          const numberedSlotMatch =
-            typeof exoSlot.index === 'number'
-              ? familySlotMatches[exoSlot.index]
-              : undefined;
-
-          const equippedItem =
-            exactSlotMatch ?? numberedSlotMatch ?? matchingItems[0];
-
-          if (!mappedStat || !equippedItem) {
-            throw new Error('Could not apply generated exos to the build.');
-          }
-
-          await setEquippedItemExoMutate({
-            variables: {
-              equippedItemId: equippedItem.id,
-              stat: mappedStat,
-              hasStat: true,
-            },
-          });
-        },
-        Promise.resolve(),
-      );
 
       gtag.event({
         action: 'build_discovery_open_builder_success',
@@ -291,51 +328,47 @@ function useOpenBuildDiscoveryBuild(build: BuildDiscoveryBuild) {
           ? caughtError.message
           : 'Could not open build.',
       );
-      if (createdCustomSetId !== null) {
-        gtag.event({
-          action: 'build_discovery_open_builder_partial',
-          category: 'Build Discovery',
-          label: createdCustomSetId,
-          value: itemIds.length,
-        });
-        navigateToNewCustomSet(router, createdCustomSetId);
-      } else {
-        gtag.event({
-          action: 'build_discovery_open_builder_error',
-          category: 'Build Discovery',
-          label: 'open_failed_before_build_created',
-          value: itemIds.length,
-        });
-      }
+      gtag.event({
+        action: 'build_discovery_open_builder_error',
+        category: 'Build Discovery',
+        label: 'generated_import_failed',
+        value: itemIds.length,
+      });
     }
   }, [
     build,
-    build.exos,
     client,
-    editCustomSetMetadataMutate,
-    equipItemsMutate,
+    context,
+    hasMissingInternalIds,
     hasUnsupportedExos,
+    hasUnmatchedExos,
+    importGeneratedCustomSetMutate,
+    importInput,
+    importItemCount,
     itemIds,
     router,
-    setEquippedItemExoMutate,
     t,
   ]);
 
   return {
     error,
     hasExos,
+    hasMissingInternalIds,
     hasUnsupportedExos,
-    itemIds,
-    loading: isEquipping || isSavingMetadata || isSettingExos,
+    hasUnmatchedExos,
+    importItemCount,
+    loading: isImporting,
     openInBuilder,
   };
 }
 
 function BuildDiscoveryResult({
   build,
+  importContext,
   index,
 }: {
   build: BuildDiscoveryBuild;
+  importContext: BuildDiscoveryImportContext;
   index: number;
 }) {
   const itemEntries = Object.entries(build.items ?? {});
@@ -344,11 +377,18 @@ function BuildDiscoveryResult({
   const {
     error: openError,
     hasExos,
+    hasMissingInternalIds,
     hasUnsupportedExos,
-    itemIds,
+    hasUnmatchedExos,
+    importItemCount,
     loading: isOpening,
     openInBuilder,
-  } = useOpenBuildDiscoveryBuild(build);
+  } = useOpenBuildDiscoveryBuild(build, importContext);
+  const importBlockMessage = generatedImportBlockMessage(
+    hasMissingInternalIds,
+    hasUnsupportedExos,
+    hasUnmatchedExos,
+  );
 
   return (
     <article
@@ -378,7 +418,12 @@ function BuildDiscoveryResult({
       </div>
       <div css={{ marginBottom: 12 }}>
         <Button
-          disabled={itemIds.length === 0 || hasUnsupportedExos}
+          disabled={
+            importItemCount === 0 ||
+            hasMissingInternalIds ||
+            hasUnsupportedExos ||
+            hasUnmatchedExos
+          }
           loading={isOpening}
           onClick={openInBuilder}
         >
@@ -406,12 +451,19 @@ function BuildDiscoveryResult({
       )}
       {hasExos && (
         <Alert
-          type={hasUnsupportedExos ? 'warning' : 'info'}
+          type={importBlockMessage ? 'warning' : 'info'}
           message={
-            hasUnsupportedExos
-              ? 'Open in builder is disabled for unsupported generated exos.'
-              : 'Generated AP/MP/Range exos will be applied after opening this build.'
+            importBlockMessage ??
+            generatedExoImportMessage(hasUnsupportedExos, hasUnmatchedExos)
           }
+          showIcon
+          css={{ marginBottom: 12 }}
+        />
+      )}
+      {importBlockMessage && !hasExos && (
+        <Alert
+          type="warning"
+          message={importBlockMessage}
           showIcon
           css={{ marginBottom: 12 }}
         />
@@ -769,6 +821,12 @@ export default function BuildDiscoveryPage() {
             <BuildDiscoveryResult
               key={buildResultKey(build)}
               build={build}
+              importContext={{
+                datasetVersion: buildDiscovery.datasetVersion,
+                solverVersion: buildDiscovery.solverVersion,
+                query: buildDiscovery.query,
+                input: submittedInput ?? queryInput,
+              }}
               index={index}
             />
           ))}

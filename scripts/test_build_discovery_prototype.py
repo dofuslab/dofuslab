@@ -43,6 +43,7 @@ from oneoff.build_discovery_prototype import (
     has_ap_weapon,
     item_allowed_by_budget,
     generate_set_core_packages,
+    item_record_from_index,
     optimize_base_allocation,
     package_seed_states,
     packages_compatible,
@@ -57,6 +58,7 @@ from oneoff.build_discovery_prototype import (
     score_stats,
     score_state,
     secondary_ap_source_count,
+    serialize_build,
     strength_spell_damage,
     strength_spell_damage_profile,
     state_weapon_damage,
@@ -1843,6 +1845,46 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(response["targetSemantics"]["surplusScoring"], "light_reward_with_cap")
         self.assertEqual(response["diagnostics"]["resultCount"], 0)
         self.assertIn("lockedItemIds", response["warnings"][0])
+
+    def test_serialize_build_exposes_internal_item_id_for_imports(self):
+        state = BuildState()
+        state.slots["ring_1"] = {
+            "uuid": "internal-ring-uuid",
+            "dofusID": "dofus-ring-id",
+            "_name": "Ring Name",
+            "itemType": "Ring",
+            "level": 200,
+            "setID": None,
+        }
+
+        serialized = serialize_build(state, {})
+
+        self.assertEqual(serialized["items"]["ring_1"]["id"], "dofus-ring-id")
+        self.assertEqual(
+            serialized["items"]["ring_1"]["internalId"],
+            "internal-ring-uuid",
+        )
+
+    def test_indexed_item_record_preserves_internal_item_id_for_imports(self):
+        indexed_item = {
+            "id": "dofus-ring-id",
+            "internalId": "internal-ring-uuid",
+            "name": "Ring Name",
+            "itemType": "Ring",
+            "level": 200,
+            "setID": None,
+            "stats": [],
+        }
+
+        state = BuildState()
+        state.slots["ring_1"] = item_record_from_index(indexed_item)
+
+        serialized = serialize_build(state, {})
+
+        self.assertEqual(
+            serialized["items"]["ring_1"]["internalId"],
+            "internal-ring-uuid",
+        )
 
     def test_query_warnings_mentions_budget_exo_effective_behavior_below_tier_3(self):
         for exo_policy in ("allow", "opti"):

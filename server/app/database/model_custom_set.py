@@ -6,6 +6,7 @@ from .base import Base
 from .model_item import ModelItem
 from .model_equipped_item import ModelEquippedItem
 from .model_equipped_item_exo import ModelEquippedItemExo
+from .model_generation_request import ModelGenerationRequest
 from .model_item_slot import ModelItemSlot
 from .model_custom_set_stat import ModelCustomSetStat
 from .model_custom_set_tag_association import ModelCustomSetTagAssociation
