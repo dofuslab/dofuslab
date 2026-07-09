@@ -701,3 +701,24 @@ Run the initial evaluator pass:
   - Docker inline GenerationRequest display assertions
   - `python -m py_compile scripts\test_build_discovery_graphql.py`
   - `git diff --check`
+
+### 2026-07-09 Generated Data Audit
+
+- Created stacked branch `codex/build-discovery-generated-data-audit` on top of `codex/build-discovery-generated-provenance-display`.
+- Added read-only generated build data audit tooling:
+  - generated request/custom set counts
+  - source and source/version buckets
+  - aggregate age buckets
+  - orphan `GenerationRequest` samples
+  - custom sets with multiple generation requests
+  - generated-looking legacy custom set samples without `GenerationRequest`
+- The audit script does not delete or archive anything.
+- The script handles local/pre-migration DBs by returning explicit `generation_request_table_missing` status instead of crashing.
+- Reviewer findings fixed before commit:
+  - UUID values in report rows are serialized as strings
+  - age buckets use aggregate count queries instead of loading every row into Python
+- Verification passed:
+  - `python scripts\test_generated_build_data_audit.py`
+  - `docker exec dofuslab-server-1 python -m py_compile oneoff/generated_build_data_audit.py`
+  - local Docker audit run completed with `generation_request_table_missing`
+  - `git diff --check`
