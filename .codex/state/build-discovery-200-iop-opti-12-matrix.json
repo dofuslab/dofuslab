@@ -1,0 +1,2223 @@
+{
+  "results": [
+    {
+      "element": "strength",
+      "playstyle": "damage",
+      "genericDamageWeight": 0.65,
+      "weaponDamageWeight": 0.25,
+      "elapsedMs": 15771.7,
+      "resultCount": 1,
+      "build": {
+        "score": 3103.98,
+        "weightedStatScore": 4696.02,
+        "utilityStatScore": 423.63,
+        "genericDamageScore": 3948.31,
+        "rawRotationDamageScore": 3617.46,
+        "spellDamageScore": 3555.7,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.3161,
+        "weaponDamageScore": 265.52,
+        "survivabilityScore": 113.95,
+        "weakestElementEhp": 3311.18,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1338,
+          "Power": 160,
+          "Vitality": 3053,
+          "Damage": 0,
+          "Earth Damage": 152,
+          "Critical": 53,
+          "Critical Damage": 155,
+          "Neutral Damage": 152
+        },
+        "sets": {
+          "Erotegg Set": 3,
+          "Dark Court Set": 2,
+          "Gein Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15432",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "15433",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "15433",
+            "internalId": null,
+            "name": "Gein's Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "belt": {
+            "id": "15432",
+            "internalId": null,
+            "name": "Gein's Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "weapon": {
+            "id": "32235",
+            "internalId": null,
+            "name": "Erotegg Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "shield": {
+            "id": "32236",
+            "internalId": null,
+            "name": "Erotegg Disc",
+            "type": "Shield",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_1": {
+            "id": "32234",
+            "internalId": null,
+            "name": "Erotegg Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "boots": {
+            "id": "15428",
+            "internalId": null,
+            "name": "Dark Court Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "hat": {
+            "id": "15431",
+            "internalId": null,
+            "name": "Gein's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "cloak": {
+            "id": "15430",
+            "internalId": null,
+            "name": "Dark Court Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "ring_2": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "pet": {
+            "id": "7712",
+            "internalId": null,
+            "name": "Green Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "22004",
+            "internalId": null,
+            "name": "Prynyang",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "6980",
+            "internalId": null,
+            "name": "Vulbis Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      }
+    },
+    {
+      "element": "strength",
+      "playstyle": "balanced",
+      "genericDamageWeight": 0.45,
+      "weaponDamageWeight": 0.2,
+      "elapsedMs": 13890.7,
+      "resultCount": 1,
+      "build": {
+        "score": 2320.43,
+        "weightedStatScore": 4649.47,
+        "utilityStatScore": 435.14,
+        "genericDamageScore": 3890.57,
+        "rawRotationDamageScore": 3564.55,
+        "spellDamageScore": 3564.55,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.2969,
+        "weaponDamageScore": 234.55,
+        "survivabilityScore": 134.53,
+        "weakestElementEhp": 4055.67,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 1,
+          "Strength": 1418,
+          "Power": 230,
+          "Vitality": 3453,
+          "Damage": 0,
+          "Earth Damage": 143,
+          "Critical": 35,
+          "Critical Damage": 105,
+          "Neutral Damage": 143
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 3,
+          "Gein Set": 3,
+          "Depths Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15432",
+            "slot": "belt"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "15433",
+            "internalId": null,
+            "name": "Gein's Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "belt": {
+            "id": "15432",
+            "internalId": null,
+            "name": "Gein's Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "weapon": {
+            "id": "18018",
+            "internalId": null,
+            "name": "Hammerture",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "shield": {
+            "id": "18693",
+            "internalId": null,
+            "name": "Broucey Bark",
+            "type": "Shield",
+            "level": 196,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_1": {
+            "id": "13115",
+            "internalId": null,
+            "name": "Broucey Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_2": {
+            "id": "17998",
+            "internalId": null,
+            "name": "Crustic Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "boots": {
+            "id": "13116",
+            "internalId": null,
+            "name": "Broucey Boots",
+            "type": "Boots",
+            "level": 197,
+            "set": "Brouce Boulgoure Set"
+          },
+          "hat": {
+            "id": "15431",
+            "internalId": null,
+            "name": "Gein's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "cloak": {
+            "id": "14168",
+            "internalId": null,
+            "name": "Cloak of a Thousand Excuses",
+            "type": "Cloak",
+            "level": 198,
+            "set": null
+          },
+          "pet": {
+            "id": "33044",
+            "internalId": null,
+            "name": "Ivory and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "22004",
+            "internalId": null,
+            "name": "Prynyang",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "6980",
+            "internalId": null,
+            "name": "Vulbis Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      }
+    },
+    {
+      "element": "strength",
+      "playstyle": "defensive",
+      "genericDamageWeight": 0.25,
+      "weaponDamageWeight": 0.12,
+      "elapsedMs": 14335.7,
+      "resultCount": 1,
+      "build": {
+        "score": 1553.2,
+        "weightedStatScore": 4623.97,
+        "utilityStatScore": 464.14,
+        "genericDamageScore": 3827.85,
+        "rawRotationDamageScore": 3507.09,
+        "spellDamageScore": 3507.09,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.276,
+        "weaponDamageScore": 231.19,
+        "survivabilityScore": 132.1,
+        "weakestElementEhp": 4020.86,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 3,
+          "Strength": 1388,
+          "Power": 230,
+          "Vitality": 3453,
+          "Damage": 0,
+          "Earth Damage": 145,
+          "Critical": 33,
+          "Critical Damage": 105,
+          "Neutral Damage": 145
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 3,
+          "Gein Set": 3,
+          "Depths Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15432",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "15433",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "15433",
+            "internalId": null,
+            "name": "Gein's Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "belt": {
+            "id": "15432",
+            "internalId": null,
+            "name": "Gein's Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "weapon": {
+            "id": "18018",
+            "internalId": null,
+            "name": "Hammerture",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "shield": {
+            "id": "18693",
+            "internalId": null,
+            "name": "Broucey Bark",
+            "type": "Shield",
+            "level": 196,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_1": {
+            "id": "13115",
+            "internalId": null,
+            "name": "Broucey Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_2": {
+            "id": "17998",
+            "internalId": null,
+            "name": "Crustic Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "boots": {
+            "id": "13116",
+            "internalId": null,
+            "name": "Broucey Boots",
+            "type": "Boots",
+            "level": 197,
+            "set": "Brouce Boulgoure Set"
+          },
+          "hat": {
+            "id": "15431",
+            "internalId": null,
+            "name": "Gein's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "cloak": {
+            "id": "15430",
+            "internalId": null,
+            "name": "Dark Court Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "pet": {
+            "id": "33044",
+            "internalId": null,
+            "name": "Ivory and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "22004",
+            "internalId": null,
+            "name": "Prynyang",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "6980",
+            "internalId": null,
+            "name": "Vulbis Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      }
+    },
+    {
+      "element": "intelligence",
+      "playstyle": "damage",
+      "genericDamageWeight": 0.65,
+      "weaponDamageWeight": 0.25,
+      "elapsedMs": 33985.5,
+      "resultCount": 1,
+      "build": {
+        "score": 3249.67,
+        "weightedStatScore": 4757.98,
+        "utilityStatScore": 390.3,
+        "genericDamageScore": 4184.13,
+        "rawRotationDamageScore": 2851.31,
+        "spellDamageScore": 2851.31,
+        "profileBaselineDamageScore": 2044.38,
+        "profileRelativeDamage": 1.3947,
+        "weaponDamageScore": 115.1,
+        "survivabilityScore": 139.68,
+        "weakestElementEhp": 3940.75,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 0,
+          "Intelligence": 1448,
+          "Power": 250,
+          "Vitality": 3453,
+          "Damage": 0,
+          "Fire Damage": 137,
+          "Critical": 56,
+          "Critical Damage": 130
+        },
+        "sets": {
+          "Sleeping Venerable One Set": 3,
+          "War Set": 4,
+          "Slickster Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14162",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "14169",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "22192",
+            "slot": "ring_1"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14169",
+            "internalId": null,
+            "name": "White Lai Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Slickster Set"
+          },
+          "belt": {
+            "id": "14162",
+            "internalId": null,
+            "name": "Epeni's Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Slickster Set"
+          },
+          "weapon": {
+            "id": "31800",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "ring_1": {
+            "id": "22192",
+            "internalId": null,
+            "name": "War's Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "War Set"
+          },
+          "ring_2": {
+            "id": "31799",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Curse",
+            "type": "Ring",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "boots": {
+            "id": "22189",
+            "internalId": null,
+            "name": "War's Treads",
+            "type": "Boots",
+            "level": 200,
+            "set": "War Set"
+          },
+          "hat": {
+            "id": "22190",
+            "internalId": null,
+            "name": "War's Helm",
+            "type": "Hat",
+            "level": 200,
+            "set": "War Set"
+          },
+          "cloak": {
+            "id": "31797",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Coat",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "dofus_1": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13780",
+            "internalId": null,
+            "name": "Major Fire Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "shield": {
+            "id": "22191",
+            "internalId": null,
+            "name": "War's Fortress",
+            "type": "Shield",
+            "level": 200,
+            "set": "War Set"
+          },
+          "pet": {
+            "id": "7711",
+            "internalId": null,
+            "name": "Red Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          }
+        }
+      }
+    },
+    {
+      "element": "intelligence",
+      "playstyle": "balanced",
+      "genericDamageWeight": 0.45,
+      "weaponDamageWeight": 0.2,
+      "elapsedMs": 34151.6,
+      "resultCount": 1,
+      "build": {
+        "score": 2412.84,
+        "weightedStatScore": 4757.98,
+        "utilityStatScore": 390.3,
+        "genericDamageScore": 4184.13,
+        "rawRotationDamageScore": 2851.31,
+        "spellDamageScore": 2851.31,
+        "profileBaselineDamageScore": 2044.38,
+        "profileRelativeDamage": 1.3947,
+        "weaponDamageScore": 115.1,
+        "survivabilityScore": 139.68,
+        "weakestElementEhp": 3940.75,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 0,
+          "Intelligence": 1448,
+          "Power": 250,
+          "Vitality": 3453,
+          "Damage": 0,
+          "Fire Damage": 137,
+          "Critical": 56,
+          "Critical Damage": 130
+        },
+        "sets": {
+          "Sleeping Venerable One Set": 3,
+          "War Set": 4,
+          "Slickster Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14162",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "14169",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "22192",
+            "slot": "ring_1"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14169",
+            "internalId": null,
+            "name": "White Lai Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Slickster Set"
+          },
+          "belt": {
+            "id": "14162",
+            "internalId": null,
+            "name": "Epeni's Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Slickster Set"
+          },
+          "weapon": {
+            "id": "31800",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "ring_1": {
+            "id": "22192",
+            "internalId": null,
+            "name": "War's Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "War Set"
+          },
+          "ring_2": {
+            "id": "31799",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Curse",
+            "type": "Ring",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "boots": {
+            "id": "22189",
+            "internalId": null,
+            "name": "War's Treads",
+            "type": "Boots",
+            "level": 200,
+            "set": "War Set"
+          },
+          "hat": {
+            "id": "22190",
+            "internalId": null,
+            "name": "War's Helm",
+            "type": "Hat",
+            "level": 200,
+            "set": "War Set"
+          },
+          "cloak": {
+            "id": "31797",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Coat",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "dofus_1": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13780",
+            "internalId": null,
+            "name": "Major Fire Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "shield": {
+            "id": "22191",
+            "internalId": null,
+            "name": "War's Fortress",
+            "type": "Shield",
+            "level": 200,
+            "set": "War Set"
+          },
+          "pet": {
+            "id": "7711",
+            "internalId": null,
+            "name": "Red Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          }
+        }
+      }
+    },
+    {
+      "element": "intelligence",
+      "playstyle": "defensive",
+      "genericDamageWeight": 0.25,
+      "weaponDamageWeight": 0.12,
+      "elapsedMs": 34344.0,
+      "resultCount": 1,
+      "build": {
+        "score": 1578.53,
+        "weightedStatScore": 4757.98,
+        "utilityStatScore": 390.3,
+        "genericDamageScore": 4129.46,
+        "rawRotationDamageScore": 2814.06,
+        "spellDamageScore": 2814.06,
+        "profileBaselineDamageScore": 2044.38,
+        "profileRelativeDamage": 1.3765,
+        "weaponDamageScore": 116.22,
+        "survivabilityScore": 155.86,
+        "weakestElementEhp": 4397.25,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 0,
+          "Intelligence": 1418,
+          "Power": 320,
+          "Vitality": 3853,
+          "Damage": 0,
+          "Fire Damage": 137,
+          "Critical": 56,
+          "Critical Damage": 90
+        },
+        "sets": {
+          "Sleeping Venerable One Set": 3,
+          "War Set": 4,
+          "Slickster Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14162",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "14169",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "22192",
+            "slot": "ring_1"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14169",
+            "internalId": null,
+            "name": "White Lai Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Slickster Set"
+          },
+          "belt": {
+            "id": "14162",
+            "internalId": null,
+            "name": "Epeni's Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Slickster Set"
+          },
+          "weapon": {
+            "id": "31800",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "ring_1": {
+            "id": "22192",
+            "internalId": null,
+            "name": "War's Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "War Set"
+          },
+          "ring_2": {
+            "id": "31799",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Curse",
+            "type": "Ring",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "boots": {
+            "id": "22189",
+            "internalId": null,
+            "name": "War's Treads",
+            "type": "Boots",
+            "level": 200,
+            "set": "War Set"
+          },
+          "hat": {
+            "id": "22190",
+            "internalId": null,
+            "name": "War's Helm",
+            "type": "Hat",
+            "level": 200,
+            "set": "War Set"
+          },
+          "cloak": {
+            "id": "31797",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Coat",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "dofus_1": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13780",
+            "internalId": null,
+            "name": "Major Fire Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "shield": {
+            "id": "22191",
+            "internalId": null,
+            "name": "War's Fortress",
+            "type": "Shield",
+            "level": 200,
+            "set": "War Set"
+          },
+          "pet": {
+            "id": "33043",
+            "internalId": null,
+            "name": "Ivory and Orchid Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          }
+        }
+      }
+    },
+    {
+      "element": "chance",
+      "playstyle": "damage",
+      "genericDamageWeight": 0.65,
+      "weaponDamageWeight": 0.25,
+      "elapsedMs": 30087.8,
+      "resultCount": 1,
+      "build": {
+        "score": 3028.4,
+        "weightedStatScore": 4666.39,
+        "utilityStatScore": 431.49,
+        "genericDamageScore": 3794.03,
+        "rawRotationDamageScore": 2510.75,
+        "spellDamageScore": 2510.75,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.2647,
+        "weaponDamageScore": 197.44,
+        "survivabilityScore": 130.79,
+        "weakestElementEhp": 3670.0,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 1,
+          "Chance": 1208,
+          "Power": 330,
+          "Vitality": 3303,
+          "Damage": 11,
+          "Water Damage": 134,
+          "Critical": 31,
+          "Critical Damage": 177
+        },
+        "sets": {
+          "Ice Knight Set": 3,
+          "Queen of Fate Set": 3,
+          "Unsound Mind Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "19250",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "17576",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "17576",
+            "internalId": null,
+            "name": "Queen of Fate Necklace",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Queen of Fate Set"
+          },
+          "belt": {
+            "id": "19250",
+            "internalId": null,
+            "name": "Belt of the Unsound Mind",
+            "type": "Belt",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "weapon": {
+            "id": "32232",
+            "internalId": null,
+            "name": "Ice Knight's Frozen Blade",
+            "type": "Sword",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "shield": {
+            "id": "32233",
+            "internalId": null,
+            "name": "Ice Knight's Frigid Pavise",
+            "type": "Shield",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "ring_1": {
+            "id": "32231",
+            "internalId": null,
+            "name": "Ice Knight's Frozen Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "boots": {
+            "id": "17575",
+            "internalId": null,
+            "name": "Queen of Fate Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Queen of Fate Set"
+          },
+          "hat": {
+            "id": "19252",
+            "internalId": null,
+            "name": "Mask of the Unsound Mind",
+            "type": "Hat",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "cloak": {
+            "id": "17577",
+            "internalId": null,
+            "name": "Queen of Fate Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Queen of Fate Set"
+          },
+          "dofus_1": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "6980",
+            "internalId": null,
+            "name": "Vulbis Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22004",
+            "internalId": null,
+            "name": "Prynyang",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "pet": {
+            "id": "7708",
+            "internalId": null,
+            "name": "Blue Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          }
+        }
+      }
+    },
+    {
+      "element": "chance",
+      "playstyle": "balanced",
+      "genericDamageWeight": 0.45,
+      "weaponDamageWeight": 0.2,
+      "elapsedMs": 29983.1,
+      "resultCount": 1,
+      "build": {
+        "score": 2269.6,
+        "weightedStatScore": 4666.39,
+        "utilityStatScore": 431.49,
+        "genericDamageScore": 3794.03,
+        "rawRotationDamageScore": 2510.75,
+        "spellDamageScore": 2510.75,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.2647,
+        "weaponDamageScore": 197.44,
+        "survivabilityScore": 130.79,
+        "weakestElementEhp": 3670.0,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 1,
+          "Chance": 1208,
+          "Power": 330,
+          "Vitality": 3303,
+          "Damage": 11,
+          "Water Damage": 134,
+          "Critical": 31,
+          "Critical Damage": 177
+        },
+        "sets": {
+          "Ice Knight Set": 3,
+          "Queen of Fate Set": 3,
+          "Unsound Mind Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "19250",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "17576",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "17576",
+            "internalId": null,
+            "name": "Queen of Fate Necklace",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Queen of Fate Set"
+          },
+          "belt": {
+            "id": "19250",
+            "internalId": null,
+            "name": "Belt of the Unsound Mind",
+            "type": "Belt",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "weapon": {
+            "id": "32232",
+            "internalId": null,
+            "name": "Ice Knight's Frozen Blade",
+            "type": "Sword",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "shield": {
+            "id": "32233",
+            "internalId": null,
+            "name": "Ice Knight's Frigid Pavise",
+            "type": "Shield",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "ring_1": {
+            "id": "32231",
+            "internalId": null,
+            "name": "Ice Knight's Frozen Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "boots": {
+            "id": "17575",
+            "internalId": null,
+            "name": "Queen of Fate Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Queen of Fate Set"
+          },
+          "hat": {
+            "id": "19252",
+            "internalId": null,
+            "name": "Mask of the Unsound Mind",
+            "type": "Hat",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "cloak": {
+            "id": "17577",
+            "internalId": null,
+            "name": "Queen of Fate Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Queen of Fate Set"
+          },
+          "dofus_1": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "6980",
+            "internalId": null,
+            "name": "Vulbis Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22004",
+            "internalId": null,
+            "name": "Prynyang",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "pet": {
+            "id": "7708",
+            "internalId": null,
+            "name": "Blue Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          }
+        }
+      }
+    },
+    {
+      "element": "chance",
+      "playstyle": "defensive",
+      "genericDamageWeight": 0.25,
+      "weaponDamageWeight": 0.12,
+      "elapsedMs": 30146.7,
+      "resultCount": 1,
+      "build": {
+        "score": 1516.68,
+        "weightedStatScore": 4666.39,
+        "utilityStatScore": 431.49,
+        "genericDamageScore": 3754.21,
+        "rawRotationDamageScore": 2484.4,
+        "spellDamageScore": 2484.4,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.2514,
+        "weaponDamageScore": 195.99,
+        "survivabilityScore": 146.63,
+        "weakestElementEhp": 4114.44,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 1,
+          "Chance": 1178,
+          "Power": 400,
+          "Vitality": 3703,
+          "Damage": 11,
+          "Water Damage": 134,
+          "Critical": 31,
+          "Critical Damage": 137
+        },
+        "sets": {
+          "Ice Knight Set": 3,
+          "Queen of Fate Set": 3,
+          "Unsound Mind Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "19250",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "17576",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "17576",
+            "internalId": null,
+            "name": "Queen of Fate Necklace",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Queen of Fate Set"
+          },
+          "belt": {
+            "id": "19250",
+            "internalId": null,
+            "name": "Belt of the Unsound Mind",
+            "type": "Belt",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "weapon": {
+            "id": "32232",
+            "internalId": null,
+            "name": "Ice Knight's Frozen Blade",
+            "type": "Sword",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "shield": {
+            "id": "32233",
+            "internalId": null,
+            "name": "Ice Knight's Frigid Pavise",
+            "type": "Shield",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "ring_1": {
+            "id": "32231",
+            "internalId": null,
+            "name": "Ice Knight's Frozen Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "boots": {
+            "id": "17575",
+            "internalId": null,
+            "name": "Queen of Fate Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Queen of Fate Set"
+          },
+          "hat": {
+            "id": "19252",
+            "internalId": null,
+            "name": "Mask of the Unsound Mind",
+            "type": "Hat",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "cloak": {
+            "id": "17577",
+            "internalId": null,
+            "name": "Queen of Fate Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Queen of Fate Set"
+          },
+          "dofus_1": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "6980",
+            "internalId": null,
+            "name": "Vulbis Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22004",
+            "internalId": null,
+            "name": "Prynyang",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "pet": {
+            "id": "33037",
+            "internalId": null,
+            "name": "Indigo and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          }
+        }
+      }
+    },
+    {
+      "element": "agility",
+      "playstyle": "damage",
+      "genericDamageWeight": 0.65,
+      "weaponDamageWeight": 0.25,
+      "elapsedMs": 32832.6,
+      "resultCount": 1,
+      "build": {
+        "score": 3202.37,
+        "weightedStatScore": 4572.08,
+        "utilityStatScore": 422.41,
+        "genericDamageScore": 4096.9,
+        "rawRotationDamageScore": 2540.93,
+        "spellDamageScore": 2456.71,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.3656,
+        "weaponDamageScore": 262.28,
+        "survivabilityScore": 116.97,
+        "weakestElementEhp": 3585.52,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 2,
+          "Agility": 1293,
+          "Power": 340,
+          "Vitality": 3203,
+          "Damage": 0,
+          "Air Damage": 132,
+          "Critical": 41,
+          "Critical Damage": 162
+        },
+        "sets": {
+          "Allister Set": 3,
+          "Treadfast Set": 2,
+          "Abyss Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14095",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "14094",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14094",
+            "internalId": null,
+            "name": "Treadfast Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Treadfast Set"
+          },
+          "belt": {
+            "id": "14095",
+            "internalId": null,
+            "name": "Treadfast Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Treadfast Set"
+          },
+          "weapon": {
+            "id": "18014",
+            "internalId": null,
+            "name": "Mantax",
+            "type": "Axe",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "shield": {
+            "id": "30060",
+            "internalId": null,
+            "name": "Allister's Aegis",
+            "type": "Shield",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "ring_1": {
+            "id": "13124",
+            "internalId": null,
+            "name": "Allister's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "boots": {
+            "id": "18007",
+            "internalId": null,
+            "name": "Tritun Palms",
+            "type": "Boots",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "hat": {
+            "id": "13123",
+            "internalId": null,
+            "name": "Allister's Crown",
+            "type": "Hat",
+            "level": 196,
+            "set": "Allister Set"
+          },
+          "cloak": {
+            "id": "18008",
+            "internalId": null,
+            "name": "Indescribable Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "dofus_1": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "6980",
+            "internalId": null,
+            "name": "Vulbis Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22004",
+            "internalId": null,
+            "name": "Prynyang",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "ring_2": {
+            "id": "13642",
+            "internalId": null,
+            "name": "Nomarow's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Nomarow Set"
+          },
+          "pet": {
+            "id": "7709",
+            "internalId": null,
+            "name": "Yellow Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          }
+        }
+      }
+    },
+    {
+      "element": "agility",
+      "playstyle": "balanced",
+      "genericDamageWeight": 0.45,
+      "weaponDamageWeight": 0.2,
+      "elapsedMs": 33428.2,
+      "resultCount": 1,
+      "build": {
+        "score": 2382.99,
+        "weightedStatScore": 4572.08,
+        "utilityStatScore": 422.41,
+        "genericDamageScore": 4096.9,
+        "rawRotationDamageScore": 2540.93,
+        "spellDamageScore": 2456.71,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.3656,
+        "weaponDamageScore": 262.28,
+        "survivabilityScore": 116.97,
+        "weakestElementEhp": 3585.52,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 2,
+          "Agility": 1293,
+          "Power": 340,
+          "Vitality": 3203,
+          "Damage": 0,
+          "Air Damage": 132,
+          "Critical": 41,
+          "Critical Damage": 162
+        },
+        "sets": {
+          "Allister Set": 3,
+          "Treadfast Set": 2,
+          "Abyss Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14095",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "14094",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14094",
+            "internalId": null,
+            "name": "Treadfast Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Treadfast Set"
+          },
+          "belt": {
+            "id": "14095",
+            "internalId": null,
+            "name": "Treadfast Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Treadfast Set"
+          },
+          "weapon": {
+            "id": "18014",
+            "internalId": null,
+            "name": "Mantax",
+            "type": "Axe",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "shield": {
+            "id": "30060",
+            "internalId": null,
+            "name": "Allister's Aegis",
+            "type": "Shield",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "ring_1": {
+            "id": "13124",
+            "internalId": null,
+            "name": "Allister's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "boots": {
+            "id": "18007",
+            "internalId": null,
+            "name": "Tritun Palms",
+            "type": "Boots",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "hat": {
+            "id": "13123",
+            "internalId": null,
+            "name": "Allister's Crown",
+            "type": "Hat",
+            "level": 196,
+            "set": "Allister Set"
+          },
+          "cloak": {
+            "id": "18008",
+            "internalId": null,
+            "name": "Indescribable Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "dofus_1": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "6980",
+            "internalId": null,
+            "name": "Vulbis Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22004",
+            "internalId": null,
+            "name": "Prynyang",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "ring_2": {
+            "id": "13642",
+            "internalId": null,
+            "name": "Nomarow's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Nomarow Set"
+          },
+          "pet": {
+            "id": "7709",
+            "internalId": null,
+            "name": "Yellow Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          }
+        }
+      }
+    },
+    {
+      "element": "agility",
+      "playstyle": "defensive",
+      "genericDamageWeight": 0.25,
+      "weaponDamageWeight": 0.12,
+      "elapsedMs": 32778.3,
+      "resultCount": 1,
+      "build": {
+        "score": 1564.57,
+        "weightedStatScore": 4572.08,
+        "utilityStatScore": 422.41,
+        "genericDamageScore": 4042.29,
+        "rawRotationDamageScore": 2507.06,
+        "spellDamageScore": 2425.2,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.3474,
+        "weaponDamageScore": 258.12,
+        "survivabilityScore": 131.58,
+        "weakestElementEhp": 4033.29,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 2,
+          "Agility": 1263,
+          "Power": 410,
+          "Vitality": 3603,
+          "Damage": 0,
+          "Air Damage": 132,
+          "Critical": 41,
+          "Critical Damage": 122
+        },
+        "sets": {
+          "Allister Set": 3,
+          "Treadfast Set": 2,
+          "Abyss Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14095",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "14094",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14094",
+            "internalId": null,
+            "name": "Treadfast Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Treadfast Set"
+          },
+          "belt": {
+            "id": "14095",
+            "internalId": null,
+            "name": "Treadfast Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Treadfast Set"
+          },
+          "weapon": {
+            "id": "18014",
+            "internalId": null,
+            "name": "Mantax",
+            "type": "Axe",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "shield": {
+            "id": "30060",
+            "internalId": null,
+            "name": "Allister's Aegis",
+            "type": "Shield",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "ring_1": {
+            "id": "13124",
+            "internalId": null,
+            "name": "Allister's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "boots": {
+            "id": "18007",
+            "internalId": null,
+            "name": "Tritun Palms",
+            "type": "Boots",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "hat": {
+            "id": "13123",
+            "internalId": null,
+            "name": "Allister's Crown",
+            "type": "Hat",
+            "level": 196,
+            "set": "Allister Set"
+          },
+          "cloak": {
+            "id": "18008",
+            "internalId": null,
+            "name": "Indescribable Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "dofus_1": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "6980",
+            "internalId": null,
+            "name": "Vulbis Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22004",
+            "internalId": null,
+            "name": "Prynyang",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "ring_2": {
+            "id": "13642",
+            "internalId": null,
+            "name": "Nomarow's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Nomarow Set"
+          },
+          "pet": {
+            "id": "33023",
+            "internalId": null,
+            "name": "Ebony and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          }
+        }
+      }
+    }
+  ]
+}
