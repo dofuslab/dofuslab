@@ -1,4 +1,5 @@
 import argparse
+import json
 import unittest
 from pathlib import Path
 import sys
@@ -9,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 from oneoff.build_discovery_prototype import BuildDiscoveryQuery
 from oneoff.build_discovery_query_perf import (
     DEFAULT_P95_THRESHOLD_MS,
+    LOCAL_SUITE_FIXTURE_VERSION,
     LOCAL_VALIDATION_PROFILE_ID,
     LOCAL_VALIDATION_QUERY,
     LOCAL_VALIDATION_SUITE_ID,
@@ -20,6 +22,7 @@ from oneoff.build_discovery_query_perf import (
     main,
     measure_element_matrix,
     measure_query,
+    normalized_local_suite_fixture,
     percentile,
     timing_summary,
     validate_local_element_matrix,
@@ -30,6 +33,8 @@ from oneoff.build_discovery_query_perf import (
 
 
 class BuildDiscoveryQueryPerfTest(unittest.TestCase):
+    maxDiff = None
+
     def test_percentile_and_summary_are_stable_for_small_samples(self):
         self.assertEqual(percentile([10, 20, 30], 0.95), 30)
         self.assertEqual(
@@ -326,6 +331,115 @@ class BuildDiscoveryQueryPerfTest(unittest.TestCase):
             ["pass", "fail"],
         )
 
+    def test_normalized_local_suite_fixture_matches_committed_shape(self):
+        report = self.fake_local_suite_report()
+        fixture_path = Path(__file__).resolve().parent / "fixtures" / "build_discovery_local_query_suite_fixture.json"
+        expected_fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
+
+        self.assertEqual(normalized_local_suite_fixture(report), expected_fixture)
+
+    def test_normalized_local_suite_fixture_strips_volatile_timings_and_counts(self):
+        report = self.fake_local_suite_report()
+        changed_report = self.fake_local_suite_report()
+        changed_report["profiles"][0]["results"][0]["timings"] = {
+            "minMs": 9999,
+            "avgMs": 9999,
+            "p95Ms": 9999,
+            "maxMs": 9999,
+        }
+        changed_report["profiles"][0]["results"][0]["resultCount"] = 12
+        changed_report["profiles"][0]["results"][0]["cacheHits"] = 7
+        changed_report["profiles"][0]["results"][0]["cacheKey"] = "different-cache-key"
+
+        self.assertEqual(
+            normalized_local_suite_fixture(report),
+            normalized_local_suite_fixture(changed_report),
+        )
+
+    def test_normalized_local_suite_fixture_preserves_validation_failures(self):
+        report = self.fake_local_suite_report()
+        report["profiles"][1]["results"][3]["resultCount"] = 0
+        report["profiles"][1]["results"][3]["validation"] = {
+            "status": "fail",
+            "failures": ["empty_results"],
+        }
+
+        fixture = normalized_local_suite_fixture(report)
+
+        self.assertEqual(fixture["fixtureVersion"], LOCAL_SUITE_FIXTURE_VERSION)
+        self.assertEqual(
+            fixture["profiles"][1]["results"][3]["validation"],
+            {"status": "fail", "failures": ["empty_results"]},
+        )
+        self.assertFalse(fixture["profiles"][1]["results"][3]["resultPresent"])
+
+    def test_main_writes_output_and_fixture_files_for_local_suite(self):
+        report = self.fake_local_suite_report()
+        output_path = Path(__file__).with_name("temp-local-suite-report.json")
+        fixture_path = Path(__file__).with_name("temp-local-suite-fixture.json")
+        argv = [
+            "build_discovery_query_perf.py",
+            "--validate-local-suite",
+            "--output",
+            str(output_path),
+            "--fixture-output",
+            str(fixture_path),
+        ]
+
+        try:
+            with patch.object(sys, "argv", argv):
+                with patch("oneoff.build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH", str(Path(__file__))):
+                    with patch(
+                        "oneoff.build_discovery_query_perf.validate_local_query_suite",
+                        return_value=report,
+                    ):
+                        main()
+
+            self.assertEqual(json.loads(output_path.read_text(encoding="utf-8")), report)
+            self.assertEqual(
+                json.loads(fixture_path.read_text(encoding="utf-8")),
+                normalized_local_suite_fixture(report),
+            )
+        finally:
+            output_path.unlink(missing_ok=True)
+            fixture_path.unlink(missing_ok=True)
+
+    def test_main_writes_local_suite_artifacts_before_nonzero_exit(self):
+        report = self.fake_local_suite_report()
+        report["status"] = "fail"
+        report["profiles"][1]["status"] = "fail"
+        report["profiles"][1]["results"][3]["resultCount"] = 0
+        report["profiles"][1]["results"][3]["validation"] = {
+            "status": "fail",
+            "failures": ["empty_results"],
+        }
+        output_path = Path(__file__).with_name("temp-failed-local-suite-report.json")
+        fixture_path = Path(__file__).with_name("temp-failed-local-suite-fixture.json")
+        argv = [
+            "build_discovery_query_perf.py",
+            "--validate-local-suite",
+            "--output",
+            str(output_path),
+            "--fixture-output",
+            str(fixture_path),
+        ]
+
+        try:
+            with patch.object(sys, "argv", argv):
+                with patch("oneoff.build_discovery_prototype.BUILD_DISCOVERY_INDEX_PATH", str(Path(__file__))):
+                    with patch(
+                        "oneoff.build_discovery_query_perf.validate_local_query_suite",
+                        return_value=report,
+                    ):
+                        with self.assertRaises(SystemExit):
+                            main()
+
+            self.assertEqual(json.loads(output_path.read_text(encoding="utf-8"))["status"], "fail")
+            self.assertEqual(json.loads(fixture_path.read_text(encoding="utf-8"))["status"], "fail")
+        finally:
+            output_path.unlink(missing_ok=True)
+            fixture_path.unlink(missing_ok=True)
+
     def test_configure_index_path_updates_prototype_and_clears_caches(self):
         from oneoff import build_discovery_prototype
 
@@ -393,6 +507,118 @@ class BuildDiscoveryQueryPerfTest(unittest.TestCase):
 
         validate_suite.assert_not_called()
         validate_profile.assert_not_called()
+
+    def test_fixture_output_requires_local_suite_mode(self):
+        argv = ["build_discovery_query_perf.py", "--fixture-output", "fixture.json"]
+
+        with patch.object(sys, "argv", argv):
+            with patch("oneoff.build_discovery_query_perf.measure_query") as measure:
+                with self.assertRaises(SystemExit):
+                    main()
+
+        measure.assert_not_called()
+
+    def fake_local_suite_report(self):
+        return {
+            "reportVersion": SUITE_REPORT_VERSION,
+            "status": "pass",
+            "suite": {
+                "id": LOCAL_VALIDATION_SUITE_ID,
+                "label": "Iop element matrix 11/6/0 and 12/6/0 budget tier 4 exo allow",
+                "source": "generated_json_index_local_smoke",
+                "assumption": "Supported Iop 11/6/0 and 12/6/0 element profiles should return at least one build under the fresh-query threshold.",
+            },
+            "index": {"path": "volatile-index-path.json", "source": "generated_json_index"},
+            "thresholds": {"p95Ms": DEFAULT_P95_THRESHOLD_MS},
+            "runs": 1,
+            "cacheEnabled": False,
+            "elements": list(SUPPORTED_IOP_ELEMENTS),
+            "profiles": [
+                self.fake_profile_report(11, "iop_element_matrix_11_6_0_budget4_exo_allow"),
+                self.fake_profile_report(12, "iop_element_matrix_12_6_0_budget4_exo_allow"),
+            ],
+        }
+
+    def fake_profile_report(self, ap_target, profile_id):
+        rows = []
+        for element in SUPPORTED_IOP_ELEMENTS:
+            rows.append(
+                {
+                    "element": element,
+                    "runs": 1,
+                    "cacheEnabled": False,
+                    "cacheHits": 0,
+                    "timings": {"minMs": 1, "avgMs": 1, "p95Ms": 1, "maxMs": 1},
+                    "resultCount": 1,
+                    "cacheKey": f"volatile-{profile_id}-{element}",
+                    "expectedProfile": {
+                        "primaryStat": {
+                            "strength": "Strength",
+                            "intelligence": "Intelligence",
+                            "chance": "Chance",
+                            "agility": "Agility",
+                        }[element],
+                        "damageStat": {
+                            "strength": "Earth Damage",
+                            "intelligence": "Fire Damage",
+                            "chance": "Water Damage",
+                            "agility": "Air Damage",
+                        }[element],
+                        "damageElement": {
+                            "strength": "earth",
+                            "intelligence": "fire",
+                            "chance": "water",
+                            "agility": "air",
+                        }[element],
+                        "secondaryDamageStats": ["Neutral Damage"] if element == "strength" else [],
+                    },
+                    "validation": {"status": "pass", "failures": []},
+                }
+            )
+
+        expected_profiles = {
+            row["element"]: row["expectedProfile"]
+            for row in rows
+        }
+        return {
+            "reportVersion": REPORT_VERSION,
+            "status": "pass",
+            "profile": {
+                "id": profile_id,
+                "label": f"Iop element matrix {ap_target}/6/0 budget tier 4 exo allow",
+                "source": "generated_json_index_local_smoke",
+                "assumption": "All supported Iop elements should return at least one build for this bounded profile.",
+            },
+            "index": {"path": "volatile-index-path.json", "source": "generated_json_index"},
+            "thresholds": {"p95Ms": DEFAULT_P95_THRESHOLD_MS},
+            "queryParams": {
+                "className": "Iop",
+                "level": 200,
+                "elements": list(SUPPORTED_IOP_ELEMENTS),
+                "mode": "pvm",
+                "apTarget": ap_target,
+                "mpTarget": 6,
+                "rangeTarget": 0,
+                "damageSurvivabilityPreset": 3,
+                "budgetTier": 4,
+                "exoPolicy": "allow",
+                "weaponPolicy": "stat_stick_allowed",
+                "lockedItemIds": [],
+                "avoidedItemIds": [],
+                "limit": 3,
+                "topK": 10,
+                "beamWidth": 75,
+                "perSignatureCap": 20,
+                "relevantSetLimit": 60,
+                "maxSharedItems": 10,
+                "genericDamageWeight": 0.45,
+                "weaponDamageWeight": 0.2,
+            },
+            "expectedProfiles": expected_profiles,
+            "runs": 1,
+            "cacheEnabled": False,
+            "results": rows,
+        }
 
 
 if __name__ == "__main__":

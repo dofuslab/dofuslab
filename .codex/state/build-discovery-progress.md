@@ -169,3 +169,19 @@ Run the initial evaluator pass:
 - Actual prod sample execution is blocked in the current environment:
   - `DOFUSLAB_READONLY_DATABASE_URL` is not present in the host shell
   - `DOFUSLAB_READONLY_DATABASE_URL` is not present in the running `dofuslab-server-1` container env
+
+### 2026-07-08 Local Regression Artifact Support
+
+- Created stacked branch `codex/build-discovery-local-regression-artifacts` on top of `codex/build-discovery-prod-benchmark-discovery`.
+- Added local suite artifact support to the query performance harness:
+  - `--output` writes the full JSON report to a file and keeps stdout quiet
+  - `--fixture-output` writes a normalized fixture JSON for `--validate-local-suite`
+  - artifact files are written before nonzero validation exit so failed runs remain inspectable
+  - fixture normalization strips volatile timing, result count, cache hit, cache key, and index path values
+  - fixture normalization preserves report versions, suite/profile/query metadata, expected element profiles, result presence, cache metadata shape, and validation failures
+- Added committed fixture `scripts/fixtures/build_discovery_local_query_suite_fixture.json`.
+- Verification passed:
+  - `python -m unittest scripts.test_build_discovery_query_perf` (21 tests)
+  - `python scripts\build_discovery_query_perf.py --help`
+  - `git diff --check`
+  - generated JSON index smoke with `--validate-local-suite --runs 1 --no-cache --output <report> --fixture-output <fixture>` produced `status=pass` with 2 profiles

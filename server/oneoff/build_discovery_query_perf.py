@@ -58,6 +58,7 @@ LOCAL_VALIDATION_SUITE_PROFILES = (
         "query": replace(LOCAL_VALIDATION_QUERY, ap_target=12),
     },
 )
+LOCAL_SUITE_FIXTURE_VERSION = "build-discovery-local-query-suite-fixture-v1"
 
 
 def percentile(values: list[float], percentile_value: float) -> float:
@@ -258,6 +259,48 @@ def validate_local_query_suite(
     }
 
 
+def normalized_local_suite_fixture(report: dict[str, Any]) -> dict[str, Any]:
+    profiles = []
+    for profile in report.get("profiles", []):
+        rows = []
+        for row in profile.get("results", []):
+            rows.append(
+                {
+                    "element": row.get("element"),
+                    "resultPresent": row.get("resultCount", 0) > 0,
+                    "cacheMetadataPresent": {
+                        "cacheEnabled": "cacheEnabled" in row,
+                        "cacheHits": "cacheHits" in row,
+                        "cacheKey": "cacheKey" in row,
+                    },
+                    "validation": row.get("validation", {}),
+                    "expectedProfile": row.get("expectedProfile", {}),
+                }
+            )
+        profiles.append(
+            {
+                "reportVersion": profile.get("reportVersion"),
+                "status": profile.get("status"),
+                "profile": profile.get("profile"),
+                "queryParams": profile.get("queryParams"),
+                "expectedProfiles": profile.get("expectedProfiles"),
+                "results": rows,
+            }
+        )
+
+    return {
+        "fixtureVersion": LOCAL_SUITE_FIXTURE_VERSION,
+        "reportVersion": report.get("reportVersion"),
+        "status": report.get("status"),
+        "suite": report.get("suite"),
+        "thresholds": report.get("thresholds"),
+        "runs": report.get("runs"),
+        "cacheEnabled": report.get("cacheEnabled"),
+        "elements": report.get("elements"),
+        "profiles": profiles,
+    }
+
+
 def measure_element_matrix(
     query: BuildDiscoveryQuery,
     runs: int,
@@ -340,6 +383,11 @@ def main() -> None:
         default=DEFAULT_P95_THRESHOLD_MS,
         help="Fail local validation when any element p95 exceeds this threshold.",
     )
+    parser.add_argument("--output", help="Write report JSON to this path instead of stdout.")
+    parser.add_argument(
+        "--fixture-output",
+        help="Write a normalized local-suite fixture JSON to this path. Requires --validate-local-suite.",
+    )
     parser.add_argument(
         "--allow-db",
         action="store_true",
@@ -359,6 +407,8 @@ def main() -> None:
     args = parser.parse_args()
     if args.validate_local_profile and args.validate_local_suite:
         parser.error("--validate-local-profile and --validate-local-suite are mutually exclusive.")
+    if args.fixture_output and not args.validate_local_suite:
+        parser.error("--fixture-output requires --validate-local-suite.")
     configure_index_path(args.index_path)
     validate_cli_bounds(parser, args)
     local_validation_mode = args.validate_local_profile or args.validate_local_suite
@@ -398,7 +448,18 @@ def main() -> None:
             report = measure_element_matrix(query, args.runs, not args.no_cache)
         else:
             report = measure_query(query, args.runs, not args.no_cache)
-    print(json.dumps(report, indent=2))
+    output = json.dumps(report, indent=2)
+    if args.output:
+        with open(args.output, "w", encoding="utf-8") as file:
+            file.write(output)
+            file.write("\n")
+    else:
+        print(output)
+    if args.fixture_output:
+        fixture = normalized_local_suite_fixture(report)
+        with open(args.fixture_output, "w", encoding="utf-8") as file:
+            file.write(json.dumps(fixture, indent=2))
+            file.write("\n")
     if local_validation_mode and report["status"] != "pass":
         sys.exit(1)
 

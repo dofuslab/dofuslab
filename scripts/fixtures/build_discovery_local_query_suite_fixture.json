@@ -1,0 +1,316 @@
+{
+  "fixtureVersion": "build-discovery-local-query-suite-fixture-v1",
+  "reportVersion": "build-discovery-local-query-regression-suite-v1",
+  "status": "pass",
+  "suite": {
+    "id": "iop_element_matrix_11_6_0_and_12_6_0_budget4_exo_allow",
+    "label": "Iop element matrix 11/6/0 and 12/6/0 budget tier 4 exo allow",
+    "source": "generated_json_index_local_smoke",
+    "assumption": "Supported Iop 11/6/0 and 12/6/0 element profiles should return at least one build under the fresh-query threshold."
+  },
+  "thresholds": {
+    "p95Ms": 5000.0
+  },
+  "runs": 1,
+  "cacheEnabled": false,
+  "elements": [
+    "strength",
+    "intelligence",
+    "chance",
+    "agility"
+  ],
+  "profiles": [
+    {
+      "reportVersion": "build-discovery-local-query-validation-v1",
+      "status": "pass",
+      "profile": {
+        "id": "iop_element_matrix_11_6_0_budget4_exo_allow",
+        "label": "Iop element matrix 11/6/0 budget tier 4 exo allow",
+        "source": "generated_json_index_local_smoke",
+        "assumption": "All supported Iop elements should return at least one build for this bounded profile."
+      },
+      "queryParams": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength",
+          "intelligence",
+          "chance",
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 6,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 10,
+        "beamWidth": 75,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 60,
+        "maxSharedItems": 10,
+        "genericDamageWeight": 0.45,
+        "weaponDamageWeight": 0.2
+      },
+      "expectedProfiles": {
+        "strength": {
+          "primaryStat": "Strength",
+          "damageStat": "Earth Damage",
+          "damageElement": "earth",
+          "secondaryDamageStats": [
+            "Neutral Damage"
+          ]
+        },
+        "intelligence": {
+          "primaryStat": "Intelligence",
+          "damageStat": "Fire Damage",
+          "damageElement": "fire",
+          "secondaryDamageStats": []
+        },
+        "chance": {
+          "primaryStat": "Chance",
+          "damageStat": "Water Damage",
+          "damageElement": "water",
+          "secondaryDamageStats": []
+        },
+        "agility": {
+          "primaryStat": "Agility",
+          "damageStat": "Air Damage",
+          "damageElement": "air",
+          "secondaryDamageStats": []
+        }
+      },
+      "results": [
+        {
+          "element": "strength",
+          "resultPresent": true,
+          "cacheMetadataPresent": {
+            "cacheEnabled": true,
+            "cacheHits": true,
+            "cacheKey": true
+          },
+          "validation": {
+            "status": "pass",
+            "failures": []
+          },
+          "expectedProfile": {
+            "primaryStat": "Strength",
+            "damageStat": "Earth Damage",
+            "damageElement": "earth",
+            "secondaryDamageStats": [
+              "Neutral Damage"
+            ]
+          }
+        },
+        {
+          "element": "intelligence",
+          "resultPresent": true,
+          "cacheMetadataPresent": {
+            "cacheEnabled": true,
+            "cacheHits": true,
+            "cacheKey": true
+          },
+          "validation": {
+            "status": "pass",
+            "failures": []
+          },
+          "expectedProfile": {
+            "primaryStat": "Intelligence",
+            "damageStat": "Fire Damage",
+            "damageElement": "fire",
+            "secondaryDamageStats": []
+          }
+        },
+        {
+          "element": "chance",
+          "resultPresent": true,
+          "cacheMetadataPresent": {
+            "cacheEnabled": true,
+            "cacheHits": true,
+            "cacheKey": true
+          },
+          "validation": {
+            "status": "pass",
+            "failures": []
+          },
+          "expectedProfile": {
+            "primaryStat": "Chance",
+            "damageStat": "Water Damage",
+            "damageElement": "water",
+            "secondaryDamageStats": []
+          }
+        },
+        {
+          "element": "agility",
+          "resultPresent": true,
+          "cacheMetadataPresent": {
+            "cacheEnabled": true,
+            "cacheHits": true,
+            "cacheKey": true
+          },
+          "validation": {
+            "status": "pass",
+            "failures": []
+          },
+          "expectedProfile": {
+            "primaryStat": "Agility",
+            "damageStat": "Air Damage",
+            "damageElement": "air",
+            "secondaryDamageStats": []
+          }
+        }
+      ]
+    },
+    {
+      "reportVersion": "build-discovery-local-query-validation-v1",
+      "status": "pass",
+      "profile": {
+        "id": "iop_element_matrix_12_6_0_budget4_exo_allow",
+        "label": "Iop element matrix 12/6/0 budget tier 4 exo allow",
+        "source": "generated_json_index_local_smoke",
+        "assumption": "All supported Iop elements should return at least one build for this bounded profile."
+      },
+      "queryParams": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength",
+          "intelligence",
+          "chance",
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 10,
+        "beamWidth": 75,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 60,
+        "maxSharedItems": 10,
+        "genericDamageWeight": 0.45,
+        "weaponDamageWeight": 0.2
+      },
+      "expectedProfiles": {
+        "strength": {
+          "primaryStat": "Strength",
+          "damageStat": "Earth Damage",
+          "damageElement": "earth",
+          "secondaryDamageStats": [
+            "Neutral Damage"
+          ]
+        },
+        "intelligence": {
+          "primaryStat": "Intelligence",
+          "damageStat": "Fire Damage",
+          "damageElement": "fire",
+          "secondaryDamageStats": []
+        },
+        "chance": {
+          "primaryStat": "Chance",
+          "damageStat": "Water Damage",
+          "damageElement": "water",
+          "secondaryDamageStats": []
+        },
+        "agility": {
+          "primaryStat": "Agility",
+          "damageStat": "Air Damage",
+          "damageElement": "air",
+          "secondaryDamageStats": []
+        }
+      },
+      "results": [
+        {
+          "element": "strength",
+          "resultPresent": true,
+          "cacheMetadataPresent": {
+            "cacheEnabled": true,
+            "cacheHits": true,
+            "cacheKey": true
+          },
+          "validation": {
+            "status": "pass",
+            "failures": []
+          },
+          "expectedProfile": {
+            "primaryStat": "Strength",
+            "damageStat": "Earth Damage",
+            "damageElement": "earth",
+            "secondaryDamageStats": [
+              "Neutral Damage"
+            ]
+          }
+        },
+        {
+          "element": "intelligence",
+          "resultPresent": true,
+          "cacheMetadataPresent": {
+            "cacheEnabled": true,
+            "cacheHits": true,
+            "cacheKey": true
+          },
+          "validation": {
+            "status": "pass",
+            "failures": []
+          },
+          "expectedProfile": {
+            "primaryStat": "Intelligence",
+            "damageStat": "Fire Damage",
+            "damageElement": "fire",
+            "secondaryDamageStats": []
+          }
+        },
+        {
+          "element": "chance",
+          "resultPresent": true,
+          "cacheMetadataPresent": {
+            "cacheEnabled": true,
+            "cacheHits": true,
+            "cacheKey": true
+          },
+          "validation": {
+            "status": "pass",
+            "failures": []
+          },
+          "expectedProfile": {
+            "primaryStat": "Chance",
+            "damageStat": "Water Damage",
+            "damageElement": "water",
+            "secondaryDamageStats": []
+          }
+        },
+        {
+          "element": "agility",
+          "resultPresent": true,
+          "cacheMetadataPresent": {
+            "cacheEnabled": true,
+            "cacheHits": true,
+            "cacheKey": true
+          },
+          "validation": {
+            "status": "pass",
+            "failures": []
+          },
+          "expectedProfile": {
+            "primaryStat": "Agility",
+            "damageStat": "Air Damage",
+            "damageElement": "air",
+            "secondaryDamageStats": []
+          }
+        }
+      ]
+    }
+  ]
+}
