@@ -28,6 +28,7 @@ import {
   faUserPlus,
   faKey,
   faMugHot,
+  faSearch,
   faWrench,
 } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -172,6 +173,17 @@ function Layout({ children }: LayoutProps) {
 
   const menuItems: MenuItem[] = useMemo(() => {
     const items: MenuItem[] = [
+      {
+        key: 'build-discovery',
+        label: (
+          <Link href="/build-discovery" as="/build-discovery">
+            <span css={iconWrapper}>
+              <FontAwesomeIcon icon={faSearch} />
+            </span>
+            {t('BUILD_DISCOVERY', { ns: 'common' })}
+          </Link>
+        ),
+      },
       {
         key: 'home',
         label: (

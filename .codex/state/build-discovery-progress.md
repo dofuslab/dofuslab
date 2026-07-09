@@ -263,3 +263,17 @@ Run the initial evaluator pass:
   - changed query behavior from edit-triggered requests to explicit `Run`
 - Residual risk:
   - in-app browser navigation timed out during visual smoke, so screenshot/mobile visual verification is still pending.
+
+### 2026-07-09 Build Discovery Navigation Checkpoint
+
+- Created stacked branch `codex/build-discovery-ui-visual-smoke` on top of `codex/build-discovery-first-client-page`.
+- Added Build Discovery navigation entry points:
+  - desktop header button linking to `/build-discovery`
+  - mobile drawer menu item linking to `/build-discovery`
+- Verification passed:
+  - `cd client && npx eslint --fix-dry-run components/desktop/Layout.tsx components/mobile/Layout.tsx`
+  - `cd client && yarn type-check`
+- Reviewer findings fixed before commit:
+  - desktop navigation uses a compact icon-only `Button href` with tooltip instead of a wide nested `Link > Button`
+  - desktop and mobile labels use the `common:BUILD_DISCOVERY` translation key
+  - locale files include `BUILD_DISCOVERY`
