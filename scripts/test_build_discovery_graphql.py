@@ -97,11 +97,21 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
 
     def test_import_generated_custom_set_creates_build_and_provenance_atomically(self):
         custom_set_id = uuid.uuid4()
-        item_id = uuid.uuid4()
-        item = SimpleNamespace(uuid=item_id)
-        custom_set = SimpleNamespace(uuid=custom_set_id, equip_items=Mock())
+        first_item_id = uuid.uuid4()
+        second_item_id = uuid.uuid4()
+        class_id = uuid.uuid4()
+        first_item = SimpleNamespace(uuid=first_item_id)
+        second_item = SimpleNamespace(uuid=second_item_id)
+        custom_set = SimpleNamespace(
+            uuid=custom_set_id,
+            default_class_id=None,
+            equip_items=Mock(),
+        )
         db_session = Mock()
-        db_session.query.return_value.filter.return_value.one.return_value = item
+        db_session.query.return_value.filter.return_value.one.side_effect = [
+            first_item,
+            second_item,
+        ]
 
         with patch.object(
             schema_module, "session_scope", return_value=mocked_session_scope(db_session)
@@ -110,6 +120,8 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
         ) as get_custom_set, patch.object(
             schema_module, "edit_custom_set_metadata"
         ) as edit_metadata, patch.object(
+            schema_module, "generated_default_class_id", return_value=class_id
+        ) as generated_class, patch.object(
             utils_module, "current_user", SimpleNamespace(is_authenticated=False)
         ):
             result = schema.execute(
@@ -117,7 +129,7 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
                 mutation ImportGeneratedCustomSet($items: [CustomSetImportedItemInput!]!, $payload: GenericScalar) {
                   importGeneratedCustomSet(
                     items: $items
-                    name: "Generated Build Discovery #100"
+                    name: "Generated Strength Iop #100"
                     level: 200
                     source: "build_discovery"
                     datasetVersion: "dataset-v1"
@@ -134,8 +146,11 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
                 }
                 """,
                 variables={
-                    "items": [{"id": str(item_id), "apExo": True}],
-                    "payload": {"query": {"element": "strength"}},
+                    "items": [
+                        {"id": str(first_item_id), "apExo": True},
+                        {"id": str(second_item_id), "rangeExo": True},
+                    ],
+                    "payload": {"query": {"className": "Iop", "element": "strength"}},
                 },
             )
 
@@ -143,17 +158,29 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
         get_custom_set.assert_called_once_with(None, db_session)
         edit_metadata.assert_called_once_with(
             custom_set,
-            "Generated Build Discovery #100",
+            "Generated Strength Iop #100",
             200,
         )
+        generated_class.assert_called_once_with(
+            db_session,
+            "build_discovery",
+            {"query": {"className": "Iop", "element": "strength"}},
+        )
+        self.assertEqual(custom_set.default_class_id, class_id)
         custom_set.equip_items.assert_called_once_with(
             [
                 {
-                    "item": item,
+                    "item": first_item,
                     "ap_exo": True,
                     "mp_exo": None,
                     "range_exo": None,
-                }
+                },
+                {
+                    "item": second_item,
+                    "ap_exo": None,
+                    "mp_exo": None,
+                    "range_exo": True,
+                },
             ],
             db_session,
         )
@@ -162,15 +189,71 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
         self.assertEqual(generation_request.source, "build_discovery")
         self.assertEqual(generation_request.dataset_version, "dataset-v1")
         self.assertEqual(generation_request.solver_version, "solver-v1")
-        self.assertEqual(generation_request.request_payload, {"query": {"element": "strength"}})
+        self.assertEqual(
+            generation_request.request_payload,
+            {"query": {"className": "Iop", "element": "strength"}},
+        )
         self.assertEqual(
             result.data["importGeneratedCustomSet"]["generationRequest"]["source"],
             "build_discovery",
         )
         self.assertEqual(
             result.data["importGeneratedCustomSet"]["generationRequest"]["requestPayload"],
-            {"query": {"element": "strength"}},
+            {"query": {"className": "Iop", "element": "strength"}},
         )
+
+    def test_import_generated_custom_set_keeps_other_sources_default_class_unchanged(self):
+        custom_set_id = uuid.uuid4()
+        item_id = uuid.uuid4()
+        existing_class_id = uuid.uuid4()
+        item = SimpleNamespace(uuid=item_id)
+        custom_set = SimpleNamespace(
+            uuid=custom_set_id,
+            default_class_id=existing_class_id,
+            equip_items=Mock(),
+        )
+        db_session = Mock()
+        db_session.query.return_value.filter.return_value.one.return_value = item
+
+        with patch.object(
+            schema_module, "session_scope", return_value=mocked_session_scope(db_session)
+        ), patch.object(
+            schema_module, "get_or_create_custom_set", return_value=custom_set
+        ), patch.object(
+            schema_module, "edit_custom_set_metadata"
+        ) as edit_metadata, patch.object(
+            utils_module, "current_user", SimpleNamespace(is_authenticated=False)
+        ):
+            result = schema.execute(
+                """
+                mutation ImportGeneratedCustomSet($items: [CustomSetImportedItemInput!]!, $payload: GenericScalar) {
+                  importGeneratedCustomSet(
+                    items: $items
+                    name: "Generated Other"
+                    level: 200
+                    source: "other_generator"
+                    datasetVersion: "dataset-v1"
+                    solverVersion: "solver-v1"
+                    requestPayload: $payload
+                  ) {
+                    generationRequest {
+                      source
+                      datasetVersion
+                      solverVersion
+                      requestPayload
+                    }
+                  }
+                }
+                """,
+                variables={
+                    "items": [{"id": str(item_id)}],
+                    "payload": {"query": {"className": "Iop"}},
+                },
+            )
+
+        self.assertIsNone(result.errors)
+        edit_metadata.assert_called_once_with(custom_set, "Generated Other", 200)
+        self.assertEqual(custom_set.default_class_id, existing_class_id)
 
     def test_import_generated_custom_set_sets_generated_default_class(self):
         custom_set_id = uuid.uuid4()

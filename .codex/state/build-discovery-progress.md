@@ -612,3 +612,20 @@ Run the initial evaluator pass:
   - `cd client; yarn type-check`
   - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts common/buildDiscoveryContract.ts components/common/BuildDiscoveryPage.tsx scripts/check-build-discovery-contract.ts` (existing `no-console` warning in the contract check script)
   - `git diff --check`
+
+### 2026-07-09 Atomic Import Regression
+
+- Created stacked branch `codex/build-discovery-atomic-import-regression` on top of `codex/build-discovery-client-import-contract-tests`.
+- Strengthened the mocked GraphQL regression for `importGeneratedCustomSet`:
+  - two internal item UUID inputs
+  - AP and Range exo flags passed atomically to `equip_items`
+  - generated provenance metadata persisted and read back
+  - Build Discovery source assigns generated default class
+  - non-Build-Discovery generated source preserves an existing default class
+- Reviewer finding fixed before commit:
+  - the non-Build-Discovery test now starts with an existing class UUID, so it catches accidental clearing as well as accidental reassignment
+- Verification passed:
+  - `python -m py_compile scripts/test_build_discovery_graphql.py`
+  - Docker inline assertions equivalent to the strengthened atomic import path
+  - `git diff --check`
+- Docker's checked-out `scripts` package is stale in this environment, so direct Docker unittest could not see this edited test file.
