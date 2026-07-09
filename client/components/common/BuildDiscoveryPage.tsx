@@ -692,7 +692,7 @@ export default function BuildDiscoveryPage() {
           <InputNumber
             aria-label="Minimum AP target"
             css={{ width: '100%' }}
-            min={6}
+            min={7}
             max={12}
             value={input.apTarget}
             onChange={(value) =>

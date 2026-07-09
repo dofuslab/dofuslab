@@ -49,6 +49,9 @@ BASE_MP = 3
 REQUIRED_AP = 11
 REQUIRED_MP = 6
 REQUIRED_RANGE = 0
+MIN_AP = BASE_AP
+MIN_MP = BASE_MP
+MIN_RANGE = 0
 MAX_AP = 12
 MAX_MP = 6
 MAX_RANGE = 6
@@ -581,12 +584,12 @@ class BuildTarget:
     range: int = REQUIRED_RANGE
 
     def __post_init__(self) -> None:
-        if self.ap < 0:
-            raise ValueError("Target AP cannot be negative.")
-        if self.mp < 0:
-            raise ValueError("Target MP cannot be negative.")
-        if self.range < 0:
-            raise ValueError("Target Range cannot be negative.")
+        if self.ap < MIN_AP:
+            raise ValueError(f"Target AP cannot be below {MIN_AP}.")
+        if self.mp < MIN_MP:
+            raise ValueError(f"Target MP cannot be below {MIN_MP}.")
+        if self.range < MIN_RANGE:
+            raise ValueError(f"Target Range cannot be below {MIN_RANGE}.")
         if self.ap > MAX_AP:
             raise ValueError(f"Target AP cannot exceed {MAX_AP}.")
         if self.mp > MAX_MP:
