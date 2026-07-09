@@ -930,3 +930,15 @@ Run the initial evaluator pass:
 - Verification passed:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m oneoff.generate_build_discovery_index --output /tmp/build_discovery_index_current.json --source db`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m oneoff.build_discovery_query_perf --index-path /tmp/build_discovery_index_current.json --validate-local-suite --runs 1 --no-cache --output /tmp/build_discovery_fresh_suite_report.json --fixture-output /tmp/build_discovery_fresh_suite_fixture.json` wrote artifacts and exited nonzero due to expected threshold failures
+
+### 2026-07-09 Prod Discovery Env Preflight
+
+- Created stacked branch `codex/build-discovery-prod-env-preflight` on top of `codex/build-discovery-fresh-suite-measurement`.
+- Added `--check-env` to the bounded prod benchmark discovery helper:
+  - reports whether `DOFUSLAB_READONLY_DATABASE_URL` is present
+  - reports whether SQLAlchemy is available
+  - does not open a database connection
+  - does not print the database URL
+- Confirmed current runtime state:
+  - host shell: `DOFUSLAB_READONLY_DATABASE_URL` missing
+  - running `dofuslab-server-1` container: `DOFUSLAB_READONLY_DATABASE_URL` missing

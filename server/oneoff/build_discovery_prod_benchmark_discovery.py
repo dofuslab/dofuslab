@@ -28,6 +28,25 @@ MAX_TOP_ITEMS = 50
 MIN_PROFILE_SAMPLE_COUNT = 3
 DEFAULT_STATEMENT_TIMEOUT_MS = 5000
 TARGET_STATS = ("AP", "MP", "RANGE", "STRENGTH", "INTELLIGENCE", "CHANCE", "AGILITY")
+
+
+def preflight_status() -> dict[str, Any]:
+    return {
+        "reportVersion": REPORT_VERSION,
+        "mode": "preflight",
+        "environment": {
+            "readonlyDatabaseUrlPresent": bool(
+                os.getenv("DOFUSLAB_READONLY_DATABASE_URL")
+            ),
+            "sqlalchemyAvailable": create_engine is not None and text is not None,
+        },
+        "safety": {
+            "opensDatabaseConnection": False,
+            "printsDatabaseUrl": False,
+        },
+    }
+
+
 def prod_database_url() -> str:
     database_url = os.getenv("DOFUSLAB_READONLY_DATABASE_URL")
     if not database_url:
@@ -281,7 +300,15 @@ def main() -> None:
     parser.add_argument("--top-items", type=int, default=DEFAULT_TOP_ITEMS)
     parser.add_argument("--locale", default="en")
     parser.add_argument("--statement-timeout-ms", type=int, default=DEFAULT_STATEMENT_TIMEOUT_MS)
+    parser.add_argument(
+        "--check-env",
+        action="store_true",
+        help="Print non-secret environment/runtime readiness without connecting to prod.",
+    )
     args = parser.parse_args()
+    if args.check_env:
+        print(json.dumps(preflight_status(), indent=2))
+        return
     validate_bounds(parser, args)
     report = discover_prod_benchmarks(
         prod_database_url(),

@@ -17,6 +17,7 @@ from oneoff.build_discovery_prod_benchmark_discovery import (
     dominant_element,
     enforce_bounds,
     prod_database_url,
+    preflight_status,
     recent_build_rows,
     summarize_rows,
     validate_bounds,
@@ -24,6 +25,20 @@ from oneoff.build_discovery_prod_benchmark_discovery import (
 
 
 class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
+    def test_preflight_status_does_not_expose_database_url_or_connect(self):
+        with patch.dict(
+            os.environ,
+            {"DOFUSLAB_READONLY_DATABASE_URL": "postgresql://readonly-secret"},
+        ):
+            report = preflight_status()
+
+        self.assertEqual(report["mode"], "preflight")
+        self.assertTrue(report["environment"]["readonlyDatabaseUrlPresent"])
+        self.assertIsInstance(report["environment"]["sqlalchemyAvailable"], bool)
+        self.assertFalse(report["safety"]["opensDatabaseConnection"])
+        self.assertFalse(report["safety"]["printsDatabaseUrl"])
+        self.assertNotIn("readonly-secret", str(report))
+
     def test_prod_database_url_requires_readonly_env(self):
         with patch.dict(os.environ, {}, clear=True):
             with self.assertRaises(SystemExit):
