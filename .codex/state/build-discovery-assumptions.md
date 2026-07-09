@@ -1,6 +1,6 @@
 # Build Discovery Assumptions To Review
 
-Last updated: 2026-07-08
+Last updated: 2026-07-09
 
 This file lists the working assumptions embedded in the Build Discovery PRD, prototype, benchmark tooling, and harness. Treat it as a review checklist, not settled truth.
 
@@ -25,7 +25,11 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Avoided items are excluded from candidate loading.
 - Locked and avoided item IDs cannot overlap.
 - `datasetVersion`, `solverVersion`, and query inputs belong in cache keys.
-- The current oneoff query wrapper is a prototype contract, not yet the final backend API.
+- The oneoff query wrapper remains the solver core, but there is now a GraphQL product path for app use.
+- `buildDiscovery` remains the direct synchronous query path.
+- `startBuildDiscovery` is the product run path for the page and returns a persisted job contract.
+- `buildDiscoveryJob(id)` is the product polling path for persisted jobs.
+- Successful generated imports should keep enough request/build provenance to explain where generated custom sets came from.
 
 ## AP / MP / Range Assumptions
 
@@ -94,6 +98,8 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Iop's Wrath is modeled over a 7-turn window with setup/cooldown semantics.
 - Intelligence, Chance, and Agility Iop currently reuse the broader Iop/scoring methodology and need more validation.
 - Non-Iop classes are not yet product-supported.
+- Queries like "200 glass cannon int Cra" and "150 balanced str ecaflip" are target benchmark prompts for later expansion, not supported v1 generation queries yet.
+- Non-Iop benchmark discovery can still inspect existing user builds, but generated comparisons require class support before they are product-valid.
 
 ## Damage Scoring Assumptions
 
@@ -187,21 +193,43 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Data loading should be sub-second when the generated index exists.
 - Beam search and final scoring are the main bottlenecks.
 - Shippable target: cached query under 500ms.
-- Shippable target: fresh query p95 under 5s if served synchronously.
-- If fresh p95 stays above 5s, product should use async job flow with progress.
+- Shippable target: fresh query p95 under 5s only if served synchronously.
+- If fresh p95 exceeds 5s, the product path should be async job flow with visible status/progress/error.
 - Cache keys must include query inputs, dataset version, and solver version.
 - Cache should include budget tier, exo policy, locked items, avoided items, and damage/survivability preset.
-- Current cache-key support does not yet choose final cache storage.
-- Storage could eventually be in-memory, Redis, database, or generated precompute artifacts.
+- App-level cache storage is dogpile/Redis through `cache_region`.
+- The prototype process-memory cache is still available inside oneoff code, but app cache misses bypass it for fresh measurement/execution.
+- `startBuildDiscovery` should check app cache first; cache hits can return succeeded jobs immediately.
+- App-cache misses should create queued jobs and be handled by the RQ worker path.
+- Worker-computed results should populate app cache using the same query/dataset/solver key.
+- Local Docker/Compose needs a worker service to consume queued Build Discovery jobs.
+
+## Async Job Assumptions
+
+- A Build Discovery job row is the durable user-facing generation request state.
+- Job statuses currently expected by the client are `queued`, `running`, `succeeded`, and `failed`.
+- Queued/running jobs may have no result payload yet.
+- Failed jobs must expose `errorPayload.message`; failures should not look like empty result sets.
+- Enqueue failures must be written back to the job row and returned to the client as failed jobs.
+- Worker failures should persist `errorPayload` and transition jobs to `failed`.
+- Job result payloads may be full solver responses; request payloads should remain compact and replayable.
+- `requestPayload.queryIdentity` is the canonical replay/cache identity for workers.
+- `requestPayload.query` is the compact display/provenance query shape.
+- Job rows may link to a `GenerationRequest` later when a generated build is imported.
+- The existing default RQ queue also handles non-Build-Discovery jobs such as email, so local workers are shared infrastructure.
 
 ## Benchmark Assumptions
 
 - Milestone 4 starts with Strength Iop 11/6 and 12/6 human references.
+- Milestone 6 starts by validating Iop Strength, Intelligence, Chance, and Agility over 11/6/0 and 12/6/0 local query profiles.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.
 - Fashionista links are currently manual comparison references, not automatically parsed/scored.
 - A benchmark report with per-benchmark errors is still useful if it exposes environment/data setup gaps.
 - Accepted benchmark outputs should become regression fixtures.
+- The current committed local query fixture proves importable result shape for Iop element profiles, but it intentionally records fresh p95 threshold failures where observed.
+- Prod benchmark discovery must remain bounded, aggregate-first, and read-only.
+- Prod benchmark discovery should not expose custom set names, owner IDs, or singleton-identifying build details.
 
 ## Instrumentation Assumptions
 
