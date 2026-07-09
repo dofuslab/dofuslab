@@ -5,11 +5,25 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from types import SimpleNamespace
 from pathlib import Path
 from typing import Any, Callable
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from oneoff.build_discovery_prototype import (  # noqa: E402
+    DEFAULT_MAX_SHARED_ITEMS,
+    GENERIC_DAMAGE_WEIGHT,
+    WEAPON_DAMAGE_WEIGHT,
+)
+from oneoff.build_discovery_benchmark_report import build_report  # noqa: E402
+from scripts.build_discovery_benchmark_generated_results import (  # noqa: E402
+    build_generated_results,
+)
+from scripts.check_build_discovery_benchmark_comparison import (  # noqa: E402
+    DEFAULT_FIXTURE_PATH,
+    validate_report,
+)
 from scripts.build_discovery_local_readiness_report import (  # noqa: E402
     DEFAULT_ASSUMPTIONS_LEDGER,
     DEFAULT_GAMEPLAY_REVIEW_PACKET,
@@ -20,6 +34,8 @@ from scripts.build_discovery_local_readiness_report import (  # noqa: E402
 REPORT_VERSION = "build-discovery-local-readiness-pipeline-v1"
 WARM_CACHE_FILENAME = "cache_prewarm_warm.json"
 STRICT_CACHE_FILENAME = "cache_prewarm_strict.json"
+BENCHMARK_GENERATED_RESULTS_FILENAME = "benchmark_generated_results.json"
+BENCHMARK_COMPARISON_FILENAME = "benchmark_comparison_report.json"
 READINESS_FILENAME = "local_readiness_report.json"
 SUMMARY_FILENAME = "local_readiness_pipeline_summary.json"
 
@@ -49,9 +65,38 @@ def default_cache_prewarm_report(
         )
 
 
+def default_benchmark_generated_results() -> dict[str, Any]:
+    return build_generated_results(
+        SimpleNamespace(
+            limit=5,
+            top_k=25,
+            beam_width=250,
+            per_signature_cap=40,
+            relevant_set_limit=60,
+            budget_tier=4,
+            exo_policy="opti",
+            max_shared_items=DEFAULT_MAX_SHARED_ITEMS,
+            generic_damage_weight=GENERIC_DAMAGE_WEIGHT,
+            weapon_damage_weight=WEAPON_DAMAGE_WEIGHT,
+        )
+    )
+
+
+def default_benchmark_comparison_report(
+    generated_results: dict[str, Any],
+) -> dict[str, Any]:
+    return build_report(
+        generated_results=generated_results,
+        allow_errors=True,
+    )
+
+
 def build_summary(
     warm_cache_report: dict[str, Any],
     strict_cache_report: dict[str, Any],
+    benchmark_generated_results: dict[str, Any] | None,
+    benchmark_comparison_report: dict[str, Any] | None,
+    benchmark_validation_failures: list[str],
     readiness_report: dict[str, Any],
     output_dir: Path,
 ) -> dict[str, Any]:
@@ -60,11 +105,24 @@ def build_summary(
         "artifacts": {
             "warmCachePrewarmReport": str(output_dir / WARM_CACHE_FILENAME),
             "strictCachePrewarmReport": str(output_dir / STRICT_CACHE_FILENAME),
+            "benchmarkGeneratedResults": None
+            if benchmark_generated_results is None
+            else str(output_dir / BENCHMARK_GENERATED_RESULTS_FILENAME),
+            "benchmarkComparisonReport": None
+            if benchmark_comparison_report is None
+            else str(output_dir / BENCHMARK_COMPARISON_FILENAME),
             "readinessReport": str(output_dir / READINESS_FILENAME),
         },
         "warmCacheStatus": warm_cache_report.get("status"),
         "strictCacheStatus": strict_cache_report.get("status"),
         "strictCacheSummary": strict_cache_report.get("summary", {}),
+        "benchmarkGeneratedStatus": "not_checked"
+        if benchmark_generated_results is None
+        else "pass",
+        "benchmarkComparisonStatus": "not_checked"
+        if benchmark_comparison_report is None
+        else "pass" if not benchmark_validation_failures else "fail",
+        "benchmarkValidationFailures": benchmark_validation_failures,
         "readinessStatus": readiness_report.get("status"),
         "assumptionsReview": readiness_report.get("assumptionsReview", {}),
         "blockers": readiness_report.get("blockers", []),
@@ -78,7 +136,11 @@ def run_pipeline(
     readiness_checklist_path: Path = DEFAULT_READINESS_CHECKLIST,
     gameplay_review_packet_path: Path = DEFAULT_GAMEPLAY_REVIEW_PACKET,
     assumptions_ledger_path: Path = DEFAULT_ASSUMPTIONS_LEDGER,
+    benchmark_fixture_path: Path = DEFAULT_FIXTURE_PATH,
+    include_benchmark_comparison: bool = True,
     cache_prewarm_fn: Callable[[bool, float | None, float | None], dict[str, Any]] = default_cache_prewarm_report,
+    benchmark_generated_results_fn: Callable[[], dict[str, Any]] = default_benchmark_generated_results,
+    benchmark_comparison_report_fn: Callable[[dict[str, Any]], dict[str, Any]] = default_benchmark_comparison_report,
     readiness_fn: Callable[..., dict[str, Any]] = build_readiness_report,
 ) -> dict[str, Any]:
     output_path = Path(output_dir)
@@ -87,21 +149,45 @@ def run_pipeline(
 
     warm_cache_path = output_path / WARM_CACHE_FILENAME
     strict_cache_path = output_path / STRICT_CACHE_FILENAME
+    benchmark_generated_path = output_path / BENCHMARK_GENERATED_RESULTS_FILENAME
+    benchmark_comparison_path = output_path / BENCHMARK_COMPARISON_FILENAME
     readiness_path = output_path / READINESS_FILENAME
 
     write_json(warm_cache_path, warm_cache_report)
     write_json(strict_cache_path, strict_cache_report)
+
+    benchmark_generated_results = None
+    benchmark_comparison_report = None
+    benchmark_validation_failures: list[str] = []
+    if include_benchmark_comparison:
+        benchmark_generated_results = benchmark_generated_results_fn()
+        benchmark_comparison_report = benchmark_comparison_report_fn(
+            benchmark_generated_results,
+        )
+        benchmark_validation_failures = validate_report(
+            benchmark_comparison_report,
+            json.loads(benchmark_fixture_path.read_text(encoding="utf-8")),
+        )
+        write_json(benchmark_generated_path, benchmark_generated_results)
+        write_json(benchmark_comparison_path, benchmark_comparison_report)
 
     readiness_report = readiness_fn(
         readiness_checklist_path=readiness_checklist_path,
         gameplay_review_packet_path=gameplay_review_packet_path,
         assumptions_ledger_path=assumptions_ledger_path,
         cache_prewarm_report_path=strict_cache_path,
+        benchmark_comparison_report_path=benchmark_comparison_path
+        if include_benchmark_comparison
+        else None,
+        benchmark_fixture_path=benchmark_fixture_path,
         max_cache_hit_p95_ms=max_hit_p95_ms,
     )
     summary = build_summary(
         warm_cache_report,
         strict_cache_report,
+        benchmark_generated_results,
+        benchmark_comparison_report,
+        benchmark_validation_failures,
         readiness_report,
         output_path,
     )
@@ -119,6 +205,12 @@ def main() -> None:
     parser.add_argument("--readiness-checklist", type=Path, default=DEFAULT_READINESS_CHECKLIST)
     parser.add_argument("--gameplay-review-packet", type=Path, default=DEFAULT_GAMEPLAY_REVIEW_PACKET)
     parser.add_argument("--assumptions-ledger", type=Path, default=DEFAULT_ASSUMPTIONS_LEDGER)
+    parser.add_argument("--benchmark-fixture", type=Path, default=DEFAULT_FIXTURE_PATH)
+    parser.add_argument(
+        "--skip-benchmark-comparison",
+        action="store_true",
+        help="Skip local benchmark generated-result and comparison artifacts.",
+    )
     args = parser.parse_args()
 
     summary = run_pipeline(
@@ -128,6 +220,8 @@ def main() -> None:
         readiness_checklist_path=args.readiness_checklist,
         gameplay_review_packet_path=args.gameplay_review_packet,
         assumptions_ledger_path=args.assumptions_ledger,
+        benchmark_fixture_path=args.benchmark_fixture,
+        include_benchmark_comparison=not args.skip_benchmark_comparison,
     )
     print(json.dumps(summary, indent=2, ensure_ascii=False))
 

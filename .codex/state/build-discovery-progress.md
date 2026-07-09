@@ -1270,3 +1270,34 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_pipeline.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_local_readiness_pipeline.py --output-dir /tmp/build_discovery_local_readiness_pipeline --readiness-checklist /tmp/build_discovery_local_readiness_state/build-discovery-readiness-checklist.md --gameplay-review-packet /tmp/build_discovery_local_readiness_state/build-discovery-gameplay-review-packet.md --assumptions-ledger /tmp/build_discovery_local_readiness_state/build-discovery-assumptions.md`
   - `git diff --check`
+
+### 2026-07-09 Local Benchmark Readiness Pipeline
+
+- Created stacked branch `codex/build-discovery-local-benchmark-readiness-pipeline` on top of `codex/build-discovery-assumptions-readiness-surface`.
+- Extended `server/scripts/build_discovery_local_readiness_pipeline.py` so local readiness evidence now includes benchmark artifacts by default:
+  - generated benchmark Build Discovery results
+  - DofusLab reference comparison report
+  - compact fixture validation failures
+  - readiness report wired to the benchmark comparison artifact
+- Added `--skip-benchmark-comparison` for faster local evidence runs that only need cache/readiness state.
+- Pipeline summaries now distinguish skipped benchmark artifacts from written benchmark artifacts.
+- Added focused tests for benchmark artifact writing, fixture pass-through, summary statuses, and skip behavior.
+- Docker full pipeline result:
+  - warm cache status: `pass`
+  - strict cache status: `pass`
+  - strict cache hits: 8
+  - strict cache misses: 0
+  - strict cache-hit p95: `0.7ms`
+  - benchmark generated status: `pass`
+  - benchmark comparison status: `pass`
+  - benchmark validation failures: 0
+  - readiness status: `incomplete`
+  - remaining blockers: gameplay review and prod benchmark access/work
+- Verification passed:
+  - `python server\scripts\test_build_discovery_local_readiness_pipeline.py`
+  - `python server\scripts\test_build_discovery_local_readiness_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_local_readiness_pipeline.py scripts/test_build_discovery_local_readiness_pipeline.py scripts/build_discovery_local_readiness_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_local_readiness_pipeline.py --output-dir /tmp/build_discovery_local_readiness_pipeline_full --readiness-checklist /tmp/build_discovery_local_readiness_state/build-discovery-readiness-checklist.md --gameplay-review-packet /tmp/build_discovery_local_readiness_state/build-discovery-gameplay-review-packet.md --assumptions-ledger /tmp/build_discovery_local_readiness_state/build-discovery-assumptions.md`
+  - `git diff --check`
