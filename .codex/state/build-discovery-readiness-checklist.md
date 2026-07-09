@@ -42,7 +42,7 @@ This is the current working checklist for deciding whether Build Discovery is sh
 - [x] Generated build list filtering exists.
 - [x] Oneoff generated imports also create provenance.
 - [x] Read-only generated data audit tooling exists.
-- [ ] Decide retention/cleanup policy for generated custom sets if they become disposable job artifacts.
+- [x] Generated custom set retention policy is documented: imported generated sets are user-owned saved builds, not disposable job artifacts.
 
 ## Assumptions And Review
 

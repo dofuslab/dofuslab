@@ -1023,3 +1023,16 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/check_build_discovery_benchmark_comparison.py scripts/test_build_discovery_benchmark_comparison_fixture.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/check_build_discovery_benchmark_comparison.py /tmp/build_discovery_benchmark_comparison_report.json`
   - `git diff --check`
+
+### 2026-07-09 Generated Data Retention Policy
+
+- Created stacked branch `codex/build-discovery-generated-data-retention-policy` on top of `codex/build-discovery-benchmark-regression-fixture`.
+- Documented generated data retention in `.codex/state/build-discovery-generated-data-retention.md`.
+- Decision:
+  - generated preview/job output is disposable execution data
+  - imported generated custom sets are user-owned saved builds
+  - `GenerationRequest` rows attached to existing custom sets are durable provenance
+  - future cleanup should start as explicit dry-run tooling and target only orphan/duplicate/legacy anomalies
+  - generated-looking legacy custom sets without provenance are audit/backfill/classification candidates, not cleanup targets
+- Verification passed:
+  - `git diff --check`
