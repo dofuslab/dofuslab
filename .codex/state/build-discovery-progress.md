@@ -151,3 +151,21 @@ Run the initial evaluator pass:
 - PR creation remains blocked by GitHub connector permissions:
   - `_create_pull_request` returns `403 Resource not accessible by integration`
   - pushed branch URL: `https://github.com/dofuslab/dofuslab/pull/new/codex/build-discovery-local-query-regression-suite`
+
+### 2026-07-08 Prod Benchmark Discovery Helper
+
+- Created stacked branch `codex/build-discovery-prod-benchmark-discovery` on top of `codex/build-discovery-local-query-regression-suite`.
+- Added a bounded readonly prod discovery helper:
+  - reads `DOFUSLAB_READONLY_DATABASE_URL`
+  - samples recent level-200 `custom_set` rows with configurable hard caps
+  - runs inside an explicit read-only transaction with `statement_timeout`
+  - reports aggregate class/profile distributions and common item aggregates only for buckets with at least 3 matching builds
+  - omits custom set IDs, custom set names, owner IDs, and singleton profile item lists
+  - enforces bounds in both CLI parsing and the callable discovery function
+- Verification passed:
+  - `python -m unittest scripts.test_build_discovery_prod_benchmark_discovery` (8 tests)
+  - `python scripts\build_discovery_prod_benchmark_discovery.py --help`
+  - `git diff --check`
+- Actual prod sample execution is blocked in the current environment:
+  - `DOFUSLAB_READONLY_DATABASE_URL` is not present in the host shell
+  - `DOFUSLAB_READONLY_DATABASE_URL` is not present in the running `dofuslab-server-1` container env
