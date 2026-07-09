@@ -11,6 +11,8 @@ from oneoff.build_discovery_prototype import (
     BuildTarget,
     ACTION_STAT_SOURCE_LIMIT,
     ACTION_STAT_SOURCE_MIN_LEVEL,
+    BuildDiscoveryQuery,
+    clear_build_discovery_response_cache,
     DOFUS_AP_SOURCE_LIMIT,
     DOFUS_ACTION_STAT_SOURCE_LIMIT,
     DOFUS_ZERO_SCORE_FILLER_LIMIT,
@@ -18,15 +20,19 @@ from oneoff.build_discovery_prototype import (
     ApStrategy,
     DEFAULT_AP_STRATEGIES,
     add_item_to_state,
+    action_stats_meet_target,
     ap_strategy_matches,
     approach_item_ids,
     apply_missing_exos,
+    availability_tier_for_item,
     survivability_score,
     candidate_pool_for_slot,
     diversify_builds,
     dominates_item,
     db_item_dofus_id,
+    cheap_final_score_state,
     effective_scoring_stats,
+    effective_exo_policy,
     exo_search_target,
     exo_natural_cap_target,
     final_score_state,
@@ -35,14 +41,17 @@ from oneoff.build_discovery_prototype import (
     has_negative_action_stat,
     has_ap_set_bonus,
     has_ap_weapon,
+    item_allowed_by_budget,
     generate_set_core_packages,
     optimize_base_allocation,
     package_seed_states,
     packages_compatible,
     pending_dofus_search_target,
     prune_dominated_items,
+    query_cache_key,
     ranked_dofus_combinations,
     base_stats_for_strength_allocation,
+    build_discovery_response,
     build_package_index,
     strength_point_cost,
     score_stats,
@@ -51,6 +60,7 @@ from oneoff.build_discovery_prototype import (
     strength_spell_damage,
     strength_spell_damage_profile,
     state_weapon_damage,
+    trim_full_item_signatures,
 )
 
 
@@ -69,12 +79,87 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertEqual(db_item_dofus_id(Item()), "33008")
 
-    def test_exo_natural_cap_target_reserves_ap_exo(self):
+    def test_budget_action_trophies_are_mandatory_dofus_candidates(self):
+        self.assertIn(
+            build_discovery_prototype.SHAKER_TROPHY_ID,
+            build_discovery_prototype.MANDATORY_DOFUS_CANDIDATE_IDS,
+        )
+        self.assertIn(
+            build_discovery_prototype.NOMAD_TROPHY_ID,
+            build_discovery_prototype.MANDATORY_DOFUS_CANDIDATE_IDS,
+        )
+        self.assertIn(
+            build_discovery_prototype.JACKANAPES_TROPHY_ID,
+            build_discovery_prototype.MANDATORY_DOFUS_CANDIDATE_IDS,
+        )
+        self.assertIn(
+            build_discovery_prototype.VOYAGER_TROPHY_ID,
+            build_discovery_prototype.MANDATORY_DOFUS_CANDIDATE_IDS,
+        )
+
+    def test_availability_tiers_follow_initial_budget_priors(self):
+        self.assertEqual(availability_tier_for_item({"dofusID": "mount", "itemType": "Mount"}), 1)
+        self.assertEqual(availability_tier_for_item({"dofusID": "ring", "itemType": "Ring"}), 1)
+        self.assertEqual(availability_tier_for_item({"dofusID": "pet", "itemType": "Pet"}), 2)
+        self.assertEqual(availability_tier_for_item({"dofusID": "739", "itemType": "Dofus"}), 2)
+        self.assertEqual(availability_tier_for_item({"dofusID": "other_dofus", "itemType": "Dofus"}), 3)
+        self.assertEqual(availability_tier_for_item({"dofusID": "prysma", "itemType": "Prysmaradite"}), 3)
+        self.assertEqual(
+            availability_tier_for_item(
+                {"dofusID": build_discovery_prototype.OCHRE_DOFUS_ID, "itemType": "Dofus"}
+            ),
+            4,
+        )
+        self.assertEqual(
+            availability_tier_for_item(
+                {"dofusID": build_discovery_prototype.VULBIS_DOFUS_ID, "itemType": "Dofus"}
+            ),
+            4,
+        )
+        self.assertEqual(
+            availability_tier_for_item(
+                {"dofusID": "legendary", "itemType": "Hat", "buffs": [{"x": 1}]}
+            ),
+            4,
+        )
+
+    def test_item_allowed_by_budget_uses_availability_tier(self):
+        ochre = {"dofusID": build_discovery_prototype.OCHRE_DOFUS_ID, "itemType": "Dofus"}
+        turquoise = {"dofusID": "739", "itemType": "Dofus"}
+
+        self.assertFalse(item_allowed_by_budget(ochre, 3))
+        self.assertTrue(item_allowed_by_budget(ochre, 4))
+        self.assertFalse(item_allowed_by_budget(turquoise, 1))
+        self.assertTrue(item_allowed_by_budget(turquoise, 2))
+
+    def test_final_completion_trim_preserves_dofus_variants_for_same_sets(self):
+        first = BuildState(
+            slots={
+                "hat": {"dofusID": "hat", "setID": "set"},
+                "dofus_1": {"dofusID": "dofus_a"},
+            },
+            set_counts={"set": 1},
+            used_item_ids={"hat", "dofus_a"},
+            score=10,
+        )
+        second = BuildState(
+            slots={
+                "hat": {"dofusID": "hat", "setID": "set"},
+                "dofus_1": {"dofusID": "dofus_b"},
+            },
+            set_counts={"set": 1},
+            used_item_ids={"hat", "dofus_b"},
+            score=9,
+        )
+
+        self.assertEqual(trim_full_item_signatures([first, second], 10), [first, second])
+
+    def test_exo_natural_cap_target_uses_hard_action_stat_caps(self):
         target = exo_natural_cap_target(BuildTarget(ap=11, mp=6, range=4))
 
-        self.assertEqual(target.ap, 10)
+        self.assertEqual(target.ap, 12)
         self.assertEqual(target.mp, 6)
-        self.assertEqual(target.range, 4)
+        self.assertEqual(target.range, 6)
 
     def test_pending_dofus_search_target_reserves_dofus_and_exo_action_stats(self):
         target = pending_dofus_search_target(BuildTarget(ap=12, mp=6, range=4))
@@ -101,12 +186,30 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertGreater(final_score_state(high_damage), final_score_state(low_damage))
 
+    def test_cheap_final_score_uses_damage_proxy_for_shortlist_ranking(self):
+        low_damage = BuildState()
+        high_damage = BuildState()
+        high_damage.stats["Strength"] = 500
+        high_damage.stats["Power"] = 100
+        high_damage.stats["Critical Damage"] = 20
+
+        self.assertGreater(cheap_final_score_state(high_damage), cheap_final_score_state(low_damage))
+
     def test_reference_profile_damage_normalizes_to_reference_score(self):
         build_discovery_prototype.configure_damage_profile("strength")
         reference_stats = build_discovery_prototype.profile_damage_reference_stats()
 
         self.assertAlmostEqual(
             build_discovery_prototype.normalized_profile_damage_score(reference_stats),
+            build_discovery_prototype.PROFILE_DAMAGE_REFERENCE_SCORE,
+        )
+
+    def test_cheap_profile_damage_normalizes_to_reference_score(self):
+        build_discovery_prototype.configure_damage_profile("strength")
+        reference_stats = build_discovery_prototype.profile_damage_reference_stats()
+
+        self.assertAlmostEqual(
+            build_discovery_prototype.cheap_profile_damage_score(reference_stats),
             build_discovery_prototype.PROFILE_DAMAGE_REFERENCE_SCORE,
         )
 
@@ -146,6 +249,71 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(build_discovery_prototype.target_count_condition(["1 target"]), 1)
         self.assertEqual(build_discovery_prototype.target_count_condition(["5 targets"]), 5)
         self.assertIsNone(build_discovery_prototype.target_count_condition(["On critical hit"]))
+
+    def test_single_target_spell_effects_keep_base_direct_lines(self):
+        class Condition:
+            locale = "en"
+
+            def __init__(self, condition):
+                self.condition = condition
+
+        class Effect:
+            effect_type = "EARTH_DAMAGE"
+            min_damage = 1
+            max_damage = 1
+            crit_min_damage = None
+            crit_max_damage = None
+
+            def __init__(self, condition, order):
+                self.condition = [Condition(condition)]
+                self.order = order
+
+        lines = build_discovery_prototype.collapse_single_target_spell_effects(
+            (
+                Effect("On non-summons", 0),
+                Effect("On the target", 1),
+                Effect("1 target", 2),
+                Effect("Base", 3),
+                Effect("Enemies", 4),
+                Effect("On an enemy", 5),
+            ),
+            {"EARTH_DAMAGE": "earth"},
+            base_crit_chance=0,
+        )
+
+        self.assertEqual(len(lines), 6)
+
+    def test_single_target_spell_effects_exclude_conditional_lines(self):
+        class Condition:
+            locale = "en"
+
+            def __init__(self, condition):
+                self.condition = condition
+
+        class Effect:
+            effect_type = "EARTH_DAMAGE"
+            min_damage = 1
+            max_damage = 1
+            crit_min_damage = None
+            crit_max_damage = None
+
+            def __init__(self, condition, order):
+                self.condition = [Condition(condition)]
+                self.order = order
+
+        lines = build_discovery_prototype.collapse_single_target_spell_effects(
+            (
+                Effect("On summons", 0),
+                Effect("Around the target", 1),
+                Effect("2 targets", 2),
+                Effect("Telefrag", 3),
+                Effect("With 3 traps", 4),
+            ),
+            {"EARTH_DAMAGE": "earth"},
+            base_crit_chance=0,
+        )
+
+        self.assertEqual(lines, tuple())
 
     def test_select_variant_spells_keeps_best_spell_per_variant_pair(self):
         weak = build_discovery_prototype.SpellDamageCandidate(
@@ -215,6 +383,173 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertGreater(with_wrath, without_wrath)
 
+    def test_filler_rotation_can_choose_setup_cast_for_stacking_spell(self):
+        stacking = build_discovery_prototype.SpellDamageCandidate(
+            name="Stacking",
+            variant_pair_id="stacking",
+            ap_cost=3,
+            cooldown=None,
+            casts_per_turn=3,
+            casts_per_target=2,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 10, 10),),
+            damage_increase=15,
+            crit_damage_increase=15,
+            max_damage_increase_stacks=1,
+        )
+        steady = build_discovery_prototype.SpellDamageCandidate(
+            name="Steady",
+            variant_pair_id="steady",
+            ap_cost=3,
+            cooldown=None,
+            casts_per_turn=None,
+            casts_per_target=None,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 14, 14),),
+        )
+
+        result = build_discovery_prototype.best_filler_sequence(
+            (stacking, steady),
+            {"AP": 12},
+            remaining_ap=12,
+            turn_cast_counts={},
+            turn=1,
+            last_cast_turns={},
+            stack_counts={},
+        )
+
+        self.assertEqual(result.cast_names[:2], ("Stacking", "Stacking"))
+        self.assertGreater(result.total_damage, 56)
+
+    def test_accumulation_requires_self_buff_before_damage_casts(self):
+        accumulation = build_discovery_prototype.SpellDamageCandidate(
+            name=build_discovery_prototype.ACCUMULATION_SPELL_NAME,
+            variant_pair_id="accumulation",
+            ap_cost=3,
+            cooldown=None,
+            casts_per_turn=3,
+            casts_per_target=2,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 10, 10),),
+            damage_increase=15,
+            crit_damage_increase=15,
+            max_damage_increase_stacks=1,
+        )
+        steady = build_discovery_prototype.SpellDamageCandidate(
+            name="Steady",
+            variant_pair_id="steady",
+            ap_cost=3,
+            cooldown=None,
+            casts_per_turn=None,
+            casts_per_target=None,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 14, 14),),
+        )
+
+        self.assertEqual(
+            build_discovery_prototype.spell_damage_per_cast(accumulation, {"AP": 12}),
+            0,
+        )
+        self.assertEqual(
+            build_discovery_prototype.spell_damage_per_cast(
+                accumulation,
+                {"AP": 12},
+                stacks=1,
+            ),
+            25,
+        )
+
+        result = build_discovery_prototype.best_filler_sequence(
+            (accumulation, steady),
+            {"AP": 12},
+            remaining_ap=9,
+            turn_cast_counts={},
+            turn=1,
+            last_cast_turns={},
+            stack_counts={},
+        )
+
+        self.assertEqual(
+            result.cast_names,
+            (
+                build_discovery_prototype.ACCUMULATION_SPELL_NAME,
+                build_discovery_prototype.ACCUMULATION_SPELL_NAME,
+                build_discovery_prototype.ACCUMULATION_SPELL_NAME,
+            ),
+        )
+        self.assertEqual(result.total_damage, 50)
+        self.assertEqual(
+            dict(result.turn_cast_counts),
+            {
+                f"{build_discovery_prototype.ACCUMULATION_SPELL_NAME}:buff": 1,
+                f"{build_discovery_prototype.ACCUMULATION_SPELL_NAME}:damage": 2,
+            },
+        )
+        self.assertEqual(dict(result.stack_counts)[build_discovery_prototype.ACCUMULATION_SPELL_NAME], 3)
+
+        already_buffed = build_discovery_prototype.best_filler_sequence(
+            (accumulation,),
+            {"AP": 12},
+            remaining_ap=6,
+            turn_cast_counts={},
+            turn=2,
+            last_cast_turns={},
+            stack_counts={build_discovery_prototype.ACCUMULATION_SPELL_NAME: 1},
+        )
+
+        self.assertEqual(already_buffed.cast_names, ("Accumulation", "Accumulation"))
+        self.assertEqual(dict(already_buffed.stack_counts)[build_discovery_prototype.ACCUMULATION_SPELL_NAME], 1)
+
+    def test_accumulation_buff_duration_ticks_down_each_turn(self):
+        counts = {build_discovery_prototype.ACCUMULATION_SPELL_NAME: 3}
+
+        counts = build_discovery_prototype.decrement_timed_spell_buffs(counts)
+        self.assertEqual(counts[build_discovery_prototype.ACCUMULATION_SPELL_NAME], 2)
+        counts = build_discovery_prototype.decrement_timed_spell_buffs(counts)
+        self.assertEqual(counts[build_discovery_prototype.ACCUMULATION_SPELL_NAME], 1)
+        counts = build_discovery_prototype.decrement_timed_spell_buffs(counts)
+        self.assertNotIn(build_discovery_prototype.ACCUMULATION_SPELL_NAME, counts)
+
+    def test_iop_rotation_casts_accumulation_setup_for_future_turns(self):
+        accumulation = build_discovery_prototype.SpellDamageCandidate(
+            name=build_discovery_prototype.ACCUMULATION_SPELL_NAME,
+            variant_pair_id="accumulation",
+            ap_cost=3,
+            cooldown=None,
+            casts_per_turn=3,
+            casts_per_target=2,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 10, 10),),
+            damage_increase=15,
+            crit_damage_increase=15,
+            max_damage_increase_stacks=1,
+        )
+        steady = build_discovery_prototype.SpellDamageCandidate(
+            name="Steady",
+            variant_pair_id="steady",
+            ap_cost=3,
+            cooldown=None,
+            casts_per_turn=None,
+            casts_per_target=None,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 14, 14),),
+        )
+
+        with patch.object(
+            build_discovery_prototype,
+            "strength_spell_candidates",
+            return_value=(accumulation, steady),
+        ):
+            with_accumulation = build_discovery_prototype.iop_spell_rotation_result({"AP": 12})
+        with patch.object(
+            build_discovery_prototype,
+            "strength_spell_candidates",
+            return_value=(steady,),
+        ):
+            without_accumulation = build_discovery_prototype.iop_spell_rotation_result({"AP": 12})
+
+        self.assertGreater(with_accumulation.total_damage, without_accumulation.total_damage)
+
     def test_weapon_uplift_only_counts_when_it_beats_spell_filler(self):
         filler = build_discovery_prototype.SpellDamageCandidate(
             name="Filler",
@@ -270,6 +605,63 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertGreater(final_score_state(crimson), final_score_state(baseline))
         self.assertEqual(effective_scoring_stats(crimson)["% Final Damage"], 4)
+
+    def test_vulbis_damage_buff_uses_low_iop_expected_uptime(self):
+        vulbis = BuildState()
+        vulbis.slots["dofus_1"] = {
+            "dofusID": "6980",
+            "buffs": [{"stat": "% Final Damage", "incrementBy": 10, "maxStacks": 1}],
+        }
+
+        self.assertEqual(effective_scoring_stats(vulbis)["% Final Damage"], 1)
+
+    def test_cloudy_dofus_uses_fixed_expected_final_damage(self):
+        cloudy = BuildState()
+        cloudy.slots["dofus_1"] = {
+            "dofusID": "8698",
+            "buffs": [
+                {"stat": "% Final Damage", "incrementBy": 20, "maxStacks": 1},
+                {"stat": "% Final Damage", "incrementBy": -10, "maxStacks": 1},
+            ],
+        }
+
+        self.assertAlmostEqual(
+            effective_scoring_stats(cloudy)["% Final Damage"],
+            5.5,
+        )
+
+    def test_ap_prysmaradite_text_effects_use_seven_turn_expected_values(self):
+        pryssure_o_mat = BuildState()
+        pryssure_o_mat.slots["dofus_1"] = {"dofusID": "21996"}
+        shiny_pryssure = BuildState()
+        shiny_pryssure.slots["dofus_1"] = {"dofusID": "21997"}
+        iridescent_pryssure = BuildState()
+        iridescent_pryssure.slots["dofus_1"] = {"dofusID": "21998"}
+
+        self.assertAlmostEqual(
+            effective_scoring_stats(pryssure_o_mat)["% Final Damage"],
+            -30 / 7,
+        )
+        self.assertAlmostEqual(
+            effective_scoring_stats(pryssure_o_mat)["Temporary AP"],
+            3 / 7,
+        )
+        self.assertAlmostEqual(
+            effective_scoring_stats(shiny_pryssure)["% Final Damage"],
+            -70 / 7,
+        )
+        self.assertAlmostEqual(
+            effective_scoring_stats(shiny_pryssure)["Temporary AP"],
+            4 / 7,
+        )
+        self.assertAlmostEqual(
+            effective_scoring_stats(iridescent_pryssure)["% Final Damage"],
+            -50 / 7,
+        )
+        self.assertAlmostEqual(
+            effective_scoring_stats(iridescent_pryssure)["Temporary AP"],
+            3 / 7,
+        )
 
     def test_special_effects_adjust_scoring_stats_without_changing_real_stats(self):
         ochre = BuildState()
@@ -1071,7 +1463,10 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             len(combos),
             build_discovery_prototype.DIRECT_COMPLETION_DOFUS_COMBO_LIMIT,
         )
-        self.assertIn(("7754", "8698"), [tuple(sorted(item["dofusID"] for item in combo)) for combo in combos])
+        self.assertIn(
+            ("7754", "8698"),
+            [tuple(sorted(item["dofusID"] for item in combo.items)) for combo in combos],
+        )
 
     def test_candidate_pool_does_not_force_low_level_action_stat_gear(self):
         weak_ap_weapon = {
@@ -1298,7 +1693,7 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertIsNone(add_item_to_state(state, "boots", item, {}))
 
-    def test_over_target_ap_is_rejected(self):
+    def test_surplus_ap_is_allowed_up_to_hard_cap(self):
         state = BuildState()
         state.stats["AP"] = 11
         item = {
@@ -1307,7 +1702,222 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             "stats": [{"stat": "AP", "maxStat": 1}],
         }
 
+        next_state = add_item_to_state(state, "amulet", item, {})
+
+        self.assertIsNotNone(next_state)
+        self.assertEqual(next_state.stats["AP"], 12)
+
+    def test_over_hard_ap_cap_is_rejected(self):
+        state = BuildState()
+        state.stats["AP"] = 12
+        item = {
+            "dofusID": "1",
+            "setID": None,
+            "stats": [{"stat": "AP", "maxStat": 1}],
+        }
+
         self.assertIsNone(add_item_to_state(state, "amulet", item, {}))
+
+    def test_surplus_range_is_allowed_up_to_hard_cap(self):
+        state = BuildState()
+        state.stats["Range"] = 5
+        item = {
+            "dofusID": "1",
+            "setID": None,
+            "stats": [{"stat": "Range", "maxStat": 1}],
+        }
+
+        next_state = add_item_to_state(state, "ring_1", item, {}, BuildTarget(range=0))
+
+        self.assertIsNotNone(next_state)
+        self.assertEqual(next_state.stats["Range"], 6)
+
+    def test_over_hard_range_cap_is_rejected(self):
+        state = BuildState()
+        state.stats["Range"] = 6
+        item = {
+            "dofusID": "1",
+            "setID": None,
+            "stats": [{"stat": "Range", "maxStat": 1}],
+        }
+
+        self.assertIsNone(add_item_to_state(state, "ring_1", item, {}, BuildTarget(range=0)))
+
+    def test_action_stats_meet_target_allows_surplus_within_caps(self):
+        state = BuildState()
+        state.stats.update({"AP": 12, "MP": 6, "Range": 1})
+
+        self.assertTrue(action_stats_meet_target(state, BuildTarget(ap=11, mp=6, range=0)))
+
+    def test_action_stats_meet_target_rejects_missing_or_over_cap_stats(self):
+        missing_ap = BuildState()
+        missing_ap.stats.update({"AP": 10, "MP": 6, "Range": 0})
+        over_range = BuildState()
+        over_range.stats.update({"AP": 11, "MP": 6, "Range": 7})
+
+        self.assertFalse(action_stats_meet_target(missing_ap, BuildTarget(ap=11, mp=6, range=0)))
+        self.assertFalse(action_stats_meet_target(over_range, BuildTarget(ap=11, mp=6, range=0)))
+
+    def test_build_discovery_response_exposes_product_query_contract(self):
+        clear_build_discovery_response_cache()
+        query = BuildDiscoveryQuery(
+            elements=("strength",),
+            ap_target=11,
+            mp_target=6,
+            range_target=0,
+            budget_tier=2,
+            exo_policy="allow",
+            locked_item_ids=("locked",),
+            avoided_item_ids=("avoided",),
+        )
+        with patch.object(build_discovery_prototype, "find_diverse_builds", return_value=[]) as find_builds:
+            with patch.object(build_discovery_prototype, "load_sets", return_value={}):
+                with patch.object(build_discovery_prototype, "dataset_version", return_value="dataset-v1"):
+                    response = build_discovery_response(query)
+
+        find_builds.assert_called_once()
+        self.assertEqual(find_builds.call_args.kwargs["excluded_item_ids"], {"avoided"})
+        self.assertEqual(find_builds.call_args.kwargs["required_item_ids"], {"locked"})
+        self.assertEqual(find_builds.call_args.kwargs["budget_tier"], 2)
+        self.assertEqual(find_builds.call_args.kwargs["exo_policy"], "none")
+        self.assertEqual(response["datasetVersion"], "dataset-v1")
+        self.assertEqual(response["solverVersion"], build_discovery_prototype.SOLVER_VERSION)
+        self.assertEqual(response["cache"]["status"], "miss")
+        self.assertEqual(response["query"]["budgetTier"], 2)
+        self.assertEqual(response["query"]["exoPolicy"], "allow")
+        self.assertEqual(response["targetSemantics"]["type"], "minimum_with_hard_caps")
+        self.assertEqual(response["diagnostics"]["resultCount"], 0)
+        self.assertIn("lockedItemIds", response["warnings"][0])
+
+    def test_query_warnings_mentions_budget_exo_effective_behavior_below_tier_3(self):
+        for exo_policy in ("allow", "opti"):
+            with self.subTest(exo_policy=exo_policy):
+                query = BuildDiscoveryQuery(budget_tier=2, exo_policy=exo_policy)
+
+                warnings = build_discovery_prototype.query_warnings(query)
+
+                self.assertTrue(
+                    any("Generated exos require budget tier 3" in warning for warning in warnings)
+                )
+
+    def test_build_discovery_response_uses_in_process_cache(self):
+        clear_build_discovery_response_cache()
+        query = BuildDiscoveryQuery(elements=("strength",), budget_tier=2)
+        with patch.object(build_discovery_prototype, "find_diverse_builds", return_value=[]) as find_builds:
+            with patch.object(build_discovery_prototype, "load_sets", return_value={}):
+                with patch.object(build_discovery_prototype, "dataset_version", return_value="dataset-v1"):
+                    first = build_discovery_response(query)
+                    second = build_discovery_response(query)
+
+        self.assertEqual(find_builds.call_count, 1)
+        self.assertEqual(first["cache"]["status"], "miss")
+        self.assertFalse(first["diagnostics"]["cacheHit"])
+        self.assertEqual(second["cache"]["status"], "hit")
+        self.assertTrue(second["diagnostics"]["cacheHit"])
+        self.assertEqual(first["cacheKey"], second["cacheKey"])
+
+    def test_build_discovery_response_cache_misses_when_limit_changes(self):
+        clear_build_discovery_response_cache()
+        first_query = BuildDiscoveryQuery(elements=("strength",), budget_tier=2, limit=1)
+        second_query = BuildDiscoveryQuery(elements=("strength",), budget_tier=2, limit=2)
+        with patch.object(build_discovery_prototype, "find_diverse_builds", return_value=[]) as find_builds:
+            with patch.object(build_discovery_prototype, "load_sets", return_value={}):
+                with patch.object(build_discovery_prototype, "dataset_version", return_value="dataset-v1"):
+                    first = build_discovery_response(first_query)
+                    second = build_discovery_response(first_query)
+                    changed_limit = build_discovery_response(second_query)
+
+        self.assertEqual(find_builds.call_count, 2)
+        self.assertEqual(first["cache"]["status"], "miss")
+        self.assertEqual(second["cache"]["status"], "hit")
+        self.assertEqual(changed_limit["cache"]["status"], "miss")
+        self.assertNotEqual(first["cacheKey"], changed_limit["cacheKey"])
+
+    def test_build_discovery_response_can_bypass_cache(self):
+        clear_build_discovery_response_cache()
+        query = BuildDiscoveryQuery(elements=("strength",), budget_tier=2)
+        with patch.object(build_discovery_prototype, "find_diverse_builds", return_value=[]) as find_builds:
+            with patch.object(build_discovery_prototype, "load_sets", return_value={}):
+                with patch.object(build_discovery_prototype, "dataset_version", return_value="dataset-v1"):
+                    build_discovery_response(query, use_cache=False)
+                    build_discovery_response(query, use_cache=False)
+
+        self.assertEqual(find_builds.call_count, 2)
+
+    def test_build_discovery_response_accepts_all_iop_single_elements(self):
+        expected_profiles = {
+            "strength": ("Strength", "earth", "Earth Damage"),
+            "intelligence": ("Intelligence", "fire", "Fire Damage"),
+            "chance": ("Chance", "water", "Water Damage"),
+            "agility": ("Agility", "air", "Air Damage"),
+        }
+        for element, (primary_stat, damage_element, damage_stat) in expected_profiles.items():
+            with self.subTest(element=element):
+                clear_build_discovery_response_cache()
+                query = BuildDiscoveryQuery(elements=(element,), budget_tier=2)
+                with patch.object(build_discovery_prototype, "find_diverse_builds", return_value=[]):
+                    with patch.object(build_discovery_prototype, "load_sets", return_value={}):
+                        with patch.object(build_discovery_prototype, "dataset_version", return_value="dataset-v1"):
+                            response = build_discovery_response(query)
+
+                self.assertEqual(response["profile"]["name"], element)
+                self.assertEqual(response["profile"]["primaryStat"], primary_stat)
+                self.assertEqual(response["profile"]["element"], damage_element)
+                self.assertEqual(response["profile"]["damageStat"], damage_stat)
+
+    def test_build_discovery_query_rejects_out_of_scope_inputs(self):
+        with self.assertRaises(ValueError):
+            BuildDiscoveryQuery(class_name="Cra").validate()
+        with self.assertRaises(ValueError):
+            BuildDiscoveryQuery(elements=("strength", "chance")).validate()
+        with self.assertRaises(ValueError):
+            BuildDiscoveryQuery(budget_tier=5).validate()
+        with self.assertRaises(ValueError):
+            BuildDiscoveryQuery(locked_item_ids=("same",), avoided_item_ids=("same",)).validate()
+
+    def test_query_cache_key_includes_dataset_solver_and_query(self):
+        query = BuildDiscoveryQuery(elements=("strength",), ap_target=11, mp_target=6)
+
+        first = query_cache_key(query, "dataset-v1")
+        equivalent = query_cache_key(query, "dataset-v1")
+        changed_dataset = query_cache_key(query, "dataset-v2")
+        changed_query = query_cache_key(
+            BuildDiscoveryQuery(elements=("strength",), ap_target=12, mp_target=6),
+            "dataset-v1",
+        )
+
+        self.assertEqual(first, equivalent)
+        self.assertNotEqual(first, changed_dataset)
+        self.assertNotEqual(first, changed_query)
+        self.assertEqual(len(first), 64)
+
+    def test_query_cache_key_includes_result_shaping_fields(self):
+        base_query = BuildDiscoveryQuery(elements=("strength",), budget_tier=2)
+        base = query_cache_key(base_query, "dataset-v1")
+
+        changed_queries = {
+            "limit": BuildDiscoveryQuery(elements=("strength",), budget_tier=2, limit=base_query.limit + 1),
+            "top_k": BuildDiscoveryQuery(elements=("strength",), budget_tier=2, top_k=base_query.top_k + 1),
+            "beam_width": BuildDiscoveryQuery(
+                elements=("strength",),
+                budget_tier=2,
+                beam_width=base_query.beam_width + 1,
+            ),
+            "max_shared_items": BuildDiscoveryQuery(
+                elements=("strength",),
+                budget_tier=2,
+                max_shared_items=base_query.max_shared_items - 1,
+            ),
+            "generic_damage_weight": BuildDiscoveryQuery(
+                elements=("strength",),
+                budget_tier=2,
+                generic_damage_weight=base_query.generic_damage_weight + 0.1,
+            ),
+        }
+
+        for field_name, changed_query in changed_queries.items():
+            with self.subTest(field_name=field_name):
+                self.assertNotEqual(base, query_cache_key(changed_query, "dataset-v1"))
 
     def test_search_target_can_score_lower_than_final_cap(self):
         search_target = BuildTarget(ap=10, mp=5)
@@ -1365,6 +1975,49 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         state = add_item_to_state(BuildState(), "hat", item, {}, target)
         state = apply_missing_exos(state, target)
+
+        self.assertIsNotNone(state)
+        self.assertEqual(state.stats["AP"], 8)
+        self.assertEqual(state.exos, {"AP": "1"})
+
+    def test_exo_policy_none_does_not_fill_missing_action_stats(self):
+        target = BuildTarget(ap=8, mp=3)
+        item = {
+            "dofusID": "1",
+            "itemType": "Hat",
+            "setID": None,
+            "stats": [{"stat": "Strength", "maxStat": 50}],
+        }
+
+        state = add_item_to_state(BuildState(), "hat", item, {}, target)
+
+        self.assertIsNone(apply_missing_exos(state, target, exo_policy="none"))
+
+    def test_tier_2_allow_does_not_apply_missing_exos(self):
+        query = BuildDiscoveryQuery(budget_tier=2, exo_policy="allow", ap_target=8, mp_target=3)
+        item = {
+            "dofusID": "1",
+            "itemType": "Hat",
+            "setID": None,
+            "stats": [{"stat": "Strength", "maxStat": 50}],
+        }
+
+        state = add_item_to_state(BuildState(), "hat", item, {}, query.target)
+        state = apply_missing_exos(state, query.target, exo_policy=effective_exo_policy(query))
+
+        self.assertIsNone(state)
+
+    def test_tier_3_allow_can_apply_missing_exos(self):
+        query = BuildDiscoveryQuery(budget_tier=3, exo_policy="allow", ap_target=8, mp_target=3)
+        item = {
+            "dofusID": "1",
+            "itemType": "Hat",
+            "setID": None,
+            "stats": [{"stat": "Strength", "maxStat": 50}],
+        }
+
+        state = add_item_to_state(BuildState(), "hat", item, {}, query.target)
+        state = apply_missing_exos(state, query.target, exo_policy=effective_exo_policy(query))
 
         self.assertIsNotNone(state)
         self.assertEqual(state.stats["AP"], 8)
@@ -1480,7 +2133,7 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(approach_item_ids(state), {"hat", "cloak", "ring"})
 
     def test_find_diverse_builds_selects_from_one_ranked_search_pass(self):
-        def state_with_items(prefix: str, score: int, shared: set[str] | None = None) -> BuildState:
+        def state_with_items(prefix: str, score: int, shared=None) -> BuildState:
             shared_ids = shared or set()
             item_ids = set(shared_ids) | {
                 f"{prefix}_{idx}" for idx in range(16 - len(shared_ids))
@@ -1516,6 +2169,26 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         find_builds.assert_called_once()
         self.assertEqual(builds, [first, different])
+
+    def test_find_diverse_builds_enforces_required_locked_items(self):
+        without_locked = BuildState(used_item_ids={"a", "b"}, score=100)
+        with_locked = BuildState(used_item_ids={"locked", "c"}, score=90)
+
+        with patch.object(
+            build_discovery_prototype,
+            "find_builds",
+            return_value=[without_locked, with_locked],
+        ):
+            builds = find_diverse_builds(
+                limit=2,
+                top_k=1,
+                beam_width=1,
+                per_signature_cap=1,
+                relevant_set_limit=1,
+                required_item_ids={"locked"},
+            )
+
+        self.assertEqual(builds, [with_locked])
 
 
 if __name__ == "__main__":

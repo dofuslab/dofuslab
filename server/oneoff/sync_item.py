@@ -44,6 +44,16 @@ allowed_file_names = [
 languages = ["en", "fr", "pt", "it", "es", "de"]
 
 
+def regenerate_build_discovery_index():
+    if os.getenv("SKIP_BUILD_DISCOVERY_INDEX_REGEN") == "1":
+        return
+
+    from oneoff.generate_build_discovery_index import write_index
+
+    print("\nRegenerating build discovery index...")
+    write_index()
+
+
 def update_or_create_item(
     db_session,
     item_id,
@@ -550,6 +560,7 @@ def sync_item():
                         print(f"Skipped {len(skipped_items)} items (e.g., Living objects).")
                     if errored_items:
                         print(f"Failed to process {len(errored_items)} items due to errors.")
+                    regenerate_build_discovery_index()
                 else:
                     print("Operation cancelled.")
             
@@ -578,6 +589,7 @@ def sync_item():
                         print(f"Skipped {len(skipped_items)} items (e.g., Living objects).")
                     if errored_items:
                         print(f"Failed to process {len(errored_items)} items due to errors.")
+                    regenerate_build_discovery_index()
                 else:
                     print("Operation cancelled.")
             
@@ -594,6 +606,7 @@ def sync_item():
                         print(f"Skipped {len(skipped_items)} items (e.g., Living objects).")
                     if errored_items:
                         print(f"Failed to process {len(errored_items)} items due to errors.")
+                    regenerate_build_discovery_index()
             
             else:
                 print("Invalid choice. Please select 1-4.")

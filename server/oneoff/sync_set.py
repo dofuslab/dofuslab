@@ -29,6 +29,16 @@ from oneoff.enums import to_stat_enum
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+def regenerate_build_discovery_index():
+    if os.getenv("SKIP_BUILD_DISCOVERY_INDEX_REGEN") == "1":
+        return
+
+    from oneoff.generate_build_discovery_index import write_index
+
+    print("\nRegenerating build discovery index...")
+    write_index()
+
+
 def create_set_bonuses(db_session, set_object, data):
     for num_items in data["bonuses"]:
         bonuses = data["bonuses"][num_items]
@@ -364,6 +374,7 @@ def sync_set():
                         print(f"Skipped {len(skipped_sets)} sets.")
                     if errored_sets:
                         print(f"Failed to process {len(errored_sets)} sets due to errors.")
+                    regenerate_build_discovery_index()
                 else:
                     print("Operation cancelled.")
             
@@ -392,6 +403,7 @@ def sync_set():
                         print(f"Skipped {len(skipped_sets)} sets.")
                     if errored_sets:
                         print(f"Failed to process {len(errored_sets)} sets due to errors.")
+                    regenerate_build_discovery_index()
                 else:
                     print("Operation cancelled.")
             
@@ -408,6 +420,7 @@ def sync_set():
                         print(f"Skipped {len(skipped_sets)} sets.")
                     if errored_sets:
                         print(f"Failed to process {len(errored_sets)} sets due to errors.")
+                    regenerate_build_discovery_index()
             
             else:
                 print("Invalid choice. Please select 1-4.")

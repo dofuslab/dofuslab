@@ -12,7 +12,9 @@ Known prototype limitations:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import os
 import time
 from collections import defaultdict
 from dataclasses import dataclass, field
@@ -28,6 +30,18 @@ from oneoff.condition_evaluator import (
 from oneoff.damage_calculator import DamageLine, profile_damage
 
 TARGET_LEVEL = 200
+BUILD_DISCOVERY_INDEX_PATH = os.getenv(
+    "BUILD_DISCOVERY_INDEX_PATH",
+    os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "app",
+        "database",
+        "data",
+        "build_discovery_index.json",
+    ),
+)
+SOLVER_VERSION = "build-discovery-prototype-v1"
+BUILD_DISCOVERY_INDEX_SCHEMA_VERSION = 1
 RELEVANT_SET_ITEM_MIN_LEVEL = 180
 BASE_AP = 7 if TARGET_LEVEL >= 100 else 6
 BASE_MP = 3
@@ -36,6 +50,7 @@ REQUIRED_MP = 6
 REQUIRED_RANGE = 0
 MAX_AP = 12
 MAX_MP = 6
+MAX_RANGE = 6
 ACTION_STATS = ("AP", "MP", "Range")
 ACTION_STAT_SOURCE_LIMIT = 4
 ACTION_STAT_SOURCE_MIN_LEVEL = 180
@@ -49,6 +64,7 @@ SET_PACKAGE_KEEP_PER_SET_SIZE = 10
 SET_PACKAGE_GLOBAL_LIMIT = 500
 SET_PACKAGE_PAIR_SEED_LIMIT = 800
 SET_PACKAGE_TRIPLE_SOURCE_LIMIT = 250
+SET_PACKAGE_TRIPLE_CANDIDATE_SCAN_LIMIT = 20000
 SET_PACKAGE_TRIPLE_SEED_LIMIT = 300
 SET_PACKAGE_DIVERSE_TRIPLE_SEED_LIMIT = 700
 SET_PACKAGE_TOTAL_SEED_LIMIT = 1500
@@ -59,7 +75,9 @@ DIRECT_COMPLETION_DOFUS_POOL_LIMIT = 22
 DIRECT_COMPLETION_GEAR_STATE_LIMIT = 300
 DIRECT_COMPLETION_GEAR_STATE_PER_SIGNATURE_CAP = 6
 DIRECT_COMPLETION_DOFUS_COMBO_LIMIT = 500
+DIRECT_COMPLETION_FINAL_SCORE_LIMIT = 120
 DIRECT_COMPLETION_SPECIAL_DOFUS_IDS = {"7754", "8698", "6980"}
+BEAM_FINAL_SCORE_LIMIT = 60
 GENERIC_DAMAGE_WEIGHT = 0.45
 WEAPON_DAMAGE_WEIGHT = 0.20
 PROFILE_DAMAGE_REFERENCE_SCORE = 3000
@@ -83,6 +101,8 @@ SPELL_DAMAGE_PROFILE_TURN_AP = 10
 SPELL_DAMAGE_PROFILE_TURNS = 7
 IOP_WRATH_SPELL_NAME = "Iop's Wrath"
 IOP_WRATH_CAST_TURNS = (1, 4, 7)
+ACCUMULATION_SPELL_NAME = "Accumulation"
+ACCUMULATION_BUFF_DURATION_TURNS = 3
 WEAPON_EFFECT_ELEMENTS = {
     "NEUTRAL_DAMAGE": "neutral",
     "NEUTRAL_STEAL": "neutral",
@@ -128,7 +148,7 @@ BASE_STATS = {
 }
 BASE_CHARACTERISTIC_POINTS = 995
 SCROLLED_BASE_STAT = 100
-BASE_STRENGTH_ALLOCATION_OPTIONS = (0, 100, 200, 250, 300, 350, 375, 398)
+BASE_STRENGTH_ALLOCATION_OPTIONS = (0, 300, 398)
 
 SLOTS: list[tuple[str, tuple[str, ...]]] = [
     ("amulet", ("Amulet",)),
@@ -178,6 +198,25 @@ GENERIC_INCOMING_CRIT_RATE = 0.2
 GENERIC_INCOMING_PUSHBACK_RATE = 0.02
 GENERIC_INCOMING_RANGED_RATE = 0.7
 DAMAGE_BUFF_EXPECTED_STACK_RATIO = 0.4
+ITEM_DAMAGE_BUFF_EXPECTED_STACK_RATIO_BY_DOFUS_ID = {
+    # Vulbis Dofus: +10% final damage while the bearer has not taken damage.
+    # General Iop PvM should not assume high uptime, but the buff is not worthless.
+    "6980": 0.1,
+}
+ITEM_EXPECTED_EFFECT_STATS_BY_DOFUS_ID = {
+    # Cloudy Dofus alternates +20% and -10% final damage. A 7-turn window
+    # overstates the value because it ends on an extra +20% turn; use a fixed
+    # conservative expectation near the 6/8-turn average instead.
+    "8698": {"% Final Damage": 5.5},
+    # AP prysmaradites have a static AP line plus a temporary AP effect bought
+    # with final damage. Model the text effect as its 7-turn expected value.
+    # Pryssure-O-Mat: -10% final damage for 3 turns, +1 AP for 3 turns.
+    "21996": {"% Final Damage": -30 / 7, "Temporary AP": 3 / 7},
+    # Shiny Pryssure: -35% final damage for 2 turns, +2 AP for 2 turns.
+    "21997": {"% Final Damage": -70 / 7, "Temporary AP": 4 / 7},
+    # Iridescent Pryssure: -50% final damage for 1 turn, +3 AP for 1 turn.
+    "21998": {"% Final Damage": -50 / 7, "Temporary AP": 3 / 7},
+}
 SPECIAL_EFFECT_EXPECTED_STATS_BY_DOFUS_ID = {
     # Ochre Yellow: if untouched, +1 AP for the turn; otherwise +20 Dodge.
     # Temporary AP happens after static AP targets, so score it separately from real AP.
@@ -319,6 +358,7 @@ def configure_damage_profile(profile_name: str) -> DamageProfile:
     strength_spell_candidates.cache_clear()
     strength_spell_damage_profile.cache_clear()
     active_profile_spell_damage_baseline.cache_clear()
+    cheap_profile_damage_baseline.cache_clear()
     return profile
 
 
@@ -461,6 +501,8 @@ class BuildTarget:
             raise ValueError(f"Target AP cannot exceed {MAX_AP}.")
         if self.mp > MAX_MP:
             raise ValueError(f"Target MP cannot exceed {MAX_MP}.")
+        if self.range > MAX_RANGE:
+            raise ValueError(f"Target Range cannot exceed {MAX_RANGE}.")
 
     @property
     def condition_stats(self) -> dict[str, int]:
@@ -470,6 +512,161 @@ class BuildTarget:
 DEFAULT_TARGET = BuildTarget()
 DEFAULT_MAX_SHARED_ITEMS = 10
 LAST_FIND_BUILD_TIMINGS: dict[str, float] = {}
+BUILD_DISCOVERY_RESPONSE_CACHE: dict[str, dict[str, Any]] = {}
+
+
+@dataclass(frozen=True)
+class BuildDiscoveryQuery:
+    class_name: str = "Iop"
+    level: int = TARGET_LEVEL
+    elements: tuple[str, ...] = ("strength",)
+    mode: str = "pvm"
+    ap_target: int = REQUIRED_AP
+    mp_target: int = REQUIRED_MP
+    range_target: int = REQUIRED_RANGE
+    damage_survivability_preset: int = 3
+    budget_tier: int = 2
+    exo_policy: str = "allow"
+    weapon_policy: str = "stat_stick_allowed"
+    locked_item_ids: tuple[str, ...] = ()
+    avoided_item_ids: tuple[str, ...] = ()
+    limit: int = 5
+    top_k: int = 25
+    beam_width: int = 250
+    per_signature_cap: int = 40
+    relevant_set_limit: int = 60
+    max_shared_items: int | None = DEFAULT_MAX_SHARED_ITEMS
+    generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT
+    weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT
+
+    @property
+    def primary_element(self) -> str:
+        if len(self.elements) != 1:
+            raise ValueError("Build Discovery v1 only supports one element at a time.")
+        return self.elements[0]
+
+    @property
+    def target(self) -> BuildTarget:
+        return BuildTarget(
+            ap=self.ap_target,
+            mp=self.mp_target,
+            range=self.range_target,
+        )
+
+    def validate(self) -> None:
+        if self.class_name != "Iop":
+            raise ValueError("Build Discovery v1 currently supports Iop only.")
+        if self.level != TARGET_LEVEL:
+            raise ValueError(f"Build Discovery v1 currently supports level {TARGET_LEVEL} only.")
+        if self.mode != "pvm":
+            raise ValueError("Build Discovery v1 currently supports PvM only.")
+        if self.primary_element not in ELEMENT_PROFILES:
+            raise ValueError(f"Unsupported element: {self.primary_element}.")
+        if not 1 <= self.damage_survivability_preset <= 5:
+            raise ValueError("damage_survivability_preset must be between 1 and 5.")
+        if not 1 <= self.budget_tier <= 4:
+            raise ValueError("budget_tier must be between 1 and 4.")
+        if self.exo_policy not in {"none", "allow", "opti"}:
+            raise ValueError("exo_policy must be one of: none, allow, opti.")
+        overlap = set(self.locked_item_ids) & set(self.avoided_item_ids)
+        if overlap:
+            raise ValueError(f"Items cannot be both locked and avoided: {', '.join(sorted(overlap))}.")
+
+
+def query_summary(query: BuildDiscoveryQuery) -> dict[str, Any]:
+    return {
+        "className": query.class_name,
+        "level": query.level,
+        "elements": list(query.elements),
+        "mode": query.mode,
+        "apTarget": query.ap_target,
+        "mpTarget": query.mp_target,
+        "rangeTarget": query.range_target,
+        "damageSurvivabilityPreset": query.damage_survivability_preset,
+        "budgetTier": query.budget_tier,
+        "exoPolicy": query.exo_policy,
+        "weaponPolicy": query.weapon_policy,
+        "lockedItemIds": list(query.locked_item_ids),
+        "avoidedItemIds": list(query.avoided_item_ids),
+    }
+
+
+def query_cache_identity(query: BuildDiscoveryQuery) -> dict[str, Any]:
+    return {
+        "className": query.class_name,
+        "level": query.level,
+        "elements": list(query.elements),
+        "mode": query.mode,
+        "apTarget": query.ap_target,
+        "mpTarget": query.mp_target,
+        "rangeTarget": query.range_target,
+        "damageSurvivabilityPreset": query.damage_survivability_preset,
+        "budgetTier": query.budget_tier,
+        "exoPolicy": query.exo_policy,
+        "weaponPolicy": query.weapon_policy,
+        "lockedItemIds": list(query.locked_item_ids),
+        "avoidedItemIds": list(query.avoided_item_ids),
+        "limit": query.limit,
+        "topK": query.top_k,
+        "beamWidth": query.beam_width,
+        "perSignatureCap": query.per_signature_cap,
+        "relevantSetLimit": query.relevant_set_limit,
+        "maxSharedItems": query.max_shared_items,
+        "genericDamageWeight": query.generic_damage_weight,
+        "weaponDamageWeight": query.weapon_damage_weight,
+    }
+
+
+def effective_exo_policy(query: BuildDiscoveryQuery) -> str:
+    if query.budget_tier < 3 and query.exo_policy in {"allow", "opti"}:
+        return "none"
+    return query.exo_policy
+
+
+def query_cache_key(query: BuildDiscoveryQuery, current_dataset_version: str) -> str:
+    payload = {
+        "datasetVersion": current_dataset_version,
+        "solverVersion": SOLVER_VERSION,
+        "query": query_cache_identity(query),
+    }
+    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def clone_response(response: dict[str, Any]) -> dict[str, Any]:
+    return json.loads(json.dumps(response))
+
+
+def clear_build_discovery_response_cache() -> None:
+    BUILD_DISCOVERY_RESPONSE_CACHE.clear()
+
+
+def availability_tier_for_item(item: dict[str, Any]) -> int:
+    item_type = item.get("itemType")
+    item_id = item.get("dofusID")
+    if item_id in OPTI_DOFUS_IDS:
+        return 4
+    if item_type == "Prysmaradite":
+        return 3
+    if item_type == "Dofus":
+        return 2 if item_id in ACCESSIBLE_DOFUS_IDS else 3
+    if item_type == "Trophy":
+        return 2
+    if item_type in {"Pet", "Petsmount"}:
+        return 2
+    if item_type == "Mount":
+        return 1
+    if item.get("buffs"):
+        return 4
+    return 1
+
+
+def item_allowed_by_budget(item: dict[str, Any], budget_tier: int) -> bool:
+    return availability_tier_for_item(item) <= budget_tier
+
+
+def hard_cap_target() -> BuildTarget:
+    return BuildTarget(ap=MAX_AP, mp=MAX_MP, range=MAX_RANGE)
 
 
 @dataclass(frozen=True)
@@ -486,8 +683,28 @@ class ApStrategy:
 
 
 OCHRE_DOFUS_ID = "7754"
+VULBIS_DOFUS_ID = "6980"
+ACCESSIBLE_DOFUS_IDS = {
+    "694",  # Crimson Dofus
+    "739",  # Turquoise Dofus
+    "7043",  # Ice Dofus
+    "13344",  # Dolmanax
+}
+OPTI_DOFUS_IDS = {
+    OCHRE_DOFUS_ID,
+    VULBIS_DOFUS_ID,
+}
 SHAKER_TROPHY_ID = "16333"
-MANDATORY_DOFUS_CANDIDATE_IDS = {OCHRE_DOFUS_ID}
+NOMAD_TROPHY_ID = "16335"
+JACKANAPES_TROPHY_ID = "13829"
+VOYAGER_TROPHY_ID = "13830"
+MANDATORY_DOFUS_CANDIDATE_IDS = {
+    OCHRE_DOFUS_ID,
+    SHAKER_TROPHY_ID,
+    NOMAD_TROPHY_ID,
+    JACKANAPES_TROPHY_ID,
+    VOYAGER_TROPHY_ID,
+}
 DEFAULT_AP_STRATEGIES = (
     ApStrategy(name="ochre_plus_one", require_ochre=True, min_secondary_ap_sources=2),
     ApStrategy(
@@ -515,11 +732,7 @@ def exo_search_target(final_target: BuildTarget) -> BuildTarget:
 
 
 def exo_natural_cap_target(final_target: BuildTarget) -> BuildTarget:
-    return BuildTarget(
-        ap=max(BASE_AP, final_target.ap - 1),
-        mp=final_target.mp,
-        range=final_target.range,
-    )
+    return hard_cap_target()
 
 
 def pending_dofus_search_target(final_target: BuildTarget) -> BuildTarget:
@@ -573,6 +786,14 @@ class PackageCandidate:
 
 
 @dataclass(frozen=True)
+class DofusCombinationCandidate:
+    items: tuple[dict[str, Any], ...]
+    item_ids: frozenset[str]
+    stats: dict[str, int]
+    score: float
+
+
+@dataclass(frozen=True)
 class PackageIndex:
     packages: tuple[PackageCandidate, ...]
 
@@ -605,6 +826,16 @@ class RotationDamageResult:
     normalized_damage: float
     total_damage: float
     weakest_filler_damage_per_ap: float
+
+
+@dataclass(frozen=True)
+class FillerSequenceResult:
+    total_damage: float
+    weakest_damage_per_ap: float
+    cast_names: tuple[str, ...]
+    turn_cast_counts: tuple[tuple[str, int], ...]
+    last_cast_turns: tuple[tuple[str, int], ...]
+    stack_counts: tuple[tuple[str, int], ...]
 
 
 def normalize_stats(lines: Iterable[dict[str, Any]]) -> dict[str, int]:
@@ -715,6 +946,20 @@ def set_bonuses_from_db(bonuses: Iterable[Any]) -> dict[str, list[dict[str, Any]
     return dict(bonus_lines_by_count)
 
 
+def normalized_set_bonuses(bonuses: dict[str, list[dict[str, Any]]]) -> dict[str, dict[str, int]]:
+    return {
+        count: normalize_stats(bonus_lines)
+        for count, bonus_lines in bonuses.items()
+    }
+
+
+def set_bonus_stats(set_obj: dict[str, Any]) -> dict[str, dict[str, int]]:
+    bonus_stats = set_obj.get("_bonus_stats")
+    if bonus_stats is not None:
+        return bonus_stats
+    return normalized_set_bonuses(set_obj.get("bonuses", {}))
+
+
 def score_stats_with_weights(stats: dict[str, int], weights: dict[str, float]) -> float:
     return sum(
         min(stats.get(stat, 0), STAT_SCORE_CAPS.get(stat, float("inf"))) * weight
@@ -736,6 +981,16 @@ def item_score(item: dict[str, Any]) -> float:
 
 def expected_item_effect_stats(item: dict[str, Any]) -> dict[str, float]:
     stats: dict[str, float] = defaultdict(float)
+    item_id = item.get("dofusID")
+    if item_id in ITEM_EXPECTED_EFFECT_STATS_BY_DOFUS_ID:
+        stats.update(ITEM_EXPECTED_EFFECT_STATS_BY_DOFUS_ID[item_id])
+        for stat, value in SPECIAL_EFFECT_EXPECTED_STATS_BY_DOFUS_ID.get(item_id, {}).items():
+            stats[stat] += value
+        return dict(stats)
+    damage_buff_expected_stack_ratio = ITEM_DAMAGE_BUFF_EXPECTED_STACK_RATIO_BY_DOFUS_ID.get(
+        item_id,
+        DAMAGE_BUFF_EXPECTED_STACK_RATIO,
+    )
     for buff in item.get("buffs", []):
         stat = buff.get("stat")
         if not stat:
@@ -743,9 +998,9 @@ def expected_item_effect_stats(item: dict[str, Any]) -> dict[str, float]:
         stats[stat] += (
             (buff.get("incrementBy") or 0)
             * (buff.get("maxStacks") or 1)
-            * DAMAGE_BUFF_EXPECTED_STACK_RATIO
+            * damage_buff_expected_stack_ratio
         )
-    for stat, value in SPECIAL_EFFECT_EXPECTED_STATS_BY_DOFUS_ID.get(item.get("dofusID"), {}).items():
+    for stat, value in SPECIAL_EFFECT_EXPECTED_STATS_BY_DOFUS_ID.get(item_id, {}).items():
         stats[stat] += value
     return dict(stats)
 
@@ -764,7 +1019,7 @@ def db_item_dofus_id(item: Any) -> str | None:
 
 def set_bonus_score(set_obj: dict[str, Any]) -> float:
     return max(
-        (score_stats(normalize_stats(bonus_lines)) for bonus_lines in set_obj.get("bonuses", {}).values()),
+        (score_stats(stats) for stats in set_bonus_stats(set_obj).values()),
         default=0.0,
     )
 
@@ -805,9 +1060,105 @@ def has_negative_action_stat(item: dict[str, Any]) -> bool:
 
 
 @lru_cache(maxsize=1)
+def load_build_discovery_index() -> dict[str, Any] | None:
+    if not os.path.exists(BUILD_DISCOVERY_INDEX_PATH):
+        return None
+    with open(BUILD_DISCOVERY_INDEX_PATH, encoding="utf-8") as file:
+        generated_index = json.load(file)
+    schema_version = generated_index.get("schemaVersion")
+    if schema_version != BUILD_DISCOVERY_INDEX_SCHEMA_VERSION:
+        raise ValueError(
+            "Unsupported build discovery index schemaVersion "
+            f"{schema_version}; expected {BUILD_DISCOVERY_INDEX_SCHEMA_VERSION}."
+        )
+    return generated_index
+
+
+def dataset_version() -> str:
+    generated_index = load_build_discovery_index()
+    if generated_index is None:
+        return "unindexed-db"
+    return (
+        generated_index.get("datasetVersion")
+        or generated_index.get("generatedAt")
+        or "indexed-unknown"
+    )
+
+
+def item_record_from_index(item: dict[str, Any]) -> dict[str, Any]:
+    record = {
+        "dofusID": item["id"],
+        "name": item.get("name") or item["id"],
+        "itemType": item.get("itemType"),
+        "setID": item.get("setID"),
+        "level": item.get("level"),
+        "stats": item.get("stats", []),
+        "buffs": item.get("buffs", []),
+        "weaponStats": item.get("weaponStats"),
+        "conditions": item.get("conditions") or {"conditions": {}, "customConditions": {}},
+    }
+    record["_name"] = get_name(record)
+    record["_stats"] = item.get("normalizedStats") or normalize_stats(record.get("stats", []))
+    record["_score"] = score_stats(record["_stats"])
+    return record
+
+
+def set_record_from_index(set_id: str, set_obj: dict[str, Any]) -> dict[str, Any]:
+    bonuses = set_obj.get("bonuses", {})
+    return {
+        "id": set_obj.get("id", set_id),
+        "name": set_obj.get("name", set_id),
+        "bonuses": bonuses,
+        "_bonus_stats": normalized_set_bonuses(bonuses),
+        "_name": set_obj.get("name", set_id),
+        "_excluded": bool(set_obj.get("excluded")),
+    }
+
+
+def target_level_bucket_name(target_level: int) -> str | None:
+    generated_index = load_build_discovery_index()
+    if generated_index is None:
+        return None
+    for bucket in generated_index.get("levelBuckets", []):
+        if bucket["minLevel"] <= target_level <= bucket["maxLevel"]:
+            return bucket["name"]
+    return None
+
+
+def indexed_candidate_item_ids(target_level: int = TARGET_LEVEL) -> set[str] | None:
+    generated_index = load_build_discovery_index()
+    if generated_index is None:
+        return None
+
+    indexes = generated_index.get("indexes", {})
+    target_bucket = target_level_bucket_name(target_level)
+    item_ids: set[str] = set(indexes.get("evergreenItemIds", []))
+    item_ids.update(indexes.get("petMountIds", []))
+
+    normal_by_bucket = indexes.get("normalGearByLevelBucket", {})
+    if target_bucket:
+        item_ids.update(normal_by_bucket.get(target_bucket, []))
+
+    dofus_like_by_bucket = indexes.get("dofusTrophyPrysmaraditeByLevelBucket", {})
+    buckets_by_name = {
+        bucket["name"]: bucket
+        for bucket in generated_index.get("levelBuckets", [])
+    }
+    for bucket_name, ids in dofus_like_by_bucket.items():
+        if buckets_by_name.get(bucket_name, {}).get("minLevel", target_level + 1) <= target_level:
+            item_ids.update(ids)
+
+    return item_ids
+
+
+@lru_cache(maxsize=1)
 def load_all_item_records() -> tuple[dict[str, Any], ...]:
+    generated_index = load_build_discovery_index()
+    if generated_index is not None:
+        return tuple(item_record_from_index(item) for item in generated_index.get("items", []))
+
     from sqlalchemy import or_
-    from sqlalchemy.orm import joinedload
+    from sqlalchemy.orm import selectinload
 
     from app import session_scope
     from app.database.model_item import ModelItem
@@ -819,11 +1170,11 @@ def load_all_item_records() -> tuple[dict[str, Any], ...]:
             db_session.query(ModelItem)
             .join(ModelItem.item_type)
             .options(
-                joinedload(ModelItem.item_translations),
-                joinedload(ModelItem.stats),
-                joinedload(ModelItem.buffs),
-                joinedload(ModelItem.item_type).joinedload(ModelItemType.item_type_translation),
-                joinedload(ModelItem.weapon_stats).joinedload(ModelWeaponStat.weapon_effects),
+                selectinload(ModelItem.item_translations),
+                selectinload(ModelItem.stats),
+                selectinload(ModelItem.buffs),
+                selectinload(ModelItem.item_type).selectinload(ModelItemType.item_type_translation),
+                selectinload(ModelItem.weapon_stats).selectinload(ModelWeaponStat.weapon_effects),
             )
             .filter(ModelItem.level <= TARGET_LEVEL)
             .filter(or_(ModelItem.dofus_db_id.isnot(None), ModelItem.dofus_db_mount_id.isnot(None)))
@@ -853,16 +1204,20 @@ def load_all_item_records() -> tuple[dict[str, Any], ...]:
 def load_items(
     target: BuildTarget = DEFAULT_TARGET,
     excluded_item_ids: set[str] | None = None,
+    budget_tier: int = 4,
 ) -> list[dict[str, Any]]:
     excluded_item_ids = excluded_item_ids or set()
     items = load_all_item_records()
+    indexed_item_ids = indexed_candidate_item_ids(TARGET_LEVEL)
     for item in items:
         item["_score"] = score_stats(item["_stats"])
     candidates = [
         item
         for item in items
         if item.get("level", 0) <= TARGET_LEVEL
+        and (indexed_item_ids is None or item.get("dofusID") in indexed_item_ids)
         and item.get("dofusID") not in excluded_item_ids
+        and item_allowed_by_budget(item, budget_tier)
         and condition_can_pass_at_target(
             item.get("conditions", {}).get("conditions", {}),
             target.condition_stats,
@@ -873,6 +1228,13 @@ def load_items(
 
 @lru_cache(maxsize=1)
 def load_sets() -> dict[str, dict[str, Any]]:
+    generated_index = load_build_discovery_index()
+    if generated_index is not None:
+        return {
+            set_id: set_record_from_index(set_id, set_obj)
+            for set_id, set_obj in generated_index.get("sets", {}).items()
+        }
+
     from sqlalchemy.orm import joinedload
 
     from app import session_scope
@@ -894,6 +1256,7 @@ def load_sets() -> dict[str, dict[str, Any]]:
         }
     for set_obj in sets.values():
         set_obj["_name"] = get_name(set_obj)
+        set_obj["_bonus_stats"] = normalized_set_bonuses(set_obj.get("bonuses", {}))
         set_obj["_excluded"] = any(part in set_obj["_name"] for part in EXCLUDED_SET_NAME_PARTS)
     return sets
 
@@ -986,8 +1349,8 @@ def candidate_pool_for_slot(
     return sorted(selected.values(), key=lambda i: i["_score"], reverse=True)
 
 
-def apply_stat_delta(stats: dict[str, int], stat_lines: Iterable[dict[str, Any]], multiplier: int = 1) -> None:
-    for stat, value in normalize_stats(stat_lines).items():
+def apply_stat_delta(stats: dict[str, int], stat_values: dict[str, int], multiplier: int = 1) -> None:
+    for stat, value in stat_values.items():
         stats[stat] = stats.get(stat, 0) + (value * multiplier)
 
 
@@ -1002,26 +1365,31 @@ def add_item_to_state(
     include_potential_score: bool = True,
 ) -> BuildState | None:
     condition_target = condition_target or target
-    cap_target = cap_target or target
+    cap_target = cap_target or hard_cap_target()
     if item["dofusID"] in state.used_item_ids:
         return None
 
     next_state = state.clone()
     next_state.slots[slot_name] = item
     next_state.used_item_ids.add(item["dofusID"])
-    apply_stat_delta(next_state.stats, item.get("stats", []))
+    apply_stat_delta(next_state.stats, item.get("_stats") or normalize_stats(item.get("stats", [])))
 
     set_id = item.get("setID")
     if set_id and set_id in sets:
         previous_count = next_state.set_counts.get(set_id, 0)
         next_count = previous_count + 1
         next_state.set_counts[set_id] = next_count
-        previous_bonus = sets[set_id].get("bonuses", {}).get(str(previous_count), [])
-        bonus = sets[set_id].get("bonuses", {}).get(str(next_count), [])
+        bonus_stats = set_bonus_stats(sets[set_id])
+        previous_bonus = bonus_stats.get(str(previous_count), {})
+        bonus = bonus_stats.get(str(next_count), {})
         apply_stat_delta(next_state.stats, previous_bonus, multiplier=-1)
         apply_stat_delta(next_state.stats, bonus)
 
-    if next_state.stats.get("AP", 0) > cap_target.ap or next_state.stats.get("MP", 0) > cap_target.mp:
+    if (
+        next_state.stats.get("AP", 0) > cap_target.ap
+        or next_state.stats.get("MP", 0) > cap_target.mp
+        or next_state.stats.get("Range", 0) > cap_target.range
+    ):
         return None
 
     next_state.score = score_state(
@@ -1041,12 +1409,18 @@ def eligible_for_exo(item: dict[str, Any], stat: str) -> bool:
     return item.get("itemType") in EXO_ELIGIBLE_ITEM_TYPES and item_stats.get(stat, 0) == 0
 
 
-def apply_missing_exos(state: BuildState, target: BuildTarget) -> BuildState | None:
+def apply_missing_exos(
+    state: BuildState,
+    target: BuildTarget,
+    exo_policy: str = "allow",
+) -> BuildState | None:
     next_state = state.clone()
     for stat, target_value in (("AP", target.ap), ("MP", target.mp), ("Range", target.range)):
         missing = target_value - next_state.stats.get(stat, 0)
         if missing <= 0:
             continue
+        if exo_policy == "none":
+            return None
         if missing > 1:
             return None
 
@@ -1071,9 +1445,9 @@ def apply_missing_exos(state: BuildState, target: BuildTarget) -> BuildState | N
 def potential_set_bonus_score(state: BuildState, sets: dict[str, dict[str, Any]]) -> float:
     potential = 0.0
     for set_id, count in state.set_counts.items():
-        next_bonus = sets.get(set_id, {}).get("bonuses", {}).get(str(count + 1))
+        next_bonus = set_bonus_stats(sets.get(set_id, {})).get(str(count + 1))
         if next_bonus:
-            potential += 0.25 * score_stats(normalize_stats(next_bonus))
+            potential += 0.25 * score_stats(next_bonus)
     return potential
 
 
@@ -1094,6 +1468,14 @@ def score_state(
     if include_potential and not final:
         score += potential_set_bonus_score(state, sets)
     return score
+
+
+def action_stats_meet_target(state: BuildState, target: BuildTarget) -> bool:
+    return (
+        target.ap <= state.stats.get("AP", 0) <= MAX_AP
+        and target.mp <= state.stats.get("MP", 0) <= MAX_MP
+        and target.range <= state.stats.get("Range", 0) <= MAX_RANGE
+    )
 
 
 def weapon_damage_lines(item: dict[str, Any]) -> list[DamageLine]:
@@ -1177,6 +1559,23 @@ def target_count_condition(conditions: Iterable[str]) -> int | None:
     return None
 
 
+BASE_SINGLE_TARGET_CONDITIONS = {
+    "base",
+    "enemies",
+    "on an enemy",
+    "on non-summons",
+    "on the target",
+    "1 target",
+}
+
+
+def is_base_single_target_effect(conditions: Iterable[str]) -> bool:
+    normalized_conditions = {condition.strip().lower() for condition in conditions}
+    if not normalized_conditions:
+        return True
+    return normalized_conditions.issubset(BASE_SINGLE_TARGET_CONDITIONS)
+
+
 def collapse_single_target_spell_effects(
     effects: Iterable[Any],
     profile_elements: dict[str, str],
@@ -1188,8 +1587,11 @@ def collapse_single_target_spell_effects(
         element = profile_elements.get(effect_type_key(effect.effect_type))
         if not element or effect.min_damage is None:
             continue
-        target_count = target_count_condition(english_conditions(effect))
+        conditions = english_conditions(effect)
+        target_count = target_count_condition(conditions)
         if target_count is not None and target_count != 1:
+            continue
+        if not is_base_single_target_effect(conditions):
             continue
 
         line = DamageLine(
@@ -1219,6 +1621,8 @@ def collapse_single_target_spell_effects(
 
 
 def spell_damage_per_cast(spell: SpellDamageCandidate, stats: dict[str, int], stacks: int = 0) -> float:
+    if spell.name == ACCUMULATION_SPELL_NAME and stacks <= 0:
+        return 0.0
     stack_count = min(max(stacks, 0), spell.max_damage_increase_stacks)
     lines = [
         DamageLine(
@@ -1269,6 +1673,37 @@ def filler_cast_count_for_turn(spell: SpellDamageCandidate, turn_cast_counts: di
     return max(max_casts - used_casts, 0)
 
 
+def filler_casts_available_for_state(
+    spell: SpellDamageCandidate,
+    turn_cast_counts: dict[str, int],
+    stack_counts: dict[str, int],
+) -> int:
+    if spell.name != ACCUMULATION_SPELL_NAME:
+        return filler_cast_count_for_turn(spell, turn_cast_counts)
+
+    total_casts = (
+        turn_cast_counts.get(f"{ACCUMULATION_SPELL_NAME}:buff", 0)
+        + turn_cast_counts.get(f"{ACCUMULATION_SPELL_NAME}:damage", 0)
+    )
+    if spell.casts_per_turn and total_casts >= spell.casts_per_turn:
+        return 0
+    if spell_active_stacks(spell, stack_counts):
+        used_damage_casts = turn_cast_counts.get(f"{ACCUMULATION_SPELL_NAME}:damage", 0)
+        damage_cast_limit = spell.casts_per_target or spell.casts_per_turn or 99
+        return max(damage_cast_limit - used_damage_casts, 0)
+    return 0 if turn_cast_counts.get(f"{ACCUMULATION_SPELL_NAME}:buff", 0) else 1
+
+
+def filler_cast_count_key(spell: SpellDamageCandidate, stack_counts: dict[str, int]) -> str:
+    if spell.name == ACCUMULATION_SPELL_NAME:
+        return (
+            f"{ACCUMULATION_SPELL_NAME}:damage"
+            if spell_active_stacks(spell, stack_counts)
+            else f"{ACCUMULATION_SPELL_NAME}:buff"
+        )
+    return spell.name
+
+
 def best_filler_spell(
     filler_spells: Iterable[SpellDamageCandidate],
     stats: dict[str, int],
@@ -1283,7 +1718,8 @@ def best_filler_spell(
     affordable = [
         spell
         for spell in filler_spells
-        if spell.ap_cost <= remaining_ap and filler_cast_count_for_turn(spell, turn_cast_counts) > 0
+        if spell.ap_cost <= remaining_ap
+        and filler_casts_available_for_state(spell, turn_cast_counts, stack_counts) > 0
         and (
             not spell.cooldown
             or turn is None
@@ -1299,6 +1735,119 @@ def best_filler_spell(
     )
 
 
+def mapping_key(values: dict[str, int]) -> tuple[tuple[str, int], ...]:
+    return tuple(sorted((key, value) for key, value in values.items() if value))
+
+
+def spell_active_stacks(spell: SpellDamageCandidate, stack_counts: dict[str, int]) -> int:
+    if spell.name == ACCUMULATION_SPELL_NAME:
+        return 1 if stack_counts.get(spell.name, 0) > 0 else 0
+    return stack_counts.get(spell.name, 0)
+
+
+def next_stack_counts_after_cast(
+    spell: SpellDamageCandidate,
+    stack_counts: dict[str, int],
+) -> dict[str, int]:
+    next_stacks = dict(stack_counts)
+    if spell.name == ACCUMULATION_SPELL_NAME:
+        if not spell_active_stacks(spell, stack_counts):
+            next_stacks[spell.name] = ACCUMULATION_BUFF_DURATION_TURNS
+    elif spell.damage_increase and spell.max_damage_increase_stacks:
+        next_stacks[spell.name] = min(
+            next_stacks.get(spell.name, 0) + 1,
+            spell.max_damage_increase_stacks,
+        )
+    return next_stacks
+
+
+def decrement_timed_spell_buffs(stack_counts: dict[str, int]) -> dict[str, int]:
+    next_counts = dict(stack_counts)
+    if next_counts.get(ACCUMULATION_SPELL_NAME, 0) > 0:
+        next_counts[ACCUMULATION_SPELL_NAME] -= 1
+    return {key: value for key, value in next_counts.items() if value}
+
+
+def best_filler_sequence(
+    filler_spells: tuple[SpellDamageCandidate, ...],
+    stats: dict[str, int],
+    remaining_ap: int,
+    turn_cast_counts: dict[str, int],
+    turn: int,
+    last_cast_turns: dict[str, int],
+    stack_counts: dict[str, int],
+) -> FillerSequenceResult:
+    @lru_cache(maxsize=None)
+    def search(
+        ap_left: int,
+        counts_key: tuple[tuple[str, int], ...],
+        last_key: tuple[tuple[str, int], ...],
+        stacks_key: tuple[tuple[str, int], ...],
+    ) -> FillerSequenceResult:
+        counts = dict(counts_key)
+        last_casts = dict(last_key)
+        stacks = dict(stacks_key)
+        best = FillerSequenceResult(
+            total_damage=0.0,
+            weakest_damage_per_ap=float("inf"),
+            cast_names=tuple(),
+            turn_cast_counts=counts_key,
+            last_cast_turns=last_key,
+            stack_counts=stacks_key,
+        )
+        for spell in filler_spells:
+            if spell.ap_cost > ap_left:
+                continue
+            if filler_casts_available_for_state(spell, counts, stacks) <= 0:
+                continue
+            if (
+                spell.cooldown
+                and spell.name in last_casts
+                and turn - last_casts[spell.name] < spell.cooldown
+            ):
+                continue
+
+            spell_stacks = spell_active_stacks(spell, stacks)
+            damage = spell_damage_per_cast(spell, stats, stacks=spell_stacks)
+            damage_per_ap = damage / max(spell.ap_cost, 1)
+            next_counts = dict(counts)
+            count_key = filler_cast_count_key(spell, stacks)
+            next_counts[count_key] = next_counts.get(count_key, 0) + 1
+            next_last_casts = dict(last_casts)
+            next_last_casts[spell.name] = turn
+            next_stacks = next_stack_counts_after_cast(spell, stacks)
+
+            tail = search(
+                ap_left - spell.ap_cost,
+                mapping_key(next_counts),
+                mapping_key(next_last_casts),
+                mapping_key(next_stacks),
+            )
+            total_damage = damage + tail.total_damage
+            if total_damage > best.total_damage:
+                weakest_damage_per_ap = (
+                    tail.weakest_damage_per_ap
+                    if damage <= 0
+                    else min(damage_per_ap, tail.weakest_damage_per_ap)
+                )
+                best = FillerSequenceResult(
+                    total_damage=total_damage,
+                    weakest_damage_per_ap=weakest_damage_per_ap,
+                    cast_names=(spell.name,) + tail.cast_names,
+                    turn_cast_counts=tail.turn_cast_counts,
+                    last_cast_turns=tail.last_cast_turns,
+                    stack_counts=tail.stack_counts,
+                )
+        return best
+
+    return search(
+        remaining_ap,
+        mapping_key(turn_cast_counts),
+        mapping_key(last_cast_turns),
+        mapping_key(stack_counts),
+    )
+
+
 def iop_spell_rotation_result(stats: dict[str, int]) -> RotationDamageResult:
     candidates = strength_spell_candidates()
     if not candidates:
@@ -1311,6 +1860,10 @@ def iop_spell_rotation_result(stats: dict[str, int]) -> RotationDamageResult:
 
     selected_spells = select_variant_spells(candidates, stats)
     wrath = next((spell for spell in selected_spells if spell.name == IOP_WRATH_SPELL_NAME), None)
+    accumulation = next(
+        (spell for spell in selected_spells if spell.name == ACCUMULATION_SPELL_NAME),
+        None,
+    )
     filler_spells = tuple(
         spell for spell in selected_spells if spell.name != IOP_WRATH_SPELL_NAME
     )
@@ -1340,35 +1893,37 @@ def iop_spell_rotation_result(stats: dict[str, int]) -> RotationDamageResult:
             last_cast_turns[wrath.name] = turn
             stack_counts[wrath.name] = stacks
 
-        while remaining_ap > 0:
-            filler = best_filler_spell(
-                filler_spells,
-                stats,
-                remaining_ap,
-                turn_cast_counts,
-                turn=turn,
-                last_cast_turns=last_cast_turns,
-                stack_counts=stack_counts,
+        if (
+            accumulation
+            and stack_counts.get(ACCUMULATION_SPELL_NAME, 0) <= 0
+            and turn < SPELL_DAMAGE_PROFILE_TURNS
+            and accumulation.ap_cost <= remaining_ap
+        ):
+            remaining_ap -= accumulation.ap_cost
+            turn_cast_counts[f"{ACCUMULATION_SPELL_NAME}:buff"] = (
+                turn_cast_counts.get(f"{ACCUMULATION_SPELL_NAME}:buff", 0) + 1
             )
-            if filler is None:
-                break
-            total_damage += spell_damage_per_cast(
-                filler,
-                stats,
-                stacks=stack_counts.get(filler.name, 0),
-            )
-            weakest_filler_damage_per_ap = min(
-                weakest_filler_damage_per_ap,
-                spell_damage_per_ap(filler, stats, stacks=stack_counts.get(filler.name, 0)),
-            )
-            remaining_ap -= filler.ap_cost
-            turn_cast_counts[filler.name] = turn_cast_counts.get(filler.name, 0) + 1
-            last_cast_turns[filler.name] = turn
-            if filler.damage_increase and filler.max_damage_increase_stacks:
-                stack_counts[filler.name] = min(
-                    stack_counts.get(filler.name, 0) + 1,
-                    filler.max_damage_increase_stacks,
-                )
+            last_cast_turns[ACCUMULATION_SPELL_NAME] = turn
+            stack_counts[ACCUMULATION_SPELL_NAME] = ACCUMULATION_BUFF_DURATION_TURNS
+
+        filler_sequence = best_filler_sequence(
+            filler_spells,
+            stats,
+            remaining_ap,
+            turn_cast_counts,
+            turn,
+            last_cast_turns,
+            stack_counts,
+        )
+        total_damage += filler_sequence.total_damage
+        weakest_filler_damage_per_ap = min(
+            weakest_filler_damage_per_ap,
+            filler_sequence.weakest_damage_per_ap,
+        )
+        turn_cast_counts = dict(filler_sequence.turn_cast_counts)
+        last_cast_turns = dict(filler_sequence.last_cast_turns)
+        stack_counts = defaultdict(int, dict(filler_sequence.stack_counts))
+        stack_counts = defaultdict(int, decrement_timed_spell_buffs(stack_counts))
 
     normalized_damage = total_damage / max(total_ap_budget, 1) * SPELL_DAMAGE_PROFILE_TURN_AP
     if weakest_filler_damage_per_ap == float("inf"):
@@ -1538,6 +2093,22 @@ def active_profile_spell_damage_baseline() -> float:
     return max(iop_rotation_damage(profile_damage_reference_stats()), 1.0)
 
 
+@lru_cache(maxsize=1)
+def cheap_profile_damage_baseline() -> float:
+    return max(
+        profile_damage(strength_spell_damage_profile(), profile_damage_reference_stats()),
+        1.0,
+    )
+
+
+def cheap_profile_damage_score(stats: dict[str, int]) -> float:
+    return (
+        profile_damage(strength_spell_damage_profile(), stats)
+        / cheap_profile_damage_baseline()
+        * PROFILE_DAMAGE_REFERENCE_SCORE
+    )
+
+
 def normalized_profile_damage_score(stats: dict[str, int], state: BuildState | None = None) -> float:
     return (
         iop_rotation_damage(stats, state)
@@ -1666,6 +2237,18 @@ def final_score_state(
     )
 
 
+def cheap_final_score_state(
+    state: BuildState,
+    generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
+) -> float:
+    stats = effective_scoring_stats(state)
+    return (
+        final_utility_score(stats)
+        + cheap_profile_damage_score(stats) * generic_damage_weight
+        + survivability_score(stats)
+    )
+
+
 def item_stat_total(state: BuildState, stat: str) -> int:
     return sum(item["_stats"].get(stat, 0) for item in state.slots.values())
 
@@ -1741,6 +2324,20 @@ def trim_beam(states: list[BuildState], beam_width: int, per_signature_cap: int)
     return sorted(diversified, key=lambda s: s.score, reverse=True)[:beam_width]
 
 
+def trim_full_item_signatures(states: list[BuildState], limit: int) -> list[BuildState]:
+    selected = []
+    seen: set[tuple[str, ...]] = set()
+    for state in sorted(states, key=lambda s: s.score, reverse=True):
+        signature = tuple(sorted(state.used_item_ids))
+        if signature in seen:
+            continue
+        seen.add(signature)
+        selected.append(state)
+        if len(selected) >= limit:
+            break
+    return selected
+
+
 def dedupe_builds(states: list[BuildState]) -> list[BuildState]:
     seen: set[tuple[str, ...]] = set()
     unique = []
@@ -1760,17 +2357,14 @@ def completed_valid_builds(
     ap_strategies: tuple[ApStrategy, ...] | None = None,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    exo_policy: str = "allow",
 ) -> list[BuildState]:
-    valid_final_states = []
+    cheap_valid_states = []
     for state in beam:
-        state_with_exos = apply_missing_exos(state, target)
+        state_with_exos = apply_missing_exos(state, target, exo_policy)
         if state_with_exos is None:
             continue
-        if (
-            state_with_exos.stats.get("AP", 0) != target.ap
-            or state_with_exos.stats.get("MP", 0) != target.mp
-            or state_with_exos.stats.get("Range", 0) < target.range
-        ):
+        if not action_stats_meet_target(state_with_exos, target):
             continue
         state_with_exos.condition_failures = unmet_item_conditions(state_with_exos)
         if state_with_exos.condition_failures:
@@ -1791,12 +2385,28 @@ def completed_valid_builds(
             if matched_strategy is None:
                 continue
             state_with_exos.ap_strategy = matched_strategy.name
-        state_with_exos = optimize_base_allocation(
+        state_with_exos.score = cheap_final_score_state(
             state_with_exos,
             generic_damage_weight=generic_damage_weight,
-            weapon_damage_weight=weapon_damage_weight,
         )
-        valid_final_states.append(state_with_exos)
+        cheap_valid_states.append(state_with_exos)
+
+    cheap_valid_states = trim_full_item_signatures(
+        cheap_valid_states,
+        BEAM_FINAL_SCORE_LIMIT,
+    )
+    valid_final_states = [
+        valid_state
+        for valid_state in (
+            optimize_base_allocation(
+                cheap_valid_state,
+                generic_damage_weight=generic_damage_weight,
+                weapon_damage_weight=weapon_damage_weight,
+            )
+            for cheap_valid_state in cheap_valid_states
+        )
+        if valid_state is not None
+    ]
     return valid_final_states
 
 
@@ -1974,7 +2584,11 @@ def package_seed_states(
     )
 
     triple_entries = []
+    triple_groups_scanned = 0
     for package_group in combinations(packages[:SET_PACKAGE_TRIPLE_SOURCE_LIMIT], 3):
+        triple_groups_scanned += 1
+        if triple_groups_scanned > SET_PACKAGE_TRIPLE_CANDIDATE_SCAN_LIMIT:
+            break
         if not packages_compatible(package_group):
             continue
         triple_entries.append(
@@ -2096,9 +2710,21 @@ def dofus_completion_pool(pools: dict[str, list[dict[str, Any]]]) -> list[dict[s
 def ranked_dofus_combinations(
     dofus_pool: list[dict[str, Any]],
     combo_size: int,
-) -> list[tuple[dict[str, Any], ...]]:
+) -> list[DofusCombinationCandidate]:
+    def candidate(combo: tuple[dict[str, Any], ...]) -> DofusCombinationCandidate:
+        stats: dict[str, int] = defaultdict(int)
+        for item in combo:
+            for stat, value in (item.get("_stats") or normalize_stats(item.get("stats", []))).items():
+                stats[stat] += value
+        return DofusCombinationCandidate(
+            items=combo,
+            item_ids=frozenset(item["dofusID"] for item in combo),
+            stats=dict(stats),
+            score=sum(item["_score"] for item in combo),
+        )
+
     if combo_size == 0:
-        return [()]
+        return [candidate(tuple())]
 
     scored_combinations = [
         (sum(item["_score"] for item in combo), combo)
@@ -2130,30 +2756,49 @@ def ranked_dofus_combinations(
         ranked.append(combo)
         if len(ranked) >= DIRECT_COMPLETION_DOFUS_COMBO_LIMIT:
             break
-    return ranked
+    return [candidate(combo) for combo in ranked]
+
+
+def dofus_combination_can_meet_target(
+    state: BuildState,
+    dofus_candidate: DofusCombinationCandidate,
+    target: BuildTarget,
+    natural_cap_target: BuildTarget,
+) -> bool:
+    ap = state.stats.get("AP", 0) + dofus_candidate.stats.get("AP", 0)
+    mp = state.stats.get("MP", 0) + dofus_candidate.stats.get("MP", 0)
+    range_value = state.stats.get("Range", 0) + dofus_candidate.stats.get("Range", 0)
+    return (
+        ap <= natural_cap_target.ap
+        and mp <= natural_cap_target.mp
+        and ap >= target.ap - 1
+        and mp >= target.mp - 1
+        and range_value >= target.range - 1
+    )
 
 
 def complete_dofus_combination(
     state: BuildState,
-    dofus_items: tuple[dict[str, Any], ...],
+    dofus_candidate: DofusCombinationCandidate,
     sets: dict[str, dict[str, Any]],
     target: BuildTarget,
     natural_cap_target: BuildTarget,
 ) -> BuildState | None:
     open_slots = [slot_name for slot_name, _ in SLOTS if is_dofus_slot(slot_name) and slot_name not in state.slots]
-    if len(open_slots) != len(dofus_items):
+    if len(open_slots) != len(dofus_candidate.items):
         return None
     next_state = state.clone()
-    for slot_name, item in zip(open_slots, dofus_items):
+    for slot_name, item in zip(open_slots, dofus_candidate.items):
         item_id = item["dofusID"]
         if item_id in next_state.used_item_ids:
             return None
         next_state.slots[slot_name] = item
         next_state.used_item_ids.add(item_id)
-        apply_stat_delta(next_state.stats, item.get("stats", []))
+    for stat, value in dofus_candidate.stats.items():
+        next_state.stats[stat] = next_state.stats.get(stat, 0) + value
     if next_state.stats.get("AP", 0) > natural_cap_target.ap or next_state.stats.get("MP", 0) > natural_cap_target.mp:
         return None
-    next_state.score = state.score + sum(item["_score"] for item in dofus_items)
+    next_state.score = state.score + dofus_candidate.score
     return next_state
 
 
@@ -2163,15 +2808,12 @@ def direct_valid_completed_state(
     ap_strategies: tuple[ApStrategy, ...],
     generic_damage_weight: float,
     weapon_damage_weight: float,
+    exo_policy: str = "allow",
 ) -> BuildState | None:
-    state_with_exos = apply_missing_exos(state, target)
+    state_with_exos = apply_missing_exos(state, target, exo_policy)
     if state_with_exos is None:
         return None
-    if (
-        state_with_exos.stats.get("AP", 0) != target.ap
-        or state_with_exos.stats.get("MP", 0) != target.mp
-        or state_with_exos.stats.get("Range", 0) < target.range
-    ):
+    if not action_stats_meet_target(state_with_exos, target):
         return None
     state_with_exos.condition_failures = unmet_item_conditions(state_with_exos)
     if state_with_exos.condition_failures:
@@ -2197,6 +2839,41 @@ def direct_valid_completed_state(
     return state_with_exos
 
 
+def direct_cheap_valid_completed_state(
+    state: BuildState,
+    target: BuildTarget,
+    ap_strategies: tuple[ApStrategy, ...],
+    generic_damage_weight: float,
+    exo_policy: str = "allow",
+) -> BuildState | None:
+    state_with_exos = apply_missing_exos(state, target, exo_policy)
+    if state_with_exos is None:
+        return None
+    if not action_stats_meet_target(state_with_exos, target):
+        return None
+    state_with_exos.condition_failures = unmet_item_conditions(state_with_exos)
+    if state_with_exos.condition_failures:
+        return None
+
+    matched_strategy = next(
+        (
+            ap_strategy
+            for ap_strategy in ap_strategies
+            if ap_strategy_matches(state_with_exos, ap_strategy)
+        ),
+        None,
+    )
+    if matched_strategy is None:
+        return None
+
+    state_with_exos.ap_strategy = matched_strategy.name
+    state_with_exos.score = cheap_final_score_state(
+        state_with_exos,
+        generic_damage_weight=generic_damage_weight,
+    )
+    return state_with_exos
+
+
 def direct_complete_package_seeds(
     seeds: list[BuildState],
     pools: dict[str, list[dict[str, Any]]],
@@ -2207,11 +2884,12 @@ def direct_complete_package_seeds(
     ap_strategies: tuple[ApStrategy, ...],
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    exo_policy: str = "allow",
 ) -> list[BuildState]:
     dofus_pool = dofus_completion_pool(pools)
     ranked_combinations_by_size: dict[int, list[tuple[dict[str, Any], ...]]] = {}
     completed_gear_states: list[BuildState] = []
-    valid_final_states: list[BuildState] = []
+    cheap_valid_states: list[BuildState] = []
     for seed in direct_completion_seed_candidates(seeds):
         completed_gear_states.extend(
             direct_non_dofus_completions(
@@ -2241,27 +2919,54 @@ def direct_complete_package_seeds(
                 dofus_pool,
                 combo_size,
             )
-        for dofus_items in ranked_combinations_by_size[combo_size]:
-            if any(item["dofusID"] in non_dofus_state.used_item_ids for item in dofus_items):
+        for dofus_candidate in ranked_combinations_by_size[combo_size]:
+            if dofus_candidate.item_ids & non_dofus_state.used_item_ids:
+                continue
+            if not dofus_combination_can_meet_target(
+                non_dofus_state,
+                dofus_candidate,
+                target,
+                natural_cap_target,
+            ):
                 continue
             completed = complete_dofus_combination(
                 non_dofus_state,
-                dofus_items,
+                dofus_candidate,
                 sets,
                 target,
                 natural_cap_target,
             )
             if completed is None:
                 continue
-            valid_state = direct_valid_completed_state(
+            cheap_valid_state = direct_cheap_valid_completed_state(
                 completed,
                 target,
                 ap_strategies,
                 generic_damage_weight,
-                weapon_damage_weight,
+                exo_policy=exo_policy,
             )
-            if valid_state is not None:
-                valid_final_states.append(valid_state)
+            if cheap_valid_state is not None:
+                cheap_valid_states.append(cheap_valid_state)
+
+    cheap_valid_states = trim_full_item_signatures(
+        cheap_valid_states,
+        DIRECT_COMPLETION_FINAL_SCORE_LIMIT,
+    )
+    valid_final_states = [
+        valid_state
+        for valid_state in (
+            direct_valid_completed_state(
+                cheap_valid_state,
+                target,
+                ap_strategies,
+                generic_damage_weight,
+                weapon_damage_weight,
+                exo_policy=exo_policy,
+            )
+            for cheap_valid_state in cheap_valid_states
+        )
+        if valid_state is not None
+    ]
 
     return dedupe_builds(sorted(valid_final_states, key=lambda state: state.score, reverse=True))
 
@@ -2349,6 +3054,7 @@ def search_slot_order(
     initial_seeds: list[BuildState] | None = None,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    exo_policy: str = "allow",
 ) -> list[BuildState]:
     strategy_seeds = [BuildState()]
     beam = dedupe_builds(sorted(strategy_seeds + (initial_seeds or []), key=lambda state: state.score, reverse=True))
@@ -2379,6 +3085,7 @@ def search_slot_order(
         ap_strategies=ap_strategies,
         generic_damage_weight=generic_damage_weight,
         weapon_damage_weight=weapon_damage_weight,
+        exo_policy=exo_policy,
     )
 
 
@@ -2404,14 +3111,19 @@ def find_builds(
     target: BuildTarget = DEFAULT_TARGET,
     max_shared_items: int | None = DEFAULT_MAX_SHARED_ITEMS,
     excluded_item_ids: set[str] | None = None,
+    budget_tier: int = 4,
     slot_orders: list[tuple[str, ...]] = DEFAULT_SLOT_ORDERS,
     ap_strategies: tuple[ApStrategy, ...] = DEFAULT_AP_STRATEGIES,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    exo_policy: str = "allow",
 ) -> list[BuildState]:
+    if budget_tier < 3 and exo_policy in {"allow", "opti"}:
+        exo_policy = "none"
+
     timings: dict[str, float] = {}
     started_at = time.perf_counter()
-    items = load_items(target, excluded_item_ids)
+    items = load_items(target, excluded_item_ids, budget_tier)
     sets = load_sets()
     timings["loadDataMs"] = (time.perf_counter() - started_at) * 1000
 
@@ -2478,28 +3190,31 @@ def find_builds(
             ap_strategies,
             generic_damage_weight=generic_damage_weight,
             weapon_damage_weight=weapon_damage_weight,
+            exo_policy=exo_policy,
         )
     )
     timings["directCompletionMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
-    for slot_order in slot_orders:
-        valid_final_states.extend(
-            search_slot_order(
-                slot_order=slot_order,
-                pools=pools,
-                sets=sets,
-                target=target,
-                search_target=search_target,
-                natural_cap_target=natural_cap_target,
-                beam_width=beam_width,
-                per_signature_cap=per_signature_cap,
-                ap_strategies=ap_strategies,
-                initial_seeds=initial_seeds,
-                generic_damage_weight=generic_damage_weight,
-                weapon_damage_weight=weapon_damage_weight,
+    if len(valid_final_states) < top_k:
+        for slot_order in slot_orders:
+            valid_final_states.extend(
+                search_slot_order(
+                    slot_order=slot_order,
+                    pools=pools,
+                    sets=sets,
+                    target=target,
+                    search_target=search_target,
+                    natural_cap_target=natural_cap_target,
+                    beam_width=beam_width,
+                    per_signature_cap=per_signature_cap,
+                    ap_strategies=ap_strategies,
+                    initial_seeds=initial_seeds,
+                    generic_damage_weight=generic_damage_weight,
+                    weapon_damage_weight=weapon_damage_weight,
+                    exo_policy=exo_policy,
+                )
             )
-        )
     timings["beamSearchMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
@@ -2545,9 +3260,17 @@ def find_diverse_builds(
     relevant_set_limit: int,
     target: BuildTarget = DEFAULT_TARGET,
     max_shared_items: int | None = DEFAULT_MAX_SHARED_ITEMS,
+    excluded_item_ids: set[str] | None = None,
+    required_item_ids: set[str] | None = None,
+    budget_tier: int = 4,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    exo_policy: str = "allow",
 ) -> list[BuildState]:
+    if budget_tier < 3 and exo_policy in {"allow", "opti"}:
+        exo_policy = "none"
+
+    required_item_ids = required_item_ids or set()
     candidates = find_builds(
         top_k=top_k,
         beam_width=beam_width,
@@ -2555,14 +3278,19 @@ def find_diverse_builds(
         relevant_set_limit=relevant_set_limit,
         target=target,
         max_shared_items=None,
+        excluded_item_ids=excluded_item_ids,
+        budget_tier=budget_tier,
         generic_damage_weight=generic_damage_weight,
         weapon_damage_weight=weapon_damage_weight,
+        exo_policy=exo_policy,
     )
 
     selected: list[BuildState] = []
     seen_item_signatures: set[tuple[str, ...]] = set()
     seen_approaches: set[tuple[str | None, ...]] = set()
     for candidate in candidates:
+        if required_item_ids and not required_item_ids <= candidate.used_item_ids:
+            continue
         item_signature = tuple(sorted(candidate.used_item_ids))
         if item_signature in seen_item_signatures:
             continue
@@ -2582,6 +3310,95 @@ def find_diverse_builds(
             break
 
     return selected
+
+
+def query_warnings(query: BuildDiscoveryQuery) -> list[str]:
+    warnings = []
+    if query.locked_item_ids:
+        warnings.append("lockedItemIds are enforced as final result requirements and may reduce result count.")
+    if query.budget_tier < 3 and query.exo_policy in {"allow", "opti"}:
+        warnings.append("Generated exos require budget tier 3 or higher; effective exo behavior is none.")
+    if query.budget_tier != 4 and query.exo_policy == "opti":
+        warnings.append("exoPolicy=opti may conflict with non-opti budget tiers.")
+    return warnings
+
+
+def build_discovery_response(
+    query: BuildDiscoveryQuery,
+    use_cache: bool = True,
+) -> dict[str, Any]:
+    query.validate()
+    profile = configure_damage_profile(query.primary_element)
+    current_dataset_version = dataset_version()
+    cache_key = query_cache_key(query, current_dataset_version)
+    if use_cache and cache_key in BUILD_DISCOVERY_RESPONSE_CACHE:
+        cached = clone_response(BUILD_DISCOVERY_RESPONSE_CACHE[cache_key])
+        cached["cache"] = {
+            "status": "hit",
+            "storage": "process_memory",
+        }
+        cached.setdefault("diagnostics", {})["cacheHit"] = True
+        cached["diagnostics"]["elapsedMs"] = 0.0
+        return cached
+
+    start = time.perf_counter()
+    builds = find_diverse_builds(
+        limit=query.limit,
+        top_k=query.top_k,
+        beam_width=query.beam_width,
+        per_signature_cap=query.per_signature_cap,
+        relevant_set_limit=query.relevant_set_limit,
+        target=query.target,
+        max_shared_items=query.max_shared_items,
+        excluded_item_ids=set(query.avoided_item_ids),
+        required_item_ids=set(query.locked_item_ids),
+        budget_tier=query.budget_tier,
+        generic_damage_weight=query.generic_damage_weight,
+        weapon_damage_weight=query.weapon_damage_weight,
+        exo_policy=effective_exo_policy(query),
+    )
+    elapsed_ms = round((time.perf_counter() - start) * 1000, 1)
+    sets = load_sets()
+
+    response = {
+        "datasetVersion": current_dataset_version,
+        "solverVersion": SOLVER_VERSION,
+        "cacheKey": cache_key,
+        "cache": {
+            "status": "miss",
+            "storage": "process_memory",
+        },
+        "status": "complete",
+        "query": query_summary(query),
+        "targetSemantics": {
+            "type": "minimum_with_hard_caps",
+            "caps": {"AP": MAX_AP, "MP": MAX_MP, "Range": MAX_RANGE},
+            "surplusScoring": "light",
+        },
+        "prototype": f"level_200_{profile.name}_pvm_generalist",
+        "profile": {
+            "name": profile.name,
+            "primaryStat": profile.primary_stat,
+            "element": profile.element,
+            "damageStat": profile.damage_stat,
+        },
+        "target": {"level": TARGET_LEVEL, "AP": query.target.ap, "MP": query.target.mp, "Range": query.target.range},
+        "scoring": {
+            "genericDamageWeight": query.generic_damage_weight,
+            "weaponDamageWeight": query.weapon_damage_weight,
+        },
+        "warnings": query_warnings(query),
+        "diagnostics": {
+            "elapsedMs": elapsed_ms,
+            "cacheHit": False,
+            "timings": {key: round(value, 1) for key, value in LAST_FIND_BUILD_TIMINGS.items()},
+            "resultCount": len(builds),
+        },
+        "builds": [serialize_build(build, sets) for build in builds],
+    }
+    if use_cache:
+        BUILD_DISCOVERY_RESPONSE_CACHE[cache_key] = clone_response(response)
+    return response
 
 
 def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[str, Any]:
@@ -2659,47 +3476,34 @@ def main() -> None:
     parser.add_argument("--target-mp", type=int, default=DEFAULT_TARGET.mp)
     parser.add_argument("--target-range", type=int, default=DEFAULT_TARGET.range)
     parser.add_argument("--element", choices=sorted(ELEMENT_PROFILES), default="strength")
+    parser.add_argument("--budget-tier", type=int, default=2)
+    parser.add_argument("--exo-policy", choices=("none", "allow", "opti"), default="allow")
+    parser.add_argument("--locked-item-id", action="append", default=[])
+    parser.add_argument("--avoided-item-id", action="append", default=[])
     parser.add_argument("--max-shared-items", type=int, default=DEFAULT_MAX_SHARED_ITEMS)
     parser.add_argument("--generic-damage-weight", type=float, default=GENERIC_DAMAGE_WEIGHT)
     parser.add_argument("--weapon-damage-weight", type=float, default=WEAPON_DAMAGE_WEIGHT)
     args = parser.parse_args()
 
-    profile = configure_damage_profile(args.element)
-    target = BuildTarget(ap=args.target_ap, mp=args.target_mp, range=args.target_range)
-    start = time.perf_counter()
-    builds = find_diverse_builds(
+    query = BuildDiscoveryQuery(
+        elements=(args.element,),
+        ap_target=args.target_ap,
+        mp_target=args.target_mp,
+        range_target=args.target_range,
+        budget_tier=args.budget_tier,
+        exo_policy=args.exo_policy,
+        locked_item_ids=tuple(args.locked_item_id),
+        avoided_item_ids=tuple(args.avoided_item_id),
         limit=args.limit,
         top_k=args.top_k,
         beam_width=args.beam_width,
         per_signature_cap=args.per_signature_cap,
         relevant_set_limit=args.relevant_set_limit,
-        target=target,
         max_shared_items=args.max_shared_items,
         generic_damage_weight=args.generic_damage_weight,
         weapon_damage_weight=args.weapon_damage_weight,
     )
-    elapsed_ms = round((time.perf_counter() - start) * 1000, 1)
-    sets = load_sets()
-
-    output = {
-        "prototype": f"level_200_{profile.name}_pvm_generalist",
-        "profile": {
-            "name": profile.name,
-            "primaryStat": profile.primary_stat,
-            "element": profile.element,
-            "damageStat": profile.damage_stat,
-        },
-        "target": {"level": TARGET_LEVEL, "AP": target.ap, "MP": target.mp, "Range": target.range},
-        "scoring": {
-            "genericDamageWeight": args.generic_damage_weight,
-            "weaponDamageWeight": args.weapon_damage_weight,
-        },
-        "elapsedMs": elapsed_ms,
-        "timings": {key: round(value, 1) for key, value in LAST_FIND_BUILD_TIMINGS.items()},
-        "resultCount": len(builds),
-        "builds": [serialize_build(build, sets) for build in builds],
-    }
-    print(json.dumps(output, indent=2, ensure_ascii=False))
+    print(json.dumps(build_discovery_response(query), indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":
