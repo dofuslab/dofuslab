@@ -1,0 +1,17 @@
+query buildDiscoveryJob($id: UUID!) {
+  buildDiscoveryJob(id: $id) {
+    id
+    status
+    progress
+    freshThresholdMs
+    elapsedMs
+    cacheHit
+    syncRecommended
+    asyncRecommended
+    generationRequestSource
+    datasetVersion
+    solverVersion
+    requestPayload
+    result
+  }
+}

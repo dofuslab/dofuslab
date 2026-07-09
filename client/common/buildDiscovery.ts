@@ -7,11 +7,16 @@ import {
 import { useCallback } from 'react';
 
 import buildDiscoveryQuery from 'graphql/queries/buildDiscovery.graphql';
+import buildDiscoveryJobQuery from 'graphql/queries/buildDiscoveryJob.graphql';
 import startBuildDiscoveryMutation from 'graphql/mutations/startBuildDiscovery.graphql';
 import {
   buildDiscovery,
   buildDiscoveryVariables,
 } from 'graphql/queries/__generated__/buildDiscovery';
+import {
+  buildDiscoveryJob,
+  buildDiscoveryJobVariables,
+} from 'graphql/queries/__generated__/buildDiscoveryJob';
 import {
   startBuildDiscovery,
   startBuildDiscoveryVariables,
@@ -73,6 +78,31 @@ export function useBuildDiscoveryQuery(
   return {
     ...result,
     buildDiscovery: parseBuildDiscoveryResponse(result.data?.buildDiscovery),
+  };
+}
+
+export function useBuildDiscoveryJobQuery(
+  id: string | undefined,
+  options: Omit<
+    QueryHookOptions<buildDiscoveryJob, buildDiscoveryJobVariables>,
+    'variables'
+  > = {},
+) {
+  const skip = !id || options.skip;
+  const result = useQuery<buildDiscoveryJob, buildDiscoveryJobVariables>(
+    buildDiscoveryJobQuery,
+    {
+      ...options,
+      skip,
+      variables: { id: id ?? '' },
+    },
+  );
+
+  return {
+    ...result,
+    buildDiscoveryJob: skip
+      ? null
+      : parseBuildDiscoveryJob(result.data?.buildDiscoveryJob),
   };
 }
 

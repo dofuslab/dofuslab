@@ -797,3 +797,16 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_job_persistence.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile app/schema.py scripts/test_build_discovery_job_persistence.py`
   - `git diff --check`
+
+### 2026-07-09 Client Job Lookup Bridge
+
+- Created stacked branch `codex/build-discovery-client-job-lookup` on top of `codex/build-discovery-job-lookup`.
+- Added the client GraphQL query and generated types for `buildDiscoveryJob(id)`.
+- Added `useBuildDiscoveryJobQuery` to the Build Discovery client bridge.
+- Reviewer finding fixed before commit:
+  - skipped job lookups now return `buildDiscoveryJob: null` so Apollo-retained stale data is not exposed when no job id is active.
+- Verification passed:
+  - `cd client; yarn generate`
+  - `cd client; yarn type-check`
+  - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts`
+  - `git diff --check`

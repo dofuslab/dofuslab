@@ -632,6 +632,7 @@ export type PageInfo = {
 export type Query = {
   __typename: 'Query';
   buildDiscovery: Maybe<Scalars['GenericScalar']['output']>;
+  buildDiscoveryJob: Maybe<BuildDiscoveryJob>;
   classById: Maybe<Class>;
   classes: Array<Class>;
   classic: Scalars['Boolean']['output'];
@@ -671,6 +672,10 @@ export type QuerybuildDiscoveryArgs = {
   relevantSetLimit?: InputMaybe<Scalars['Int']['input']>;
   topK?: InputMaybe<Scalars['Int']['input']>;
   weaponPolicy?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type QuerybuildDiscoveryJobArgs = {
+  id: Scalars['UUID']['input'];
 };
 
 export type QueryclassByIdArgs = {
