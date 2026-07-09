@@ -1067,3 +1067,14 @@ Run the initial evaluator pass:
   - `git diff --check`
 - Verification note:
   - host `scripts\test_build_discovery_graphql.py BuildDiscoveryGraphQLTest.test_build_discovery_query_rejects_out_of_scope_class` could not run because host Python is missing `dogpile`; the test remains present in the suite.
+
+### 2026-07-09 Action Stat Score Test Maintenance
+
+- Created stacked branch `codex/build-discovery-action-stat-score-test` on top of `codex/build-discovery-v1-scope-boundary`.
+- Updated `test_score_state_treats_mp_and_range_as_small_feasibility_hints` to derive the expected delta from:
+  - added MP/Range stat score over the default base state
+  - removed MP/Range target-gap penalties
+- This keeps the test aligned with the current target semantics where AP/MP/Range are minimum targets with light surplus scoring.
+- Verification passed:
+  - `python scripts\test_build_discovery_prototype.py`
+  - `git diff --check`

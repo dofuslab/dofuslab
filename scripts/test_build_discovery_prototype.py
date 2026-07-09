@@ -177,7 +177,12 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         with_mp_range.stats["MP"] = 6
         with_mp_range.stats["Range"] = 4
 
-        self.assertEqual(score_state(with_mp_range, {}, target) - score_state(baseline, {}, target), 325)
+        mp_range_stat_score = 3 * 10 + 4 * 8
+        removed_gap_penalty = 3 * 75 + 4 * 25
+        self.assertEqual(
+            score_state(with_mp_range, {}, target) - score_state(baseline, {}, target),
+            mp_range_stat_score + removed_gap_penalty,
+        )
 
     def test_final_score_uses_generic_damage_profile(self):
         low_damage = BuildState()
