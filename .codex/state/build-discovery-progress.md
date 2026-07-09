@@ -890,6 +890,32 @@ Run the initial evaluator pass:
 - Verification passed:
   - `git diff --check`
 
+### 2026-07-09 Prod Review Packet Readiness Gate
+
+- Created stacked branch `codex/build-discovery-prod-review-packet-readiness-gate` on top of `codex/build-discovery-prod-review-packet-readiness`.
+- Extended `server/scripts/build_discovery_local_readiness_report.py` with optional `--prod-benchmark-review-packet` validation.
+- The readiness report now summarizes:
+  - prod benchmark review packet status
+  - supported prompt count
+  - future prompt count
+  - structural/privacy validation failures
+- Supplied prod benchmark review packets fail readiness if they are missing, malformed, wrong-version, or include forbidden custom-set/owner identifier keys.
+- Extended `server/scripts/build_discovery_local_readiness_pipeline.py` so local readiness runs can pass a prod review packet artifact through to the readiness report.
+- Added focused tests for aggregate packet validation, forbidden identifier rejection, and pipeline pass-through.
+- Synthetic host readiness smoke result:
+  - prod benchmark review packet status: `pass`
+  - supported prompt count: 1
+  - future prompt count: 1
+  - readiness status: `incomplete`
+- Verification passed:
+  - `python server\scripts\test_build_discovery_local_readiness_report.py`
+  - `python server\scripts\test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_local_readiness_report.py scripts/test_build_discovery_local_readiness_report.py scripts/build_discovery_local_readiness_pipeline.py scripts/test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_pipeline.py`
+  - `python server\scripts\build_discovery_local_readiness_report.py --prod-benchmark-review-packet $env:TEMP\build_discovery_prod_review_packet_smoke.json --output .codex/state/build-discovery-local-readiness-report.json`
+  - `git diff --check`
+
 ### 2026-07-09 Async Job Docker Smoke
 
 - Created stacked branch `codex/build-discovery-async-smoke` on top of `codex/build-discovery-assumptions-refresh`.

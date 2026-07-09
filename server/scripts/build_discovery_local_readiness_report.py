@@ -16,8 +16,28 @@ from scripts.check_build_discovery_benchmark_comparison import (  # noqa: E402
     load_json,
     validate_report,
 )
+from scripts.build_discovery_prod_benchmark_review_packet import (  # noqa: E402
+    REPORT_VERSION as PROD_REVIEW_PACKET_VERSION,
+)
 
 REPORT_VERSION = "build-discovery-local-readiness-report-v1"
+PROD_REVIEW_PACKET_FORBIDDEN_KEYS = {
+    "customSetId",
+    "custom_set_id",
+    "customSetName",
+    "custom_set_name",
+    "customSetUuid",
+    "custom_set_uuid",
+    "owner",
+    "ownerId",
+    "owner_id",
+    "ownerUuid",
+    "owner_uuid",
+    "userId",
+    "user_id",
+    "userUuid",
+    "user_uuid",
+}
 
 
 def find_repo_root(start: Path) -> Path:
@@ -172,6 +192,58 @@ def benchmark_report_status(path: Path | None, fixture_path: Path) -> dict[str, 
     }
 
 
+def forbidden_keys_in_json(value: Any) -> list[str]:
+    found: list[str] = []
+    if isinstance(value, dict):
+        for key, nested_value in value.items():
+            if key in PROD_REVIEW_PACKET_FORBIDDEN_KEYS:
+                found.append(key)
+            found.extend(forbidden_keys_in_json(nested_value))
+    elif isinstance(value, list):
+        for item in value:
+            found.extend(forbidden_keys_in_json(item))
+    return found
+
+
+def prod_review_packet_status(path: Path | None) -> dict[str, Any]:
+    if path is None:
+        return {
+            "status": "not_checked",
+            "reason": "no prod benchmark review packet path provided",
+        }
+    if not path.exists():
+        return {
+            "status": "missing",
+            "path": str(path),
+        }
+
+    packet = load_json(path)
+    failures = []
+    if packet.get("reportVersion") != PROD_REVIEW_PACKET_VERSION:
+        failures.append("prod benchmark review packet reportVersion is unexpected")
+    for field in ("supportedGeneratedBenchmarkPrompts", "futureBenchmarkPrompts"):
+        if not isinstance(packet.get(field), list):
+            failures.append(f"prod benchmark review packet {field} is missing or not a list")
+    forbidden_keys = sorted(set(forbidden_keys_in_json(packet)))
+    if forbidden_keys:
+        failures.append(
+            "prod benchmark review packet includes forbidden identifier keys: "
+            + ", ".join(forbidden_keys)
+        )
+
+    return {
+        "status": "pass" if not failures else "fail",
+        "path": str(path),
+        "failures": failures,
+        "supportedPromptCount": len(packet.get("supportedGeneratedBenchmarkPrompts", []))
+        if isinstance(packet.get("supportedGeneratedBenchmarkPrompts"), list)
+        else 0,
+        "futurePromptCount": len(packet.get("futureBenchmarkPrompts", []))
+        if isinstance(packet.get("futureBenchmarkPrompts"), list)
+        else 0,
+    }
+
+
 def build_readiness_report(
     readiness_checklist_path: Path = DEFAULT_READINESS_CHECKLIST,
     gameplay_review_packet_path: Path = DEFAULT_GAMEPLAY_REVIEW_PACKET,
@@ -179,6 +251,7 @@ def build_readiness_report(
     assumptions_review_index_path: Path = DEFAULT_ASSUMPTIONS_REVIEW_INDEX,
     cache_prewarm_report_path: Path | None = None,
     benchmark_comparison_report_path: Path | None = None,
+    prod_benchmark_review_packet_path: Path | None = None,
     benchmark_fixture_path: Path = DEFAULT_FIXTURE_PATH,
     max_cache_hit_p95_ms: float = 500.0,
 ) -> dict[str, Any]:
@@ -186,6 +259,7 @@ def build_readiness_report(
     prod_preflight = preflight_status()
     cache_status = cache_report_status(cache_prewarm_report_path, max_cache_hit_p95_ms)
     benchmark_status = benchmark_report_status(benchmark_comparison_report_path, benchmark_fixture_path)
+    prod_review_packet = prod_review_packet_status(prod_benchmark_review_packet_path)
     assumptions_status = assumptions_review_status(
         assumptions_ledger_path,
         gameplay_review_packet_path,
@@ -205,6 +279,10 @@ def build_readiness_report(
         blockers.append(f"cache prewarm validation is {cache_status['status']}")
     if benchmark_status["status"] in {"fail", "missing"}:
         blockers.append(f"benchmark comparison validation is {benchmark_status['status']}")
+    if prod_review_packet["status"] in {"fail", "missing"}:
+        blockers.append(
+            f"prod benchmark review packet validation is {prod_review_packet['status']}"
+        )
 
     return {
         "reportVersion": REPORT_VERSION,
@@ -221,6 +299,7 @@ def build_readiness_report(
         "assumptionsReview": assumptions_status,
         "cachePrewarm": cache_status,
         "benchmarkComparison": benchmark_status,
+        "prodBenchmarkReviewPacket": prod_review_packet,
         "prodPreflight": prod_preflight,
         "blockers": blockers,
     }
@@ -238,6 +317,7 @@ def main() -> None:
     )
     parser.add_argument("--cache-prewarm-report", type=Path)
     parser.add_argument("--benchmark-comparison-report", type=Path)
+    parser.add_argument("--prod-benchmark-review-packet", type=Path)
     parser.add_argument("--benchmark-fixture", type=Path, default=DEFAULT_FIXTURE_PATH)
     parser.add_argument("--max-cache-hit-p95-ms", type=float, default=500.0)
     parser.add_argument("--output", type=Path)
@@ -250,6 +330,7 @@ def main() -> None:
         assumptions_review_index_path=args.assumptions_review_index,
         cache_prewarm_report_path=args.cache_prewarm_report,
         benchmark_comparison_report_path=args.benchmark_comparison_report,
+        prod_benchmark_review_packet_path=args.prod_benchmark_review_packet,
         benchmark_fixture_path=args.benchmark_fixture,
         max_cache_hit_p95_ms=args.max_cache_hit_p95_ms,
     )

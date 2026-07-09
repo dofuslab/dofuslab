@@ -151,6 +151,7 @@ def run_pipeline(
     gameplay_review_packet_path: Path = DEFAULT_GAMEPLAY_REVIEW_PACKET,
     assumptions_ledger_path: Path = DEFAULT_ASSUMPTIONS_LEDGER,
     assumptions_review_index_path: Path = DEFAULT_ASSUMPTIONS_REVIEW_INDEX,
+    prod_benchmark_review_packet_path: Path | None = None,
     benchmark_fixture_path: Path = DEFAULT_FIXTURE_PATH,
     include_benchmark_comparison: bool = True,
     cache_prewarm_fn: Callable[[bool, float | None, float | None], dict[str, Any]] = default_cache_prewarm_report,
@@ -195,6 +196,7 @@ def run_pipeline(
         benchmark_comparison_report_path=benchmark_comparison_path
         if include_benchmark_comparison
         else None,
+        prod_benchmark_review_packet_path=prod_benchmark_review_packet_path,
         benchmark_fixture_path=benchmark_fixture_path,
         max_cache_hit_p95_ms=max_hit_p95_ms,
     )
@@ -232,6 +234,7 @@ def main() -> None:
     parser.add_argument("--gameplay-review-packet", type=Path)
     parser.add_argument("--assumptions-ledger", type=Path)
     parser.add_argument("--assumptions-review-index", type=Path)
+    parser.add_argument("--prod-benchmark-review-packet", type=Path)
     parser.add_argument("--benchmark-fixture", type=Path, default=DEFAULT_FIXTURE_PATH)
     parser.add_argument(
         "--skip-benchmark-comparison",
@@ -253,6 +256,7 @@ def main() -> None:
         or state_paths.get("assumptions_ledger_path", DEFAULT_ASSUMPTIONS_LEDGER),
         assumptions_review_index_path=args.assumptions_review_index
         or state_paths.get("assumptions_review_index_path", DEFAULT_ASSUMPTIONS_REVIEW_INDEX),
+        prod_benchmark_review_packet_path=args.prod_benchmark_review_packet,
         benchmark_fixture_path=args.benchmark_fixture,
         include_benchmark_comparison=not args.skip_benchmark_comparison,
     )

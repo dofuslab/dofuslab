@@ -151,6 +151,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
             gameplay_path = Path(temp_dir) / "gameplay.md"
             assumptions_path = Path(temp_dir) / "assumptions.md"
             review_index_path = Path(temp_dir) / "review-index.md"
+            prod_review_packet_path = Path(temp_dir) / "prod-review-packet.json"
             fixture_path = Path(temp_dir) / "fixture.json"
             fixture_path.write_text(json.dumps(benchmark_fixture()), encoding="utf-8")
             calls = []
@@ -172,6 +173,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
                 gameplay_review_packet_path=gameplay_path,
                 assumptions_ledger_path=assumptions_path,
                 assumptions_review_index_path=review_index_path,
+                prod_benchmark_review_packet_path=prod_review_packet_path,
                 benchmark_fixture_path=fixture_path,
                 cache_prewarm_fn=fake_cache_prewarm,
                 benchmark_generated_results_fn=benchmark_generated_results,
@@ -195,6 +197,10 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
             self.assertEqual(
                 readiness_kwargs["assumptions_review_index_path"],
                 review_index_path,
+            )
+            self.assertEqual(
+                readiness_kwargs["prod_benchmark_review_packet_path"],
+                prod_review_packet_path,
             )
             self.assertEqual(
                 readiness_kwargs["benchmark_comparison_report_path"],

@@ -12,6 +12,7 @@ from build_discovery_local_readiness_report import (
     checklist_open_items,
     find_repo_root,
     numbered_items_in_section,
+    prod_review_packet_status,
 )
 
 
@@ -180,6 +181,80 @@ class BuildDiscoveryLocalReadinessReportTest(unittest.TestCase):
             status = benchmark_report_status(report_path, fixture_path)
 
             self.assertEqual(status["status"], "pass")
+
+    def test_prod_review_packet_status_passes_aggregate_packet(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "packet.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "reportVersion": "build-discovery-prod-benchmark-review-packet-v1",
+                        "supportedGeneratedBenchmarkPrompts": [
+                            {"prompt": "200 strength Iop 11/6/0"}
+                        ],
+                        "futureBenchmarkPrompts": [
+                            {
+                                "prompt": "200 intelligence Cra 11/6/6",
+                                "unsupportedReasons": ["Build Discovery v1 currently supports Iop only."],
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            status = prod_review_packet_status(path)
+
+            self.assertEqual(status["status"], "pass")
+            self.assertEqual(status["supportedPromptCount"], 1)
+            self.assertEqual(status["futurePromptCount"], 1)
+
+    def test_prod_review_packet_status_rejects_identifier_keys(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "packet.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "reportVersion": "build-discovery-prod-benchmark-review-packet-v1",
+                        "supportedGeneratedBenchmarkPrompts": [
+                            {"prompt": "200 strength Iop 11/6/0", "customSetId": "secret"}
+                        ],
+                        "futureBenchmarkPrompts": [],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            status = prod_review_packet_status(path)
+
+            self.assertEqual(status["status"], "fail")
+            self.assertIn("forbidden identifier keys", status["failures"][0])
+
+    def test_prod_review_packet_status_rejects_uuid_identifier_keys(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "packet.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "reportVersion": "build-discovery-prod-benchmark-review-packet-v1",
+                        "supportedGeneratedBenchmarkPrompts": [],
+                        "futureBenchmarkPrompts": [
+                            {
+                                "prompt": "200 intelligence Cra 11/6/6",
+                                "customSetUuid": "set-secret",
+                                "owner_uuid": "owner-secret",
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            status = prod_review_packet_status(path)
+
+            self.assertEqual(status["status"], "fail")
+            self.assertIn("customSetUuid", status["failures"][0])
+            self.assertIn("owner_uuid", status["failures"][0])
 
     def test_build_readiness_report_keeps_external_blockers_visible(self):
         with tempfile.TemporaryDirectory() as temp_dir:
