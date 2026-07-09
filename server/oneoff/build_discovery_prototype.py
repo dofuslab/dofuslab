@@ -259,6 +259,9 @@ STAT_SCORE_CAPS = {
 }
 
 STAT_WEIGHTS = {
+    "AP": 12.0,
+    "MP": 10.0,
+    "Range": 8.0,
     "Strength": 1.0,
     "Power": 1.0,
     "Earth Damage": 4.0,

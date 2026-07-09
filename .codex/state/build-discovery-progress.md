@@ -557,3 +557,18 @@ Run the initial evaluator pass:
   - `cd client; yarn type-check`
   - `cd client; npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx`
   - `git diff --check`
+
+### 2026-07-09 Action Stat Surplus Scoring
+
+- Created stacked branch `codex/build-discovery-action-stat-surplus-score` on top of `codex/build-discovery-descriptive-generated-names`.
+- Added light capped utility weights for AP/MP/Range:
+  - AP: 12
+  - MP: 10
+  - Range: 8
+- This encodes the product decision that extra AP/MP/Range is good within hard caps, but should not dominate build quality.
+- Reviewer finding: no issues.
+- Verification passed:
+  - focused unittest coverage for action-stat surplus scoring, target semantics, and surplus target behavior
+  - nearby utility/cap tests for score caps and damage/survivability exclusion
+  - `docker exec dofuslab-server-1 python -m py_compile oneoff/build_discovery_prototype.py`
+  - `git diff --check`

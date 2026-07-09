@@ -751,6 +751,23 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertEqual(final_utility_score(survivability_stats), 0)
 
+    def test_action_stat_surplus_has_light_capped_utility_value(self):
+        target_action_stats = {"AP": 11, "MP": 6, "Range": 0}
+        surplus_action_stats = {"AP": 12, "MP": 6, "Range": 6}
+
+        self.assertGreater(
+            final_utility_score(surplus_action_stats),
+            final_utility_score(target_action_stats),
+        )
+        self.assertEqual(
+            final_utility_score({"AP": 13, "MP": 7, "Range": 8}),
+            final_utility_score({"AP": 12, "MP": 6, "Range": 6}),
+        )
+        self.assertLess(
+            final_utility_score({"Range": 6}) - final_utility_score({"Range": 0}),
+            score_stats({"Strength": 80}),
+        )
+
     def test_percent_resistances_are_equal_and_above_strength(self):
         resistance_weights = [
             build_discovery_prototype.STAT_WEIGHTS["% Earth Resistance"],
