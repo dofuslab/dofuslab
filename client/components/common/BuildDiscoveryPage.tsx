@@ -16,22 +16,26 @@ import {
 import { ReloadOutlined } from '@ant-design/icons';
 
 import {
-  BUILD_DISCOVERY_EXO_STAT_MAP,
   BuildDiscoveryBuild,
   BuildDiscoveryElement,
+  BuildDiscoveryImportContext,
   BuildDiscoveryQueryInput,
   DEFAULT_BUILD_DISCOVERY_INPUT,
   buildDiscoveryExoLabels,
   buildDiscoveryHasExos,
   buildDiscoveryHasUnsupportedExos,
+  buildDiscoveryImportItems,
   buildDiscoveryItemIds,
-  buildDiscoveryNumberedSlotParts,
+  buildDiscoveryRequestPayload,
+  buildDiscoveryResultKey,
   formatBuildDiscoveryLabel,
+  generatedBuildName,
+  generatedExoImportMessage,
+  generatedImportBlockMessage,
   useBuildDiscoveryQuery,
 } from 'common/buildDiscovery';
 import { mq } from 'common/constants';
 import { checkAuthentication, navigateToNewCustomSet } from 'common/utils';
-import { CustomSetImportedItemInput } from '__generated__/globalTypes';
 import ImportGeneratedCustomSetMutation from 'graphql/mutations/importGeneratedCustomSet.graphql';
 import {
   importGeneratedCustomSet,
@@ -123,155 +127,6 @@ function sortedTotals(totals: Record<string, number> = {}) {
     });
 }
 
-function buildResultKey(build: BuildDiscoveryBuild) {
-  const itemIds = Object.values(build.items ?? {})
-    .map((item) => item.id ?? item.name ?? 'unknown')
-    .join(':');
-
-  return `${build.score ?? 'score'}:${itemIds}`;
-}
-
-type BuildDiscoveryImportContext = {
-  datasetVersion?: string;
-  solverVersion?: string;
-  query?: Record<string, unknown>;
-  input: BuildDiscoveryQueryInput;
-};
-
-function generatedBuildName(
-  build: BuildDiscoveryBuild,
-  context: BuildDiscoveryImportContext,
-) {
-  const scoreLabel =
-    typeof build.score === 'number' ? ` #${Math.round(build.score)}` : '';
-  const query = context.query ?? context.input;
-  const className =
-    typeof query.className === 'string'
-      ? query.className
-      : context.input.className;
-  const element =
-    Array.isArray(query.elements) && typeof query.elements[0] === 'string'
-      ? query.elements[0]
-      : context.input.element;
-  const buildLabel =
-    element && className
-      ? `${formatBuildDiscoveryLabel(element)} ${className}`
-      : 'Build Discovery';
-
-  return `Generated ${buildLabel}${scoreLabel}`;
-}
-
-function buildDiscoveryImportItems(build: BuildDiscoveryBuild) {
-  const items: CustomSetImportedItemInput[] = [];
-  const matchedExoKeys = new Set<string>();
-  const exoEntries = Object.entries(build.exos ?? {});
-  let hasMissingInternalIds = false;
-
-  Object.entries(build.items ?? {})
-    .sort(([leftSlot], [rightSlot]) => {
-      const left = buildDiscoveryNumberedSlotParts(leftSlot);
-      const right = buildDiscoveryNumberedSlotParts(rightSlot);
-      const familyOrder = (left.family ?? '').localeCompare(right.family ?? '');
-
-      if (familyOrder !== 0) {
-        return familyOrder;
-      }
-
-      return (left.index ?? 0) - (right.index ?? 0);
-    })
-    .forEach(([slot, item]) => {
-      if (typeof item.id !== 'string' || item.id.length === 0) {
-        return;
-      }
-
-      if (typeof item.internalId !== 'string' || item.internalId.length === 0) {
-        hasMissingInternalIds = true;
-        return;
-      }
-
-      const hasGeneratedExo = (
-        stat: keyof typeof BUILD_DISCOVERY_EXO_STAT_MAP,
-      ) =>
-        exoEntries.some(([exoStat, exo]) => {
-          if (exoStat !== stat || exo.itemId !== item.id) {
-            return false;
-          }
-
-          const exoSlot = buildDiscoveryNumberedSlotParts(exo.slot);
-          const itemSlot = buildDiscoveryNumberedSlotParts(slot);
-
-          if (
-            exoSlot.family !== itemSlot.family ||
-            exoSlot.index !== itemSlot.index
-          ) {
-            return false;
-          }
-
-          matchedExoKeys.add(exoStat);
-          return true;
-        });
-
-      items.push({
-        id: item.internalId,
-        apExo: hasGeneratedExo('AP') || undefined,
-        mpExo: hasGeneratedExo('MP') || undefined,
-        rangeExo: hasGeneratedExo('Range') || undefined,
-      });
-    });
-
-  return {
-    items,
-    hasMissingInternalIds,
-    hasUnmatchedExos: matchedExoKeys.size !== exoEntries.length,
-  };
-}
-
-function buildDiscoveryRequestPayload(
-  build: BuildDiscoveryBuild,
-  context: BuildDiscoveryImportContext,
-) {
-  return {
-    query: context.query ?? context.input,
-    build: {
-      key: buildResultKey(build),
-      score: build.score,
-      itemIds: buildDiscoveryItemIds(build),
-      exos: build.exos ?? {},
-    },
-  };
-}
-
-function generatedExoImportMessage(
-  hasUnsupportedExos: boolean,
-  hasUnmatchedExos: boolean,
-) {
-  if (hasUnsupportedExos) {
-    return 'Open in builder is disabled for unsupported generated exos.';
-  }
-
-  if (hasUnmatchedExos) {
-    return 'Open in builder is disabled because generated exos could not be matched to one item slot.';
-  }
-
-  return 'Generated AP/MP/Range exos will be imported with this build.';
-}
-
-function generatedImportBlockMessage(
-  hasMissingInternalIds: boolean,
-  hasUnsupportedExos: boolean,
-  hasUnmatchedExos: boolean,
-) {
-  if (hasMissingInternalIds) {
-    return 'Open in builder is disabled because this result is missing generated item import IDs.';
-  }
-
-  if (hasUnsupportedExos || hasUnmatchedExos) {
-    return generatedExoImportMessage(hasUnsupportedExos, hasUnmatchedExos);
-  }
-
-  return null;
-}
-
 function useOpenBuildDiscoveryBuild(
   build: BuildDiscoveryBuild,
   context: BuildDiscoveryImportContext,
@@ -298,7 +153,7 @@ function useOpenBuildDiscoveryBuild(
     gtag.event({
       action: 'build_discovery_open_builder_attempt',
       category: 'Build Discovery',
-      label: buildResultKey(build),
+      label: buildDiscoveryResultKey(build),
       value: itemIds.length,
     });
     const ok = await checkAuthentication(client, t);
@@ -835,7 +690,7 @@ export default function BuildDiscoveryPage() {
           hasBuilds &&
           buildDiscovery?.builds.map((build, index) => (
             <BuildDiscoveryResult
-              key={buildResultKey(build)}
+              key={buildDiscoveryResultKey(build)}
               build={build}
               importContext={{
                 datasetVersion: buildDiscovery.datasetVersion,

@@ -1,4 +1,5 @@
 import type { buildDiscoveryVariables } from 'graphql/queries/__generated__/buildDiscovery';
+import type { CustomSetImportedItemInput } from '__generated__/globalTypes';
 
 export type BuildDiscoveryElement =
   | 'strength'
@@ -51,6 +52,13 @@ export type BuildDiscoveryResponse = {
   builds: BuildDiscoveryBuild[];
 };
 
+export type BuildDiscoveryImportContext = {
+  datasetVersion?: string;
+  solverVersion?: string;
+  query?: Record<string, unknown>;
+  input: BuildDiscoveryQueryInput;
+};
+
 export type BuildDiscoveryBuild = {
   score?: number;
   totals?: Record<string, number>;
@@ -94,6 +102,37 @@ export function buildDiscoveryItemIds(build: BuildDiscoveryBuild) {
     .filter((id): id is string => typeof id === 'string' && id.length > 0);
 }
 
+export function buildDiscoveryResultKey(build: BuildDiscoveryBuild) {
+  const itemIds = Object.values(build.items ?? {})
+    .map((item) => item.id ?? item.name ?? 'unknown')
+    .join(':');
+
+  return `${build.score ?? 'score'}:${itemIds}`;
+}
+
+export function generatedBuildName(
+  build: BuildDiscoveryBuild,
+  context: BuildDiscoveryImportContext,
+) {
+  const scoreLabel =
+    typeof build.score === 'number' ? ` #${Math.round(build.score)}` : '';
+  const query = context.query ?? context.input;
+  const className =
+    typeof query.className === 'string'
+      ? query.className
+      : context.input.className;
+  const element =
+    Array.isArray(query.elements) && typeof query.elements[0] === 'string'
+      ? query.elements[0]
+      : context.input.element;
+  const buildLabel =
+    element && className
+      ? `${formatBuildDiscoveryLabel(element)} ${className}`
+      : 'Build Discovery';
+
+  return `Generated ${buildLabel}${scoreLabel}`;
+}
+
 export function buildDiscoveryHasExos(build: BuildDiscoveryBuild) {
   return Object.keys(build.exos ?? {}).length > 0;
 }
@@ -103,22 +142,6 @@ export function buildDiscoveryHasUnsupportedExos(build: BuildDiscoveryBuild) {
     (stat) =>
       !Object.prototype.hasOwnProperty.call(BUILD_DISCOVERY_EXO_STAT_MAP, stat),
   );
-}
-
-export function buildDiscoveryExoLabels(build: BuildDiscoveryBuild) {
-  return Object.entries(build.exos ?? {}).map(([stat, exo]) => {
-    const slotLabel = exo.slot
-      ? formatBuildDiscoveryLabel(exo.slot)
-      : 'Unknown slot';
-    const itemName = Object.values(build.items ?? {}).find(
-      (item) => item.id === exo.itemId,
-    )?.name;
-
-    return {
-      key: `${stat}:${exo.itemId ?? slotLabel}`,
-      label: `${stat} exo - ${itemName ?? exo.itemId ?? slotLabel}`,
-    };
-  });
 }
 
 export function normalizeBuildDiscoverySlotName(
@@ -141,6 +164,133 @@ export function buildDiscoveryNumberedSlotParts(
     family: match[1],
     index: Number(match[2]) - 1,
   };
+}
+
+export function buildDiscoveryImportItems(build: BuildDiscoveryBuild) {
+  const items: CustomSetImportedItemInput[] = [];
+  const matchedExoKeys = new Set<string>();
+  const exoEntries = Object.entries(build.exos ?? {});
+  let hasMissingInternalIds = false;
+
+  Object.entries(build.items ?? {})
+    .sort(([leftSlot], [rightSlot]) => {
+      const left = buildDiscoveryNumberedSlotParts(leftSlot);
+      const right = buildDiscoveryNumberedSlotParts(rightSlot);
+      const familyOrder = (left.family ?? '').localeCompare(right.family ?? '');
+
+      if (familyOrder !== 0) {
+        return familyOrder;
+      }
+
+      return (left.index ?? 0) - (right.index ?? 0);
+    })
+    .forEach(([slot, item]) => {
+      if (typeof item.id !== 'string' || item.id.length === 0) {
+        return;
+      }
+
+      if (typeof item.internalId !== 'string' || item.internalId.length === 0) {
+        hasMissingInternalIds = true;
+        return;
+      }
+
+      const hasGeneratedExo = (
+        stat: keyof typeof BUILD_DISCOVERY_EXO_STAT_MAP,
+      ) =>
+        exoEntries.some(([exoStat, exo]) => {
+          if (exoStat !== stat || exo.itemId !== item.id) {
+            return false;
+          }
+
+          const exoSlot = buildDiscoveryNumberedSlotParts(exo.slot);
+          const itemSlot = buildDiscoveryNumberedSlotParts(slot);
+
+          if (
+            exoSlot.family !== itemSlot.family ||
+            exoSlot.index !== itemSlot.index
+          ) {
+            return false;
+          }
+
+          matchedExoKeys.add(exoStat);
+          return true;
+        });
+
+      items.push({
+        id: item.internalId,
+        apExo: hasGeneratedExo('AP') || undefined,
+        mpExo: hasGeneratedExo('MP') || undefined,
+        rangeExo: hasGeneratedExo('Range') || undefined,
+      });
+    });
+
+  return {
+    items,
+    hasMissingInternalIds,
+    hasUnmatchedExos: matchedExoKeys.size !== exoEntries.length,
+  };
+}
+
+export function buildDiscoveryRequestPayload(
+  build: BuildDiscoveryBuild,
+  context: BuildDiscoveryImportContext,
+) {
+  return {
+    query: context.query ?? context.input,
+    build: {
+      key: buildDiscoveryResultKey(build),
+      score: build.score,
+      itemIds: buildDiscoveryItemIds(build),
+      exos: build.exos ?? {},
+    },
+  };
+}
+
+export function generatedExoImportMessage(
+  hasUnsupportedExos: boolean,
+  hasUnmatchedExos: boolean,
+) {
+  if (hasUnsupportedExos) {
+    return 'Open in builder is disabled for unsupported generated exos.';
+  }
+
+  if (hasUnmatchedExos) {
+    return 'Open in builder is disabled because generated exos could not be matched to one item slot.';
+  }
+
+  return 'Generated AP/MP/Range exos will be imported with this build.';
+}
+
+export function generatedImportBlockMessage(
+  hasMissingInternalIds: boolean,
+  hasUnsupportedExos: boolean,
+  hasUnmatchedExos: boolean,
+) {
+  if (hasMissingInternalIds) {
+    return 'Open in builder is disabled because this result is missing generated item import IDs.';
+  }
+
+  if (hasUnsupportedExos || hasUnmatchedExos) {
+    return generatedExoImportMessage(hasUnsupportedExos, hasUnmatchedExos);
+  }
+
+  return null;
+}
+
+export function buildDiscoveryExoLabels(build: BuildDiscoveryBuild) {
+  return Object.entries(build.exos ?? {}).map(([stat, exo]) => {
+    const slotLabel = exo.slot
+      ? formatBuildDiscoveryLabel(exo.slot)
+      : 'Unknown slot';
+    const itemName = Object.values(build.items ?? {}).find(
+      (item) => item.id === exo.itemId,
+    )?.name;
+
+    return {
+      key: `${stat}:${exo.itemId ?? slotLabel}`,
+      label: `${stat} exo - ${itemName ?? exo.itemId ?? slotLabel}`,
+    };
+  });
 }
 
 export const DEFAULT_BUILD_DISCOVERY_INPUT: Required<

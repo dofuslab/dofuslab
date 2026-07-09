@@ -5,10 +5,15 @@ import {
   buildDiscoveryExoLabels,
   buildDiscoveryHasExos,
   buildDiscoveryHasUnsupportedExos,
+  buildDiscoveryImportItems,
   buildDiscoveryItemIds,
   buildDiscoveryNumberedSlotParts,
+  buildDiscoveryRequestPayload,
+  buildDiscoveryResultKey,
   buildDiscoveryVariablesFromInput,
   DEFAULT_BUILD_DISCOVERY_INPUT,
+  generatedBuildName,
+  generatedImportBlockMessage,
   normalizeBuildDiscoverySlotName,
   parseBuildDiscoveryResponse,
 } from '../common/buildDiscoveryContract';
@@ -171,6 +176,10 @@ assert.deepStrictEqual(buildDiscoveryItemIds(buildWithExos), [
   'ring-a',
   'shield-a',
 ]);
+assert.strictEqual(
+  buildDiscoveryResultKey(buildWithExos),
+  'score:ring-a:ring-a:shield-a',
+);
 assert.strictEqual(buildDiscoveryHasExos(buildWithExos), true);
 assert.strictEqual(buildDiscoveryHasUnsupportedExos(buildWithExos), false);
 assert.deepStrictEqual(BUILD_DISCOVERY_EXO_STAT_MAP, {
@@ -196,6 +205,129 @@ assert.strictEqual(
     exos: { Wisdom: { itemId: 'hat-a', slot: 'hat' } },
   }),
   true,
+);
+
+assert.deepStrictEqual(buildDiscoveryImportItems(buildWithExos), {
+  items: [
+    {
+      id: 'uuid-ring-a',
+      apExo: true,
+      mpExo: undefined,
+      rangeExo: undefined,
+    },
+    {
+      id: 'uuid-ring-a-2',
+      apExo: undefined,
+      mpExo: undefined,
+      rangeExo: undefined,
+    },
+    {
+      id: 'uuid-shield-a',
+      apExo: undefined,
+      mpExo: undefined,
+      rangeExo: true,
+    },
+  ],
+  hasMissingInternalIds: false,
+  hasUnmatchedExos: false,
+});
+assert.deepStrictEqual(
+  buildDiscoveryImportItems({
+    items: {
+      ring_2: {
+        id: 'ring-b',
+        internalId: 'uuid-ring-b-2',
+        name: 'Second Ring',
+      },
+      shield: {
+        id: 'shield-b',
+        internalId: 'uuid-shield-b',
+        name: 'Shield',
+      },
+      ring_1: {
+        id: 'ring-a',
+        internalId: 'uuid-ring-a-1',
+        name: 'First Ring',
+      },
+    },
+  }).items.map((item) => item.id),
+  ['uuid-ring-a-1', 'uuid-ring-b-2', 'uuid-shield-b'],
+);
+assert.deepStrictEqual(
+  buildDiscoveryImportItems({
+    items: {
+      ring_1: { id: 'ring-a', name: 'Ring Name' },
+    },
+  }),
+  {
+    items: [],
+    hasMissingInternalIds: true,
+    hasUnmatchedExos: false,
+  },
+);
+assert.deepStrictEqual(
+  buildDiscoveryImportItems({
+    exos: {
+      AP: { itemId: 'ring-a', slot: null },
+    },
+    items: {
+      ring_1: {
+        id: 'ring-a',
+        internalId: 'uuid-ring-a',
+        name: 'Ring Name',
+      },
+    },
+  }),
+  {
+    items: [
+      {
+        id: 'uuid-ring-a',
+        apExo: undefined,
+        mpExo: undefined,
+        rangeExo: undefined,
+      },
+    ],
+    hasMissingInternalIds: false,
+    hasUnmatchedExos: true,
+  },
+);
+assert.strictEqual(
+  generatedImportBlockMessage(true, false, false),
+  'Open in builder is disabled because this result is missing generated item import IDs.',
+);
+assert.strictEqual(
+  generatedImportBlockMessage(false, false, true),
+  'Open in builder is disabled because generated exos could not be matched to one item slot.',
+);
+
+const importContext = {
+  datasetVersion: 'dataset-v1',
+  solverVersion: 'solver-v1',
+  query: { className: 'Iop', elements: ['chance'] },
+  input: { className: 'Iop' as const, element: 'strength' as const },
+};
+assert.strictEqual(
+  generatedBuildName({ score: 123.4 }, importContext),
+  'Generated Chance Iop #123',
+);
+assert.strictEqual(
+  generatedBuildName({ score: 123.4 }, { input: {} }),
+  'Generated Build Discovery #123',
+);
+assert.deepStrictEqual(
+  buildDiscoveryRequestPayload(buildWithExos, importContext),
+  {
+    query: { className: 'Iop', elements: ['chance'] },
+    build: {
+      key: 'score:ring-a:ring-a:shield-a',
+      score: undefined,
+      itemIds: ['ring-a', 'ring-a', 'shield-a'],
+      exos: {
+        AP: { itemId: 'ring-a', slot: 'ring_1' },
+        Range: { itemId: 'shield-a', slot: 'shield' },
+      },
+    },
+  },
 );
 
 console.log('Build Discovery client contract check passed.');

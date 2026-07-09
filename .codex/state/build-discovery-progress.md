@@ -588,3 +588,27 @@ Run the initial evaluator pass:
   - `cd client; npx eslint --fix-dry-run components/common/BuildList.tsx`
   - parsed all `client/public/locales/*/common.json` files and asserted filter keys are present
   - `git diff --check`
+
+### 2026-07-09 Client Import Contract Tests
+
+- Created stacked branch `codex/build-discovery-client-import-contract-tests` on top of `codex/build-discovery-generated-build-list-filter-ui`.
+- Extracted Build Discovery generated-import helpers from `BuildDiscoveryPage` into the pure client contract module:
+  - generated build name
+  - generated import item rows
+  - import request payload
+  - result key
+  - import block/exo messages
+- Extended `yarn check-build-discovery-contract` assertions for:
+  - using internal UUIDs for mutation item IDs
+  - using Dofus IDs only for generated exo matching
+  - missing internal IDs
+  - unmatched/null-slot exos
+  - deterministic import row sorting from an unsorted fixture
+  - generated-name fallback behavior
+  - compact request payload shape
+- Reviewer finding fixed before commit:
+  - added an unsorted fixture so the slot sorting assertion would fail if sorting were removed
+- Verification passed:
+  - `cd client; yarn type-check`
+  - `cd client; npx eslint --fix-dry-run common/buildDiscovery.ts common/buildDiscoveryContract.ts components/common/BuildDiscoveryPage.tsx scripts/check-build-discovery-contract.ts` (existing `no-console` warning in the contract check script)
+  - `git diff --check`
