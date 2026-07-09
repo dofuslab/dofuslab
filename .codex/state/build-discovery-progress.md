@@ -1036,3 +1036,15 @@ Run the initial evaluator pass:
   - generated-looking legacy custom sets without provenance are audit/backfill/classification candidates, not cleanup targets
 - Verification passed:
   - `git diff --check`
+
+### 2026-07-09 Async Performance Acceptance
+
+- Created stacked branch `codex/build-discovery-async-performance-acceptance` on top of `codex/build-discovery-generated-data-retention-policy`.
+- Documented the current performance decision in `.codex/state/build-discovery-performance-acceptance.md`.
+- Decision:
+  - fresh synchronous Build Discovery remains above the original 5000 ms p95 threshold
+  - this is accepted only because product/client serving is async-first for misses
+  - synchronous responses are appropriate for app-cache hits
+  - direct fresh synchronous `buildDiscovery` remains legacy/dev and should not be treated as shippable
+- Verification passed:
+  - `git diff --check`

@@ -29,7 +29,7 @@ This is the current working checklist for deciding whether Build Discovery is sh
 - [x] Local Iop element/profile validation covers Strength, Intelligence, Chance, and Agility for 11/6/0 and 12/6/0.
 - [x] First-build contract fixture checks importable item IDs, internal UUIDs, exos, base allocation, and AP/MP/Range targets.
 - [x] Fresh local suite p95 remeasured against the latest Docker DB generated index.
-- [ ] Fresh synchronous p95 is still above 5s for most local suite rows; keep app-cache misses on async path or optimize slow rows before serving fresh sync.
+- [x] Fresh synchronous p95 remains above 5s; accepted serving path is async-first misses plus synchronous cache hits.
 - [x] Warmed app-cache suite pass returns all supported rows as hits with nonempty results.
 - [x] Accepted benchmark artifact exists for current Strength Iop DofusLab refs, including generated comparisons.
 - [x] Benchmark comparisons have a compact regression fixture with explicit drift thresholds.
