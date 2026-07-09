@@ -11,6 +11,7 @@ from typing import Any, Callable
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.build_discovery_local_readiness_report import (  # noqa: E402
+    DEFAULT_ASSUMPTIONS_LEDGER,
     DEFAULT_GAMEPLAY_REVIEW_PACKET,
     DEFAULT_READINESS_CHECKLIST,
     build_readiness_report,
@@ -65,6 +66,7 @@ def build_summary(
         "strictCacheStatus": strict_cache_report.get("status"),
         "strictCacheSummary": strict_cache_report.get("summary", {}),
         "readinessStatus": readiness_report.get("status"),
+        "assumptionsReview": readiness_report.get("assumptionsReview", {}),
         "blockers": readiness_report.get("blockers", []),
     }
 
@@ -75,6 +77,7 @@ def run_pipeline(
     max_hit_elapsed_ms: float = 500.0,
     readiness_checklist_path: Path = DEFAULT_READINESS_CHECKLIST,
     gameplay_review_packet_path: Path = DEFAULT_GAMEPLAY_REVIEW_PACKET,
+    assumptions_ledger_path: Path = DEFAULT_ASSUMPTIONS_LEDGER,
     cache_prewarm_fn: Callable[[bool, float | None, float | None], dict[str, Any]] = default_cache_prewarm_report,
     readiness_fn: Callable[..., dict[str, Any]] = build_readiness_report,
 ) -> dict[str, Any]:
@@ -92,6 +95,7 @@ def run_pipeline(
     readiness_report = readiness_fn(
         readiness_checklist_path=readiness_checklist_path,
         gameplay_review_packet_path=gameplay_review_packet_path,
+        assumptions_ledger_path=assumptions_ledger_path,
         cache_prewarm_report_path=strict_cache_path,
         max_cache_hit_p95_ms=max_hit_p95_ms,
     )
@@ -114,6 +118,7 @@ def main() -> None:
     parser.add_argument("--max-hit-elapsed-ms", type=float, default=500.0)
     parser.add_argument("--readiness-checklist", type=Path, default=DEFAULT_READINESS_CHECKLIST)
     parser.add_argument("--gameplay-review-packet", type=Path, default=DEFAULT_GAMEPLAY_REVIEW_PACKET)
+    parser.add_argument("--assumptions-ledger", type=Path, default=DEFAULT_ASSUMPTIONS_LEDGER)
     args = parser.parse_args()
 
     summary = run_pipeline(
@@ -122,6 +127,7 @@ def main() -> None:
         max_hit_elapsed_ms=args.max_hit_elapsed_ms,
         readiness_checklist_path=args.readiness_checklist,
         gameplay_review_packet_path=args.gameplay_review_packet,
+        assumptions_ledger_path=args.assumptions_ledger,
     )
     print(json.dumps(summary, indent=2, ensure_ascii=False))
 

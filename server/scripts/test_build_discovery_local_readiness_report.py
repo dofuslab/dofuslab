@@ -5,6 +5,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from build_discovery_local_readiness_report import (
+    assumptions_review_status,
     benchmark_report_status,
     build_readiness_report,
     cache_report_status,
@@ -40,6 +41,26 @@ class BuildDiscoveryLocalReadinessReportTest(unittest.TestCase):
             path.write_text("- [x] Done\n- [ ] Needs review\n", encoding="utf-8")
 
             self.assertEqual(checklist_open_items(path), ["Needs review"])
+
+    def test_assumptions_review_status_counts_ledger_and_review_questions(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            ledger_path = Path(temp_dir) / "assumptions.md"
+            gameplay_path = Path(temp_dir) / "gameplay.md"
+            ledger_path.write_text(
+                "## Budget\n- Budget assumption\n## Classes\n- Class assumption\n",
+                encoding="utf-8",
+            )
+            gameplay_path.write_text(
+                "- Should this be reviewed?\n- This is context.\n",
+                encoding="utf-8",
+            )
+
+            status = assumptions_review_status(ledger_path, gameplay_path)
+
+            self.assertTrue(status["ledgerExists"])
+            self.assertEqual(status["ledgerSectionCount"], 2)
+            self.assertEqual(status["ledgerAssumptionCount"], 2)
+            self.assertEqual(status["gameplayReviewQuestionCount"], 1)
 
     def test_cache_report_status_passes_strict_warmed_cache_report(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -133,8 +154,10 @@ class BuildDiscoveryLocalReadinessReportTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             checklist_path = Path(temp_dir) / "checklist.md"
             gameplay_path = Path(temp_dir) / "gameplay.md"
+            assumptions_path = Path(temp_dir) / "assumptions.md"
             checklist_path.write_text("- [ ] User review needed\n", encoding="utf-8")
             gameplay_path.write_text("# Packet\n", encoding="utf-8")
+            assumptions_path.write_text("- Assumption\n", encoding="utf-8")
 
             with patch(
                 "build_discovery_local_readiness_report.preflight_status",
@@ -146,6 +169,7 @@ class BuildDiscoveryLocalReadinessReportTest(unittest.TestCase):
                 report = build_readiness_report(
                     readiness_checklist_path=checklist_path,
                     gameplay_review_packet_path=gameplay_path,
+                    assumptions_ledger_path=assumptions_path,
                 )
 
             self.assertEqual(report["status"], "incomplete")
@@ -156,11 +180,13 @@ class BuildDiscoveryLocalReadinessReportTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             checklist_path = Path(temp_dir) / "checklist.md"
             gameplay_path = Path(temp_dir) / "gameplay.md"
+            assumptions_path = Path(temp_dir) / "assumptions.md"
             cache_path = Path(temp_dir) / "cache.json"
             benchmark_path = Path(temp_dir) / "benchmark.json"
             fixture_path = Path(temp_dir) / "fixture.json"
             checklist_path.write_text("- [x] Done\n", encoding="utf-8")
             gameplay_path.write_text("# Packet\n", encoding="utf-8")
+            assumptions_path.write_text("- Assumption\n", encoding="utf-8")
             cache_path.write_text(
                 json.dumps(
                     {
@@ -210,6 +236,7 @@ class BuildDiscoveryLocalReadinessReportTest(unittest.TestCase):
                 report = build_readiness_report(
                     readiness_checklist_path=checklist_path,
                     gameplay_review_packet_path=gameplay_path,
+                    assumptions_ledger_path=assumptions_path,
                     cache_prewarm_report_path=cache_path,
                     benchmark_comparison_report_path=benchmark_path,
                     benchmark_fixture_path=fixture_path,

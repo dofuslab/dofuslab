@@ -29,6 +29,11 @@ def cache_report(status: str, cache_hits: int = 8, cache_misses: int = 0) -> dic
 def readiness_report(status: str = "incomplete") -> dict:
     return {
         "status": status,
+        "assumptionsReview": {
+            "ledgerExists": True,
+            "ledgerAssumptionCount": 181,
+            "gameplayReviewQuestionCount": 15,
+        },
         "blockers": ["prod readonly database URL is not available"],
     }
 
@@ -47,6 +52,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
         self.assertEqual(summary["warmCacheStatus"], "pass")
         self.assertEqual(summary["strictCacheStatus"], "fail")
         self.assertEqual(summary["readinessStatus"], "incomplete")
+        self.assertEqual(summary["assumptionsReview"]["ledgerAssumptionCount"], 181)
         self.assertEqual(
             summary["artifacts"]["strictCachePrewarmReport"],
             str(output_dir / STRICT_CACHE_FILENAME),
@@ -57,6 +63,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             checklist_path = Path(temp_dir) / "checklist.md"
             gameplay_path = Path(temp_dir) / "gameplay.md"
+            assumptions_path = Path(temp_dir) / "assumptions.md"
             calls = []
             readiness_kwargs = {}
 
@@ -74,6 +81,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
                 max_hit_elapsed_ms=400,
                 readiness_checklist_path=checklist_path,
                 gameplay_review_packet_path=gameplay_path,
+                assumptions_ledger_path=assumptions_path,
                 cache_prewarm_fn=fake_cache_prewarm,
                 readiness_fn=fake_readiness,
             )
@@ -88,6 +96,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
                 readiness_kwargs["cache_prewarm_report_path"],
                 output_path / STRICT_CACHE_FILENAME,
             )
+            self.assertEqual(readiness_kwargs["assumptions_ledger_path"], assumptions_path)
             self.assertEqual(readiness_kwargs["max_cache_hit_p95_ms"], 250)
             self.assertEqual(
                 json.loads((output_path / SUMMARY_FILENAME).read_text()),

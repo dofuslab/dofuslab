@@ -1234,3 +1234,39 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_pipeline.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_local_readiness_pipeline.py --output-dir /tmp/build_discovery_local_readiness_pipeline --readiness-checklist /tmp/build_discovery_local_readiness_state/build-discovery-readiness-checklist.md --gameplay-review-packet /tmp/build_discovery_local_readiness_state/build-discovery-gameplay-review-packet.md`
   - `git diff --check`
+
+### 2026-07-09 Assumptions Readiness Surface
+
+- Created stacked branch `codex/build-discovery-assumptions-readiness-surface` on top of `codex/build-discovery-local-readiness-pipeline`.
+- Extended `server/scripts/build_discovery_local_readiness_report.py` with an `assumptionsReview` section:
+  - assumptions ledger path and existence
+  - assumptions ledger section count
+  - assumptions ledger bullet count
+  - gameplay review packet question count
+- The readiness report now blocks on a missing assumptions ledger instead of silently omitting it.
+- Extended `server/scripts/build_discovery_local_readiness_pipeline.py` so pipeline summaries surface `assumptionsReview` directly.
+- Added focused tests for assumptions counting and pipeline pass-through.
+- Host readiness report result:
+  - readiness status: `incomplete`
+  - assumptions ledger exists
+  - assumptions sections: 17
+  - assumptions bullets: 181
+  - gameplay review questions: 15
+- Docker pipeline result with state files copied into `/tmp`:
+  - warm cache status: `pass`
+  - strict cache status: `pass`
+  - strict cache hits: 8
+  - strict cache misses: 0
+  - strict cache-hit p95: `0.7ms`
+  - readiness status: `incomplete`
+  - assumptions sections: 17
+  - assumptions bullets: 181
+  - gameplay review questions: 15
+- Verification passed:
+  - `python server\scripts\test_build_discovery_local_readiness_report.py`
+  - `python server\scripts\test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_local_readiness_report.py scripts/test_build_discovery_local_readiness_report.py scripts/build_discovery_local_readiness_pipeline.py scripts/test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_report.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_local_readiness_pipeline.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_local_readiness_pipeline.py --output-dir /tmp/build_discovery_local_readiness_pipeline --readiness-checklist /tmp/build_discovery_local_readiness_state/build-discovery-readiness-checklist.md --gameplay-review-packet /tmp/build_discovery_local_readiness_state/build-discovery-gameplay-review-packet.md --assumptions-ledger /tmp/build_discovery_local_readiness_state/build-discovery-assumptions.md`
+  - `git diff --check`
