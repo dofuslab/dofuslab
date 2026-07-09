@@ -244,3 +244,22 @@ Run the initial evaluator pass:
   - `yarn type-check` now runs `tsc && yarn check-build-discovery-contract`
 - Verification passed:
   - `cd client && yarn type-check`
+
+### 2026-07-09 First Client Page Checkpoint
+
+- Created stacked branch `codex/build-discovery-first-client-page` on top of `codex/build-discovery-contract-ci-check`.
+- Added a first usable `/build-discovery` client route:
+  - controls for element, AP, MP, range, budget, limit, exo policy, and weapon policy
+  - explicit `Run` submission so filter edits do not immediately spam solver requests
+  - result cards for item slots, score, totals, warnings, cache status, and elapsed time
+  - mobile-first grids with desktop min-width overrides
+- Verification passed:
+  - `cd client && npx eslint --fix-dry-run components/common/BuildDiscoveryPage.tsx pages/build-discovery.tsx`
+  - `cd client && yarn type-check`
+  - `git diff --check`
+  - `Invoke-WebRequest http://localhost:3000/build-discovery/` returned HTTP 200 after clearing stale generated `.next` cache in the client container
+- Reviewer findings fixed before commit:
+  - corrected responsive breakpoint direction
+  - changed query behavior from edit-triggered requests to explicit `Run`
+- Residual risk:
+  - in-app browser navigation timed out during visual smoke, so screenshot/mobile visual verification is still pending.
