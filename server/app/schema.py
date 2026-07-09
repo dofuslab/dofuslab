@@ -1,5 +1,6 @@
 from json.encoder import INFINITY
 from math import inf
+from copy import deepcopy
 import random
 from app import (
     db,
@@ -10,6 +11,7 @@ from app import (
     limiter,
     base_url,
     reset_password_salt,
+    cache_region,
 )
 from app.database.model_favorite_item import ModelFavoriteItem
 from app.database.model_item_stat_translation import ModelItemStatTranslation
@@ -90,11 +92,14 @@ from sqlalchemy.orm import aliased
 from sqlalchemy.sql.expression import true
 from datetime import datetime
 from ddtrace import tracer
+from dogpile.cache.api import NO_VALUE
 from oneoff.build_discovery_prototype import (
     BuildDiscoveryQuery,
     DEFAULT_MAX_SHARED_ITEMS,
     build_discovery_response,
+    dataset_version,
     load_build_discovery_index,
+    query_cache_key,
 )
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
@@ -216,6 +221,46 @@ def build_discovery_query_from_args(kwargs):
 def require_build_discovery_index():
     if load_build_discovery_index() is None:
         raise GraphQLError("Build Discovery index is not available.")
+
+
+def build_discovery_app_cache_key(query):
+    return "build_discovery_response:" + query_cache_key(query, dataset_version())
+
+
+def mark_build_discovery_app_cache_hit(response):
+    cached = deepcopy(response)
+    cached["cache"] = {
+        **cached.get("cache", {}),
+        "status": "hit",
+        "storage": "app_cache",
+    }
+    cached.setdefault("diagnostics", {})["cacheHit"] = True
+    cached["diagnostics"]["appCacheHit"] = True
+    cached["diagnostics"]["elapsedMs"] = 0.0
+    return cached
+
+
+def mark_build_discovery_app_cache_miss(response):
+    cached = deepcopy(response)
+    cached["cache"] = {
+        **cached.get("cache", {}),
+        "status": "miss",
+        "storage": "app_cache",
+    }
+    cached.setdefault("diagnostics", {})["appCacheHit"] = False
+    return cached
+
+
+def build_discovery_cached_response(query):
+    cache_key = build_discovery_app_cache_key(query)
+    cached_response = cache_region.get(cache_key)
+    if cached_response is not None and cached_response is not NO_VALUE:
+        return mark_build_discovery_app_cache_hit(cached_response)
+
+    response = build_discovery_response(query, use_cache=False)
+    response = mark_build_discovery_app_cache_miss(response)
+    cache_region.set(cache_key, response)
+    return response
 
 
 class ItemStat(SQLAlchemyObjectType):
@@ -1558,7 +1603,7 @@ class Query(graphene.ObjectType):
             query = build_discovery_query_from_args(kwargs)
             query.validate()
             require_build_discovery_index()
-            return build_discovery_response(query)
+            return build_discovery_cached_response(query)
         except ValueError as error:
             raise GraphQLError(str(error))
 

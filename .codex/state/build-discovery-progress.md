@@ -185,3 +185,20 @@ Run the initial evaluator pass:
   - `python scripts\build_discovery_query_perf.py --help`
   - `git diff --check`
   - generated JSON index smoke with `--validate-local-suite --runs 1 --no-cache --output <report> --fixture-output <fixture>` produced `status=pass` with 2 profiles
+
+### 2026-07-08 GraphQL App Cache Checkpoint
+
+- Created stacked branch `codex/build-discovery-app-cache` on top of `codex/build-discovery-local-regression-artifacts`.
+- Added app-level caching behind the GraphQL `buildDiscovery` resolver:
+  - uses `cache_region` dogpile/Redis infrastructure
+  - builds cache keys from the prototype cache-key helper, including dataset version, solver version, and query identity
+  - checks generated-index availability before cache access so stale cache cannot mask missing index setup
+  - bypasses prototype process-memory cache on app-cache misses with `use_cache=False`
+  - marks app-cache hits with `cache.status=hit`, `cache.storage=app_cache`, `diagnostics.appCacheHit=true`, and `diagnostics.elapsedMs=0.0`
+  - treats dogpile `NO_VALUE` as a miss and deep-copies cached responses before hit annotation
+- Verification passed:
+  - `python -m unittest scripts.test_build_discovery_query_perf` (21 tests)
+  - `python -m unittest scripts.test_build_discovery_prototype` (112 tests)
+  - `git diff --check`
+  - server-container inline GraphQL checks for identical-request hit, changed-query miss, dataset-version miss, `NO_VALUE` miss, prototype-cache bypass, missing-index no-cache-access, and cached-object immutability
+- Host GraphQL unit test execution is blocked by missing host Flask dependencies; GraphQL behavior was verified inside `dofuslab-server-1`.
