@@ -851,3 +851,18 @@ Run the initial evaluator pass:
   - `git diff --check`
 - Residual note:
   - the client contract script still has the pre-existing `no-console` lint warning.
+
+### 2026-07-09 Docker Worker Service
+
+- Created stacked branch `codex/build-discovery-docker-worker-service` on top of `codex/build-discovery-worker-task-skeleton`.
+- Added a `worker` service to `docker-compose.yml`:
+  - reuses the existing server image
+  - runs `python worker.py`
+  - depends on postgres and redis
+  - mirrors server develop-watch sync for local edits
+- Reviewer finding: no issues.
+- Verification passed:
+  - `docker compose config --quiet`
+  - `git diff --check`
+- Residual note:
+  - the worker consumes the existing default RQ queue, so it also handles non-Build-Discovery jobs such as email tasks in local Compose.

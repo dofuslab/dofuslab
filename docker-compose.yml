@@ -57,6 +57,18 @@ services:
         - action: sync
           path: ./server
           target: /home/dofuslab
+  worker:
+    build: ./server/
+    command: python worker.py
+    restart: always
+    depends_on:
+      - postgres
+      - redis
+    develop:
+      watch:
+        - action: sync
+          path: ./server
+          target: /home/dofuslab
   nginx:
     # https://hub.docker.com/_/nginx
     build: ./nginx/
