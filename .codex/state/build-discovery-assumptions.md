@@ -21,6 +21,11 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 
 - Query inputs should include class, level, elements, mode, AP target, MP target, Range target, damage/survivability preset, budget tier, exo policy, weapon policy, locked items, and avoided items.
 - `className=Iop`, `level=200`, `mode=pvm`, and one element are the only supported product-shaped query values for now.
+- `level` belongs in the Milestone 1 query/API/cache/provenance contract, but only level 200 generation is supported in Milestone 1.
+- Non-200 levels should return clear unsupported-input errors until the future Level Bracket Expansion milestone, unless product priority explicitly pulls that work forward.
+- Milestone 1 support means all supported Iop single elements: Strength, Intelligence, Chance, and Agility.
+- Milestone 1 support means any valid AP/MP/Range target within hard caps, not only 11/6/0 and 12/6/0 benchmark rows.
+- Milestone 1 support means product intent controls should affect generation: damage/survivability preset, budget tier, exo policy, weapon policy, locked items, and avoided items.
 - Locked items are final-result requirements. If the solver cannot find builds containing all locked items, result count can fall.
 - Avoided items are excluded from candidate loading.
 - Locked and avoided item IDs cannot overlap.
@@ -183,18 +188,21 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   - 100-149
   - 150-179
   - 180-200
-- Normal gear currently comes from the target level bucket.
+- Normal gear and set package candidates should come from the target level bucket plus the immediately previous bucket.
+- Strict target-bucket-only filtering is too narrow because players commonly dip into the previous bracket for still-efficient pieces.
 - Dofus/trophy/Prysmaradite candidates can come from lower/equal level buckets.
 - Pets, petsmounts, mounts, and evergreen IDs bypass ordinary level-bucket pruning.
 - Evergreen item IDs are a curated workaround for useful low-level items.
 
 ## Performance And Cache Assumptions
 
+- Performance is Milestone 2. Availability v0 follows as Milestone 3 unless product priority changes again.
 - Data loading should be sub-second when the generated index exists.
 - Beam search and final scoring are the main bottlenecks.
-- Shippable target: cached query under 500ms.
-- Shippable target: fresh query p95 under 5s only if served synchronously.
-- Current local fresh p95 exceeds 5s for most supported rows; the accepted product path is async job flow for misses with visible status/progress/error.
+- Milestone 2 success target: cached query p95 under 500ms.
+- Milestone 2 success target: cache-miss / fresh-generation p95 under 5s for the representative Milestone 1 level 200 Iop query matrix.
+- Async job flow remains useful fallback/resilience infrastructure, but async alone does not satisfy Milestone 2 unless the product target is explicitly revised.
+- Current local fresh p95 exceeds 5s for most supported rows, so Milestone 2 remains incomplete.
 - Cache keys must include query inputs, dataset version, and solver version.
 - Cache should include budget tier, exo policy, locked items, avoided items, and damage/survivability preset.
 - App-level cache storage is dogpile/Redis through `cache_region`.
@@ -221,7 +229,11 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 ## Benchmark Assumptions
 
 - Milestone 4 starts with Strength Iop 11/6 and 12/6 human references.
-- Milestone 6 starts by validating Iop Strength, Intelligence, Chance, and Agility over 11/6/0 and 12/6/0 local query profiles.
+- Milestone 1 owns the broad Iop query surface; 11/6/0 and 12/6/0 Iop profiles are regression rows, not the whole Milestone 1 scope.
+- Milestone 6 starts after the Iop surface is in good shape and expands beyond Iop to additional PvM classes.
+- Non-200 generation belongs to a future Level Bracket Expansion milestone after the level 200 Iop surface is shippable and the first non-Iop expansion path is understood, unless product priority changes.
+- Level Bracket Expansion should use generated index level buckets as starting boundaries: 1-99, 100-149, 150-179, and 180-200.
+- Level Bracket Expansion needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.
 - Fashionista links are currently manual comparison references, not automatically parsed/scored.

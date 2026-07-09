@@ -12,22 +12,27 @@ The v1 goal is not perfect optimization, PvP meta modeling, a chatbot, or LLM-dr
 
 - Level 200 PvM first.
 - Iop first, single element first.
-- First benchmark path: Strength, Intelligence, Chance, and Agility Iop at level 200.
-- 11/6 and 12/6 variants.
+- Milestone 1 product surface: level 200 PvM Iop across Strength, Intelligence, Chance, and Agility.
+- `level` belongs in the query/API/cache/provenance contract in Milestone 1, but level 200 is the only supported generation value. Non-200 generation should return a clear unsupported-input error until the future Level Bracket Expansion milestone unless product priority explicitly pulls it forward.
+- Milestone 1 should handle any valid AP/MP/Range target within caps, not only benchmark defaults such as 11/6/0 or 12/6/0.
+- Milestone 1 should handle product intent controls for Iop: damage-vs-survivability/playstyle preset, budget tier, exo policy, weapon policy, locked items, and avoided items.
+- 11/6 and 12/6 variants are benchmark/regression rows, not the full Milestone 1 scope.
 - AP, MP, and Range are minimum targets with caps: AP 12, MP 6, Range 6. Surplus AP/MP/range is valid and usually useful, but should only receive a small marginal score.
 - Item conditions must be evaluated on the backend.
 - Set-aware generation and Dofus/trophy/package diversity are required.
+- Candidate item horizons should include the target level bucket plus the immediately previous bucket for normal gear and set packages.
 - Budget/availability and exo policy are first-class product controls.
 - Results return 3-5 meaningfully different builds with score breakdowns, warnings, assumptions, and deterministic explanations.
 
 ## Major Milestones
 
 1. Productize current prototype inputs.
-2. Availability v0.
-3. Performance v1.
+2. Performance v1.
+3. Availability v0.
 4. Build quality benchmarks.
 5. Minimal UI.
-6. Expand beyond Strength Iop.
+6. Expand beyond Iop.
+Future: Level Bracket Expansion for non-200 generation if not pulled forward deliberately.
 
 ## Acceptance Criteria
 
@@ -41,11 +46,14 @@ The v1 goal is not perfect optimization, PvP meta modeling, a chatbot, or LLM-dr
 - Budget tier 4 can use Ochre, Vulbis, legendary items, and other opti assumptions.
 - Crimson, Turquoise, and Ice Dofus are not incorrectly treated as opti-only.
 - Shaker, Nomad, Jackanapes, and Voyager are considered budget enablers.
-- Cached result returns under 500ms.
-- Fresh result returns under 5s or uses async job flow.
+- Cached result p95 returns under 500ms.
+- Cache miss / fresh generation p95 returns under 5s for the representative Milestone 1 level 200 Iop query matrix.
 - Every generation logs timing breakdowns.
 - UI exposes structured controls, not numeric stat weights.
 - Results are labeled by role and include item list, stats, score breakdown, warnings, and explanations.
+- Milestone 1 is not complete if the generator only handles Strength Iop or only hard-coded 11/6 and 12/6 benchmark profiles; it must support level 200 Iop generation across the supported Iop element, AP/MP/Range, budget, exo, and playstyle/intent query combinations.
+- Non-200 level generation belongs to a future Level Bracket Expansion milestone unless product priority explicitly pulls it forward.
+- Milestone 2 is not complete until cache-miss / fresh-generation p95 is under 5s for the representative Milestone 1 level 200 Iop query matrix. Async miss handling is useful fallback infrastructure, but does not by itself satisfy the Milestone 2 success goal.
 
 ## Current PRD Facts To Verify In Code
 
