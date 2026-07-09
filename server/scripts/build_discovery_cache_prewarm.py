@@ -20,11 +20,14 @@ from oneoff.build_discovery_prototype import BuildDiscoveryQuery  # noqa: E402
 
 
 REPORT_VERSION = "build-discovery-cache-prewarm-v1"
+DEFAULT_MAX_HIT_ELAPSED_MS = 500.0
 
 
 def prewarm_query_matrix(
     prewarm_fn: Callable[[BuildDiscoveryQuery], dict],
     elements: tuple[str, ...] = SUPPORTED_IOP_ELEMENTS,
+    require_all_hits: bool = False,
+    max_hit_elapsed_ms: float | None = None,
 ) -> dict:
     rows = []
     for profile in LOCAL_VALIDATION_SUITE_PROFILES:
@@ -52,16 +55,38 @@ def prewarm_query_matrix(
                 }
             )
 
+    summary = {
+        "rowCount": len(rows),
+        "cacheHits": sum(1 for row in rows if row["appCacheHit"]),
+        "cacheMisses": sum(1 for row in rows if not row["appCacheHit"]),
+        "emptyResults": sum(1 for row in rows if row["resultCount"] <= 0),
+    }
+    failures = []
+    if summary["emptyResults"]:
+        failures.append("one or more supported cache prewarm rows returned no builds")
+    if require_all_hits and summary["cacheMisses"]:
+        failures.append("one or more supported cache prewarm rows were cache misses")
+    if max_hit_elapsed_ms is not None:
+        slow_hit_rows = [
+            row
+            for row in rows
+            if row["appCacheHit"] and row["elapsedMs"] > max_hit_elapsed_ms
+        ]
+        if slow_hit_rows:
+            failures.append(
+                "one or more cache-hit rows exceeded the max elapsed threshold"
+            )
+
     return {
         "reportVersion": REPORT_VERSION,
-        "status": "pass" if all(row["resultCount"] > 0 for row in rows) else "fail",
-        "rows": rows,
-        "summary": {
-            "rowCount": len(rows),
-            "cacheHits": sum(1 for row in rows if row["appCacheHit"]),
-            "cacheMisses": sum(1 for row in rows if not row["appCacheHit"]),
-            "emptyResults": sum(1 for row in rows if row["resultCount"] <= 0),
+        "status": "pass" if not failures else "fail",
+        "requirements": {
+            "requireAllHits": require_all_hits,
+            "maxHitElapsedMs": max_hit_elapsed_ms,
         },
+        "failures": failures,
+        "rows": rows,
+        "summary": summary,
     }
 
 
@@ -71,10 +96,28 @@ def main() -> None:
         "--output",
         help="Optional path for writing the prewarm report JSON.",
     )
+    parser.add_argument(
+        "--require-all-hits",
+        action="store_true",
+        help="Fail unless every supported row is already an app-cache hit.",
+    )
+    parser.add_argument(
+        "--max-hit-elapsed-ms",
+        type=float,
+        default=None,
+        help=(
+            "Fail when any cache-hit row exceeds this elapsed threshold. "
+            f"Use {DEFAULT_MAX_HIT_ELAPSED_MS:g} for the current warmed-cache target."
+        ),
+    )
     args = parser.parse_args()
 
     with app.app_context():
-        report = prewarm_query_matrix(build_discovery_cached_response)
+        report = prewarm_query_matrix(
+            build_discovery_cached_response,
+            require_all_hits=args.require_all_hits,
+            max_hit_elapsed_ms=args.max_hit_elapsed_ms,
+        )
 
     report_json = json.dumps(report, indent=2)
     if args.output:

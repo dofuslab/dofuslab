@@ -1140,3 +1140,25 @@ Run the initial evaluator pass:
   - fresh sync p95 remains above 5s locally; async misses are the accepted product path
 - Verification passed:
   - `git diff --check`
+
+### 2026-07-09 Cache Prewarm Readiness Gates
+
+- Created stacked branch `codex/build-discovery-cache-prewarm-readiness` on top of `codex/build-discovery-gameplay-review-packet`.
+- Extended `server/scripts/build_discovery_cache_prewarm.py` with optional readiness gates:
+  - `--require-all-hits` fails unless every supported row is already an app-cache hit
+  - `--max-hit-elapsed-ms` fails when any cache-hit row exceeds the given warmed-cache latency threshold
+- Kept ordinary prewarm behavior unchanged for first-pass warming.
+- Added focused tests in `server/scripts/test_build_discovery_cache_prewarm.py`.
+- Strict warmed-cache gate result:
+  - `status=pass`
+  - `rowCount=8`
+  - `cacheHits=8`
+  - `cacheMisses=0`
+  - `emptyResults=0`
+  - max row elapsed `137.0ms`
+- Verification passed:
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/test_build_discovery_cache_prewarm.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_cache_prewarm.py scripts/test_build_discovery_cache_prewarm.py`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_cache_prewarm.py --output /tmp/build_discovery_cache_prewarm_readiness_warm.json`
+  - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_cache_prewarm.py --require-all-hits --max-hit-elapsed-ms 500 --output /tmp/build_discovery_cache_prewarm_readiness_strict.json`
+  - `git diff --check`
