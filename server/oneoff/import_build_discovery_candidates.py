@@ -16,17 +16,21 @@ from app.database.enums import BuildGender
 from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_custom_set import MAX_NAME_LENGTH, ModelCustomSet
 from app.database.model_custom_set_stat import ModelCustomSetStat
+from app.database.model_generation_request import ModelGenerationRequest
 from app.database.model_item import ModelItem
 from oneoff.build_discovery_prototype import (
     DEFAULT_MAX_SHARED_ITEMS,
     DEFAULT_TARGET,
+    SOLVER_VERSION,
     TARGET_LEVEL,
     BuildTarget,
+    dataset_version,
     find_diverse_builds,
 )
 
 
 DEFAULT_BASE_URL = "http://localhost:8080"
+GENERATION_SOURCE = "build_discovery_oneoff_import"
 
 
 def get_iop_class_id(db_session):
@@ -72,7 +76,32 @@ def missing_item_ids_for_build(db_session, build) -> list[str]:
     return [dofus_id for dofus_id in dofus_ids if dofus_id not in items_by_dofus_id]
 
 
-def create_custom_set_from_build(db_session, build, index: int, name_prefix: str):
+def generation_request_payload(build, args) -> dict:
+    return {
+        "query": {
+            "level": TARGET_LEVEL,
+            "className": "Iop",
+            "mode": "pvm",
+            "target": {
+                "ap": args.target_ap,
+                "mp": args.target_mp,
+                "range": args.target_range,
+            },
+            "limit": args.limit,
+            "topK": args.top_k,
+            "beamWidth": args.beam_width,
+            "maxSharedItems": args.max_shared_items,
+        },
+        "build": {
+            "score": build.score,
+            "itemIds": item_ids_for_build(build),
+            "exos": build.exos,
+            "baseAllocation": build.base_allocation,
+        },
+    }
+
+
+def create_custom_set_from_build(db_session, build, index: int, name_prefix: str, args):
     dofus_ids = item_ids_for_build(build)
     items_by_dofus_id = get_items_by_dofus_id(db_session, dofus_ids)
     missing_ids = [dofus_id for dofus_id in dofus_ids if dofus_id not in items_by_dofus_id]
@@ -92,6 +121,16 @@ def create_custom_set_from_build(db_session, build, index: int, name_prefix: str
     )
     db_session.add(custom_set)
     db_session.flush()
+
+    db_session.add(
+        ModelGenerationRequest(
+            custom_set_id=custom_set.uuid,
+            source=GENERATION_SOURCE,
+            dataset_version=dataset_version(),
+            solver_version=SOLVER_VERSION,
+            request_payload=generation_request_payload(build, args),
+        )
+    )
 
     stats = ModelCustomSetStat(
         custom_set_id=custom_set.uuid,
@@ -154,6 +193,7 @@ def main() -> None:
                 build,
                 len(created) + 1,
                 args.name_prefix,
+                args,
             )
             created.append(
                 {

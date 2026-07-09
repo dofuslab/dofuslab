@@ -487,3 +487,16 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 python -m py_compile app/__init__.py app/loaders.py app/schema.py`
   - parsed all `client/public/locales/*/common.json` files and asserted `GENERATED` is present
   - `git diff --check`
+
+### 2026-07-09 Oneoff Import Provenance
+
+- Created stacked branch `codex/build-discovery-oneoff-import-provenance` on top of `codex/build-discovery-generated-build-badge`.
+- Updated the legacy `oneoff.import_build_discovery_candidates` script so generated custom sets created outside the GraphQL import path also get `GenerationRequest` provenance:
+  - source is `build_discovery_oneoff_import`
+  - dataset and solver versions are recorded
+  - request payload captures target/query knobs, generated item IDs, exos, score, and base allocation
+- Reviewer finding: no issues.
+- Verification passed:
+  - `docker exec dofuslab-server-1 python -m py_compile oneoff/import_build_discovery_candidates.py`
+  - Docker inline assertions for `generation_request_payload`
+  - `git diff --check`
