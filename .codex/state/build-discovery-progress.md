@@ -1130,3 +1130,13 @@ Run the initial evaluator pass:
   - `docker exec -w /home/dofuslab dofuslab-server-1 python -m py_compile scripts/build_discovery_prod_benchmark_pipeline.py scripts/test_build_discovery_prod_benchmark_pipeline.py`
   - `docker exec -w /home/dofuslab dofuslab-server-1 python scripts/build_discovery_prod_benchmark_pipeline.py --check-env`
   - `git diff --check`
+
+### 2026-07-09 Gameplay Review Packet
+
+- Created stacked branch `codex/build-discovery-gameplay-review-packet` on top of `codex/build-discovery-prod-benchmark-pipeline`.
+- Added `.codex/state/build-discovery-gameplay-review-packet.md` as a compact gameplay/product review checklist.
+- Refreshed stale assumptions:
+  - direct `buildDiscovery` is now documented as deprecated legacy/dev path
+  - fresh sync p95 remains above 5s locally; async misses are the accepted product path
+- Verification passed:
+  - `git diff --check`

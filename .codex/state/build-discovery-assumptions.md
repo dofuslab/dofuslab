@@ -26,7 +26,7 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Locked and avoided item IDs cannot overlap.
 - `datasetVersion`, `solverVersion`, and query inputs belong in cache keys.
 - The oneoff query wrapper remains the solver core, but there is now a GraphQL product path for app use.
-- `buildDiscovery` remains the direct synchronous query path.
+- `buildDiscovery` remains only as a deprecated legacy/dev direct query path.
 - `startBuildDiscovery` is the product run path for the page and returns a persisted job contract.
 - `buildDiscoveryJob(id)` is the product polling path for persisted jobs.
 - Successful generated imports should keep enough request/build provenance to explain where generated custom sets came from.
@@ -194,7 +194,7 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Beam search and final scoring are the main bottlenecks.
 - Shippable target: cached query under 500ms.
 - Shippable target: fresh query p95 under 5s only if served synchronously.
-- If fresh p95 exceeds 5s, the product path should be async job flow with visible status/progress/error.
+- Current local fresh p95 exceeds 5s for most supported rows; the accepted product path is async job flow for misses with visible status/progress/error.
 - Cache keys must include query inputs, dataset version, and solver version.
 - Cache should include budget tier, exo policy, locked items, avoided items, and damage/survivability preset.
 - App-level cache storage is dogpile/Redis through `cache_region`.
