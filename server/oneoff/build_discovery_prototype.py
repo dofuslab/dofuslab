@@ -134,7 +134,7 @@ SET_PACKAGE_KEEP_PER_SET_SIZE = 10
 SET_PACKAGE_GLOBAL_LIMIT = 500
 SET_PACKAGE_PAIR_SEED_LIMIT = 800
 SET_PACKAGE_TRIPLE_SOURCE_LIMIT = 250
-SET_PACKAGE_TRIPLE_CANDIDATE_SCAN_LIMIT = 20000
+SET_PACKAGE_TRIPLE_CANDIDATE_SCAN_LIMIT = 3000000
 SET_PACKAGE_TRIPLE_SEED_LIMIT = 300
 SET_PACKAGE_DIVERSE_TRIPLE_SEED_LIMIT = 700
 SET_PACKAGE_TOTAL_SEED_LIMIT = 1500
@@ -145,8 +145,19 @@ DIRECT_COMPLETION_DOFUS_POOL_LIMIT = 22
 DIRECT_COMPLETION_GEAR_STATE_LIMIT = 300
 DIRECT_COMPLETION_GEAR_STATE_PER_SIGNATURE_CAP = 6
 DIRECT_COMPLETION_DOFUS_COMBO_LIMIT = 500
-DIRECT_COMPLETION_FINAL_SCORE_LIMIT = 120
+DIRECT_COMPLETION_FINAL_SCORE_LIMIT = 1000
 DIRECT_COMPLETION_SPECIAL_DOFUS_IDS = {"7754", "8698", "6980"}
+DIRECT_COMPLETION_CORE_DOFUS_IDS = {
+    "694",  # Crimson Dofus
+    "737",  # Emerald Dofus
+    "739",  # Turquoise Dofus
+    "7043",  # Ice Dofus
+    "7754",  # Ochre Dofus
+    "8698",  # Cloudy Dofus
+    "13344",  # Dolmanax
+    "22004",  # Prynyang
+    "22020",  # Prywitchment
+}
 BEAM_FINAL_SCORE_LIMIT = 60
 GENERIC_DAMAGE_WEIGHT = 0.45
 WEAPON_DAMAGE_WEIGHT = 0.20
@@ -1086,7 +1097,10 @@ def final_utility_score(stats: dict[str, int]) -> float:
 
 
 def item_score(item: dict[str, Any]) -> float:
-    return score_stats(normalize_stats(item.get("stats", [])))
+    stats: dict[str, float] = defaultdict(float, normalize_stats(item.get("stats", [])))
+    for stat, value in expected_item_effect_stats(item).items():
+        stats[stat] += value
+    return score_stats(dict(stats))
 
 
 def expected_item_effect_stats(item: dict[str, Any]) -> dict[str, float]:
@@ -1210,7 +1224,7 @@ def item_record_from_index(item: dict[str, Any]) -> dict[str, Any]:
     }
     record["_name"] = get_name(record)
     record["_stats"] = item.get("normalizedStats") or normalize_stats(record.get("stats", []))
-    record["_score"] = score_stats(record["_stats"])
+    record["_score"] = item_score(record)
     return record
 
 
@@ -1309,7 +1323,7 @@ def load_all_item_records() -> tuple[dict[str, Any], ...]:
     for item in items:
         item["_name"] = get_name(item)
         item["_stats"] = normalize_stats(item.get("stats", []))
-        item["_score"] = score_stats(item["_stats"])
+        item["_score"] = item_score(item)
     return items
 
 
@@ -1322,7 +1336,7 @@ def load_items(
     items = load_all_item_records()
     indexed_item_ids = indexed_candidate_item_ids(TARGET_LEVEL)
     for item in items:
-        item["_score"] = score_stats(item["_stats"])
+        item["_score"] = item_score(item)
     candidates = [
         item
         for item in items
@@ -2982,46 +2996,64 @@ def ranked_dofus_combinations(
         for combo in combinations(dofus_pool, combo_size)
     ]
     sorted_combinations = sorted(scored_combinations, key=lambda entry: entry[0], reverse=True)
-    condition_light_limit = max(1, min(limit // 4, 10))
+    top_combination_limit = max(1, limit // 2)
+    priority_combination_limit = max(1, limit // 10)
+    condition_light_limit = max(1, min(limit // 10, 10))
     condition_light_combinations = [
         combo
         for _, combo in sorted_combinations
         if all(not has_item_conditions(item) for item in combo)
     ][:condition_light_limit]
+    core_items = [
+        item
+        for item in dofus_pool
+        if item["dofusID"] in DIRECT_COMPLETION_CORE_DOFUS_IDS
+    ]
+    core_combinations = sorted(
+        combinations(core_items, combo_size),
+        key=lambda combo: sum(item["_score"] for item in combo),
+        reverse=True,
+    )
     multi_special_combinations = [
         combo
         for _, combo in sorted_combinations
         if sum(item["dofusID"] in DIRECT_COMPLETION_SPECIAL_DOFUS_IDS for item in combo) >= 2
-    ][:limit]
+    ][:priority_combination_limit]
     special_combinations = [
         combo
         for _, combo in sorted_combinations
         if any(item["dofusID"] in DIRECT_COMPLETION_SPECIAL_DOFUS_IDS for item in combo)
-    ][:limit]
+    ][:priority_combination_limit]
     multi_mandatory_combinations = [
         combo
         for _, combo in sorted_combinations
         if sum(item["dofusID"] in MANDATORY_DOFUS_CANDIDATE_IDS for item in combo) >= 2
-    ][:limit]
+    ][:priority_combination_limit]
     mandatory_combinations = [
         combo
         for _, combo in sorted_combinations
         if any(item["dofusID"] in MANDATORY_DOFUS_CANDIDATE_IDS for item in combo)
-    ][:limit]
+    ][:priority_combination_limit]
     top_combinations = [
         combo
-        for _, combo in sorted_combinations[:limit]
+        for _, combo in sorted_combinations[:top_combination_limit]
+    ]
+    fill_combinations = [
+        combo
+        for _, combo in sorted_combinations[top_combination_limit:limit]
     ]
 
     seen: set[tuple[str, ...]] = set()
     ranked = []
     for combo in (
-        condition_light_combinations
+        top_combinations
+        + condition_light_combinations
+        + core_combinations
         + multi_special_combinations
         + special_combinations
         + multi_mandatory_combinations
         + mandatory_combinations
-        + top_combinations
+        + fill_combinations
     ):
         signature = tuple(sorted(item["dofusID"] for item in combo))
         if signature in seen:
@@ -3502,14 +3534,8 @@ def find_builds(
         DIRECT_COMPLETION_GEAR_STATE_LIMIT,
         max(top_k * 10, beam_width),
     )
-    direct_dofus_combo_limit = min(
-        DIRECT_COMPLETION_DOFUS_COMBO_LIMIT,
-        max(top_k * 8, 80),
-    )
-    direct_final_score_limit = min(
-        DIRECT_COMPLETION_FINAL_SCORE_LIMIT,
-        max(top_k * 3, 30),
-    )
+    direct_dofus_combo_limit = DIRECT_COMPLETION_DOFUS_COMBO_LIMIT
+    direct_final_score_limit = DIRECT_COMPLETION_FINAL_SCORE_LIMIT
     initial_seeds = initial_seeds[: max(direct_seed_limit, top_k * 20)]
     timings["packageSeedsMs"] = (time.perf_counter() - phase_started) * 1000
 
