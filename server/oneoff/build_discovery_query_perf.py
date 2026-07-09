@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 import time
+from dataclasses import replace
 from statistics import mean
 from typing import Any
 
@@ -22,6 +23,7 @@ MAX_TOP_K = 100
 MAX_BEAM_WIDTH = 1000
 MAX_PER_SIGNATURE_CAP = 200
 MAX_RELEVANT_SET_LIMIT = 200
+SUPPORTED_IOP_ELEMENTS = ("strength", "intelligence", "chance", "agility")
 
 
 def percentile(values: list[float], percentile_value: float) -> float:
@@ -65,6 +67,26 @@ def measure_query(query: BuildDiscoveryQuery, runs: int, use_cache: bool) -> dic
     }
 
 
+def measure_element_matrix(
+    query: BuildDiscoveryQuery,
+    runs: int,
+    use_cache: bool,
+    elements: tuple[str, ...] = SUPPORTED_IOP_ELEMENTS,
+) -> dict[str, Any]:
+    results = []
+    for element in elements:
+        element_query = replace(query, elements=(element,))
+        report = measure_query(element_query, runs, use_cache)
+        results.append({"element": element, **report})
+
+    return {
+        "elements": list(elements),
+        "runs": runs,
+        "cacheEnabled": use_cache,
+        "results": results,
+    }
+
+
 def validate_cli_bounds(parser: argparse.ArgumentParser, args: argparse.Namespace) -> None:
     bounded_values = (
         ("--runs", args.runs, 1, MAX_RUNS),
@@ -95,6 +117,11 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--runs", type=int, default=3)
     parser.add_argument("--no-cache", action="store_true")
+    parser.add_argument(
+        "--element-matrix",
+        action="store_true",
+        help="Measure the bounded supported Iop element matrix.",
+    )
     parser.add_argument(
         "--allow-db",
         action="store_true",
@@ -128,7 +155,11 @@ def main() -> None:
         per_signature_cap=args.per_signature_cap,
         relevant_set_limit=args.relevant_set_limit,
     )
-    print(json.dumps(measure_query(query, args.runs, not args.no_cache), indent=2))
+    if args.element_matrix:
+        report = measure_element_matrix(query, args.runs, not args.no_cache)
+    else:
+        report = measure_query(query, args.runs, not args.no_cache)
+    print(json.dumps(report, indent=2))
 
 
 if __name__ == "__main__":

@@ -7,6 +7,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 from oneoff.build_discovery_prototype import BuildState
 from oneoff.build_discovery_benchmark_report import (
     BENCHMARKS,
+    ELEMENT_VALIDATION_PROFILES,
     REPORT_VERSION,
     build_report,
     generated_score_comparison,
@@ -49,6 +50,33 @@ class BuildDiscoveryBenchmarkReportTest(unittest.TestCase):
             {(11, 6, 0), (12, 6, 0)},
         )
 
+    def test_element_validation_profile_catalog_covers_supported_iop_elements(self):
+        profiles_by_element = {
+            profile.query.primary_element: profile
+            for profile in ELEMENT_VALIDATION_PROFILES
+        }
+
+        self.assertEqual(
+            set(profiles_by_element),
+            {"strength", "intelligence", "chance", "agility"},
+        )
+        self.assertEqual(profiles_by_element["strength"].primary_stat, "Strength")
+        self.assertEqual(profiles_by_element["strength"].damage_stat, "Earth Damage")
+        self.assertEqual(profiles_by_element["strength"].damage_element, "earth")
+        self.assertEqual(
+            profiles_by_element["strength"].secondary_damage_stats,
+            ("Neutral Damage",),
+        )
+        self.assertEqual(profiles_by_element["intelligence"].primary_stat, "Intelligence")
+        self.assertEqual(profiles_by_element["intelligence"].damage_stat, "Fire Damage")
+        self.assertEqual(profiles_by_element["intelligence"].damage_element, "fire")
+        self.assertEqual(profiles_by_element["chance"].primary_stat, "Chance")
+        self.assertEqual(profiles_by_element["chance"].damage_stat, "Water Damage")
+        self.assertEqual(profiles_by_element["chance"].damage_element, "water")
+        self.assertEqual(profiles_by_element["agility"].primary_stat, "Agility")
+        self.assertEqual(profiles_by_element["agility"].damage_stat, "Air Damage")
+        self.assertEqual(profiles_by_element["agility"].damage_element, "air")
+
     def test_build_report_uses_injected_scorer_and_compares_generated_scores(self):
         benchmark = BENCHMARKS[0]
 
@@ -86,6 +114,27 @@ class BuildDiscoveryBenchmarkReportTest(unittest.TestCase):
             "generated_meets_or_beats_benchmark",
         )
         self.assertEqual(benchmark_report["generatedComparison"]["delta"], 25)
+        validation_profiles = {
+            profile["element"]: profile
+            for profile in report["elementValidationProfiles"]
+        }
+        self.assertEqual(
+            set(validation_profiles),
+            {"strength", "intelligence", "chance", "agility"},
+        )
+        self.assertEqual(
+            validation_profiles["intelligence"]["expectedProfile"],
+            {
+                "primaryStat": "Intelligence",
+                "damageStat": "Fire Damage",
+                "damageElement": "fire",
+                "secondaryDamageStats": [],
+            },
+        )
+        self.assertEqual(
+            validation_profiles["chance"]["query"]["elements"],
+            ["chance"],
+        )
 
     def test_generated_score_comparison_reports_benchmark_lead(self):
         comparison = generated_score_comparison(

@@ -11,7 +11,12 @@ import json
 from dataclasses import dataclass
 from typing import Any, Callable, Iterable
 
-from oneoff.build_discovery_prototype import BuildTarget
+from oneoff.build_discovery_prototype import (
+    BuildDiscoveryQuery,
+    BuildTarget,
+    ELEMENT_PROFILES,
+    query_summary,
+)
 from oneoff.score_dofuslab_view import score_view, state_summary
 
 REPORT_VERSION = "build-discovery-benchmark-report-v1"
@@ -25,6 +30,19 @@ class BenchmarkDefinition:
     target: BuildTarget
     element: str = "strength"
     source: str = "dofuslab"
+    notes: str = ""
+
+
+@dataclass(frozen=True)
+class ElementValidationProfile:
+    id: str
+    label: str
+    query: BuildDiscoveryQuery
+    primary_stat: str
+    damage_stat: str
+    damage_element: str
+    secondary_damage_stats: tuple[str, ...] = ()
+    source: str = "deterministic_validation_profile"
     notes: str = ""
 
 
@@ -62,6 +80,23 @@ BENCHMARKS: tuple[BenchmarkDefinition, ...] = (
     ),
 )
 
+ELEMENT_VALIDATION_PROFILES: tuple[ElementValidationProfile, ...] = tuple(
+    ElementValidationProfile(
+        id=f"iop_{element_name}_validation_profile",
+        label=f"Iop {element_name.title()} validation profile",
+        query=BuildDiscoveryQuery(elements=(element_name,)),
+        primary_stat=profile.primary_stat,
+        damage_stat=profile.damage_stat,
+        damage_element=profile.element,
+        secondary_damage_stats=tuple(sorted(profile.secondary_damage_weights)),
+        notes=(
+            "Static catalog entry for Milestone 6 element validation; "
+            "not a scored production benchmark."
+        ),
+    )
+    for element_name, profile in ELEMENT_PROFILES.items()
+)
+
 EXTERNAL_COMPARISON_REFERENCES = (
     {
         "id": "fashionista_balanced_glass_cannon",
@@ -93,6 +128,23 @@ def benchmark_definition_summary(benchmark: BenchmarkDefinition) -> dict[str, An
         "element": benchmark.element,
         "target": target_summary(benchmark.target),
         "notes": benchmark.notes,
+    }
+
+
+def element_validation_profile_summary(profile: ElementValidationProfile) -> dict[str, Any]:
+    return {
+        "id": profile.id,
+        "label": profile.label,
+        "source": profile.source,
+        "element": profile.query.primary_element,
+        "query": query_summary(profile.query),
+        "expectedProfile": {
+            "primaryStat": profile.primary_stat,
+            "damageStat": profile.damage_stat,
+            "damageElement": profile.damage_element,
+            "secondaryDamageStats": list(profile.secondary_damage_stats),
+        },
+        "notes": profile.notes,
     }
 
 
@@ -198,6 +250,10 @@ def build_report(
         "benchmarkCount": len(benchmark_reports),
         "errorCount": sum(1 for report in benchmark_reports if report.get("status") == "error"),
         "benchmarks": benchmark_reports,
+        "elementValidationProfiles": [
+            element_validation_profile_summary(profile)
+            for profile in ELEMENT_VALIDATION_PROFILES
+        ],
         "externalComparisonReferences": list(EXTERNAL_COMPARISON_REFERENCES),
     }
 
