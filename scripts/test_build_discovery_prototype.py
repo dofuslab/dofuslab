@@ -226,6 +226,15 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertEqual(stats["Strength"], 498)
         self.assertEqual(stats["Vitality"], 103)
+        self.assertEqual(stats["Intelligence"], 100)
+
+    def test_base_stats_for_primary_allocation_resets_non_primary_elements(self):
+        stats = build_discovery_prototype.base_stats_for_primary_allocation(398, "Chance")
+
+        self.assertEqual(stats["Chance"], 498)
+        self.assertEqual(stats["Strength"], 100)
+        self.assertEqual(stats["Intelligence"], 100)
+        self.assertEqual(stats["Agility"], 100)
 
     def test_optimize_base_allocation_can_choose_glass_cannon_strength(self):
         state = BuildState()
@@ -237,6 +246,22 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertEqual(optimized.base_allocation["Strength"], 398)
         self.assertEqual(optimized.stats["Strength"], 498)
+
+    def test_optimize_base_allocation_uses_active_profile_primary_stat(self):
+        build_discovery_prototype.configure_damage_profile("chance")
+        try:
+            state = BuildState()
+            optimized = optimize_base_allocation(
+                state,
+                generic_damage_weight=10,
+                weapon_damage_weight=0,
+            )
+        finally:
+            build_discovery_prototype.configure_damage_profile("strength")
+
+        self.assertEqual(optimized.base_allocation["Chance"], 398)
+        self.assertEqual(optimized.stats["Chance"], 498)
+        self.assertEqual(optimized.stats["Strength"], 100)
 
     def test_strength_spell_damage_profile_falls_back_to_generic_profile(self):
         strength_spell_damage_profile.cache_clear()

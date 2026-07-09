@@ -500,3 +500,17 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 python -m py_compile oneoff/import_build_discovery_candidates.py`
   - Docker inline assertions for `generation_request_payload`
   - `git diff --check`
+
+### 2026-07-09 Primary Stat Allocation
+
+- Created stacked branch `codex/build-discovery-primary-stat-allocation` on top of `codex/build-discovery-oneoff-import-provenance`.
+- Fixed non-Strength Iop base stat allocation:
+  - allocation now explicitly carries the active profile primary stat into final build optimization
+  - base allocation resets non-primary elemental stats to scrolled baseline before applying the selected primary stat allocation
+  - Chance/Intelligence/Agility no longer keep baked-in free Strength from the old Strength-only baseline
+- Reviewer finding fixed before commit:
+  - corrected the first pass that optimized Chance but still preserved `BASE_STATS["Strength"]`
+- Verification passed:
+  - focused unittest coverage for Strength allocation, Chance allocation baseline, Chance optimizer allocation, and all-element response contract
+  - `docker exec dofuslab-server-1 python -m py_compile oneoff/build_discovery_prototype.py`
+  - `git diff --check`

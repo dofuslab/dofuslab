@@ -2193,8 +2193,12 @@ def base_stats_for_primary_allocation(base_points: int, primary_stat: str | None
     if cost > BASE_CHARACTERISTIC_POINTS:
         raise ValueError(f"Base {primary_stat} allocation exceeds available points: {base_points}")
     base_vitality = BASE_CHARACTERISTIC_POINTS - cost
-    return {
+    allocated_stats = {
         **BASE_STATS,
+        **{stat: SCROLLED_BASE_STAT for stat in PRIMARY_STAT_NAMES},
+    }
+    return {
+        **allocated_stats,
         primary_stat: SCROLLED_BASE_STAT + base_points,
         "Vitality": SCROLLED_BASE_STAT + base_vitality,
     }
@@ -2226,10 +2230,12 @@ def optimize_base_allocation(
     state: BuildState,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    primary_stat: str | None = None,
 ) -> BuildState:
+    primary_stat = primary_stat or ACTIVE_DAMAGE_PROFILE.primary_stat
     best_state: BuildState | None = None
     for base_points in BASE_STRENGTH_ALLOCATION_OPTIONS:
-        allocated_state = state_with_base_allocation(state, base_points)
+        allocated_state = state_with_base_allocation(state, base_points, primary_stat)
         allocated_state.score = final_score_state(
             allocated_state,
             generic_damage_weight=generic_damage_weight,
@@ -2420,6 +2426,7 @@ def completed_valid_builds(
                 cheap_valid_state,
                 generic_damage_weight=generic_damage_weight,
                 weapon_damage_weight=weapon_damage_weight,
+                primary_stat=ACTIVE_DAMAGE_PROFILE.primary_stat,
             )
             for cheap_valid_state in cheap_valid_states
         )
@@ -2873,6 +2880,7 @@ def direct_valid_completed_state(
         state_with_exos,
         generic_damage_weight=generic_damage_weight,
         weapon_damage_weight=weapon_damage_weight,
+        primary_stat=ACTIVE_DAMAGE_PROFILE.primary_stat,
     )
     return state_with_exos
 
