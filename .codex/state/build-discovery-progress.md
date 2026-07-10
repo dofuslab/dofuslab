@@ -1840,3 +1840,17 @@ Run the initial evaluator pass:
 - Cheap verification passed:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_level_boundary_generation_smoke.BuildDiscoveryLevelBoundarySmokeShapeTest"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/test_build_discovery_level_boundary_generation_smoke.py"`
+
+### 2026-07-10 Empty Dofus Slot Boundary Fix
+
+- Boundary slice `19,20,100` initially failed at level 20 Chance `6/3/None`.
+- Root cause: empty Dofus/trophy slots were still treated as required when no
+  Dofus/trophy candidates existed at early levels.
+- Fixed empty Dofus slots to be optional when their pool is empty, matching pet
+  slot behavior.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
+  - `python -m oneoff.build_discovery_prototype --level 20 --element chance --ap 6 --mp 3 --range none --budget-tier 1 --exo-policy none --limit 1 --top-k 25 --beam-width 100 --per-signature-cap 10 --relevant-set-limit 40`
+  - `BUILD_DISCOVERY_LEVEL_BOUNDARY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=19,20,100 python -m unittest scripts.test_build_discovery_level_boundary_generation_smoke.BuildDiscoveryLevelBoundaryGenerationSmokeTest`
+- Level 20 result: one generated build, totals `6/3/0`, no warnings.
+- Boundary slice result: pass in 118.911 seconds.

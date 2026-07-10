@@ -3140,7 +3140,7 @@ def optional_empty_slot(
 ) -> bool:
     if pools.get(slot_name):
         return False
-    return slot_name == "pet" or target_level <= LOW_LEVEL_EMPTY_SLOT_MAX_LEVEL
+    return slot_name == "pet" or is_dofus_slot(slot_name) or target_level <= LOW_LEVEL_EMPTY_SLOT_MAX_LEVEL
 
 
 def optional_slot_choice(slot_name: str, target_level: int = TARGET_LEVEL) -> bool:

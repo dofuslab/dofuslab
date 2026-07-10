@@ -289,7 +289,9 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
 
     def test_pet_slot_is_optional_only_when_no_candidates_exist(self):
         self.assertTrue(optional_empty_slot("pet", {"pet": []}))
+        self.assertTrue(optional_empty_slot("dofus_1", {"dofus_1": []}, target_level=20))
         self.assertFalse(optional_empty_slot("pet", {"pet": [{"dofusID": "mount"}]}))
+        self.assertFalse(optional_empty_slot("dofus_1", {"dofus_1": [{"dofusID": "trophy"}]}, target_level=20))
         self.assertFalse(optional_empty_slot("hat", {"hat": []}))
         self.assertTrue(optional_empty_slot("hat", {"hat": []}, target_level=1))
         self.assertTrue(optional_empty_slot("ring_1", {"ring_1": []}, target_level=19))
