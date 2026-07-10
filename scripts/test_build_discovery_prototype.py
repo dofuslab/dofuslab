@@ -82,12 +82,14 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         target = BuildDiscoveryQuery(ap_target=10, mp_target=5, range_target=None).target
 
         self.assertFalse(target.range_required)
+        self.assertEqual(target.condition_stats, {"AP": 10, "MP": 5})
         self.assertTrue(action_stats_meet_target(BuildState(stats={"AP": 10, "MP": 5, "Range": -2}), target))
 
     def test_range_zero_query_requires_non_negative_range(self):
         target = BuildDiscoveryQuery(ap_target=10, mp_target=5, range_target=0).target
 
         self.assertTrue(target.range_required)
+        self.assertEqual(target.condition_stats, {"AP": 10, "MP": 5, "Range": 0})
         self.assertFalse(action_stats_meet_target(BuildState(stats={"AP": 10, "MP": 5, "Range": -1}), target))
 
     def test_score_state_does_not_penalize_range_when_range_target_is_none(self):
@@ -98,6 +100,35 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(
             score_state(negative_range, {}, no_range_target) - score_state(negative_range, {}, zero_range_target),
             3 * 25,
+        )
+
+    def test_range_none_does_not_force_range_item_condition_during_partial_search(self):
+        target = BuildDiscoveryQuery(ap_target=12, mp_target=3, range_target=None).target
+        state = BuildState(stats={"AP": 12, "MP": 3, "Range": 0})
+        item = {
+            "dofusID": "range-condition",
+            "setID": None,
+            "stats": [],
+            "conditions": {
+                "conditions": {
+                    "or": [
+                        {"stat": "AP", "operator": "<", "value": 12},
+                        {"stat": "RANGE", "operator": ">", "value": 0},
+                    ]
+                },
+                "customConditions": {},
+            },
+        }
+
+        self.assertIsNotNone(
+            add_item_to_state(
+                state,
+                "ring_1",
+                item,
+                {},
+                target,
+                condition_target=target,
+            )
         )
 
     def test_db_item_dofus_id_uses_mount_id_for_mounts(self):

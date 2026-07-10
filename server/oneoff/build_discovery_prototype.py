@@ -648,7 +648,10 @@ class BuildTarget:
 
     @property
     def condition_stats(self) -> dict[str, int]:
-        return {"AP": self.ap, "MP": self.mp, "Range": self.range}
+        stats = {"AP": self.ap, "MP": self.mp}
+        if self.range_required:
+            stats["Range"] = self.range
+        return stats
 
 
 DEFAULT_TARGET = BuildTarget()

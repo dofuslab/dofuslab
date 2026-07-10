@@ -150,6 +150,30 @@ def condition_can_pass_at_target(
     return True
 
 
+def condition_is_target_forced(
+    condition_obj: dict[str, Any],
+    target_stats: dict[str, int],
+) -> bool:
+    if not condition_obj:
+        return False
+    if is_leaf_condition(condition_obj):
+        if condition_obj["stat"] == "SET_BONUS":
+            return True
+        stat_name = CONDITION_STAT_TO_STAT_NAME.get(condition_obj["stat"])
+        return bool(stat_name and stat_name in target_stats)
+    if condition_obj.get("and"):
+        return all(
+            condition_is_target_forced(child, target_stats)
+            for child in condition_obj["and"]
+        )
+    if condition_obj.get("or"):
+        return all(
+            condition_is_target_forced(child, target_stats)
+            for child in condition_obj["or"]
+        )
+    return False
+
+
 def forced_target_condition_holds(
     condition_obj: dict[str, Any],
     stats: dict[str, int],
@@ -181,7 +205,9 @@ def forced_target_condition_holds(
             if condition_can_pass_at_target(child, target_stats)
         ]
         if len(compatible_children) == 1:
-            return traverse_conditions(compatible_children[0], stats, set_counts)
+            forced_child = compatible_children[0]
+            if condition_is_target_forced(forced_child, target_stats):
+                return traverse_conditions(forced_child, stats, set_counts)
         return True
     return True
 
