@@ -1669,3 +1669,14 @@ Run the initial evaluator pass:
   - `level_150_intelligence_12_5_2_budget3`
   - `level_150_chance_12_4_2_budget2`
   - `level_150_agility_11_5_2_budget2`
+
+### 2026-07-10 Level 160 Matrix Green
+
+- Verified the next level-diversity slice:
+  - `BUILD_DISCOVERY_LEVEL_DIVERSITY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=160 python -m unittest scripts.test_build_discovery_level_diversity_generation_smoke.BuildDiscoveryLevelDiversityGenerationSmokeTest`
+- Result: pass in 477.634 seconds.
+- Passing rows in this slice:
+  - `level_160_strength_12_5_3_budget3`
+  - `level_160_intelligence_12_5_2_budget2`
+  - `level_160_chance_11_6_none_budget3`
+  - `level_160_agility_12_6_3_budget4`
