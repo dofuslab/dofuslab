@@ -1935,3 +1935,17 @@ Run the initial evaluator pass:
   - `coverage_level_180_intelligence_cap_budget3`
   - `coverage_level_199_chance_mid_budget2`
   - `coverage_level_200_agility_cap_budget4`
+
+### 2026-07-10 AP/MP/Range Coverage Build Matrix Artifact
+
+- Generated current AP/MP/Range coverage artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-coverage-matrix.json`
+  - `.codex/state/build-discovery-ap-mp-range-coverage-matrix.md`
+- Artifact summary:
+  - targets: 12
+  - generated: 12
+  - invalid: 0
+  - no build: 0
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-coverage-matrix.json --target-set coverage"`
+- Artifact generation result: pass in 749.2 seconds.
