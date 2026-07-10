@@ -2342,3 +2342,26 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py scripts/build_discovery_ap_mp_range_grid_inventory.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-grid-next-cap-2-matrix.json --target-set grid-next-cap-2 --allow-no-build"`
   - `git diff --check`
+
+### 2026-07-10 Cap 2 Diagnostic Plan
+
+- Attempted to run a five-row cap-2 witness diagnostic batch for the no-build
+  rows in `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-matrix.json`.
+- The batch hit the 30-minute command timeout before producing a committed
+  artifact.
+- After the timeout, Docker Desktop started returning engine API errors for
+  both `docker version` and `docker ps`, so solver-backed diagnostics could not
+  continue in this turn.
+- Host Python cannot run the diagnostic because server dependencies such as
+  `sqlalchemy` are not installed outside the container.
+- Added a resume plan artifact:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-diagnostic-plan.md`
+- The plan documents:
+  - Docker recovery checks
+  - a fast all-row item-stat upper-bound diagnostic command
+  - one witness-search command per cap-2 no-build target
+  - interpretation rules for upper-bound misses, witnesses, and state-cap hits
+- Interpretation:
+  - this checkpoint adds no new generated-build or diagnostic evidence
+  - it keeps the next diagnostic step reviewable and restartable once Docker is
+    healthy
