@@ -1729,3 +1729,14 @@ Run the initial evaluator pass:
 - Fast verification passed:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_matrix.py"`
+
+### 2026-07-10 Level Diversity Assumptions Review Surface
+
+- Updated `.codex/state/build-discovery-assumptions.md` to clarify that the
+  generated Level Diversity matrix is a sampled correctness surface, not
+  exhaustive query proof or gameplay acceptance.
+- Updated `.codex/state/build-discovery-assumptions-review-index.md` to point
+  reviewers at `.codex/state/build-discovery-level-diversity-matrix.md`.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_local_readiness_report.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_local_readiness_pipeline.py"`

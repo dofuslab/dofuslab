@@ -1,6 +1,6 @@
 # Build Discovery Assumptions To Review
 
-Last updated: 2026-07-09
+Last updated: 2026-07-10
 
 This file lists the working assumptions embedded in the Build Discovery PRD, prototype, benchmark tooling, and harness. Treat it as a review checklist, not settled truth.
 
@@ -236,6 +236,15 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Class expansion starts after the level 200 Iop and sampled Iop level-diversity surfaces are in good shape.
 - Broad non-200 generation is the active Milestone 3 target for Iop.
 - Level Diversity should use prod-derived AP/MP/Range distributions plus generated index level buckets as starting boundaries: 1-99, 100-149, 150-179, and 180-200.
+- The current Level Diversity generated matrix is a sampled correctness surface,
+  not proof that every valid level/AP/MP/Range combination is high quality.
+- The current Level Diversity generated matrix records current best solver
+  outputs for review; human/gameplay acceptance is still separate.
+- Rows that over-satisfy AP, MP, or Range are valid under current product
+  semantics, but reviewers should flag cases where surplus action stats appear
+  to crowd out better damage, survivability, or availability.
+- A generated build passing condition and target checks does not prove the build
+  is desirable for real play at that level.
 - Level Diversity needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket broadly.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.

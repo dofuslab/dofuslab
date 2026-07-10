@@ -1,6 +1,6 @@
 # Build Discovery Assumptions Review Index
 
-Last updated: 2026-07-09
+Last updated: 2026-07-10
 
 This is the short review index for the highest-risk Build Discovery assumptions.
 Use it with:
@@ -43,6 +43,13 @@ These need gameplay or product review before calling the feature shippable.
    - Confirm the current Strength Iop DofusLab references are representative.
    - Identify missing non-Strength Iop references before expanding release confidence.
    - Treat non-Iop prod references as discovery targets only until class modeling expands.
+
+7. Level-diversity matrix quality
+   - Review `.codex/state/build-discovery-level-diversity-matrix.md`.
+   - The current matrix has 27 sampled Iop targets, all generated with at least one build.
+   - Confirm the sampled rows are useful representatives before promoting them to accepted benchmarks.
+   - Flag rows where surplus AP/MP/Range, budget assumptions, or old lower-bucket gear look suspicious.
+   - Treat this as generated solver evidence, not gameplay acceptance.
 
 ## Shippability Watch Items
 
@@ -89,5 +96,8 @@ Special effects:
 - approve / change:
 
 Benchmarks:
+- approve / change:
+
+Level-diversity matrix:
 - approve / change:
 ```
