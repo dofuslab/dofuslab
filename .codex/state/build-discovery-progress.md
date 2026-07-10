@@ -1949,3 +1949,16 @@ Run the initial evaluator pass:
 - Verification passed:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-coverage-matrix.json --target-set coverage"`
 - Artifact generation result: pass in 749.2 seconds.
+
+### 2026-07-10 Generated Matrix Review Index Update
+
+- Updated `.codex/state/build-discovery-assumptions-review-index.md` to point
+  reviewers at all current generated-build matrices:
+  - `.codex/state/build-discovery-level-diversity-matrix.md`
+  - `.codex/state/build-discovery-level-boundary-matrix.md`
+  - `.codex/state/build-discovery-ap-mp-range-coverage-matrix.md`
+- Current generated solver evidence across those artifacts:
+  - targets: 49
+  - generated: 49
+  - invalid: 0
+  - no build: 0
