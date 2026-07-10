@@ -2745,3 +2745,29 @@ Run the initial evaluator pass:
     not easy to misread as negative evidence
   - regenerated cap-4 matrix Markdown, cap-4 fast diagnostics, and the cap-4
     level 50 witness diagnostics with the safer wording
+
+### 2026-07-10 Cap 4 Remaining Witness Sweep
+
+- Generated bounded 2k witness diagnostics for the remaining cap-4 not-proven
+  rows:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.md`
+  - split artifacts in `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/`
+- Aggregate result:
+  - diagnostics: 4
+  - witness searches run: 4
+  - action-stat witnesses found: 3 of 4 searched
+  - not proven infeasible: 1
+- Solver recall gaps for action-stat validity:
+  - level 99 Intelligence tier 2 `12/6/6`
+  - level 199 Agility tier 2 `12/6/6`
+  - level 200 Strength tier 1 `12/6/6`
+- Bounded witness miss:
+  - level 80 Strength tier 1 `12/6/6` was not found and hit the state cap
+- Interpretation:
+  - most cap-4 not-proven no-build rows are now demonstrated solver recall
+    gaps for action-stat validity, not catalog limits
+  - level 80 Strength tier 1 remains unresolved and should not be called
+    infeasible without stronger diagnostics
+- Command:
+  - `docker exec dofuslab-server-1 sh -lc 'rm -rf /tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k && cd /home/dofuslab && python scripts/build_discovery_action_stat_diagnostics.py /tmp/build-discovery-ap-mp-range-grid-next-cap-4-matrix.json --targets grid_next_cap4_level_80_strength_12_6_6_budget1,grid_next_cap4_level_99_intelligence_12_6_6_budget2,grid_next_cap4_level_199_agility_12_6_6_budget2,grid_next_cap4_level_200_strength_12_6_6_budget1 --witness-search --witness-max-states-per-slot 2000 --split-output-dir /tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k --output-json /tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.json --output-md /tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.md'`

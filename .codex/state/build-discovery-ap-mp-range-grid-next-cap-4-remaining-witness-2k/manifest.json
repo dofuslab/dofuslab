@@ -1,0 +1,32 @@
+{
+  "reportVersion": "build-discovery-action-stat-diagnostics-v1",
+  "sourceMatrix": "Iop grid-next-cap-4 generated target matrix",
+  "sourceGeneratedAt": "2026-07-10T18:29:41.220389+00:00",
+  "splitReportCount": 4,
+  "reports": [
+    {
+      "targetId": "grid_next_cap4_level_80_strength_12_6_6_budget1",
+      "json": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/grid_next_cap4_level_80_strength_12_6_6_budget1.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/grid_next_cap4_level_80_strength_12_6_6_budget1.md",
+      "diagnosticStatus": "not_proven_infeasible"
+    },
+    {
+      "targetId": "grid_next_cap4_level_99_intelligence_12_6_6_budget2",
+      "json": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/grid_next_cap4_level_99_intelligence_12_6_6_budget2.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/grid_next_cap4_level_99_intelligence_12_6_6_budget2.md",
+      "diagnosticStatus": "action_stat_witness_found"
+    },
+    {
+      "targetId": "grid_next_cap4_level_199_agility_12_6_6_budget2",
+      "json": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/grid_next_cap4_level_199_agility_12_6_6_budget2.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/grid_next_cap4_level_199_agility_12_6_6_budget2.md",
+      "diagnosticStatus": "action_stat_witness_found"
+    },
+    {
+      "targetId": "grid_next_cap4_level_200_strength_12_6_6_budget1",
+      "json": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/grid_next_cap4_level_200_strength_12_6_6_budget1.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/grid_next_cap4_level_200_strength_12_6_6_budget1.md",
+      "diagnosticStatus": "action_stat_witness_found"
+    }
+  ]
+}
