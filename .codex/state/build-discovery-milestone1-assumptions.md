@@ -176,6 +176,9 @@ python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
 - 2026-07-09: interior smoke profile `9/4/3`, budget tier 3, all four elements
   (`strength,intelligence,chance,agility`) passed the bounded smoke test in
   Docker. Runtime was about 652s for four generation rows.
+- 2026-07-09: interior smoke profile `10/5/6`, budget tier 3, all four
+  elements (`strength,intelligence,chance,agility`) passed the bounded smoke
+  test in Docker. Runtime was about 594s for four generation rows.
 - 2026-07-09: interior smoke profiles `9/4/3` and `10/5/6`, budget tier 3,
   all four elements exceeded a 20-minute iterative timeout. Keep tier 3
   interior smoke sliced by profile until performance work makes broader local
