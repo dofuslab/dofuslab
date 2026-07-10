@@ -317,6 +317,15 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
 
         self.assertEqual(strategies, DEFAULT_AP_STRATEGIES)
 
+    def test_sub_endgame_ap_target_allows_flexible_ap_sources(self):
+        target = BuildDiscoveryQuery(level=50, ap_target=7, mp_target=3).target
+
+        strategies = effective_ap_strategies_for_target(target, DEFAULT_AP_STRATEGIES)
+
+        self.assertEqual(strategies[0].name, "level_diversity_flexible_ap")
+        self.assertFalse(strategies[0].require_amulet_ap)
+        self.assertFalse(strategies[0].require_ap_exo)
+
     def test_target_semantics_are_minimum_with_hard_caps(self):
         semantics = target_semantics_response()
         self.assertEqual(semantics["type"], "minimum_with_hard_caps")

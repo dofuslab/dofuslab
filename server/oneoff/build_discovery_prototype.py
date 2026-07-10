@@ -910,6 +910,14 @@ BASE_AP_STRATEGIES = (
         min_secondary_ap_sources=0,
     ),
 )
+LEVEL_DIVERSITY_AP_STRATEGIES = (
+    ApStrategy(
+        name="level_diversity_flexible_ap",
+        require_amulet_ap=False,
+        require_ap_exo=False,
+        min_secondary_ap_sources=1,
+    ),
+)
 
 
 def effective_ap_strategies_for_target(
@@ -918,6 +926,8 @@ def effective_ap_strategies_for_target(
 ) -> tuple[ApStrategy, ...]:
     if target.ap <= target.min_ap:
         return BASE_AP_STRATEGIES + ap_strategies
+    if target.level < RELEVANT_SET_ITEM_MIN_LEVEL:
+        return LEVEL_DIVERSITY_AP_STRATEGIES + ap_strategies
     return ap_strategies
 
 
