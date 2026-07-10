@@ -1782,3 +1782,29 @@ Run the initial evaluator pass:
   - aggregate rows: 300
   - exact levels represented: 30
   - level buckets represented: 10
+
+### 2026-07-10 Matrix Validation Refresh
+
+- Addressed evaluator findings:
+  - moved Level Diversity target rows and `query_for_target()` out of the smoke
+    test module into `server/scripts/build_discovery_level_diversity_targets.py`
+  - added matrix-side best-build validation for condition failures, AP/MP/Range
+    target/cap checks, and item-level caps
+  - added per-row `validationErrors`, `invalid` status, and report-level
+    `invalidCount`
+  - added provenance fields for target source and generator script
+- Regenerated:
+  - `.codex/state/build-discovery-level-diversity-matrix.json`
+  - `.codex/state/build-discovery-level-diversity-matrix.md`
+- Result:
+  - targets: 27
+  - generated: 27
+  - invalid: 0
+  - no build: 0
+- Note: `provenance.gitSha` is `null` when generated inside the server-only
+  Docker mount because the container cannot see the repo root `.git` directory.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix_check.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_level_diversity_generation_smoke.BuildDiscoveryLevelDiversitySmokeShapeTest"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-level-diversity-matrix-check-v2.json"`

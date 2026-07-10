@@ -1,10 +1,16 @@
 {
   "reportVersion": "build-discovery-level-diversity-matrix-v1",
-  "generatedAt": "2026-07-10T07:21:27.894564+00:00",
+  "generatedAt": "2026-07-10T08:49:11.878337+00:00",
   "scope": "Iop level-diversity sampled targets from prod aggregate discovery",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
   "targetCount": 27,
   "generatedCount": 27,
   "noBuildCount": 0,
+  "invalidCount": 0,
   "results": [
     {
       "target": {
@@ -36,6 +42,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 693.62,
         "weightedStatScore": 1051.49,
@@ -230,17 +237,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 29175.4,
+        "elapsedMs": 28446.5,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 227.8,
-          "candidatePoolsMs": 393.9,
+          "loadDataMs": 263.9,
+          "candidatePoolsMs": 433.9,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 23.1,
-          "directCompletionMs": 28527.2,
+          "packageSeedsMs": 23.8,
+          "directCompletionMs": 27721.8,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.5,
-          "totalFindBuildsMs": 29173.6
+          "rankAndDiversifyMs": 1.3,
+          "totalFindBuildsMs": 28444.8
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -282,6 +289,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 716.77,
         "weightedStatScore": 1041.15,
@@ -474,17 +482,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 20359.3,
+        "elapsedMs": 20169.3,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 110.6,
-          "candidatePoolsMs": 482.7,
+          "loadDataMs": 109.8,
+          "candidatePoolsMs": 406.6,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 51.0,
-          "directCompletionMs": 19712.1,
+          "packageSeedsMs": 48.9,
+          "directCompletionMs": 19601.2,
           "beamSearchMs": 0.0,
           "rankAndDiversifyMs": 1.2,
-          "totalFindBuildsMs": 20357.8
+          "totalFindBuildsMs": 20167.9
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -526,6 +534,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 811.49,
         "weightedStatScore": 1206.7,
@@ -727,17 +736,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 21573.1,
+        "elapsedMs": 21662.4,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 107.0,
-          "candidatePoolsMs": 457.1,
+          "loadDataMs": 106.9,
+          "candidatePoolsMs": 483.4,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 53.4,
-          "directCompletionMs": 20951.8,
+          "packageSeedsMs": 56.1,
+          "directCompletionMs": 21011.9,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.7,
-          "totalFindBuildsMs": 21571.1
+          "rankAndDiversifyMs": 1.9,
+          "totalFindBuildsMs": 21660.3
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -779,6 +788,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 872.81,
         "weightedStatScore": 1393.73,
@@ -982,17 +992,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 30481.8,
+        "elapsedMs": 29910.4,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 108.8,
-          "candidatePoolsMs": 739.1,
-          "packageIndexMs": 0.2,
-          "packageSeedsMs": 41.0,
-          "directCompletionMs": 29589.1,
+          "loadDataMs": 122.6,
+          "candidatePoolsMs": 728.2,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 39.7,
+          "directCompletionMs": 29016.4,
           "beamSearchMs": 0.0,
           "rankAndDiversifyMs": 1.6,
-          "totalFindBuildsMs": 30479.9
+          "totalFindBuildsMs": 29908.6
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -1034,6 +1044,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 807.26,
         "weightedStatScore": 1301.23,
@@ -1239,17 +1250,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 22309.6,
+        "elapsedMs": 22603.5,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 108.9,
-          "candidatePoolsMs": 743.0,
+          "loadDataMs": 122.9,
+          "candidatePoolsMs": 705.7,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 39.2,
-          "directCompletionMs": 21414.5,
+          "packageSeedsMs": 39.9,
+          "directCompletionMs": 21731.6,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 2.0,
-          "totalFindBuildsMs": 22307.7
+          "rankAndDiversifyMs": 1.8,
+          "totalFindBuildsMs": 22601.9
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -1291,6 +1302,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1003.16,
         "weightedStatScore": 1562.9,
@@ -1498,17 +1510,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 28654.8,
+        "elapsedMs": 28218.2,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 113.8,
-          "candidatePoolsMs": 758.7,
+          "loadDataMs": 112.1,
+          "candidatePoolsMs": 732.2,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 63.2,
-          "directCompletionMs": 27715.3,
+          "packageSeedsMs": 58.5,
+          "directCompletionMs": 27311.8,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.7,
-          "totalFindBuildsMs": 28652.8
+          "rankAndDiversifyMs": 1.6,
+          "totalFindBuildsMs": 28216.3
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -1550,6 +1562,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 999.01,
         "weightedStatScore": 1492.15,
@@ -1751,17 +1764,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 21898.2,
+        "elapsedMs": 22064.2,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 107.8,
-          "candidatePoolsMs": 700.7,
+          "loadDataMs": 107.6,
+          "candidatePoolsMs": 703.1,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 59.1,
-          "directCompletionMs": 21027.3,
+          "packageSeedsMs": 64.5,
+          "directCompletionMs": 21186.1,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.6,
-          "totalFindBuildsMs": 21896.6
+          "rankAndDiversifyMs": 1.4,
+          "totalFindBuildsMs": 22062.8
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -1803,6 +1816,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1037.08,
         "weightedStatScore": 1688.73,
@@ -2008,17 +2022,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 26071.1,
+        "elapsedMs": 25404.0,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 107.8,
-          "candidatePoolsMs": 807.7,
+          "loadDataMs": 106.3,
+          "candidatePoolsMs": 794.1,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 211.6,
-          "directCompletionMs": 24939.8,
+          "packageSeedsMs": 151.0,
+          "directCompletionMs": 24349.3,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.8,
-          "totalFindBuildsMs": 26068.9
+          "rankAndDiversifyMs": 1.6,
+          "totalFindBuildsMs": 25402.4
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -2060,6 +2074,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1039.96,
         "weightedStatScore": 1692.65,
@@ -2269,17 +2284,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 55613.9,
+        "elapsedMs": 55328.1,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 110.4,
-          "candidatePoolsMs": 820.3,
+          "loadDataMs": 106.2,
+          "candidatePoolsMs": 745.8,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 130.5,
-          "directCompletionMs": 54548.8,
+          "packageSeedsMs": 132.9,
+          "directCompletionMs": 54339.1,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.6,
-          "totalFindBuildsMs": 55611.7
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 55325.8
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -2321,6 +2336,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1219.05,
         "weightedStatScore": 1875.29,
@@ -2528,17 +2544,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 118471.1,
+        "elapsedMs": 118622.9,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 111.4,
-          "candidatePoolsMs": 924.7,
+          "loadDataMs": 106.7,
+          "candidatePoolsMs": 768.7,
           "packageIndexMs": 0.2,
-          "packageSeedsMs": 171.1,
-          "directCompletionMs": 117258.7,
+          "packageSeedsMs": 168.7,
+          "directCompletionMs": 117574.5,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 2.2,
-          "totalFindBuildsMs": 118468.2
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 118620.4
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -2580,6 +2596,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1542.25,
         "weightedStatScore": 2439.08,
@@ -2787,17 +2804,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 73463.3,
+        "elapsedMs": 72696.6,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 110.4,
-          "candidatePoolsMs": 940.7,
+          "loadDataMs": 110.3,
+          "candidatePoolsMs": 963.7,
           "packageIndexMs": 0.2,
-          "packageSeedsMs": 188.1,
-          "directCompletionMs": 72218.8,
+          "packageSeedsMs": 178.1,
+          "directCompletionMs": 71438.9,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.7,
-          "totalFindBuildsMs": 73460.0
+          "rankAndDiversifyMs": 2.2,
+          "totalFindBuildsMs": 72693.4
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -2839,6 +2856,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1183.16,
         "weightedStatScore": 2088.31,
@@ -3046,17 +3064,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 94181.8,
+        "elapsedMs": 94800.5,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 109.7,
-          "candidatePoolsMs": 902.4,
+          "loadDataMs": 112.1,
+          "candidatePoolsMs": 863.1,
           "packageIndexMs": 0.2,
-          "packageSeedsMs": 226.8,
-          "directCompletionMs": 92935.6,
+          "packageSeedsMs": 228.2,
+          "directCompletionMs": 93590.4,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 2.0,
-          "totalFindBuildsMs": 94176.7
+          "rankAndDiversifyMs": 1.6,
+          "totalFindBuildsMs": 94795.6
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -3098,6 +3116,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1308.92,
         "weightedStatScore": 2387.06,
@@ -3305,17 +3324,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 82526.5,
+        "elapsedMs": 82293.7,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 107.7,
-          "candidatePoolsMs": 838.1,
-          "packageIndexMs": 0.1,
-          "packageSeedsMs": 221.3,
-          "directCompletionMs": 81354.0,
+          "loadDataMs": 105.8,
+          "candidatePoolsMs": 860.2,
+          "packageIndexMs": 0.2,
+          "packageSeedsMs": 216.8,
+          "directCompletionMs": 81105.2,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 2.1,
-          "totalFindBuildsMs": 82523.4
+          "rankAndDiversifyMs": 2.0,
+          "totalFindBuildsMs": 82290.2
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -3357,6 +3376,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1660.49,
         "weightedStatScore": 3132.22,
@@ -3566,17 +3586,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 149128.8,
+        "elapsedMs": 148701.5,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 110.1,
-          "candidatePoolsMs": 850.1,
-          "packageIndexMs": 0.1,
-          "packageSeedsMs": 75.2,
-          "directCompletionMs": 148088.7,
+          "loadDataMs": 115.5,
+          "candidatePoolsMs": 803.8,
+          "packageIndexMs": 0.2,
+          "packageSeedsMs": 77.9,
+          "directCompletionMs": 147693.1,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.6,
-          "totalFindBuildsMs": 149125.9
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 148692.3
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -3618,6 +3638,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1612.02,
         "weightedStatScore": 2825.82,
@@ -3833,17 +3854,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 88708.6,
+        "elapsedMs": 87078.9,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 104.7,
-          "candidatePoolsMs": 872.2,
-          "packageIndexMs": 0.2,
-          "packageSeedsMs": 65.4,
-          "directCompletionMs": 87661.4,
+          "loadDataMs": 109.0,
+          "candidatePoolsMs": 886.8,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 66.4,
+          "directCompletionMs": 86012.3,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.9,
-          "totalFindBuildsMs": 88705.9
+          "rankAndDiversifyMs": 1.6,
+          "totalFindBuildsMs": 87076.2
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -3885,6 +3906,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1489.21,
         "weightedStatScore": 2793.81,
@@ -4090,17 +4112,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 119679.3,
+        "elapsedMs": 118826.9,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 108.6,
-          "candidatePoolsMs": 929.4,
-          "packageIndexMs": 0.1,
-          "packageSeedsMs": 80.0,
-          "directCompletionMs": 118534.4,
+          "loadDataMs": 103.5,
+          "candidatePoolsMs": 894.4,
+          "packageIndexMs": 0.2,
+          "packageSeedsMs": 82.4,
+          "directCompletionMs": 117722.7,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.8,
-          "totalFindBuildsMs": 119654.3
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 118805.0
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -4142,6 +4164,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1583.17,
         "weightedStatScore": 2887.88,
@@ -4347,17 +4370,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 82072.5,
+        "elapsedMs": 82066.2,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 105.3,
-          "candidatePoolsMs": 834.5,
+          "loadDataMs": 103.2,
+          "candidatePoolsMs": 866.1,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 76.4,
-          "directCompletionMs": 81052.2,
+          "packageSeedsMs": 72.8,
+          "directCompletionMs": 81017.1,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.6,
-          "totalFindBuildsMs": 82070.1
+          "rankAndDiversifyMs": 1.9,
+          "totalFindBuildsMs": 82061.2
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -4399,6 +4422,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1581.36,
         "weightedStatScore": 2970.57,
@@ -4618,17 +4642,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 209731.1,
+        "elapsedMs": 210130.6,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 104.1,
-          "candidatePoolsMs": 979.2,
+          "loadDataMs": 105.8,
+          "candidatePoolsMs": 934.5,
           "packageIndexMs": 0.2,
-          "packageSeedsMs": 83.3,
-          "directCompletionMs": 208559.3,
+          "packageSeedsMs": 84.7,
+          "directCompletionMs": 208999.8,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.7,
-          "totalFindBuildsMs": 209727.7
+          "rankAndDiversifyMs": 1.6,
+          "totalFindBuildsMs": 210126.6
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -4670,6 +4694,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1605.13,
         "weightedStatScore": 2956.6,
@@ -4871,17 +4896,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 62447.6,
+        "elapsedMs": 62199.1,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 106.4,
-          "candidatePoolsMs": 972.8,
+          "loadDataMs": 103.8,
+          "candidatePoolsMs": 942.1,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 77.3,
-          "directCompletionMs": 61274.4,
+          "packageSeedsMs": 76.0,
+          "directCompletionMs": 61065.2,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 2.5,
-          "totalFindBuildsMs": 62433.6
+          "rankAndDiversifyMs": 1.9,
+          "totalFindBuildsMs": 62189.1
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -4923,6 +4948,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1632.38,
         "weightedStatScore": 3147.57,
@@ -5142,17 +5168,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 103916.0,
+        "elapsedMs": 104160.5,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 107.3,
-          "candidatePoolsMs": 920.7,
-          "packageIndexMs": 0.2,
-          "packageSeedsMs": 90.3,
-          "directCompletionMs": 102791.9,
+          "loadDataMs": 108.8,
+          "candidatePoolsMs": 850.3,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 91.3,
+          "directCompletionMs": 103104.4,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.6,
-          "totalFindBuildsMs": 103912.0
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 104156.6
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -5194,6 +5220,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1654.03,
         "weightedStatScore": 3056.5,
@@ -5417,17 +5444,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 94662.1,
+        "elapsedMs": 94517.2,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 106.0,
-          "candidatePoolsMs": 731.7,
-          "packageIndexMs": 0.2,
-          "packageSeedsMs": 84.6,
-          "directCompletionMs": 93720.5,
+          "loadDataMs": 105.9,
+          "candidatePoolsMs": 821.2,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 84.9,
+          "directCompletionMs": 93499.6,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 2.3,
-          "totalFindBuildsMs": 94645.4
+          "rankAndDiversifyMs": 2.1,
+          "totalFindBuildsMs": 94513.9
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -5469,6 +5496,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1604.54,
         "weightedStatScore": 2965.59,
@@ -5686,17 +5714,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 211062.6,
+        "elapsedMs": 210750.6,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 106.2,
-          "candidatePoolsMs": 609.3,
+          "loadDataMs": 107.9,
+          "candidatePoolsMs": 711.3,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 1.9,
-          "directCompletionMs": 210339.9,
+          "packageSeedsMs": 2.0,
+          "directCompletionMs": 209918.8,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.6,
-          "totalFindBuildsMs": 211059.0
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 210741.8
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -5738,6 +5766,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 2495.06,
         "weightedStatScore": 4209.4,
@@ -5967,17 +5996,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 207083.9,
+        "elapsedMs": 205965.7,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 106.0,
-          "candidatePoolsMs": 799.6,
-          "packageIndexMs": 65.7,
-          "packageSeedsMs": 4925.1,
-          "directCompletionMs": 201181.5,
+          "loadDataMs": 105.8,
+          "candidatePoolsMs": 844.1,
+          "packageIndexMs": 64.6,
+          "packageSeedsMs": 4725.9,
+          "directCompletionMs": 200219.5,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.9,
-          "totalFindBuildsMs": 207079.9
+          "rankAndDiversifyMs": 1.8,
+          "totalFindBuildsMs": 205961.7
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -6019,6 +6048,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 2078.09,
         "weightedStatScore": 4068.06,
@@ -6246,17 +6276,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 25429.4,
+        "elapsedMs": 26042.0,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 106.0,
-          "candidatePoolsMs": 825.2,
-          "packageIndexMs": 69.2,
-          "packageSeedsMs": 4915.1,
-          "directCompletionMs": 9681.2,
-          "beamSearchMs": 9831.0,
-          "rankAndDiversifyMs": 0.2,
-          "totalFindBuildsMs": 25427.8
+          "loadDataMs": 107.6,
+          "candidatePoolsMs": 826.8,
+          "packageIndexMs": 69.0,
+          "packageSeedsMs": 4936.1,
+          "directCompletionMs": 10007.7,
+          "beamSearchMs": 10093.2,
+          "rankAndDiversifyMs": 0.1,
+          "totalFindBuildsMs": 26040.7
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -6298,6 +6328,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 1951.14,
         "weightedStatScore": 3878.37,
@@ -6505,17 +6536,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 45508.5,
+        "elapsedMs": 44913.1,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 104.5,
-          "candidatePoolsMs": 752.8,
-          "packageIndexMs": 66.8,
-          "packageSeedsMs": 4617.7,
-          "directCompletionMs": 10045.1,
-          "beamSearchMs": 29919.7,
+          "loadDataMs": 107.9,
+          "candidatePoolsMs": 735.8,
+          "packageIndexMs": 67.8,
+          "packageSeedsMs": 4549.3,
+          "directCompletionMs": 9702.8,
+          "beamSearchMs": 29746.7,
           "rankAndDiversifyMs": 0.2,
-          "totalFindBuildsMs": 45506.7
+          "totalFindBuildsMs": 44910.6
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -6557,6 +6588,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 2141.18,
         "weightedStatScore": 4152.31,
@@ -6766,17 +6798,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 51007.7,
+        "elapsedMs": 51131.6,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 104.6,
-          "candidatePoolsMs": 712.6,
-          "packageIndexMs": 65.6,
-          "packageSeedsMs": 4642.0,
-          "directCompletionMs": 12050.8,
-          "beamSearchMs": 33430.3,
+          "loadDataMs": 107.4,
+          "candidatePoolsMs": 743.4,
+          "packageIndexMs": 68.3,
+          "packageSeedsMs": 4768.6,
+          "directCompletionMs": 12229.9,
+          "beamSearchMs": 33212.2,
           "rankAndDiversifyMs": 0.2,
-          "totalFindBuildsMs": 51006.1
+          "totalFindBuildsMs": 51130.0
         },
         "resultCount": 1,
         "fallbackBudget": null
@@ -6818,6 +6850,7 @@
       },
       "status": "generated",
       "resultCount": 1,
+      "validationErrors": [],
       "bestBuild": {
         "score": 2503.06,
         "weightedStatScore": 4217.4,
@@ -7055,17 +7088,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 188797.9,
+        "elapsedMs": 188510.3,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 104.9,
-          "candidatePoolsMs": 849.9,
-          "packageIndexMs": 66.1,
-          "packageSeedsMs": 4986.9,
-          "directCompletionMs": 182785.1,
+          "loadDataMs": 107.6,
+          "candidatePoolsMs": 844.9,
+          "packageIndexMs": 65.9,
+          "packageSeedsMs": 4976.9,
+          "directCompletionMs": 182509.9,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.3,
-          "totalFindBuildsMs": 188794.1
+          "rankAndDiversifyMs": 1.4,
+          "totalFindBuildsMs": 188506.6
         },
         "resultCount": 1,
         "fallbackBudget": null
