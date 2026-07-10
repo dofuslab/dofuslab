@@ -30,7 +30,8 @@ The v1 goal is not perfect optimization, PvP meta modeling, a chatbot, or LLM-dr
 These milestones supersede the earlier implementation-order plan. The product
 should advance by proving correctness over a bounded surface and remembering the
 best builds found at each step. Performance, API, UI, and polish come after the
-correctness surface is trustworthy.
+correctness surface is trustworthy. The next correctness expansion after level
+200 Iop is level diversity for Iop, not all classes.
 
 Current confidence boundary:
 
@@ -53,19 +54,41 @@ Current confidence boundary:
    - Add/keep expensive no-cache regressions for the best known builds found.
    - For every supported query family, remember the top scoring generated build
      and any better human benchmark build.
-3. Extend to all classes at level 200.
+3. Level diversity for Iop.
+   - Keep class scope to Iop while proving that the solver can adapt to
+     different item pools, AP baselines, trophy availability, budget
+     assumptions, and survivability expectations across levels.
+   - Start with sampled level brackets rather than every possible query
+     combination.
+   - Use readonly prod aggregate discovery to find common AP/MP/Range targets
+     by level bucket before choosing sample rows. Do not guess target defaults
+     when prod data is available.
+   - Generate and remember a diverse set of benchmark builds around roughly
+     20-level intervals, with heavier attention at transition levels where the
+     rules change: level 60, 100, 150, 180, and 200.
+   - Treat level-specific AP/MP/Range targets as realistic defaults, not a
+     direct copy of level 200 targets. Characters start at 6 AP through level
+     99 and 7 AP from level 100 onward.
+   - For level 200 Iop, avoid using low AP/MP targets as quality benchmarks;
+     `10/5/0`, `11/6/0`, and `12/6/0` are the useful reference rows.
+   - Remember top generated builds and any better human benchmark builds per
+     sampled level/element/budget/playstyle row.
+4. Extend to all classes at level 200.
    - Add class-specific scoring defaults and damage baselines before enabling
      each class.
    - Establish at least one trusted benchmark path per class before broad query
      support.
    - Continue remembering top scoring generated and human benchmark builds at
      each expansion step.
-4. Extend to all supported levels.
-   - Add level brackets only after level 200 class quality is understood.
+5. Broad level support.
+   - Expand from sampled Iop level diversity to supported level brackets only
+     after the sampled rows produce plausible builds and reviewed benchmark
+     fixtures.
    - Define bracket-specific AP/MP/Range defaults, budget assumptions,
-     survivability baselines, and benchmark fixtures.
+     survivability baselines, trophy/Dofus availability, and benchmark
+     fixtures.
    - Remember top scoring builds per class/element/playstyle/level bracket.
-5. Optimization.
+6. Optimization.
    - Only after correctness milestones are stable, optimize cache misses and
      beam/search paths.
    - Preserve expensive correctness regressions while optimizing.
@@ -84,11 +107,71 @@ Current confidence boundary:
    - Cache package indexes with `datasetVersion` and `solverVersion`, and make
      pruning auditable: every dropped benchmark path should have a diagnostic
      reason.
-6. Product/API/UI.
+7. Product/API/UI.
    - Productize API, persistence, generated build provenance, and UI after core
      quality is defensible.
    - Async/cache can exist as infrastructure, but should not distract from
      benchmark-led correctness.
+
+## Level Diversity Sampling Plan
+
+Do not try to prove every level and every query combination in the first level
+expansion pass. Start with a deliberately broad but bounded Iop sample that
+exercises item-pool transitions, AP-baseline transitions, trophy availability,
+and endgame/opti assumptions.
+
+Before finalizing the sampled targets, run the readonly aggregate helper:
+
+```sh
+python -m oneoff.build_discovery_prod_level_target_discovery \
+  --sample-limit 2500 \
+  --top-targets 8 \
+  --class-name Iop \
+  --bucket-size 20
+```
+
+Use the helper output to choose the AP/MP/Range targets for each level bucket.
+The helper reports aggregate recent `custom_set` rows only; it omits custom set
+IDs, names, owners, and URLs. AP includes level baseline AP, item AP, exos, and
+active set bonus AP. MP includes base 3 MP, item MP, exos, and active set bonus
+MP. Range includes item Range, exos, and active set bonus Range. The sample is
+recency-based, not popularity-weighted.
+
+Representative levels to inspect:
+
+- `20`: early build, no trophies/Dofuses expected, simple AP/MP target.
+- `40`: first meaningful low-level set comparisons.
+- `60`: Dragoturkey/mount era, first major mobility/accessibility shift.
+- `80`: late pre-100 build, still 6 base AP.
+- `100`: base AP becomes 7 and major trophies such as Shaker become available.
+- `120`: early post-100 trophy-driven builds.
+- `140`: midgame set and trophy diversity.
+- `160`: late-midgame build quality starts resembling endgame structure.
+- `180`: high-level pre-200 item pool, Ice Dofus-level assumptions start to
+  matter.
+- `200`: already covered by Milestone 1, remains the calibration anchor.
+
+Initial build rows should be selected from the prod target distribution, not
+hardcoded upfront. The intended shape is:
+
+- At least one Strength Iop row before level 100.
+- At least one non-Strength row before level 100.
+- At least one row at the level 100 AP-baseline/trophy transition.
+- At least one row in each of the 120, 140, 160, and 180 buckets.
+- At least one budget tier 1 row, one tier 2 row, and one tier 3 row outside
+  level 200.
+- Level 200 remains represented by accepted `10/5/0`, `11/6/0`, and `12/6/0`
+  reference rows rather than low AP/MP targets.
+
+After the first sample is reviewed:
+
+- Add one high-confidence generated build per accepted sampled row to a matrix
+  artifact.
+- Promote reviewed rows into expensive item-by-item regressions.
+- Add human/prod benchmark rows where saved builds can be mapped to clean query
+  assumptions.
+- Add rows for elements/level bands that failed review or looked obviously
+  underfit.
 
 ## Regression Test Tiers
 
@@ -122,13 +205,13 @@ checkpoint.
 - Crimson, Turquoise, and Ice Dofus are not incorrectly treated as opti-only.
 - Shaker, Nomad, Jackanapes, and Voyager are considered budget enablers.
 - Cached result p95 returns under 500ms.
-- Cache miss / fresh generation p95 returns under 5s for the representative Milestone 1 level 200 Iop query matrix.
+- Cache miss / fresh generation p95 returns under 5s for the representative level 200 Iop and accepted level-diversity query matrices once Optimization is active.
 - Every generation logs timing breakdowns.
 - UI exposes structured controls, not numeric stat weights.
 - Results are labeled by role and include item list, stats, score breakdown, warnings, and explanations.
 - Milestone 1 is not complete if the generator only handles Strength Iop or only hard-coded 11/6 and 12/6 benchmark profiles; it must support level 200 Iop generation across the supported Iop element, AP/MP/Range, budget, exo, and playstyle/intent query combinations.
-- Non-200 level generation belongs to a future Level Bracket Expansion milestone unless product priority explicitly pulls it forward.
-- Milestone 2 is not complete until cache-miss / fresh-generation p95 is under 5s for the representative Milestone 1 level 200 Iop query matrix. Async miss handling is useful fallback infrastructure, but does not by itself satisfy the Milestone 2 success goal.
+- Non-200 level generation belongs to the Level Diversity for Iop milestone.
+- Optimization is not complete until cache-miss / fresh-generation p95 is under 5s for the representative level 200 Iop and accepted level-diversity query matrices. Async miss handling is useful fallback infrastructure, but does not by itself satisfy the optimization success goal.
 
 ## Current PRD Facts To Verify In Code
 

@@ -196,13 +196,13 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 
 ## Performance And Cache Assumptions
 
-- Performance is Milestone 2. Availability v0 follows as Milestone 3 unless product priority changes again.
+- Performance is not the next correctness milestone. The next expansion is level diversity for Iop; optimization comes after accepted level-diversity rows exist.
 - Data loading should be sub-second when the generated index exists.
 - Beam search and final scoring are the main bottlenecks.
-- Milestone 2 success target: cached query p95 under 500ms.
-- Milestone 2 success target: cache-miss / fresh-generation p95 under 5s for the representative Milestone 1 level 200 Iop query matrix.
-- Async job flow remains useful fallback/resilience infrastructure, but async alone does not satisfy Milestone 2 unless the product target is explicitly revised.
-- Current local fresh p95 exceeds 5s for most supported rows, so Milestone 2 remains incomplete.
+- Optimization success target: cached query p95 under 500ms.
+- Optimization success target: cache-miss / fresh-generation p95 under 5s for the representative level 200 Iop and accepted level-diversity query matrices.
+- Async job flow remains useful fallback/resilience infrastructure, but async alone does not satisfy optimization unless the product target is explicitly revised.
+- Current local fresh p95 exceeds 5s for most supported rows, so optimization remains incomplete.
 - Cache keys must include query inputs, dataset version, and solver version.
 - Cache should include budget tier, exo policy, locked items, avoided items, and damage/survivability preset.
 - App-level cache storage is dogpile/Redis through `cache_region`.
@@ -228,12 +228,12 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 
 ## Benchmark Assumptions
 
-- Milestone 4 starts with Strength Iop 11/6 and 12/6 human references.
+- The next benchmark expansion is level diversity for Iop, using readonly prod aggregate AP/MP/Range distributions by level bucket to choose sample targets.
 - Milestone 1 owns the broad Iop query surface; 11/6/0 and 12/6/0 Iop profiles are regression rows, not the whole Milestone 1 scope.
-- Milestone 6 starts after the Iop surface is in good shape and expands beyond Iop to additional PvM classes.
-- Non-200 generation belongs to a future Level Bracket Expansion milestone after the level 200 Iop surface is shippable and the first non-Iop expansion path is understood, unless product priority changes.
-- Level Bracket Expansion should use generated index level buckets as starting boundaries: 1-99, 100-149, 150-179, and 180-200.
-- Level Bracket Expansion needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket.
+- Class expansion starts after the level 200 Iop and sampled Iop level-diversity surfaces are in good shape.
+- Broad non-200 generation follows the sampled Level Diversity for Iop milestone, unless product priority changes.
+- Level Diversity should use prod-derived AP/MP/Range distributions plus generated index level buckets as starting boundaries: 1-99, 100-149, 150-179, and 180-200.
+- Level Diversity needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket broadly.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.
 - Fashionista links are currently manual comparison references, not automatically parsed/scored.
