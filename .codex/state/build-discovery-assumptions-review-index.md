@@ -113,6 +113,11 @@ These need gameplay or product review before calling the feature shippable.
      level 99 Intelligence tier 2, level 199 Agility tier 2, and level 200
      Strength tier 1. Level 80 Strength tier 1 remains a bounded witness miss
      with state cap hit.
+   - The cap-4 witness diagnostics now include solver candidate-pool coverage:
+     level 50 misses `Sponghield`; level 199 misses `Bzzegg Supervisor's Fist`
+     and `Golden Dragoone`; level 200 misses `Khardboard Moowolf Belt` and
+     `Plum and Almond Dragoturkey`; level 99 has full witness-item pool
+     coverage and is therefore a later seed/completion recall gap.
    - The cap-2 item-stat diagnostic shows level 1 Intelligence and level 20
      Chance are below target under the item-stat-only upper bound.
    - Level 50 Agility, level 80 Strength, and level 99 Intelligence previously

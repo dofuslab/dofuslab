@@ -196,6 +196,92 @@
           }
         ]
       },
+      "solverCandidatePoolCoverage": {
+        "topK": 25,
+        "relevantSetLimit": 60,
+        "missingCount": 0,
+        "witnessItemCount": 11,
+        "missingItems": [],
+        "items": [
+          {
+            "slot": "amulet",
+            "id": "7880",
+            "name": "Gobkool Amulet",
+            "inSolverPool": true,
+            "poolSize": 73
+          },
+          {
+            "slot": "belt",
+            "id": "7885",
+            "name": "Gobkool Belt",
+            "inSolverPool": true,
+            "poolSize": 45
+          },
+          {
+            "slot": "weapon",
+            "id": "7882",
+            "name": "Gobkool Hammer",
+            "inSolverPool": true,
+            "poolSize": 74
+          },
+          {
+            "slot": "shield",
+            "id": "33576",
+            "name": "Musha Sheyeld",
+            "inSolverPool": true,
+            "poolSize": 12
+          },
+          {
+            "slot": "ring_1",
+            "id": "836",
+            "name": "Treering",
+            "inSolverPool": true,
+            "poolSize": 39
+          },
+          {
+            "slot": "ring_2",
+            "id": "841",
+            "name": "Ring of Satisfaction",
+            "inSolverPool": true,
+            "poolSize": 39
+          },
+          {
+            "slot": "boots",
+            "id": "9162",
+            "name": "Royal Morello Cherry Bloopts",
+            "inSolverPool": true,
+            "poolSize": 86
+          },
+          {
+            "slot": "hat",
+            "id": "1908",
+            "name": "Chafer Helmet",
+            "inSolverPool": true,
+            "poolSize": 57
+          },
+          {
+            "slot": "cloak",
+            "id": "1693",
+            "name": "Jules Yanos's Cloak",
+            "inSolverPool": true,
+            "poolSize": 59
+          },
+          {
+            "slot": "pet",
+            "id": "13603",
+            "name": "Razorbuck",
+            "inSolverPool": true,
+            "poolSize": 290
+          },
+          {
+            "slot": "dofus_1",
+            "id": "13831",
+            "name": "Twitcher",
+            "inSolverPool": true,
+            "poolSize": 29
+          }
+        ]
+      },
       "slotSummaries": [
         {
           "slot": "amulet",

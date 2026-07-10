@@ -196,6 +196,100 @@
           }
         ]
       },
+      "solverCandidatePoolCoverage": {
+        "topK": 25,
+        "relevantSetLimit": 60,
+        "missingCount": 1,
+        "witnessItemCount": 11,
+        "missingItems": [
+          {
+            "slot": "shield",
+            "id": "18659",
+            "name": "Sponghield",
+            "inSolverPool": false,
+            "poolSize": 4
+          }
+        ],
+        "items": [
+          {
+            "slot": "amulet",
+            "id": "159",
+            "name": "The Celestial Brooch",
+            "inSolverPool": true,
+            "poolSize": 36
+          },
+          {
+            "slot": "belt",
+            "id": "1667",
+            "name": "Luthuthu Belt",
+            "inSolverPool": true,
+            "poolSize": 22
+          },
+          {
+            "slot": "weapon",
+            "id": "27268",
+            "name": "Khardboard Goultard",
+            "inSolverPool": true,
+            "poolSize": 37
+          },
+          {
+            "slot": "shield",
+            "id": "18659",
+            "name": "Sponghield",
+            "inSolverPool": false,
+            "poolSize": 4
+          },
+          {
+            "slot": "ring_1",
+            "id": "836",
+            "name": "Treering",
+            "inSolverPool": true,
+            "poolSize": 24
+          },
+          {
+            "slot": "ring_2",
+            "id": "841",
+            "name": "Ring of Satisfaction",
+            "inSolverPool": true,
+            "poolSize": 24
+          },
+          {
+            "slot": "boots",
+            "id": "127",
+            "name": "Bowisse's Boots",
+            "inSolverPool": true,
+            "poolSize": 36
+          },
+          {
+            "slot": "hat",
+            "id": "27282",
+            "name": "Khardboard Gobball Headgear",
+            "inSolverPool": true,
+            "poolSize": 36
+          },
+          {
+            "slot": "cloak",
+            "id": "948",
+            "name": "Treecloak",
+            "inSolverPool": true,
+            "poolSize": 15
+          },
+          {
+            "slot": "pet",
+            "id": "15254",
+            "name": "Drhellbert",
+            "inSolverPool": true,
+            "poolSize": 36
+          },
+          {
+            "slot": "dofus_1",
+            "id": "13831",
+            "name": "Twitcher",
+            "inSolverPool": true,
+            "poolSize": 29
+          }
+        ]
+      },
       "slotSummaries": [
         {
           "slot": "amulet",

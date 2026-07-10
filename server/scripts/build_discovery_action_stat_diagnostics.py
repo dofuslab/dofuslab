@@ -21,12 +21,14 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     add_item_to_state,
     apply_missing_exos,
     base_ap_for_level,
+    candidate_pool_for_slot,
     effective_exo_policy,
     hard_cap_target,
     is_dofus_slot,
     load_items,
     load_sets,
     query_summary,
+    relevant_set_ids,
     set_bonus_stats,
 )
 
@@ -162,6 +164,54 @@ def compact_witness_state(state: BuildState) -> dict[str, Any]:
             }
             for slot_name, item in state.slots.items()
         ],
+    }
+
+
+def solver_candidate_pool_coverage(
+    query: BuildDiscoveryQuery,
+    witness: dict[str, Any] | None,
+    items: list[dict[str, Any]],
+    sets: dict[str, dict[str, Any]],
+) -> dict[str, Any] | None:
+    if not witness:
+        return None
+
+    relevant_sets = relevant_set_ids(items, sets, query.relevant_set_limit)
+    pools = {
+        slot_name: candidate_pool_for_slot(
+            slot_types,
+            items,
+            relevant_sets,
+            query.top_k,
+            required_item_ids=set(query.locked_item_ids),
+            target_level=query.level,
+        )
+        for slot_name, slot_types in SLOTS
+    }
+    by_slot = []
+    missing = []
+    for witness_item in witness.get("items", []):
+        slot_name = witness_item["slot"]
+        item_id = str(witness_item["id"])
+        pool = pools.get(slot_name, [])
+        present = any(str(item.get("dofusID")) == item_id for item in pool)
+        row = {
+            "slot": slot_name,
+            "id": item_id,
+            "name": witness_item.get("name"),
+            "inSolverPool": present,
+            "poolSize": len(pool),
+        }
+        by_slot.append(row)
+        if not present:
+            missing.append(row)
+    return {
+        "topK": query.top_k,
+        "relevantSetLimit": query.relevant_set_limit,
+        "missingCount": len(missing),
+        "witnessItemCount": len(by_slot),
+        "missingItems": missing,
+        "items": by_slot,
     }
 
 
@@ -319,6 +369,7 @@ def diagnose_entry(
         }
     )
     witness = witness_search_result["witness"]
+    sets = load_sets() if witness else {}
     return {
         "target": target,
         "query": query_summary(query),
@@ -339,6 +390,7 @@ def diagnose_entry(
             key: value for key, value in witness_search_result.items() if key != "witness"
         },
         "actionStatWitness": witness,
+        "solverCandidatePoolCoverage": solver_candidate_pool_coverage(query, witness, items, sets),
         "slotSummaries": summaries,
     }
 
@@ -424,8 +476,8 @@ def render_markdown(report: dict[str, Any]) -> str:
             f"of `{report.get('witnessSearchRunCount', 0)}` searched"
         ),
         "",
-        "| Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness search | Witness AP/MP/Range | Reasons |",
-        "|---|---|---|---|---|---|---|",
+        "| Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness search | Witness AP/MP/Range | Solver pool missing | Reasons |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for diagnostic in report["diagnostics"]:
         upper = diagnostic["optimisticIndependentSlotUpperBound"]
@@ -448,8 +500,20 @@ def render_markdown(report: dict[str, Any]) -> str:
             if witness_search.get("stateLimitHit")
             else "not found"
         )
+        pool_coverage = diagnostic.get("solverCandidatePoolCoverage") or {}
+        missing_items = pool_coverage.get("missingItems") or []
+        pool_missing_label = (
+            "not checked"
+            if diagnostic.get("actionStatWitness") is None
+            else "0"
+            if not missing_items
+            else "{}: {}".format(
+                len(missing_items),
+                ", ".join(str(item.get("name") or item.get("id")) for item in missing_items[:6]),
+            )
+        )
         lines.append(
-            "| {} | {} | {} | {}/{}/{} | {} | {} | {} |".format(
+            "| {} | {} | {} | {}/{}/{} | {} | {} | {} | {} |".format(
                 target_label(diagnostic["target"]),
                 diagnostic["matrixStatus"],
                 diagnostic["diagnosticStatus"],
@@ -458,6 +522,7 @@ def render_markdown(report: dict[str, Any]) -> str:
                 upper.get("Range", ""),
                 witness_search_label,
                 witness_label,
+                pool_missing_label,
                 "; ".join(diagnostic["reasons"]),
             )
         )

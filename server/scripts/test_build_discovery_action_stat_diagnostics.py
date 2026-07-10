@@ -10,8 +10,10 @@ from build_discovery_action_stat_diagnostics import (
     build_diagnostics_report,
     main,
     render_markdown,
+    solver_candidate_pool_coverage,
     write_split_reports,
 )
+from oneoff.build_discovery_prototype import BuildDiscoveryQuery
 
 
 def matrix_entry(level=1, status="no_build"):
@@ -135,6 +137,34 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
         self.assertIn("Action-stat witnesses found: `1` of `1` searched", markdown)
         self.assertIn("AP optimistic upper bound", markdown)
 
+    def test_solver_candidate_pool_coverage_reports_missing_witness_items(self):
+        witness = {
+            "items": [
+                {"slot": "amulet", "id": "kept", "name": "Kept Amulet"},
+                {"slot": "belt", "id": "missing", "name": "Missing Belt"},
+            ]
+        }
+
+        def fake_pool(slot_types, items, relevant_sets, top_k, **kwargs):
+            if slot_types == ("Amulet",):
+                return [{"dofusID": "kept"}]
+            return []
+
+        with patch("build_discovery_action_stat_diagnostics.relevant_set_ids", return_value=set()), patch(
+            "build_discovery_action_stat_diagnostics.candidate_pool_for_slot",
+            side_effect=fake_pool,
+        ):
+            coverage = solver_candidate_pool_coverage(
+                BuildDiscoveryQuery(level=50, top_k=1),
+                witness,
+                items=[],
+                sets={},
+            )
+
+        self.assertEqual(coverage["missingCount"], 1)
+        self.assertEqual(coverage["missingItems"][0]["name"], "Missing Belt")
+        self.assertEqual(coverage["items"][0]["inSolverPool"], True)
+
     def test_diagnostics_use_matrix_query_exo_policy(self):
         entry = matrix_entry(level=100)
         entry["query"]["exoPolicy"] = "none"
@@ -187,6 +217,12 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
                 "found": True,
                 "witness": {"totals": {"AP": 12, "MP": 6, "Range": 6}, "items": []},
             },
+        ), patch(
+            "build_discovery_action_stat_diagnostics.solver_candidate_pool_coverage",
+            return_value={"missingCount": 0, "missingItems": [], "items": []},
+        ), patch(
+            "build_discovery_action_stat_diagnostics.load_sets",
+            return_value={},
         ):
             diagnostics = build_diagnostics_report(
                 report,

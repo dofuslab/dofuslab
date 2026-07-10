@@ -184,6 +184,100 @@
           }
         ]
       },
+      "solverCandidatePoolCoverage": {
+        "topK": 25,
+        "relevantSetLimit": 60,
+        "missingCount": 2,
+        "witnessItemCount": 10,
+        "missingItems": [
+          {
+            "slot": "belt",
+            "id": "27266",
+            "name": "Khardboard Moowolf Belt",
+            "inSolverPool": false,
+            "poolSize": 29
+          },
+          {
+            "slot": "pet",
+            "id": "33053",
+            "name": "Plum and Almond Dragoturkey",
+            "inSolverPool": false,
+            "poolSize": 32
+          }
+        ],
+        "items": [
+          {
+            "slot": "amulet",
+            "id": "31789",
+            "name": "Gargandyas's Necklace",
+            "inSolverPool": true,
+            "poolSize": 35
+          },
+          {
+            "slot": "belt",
+            "id": "27266",
+            "name": "Khardboard Moowolf Belt",
+            "inSolverPool": false,
+            "poolSize": 29
+          },
+          {
+            "slot": "weapon",
+            "id": "6981",
+            "name": "Ice Daggers",
+            "inSolverPool": true,
+            "poolSize": 44
+          },
+          {
+            "slot": "shield",
+            "id": "30858",
+            "name": "Mama Ayuto's Parasail",
+            "inSolverPool": true,
+            "poolSize": 19
+          },
+          {
+            "slot": "ring_1",
+            "id": "27284",
+            "name": "Khardboard Gelano",
+            "inSolverPool": true,
+            "poolSize": 38
+          },
+          {
+            "slot": "ring_2",
+            "id": "2469",
+            "name": "Gelano",
+            "inSolverPool": true,
+            "poolSize": 38
+          },
+          {
+            "slot": "boots",
+            "id": "32121",
+            "name": "Meriana's Clairvoyance",
+            "inSolverPool": true,
+            "poolSize": 37
+          },
+          {
+            "slot": "hat",
+            "id": "15183",
+            "name": "Staruman Mask",
+            "inSolverPool": true,
+            "poolSize": 37
+          },
+          {
+            "slot": "cloak",
+            "id": "8876",
+            "name": "Inky Veil",
+            "inSolverPool": true,
+            "poolSize": 32
+          },
+          {
+            "slot": "pet",
+            "id": "33053",
+            "name": "Plum and Almond Dragoturkey",
+            "inSolverPool": false,
+            "poolSize": 32
+          }
+        ]
+      },
       "slotSummaries": [
         {
           "slot": "amulet",

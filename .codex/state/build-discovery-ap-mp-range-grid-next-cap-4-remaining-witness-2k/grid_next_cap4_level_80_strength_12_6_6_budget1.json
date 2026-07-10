@@ -55,6 +55,7 @@
         "found": false
       },
       "actionStatWitness": null,
+      "solverCandidatePoolCoverage": null,
       "slotSummaries": [
         {
           "slot": "amulet",

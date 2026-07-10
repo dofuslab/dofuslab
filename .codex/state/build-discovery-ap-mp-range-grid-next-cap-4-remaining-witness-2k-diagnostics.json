@@ -55,6 +55,7 @@
         "found": false
       },
       "actionStatWitness": null,
+      "solverCandidatePoolCoverage": null,
       "slotSummaries": [
         {
           "slot": "amulet",
@@ -1381,6 +1382,92 @@
               "MP": 0,
               "Range": 1
             }
+          }
+        ]
+      },
+      "solverCandidatePoolCoverage": {
+        "topK": 25,
+        "relevantSetLimit": 60,
+        "missingCount": 0,
+        "witnessItemCount": 11,
+        "missingItems": [],
+        "items": [
+          {
+            "slot": "amulet",
+            "id": "7880",
+            "name": "Gobkool Amulet",
+            "inSolverPool": true,
+            "poolSize": 73
+          },
+          {
+            "slot": "belt",
+            "id": "7885",
+            "name": "Gobkool Belt",
+            "inSolverPool": true,
+            "poolSize": 45
+          },
+          {
+            "slot": "weapon",
+            "id": "7882",
+            "name": "Gobkool Hammer",
+            "inSolverPool": true,
+            "poolSize": 74
+          },
+          {
+            "slot": "shield",
+            "id": "33576",
+            "name": "Musha Sheyeld",
+            "inSolverPool": true,
+            "poolSize": 12
+          },
+          {
+            "slot": "ring_1",
+            "id": "836",
+            "name": "Treering",
+            "inSolverPool": true,
+            "poolSize": 39
+          },
+          {
+            "slot": "ring_2",
+            "id": "841",
+            "name": "Ring of Satisfaction",
+            "inSolverPool": true,
+            "poolSize": 39
+          },
+          {
+            "slot": "boots",
+            "id": "9162",
+            "name": "Royal Morello Cherry Bloopts",
+            "inSolverPool": true,
+            "poolSize": 86
+          },
+          {
+            "slot": "hat",
+            "id": "1908",
+            "name": "Chafer Helmet",
+            "inSolverPool": true,
+            "poolSize": 57
+          },
+          {
+            "slot": "cloak",
+            "id": "1693",
+            "name": "Jules Yanos's Cloak",
+            "inSolverPool": true,
+            "poolSize": 59
+          },
+          {
+            "slot": "pet",
+            "id": "13603",
+            "name": "Razorbuck",
+            "inSolverPool": true,
+            "poolSize": 290
+          },
+          {
+            "slot": "dofus_1",
+            "id": "13831",
+            "name": "Twitcher",
+            "inSolverPool": true,
+            "poolSize": 29
           }
         ]
       },
@@ -2767,6 +2854,121 @@
               "MP": 0,
               "Range": 1
             }
+          }
+        ]
+      },
+      "solverCandidatePoolCoverage": {
+        "topK": 25,
+        "relevantSetLimit": 60,
+        "missingCount": 2,
+        "witnessItemCount": 13,
+        "missingItems": [
+          {
+            "slot": "ring_2",
+            "id": "31753",
+            "name": "Bzzegg Supervisor's Fist",
+            "inSolverPool": false,
+            "poolSize": 29
+          },
+          {
+            "slot": "pet",
+            "id": "10802",
+            "name": "Golden Dragoone",
+            "inSolverPool": false,
+            "poolSize": 37
+          }
+        ],
+        "items": [
+          {
+            "slot": "amulet",
+            "id": "11720",
+            "name": "Celestial Bearbarian Amulet",
+            "inSolverPool": true,
+            "poolSize": 23
+          },
+          {
+            "slot": "belt",
+            "id": "11850",
+            "name": "Potsan Pants",
+            "inSolverPool": true,
+            "poolSize": 30
+          },
+          {
+            "slot": "weapon",
+            "id": "31752",
+            "name": "Bzzegg Supervisor's Stinger",
+            "inSolverPool": true,
+            "poolSize": 33
+          },
+          {
+            "slot": "shield",
+            "id": "31751",
+            "name": "Bzzegg Supervisor's Armour-Plating",
+            "inSolverPool": true,
+            "poolSize": 16
+          },
+          {
+            "slot": "ring_1",
+            "id": "2469",
+            "name": "Gelano",
+            "inSolverPool": true,
+            "poolSize": 29
+          },
+          {
+            "slot": "ring_2",
+            "id": "31753",
+            "name": "Bzzegg Supervisor's Fist",
+            "inSolverPool": false,
+            "poolSize": 29
+          },
+          {
+            "slot": "boots",
+            "id": "12110",
+            "name": "Professor Xa's Boots",
+            "inSolverPool": true,
+            "poolSize": 30
+          },
+          {
+            "slot": "hat",
+            "id": "14000",
+            "name": "Nekochief",
+            "inSolverPool": true,
+            "poolSize": 29
+          },
+          {
+            "slot": "cloak",
+            "id": "12117",
+            "name": "Fuji Snowfoux Cloak",
+            "inSolverPool": true,
+            "poolSize": 22
+          },
+          {
+            "slot": "pet",
+            "id": "10802",
+            "name": "Golden Dragoone",
+            "inSolverPool": false,
+            "poolSize": 37
+          },
+          {
+            "slot": "dofus_1",
+            "id": "13830",
+            "name": "Voyager",
+            "inSolverPool": true,
+            "poolSize": 35
+          },
+          {
+            "slot": "dofus_2",
+            "id": "16336",
+            "name": "Observer",
+            "inSolverPool": true,
+            "poolSize": 35
+          },
+          {
+            "slot": "dofus_3",
+            "id": "13831",
+            "name": "Twitcher",
+            "inSolverPool": true,
+            "poolSize": 35
           }
         ]
       },
@@ -4381,6 +4583,100 @@
               "MP": 0,
               "Range": 1
             }
+          }
+        ]
+      },
+      "solverCandidatePoolCoverage": {
+        "topK": 25,
+        "relevantSetLimit": 60,
+        "missingCount": 2,
+        "witnessItemCount": 10,
+        "missingItems": [
+          {
+            "slot": "belt",
+            "id": "27266",
+            "name": "Khardboard Moowolf Belt",
+            "inSolverPool": false,
+            "poolSize": 29
+          },
+          {
+            "slot": "pet",
+            "id": "33053",
+            "name": "Plum and Almond Dragoturkey",
+            "inSolverPool": false,
+            "poolSize": 32
+          }
+        ],
+        "items": [
+          {
+            "slot": "amulet",
+            "id": "31789",
+            "name": "Gargandyas's Necklace",
+            "inSolverPool": true,
+            "poolSize": 35
+          },
+          {
+            "slot": "belt",
+            "id": "27266",
+            "name": "Khardboard Moowolf Belt",
+            "inSolverPool": false,
+            "poolSize": 29
+          },
+          {
+            "slot": "weapon",
+            "id": "6981",
+            "name": "Ice Daggers",
+            "inSolverPool": true,
+            "poolSize": 44
+          },
+          {
+            "slot": "shield",
+            "id": "30858",
+            "name": "Mama Ayuto's Parasail",
+            "inSolverPool": true,
+            "poolSize": 19
+          },
+          {
+            "slot": "ring_1",
+            "id": "27284",
+            "name": "Khardboard Gelano",
+            "inSolverPool": true,
+            "poolSize": 38
+          },
+          {
+            "slot": "ring_2",
+            "id": "2469",
+            "name": "Gelano",
+            "inSolverPool": true,
+            "poolSize": 38
+          },
+          {
+            "slot": "boots",
+            "id": "32121",
+            "name": "Meriana's Clairvoyance",
+            "inSolverPool": true,
+            "poolSize": 37
+          },
+          {
+            "slot": "hat",
+            "id": "15183",
+            "name": "Staruman Mask",
+            "inSolverPool": true,
+            "poolSize": 37
+          },
+          {
+            "slot": "cloak",
+            "id": "8876",
+            "name": "Inky Veil",
+            "inSolverPool": true,
+            "poolSize": 32
+          },
+          {
+            "slot": "pet",
+            "id": "33053",
+            "name": "Plum and Almond Dragoturkey",
+            "inSolverPool": false,
+            "poolSize": 32
           }
         ]
       },

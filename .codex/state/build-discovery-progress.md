@@ -2771,3 +2771,34 @@ Run the initial evaluator pass:
     infeasible without stronger diagnostics
 - Command:
   - `docker exec dofuslab-server-1 sh -lc 'rm -rf /tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k && cd /home/dofuslab && python scripts/build_discovery_action_stat_diagnostics.py /tmp/build-discovery-ap-mp-range-grid-next-cap-4-matrix.json --targets grid_next_cap4_level_80_strength_12_6_6_budget1,grid_next_cap4_level_99_intelligence_12_6_6_budget2,grid_next_cap4_level_199_agility_12_6_6_budget2,grid_next_cap4_level_200_strength_12_6_6_budget1 --witness-search --witness-max-states-per-slot 2000 --split-output-dir /tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k --output-json /tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.json --output-md /tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.md'`
+
+### 2026-07-10 Cap 4 Witness Pool-Coverage Diagnostics
+
+- Extended `server/scripts/build_discovery_action_stat_diagnostics.py` so a
+  found action-stat witness also reports whether each witness item is present
+  in the solver's normal candidate pool.
+- Regenerated:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-level50-witness-2k-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-level50-witness-2k-diagnostics.md`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.md`
+  - split artifacts in `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/`
+- Pool-coverage result:
+  - level 50 Agility tier 2: witness found; missing `Sponghield`
+  - level 99 Intelligence tier 2: witness found; no witness items missing
+  - level 199 Agility tier 2: witness found; missing `Bzzegg Supervisor's Fist`
+    and `Golden Dragoone`
+  - level 200 Strength tier 1: witness found; missing `Khardboard Moowolf Belt`
+    and `Plum and Almond Dragoturkey`
+  - level 80 Strength tier 1: no witness found, so pool coverage is not checked
+- Interpretation:
+  - level 50, 199, and 200 have candidate-pool recall gaps for their found
+    action-stat witnesses
+  - level 99 has full candidate-pool coverage, so its no-build is later in
+    seed retention, completion, validation, or scoring
+  - level 80 remains unresolved as a bounded witness miss
+- Verification passed:
+  - `python server\scripts\test_build_discovery_action_stat_diagnostics.py`
+  - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
+  - copied changed diagnostic scripts into the Docker server container, then ran
+    `python scripts/test_build_discovery_action_stat_diagnostics.py && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py`
