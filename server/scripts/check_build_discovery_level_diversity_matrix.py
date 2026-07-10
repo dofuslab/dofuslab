@@ -83,7 +83,7 @@ def main() -> None:
     parser.add_argument("report", help="Path to a level-diversity matrix JSON artifact.")
     parser.add_argument(
         "--target-set",
-        choices=("level-diversity", "boundary", "all"),
+        choices=("level-diversity", "boundary", "coverage", "all"),
         default="level-diversity",
     )
     args = parser.parse_args()

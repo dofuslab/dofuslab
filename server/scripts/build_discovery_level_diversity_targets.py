@@ -62,6 +62,21 @@ BOUNDARY_LEVEL_TARGETS = (
     LevelDiversityTarget("boundary_level_200_strength_10_5_0_budget4", 200, "strength", 4, 10, 5, 0),
 )
 
+AP_MP_RANGE_COVERAGE_TARGETS = (
+    LevelDiversityTarget("coverage_level_1_strength_min_budget1", 1, "strength", 1, 6, 3, None),
+    LevelDiversityTarget("coverage_level_20_chance_range_budget1", 20, "chance", 1, 6, 3, 6),
+    LevelDiversityTarget("coverage_level_50_intelligence_mp_budget1", 50, "intelligence", 1, 6, 6, None),
+    LevelDiversityTarget("coverage_level_80_agility_ap_mp_budget2", 80, "agility", 2, 10, 6, 0),
+    LevelDiversityTarget("coverage_level_99_strength_pre100_cap_budget2", 99, "strength", 2, 12, 6, 6),
+    LevelDiversityTarget("coverage_level_100_intelligence_min_budget1", 100, "intelligence", 1, 7, 3, None),
+    LevelDiversityTarget("coverage_level_120_chance_range_budget2", 120, "chance", 2, 7, 3, 6),
+    LevelDiversityTarget("coverage_level_150_agility_mid_budget2", 150, "agility", 2, 10, 5, 3),
+    LevelDiversityTarget("coverage_level_179_strength_cap_budget3", 179, "strength", 3, 12, 6, 6),
+    LevelDiversityTarget("coverage_level_180_intelligence_cap_budget3", 180, "intelligence", 3, 12, 6, 6),
+    LevelDiversityTarget("coverage_level_199_chance_mid_budget2", 199, "chance", 2, 11, 6, 3),
+    LevelDiversityTarget("coverage_level_200_agility_cap_budget4", 200, "agility", 4, 12, 6, 6),
+)
+
 
 def query_for_target(target: LevelDiversityTarget) -> BuildDiscoveryQuery:
     return BuildDiscoveryQuery(
