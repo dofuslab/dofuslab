@@ -1873,3 +1873,22 @@ Run the initial evaluator pass:
   - `boundary_level_179_agility_12_5_2_budget3`
   - `boundary_level_180_strength_12_5_3_budget3`
   - `boundary_level_200_strength_10_5_0_budget4`
+
+### 2026-07-10 Boundary Level Build Matrix Artifact
+
+- Extended `server/scripts/build_discovery_level_diversity_matrix.py` and
+  `server/scripts/check_build_discovery_level_diversity_matrix.py` with
+  `--target-set boundary`.
+- Generated current boundary artifacts:
+  - `.codex/state/build-discovery-level-boundary-matrix.json`
+  - `.codex/state/build-discovery-level-boundary-matrix.md`
+- Artifact summary:
+  - targets: 10
+  - generated: 10
+  - invalid: 0
+  - no build: 0
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix_check.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-level-boundary-matrix.json --target-set boundary"`
+- Artifact generation result: pass in 793.8 seconds.

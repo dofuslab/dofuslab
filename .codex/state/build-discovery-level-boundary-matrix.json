@@ -1,0 +1,2437 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-10T09:27:51.041197+00:00",
+  "scope": "Iop boundary generated target matrix",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.BOUNDARY_LEVEL_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 10,
+  "generatedCount": 10,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "boundary_level_1_strength_6_3_none_budget1",
+        "className": "Iop",
+        "level": 1,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 1,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 522.47,
+        "weightedStatScore": 697.3,
+        "utilityStatScore": 118.1,
+        "genericDamageScore": 888.99,
+        "rawRotationDamageScore": 199.73,
+        "spellDamageScore": 199.73,
+        "profileBaselineDamageScore": 674.0,
+        "profileRelativeDamage": 0.2963,
+        "weaponDamageScore": 25.75,
+        "survivabilityScore": 4.32,
+        "weakestElementEhp": 144.0,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 525,
+          "Power": 0,
+          "Vitality": 144,
+          "Damage": 1,
+          "Earth Damage": 1,
+          "Critical": 0,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 4
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "766",
+            "internalId": null,
+            "name": "Koliet Aclou",
+            "type": "Amulet",
+            "level": 1,
+            "set": null
+          },
+          "belt": {
+            "id": "8536",
+            "internalId": null,
+            "name": "Muffin Belt",
+            "type": "Belt",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "weapon": {
+            "id": "30828",
+            "internalId": null,
+            "name": "Bounihime",
+            "type": "Sword",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "shield": {
+            "id": "18676",
+            "internalId": null,
+            "name": "Lumberjack Shield",
+            "type": "Shield",
+            "level": 1,
+            "set": null
+          },
+          "ring_1": {
+            "id": "8537",
+            "internalId": null,
+            "name": "Pluswan",
+            "type": "Ring",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "boots": {
+            "id": "861",
+            "internalId": null,
+            "name": "Strength Boots",
+            "type": "Boots",
+            "level": 1,
+            "set": null
+          },
+          "hat": {
+            "id": "8162",
+            "internalId": null,
+            "name": "Pumpkwin Head",
+            "type": "Hat",
+            "level": 1,
+            "set": null
+          },
+          "cloak": {
+            "id": "8534",
+            "internalId": null,
+            "name": "S'loque Cape",
+            "type": "Cloak",
+            "level": 1,
+            "set": "Boon Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 522.47,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 525,
+          "Power": 0,
+          "Vitality": 144,
+          "Damage": 1,
+          "Earth Damage": 1,
+          "Critical": 0,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 4
+        },
+        "exos": {},
+        "items": [
+          "Koliet Aclou",
+          "Muffin Belt",
+          "Bounihime",
+          "Lumberjack Shield",
+          "Pluswan",
+          "Strength Boots",
+          "Pumpkwin Head",
+          "S'loque Cape"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 1618.5,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 248.3,
+          "candidatePoolsMs": 31.1,
+          "packageIndexMs": 0.0,
+          "packageSeedsMs": 1.8,
+          "directCompletionMs": 0.0,
+          "beamSearchMs": 1337.0,
+          "rankAndDiversifyMs": 0.1,
+          "totalFindBuildsMs": 1618.3
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "boundary_level_19_intelligence_6_3_none_budget1",
+        "className": "Iop",
+        "level": 19,
+        "element": "intelligence",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 19,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 531.01,
+        "weightedStatScore": 899.4,
+        "utilityStatScore": 117.0,
+        "genericDamageScore": 908.15,
+        "rawRotationDamageScore": 349.36,
+        "spellDamageScore": 330.22,
+        "profileBaselineDamageScore": 1154.08,
+        "profileRelativeDamage": 0.3027,
+        "weaponDamageScore": 25.48,
+        "survivabilityScore": 5.34,
+        "weakestElementEhp": 178.0,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Intelligence": 623,
+          "Power": 10,
+          "Vitality": 178,
+          "Damage": 0,
+          "Fire Damage": 3,
+          "Critical": 14,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Red Piwi Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8213",
+            "internalId": null,
+            "name": "Red Piwi Amulet",
+            "type": "Amulet",
+            "level": 11,
+            "set": "Red Piwi Set"
+          },
+          "belt": {
+            "id": "14589",
+            "internalId": null,
+            "name": "Cheekirdle",
+            "type": "Belt",
+            "level": 10,
+            "set": null
+          },
+          "weapon": {
+            "id": "502",
+            "internalId": null,
+            "name": "Yew Axe",
+            "type": "Axe",
+            "level": 17,
+            "set": null
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "ring_1": {
+            "id": "8219",
+            "internalId": null,
+            "name": "Red Piwi Ring",
+            "type": "Ring",
+            "level": 10,
+            "set": "Red Piwi Set"
+          },
+          "ring_2": {
+            "id": "6910",
+            "internalId": null,
+            "name": "Boar Ring",
+            "type": "Ring",
+            "level": 19,
+            "set": "Boar Set"
+          },
+          "boots": {
+            "id": "8225",
+            "internalId": null,
+            "name": "Red Piwi Sandals",
+            "type": "Boots",
+            "level": 9,
+            "set": "Red Piwi Set"
+          },
+          "hat": {
+            "id": "8245",
+            "internalId": null,
+            "name": "Purple Piwi Hat",
+            "type": "Hat",
+            "level": 10,
+            "set": "Purple Piwi Set"
+          },
+          "cloak": {
+            "id": "775",
+            "internalId": null,
+            "name": "Cape Ability",
+            "type": "Cloak",
+            "level": 17,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 531.01,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Intelligence": 623,
+          "Power": 10,
+          "Vitality": 178,
+          "Damage": 0,
+          "Fire Damage": 3,
+          "Critical": 14,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Red Piwi Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Red Piwi Amulet",
+          "Cheekirdle",
+          "Yew Axe",
+          "Wild Sunflower Shield",
+          "Red Piwi Ring",
+          "Boar Ring",
+          "Red Piwi Sandals",
+          "Purple Piwi Hat",
+          "Cape Ability"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 3305.7,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 105.9,
+          "candidatePoolsMs": 33.9,
+          "packageIndexMs": 0.0,
+          "packageSeedsMs": 2.1,
+          "directCompletionMs": 0.0,
+          "beamSearchMs": 3163.1,
+          "rankAndDiversifyMs": 0.4,
+          "totalFindBuildsMs": 3305.4
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "boundary_level_20_chance_6_3_none_budget1",
+        "className": "Iop",
+        "level": 20,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 20,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 622.95,
+        "weightedStatScore": 924.4,
+        "utilityStatScore": 124.0,
+        "genericDamageScore": 1096.92,
+        "rawRotationDamageScore": 452.28,
+        "spellDamageScore": 404.16,
+        "profileBaselineDamageScore": 1236.96,
+        "profileRelativeDamage": 0.3656,
+        "weaponDamageScore": 34.71,
+        "survivabilityScore": 5.34,
+        "weakestElementEhp": 178.0,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 678,
+          "Power": 15,
+          "Vitality": 178,
+          "Damage": 0,
+          "Water Damage": 3,
+          "Critical": 7,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Blue Piwi Set": 2,
+          "Sponge Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8253",
+            "internalId": null,
+            "name": "Sponge Amulet",
+            "type": "Amulet",
+            "level": 20,
+            "set": "Sponge Set"
+          },
+          "belt": {
+            "id": "8124",
+            "internalId": null,
+            "name": "Farmer Beltudas",
+            "type": "Belt",
+            "level": 20,
+            "set": "Farmer Set"
+          },
+          "weapon": {
+            "id": "8255",
+            "internalId": null,
+            "name": "Sponge Shovel",
+            "type": "Shovel",
+            "level": 20,
+            "set": "Sponge Set"
+          },
+          "shield": {
+            "id": "18666",
+            "internalId": null,
+            "name": "Gobball Shield",
+            "type": "Shield",
+            "level": 20,
+            "set": "Gobball Set"
+          },
+          "ring_1": {
+            "id": "16502",
+            "internalId": null,
+            "name": "Kardorim's Bracelet",
+            "type": "Ring",
+            "level": 12,
+            "set": "Kardorim Set"
+          },
+          "ring_2": {
+            "id": "8220",
+            "internalId": null,
+            "name": "Blue Piwi Ring",
+            "type": "Ring",
+            "level": 9,
+            "set": "Blue Piwi Set"
+          },
+          "boots": {
+            "id": "1622",
+            "internalId": null,
+            "name": "Power Boots",
+            "type": "Boots",
+            "level": 16,
+            "set": null
+          },
+          "hat": {
+            "id": "8244",
+            "internalId": null,
+            "name": "Blue Piwi Hat",
+            "type": "Hat",
+            "level": 11,
+            "set": "Blue Piwi Set"
+          },
+          "cloak": {
+            "id": "744",
+            "internalId": null,
+            "name": "Bowisse's Cloak",
+            "type": "Cloak",
+            "level": 20,
+            "set": "Bowisse Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 622.95,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 678,
+          "Power": 15,
+          "Vitality": 178,
+          "Damage": 0,
+          "Water Damage": 3,
+          "Critical": 7,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Blue Piwi Set": 2,
+          "Sponge Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Sponge Amulet",
+          "Farmer Beltudas",
+          "Sponge Shovel",
+          "Gobball Shield",
+          "Kardorim's Bracelet",
+          "Blue Piwi Ring",
+          "Power Boots",
+          "Blue Piwi Hat",
+          "Bowisse's Cloak"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 4060.1,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 103.4,
+          "candidatePoolsMs": 33.9,
+          "packageIndexMs": 0.0,
+          "packageSeedsMs": 2.6,
+          "directCompletionMs": 0.0,
+          "beamSearchMs": 3919.5,
+          "rankAndDiversifyMs": 0.4,
+          "totalFindBuildsMs": 4059.8
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "boundary_level_99_agility_6_3_none_budget1",
+        "className": "Iop",
+        "level": 99,
+        "element": "agility",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 99,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1163.68,
+        "weightedStatScore": 2014.47,
+        "utilityStatScore": 262.91,
+        "genericDamageScore": 1961.97,
+        "rawRotationDamageScore": 985.73,
+        "spellDamageScore": 985.73,
+        "profileBaselineDamageScore": 1507.25,
+        "profileRelativeDamage": 0.654,
+        "weaponDamageScore": 43.12,
+        "survivabilityScore": 17.88,
+        "weakestElementEhp": 570.92,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 5,
+          "Range": 6,
+          "Agility": 768,
+          "Power": 105,
+          "Vitality": 583,
+          "Damage": 3,
+          "Air Damage": 38,
+          "Critical": 35,
+          "Critical Damage": 70
+        },
+        "sets": {
+          "Simbadas Set": 3,
+          "Legendary Crackler Set": 2,
+          "Dragon Pig Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "33577",
+            "internalId": null,
+            "name": "Simbadas Cage",
+            "type": "Amulet",
+            "level": 92,
+            "set": "Simbadas Set"
+          },
+          "belt": {
+            "id": "2808",
+            "internalId": null,
+            "name": "Drasmuty Belt",
+            "type": "Belt",
+            "level": 96,
+            "set": "Dragon Pig Set"
+          },
+          "shield": {
+            "id": "33578",
+            "internalId": null,
+            "name": "Simbadas Barrier",
+            "type": "Shield",
+            "level": 94,
+            "set": "Simbadas Set"
+          },
+          "ring_1": {
+            "id": "8149",
+            "internalId": null,
+            "name": "Legendary Cracklering",
+            "type": "Ring",
+            "level": 72,
+            "set": "Legendary Crackler Set"
+          },
+          "boots": {
+            "id": "8278",
+            "internalId": null,
+            "name": "Dragon Pig Mules",
+            "type": "Boots",
+            "level": 94,
+            "set": "Dragon Pig Set"
+          },
+          "hat": {
+            "id": "8147",
+            "internalId": null,
+            "name": "Legendary Crackler Helmet",
+            "type": "Hat",
+            "level": 80,
+            "set": "Legendary Crackler Set"
+          },
+          "cloak": {
+            "id": "18426",
+            "internalId": null,
+            "name": "Desert Cape",
+            "type": "Cloak",
+            "level": 79,
+            "set": "Desert Set"
+          },
+          "pet": {
+            "id": "33307",
+            "internalId": null,
+            "name": "Aquamarine and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "weapon": {
+            "id": "1039",
+            "internalId": null,
+            "name": "Deceitful Daggers",
+            "type": "Dagger",
+            "level": 67,
+            "set": null
+          },
+          "ring_2": {
+            "id": "33579",
+            "internalId": null,
+            "name": "Simbadas Paw",
+            "type": "Ring",
+            "level": 96,
+            "set": "Simbadas Set"
+          },
+          "dofus_1": {
+            "id": "13784",
+            "internalId": null,
+            "name": "Minor Air Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12712",
+            "internalId": null,
+            "name": "Minor Acrobat",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12688",
+            "internalId": null,
+            "name": "Minor Air Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13763",
+            "internalId": null,
+            "name": "Minor Gymnast",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1163.68,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 8,
+          "MP": 5,
+          "Range": 6,
+          "Agility": 768,
+          "Power": 105,
+          "Vitality": 583,
+          "Damage": 3,
+          "Air Damage": 38,
+          "Critical": 35,
+          "Critical Damage": 70
+        },
+        "sets": {
+          "Simbadas Set": 3,
+          "Legendary Crackler Set": 2,
+          "Dragon Pig Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Simbadas Cage",
+          "Drasmuty Belt",
+          "Deceitful Daggers",
+          "Simbadas Barrier",
+          "Legendary Cracklering",
+          "Simbadas Paw",
+          "Dragon Pig Mules",
+          "Legendary Crackler Helmet",
+          "Desert Cape",
+          "Aquamarine and Emerald Seemyool",
+          "Minor Air Wrecker",
+          "Minor Acrobat",
+          "Minor Air Destroyer",
+          "Minor Gymnast",
+          "Minor Dynamo",
+          "Twitcher"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 43050.8,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 114.2,
+          "candidatePoolsMs": 707.3,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 249.6,
+          "directCompletionMs": 41976.2,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.5,
+          "totalFindBuildsMs": 43049.0
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "boundary_level_100_strength_7_3_none_budget1",
+        "className": "Iop",
+        "level": 100,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 100,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1481.21,
+        "weightedStatScore": 2134.47,
+        "utilityStatScore": 254.91,
+        "genericDamageScore": 2676.41,
+        "rawRotationDamageScore": 1535.55,
+        "spellDamageScore": 1476.64,
+        "profileBaselineDamageScore": 1721.21,
+        "profileRelativeDamage": 0.8921,
+        "weaponDamageScore": 123.0,
+        "survivabilityScore": 21.91,
+        "weakestElementEhp": 695.25,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 5,
+          "Strength": 733,
+          "Power": 120,
+          "Vitality": 703,
+          "Damage": 8,
+          "Earth Damage": 68,
+          "Critical": 29,
+          "Critical Damage": 60,
+          "Neutral Damage": 16
+        },
+        "sets": {
+          "Simbadas Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "33577",
+            "internalId": null,
+            "name": "Simbadas Cage",
+            "type": "Amulet",
+            "level": 92,
+            "set": "Simbadas Set"
+          },
+          "belt": {
+            "id": "33569",
+            "internalId": null,
+            "name": "Tyranna Belt",
+            "type": "Belt",
+            "level": 83,
+            "set": "The Terrible Set"
+          },
+          "shield": {
+            "id": "33578",
+            "internalId": null,
+            "name": "Simbadas Barrier",
+            "type": "Shield",
+            "level": 94,
+            "set": "Simbadas Set"
+          },
+          "ring_1": {
+            "id": "18424",
+            "internalId": null,
+            "name": "Ourobubble Ring",
+            "type": "Ring",
+            "level": 80,
+            "set": "Ourobubble Set"
+          },
+          "boots": {
+            "id": "9166",
+            "internalId": null,
+            "name": "Royal Rainbow Bloopts",
+            "type": "Boots",
+            "level": 90,
+            "set": "Royal Rainbow Blop Set"
+          },
+          "hat": {
+            "id": "6813",
+            "internalId": null,
+            "name": "Bwork Chief Helmet",
+            "type": "Hat",
+            "level": 100,
+            "set": "Bwork Chief Set"
+          },
+          "cloak": {
+            "id": "14492",
+            "internalId": null,
+            "name": "Wa Wobot Cloak",
+            "type": "Cloak",
+            "level": 81,
+            "set": "Wa Wobot Set"
+          },
+          "pet": {
+            "id": "33268",
+            "internalId": null,
+            "name": "Amber and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "weapon": {
+            "id": "7255",
+            "internalId": null,
+            "name": "Terrdala Axe",
+            "type": "Axe",
+            "level": 83,
+            "set": "Terrdala Set"
+          },
+          "ring_2": {
+            "id": "33579",
+            "internalId": null,
+            "name": "Simbadas Paw",
+            "type": "Ring",
+            "level": 96,
+            "set": "Simbadas Set"
+          },
+          "dofus_1": {
+            "id": "16195",
+            "internalId": null,
+            "name": "Rabid",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "16253",
+            "internalId": null,
+            "name": "Earth Devastator",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16331",
+            "internalId": null,
+            "name": "Vigour",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13773",
+            "internalId": null,
+            "name": "Earth Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12723",
+            "internalId": null,
+            "name": "Maniac",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16338",
+            "internalId": null,
+            "name": "Bloodthirst",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1481.21,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 5,
+          "Strength": 733,
+          "Power": 120,
+          "Vitality": 703,
+          "Damage": 8,
+          "Earth Damage": 68,
+          "Critical": 29,
+          "Critical Damage": 60,
+          "Neutral Damage": 16
+        },
+        "sets": {
+          "Simbadas Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Simbadas Cage",
+          "Tyranna Belt",
+          "Terrdala Axe",
+          "Simbadas Barrier",
+          "Ourobubble Ring",
+          "Simbadas Paw",
+          "Royal Rainbow Bloopts",
+          "Bwork Chief Helmet",
+          "Wa Wobot Cloak",
+          "Amber and Emerald Seemyool",
+          "Rabid",
+          "Earth Devastator",
+          "Vigour",
+          "Earth Wrecker",
+          "Maniac",
+          "Bloodthirst"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 111180.4,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 107.0,
+          "candidatePoolsMs": 711.0,
+          "packageIndexMs": 0.2,
+          "packageSeedsMs": 169.8,
+          "directCompletionMs": 110188.2,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 111177.9
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "boundary_level_149_intelligence_11_5_1_budget2",
+        "className": "Iop",
+        "level": 149,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 149,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1480.61,
+        "weightedStatScore": 2761.47,
+        "utilityStatScore": 276.56,
+        "genericDamageScore": 2535.02,
+        "rawRotationDamageScore": 1582.07,
+        "spellDamageScore": 1582.07,
+        "profileBaselineDamageScore": 1872.26,
+        "profileRelativeDamage": 0.845,
+        "weaponDamageScore": 105.27,
+        "survivabilityScore": 63.29,
+        "weakestElementEhp": 1886.93,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 3,
+          "Intelligence": 998,
+          "Power": 115,
+          "Vitality": 1943,
+          "Damage": 30,
+          "Fire Damage": 67,
+          "Critical": 13,
+          "Critical Damage": 37
+        },
+        "sets": {
+          "Hell Mina Set": 2,
+          "Soft Oak Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "12089",
+            "internalId": null,
+            "name": "Frigostine's Amulet",
+            "type": "Amulet",
+            "level": 147,
+            "set": "Frigostine Set"
+          },
+          "belt": {
+            "id": "8473",
+            "internalId": null,
+            "name": "Autumnal Soft Oak G-String",
+            "type": "Belt",
+            "level": 141,
+            "set": "Soft Oak Set"
+          },
+          "weapon": {
+            "id": "8827",
+            "internalId": null,
+            "name": "Zoth Warrior Axe",
+            "type": "Axe",
+            "level": 139,
+            "set": "Zothician Set"
+          },
+          "ring_1": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "boots": {
+            "id": "8471",
+            "internalId": null,
+            "name": "Soft Oak Flip-Flops",
+            "type": "Boots",
+            "level": 136,
+            "set": "Soft Oak Set"
+          },
+          "hat": {
+            "id": "8821",
+            "internalId": null,
+            "name": "Zoth Disciple Hat",
+            "type": "Hat",
+            "level": 128,
+            "set": null
+          },
+          "cloak": {
+            "id": "26313",
+            "internalId": null,
+            "name": "Hell Mina's Cape",
+            "type": "Cloak",
+            "level": 148,
+            "set": "Hell Mina Set"
+          },
+          "pet": {
+            "id": "33282",
+            "internalId": null,
+            "name": "Coral and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "shield": {
+            "id": "19084",
+            "internalId": null,
+            "name": "Cauldini Shield",
+            "type": "Shield",
+            "level": 90,
+            "set": "Cauldini Set"
+          },
+          "ring_2": {
+            "id": "26311",
+            "internalId": null,
+            "name": "Hell Mina's Wedding Ring",
+            "type": "Ring",
+            "level": 146,
+            "set": "Hell Mina Set"
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "16203",
+            "internalId": null,
+            "name": "Intellectual",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13761",
+            "internalId": null,
+            "name": "Brainbox",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16333",
+            "internalId": null,
+            "name": "Shaker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1480.61,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 3,
+          "Intelligence": 998,
+          "Power": 115,
+          "Vitality": 1943,
+          "Damage": 30,
+          "Fire Damage": 67,
+          "Critical": 13,
+          "Critical Damage": 37
+        },
+        "sets": {
+          "Hell Mina Set": 2,
+          "Soft Oak Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Frigostine's Amulet",
+          "Autumnal Soft Oak G-String",
+          "Zoth Warrior Axe",
+          "Cauldini Shield",
+          "Gelano",
+          "Hell Mina's Wedding Ring",
+          "Soft Oak Flip-Flops",
+          "Zoth Disciple Hat",
+          "Hell Mina's Cape",
+          "Coral and Emerald Seemyool",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Intellectual",
+          "Brainbox",
+          "Shaker"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 67399.4,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 109.8,
+          "candidatePoolsMs": 1047.4,
+          "packageIndexMs": 0.2,
+          "packageSeedsMs": 155.7,
+          "directCompletionMs": 66082.2,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 67397.0
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "boundary_level_150_chance_11_5_1_budget2",
+        "className": "Iop",
+        "level": 150,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 150,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1573.0,
+        "weightedStatScore": 2891.9,
+        "utilityStatScore": 309.62,
+        "genericDamageScore": 2671.07,
+        "rawRotationDamageScore": 1685.56,
+        "spellDamageScore": 1685.56,
+        "profileBaselineDamageScore": 1893.12,
+        "profileRelativeDamage": 0.8904,
+        "weaponDamageScore": 119.56,
+        "survivabilityScore": 61.39,
+        "weakestElementEhp": 1877.88,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 4,
+          "Chance": 908,
+          "Power": 220,
+          "Vitality": 1828,
+          "Damage": 14,
+          "Water Damage": 105,
+          "Critical": 32,
+          "Critical Damage": 30
+        },
+        "sets": {
+          "Frigostine Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "12089",
+            "internalId": null,
+            "name": "Frigostine's Amulet",
+            "type": "Amulet",
+            "level": 147,
+            "set": "Frigostine Set"
+          },
+          "belt": {
+            "id": "11686",
+            "internalId": null,
+            "name": "Kanigloo Loincloth",
+            "type": "Belt",
+            "level": 137,
+            "set": "Lonesome Pine Set"
+          },
+          "weapon": {
+            "id": "8827",
+            "internalId": null,
+            "name": "Zoth Warrior Axe",
+            "type": "Axe",
+            "level": 139,
+            "set": "Zothician Set"
+          },
+          "ring_1": {
+            "id": "12090",
+            "internalId": null,
+            "name": "Frigostine's Ring",
+            "type": "Ring",
+            "level": 144,
+            "set": "Frigostine Set"
+          },
+          "boots": {
+            "id": "12092",
+            "internalId": null,
+            "name": "Frigostine's Boots",
+            "type": "Boots",
+            "level": 142,
+            "set": "Frigostine Set"
+          },
+          "hat": {
+            "id": "8260",
+            "internalId": null,
+            "name": "Kaliptus Headband",
+            "type": "Hat",
+            "level": 133,
+            "set": null
+          },
+          "cloak": {
+            "id": "11580",
+            "internalId": null,
+            "name": "Royal Pingwin Cloak",
+            "type": "Cloak",
+            "level": 144,
+            "set": "Royal Pingwin Set"
+          },
+          "pet": {
+            "id": "33295",
+            "internalId": null,
+            "name": "Azure and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "shield": {
+            "id": "33596",
+            "internalId": null,
+            "name": "Transplent Shield",
+            "type": "Shield",
+            "level": 137,
+            "set": "Transplent Set"
+          },
+          "ring_2": {
+            "id": "14007",
+            "internalId": null,
+            "name": "Styxring",
+            "type": "Ring",
+            "level": 150,
+            "set": "Fluvial Set"
+          },
+          "dofus_1": {
+            "id": "16248",
+            "internalId": null,
+            "name": "Major Luckster",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16264",
+            "internalId": null,
+            "name": "Major Water Devastator",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16333",
+            "internalId": null,
+            "name": "Shaker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1573.0,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 4,
+          "Chance": 908,
+          "Power": 220,
+          "Vitality": 1828,
+          "Damage": 14,
+          "Water Damage": 105,
+          "Critical": 32,
+          "Critical Damage": 30
+        },
+        "sets": {
+          "Frigostine Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Frigostine's Amulet",
+          "Kanigloo Loincloth",
+          "Zoth Warrior Axe",
+          "Transplent Shield",
+          "Frigostine's Ring",
+          "Styxring",
+          "Frigostine's Boots",
+          "Kaliptus Headband",
+          "Royal Pingwin Cloak",
+          "Azure and Emerald Seemyool",
+          "Major Luckster",
+          "Crimson Dofus",
+          "Major Water Devastator",
+          "Major Vigour",
+          "Dolmanax",
+          "Shaker"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 91559.5,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 107.9,
+          "candidatePoolsMs": 774.5,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 78.3,
+          "directCompletionMs": 90592.7,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.2,
+          "totalFindBuildsMs": 91555.8
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "boundary_level_179_agility_12_5_2_budget3",
+        "className": "Iop",
+        "level": 179,
+        "element": "agility",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 179,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1600.64,
+        "weightedStatScore": 3007.25,
+        "utilityStatScore": 299.32,
+        "genericDamageScore": 2747.85,
+        "rawRotationDamageScore": 1704.24,
+        "spellDamageScore": 1704.24,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 0.916,
+        "weaponDamageScore": 135.87,
+        "survivabilityScore": 64.78,
+        "weakestElementEhp": 1863.65,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Agility": 958,
+          "Power": 275,
+          "Vitality": 1853,
+          "Damage": 10,
+          "Air Damage": 104,
+          "Critical": 21,
+          "Critical Damage": 40
+        },
+        "sets": {},
+        "exos": {
+          "AP": {
+            "itemId": "15063",
+            "slot": "belt"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "15499",
+            "internalId": null,
+            "name": "Necrotick Amulet",
+            "type": "Amulet",
+            "level": 178,
+            "set": "Necrotick Set"
+          },
+          "belt": {
+            "id": "15063",
+            "internalId": null,
+            "name": "Orfan Belt",
+            "type": "Belt",
+            "level": 158,
+            "set": "Orfan Set"
+          },
+          "weapon": {
+            "id": "8414",
+            "internalId": null,
+            "name": "Dreggon Daggers",
+            "type": "Dagger",
+            "level": 128,
+            "set": "Vagabond Dreggon Set"
+          },
+          "ring_1": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "boots": {
+            "id": "11619",
+            "internalId": null,
+            "name": "Sandals Bino",
+            "type": "Boots",
+            "level": 166,
+            "set": null
+          },
+          "hat": {
+            "id": "14000",
+            "internalId": null,
+            "name": "Nekochief",
+            "type": "Hat",
+            "level": 151,
+            "set": null
+          },
+          "cloak": {
+            "id": "14001",
+            "internalId": null,
+            "name": "Augilol's Tippet",
+            "type": "Cloak",
+            "level": 151,
+            "set": null
+          },
+          "pet": {
+            "id": "33307",
+            "internalId": null,
+            "name": "Aquamarine and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "shield": {
+            "id": "18679",
+            "internalId": null,
+            "name": "Air Dial",
+            "type": "Shield",
+            "level": 170,
+            "set": null
+          },
+          "ring_2": {
+            "id": "9177",
+            "internalId": null,
+            "name": "Pot-Bellied Bracelet",
+            "type": "Ring",
+            "level": 179,
+            "set": "Berserker Bworker Set"
+          },
+          "dofus_1": {
+            "id": "16245",
+            "internalId": null,
+            "name": "Major Stunter",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16267",
+            "internalId": null,
+            "name": "Major Air Devastator",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13786",
+            "internalId": null,
+            "name": "Major Air Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1600.64,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Agility": 958,
+          "Power": 275,
+          "Vitality": 1853,
+          "Damage": 10,
+          "Air Damage": 104,
+          "Critical": 21,
+          "Critical Damage": 40
+        },
+        "sets": {},
+        "exos": {
+          "AP": {
+            "itemId": "15063",
+            "slot": "belt"
+          }
+        },
+        "items": [
+          "Necrotick Amulet",
+          "Orfan Belt",
+          "Dreggon Daggers",
+          "Air Dial",
+          "Gelano",
+          "Pot-Bellied Bracelet",
+          "Sandals Bino",
+          "Nekochief",
+          "Augilol's Tippet",
+          "Aquamarine and Emerald Seemyool",
+          "Major Stunter",
+          "Crimson Dofus",
+          "Major Air Devastator",
+          "Major Vigour",
+          "Dolmanax",
+          "Major Air Wrecker"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 106793.3,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 108.7,
+          "candidatePoolsMs": 1078.0,
+          "packageIndexMs": 0.2,
+          "packageSeedsMs": 95.8,
+          "directCompletionMs": 105504.7,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 106789.2
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "boundary_level_180_strength_12_5_3_budget3",
+        "className": "Iop",
+        "level": 180,
+        "element": "strength",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 180,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 3,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1604.54,
+        "weightedStatScore": 2965.59,
+        "utilityStatScore": 311.0,
+        "genericDamageScore": 2722.7,
+        "rawRotationDamageScore": 1974.75,
+        "spellDamageScore": 1974.75,
+        "profileBaselineDamageScore": 2175.88,
+        "profileRelativeDamage": 0.9076,
+        "weaponDamageScore": 155.27,
+        "survivabilityScore": 68.33,
+        "weakestElementEhp": 2095.09,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Strength": 858,
+          "Power": 290,
+          "Vitality": 1913,
+          "Damage": 0,
+          "Earth Damage": 101,
+          "Critical": 21,
+          "Critical Damage": 40,
+          "Neutral Damage": 69
+        },
+        "sets": {
+          "Necrotick Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15060",
+            "slot": "belt"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "15499",
+            "internalId": null,
+            "name": "Necrotick Amulet",
+            "type": "Amulet",
+            "level": 178,
+            "set": "Necrotick Set"
+          },
+          "belt": {
+            "id": "15060",
+            "internalId": null,
+            "name": "Kanazure Belt",
+            "type": "Belt",
+            "level": 158,
+            "set": "Kanazure Set"
+          },
+          "weapon": {
+            "id": "8414",
+            "internalId": null,
+            "name": "Dreggon Daggers",
+            "type": "Dagger",
+            "level": 128,
+            "set": "Vagabond Dreggon Set"
+          },
+          "ring_1": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "ring_2": {
+            "id": "11623",
+            "internalId": null,
+            "name": "Notewell Ring",
+            "type": "Ring",
+            "level": 166,
+            "set": "Abbreviated Set"
+          },
+          "boots": {
+            "id": "15500",
+            "internalId": null,
+            "name": "Necrotick Boots",
+            "type": "Boots",
+            "level": 177,
+            "set": "Necrotick Set"
+          },
+          "hat": {
+            "id": "14000",
+            "internalId": null,
+            "name": "Nekochief",
+            "type": "Hat",
+            "level": 151,
+            "set": null
+          },
+          "cloak": {
+            "id": "14001",
+            "internalId": null,
+            "name": "Augilol's Tippet",
+            "type": "Cloak",
+            "level": 151,
+            "set": null
+          },
+          "pet": {
+            "id": "33268",
+            "internalId": null,
+            "name": "Amber and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "shield": {
+            "id": "18694",
+            "internalId": null,
+            "name": "Brambler",
+            "type": "Shield",
+            "level": 180,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "16196",
+            "internalId": null,
+            "name": "Major Rabid",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1604.54,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Strength": 858,
+          "Power": 290,
+          "Vitality": 1913,
+          "Damage": 0,
+          "Earth Damage": 101,
+          "Critical": 21,
+          "Critical Damage": 40,
+          "Neutral Damage": 69
+        },
+        "sets": {
+          "Necrotick Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15060",
+            "slot": "belt"
+          }
+        },
+        "items": [
+          "Necrotick Amulet",
+          "Kanazure Belt",
+          "Dreggon Daggers",
+          "Brambler",
+          "Gelano",
+          "Notewell Ring",
+          "Necrotick Boots",
+          "Nekochief",
+          "Augilol's Tippet",
+          "Amber and Emerald Seemyool",
+          "Ice Dofus",
+          "Major Rabid",
+          "Crimson Dofus",
+          "Major Vigour",
+          "Dolmanax",
+          "Cloudy Dofus"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 211049.2,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 110.2,
+          "candidatePoolsMs": 619.5,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 1.8,
+          "directCompletionMs": 210312.9,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 211046.3
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "boundary_level_200_strength_10_5_0_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 10,
+        "mpTarget": 5,
+        "rangeTarget": 0
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 5,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 2221.41,
+        "weightedStatScore": 4858.53,
+        "utilityStatScore": 304.98,
+        "genericDamageScore": 3931.45,
+        "rawRotationDamageScore": 3602.01,
+        "spellDamageScore": 3602.01,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.3105,
+        "weaponDamageScore": 218.52,
+        "survivabilityScore": 147.29,
+        "weakestElementEhp": 4258.96,
+        "apStrategy": "budget_no_exo_no_ochre",
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 3,
+          "Strength": 1418,
+          "Power": 270,
+          "Vitality": 4073,
+          "Damage": 0,
+          "Earth Damage": 150,
+          "Critical": 40,
+          "Critical Damage": 117,
+          "Neutral Damage": 150
+        },
+        "sets": {
+          "Count Harebourg Set": 2,
+          "Bleeding Heart Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "19244",
+            "internalId": null,
+            "name": "Amulet of the Bleeding Heart",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "belt": {
+            "id": "19596",
+            "internalId": null,
+            "name": "Suspender Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Oven Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "30858",
+            "internalId": null,
+            "name": "Mama Ayuto's Parasail",
+            "type": "Shield",
+            "level": 200,
+            "set": "Mama Ayuto Set"
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "14077",
+            "internalId": null,
+            "name": "Count Harebourg's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "boots": {
+            "id": "19245",
+            "internalId": null,
+            "name": "Boots of the Bleeding Heart",
+            "type": "Boots",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "hat": {
+            "id": "14076",
+            "internalId": null,
+            "name": "Count Harebourg's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "cloak": {
+            "id": "14168",
+            "internalId": null,
+            "name": "Cloak of a Thousand Excuses",
+            "type": "Cloak",
+            "level": 198,
+            "set": null
+          },
+          "pet": {
+            "id": "7712",
+            "internalId": null,
+            "name": "Green Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "16196",
+            "internalId": null,
+            "name": "Major Rabid",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16193",
+            "internalId": null,
+            "name": "Major Miracle Man",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16333",
+            "internalId": null,
+            "name": "Shaker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2221.41,
+        "apStrategy": "budget_no_exo_no_ochre",
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 3,
+          "Strength": 1418,
+          "Power": 270,
+          "Vitality": 4073,
+          "Damage": 0,
+          "Earth Damage": 150,
+          "Critical": 40,
+          "Critical Damage": 117,
+          "Neutral Damage": 150
+        },
+        "sets": {
+          "Count Harebourg Set": 2,
+          "Bleeding Heart Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Amulet of the Bleeding Heart",
+          "Suspender Belt",
+          "Gargandyas's Fury",
+          "Mama Ayuto's Parasail",
+          "Corruption's Ring",
+          "Count Harebourg's Ring",
+          "Boots of the Bleeding Heart",
+          "Count Harebourg's Hat",
+          "Cloak of a Thousand Excuses",
+          "Green Piwin",
+          "Ice Dofus",
+          "Major Rabid",
+          "Major Miracle Man",
+          "Crimson Dofus",
+          "Major Vigour",
+          "Shaker"
+        ]
+      },
+      "warnings": [
+        "Requested budget tier search returned no builds; results were generated from stricter budget tier 2."
+      ],
+      "diagnostics": {
+        "elapsedMs": 152012.7,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 109.7,
+          "candidatePoolsMs": 763.0,
+          "packageIndexMs": 123.4,
+          "packageSeedsMs": 4340.7,
+          "directCompletionMs": 12292.6,
+          "beamSearchMs": 31997.0,
+          "rankAndDiversifyMs": 0.2,
+          "totalFindBuildsMs": 49626.7
+        },
+        "resultCount": 1,
+        "fallbackBudget": {
+          "requestedBudgetTier": 4,
+          "usedBudgetTier": 2
+        }
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}
