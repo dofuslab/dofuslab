@@ -1680,3 +1680,19 @@ Run the initial evaluator pass:
   - `level_160_intelligence_12_5_2_budget2`
   - `level_160_chance_11_6_none_budget3`
   - `level_160_agility_12_6_3_budget4`
+
+### 2026-07-10 Level 180 Previous Bucket Recall Fix
+
+- The level 180 row initially failed with zero builds:
+  - `level_180_strength_12_5_3_budget3`
+- Root cause: indexed normal gear included only the current `180-200` bucket.
+  At the level 180 transition, that starved the pool of normal level `150-179`
+  gear and left key slots such as amulet, belt, and cloak empty.
+- Fixed indexed candidate selection to include normal gear from the target
+  bucket and the immediately previous bucket, matching the PRD's level-diversity
+  candidate horizon.
+- Added cheap contract coverage for current+previous normal gear buckets.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
+  - `BUILD_DISCOVERY_LEVEL_DIVERSITY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=180 python -m unittest scripts.test_build_discovery_level_diversity_generation_smoke.BuildDiscoveryLevelDiversityGenerationSmokeTest`
+- Level 180 smoke result: pass in 217.092 seconds.

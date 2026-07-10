@@ -24,7 +24,9 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     find_diverse_builds,
     effective_ap_strategies_for_target,
     effective_exo_policy,
+    indexed_candidate_item_ids,
     normalize_range_target,
+    normal_gear_bucket_names_for_target,
     load_items,
     optional_empty_slot,
     query_cache_identity,
@@ -208,6 +210,42 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         index_mock.assert_called_once_with(50)
         self.assertEqual([item["dofusID"] for item in items], ["low"])
 
+    def test_indexed_candidates_include_previous_normal_gear_bucket(self):
+        index = {
+            "levelBuckets": [
+                {"name": "1-99", "minLevel": 1, "maxLevel": 99},
+                {"name": "100-149", "minLevel": 100, "maxLevel": 149},
+                {"name": "150-179", "minLevel": 150, "maxLevel": 179},
+                {"name": "180-200", "minLevel": 180, "maxLevel": 200},
+            ],
+            "indexes": {
+                "evergreenItemIds": ["gelano"],
+                "petMountIds": ["mount"],
+                "normalGearByLevelBucket": {
+                    "150-179": ["previous-bucket-gear"],
+                    "180-200": ["target-bucket-gear"],
+                },
+                "dofusTrophyPrysmaraditeByLevelBucket": {
+                    "100-149": ["shaker"],
+                    "180-200": ["sylvan"],
+                },
+            },
+        }
+
+        with patch("oneoff.build_discovery_prototype.load_build_discovery_index", return_value=index):
+            self.assertEqual(
+                normal_gear_bucket_names_for_target(180),
+                ("180-200", "150-179"),
+            )
+            item_ids = indexed_candidate_item_ids(180)
+
+        self.assertIn("previous-bucket-gear", item_ids)
+        self.assertIn("target-bucket-gear", item_ids)
+        self.assertIn("gelano", item_ids)
+        self.assertIn("mount", item_ids)
+        self.assertIn("shaker", item_ids)
+        self.assertIn("sylvan", item_ids)
+
     def test_pet_slot_is_optional_only_when_no_candidates_exist(self):
         self.assertTrue(optional_empty_slot("pet", {"pet": []}))
         self.assertFalse(optional_empty_slot("pet", {"pet": [{"dofusID": "mount"}]}))
@@ -319,6 +357,15 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
 
     def test_sub_endgame_ap_target_allows_flexible_ap_sources(self):
         target = BuildDiscoveryQuery(level=50, ap_target=7, mp_target=3).target
+
+        strategies = effective_ap_strategies_for_target(target, DEFAULT_AP_STRATEGIES)
+
+        self.assertEqual(strategies[0].name, "level_diversity_flexible_ap")
+        self.assertFalse(strategies[0].require_amulet_ap)
+        self.assertFalse(strategies[0].require_ap_exo)
+
+    def test_level_180_transition_target_allows_flexible_ap_sources(self):
+        target = BuildDiscoveryQuery(level=180, ap_target=12, mp_target=5, range_target=3).target
 
         strategies = effective_ap_strategies_for_target(target, DEFAULT_AP_STRATEGIES)
 

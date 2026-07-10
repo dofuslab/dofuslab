@@ -926,7 +926,7 @@ def effective_ap_strategies_for_target(
 ) -> tuple[ApStrategy, ...]:
     if target.ap <= target.min_ap:
         return BASE_AP_STRATEGIES + ap_strategies
-    if target.level < RELEVANT_SET_ITEM_MIN_LEVEL:
+    if target.level <= RELEVANT_SET_ITEM_MIN_LEVEL:
         return LEVEL_DIVERSITY_AP_STRATEGIES + ap_strategies
     return ap_strategies
 
@@ -1341,19 +1341,36 @@ def target_level_bucket_name(target_level: int) -> str | None:
     return None
 
 
+def normal_gear_bucket_names_for_target(target_level: int) -> tuple[str, ...]:
+    generated_index = load_build_discovery_index()
+    if generated_index is None:
+        return tuple()
+
+    buckets = sorted(
+        generated_index.get("levelBuckets", []),
+        key=lambda bucket: bucket["minLevel"],
+    )
+    for index, bucket in enumerate(buckets):
+        if bucket["minLevel"] <= target_level <= bucket["maxLevel"]:
+            bucket_names = [bucket["name"]]
+            if index > 0:
+                bucket_names.append(buckets[index - 1]["name"])
+            return tuple(bucket_names)
+    return tuple()
+
+
 def indexed_candidate_item_ids(target_level: int = TARGET_LEVEL) -> set[str] | None:
     generated_index = load_build_discovery_index()
     if generated_index is None:
         return None
 
     indexes = generated_index.get("indexes", {})
-    target_bucket = target_level_bucket_name(target_level)
     item_ids: set[str] = set(indexes.get("evergreenItemIds", []))
     item_ids.update(indexes.get("petMountIds", []))
 
     normal_by_bucket = indexes.get("normalGearByLevelBucket", {})
-    if target_bucket:
-        item_ids.update(normal_by_bucket.get(target_bucket, []))
+    for bucket_name in normal_gear_bucket_names_for_target(target_level):
+        item_ids.update(normal_by_bucket.get(bucket_name, []))
 
     dofus_like_by_bucket = indexes.get("dofusTrophyPrysmaraditeByLevelBucket", {})
     buckets_by_name = {
