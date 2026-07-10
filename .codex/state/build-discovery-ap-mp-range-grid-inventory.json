@@ -28,80 +28,80 @@
     4
   ],
   "validQueryCount": 39424,
-  "generatedEvidenceCount": 37,
-  "unprovenCount": 39387,
+  "generatedEvidenceCount": 49,
+  "unprovenCount": 39375,
   "byLevel": [
     {
       "level": 1,
-      "validQueryCount": 3584,
-      "generatedEvidenceCount": 1,
-      "unprovenCount": 3583
-    },
-    {
-      "level": 20,
       "validQueryCount": 3584,
       "generatedEvidenceCount": 2,
       "unprovenCount": 3582
     },
     {
-      "level": 50,
-      "validQueryCount": 3584,
-      "generatedEvidenceCount": 4,
-      "unprovenCount": 3580
-    },
-    {
-      "level": 80,
+      "level": 20,
       "validQueryCount": 3584,
       "generatedEvidenceCount": 3,
       "unprovenCount": 3581
     },
     {
+      "level": 50,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 5,
+      "unprovenCount": 3579
+    },
+    {
+      "level": 80,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 4,
+      "unprovenCount": 3580
+    },
+    {
       "level": 99,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 2,
-      "unprovenCount": 3582
+      "generatedEvidenceCount": 3,
+      "unprovenCount": 3581
     },
     {
       "level": 100,
-      "validQueryCount": 3072,
-      "generatedEvidenceCount": 3,
-      "unprovenCount": 3069
-    },
-    {
-      "level": 120,
       "validQueryCount": 3072,
       "generatedEvidenceCount": 4,
       "unprovenCount": 3068
     },
     {
+      "level": 120,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 5,
+      "unprovenCount": 3067
+    },
+    {
       "level": 150,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 6,
-      "unprovenCount": 3066
+      "generatedEvidenceCount": 7,
+      "unprovenCount": 3065
     },
     {
       "level": 179,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 2,
-      "unprovenCount": 3070
+      "generatedEvidenceCount": 3,
+      "unprovenCount": 3069
     },
     {
       "level": 180,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 2,
-      "unprovenCount": 3070
+      "generatedEvidenceCount": 3,
+      "unprovenCount": 3069
     },
     {
       "level": 199,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 6,
-      "unprovenCount": 3066
+      "generatedEvidenceCount": 7,
+      "unprovenCount": 3065
     },
     {
       "level": 200,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 2,
-      "unprovenCount": 3070
+      "generatedEvidenceCount": 3,
+      "unprovenCount": 3069
     }
   ],
   "unprovenExamples": [
@@ -430,7 +430,7 @@
     {
       "level": 1,
       "element": "strength",
-      "budgetTier": 2,
+      "budgetTier": 3,
       "apTarget": 6,
       "mpTarget": 3,
       "rangeTarget": null,
@@ -439,7 +439,7 @@
     {
       "level": 20,
       "element": "strength",
-      "budgetTier": 1,
+      "budgetTier": 2,
       "apTarget": 6,
       "mpTarget": 3,
       "rangeTarget": null,
@@ -448,7 +448,7 @@
     {
       "level": 50,
       "element": "strength",
-      "budgetTier": 1,
+      "budgetTier": 2,
       "apTarget": 6,
       "mpTarget": 3,
       "rangeTarget": null,
@@ -457,7 +457,7 @@
     {
       "level": 80,
       "element": "strength",
-      "budgetTier": 1,
+      "budgetTier": 2,
       "apTarget": 6,
       "mpTarget": 3,
       "rangeTarget": null,
@@ -466,7 +466,7 @@
     {
       "level": 99,
       "element": "strength",
-      "budgetTier": 1,
+      "budgetTier": 2,
       "apTarget": 6,
       "mpTarget": 3,
       "rangeTarget": null,
@@ -475,7 +475,7 @@
     {
       "level": 100,
       "element": "strength",
-      "budgetTier": 2,
+      "budgetTier": 3,
       "apTarget": 7,
       "mpTarget": 3,
       "rangeTarget": null,
@@ -484,7 +484,7 @@
     {
       "level": 120,
       "element": "strength",
-      "budgetTier": 1,
+      "budgetTier": 2,
       "apTarget": 7,
       "mpTarget": 3,
       "rangeTarget": null,
@@ -493,7 +493,7 @@
     {
       "level": 150,
       "element": "strength",
-      "budgetTier": 1,
+      "budgetTier": 2,
       "apTarget": 7,
       "mpTarget": 3,
       "rangeTarget": null,
@@ -502,7 +502,7 @@
     {
       "level": 179,
       "element": "strength",
-      "budgetTier": 1,
+      "budgetTier": 2,
       "apTarget": 7,
       "mpTarget": 3,
       "rangeTarget": null,
@@ -511,7 +511,7 @@
     {
       "level": 180,
       "element": "strength",
-      "budgetTier": 1,
+      "budgetTier": 2,
       "apTarget": 7,
       "mpTarget": 3,
       "rangeTarget": null,
@@ -520,7 +520,7 @@
     {
       "level": 199,
       "element": "strength",
-      "budgetTier": 1,
+      "budgetTier": 2,
       "apTarget": 7,
       "mpTarget": 3,
       "rangeTarget": null,
@@ -529,7 +529,7 @@
     {
       "level": 200,
       "element": "strength",
-      "budgetTier": 1,
+      "budgetTier": 2,
       "apTarget": 7,
       "mpTarget": 3,
       "rangeTarget": null,

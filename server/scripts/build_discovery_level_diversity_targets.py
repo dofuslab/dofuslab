@@ -77,6 +77,21 @@ AP_MP_RANGE_COVERAGE_TARGETS = (
     LevelDiversityTarget("coverage_level_200_agility_cap_budget4", 200, "agility", 4, 12, 6, 6),
 )
 
+AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS = (
+    LevelDiversityTarget("grid_next_min_level_1_strength_6_3_none_budget2", 1, "strength", 2, 6, 3, None),
+    LevelDiversityTarget("grid_next_min_level_20_strength_6_3_none_budget1", 20, "strength", 1, 6, 3, None),
+    LevelDiversityTarget("grid_next_min_level_50_strength_6_3_none_budget1", 50, "strength", 1, 6, 3, None),
+    LevelDiversityTarget("grid_next_min_level_80_strength_6_3_none_budget1", 80, "strength", 1, 6, 3, None),
+    LevelDiversityTarget("grid_next_min_level_99_strength_6_3_none_budget1", 99, "strength", 1, 6, 3, None),
+    LevelDiversityTarget("grid_next_min_level_100_strength_7_3_none_budget2", 100, "strength", 2, 7, 3, None),
+    LevelDiversityTarget("grid_next_min_level_120_strength_7_3_none_budget1", 120, "strength", 1, 7, 3, None),
+    LevelDiversityTarget("grid_next_min_level_150_strength_7_3_none_budget1", 150, "strength", 1, 7, 3, None),
+    LevelDiversityTarget("grid_next_min_level_179_strength_7_3_none_budget1", 179, "strength", 1, 7, 3, None),
+    LevelDiversityTarget("grid_next_min_level_180_strength_7_3_none_budget1", 180, "strength", 1, 7, 3, None),
+    LevelDiversityTarget("grid_next_min_level_199_strength_7_3_none_budget1", 199, "strength", 1, 7, 3, None),
+    LevelDiversityTarget("grid_next_min_level_200_strength_7_3_none_budget1", 200, "strength", 1, 7, 3, None),
+)
+
 
 def query_for_target(target: LevelDiversityTarget) -> BuildDiscoveryQuery:
     return BuildDiscoveryQuery(

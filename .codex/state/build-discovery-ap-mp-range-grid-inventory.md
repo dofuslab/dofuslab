@@ -4,23 +4,23 @@ This inventory enumerates valid Iop query-grid targets for representative levels
 It is not generated-build proof; it shows how much of the grid currently has generated artifact evidence.
 
 Valid query rows: `39424`
-Generated evidence rows: `37`
-Unproven rows: `39387`
+Generated evidence rows: `49`
+Unproven rows: `39375`
 
 | Level | Valid rows | Generated evidence | Unproven |
 |---:|---:|---:|---:|
-| 1 | 3584 | 1 | 3583 |
-| 20 | 3584 | 2 | 3582 |
-| 50 | 3584 | 4 | 3580 |
-| 80 | 3584 | 3 | 3581 |
-| 99 | 3584 | 2 | 3582 |
-| 100 | 3072 | 3 | 3069 |
-| 120 | 3072 | 4 | 3068 |
-| 150 | 3072 | 6 | 3066 |
-| 179 | 3072 | 2 | 3070 |
-| 180 | 3072 | 2 | 3070 |
-| 199 | 3072 | 6 | 3066 |
-| 200 | 3072 | 2 | 3070 |
+| 1 | 3584 | 2 | 3582 |
+| 20 | 3584 | 3 | 3581 |
+| 50 | 3584 | 5 | 3579 |
+| 80 | 3584 | 4 | 3580 |
+| 99 | 3584 | 3 | 3581 |
+| 100 | 3072 | 4 | 3068 |
+| 120 | 3072 | 5 | 3067 |
+| 150 | 3072 | 7 | 3065 |
+| 179 | 3072 | 3 | 3069 |
+| 180 | 3072 | 3 | 3069 |
+| 199 | 3072 | 7 | 3065 |
+| 200 | 3072 | 3 | 3069 |
 
 ## Unproven Examples
 
@@ -67,18 +67,18 @@ Unproven rows: `39387`
 
 ## Suggested Next Generated Rows
 
-- L1 strength tier 2 6/3/any `minimum`
-- L20 strength tier 1 6/3/any `minimum`
-- L50 strength tier 1 6/3/any `minimum`
-- L80 strength tier 1 6/3/any `minimum`
-- L99 strength tier 1 6/3/any `minimum`
-- L100 strength tier 2 7/3/any `minimum`
-- L120 strength tier 1 7/3/any `minimum`
-- L150 strength tier 1 7/3/any `minimum`
-- L179 strength tier 1 7/3/any `minimum`
-- L180 strength tier 1 7/3/any `minimum`
-- L199 strength tier 1 7/3/any `minimum`
-- L200 strength tier 1 7/3/any `minimum`
+- L1 strength tier 3 6/3/any `minimum`
+- L20 strength tier 2 6/3/any `minimum`
+- L50 strength tier 2 6/3/any `minimum`
+- L80 strength tier 2 6/3/any `minimum`
+- L99 strength tier 2 6/3/any `minimum`
+- L100 strength tier 3 7/3/any `minimum`
+- L120 strength tier 2 7/3/any `minimum`
+- L150 strength tier 2 7/3/any `minimum`
+- L179 strength tier 2 7/3/any `minimum`
+- L180 strength tier 2 7/3/any `minimum`
+- L199 strength tier 2 7/3/any `minimum`
+- L200 strength tier 2 7/3/any `minimum`
 - L1 strength tier 4 12/6/6 `cap`
 - L20 strength tier 4 12/6/6 `cap`
 - L50 strength tier 4 12/6/6 `cap`

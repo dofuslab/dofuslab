@@ -2034,3 +2034,31 @@ Run the initial evaluator pass:
 - Verification passed:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_ap_mp_range_grid_inventory.py scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
+
+### 2026-07-10 Grid Next Minimum Matrix
+
+- Added selector-derived target set
+  `AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS`.
+- Added `--target-set grid-next-minimum` support to the matrix generator and
+  checker.
+- Generated current artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-matrix.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-matrix.md`
+- Artifact summary:
+  - targets: 12
+  - generated: 12
+  - invalid: 0
+  - no build: 0
+- Regenerated the grid inventory with this artifact included.
+- Updated grid inventory result:
+  - valid query rows: 39,424
+  - exact generated evidence rows: 49
+  - unproven rows: 39,375
+- The slowest rows in this slice were high-level tier 1 minimum queries,
+  around 150-168 seconds each. This is correctness evidence only; optimization
+  remains later milestone work.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix_check.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix_check.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-grid-next-minimum-matrix.json --target-set grid-next-minimum"`

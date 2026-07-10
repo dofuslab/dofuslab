@@ -48,12 +48,15 @@ These need gameplay or product review before calling the feature shippable.
    - Review `.codex/state/build-discovery-level-diversity-matrix.md`.
    - Review `.codex/state/build-discovery-level-boundary-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-coverage-matrix.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-inventory.md`.
    - The current matrix has 27 sampled Iop targets, all generated with at least one build.
    - The current boundary matrix has 10 transition-level targets, all generated with at least one build.
    - The current AP/MP/Range coverage matrix has 12 edge/corner targets, all generated with at least one build.
+   - The current selector-derived minimum matrix has 12 representative-level
+     minimum targets, all generated with at least one build.
    - The current grid inventory has 39,424 representative valid query rows and
-     37 exact generated-evidence rows; it is a gap map, not build proof.
+     49 exact generated-evidence rows; it is a gap map, not build proof.
    - Confirm the sampled rows are useful representatives before promoting them to accepted benchmarks.
    - Flag rows where surplus AP/MP/Range, budget assumptions, or old lower-bucket gear look suspicious.
    - Treat this as generated solver evidence, not gameplay acceptance.
@@ -80,7 +83,8 @@ These do not necessarily block a constrained v1, but they should stay visible.
 4. Prod benchmark path
    - Prod discovery must remain bounded, aggregate-first, and read-only.
    - Prod discovery should not expose custom set names, owner IDs, or singleton-identifying build details.
-   - `DOFUSLAB_READONLY_DATABASE_URL` is still not available in the current host/container environment.
+   - `DOFUSLAB_READONLY_DATABASE_URL` is stored in the Windows user environment
+     and must be passed explicitly into Docker with `docker exec -e`.
 
 ## Suggested Review Output
 
