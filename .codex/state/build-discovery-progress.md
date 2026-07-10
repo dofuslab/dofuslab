@@ -1696,3 +1696,15 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
   - `BUILD_DISCOVERY_LEVEL_DIVERSITY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=180 python -m unittest scripts.test_build_discovery_level_diversity_generation_smoke.BuildDiscoveryLevelDiversityGenerationSmokeTest`
 - Level 180 smoke result: pass in 217.092 seconds.
+
+### 2026-07-10 Level 199 Matrix Green
+
+- Verified the final planned level-diversity slice:
+  - `BUILD_DISCOVERY_LEVEL_DIVERSITY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=199 python -m unittest scripts.test_build_discovery_level_diversity_generation_smoke.BuildDiscoveryLevelDiversityGenerationSmokeTest`
+- Result: pass in 522.274 seconds.
+- Passing rows in this slice:
+  - `level_199_strength_12_6_2_budget4`
+  - `level_199_intelligence_12_5_2_budget3`
+  - `level_199_chance_10_6_3_budget2`
+  - `level_199_agility_10_5_2_budget2`
+  - `level_199_strength_12_6_5_budget4`
