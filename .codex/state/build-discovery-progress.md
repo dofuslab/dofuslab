@@ -1516,8 +1516,8 @@ Run the initial evaluator pass:
   `0` for target construction; true "any Range, even negative" solver semantics
   still need to be threaded through final validation.
 - `targetSemantics` now reports the level-dependent AP minimums.
-- Non-200 response execution is temporarily guarded so the old level-200 solver
-  cannot silently return mislabeled lower-level builds.
+- The initial contract checkpoint guarded non-200 response execution so the old
+  level-200 solver could not silently return mislabeled lower-level builds.
 - This checkpoint does not prove non-200 solver quality yet. Remaining level
   work includes level-specific base stats during search, candidate item loading,
   index bucket use, spell selection, sampled benchmark rows, and generated build
@@ -1525,3 +1525,28 @@ Run the initial evaluator pass:
 - Verification passed:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
   - `python -m py_compile server\oneoff\build_discovery_prototype.py server\scripts\test_build_discovery_query_contract.py`
+
+### 2026-07-10 Level-Threaded Solver Entry
+
+- Threaded query level into `BuildTarget`, item/index candidate filtering, AP
+  strategy helpers, exo search targets, base-stat defaults for new
+  `BuildState()` seeds, base allocation, and response prototype metadata.
+- Non-200 response execution is no longer blocked after the level context is
+  installed.
+- Added cheap coverage that:
+  - level 50 response construction passes `target.level=50` and `min_ap=6` into
+    the solver
+  - level 50 candidate loading asks the generated index for level 50 candidates
+    and excludes level 200 gear
+  - `BuildState()` starts at AP 6 inside a level 50 context and returns to AP 7
+    afterward
+- Real local smoke results with intentionally small search limits:
+  - Level 50 Strength Iop `6/3/None`, tier 1, no exo: no build found in 1340.9
+    ms. Candidate pools showed no pet/mount item at level 50, so optional empty
+    pet-slot handling is a likely next recall fix.
+  - Level 60 Strength Iop `9/3/None`, tier 1, no exo: found one build in
+    30153.9 ms with totals `9/5/6`.
+  - Level 100 Strength Iop `7/3/None`, tier 1, no exo: no build found in 523.9
+    ms. Needs AP-baseline/trophy transition investigation.
+- Remaining caveat: `rangeTarget=None` still normalizes to `0` for final target
+  checks; true "any Range, even negative" remains open.

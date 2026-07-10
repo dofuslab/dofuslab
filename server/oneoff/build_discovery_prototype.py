@@ -243,6 +243,34 @@ BASE_STATS = {
     "Chance": 100,
     "Agility": 100,
 }
+ACTIVE_TARGET_LEVEL = TARGET_LEVEL
+
+
+def base_stats_for_level(level: int) -> dict[str, int]:
+    stats = dict(BASE_STATS)
+    stats["AP"] = base_ap_for_level(level)
+    return stats
+
+
+def active_base_stats() -> dict[str, int]:
+    return base_stats_for_level(ACTIVE_TARGET_LEVEL)
+
+
+class target_level_context:
+    def __init__(self, level: int):
+        self.level = level
+        self.previous_level = TARGET_LEVEL
+
+    def __enter__(self) -> None:
+        global ACTIVE_TARGET_LEVEL
+        self.previous_level = ACTIVE_TARGET_LEVEL
+        ACTIVE_TARGET_LEVEL = self.level
+
+    def __exit__(self, exc_type, exc, traceback) -> None:
+        global ACTIVE_TARGET_LEVEL
+        ACTIVE_TARGET_LEVEL = self.previous_level
+
+
 BASE_CHARACTERISTIC_POINTS = 995
 SCROLLED_BASE_STAT = 100
 BASE_STRENGTH_ALLOCATION_OPTIONS = (0, 300, 398)
@@ -595,6 +623,7 @@ class BuildTarget:
     ap: int = REQUIRED_AP
     mp: int = REQUIRED_MP
     range: int = REQUIRED_RANGE
+    level: int = TARGET_LEVEL
     min_ap: int = MIN_AP
 
     def __post_init__(self) -> None:
@@ -659,6 +688,7 @@ class BuildDiscoveryQuery:
             ap=self.ap_target,
             mp=self.mp_target,
             range=normalize_range_target(self.range_target),
+            level=self.level,
             min_ap=base_ap_for_level(self.level),
         )
 
@@ -789,8 +819,14 @@ def item_allowed_by_budget(item: dict[str, Any], budget_tier: int) -> bool:
     return availability_tier_for_item(item) <= budget_tier
 
 
-def hard_cap_target() -> BuildTarget:
-    return BuildTarget(ap=MAX_AP, mp=MAX_MP, range=MAX_RANGE)
+def hard_cap_target(level: int = TARGET_LEVEL) -> BuildTarget:
+    return BuildTarget(
+        ap=MAX_AP,
+        mp=MAX_MP,
+        range=MAX_RANGE,
+        level=level,
+        min_ap=base_ap_for_level(level),
+    )
 
 
 @dataclass(frozen=True)
@@ -880,35 +916,39 @@ def effective_ap_strategies_for_target(
     target: BuildTarget,
     ap_strategies: tuple[ApStrategy, ...],
 ) -> tuple[ApStrategy, ...]:
-    if target.ap <= BASE_AP:
+    if target.ap <= target.min_ap:
         return BASE_AP_STRATEGIES + ap_strategies
     return ap_strategies
 
 
 def exo_search_target(final_target: BuildTarget) -> BuildTarget:
     return BuildTarget(
-        ap=max(BASE_AP, final_target.ap - 1),
+        ap=max(final_target.min_ap, final_target.ap - 1),
         mp=max(BASE_MP, final_target.mp - 1),
         range=max(0, final_target.range - 1),
+        level=final_target.level,
+        min_ap=final_target.min_ap,
     )
 
 
 def exo_natural_cap_target(final_target: BuildTarget) -> BuildTarget:
-    return hard_cap_target()
+    return hard_cap_target(final_target.level)
 
 
 def pending_dofus_search_target(final_target: BuildTarget) -> BuildTarget:
     return BuildTarget(
-        ap=max(BASE_AP, final_target.ap - 2),
+        ap=max(final_target.min_ap, final_target.ap - 2),
         mp=max(BASE_MP, final_target.mp - 2),
         range=max(0, final_target.range - 1),
+        level=final_target.level,
+        min_ap=final_target.min_ap,
     )
 
 
 @dataclass
 class BuildState:
     slots: dict[str, dict[str, Any]] = field(default_factory=dict)
-    stats: dict[str, int] = field(default_factory=lambda: dict(BASE_STATS))
+    stats: dict[str, int] = field(default_factory=active_base_stats)
     set_counts: dict[str, int] = field(default_factory=dict)
     used_item_ids: set[str] = field(default_factory=set)
     exos: dict[str, str] = field(default_factory=dict)
@@ -1375,13 +1415,13 @@ def load_items(
 ) -> list[dict[str, Any]]:
     excluded_item_ids = excluded_item_ids or set()
     items = load_all_item_records()
-    indexed_item_ids = indexed_candidate_item_ids(TARGET_LEVEL)
+    indexed_item_ids = indexed_candidate_item_ids(target.level)
     for item in items:
         item["_score"] = item_score(item)
     candidates = [
         item
         for item in items
-        if item.get("level", 0) <= TARGET_LEVEL
+        if item.get("level", 0) <= target.level
         and (indexed_item_ids is None or item.get("dofusID") in indexed_item_ids)
         and item.get("dofusID") not in excluded_item_ids
         and item_allowed_by_budget(item, budget_tier)
@@ -1787,7 +1827,7 @@ def budget_action_gear_seed_states(
     seeds = [
         seed
         for seed in seeds
-        if seed.used_item_ids and any(seed.stats.get(stat, 0) > BASE_STATS.get(stat, 0) for stat in ACTION_STATS)
+        if seed.used_item_ids and any(seed.stats.get(stat, 0) > active_base_stats().get(stat, 0) for stat in ACTION_STATS)
     ]
     return dedupe_builds(sorted(seeds, key=lambda state: state.score, reverse=True))[:limit]
 
@@ -2388,7 +2428,7 @@ def strength_spell_candidates() -> tuple[SpellDamageCandidate, ...]:
                     ModelClassTranslation.locale == "en",
                     ModelClassTranslation.name == SPELL_PROFILE_CLASS_NAME,
                     ModelSpellTranslation.locale == "en",
-                    ModelSpellStats.level <= TARGET_LEVEL,
+                    ModelSpellStats.level <= ACTIVE_TARGET_LEVEL,
                 )
                 .order_by(ModelSpellTranslation.name, ModelSpellStats.level.desc())
                 .all()
@@ -2438,7 +2478,7 @@ def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
     candidates = strength_spell_candidates()
     if not candidates:
         return generic_damage_profile()
-    selected = select_variant_spells(candidates, BASE_STATS)
+    selected = select_variant_spells(candidates, active_base_stats())
     filler_spells = [spell for spell in selected if spell.name != IOP_WRATH_SPELL_NAME]
     if not filler_spells:
         return generic_damage_profile()
@@ -2466,7 +2506,7 @@ def strength_spell_damage(stats: dict[str, int]) -> float:
 
 def profile_damage_reference_stats() -> dict[str, int]:
     return {
-        **BASE_STATS,
+        **active_base_stats(),
         "AP": MAX_AP,
         ACTIVE_DAMAGE_PROFILE.primary_stat: PROFILE_DAMAGE_REFERENCE_PRIMARY_STAT,
         "Power": PROFILE_DAMAGE_REFERENCE_POWER,
@@ -2564,7 +2604,7 @@ def base_stats_for_primary_allocation(base_points: int, primary_stat: str | None
         raise ValueError(f"Base {primary_stat} allocation exceeds available points: {base_points}")
     base_vitality = BASE_CHARACTERISTIC_POINTS - cost
     allocated_stats = {
-        **BASE_STATS,
+        **active_base_stats(),
         **{stat: SCROLLED_BASE_STAT for stat in PRIMARY_STAT_NAMES},
     }
     return {
@@ -2591,7 +2631,7 @@ def state_with_base_allocation(
         "Vitality": allocated_base_stats["Vitality"] - SCROLLED_BASE_STAT,
     }
     for stat, allocated_value in allocated_base_stats.items():
-        current_base_value = BASE_STATS.get(stat, 0)
+        current_base_value = active_base_stats().get(stat, 0)
         next_state.stats[stat] = next_state.stats.get(stat, 0) - current_base_value + allocated_value
     return next_state
 
@@ -2649,7 +2689,7 @@ def item_stat_total(state: BuildState, stat: str) -> int:
 
 def set_stat_total(state: BuildState, stat: str) -> int:
     exo_total = 1 if stat in state.exos else 0
-    return state.stats.get(stat, 0) - BASE_STATS.get(stat, 0) - item_stat_total(state, stat) - exo_total
+    return state.stats.get(stat, 0) - active_base_stats().get(stat, 0) - item_stat_total(state, stat) - exo_total
 
 
 def has_amulet_ap(state: BuildState) -> bool:
@@ -2858,9 +2898,9 @@ def state_from_entries(
 
 def package_delta_score(state: BuildState) -> float:
     delta_stats = {
-        stat: value - BASE_STATS.get(stat, 0)
+        stat: value - active_base_stats().get(stat, 0)
         for stat, value in state.stats.items()
-        if value != BASE_STATS.get(stat, 0)
+        if value != active_base_stats().get(stat, 0)
     }
     return score_stats(delta_stats)
 
@@ -3967,10 +4007,14 @@ def build_discovery_response(
     use_cache: bool = True,
 ) -> dict[str, Any]:
     query.validate()
-    if query.level != TARGET_LEVEL:
-        raise ValueError(
-            "Build Discovery level-aware query validation is enabled, but non-200 solver execution is pending."
-        )
+    with target_level_context(query.level):
+        return build_discovery_response_for_active_level(query, use_cache)
+
+
+def build_discovery_response_for_active_level(
+    query: BuildDiscoveryQuery,
+    use_cache: bool = True,
+) -> dict[str, Any]:
     profile = configure_damage_profile(query.primary_element)
     current_dataset_version = dataset_version()
     cache_key = query_cache_key(query, current_dataset_version)
@@ -4019,7 +4063,7 @@ def build_discovery_response(
         "status": "complete",
         "query": query_summary(query),
         "targetSemantics": target_semantics_response(),
-        "prototype": f"level_200_{profile.name}_pvm_generalist",
+        "prototype": f"level_{query.level}_{profile.name}_pvm_generalist",
         "profile": {
             "name": profile.name,
             "primaryStat": profile.primary_stat,

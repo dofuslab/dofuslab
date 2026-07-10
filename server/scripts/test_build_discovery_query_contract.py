@@ -24,8 +24,10 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     effective_ap_strategies_for_target,
     effective_exo_policy,
     normalize_range_target,
+    load_items,
     query_cache_identity,
     result_warnings,
+    target_level_context,
     target_semantics_response,
 )
 
@@ -156,12 +158,53 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         self.assertEqual(query.target.range, MIN_RANGE)
         self.assertIsNone(query_cache_identity(query)["rangeTarget"])
 
-    def test_non_200_query_validation_does_not_silently_run_level_200_solver(self):
+    def test_level_context_updates_build_state_base_ap(self):
+        self.assertEqual(BuildState().stats["AP"], 7)
+        with target_level_context(50):
+            self.assertEqual(BuildState().stats["AP"], 6)
+        self.assertEqual(BuildState().stats["AP"], 7)
+
+    def test_non_200_response_calls_solver_with_level_aware_target(self):
         query = BuildDiscoveryQuery(level=50, ap_target=6, mp_target=3, range_target=None)
         query.validate()
 
-        with self.assertRaisesRegex(ValueError, "non-200 solver execution is pending"):
-            build_discovery_response(query, use_cache=False)
+        with patch("oneoff.build_discovery_prototype.find_diverse_builds", return_value=[]) as find_builds_mock:
+            with patch("oneoff.build_discovery_prototype.load_sets", return_value={}):
+                response = build_discovery_response(query, use_cache=False)
+
+        called_target = find_builds_mock.call_args.kwargs["target"]
+        self.assertEqual(called_target.level, 50)
+        self.assertEqual(called_target.min_ap, 6)
+        self.assertEqual(response["target"], {"level": 50, "AP": 6, "MP": 3, "Range": 0})
+
+    def test_load_items_filters_candidates_by_target_level(self):
+        low_level_item = {
+            "dofusID": "low",
+            "level": 50,
+            "itemType": "Hat",
+            "_stats": {},
+            "_score": 1,
+            "conditions": {"conditions": {}, "customConditions": {}},
+        }
+        high_level_item = {
+            "dofusID": "high",
+            "level": 200,
+            "itemType": "Hat",
+            "_stats": {},
+            "_score": 1,
+            "conditions": {"conditions": {}, "customConditions": {}},
+        }
+        target = BuildDiscoveryQuery(level=50, ap_target=6, mp_target=3).target
+
+        with patch(
+            "oneoff.build_discovery_prototype.load_all_item_records",
+            return_value=(low_level_item, high_level_item),
+        ):
+            with patch("oneoff.build_discovery_prototype.indexed_candidate_item_ids", return_value=None) as index_mock:
+                items = load_items(target, budget_tier=1)
+
+        index_mock.assert_called_once_with(50)
+        self.assertEqual([item["dofusID"] for item in items], ["low"])
 
     def test_query_contract_rejects_ap_below_level_baseline(self):
         invalid_queries = (
