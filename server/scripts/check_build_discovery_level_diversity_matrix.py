@@ -21,7 +21,12 @@ def load_json(path: str | Path) -> dict[str, Any]:
         return json.load(file)
 
 
-def validate_report(report: dict[str, Any], target_set: str = "level-diversity") -> list[str]:
+def validate_report(
+    report: dict[str, Any],
+    target_set: str = "level-diversity",
+    *,
+    allow_no_build: bool = False,
+) -> list[str]:
     failures: list[str] = []
     if report.get("reportVersion") != REPORT_VERSION:
         failures.append(
@@ -44,17 +49,24 @@ def validate_report(report: dict[str, Any], target_set: str = "level-diversity")
 
     if report.get("targetCount") != len(expected_ids):
         failures.append(f"targetCount is {report.get('targetCount')}, expected {len(expected_ids)}")
-    if report.get("generatedCount") != len(expected_ids):
+    expected_generated_count = len(expected_ids) - report.get("noBuildCount", 0) if allow_no_build else len(expected_ids)
+    if report.get("generatedCount") != expected_generated_count:
         failures.append(
-            f"generatedCount is {report.get('generatedCount')}, expected {len(expected_ids)}"
+            f"generatedCount is {report.get('generatedCount')}, expected {expected_generated_count}"
         )
-    if report.get("noBuildCount") != 0:
+    if not allow_no_build and report.get("noBuildCount") != 0:
         failures.append(f"noBuildCount is {report.get('noBuildCount')}, expected 0")
     if report.get("invalidCount", 0) != 0:
         failures.append(f"invalidCount is {report.get('invalidCount')}, expected 0")
 
     for result in results:
         target_id = result.get("target", {}).get("id", "unknown")
+        if result.get("status") == "no_build" and allow_no_build:
+            if result.get("resultCount", 0) != 0:
+                failures.append(f"{target_id}: no_build resultCount is {result.get('resultCount')}, expected 0")
+            if result.get("bestBuildSummary") is not None:
+                failures.append(f"{target_id}: no_build bestBuildSummary should be empty")
+            continue
         if result.get("status") != "generated":
             failures.append(f"{target_id}: status is {result.get('status')}, expected generated")
         validation_errors = result.get("validationErrors") or []
@@ -83,12 +95,17 @@ def main() -> None:
     parser.add_argument("report", help="Path to a level-diversity matrix JSON artifact.")
     parser.add_argument(
         "--target-set",
-        choices=("level-diversity", "boundary", "coverage", "grid-next-minimum", "all"),
+        choices=("level-diversity", "boundary", "coverage", "grid-next-minimum", "grid-next-cap", "all"),
         default="level-diversity",
     )
+    parser.add_argument("--allow-no-build", action="store_true")
     args = parser.parse_args()
 
-    failures = validate_report(load_json(args.report), target_set=args.target_set)
+    failures = validate_report(
+        load_json(args.report),
+        target_set=args.target_set,
+        allow_no_build=args.allow_no_build,
+    )
     if failures:
         for failure in failures:
             print(failure, file=sys.stderr)

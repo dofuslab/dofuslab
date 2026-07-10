@@ -92,6 +92,21 @@ AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS = (
     LevelDiversityTarget("grid_next_min_level_200_strength_7_3_none_budget1", 200, "strength", 1, 7, 3, None),
 )
 
+AP_MP_RANGE_GRID_NEXT_CAP_TARGETS = (
+    LevelDiversityTarget("grid_next_cap_level_1_strength_12_6_6_budget4", 1, "strength", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap_level_20_strength_12_6_6_budget4", 20, "strength", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap_level_50_strength_12_6_6_budget4", 50, "strength", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap_level_80_strength_12_6_6_budget4", 80, "strength", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap_level_99_strength_12_6_6_budget4", 99, "strength", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap_level_100_strength_12_6_6_budget4", 100, "strength", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap_level_120_strength_12_6_6_budget4", 120, "strength", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap_level_150_strength_12_6_6_budget4", 150, "strength", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap_level_179_strength_12_6_6_budget4", 179, "strength", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap_level_180_strength_12_6_6_budget4", 180, "strength", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap_level_199_strength_12_6_6_budget4", 199, "strength", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap_level_200_strength_12_6_6_budget4", 200, "strength", 4, 12, 6, 6),
+)
+
 
 def query_for_target(target: LevelDiversityTarget) -> BuildDiscoveryQuery:
     return BuildDiscoveryQuery(

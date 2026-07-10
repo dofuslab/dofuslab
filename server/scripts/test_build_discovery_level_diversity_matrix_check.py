@@ -73,6 +73,19 @@ class BuildDiscoveryLevelDiversityMatrixCheckTest(unittest.TestCase):
 
         self.assertEqual(validate_report(report, target_set="grid-next-minimum"), [])
 
+    def test_validate_report_accepts_grid_next_cap_target_set(self):
+        results = [valid_result(target) for target in targets_for_set("grid-next-cap")]
+        report = {
+            "reportVersion": REPORT_VERSION,
+            "targetCount": len(results),
+            "generatedCount": len(results),
+            "noBuildCount": 0,
+            "invalidCount": 0,
+            "results": results,
+        }
+
+        self.assertEqual(validate_report(report, target_set="grid-next-cap"), [])
+
     def test_validate_report_rejects_missing_target(self):
         report = valid_report()
         report["results"] = report["results"][1:]
@@ -94,6 +107,26 @@ class BuildDiscoveryLevelDiversityMatrixCheckTest(unittest.TestCase):
         self.assertTrue(any("noBuildCount" in failure for failure in failures))
         self.assertTrue(any("status is no_build" in failure for failure in failures))
         self.assertTrue(any("missing bestBuildSummary" in failure for failure in failures))
+
+    def test_validate_report_can_allow_no_build_rows(self):
+        results = [valid_result(target) for target in targets_for_set("grid-next-cap")]
+        results[0]["status"] = "no_build"
+        results[0]["resultCount"] = 0
+        results[0]["validationErrors"] = ["no build returned"]
+        results[0]["bestBuildSummary"] = None
+        report = {
+            "reportVersion": REPORT_VERSION,
+            "targetCount": len(results),
+            "generatedCount": len(results) - 1,
+            "noBuildCount": 1,
+            "invalidCount": 0,
+            "results": results,
+        }
+
+        self.assertEqual(
+            validate_report(report, target_set="grid-next-cap", allow_no_build=True),
+            [],
+        )
 
     def test_validate_report_rejects_invalid_rows(self):
         report = valid_report()
