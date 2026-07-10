@@ -1808,3 +1808,17 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix_check.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_level_diversity_generation_smoke.BuildDiscoveryLevelDiversitySmokeShapeTest"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-level-diversity-matrix-check-v2.json"`
+
+### 2026-07-10 Level 1 Empty Slot Fix
+
+- Boundary probe found level 1 Iop generation returned zero builds even for
+  base `6/3/None` constraints.
+- Root cause: the solver forced every non-empty low-level slot pool to equip an
+  item. At level 1, both ring slots had only the same unique ring candidate, so
+  the second ring killed the beam.
+- Added low-level optional slot choices for levels `1-19`, while preserving
+  strict required slot behavior from level 20 onward.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
+  - `python -m oneoff.build_discovery_prototype --level 1 --element strength --ap 6 --mp 3 --range none --budget-tier 1 --exo-policy none --limit 1 --top-k 10 --beam-width 20 --per-signature-cap 5 --relevant-set-limit 10`
+- Level 1 result: one generated build, totals `6/3/0`, no warnings.

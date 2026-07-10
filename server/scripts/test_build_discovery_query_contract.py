@@ -31,6 +31,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     normal_gear_bucket_names_for_target,
     load_items,
     optional_empty_slot,
+    optional_slot_choice,
     parse_optional_range_target,
     query_cache_identity,
     result_warnings,
@@ -290,6 +291,11 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         self.assertTrue(optional_empty_slot("pet", {"pet": []}))
         self.assertFalse(optional_empty_slot("pet", {"pet": [{"dofusID": "mount"}]}))
         self.assertFalse(optional_empty_slot("hat", {"hat": []}))
+        self.assertTrue(optional_empty_slot("hat", {"hat": []}, target_level=1))
+        self.assertTrue(optional_empty_slot("ring_1", {"ring_1": []}, target_level=19))
+        self.assertFalse(optional_empty_slot("hat", {"hat": []}, target_level=20))
+        self.assertTrue(optional_slot_choice("ring_2", target_level=1))
+        self.assertFalse(optional_slot_choice("ring_2", target_level=20))
 
     def test_low_level_relevant_set_items_are_kept_in_candidate_pool(self):
         set_ring = {

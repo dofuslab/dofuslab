@@ -70,6 +70,7 @@ ACTION_STAT_VECTOR_SOURCE_LIMIT = 3
 DOFUS_ACTION_STAT_SOURCE_LIMIT = 2
 DOFUS_AP_SOURCE_LIMIT = 2
 DOFUS_ZERO_SCORE_FILLER_LIMIT = 4
+LOW_LEVEL_EMPTY_SLOT_MAX_LEVEL = 19
 UNCOMMON_AP_SOURCE_IDS = frozenset(
     {
         "11738",  # Awmigawd Band
@@ -3132,8 +3133,18 @@ def is_dofus_slot(slot_name: str) -> bool:
     return slot_name.startswith("dofus_")
 
 
-def optional_empty_slot(slot_name: str, pools: dict[str, list[dict[str, Any]]]) -> bool:
-    return slot_name == "pet" and not pools.get(slot_name)
+def optional_empty_slot(
+    slot_name: str,
+    pools: dict[str, list[dict[str, Any]]],
+    target_level: int = TARGET_LEVEL,
+) -> bool:
+    if pools.get(slot_name):
+        return False
+    return slot_name == "pet" or target_level <= LOW_LEVEL_EMPTY_SLOT_MAX_LEVEL
+
+
+def optional_slot_choice(slot_name: str, target_level: int = TARGET_LEVEL) -> bool:
+    return target_level <= LOW_LEVEL_EMPTY_SLOT_MAX_LEVEL
 
 
 def direct_completion_seed_candidates(
@@ -3167,10 +3178,12 @@ def direct_non_dofus_completions(
     ]
     beam = [seed]
     for slot_name in remaining_slots:
-        if optional_empty_slot(slot_name, pools):
+        if optional_empty_slot(slot_name, pools, target.level):
             continue
         next_states: list[BuildState] = []
         for state in beam:
+            if optional_slot_choice(slot_name, target.level):
+                next_states.append(state)
             for item in pools[slot_name]:
                 next_state = add_item_to_state(
                     state,
@@ -3637,12 +3650,13 @@ def search_slot_order(
         seed_states = strategy_seeds + (initial_seeds or [])
     beam = dedupe_builds(sorted(seed_states, key=lambda state: state.score, reverse=True))
     for slot_name in slot_order:
-        if optional_empty_slot(slot_name, pools):
+        if optional_empty_slot(slot_name, pools, target.level):
             continue
         next_states: list[BuildState] = []
         for state in beam:
-            if slot_name in state.slots:
+            if slot_name in state.slots or optional_slot_choice(slot_name, target.level):
                 next_states.append(state)
+            if slot_name in state.slots:
                 continue
             for item in pools[slot_name]:
                 next_state = add_item_to_state(
