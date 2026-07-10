@@ -2952,9 +2952,14 @@ def trim_action_completion_beam(
     return sorted(
         diversified,
         key=lambda state: (
-            min(state.stats.get("AP", 0), target.ap),
-            min(state.stats.get("MP", 0), target.mp),
-            min(state.stats.get("Range", 0), target.range),
+            -(
+                max(target.ap - state.stats.get("AP", 0), 0)
+                + max(target.mp - state.stats.get("MP", 0), 0)
+                + max(target.range - state.stats.get("Range", 0), 0)
+            ),
+            min(state.stats.get("AP", 0), target.ap)
+            + min(state.stats.get("MP", 0), target.mp)
+            + min(state.stats.get("Range", 0), target.range),
             state.score,
         ),
         reverse=True,

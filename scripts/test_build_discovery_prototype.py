@@ -1722,18 +1722,19 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertTrue(any("ap_amulet" in completion.used_item_ids for completion in completions))
 
     def test_action_completion_beam_prioritizes_action_progress(self):
-        target = BuildTarget(ap=8, mp=3, range=0)
+        target = BuildTarget(ap=12, mp=6, range=6)
         high_score = BuildState(stats={**build_discovery_prototype.BASE_STATS, "Strength": 1000}, score=1000)
-        action_progress = BuildState(stats={**build_discovery_prototype.BASE_STATS, "AP": 8}, score=1)
+        ap_heavy = BuildState(stats={**build_discovery_prototype.BASE_STATS, "AP": 12, "MP": 5, "Range": 6}, score=500)
+        balanced = BuildState(stats={**build_discovery_prototype.BASE_STATS, "AP": 12, "MP": 6, "Range": 6}, score=1)
 
         trimmed = trim_action_completion_beam(
-            [high_score, action_progress],
+            [high_score, ap_heavy, balanced],
             target,
             beam_width=1,
             per_signature_cap=1,
         )
 
-        self.assertEqual(trimmed, [action_progress])
+        self.assertEqual(trimmed, [balanced])
 
     def test_packages_compatible_rejects_slot_conflicts(self):
         first = build_discovery_prototype.PackageCandidate(

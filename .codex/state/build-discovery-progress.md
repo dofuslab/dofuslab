@@ -3060,3 +3060,37 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `git diff --check`
   - copied changed solver/test files into Docker and ran focused regression
     tests plus `py_compile`
+
+### 2026-07-10 Level 80 Balanced Action Completion Fix
+
+- Fixed the direct completion beam to rank by total remaining AP/MP/Range
+  deficit before general score.
+- This preserves balanced action-stat completions such as `12/6/6` over
+  higher-score but still-incomplete variants like `12/5/6`.
+- Added regression coverage:
+  - action-completion beam prioritizes balanced AP/MP/Range completion
+  - existing action-variant completion tests still pass
+- Regenerated focused Docker artifact:
+  - `.codex/state/build-discovery-cap4-level80-action-balanced-matrix.json`
+  - `.codex/state/build-discovery-cap4-level80-action-balanced-matrix.md`
+- Result:
+  - level 80 Strength tier 1 `12/6/6`: generated
+  - totals: `12/6/6`
+  - main stat: Strength `883`
+  - Vitality `813`
+  - sets: Royal Pippin Blop Set x4, Khardboard Set x3
+  - items: Royal Pippin Amublop, Royal Pippin Blop Belt, Khardboard Goultard,
+    Bawbawian Shield, Royal Pippin Blop Ring, Treering, Royal Pippin Bloopts,
+    Khardboard Gobball Headgear, Khardboard Dazzling Cloak, Golden and Crimson
+    Rhineetle, Minor Earth Wrecker, Minor Maniac, Minor Earth Destroyer, Minor
+    Goliath, Minor Dynamo, Twitcher
+- Runtime:
+  - focused matrix miss time was 475838.4ms
+  - this is correctness evidence only; performance is still far outside the
+    Milestone 2 cache-miss target
+- Verification passed:
+  - `python scripts\test_build_discovery_prototype.py`
+  - `python -m py_compile server\oneoff\build_discovery_prototype.py scripts\test_build_discovery_prototype.py`
+  - `git diff --check`
+  - copied changed solver/test files into Docker and ran focused regression
+    tests plus `py_compile`
