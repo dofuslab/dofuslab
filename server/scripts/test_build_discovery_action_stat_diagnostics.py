@@ -1,4 +1,5 @@
 import json
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -7,6 +8,7 @@ from unittest.mock import patch
 from build_discovery_action_stat_diagnostics import (
     artifact_stem_for_target,
     build_diagnostics_report,
+    main,
     render_markdown,
     write_split_reports,
 )
@@ -234,12 +236,13 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
             "build_discovery_action_stat_diagnostics.diagnose_entry",
             side_effect=fake_diagnose,
         ):
-            written = write_split_reports(
+            split_result = write_split_reports(
                 matrix_report,
                 entries,
                 output_dir=Path(temp_dir),
             )
 
+            written = split_result["manifest"]["reports"]
             self.assertEqual([row["targetId"] for row in written], ["target/one", "target two"])
             self.assertTrue((Path(temp_dir) / "target-one.json").exists())
             self.assertTrue((Path(temp_dir) / "target-one.md").exists())
@@ -250,6 +253,86 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
                 [row["diagnosticStatus"] for row in manifest["reports"]],
                 ["item_stat_upper_bound_below_target", "item_stat_upper_bound_below_target"],
             )
+            self.assertEqual(split_result["aggregateReport"]["diagnosticCount"], 2)
+
+    def test_write_split_reports_avoids_sanitized_filename_collisions(self):
+        entries = [
+            matrix_entry(level=1),
+            matrix_entry(level=20),
+        ]
+        entries[0]["target"]["id"] = "target/one"
+        entries[1]["target"]["id"] = "target one"
+        matrix_report = {"scope": "Iop test matrix", "generatedAt": "now", "results": entries}
+
+        with tempfile.TemporaryDirectory() as temp_dir, patch(
+            "build_discovery_action_stat_diagnostics.diagnose_entry",
+            return_value={
+                "target": entries[0]["target"],
+                "query": {},
+                "matrixStatus": "no_build",
+                "catalogItemCount": 0,
+                "effectiveExoPolicy": "allow",
+                "optimisticIndependentSlotUpperBound": {"AP": 7, "MP": 4, "Range": 1},
+                "diagnosticStatus": "item_stat_upper_bound_below_target",
+                "reasons": ["AP optimistic upper bound 7 is below target 12"],
+                "witnessSearch": {"enabled": False, "maxStatesPerSlot": 20_000, "stateLimitHit": False, "found": False},
+                "actionStatWitness": None,
+                "slotSummaries": [],
+            },
+        ):
+            split_result = write_split_reports(matrix_report, entries, output_dir=Path(temp_dir))
+
+            self.assertTrue((Path(temp_dir) / "target-one.json").exists())
+            self.assertTrue((Path(temp_dir) / "target-one-2.json").exists())
+            self.assertEqual(
+                [Path(row["json"]).name for row in split_result["manifest"]["reports"]],
+                ["target-one.json", "target-one-2.json"],
+            )
+
+    def test_split_output_cli_honors_aggregate_output_paths(self):
+        entry = matrix_entry(level=1)
+        matrix_report = {"scope": "Iop test matrix", "generatedAt": "now", "results": [entry]}
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            matrix_path = Path(temp_dir) / "matrix.json"
+            split_dir = Path(temp_dir) / "split"
+            aggregate_json = Path(temp_dir) / "aggregate.json"
+            aggregate_md = Path(temp_dir) / "aggregate.md"
+            matrix_path.write_text(json.dumps(matrix_report), encoding="utf-8")
+            argv = [
+                "build_discovery_action_stat_diagnostics.py",
+                str(matrix_path),
+                "--split-output-dir",
+                str(split_dir),
+                "--output-json",
+                str(aggregate_json),
+                "--output-md",
+                str(aggregate_md),
+            ]
+
+            with patch.object(sys, "argv", argv), patch(
+                "build_discovery_action_stat_diagnostics.diagnose_entry",
+                return_value={
+                    "target": entry["target"],
+                    "query": {},
+                    "matrixStatus": "no_build",
+                    "catalogItemCount": 0,
+                    "effectiveExoPolicy": "allow",
+                    "optimisticIndependentSlotUpperBound": {"AP": 7, "MP": 4, "Range": 1},
+                    "diagnosticStatus": "item_stat_upper_bound_below_target",
+                    "reasons": ["AP optimistic upper bound 7 is below target 12"],
+                    "witnessSearch": {"enabled": False, "maxStatesPerSlot": 20_000, "stateLimitHit": False, "found": False},
+                    "actionStatWitness": None,
+                    "slotSummaries": [],
+                },
+            ):
+                main()
+
+            self.assertTrue((split_dir / "target_1.json").exists())
+            self.assertTrue((split_dir / "manifest.json").exists())
+            self.assertTrue(aggregate_json.exists())
+            self.assertTrue(aggregate_md.exists())
+            self.assertEqual(json.loads(aggregate_json.read_text(encoding="utf-8"))["diagnosticCount"], 1)
 
 
 if __name__ == "__main__":

@@ -54,6 +54,10 @@ These need gameplay or product review before calling the feature shippable.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-diagnostic-plan.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-diagnostics.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-level50-witness-diagnostics.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-level80-witness-diagnostics.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-level99-witness-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-level50-witness-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-remaining-witness-diagnostics.md`.
@@ -73,6 +77,11 @@ These need gameplay or product review before calling the feature shippable.
    - The current second selector-derived cap matrix has 12 mixed-element
      `12/6/6` targets: 7 generated and 5 no-build rows at levels 1, 20, 50,
      80, and 99.
+   - The cap-2 item-stat diagnostic shows level 1 Intelligence and level 20
+     Chance are below target under the item-stat-only upper bound. Level 50
+     Agility, level 80 Strength, and level 99 Intelligence all have exact
+     `12/6/6` action-stat witnesses, so their no-build rows are solver
+     recall/search gaps rather than action-stat catalog impossibility.
    - The current cap diagnostics show levels 1 and 20 are below target under
      an optimistic item-stat-only independent-slot upper bound. Because set
      bonuses are not included yet, this is strong evidence but not a full

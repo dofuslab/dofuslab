@@ -461,12 +461,43 @@ def artifact_stem_for_target(entry: dict[str, Any]) -> str:
     return stem or "unknown-target"
 
 
+def unique_artifact_stem(entry: dict[str, Any], used_stems: dict[str, int]) -> str:
+    stem = artifact_stem_for_target(entry)
+    count = used_stems.get(stem, 0)
+    used_stems[stem] = count + 1
+    if count == 0:
+        return stem
+    return f"{stem}-{count + 1}"
+
+
 def write_report_outputs(report: dict[str, Any], *, output_json: Path, output_md: Path | None = None) -> None:
     output_json.parent.mkdir(parents=True, exist_ok=True)
     output_json.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     if output_md is not None:
         output_md.parent.mkdir(parents=True, exist_ok=True)
         output_md.write_text(render_markdown(report), encoding="utf-8")
+
+
+def combine_split_diagnostics(matrix_report: dict[str, Any], reports: Iterable[dict[str, Any]]) -> dict[str, Any]:
+    diagnostics = []
+    for report in reports:
+        diagnostics.extend(report.get("diagnostics", []))
+    return {
+        "reportVersion": REPORT_VERSION,
+        "sourceMatrix": matrix_report.get("scope"),
+        "sourceGeneratedAt": matrix_report.get("generatedAt"),
+        "diagnosticCount": len(diagnostics),
+        "itemStatUpperBoundBelowTargetCount": sum(
+            1 for diagnostic in diagnostics if diagnostic["diagnosticStatus"] == "item_stat_upper_bound_below_target"
+        ),
+        "notProvenInfeasibleCount": sum(
+            1 for diagnostic in diagnostics if diagnostic["diagnosticStatus"] == "not_proven_infeasible"
+        ),
+        "actionStatWitnessFoundCount": sum(
+            1 for diagnostic in diagnostics if diagnostic["diagnosticStatus"] == "action_stat_witness_found"
+        ),
+        "diagnostics": diagnostics,
+    }
 
 
 def write_split_reports(
@@ -476,8 +507,10 @@ def write_split_reports(
     output_dir: Path,
     witness_search: bool = False,
     witness_max_states_per_slot: int = 20_000,
-) -> list[dict[str, Any]]:
+) -> dict[str, Any]:
     written = []
+    reports = []
+    used_stems: dict[str, int] = {}
     output_dir.mkdir(parents=True, exist_ok=True)
     for entry in entries:
         report = build_diagnostics_report_for_entries(
@@ -486,7 +519,8 @@ def write_split_reports(
             witness_search=witness_search,
             witness_max_states_per_slot=witness_max_states_per_slot,
         )
-        stem = artifact_stem_for_target(entry)
+        reports.append(report)
+        stem = unique_artifact_stem(entry, used_stems)
         json_path = output_dir / f"{stem}.json"
         md_path = output_dir / f"{stem}.md"
         write_report_outputs(report, output_json=json_path, output_md=md_path)
@@ -506,7 +540,10 @@ def write_split_reports(
         "reports": written,
     }
     write_report_outputs(manifest, output_json=output_dir / "manifest.json")
-    return written
+    return {
+        "manifest": manifest,
+        "aggregateReport": combine_split_diagnostics(matrix_report, reports),
+    }
 
 
 def csv_filter(raw_value: str | None) -> set[str] | None:
@@ -536,15 +573,25 @@ def main() -> None:
 
     if args.split_output_dir:
         selected_entries = selected_matrix_entries(matrix_report, statuses=statuses, target_ids=target_ids)
-        written = write_split_reports(
+        split_result = write_split_reports(
             matrix_report,
             selected_entries,
             output_dir=Path(args.split_output_dir),
             witness_search=args.witness_search,
             witness_max_states_per_slot=args.witness_max_states_per_slot,
         )
-        if not args.output_json and not args.output_md:
-            print(json.dumps({"splitReportCount": len(written), "reports": written}, indent=2, ensure_ascii=False))
+        if args.output_json:
+            write_report_outputs(
+                split_result["aggregateReport"],
+                output_json=Path(args.output_json),
+                output_md=Path(args.output_md) if args.output_md else None,
+            )
+        elif args.output_md:
+            output_md = Path(args.output_md)
+            output_md.parent.mkdir(parents=True, exist_ok=True)
+            output_md.write_text(render_markdown(split_result["aggregateReport"]), encoding="utf-8")
+        else:
+            print(json.dumps(split_result["manifest"], indent=2, ensure_ascii=False))
         return
 
     report = build_diagnostics_report(

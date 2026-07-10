@@ -2382,3 +2382,48 @@ Run the initial evaluator pass:
   - `python server\scripts\test_build_discovery_action_stat_diagnostics.py`
   - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
   - `git diff --check`
+- Reviewer findings fixed:
+  - split mode now still honors aggregate `--output-json` and `--output-md`
+    paths by writing a combined report assembled from completed split reports
+  - split artifact filenames now avoid collisions after target-id sanitization
+
+### 2026-07-10 Cap 2 Action-Stat Diagnostics
+
+- Generated fast cap-2 no-build diagnostics:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-diagnostics.md`
+- Fast diagnostic result:
+  - diagnostics: 5
+  - item-stat upper-bound below target: 2
+  - not proven infeasible: 3
+  - action-stat witnesses found in fast pass: 0
+- Item-stat upper-bound misses:
+  - level 1 Intelligence `12/6/6` tier 4 upper bound: `7/4/1`
+  - level 20 Chance `12/6/6` tier 4 upper bound: `10/6/4`
+- Witness diagnostics for the three inconclusive rows:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-level50-witness-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-level50-witness-diagnostics.md`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-level80-witness-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-level80-witness-diagnostics.md`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-level99-witness-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-level99-witness-diagnostics.md`
+- Witness result:
+  - level 50 Agility `12/6/6` tier 4 has an action-stat witness with totals
+    `12/6/6`
+  - level 80 Strength `12/6/6` tier 3 has an action-stat witness with totals
+    `12/6/6`
+  - level 99 Intelligence `12/6/6` tier 4 has an action-stat witness with
+    totals `12/6/6`
+- Interpretation:
+  - level 1 and 20 cap-2 no-build rows have strong item-stat-only evidence
+    against feasibility, but still need set-bonus-aware proof before claiming
+    full infeasibility
+  - level 50, 80, and 99 cap-2 no-build rows are solver recall/search gaps for
+    action-stat validity
+  - the next useful implementation work is candidate/search recall tuning for
+    those three witness-backed rows
+- Verification passed:
+  - `python server\scripts\test_build_discovery_action_stat_diagnostics.py`
+  - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_action_stat_diagnostics.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py"`
