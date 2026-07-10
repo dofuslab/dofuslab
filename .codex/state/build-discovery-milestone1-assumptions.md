@@ -124,6 +124,18 @@ BUILD_DISCOVERY_EXPENSIVE_SCOPE=str-opti \
 python -m unittest scripts.test_build_discovery_expensive_regressions
 ```
 
+Focused Agility 12/6 benchmark regressions:
+
+```sh
+BUILD_DISCOVERY_EXPENSIVE_REGRESSION=1 \
+BUILD_DISCOVERY_EXPENSIVE_SCOPE=agi-opti \
+python -m unittest scripts.test_build_discovery_expensive_regressions
+
+BUILD_DISCOVERY_EXPENSIVE_REGRESSION=1 \
+BUILD_DISCOVERY_EXPENSIVE_SCOPE=agi-budget \
+python -m unittest scripts.test_build_discovery_expensive_regressions
+```
+
 Bounded Milestone 1 generation smoke. This is intentionally opt-in because it
 runs 80 no-cache solver calls:
 
@@ -210,3 +222,6 @@ python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
 - 2026-07-09: default profile `11/6/0`, all budget tiers and all four elements
   exceeded a 20-minute iterative timeout. Keep Milestone 1 smoke runs sliced by
   budget tier until performance work makes broader local runs practical.
+- 2026-07-09: Agility Iop `12/6/0` tier 4 opti and tier 1 no-exo generated
+  builds were promoted into expensive item-by-item regression tests. Narrow
+  `agi-opti` and `agi-budget` scopes passed in Docker.

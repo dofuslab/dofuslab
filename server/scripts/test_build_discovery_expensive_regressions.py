@@ -20,6 +20,8 @@ EXPENSIVE_REGRESSION_SCOPE = os.getenv("BUILD_DISCOVERY_EXPENSIVE_SCOPE", "all")
 # Examples:
 #   BUILD_DISCOVERY_EXPENSIVE_REGRESSION=1 python -m unittest scripts.test_build_discovery_expensive_regressions
 #   BUILD_DISCOVERY_EXPENSIVE_REGRESSION=1 BUILD_DISCOVERY_EXPENSIVE_SCOPE=str-opti python -m unittest scripts.test_build_discovery_expensive_regressions
+#   BUILD_DISCOVERY_EXPENSIVE_REGRESSION=1 BUILD_DISCOVERY_EXPENSIVE_SCOPE=agi-opti python -m unittest scripts.test_build_discovery_expensive_regressions
+#   BUILD_DISCOVERY_EXPENSIVE_REGRESSION=1 BUILD_DISCOVERY_EXPENSIVE_SCOPE=agi-budget python -m unittest scripts.test_build_discovery_expensive_regressions
 #   BUILD_DISCOVERY_EXPENSIVE_REGRESSION=1 BUILD_DISCOVERY_EXPENSIVE_SCOPE=budget python -m unittest scripts.test_build_discovery_expensive_regressions
 
 
@@ -109,6 +111,47 @@ class BuildDiscoveryExpensiveRegressionTest(unittest.TestCase):
                 "16332",
                 "16333",
                 "16335",
+            },
+        )
+
+    @expensive_scope("budget", "agi-budget")
+    def test_tier_one_agility_iop_12_6_no_exo_still_finds_budget_benchmark(self):
+        response = build_discovery_response(
+            BuildDiscoveryQuery(
+                elements=("agility",),
+                ap_target=12,
+                mp_target=6,
+                range_target=0,
+                budget_tier=1,
+                exo_policy="none",
+                limit=2,
+            ),
+            use_cache=False,
+        )
+
+        self.assert_has_budget_build(
+            response,
+            min_ap=12,
+            primary_stat="Agility",
+            min_primary_stat=900,
+            min_score=1940.16,
+            expected_item_ids={
+                "13786",
+                "15696",
+                "15698",
+                "15701",
+                "16193",
+                "16245",
+                "16267",
+                "16332",
+                "16333",
+                "19599",
+                "20360",
+                "24035",
+                "31790",
+                "32121",
+                "32245",
+                "33023",
             },
         )
 
@@ -280,6 +323,51 @@ class BuildDiscoveryExpensiveRegressionTest(unittest.TestCase):
             expected_exos={
                 "AP": {"itemId": "22209", "slot": "belt"},
                 "MP": {"itemId": "19244", "slot": "amulet"},
+            },
+        )
+
+    @expensive_scope("agi-opti")
+    def test_opti_agility_iop_12_6_still_finds_benchmark_build(self):
+        response = build_discovery_response(
+            BuildDiscoveryQuery(
+                elements=("agility",),
+                ap_target=12,
+                mp_target=6,
+                range_target=0,
+                budget_tier=4,
+                exo_policy="opti",
+                limit=2,
+            ),
+            use_cache=False,
+        )
+
+        self.assert_has_budget_build(
+            response,
+            min_ap=12,
+            primary_stat="Agility",
+            min_primary_stat=1300,
+            min_score=2399.88,
+            expected_item_ids={
+                "13344",
+                "14082",
+                "14083",
+                "14092",
+                "14093",
+                "18718",
+                "19599",
+                "19601",
+                "19606",
+                "22020",
+                "24035",
+                "694",
+                "7043",
+                "7709",
+                "7754",
+                "8698",
+            },
+            expected_exos={
+                "AP": {"itemId": "19599", "slot": "belt"},
+                "MP": {"itemId": "14083", "slot": "amulet"},
             },
         )
 
