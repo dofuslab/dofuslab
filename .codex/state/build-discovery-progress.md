@@ -1982,3 +1982,26 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix.py && python -m unittest scripts.test_build_discovery_ap_mp_range_coverage_generation_smoke.BuildDiscoveryApMpRangeCoverageSmokeShapeTest"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-coverage-matrix-v2.json --target-set coverage"`
 - Artifact generation result: pass in 763.0 seconds.
+
+### 2026-07-10 AP/MP/Range Grid Inventory
+
+- Added `server/scripts/build_discovery_ap_mp_range_grid_inventory.py`.
+- Added `server/scripts/test_build_discovery_ap_mp_range_grid_inventory.py`.
+- Generated inventory artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-grid-inventory.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-inventory.md`
+- The inventory enumerates the valid query grid for representative levels,
+  elements, and budget tiers, then compares it against current generated matrix
+  artifacts.
+- Result:
+  - representative levels: `1,20,50,80,99,100,120,150,179,180,199,200`
+  - elements: Strength, Intelligence, Chance, Agility
+  - budget tiers: 1-4
+  - valid query rows: 39,424
+  - exact generated evidence rows: 37
+  - unproven rows: 39,387
+- This is a gap inventory, not a blocker fix. It makes explicit that current
+  generated matrices prove selected rows, not full-grid build quality.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_ap_mp_range_grid_inventory.py scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`

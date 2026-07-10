@@ -1,0 +1,429 @@
+{
+  "reportVersion": "build-discovery-ap-mp-range-grid-inventory-v1",
+  "scope": "query-grid inventory, not generated-build proof",
+  "levels": [
+    1,
+    20,
+    50,
+    80,
+    99,
+    100,
+    120,
+    150,
+    179,
+    180,
+    199,
+    200
+  ],
+  "elements": [
+    "strength",
+    "intelligence",
+    "chance",
+    "agility"
+  ],
+  "budgetTiers": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "validQueryCount": 39424,
+  "generatedEvidenceCount": 37,
+  "unprovenCount": 39387,
+  "byLevel": [
+    {
+      "level": 1,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 1,
+      "unprovenCount": 3583
+    },
+    {
+      "level": 20,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 2,
+      "unprovenCount": 3582
+    },
+    {
+      "level": 50,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 4,
+      "unprovenCount": 3580
+    },
+    {
+      "level": 80,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 3,
+      "unprovenCount": 3581
+    },
+    {
+      "level": 99,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 2,
+      "unprovenCount": 3582
+    },
+    {
+      "level": 100,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 3,
+      "unprovenCount": 3069
+    },
+    {
+      "level": 120,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 4,
+      "unprovenCount": 3068
+    },
+    {
+      "level": 150,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 6,
+      "unprovenCount": 3066
+    },
+    {
+      "level": 179,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 2,
+      "unprovenCount": 3070
+    },
+    {
+      "level": 180,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 2,
+      "unprovenCount": 3070
+    },
+    {
+      "level": 199,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 6,
+      "unprovenCount": 3066
+    },
+    {
+      "level": 200,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 2,
+      "unprovenCount": 3070
+    }
+  ],
+  "unprovenExamples": [
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 0
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 1
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 2
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 3
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 4
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 5
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 6
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": null
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 0
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 1
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 2
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 3
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 4
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 5
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 6
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": null
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 0
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 1
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 2
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 3
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 4
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 5
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 6
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": null
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 0
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 1
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 2
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 3
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 4
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 5
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 6
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 0
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 1
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 2
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 3
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 4
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 5
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 6
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 4,
+      "rangeTarget": null
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+# Build Discovery AP/MP/Range Grid Inventory
+
+This inventory enumerates valid Iop query-grid targets for representative levels, elements, and budgets.
+It is not generated-build proof; it shows how much of the grid currently has generated artifact evidence.
+
+Valid query rows: `39424`
+Generated evidence rows: `37`
+Unproven rows: `39387`
+
+| Level | Valid rows | Generated evidence | Unproven |
+|---:|---:|---:|---:|
+| 1 | 3584 | 1 | 3583 |
+| 20 | 3584 | 2 | 3582 |
+| 50 | 3584 | 4 | 3580 |
+| 80 | 3584 | 3 | 3581 |
+| 99 | 3584 | 2 | 3582 |
+| 100 | 3072 | 3 | 3069 |
+| 120 | 3072 | 4 | 3068 |
+| 150 | 3072 | 6 | 3066 |
+| 179 | 3072 | 2 | 3070 |
+| 180 | 3072 | 2 | 3070 |
+| 199 | 3072 | 6 | 3066 |
+| 200 | 3072 | 2 | 3070 |
+
+## Unproven Examples
+
+- L1 strength tier 1 6/3/0
+- L1 strength tier 1 6/3/1
+- L1 strength tier 1 6/3/2
+- L1 strength tier 1 6/3/3
+- L1 strength tier 1 6/3/4
+- L1 strength tier 1 6/3/5
+- L1 strength tier 1 6/3/6
+- L1 strength tier 1 6/4/any
+- L1 strength tier 1 6/4/0
+- L1 strength tier 1 6/4/1
+- L1 strength tier 1 6/4/2
+- L1 strength tier 1 6/4/3
+- L1 strength tier 1 6/4/4
+- L1 strength tier 1 6/4/5
+- L1 strength tier 1 6/4/6
+- L1 strength tier 1 6/5/any
+- L1 strength tier 1 6/5/0
+- L1 strength tier 1 6/5/1
+- L1 strength tier 1 6/5/2
+- L1 strength tier 1 6/5/3
+- L1 strength tier 1 6/5/4
+- L1 strength tier 1 6/5/5
+- L1 strength tier 1 6/5/6
+- L1 strength tier 1 6/6/any
+- L1 strength tier 1 6/6/0
+- L1 strength tier 1 6/6/1
+- L1 strength tier 1 6/6/2
+- L1 strength tier 1 6/6/3
+- L1 strength tier 1 6/6/4
+- L1 strength tier 1 6/6/5
+- L1 strength tier 1 6/6/6
+- L1 strength tier 1 7/3/any
+- L1 strength tier 1 7/3/0
+- L1 strength tier 1 7/3/1
+- L1 strength tier 1 7/3/2
+- L1 strength tier 1 7/3/3
+- L1 strength tier 1 7/3/4
+- L1 strength tier 1 7/3/5
+- L1 strength tier 1 7/3/6
+- L1 strength tier 1 7/4/any
