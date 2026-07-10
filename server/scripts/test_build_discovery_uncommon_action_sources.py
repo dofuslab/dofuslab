@@ -1,4 +1,8 @@
 import unittest
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from oneoff.build_discovery_prototype import (
     BuildTarget,
@@ -12,6 +16,36 @@ from oneoff.build_discovery_prototype import (
 
 
 class BuildDiscoveryUncommonActionSourceTest(unittest.TestCase):
+    def test_low_level_positive_action_sources_survive_small_candidate_pools(self):
+        bad_score_ap_ring = {
+            "dofusID": "bad-score-ap-ring",
+            "name": "Bad Score AP Ring",
+            "level": 8,
+            "itemType": "Ring",
+            "setID": None,
+            "_stats": {"AP": 1, "Strength": -200},
+            "_score": -200,
+        }
+        good_score_ring = {
+            "dofusID": "good-score-ring",
+            "name": "Good Score Ring",
+            "level": 50,
+            "itemType": "Ring",
+            "setID": None,
+            "_stats": {"Strength": 80},
+            "_score": 80,
+        }
+
+        pool = candidate_pool_for_slot(
+            ("Ring",),
+            [bad_score_ap_ring, good_score_ring],
+            relevant_sets=set(),
+            top_k=1,
+            target_level=50,
+        )
+
+        self.assertIn("bad-score-ap-ring", {item["dofusID"] for item in pool})
+
     def test_uncommon_ap_mp_sources_survive_small_candidate_pools(self):
         target = BuildTarget(ap=11, mp=6, range=0)
         items = load_items(target, excluded_item_ids=set(), budget_tier=1)

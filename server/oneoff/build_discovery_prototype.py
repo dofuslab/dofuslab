@@ -1581,15 +1581,19 @@ def candidate_pool_for_slot(
             stat_source_limit = DOFUS_AP_SOURCE_LIMIT
         stat_sources = [
             item
-            for item in search_compatible
+            for item in compatible
             if item["_stats"].get(stat, 0) > 0
-            and (is_dofus_slot or item.get("level", 0) >= ACTION_STAT_SOURCE_MIN_LEVEL)
         ]
-        for item in sorted(
-            stat_sources,
-            key=lambda i: (i["_score"], i.get("level", 0)),
-            reverse=True,
-        )[:stat_source_limit]:
+        retained_stat_sources = (
+            stat_sources
+            if not is_dofus_slot and target_level < ACTION_STAT_SOURCE_MIN_LEVEL
+            else sorted(
+                stat_sources,
+                key=lambda i: (i["_score"], i.get("level", 0)),
+                reverse=True,
+            )[:stat_source_limit]
+        )
+        for item in retained_stat_sources:
             selected[item["dofusID"]] = item
 
     if not is_dofus_slot:
