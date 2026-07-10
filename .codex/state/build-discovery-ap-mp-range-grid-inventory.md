@@ -4,10 +4,10 @@ This inventory enumerates valid Iop query-grid targets for representative levels
 It is not generated-build proof; it shows how much of the grid currently has generated artifact evidence.
 
 Valid query rows: `39424`
-Generated evidence rows: `83`
-Attempted evidence rows: `85`
-Unproven rows: `39341`
-Unattempted rows: `39339`
+Generated evidence rows: `90`
+Attempted evidence rows: `97`
+Unproven rows: `39334`
+Unattempted rows: `39327`
 
 | Level | Valid rows | Generated evidence | Unproven |
 |---:|---:|---:|---:|
@@ -16,13 +16,13 @@ Unattempted rows: `39339`
 | 50 | 3584 | 8 | 3576 |
 | 80 | 3584 | 7 | 3577 |
 | 99 | 3584 | 6 | 3578 |
-| 100 | 3072 | 7 | 3065 |
-| 120 | 3072 | 8 | 3064 |
-| 150 | 3072 | 10 | 3062 |
-| 179 | 3072 | 6 | 3066 |
-| 180 | 3072 | 6 | 3066 |
-| 199 | 3072 | 10 | 3062 |
-| 200 | 3072 | 6 | 3066 |
+| 100 | 3072 | 8 | 3064 |
+| 120 | 3072 | 9 | 3063 |
+| 150 | 3072 | 11 | 3061 |
+| 179 | 3072 | 7 | 3065 |
+| 180 | 3072 | 7 | 3065 |
+| 199 | 3072 | 11 | 3061 |
+| 200 | 3072 | 7 | 3065 |
 
 ## Unproven Examples
 
@@ -81,15 +81,15 @@ Unattempted rows: `39339`
 - L180 intelligence tier 2 7/3/any `minimum`
 - L199 chance tier 2 7/3/any `minimum`
 - L200 agility tier 2 7/3/any `minimum`
-- L1 intelligence tier 4 12/6/6 `cap`
-- L20 chance tier 4 12/6/6 `cap`
-- L50 agility tier 4 12/6/6 `cap`
-- L80 strength tier 3 12/6/6 `cap`
-- L99 intelligence tier 4 12/6/6 `cap`
-- L100 chance tier 4 12/6/6 `cap`
-- L120 agility tier 4 12/6/6 `cap`
-- L150 strength tier 3 12/6/6 `cap`
-- L179 intelligence tier 4 12/6/6 `cap`
-- L180 chance tier 4 12/6/6 `cap`
-- L199 agility tier 4 12/6/6 `cap`
-- L200 strength tier 3 12/6/6 `cap`
+- L1 intelligence tier 3 12/6/6 `cap`
+- L20 chance tier 3 12/6/6 `cap`
+- L50 agility tier 3 12/6/6 `cap`
+- L80 strength tier 2 12/6/6 `cap`
+- L99 intelligence tier 3 12/6/6 `cap`
+- L100 chance tier 3 12/6/6 `cap`
+- L120 agility tier 3 12/6/6 `cap`
+- L150 strength tier 2 12/6/6 `cap`
+- L179 intelligence tier 3 12/6/6 `cap`
+- L180 chance tier 3 12/6/6 `cap`
+- L199 agility tier 3 12/6/6 `cap`
+- L200 strength tier 2 12/6/6 `cap`

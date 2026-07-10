@@ -2298,3 +2298,47 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py scripts/build_discovery_ap_mp_range_grid_inventory.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-grid-next-minimum-3-matrix.json --target-set grid-next-minimum-3"`
   - `git diff --check`
+
+### 2026-07-10 Grid Next Cap 2 Matrix
+
+- Added selector-derived target set
+  `AP_MP_RANGE_GRID_NEXT_CAP_2_TARGETS`.
+- Generated current artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-matrix.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-matrix.md`
+- Artifact summary:
+  - targets: 12
+  - generated: 7
+  - invalid: 0
+  - no build: 5
+- Generated rows:
+  - level 100 Chance `12/6/6` tier 4
+  - level 120 Agility `12/6/6` tier 4
+  - level 150 Strength `12/6/6` tier 3
+  - level 179 Intelligence `12/6/6` tier 4
+  - level 180 Chance `12/6/6` tier 4
+  - level 199 Agility `12/6/6` tier 4
+  - level 200 Strength `12/6/6` tier 3
+- No-build rows:
+  - level 1 Intelligence `12/6/6` tier 4
+  - level 20 Chance `12/6/6` tier 4
+  - level 50 Agility `12/6/6` tier 4
+  - level 80 Strength `12/6/6` tier 3
+  - level 99 Intelligence `12/6/6` tier 4
+- Regenerated the grid inventory with this artifact included.
+- Updated grid inventory result:
+  - valid query rows: 39,424
+  - exact generated evidence rows: 90
+  - attempted evidence rows: 97
+  - unproven rows: 39,334
+  - unattempted rows: 39,327
+- Interpretation:
+  - these no-build rows are solver results, not infeasibility proof
+  - the next cap work should run action-stat/set-aware diagnostics for the
+    five cap-2 no-build rows before deciding whether to tune recall or mark
+    them as bounded/catalog-infeasible evidence
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix.py && python scripts/test_build_discovery_level_diversity_matrix_check.py && python scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py scripts/build_discovery_ap_mp_range_grid_inventory.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-grid-next-cap-2-matrix.json --target-set grid-next-cap-2 --allow-no-build"`
+  - `git diff --check`

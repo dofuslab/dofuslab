@@ -52,6 +52,7 @@ These need gameplay or product review before calling the feature shippable.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-2-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-3-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-matrix.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-level50-witness-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-remaining-witness-diagnostics.md`.
@@ -68,6 +69,9 @@ These need gameplay or product review before calling the feature shippable.
    - The current selector-derived cap matrix has 12 representative-level
      `12/6/6` tier 4 targets: 10 generated and 2 no-build rows at levels 1
      and 20.
+   - The current second selector-derived cap matrix has 12 mixed-element
+     `12/6/6` targets: 7 generated and 5 no-build rows at levels 1, 20, 50,
+     80, and 99.
    - The current cap diagnostics show levels 1 and 20 are below target under
      an optimistic item-stat-only independent-slot upper bound. Because set
      bonuses are not included yet, this is strong evidence but not a full
@@ -80,7 +84,7 @@ These need gameplay or product review before calling the feature shippable.
      cap, so it remains bounded/inconclusive rather than fully proven
      infeasible.
    - The current grid inventory has 39,424 representative valid query rows and
-     83 exact generated-evidence rows; it is a gap map, not build proof.
+     90 exact generated-evidence rows; it is a gap map, not build proof.
    - Confirm the sampled rows are useful representatives before promoting them to accepted benchmarks.
    - Flag rows where surplus AP/MP/Range, budget assumptions, or old lower-bucket gear look suspicious.
    - Treat this as generated solver evidence, not gameplay acceptance.
