@@ -122,6 +122,22 @@ def action_relevant_pools(
     return pools
 
 
+def slot_action_pressure(slot_name: str, pool: list[dict[str, Any]]) -> tuple[int, int, int, int]:
+    max_ap = max((item["_stats"].get("AP", 0) for item in pool), default=0)
+    max_mp = max((item["_stats"].get("MP", 0) for item in pool), default=0)
+    max_range = max((item["_stats"].get("Range", 0) for item in pool), default=0)
+    return (max_ap, max_mp, max_range, len(pool))
+
+
+def ordered_gear_slots(pools: dict[str, list[dict[str, Any]]]) -> list[str]:
+    gear_slots = [slot_name for slot_name, _ in solver.SLOTS if not is_dofus_slot(slot_name)]
+    return sorted(
+        gear_slots,
+        key=lambda slot_name: slot_action_pressure(slot_name, pools[slot_name]),
+        reverse=True,
+    )
+
+
 def state_signature(state: solver.BuildState, target: solver.BuildTarget) -> tuple[Any, ...]:
     return (
         min(state.stats.get("AP", 0), target.ap),
@@ -226,7 +242,7 @@ def diagnose_target(
             if not item.get("setID") or not sets.get(item["setID"], {}).get("_excluded")
         ]
         pools = action_relevant_pools(items, sets)
-        gear_slots = [slot_name for slot_name, _ in solver.SLOTS if not is_dofus_slot(slot_name)]
+        gear_slots = ordered_gear_slots(pools)
         dofus_by_id = {
             item["dofusID"]: item
             for slot_name in [slot for slot, _ in solver.SLOTS if is_dofus_slot(slot)]

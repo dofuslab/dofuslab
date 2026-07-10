@@ -5,6 +5,7 @@ from build_discovery_action_feasibility import (
     action_deficit,
     action_stat_total,
     complete_with_action_dofus,
+    ordered_gear_slots,
     render_markdown,
     target_to_build_target,
 )
@@ -42,6 +43,21 @@ class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
 
         self.assertEqual(action_stat_total({"AP": 10, "MP": 5, "Range": -4}, target), 15)
         self.assertEqual(action_deficit({"AP": 9, "MP": 4, "Range": -4}, target), 2)
+
+    def test_ordered_gear_slots_prioritizes_ap_mp_pressure(self):
+        pools = {
+            slot_name: []
+            for slot_name, _ in solver.SLOTS
+            if not slot_name.startswith("dofus_")
+        }
+        pools["belt"] = [{"_stats": {"Range": 1}}]
+        pools["boots"] = [{"_stats": {"MP": 1}}]
+        pools["hat"] = [{"_stats": {"AP": 1}}]
+
+        slots = ordered_gear_slots(pools)
+
+        self.assertLess(slots.index("hat"), slots.index("boots"))
+        self.assertLess(slots.index("boots"), slots.index("belt"))
 
     def test_render_markdown_reports_status_and_example(self):
         report = {

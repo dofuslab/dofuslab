@@ -1,6 +1,6 @@
 {
   "reportVersion": "build-discovery-action-feasibility-v1",
-  "generatedAt": "2026-07-10T23:20:19.767772+00:00",
+  "generatedAt": "2026-07-10T23:23:06.641476+00:00",
   "targetCount": 1,
   "statusCounts": {
     "unknown_state_cap_hit": 1
@@ -24,9 +24,9 @@
       },
       "slotSummaries": [
         {
-          "slot": "amulet",
-          "candidateCount": 53,
-          "stateCount": 54,
+          "slot": "cloak",
+          "candidateCount": 34,
+          "stateCount": 35,
           "stateCapHit": false,
           "bestActionStats": {
             "AP": 6,
@@ -35,69 +35,14 @@
           }
         },
         {
-          "slot": "belt",
-          "candidateCount": 51,
-          "stateCount": 2808,
+          "slot": "pet",
+          "candidateCount": 11,
+          "stateCount": 420,
           "stateCapHit": false,
           "bestActionStats": {
             "AP": 6,
-            "MP": 3,
-            "Range": 3
-          }
-        },
-        {
-          "slot": "weapon",
-          "candidateCount": 31,
-          "stateCount": 5000,
-          "stateCapHit": true,
-          "bestActionStats": {
-            "AP": 6,
-            "MP": 3,
-            "Range": 4
-          }
-        },
-        {
-          "slot": "shield",
-          "candidateCount": 4,
-          "stateCount": 5000,
-          "stateCapHit": true,
-          "bestActionStats": {
-            "AP": 6,
-            "MP": 3,
-            "Range": 4
-          }
-        },
-        {
-          "slot": "ring_1",
-          "candidateCount": 47,
-          "stateCount": 5000,
-          "stateCapHit": true,
-          "bestActionStats": {
-            "AP": 7,
-            "MP": 3,
-            "Range": 5
-          }
-        },
-        {
-          "slot": "ring_2",
-          "candidateCount": 47,
-          "stateCount": 5000,
-          "stateCapHit": true,
-          "bestActionStats": {
-            "AP": 8,
-            "MP": 3,
-            "Range": 5
-          }
-        },
-        {
-          "slot": "boots",
-          "candidateCount": 61,
-          "stateCount": 5000,
-          "stateCapHit": true,
-          "bestActionStats": {
-            "AP": 8,
             "MP": 4,
-            "Range": 5
+            "Range": 4
           }
         },
         {
@@ -106,31 +51,86 @@
           "stateCount": 5000,
           "stateCapHit": true,
           "bestActionStats": {
-            "AP": 9,
+            "AP": 6,
             "MP": 4,
-            "Range": 5
+            "Range": 6
           }
         },
         {
-          "slot": "cloak",
-          "candidateCount": 34,
+          "slot": "amulet",
+          "candidateCount": 53,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 6
+          }
+        },
+        {
+          "slot": "ring_1",
+          "candidateCount": 47,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 9,
+            "MP": 4,
+            "Range": 6
+          }
+        },
+        {
+          "slot": "ring_2",
+          "candidateCount": 47,
           "stateCount": 5000,
           "stateCapHit": true,
           "bestActionStats": {
             "AP": 10,
             "MP": 4,
-            "Range": 5
+            "Range": 6
           }
         },
         {
-          "slot": "pet",
-          "candidateCount": 11,
+          "slot": "boots",
+          "candidateCount": 61,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 6
+          }
+        },
+        {
+          "slot": "belt",
+          "candidateCount": 51,
           "stateCount": 5000,
           "stateCapHit": true,
           "bestActionStats": {
             "AP": 11,
-            "MP": 4,
+            "MP": 5,
             "Range": 5
+          }
+        },
+        {
+          "slot": "weapon",
+          "candidateCount": 31,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 6
+          }
+        },
+        {
+          "slot": "shield",
+          "candidateCount": 4,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 6
           }
         }
       ],
