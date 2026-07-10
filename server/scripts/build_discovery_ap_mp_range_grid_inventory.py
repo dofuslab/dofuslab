@@ -28,6 +28,7 @@ DEFAULT_ARTIFACTS = (
     ".codex/state/build-discovery-level-diversity-matrix.json",
     ".codex/state/build-discovery-level-boundary-matrix.json",
     ".codex/state/build-discovery-ap-mp-range-coverage-matrix.json",
+    ".codex/state/build-discovery-ap-mp-range-grid-next-minimum-matrix.json",
 )
 
 

@@ -4,7 +4,7 @@
   "scope": "Iop grid-next-minimum generated target matrix",
   "evidenceType": "generated_solver_snapshot",
   "provenance": {
-    "gitSha": "9529f327144c6d31f86d7a3001dd17a23e71f6ab",
+    "gitSha": "249082ff7661b1f0919bce5b64083192289d47d1",
     "targetSource": "scripts.build_discovery_level_diversity_targets.AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS",
     "generator": "scripts/build_discovery_level_diversity_matrix.py"
   },
