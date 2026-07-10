@@ -1615,3 +1615,18 @@ Run the initial evaluator pass:
   - `BUILD_DISCOVERY_LEVEL_DIVERSITY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_TARGETS=level_50_strength_7_3_1_budget1 python -m unittest scripts.test_build_discovery_level_diversity_generation_smoke.BuildDiscoveryLevelDiversityGenerationSmokeTest`
   - `BUILD_DISCOVERY_LEVEL_DIVERSITY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_TARGETS=level_100_strength_12_5_none_budget2 python -m unittest scripts.test_build_discovery_level_diversity_generation_smoke.BuildDiscoveryLevelDiversityGenerationSmokeTest`
   - `git diff --check`
+
+### 2026-07-10 Sub-180 Flexible AP Sources
+
+- Added `level_diversity_flexible_ap` for targets below level 180.
+- This avoids rejecting otherwise valid lower-level builds merely because they
+  do not use the endgame AP-source shape.
+- Confirmed the first matrix rows now pass:
+  - `level_50_strength_7_3_1_budget1`
+  - `level_100_strength_12_5_none_budget2`
+- Ran the level 50/60 matrix slice. Remaining failing rows:
+  - `level_60_strength_10_4_2_budget2`
+  - `level_60_intelligence_10_4_3_budget2`
+  - `level_60_agility_9_3_none_budget1`
+- Level 60 catalog inspection shows many AP, MP, and Range sources exist, so the
+  next issue is search recall/strategy coverage rather than missing source data.
