@@ -1753,3 +1753,16 @@ Run the initial evaluator pass:
 - Verification passed:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m oneoff.build_discovery_prototype --level 50 --element strength --ap 6 --mp 3 --range none --limit 1 --top-k 3 --beam-width 3 --per-signature-cap 1 --relevant-set-limit 3 >/tmp/build_discovery_cli_level_smoke.json"`
+
+### 2026-07-10 Level Diversity Artifact Checker
+
+- Added `server/scripts/check_build_discovery_level_diversity_matrix.py`.
+- The checker validates that the generated matrix artifact:
+  - uses the expected report version
+  - includes every sampled level-diversity target exactly once
+  - has zero `no_build` rows
+  - records a best-build summary with core numeric totals and item names
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix_check.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/check_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix_check.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-level-diversity-matrix.json"`
