@@ -1766,3 +1766,19 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix_check.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/check_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix_check.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-level-diversity-matrix.json"`
+
+### 2026-07-10 Prod Level Target Refresh
+
+- Confirmed the Windows user environment contains
+  `DOFUSLAB_READONLY_DATABASE_URL`; Docker needs it passed explicitly with
+  `docker exec -e DOFUSLAB_READONLY_DATABASE_URL`.
+- Ran the bounded readonly aggregate Iop level-target discovery again:
+  - `python -m oneoff.build_discovery_prod_level_target_discovery --sample-limit 300 --top-targets 8 --class-name Iop --bucket-size 20`
+- Wrote refresh artifact:
+  - `.codex/state/build-discovery-prod-level-targets-iop-refresh-2026-07-10.json`
+- Updated `.codex/state/build-discovery-prod-level-targets-iop.md` with uncovered
+  top-three exact-level target candidates.
+- Result:
+  - aggregate rows: 300
+  - exact levels represented: 30
+  - level buckets represented: 10

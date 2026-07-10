@@ -52,3 +52,60 @@ used as a benchmark target.
 - Level `200`: keep accepted milestone-1 calibration rows and filter below
   `10/5`; useful prod shapes cluster around `12/5` and `12/6` with varying
   Range.
+
+## 2026-07-10 Refresh Notes
+
+- Refresh artifact:
+  `.codex/state/build-discovery-prod-level-targets-iop-refresh-2026-07-10.json`.
+- Command:
+  `python -m oneoff.build_discovery_prod_level_target_discovery --sample-limit 300 --top-targets 8 --class-name Iop --bucket-size 20`.
+- Safety:
+  - readonly URL passed from the Windows user environment into Docker with
+    `docker exec -e DOFUSLAB_READONLY_DATABASE_URL`
+  - aggregate-only query
+  - result still capped at 300 recent rows
+- Result:
+  - aggregate rows: 300
+  - exact levels represented: 30
+  - level buckets represented: 10
+- Current generated Level Diversity matrix coverage:
+  - sampled generated targets: 27
+  - generated targets with at least one build: 27
+  - no-build rows: 0
+
+Uncovered top-three exact-level targets from the refresh, excluding the current
+27 generated matrix rows:
+
+- Level `1`: `6/3/0`.
+- Level `40`: `6/3/0`.
+- Level `42`: `7/4/1`.
+- Level `46`: `9/3/1`.
+- Level `70`: `9/4/1`, `10/4/-1`.
+- Level `80`: `7/3/0`.
+- Level `90`: `9/4/3`.
+- Level `92`: `10/4/1`.
+- Level `95`: `10/4/1`.
+- Level `103`: `11/5/0`.
+- Level `112`: `11/4/1`.
+- Level `114`: `11/6/1`.
+- Level `130`: `12/5/1`.
+- Level `140`: `11/4/2`.
+- Level `143`: `11/4/1`.
+- Level `160`: `10/4/0`.
+- Level `165`: `12/5/4`, `12/5/1`.
+- Level `167`: `12/5/0`.
+- Level `170`: `10/5/4`, `12/5/5`.
+- Level `185`: `12/5/3`.
+- Level `186`: `11/5/2`, `11/5/3`.
+- Level `196`: `12/5/4`.
+- Level `200`: `7/3/0`, `12/6/5`, `12/6/3`.
+
+Next expansion candidates:
+
+- Add a small early-level slice for `1`, `40`, `42`, `46`, and `70` to exercise
+  very-low-level AP baselines and negative/low Range handling.
+- Add a transition slice for `90`, `92`, `95`, `103`, `112`, and `114`.
+- Add late-midgame exact levels `130`, `140`, `143`, `165`, `167`, `170`, `185`,
+  `186`, and `196` only after reviewing whether exact saved-set levels should be
+  modeled directly or collapsed to bracket representatives.
+- Keep filtering level-200 `7/3/0` as likely low-effort/noisy saved-set data.
