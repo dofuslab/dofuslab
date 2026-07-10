@@ -33,6 +33,7 @@ DEFAULT_ARTIFACTS = (
     ".codex/state/build-discovery-ap-mp-range-grid-next-minimum-3-matrix.json",
     ".codex/state/build-discovery-ap-mp-range-grid-next-cap-matrix.json",
     ".codex/state/build-discovery-ap-mp-range-grid-next-cap-2-matrix.json",
+    ".codex/state/build-discovery-ap-mp-range-grid-next-cap-3-matrix.json",
 )
 
 

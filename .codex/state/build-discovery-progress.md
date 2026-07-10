@@ -2539,3 +2539,77 @@ Run the initial evaluator pass:
     solver no-build rows
   - the remaining level 1 and level 20 cap rows still need stronger
     set-bonus-aware proof before calling them fully infeasible
+
+### 2026-07-10 Lower-Budget Cap Matrix After Exo Policy Fix
+
+- Regenerated `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-matrix.json`
+  and `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-matrix.md`
+  at commit `dc5d01e30ff96fa7e9d79b5d01d0d8bb69a9a9eb`.
+- Cap-3 matrix result:
+  - targets: 12
+  - generated: 8
+  - invalid: 0
+  - no build: 4
+- Generated rows:
+  - level 50 Agility `12/6/6` tier 3
+  - level 99 Intelligence `12/6/6` tier 3
+  - level 100 Chance `12/6/6` tier 3
+  - level 120 Agility `12/6/6` tier 3
+  - level 150 Strength `12/6/6` tier 2
+  - level 179 Intelligence `12/6/6` tier 3
+  - level 180 Chance `12/6/6` tier 3
+  - level 199 Agility `12/6/6` tier 3
+- No-build rows:
+  - level 1 Intelligence `12/6/6` tier 3
+  - level 20 Chance `12/6/6` tier 3
+  - level 80 Strength `12/6/6` tier 2
+  - level 200 Strength `12/6/6` tier 2
+- Regenerated cap-3 diagnostics:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-diagnostics.md`
+- Cap-3 diagnostic result:
+  - diagnostics: 4
+  - item-stat upper-bound below target: 2
+  - not proven infeasible: 2
+  - action-stat witnesses found: 0
+- Diagnostic interpretation:
+  - level 1 Intelligence tier 3 and level 20 Chance tier 3 are below target
+    under the optimistic item-stat-only independent-slot upper bound
+  - level 80 Strength tier 2 and level 200 Strength tier 2 are not proven
+    infeasible because the optimistic item-stat-only upper bound reaches the
+    target; they remain search, set-bonus, uniqueness, condition, budget, or
+    scoring questions
+  - the level 80 tier 2 no-build is expected to stay strict about exos because
+    budget tier 2 forces the effective exo policy to `none`
+- Regenerated the AP/MP/Range grid inventory.
+- Updated grid inventory result:
+  - valid query rows: 39,424
+  - exact generated evidence rows: 101
+  - attempted evidence rows: 109
+  - unproven rows: 39,323
+  - unattempted rows: 39,315
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-grid-next-cap-3-matrix.json --target-set grid-next-cap-3 --allow-no-build"`
+
+### 2026-07-10 Search Architecture Risk
+
+- Current state:
+  - the scoring loop is anchored by benchmarks and generated matrix evidence,
+    especially the steered level-200 melee Strength Iop work
+  - the search prototype now has several recall-oriented seed paths, including
+    set retention, uncommon action-stat sources, cap-pressure witness seeds,
+    and final completion/validation
+- Risk:
+  - these paths are still readable in isolation, but they are starting to look
+    like patch pressure around a shared search core
+  - more target-specific fixes without a stage contract will make correctness
+    harder to reason about and performance tuning less trustworthy
+- Consolidation direction before productization:
+  - define explicit stages for candidate generation, action-stat preservation,
+    package/set retention, completion, final validation, and scoring
+  - require every stage to state which policies it may apply, especially
+    budget tier, exo policy, locked/avoided items, target level, and hard
+    AP/MP/Range validation
+  - keep generated artifacts separated from accepted gameplay benchmarks
+  - add regression coverage for each new recall stage before using it to
+    explain a matrix improvement
