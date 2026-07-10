@@ -113,6 +113,65 @@ Current confidence boundary:
    - Async/cache can exist as infrastructure, but should not distract from
      benchmark-led correctness.
 
+## Shareable Generated Build Proposal
+
+Build Discovery needs a way to publish generated builds as normal DofusLab view
+URLs so humans can review them, compare alternatives, and give gameplay
+feedback. Do not implement this before reviewing the persistence/API/deployment
+plan; it writes production data and needs clean provenance.
+
+Existing implementation pieces:
+
+- `EquipMultipleItems` can bulk-equip item UUIDs on a custom set.
+- `ImportGeneratedCustomSet` can create a custom set, equip items/exos, and
+  write a linked `generation_request` row.
+- `generation_request` already stores `custom_set_id`, `source`,
+  `dataset_version`, `solver_version`, `request_payload`, and creation time.
+- `CustomSet.generation_request` and generated filters already make generated
+  custom sets distinguishable from hand-authored sets.
+
+Proposed product path:
+
+- Use `ImportGeneratedCustomSet` as the canonical publish path for Build
+  Discovery outputs instead of plain bulk equip, because it already creates
+  provenance.
+- Set `source="build_discovery"` for all generated builds.
+- Require `request_payload` to include:
+  - normalized query inputs: class, level, element, AP, MP, Range, budget tier,
+    exo policy, damage/survivability preset, locked/avoided items
+  - solver diagnostics: score, rank, search limits, matrix target name when
+    applicable, warnings, and fallback budget if used
+  - reproducibility identifiers: `datasetVersion`, `solverVersion`, index
+    version, and generated-at timestamp
+- Name generated sets with an obvious prefix, for example
+  `Generated Build Discovery: L60 Agility Iop 9/3/any`, so shared URLs are
+  understandable even outside admin/debug views.
+- Ensure generated sets are filterable/excludable from normal user browsing and
+  analytics. Any production analysis should be able to separate generated sets
+  by the linked `generation_request`, not by name parsing.
+- Prefer a dedicated review owner/user or internal generation account if we bulk
+  publish benchmark matrices, so generated review artifacts do not appear as a
+  real user's personal builds.
+- Add a review status before public surfacing: `generated`, `needs_review`,
+  `accepted`, `rejected`, or equivalent. This likely belongs on
+  `generation_request` or a child review table rather than on `custom_set`
+  itself.
+- Keep generated build deletion/cleanup straightforward: deleting a generated
+  custom set should cascade to the generation request; bulk cleanup should be
+  possible by `source`, `solverVersion`, dataset version, or review batch.
+
+Open questions before implementation:
+
+- Should generated review builds be private/unlisted by default, or publicly
+  accessible to anyone with the URL?
+- Should `generation_request` gain explicit `review_status`, `review_batch`,
+  and `notes` columns, or should those live in a separate review table?
+- Should generated review builds count in public popularity/recent-build
+  surfaces? Default answer should be no unless explicitly opted in.
+- Should every generated candidate be persisted, or only selected top builds
+  from accepted matrix rows?
+- What is the retention policy for failed/obsolete generated review batches?
+
 ## Level Diversity Sampling Plan
 
 Do not try to prove every level and every query combination in the first level
