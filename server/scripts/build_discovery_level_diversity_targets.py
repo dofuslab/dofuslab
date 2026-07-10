@@ -64,7 +64,7 @@ BOUNDARY_LEVEL_TARGETS = (
 
 AP_MP_RANGE_COVERAGE_TARGETS = (
     LevelDiversityTarget("coverage_level_1_strength_min_budget1", 1, "strength", 1, 6, 3, None),
-    LevelDiversityTarget("coverage_level_20_chance_range_budget1", 20, "chance", 1, 6, 3, 6),
+    LevelDiversityTarget("coverage_level_20_chance_range_budget1", 20, "chance", 1, 6, 3, 1),
     LevelDiversityTarget("coverage_level_50_intelligence_mp_budget1", 50, "intelligence", 1, 6, 6, None),
     LevelDiversityTarget("coverage_level_80_agility_ap_mp_budget2", 80, "agility", 2, 10, 6, 0),
     LevelDiversityTarget("coverage_level_99_strength_pre100_cap_budget2", 99, "strength", 2, 12, 6, 6),

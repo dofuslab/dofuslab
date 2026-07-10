@@ -1892,3 +1892,19 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix_check.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-level-boundary-matrix.json --target-set boundary"`
 - Artifact generation result: pass in 793.8 seconds.
+
+### 2026-07-10 AP/MP/Range Coverage Matrix Start
+
+- Added `AP_MP_RANGE_COVERAGE_TARGETS` for systematic AP/MP/Range edge coverage
+  across representative Iop level bands, elements, and budgets.
+- Initial low-level coverage slice found `coverage_level_20_chance_range_budget1`
+  failed when targeting `Range=6`.
+- Catalog inspection showed level 20 tier 1 has only two +Range items and both
+  are amulets, so level 20 `Range=6` is catalog-infeasible rather than a simple
+  solver recall miss.
+- Revised the level 20 Range coverage row to `6/3/1`, and documented the
+  assumption that some syntactically valid AP/MP/Range targets can be
+  catalog-infeasible for a given level/budget.
+- Verification so far:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_ap_mp_range_coverage_generation_smoke.BuildDiscoveryApMpRangeCoverageSmokeShapeTest"`
+  - `BUILD_DISCOVERY_AP_MP_RANGE_COVERAGE_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_TARGETS=coverage_level_50_intelligence_mp_budget1 python -m unittest scripts.test_build_discovery_ap_mp_range_coverage_generation_smoke.BuildDiscoveryApMpRangeCoverageGenerationSmokeTest`
