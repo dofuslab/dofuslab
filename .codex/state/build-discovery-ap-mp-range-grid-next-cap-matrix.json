@@ -4,13 +4,13 @@
   "scope": "Iop grid-next-cap generated target matrix",
   "evidenceType": "generated_solver_snapshot",
   "provenance": {
-    "gitSha": "fb0e70b24dd1656c634b5bcf2c0d529fd40f8a5a",
+    "gitSha": "a3f425242ca6e04878a0beb9146cfb5dfbc4eff5",
     "targetSource": "scripts.build_discovery_level_diversity_targets.AP_MP_RANGE_GRID_NEXT_CAP_TARGETS",
     "generator": "scripts/build_discovery_level_diversity_matrix.py"
   },
   "targetCount": 12,
-  "generatedCount": 9,
-  "noBuildCount": 3,
+  "generatedCount": 10,
+  "noBuildCount": 2,
   "invalidCount": 0,
   "results": [
     {
@@ -163,30 +163,255 @@
         "lockedItemIds": [],
         "avoidedItemIds": []
       },
-      "status": "no_build",
-      "resultCount": 0,
-      "validationErrors": [
-        "no build returned"
-      ],
-      "bestBuild": null,
-      "bestBuildSummary": null,
-      "warnings": [
-        "No builds found; this may be infeasible for the selected constraints or a remaining search coverage gap."
-      ],
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 588.69,
+        "weightedStatScore": 831.49,
+        "utilityStatScore": 277.75,
+        "genericDamageScore": 663.17,
+        "rawRotationDamageScore": 321.58,
+        "spellDamageScore": 321.58,
+        "profileBaselineDamageScore": 1454.75,
+        "profileRelativeDamage": 0.2211,
+        "weaponDamageScore": 22.18,
+        "survivabilityScore": 12.52,
+        "weakestElementEhp": 409.8,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 228,
+          "Power": 20,
+          "Vitality": 418,
+          "Damage": 14,
+          "Earth Damage": 16,
+          "Critical": 5,
+          "Critical Damage": 0,
+          "Neutral Damage": 3
+        },
+        "sets": {
+          "Treechnid Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "928",
+            "slot": "weapon"
+          },
+          "MP": {
+            "itemId": "1619",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "6464",
+            "slot": "ring_2"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "1619",
+            "internalId": null,
+            "name": "The Treemu",
+            "type": "Amulet",
+            "level": 46,
+            "set": "Treechnid Set"
+          },
+          "weapon": {
+            "id": "928",
+            "internalId": null,
+            "name": "Ogralimde's Sword",
+            "type": "Sword",
+            "level": 45,
+            "set": null
+          },
+          "ring_1": {
+            "id": "836",
+            "internalId": null,
+            "name": "Treering",
+            "type": "Ring",
+            "level": 40,
+            "set": "Treechnid Set"
+          },
+          "ring_2": {
+            "id": "6464",
+            "internalId": null,
+            "name": "Satisfied Summoner's Ring",
+            "type": "Ring",
+            "level": 40,
+            "set": null
+          },
+          "boots": {
+            "id": "13020",
+            "internalId": null,
+            "name": "Feline's Stilletoed Boots",
+            "type": "Boots",
+            "level": 50,
+            "set": "Maria Kitty Set"
+          },
+          "hat": {
+            "id": "1908",
+            "internalId": null,
+            "name": "Chafer Helmet",
+            "type": "Hat",
+            "level": 49,
+            "set": null
+          },
+          "cloak": {
+            "id": "948",
+            "internalId": null,
+            "name": "Treecloak",
+            "type": "Cloak",
+            "level": 40,
+            "set": "Treechnid Set"
+          },
+          "pet": {
+            "id": "15254",
+            "internalId": null,
+            "name": "Drhellbert",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "belt": {
+            "id": "9168",
+            "internalId": null,
+            "name": "Pippin Blop Belt",
+            "type": "Belt",
+            "level": 50,
+            "set": "Pippin Blop Set"
+          },
+          "shield": {
+            "id": "18682",
+            "internalId": null,
+            "name": "Treechnid Shield",
+            "type": "Shield",
+            "level": 45,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "16194",
+            "internalId": null,
+            "name": "Minor Rabid",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "16252",
+            "internalId": null,
+            "name": "Minor Earth Devastator",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16330",
+            "internalId": null,
+            "name": "Minor Vigour",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13772",
+            "internalId": null,
+            "name": "Minor Earth Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16337",
+            "internalId": null,
+            "name": "Minor Bloodthirst",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13757",
+            "internalId": null,
+            "name": "Minor Goliath",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 588.69,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 228,
+          "Power": 20,
+          "Vitality": 418,
+          "Damage": 14,
+          "Earth Damage": 16,
+          "Critical": 5,
+          "Critical Damage": 0,
+          "Neutral Damage": 3
+        },
+        "sets": {
+          "Treechnid Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "928",
+            "slot": "weapon"
+          },
+          "MP": {
+            "itemId": "1619",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "6464",
+            "slot": "ring_2"
+          }
+        },
+        "items": [
+          "The Treemu",
+          "Pippin Blop Belt",
+          "Ogralimde's Sword",
+          "Treechnid Shield",
+          "Treering",
+          "Satisfied Summoner's Ring",
+          "Feline's Stilletoed Boots",
+          "Chafer Helmet",
+          "Treecloak",
+          "Drhellbert",
+          "Minor Rabid",
+          "Minor Earth Devastator",
+          "Minor Vigour",
+          "Minor Earth Wrecker",
+          "Minor Bloodthirst",
+          "Minor Goliath"
+        ]
+      },
+      "warnings": [],
       "diagnostics": {
-        "elapsedMs": 45056.7,
+        "elapsedMs": 32606.1,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 108.0,
-          "candidatePoolsMs": 345.4,
+          "loadDataMs": 236.6,
+          "candidatePoolsMs": 500.4,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 22.7,
-          "directCompletionMs": 661.9,
-          "beamSearchMs": 14633.7,
-          "rankAndDiversifyMs": 0.0,
-          "totalFindBuildsMs": 15771.8
+          "packageSeedsMs": 23.0,
+          "directCompletionMs": 31841.7,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.9,
+          "totalFindBuildsMs": 32603.8
         },
-        "resultCount": 0,
+        "resultCount": 1,
         "fallbackBudget": null
       },
       "cache": {

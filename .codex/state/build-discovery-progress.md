@@ -2152,3 +2152,33 @@ Run the initial evaluator pass:
 - Verification passed:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_action_stat_diagnostics.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py"`
+
+### 2026-07-10 Level 50 Cap Recall Fix
+
+- The level 50 cap witness showed the solver was missing low-score action-stat
+  enablers such as AP/MP gear with large stat penalties.
+- Fixed candidate pool retention so positive AP/MP/Range sources are considered
+  from the full compatible slot list and all low-level positive action sources
+  are retained before score pruning.
+- Added regression coverage that a low-score low-level AP source survives a
+  small candidate pool.
+- Regenerated the level 50 cap row:
+  - `grid_next_cap_level_50_strength_12_6_6_budget4`
+  - status: generated
+  - totals: `12/6/6`
+- Updated cap matrix artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-matrix.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-matrix.md`
+- Updated cap no-build diagnostics:
+  - remaining no-build rows are levels 1 and 20
+  - both remain below target under the item-stat-only upper-bound diagnostic
+- Updated grid inventory result:
+  - valid query rows: 39,424
+  - exact generated evidence rows: 59
+  - attempted evidence rows: 61
+  - unproven rows: 39,365
+  - unattempted rows: 39,363
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_uncommon_action_sources.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile oneoff/build_discovery_prototype.py scripts/test_build_discovery_uncommon_action_sources.py"`

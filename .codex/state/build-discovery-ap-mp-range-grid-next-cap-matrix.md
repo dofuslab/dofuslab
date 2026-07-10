@@ -6,15 +6,15 @@ This is a generated-output snapshot for the sampled Milestone 3 level-diversity 
 
 
 Targets: `12`
-Generated: `9`
-No build: `3`
+Generated: `10`
+No build: `2`
 Invalid: `0`
 
 | Target | Status | Score | Miss ms | AP/MP/Range | Main stat | Vitality | Validation | Sets | Items |
 |---|---:|---:|---:|---|---:|---:|---|---|---|
 | L1 strength 12/6/6 tier 4 | no_build |  | 856.8 |  |  |  | no build returned |  |  |
 | L20 strength 12/6/6 tier 4 | no_build |  | 5972.5 |  |  |  | no build returned |  |  |
-| L50 strength 12/6/6 tier 4 | no_build |  | 45056.7 |  |  |  | no build returned |  |  |
+| L50 strength 12/6/6 tier 4 | generated | 588.69 | 32606.1 | 12/6/6 | 228 | 418 |  | Treechnid Set x3 | The Treemu, Pippin Blop Belt, Ogralimde's Sword, Treechnid Shield, Treering, Satisfied Summoner's Ring, Feline's Stilletoed Boots, Chafer Helmet, Treecloak, Drhellbert, Minor Rabid, Minor Earth Devastator, Minor Vigour, Minor Earth Wrecker, Minor Bloodthirst, Minor Goliath |
 | L80 strength 12/6/6 tier 4 | generated | 854.73 | 68031.0 | 12/6/6 | 483 | 493 |  | Royal Pippin Blop Set x2 | Royal Pippin Amublop, Klume's Belt, Yench Cutting Sword, Bawbawian Shield, Gelano, Treering, Royal Pippin Bloopts, Chafer Helmet, Horn Cape, Amber and Emerald Seemyool, Minor Rabid, Minor Earth Devastator, Minor Vigour, Minor Earth Wrecker, Minor Maniac, Minor Goliath |
 | L99 strength 12/6/6 tier 4 | generated | 1060.02 | 116269.6 | 12/6/6 | 333 | 693 |  | Royal Rainbow Blop Set x2, Simbadas Set x2 | Simbadas Cage, Royal Rainbow Blop Belt, Yondanwa Staff, Simbadas Barrier, Gelano, Treering, Royal Rainbow Bloopts, Chafer Helmet, Horn Cape, Amber and Emerald Seemyool, Minor Rabid, Minor Earth Devastator, Minor Vigour, Minor Earth Wrecker, Observer, Minor Bloodthirst |
 | L100 strength 12/6/6 tier 4 | generated | 1246.52 | 122872.8 | 12/6/6 | 558 | 883 |  | Simbadas Set x2 | Simbadas Cage, Tyranna Belt, Yondanwa Staff, Simbadas Barrier, Gelano, Treering, Royal Rainbow Bloopts, Chafer Helmet, Wa Wobot Cloak, Amber and Emerald Seemyool, Dolmanax, Emerald Dofus, Rabid, Earth Devastator, Earth Wrecker, Bloodthirst |

@@ -59,19 +59,17 @@ These need gameplay or product review before calling the feature shippable.
    - The current selector-derived minimum matrix has 12 representative-level
      minimum targets, all generated with at least one build.
    - The current selector-derived cap matrix has 12 representative-level
-     `12/6/6` tier 4 targets: 9 generated and 3 no-build rows at levels 1, 20,
-     and 50.
+     `12/6/6` tier 4 targets: 10 generated and 2 no-build rows at levels 1
+     and 20.
    - The current cap diagnostics show levels 1 and 20 are below target under
      an optimistic item-stat-only independent-slot upper bound. Because set
      bonuses are not included yet, this is strong evidence but not a full
      catalog-infeasibility proof.
-   - Level 50 is not proven infeasible by that diagnostic and remains a solver
-     recall, set-bonus, uniqueness, condition, or deeper interaction question.
    - The level 50 witness diagnostic found a valid `12/6/6` action-stat item
-     placement, so the current cap no-build row is a solver recall/search gap
-     for that target.
+     placement, and the solver now generates a valid level 50 cap row after
+     retaining low-level action stat sources.
    - The current grid inventory has 39,424 representative valid query rows and
-     58 exact generated-evidence rows; it is a gap map, not build proof.
+     59 exact generated-evidence rows; it is a gap map, not build proof.
    - Confirm the sampled rows are useful representatives before promoting them to accepted benchmarks.
    - Flag rows where surplus AP/MP/Range, budget assumptions, or old lower-bucket gear look suspicious.
    - Treat this as generated solver evidence, not gameplay acceptance.

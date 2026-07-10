@@ -28,9 +28,9 @@
     4
   ],
   "validQueryCount": 39424,
-  "generatedEvidenceCount": 58,
+  "generatedEvidenceCount": 59,
   "attemptedEvidenceCount": 61,
-  "unprovenCount": 39366,
+  "unprovenCount": 39365,
   "unattemptedCount": 39363,
   "byLevel": [
     {
@@ -48,8 +48,8 @@
     {
       "level": 50,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 5,
-      "unprovenCount": 3579
+      "generatedEvidenceCount": 6,
+      "unprovenCount": 3578
     },
     {
       "level": 80,
