@@ -118,12 +118,19 @@ def action_relevant_pools(
 
 
 def state_signature(state: solver.BuildState, target: solver.BuildTarget) -> tuple[Any, ...]:
+    duplicate_sensitive_item_ids = tuple(
+        sorted(
+            item["dofusID"]
+            for item in state.slots.values()
+            if item.get("itemType") == "Ring"
+        )
+    )
     return (
         min(state.stats.get("AP", 0), target.ap),
         min(state.stats.get("MP", 0), target.mp),
         min(state.stats.get("Range", 0), target.range),
         tuple(sorted((set_id, min(count, 8)) for set_id, count in state.set_counts.items() if count)),
-        tuple(sorted(item_id for item_id in state.used_item_ids if item_id in {"836", "841", "6464"})),
+        duplicate_sensitive_item_ids,
     )
 
 
@@ -242,9 +249,10 @@ def diagnose_target(
         examples: list[tuple[solver.BuildState, tuple[dict[str, Any], ...]]] = []
 
         for slot_name in gear_slots:
-            next_states = []
-            if slot_name == "pet":
-                next_states.extend(states)
+            # Carry the current states through each slot to represent a non-action filler.
+            # This keeps the diagnostic focused on AP/MP/Range feasibility instead of
+            # forcing every slot to use an action-stat or action-set item.
+            next_states = list(states)
             for state in states:
                 for item in pools[slot_name]:
                     next_state = solver.add_item_to_state(
@@ -271,11 +279,17 @@ def diagnose_target(
                     "bestActionStats": action_stats(best_state.stats) if best_state else None,
                 }
             )
-            for state in states:
-                examples.extend(complete_with_action_dofus(state, action_dofus, target, config.max_examples - len(examples)))
-                if len(examples) >= config.max_examples:
-                    break
-            if examples:
+
+        for state in states:
+            examples.extend(
+                complete_with_action_dofus(
+                    state,
+                    action_dofus,
+                    target,
+                    config.max_examples - len(examples),
+                )
+            )
+            if len(examples) >= config.max_examples:
                 break
 
         status = "feasible" if examples else "unknown_state_cap_hit" if cap_hit else "likely_infeasible"
