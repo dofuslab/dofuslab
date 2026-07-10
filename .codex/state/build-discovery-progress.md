@@ -1923,3 +1923,15 @@ Run the initial evaluator pass:
 - Verification passed:
   - `BUILD_DISCOVERY_AP_MP_RANGE_COVERAGE_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=80,99,100,120 python -m unittest scripts.test_build_discovery_ap_mp_range_coverage_generation_smoke.BuildDiscoveryApMpRangeCoverageGenerationSmokeTest`
 - Result: pass in 254.429 seconds.
+
+### 2026-07-10 AP/MP/Range Coverage Late Slice Green
+
+- Verified the late-game AP/MP/Range coverage slice:
+  - `BUILD_DISCOVERY_AP_MP_RANGE_COVERAGE_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=150,179,180,199,200 python -m unittest scripts.test_build_discovery_ap_mp_range_coverage_generation_smoke.BuildDiscoveryApMpRangeCoverageGenerationSmokeTest`
+- Result: pass in 471.783 seconds.
+- Passing rows:
+  - `coverage_level_150_agility_mid_budget2`
+  - `coverage_level_179_strength_cap_budget3`
+  - `coverage_level_180_intelligence_cap_budget3`
+  - `coverage_level_199_chance_mid_budget2`
+  - `coverage_level_200_agility_cap_budget4`
