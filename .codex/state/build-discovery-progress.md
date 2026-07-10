@@ -1854,3 +1854,12 @@ Run the initial evaluator pass:
   - `BUILD_DISCOVERY_LEVEL_BOUNDARY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=19,20,100 python -m unittest scripts.test_build_discovery_level_boundary_generation_smoke.BuildDiscoveryLevelBoundaryGenerationSmokeTest`
 - Level 20 result: one generated build, totals `6/3/0`, no warnings.
 - Boundary slice result: pass in 118.911 seconds.
+
+### 2026-07-10 Boundary Level 149/150 Matrix Green
+
+- Verified the next boundary slice:
+  - `BUILD_DISCOVERY_LEVEL_BOUNDARY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=149,150 python -m unittest scripts.test_build_discovery_level_boundary_generation_smoke.BuildDiscoveryLevelBoundaryGenerationSmokeTest`
+- Result: pass in 162.201 seconds.
+- Passing rows:
+  - `boundary_level_149_intelligence_11_5_1_budget2`
+  - `boundary_level_150_chance_11_5_1_budget2`
