@@ -95,7 +95,7 @@ def main() -> None:
     parser.add_argument("report", help="Path to a level-diversity matrix JSON artifact.")
     parser.add_argument(
         "--target-set",
-        choices=("level-diversity", "boundary", "coverage", "grid-next-minimum", "grid-next-minimum-2", "grid-next-minimum-3", "grid-next-cap", "grid-next-cap-2", "grid-next-cap-3", "all"),
+        choices=("level-diversity", "boundary", "coverage", "grid-next-minimum", "grid-next-minimum-2", "grid-next-minimum-3", "grid-next-cap", "grid-next-cap-2", "grid-next-cap-3", "grid-next-cap-4", "all"),
         default="level-diversity",
     )
     parser.add_argument("--allow-no-build", action="store_true")

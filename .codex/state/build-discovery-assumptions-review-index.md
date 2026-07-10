@@ -94,6 +94,9 @@ These need gameplay or product review before calling the feature shippable.
    - The cap-3 2k witness diagnostic found a level 200 Strength tier 2
      `12/6/6` action-stat witness and hit the state cap, so that row is a
      solver recall gap for action-stat validity.
+   - The next lower-budget cap target set is now defined as `grid-next-cap-4`;
+     it is target-slice definition only until generated matrix artifacts are
+     committed.
    - The cap-2 item-stat diagnostic shows level 1 Intelligence and level 20
      Chance are below target under the item-stat-only upper bound.
    - Level 50 Agility, level 80 Strength, and level 99 Intelligence previously

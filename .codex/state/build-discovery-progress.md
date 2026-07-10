@@ -2645,3 +2645,31 @@ Run the initial evaluator pass:
   - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
   - copied changed diagnostic scripts into the Docker server container, then ran
     `python scripts/test_build_discovery_action_stat_diagnostics.py && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py`
+
+### 2026-07-10 Lower-Budget Cap 4 Target Set
+
+- Added `AP_MP_RANGE_GRID_NEXT_CAP_4_TARGETS` as the next inventory-suggested
+  lower-budget `12/6/6` cap slice.
+- Target shape:
+  - level 1 Intelligence tier 2
+  - level 20 Chance tier 2
+  - level 50 Agility tier 2
+  - level 80 Strength tier 1
+  - level 99 Intelligence tier 2
+  - level 100 Chance tier 2
+  - level 120 Agility tier 2
+  - level 150 Strength tier 1
+  - level 179 Intelligence tier 2
+  - level 180 Chance tier 2
+  - level 199 Agility tier 2
+  - level 200 Strength tier 1
+- Wired `grid-next-cap-4` through the matrix generator, matrix checker, and
+  focused tests.
+- This checkpoint defines the next reviewable target slice only; generated
+  matrix evidence should be committed separately.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+  - `python -m py_compile server\scripts\build_discovery_level_diversity_targets.py server\scripts\build_discovery_level_diversity_matrix.py server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+  - copied changed matrix scripts into the Docker server container, then ran
+    `python scripts/test_build_discovery_level_diversity_matrix.py && python scripts/test_build_discovery_level_diversity_matrix_check.py && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py`
