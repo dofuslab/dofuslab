@@ -1863,3 +1863,13 @@ Run the initial evaluator pass:
 - Passing rows:
   - `boundary_level_149_intelligence_11_5_1_budget2`
   - `boundary_level_150_chance_11_5_1_budget2`
+
+### 2026-07-10 Boundary Level 179/180/200 Matrix Green
+
+- Verified the final boundary slice:
+  - `BUILD_DISCOVERY_LEVEL_BOUNDARY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=179,180,200 python -m unittest scripts.test_build_discovery_level_boundary_generation_smoke.BuildDiscoveryLevelBoundaryGenerationSmokeTest`
+- Result: pass in 472.130 seconds.
+- Passing rows:
+  - `boundary_level_179_agility_12_5_2_budget3`
+  - `boundary_level_180_strength_12_5_3_budget3`
+  - `boundary_level_200_strength_10_5_0_budget4`
