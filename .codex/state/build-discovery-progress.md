@@ -1630,3 +1630,18 @@ Run the initial evaluator pass:
   - `level_60_agility_9_3_none_budget1`
 - Level 60 catalog inspection shows many AP, MP, and Range sources exist, so the
   next issue is search recall/strategy coverage rather than missing source data.
+
+### 2026-07-10 Level 50/60 Matrix Green
+
+- Increased the opt-in Level Diversity smoke width to `top_k=25`,
+  `beam_width=100`, `per_signature_cap=10`, and `relevant_set_limit=40`.
+- Fixed the remaining level 60 Agility row by filtering budget action gear seeds
+  that already have unmet item conditions.
+- Root cause: high-scoring Agility seeds used Cruel Trovel, whose condition
+  requires `MP < 5`; those seeds already had MP 6 and could never become valid,
+  but crowded out valid AP/MP paths.
+- Verified the full level 50/60 slice now passes:
+  - `BUILD_DISCOVERY_LEVEL_DIVERSITY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=50,60 python -m unittest scripts.test_build_discovery_level_diversity_generation_smoke.BuildDiscoveryLevelDiversityGenerationSmokeTest`
+- Focused checks also passed:
+  - `BUILD_DISCOVERY_LEVEL_DIVERSITY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_TARGETS=level_60_agility_9_3_none_budget1 python -m unittest scripts.test_build_discovery_level_diversity_generation_smoke.BuildDiscoveryLevelDiversityGenerationSmokeTest`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract scripts.test_build_discovery_level_diversity_generation_smoke"`

@@ -1843,6 +1843,7 @@ def budget_action_gear_seed_states(
         for seed in seeds
         if seed.used_item_ids and any(seed.stats.get(stat, 0) > active_base_stats().get(stat, 0) for stat in ACTION_STATS)
     ]
+    seeds = [seed for seed in seeds if not unmet_item_conditions(seed)]
     return dedupe_builds(sorted(seeds, key=lambda state: state.score, reverse=True))[:limit]
 
 

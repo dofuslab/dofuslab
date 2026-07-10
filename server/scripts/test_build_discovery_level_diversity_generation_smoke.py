@@ -122,10 +122,10 @@ def query_for_target(target: LevelDiversityTarget) -> BuildDiscoveryQuery:
         budget_tier=target.budget_tier,
         exo_policy="none" if target.budget_tier < 3 else "allow",
         limit=1,
-        top_k=8,
-        beam_width=40,
-        per_signature_cap=8,
-        relevant_set_limit=30,
+        top_k=25,
+        beam_width=100,
+        per_signature_cap=10,
+        relevant_set_limit=40,
     )
 
 
