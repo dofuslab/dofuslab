@@ -1,0 +1,160 @@
+{
+  "reportVersion": "build-discovery-action-feasibility-v1",
+  "generatedAt": "2026-07-10T23:20:19.767772+00:00",
+  "targetCount": 1,
+  "statusCounts": {
+    "unknown_state_cap_hit": 1
+  },
+  "results": [
+    {
+      "target": {
+        "id": "grid_next_cap4_level_50_agility_12_6_6_budget2",
+        "level": 50,
+        "element": "agility",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "status": "unknown_state_cap_hit",
+      "baseStats": {
+        "AP": 6,
+        "MP": 3,
+        "Range": 0
+      },
+      "slotSummaries": [
+        {
+          "slot": "amulet",
+          "candidateCount": 53,
+          "stateCount": 54,
+          "stateCapHit": false,
+          "bestActionStats": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 2
+          }
+        },
+        {
+          "slot": "belt",
+          "candidateCount": 51,
+          "stateCount": 2808,
+          "stateCapHit": false,
+          "bestActionStats": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 3
+          }
+        },
+        {
+          "slot": "weapon",
+          "candidateCount": 31,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 4
+          }
+        },
+        {
+          "slot": "shield",
+          "candidateCount": 4,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 4
+          }
+        },
+        {
+          "slot": "ring_1",
+          "candidateCount": 47,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 5
+          }
+        },
+        {
+          "slot": "ring_2",
+          "candidateCount": 47,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 8,
+            "MP": 3,
+            "Range": 5
+          }
+        },
+        {
+          "slot": "boots",
+          "candidateCount": 61,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 5
+          }
+        },
+        {
+          "slot": "hat",
+          "candidateCount": 56,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 9,
+            "MP": 4,
+            "Range": 5
+          }
+        },
+        {
+          "slot": "cloak",
+          "candidateCount": 34,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 10,
+            "MP": 4,
+            "Range": 5
+          }
+        },
+        {
+          "slot": "pet",
+          "candidateCount": 11,
+          "stateCount": 5000,
+          "stateCapHit": true,
+          "bestActionStats": {
+            "AP": 11,
+            "MP": 4,
+            "Range": 5
+          }
+        }
+      ],
+      "actionDofus": [
+        {
+          "id": "16336",
+          "name": "Observer",
+          "stats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 2
+          }
+        },
+        {
+          "id": "13831",
+          "name": "Twitcher",
+          "stats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 1
+          }
+        }
+      ],
+      "examples": []
+    }
+  ]
+}

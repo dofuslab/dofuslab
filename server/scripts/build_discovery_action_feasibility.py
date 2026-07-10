@@ -71,9 +71,15 @@ def action_deficit(stats: dict[str, int], target: solver.BuildTarget) -> int:
     return deficit
 
 
-def state_sort_key(state: solver.BuildState, target: solver.BuildTarget) -> tuple[float, int, float]:
+def state_sort_key(state: solver.BuildState, target: solver.BuildTarget) -> tuple[float, int, int, int, int, float]:
+    ap_progress = min(state.stats.get("AP", 0), target.ap)
+    mp_progress = min(state.stats.get("MP", 0), target.mp)
+    range_progress = min(state.stats.get("Range", 0), target.range) if target.range_required else 0
     return (
         -action_deficit(state.stats, target),
+        ap_progress,
+        mp_progress,
+        range_progress,
         action_stat_total(state.stats, target),
         solver.final_utility_score(state.stats),
     )
