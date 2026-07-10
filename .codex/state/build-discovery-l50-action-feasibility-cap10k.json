@@ -1,6 +1,6 @@
 {
   "reportVersion": "build-discovery-action-feasibility-v1",
-  "generatedAt": "2026-07-10T23:26:36.801774+00:00",
+  "generatedAt": "2026-07-10T23:31:54.661546+00:00",
   "targetCount": 1,
   "statusCounts": {
     "unknown_state_cap_hit": 1
@@ -37,7 +37,7 @@
         {
           "slot": "pet",
           "candidateCount": 11,
-          "stateCount": 420,
+          "stateCount": 210,
           "stateCapHit": false,
           "bestActionStats": {
             "AP": 6,
@@ -48,8 +48,8 @@
         {
           "slot": "hat",
           "candidateCount": 56,
-          "stateCount": 10000,
-          "stateCapHit": true,
+          "stateCount": 9945,
+          "stateCapHit": false,
           "bestActionStats": {
             "AP": 6,
             "MP": 4,
@@ -118,7 +118,7 @@
           "stateCapHit": true,
           "bestActionStats": {
             "AP": 11,
-            "MP": 5,
+            "MP": 6,
             "Range": 6
           }
         },
@@ -129,7 +129,7 @@
           "stateCapHit": true,
           "bestActionStats": {
             "AP": 11,
-            "MP": 5,
+            "MP": 6,
             "Range": 6
           }
         }

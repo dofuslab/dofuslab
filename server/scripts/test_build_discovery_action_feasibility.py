@@ -7,6 +7,7 @@ from build_discovery_action_feasibility import (
     complete_with_action_dofus,
     ordered_gear_slots,
     render_markdown,
+    state_signature,
     target_to_build_target,
 )
 from build_discovery_level_diversity_targets import LevelDiversityTarget
@@ -58,6 +59,34 @@ class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
 
         self.assertLess(slots.index("hat"), slots.index("boots"))
         self.assertLess(slots.index("boots"), slots.index("belt"))
+
+    def test_state_signature_keeps_ring_identity_but_collapses_harmless_variants(self):
+        target = target_to_build_target(
+            LevelDiversityTarget("target", 200, "strength", 1, 10, 5, 0)
+        )
+        first_belt = solver.BuildState(
+            slots={"belt": {"dofusID": "belt-a", "itemType": "Belt", "conditions": {}}},
+            stats={"AP": 10, "MP": 5, "Range": 0},
+            used_item_ids={"belt-a"},
+        )
+        second_belt = solver.BuildState(
+            slots={"belt": {"dofusID": "belt-b", "itemType": "Belt", "conditions": {}}},
+            stats={"AP": 10, "MP": 5, "Range": 0},
+            used_item_ids={"belt-b"},
+        )
+        first_ring = solver.BuildState(
+            slots={"ring_1": {"dofusID": "ring-a", "itemType": "Ring", "conditions": {}}},
+            stats={"AP": 10, "MP": 5, "Range": 0},
+            used_item_ids={"ring-a"},
+        )
+        second_ring = solver.BuildState(
+            slots={"ring_1": {"dofusID": "ring-b", "itemType": "Ring", "conditions": {}}},
+            stats={"AP": 10, "MP": 5, "Range": 0},
+            used_item_ids={"ring-b"},
+        )
+
+        self.assertEqual(state_signature(first_belt, target), state_signature(second_belt, target))
+        self.assertNotEqual(state_signature(first_ring, target), state_signature(second_ring, target))
 
     def test_render_markdown_reports_status_and_example(self):
         report = {

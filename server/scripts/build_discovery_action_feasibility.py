@@ -139,12 +139,21 @@ def ordered_gear_slots(pools: dict[str, list[dict[str, Any]]]) -> list[str]:
 
 
 def state_signature(state: solver.BuildState, target: solver.BuildTarget) -> tuple[Any, ...]:
+    identity_sensitive_ids = tuple(
+        sorted(
+            item["dofusID"]
+            for item in state.slots.values()
+            if item.get("itemType") == "Ring"
+            or (item.get("conditions", {}).get("conditions") or item.get("conditions", {}).get("customConditions"))
+        )
+    )
     return (
         min(state.stats.get("AP", 0), target.ap),
         min(state.stats.get("MP", 0), target.mp),
         min(state.stats.get("Range", 0), target.range) if target.range_required else 0,
         tuple(sorted((set_id, min(count, 8)) for set_id, count in state.set_counts.items() if count)),
-        tuple(sorted(state.used_item_ids)),
+        tuple(sorted(state.slots)),
+        identity_sensitive_ids,
     )
 
 
