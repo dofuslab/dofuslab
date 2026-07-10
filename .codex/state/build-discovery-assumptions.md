@@ -249,6 +249,9 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   given level and budget. For example, level 20 tier 1 currently has only
   mutually exclusive +Range amulet options, so `Range=6` is not a realistic
   generated-build target at that level.
+- Pre-100 cap targets can require higher-budget assumptions. For example,
+  level 99 `12/6/6` currently needs tier 3 exo support in the coverage matrix;
+  tier 2 no-exo did not produce a valid build in wide search.
 - Level Diversity needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket broadly.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.

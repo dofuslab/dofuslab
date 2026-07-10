@@ -1908,3 +1908,18 @@ Run the initial evaluator pass:
 - Verification so far:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_ap_mp_range_coverage_generation_smoke.BuildDiscoveryApMpRangeCoverageSmokeShapeTest"`
   - `BUILD_DISCOVERY_AP_MP_RANGE_COVERAGE_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_TARGETS=coverage_level_50_intelligence_mp_budget1 python -m unittest scripts.test_build_discovery_ap_mp_range_coverage_generation_smoke.BuildDiscoveryApMpRangeCoverageGenerationSmokeTest`
+
+### 2026-07-10 AP/MP/Range Coverage Feasibility Corrections
+
+- The next coverage slice found two additional infeasible/no-result rows under
+  the original budget assumptions:
+  - level 80 Agility `10/6/0` tier 2 no-exo
+  - level 99 Strength `12/6/6` tier 2 no-exo
+- Wide search still produced zero builds for both rows.
+- Confirmed replacement assumptions:
+  - level 80 Agility `10/5/0` tier 2 no-exo generates a build
+  - level 99 Strength `12/6/6` tier 3 with exos generates a build
+- Updated `AP_MP_RANGE_COVERAGE_TARGETS` accordingly.
+- Verification passed:
+  - `BUILD_DISCOVERY_AP_MP_RANGE_COVERAGE_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=80,99,100,120 python -m unittest scripts.test_build_discovery_ap_mp_range_coverage_generation_smoke.BuildDiscoveryApMpRangeCoverageGenerationSmokeTest`
+- Result: pass in 254.429 seconds.
