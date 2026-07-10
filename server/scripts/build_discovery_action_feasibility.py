@@ -118,19 +118,12 @@ def action_relevant_pools(
 
 
 def state_signature(state: solver.BuildState, target: solver.BuildTarget) -> tuple[Any, ...]:
-    duplicate_sensitive_item_ids = tuple(
-        sorted(
-            item["dofusID"]
-            for item in state.slots.values()
-            if item.get("itemType") == "Ring"
-        )
-    )
     return (
         min(state.stats.get("AP", 0), target.ap),
         min(state.stats.get("MP", 0), target.mp),
         min(state.stats.get("Range", 0), target.range),
         tuple(sorted((set_id, min(count, 8)) for set_id, count in state.set_counts.items() if count)),
-        duplicate_sensitive_item_ids,
+        tuple(sorted(state.used_item_ids)),
     )
 
 
@@ -154,40 +147,44 @@ def complete_with_action_dofus(
     state: solver.BuildState,
     dofus_items: list[dict[str, Any]],
     target: solver.BuildTarget,
+    exo_policy: str,
     max_examples: int,
-) -> list[tuple[solver.BuildState, tuple[dict[str, Any], ...]]]:
+) -> list[solver.BuildState]:
     from itertools import combinations
 
     examples = []
+    open_dofus_slots = [
+        slot_name
+        for slot_name, _ in solver.SLOTS
+        if is_dofus_slot(slot_name) and slot_name not in state.slots
+    ]
     max_combo_size = min(6, len(dofus_items))
     for combo_size in range(max_combo_size + 1):
         for combo in combinations(dofus_items, combo_size):
             if any(item["dofusID"] in state.used_item_ids for item in combo):
                 continue
-            stats = dict(state.stats)
-            for item in combo:
-                solver.apply_stat_delta(stats, item["_stats"])
+            completed = state.clone()
+            for slot_name, item in zip(open_dofus_slots, combo):
+                completed.slots[slot_name] = item
+                completed.used_item_ids.add(item["dofusID"])
+                solver.apply_stat_delta(completed.stats, item["_stats"])
+            completed = solver.apply_missing_exos(completed, target, exo_policy)
+            if completed is None:
+                continue
             if (
-                target.ap <= stats.get("AP", 0) <= solver.MAX_AP
-                and target.mp <= stats.get("MP", 0) <= solver.MAX_MP
-                and target.range <= stats.get("Range", 0) <= solver.MAX_RANGE
+                not solver.action_stats_meet_target(completed, target)
+                or solver.unmet_item_conditions(completed)
             ):
-                examples.append((state, combo))
-                if len(examples) >= max_examples:
-                    return examples
+                continue
+            examples.append(completed)
+            if len(examples) >= max_examples:
+                return examples
     return examples
 
 
-def summarize_state(
-    state: solver.BuildState,
-    dofus_combo: tuple[dict[str, Any], ...],
-    sets: dict[str, dict[str, Any]],
-) -> dict[str, Any]:
-    stats = dict(state.stats)
-    for item in dofus_combo:
-        solver.apply_stat_delta(stats, item["_stats"])
+def summarize_state(state: solver.BuildState, sets: dict[str, dict[str, Any]]) -> dict[str, Any]:
     return {
-        "stats": action_stats(stats),
+        "stats": action_stats(state.stats),
         "items": [
             {
                 "slot": slot_name,
@@ -197,17 +194,8 @@ def summarize_state(
                 "set": sets.get(item.get("setID"), {}).get("_name") if item.get("setID") else None,
             }
             for slot_name, item in sorted(state.slots.items())
-        ]
-        + [
-            {
-                "slot": "dofus",
-                "id": item["dofusID"],
-                "name": item["_name"],
-                "stats": action_stats(item["_stats"]),
-                "set": None,
-            }
-            for item in dofus_combo
         ],
+        "exos": dict(state.exos),
         "sets": [
             {"name": sets.get(set_id, {}).get("_name", set_id), "count": count}
             for set_id, count in sorted(state.set_counts.items())
@@ -223,6 +211,7 @@ def diagnose_target(
     query = query_for_target(target_spec)
     target = target_to_build_target(target_spec)
     solver.configure_damage_profile(query.primary_element)
+    exo_policy = solver.effective_exo_policy(query)
     with solver.target_level_context(target.level):
         items = solver.load_items(target, None, query.budget_tier)
         sets = solver.load_sets()
@@ -246,7 +235,7 @@ def diagnose_target(
         states = [solver.BuildState()]
         slot_summaries = []
         cap_hit = False
-        examples: list[tuple[solver.BuildState, tuple[dict[str, Any], ...]]] = []
+        examples: list[solver.BuildState] = []
 
         for slot_name in gear_slots:
             # Carry the current states through each slot to represent a non-action filler.
@@ -286,6 +275,7 @@ def diagnose_target(
                     state,
                     action_dofus,
                     target,
+                    exo_policy,
                     config.max_examples - len(examples),
                 )
             )
@@ -310,7 +300,7 @@ def diagnose_target(
                 {"id": item["dofusID"], "name": item["_name"], "stats": action_stats(item["_stats"])}
                 for item in action_dofus
             ],
-            "examples": [summarize_state(state, combo, sets) for state, combo in examples],
+            "examples": [summarize_state(state, sets) for state in examples],
         }
 
 

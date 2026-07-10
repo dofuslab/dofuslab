@@ -4,10 +4,12 @@ from build_discovery_action_feasibility import (
     REPORT_VERSION,
     action_deficit,
     action_stat_total,
+    complete_with_action_dofus,
     render_markdown,
     target_to_build_target,
 )
 from build_discovery_level_diversity_targets import LevelDiversityTarget
+from oneoff import build_discovery_prototype as solver
 
 
 class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
@@ -58,6 +60,49 @@ class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
         self.assertIn("feasible", markdown)
         self.assertIn("12/6/6", markdown)
         self.assertIn("state cap hit", markdown)
+
+    def test_complete_with_action_dofus_returns_completed_state(self):
+        target = target_to_build_target(
+            LevelDiversityTarget("target", 200, "strength", 1, 12, 6, 6)
+        )
+        state = solver.BuildState(stats={"AP": 11, "MP": 6, "Range": 6})
+        shaker = {
+            "dofusID": "test-shaker",
+            "_name": "Test Shaker",
+            "itemType": "Trophy",
+            "_stats": {"AP": 1},
+            "conditions": {"conditions": {}, "customConditions": {}},
+        }
+
+        examples = complete_with_action_dofus(state, [shaker], target, "none", 1)
+
+        self.assertEqual(len(examples), 1)
+        self.assertEqual(examples[0].stats["AP"], 12)
+        self.assertIn("dofus_1", examples[0].slots)
+        self.assertEqual(examples[0].slots["dofus_1"]["dofusID"], "test-shaker")
+
+    def test_complete_with_action_dofus_can_apply_exo_policy(self):
+        target = target_to_build_target(
+            LevelDiversityTarget("target", 200, "strength", 3, 12, 6, 6)
+        )
+        ring = {
+            "dofusID": "test-ring",
+            "_name": "Test Ring",
+            "itemType": "Ring",
+            "_stats": {},
+            "conditions": {"conditions": {}, "customConditions": {}},
+        }
+        state = solver.BuildState(
+            slots={"ring_1": ring},
+            stats={"AP": 11, "MP": 6, "Range": 6},
+            used_item_ids={"test-ring"},
+        )
+
+        examples = complete_with_action_dofus(state, [], target, "allow", 1)
+
+        self.assertEqual(len(examples), 1)
+        self.assertEqual(examples[0].stats["AP"], 12)
+        self.assertEqual(examples[0].exos["AP"], "test-ring")
 
 
 if __name__ == "__main__":
