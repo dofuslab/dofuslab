@@ -1500,3 +1500,28 @@ Run the initial evaluator pass:
 - Kept actual prod access, prod aggregate selection, and discovered-build scoring/comparison open.
 - Verification passed:
   - `git diff --check`
+
+### 2026-07-10 Level-Aware Query Contract
+
+- Started the Milestone 3 any-level Iop expansion with the query/target
+  contract instead of solver scoring.
+- Added `base_ap_for_level(level)`:
+  - levels `1-99` have baseline AP `6`
+  - levels `100-200` have baseline AP `7`
+- `BuildDiscoveryQuery.validate()` now accepts Iop levels `1-200` and rejects
+  level `0` / `201`.
+- `BuildTarget` now carries the level-specific AP minimum so sub-100 queries can
+  request `6/3/0` while level 100+ queries still reject AP below `7`.
+- `rangeTarget=None` is accepted at the query level and currently normalizes to
+  `0` for target construction; true "any Range, even negative" solver semantics
+  still need to be threaded through final validation.
+- `targetSemantics` now reports the level-dependent AP minimums.
+- Non-200 response execution is temporarily guarded so the old level-200 solver
+  cannot silently return mislabeled lower-level builds.
+- This checkpoint does not prove non-200 solver quality yet. Remaining level
+  work includes level-specific base stats during search, candidate item loading,
+  index bucket use, spell selection, sampled benchmark rows, and generated build
+  review.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
+  - `python -m py_compile server\oneoff\build_discovery_prototype.py server\scripts\test_build_discovery_query_contract.py`

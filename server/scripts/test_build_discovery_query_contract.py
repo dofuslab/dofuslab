@@ -18,9 +18,12 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     BuildState,
     DEFAULT_AP_STRATEGIES,
     BuildTarget,
+    build_discovery_response,
+    base_ap_for_level,
     find_diverse_builds,
     effective_ap_strategies_for_target,
     effective_exo_policy,
+    normalize_range_target,
     query_cache_identity,
     result_warnings,
     target_semantics_response,
@@ -31,6 +34,10 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
     def test_milestone_one_base_ap_uses_level_100_plus_baseline(self):
         self.assertEqual(BASE_AP, 7)
         self.assertEqual(MIN_AP, BASE_AP)
+        self.assertEqual(base_ap_for_level(1), 6)
+        self.assertEqual(base_ap_for_level(99), 6)
+        self.assertEqual(base_ap_for_level(100), 7)
+        self.assertEqual(base_ap_for_level(200), 7)
 
     def test_level_200_milestone_one_action_stat_bounds_are_supported(self):
         lower = BuildDiscoveryQuery(
@@ -115,6 +122,60 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
             * (MAX_RANGE - MIN_RANGE + 1),
         )
 
+    def test_query_contract_accepts_level_diversity_bounds_for_iop(self):
+        examples = (
+            (1, 6, 3, 0),
+            (50, 6, 3, 0),
+            (99, 6, 6, 6),
+            (100, 7, 3, 0),
+            (150, 12, 6, 6),
+            (200, 12, 6, 6),
+        )
+
+        for level, ap, mp, range_target in examples:
+            with self.subTest(level=level, ap=ap, mp=mp, range=range_target):
+                query = BuildDiscoveryQuery(
+                    level=level,
+                    ap_target=ap,
+                    mp_target=mp,
+                    range_target=range_target,
+                )
+                query.validate()
+                self.assertEqual(query.target.min_ap, base_ap_for_level(level))
+                identity = query_cache_identity(query)
+                self.assertEqual(identity["level"], level)
+                self.assertEqual(identity["apTarget"], ap)
+
+    def test_query_contract_accepts_none_range_as_no_explicit_range_floor(self):
+        query = BuildDiscoveryQuery(level=50, ap_target=6, mp_target=3, range_target=None)
+
+        query.validate()
+
+        self.assertIsNone(query.range_target)
+        self.assertEqual(normalize_range_target(query.range_target), MIN_RANGE)
+        self.assertEqual(query.target.range, MIN_RANGE)
+        self.assertIsNone(query_cache_identity(query)["rangeTarget"])
+
+    def test_non_200_query_validation_does_not_silently_run_level_200_solver(self):
+        query = BuildDiscoveryQuery(level=50, ap_target=6, mp_target=3, range_target=None)
+        query.validate()
+
+        with self.assertRaisesRegex(ValueError, "non-200 solver execution is pending"):
+            build_discovery_response(query, use_cache=False)
+
+    def test_query_contract_rejects_ap_below_level_baseline(self):
+        invalid_queries = (
+            BuildDiscoveryQuery(level=1, ap_target=5),
+            BuildDiscoveryQuery(level=99, ap_target=5),
+            BuildDiscoveryQuery(level=100, ap_target=6),
+            BuildDiscoveryQuery(level=200, ap_target=6),
+        )
+
+        for query in invalid_queries:
+            with self.subTest(level=query.level, ap=query.ap_target):
+                with self.assertRaises(ValueError):
+                    query.validate()
+
     def test_low_budget_forces_no_exo_policy(self):
         for budget_tier in (1, 2):
             for exo_policy in ("allow", "opti"):
@@ -182,6 +243,7 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         semantics = target_semantics_response()
         self.assertEqual(semantics["type"], "minimum_with_hard_caps")
         self.assertEqual(semantics["targets"], {"AP": "minimum", "MP": "minimum", "Range": "minimum"})
+        self.assertEqual(semantics["minimums"]["AP"], {"1-99": 6, "100-200": 7})
         self.assertEqual(semantics["caps"], {"AP": MAX_AP, "MP": MAX_MP, "Range": MAX_RANGE})
         self.assertEqual(semantics["surplusScoring"], "light_reward_with_cap")
 
@@ -214,10 +276,11 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     query.validate()
 
-    def test_milestone_one_scope_rejects_non_iop_non_200_and_multi_element(self):
+    def test_scope_rejects_non_iop_invalid_levels_and_multi_element(self):
         invalid_queries = (
             BuildDiscoveryQuery(class_name="Cra"),
-            BuildDiscoveryQuery(level=199),
+            BuildDiscoveryQuery(level=0),
+            BuildDiscoveryQuery(level=201),
             BuildDiscoveryQuery(elements=("strength", "chance")),
         )
 

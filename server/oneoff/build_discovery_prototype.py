@@ -44,7 +44,15 @@ BUILD_DISCOVERY_INDEX_PATH = os.getenv(
 SOLVER_VERSION = "build-discovery-prototype-v1"
 BUILD_DISCOVERY_INDEX_SCHEMA_VERSION = 1
 RELEVANT_SET_ITEM_MIN_LEVEL = 180
-BASE_AP = 7 if TARGET_LEVEL >= 100 else 6
+def base_ap_for_level(level: int) -> int:
+    return 7 if level >= 100 else 6
+
+
+def normalize_range_target(range_target: int | None) -> int:
+    return MIN_RANGE if range_target is None else range_target
+
+
+BASE_AP = base_ap_for_level(TARGET_LEVEL)
 BASE_MP = 3
 REQUIRED_AP = 11
 REQUIRED_MP = 6
@@ -587,10 +595,11 @@ class BuildTarget:
     ap: int = REQUIRED_AP
     mp: int = REQUIRED_MP
     range: int = REQUIRED_RANGE
+    min_ap: int = MIN_AP
 
     def __post_init__(self) -> None:
-        if self.ap < MIN_AP:
-            raise ValueError(f"Target AP cannot be below {MIN_AP}.")
+        if self.ap < self.min_ap:
+            raise ValueError(f"Target AP cannot be below {self.min_ap}.")
         if self.mp < MIN_MP:
             raise ValueError(f"Target MP cannot be below {MIN_MP}.")
         if self.range < MIN_RANGE:
@@ -622,7 +631,7 @@ class BuildDiscoveryQuery:
     mode: str = "pvm"
     ap_target: int = REQUIRED_AP
     mp_target: int = REQUIRED_MP
-    range_target: int = REQUIRED_RANGE
+    range_target: int | None = REQUIRED_RANGE
     damage_survivability_preset: int = 3
     budget_tier: int = 2
     exo_policy: str = "allow"
@@ -649,14 +658,15 @@ class BuildDiscoveryQuery:
         return BuildTarget(
             ap=self.ap_target,
             mp=self.mp_target,
-            range=self.range_target,
+            range=normalize_range_target(self.range_target),
+            min_ap=base_ap_for_level(self.level),
         )
 
     def validate(self) -> None:
         if self.class_name != "Iop":
             raise ValueError("Build Discovery v1 currently supports Iop only.")
-        if self.level != TARGET_LEVEL:
-            raise ValueError(f"Build Discovery v1 currently supports level {TARGET_LEVEL} only.")
+        if not 1 <= self.level <= TARGET_LEVEL:
+            raise ValueError(f"Build Discovery supports levels 1-{TARGET_LEVEL}.")
         if self.mode != "pvm":
             raise ValueError("Build Discovery v1 currently supports PvM only.")
         if self.primary_element not in ELEMENT_PROFILES:
@@ -727,6 +737,11 @@ def target_semantics_response() -> dict[str, Any]:
     return {
         "type": "minimum_with_hard_caps",
         "targets": {"AP": "minimum", "MP": "minimum", "Range": "minimum"},
+        "minimums": {
+            "AP": {"1-99": base_ap_for_level(1), "100-200": base_ap_for_level(100)},
+            "MP": MIN_MP,
+            "Range": MIN_RANGE,
+        },
         "caps": {"AP": MAX_AP, "MP": MAX_MP, "Range": MAX_RANGE},
         "surplusScoring": "light_reward_with_cap",
     }
@@ -3952,6 +3967,10 @@ def build_discovery_response(
     use_cache: bool = True,
 ) -> dict[str, Any]:
     query.validate()
+    if query.level != TARGET_LEVEL:
+        raise ValueError(
+            "Build Discovery level-aware query validation is enabled, but non-200 solver execution is pending."
+        )
     profile = configure_damage_profile(query.primary_element)
     current_dataset_version = dataset_version()
     cache_key = query_cache_key(query, current_dataset_version)
@@ -4007,7 +4026,7 @@ def build_discovery_response(
             "element": profile.element,
             "damageStat": profile.damage_stat,
         },
-        "target": {"level": TARGET_LEVEL, "AP": query.target.ap, "MP": query.target.mp, "Range": query.target.range},
+        "target": {"level": query.level, "AP": query.target.ap, "MP": query.target.mp, "Range": query.target.range},
         "scoring": {
             "genericDamageWeight": query.generic_damage_weight,
             "weaponDamageWeight": query.weapon_damage_weight,

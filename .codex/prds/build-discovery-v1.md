@@ -10,12 +10,12 @@ The v1 goal is not perfect optimization, PvP meta modeling, a chatbot, or LLM-dr
 
 ## Initial Scope
 
-- Level 200 PvM first.
+- Level 200 PvM first; Milestone 3 expands the Iop surface to levels 1-200.
 - Iop first, single element first.
 - Milestone 1 product surface: level 200 PvM Iop across Strength, Intelligence, Chance, and Agility.
-- `level` belongs in the query/API/cache/provenance contract in Milestone 1, but level 200 is the only supported generation value. Non-200 generation should return a clear unsupported-input error until the future Level Bracket Expansion milestone unless product priority explicitly pulls it forward.
+- `level` belongs in the query/API/cache/provenance contract. Milestone 3 should support Iop levels 1-200 after level-specific candidate loading, base stats, spell selection, and benchmark rows are validated.
 - Milestone 1 should handle any valid AP/MP/Range target within caps, not only benchmark defaults such as 11/6/0 or 12/6/0.
-- Character baseline AP is 6 from levels 1-99 and 7 from level 100 onward. For the level 200 / level 100+ surface, valid target bounds are AP 7-12, MP 3-6, and Range 0-6. Sub-100 generation belongs to the future level expansion milestone.
+- Character baseline AP is 6 from levels 1-99 and 7 from level 100 onward. Valid target bounds are AP `6-12` below level 100, AP `7-12` from level 100 onward, MP `3-6`, and Range `0-6`.
 - Milestone 1 should handle product intent controls for Iop: damage-vs-survivability/playstyle preset, budget tier, exo policy, weapon policy, locked items, and avoided items.
 - 11/6 and 12/6 variants are benchmark/regression rows, not the full Milestone 1 scope.
 - AP, MP, and Range are minimum targets with caps: AP 12, MP 6, Range 6. Surplus AP/MP/range is valid and usually useful, but should only receive a small marginal score.

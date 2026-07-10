@@ -8,7 +8,7 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 
 - v1 is a structured build generator, not a chatbot.
 - v1 item selection is deterministic solver logic, not LLM selection.
-- v1 starts with level 200 PvM.
+- v1 started with level 200 PvM; the active expansion target is any level Iop.
 - v1 starts with Iop.
 - v1 starts with single-element builds.
 - v1 should support Iop Strength, Intelligence, Chance, and Agility before expanding further.
@@ -20,9 +20,8 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 ## Query Contract Assumptions
 
 - Query inputs should include class, level, elements, mode, AP target, MP target, Range target, damage/survivability preset, budget tier, exo policy, weapon policy, locked items, and avoided items.
-- `className=Iop`, `level=200`, `mode=pvm`, and one element are the only supported product-shaped query values for now.
-- `level` belongs in the Milestone 1 query/API/cache/provenance contract, but only level 200 generation is supported in Milestone 1.
-- Non-200 levels should return clear unsupported-input errors until the future Level Bracket Expansion milestone, unless product priority explicitly pulls that work forward.
+- `className=Iop`, `level=1-200`, `mode=pvm`, and one single element are the intended Milestone 3 product-shaped query values.
+- `level` belongs in the query/API/cache/provenance contract. Validation now accepts levels 1-200 for Iop, but solver quality is not considered proven for non-200 levels until level-aware candidate loading, base stats, spell selection, and benchmark rows are reviewed.
 - Milestone 1 support means all supported Iop single elements: Strength, Intelligence, Chance, and Agility.
 - Milestone 1 support means any valid AP/MP/Range target within hard caps, not only 11/6/0 and 12/6/0 benchmark rows.
 - Milestone 1 support means product intent controls should affect generation: damage/survivability preset, budget tier, exo policy, weapon policy, locked items, and avoided items.
@@ -40,10 +39,14 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 
 - AP, MP, and Range are minimum targets with hard caps, not exact targets.
 - Hard caps are AP 12, MP 6, Range 6.
+- AP minimum is level-dependent: 6 for levels 1-99 and 7 for levels 100-200.
 - Below target is invalid or heavily rejected.
 - At target is valid.
 - Above target and at/below cap is valid.
 - Above cap is invalid.
+- `rangeTarget=None` means no explicit Range requirement in the product goal;
+  the current contract accepts it but normalizes to `0` internally until the
+  solver can safely allow negative Range final totals.
 - Extra AP, MP, and Range are usually good, but only lightly rewarded.
 - The solver should not choose a much weaker or less available build just because it has surplus Range or unnecessary surplus movement.
 - Temporary AP from special effects does not satisfy static AP targets.
@@ -231,7 +234,7 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - The next benchmark expansion is level diversity for Iop, using readonly prod aggregate AP/MP/Range distributions by level bucket to choose sample targets.
 - Milestone 1 owns the broad Iop query surface; 11/6/0 and 12/6/0 Iop profiles are regression rows, not the whole Milestone 1 scope.
 - Class expansion starts after the level 200 Iop and sampled Iop level-diversity surfaces are in good shape.
-- Broad non-200 generation follows the sampled Level Diversity for Iop milestone, unless product priority changes.
+- Broad non-200 generation is the active Milestone 3 target for Iop.
 - Level Diversity should use prod-derived AP/MP/Range distributions plus generated index level buckets as starting boundaries: 1-99, 100-149, 150-179, and 180-200.
 - Level Diversity needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket broadly.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
