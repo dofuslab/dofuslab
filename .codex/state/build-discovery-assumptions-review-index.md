@@ -51,6 +51,7 @@ These need gameplay or product review before calling the feature shippable.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-diagnostics.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-level50-witness-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-inventory.md`.
    - The current matrix has 27 sampled Iop targets, all generated with at least one build.
    - The current boundary matrix has 10 transition-level targets, all generated with at least one build.
@@ -66,6 +67,9 @@ These need gameplay or product review before calling the feature shippable.
      catalog-infeasibility proof.
    - Level 50 is not proven infeasible by that diagnostic and remains a solver
      recall, set-bonus, uniqueness, condition, or deeper interaction question.
+   - The level 50 witness diagnostic found a valid `12/6/6` action-stat item
+     placement, so the current cap no-build row is a solver recall/search gap
+     for that target.
    - The current grid inventory has 39,424 representative valid query rows and
      58 exact generated-evidence rows; it is a gap map, not build proof.
    - Confirm the sampled rows are useful representatives before promoting them to accepted benchmarks.

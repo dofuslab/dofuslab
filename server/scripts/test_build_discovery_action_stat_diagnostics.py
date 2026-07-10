@@ -154,6 +154,28 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
         self.assertEqual(boots["actionSourceCount"], 1)
         self.assertEqual([item["id"] for item in boots["topActionSources"]], ["positive_boots"])
 
+    def test_witness_search_promotes_diagnostic_status(self):
+        report = {"results": [matrix_entry(level=50)]}
+
+        with patch(
+            "build_discovery_action_stat_diagnostics.load_items",
+            return_value=[item("amulet", "Amulet", {"AP": 5, "MP": 3, "Range": 6})],
+        ), patch(
+            "build_discovery_action_stat_diagnostics.find_action_stat_witness",
+            return_value={"totals": {"AP": 12, "MP": 6, "Range": 6}, "items": []},
+        ):
+            diagnostics = build_diagnostics_report(
+                report,
+                statuses={"no_build"},
+                witness_search=True,
+            )
+
+        self.assertEqual(diagnostics["actionStatWitnessFoundCount"], 1)
+        self.assertEqual(
+            diagnostics["diagnostics"][0]["diagnosticStatus"],
+            "action_stat_witness_found",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

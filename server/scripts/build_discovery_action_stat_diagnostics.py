@@ -12,12 +12,21 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from oneoff.build_discovery_prototype import (  # noqa: E402
     ACTION_STATS,
+    LOW_LEVEL_EMPTY_SLOT_MAX_LEVEL,
     SLOTS,
+    BuildState,
     BuildDiscoveryQuery,
+    action_stats_meet_target,
+    add_item_to_state,
+    apply_missing_exos,
     base_ap_for_level,
     effective_exo_policy,
+    hard_cap_target,
+    is_dofus_slot,
     load_items,
+    load_sets,
     query_summary,
+    set_bonus_stats,
 )
 
 
@@ -123,6 +132,133 @@ def optimistic_upper_bound(query: BuildDiscoveryQuery, slot_summaries: Iterable[
     return totals
 
 
+def action_bonus_set_ids(sets: dict[str, dict[str, Any]]) -> set[str]:
+    set_ids = set()
+    for set_id, set_obj in sets.items():
+        for stats in set_bonus_stats(set_obj).values():
+            if any(stats.get(stat, 0) > 0 for stat in ACTION_STATS):
+                set_ids.add(set_id)
+                break
+    return set_ids
+
+
+def item_action_stats(item: dict[str, Any]) -> dict[str, int]:
+    return stat_vector(item.get("_stats", {}))
+
+
+def compact_witness_state(state: BuildState) -> dict[str, Any]:
+    return {
+        "totals": stat_vector(state.stats),
+        "exos": state.exos,
+        "items": [
+            {
+                "slot": slot_name,
+                "id": item.get("dofusID"),
+                "name": item.get("_name") or item.get("name") or item.get("dofusID"),
+                "level": item.get("level"),
+                "itemType": item.get("itemType"),
+                "stats": item_action_stats(item),
+            }
+            for slot_name, item in state.slots.items()
+        ],
+    }
+
+
+def witness_slot_choices(
+    slot_name: str,
+    slot_types: tuple[str, ...],
+    items: list[dict[str, Any]],
+    action_set_ids: set[str],
+    level: int,
+) -> list[dict[str, Any] | None]:
+    compatible = [item for item in items if item.get("itemType") in slot_types]
+    useful = [
+        item
+        for item in compatible
+        if any(item.get("_stats", {}).get(stat, 0) > 0 for stat in ACTION_STATS)
+        or item.get("setID") in action_set_ids
+    ]
+    if slot_name == "pet" or is_dofus_slot(slot_name) or level <= LOW_LEVEL_EMPTY_SLOT_MAX_LEVEL:
+        return [None] + useful
+    if useful:
+        return useful
+    if compatible:
+        return compatible[:1]
+    return []
+
+
+def find_action_stat_witness(
+    query: BuildDiscoveryQuery,
+    *,
+    max_states_per_slot: int = 20_000,
+) -> dict[str, Any] | None:
+    items = load_items(query.target, budget_tier=query.budget_tier)
+    sets = load_sets()
+    action_set_ids = action_bonus_set_ids(sets)
+    cap_target = hard_cap_target(query.level)
+    slot_choices = [
+        (
+            slot_name,
+            witness_slot_choices(slot_name, slot_types, items, action_set_ids, query.level),
+        )
+        for slot_name, slot_types in SLOTS
+    ]
+    if any(not choices for _, choices in slot_choices):
+        return None
+
+    states = [BuildState()]
+    for slot_name, choices in slot_choices:
+        next_states: list[BuildState] = []
+        for state in states:
+            for item in choices:
+                if item is None:
+                    next_states.append(state)
+                    continue
+                next_state = add_item_to_state(
+                    state,
+                    slot_name,
+                    item,
+                    sets,
+                    query.target,
+                    condition_target=query.target,
+                    cap_target=cap_target,
+                    include_potential_score=False,
+                )
+                if next_state is not None:
+                    next_states.append(next_state)
+        buckets: dict[tuple[Any, ...], BuildState] = {}
+        for state in next_states:
+            key = (
+                min(state.stats.get("AP", 0), query.ap_target),
+                min(state.stats.get("MP", 0), query.mp_target),
+                min(state.stats.get("Range", 0), query.target.range),
+                tuple(
+                    sorted(
+                        (set_id, min(count, 8))
+                        for set_id, count in state.set_counts.items()
+                        if set_id in action_set_ids
+                    )
+                ),
+            )
+            buckets.setdefault(key, state)
+        states = sorted(
+            buckets.values(),
+            key=lambda state: (
+                state.stats.get("AP", 0),
+                state.stats.get("MP", 0),
+                state.stats.get("Range", 0),
+                len(state.slots),
+            ),
+            reverse=True,
+        )[:max_states_per_slot]
+
+    for state in states:
+        state_with_exos = apply_missing_exos(state, query.target, effective_exo_policy(query))
+        if state_with_exos and action_stats_meet_target(state_with_exos, query.target):
+            return compact_witness_state(state_with_exos)
+    return None
+
+
 def diagnostic_reasons(query: BuildDiscoveryQuery, upper_bound: dict[str, int]) -> list[str]:
     reasons = []
     targets = {"AP": query.ap_target, "MP": query.mp_target, "Range": query.target.range}
@@ -136,7 +272,12 @@ def diagnostic_reasons(query: BuildDiscoveryQuery, upper_bound: dict[str, int]) 
     return reasons
 
 
-def diagnose_entry(entry: dict[str, Any]) -> dict[str, Any]:
+def diagnose_entry(
+    entry: dict[str, Any],
+    *,
+    witness_search: bool = False,
+    witness_max_states_per_slot: int = 20_000,
+) -> dict[str, Any]:
     target = entry["target"]
     query = query_from_entry(entry)
     query.validate()
@@ -144,6 +285,11 @@ def diagnose_entry(entry: dict[str, Any]) -> dict[str, Any]:
     summaries = slot_action_summaries(items)
     upper_bound = optimistic_upper_bound(query, summaries)
     reasons = diagnostic_reasons(query, upper_bound)
+    witness = (
+        find_action_stat_witness(query, max_states_per_slot=witness_max_states_per_slot)
+        if witness_search
+        else None
+    )
     return {
         "target": target,
         "query": query_summary(query),
@@ -152,11 +298,15 @@ def diagnose_entry(entry: dict[str, Any]) -> dict[str, Any]:
         "effectiveExoPolicy": effective_exo_policy(query),
         "optimisticIndependentSlotUpperBound": upper_bound,
         "diagnosticStatus": (
+            "action_stat_witness_found"
+            if witness
+            else
             "item_stat_upper_bound_below_target"
             if any("below target" in reason for reason in reasons)
             else "not_proven_infeasible"
         ),
         "reasons": reasons,
+        "actionStatWitness": witness,
         "slotSummaries": summaries,
     }
 
@@ -166,9 +316,15 @@ def build_diagnostics_report(
     *,
     statuses: set[str] | None = None,
     target_ids: set[str] | None = None,
+    witness_search: bool = False,
+    witness_max_states_per_slot: int = 20_000,
 ) -> dict[str, Any]:
     diagnostics = [
-        diagnose_entry(entry)
+        diagnose_entry(
+            entry,
+            witness_search=witness_search,
+            witness_max_states_per_slot=witness_max_states_per_slot,
+        )
         for entry in selected_matrix_entries(matrix_report, statuses=statuses, target_ids=target_ids)
     ]
     return {
@@ -181,6 +337,9 @@ def build_diagnostics_report(
         ),
         "notProvenInfeasibleCount": sum(
             1 for diagnostic in diagnostics if diagnostic["diagnosticStatus"] == "not_proven_infeasible"
+        ),
+        "actionStatWitnessFoundCount": sum(
+            1 for diagnostic in diagnostics if diagnostic["diagnosticStatus"] == "action_stat_witness_found"
         ),
         "diagnostics": diagnostics,
     }
@@ -208,20 +367,29 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Diagnostics: `{report['diagnosticCount']}`",
         f"Item-stat upper-bound below target: `{report['itemStatUpperBoundBelowTargetCount']}`",
         f"Not proven infeasible: `{report['notProvenInfeasibleCount']}`",
+        f"Action-stat witnesses found: `{report.get('actionStatWitnessFoundCount', 0)}`",
         "",
-        "| Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Reasons |",
-        "|---|---|---|---|---|",
+        "| Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness AP/MP/Range | Reasons |",
+        "|---|---|---|---|---|---|",
     ]
     for diagnostic in report["diagnostics"]:
         upper = diagnostic["optimisticIndependentSlotUpperBound"]
+        witness = diagnostic.get("actionStatWitness") or {}
+        witness_totals = witness.get("totals") or {}
+        witness_label = (
+            f"{witness_totals.get('AP', '')}/{witness_totals.get('MP', '')}/{witness_totals.get('Range', '')}"
+            if witness_totals
+            else ""
+        )
         lines.append(
-            "| {} | {} | {} | {}/{}/{} | {} |".format(
+            "| {} | {} | {} | {}/{}/{} | {} | {} |".format(
                 target_label(diagnostic["target"]),
                 diagnostic["matrixStatus"],
                 diagnostic["diagnosticStatus"],
                 upper.get("AP", ""),
                 upper.get("MP", ""),
                 upper.get("Range", ""),
+                witness_label,
                 "; ".join(diagnostic["reasons"]),
             )
         )
@@ -240,6 +408,8 @@ def main() -> None:
     parser.add_argument("matrix_report")
     parser.add_argument("--statuses", default="no_build")
     parser.add_argument("--targets")
+    parser.add_argument("--witness-search", action="store_true")
+    parser.add_argument("--witness-max-states-per-slot", type=int, default=20_000)
     parser.add_argument("--output-json")
     parser.add_argument("--output-md")
     args = parser.parse_args()
@@ -248,6 +418,8 @@ def main() -> None:
         load_json(args.matrix_report),
         statuses=csv_filter(args.statuses),
         target_ids=csv_filter(args.targets),
+        witness_search=args.witness_search,
+        witness_max_states_per_slot=args.witness_max_states_per_slot,
     )
 
     if args.output_json:

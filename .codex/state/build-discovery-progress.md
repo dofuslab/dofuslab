@@ -2132,3 +2132,23 @@ Run the initial evaluator pass:
 - Verification passed:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_action_stat_diagnostics.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py"`
+
+### 2026-07-10 Level 50 Cap Action-Stat Witness
+
+- Extended `server/scripts/build_discovery_action_stat_diagnostics.py` with
+  optional exact action-stat witness search via `--witness-search`.
+- Generated level 50 witness artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-level50-witness-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-level50-witness-diagnostics.md`
+- Result:
+  - level 50 Strength Iop `12/6/6` tier 4 has an action-stat witness with
+    totals `12/6/6`
+  - witness items: The Celestial Brooch, Luthuthu Belt, Khardboard Goultard,
+    Sponghield, Treering, Ring of Satisfaction, Bowisse's Boots, Khardboard
+    Gobball Headgear, Treecloak, Drhellbert, and Twitcher
+- Interpretation:
+  - the cap matrix no-build row at level 50 is not action-stat infeasible
+  - this is now a solver recall/search gap to fix or explain
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_action_stat_diagnostics.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py"`

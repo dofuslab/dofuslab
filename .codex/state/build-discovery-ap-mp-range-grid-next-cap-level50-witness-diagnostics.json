@@ -1,0 +1,1267 @@
+{
+  "reportVersion": "build-discovery-action-stat-diagnostics-v1",
+  "sourceMatrix": "Iop grid-next-cap generated target matrix",
+  "sourceGeneratedAt": "2026-07-10T11:51:32.496558+00:00",
+  "diagnosticCount": 1,
+  "itemStatUpperBoundBelowTargetCount": 0,
+  "notProvenInfeasibleCount": 0,
+  "actionStatWitnessFoundCount": 1,
+  "diagnostics": [
+    {
+      "target": {
+        "id": "grid_next_cap_level_50_strength_12_6_6_budget4",
+        "className": "Iop",
+        "level": 50,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 50,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "matrixStatus": "no_build",
+      "catalogItemCount": 1147,
+      "effectiveExoPolicy": "allow",
+      "optimisticIndependentSlotUpperBound": {
+        "AP": 13,
+        "MP": 8,
+        "Range": 26
+      },
+      "diagnosticStatus": "action_stat_witness_found",
+      "reasons": [
+        "Optimistic item-stat-only independent slot upper bound reaches the target; no-build remains a solver/search, set-bonus, uniqueness, condition, or interaction question."
+      ],
+      "actionStatWitness": {
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6
+        },
+        "exos": {},
+        "items": [
+          {
+            "slot": "amulet",
+            "id": "159",
+            "name": "The Celestial Brooch",
+            "level": 40,
+            "itemType": "Amulet",
+            "stats": {
+              "AP": 1,
+              "MP": 0,
+              "Range": 0
+            }
+          },
+          {
+            "slot": "belt",
+            "id": "1667",
+            "name": "Luthuthu Belt",
+            "level": 50,
+            "itemType": "Belt",
+            "stats": {
+              "AP": 0,
+              "MP": 0,
+              "Range": 1
+            }
+          },
+          {
+            "slot": "weapon",
+            "id": "27268",
+            "name": "Khardboard Goultard",
+            "level": 50,
+            "itemType": "Sword",
+            "stats": {
+              "AP": 0,
+              "MP": 0,
+              "Range": 0
+            }
+          },
+          {
+            "slot": "shield",
+            "id": "18659",
+            "name": "Sponghield",
+            "level": 25,
+            "itemType": "Shield",
+            "stats": {
+              "AP": 0,
+              "MP": 0,
+              "Range": 0
+            }
+          },
+          {
+            "slot": "ring_1",
+            "id": "836",
+            "name": "Treering",
+            "level": 40,
+            "itemType": "Ring",
+            "stats": {
+              "AP": 1,
+              "MP": 0,
+              "Range": 1
+            }
+          },
+          {
+            "slot": "ring_2",
+            "id": "841",
+            "name": "Ring of Satisfaction",
+            "level": 8,
+            "itemType": "Ring",
+            "stats": {
+              "AP": 1,
+              "MP": 0,
+              "Range": 0
+            }
+          },
+          {
+            "slot": "boots",
+            "id": "127",
+            "name": "Bowisse's Boots",
+            "level": 50,
+            "itemType": "Boots",
+            "stats": {
+              "AP": 0,
+              "MP": 1,
+              "Range": 0
+            }
+          },
+          {
+            "slot": "hat",
+            "id": "27282",
+            "name": "Khardboard Gobball Headgear",
+            "level": 50,
+            "itemType": "Hat",
+            "stats": {
+              "AP": 0,
+              "MP": 0,
+              "Range": 0
+            }
+          },
+          {
+            "slot": "cloak",
+            "id": "948",
+            "name": "Treecloak",
+            "level": 40,
+            "itemType": "Cloak",
+            "stats": {
+              "AP": 1,
+              "MP": 0,
+              "Range": 0
+            }
+          },
+          {
+            "slot": "pet",
+            "id": "15254",
+            "name": "Drhellbert",
+            "level": 20,
+            "itemType": "Pet",
+            "stats": {
+              "AP": 0,
+              "MP": 1,
+              "Range": 2
+            }
+          },
+          {
+            "slot": "dofus_1",
+            "id": "13831",
+            "name": "Twitcher",
+            "level": 50,
+            "itemType": "Trophy",
+            "stats": {
+              "AP": 0,
+              "MP": 0,
+              "Range": 1
+            }
+          }
+        ]
+      },
+      "slotSummaries": [
+        {
+          "slot": "amulet",
+          "compatibleCount": 132,
+          "actionSourceCount": 22,
+          "maxActionStats": {
+            "AP": 1,
+            "MP": 0,
+            "Range": 2
+          },
+          "topActionSources": [
+            {
+              "id": "2498",
+              "name": "Vegamu",
+              "level": 40,
+              "itemType": "Amulet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "2426",
+              "name": "Arachnamu",
+              "level": 40,
+              "itemType": "Amulet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "14271",
+              "name": "Lucky Dice",
+              "level": 50,
+              "itemType": "Amulet",
+              "stats": {
+                "AP": 1,
+                "MP": 0,
+                "Range": 0
+              }
+            },
+            {
+              "id": "1619",
+              "name": "The Treemu",
+              "level": 46,
+              "itemType": "Amulet",
+              "stats": {
+                "AP": 1,
+                "MP": 0,
+                "Range": 0
+              }
+            },
+            {
+              "id": "10635",
+              "name": "Lektor's Amulet",
+              "level": 41,
+              "itemType": "Amulet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "11976",
+              "name": "Boostache's Amulet",
+              "level": 48,
+              "itemType": "Amulet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "15549",
+              "name": "Greenengol Amulet",
+              "level": 30,
+              "itemType": "Amulet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "8120",
+              "name": "Golden Scarabugly Amulet",
+              "level": 45,
+              "itemType": "Amulet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "belt",
+          "compatibleCount": 132,
+          "actionSourceCount": 8,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 1
+          },
+          "topActionSources": [
+            {
+              "id": "10629",
+              "name": "Koksiks's Belt",
+              "level": 42,
+              "itemType": "Belt",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "2403",
+              "name": "Peeka Belt",
+              "level": 49,
+              "itemType": "Belt",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "1667",
+              "name": "Luthuthu Belt",
+              "level": 50,
+              "itemType": "Belt",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "11042",
+              "name": "Doggona Rope",
+              "level": 40,
+              "itemType": "Belt",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "10987",
+              "name": "Frost Belt",
+              "level": 35,
+              "itemType": "Belt",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "6929",
+              "name": "Prespic Belt",
+              "level": 33,
+              "itemType": "Belt",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "12887",
+              "name": "Gladiapants",
+              "level": 46,
+              "itemType": "Belt",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "12850",
+              "name": "Goblimp Furry Underpants",
+              "level": 25,
+              "itemType": "Belt",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "weapon",
+          "compatibleCount": 198,
+          "actionSourceCount": 13,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 1
+          },
+          "topActionSources": [
+            {
+              "id": "928",
+              "name": "Ogralimde's Sword",
+              "level": 45,
+              "itemType": "Sword",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "1376",
+              "name": "Huvant Axe",
+              "level": 35,
+              "itemType": "Axe",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "1112",
+              "name": "Gobball Horn Bow",
+              "level": 38,
+              "itemType": "Bow",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "273",
+              "name": "Yamato String",
+              "level": 31,
+              "itemType": "Bow",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "1432",
+              "name": "Houze Shovel",
+              "level": 21,
+              "itemType": "Shovel",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "640",
+              "name": "Rento Bow",
+              "level": 46,
+              "itemType": "Bow",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "332",
+              "name": "Joan's Bow",
+              "level": 30,
+              "itemType": "Bow",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "8110",
+              "name": "Tofu Wand",
+              "level": 25,
+              "itemType": "Wand",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "shield",
+          "compatibleCount": 17,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "ring_1",
+          "compatibleCount": 133,
+          "actionSourceCount": 12,
+          "maxActionStats": {
+            "AP": 1,
+            "MP": 0,
+            "Range": 1
+          },
+          "topActionSources": [
+            {
+              "id": "836",
+              "name": "Treering",
+              "level": 40,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 1,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "9123",
+              "name": "Pippin Blop Ring",
+              "level": 50,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "10557",
+              "name": "Real Gobbly Glove",
+              "level": 43,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "9921",
+              "name": "Slamdance Bracelet",
+              "level": 45,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "9122",
+              "name": "Morello Cherry Blop Ring",
+              "level": 50,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "9124",
+              "name": "Coco Blop Ring",
+              "level": 50,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "9125",
+              "name": "Indigo Blop Ring",
+              "level": 50,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "10181",
+              "name": "Solaris Ring",
+              "level": 41,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "ring_2",
+          "compatibleCount": 133,
+          "actionSourceCount": 12,
+          "maxActionStats": {
+            "AP": 1,
+            "MP": 0,
+            "Range": 1
+          },
+          "topActionSources": [
+            {
+              "id": "836",
+              "name": "Treering",
+              "level": 40,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 1,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "9123",
+              "name": "Pippin Blop Ring",
+              "level": 50,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "10557",
+              "name": "Real Gobbly Glove",
+              "level": 43,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "9921",
+              "name": "Slamdance Bracelet",
+              "level": 45,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "9122",
+              "name": "Morello Cherry Blop Ring",
+              "level": 50,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "9124",
+              "name": "Coco Blop Ring",
+              "level": 50,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "9125",
+              "name": "Indigo Blop Ring",
+              "level": 50,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "10181",
+              "name": "Solaris Ring",
+              "level": 41,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "boots",
+          "compatibleCount": 133,
+          "actionSourceCount": 24,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 1,
+            "Range": 1
+          },
+          "topActionSources": [
+            {
+              "id": "10625",
+              "name": "Grute's Boots",
+              "level": 44,
+              "itemType": "Boots",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "9576",
+              "name": "Black Wab Boots",
+              "level": 47,
+              "itemType": "Boots",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "13020",
+              "name": "Feline's Stilletoed Boots",
+              "level": 50,
+              "itemType": "Boots",
+              "stats": {
+                "AP": 0,
+                "MP": 1,
+                "Range": 0
+              }
+            },
+            {
+              "id": "17292",
+              "name": "Bigoks Boots",
+              "level": 30,
+              "itemType": "Boots",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "26337",
+              "name": "Director Grunob's Boots",
+              "level": 42,
+              "itemType": "Boots",
+              "stats": {
+                "AP": 0,
+                "MP": 1,
+                "Range": 0
+              }
+            },
+            {
+              "id": "10637",
+              "name": "Lektor's Boots",
+              "level": 43,
+              "itemType": "Boots",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "10978",
+              "name": "Phong Huss's Boots",
+              "level": 32,
+              "itemType": "Boots",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "18530",
+              "name": "Woolensocks",
+              "level": 50,
+              "itemType": "Boots",
+              "stats": {
+                "AP": 0,
+                "MP": 1,
+                "Range": 0
+              }
+            }
+          ]
+        },
+        {
+          "slot": "hat",
+          "compatibleCount": 106,
+          "actionSourceCount": 5,
+          "maxActionStats": {
+            "AP": 1,
+            "MP": 0,
+            "Range": 2
+          },
+          "topActionSources": [
+            {
+              "id": "698",
+              "name": "Sortingat Hogwat",
+              "level": 33,
+              "itemType": "Hat",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "2097",
+              "name": "Champo",
+              "level": 43,
+              "itemType": "Hat",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "26336",
+              "name": "Director Grunob's Hat",
+              "level": 40,
+              "itemType": "Hat",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "1908",
+              "name": "Chafer Helmet",
+              "level": 49,
+              "itemType": "Hat",
+              "stats": {
+                "AP": 1,
+                "MP": 0,
+                "Range": 0
+              }
+            },
+            {
+              "id": "15015",
+              "name": "Tearjerker",
+              "level": 42,
+              "itemType": "Hat",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "cloak",
+          "compatibleCount": 87,
+          "actionSourceCount": 7,
+          "maxActionStats": {
+            "AP": 1,
+            "MP": 2,
+            "Range": 2
+          },
+          "topActionSources": [
+            {
+              "id": "953",
+              "name": "Mad Tofu Cloak",
+              "level": 36,
+              "itemType": "Cloak",
+              "stats": {
+                "AP": -1,
+                "MP": 2,
+                "Range": 0
+              }
+            },
+            {
+              "id": "956",
+              "name": "Cape Rice",
+              "level": 32,
+              "itemType": "Cloak",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "7230",
+              "name": "Akwadala Cloak",
+              "level": 41,
+              "itemType": "Cloak",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "10058",
+              "name": "Vampyre Cape",
+              "level": 41,
+              "itemType": "Cloak",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "15993",
+              "name": "Match Cape",
+              "level": 38,
+              "itemType": "Cloak",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "948",
+              "name": "Treecloak",
+              "level": 40,
+              "itemType": "Cloak",
+              "stats": {
+                "AP": 1,
+                "MP": 0,
+                "Range": 0
+              }
+            },
+            {
+              "id": "790",
+              "name": "Cape of Good Hope",
+              "level": 30,
+              "itemType": "Cloak",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "pet",
+          "compatibleCount": 119,
+          "actionSourceCount": 11,
+          "maxActionStats": {
+            "AP": 1,
+            "MP": 1,
+            "Range": 2
+          },
+          "topActionSources": [
+            {
+              "id": "15254",
+              "name": "Drhellbert",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 0,
+                "MP": 1,
+                "Range": 2
+              }
+            },
+            {
+              "id": "7710",
+              "name": "Pink Piwin",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "13230",
+              "name": "Krolimea",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "12982",
+              "name": "Mouselet",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "10802",
+              "name": "Golden Dragoone",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "31862",
+              "name": "Oddnipup",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "31885",
+              "name": "Mikrosmoglob",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 1,
+                "MP": 0,
+                "Range": 0
+              }
+            },
+            {
+              "id": "8693",
+              "name": "Feanor",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 1,
+                "MP": 0,
+                "Range": 0
+              }
+            }
+          ]
+        },
+        {
+          "slot": "dofus_1",
+          "compatibleCount": 90,
+          "actionSourceCount": 2,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 2
+          },
+          "topActionSources": [
+            {
+              "id": "16336",
+              "name": "Observer",
+              "level": 50,
+              "itemType": "Trophy",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "13831",
+              "name": "Twitcher",
+              "level": 50,
+              "itemType": "Trophy",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "dofus_2",
+          "compatibleCount": 90,
+          "actionSourceCount": 2,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 2
+          },
+          "topActionSources": [
+            {
+              "id": "16336",
+              "name": "Observer",
+              "level": 50,
+              "itemType": "Trophy",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "13831",
+              "name": "Twitcher",
+              "level": 50,
+              "itemType": "Trophy",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "dofus_3",
+          "compatibleCount": 90,
+          "actionSourceCount": 2,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 2
+          },
+          "topActionSources": [
+            {
+              "id": "16336",
+              "name": "Observer",
+              "level": 50,
+              "itemType": "Trophy",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "13831",
+              "name": "Twitcher",
+              "level": 50,
+              "itemType": "Trophy",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "dofus_4",
+          "compatibleCount": 90,
+          "actionSourceCount": 2,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 2
+          },
+          "topActionSources": [
+            {
+              "id": "16336",
+              "name": "Observer",
+              "level": 50,
+              "itemType": "Trophy",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "13831",
+              "name": "Twitcher",
+              "level": 50,
+              "itemType": "Trophy",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "dofus_5",
+          "compatibleCount": 90,
+          "actionSourceCount": 2,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 2
+          },
+          "topActionSources": [
+            {
+              "id": "16336",
+              "name": "Observer",
+              "level": 50,
+              "itemType": "Trophy",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "13831",
+              "name": "Twitcher",
+              "level": 50,
+              "itemType": "Trophy",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "dofus_6",
+          "compatibleCount": 90,
+          "actionSourceCount": 2,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 2
+          },
+          "topActionSources": [
+            {
+              "id": "16336",
+              "name": "Observer",
+              "level": 50,
+              "itemType": "Trophy",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "13831",
+              "name": "Twitcher",
+              "level": 50,
+              "itemType": "Trophy",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
