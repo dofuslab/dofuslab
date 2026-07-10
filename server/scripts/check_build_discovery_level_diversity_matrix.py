@@ -11,8 +11,8 @@ from typing import Any
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.build_discovery_level_diversity_matrix import (  # noqa: E402
-    LEVEL_DIVERSITY_TARGETS,
     REPORT_VERSION,
+    targets_for_set,
 )
 
 
@@ -21,14 +21,14 @@ def load_json(path: str | Path) -> dict[str, Any]:
         return json.load(file)
 
 
-def validate_report(report: dict[str, Any]) -> list[str]:
+def validate_report(report: dict[str, Any], target_set: str = "level-diversity") -> list[str]:
     failures: list[str] = []
     if report.get("reportVersion") != REPORT_VERSION:
         failures.append(
             f"reportVersion is {report.get('reportVersion')}, expected {REPORT_VERSION}"
         )
 
-    expected_ids = {target.name for target in LEVEL_DIVERSITY_TARGETS}
+    expected_ids = {target.name for target in targets_for_set(target_set)}
     results = report.get("results", [])
     actual_ids = {
         result.get("target", {}).get("id")
@@ -81,9 +81,14 @@ def validate_report(report: dict[str, Any]) -> list[str]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("report", help="Path to a level-diversity matrix JSON artifact.")
+    parser.add_argument(
+        "--target-set",
+        choices=("level-diversity", "boundary", "all"),
+        default="level-diversity",
+    )
     args = parser.parse_args()
 
-    failures = validate_report(load_json(args.report))
+    failures = validate_report(load_json(args.report), target_set=args.target_set)
     if failures:
         for failure in failures:
             print(failure, file=sys.stderr)

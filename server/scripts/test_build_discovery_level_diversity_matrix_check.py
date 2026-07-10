@@ -1,7 +1,7 @@
 import unittest
 
 from check_build_discovery_level_diversity_matrix import validate_report
-from build_discovery_level_diversity_matrix import LEVEL_DIVERSITY_TARGETS, REPORT_VERSION
+from build_discovery_level_diversity_matrix import LEVEL_DIVERSITY_TARGETS, REPORT_VERSION, targets_for_set
 
 
 def valid_result(target):
@@ -33,6 +33,19 @@ def valid_report():
 class BuildDiscoveryLevelDiversityMatrixCheckTest(unittest.TestCase):
     def test_validate_report_accepts_complete_generated_matrix(self):
         self.assertEqual(validate_report(valid_report()), [])
+
+    def test_validate_report_accepts_boundary_target_set(self):
+        results = [valid_result(target) for target in targets_for_set("boundary")]
+        report = {
+            "reportVersion": REPORT_VERSION,
+            "targetCount": len(results),
+            "generatedCount": len(results),
+            "noBuildCount": 0,
+            "invalidCount": 0,
+            "results": results,
+        }
+
+        self.assertEqual(validate_report(report, target_set="boundary"), [])
 
     def test_validate_report_rejects_missing_target(self):
         report = valid_report()

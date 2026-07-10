@@ -22,6 +22,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     query_summary,
 )
 from scripts.build_discovery_level_diversity_targets import (  # noqa: E402
+    BOUNDARY_LEVEL_TARGETS,
     LEVEL_DIVERSITY_TARGETS,
     LevelDiversityTarget,
     query_for_target,
@@ -39,13 +40,14 @@ def csv_filter(raw_value: str | None) -> set[str] | None:
 
 def selected_targets(
     *,
+    all_targets: Iterable[LevelDiversityTarget] = LEVEL_DIVERSITY_TARGETS,
     target_names: set[str] | None = None,
     levels: set[int] | None = None,
     elements: set[str] | None = None,
     budget_tiers: set[int] | None = None,
 ) -> list[LevelDiversityTarget]:
     targets = []
-    for target in LEVEL_DIVERSITY_TARGETS:
+    for target in all_targets:
         if target_names is not None and target.name not in target_names:
             continue
         if levels is not None and target.level not in levels:
@@ -56,6 +58,24 @@ def selected_targets(
             continue
         targets.append(target)
     return targets
+
+
+def targets_for_set(target_set: str) -> tuple[LevelDiversityTarget, ...]:
+    if target_set == "level-diversity":
+        return LEVEL_DIVERSITY_TARGETS
+    if target_set == "boundary":
+        return BOUNDARY_LEVEL_TARGETS
+    if target_set == "all":
+        return LEVEL_DIVERSITY_TARGETS + BOUNDARY_LEVEL_TARGETS
+    raise ValueError(f"Unsupported target set: {target_set}")
+
+
+def target_source_for_set(target_set: str) -> str:
+    if target_set == "boundary":
+        return "scripts.build_discovery_level_diversity_targets.BOUNDARY_LEVEL_TARGETS"
+    if target_set == "all":
+        return "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS+BOUNDARY_LEVEL_TARGETS"
+    return "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS"
 
 
 def target_summary(target: LevelDiversityTarget) -> dict[str, Any]:
@@ -178,6 +198,7 @@ def build_matrix_report(
     *,
     generator: Callable[[BuildDiscoveryQuery], dict[str, Any]] = build_discovery_response,
     generated_at: str | None = None,
+    target_set: str = "level-diversity",
 ) -> dict[str, Any]:
     entries = []
     for target in targets:
@@ -189,10 +210,10 @@ def build_matrix_report(
     return {
         "reportVersion": REPORT_VERSION,
         "generatedAt": generated_at or datetime.now(timezone.utc).isoformat(),
-        "scope": "Iop level-diversity sampled targets from prod aggregate discovery",
+        "scope": f"Iop {target_set} generated target matrix",
         "provenance": {
             "gitSha": current_git_sha(),
-            "targetSource": "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS",
+            "targetSource": target_source_for_set(target_set),
             "generator": "scripts/build_discovery_level_diversity_matrix.py",
         },
         "targetCount": len(entries),
@@ -284,6 +305,11 @@ def parse_int_filter(raw_value: str | None) -> set[int] | None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--targets", help="Comma-separated target ids to include.")
+    parser.add_argument(
+        "--target-set",
+        choices=("level-diversity", "boundary", "all"),
+        default="level-diversity",
+    )
     parser.add_argument("--levels", help="Comma-separated levels to include.")
     parser.add_argument("--elements", help="Comma-separated elements to include.")
     parser.add_argument("--budget-tiers", help="Comma-separated budget tiers to include.")
@@ -293,6 +319,7 @@ def main() -> None:
     args = parser.parse_args()
 
     targets = selected_targets(
+        all_targets=targets_for_set(args.target_set),
         target_names=csv_filter(args.targets),
         levels=parse_int_filter(args.levels),
         elements=csv_filter(args.elements),
@@ -306,7 +333,7 @@ def main() -> None:
         if args.use_cache
         else lambda query: build_discovery_response(query, use_cache=False)
     )
-    report = build_matrix_report(targets, generator=generator)
+    report = build_matrix_report(targets, generator=generator, target_set=args.target_set)
 
     if args.output_json:
         output_json = Path(args.output_json)

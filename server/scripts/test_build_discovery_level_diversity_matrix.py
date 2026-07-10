@@ -5,6 +5,7 @@ from build_discovery_level_diversity_matrix import (
     build_matrix_report,
     render_markdown,
     selected_targets,
+    targets_for_set,
     validate_best_build,
 )
 from build_discovery_level_diversity_targets import query_for_target
@@ -19,6 +20,21 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         )
 
         self.assertEqual([target.name for target in targets], ["level_60_agility_9_3_none_budget1"])
+
+    def test_selected_targets_can_use_boundary_target_set(self):
+        targets = selected_targets(
+            all_targets=targets_for_set("boundary"),
+            levels={1, 99},
+            budget_tiers={1},
+        )
+
+        self.assertEqual(
+            [target.name for target in targets],
+            [
+                "boundary_level_1_strength_6_3_none_budget1",
+                "boundary_level_99_agility_6_3_none_budget1",
+            ],
+        )
 
     def test_build_matrix_report_records_generated_and_empty_results(self):
         selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})
@@ -53,13 +69,22 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
                 ],
             }
 
-        report = build_matrix_report(selected, generator=fake_generator, generated_at="now")
+        report = build_matrix_report(
+            selected,
+            generator=fake_generator,
+            generated_at="now",
+            target_set="level-diversity",
+        )
 
         self.assertEqual(report["reportVersion"], REPORT_VERSION)
         self.assertEqual(report["targetCount"], 1)
         self.assertEqual(report["generatedCount"], 1)
         self.assertEqual(report["noBuildCount"], 0)
         self.assertEqual(report["invalidCount"], 0)
+        self.assertEqual(
+            report["provenance"]["targetSource"],
+            "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS",
+        )
         self.assertEqual(seen_queries[0].level, 50)
         self.assertEqual(report["results"][0]["validationErrors"], [])
         self.assertEqual(report["results"][0]["bestBuildSummary"]["items"], ["Example Amulet", "Example Sword"])
