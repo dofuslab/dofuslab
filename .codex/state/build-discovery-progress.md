@@ -2475,6 +2475,32 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_uncommon_action_sources.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile oneoff/build_discovery_prototype.py scripts/test_build_discovery_uncommon_action_sources.py"`
   - targeted no-cache generation for the three witness-backed cap-2 rows
+- Reviewer finding fixed in the next checkpoint:
+  - witness seeds now honor the effective `exoPolicy`; no-exo budget rows
+    cannot receive pre-applied generated exos from the seed path
+  - the witness seed helper now establishes the target-level context itself so
+    direct calls do not accidentally use level-200 base AP
+
+### 2026-07-10 Witness Seed Exo Policy Fix
+
+- Fixed `action_stat_witness_seed_states()` so it receives and uses the
+  effective search `exo_policy`.
+- Added regression coverage that the synthetic cap witness seed succeeds with
+  `exo_policy=allow`, records generated exos, and returns no seeds with
+  `exo_policy=none`.
+- Verified a real lower-budget cap row:
+  - query: level 80 Strength `12/6/6` budget tier 2 with requested
+    `exoPolicy=allow`
+  - effective behavior: no exos, because tier 2 forces `exoPolicy=none`
+  - result: no build, with the expected no-exo warning
+- Interpretation:
+  - cap witness seeds no longer bypass budget/exo policy
+  - the previously generated cap-3 artifact from before this fix should not be
+    used; cap-3 must be regenerated after this checkpoint
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_uncommon_action_sources.py && python -m unittest scripts.test_build_discovery_query_contract"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile oneoff/build_discovery_prototype.py scripts/test_build_discovery_uncommon_action_sources.py"`
+  - targeted no-cache generation for level 80 Strength `12/6/6` budget tier 2
 
 ### 2026-07-10 Cap 2 Matrix After Witness Seed Fix
 

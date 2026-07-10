@@ -1899,6 +1899,7 @@ def action_stat_witness_seed_states(
     search_target: BuildTarget,
     natural_cap_target: BuildTarget,
     *,
+    exo_policy: str = "allow",
     limit: int = ACTION_STAT_WITNESS_SEED_LIMIT,
     max_states_per_slot: int = ACTION_STAT_WITNESS_MAX_STATES_PER_SLOT,
 ) -> list[BuildState]:
@@ -1921,56 +1922,57 @@ def action_stat_witness_seed_states(
     if any(not choices for _, choices in slot_choices):
         return []
 
-    states = [BuildState()]
-    for slot_name, choices in slot_choices:
-        next_states: list[BuildState] = []
-        for state in states:
-            for item in choices:
-                if item is None:
-                    next_states.append(state)
-                    continue
-                next_state = add_item_to_state(
-                    state,
-                    slot_name,
-                    item,
-                    sets,
-                    search_target,
-                    condition_target=target,
-                    cap_target=natural_cap_target,
-                    include_potential_score=False,
+    with target_level_context(target.level):
+        states = [BuildState()]
+        for slot_name, choices in slot_choices:
+            next_states: list[BuildState] = []
+            for state in states:
+                for item in choices:
+                    if item is None:
+                        next_states.append(state)
+                        continue
+                    next_state = add_item_to_state(
+                        state,
+                        slot_name,
+                        item,
+                        sets,
+                        search_target,
+                        condition_target=target,
+                        cap_target=natural_cap_target,
+                        include_potential_score=False,
+                    )
+                    if next_state is not None:
+                        next_states.append(next_state)
+
+            buckets: dict[tuple[Any, ...], BuildState] = {}
+            for state in next_states:
+                key = (
+                    min(state.stats.get("AP", 0), target.ap),
+                    min(state.stats.get("MP", 0), target.mp),
+                    min(state.stats.get("Range", 0), target.range),
+                    tuple(sorted((set_id, min(count, 8)) for set_id, count in state.set_counts.items() if set_id in action_set_ids)),
+                    tuple(sorted(state.slots)),
                 )
-                if next_state is not None:
-                    next_states.append(next_state)
+                current = buckets.get(key)
+                if current is None or state.score > current.score:
+                    buckets[key] = state
+            states = sorted(
+                buckets.values(),
+                key=lambda state: (
+                    min(state.stats.get("AP", 0), target.ap),
+                    min(state.stats.get("MP", 0), target.mp),
+                    min(state.stats.get("Range", 0), target.range),
+                    len(state.slots),
+                    state.score,
+                ),
+                reverse=True,
+            )[:max_states_per_slot]
 
-        buckets: dict[tuple[Any, ...], BuildState] = {}
-        for state in next_states:
-            key = (
-                min(state.stats.get("AP", 0), target.ap),
-                min(state.stats.get("MP", 0), target.mp),
-                min(state.stats.get("Range", 0), target.range),
-                tuple(sorted((set_id, min(count, 8)) for set_id, count in state.set_counts.items() if set_id in action_set_ids)),
-                tuple(sorted(state.slots)),
-            )
-            current = buckets.get(key)
-            if current is None or state.score > current.score:
-                buckets[key] = state
-        states = sorted(
-            buckets.values(),
-            key=lambda state: (
-                min(state.stats.get("AP", 0), target.ap),
-                min(state.stats.get("MP", 0), target.mp),
-                min(state.stats.get("Range", 0), target.range),
-                len(state.slots),
-                state.score,
-            ),
-            reverse=True,
-        )[:max_states_per_slot]
-
-    valid_seeds = []
-    for state in states:
-        state_with_exos = apply_missing_exos(state, target, "allow")
-        if state_with_exos and action_stats_meet_target(state_with_exos, target):
-            valid_seeds.append(state_with_exos)
+        valid_seeds = []
+        for state in states:
+            state_with_exos = apply_missing_exos(state, target, exo_policy)
+            if state_with_exos and action_stats_meet_target(state_with_exos, target):
+                valid_seeds.append(state_with_exos)
 
     valid_seeds = [seed for seed in valid_seeds if not unmet_item_conditions(seed)]
     return dedupe_builds(sorted(valid_seeds, key=lambda state: state.score, reverse=True))[:limit]
@@ -3901,6 +3903,7 @@ def find_builds(
             target,
             search_target,
             natural_cap_target,
+            exo_policy=exo_policy,
         )
     )
     timings["candidatePoolsMs"] = (time.perf_counter() - phase_started) * 1000

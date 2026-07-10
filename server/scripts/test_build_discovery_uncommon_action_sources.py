@@ -102,7 +102,7 @@ class BuildDiscoveryUncommonActionSourceTest(unittest.TestCase):
         pools = {
             "amulet": [test_item("ap_amulet", "Amulet", {"AP": 1})],
             "belt": [test_item("range_belt", "Belt", {"Range": 1})],
-            "weapon": [test_item("range_sword", "Sword", {"Range": 1})],
+            "weapon": [test_item("ap_range_sword", "Sword", {"AP": 1, "Range": 1})],
             "shield": [test_item("range_shield", "Shield", {"Range": 1})],
             "ring_1": [test_item("ap_ring_1", "Ring", {"AP": 1}, score=-100)],
             "ring_2": [test_item("ap_ring_2", "Ring", {"AP": 1}, score=-90)],
@@ -124,11 +124,25 @@ class BuildDiscoveryUncommonActionSourceTest(unittest.TestCase):
             target,
             target,
             target,
+            exo_policy="allow",
             max_states_per_slot=200,
         )
 
         self.assertTrue(seeds)
         self.assertTrue(any(seed.stats["AP"] >= 12 and seed.stats["MP"] >= 6 and seed.stats["Range"] >= 6 for seed in seeds))
+        self.assertTrue(any(seed.exos for seed in seeds))
+
+        no_exo_seeds = action_stat_witness_seed_states(
+            pools,
+            {},
+            target,
+            target,
+            target,
+            exo_policy="none",
+            max_states_per_slot=200,
+        )
+
+        self.assertEqual(no_exo_seeds, [])
 
     def test_action_stat_witness_seeds_only_run_for_cap_pressure_targets(self):
         target = BuildTarget(ap=11, mp=6, range=6, level=50, min_ap=base_ap_for_level(50))
