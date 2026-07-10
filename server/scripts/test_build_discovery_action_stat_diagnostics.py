@@ -135,6 +135,7 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
         self.assertIn("found, state cap hit", markdown)
         self.assertIn("Witness searches run: `1`", markdown)
         self.assertIn("Action-stat witnesses found: `1` of `1` searched", markdown)
+        self.assertIn("not checked", markdown)
         self.assertIn("AP optimistic upper bound", markdown)
 
     def test_solver_candidate_pool_coverage_reports_missing_witness_items(self):
@@ -162,6 +163,7 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
             )
 
         self.assertEqual(coverage["missingCount"], 1)
+        self.assertIsInstance(coverage["elapsedMs"], float)
         self.assertEqual(coverage["missingItems"][0]["name"], "Missing Belt")
         self.assertEqual(coverage["items"][0]["inSolverPool"], True)
 
@@ -245,6 +247,7 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
                 "found": True,
             },
         )
+        self.assertIsNone(diagnostics["diagnostics"][0]["solverCandidatePoolCoverage"])
 
     def test_artifact_stem_for_target_sanitizes_ids(self):
         entry = {"target": {"id": "cap row/level 20:chance"}}

@@ -199,6 +199,7 @@
       "solverCandidatePoolCoverage": {
         "topK": 25,
         "relevantSetLimit": 60,
+        "elapsedMs": 70.5,
         "missingCount": 0,
         "witnessItemCount": 11,
         "missingItems": [],

@@ -2645,6 +2645,8 @@ Run the initial evaluator pass:
   - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
   - copied changed diagnostic scripts into the Docker server container, then ran
     `python scripts/test_build_discovery_action_stat_diagnostics.py && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py`
+- Regeneration commands included `--solver-pool-coverage` on the cap-4 level
+  50 witness diagnostic and the cap-4 remaining witness split diagnostic.
 
 ### 2026-07-10 Lower-Budget Cap 4 Target Set
 
@@ -2775,8 +2777,10 @@ Run the initial evaluator pass:
 ### 2026-07-10 Cap 4 Witness Pool-Coverage Diagnostics
 
 - Extended `server/scripts/build_discovery_action_stat_diagnostics.py` so a
-  found action-stat witness also reports whether each witness item is present
-  in the solver's normal candidate pool.
+  found action-stat witness can also report whether each witness item is
+  present in the default solver candidate pool.
+- Pool coverage is now explicit opt-in with `--solver-pool-coverage` and each
+  row records elapsed milliseconds.
 - Regenerated:
   - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-level50-witness-2k-diagnostics.json`
   - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-level50-witness-2k-diagnostics.md`
@@ -2784,21 +2788,46 @@ Run the initial evaluator pass:
   - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.md`
   - split artifacts in `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/`
 - Pool-coverage result:
-  - level 50 Agility tier 2: witness found; missing `Sponghield`
-  - level 99 Intelligence tier 2: witness found; no witness items missing
+  - level 50 Agility tier 2: witness found; missing `Sponghield`; coverage
+    check took 52.2ms
+  - level 99 Intelligence tier 2: witness found; no witness items missing from
+    the default solver candidate pool; coverage check took 70.5ms
   - level 199 Agility tier 2: witness found; missing `Bzzegg Supervisor's Fist`
-    and `Golden Dragoone`
+    and `Golden Dragoone`; coverage check took 44.7ms
   - level 200 Strength tier 1: witness found; missing `Khardboard Moowolf Belt`
-    and `Plum and Almond Dragoturkey`
+    and `Plum and Almond Dragoturkey`; coverage check took 58.4ms
   - level 80 Strength tier 1: no witness found, so pool coverage is not checked
 - Interpretation:
   - level 50, 199, and 200 have candidate-pool recall gaps for their found
     action-stat witnesses
-  - level 99 has full candidate-pool coverage, so its no-build is later in
-    seed retention, completion, validation, or scoring
+  - level 99 has full default candidate-pool coverage for the found witness, so
+    pool exclusion is not implicated; remaining likely causes include seed
+    retention, completion, validation, scoring, or another downstream
+    interaction
   - level 80 remains unresolved as a bounded witness miss
 - Verification passed:
   - `python server\scripts\test_build_discovery_action_stat_diagnostics.py`
   - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
   - copied changed diagnostic scripts into the Docker server container, then ran
     `python scripts/test_build_discovery_action_stat_diagnostics.py && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py`
+
+### 2026-07-10 Action-Set Recall Plan
+
+- Added `.codex/state/build-discovery-action-set-recall-plan.md`.
+- Motivation:
+  - cap-4 witness diagnostics show missing candidate-pool items that are
+    individually low-score but useful through AP/MP/Range set/package bonuses
+  - named-item allowlisting would overfit the current artifacts
+- Broad inclusion is too large:
+  - level 50 tier 2 has 76 available AP/MP/Range-bonus sets, 50 outside the
+    current relevant-set limit
+  - level 199 tier 2 has 129 available AP/MP/Range-bonus sets, 89 outside the
+    current relevant-set limit
+  - level 200 tier 1 has 223 available AP/MP/Range-bonus sets, 184 outside the
+    current relevant-set limit
+- Proposed next step:
+  - add a read-only action-set package diagnostic before solver consumption
+  - report which set/package explains each missing witness item and whether a
+    bounded package rank would select it
+  - only then add a bounded package seed stage that honors budget, exo policy,
+    conditions, level, locked items, and avoided items

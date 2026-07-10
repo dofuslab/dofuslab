@@ -6,6 +6,7 @@ import argparse
 import json
 import re
 import sys
+import time
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -176,6 +177,7 @@ def solver_candidate_pool_coverage(
     if not witness:
         return None
 
+    started_at = time.perf_counter()
     relevant_sets = relevant_set_ids(items, sets, query.relevant_set_limit)
     pools = {
         slot_name: candidate_pool_for_slot(
@@ -208,6 +210,7 @@ def solver_candidate_pool_coverage(
     return {
         "topK": query.top_k,
         "relevantSetLimit": query.relevant_set_limit,
+        "elapsedMs": round((time.perf_counter() - started_at) * 1000, 1),
         "missingCount": len(missing),
         "witnessItemCount": len(by_slot),
         "missingItems": missing,
@@ -349,6 +352,7 @@ def diagnose_entry(
     *,
     witness_search: bool = False,
     witness_max_states_per_slot: int = 20_000,
+    solver_pool_coverage: bool = False,
 ) -> dict[str, Any]:
     target = entry["target"]
     query = query_from_entry(entry)
@@ -369,7 +373,7 @@ def diagnose_entry(
         }
     )
     witness = witness_search_result["witness"]
-    sets = load_sets() if witness else {}
+    sets = load_sets() if witness and solver_pool_coverage else {}
     return {
         "target": target,
         "query": query_summary(query),
@@ -390,7 +394,11 @@ def diagnose_entry(
             key: value for key, value in witness_search_result.items() if key != "witness"
         },
         "actionStatWitness": witness,
-        "solverCandidatePoolCoverage": solver_candidate_pool_coverage(query, witness, items, sets),
+        "solverCandidatePoolCoverage": (
+            solver_candidate_pool_coverage(query, witness, items, sets)
+            if solver_pool_coverage
+            else None
+        ),
         "slotSummaries": summaries,
     }
 
@@ -402,12 +410,14 @@ def build_diagnostics_report(
     target_ids: set[str] | None = None,
     witness_search: bool = False,
     witness_max_states_per_slot: int = 20_000,
+    solver_pool_coverage: bool = False,
 ) -> dict[str, Any]:
     return build_diagnostics_report_for_entries(
         matrix_report,
         selected_matrix_entries(matrix_report, statuses=statuses, target_ids=target_ids),
         witness_search=witness_search,
         witness_max_states_per_slot=witness_max_states_per_slot,
+        solver_pool_coverage=solver_pool_coverage,
     )
 
 
@@ -417,12 +427,14 @@ def build_diagnostics_report_for_entries(
     *,
     witness_search: bool = False,
     witness_max_states_per_slot: int = 20_000,
+    solver_pool_coverage: bool = False,
 ) -> dict[str, Any]:
     diagnostics = [
         diagnose_entry(
             entry,
             witness_search=witness_search,
             witness_max_states_per_slot=witness_max_states_per_slot,
+            solver_pool_coverage=solver_pool_coverage,
         )
         for entry in entries
     ]
@@ -476,7 +488,7 @@ def render_markdown(report: dict[str, Any]) -> str:
             f"of `{report.get('witnessSearchRunCount', 0)}` searched"
         ),
         "",
-        "| Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness search | Witness AP/MP/Range | Solver pool missing | Reasons |",
+        "| Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness search | Witness AP/MP/Range | Default solver pool missing | Reasons |",
         "|---|---|---|---|---|---|---|---|",
     ]
     for diagnostic in report["diagnostics"]:
@@ -504,7 +516,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         missing_items = pool_coverage.get("missingItems") or []
         pool_missing_label = (
             "not checked"
-            if diagnostic.get("actionStatWitness") is None
+            if not pool_coverage
             else "0"
             if not missing_items
             else "{}: {}".format(
@@ -512,6 +524,13 @@ def render_markdown(report: dict[str, Any]) -> str:
                 ", ".join(str(item.get("name") or item.get("id")) for item in missing_items[:6]),
             )
         )
+        if pool_coverage:
+            pool_missing_label = (
+                f"{pool_missing_label} "
+                f"(topK {pool_coverage.get('topK')}, "
+                f"sets {pool_coverage.get('relevantSetLimit')}, "
+                f"{pool_coverage.get('elapsedMs')}ms)"
+            )
         lines.append(
             "| {} | {} | {} | {}/{}/{} | {} | {} | {} | {} |".format(
                 target_label(diagnostic["target"]),
@@ -585,6 +604,7 @@ def write_split_reports(
     output_dir: Path,
     witness_search: bool = False,
     witness_max_states_per_slot: int = 20_000,
+    solver_pool_coverage: bool = False,
 ) -> dict[str, Any]:
     written = []
     reports = []
@@ -596,6 +616,7 @@ def write_split_reports(
             [entry],
             witness_search=witness_search,
             witness_max_states_per_slot=witness_max_states_per_slot,
+            solver_pool_coverage=solver_pool_coverage,
         )
         reports.append(report)
         stem = unique_artifact_stem(entry, used_stems)
@@ -655,6 +676,11 @@ def main() -> None:
     parser.add_argument("--targets")
     parser.add_argument("--witness-search", action="store_true")
     parser.add_argument("--witness-max-states-per-slot", type=int, default=20_000)
+    parser.add_argument(
+        "--solver-pool-coverage",
+        action="store_true",
+        help="For found witnesses, also check default solver candidate-pool coverage.",
+    )
     parser.add_argument("--output-json")
     parser.add_argument("--output-md")
     parser.add_argument(
@@ -677,6 +703,7 @@ def main() -> None:
             output_dir=Path(args.split_output_dir),
             witness_search=args.witness_search,
             witness_max_states_per_slot=args.witness_max_states_per_slot,
+            solver_pool_coverage=args.solver_pool_coverage,
         )
         if args.output_json:
             write_report_outputs(
@@ -697,6 +724,7 @@ def main() -> None:
         selected_entries,
         witness_search=args.witness_search,
         witness_max_states_per_slot=args.witness_max_states_per_slot,
+        solver_pool_coverage=args.solver_pool_coverage,
     )
 
     if args.output_json:

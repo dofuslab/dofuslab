@@ -1388,6 +1388,7 @@
       "solverCandidatePoolCoverage": {
         "topK": 25,
         "relevantSetLimit": 60,
+        "elapsedMs": 70.5,
         "missingCount": 0,
         "witnessItemCount": 11,
         "missingItems": [],
@@ -2860,6 +2861,7 @@
       "solverCandidatePoolCoverage": {
         "topK": 25,
         "relevantSetLimit": 60,
+        "elapsedMs": 44.7,
         "missingCount": 2,
         "witnessItemCount": 13,
         "missingItems": [
@@ -4589,6 +4591,7 @@
       "solverCandidatePoolCoverage": {
         "topK": 25,
         "relevantSetLimit": 60,
+        "elapsedMs": 58.4,
         "missingCount": 2,
         "witnessItemCount": 10,
         "missingItems": [

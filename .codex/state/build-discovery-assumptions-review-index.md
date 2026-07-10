@@ -68,6 +68,7 @@ These need gameplay or product review before calling the feature shippable.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-level50-witness-2k-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/manifest.json`.
+   - Review `.codex/state/build-discovery-action-set-recall-plan.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-level50-witness-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-remaining-witness-diagnostics.md`.
@@ -113,11 +114,15 @@ These need gameplay or product review before calling the feature shippable.
      level 99 Intelligence tier 2, level 199 Agility tier 2, and level 200
      Strength tier 1. Level 80 Strength tier 1 remains a bounded witness miss
      with state cap hit.
-   - The cap-4 witness diagnostics now include solver candidate-pool coverage:
-     level 50 misses `Sponghield`; level 199 misses `Bzzegg Supervisor's Fist`
-     and `Golden Dragoone`; level 200 misses `Khardboard Moowolf Belt` and
-     `Plum and Almond Dragoturkey`; level 99 has full witness-item pool
-     coverage and is therefore a later seed/completion recall gap.
+   - The cap-4 witness diagnostics now include opt-in default solver
+     candidate-pool coverage: level 50 misses `Sponghield`; level 199 misses
+     `Bzzegg Supervisor's Fist` and `Golden Dragoone`; level 200 misses
+     `Khardboard Moowolf Belt` and `Plum and Almond Dragoturkey`; level 99 has
+     full witness-item coverage in the default solver candidate pools, so pool
+     exclusion is not implicated for that found witness.
+   - The next solver-recall direction should be a bounded action-set package
+     diagnostic/stage, not named-item allowlisting or including every
+     AP/MP/Range-bonus set.
    - The cap-2 item-stat diagnostic shows level 1 Intelligence and level 20
      Chance are below target under the item-stat-only upper bound.
    - Level 50 Agility, level 80 Strength, and level 99 Intelligence previously

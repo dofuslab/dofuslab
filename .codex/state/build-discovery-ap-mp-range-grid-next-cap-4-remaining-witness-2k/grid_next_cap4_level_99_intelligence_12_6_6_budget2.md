@@ -11,6 +11,6 @@ Not proven infeasible: `0`
 Witness searches run: `1`
 Action-stat witnesses found: `1` of `1` searched
 
-| Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness search | Witness AP/MP/Range | Solver pool missing | Reasons |
+| Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness search | Witness AP/MP/Range | Default solver pool missing | Reasons |
 |---|---|---|---|---|---|---|---|
-| L99 intelligence 12/6/6 tier 2 | no_build | action_stat_witness_found | 13/9/28 | found, state cap hit | 12/6/6 | 0 | Optimistic item-stat-only independent slot upper bound reaches the target; no-build remains a solver/search, set-bonus, uniqueness, condition, or interaction question. |
+| L99 intelligence 12/6/6 tier 2 | no_build | action_stat_witness_found | 13/9/28 | found, state cap hit | 12/6/6 | 0 (topK 25, sets 60, 70.5ms) | Optimistic item-stat-only independent slot upper bound reaches the target; no-build remains a solver/search, set-bonus, uniqueness, condition, or interaction question. |
