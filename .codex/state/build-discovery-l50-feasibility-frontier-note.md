@@ -24,10 +24,13 @@ Action feasibility diagnostics:
 
 - `.codex/state/build-discovery-l50-action-feasibility-cap5k.md`
 - `.codex/state/build-discovery-l50-action-feasibility-cap10k.md`
+- `.codex/state/build-discovery-l50-natural-gear-proof-cap10k.md`
 
 The first bounded diagnostic runs hit the state cap while preserving frontiers around `11/5/6`.
 
 After prioritizing AP/MP-capable slots and compressing harmless same-action item variants, the 10k diagnostic still hits the state cap but preserves a frontier at `11/6/6`.
+
+The first natural-gear proof-mode run also hits the same 10k state cap and preserves the same `11/6/6` frontier. It proves that the natural-gear path still needs a sharper representation; it does not yet prove infeasibility.
 
 ## Interpretation
 
