@@ -3100,6 +3100,10 @@ def is_dofus_slot(slot_name: str) -> bool:
     return slot_name.startswith("dofus_")
 
 
+def optional_empty_slot(slot_name: str, pools: dict[str, list[dict[str, Any]]]) -> bool:
+    return slot_name == "pet" and not pools.get(slot_name)
+
+
 def direct_completion_seed_candidates(
     seeds: list[BuildState],
     limit: int = DIRECT_COMPLETION_SEED_LIMIT,
@@ -3131,6 +3135,8 @@ def direct_non_dofus_completions(
     ]
     beam = [seed]
     for slot_name in remaining_slots:
+        if optional_empty_slot(slot_name, pools):
+            continue
         next_states: list[BuildState] = []
         for state in beam:
             for item in pools[slot_name]:
@@ -3599,6 +3605,8 @@ def search_slot_order(
         seed_states = strategy_seeds + (initial_seeds or [])
     beam = dedupe_builds(sorted(seed_states, key=lambda state: state.score, reverse=True))
     for slot_name in slot_order:
+        if optional_empty_slot(slot_name, pools):
+            continue
         next_states: list[BuildState] = []
         for state in beam:
             if slot_name in state.slots:

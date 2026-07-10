@@ -1550,3 +1550,23 @@ Run the initial evaluator pass:
     ms. Needs AP-baseline/trophy transition investigation.
 - Remaining caveat: `rangeTarget=None` still normalizes to `0` for final target
   checks; true "any Range, even negative" remains open.
+
+### 2026-07-10 Optional Empty Pet Slot
+
+- Treated the `pet` slot as optional when no Pet/Petsmount/Mount candidates are
+  available for the target level and budget.
+- This fixes an early-level recall gap where level 50 had no legal pet/mount
+  pool, causing direct completion and slot-order search beams to collapse.
+- The slot remains required when pet/mount candidates are available.
+- Added cheap coverage for optional pet-slot behavior.
+- Real local smoke after the fix:
+  - Level 50 Strength Iop `6/3/None`, tier 1, no exo, small search:
+    resultCount `1`, elapsed `6386.3` ms, totals `9/3/6`.
+    Items: Arachnamu, Dazzling Belt, Ogralimde's Sword, Pippin Blop Ring,
+    Treering, Black Wab Boots, Champo, Treecloak, Treechnid Shield, Minor
+    Rabid, Minor Miracle Man, Minor Earth Devastator, Minor Vigour, Minor Earth
+    Wrecker, Minor Friction.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
+  - `python -m py_compile server\oneoff\build_discovery_prototype.py server\scripts\test_build_discovery_query_contract.py`
+  - `git diff --check`

@@ -25,6 +25,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     effective_exo_policy,
     normalize_range_target,
     load_items,
+    optional_empty_slot,
     query_cache_identity,
     result_warnings,
     target_level_context,
@@ -205,6 +206,11 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
 
         index_mock.assert_called_once_with(50)
         self.assertEqual([item["dofusID"] for item in items], ["low"])
+
+    def test_pet_slot_is_optional_only_when_no_candidates_exist(self):
+        self.assertTrue(optional_empty_slot("pet", {"pet": []}))
+        self.assertFalse(optional_empty_slot("pet", {"pet": [{"dofusID": "mount"}]}))
+        self.assertFalse(optional_empty_slot("hat", {"hat": []}))
 
     def test_query_contract_rejects_ap_below_level_baseline(self):
         invalid_queries = (
