@@ -124,7 +124,7 @@ Before finalizing the sampled targets, run the readonly aggregate helper:
 
 ```sh
 python -m oneoff.build_discovery_prod_level_target_discovery \
-  --sample-limit 2500 \
+  --sample-limit 300 \
   --top-targets 8 \
   --class-name Iop \
   --bucket-size 20
@@ -135,7 +135,9 @@ The helper reports aggregate recent `custom_set` rows only; it omits custom set
 IDs, names, owners, and URLs. AP includes level baseline AP, item AP, exos, and
 active set bonus AP. MP includes base 3 MP, item MP, exos, and active set bonus
 MP. Range includes item Range, exos, and active set bonus Range. The sample is
-recency-based, not popularity-weighted.
+recency-based, not popularity-weighted. The initial default is intentionally
+small to avoid prod load; increase it only as an opt-in investigation if the
+bounded sample is too sparse.
 
 Representative levels to inspect:
 
@@ -162,6 +164,28 @@ hardcoded upfront. The intended shape is:
   level 200.
 - Level 200 remains represented by accepted `10/5/0`, `11/6/0`, and `12/6/0`
   reference rows rather than low AP/MP targets.
+
+First bounded prod sample, `sampleLimit=300`, produced useful starting shapes
+but is sparse below level 180 and heavily skewed toward level 200. Treat these
+as sample targets to generate and review, not as proof that the listed target is
+optimal or even common globally:
+
+- Level `50`: `7/3/1`, `7/4/0`, and `7/5/1`.
+- Level `60`: `10/4/2`, `10/4/3`, `9/3/2`, and `9/3/0`.
+- Level `80`: `10/5/1` and `9/5/2`; ignore the low-effort `7/3/0` row for
+  benchmark quality.
+- Level `100`: `12/5/0`.
+- Level `120`: `11/5/1`, `12/5/1`, and `11/4/1`.
+- Level `150`: `9/4/2`, `12/5/2`, `12/4/2`, and `11/5/2`.
+- Level `160`: `12/5/3`, `12/5/2`, `11/6/-2`, and `12/6/3`.
+- Level `180`: `12/5/3`.
+- Level `199`: `12/6/2`, `12/5/2`, `10/6/3`, `10/5/2`, and `12/6/5`.
+- Level `200`: keep accepted milestone-1 calibration rows and filter out
+  unrealistic saved-set targets below `10/5`; the bounded prod sample's useful
+  shapes cluster around `12/5` and `12/6` with varying Range.
+
+For level `180+`, sample planning should filter saved-set targets below `10/5`
+because those rows are not realistic benchmark goals for high-level Iop builds.
 
 After the first sample is reviewed:
 

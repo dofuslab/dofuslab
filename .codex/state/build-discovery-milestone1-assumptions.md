@@ -148,7 +148,7 @@ does not run unless `DOFUSLAB_READONLY_DATABASE_URL` is present:
 python -m oneoff.build_discovery_prod_level_target_discovery --check-env
 
 python -m oneoff.build_discovery_prod_level_target_discovery \
-  --sample-limit 2500 \
+  --sample-limit 300 \
   --top-targets 8 \
   --class-name Iop \
   --bucket-size 20

@@ -20,7 +20,7 @@ except ImportError:
 
 
 REPORT_VERSION = "build-discovery-prod-level-target-discovery-v1"
-DEFAULT_SAMPLE_LIMIT = 2500
+DEFAULT_SAMPLE_LIMIT = 300
 MAX_SAMPLE_LIMIT = 10000
 DEFAULT_TOP_TARGETS = 8
 MAX_TOP_TARGETS = 30
