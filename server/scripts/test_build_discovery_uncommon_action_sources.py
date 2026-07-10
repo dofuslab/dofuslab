@@ -7,12 +7,28 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from oneoff.build_discovery_prototype import (
     BuildTarget,
     SHAKER_TROPHY_ID,
+    action_stat_witness_seed_states,
     candidate_pool_for_slot,
+    base_ap_for_level,
     load_all_item_records,
     load_items,
     load_sets,
     required_item_seed_states,
 )
+
+
+def test_item(item_id, item_type, stats, score=0):
+    return {
+        "dofusID": item_id,
+        "name": item_id,
+        "_name": item_id,
+        "level": 1,
+        "itemType": item_type,
+        "setID": None,
+        "_stats": stats,
+        "_score": score if score else sum(stats.values()),
+        "conditions": {},
+    }
 
 
 class BuildDiscoveryUncommonActionSourceTest(unittest.TestCase):
@@ -80,6 +96,52 @@ class BuildDiscoveryUncommonActionSourceTest(unittest.TestCase):
 
         self.assertTrue(seeds)
         self.assertTrue(all(SHAKER_TROPHY_ID in seed.used_item_ids for seed in seeds))
+
+    def test_cap_action_stat_witness_seeds_preserve_low_score_skeletons(self):
+        target = BuildTarget(ap=12, mp=6, range=6, level=50, min_ap=base_ap_for_level(50))
+        pools = {
+            "amulet": [test_item("ap_amulet", "Amulet", {"AP": 1})],
+            "belt": [test_item("range_belt", "Belt", {"Range": 1})],
+            "weapon": [test_item("range_sword", "Sword", {"Range": 1})],
+            "shield": [test_item("range_shield", "Shield", {"Range": 1})],
+            "ring_1": [test_item("ap_ring_1", "Ring", {"AP": 1}, score=-100)],
+            "ring_2": [test_item("ap_ring_2", "Ring", {"AP": 1}, score=-90)],
+            "boots": [test_item("mp_boots", "Boots", {"MP": 1})],
+            "hat": [test_item("range_hat", "Hat", {"Range": 1})],
+            "cloak": [test_item("ap_cloak", "Cloak", {"AP": 1})],
+            "pet": [test_item("mp_range_pet", "Pet", {"MP": 1, "Range": 1})],
+            "dofus_1": [test_item("range_trophy", "Trophy", {"Range": 1})],
+            "dofus_2": [],
+            "dofus_3": [],
+            "dofus_4": [],
+            "dofus_5": [],
+            "dofus_6": [],
+        }
+
+        seeds = action_stat_witness_seed_states(
+            pools,
+            {},
+            target,
+            target,
+            target,
+            max_states_per_slot=200,
+        )
+
+        self.assertTrue(seeds)
+        self.assertTrue(any(seed.stats["AP"] >= 12 and seed.stats["MP"] >= 6 and seed.stats["Range"] >= 6 for seed in seeds))
+
+    def test_action_stat_witness_seeds_only_run_for_cap_pressure_targets(self):
+        target = BuildTarget(ap=11, mp=6, range=6, level=50, min_ap=base_ap_for_level(50))
+
+        seeds = action_stat_witness_seed_states(
+            {"amulet": [test_item("ap_amulet", "Amulet", {"AP": 1})]},
+            {},
+            target,
+            target,
+            target,
+        )
+
+        self.assertEqual(seeds, [])
 
 
 if __name__ == "__main__":

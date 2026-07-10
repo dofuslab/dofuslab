@@ -2452,3 +2452,26 @@ Run the initial evaluator pass:
   - brute-force widening is too expensive as the next path
   - next recall work should be targeted, using witness item/pool membership
     diagnostics and pruning-specific tests before changing broad beam limits
+
+### 2026-07-10 Cap Action-Stat Witness Seed Recall Fix
+
+- Added a bounded cap-pressure action-stat witness seed path to
+  `server/oneoff/build_discovery_prototype.py`.
+- The seed path only runs for exact `12/6/6` cap targets and preserves
+  low-score AP/MP/Range skeletons from the solver's existing candidate pools.
+- Added focused regression coverage in
+  `server/scripts/test_build_discovery_uncommon_action_sources.py`.
+- Verified the three witness-backed cap-2 no-build rows now generate with
+  normal matrix parameters:
+  - level 50 Agility `12/6/6` tier 4: generated in about 53.5 seconds
+  - level 80 Strength `12/6/6` tier 3: generated in about 175.2 seconds
+  - level 99 Intelligence `12/6/6` tier 4: generated in about 152.2 seconds
+- Interpretation:
+  - this fixes the action-stat recall gap for those three rows
+  - level 1 and level 20 cap-2 rows remain below target under the
+    item-stat-only upper-bound diagnostic and still need stronger
+    set-bonus-aware proof before claiming full infeasibility
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_uncommon_action_sources.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile oneoff/build_discovery_prototype.py scripts/test_build_discovery_uncommon_action_sources.py"`
+  - targeted no-cache generation for the three witness-backed cap-2 rows

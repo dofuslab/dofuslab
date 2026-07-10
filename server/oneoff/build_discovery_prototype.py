@@ -163,6 +163,8 @@ BUDGET_ACTION_TROPHY_COMBO_SEED_LIMIT = 40
 BUDGET_ACTION_GEAR_SEED_LIMIT = 160
 BUDGET_ACTION_GEAR_SLOT_LIMIT = 6
 BUDGET_ACTION_GEAR_VECTOR_CAP = 4
+ACTION_STAT_WITNESS_SEED_LIMIT = 12
+ACTION_STAT_WITNESS_MAX_STATES_PER_SLOT = 5000
 DIRECT_COMPLETION_SPECIAL_DOFUS_IDS = {"7754", "8698", "6980"}
 DIRECT_COMPLETION_CORE_DOFUS_IDS = {
     "694",  # Crimson Dofus
@@ -1867,6 +1869,111 @@ def budget_action_gear_seed_states(
     ]
     seeds = [seed for seed in seeds if not unmet_item_conditions(seed)]
     return dedupe_builds(sorted(seeds, key=lambda state: state.score, reverse=True))[:limit]
+
+
+def action_stat_witness_seed_needed(target: BuildTarget) -> bool:
+    return target.ap == MAX_AP and target.mp == MAX_MP and target.range == MAX_RANGE
+
+
+def action_stat_witness_seed_choices(
+    slot_name: str,
+    pools: dict[str, list[dict[str, Any]]],
+    action_set_ids: set[str],
+    target_level: int,
+) -> list[dict[str, Any] | None]:
+    candidates = [
+        item
+        for item in pools.get(slot_name, [])
+        if any(item["_stats"].get(stat, 0) > 0 for stat in ACTION_STATS)
+        or item.get("setID") in action_set_ids
+    ]
+    if optional_slot_choice(slot_name, target_level) or slot_name == "pet" or is_dofus_slot(slot_name):
+        return [None] + candidates
+    return candidates
+
+
+def action_stat_witness_seed_states(
+    pools: dict[str, list[dict[str, Any]]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+    *,
+    limit: int = ACTION_STAT_WITNESS_SEED_LIMIT,
+    max_states_per_slot: int = ACTION_STAT_WITNESS_MAX_STATES_PER_SLOT,
+) -> list[BuildState]:
+    if not action_stat_witness_seed_needed(target):
+        return []
+
+    action_set_ids = {
+        set_id
+        for set_id, set_obj in sets.items()
+        for stats in set_bonus_stats(set_obj).values()
+        if any(stats.get(stat, 0) > 0 for stat in ACTION_STATS)
+    }
+    slot_choices = [
+        (
+            slot_name,
+            action_stat_witness_seed_choices(slot_name, pools, action_set_ids, target.level),
+        )
+        for slot_name, _ in SLOTS
+    ]
+    if any(not choices for _, choices in slot_choices):
+        return []
+
+    states = [BuildState()]
+    for slot_name, choices in slot_choices:
+        next_states: list[BuildState] = []
+        for state in states:
+            for item in choices:
+                if item is None:
+                    next_states.append(state)
+                    continue
+                next_state = add_item_to_state(
+                    state,
+                    slot_name,
+                    item,
+                    sets,
+                    search_target,
+                    condition_target=target,
+                    cap_target=natural_cap_target,
+                    include_potential_score=False,
+                )
+                if next_state is not None:
+                    next_states.append(next_state)
+
+        buckets: dict[tuple[Any, ...], BuildState] = {}
+        for state in next_states:
+            key = (
+                min(state.stats.get("AP", 0), target.ap),
+                min(state.stats.get("MP", 0), target.mp),
+                min(state.stats.get("Range", 0), target.range),
+                tuple(sorted((set_id, min(count, 8)) for set_id, count in state.set_counts.items() if set_id in action_set_ids)),
+                tuple(sorted(state.slots)),
+            )
+            current = buckets.get(key)
+            if current is None or state.score > current.score:
+                buckets[key] = state
+        states = sorted(
+            buckets.values(),
+            key=lambda state: (
+                min(state.stats.get("AP", 0), target.ap),
+                min(state.stats.get("MP", 0), target.mp),
+                min(state.stats.get("Range", 0), target.range),
+                len(state.slots),
+                state.score,
+            ),
+            reverse=True,
+        )[:max_states_per_slot]
+
+    valid_seeds = []
+    for state in states:
+        state_with_exos = apply_missing_exos(state, target, "allow")
+        if state_with_exos and action_stats_meet_target(state_with_exos, target):
+            valid_seeds.append(state_with_exos)
+
+    valid_seeds = [seed for seed in valid_seeds if not unmet_item_conditions(seed)]
+    return dedupe_builds(sorted(valid_seeds, key=lambda state: state.score, reverse=True))[:limit]
 
 
 def eligible_for_exo(item: dict[str, Any], stat: str) -> bool:
@@ -3785,6 +3892,17 @@ def find_builds(
             natural_cap_target,
         )
     )
+    action_stat_witness_seeds = (
+        []
+        if required_seeds
+        else action_stat_witness_seed_states(
+            pools,
+            sets,
+            target,
+            search_target,
+            natural_cap_target,
+        )
+    )
     timings["candidatePoolsMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
@@ -3819,7 +3937,8 @@ def find_builds(
             + ap_set_bonus_seeds
             + required_seeds
             + budget_action_trophy_seeds
-            + budget_action_gear_seeds,
+            + budget_action_gear_seeds
+            + action_stat_witness_seeds,
             key=lambda state: state.score,
             reverse=True,
         )
