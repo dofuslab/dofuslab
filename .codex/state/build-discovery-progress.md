@@ -2365,3 +2365,20 @@ Run the initial evaluator pass:
   - this checkpoint adds no new generated-build or diagnostic evidence
   - it keeps the next diagnostic step reviewable and restartable once Docker is
     healthy
+
+### 2026-07-10 Split Diagnostic Artifact Writer
+
+- Added `--split-output-dir` to
+  `server/scripts/build_discovery_action_stat_diagnostics.py`.
+- Split-output mode writes one JSON and one Markdown diagnostic artifact per
+  selected target, plus a `manifest.json`.
+- This is intended for long witness searches where a later target might time
+  out; completed earlier target artifacts remain available for checkpointing.
+- Updated the cap-2 diagnostic plan to prefer split-output mode before falling
+  back to one command per target.
+- Docker Desktop is still returning engine API errors, so no new solver-backed
+  cap-2 diagnostic evidence was generated in this checkpoint.
+- Verification passed on the host:
+  - `python server\scripts\test_build_discovery_action_stat_diagnostics.py`
+  - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
+  - `git diff --check`

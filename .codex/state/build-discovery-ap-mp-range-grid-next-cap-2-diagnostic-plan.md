@@ -47,8 +47,17 @@ docker cp dofuslab-server-1:/tmp/build-discovery-ap-mp-range-grid-next-cap-2-dia
 
 ## Per-Row Witness Search
 
-Run witness search one target at a time. Commit any completed rows as their own
-artifact checkpoint if later rows are slow.
+Preferred path: use split-output mode so each selected target writes its JSON
+and Markdown artifact as soon as it completes. If a later row is slow or times
+out, earlier row artifacts remain available to copy back and commit.
+
+```powershell
+docker exec dofuslab-server-1 sh -lc "rm -rf /tmp/build-discovery-ap-mp-range-grid-next-cap-2-split-witness && cd /home/dofuslab && python scripts/build_discovery_action_stat_diagnostics.py /tmp/build-discovery-ap-mp-range-grid-next-cap-2-matrix.json --statuses no_build --witness-search --witness-max-states-per-slot 20000 --split-output-dir /tmp/build-discovery-ap-mp-range-grid-next-cap-2-split-witness"
+docker cp dofuslab-server-1:/tmp/build-discovery-ap-mp-range-grid-next-cap-2-split-witness .codex\state\build-discovery-ap-mp-range-grid-next-cap-2-split-witness
+```
+
+Fallback path: run witness search one target at a time. Commit any completed
+rows as their own artifact checkpoint if later rows are slow.
 
 ```powershell
 docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/build_discovery_action_stat_diagnostics.py /tmp/build-discovery-ap-mp-range-grid-next-cap-2-matrix.json --targets grid_next_cap2_level_1_intelligence_12_6_6_budget4 --witness-search --witness-max-states-per-slot 20000 --output-json /tmp/build-discovery-ap-mp-range-grid-next-cap-2-level1-witness-diagnostics.json --output-md /tmp/build-discovery-ap-mp-range-grid-next-cap-2-level1-witness-diagnostics.md"

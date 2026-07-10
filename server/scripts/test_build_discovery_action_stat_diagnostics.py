@@ -1,7 +1,15 @@
+import json
+import tempfile
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
-from build_discovery_action_stat_diagnostics import build_diagnostics_report, render_markdown
+from build_discovery_action_stat_diagnostics import (
+    artifact_stem_for_target,
+    build_diagnostics_report,
+    render_markdown,
+    write_split_reports,
+)
 
 
 def matrix_entry(level=1, status="no_build"):
@@ -192,6 +200,56 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
                 "found": True,
             },
         )
+
+    def test_artifact_stem_for_target_sanitizes_ids(self):
+        entry = {"target": {"id": "cap row/level 20:chance"}}
+
+        self.assertEqual(artifact_stem_for_target(entry), "cap-row-level-20-chance")
+
+    def test_write_split_reports_writes_one_artifact_per_entry_and_manifest(self):
+        entries = [
+            matrix_entry(level=1),
+            matrix_entry(level=20),
+        ]
+        entries[0]["target"]["id"] = "target/one"
+        entries[1]["target"]["id"] = "target two"
+        matrix_report = {"scope": "Iop test matrix", "generatedAt": "now", "results": entries}
+
+        def fake_diagnose(entry, **kwargs):
+            return {
+                "target": entry["target"],
+                "query": {},
+                "matrixStatus": entry["status"],
+                "catalogItemCount": 0,
+                "effectiveExoPolicy": "allow",
+                "optimisticIndependentSlotUpperBound": {"AP": 7, "MP": 4, "Range": 1},
+                "diagnosticStatus": "item_stat_upper_bound_below_target",
+                "reasons": ["AP optimistic upper bound 7 is below target 12"],
+                "witnessSearch": {"enabled": False, "maxStatesPerSlot": 20_000, "stateLimitHit": False, "found": False},
+                "actionStatWitness": None,
+                "slotSummaries": [],
+            }
+
+        with tempfile.TemporaryDirectory() as temp_dir, patch(
+            "build_discovery_action_stat_diagnostics.diagnose_entry",
+            side_effect=fake_diagnose,
+        ):
+            written = write_split_reports(
+                matrix_report,
+                entries,
+                output_dir=Path(temp_dir),
+            )
+
+            self.assertEqual([row["targetId"] for row in written], ["target/one", "target two"])
+            self.assertTrue((Path(temp_dir) / "target-one.json").exists())
+            self.assertTrue((Path(temp_dir) / "target-one.md").exists())
+            self.assertTrue((Path(temp_dir) / "target-two.json").exists())
+            manifest = json.loads((Path(temp_dir) / "manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual(manifest["splitReportCount"], 2)
+            self.assertEqual(
+                [row["diagnosticStatus"] for row in manifest["reports"]],
+                ["item_stat_upper_bound_below_target", "item_stat_upper_bound_below_target"],
+            )
 
 
 if __name__ == "__main__":

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any, Iterable
@@ -350,13 +351,28 @@ def build_diagnostics_report(
     witness_search: bool = False,
     witness_max_states_per_slot: int = 20_000,
 ) -> dict[str, Any]:
+    return build_diagnostics_report_for_entries(
+        matrix_report,
+        selected_matrix_entries(matrix_report, statuses=statuses, target_ids=target_ids),
+        witness_search=witness_search,
+        witness_max_states_per_slot=witness_max_states_per_slot,
+    )
+
+
+def build_diagnostics_report_for_entries(
+    matrix_report: dict[str, Any],
+    entries: Iterable[dict[str, Any]],
+    *,
+    witness_search: bool = False,
+    witness_max_states_per_slot: int = 20_000,
+) -> dict[str, Any]:
     diagnostics = [
         diagnose_entry(
             entry,
             witness_search=witness_search,
             witness_max_states_per_slot=witness_max_states_per_slot,
         )
-        for entry in selected_matrix_entries(matrix_report, statuses=statuses, target_ids=target_ids)
+        for entry in entries
     ]
     return {
         "reportVersion": REPORT_VERSION,
@@ -439,6 +455,60 @@ def render_markdown(report: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def artifact_stem_for_target(entry: dict[str, Any]) -> str:
+    target_id = str((entry.get("target") or {}).get("id") or "unknown-target")
+    stem = re.sub(r"[^A-Za-z0-9_.-]+", "-", target_id).strip("-")
+    return stem or "unknown-target"
+
+
+def write_report_outputs(report: dict[str, Any], *, output_json: Path, output_md: Path | None = None) -> None:
+    output_json.parent.mkdir(parents=True, exist_ok=True)
+    output_json.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    if output_md is not None:
+        output_md.parent.mkdir(parents=True, exist_ok=True)
+        output_md.write_text(render_markdown(report), encoding="utf-8")
+
+
+def write_split_reports(
+    matrix_report: dict[str, Any],
+    entries: Iterable[dict[str, Any]],
+    *,
+    output_dir: Path,
+    witness_search: bool = False,
+    witness_max_states_per_slot: int = 20_000,
+) -> list[dict[str, Any]]:
+    written = []
+    output_dir.mkdir(parents=True, exist_ok=True)
+    for entry in entries:
+        report = build_diagnostics_report_for_entries(
+            matrix_report,
+            [entry],
+            witness_search=witness_search,
+            witness_max_states_per_slot=witness_max_states_per_slot,
+        )
+        stem = artifact_stem_for_target(entry)
+        json_path = output_dir / f"{stem}.json"
+        md_path = output_dir / f"{stem}.md"
+        write_report_outputs(report, output_json=json_path, output_md=md_path)
+        written.append(
+            {
+                "targetId": (entry.get("target") or {}).get("id"),
+                "json": str(json_path),
+                "markdown": str(md_path),
+                "diagnosticStatus": report["diagnostics"][0]["diagnosticStatus"] if report["diagnostics"] else None,
+            }
+        )
+    manifest = {
+        "reportVersion": REPORT_VERSION,
+        "sourceMatrix": matrix_report.get("scope"),
+        "sourceGeneratedAt": matrix_report.get("generatedAt"),
+        "splitReportCount": len(written),
+        "reports": written,
+    }
+    write_report_outputs(manifest, output_json=output_dir / "manifest.json")
+    return written
+
+
 def csv_filter(raw_value: str | None) -> set[str] | None:
     if not raw_value or raw_value == "all":
         return None
@@ -454,24 +524,47 @@ def main() -> None:
     parser.add_argument("--witness-max-states-per-slot", type=int, default=20_000)
     parser.add_argument("--output-json")
     parser.add_argument("--output-md")
+    parser.add_argument(
+        "--split-output-dir",
+        help="Write one JSON/Markdown diagnostic artifact per selected target and a manifest.",
+    )
     args = parser.parse_args()
 
+    matrix_report = load_json(args.matrix_report)
+    statuses = csv_filter(args.statuses)
+    target_ids = csv_filter(args.targets)
+
+    if args.split_output_dir:
+        selected_entries = selected_matrix_entries(matrix_report, statuses=statuses, target_ids=target_ids)
+        written = write_split_reports(
+            matrix_report,
+            selected_entries,
+            output_dir=Path(args.split_output_dir),
+            witness_search=args.witness_search,
+            witness_max_states_per_slot=args.witness_max_states_per_slot,
+        )
+        if not args.output_json and not args.output_md:
+            print(json.dumps({"splitReportCount": len(written), "reports": written}, indent=2, ensure_ascii=False))
+        return
+
     report = build_diagnostics_report(
-        load_json(args.matrix_report),
-        statuses=csv_filter(args.statuses),
-        target_ids=csv_filter(args.targets),
+        matrix_report,
+        statuses=statuses,
+        target_ids=target_ids,
         witness_search=args.witness_search,
         witness_max_states_per_slot=args.witness_max_states_per_slot,
     )
 
     if args.output_json:
-        output_json = Path(args.output_json)
-        output_json.parent.mkdir(parents=True, exist_ok=True)
-        output_json.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        write_report_outputs(
+            report,
+            output_json=Path(args.output_json),
+            output_md=Path(args.output_md) if args.output_md else None,
+        )
     else:
         print(json.dumps(report, indent=2, ensure_ascii=False))
 
-    if args.output_md:
+    if args.output_md and not args.output_json:
         output_md = Path(args.output_md)
         output_md.parent.mkdir(parents=True, exist_ok=True)
         output_md.write_text(render_markdown(report), encoding="utf-8")
