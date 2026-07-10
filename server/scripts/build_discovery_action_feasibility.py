@@ -36,6 +36,7 @@ REPORT_VERSION = "build-discovery-action-feasibility-v1"
 class FeasibilityConfig:
     max_states_per_slot: int = 50_000
     max_examples: int = 3
+    proof_mode: str = "full"
 
 
 def target_to_build_target(target: LevelDiversityTarget) -> solver.BuildTarget:
@@ -299,18 +300,26 @@ def diagnose_target(
                 }
             )
 
-        for state in states:
-            examples.extend(
-                complete_with_action_dofus(
-                    state,
-                    action_dofus,
-                    target,
-                    exo_policy,
-                    config.max_examples - len(examples),
+        if config.proof_mode == "natural-gear":
+            examples = [
+                state
+                for state in states
+                if solver.action_stats_meet_target(state, target)
+                and not solver.unmet_item_conditions(state)
+            ][: config.max_examples]
+        else:
+            for state in states:
+                examples.extend(
+                    complete_with_action_dofus(
+                        state,
+                        action_dofus,
+                        target,
+                        exo_policy,
+                        config.max_examples - len(examples),
+                    )
                 )
-            )
-            if len(examples) >= config.max_examples:
-                break
+                if len(examples) >= config.max_examples:
+                    break
 
         status = "feasible" if examples else "unknown_state_cap_hit" if cap_hit else "likely_infeasible"
         return {
@@ -324,6 +333,7 @@ def diagnose_target(
                 "rangeTarget": target_spec.range_target,
             },
             "status": status,
+            "proofMode": config.proof_mode,
             "baseStats": action_stats(solver.active_base_stats()),
             "slotSummaries": slot_summaries,
             "actionDofus": [
@@ -400,6 +410,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--elements", default=None, help="Comma-separated elements.")
     parser.add_argument("--budget-tiers", default=None, help="Comma-separated budget tiers.")
     parser.add_argument("--max-states-per-slot", type=int, default=50_000)
+    parser.add_argument("--proof-mode", choices=("full", "natural-gear"), default="full")
     parser.add_argument("--output-json", type=Path, required=True)
     parser.add_argument("--output-md", type=Path, required=True)
     return parser.parse_args()
@@ -416,7 +427,7 @@ def main() -> None:
     )
     report = build_report(
         targets,
-        FeasibilityConfig(max_states_per_slot=args.max_states_per_slot),
+        FeasibilityConfig(max_states_per_slot=args.max_states_per_slot, proof_mode=args.proof_mode),
     )
     args.output_json.parent.mkdir(parents=True, exist_ok=True)
     args.output_md.parent.mkdir(parents=True, exist_ok=True)

@@ -1,6 +1,7 @@
 import unittest
 
 from build_discovery_action_feasibility import (
+    FeasibilityConfig,
     REPORT_VERSION,
     action_deficit,
     action_stat_total,
@@ -106,6 +107,7 @@ class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
                         "rangeTarget": 6,
                     },
                     "status": "feasible",
+                    "proofMode": "full",
                     "baseStats": {"AP": 6, "MP": 3, "Range": 0},
                     "slotSummaries": [{"stateCapHit": True}],
                     "actionDofus": [{"id": "16336", "name": "Observer", "stats": {"Range": 2}}],
@@ -120,6 +122,9 @@ class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
         self.assertIn("feasible", markdown)
         self.assertIn("12/6/6", markdown)
         self.assertIn("state cap hit", markdown)
+
+    def test_feasibility_config_defaults_to_full_proof_mode(self):
+        self.assertEqual(FeasibilityConfig().proof_mode, "full")
 
     def test_complete_with_action_dofus_returns_completed_state(self):
         target = target_to_build_target(
