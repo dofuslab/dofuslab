@@ -2005,3 +2005,32 @@ Run the initial evaluator pass:
 - Verification passed:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_ap_mp_range_grid_inventory.py scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
+
+### 2026-07-10 AP/MP/Range Grid Next-Target Selector
+
+- Extended the grid inventory with `nextUnprovenTargets`.
+- Added profile buckets for suggested target planning:
+  - `minimum`
+  - `middle`
+  - `mp_heavy`
+  - `range_heavy`
+  - `ap_heavy`
+  - `cap`
+- The selector first chooses one unproven row per representative level, then
+  round-robins stress profiles by level so the next generated-build slice
+  exercises level transitions instead of only the first level in sort order.
+- Stress-profile rows prefer higher budget tiers; minimum rows prefer cheaper
+  budget tiers.
+- Regenerated inventory artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-grid-inventory.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-inventory.md`
+- Current inventory remains:
+  - valid query rows: 39,424
+  - exact generated evidence rows: 37
+  - unproven rows: 39,387
+  - suggested next rows: 24
+- The current suggested slice is one minimum row and one `12/6/6` tier 4 cap
+  row per representative level.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_ap_mp_range_grid_inventory.py scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`

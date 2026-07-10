@@ -3,6 +3,8 @@ import unittest
 from build_discovery_ap_mp_range_grid_inventory import (
     build_inventory_report,
     covered_keys_from_reports,
+    profile_bucket,
+    select_next_unproven_targets,
     valid_query_rows,
 )
 
@@ -64,6 +66,37 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         self.assertEqual(inventory["unprovenCount"], 223)
         self.assertEqual(inventory["byLevel"][0]["level"], 1)
         self.assertEqual(len(inventory["unprovenExamples"]), 3)
+        self.assertGreater(len(inventory["nextUnprovenTargets"]), 0)
+
+    def test_profile_bucket_labels_edge_shapes(self):
+        self.assertEqual(
+            profile_bucket({"level": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None}),
+            "minimum",
+        )
+        self.assertEqual(
+            profile_bucket({"level": 200, "apTarget": 12, "mpTarget": 6, "rangeTarget": 6}),
+            "cap",
+        )
+        self.assertEqual(
+            profile_bucket({"level": 100, "apTarget": 7, "mpTarget": 6, "rangeTarget": 0}),
+            "mp_heavy",
+        )
+
+    def test_select_next_unproven_targets_diversifies_signatures(self):
+        rows = [
+            {"level": 1, "element": "strength", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None},
+            {"level": 1, "element": "strength", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": 0},
+            {"level": 1, "element": "chance", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None},
+            {"level": 20, "element": "strength", "budgetTier": 1, "apTarget": 6, "mpTarget": 6, "rangeTarget": 0},
+        ]
+
+        selected = select_next_unproven_targets(rows, set(), limit=3)
+
+        self.assertEqual(
+            [(row["level"], row["element"], row["profileBucket"]) for row in selected[:2]],
+            [(1, "strength", "minimum"), (20, "strength", "mp_heavy")],
+        )
+        self.assertEqual(len(selected), 3)
 
 
 if __name__ == "__main__":

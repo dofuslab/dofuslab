@@ -425,5 +425,223 @@
       "mpTarget": 4,
       "rangeTarget": null
     }
+  ],
+  "nextUnprovenTargets": [
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 2,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 20,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 50,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 80,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 99,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 100,
+      "element": "strength",
+      "budgetTier": 2,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 120,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 150,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 179,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 180,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 199,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 200,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap"
+    },
+    {
+      "level": 20,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap"
+    },
+    {
+      "level": 50,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap"
+    },
+    {
+      "level": 80,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap"
+    },
+    {
+      "level": 99,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap"
+    },
+    {
+      "level": 100,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap"
+    },
+    {
+      "level": 120,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap"
+    },
+    {
+      "level": 150,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap"
+    },
+    {
+      "level": 179,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap"
+    },
+    {
+      "level": 180,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap"
+    },
+    {
+      "level": 199,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap"
+    },
+    {
+      "level": 200,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap"
+    }
   ]
 }

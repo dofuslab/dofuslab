@@ -64,3 +64,30 @@ Unproven rows: `39387`
 - L1 strength tier 1 7/3/5
 - L1 strength tier 1 7/3/6
 - L1 strength tier 1 7/4/any
+
+## Suggested Next Generated Rows
+
+- L1 strength tier 2 6/3/any `minimum`
+- L20 strength tier 1 6/3/any `minimum`
+- L50 strength tier 1 6/3/any `minimum`
+- L80 strength tier 1 6/3/any `minimum`
+- L99 strength tier 1 6/3/any `minimum`
+- L100 strength tier 2 7/3/any `minimum`
+- L120 strength tier 1 7/3/any `minimum`
+- L150 strength tier 1 7/3/any `minimum`
+- L179 strength tier 1 7/3/any `minimum`
+- L180 strength tier 1 7/3/any `minimum`
+- L199 strength tier 1 7/3/any `minimum`
+- L200 strength tier 1 7/3/any `minimum`
+- L1 strength tier 4 12/6/6 `cap`
+- L20 strength tier 4 12/6/6 `cap`
+- L50 strength tier 4 12/6/6 `cap`
+- L80 strength tier 4 12/6/6 `cap`
+- L99 strength tier 4 12/6/6 `cap`
+- L100 strength tier 4 12/6/6 `cap`
+- L120 strength tier 4 12/6/6 `cap`
+- L150 strength tier 4 12/6/6 `cap`
+- L179 strength tier 4 12/6/6 `cap`
+- L180 strength tier 4 12/6/6 `cap`
+- L199 strength tier 4 12/6/6 `cap`
+- L200 strength tier 4 12/6/6 `cap`

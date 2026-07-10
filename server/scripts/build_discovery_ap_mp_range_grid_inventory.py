@@ -145,6 +145,97 @@ def compact_unproven_examples(
     return examples
 
 
+def profile_bucket(row: dict[str, Any]) -> str:
+    range_target = row["rangeTarget"]
+    if row["apTarget"] == MAX_AP and row["mpTarget"] == MAX_MP and range_target == MAX_RANGE:
+        return "cap"
+    if row["apTarget"] == base_ap_for_level(row["level"]) and row["mpTarget"] == MIN_MP and range_target is None:
+        return "minimum"
+    if row["mpTarget"] == MAX_MP:
+        return "mp_heavy"
+    if range_target == MAX_RANGE:
+        return "range_heavy"
+    if row["apTarget"] >= MAX_AP - 1:
+        return "ap_heavy"
+    return "middle"
+
+
+def select_next_unproven_targets(
+    rows: list[dict[str, Any]],
+    covered: set[tuple[int, str, int, int, int, int | None]],
+    limit: int,
+) -> list[dict[str, Any]]:
+    selected = []
+    unproven = [row for row in rows if row_key(row) not in covered]
+    levels = sorted({row["level"] for row in unproven})
+
+    def with_bucket(row: dict[str, Any]) -> dict[str, Any]:
+        return {**row, "profileBucket": profile_bucket(row)}
+
+    def is_selected(row: dict[str, Any]) -> bool:
+        return any(row_key(row) == row_key(selected_row) for selected_row in selected)
+
+    profile_rank = {
+        "minimum": 0,
+        "cap": 1,
+        "mp_heavy": 2,
+        "range_heavy": 3,
+        "ap_heavy": 4,
+        "middle": 5,
+    }
+    element_rank = {element: index for index, element in enumerate(DEFAULT_ELEMENTS)}
+
+    def candidate_sort_key(row: dict[str, Any]) -> tuple[Any, ...]:
+        bucket = profile_bucket(row)
+        budget_sort = row["budgetTier"] if bucket == "minimum" else -row["budgetTier"]
+        return (
+            profile_rank[bucket],
+            element_rank.get(row["element"], len(element_rank)),
+            budget_sort,
+            row["apTarget"],
+            row["mpTarget"],
+            -1 if row["rangeTarget"] is None else row["rangeTarget"],
+        )
+
+    for level in levels:
+        level_rows = [row for row in unproven if row["level"] == level]
+        if not level_rows:
+            continue
+        selected.append(with_bucket(sorted(level_rows, key=candidate_sort_key)[0]))
+        if len(selected) >= limit:
+            return selected
+
+    seen_profile_signatures = {
+        (row["level"], row["element"], row["budgetTier"], row["profileBucket"])
+        for row in selected
+    }
+    profile_order = ("cap", "mp_heavy", "range_heavy", "ap_heavy", "middle", "minimum")
+    for bucket in profile_order:
+        for level in levels:
+            level_bucket_rows = [
+                row
+                for row in unproven
+                if row["level"] == level and profile_bucket(row) == bucket and not is_selected(row)
+            ]
+            if not level_bucket_rows:
+                continue
+            row = sorted(level_bucket_rows, key=candidate_sort_key)[0]
+            signature = (row["level"], row["element"], row["budgetTier"], profile_bucket(row))
+            if signature in seen_profile_signatures:
+                continue
+            seen_profile_signatures.add(signature)
+            selected.append(with_bucket(row))
+            if len(selected) >= limit:
+                return selected
+    for row in unproven:
+        if is_selected(row):
+            continue
+        selected.append(with_bucket(row))
+        if len(selected) >= limit:
+            break
+    return selected
+
+
 def build_inventory_report(
     reports: Iterable[dict[str, Any]],
     *,
@@ -152,6 +243,7 @@ def build_inventory_report(
     elements: Iterable[str] = DEFAULT_ELEMENTS,
     budget_tiers: Iterable[int] = DEFAULT_BUDGET_TIERS,
     unproven_example_limit: int = 40,
+    next_target_limit: int = 24,
 ) -> dict[str, Any]:
     rows = valid_query_rows(levels, elements, budget_tiers)
     covered = covered_keys_from_reports(reports)
@@ -167,6 +259,7 @@ def build_inventory_report(
         "unprovenCount": len(rows) - len(covered_rows),
         "byLevel": summarize_by_level(rows, covered),
         "unprovenExamples": compact_unproven_examples(rows, covered, unproven_example_limit),
+        "nextUnprovenTargets": select_next_unproven_targets(rows, covered, next_target_limit),
     }
 
 
@@ -198,6 +291,16 @@ def render_markdown(report: dict[str, Any]) -> str:
             )
         )
     lines.append("")
+    lines.extend(["## Suggested Next Generated Rows", ""])
+    for row in report["nextUnprovenTargets"]:
+        range_label = "any" if row["rangeTarget"] is None else row["rangeTarget"]
+        lines.append(
+            "- L{level} {element} tier {budgetTier} {apTarget}/{mpTarget}/{range} `{profileBucket}`".format(
+                **row,
+                range=range_label,
+            )
+        )
+    lines.append("")
     return "\n".join(lines)
 
 
@@ -220,6 +323,7 @@ def main() -> None:
     parser.add_argument("--elements")
     parser.add_argument("--budget-tiers")
     parser.add_argument("--unproven-example-limit", type=int, default=40)
+    parser.add_argument("--next-target-limit", type=int, default=24)
     parser.add_argument("--output-json")
     parser.add_argument("--output-md")
     args = parser.parse_args()
@@ -232,6 +336,7 @@ def main() -> None:
         elements=parse_csv_strings(args.elements, DEFAULT_ELEMENTS),
         budget_tiers=parse_csv_ints(args.budget_tiers, DEFAULT_BUDGET_TIERS),
         unproven_example_limit=args.unproven_example_limit,
+        next_target_limit=args.next_target_limit,
     )
 
     if args.output_json:
