@@ -50,6 +50,7 @@ These need gameplay or product review before calling the feature shippable.
    - Review `.codex/state/build-discovery-ap-mp-range-coverage-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-2-matrix.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-3-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-level50-witness-diagnostics.md`.
@@ -62,6 +63,8 @@ These need gameplay or product review before calling the feature shippable.
      minimum targets, all generated with at least one build.
    - The current second selector-derived minimum matrix has 12 representative-level
      minimum targets, all generated with at least one build.
+   - The current third selector-derived minimum matrix has 12 representative-level
+     minimum targets across all four elements, all generated with at least one build.
    - The current selector-derived cap matrix has 12 representative-level
      `12/6/6` tier 4 targets: 10 generated and 2 no-build rows at levels 1
      and 20.
@@ -77,7 +80,7 @@ These need gameplay or product review before calling the feature shippable.
      cap, so it remains bounded/inconclusive rather than fully proven
      infeasible.
    - The current grid inventory has 39,424 representative valid query rows and
-     71 exact generated-evidence rows; it is a gap map, not build proof.
+     83 exact generated-evidence rows; it is a gap map, not build proof.
    - Confirm the sampled rows are useful representatives before promoting them to accepted benchmarks.
    - Flag rows where surplus AP/MP/Range, budget assumptions, or old lower-bucket gear look suspicious.
    - Treat this as generated solver evidence, not gameplay acceptance.

@@ -273,15 +273,24 @@ def target_label(target: dict[str, Any]) -> str:
     )
 
 
+def report_title(report: dict[str, Any]) -> str:
+    scope = report.get("scope", "")
+    if scope.startswith("Iop ") and scope.endswith(" generated target matrix"):
+        target_set = scope[len("Iop ") : -len(" generated target matrix")]
+        target_set_label = target_set.replace("-", " ").title()
+        return f"# Build Discovery Iop {target_set_label} Matrix"
+    return "# Build Discovery Iop Target Matrix"
+
+
 def render_markdown(report: dict[str, Any]) -> str:
     lines = [
-        "# Build Discovery Iop Level Diversity Matrix",
+        report_title(report),
         "",
         f"Generated at: `{report['generatedAt']}`",
         "",
         (
             "This is a generated-output snapshot for the sampled Milestone 3 "
-            "level-diversity targets. It records the current best solver result "
+            "target set. It records the current best solver result "
             "for review; it is not yet a human-accepted benchmark list."
         ),
         (

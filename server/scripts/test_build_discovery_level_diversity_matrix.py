@@ -214,6 +214,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
 
     def test_render_markdown_includes_review_table(self):
         report = {
+            "scope": "Iop grid-next-minimum-3 generated target matrix",
             "generatedAt": "now",
             "targetCount": 1,
             "generatedCount": 1,
@@ -244,7 +245,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
 
         markdown = render_markdown(report)
 
-        self.assertIn("# Build Discovery Iop Level Diversity Matrix", markdown)
+        self.assertIn("# Build Discovery Iop Grid Next Minimum 3 Matrix", markdown)
         self.assertIn("L50 strength 7/3/any tier 1", markdown)
         self.assertIn("Example Amulet, Example Sword", markdown)
 

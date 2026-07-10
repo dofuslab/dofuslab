@@ -1,8 +1,8 @@
-# Build Discovery Iop Level Diversity Matrix
+# Build Discovery Iop Grid Next Minimum 2 Matrix
 
 Generated at: `2026-07-10T12:59:40.222601+00:00`
 
-This is a generated-output snapshot for the sampled Milestone 3 level-diversity targets. It records the current best solver result for review; it is not yet a human-accepted benchmark list.
+This is a generated-output snapshot for the sampled Milestone 3 target set. It records the current best solver result for review; it is not yet a human-accepted benchmark list.
 
 
 Targets: `12`

@@ -2232,6 +2232,10 @@ Run the initial evaluator pass:
   - the next selector suggestions are another minimum budget pass and a lower
     budget cap pass, with level 1/20 cap rows still needing diagnostics before
     retrying broad generation work
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix.py && python scripts/test_build_discovery_level_diversity_matrix_check.py && python scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py scripts/build_discovery_ap_mp_range_grid_inventory.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-grid-next-minimum-2-matrix.json --target-set grid-next-minimum-2"`
 
 ### 2026-07-10 Grid Selector Element Rotation
 
@@ -2250,3 +2254,47 @@ Run the initial evaluator pass:
   - it better matches the Milestone 3 objective that any single-element Iop
     query should eventually work across all levels, budgets, and action-stat
     targets
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_ap_mp_range_grid_inventory.py && python -m py_compile scripts/build_discovery_ap_mp_range_grid_inventory.py scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
+
+### 2026-07-10 Matrix Markdown Target-Set Labels
+
+- Updated matrix Markdown rendering so generated artifact titles reflect the
+  actual target set, such as `Grid Next Minimum 3`, rather than using the
+  generic Level Diversity title for every artifact.
+- Refreshed:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-2-matrix.md`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-3-matrix.md`
+- Interpretation:
+  - this addresses a reviewer documentation finding
+  - JSON provenance was already correct; the change improves review clarity
+
+### 2026-07-10 Grid Next Minimum 3 Matrix
+
+- Added selector-derived target set
+  `AP_MP_RANGE_GRID_NEXT_MINIMUM_3_TARGETS`.
+- Generated current artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-3-matrix.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-3-matrix.md`
+- Artifact summary:
+  - targets: 12
+  - generated: 12
+  - invalid: 0
+  - no build: 0
+- This slice covers mixed elements across representative levels:
+  - Strength: levels 1, 99, 179
+  - Intelligence: levels 20, 100, 180
+  - Chance: levels 50, 120, 199
+  - Agility: levels 80, 150, 200
+- Regenerated the grid inventory with this artifact included.
+- Updated grid inventory result:
+  - valid query rows: 39,424
+  - exact generated evidence rows: 83
+  - attempted evidence rows: 85
+  - unproven rows: 39,341
+  - unattempted rows: 39,339
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix.py && python scripts/test_build_discovery_level_diversity_matrix_check.py && python scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py scripts/build_discovery_ap_mp_range_grid_inventory.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-grid-next-minimum-3-matrix.json --target-set grid-next-minimum-3"`
+  - `git diff --check`
