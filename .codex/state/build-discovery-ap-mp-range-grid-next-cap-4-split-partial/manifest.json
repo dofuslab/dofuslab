@@ -1,0 +1,29 @@
+{
+  "splitReportCount": 4,
+  "reports": [
+    {
+      "targetId": "grid_next_cap4_level_1_intelligence_12_6_6_budget2",
+      "status": "no_build",
+      "json": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-split/grid_next_cap4_level_1_intelligence_12_6_6_budget2.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-split/grid_next_cap4_level_1_intelligence_12_6_6_budget2.md"
+    },
+    {
+      "targetId": "grid_next_cap4_level_20_chance_12_6_6_budget2",
+      "status": "no_build",
+      "json": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-split/grid_next_cap4_level_20_chance_12_6_6_budget2.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-split/grid_next_cap4_level_20_chance_12_6_6_budget2.md"
+    },
+    {
+      "targetId": "grid_next_cap4_level_50_agility_12_6_6_budget2",
+      "status": "no_build",
+      "json": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-split/grid_next_cap4_level_50_agility_12_6_6_budget2.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-split/grid_next_cap4_level_50_agility_12_6_6_budget2.md"
+    },
+    {
+      "targetId": "grid_next_cap4_level_80_strength_12_6_6_budget1",
+      "status": "no_build",
+      "json": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-split/grid_next_cap4_level_80_strength_12_6_6_budget1.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-split/grid_next_cap4_level_80_strength_12_6_6_budget1.md"
+    }
+  ]
+}

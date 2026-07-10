@@ -1,0 +1,78 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-10T20:54:58.961955+00:00",
+  "scope": "Iop grid-next-cap-4 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": "e01909cafa70bb859192cc35db49691be1bf0d7a",
+    "targetSource": "scripts.build_discovery_level_diversity_targets.AP_MP_RANGE_GRID_NEXT_CAP_4_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 0,
+  "noBuildCount": 1,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "grid_next_cap4_level_1_intelligence_12_6_6_budget2",
+        "className": "Iop",
+        "level": 1,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 1,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "warnings": [
+        "No builds found for max AP/MP/Range under no-exo constraints; this may be infeasible for the selected budget or a remaining search coverage gap."
+      ],
+      "diagnostics": {
+        "elapsedMs": 488.5,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 112.3,
+          "candidatePoolsMs": 32.2,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 1.7,
+          "directCompletionMs": 0.0,
+          "beamSearchMs": 24.0,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 170.3
+        },
+        "resultCount": 0,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -244,24 +245,16 @@ def matrix_entry(
     }
 
 
-def build_matrix_report(
-    targets: Iterable[LevelDiversityTarget],
+def matrix_report_from_entries(
+    entries: list[dict[str, Any]],
     *,
-    generator: Callable[[BuildDiscoveryQuery], dict[str, Any]] = build_discovery_response,
-    generated_at: str | None = None,
-    target_set: str = "level-diversity",
-    git_sha: str | None = None,
+    generated_at: str,
+    target_set: str,
+    git_sha: str | None,
 ) -> dict[str, Any]:
-    entries = []
-    for target in targets:
-        query = query_for_target(target)
-        query.validate()
-        response = generator(query)
-        entries.append(matrix_entry(target, response, query))
-
     return {
         "reportVersion": REPORT_VERSION,
-        "generatedAt": generated_at or datetime.now(timezone.utc).isoformat(),
+        "generatedAt": generated_at,
         "scope": f"Iop {target_set} generated target matrix",
         "evidenceType": (
             "action_stat_feasibility"
@@ -278,6 +271,96 @@ def build_matrix_report(
         "noBuildCount": sum(1 for entry in entries if entry["status"] == "no_build"),
         "invalidCount": sum(1 for entry in entries if entry["status"] == "invalid"),
         "results": entries,
+    }
+
+
+def build_matrix_report(
+    targets: Iterable[LevelDiversityTarget],
+    *,
+    generator: Callable[[BuildDiscoveryQuery], dict[str, Any]] = build_discovery_response,
+    generated_at: str | None = None,
+    target_set: str = "level-diversity",
+    git_sha: str | None = None,
+) -> dict[str, Any]:
+    entries = []
+    for target in targets:
+        query = query_for_target(target)
+        query.validate()
+        response = generator(query)
+        entries.append(matrix_entry(target, response, query))
+
+    return matrix_report_from_entries(
+        entries,
+        generated_at=generated_at or datetime.now(timezone.utc).isoformat(),
+        target_set=target_set,
+        git_sha=git_sha,
+    )
+
+
+def artifact_stem_for_target(target: LevelDiversityTarget) -> str:
+    stem = re.sub(r"[^A-Za-z0-9_.-]+", "-", target.name).strip("-")
+    return stem or "unknown-target"
+
+
+def write_split_matrix_reports(
+    targets: Iterable[LevelDiversityTarget],
+    *,
+    output_dir: Path,
+    generator: Callable[[BuildDiscoveryQuery], dict[str, Any]] = build_discovery_response,
+    generated_at: str | None = None,
+    target_set: str = "level-diversity",
+    git_sha: str | None = None,
+) -> dict[str, Any]:
+    generated_at = generated_at or datetime.now(timezone.utc).isoformat()
+    output_dir.mkdir(parents=True, exist_ok=True)
+    entries = []
+    manifest_rows = []
+    used_stems: set[str] = set()
+    for target in targets:
+        query = query_for_target(target)
+        query.validate()
+        response = generator(query)
+        entry = matrix_entry(target, response, query)
+        entries.append(entry)
+
+        stem = artifact_stem_for_target(target)
+        base_stem = stem
+        suffix = 2
+        while stem in used_stems:
+            stem = f"{base_stem}-{suffix}"
+            suffix += 1
+        used_stems.add(stem)
+
+        one_row_report = matrix_report_from_entries(
+            [entry],
+            generated_at=generated_at,
+            target_set=target_set,
+            git_sha=git_sha,
+        )
+        json_path = output_dir / f"{stem}.json"
+        md_path = output_dir / f"{stem}.md"
+        json_path.write_text(json.dumps(one_row_report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        md_path.write_text(render_markdown(one_row_report), encoding="utf-8")
+        manifest_rows.append(
+            {
+                "targetId": target.name,
+                "status": entry["status"],
+                "json": str(json_path),
+                "markdown": str(md_path),
+            }
+        )
+        manifest = {"splitReportCount": len(manifest_rows), "reports": manifest_rows}
+        (output_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+
+    aggregate_report = matrix_report_from_entries(
+        entries,
+        generated_at=generated_at,
+        target_set=target_set,
+        git_sha=git_sha,
+    )
+    return {
+        "manifest": {"splitReportCount": len(manifest_rows), "reports": manifest_rows},
+        "aggregateReport": aggregate_report,
     }
 
 
@@ -387,6 +470,7 @@ def main() -> None:
     parser.add_argument("--budget-tiers", help="Comma-separated budget tiers to include.")
     parser.add_argument("--output-json", help="Write JSON report to this path.")
     parser.add_argument("--output-md", help="Write Markdown summary to this path.")
+    parser.add_argument("--split-output-dir", help="Write one JSON/Markdown report per selected target.")
     parser.add_argument("--git-sha", help="Git SHA to record when the runtime cannot see .git.")
     parser.add_argument("--use-cache", action="store_true", help="Use process cache during generation.")
     args = parser.parse_args()
@@ -406,12 +490,22 @@ def main() -> None:
         if args.use_cache
         else lambda query: build_discovery_response(query, use_cache=False)
     )
-    report = build_matrix_report(
-        targets,
-        generator=generator,
-        target_set=args.target_set,
-        git_sha=args.git_sha,
-    )
+    if args.split_output_dir:
+        split_result = write_split_matrix_reports(
+            targets,
+            output_dir=Path(args.split_output_dir),
+            generator=generator,
+            target_set=args.target_set,
+            git_sha=args.git_sha,
+        )
+        report = split_result["aggregateReport"]
+    else:
+        report = build_matrix_report(
+            targets,
+            generator=generator,
+            target_set=args.target_set,
+            git_sha=args.git_sha,
+        )
 
     if args.output_json:
         output_json = Path(args.output_json)

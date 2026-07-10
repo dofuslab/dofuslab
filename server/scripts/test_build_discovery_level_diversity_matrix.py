@@ -1,4 +1,7 @@
+import json
+import tempfile
 import unittest
+from pathlib import Path
 
 from build_discovery_level_diversity_matrix import (
     REPORT_VERSION,
@@ -7,6 +10,7 @@ from build_discovery_level_diversity_matrix import (
     selected_targets,
     targets_for_set,
     validate_best_build,
+    write_split_matrix_reports,
 )
 from build_discovery_level_diversity_targets import query_for_target
 
@@ -225,6 +229,56 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(seen_queries[0].level, 50)
         self.assertEqual(report["results"][0]["validationErrors"], [])
         self.assertEqual(report["results"][0]["bestBuildSummary"]["items"], ["Example Amulet", "Example Sword"])
+
+    def test_write_split_matrix_reports_writes_each_target_as_it_finishes(self):
+        selected = selected_targets(levels={50}, elements={"strength", "intelligence"})
+
+        def fake_generator(query):
+            return {
+                "datasetVersion": "dataset",
+                "solverVersion": "solver",
+                "cache": {"status": "miss"},
+                "diagnostics": {"elapsedMs": query.level},
+                "warnings": [],
+                "builds": [
+                    {
+                        "score": 1,
+                        "apStrategy": "test",
+                        "totals": {
+                            "AP": query.ap_target,
+                            "MP": query.mp_target,
+                            "Range": query.target.range,
+                            "Strength": 100,
+                            "Intelligence": 100,
+                            "Vitality": 100,
+                        },
+                        "sets": {},
+                        "exos": {},
+                        "conditionFailures": [],
+                        "items": {"amulet": {"name": "Example Amulet", "level": query.level}},
+                    }
+                ],
+            }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            split_result = write_split_matrix_reports(
+                selected,
+                output_dir=Path(temp_dir),
+                generator=fake_generator,
+                generated_at="now",
+                target_set="level-diversity",
+                git_sha="abc123",
+            )
+            manifest_path = Path(temp_dir) / "manifest.json"
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+
+            self.assertEqual(split_result["aggregateReport"]["targetCount"], 2)
+            self.assertEqual(manifest["splitReportCount"], 2)
+            for row in manifest["reports"]:
+                self.assertTrue(Path(row["json"]).exists())
+                self.assertTrue(Path(row["markdown"]).exists())
+                one_row = json.loads(Path(row["json"]).read_text(encoding="utf-8"))
+                self.assertEqual(one_row["targetCount"], 1)
 
     def test_coverage_report_is_labeled_as_action_stat_feasibility(self):
         selected = selected_targets(

@@ -2971,3 +2971,38 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     `test_strength_spell_damage_profile_falls_back_to_generic_profile` because
     this container can read real spell data, so the fallback path is not used
     there; the full host prototype suite passed.
+
+### 2026-07-10 Matrix Split-Output Checkpoint
+
+- Added `--split-output-dir` to
+  `server/scripts/build_discovery_level_diversity_matrix.py`.
+- The matrix generator now can write one JSON/Markdown report per selected
+  target as each target finishes, plus a manifest. This prevents long all-level
+  or cap-target runs from losing all evidence when a later row times out.
+- Added regression coverage that split output writes per-target files and a
+  manifest while preserving the aggregate report.
+- Retried full `grid-next-cap-4` regeneration after the action-package seed
+  checkpoint:
+  - first non-split full run was stopped after more than 30 minutes with no new
+    aggregate artifact because the generator writes aggregates only at the end
+  - second split run was stopped after 15 minutes and preserved four completed
+    row artifacts in
+    `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-split-partial/`
+- Partial split result:
+  - level 1 Intelligence tier 2 `12/6/6`: no build
+  - level 20 Chance tier 2 `12/6/6`: no build
+  - level 50 Agility tier 2 `12/6/6`: no build
+  - level 80 Strength tier 1 `12/6/6`: no build after 256951.2ms
+- Interpretation:
+  - split output is now required for long matrix work
+  - the full cap-4 aggregate is still pending
+  - level 80 Strength tier 1 remains a hard unresolved row and should be
+    diagnosed separately before another broad full-cap run
+- Verification passed:
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `git diff --check`
+  - copied changed matrix scripts into Docker, then ran
+    `PYTHONPATH=/home/dofuslab python scripts/test_build_discovery_level_diversity_matrix.py`
+  - copied changed matrix scripts into Docker, then ran
+    `python -m py_compile scripts/build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix.py`
