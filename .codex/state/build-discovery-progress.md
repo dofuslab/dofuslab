@@ -2205,3 +2205,30 @@ Run the initial evaluator pass:
 - Verification passed:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_action_stat_diagnostics.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py"`
+
+### 2026-07-10 Grid Next Minimum 2 Matrix
+
+- Added the second selector-derived minimum matrix artifact to the grid
+  inventory's default artifact list.
+- Generated current artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-2-matrix.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-2-matrix.md`
+- Artifact summary:
+  - targets: 12
+  - generated: 12
+  - invalid: 0
+  - no build: 0
+- Regenerated the grid inventory with this artifact included.
+- Updated grid inventory result:
+  - valid query rows: 39,424
+  - exact generated evidence rows: 71
+  - attempted evidence rows: 73
+  - unproven rows: 39,353
+  - unattempted rows: 39,351
+- Interpretation:
+  - all selector-derived minimum rows for the second availability pass now
+    have generated evidence
+  - the inventory remains a gap map; it does not prove full-grid quality
+  - the next selector suggestions are another minimum budget pass and a lower
+    budget cap pass, with level 1/20 cap rows still needing diagnostics before
+    retrying broad generation work
