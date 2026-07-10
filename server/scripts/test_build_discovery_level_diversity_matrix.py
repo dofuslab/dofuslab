@@ -88,6 +88,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
             generator=fake_generator,
             generated_at="now",
             target_set="level-diversity",
+            git_sha="abc123",
         )
 
         self.assertEqual(report["reportVersion"], REPORT_VERSION)
@@ -99,9 +100,42 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
             report["provenance"]["targetSource"],
             "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS",
         )
+        self.assertEqual(report["provenance"]["gitSha"], "abc123")
+        self.assertEqual(report["evidenceType"], "generated_solver_snapshot")
         self.assertEqual(seen_queries[0].level, 50)
         self.assertEqual(report["results"][0]["validationErrors"], [])
         self.assertEqual(report["results"][0]["bestBuildSummary"]["items"], ["Example Amulet", "Example Sword"])
+
+    def test_coverage_report_is_labeled_as_action_stat_feasibility(self):
+        selected = selected_targets(
+            all_targets=targets_for_set("coverage"),
+            target_names={"coverage_level_20_chance_range_budget1"},
+        )
+
+        report = build_matrix_report(
+            selected,
+            generator=lambda query: {
+                "builds": [
+                    {
+                        "score": 1,
+                        "totals": {"AP": 6, "MP": 3, "Range": 1, "Chance": 100, "Vitality": 100},
+                        "sets": {},
+                        "exos": {},
+                        "conditionFailures": [],
+                        "items": {"amulet": {"name": "Range Amulet", "level": 20}},
+                    }
+                ],
+            },
+            generated_at="now",
+            target_set="coverage",
+            git_sha="def456",
+        )
+
+        markdown = render_markdown(report)
+
+        self.assertEqual(report["evidenceType"], "action_stat_feasibility")
+        self.assertEqual(report["provenance"]["gitSha"], "def456")
+        self.assertIn("action-stat feasibility evidence", markdown)
 
     def test_validate_best_build_rejects_condition_and_target_violations(self):
         target = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]

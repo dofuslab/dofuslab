@@ -1962,3 +1962,23 @@ Run the initial evaluator pass:
   - generated: 49
   - invalid: 0
   - no build: 0
+
+### 2026-07-10 AP/MP/Range Coverage Evidence Label
+
+- Addressed evaluator finding that the coverage matrix proves AP/MP/Range
+  plumbing, not realistic build quality at every level.
+- Updated coverage matrix generation so `target-set=coverage` records
+  `evidenceType=action_stat_feasibility`.
+- Updated coverage Markdown to state that coverage artifacts are action-stat
+  feasibility evidence only.
+- Added `--git-sha` support to matrix generation so Docker runs can record the
+  host commit even though the server container cannot see `.git`.
+- Updated the AP/MP/Range coverage smoke test to reuse `validate_best_build()`
+  from the artifact generator.
+- Regenerated:
+  - `.codex/state/build-discovery-ap-mp-range-coverage-matrix.json`
+  - `.codex/state/build-discovery-ap-mp-range-coverage-matrix.md`
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix.py && python -m unittest scripts.test_build_discovery_ap_mp_range_coverage_generation_smoke.BuildDiscoveryApMpRangeCoverageSmokeShapeTest"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-coverage-matrix-v2.json --target-set coverage"`
+- Artifact generation result: pass in 763.0 seconds.

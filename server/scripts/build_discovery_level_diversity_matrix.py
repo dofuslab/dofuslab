@@ -204,6 +204,7 @@ def build_matrix_report(
     generator: Callable[[BuildDiscoveryQuery], dict[str, Any]] = build_discovery_response,
     generated_at: str | None = None,
     target_set: str = "level-diversity",
+    git_sha: str | None = None,
 ) -> dict[str, Any]:
     entries = []
     for target in targets:
@@ -216,8 +217,13 @@ def build_matrix_report(
         "reportVersion": REPORT_VERSION,
         "generatedAt": generated_at or datetime.now(timezone.utc).isoformat(),
         "scope": f"Iop {target_set} generated target matrix",
+        "evidenceType": (
+            "action_stat_feasibility"
+            if target_set == "coverage"
+            else "generated_solver_snapshot"
+        ),
         "provenance": {
-            "gitSha": current_git_sha(),
+            "gitSha": git_sha or current_git_sha(),
             "targetSource": target_source_for_set(target_set),
             "generator": "scripts/build_discovery_level_diversity_matrix.py",
         },
@@ -249,6 +255,12 @@ def render_markdown(report: dict[str, Any]) -> str:
             "This is a generated-output snapshot for the sampled Milestone 3 "
             "level-diversity targets. It records the current best solver result "
             "for review; it is not yet a human-accepted benchmark list."
+        ),
+        (
+            "Coverage target-set artifacts are action-stat feasibility evidence "
+            "only. They do not prove realistic build quality at every level."
+            if report.get("evidenceType") == "action_stat_feasibility"
+            else ""
         ),
         "",
         f"Targets: `{report['targetCount']}`",
@@ -320,6 +332,7 @@ def main() -> None:
     parser.add_argument("--budget-tiers", help="Comma-separated budget tiers to include.")
     parser.add_argument("--output-json", help="Write JSON report to this path.")
     parser.add_argument("--output-md", help="Write Markdown summary to this path.")
+    parser.add_argument("--git-sha", help="Git SHA to record when the runtime cannot see .git.")
     parser.add_argument("--use-cache", action="store_true", help="Use process cache during generation.")
     args = parser.parse_args()
 
@@ -338,7 +351,12 @@ def main() -> None:
         if args.use_cache
         else lambda query: build_discovery_response(query, use_cache=False)
     )
-    report = build_matrix_report(targets, generator=generator, target_set=args.target_set)
+    report = build_matrix_report(
+        targets,
+        generator=generator,
+        target_set=args.target_set,
+        git_sha=args.git_sha,
+    )
 
     if args.output_json:
         output_json = Path(args.output_json)

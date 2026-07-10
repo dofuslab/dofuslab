@@ -17,6 +17,7 @@ from scripts.build_discovery_level_diversity_targets import (  # noqa: E402
     AP_MP_RANGE_COVERAGE_TARGETS,
     query_for_target,
 )
+from scripts.build_discovery_level_diversity_matrix import validate_best_build  # noqa: E402
 from scripts.test_build_discovery_level_diversity_generation_smoke import (  # noqa: E402
     BUDGET_FILTER,
     ELEMENT_FILTER,
@@ -106,6 +107,7 @@ class BuildDiscoveryApMpRangeCoverageGenerationSmokeTest(unittest.TestCase):
                 response = build_discovery_response(query, use_cache=False)
                 self.assertGreater(len(response["builds"]), 0)
                 build = response["builds"][0]
+                self.assertEqual(validate_best_build(target, query, build), [])
                 totals = build["totals"]
                 self.assertEqual(build["conditionFailures"], [])
                 self.assertGreaterEqual(totals["AP"], query.ap_target)
