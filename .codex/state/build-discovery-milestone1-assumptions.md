@@ -169,6 +169,10 @@ python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
   valid build. Added stricter-budget fallback diagnostics; focused Strength
   tier 2 interior smoke then passed in Docker. Runtime was about 289s for two
   generation rows.
+- 2026-07-09: interior smoke profiles `9/4/3` and `10/5/6`, budget tier 2,
+  all four elements (`strength,intelligence,chance,agility`) passed the
+  bounded smoke test in Docker after stricter-budget fallback. Runtime was
+  about 899s for eight generation rows.
 - 2026-07-09: low profile `7/3/0`, budget tiers 2-4 and all four elements
   exceeded a 20-minute iterative timeout. Keep broad smoke runs sliced by
   budget tier until performance work makes broader local runs practical.
