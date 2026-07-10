@@ -123,6 +123,50 @@ def action_relevant_pools(
     return pools
 
 
+def item_has_conditions(item: dict[str, Any]) -> bool:
+    conditions = item.get("conditions", {})
+    return bool(conditions.get("conditions") or conditions.get("customConditions"))
+
+
+def compress_pool_for_action_proof(
+    slot_name: str,
+    pool: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    selected: dict[tuple[Any, ...], dict[str, Any]] = {}
+    for item in pool:
+        stats = item["_stats"]
+        key = (
+            item["dofusID"] if item.get("itemType") == "Ring" or item_has_conditions(item) else None,
+            item.get("setID"),
+            stats.get("AP", 0),
+            stats.get("MP", 0),
+            stats.get("Range", 0),
+            item_has_conditions(item),
+        )
+        current = selected.get(key)
+        if current is None or solver.final_utility_score(item["_stats"]) > solver.final_utility_score(current["_stats"]):
+            selected[key] = item
+    return sorted(
+        selected.values(),
+        key=lambda item: (
+            item["_stats"].get("AP", 0),
+            item["_stats"].get("MP", 0),
+            item["_stats"].get("Range", 0),
+            solver.final_utility_score(item["_stats"]),
+        ),
+        reverse=True,
+    )
+
+
+def compress_pools_for_action_proof(
+    pools: dict[str, list[dict[str, Any]]],
+) -> dict[str, list[dict[str, Any]]]:
+    return {
+        slot_name: pool if is_dofus_slot(slot_name) else compress_pool_for_action_proof(slot_name, pool)
+        for slot_name, pool in pools.items()
+    }
+
+
 def slot_action_pressure(slot_name: str, pool: list[dict[str, Any]]) -> tuple[int, int, int, int]:
     max_ap = max((item["_stats"].get("AP", 0) for item in pool), default=0)
     max_mp = max((item["_stats"].get("MP", 0) for item in pool), default=0)
@@ -251,6 +295,8 @@ def diagnose_target(
             if not item.get("setID") or not sets.get(item["setID"], {}).get("_excluded")
         ]
         pools = action_relevant_pools(items, sets)
+        if config.proof_mode == "natural-gear":
+            pools = compress_pools_for_action_proof(pools)
         gear_slots = ordered_gear_slots(pools)
         dofus_by_id = {
             item["dofusID"]: item

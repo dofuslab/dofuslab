@@ -5,6 +5,7 @@ from build_discovery_action_feasibility import (
     REPORT_VERSION,
     action_deficit,
     action_stat_total,
+    compress_pool_for_action_proof,
     complete_with_action_dofus,
     ordered_gear_slots,
     render_markdown,
@@ -94,6 +95,54 @@ class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
         self.assertEqual(state_signature(first_belt, target), state_signature(second_belt, target))
         self.assertEqual(state_signature(first_belt, target), state_signature(same_vector_hat, target))
         self.assertNotEqual(state_signature(first_ring, target), state_signature(second_ring, target))
+
+    def test_compress_pool_for_action_proof_preserves_action_set_and_ring_identity(self):
+        belt_a = {
+            "dofusID": "belt-a",
+            "itemType": "Belt",
+            "setID": "set-a",
+            "_stats": {"AP": 0, "MP": 0, "Range": 1},
+            "conditions": {},
+        }
+        belt_b = {
+            "dofusID": "belt-b",
+            "itemType": "Belt",
+            "setID": "set-a",
+            "_stats": {"AP": 0, "MP": 0, "Range": 1},
+            "conditions": {},
+        }
+        belt_other_set = {
+            "dofusID": "belt-c",
+            "itemType": "Belt",
+            "setID": "set-b",
+            "_stats": {"AP": 0, "MP": 0, "Range": 1},
+            "conditions": {},
+        }
+        ring_a = {
+            "dofusID": "ring-a",
+            "itemType": "Ring",
+            "setID": None,
+            "_stats": {"AP": 1},
+            "conditions": {},
+        }
+        ring_b = {
+            "dofusID": "ring-b",
+            "itemType": "Ring",
+            "setID": None,
+            "_stats": {"AP": 1},
+            "conditions": {},
+        }
+
+        compressed = compress_pool_for_action_proof(
+            "belt",
+            [belt_a, belt_b, belt_other_set, ring_a, ring_b],
+        )
+        compressed_ids = {item["dofusID"] for item in compressed}
+
+        self.assertEqual(len({"belt-a", "belt-b"} & compressed_ids), 1)
+        self.assertIn("belt-c", compressed_ids)
+        self.assertIn("ring-a", compressed_ids)
+        self.assertIn("ring-b", compressed_ids)
 
     def test_render_markdown_reports_status_and_example(self):
         report = {
