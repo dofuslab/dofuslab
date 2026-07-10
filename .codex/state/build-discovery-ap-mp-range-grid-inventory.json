@@ -28,10 +28,10 @@
     4
   ],
   "validQueryCount": 39424,
-  "generatedEvidenceCount": 101,
-  "attemptedEvidenceCount": 109,
-  "unprovenCount": 39323,
-  "unattemptedCount": 39315,
+  "generatedEvidenceCount": 106,
+  "attemptedEvidenceCount": 121,
+  "unprovenCount": 39318,
+  "unattemptedCount": 39303,
   "byLevel": [
     {
       "level": 1,
@@ -66,32 +66,32 @@
     {
       "level": 100,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 9,
-      "unprovenCount": 3063
-    },
-    {
-      "level": 120,
-      "validQueryCount": 3072,
       "generatedEvidenceCount": 10,
       "unprovenCount": 3062
     },
     {
+      "level": 120,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 11,
+      "unprovenCount": 3061
+    },
+    {
       "level": 150,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 12,
-      "unprovenCount": 3060
+      "generatedEvidenceCount": 13,
+      "unprovenCount": 3059
     },
     {
       "level": 179,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 8,
-      "unprovenCount": 3064
+      "generatedEvidenceCount": 9,
+      "unprovenCount": 3063
     },
     {
       "level": 180,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 8,
-      "unprovenCount": 3064
+      "generatedEvidenceCount": 9,
+      "unprovenCount": 3063
     },
     {
       "level": 199,
@@ -540,7 +540,7 @@
     {
       "level": 1,
       "element": "intelligence",
-      "budgetTier": 2,
+      "budgetTier": 1,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -549,7 +549,7 @@
     {
       "level": 20,
       "element": "chance",
-      "budgetTier": 2,
+      "budgetTier": 1,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -558,7 +558,7 @@
     {
       "level": 50,
       "element": "agility",
-      "budgetTier": 2,
+      "budgetTier": 1,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -566,8 +566,8 @@
     },
     {
       "level": 80,
-      "element": "strength",
-      "budgetTier": 1,
+      "element": "intelligence",
+      "budgetTier": 4,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -576,7 +576,7 @@
     {
       "level": 99,
       "element": "intelligence",
-      "budgetTier": 2,
+      "budgetTier": 1,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -585,7 +585,7 @@
     {
       "level": 100,
       "element": "chance",
-      "budgetTier": 2,
+      "budgetTier": 1,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -594,7 +594,7 @@
     {
       "level": 120,
       "element": "agility",
-      "budgetTier": 2,
+      "budgetTier": 1,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -602,8 +602,8 @@
     },
     {
       "level": 150,
-      "element": "strength",
-      "budgetTier": 1,
+      "element": "intelligence",
+      "budgetTier": 4,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -612,7 +612,7 @@
     {
       "level": 179,
       "element": "intelligence",
-      "budgetTier": 2,
+      "budgetTier": 1,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -621,7 +621,7 @@
     {
       "level": 180,
       "element": "chance",
-      "budgetTier": 2,
+      "budgetTier": 1,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -630,7 +630,7 @@
     {
       "level": 199,
       "element": "agility",
-      "budgetTier": 2,
+      "budgetTier": 1,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -638,8 +638,8 @@
     },
     {
       "level": 200,
-      "element": "strength",
-      "budgetTier": 1,
+      "element": "intelligence",
+      "budgetTier": 4,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,

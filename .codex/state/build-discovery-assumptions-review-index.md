@@ -63,6 +63,8 @@ These need gameplay or product review before calling the feature shippable.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-diagnostic-plan.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-level80-witness-2k-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-level200-witness-2k-diagnostics.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-matrix.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-level50-witness-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-remaining-witness-diagnostics.md`.
@@ -95,8 +97,12 @@ These need gameplay or product review before calling the feature shippable.
      `12/6/6` action-stat witness and hit the state cap, so that row is a
      solver recall gap for action-stat validity.
    - The next lower-budget cap target set is now defined as `grid-next-cap-4`;
-     it is target-slice definition only until generated matrix artifacts are
-     committed.
+     the current generated matrix has 12 lower-budget `12/6/6` targets: 5
+     generated and 7 no-build rows.
+   - The cap-4 item-stat diagnostic shows level 1 Intelligence tier 2 and
+     level 20 Chance tier 2 are below target under the item-stat-only upper
+     bound; the other five no-build rows are not-proven and need witness/search
+     diagnostics before interpretation.
    - The cap-2 item-stat diagnostic shows level 1 Intelligence and level 20
      Chance are below target under the item-stat-only upper bound.
    - Level 50 Agility, level 80 Strength, and level 99 Intelligence previously
@@ -114,7 +120,7 @@ These need gameplay or product review before calling the feature shippable.
      cap, so it remains bounded/inconclusive rather than fully proven
      infeasible.
    - The current grid inventory has 39,424 representative valid query rows and
-     101 exact generated-evidence rows; it is a gap map, not build proof.
+     106 exact generated-evidence rows; it is a gap map, not build proof.
    - Confirm the sampled rows are useful representatives before promoting them to accepted benchmarks.
    - Flag rows where surplus AP/MP/Range, budget assumptions, or old lower-bucket gear look suspicious.
    - Treat this as generated solver evidence, not gameplay acceptance.

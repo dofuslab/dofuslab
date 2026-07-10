@@ -2673,3 +2673,51 @@ Run the initial evaluator pass:
   - `python -m py_compile server\scripts\build_discovery_level_diversity_targets.py server\scripts\build_discovery_level_diversity_matrix.py server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix_check.py`
   - copied changed matrix scripts into the Docker server container, then ran
     `python scripts/test_build_discovery_level_diversity_matrix.py && python scripts/test_build_discovery_level_diversity_matrix_check.py && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py`
+
+### 2026-07-10 Lower-Budget Cap 4 Matrix
+
+- Generated `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-matrix.json`
+  and `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-matrix.md`
+  at commit `4d6d1df6`.
+- Cap-4 matrix result:
+  - targets: 12
+  - generated: 5
+  - invalid: 0
+  - no build: 7
+- Generated rows:
+  - level 100 Chance `12/6/6` tier 2
+  - level 120 Agility `12/6/6` tier 2
+  - level 150 Strength `12/6/6` tier 1
+  - level 179 Intelligence `12/6/6` tier 2
+  - level 180 Chance `12/6/6` tier 2
+- No-build rows:
+  - level 1 Intelligence `12/6/6` tier 2
+  - level 20 Chance `12/6/6` tier 2
+  - level 50 Agility `12/6/6` tier 2
+  - level 80 Strength `12/6/6` tier 1
+  - level 99 Intelligence `12/6/6` tier 2
+  - level 199 Agility `12/6/6` tier 2
+  - level 200 Strength `12/6/6` tier 1
+- Generated fast cap-4 diagnostics:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-diagnostics.md`
+- Cap-4 diagnostic result:
+  - diagnostics: 7
+  - item-stat upper-bound below target: 2
+  - not proven infeasible: 5
+  - action-stat witnesses found: 0 because witness search was not run
+- Diagnostic interpretation:
+  - level 1 Intelligence tier 2 and level 20 Chance tier 2 are below target
+    under the item-stat-only independent-slot upper bound
+  - level 50 Agility tier 2, level 80 Strength tier 1, level 99 Intelligence
+    tier 2, level 199 Agility tier 2, and level 200 Strength tier 1 are
+    not-proven no-build rows that need bounded witness/search diagnostics
+- Regenerated the AP/MP/Range grid inventory with cap-4 included.
+- Updated grid inventory result:
+  - valid query rows: 39,424
+  - exact generated evidence rows: 106
+  - attempted evidence rows: 121
+  - unproven rows: 39,318
+  - unattempted rows: 39,303
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-grid-next-cap-4-matrix.json --target-set grid-next-cap-4 --allow-no-build"`

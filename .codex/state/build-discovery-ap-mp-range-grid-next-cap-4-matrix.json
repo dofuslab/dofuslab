@@ -1,0 +1,1746 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-10T18:29:41.220389+00:00",
+  "scope": "Iop grid-next-cap-4 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": "4d6d1df60d6086bdf113699cfb181944aafd7859",
+    "targetSource": "scripts.build_discovery_level_diversity_targets.AP_MP_RANGE_GRID_NEXT_CAP_4_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 12,
+  "generatedCount": 5,
+  "noBuildCount": 7,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "grid_next_cap4_level_1_intelligence_12_6_6_budget2",
+        "className": "Iop",
+        "level": 1,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 1,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "warnings": [
+        "No builds found for max AP/MP/Range under no-exo constraints; this may be infeasible for the selected budget or a remaining search coverage gap."
+      ],
+      "diagnostics": {
+        "elapsedMs": 466.6,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 106.1,
+          "candidatePoolsMs": 32.3,
+          "packageIndexMs": 0.0,
+          "packageSeedsMs": 1.6,
+          "directCompletionMs": 0.0,
+          "beamSearchMs": 22.8,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 162.8
+        },
+        "resultCount": 0,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "grid_next_cap4_level_20_chance_12_6_6_budget2",
+        "className": "Iop",
+        "level": 20,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 20,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "warnings": [
+        "No builds found for max AP/MP/Range under no-exo constraints; this may be infeasible for the selected budget or a remaining search coverage gap."
+      ],
+      "diagnostics": {
+        "elapsedMs": 6593.8,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 106.9,
+          "candidatePoolsMs": 105.3,
+          "packageIndexMs": 0.0,
+          "packageSeedsMs": 2.9,
+          "directCompletionMs": 0.0,
+          "beamSearchMs": 1907.6,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 2122.8
+        },
+        "resultCount": 0,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "grid_next_cap4_level_50_agility_12_6_6_budget2",
+        "className": "Iop",
+        "level": 50,
+        "element": "agility",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 50,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "warnings": [
+        "No builds found for max AP/MP/Range under no-exo constraints; this may be infeasible for the selected budget or a remaining search coverage gap."
+      ],
+      "diagnostics": {
+        "elapsedMs": 95581.5,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 108.3,
+          "candidatePoolsMs": 26778.2,
+          "packageIndexMs": 0.2,
+          "packageSeedsMs": 44.6,
+          "directCompletionMs": 702.1,
+          "beamSearchMs": 16747.1,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 44380.5
+        },
+        "resultCount": 0,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "grid_next_cap4_level_80_strength_12_6_6_budget1",
+        "className": "Iop",
+        "level": 80,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 80,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "warnings": [
+        "No builds found for max AP/MP/Range under no-exo constraints; this may be infeasible for the selected budget or a remaining search coverage gap."
+      ],
+      "diagnostics": {
+        "elapsedMs": 158143.6,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 106.4,
+          "candidatePoolsMs": 109757.9,
+          "packageIndexMs": 0.4,
+          "packageSeedsMs": 144.0,
+          "directCompletionMs": 1305.6,
+          "beamSearchMs": 46826.7,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 158141.2
+        },
+        "resultCount": 0,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "grid_next_cap4_level_99_intelligence_12_6_6_budget2",
+        "className": "Iop",
+        "level": 99,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 99,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "warnings": [
+        "No builds found for max AP/MP/Range under no-exo constraints; this may be infeasible for the selected budget or a remaining search coverage gap."
+      ],
+      "diagnostics": {
+        "elapsedMs": 340816.5,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 108.3,
+          "candidatePoolsMs": 118336.3,
+          "packageIndexMs": 0.3,
+          "packageSeedsMs": 185.8,
+          "directCompletionMs": 787.9,
+          "beamSearchMs": 49050.5,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 168469.1
+        },
+        "resultCount": 0,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "grid_next_cap4_level_100_chance_12_6_6_budget2",
+        "className": "Iop",
+        "level": 100,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 100,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1304.88,
+        "weightedStatScore": 2086.98,
+        "utilityStatScore": 285.08,
+        "genericDamageScore": 2182.93,
+        "rawRotationDamageScore": 1204.55,
+        "spellDamageScore": 1204.55,
+        "profileBaselineDamageScore": 1655.42,
+        "profileRelativeDamage": 0.7276,
+        "weaponDamageScore": 61.51,
+        "survivabilityScore": 37.48,
+        "weakestElementEhp": 1208.41,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Chance": 1003,
+          "Power": 215,
+          "Vitality": 1293,
+          "Damage": 14,
+          "Water Damage": 15,
+          "Critical": 12,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Khardboard Set": 3,
+          "Dragon Pig Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8273",
+            "internalId": null,
+            "name": "Dragon Pig Necklace",
+            "type": "Amulet",
+            "level": 100,
+            "set": "Dragon Pig Set"
+          },
+          "belt": {
+            "id": "2808",
+            "internalId": null,
+            "name": "Drasmuty Belt",
+            "type": "Belt",
+            "level": 96,
+            "set": "Dragon Pig Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "ring_2": {
+            "id": "8879",
+            "internalId": null,
+            "name": "Polished Ring",
+            "type": "Ring",
+            "level": 66,
+            "set": "Herboreals Set"
+          },
+          "boots": {
+            "id": "8278",
+            "internalId": null,
+            "name": "Dragon Pig Mules",
+            "type": "Boots",
+            "level": 94,
+            "set": "Dragon Pig Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "1695",
+            "internalId": null,
+            "name": "Elya Wood's Cloak",
+            "type": "Cloak",
+            "level": 80,
+            "set": "Elya Wood Set"
+          },
+          "pet": {
+            "id": "33037",
+            "internalId": null,
+            "name": "Indigo and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13782",
+            "internalId": null,
+            "name": "Water Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "12715",
+            "internalId": null,
+            "name": "Player",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13767",
+            "internalId": null,
+            "name": "Tease",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13824",
+            "internalId": null,
+            "name": "Dynamo",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1304.88,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Chance": 1003,
+          "Power": 215,
+          "Vitality": 1293,
+          "Damage": 14,
+          "Water Damage": 15,
+          "Critical": 12,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Khardboard Set": 3,
+          "Dragon Pig Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Dragon Pig Necklace",
+          "Drasmuty Belt",
+          "Khardboard Goultard",
+          "Khardboard Bowisse's Shield",
+          "Gelano",
+          "Polished Ring",
+          "Dragon Pig Mules",
+          "Khardboard Gobball Headgear",
+          "Elya Wood's Cloak",
+          "Indigo and Ivory Dragoturkey",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Water Wrecker",
+          "Player",
+          "Tease",
+          "Dynamo"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 161789.7,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 105.4,
+          "candidatePoolsMs": 91687.1,
+          "packageIndexMs": 0.6,
+          "packageSeedsMs": 194.4,
+          "directCompletionMs": 69798.6,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.6,
+          "totalFindBuildsMs": 161787.6
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "grid_next_cap4_level_120_agility_12_6_6_budget2",
+        "className": "Iop",
+        "level": 120,
+        "element": "agility",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 120,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1398.95,
+        "weightedStatScore": 2401.64,
+        "utilityStatScore": 316.74,
+        "genericDamageScore": 2280.65,
+        "rawRotationDamageScore": 1199.12,
+        "spellDamageScore": 1199.12,
+        "profileBaselineDamageScore": 1577.33,
+        "profileRelativeDamage": 0.7602,
+        "weaponDamageScore": 52.06,
+        "survivabilityScore": 55.92,
+        "weakestElementEhp": 1792.63,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Agility": 1048,
+          "Power": 230,
+          "Vitality": 1703,
+          "Damage": 0,
+          "Air Damage": 21,
+          "Critical": 18,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Khardboard Set": 3,
+          "Mumminotor Set": 3,
+          "Crobak Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8411",
+            "internalId": null,
+            "name": "Mumminotor Pendant",
+            "type": "Amulet",
+            "level": 111,
+            "set": "Mumminotor Set"
+          },
+          "belt": {
+            "id": "8418",
+            "internalId": null,
+            "name": "Mumminotor Belt",
+            "type": "Belt",
+            "level": 112,
+            "set": "Mumminotor Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "8412",
+            "internalId": null,
+            "name": "Mumminotor Wedding Ring",
+            "type": "Ring",
+            "level": 111,
+            "set": "Mumminotor Set"
+          },
+          "ring_2": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "boots": {
+            "id": "2545",
+            "internalId": null,
+            "name": "Croboots",
+            "type": "Boots",
+            "level": 104,
+            "set": "Crobak Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "6449",
+            "internalId": null,
+            "name": "Crobacape",
+            "type": "Cloak",
+            "level": 108,
+            "set": "Crobak Set"
+          },
+          "pet": {
+            "id": "33023",
+            "internalId": null,
+            "name": "Ebony and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13785",
+            "internalId": null,
+            "name": "Air Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12713",
+            "internalId": null,
+            "name": "Acrobat",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13764",
+            "internalId": null,
+            "name": "Gymnast",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1398.95,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Agility": 1048,
+          "Power": 230,
+          "Vitality": 1703,
+          "Damage": 0,
+          "Air Damage": 21,
+          "Critical": 18,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Khardboard Set": 3,
+          "Mumminotor Set": 3,
+          "Crobak Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Mumminotor Pendant",
+          "Mumminotor Belt",
+          "Khardboard Goultard",
+          "Khardboard Bowisse's Shield",
+          "Mumminotor Wedding Ring",
+          "Gelano",
+          "Croboots",
+          "Khardboard Gobball Headgear",
+          "Crobacape",
+          "Ebony and Ivory Dragoturkey",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Air Wrecker",
+          "Acrobat",
+          "Gymnast"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 182372.4,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 108.3,
+          "candidatePoolsMs": 108399.8,
+          "packageIndexMs": 0.4,
+          "packageSeedsMs": 252.6,
+          "directCompletionMs": 73603.4,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.3,
+          "totalFindBuildsMs": 182365.8
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "grid_next_cap4_level_150_strength_12_6_6_budget1",
+        "className": "Iop",
+        "level": 150,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 150,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1590.83,
+        "weightedStatScore": 2781.88,
+        "utilityStatScore": 291.98,
+        "genericDamageScore": 2755.16,
+        "rawRotationDamageScore": 1815.3,
+        "spellDamageScore": 1815.3,
+        "profileBaselineDamageScore": 1976.62,
+        "profileRelativeDamage": 0.9184,
+        "weaponDamageScore": 101.33,
+        "survivabilityScore": 59.03,
+        "weakestElementEhp": 1860.2,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 1233,
+          "Power": 120,
+          "Vitality": 1823,
+          "Damage": 36,
+          "Earth Damage": 37,
+          "Critical": 20,
+          "Critical Damage": 0,
+          "Neutral Damage": 5
+        },
+        "sets": {
+          "Khardboard Set": 3,
+          "Moowolf Set": 4
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8262",
+            "internalId": null,
+            "name": "Amoolet",
+            "type": "Amulet",
+            "level": 143,
+            "set": "Moowolf Set"
+          },
+          "belt": {
+            "id": "27266",
+            "internalId": null,
+            "name": "Khardboard Moowolf Belt",
+            "type": "Belt",
+            "level": 150,
+            "set": "Khardboard Set"
+          },
+          "weapon": {
+            "id": "6981",
+            "internalId": null,
+            "name": "Ice Daggers",
+            "type": "Dagger",
+            "level": 150,
+            "set": null
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "ring_2": {
+            "id": "8263",
+            "internalId": null,
+            "name": "Moowolf Ring",
+            "type": "Ring",
+            "level": 126,
+            "set": "Moowolf Set"
+          },
+          "boots": {
+            "id": "27278",
+            "internalId": null,
+            "name": "Khardboard Getas",
+            "type": "Boots",
+            "level": 125,
+            "set": "Khardboard Set"
+          },
+          "hat": {
+            "id": "8267",
+            "internalId": null,
+            "name": "Moowolf Headgear",
+            "type": "Hat",
+            "level": 141,
+            "set": "Moowolf Set"
+          },
+          "cloak": {
+            "id": "8265",
+            "internalId": null,
+            "name": "Moowolf Cloak",
+            "type": "Cloak",
+            "level": 139,
+            "set": "Moowolf Set"
+          },
+          "pet": {
+            "id": "33060",
+            "internalId": null,
+            "name": "Plum and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12724",
+            "internalId": null,
+            "name": "Major Maniac",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "12747",
+            "internalId": null,
+            "name": "Major Earth Destroyer",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13825",
+            "internalId": null,
+            "name": "Major Dynamo",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1590.83,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 1233,
+          "Power": 120,
+          "Vitality": 1823,
+          "Damage": 36,
+          "Earth Damage": 37,
+          "Critical": 20,
+          "Critical Damage": 0,
+          "Neutral Damage": 5
+        },
+        "sets": {
+          "Khardboard Set": 3,
+          "Moowolf Set": 4
+        },
+        "exos": {},
+        "items": [
+          "Amoolet",
+          "Khardboard Moowolf Belt",
+          "Ice Daggers",
+          "Khardboard Bowisse's Shield",
+          "Gelano",
+          "Moowolf Ring",
+          "Khardboard Getas",
+          "Moowolf Headgear",
+          "Moowolf Cloak",
+          "Plum and Crimson Dragoturkey",
+          "Twitcher",
+          "Major Earth Wrecker",
+          "Major Maniac",
+          "Major Earth Destroyer",
+          "Major Goliath",
+          "Major Dynamo"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 289728.5,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 105.1,
+          "candidatePoolsMs": 96327.0,
+          "packageIndexMs": 0.3,
+          "packageSeedsMs": 83.8,
+          "directCompletionMs": 193202.7,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 289720.7
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "grid_next_cap4_level_179_intelligence_12_6_6_budget2",
+        "className": "Iop",
+        "level": 179,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 179,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1756.27,
+        "weightedStatScore": 2902.91,
+        "utilityStatScore": 316.83,
+        "genericDamageScore": 3031.78,
+        "rawRotationDamageScore": 1844.88,
+        "spellDamageScore": 1844.88,
+        "profileBaselineDamageScore": 1825.54,
+        "profileRelativeDamage": 1.0106,
+        "weaponDamageScore": 78.52,
+        "survivabilityScore": 75.13,
+        "weakestElementEhp": 2382.01,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Intelligence": 1148,
+          "Power": 305,
+          "Vitality": 2253,
+          "Damage": 18,
+          "Fire Damage": 15,
+          "Critical": 24,
+          "Critical Damage": 10
+        },
+        "sets": {
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8272",
+            "internalId": null,
+            "name": "Minotot Necklace",
+            "type": "Amulet",
+            "level": 158,
+            "set": "Minotot Set"
+          },
+          "belt": {
+            "id": "27266",
+            "internalId": null,
+            "name": "Khardboard Moowolf Belt",
+            "type": "Belt",
+            "level": 150,
+            "set": "Khardboard Set"
+          },
+          "weapon": {
+            "id": "7195",
+            "internalId": null,
+            "name": "Furritung",
+            "type": "Sword",
+            "level": 158,
+            "set": null
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "ring_2": {
+            "id": "23622",
+            "internalId": null,
+            "name": "Koumiho Ring",
+            "type": "Ring",
+            "level": 164,
+            "set": "Tomb Set"
+          },
+          "boots": {
+            "id": "27278",
+            "internalId": null,
+            "name": "Khardboard Getas",
+            "type": "Boots",
+            "level": 125,
+            "set": "Khardboard Set"
+          },
+          "hat": {
+            "id": "14000",
+            "internalId": null,
+            "name": "Nekochief",
+            "type": "Hat",
+            "level": 151,
+            "set": null
+          },
+          "cloak": {
+            "id": "14001",
+            "internalId": null,
+            "name": "Augilol's Tippet",
+            "type": "Cloak",
+            "level": 151,
+            "set": null
+          },
+          "pet": {
+            "id": "33059",
+            "internalId": null,
+            "name": "Plum and Orchid Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "16204",
+            "internalId": null,
+            "name": "Major Intellectual",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "16193",
+            "internalId": null,
+            "name": "Major Miracle Man",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1756.27,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Intelligence": 1148,
+          "Power": 305,
+          "Vitality": 2253,
+          "Damage": 18,
+          "Fire Damage": 15,
+          "Critical": 24,
+          "Critical Damage": 10
+        },
+        "sets": {
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Minotot Necklace",
+          "Khardboard Moowolf Belt",
+          "Furritung",
+          "Khardboard Bowisse's Shield",
+          "Gelano",
+          "Koumiho Ring",
+          "Khardboard Getas",
+          "Nekochief",
+          "Augilol's Tippet",
+          "Plum and Orchid Dragoturkey",
+          "Major Intellectual",
+          "Major Miracle Man",
+          "Crimson Dofus",
+          "Major Vigour",
+          "Dolmanax",
+          "Major Brainbox"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 182138.5,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 112.3,
+          "candidatePoolsMs": 92429.3,
+          "packageIndexMs": 0.4,
+          "packageSeedsMs": 86.8,
+          "directCompletionMs": 89503.8,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 182134.4
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "grid_next_cap4_level_180_chance_12_6_6_budget2",
+        "className": "Iop",
+        "level": 180,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 180,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1618.29,
+        "weightedStatScore": 3136.37,
+        "utilityStatScore": 346.63,
+        "genericDamageScore": 2657.73,
+        "rawRotationDamageScore": 1679.13,
+        "spellDamageScore": 1679.13,
+        "profileBaselineDamageScore": 1895.38,
+        "profileRelativeDamage": 0.8859,
+        "weaponDamageScore": 136.99,
+        "survivabilityScore": 75.68,
+        "weakestElementEhp": 2313.38,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Chance": 838,
+          "Power": 365,
+          "Vitality": 2133,
+          "Damage": 17,
+          "Water Damage": 79,
+          "Critical": 21,
+          "Critical Damage": 60
+        },
+        "sets": {
+          "Undergrowth Set": 2,
+          "Abbreviated Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "11729",
+            "internalId": null,
+            "name": "Amulet Cetera",
+            "type": "Amulet",
+            "level": 173,
+            "set": "Abbreviated Set"
+          },
+          "belt": {
+            "id": "11850",
+            "internalId": null,
+            "name": "Potsan Pants",
+            "type": "Belt",
+            "level": 178,
+            "set": null
+          },
+          "weapon": {
+            "id": "9138",
+            "internalId": null,
+            "name": "Canni Blade",
+            "type": "Axe",
+            "level": 157,
+            "set": "Undergrowth Set"
+          },
+          "ring_1": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "ring_2": {
+            "id": "11623",
+            "internalId": null,
+            "name": "Notewell Ring",
+            "type": "Ring",
+            "level": 166,
+            "set": "Abbreviated Set"
+          },
+          "boots": {
+            "id": "9139",
+            "internalId": null,
+            "name": "Ta Boots",
+            "type": "Boots",
+            "level": 172,
+            "set": "Undergrowth Set"
+          },
+          "hat": {
+            "id": "14000",
+            "internalId": null,
+            "name": "Nekochief",
+            "type": "Hat",
+            "level": 151,
+            "set": null
+          },
+          "cloak": {
+            "id": "14001",
+            "internalId": null,
+            "name": "Augilol's Tippet",
+            "type": "Cloak",
+            "level": 151,
+            "set": null
+          },
+          "pet": {
+            "id": "13465",
+            "internalId": null,
+            "name": "Boarhog",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "shield": {
+            "id": "18694",
+            "internalId": null,
+            "name": "Brambler",
+            "type": "Shield",
+            "level": 180,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "16248",
+            "internalId": null,
+            "name": "Major Luckster",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "16264",
+            "internalId": null,
+            "name": "Major Water Devastator",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16333",
+            "internalId": null,
+            "name": "Shaker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1618.29,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Chance": 838,
+          "Power": 365,
+          "Vitality": 2133,
+          "Damage": 17,
+          "Water Damage": 79,
+          "Critical": 21,
+          "Critical Damage": 60
+        },
+        "sets": {
+          "Undergrowth Set": 2,
+          "Abbreviated Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Amulet Cetera",
+          "Potsan Pants",
+          "Canni Blade",
+          "Brambler",
+          "Gelano",
+          "Notewell Ring",
+          "Ta Boots",
+          "Nekochief",
+          "Augilol's Tippet",
+          "Boarhog",
+          "Ice Dofus",
+          "Major Luckster",
+          "Crimson Dofus",
+          "Major Water Devastator",
+          "Major Vigour",
+          "Shaker"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 133865.1,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 108.5,
+          "candidatePoolsMs": 15237.4,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 2.1,
+          "directCompletionMs": 118512.2,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.9,
+          "totalFindBuildsMs": 133862.2
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "grid_next_cap4_level_199_agility_12_6_6_budget2",
+        "className": "Iop",
+        "level": 199,
+        "element": "agility",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 199,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "warnings": [
+        "No builds found for max AP/MP/Range under no-exo constraints; this may be infeasible for the selected budget or a remaining search coverage gap."
+      ],
+      "diagnostics": {
+        "elapsedMs": 160163.6,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 111.4,
+          "candidatePoolsMs": 41619.3,
+          "packageIndexMs": 62.5,
+          "packageSeedsMs": 4897.5,
+          "directCompletionMs": 9486.4,
+          "beamSearchMs": 23279.7,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 79456.9
+        },
+        "resultCount": 0,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "grid_next_cap4_level_200_strength_12_6_6_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "warnings": [
+        "No builds found for max AP/MP/Range under no-exo constraints; this may be infeasible for the selected budget or a remaining search coverage gap."
+      ],
+      "diagnostics": {
+        "elapsedMs": 81599.7,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 107.8,
+          "candidatePoolsMs": 47040.8,
+          "packageIndexMs": 114.5,
+          "packageSeedsMs": 4722.8,
+          "directCompletionMs": 9019.5,
+          "beamSearchMs": 20589.0,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 81594.4
+        },
+        "resultCount": 0,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}
