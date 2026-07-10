@@ -153,12 +153,12 @@ SET_PACKAGE_TRIPLE_CANDIDATE_SCAN_LIMIT = 3000000
 SET_PACKAGE_TRIPLE_SEED_LIMIT = 300
 SET_PACKAGE_DIVERSE_TRIPLE_SEED_LIMIT = 700
 SET_PACKAGE_TOTAL_SEED_LIMIT = 1500
-DIRECT_COMPLETION_MIN_FILLED_GEAR_SLOTS = 8
+DIRECT_COMPLETION_MIN_FILLED_GEAR_SLOTS = 3
 DIRECT_COMPLETION_SEED_LIMIT = 700
-DIRECT_COMPLETION_NON_DOFUS_BEAM_WIDTH = 20
+DIRECT_COMPLETION_NON_DOFUS_BEAM_WIDTH = 80
 DIRECT_COMPLETION_DOFUS_POOL_LIMIT = 22
 DIRECT_COMPLETION_GEAR_STATE_LIMIT = 300
-DIRECT_COMPLETION_GEAR_STATE_PER_SIGNATURE_CAP = 6
+DIRECT_COMPLETION_GEAR_STATE_PER_SIGNATURE_CAP = 30
 DIRECT_COMPLETION_DOFUS_COMBO_LIMIT = 500
 DIRECT_COMPLETION_FINAL_SCORE_LIMIT = 1000
 BUDGET_ACTION_TROPHY_COMBO_SEED_LIMIT = 40
@@ -2936,6 +2936,31 @@ def trim_budget_beam(
     return sorted(diversified, key=lambda s: s.score, reverse=True)[:beam_width]
 
 
+def trim_action_completion_beam(
+    states: list[BuildState],
+    target: BuildTarget,
+    beam_width: int,
+    per_signature_cap: int,
+) -> list[BuildState]:
+    buckets: dict[tuple[Any, ...], list[BuildState]] = defaultdict(list)
+    for state in sorted(states, key=lambda s: s.score, reverse=True):
+        bucket = buckets[budget_beam_signature(state, target)]
+        if len(bucket) < per_signature_cap:
+            bucket.append(state)
+
+    diversified = [state for bucket in buckets.values() for state in bucket]
+    return sorted(
+        diversified,
+        key=lambda state: (
+            min(state.stats.get("AP", 0), target.ap),
+            min(state.stats.get("MP", 0), target.mp),
+            min(state.stats.get("Range", 0), target.range),
+            state.score,
+        ),
+        reverse=True,
+    )[:beam_width]
+
+
 def trim_full_item_signatures(states: list[BuildState], limit: int) -> list[BuildState]:
     selected = []
     seen: set[tuple[str, ...]] = set()
@@ -3158,31 +3183,31 @@ def build_action_set_package_index(
         thresholds = action_set_bonus_thresholds(sets[set_id])
         if not thresholds:
             continue
-        threshold, threshold_stats = thresholds[0]
-        if len(set_items_by_id) < threshold:
-            continue
 
         set_packages: list[PackageCandidate] = []
-        for item_entries in combinations(set_items_by_id.values(), threshold):
-            slot_options = [sorted(entry[1], key=slot_order.index) for entry in item_entries]
-            for slots in product(*slot_options):
-                if len(set(slots)) != len(slots):
-                    continue
-                entries = tuple(zip(slots, (entry[0] for entry in item_entries)))
-                state = state_from_entries(
-                    entries,
-                    sets,
-                    target,
-                    search_target,
-                    natural_cap_target,
-                )
-                if state is None:
-                    continue
-                if not any(set_stat_total(state, stat) > 0 for stat in ACTION_STATS):
-                    continue
-                set_packages.append(
-                    PackageCandidate(entries=entries, score=action_package_score(state, threshold_stats))
-                )
+        for threshold, threshold_stats in thresholds:
+            if len(set_items_by_id) < threshold:
+                continue
+            for item_entries in combinations(set_items_by_id.values(), threshold):
+                slot_options = [sorted(entry[1], key=slot_order.index) for entry in item_entries]
+                for slots in product(*slot_options):
+                    if len(set(slots)) != len(slots):
+                        continue
+                    entries = tuple(zip(slots, (entry[0] for entry in item_entries)))
+                    state = state_from_entries(
+                        entries,
+                        sets,
+                        target,
+                        search_target,
+                        natural_cap_target,
+                    )
+                    if state is None:
+                        continue
+                    if not any(set_stat_total(state, stat) > 0 for stat in ACTION_STATS):
+                        continue
+                    set_packages.append(
+                        PackageCandidate(entries=entries, score=action_package_score(state, threshold_stats))
+                    )
         packages.extend(sorted(set_packages, key=lambda package: package.score, reverse=True)[:keep_per_set])
 
     deduped: dict[tuple[tuple[str, str], ...], PackageCandidate] = {}
@@ -3336,7 +3361,7 @@ def optional_empty_slot(
 
 
 def optional_slot_choice(slot_name: str, target_level: int = TARGET_LEVEL) -> bool:
-    return target_level <= LOW_LEVEL_EMPTY_SLOT_MAX_LEVEL
+    return is_dofus_slot(slot_name) or target_level <= LOW_LEVEL_EMPTY_SLOT_MAX_LEVEL
 
 
 def direct_completion_seed_candidates(
@@ -3389,9 +3414,12 @@ def direct_non_dofus_completions(
                 )
                 if next_state:
                     next_states.append(next_state)
-        beam = dedupe_builds(sorted(next_states, key=lambda state: state.score, reverse=True))[
-            :DIRECT_COMPLETION_NON_DOFUS_BEAM_WIDTH
-        ]
+        beam = trim_action_completion_beam(
+            next_states,
+            target,
+            DIRECT_COMPLETION_NON_DOFUS_BEAM_WIDTH,
+            DIRECT_COMPLETION_GEAR_STATE_PER_SIGNATURE_CAP,
+        )
         if not beam:
             break
     return beam
@@ -4092,7 +4120,7 @@ def find_builds(
             beam_seed_groups = (
                 [required_seeds]
                 if required_seeds
-                else [[], budget_action_trophy_seeds, budget_action_gear_seeds]
+                else [[], budget_action_trophy_seeds, budget_action_gear_seeds, action_package_seeds]
             )
         else:
             beam_seed_groups = [initial_seeds]

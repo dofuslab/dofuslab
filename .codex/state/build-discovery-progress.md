@@ -3006,3 +3006,57 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     `PYTHONPATH=/home/dofuslab python scripts/test_build_discovery_level_diversity_matrix.py`
   - copied changed matrix scripts into Docker, then ran
     `python -m py_compile scripts/build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix.py`
+
+### 2026-07-10 Level 80 Cap-4 Search Gap Investigation
+
+- Generated higher-cap L80 witness diagnostics:
+  - `.codex/state/build-discovery-cap4-level80-witness-10k-diagnostics.json`
+  - `.codex/state/build-discovery-cap4-level80-witness-10k-diagnostics.md`
+- Result:
+  - level 80 Strength tier 1 `12/6/6` remains `not_proven_infeasible`
+  - 10k witness search found no witness and hit the state cap
+  - optimistic independent-slot upper bound remains `13/8/26`
+- Manually assembled and validated a full level 80 tier 1 no-exo `12/6/6`
+  action skeleton, so the row is a solver search gap rather than infeasible
+  under current data assumptions.
+- Valid locked skeleton:
+  - `Gobbamu`
+  - `Chafeerce Belt`
+  - `Khardboard Goultard`
+  - `Terrdala Shield`
+  - `Gelano`
+  - `Treering`
+  - `Royal Pippin Bloopts`
+  - `Khardboard Gobball Headgear`
+  - `Khardboard Dazzling Cloak`
+  - `Turquoise Rhineetle`
+  - `Twitcher`
+- Locked Docker query with those items generated a valid build:
+  - totals: `12/6/6`
+  - Strength: `758`
+  - Vitality: `563`
+  - set: `Khardboard Set x3`
+  - elapsed: 24295.2ms
+- Implemented solver-search improvements while investigating:
+  - action-set package indexing now considers every AP/MP/Range set-bonus
+    threshold, not only the first threshold
+  - no-exo beam search can start from action-package seeds
+  - Dofus slots are optional in beam search
+  - direct completion accepts 3-piece package seeds
+  - direct non-Dofus completion now trims by AP/MP/Range progress before
+    general score
+- Remaining gap:
+  - the unassisted level 80 Strength tier 1 `12/6/6` query still returns no
+    build after these changes
+  - lower-level probing shows direct non-Dofus completion now reaches AP 12 /
+    MP 5 / Range 6 variants from the Khardboard seed, but still loses the
+    AP 12 / MP 6 / Range 6 variant
+  - next likely fix is a completion beam signature/ranking that explicitly
+    preserves balanced AP/MP/Range deficit closure, not just lexicographic
+    action progress
+- Verification passed:
+  - `python scripts\test_build_discovery_prototype.py`
+  - `python -m py_compile server\oneoff\build_discovery_prototype.py scripts\test_build_discovery_prototype.py`
+  - `git diff --check`
+  - copied changed solver/test files into Docker and ran focused regression
+    tests plus `py_compile`

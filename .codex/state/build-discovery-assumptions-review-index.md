@@ -71,6 +71,7 @@ These need gameplay or product review before calling the feature shippable.
    - Review `.codex/state/build-discovery-action-set-recall-plan.md`.
    - Review `.codex/state/build-discovery-action-package-cap4-focus-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-split-partial/manifest.json`.
+   - Review `.codex/state/build-discovery-cap4-level80-witness-10k-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-level50-witness-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-remaining-witness-diagnostics.md`.
@@ -131,6 +132,9 @@ These need gameplay or product review before calling the feature shippable.
    - Full cap-4 regeneration now requires split output. The first split retry
      preserved four completed no-build rows before timeout; level 80 Strength
      tier 1 took 256951.2ms and still returned no build.
+   - Level 80 Strength tier 1 `12/6/6` has a manually validated locked
+     skeleton using Khardboard Set x3, so its unassisted no-build result is a
+     search/pruning gap under current data assumptions, not infeasibility.
    - The cap-2 item-stat diagnostic shows level 1 Intelligence and level 20
      Chance are below target under the item-stat-only upper bound.
    - Level 50 Agility, level 80 Strength, and level 99 Intelligence previously

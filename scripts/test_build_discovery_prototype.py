@@ -29,6 +29,8 @@ from oneoff.build_discovery_prototype import (
     candidate_pool_for_slot,
     diversify_builds,
     dominates_item,
+    direct_completion_seed_candidates,
+    direct_non_dofus_completions,
     db_item_dofus_id,
     cheap_final_score_state,
     effective_scoring_stats,
@@ -63,6 +65,7 @@ from oneoff.build_discovery_prototype import (
     strength_spell_damage,
     strength_spell_damage_profile,
     state_weapon_damage,
+    trim_action_completion_beam,
     trim_full_item_signatures,
 )
 
@@ -1553,6 +1556,184 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(len(normal_index.packages), 0)
         self.assertTrue(any({"weak_ring", "weak_belt"} <= seed.used_item_ids for seed in action_seeds))
         self.assertTrue(any(seed.stats["AP"] >= 8 and seed.stats["MP"] >= 4 for seed in action_seeds))
+
+    def test_action_set_package_index_keeps_later_action_threshold(self):
+        target = BuildTarget(ap=8, mp=5, range=2)
+        set_id = "threshold_set"
+        items = [
+            {
+                "dofusID": f"piece_{idx}",
+                "itemType": item_type,
+                "setID": set_id,
+                "level": 80,
+                "stats": [],
+                "_stats": {},
+                "_score": 0,
+            }
+            for idx, item_type in enumerate(("Hat", "Cloak", "Sword"))
+        ]
+        sets = {
+            set_id: {
+                "_name": "Threshold Set",
+                "_bonus_stats": {
+                    "2": {"AP": 1, "MP": 1, "Range": 1},
+                    "3": {"AP": 2, "MP": 2, "Range": 2},
+                },
+            }
+        }
+
+        action_index = build_action_set_package_index(
+            items,
+            sets,
+            target,
+            exo_search_target(target),
+            exo_natural_cap_target(target),
+        )
+        seeds = package_seed_states(
+            {},
+            sets,
+            target,
+            exo_search_target(target),
+            exo_natural_cap_target(target),
+            package_index=action_index,
+        )
+
+        self.assertTrue(any({"piece_0", "piece_1", "piece_2"} <= seed.used_item_ids for seed in seeds))
+        self.assertTrue(any(seed.stats["AP"] >= 8 and seed.stats["MP"] >= 5 and seed.stats["Range"] >= 2 for seed in seeds))
+
+    def test_no_exo_search_uses_action_package_beam_seeds(self):
+        action_seed = BuildState(slots={"hat": {"dofusID": "seed_hat"}}, used_item_ids={"seed_hat"}, score=10)
+        seen_seed_groups = []
+
+        def fake_search_slot_order(**kwargs):
+            seen_seed_groups.append(kwargs.get("initial_seeds") or [])
+            return []
+
+        with patch("oneoff.build_discovery_prototype.load_items", return_value=[]), patch(
+            "oneoff.build_discovery_prototype.load_sets",
+            return_value={},
+        ), patch(
+            "oneoff.build_discovery_prototype.budget_action_trophy_seed_states",
+            return_value=[],
+        ), patch(
+            "oneoff.build_discovery_prototype.budget_action_gear_seed_states",
+            return_value=[],
+        ), patch(
+            "oneoff.build_discovery_prototype.action_stat_witness_seed_states",
+            return_value=[],
+        ), patch(
+            "oneoff.build_discovery_prototype.build_package_index",
+            return_value=build_discovery_prototype.PackageIndex(tuple()),
+        ), patch(
+            "oneoff.build_discovery_prototype.build_action_set_package_index",
+            return_value=build_discovery_prototype.PackageIndex(tuple()),
+        ), patch(
+            "oneoff.build_discovery_prototype.package_seed_states",
+            side_effect=[[], [action_seed]],
+        ), patch(
+            "oneoff.build_discovery_prototype.ap_set_bonus_seed_states",
+            return_value=[],
+        ), patch(
+            "oneoff.build_discovery_prototype.direct_complete_package_seeds",
+            return_value=[],
+        ), patch(
+            "oneoff.build_discovery_prototype.search_slot_order",
+            side_effect=fake_search_slot_order,
+        ):
+            find_diverse_builds(
+                limit=1,
+                top_k=1,
+                beam_width=1,
+                per_signature_cap=1,
+                relevant_set_limit=1,
+                target=BuildTarget(ap=7, mp=3, range=0),
+                budget_tier=1,
+                exo_policy="none",
+            )
+
+        self.assertTrue(any(group == [action_seed] for group in seen_seed_groups))
+
+    def test_dofus_slots_are_optional_in_beam_search(self):
+        self.assertTrue(build_discovery_prototype.optional_slot_choice("dofus_1", target_level=80))
+        self.assertTrue(build_discovery_prototype.optional_slot_choice("dofus_6", target_level=200))
+        self.assertFalse(build_discovery_prototype.optional_slot_choice("belt", target_level=80))
+
+    def test_direct_completion_accepts_three_piece_package_seed_candidates(self):
+        gear_seed = BuildState(
+            slots={
+                "hat": {"dofusID": "hat"},
+                "cloak": {"dofusID": "cloak"},
+                "weapon": {"dofusID": "weapon"},
+            },
+            used_item_ids={"hat", "cloak", "weapon"},
+            score=10,
+        )
+
+        self.assertEqual(direct_completion_seed_candidates([gear_seed]), [gear_seed])
+
+    def test_direct_non_dofus_completion_preserves_action_variants(self):
+        target = BuildTarget(ap=8, mp=3, range=0)
+        seed = BuildState(slots={"hat": {"dofusID": "seed_hat"}}, used_item_ids={"seed_hat"}, score=0)
+        ap_amulet = {
+            "dofusID": "ap_amulet",
+            "itemType": "Amulet",
+            "setID": None,
+            "level": 80,
+            "stats": [{"stat": "AP", "value": 1}],
+            "_stats": {"AP": 1},
+            "_score": 1,
+        }
+        score_amulet = {
+            "dofusID": "score_amulet",
+            "itemType": "Amulet",
+            "setID": None,
+            "level": 80,
+            "stats": [{"stat": "Strength", "value": 500}],
+            "_stats": {"Strength": 500},
+            "_score": 500,
+        }
+        filler_by_slot = {
+            slot_name: {
+                "dofusID": f"{slot_name}_filler",
+                "itemType": slot_types[0],
+                "setID": None,
+                "level": 80,
+                "stats": [],
+                "_stats": {},
+                "_score": 0,
+            }
+            for slot_name, slot_types in build_discovery_prototype.SLOTS
+            if not slot_name.startswith("dofus_") and slot_name not in {"hat", "amulet"}
+        }
+        pools = {
+            "amulet": [score_amulet, ap_amulet],
+            **{slot_name: [item] for slot_name, item in filler_by_slot.items()},
+        }
+
+        completions = direct_non_dofus_completions(
+            seed,
+            pools,
+            sets={},
+            target=target,
+            search_target=target,
+            natural_cap_target=BuildTarget(ap=12, mp=6, range=6),
+        )
+
+        self.assertTrue(any("ap_amulet" in completion.used_item_ids for completion in completions))
+
+    def test_action_completion_beam_prioritizes_action_progress(self):
+        target = BuildTarget(ap=8, mp=3, range=0)
+        high_score = BuildState(stats={**build_discovery_prototype.BASE_STATS, "Strength": 1000}, score=1000)
+        action_progress = BuildState(stats={**build_discovery_prototype.BASE_STATS, "AP": 8}, score=1)
+
+        trimmed = trim_action_completion_beam(
+            [high_score, action_progress],
+            target,
+            beam_width=1,
+            per_signature_cap=1,
+        )
+
+        self.assertEqual(trimmed, [action_progress])
 
     def test_packages_compatible_rejects_slot_conflicts(self):
         first = build_discovery_prototype.PackageCandidate(
