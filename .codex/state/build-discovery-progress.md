@@ -1708,3 +1708,24 @@ Run the initial evaluator pass:
   - `level_199_chance_10_6_3_budget2`
   - `level_199_agility_10_5_2_budget2`
   - `level_199_strength_12_6_5_budget4`
+
+### 2026-07-10 Level Diversity Build Matrix Artifact
+
+- Added `server/scripts/build_discovery_level_diversity_matrix.py` to generate
+  durable JSON and Markdown review artifacts from the sampled Level Diversity
+  target matrix.
+- The script records full solver responses in JSON and a compact item/stat table
+  in Markdown.
+- Generated current artifacts:
+  - `.codex/state/build-discovery-level-diversity-matrix.json`
+  - `.codex/state/build-discovery-level-diversity-matrix.md`
+- Artifact summary:
+  - targets: 27
+  - generated: 27
+  - no build: 0
+- Full artifact generation command:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/build_discovery_level_diversity_matrix.py --output-json /tmp/build-discovery-level-diversity-matrix.json --output-md /tmp/build-discovery-level-diversity-matrix.md"`
+- Result: pass in 2267.1 seconds.
+- Fast verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_matrix.py"`

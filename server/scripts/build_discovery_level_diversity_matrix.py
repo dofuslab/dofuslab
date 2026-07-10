@@ -242,7 +242,9 @@ def main() -> None:
     report = build_matrix_report(targets, generator=generator)
 
     if args.output_json:
-        Path(args.output_json).write_text(
+        output_json = Path(args.output_json)
+        output_json.parent.mkdir(parents=True, exist_ok=True)
+        output_json.write_text(
             json.dumps(report, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
         )
@@ -250,7 +252,9 @@ def main() -> None:
         print(json.dumps(report, indent=2, ensure_ascii=False))
 
     if args.output_md:
-        Path(args.output_md).write_text(render_markdown(report), encoding="utf-8")
+        output_md = Path(args.output_md)
+        output_md.parent.mkdir(parents=True, exist_ok=True)
+        output_md.write_text(render_markdown(report), encoding="utf-8")
 
 
 if __name__ == "__main__":
