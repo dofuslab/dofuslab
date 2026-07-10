@@ -4,23 +4,25 @@ This inventory enumerates valid Iop query-grid targets for representative levels
 It is not generated-build proof; it shows how much of the grid currently has generated artifact evidence.
 
 Valid query rows: `39424`
-Generated evidence rows: `49`
-Unproven rows: `39375`
+Generated evidence rows: `58`
+Attempted evidence rows: `61`
+Unproven rows: `39366`
+Unattempted rows: `39363`
 
 | Level | Valid rows | Generated evidence | Unproven |
 |---:|---:|---:|---:|
 | 1 | 3584 | 2 | 3582 |
 | 20 | 3584 | 3 | 3581 |
 | 50 | 3584 | 5 | 3579 |
-| 80 | 3584 | 4 | 3580 |
-| 99 | 3584 | 3 | 3581 |
-| 100 | 3072 | 4 | 3068 |
-| 120 | 3072 | 5 | 3067 |
-| 150 | 3072 | 7 | 3065 |
-| 179 | 3072 | 3 | 3069 |
-| 180 | 3072 | 3 | 3069 |
-| 199 | 3072 | 7 | 3065 |
-| 200 | 3072 | 3 | 3069 |
+| 80 | 3584 | 5 | 3579 |
+| 99 | 3584 | 4 | 3580 |
+| 100 | 3072 | 5 | 3067 |
+| 120 | 3072 | 6 | 3066 |
+| 150 | 3072 | 8 | 3064 |
+| 179 | 3072 | 4 | 3068 |
+| 180 | 3072 | 4 | 3068 |
+| 199 | 3072 | 8 | 3064 |
+| 200 | 3072 | 4 | 3068 |
 
 ## Unproven Examples
 
@@ -79,15 +81,15 @@ Unproven rows: `39375`
 - L180 strength tier 2 7/3/any `minimum`
 - L199 strength tier 2 7/3/any `minimum`
 - L200 strength tier 2 7/3/any `minimum`
-- L1 strength tier 4 12/6/6 `cap`
-- L20 strength tier 4 12/6/6 `cap`
-- L50 strength tier 4 12/6/6 `cap`
-- L80 strength tier 4 12/6/6 `cap`
-- L99 strength tier 4 12/6/6 `cap`
-- L100 strength tier 4 12/6/6 `cap`
-- L120 strength tier 4 12/6/6 `cap`
-- L150 strength tier 4 12/6/6 `cap`
-- L179 strength tier 4 12/6/6 `cap`
-- L180 strength tier 4 12/6/6 `cap`
-- L199 strength tier 4 12/6/6 `cap`
-- L200 strength tier 4 12/6/6 `cap`
+- L1 strength tier 3 12/6/6 `cap`
+- L20 strength tier 3 12/6/6 `cap`
+- L50 strength tier 3 12/6/6 `cap`
+- L80 strength tier 3 12/6/6 `cap`
+- L99 strength tier 2 12/6/6 `cap`
+- L100 strength tier 3 12/6/6 `cap`
+- L120 strength tier 3 12/6/6 `cap`
+- L150 strength tier 3 12/6/6 `cap`
+- L179 strength tier 2 12/6/6 `cap`
+- L180 strength tier 3 12/6/6 `cap`
+- L199 strength tier 3 12/6/6 `cap`
+- L200 strength tier 3 12/6/6 `cap`

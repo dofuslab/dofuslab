@@ -49,14 +49,18 @@ These need gameplay or product review before calling the feature shippable.
    - Review `.codex/state/build-discovery-level-boundary-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-coverage-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-matrix.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-inventory.md`.
    - The current matrix has 27 sampled Iop targets, all generated with at least one build.
    - The current boundary matrix has 10 transition-level targets, all generated with at least one build.
    - The current AP/MP/Range coverage matrix has 12 edge/corner targets, all generated with at least one build.
    - The current selector-derived minimum matrix has 12 representative-level
      minimum targets, all generated with at least one build.
+   - The current selector-derived cap matrix has 12 representative-level
+     `12/6/6` tier 4 targets: 9 generated and 3 no-build rows at levels 1, 20,
+     and 50.
    - The current grid inventory has 39,424 representative valid query rows and
-     49 exact generated-evidence rows; it is a gap map, not build proof.
+     58 exact generated-evidence rows; it is a gap map, not build proof.
    - Confirm the sampled rows are useful representatives before promoting them to accepted benchmarks.
    - Flag rows where surplus AP/MP/Range, budget assumptions, or old lower-bucket gear look suspicious.
    - Treat this as generated solver evidence, not gameplay acceptance.

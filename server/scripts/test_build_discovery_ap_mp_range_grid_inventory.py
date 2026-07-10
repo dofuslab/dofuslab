@@ -1,6 +1,7 @@
 import unittest
 
 from build_discovery_ap_mp_range_grid_inventory import (
+    attempted_keys_from_reports,
     build_inventory_report,
     covered_keys_from_reports,
     profile_bucket,
@@ -50,6 +51,26 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         self.assertEqual(len(covered), 1)
         self.assertIn((1, "strength", 1, 6, 3, None), covered)
 
+    def test_attempted_keys_include_generated_invalid_and_no_build_results(self):
+        report = {
+            "results": [
+                generated_result(),
+                {**generated_result(element="chance"), "status": "invalid"},
+                {**generated_result(element="agility"), "status": "no_build"},
+            ]
+        }
+
+        attempted = attempted_keys_from_reports([report])
+
+        self.assertEqual(
+            attempted,
+            {
+                (1, "strength", 1, 6, 3, None),
+                (1, "chance", 1, 6, 3, None),
+                (1, "agility", 1, 6, 3, None),
+            },
+        )
+
     def test_build_inventory_report_counts_generated_evidence(self):
         report = {"results": [generated_result()]}
 
@@ -63,7 +84,9 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
 
         self.assertEqual(inventory["validQueryCount"], 224)
         self.assertEqual(inventory["generatedEvidenceCount"], 1)
+        self.assertEqual(inventory["attemptedEvidenceCount"], 1)
         self.assertEqual(inventory["unprovenCount"], 223)
+        self.assertEqual(inventory["unattemptedCount"], 223)
         self.assertEqual(inventory["byLevel"][0]["level"], 1)
         self.assertEqual(len(inventory["unprovenExamples"]), 3)
         self.assertGreater(len(inventory["nextUnprovenTargets"]), 0)

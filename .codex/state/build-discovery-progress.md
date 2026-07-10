@@ -2062,3 +2062,43 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix_check.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix_check.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-grid-next-minimum-matrix.json --target-set grid-next-minimum"`
+
+### 2026-07-10 Grid Next Cap Matrix
+
+- Added selector-derived target set `AP_MP_RANGE_GRID_NEXT_CAP_TARGETS`.
+- Added `--target-set grid-next-cap` support to the matrix generator and
+  checker.
+- Added checker support for diagnostic matrices with no-build rows via
+  `--allow-no-build`.
+- Generated current artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-matrix.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-matrix.md`
+- Artifact summary:
+  - targets: 12
+  - generated: 9
+  - invalid: 0
+  - no build: 3
+- No-build rows:
+  - `grid_next_cap_level_1_strength_12_6_6_budget4`
+  - `grid_next_cap_level_20_strength_12_6_6_budget4`
+  - `grid_next_cap_level_50_strength_12_6_6_budget4`
+- Generated rows:
+  - levels 80, 99, 100, 120, 150, 179, 180, 199, and 200 all generated valid
+    `12/6/6` tier 4 builds.
+- Regenerated the grid inventory with this artifact included.
+- Updated grid inventory result:
+  - valid query rows: 39,424
+  - exact generated evidence rows: 58
+  - attempted evidence rows: 61
+  - unproven rows: 39,366
+  - unattempted rows: 39,363
+- Note: lower-budget cap rows at levels 1, 20, and 50 remain syntactically
+  unattempted in the inventory, but tier 4 no-build evidence strongly suggests
+  the next useful work is infeasibility diagnostics rather than retrying lower
+  budget tiers for the same cap target.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_level_diversity_matrix_check.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix_check.py scripts/build_discovery_ap_mp_range_grid_inventory.py scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-grid-next-cap-matrix.json --target-set grid-next-cap --allow-no-build"`

@@ -29,6 +29,7 @@ DEFAULT_ARTIFACTS = (
     ".codex/state/build-discovery-level-boundary-matrix.json",
     ".codex/state/build-discovery-ap-mp-range-coverage-matrix.json",
     ".codex/state/build-discovery-ap-mp-range-grid-next-minimum-matrix.json",
+    ".codex/state/build-discovery-ap-mp-range-grid-next-cap-matrix.json",
 )
 
 
@@ -67,6 +68,26 @@ def covered_keys_from_reports(reports: Iterable[dict[str, Any]]) -> set[tuple[in
                 )
             )
     return covered
+
+
+def attempted_keys_from_reports(reports: Iterable[dict[str, Any]]) -> set[tuple[int, str, int, int, int, int | None]]:
+    attempted = set()
+    for report in reports:
+        for result in report.get("results", []):
+            if result.get("status") not in {"generated", "invalid", "no_build"}:
+                continue
+            target = result.get("target") or {}
+            attempted.add(
+                target_key(
+                    level=target["level"],
+                    element=target["element"],
+                    budget_tier=target["budgetTier"],
+                    ap=target["apTarget"],
+                    mp=target["mpTarget"],
+                    range_target=target["rangeTarget"],
+                )
+            )
+    return attempted
 
 
 def valid_query_rows(
@@ -248,7 +269,9 @@ def build_inventory_report(
 ) -> dict[str, Any]:
     rows = valid_query_rows(levels, elements, budget_tiers)
     covered = covered_keys_from_reports(reports)
+    attempted = attempted_keys_from_reports(reports)
     covered_rows = [row for row in rows if row_key(row) in covered]
+    attempted_rows = [row for row in rows if row_key(row) in attempted]
     return {
         "reportVersion": REPORT_VERSION,
         "scope": "query-grid inventory, not generated-build proof",
@@ -257,10 +280,12 @@ def build_inventory_report(
         "budgetTiers": list(budget_tiers),
         "validQueryCount": len(rows),
         "generatedEvidenceCount": len(covered_rows),
+        "attemptedEvidenceCount": len(attempted_rows),
         "unprovenCount": len(rows) - len(covered_rows),
+        "unattemptedCount": len(rows) - len(attempted_rows),
         "byLevel": summarize_by_level(rows, covered),
         "unprovenExamples": compact_unproven_examples(rows, covered, unproven_example_limit),
-        "nextUnprovenTargets": select_next_unproven_targets(rows, covered, next_target_limit),
+        "nextUnprovenTargets": select_next_unproven_targets(rows, attempted, next_target_limit),
     }
 
 
@@ -273,7 +298,9 @@ def render_markdown(report: dict[str, Any]) -> str:
         "",
         f"Valid query rows: `{report['validQueryCount']}`",
         f"Generated evidence rows: `{report['generatedEvidenceCount']}`",
+        f"Attempted evidence rows: `{report['attemptedEvidenceCount']}`",
         f"Unproven rows: `{report['unprovenCount']}`",
+        f"Unattempted rows: `{report['unattemptedCount']}`",
         "",
         "| Level | Valid rows | Generated evidence | Unproven |",
         "|---:|---:|---:|---:|",

@@ -28,8 +28,10 @@
     4
   ],
   "validQueryCount": 39424,
-  "generatedEvidenceCount": 49,
-  "unprovenCount": 39375,
+  "generatedEvidenceCount": 58,
+  "attemptedEvidenceCount": 61,
+  "unprovenCount": 39366,
+  "unattemptedCount": 39363,
   "byLevel": [
     {
       "level": 1,
@@ -52,56 +54,56 @@
     {
       "level": 80,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 4,
-      "unprovenCount": 3580
+      "generatedEvidenceCount": 5,
+      "unprovenCount": 3579
     },
     {
       "level": 99,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 3,
-      "unprovenCount": 3581
+      "generatedEvidenceCount": 4,
+      "unprovenCount": 3580
     },
     {
       "level": 100,
-      "validQueryCount": 3072,
-      "generatedEvidenceCount": 4,
-      "unprovenCount": 3068
-    },
-    {
-      "level": 120,
       "validQueryCount": 3072,
       "generatedEvidenceCount": 5,
       "unprovenCount": 3067
     },
     {
+      "level": 120,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 6,
+      "unprovenCount": 3066
+    },
+    {
       "level": 150,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 7,
-      "unprovenCount": 3065
+      "generatedEvidenceCount": 8,
+      "unprovenCount": 3064
     },
     {
       "level": 179,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 3,
-      "unprovenCount": 3069
+      "generatedEvidenceCount": 4,
+      "unprovenCount": 3068
     },
     {
       "level": 180,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 3,
-      "unprovenCount": 3069
+      "generatedEvidenceCount": 4,
+      "unprovenCount": 3068
     },
     {
       "level": 199,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 7,
-      "unprovenCount": 3065
+      "generatedEvidenceCount": 8,
+      "unprovenCount": 3064
     },
     {
       "level": 200,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 3,
-      "unprovenCount": 3069
+      "generatedEvidenceCount": 4,
+      "unprovenCount": 3068
     }
   ],
   "unprovenExamples": [
@@ -538,7 +540,7 @@
     {
       "level": 1,
       "element": "strength",
-      "budgetTier": 4,
+      "budgetTier": 3,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -547,7 +549,7 @@
     {
       "level": 20,
       "element": "strength",
-      "budgetTier": 4,
+      "budgetTier": 3,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -556,7 +558,7 @@
     {
       "level": 50,
       "element": "strength",
-      "budgetTier": 4,
+      "budgetTier": 3,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -565,7 +567,7 @@
     {
       "level": 80,
       "element": "strength",
-      "budgetTier": 4,
+      "budgetTier": 3,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -574,7 +576,7 @@
     {
       "level": 99,
       "element": "strength",
-      "budgetTier": 4,
+      "budgetTier": 2,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -583,7 +585,7 @@
     {
       "level": 100,
       "element": "strength",
-      "budgetTier": 4,
+      "budgetTier": 3,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -592,7 +594,7 @@
     {
       "level": 120,
       "element": "strength",
-      "budgetTier": 4,
+      "budgetTier": 3,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -601,7 +603,7 @@
     {
       "level": 150,
       "element": "strength",
-      "budgetTier": 4,
+      "budgetTier": 3,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -610,7 +612,7 @@
     {
       "level": 179,
       "element": "strength",
-      "budgetTier": 4,
+      "budgetTier": 2,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -619,7 +621,7 @@
     {
       "level": 180,
       "element": "strength",
-      "budgetTier": 4,
+      "budgetTier": 3,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -628,7 +630,7 @@
     {
       "level": 199,
       "element": "strength",
-      "budgetTier": 4,
+      "budgetTier": 3,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -637,7 +639,7 @@
     {
       "level": 200,
       "element": "strength",
-      "budgetTier": 4,
+      "budgetTier": 3,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
