@@ -4,18 +4,18 @@ This inventory enumerates valid Iop query-grid targets for representative levels
 It is not generated-build proof; it shows how much of the grid currently has generated artifact evidence.
 
 Valid query rows: `39424`
-Generated evidence rows: `90`
+Generated evidence rows: `93`
 Attempted evidence rows: `97`
-Unproven rows: `39334`
+Unproven rows: `39331`
 Unattempted rows: `39327`
 
 | Level | Valid rows | Generated evidence | Unproven |
 |---:|---:|---:|---:|
 | 1 | 3584 | 4 | 3580 |
 | 20 | 3584 | 5 | 3579 |
-| 50 | 3584 | 8 | 3576 |
-| 80 | 3584 | 7 | 3577 |
-| 99 | 3584 | 6 | 3578 |
+| 50 | 3584 | 9 | 3575 |
+| 80 | 3584 | 8 | 3576 |
+| 99 | 3584 | 7 | 3577 |
 | 100 | 3072 | 8 | 3064 |
 | 120 | 3072 | 9 | 3063 |
 | 150 | 3072 | 11 | 3061 |

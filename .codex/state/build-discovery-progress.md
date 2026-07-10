@@ -2475,3 +2475,41 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_uncommon_action_sources.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile oneoff/build_discovery_prototype.py scripts/test_build_discovery_uncommon_action_sources.py"`
   - targeted no-cache generation for the three witness-backed cap-2 rows
+
+### 2026-07-10 Cap 2 Matrix After Witness Seed Fix
+
+- Regenerated `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-matrix.json`
+  and `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-matrix.md`
+  at commit `d3d64b3d`.
+- Updated cap-2 matrix result:
+  - targets: 12
+  - generated: 10
+  - invalid: 0
+  - no build: 2
+- Newly generated rows after the recall fix:
+  - level 50 Agility `12/6/6` tier 4
+  - level 80 Strength `12/6/6` tier 3
+  - level 99 Intelligence `12/6/6` tier 4
+- Remaining no-build rows:
+  - level 1 Intelligence `12/6/6` tier 4
+  - level 20 Chance `12/6/6` tier 4
+- Regenerated cap-2 diagnostics for the remaining no-build rows:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-diagnostics.md`
+- Current cap-2 diagnostic result:
+  - diagnostics: 2
+  - item-stat upper-bound below target: 2
+  - not proven infeasible: 0
+  - action-stat witnesses found: 0
+- Regenerated the grid inventory with the updated cap-2 matrix.
+- Updated grid inventory result:
+  - valid query rows: 39,424
+  - exact generated evidence rows: 93
+  - attempted evidence rows: 97
+  - unproven rows: 39,331
+  - unattempted rows: 39,327
+- Interpretation:
+  - the cap action-stat witness seed fixed the three witness-backed cap-2
+    solver no-build rows
+  - the remaining level 1 and level 20 cap rows still need stronger
+    set-bonus-aware proof before calling them fully infeasible

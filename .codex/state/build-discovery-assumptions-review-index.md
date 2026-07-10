@@ -75,14 +75,12 @@ These need gameplay or product review before calling the feature shippable.
      `12/6/6` tier 4 targets: 10 generated and 2 no-build rows at levels 1
      and 20.
    - The current second selector-derived cap matrix has 12 mixed-element
-     `12/6/6` targets: 7 generated and 5 no-build rows at levels 1, 20, 50,
-     80, and 99.
+     `12/6/6` targets: 10 generated and 2 no-build rows at levels 1 and 20.
    - The cap-2 item-stat diagnostic shows level 1 Intelligence and level 20
-     Chance are below target under the item-stat-only upper bound. Level 50
-     Agility, level 80 Strength, and level 99 Intelligence all have exact
-     `12/6/6` action-stat witnesses, so their no-build rows are solver
-     recall/search gaps for action-stat validity rather than action-stat
-     catalog impossibility. The witnesses are not full build-quality proof.
+     Chance are below target under the item-stat-only upper bound.
+   - Level 50 Agility, level 80 Strength, and level 99 Intelligence previously
+     had exact `12/6/6` action-stat witnesses and now generate after the cap
+     action-stat witness seed recall fix.
    - The current cap diagnostics show levels 1 and 20 are below target under
      an optimistic item-stat-only independent-slot upper bound. Because set
      bonuses are not included yet, this is strong evidence but not a full
@@ -95,7 +93,7 @@ These need gameplay or product review before calling the feature shippable.
      cap, so it remains bounded/inconclusive rather than fully proven
      infeasible.
    - The current grid inventory has 39,424 representative valid query rows and
-     90 exact generated-evidence rows; it is a gap map, not build proof.
+     93 exact generated-evidence rows; it is a gap map, not build proof.
    - Confirm the sampled rows are useful representatives before promoting them to accepted benchmarks.
    - Flag rows where surplus AP/MP/Range, budget assumptions, or old lower-bucket gear look suspicious.
    - Treat this as generated solver evidence, not gameplay acceptance.
