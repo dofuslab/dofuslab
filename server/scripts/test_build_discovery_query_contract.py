@@ -1,5 +1,6 @@
 import sys
 import unittest
+from argparse import Namespace
 from pathlib import Path
 from unittest.mock import patch
 
@@ -18,6 +19,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     BuildState,
     DEFAULT_AP_STRATEGIES,
     BuildTarget,
+    build_query_from_cli_args,
     build_discovery_response,
     base_ap_for_level,
     candidate_pool_for_slot,
@@ -29,6 +31,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     normal_gear_bucket_names_for_target,
     load_items,
     optional_empty_slot,
+    parse_optional_range_target,
     query_cache_identity,
     result_warnings,
     target_level_context,
@@ -161,6 +164,43 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         self.assertEqual(normalize_range_target(query.range_target), MIN_RANGE)
         self.assertEqual(query.target.range, MIN_RANGE)
         self.assertIsNone(query_cache_identity(query)["rangeTarget"])
+
+    def test_cli_query_args_include_level_and_optional_range(self):
+        args = Namespace(
+            level=80,
+            element="agility",
+            target_ap=10,
+            target_mp=5,
+            target_range=None,
+            budget_tier=2,
+            exo_policy="none",
+            locked_item_id=["locked"],
+            avoided_item_id=["avoided"],
+            limit=1,
+            top_k=25,
+            beam_width=100,
+            per_signature_cap=10,
+            relevant_set_limit=40,
+            max_shared_items=12,
+            generic_damage_weight=0.4,
+            weapon_damage_weight=0.1,
+        )
+
+        query = build_query_from_cli_args(args)
+
+        query.validate()
+        self.assertEqual(query.level, 80)
+        self.assertEqual(query.elements, ("agility",))
+        self.assertEqual(query.ap_target, 10)
+        self.assertEqual(query.mp_target, 5)
+        self.assertIsNone(query.range_target)
+        self.assertEqual(query.locked_item_ids, ("locked",))
+        self.assertEqual(query.avoided_item_ids, ("avoided",))
+
+    def test_cli_range_parser_accepts_any_or_numeric(self):
+        self.assertIsNone(parse_optional_range_target("none"))
+        self.assertIsNone(parse_optional_range_target("any"))
+        self.assertEqual(parse_optional_range_target("3"), 3)
 
     def test_level_context_updates_build_state_base_ap(self):
         self.assertEqual(BuildState().stats["AP"], 7)

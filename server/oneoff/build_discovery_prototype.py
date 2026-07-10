@@ -4196,27 +4196,15 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
     }
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--limit", type=int, default=5)
-    parser.add_argument("--top-k", type=int, default=25)
-    parser.add_argument("--beam-width", type=int, default=250)
-    parser.add_argument("--per-signature-cap", type=int, default=40)
-    parser.add_argument("--relevant-set-limit", type=int, default=60)
-    parser.add_argument("--target-ap", type=int, default=DEFAULT_TARGET.ap)
-    parser.add_argument("--target-mp", type=int, default=DEFAULT_TARGET.mp)
-    parser.add_argument("--target-range", type=int, default=DEFAULT_TARGET.range)
-    parser.add_argument("--element", choices=sorted(ELEMENT_PROFILES), default="strength")
-    parser.add_argument("--budget-tier", type=int, default=2)
-    parser.add_argument("--exo-policy", choices=("none", "allow", "opti"), default="allow")
-    parser.add_argument("--locked-item-id", action="append", default=[])
-    parser.add_argument("--avoided-item-id", action="append", default=[])
-    parser.add_argument("--max-shared-items", type=int, default=DEFAULT_MAX_SHARED_ITEMS)
-    parser.add_argument("--generic-damage-weight", type=float, default=GENERIC_DAMAGE_WEIGHT)
-    parser.add_argument("--weapon-damage-weight", type=float, default=WEAPON_DAMAGE_WEIGHT)
-    args = parser.parse_args()
+def parse_optional_range_target(value: str) -> int | None:
+    if value.lower() in {"none", "any"}:
+        return None
+    return int(value)
 
-    query = BuildDiscoveryQuery(
+
+def build_query_from_cli_args(args: argparse.Namespace) -> BuildDiscoveryQuery:
+    return BuildDiscoveryQuery(
+        level=args.level,
         elements=(args.element,),
         ap_target=args.target_ap,
         mp_target=args.target_mp,
@@ -4234,6 +4222,36 @@ def main() -> None:
         generic_damage_weight=args.generic_damage_weight,
         weapon_damage_weight=args.weapon_damage_weight,
     )
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--level", type=int, default=TARGET_LEVEL)
+    parser.add_argument("--limit", type=int, default=5)
+    parser.add_argument("--top-k", type=int, default=25)
+    parser.add_argument("--beam-width", type=int, default=250)
+    parser.add_argument("--per-signature-cap", type=int, default=40)
+    parser.add_argument("--relevant-set-limit", type=int, default=60)
+    parser.add_argument("--target-ap", "--ap", dest="target_ap", type=int, default=DEFAULT_TARGET.ap)
+    parser.add_argument("--target-mp", "--mp", dest="target_mp", type=int, default=DEFAULT_TARGET.mp)
+    parser.add_argument(
+        "--target-range",
+        "--range",
+        dest="target_range",
+        type=parse_optional_range_target,
+        default=DEFAULT_TARGET.range,
+    )
+    parser.add_argument("--element", choices=sorted(ELEMENT_PROFILES), default="strength")
+    parser.add_argument("--budget-tier", type=int, default=2)
+    parser.add_argument("--exo-policy", choices=("none", "allow", "opti"), default="allow")
+    parser.add_argument("--locked-item-id", action="append", default=[])
+    parser.add_argument("--avoided-item-id", action="append", default=[])
+    parser.add_argument("--max-shared-items", type=int, default=DEFAULT_MAX_SHARED_ITEMS)
+    parser.add_argument("--generic-damage-weight", type=float, default=GENERIC_DAMAGE_WEIGHT)
+    parser.add_argument("--weapon-damage-weight", type=float, default=WEAPON_DAMAGE_WEIGHT)
+    args = parser.parse_args()
+
+    query = build_query_from_cli_args(args)
     print(json.dumps(build_discovery_response(query), indent=2, ensure_ascii=False))
 
 

@@ -1740,3 +1740,16 @@ Run the initial evaluator pass:
 - Verification passed:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_local_readiness_report.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_local_readiness_pipeline.py"`
+
+### 2026-07-10 Level-Aware Oneoff CLI
+
+- Added oneoff CLI support for `--level`.
+- Added AP/MP/Range aliases:
+  - `--ap` for `--target-ap`
+  - `--mp` for `--target-mp`
+  - `--range` for `--target-range`
+- Added `--range none` / `--range any` parsing for queries with no explicit
+  Range floor.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m oneoff.build_discovery_prototype --level 50 --element strength --ap 6 --mp 3 --range none --limit 1 --top-k 3 --beam-width 3 --per-signature-cap 1 --relevant-set-limit 3 >/tmp/build_discovery_cli_level_smoke.json"`
