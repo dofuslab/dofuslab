@@ -2721,3 +2721,27 @@ Run the initial evaluator pass:
   - unattempted rows: 39,303
 - Verification passed:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-grid-next-cap-4-matrix.json --target-set grid-next-cap-4 --allow-no-build"`
+
+### 2026-07-10 Cap 4 Level 50 Witness Diagnostic
+
+- Generated bounded 2k witness diagnostics for level 50 Agility tier 2:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-level50-witness-2k-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-level50-witness-2k-diagnostics.md`
+- Result:
+  - diagnostic status: `action_stat_witness_found`
+  - witness search: found, state cap hit
+  - witness totals: `12/6/6`
+- Interpretation:
+  - level 50 Agility tier 2 `12/6/6` is a solver recall gap for action-stat
+    validity, not a catalog limit
+  - this does not prove the found skeleton is a high-quality accepted build
+- Command:
+  - `docker exec dofuslab-server-1 sh -lc 'cd /home/dofuslab && python scripts/build_discovery_action_stat_diagnostics.py /tmp/build-discovery-ap-mp-range-grid-next-cap-4-matrix.json --targets grid_next_cap4_level_50_agility_12_6_6_budget2 --witness-search --witness-max-states-per-slot 2000 --output-json /tmp/build-discovery-ap-mp-range-grid-next-cap-4-level50-witness-2k-diagnostics.json --output-md /tmp/build-discovery-ap-mp-range-grid-next-cap-4-level50-witness-2k-diagnostics.md'`
+- Reviewer findings fixed in the next checkpoint:
+  - matrix artifact wording no longer hardcodes `Milestone 3`; it now says
+    `sampled target set`
+  - diagnostic Markdown now reports `Witness searches run` and renders
+    witness hits as `X of Y searched`, so `0` hits without witness search is
+    not easy to misread as negative evidence
+  - regenerated cap-4 matrix Markdown, cap-4 fast diagnostics, and the cap-4
+    level 50 witness diagnostics with the safer wording

@@ -307,8 +307,8 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Generated at: `{report['generatedAt']}`",
         "",
         (
-            "This is a generated-output snapshot for the sampled Milestone 3 "
-            "target set. It records the current best solver result "
+            "This is a generated-output snapshot for the sampled target set. "
+            "It records the current best solver result "
             "for review; it is not yet a human-accepted benchmark list."
         ),
         (

@@ -2,7 +2,7 @@
 
 Generated at: `2026-07-10T18:29:41.220389+00:00`
 
-This is a generated-output snapshot for the sampled Milestone 3 target set. It records the current best solver result for review; it is not yet a human-accepted benchmark list.
+This is a generated-output snapshot for the sampled target set. It records the current best solver result for review; it is not yet a human-accepted benchmark list.
 
 
 Targets: `12`

@@ -72,6 +72,7 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
 
         self.assertEqual(diagnostics["diagnosticCount"], 1)
         self.assertEqual(diagnostics["itemStatUpperBoundBelowTargetCount"], 1)
+        self.assertEqual(diagnostics["witnessSearchRunCount"], 0)
         self.assertEqual(
             diagnostics["diagnostics"][0]["diagnosticStatus"],
             "item_stat_upper_bound_below_target",
@@ -103,6 +104,8 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
             "diagnosticCount": 1,
             "itemStatUpperBoundBelowTargetCount": 1,
             "notProvenInfeasibleCount": 0,
+            "witnessSearchRunCount": 1,
+            "actionStatWitnessFoundCount": 1,
             "diagnostics": [
                 {
                     "target": {
@@ -128,6 +131,8 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
         self.assertIn("L1 strength 12/6/6 tier 4", markdown)
         self.assertIn("8/4/1", markdown)
         self.assertIn("found, state cap hit", markdown)
+        self.assertIn("Witness searches run: `1`", markdown)
+        self.assertIn("Action-stat witnesses found: `1` of `1` searched", markdown)
         self.assertIn("AP optimistic upper bound", markdown)
 
     def test_diagnostics_use_matrix_query_exo_policy(self):
@@ -190,6 +195,7 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
             )
 
         self.assertEqual(diagnostics["actionStatWitnessFoundCount"], 1)
+        self.assertEqual(diagnostics["witnessSearchRunCount"], 1)
         self.assertEqual(
             diagnostics["diagnostics"][0]["diagnosticStatus"],
             "action_stat_witness_found",

@@ -65,6 +65,7 @@ These need gameplay or product review before calling the feature shippable.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-level200-witness-2k-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-diagnostics.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-level50-witness-2k-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-level50-witness-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-remaining-witness-diagnostics.md`.
@@ -103,6 +104,9 @@ These need gameplay or product review before calling the feature shippable.
      level 20 Chance tier 2 are below target under the item-stat-only upper
      bound; the other five no-build rows are not-proven and need witness/search
      diagnostics before interpretation.
+   - The cap-4 2k witness diagnostic found a level 50 Agility tier 2 `12/6/6`
+     action-stat witness and hit the state cap, so that row is a solver recall
+     gap for action-stat validity.
    - The cap-2 item-stat diagnostic shows level 1 Intelligence and level 20
      Chance are below target under the item-stat-only upper bound.
    - Level 50 Agility, level 80 Strength, and level 99 Intelligence previously

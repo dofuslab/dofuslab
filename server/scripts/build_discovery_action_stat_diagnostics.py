@@ -388,6 +388,9 @@ def build_diagnostics_report_for_entries(
         "actionStatWitnessFoundCount": sum(
             1 for diagnostic in diagnostics if diagnostic["diagnosticStatus"] == "action_stat_witness_found"
         ),
+        "witnessSearchRunCount": sum(
+            1 for diagnostic in diagnostics if (diagnostic.get("witnessSearch") or {}).get("enabled")
+        ),
         "diagnostics": diagnostics,
     }
 
@@ -414,7 +417,12 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Diagnostics: `{report['diagnosticCount']}`",
         f"Item-stat upper-bound below target: `{report['itemStatUpperBoundBelowTargetCount']}`",
         f"Not proven infeasible: `{report['notProvenInfeasibleCount']}`",
-        f"Action-stat witnesses found: `{report.get('actionStatWitnessFoundCount', 0)}`",
+        f"Witness searches run: `{report.get('witnessSearchRunCount', 0)}`",
+        (
+            "Action-stat witnesses found: "
+            f"`{report.get('actionStatWitnessFoundCount', 0)}` "
+            f"of `{report.get('witnessSearchRunCount', 0)}` searched"
+        ),
         "",
         "| Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness search | Witness AP/MP/Range | Reasons |",
         "|---|---|---|---|---|---|---|",
@@ -497,6 +505,9 @@ def combine_split_diagnostics(matrix_report: dict[str, Any], reports: Iterable[d
         ),
         "actionStatWitnessFoundCount": sum(
             1 for diagnostic in diagnostics if diagnostic["diagnosticStatus"] == "action_stat_witness_found"
+        ),
+        "witnessSearchRunCount": sum(
+            1 for diagnostic in diagnostics if (diagnostic.get("witnessSearch") or {}).get("enabled")
         ),
         "diagnostics": diagnostics,
     }

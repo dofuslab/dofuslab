@@ -8,7 +8,8 @@ If the upper bound reaches target, no-build remains a solver/search, set-bonus, 
 Diagnostics: `7`
 Item-stat upper-bound below target: `2`
 Not proven infeasible: `5`
-Action-stat witnesses found: `0`
+Witness searches run: `0`
+Action-stat witnesses found: `0` of `0` searched
 
 | Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness search | Witness AP/MP/Range | Reasons |
 |---|---|---|---|---|---|---|

@@ -6,6 +6,7 @@
   "itemStatUpperBoundBelowTargetCount": 2,
   "notProvenInfeasibleCount": 5,
   "actionStatWitnessFoundCount": 0,
+  "witnessSearchRunCount": 0,
   "diagnostics": [
     {
       "target": {

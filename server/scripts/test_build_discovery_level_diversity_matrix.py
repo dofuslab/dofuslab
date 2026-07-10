@@ -288,6 +288,8 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         markdown = render_markdown(report)
 
         self.assertIn("# Build Discovery Iop Grid Next Minimum 3 Matrix", markdown)
+        self.assertIn("sampled target set", markdown)
+        self.assertNotIn("Milestone 3", markdown)
         self.assertIn("L50 strength 7/3/any tier 1", markdown)
         self.assertIn("Example Amulet, Example Sword", markdown)
 
