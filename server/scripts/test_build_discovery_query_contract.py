@@ -20,6 +20,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     BuildTarget,
     build_discovery_response,
     base_ap_for_level,
+    candidate_pool_for_slot,
     find_diverse_builds,
     effective_ap_strategies_for_target,
     effective_exo_policy,
@@ -211,6 +212,34 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         self.assertTrue(optional_empty_slot("pet", {"pet": []}))
         self.assertFalse(optional_empty_slot("pet", {"pet": [{"dofusID": "mount"}]}))
         self.assertFalse(optional_empty_slot("hat", {"hat": []}))
+
+    def test_low_level_relevant_set_items_are_kept_in_candidate_pool(self):
+        set_ring = {
+            "dofusID": "set-ring",
+            "level": 100,
+            "itemType": "Ring",
+            "setID": "set-1",
+            "_stats": {"Strength": 35, "Vitality": 60},
+            "_score": 75,
+        }
+        ap_ring = {
+            "dofusID": "ap-ring",
+            "level": 60,
+            "itemType": "Ring",
+            "setID": None,
+            "_stats": {"AP": 1},
+            "_score": 12,
+        }
+
+        pool = candidate_pool_for_slot(
+            ("Ring",),
+            [set_ring, ap_ring],
+            {"set-1"},
+            top_k=5,
+            target_level=100,
+        )
+
+        self.assertEqual({item["dofusID"] for item in pool}, {"set-ring", "ap-ring"})
 
     def test_query_contract_rejects_ap_below_level_baseline(self):
         invalid_queries = (

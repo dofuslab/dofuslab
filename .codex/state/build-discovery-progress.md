@@ -1570,3 +1570,24 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
   - `python -m py_compile server\oneoff\build_discovery_prototype.py server\scripts\test_build_discovery_query_contract.py`
   - `git diff --check`
+
+### 2026-07-10 Level-Aware Relevant Set Items
+
+- Fixed another level-diversity recall gap: `candidate_pool_for_slot()` only
+  admitted relevant set items at level `180+`, which dropped useful level-100
+  set items such as Bwork Chief Bracelet.
+- The relevant-set item threshold is now level-aware:
+  - below level 180, relevant set items at the target level are allowed
+  - at level 180+, the original endgame pruning behavior remains
+- Added cheap coverage that a level-100 relevant set ring remains in the ring
+  candidate pool alongside Gelano.
+- Real local smoke after the fix:
+  - Level 100 Strength Iop `7/3/None`, tier 1, no exo, small search:
+    resultCount `1`, elapsed `9416.3` ms, totals `9/4/2`.
+    Items: Dragon Pig Necklace, Krosmastrap, Pink Claw, Dragokart Cup, Bwork
+    Chief Bracelet, Gelano, Krosmaboots, Bwork Chief Helmet, Boowoldlum Cloak,
+    Ivory and Crimson Dragoturkey, Rabid, Miracle Man, Earth Devastator, Vigour,
+    Earth Wrecker, Observer.
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
+  - `python -m py_compile server\oneoff\build_discovery_prototype.py server\scripts\test_build_discovery_query_contract.py`

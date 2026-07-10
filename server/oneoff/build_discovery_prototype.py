@@ -1490,6 +1490,7 @@ def candidate_pool_for_slot(
     relevant_sets: set[str],
     top_k: int,
     required_item_ids: set[str] | None = None,
+    target_level: int = TARGET_LEVEL,
 ) -> list[dict[str, Any]]:
     required_item_ids = required_item_ids or set()
     is_dofus_slot = all(slot_type in {"Dofus", "Trophy", "Prysmaradite"} for slot_type in slot_types)
@@ -1499,7 +1500,10 @@ def candidate_pool_for_slot(
         item
         for item in compatible
         if item.get("setID") in relevant_sets
-        and item.get("level", 0) >= RELEVANT_SET_ITEM_MIN_LEVEL
+        and (
+            target_level < RELEVANT_SET_ITEM_MIN_LEVEL
+            or item.get("level", 0) >= RELEVANT_SET_ITEM_MIN_LEVEL
+        )
     ]
     search_compatible = compatible
     if not is_dofus_slot and not is_pet_slot:
@@ -3701,6 +3705,7 @@ def find_builds(
             relevant_sets,
             top_k,
             required_item_ids=required_item_ids,
+            target_level=target.level,
         )
         for slot_name, slot_types in SLOTS
     }
