@@ -1,6 +1,7 @@
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -14,8 +15,10 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     MIN_RANGE,
     BASE_AP_STRATEGIES,
     BuildDiscoveryQuery,
+    BuildState,
     DEFAULT_AP_STRATEGIES,
     BuildTarget,
+    find_diverse_builds,
     effective_ap_strategies_for_target,
     effective_exo_policy,
     query_cache_identity,
@@ -129,6 +132,30 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         self.assertEqual(
             effective_exo_policy(BuildDiscoveryQuery(budget_tier=4, exo_policy="opti")),
             "opti",
+        )
+
+    def test_higher_budget_search_falls_back_to_lower_budget_on_empty_result(self):
+        fallback_state = BuildState()
+        fallback_state.used_item_ids.add("tier-one-witness")
+
+        with patch(
+            "oneoff.build_discovery_prototype.find_builds",
+            side_effect=[[], [fallback_state]],
+        ) as find_builds_mock:
+            builds = find_diverse_builds(
+                limit=1,
+                top_k=1,
+                beam_width=1,
+                per_signature_cap=1,
+                relevant_set_limit=1,
+                budget_tier=2,
+                exo_policy="none",
+            )
+
+        self.assertEqual(builds, [fallback_state])
+        self.assertEqual(
+            [call.kwargs["budget_tier"] for call in find_builds_mock.call_args_list],
+            [2, 1],
         )
 
     def test_base_ap_target_allows_base_ap_strategy(self):

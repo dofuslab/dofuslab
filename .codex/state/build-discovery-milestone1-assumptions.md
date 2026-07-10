@@ -38,6 +38,11 @@ acceptance claim.
   items, and other advanced items.
 - Budget tiers below 3 force effective `exoPolicy=none` even when the query asks
   for `allow` or `opti`.
+- Higher budget queries may fall back to a stricter lower-budget search only
+  when the requested budget search returns no builds. This preserves the
+  product assumption that users can use previous budget buckets, and guards
+  against bounded-search pruning becoming non-monotonic as more candidates are
+  added.
 
 ## Dofus / Trophy / Exos
 
@@ -159,6 +164,11 @@ python -m unittest scripts.test_build_discovery_milestone_one_generation_smoke
   all four elements (`strength,intelligence,chance,agility`) passed the
   bounded smoke test in Docker. Runtime was about 709s for eight generation
   rows.
+- 2026-07-09: interior profile `10/5/6`, Strength, budget tier 2 exposed a
+  non-monotonic bounded-search miss even though budget tier 1 could generate a
+  valid build. Added stricter-budget fallback diagnostics; focused Strength
+  tier 2 interior smoke then passed in Docker. Runtime was about 289s for two
+  generation rows.
 - 2026-07-09: low profile `7/3/0`, budget tiers 2-4 and all four elements
   exceeded a 20-minute iterative timeout. Keep broad smoke runs sliced by
   budget tier until performance work makes broader local runs practical.

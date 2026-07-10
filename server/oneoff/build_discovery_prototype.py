@@ -610,6 +610,7 @@ class BuildTarget:
 DEFAULT_TARGET = BuildTarget()
 DEFAULT_MAX_SHARED_ITEMS = 10
 LAST_FIND_BUILD_TIMINGS: dict[str, float] = {}
+LAST_FIND_BUILD_FALLBACK: dict[str, int] = {}
 BUILD_DISCOVERY_RESPONSE_CACHE: dict[str, dict[str, Any]] = {}
 
 
@@ -3831,6 +3832,7 @@ def find_diverse_builds(
         exo_policy = "none"
 
     required_item_ids = required_item_ids or set()
+    LAST_FIND_BUILD_FALLBACK.clear()
     candidates = find_builds(
         top_k=top_k,
         beam_width=beam_width,
@@ -3846,6 +3848,33 @@ def find_diverse_builds(
         exo_policy=exo_policy,
         completion_target=max(top_k, limit * 10),
     )
+    selected_budget_tier = budget_tier
+    if not candidates and budget_tier > 1:
+        for fallback_budget_tier in range(budget_tier - 1, 0, -1):
+            candidates = find_builds(
+                top_k=top_k,
+                beam_width=beam_width,
+                per_signature_cap=per_signature_cap,
+                relevant_set_limit=relevant_set_limit,
+                target=target,
+                max_shared_items=None,
+                excluded_item_ids=excluded_item_ids,
+                required_item_ids=required_item_ids,
+                budget_tier=fallback_budget_tier,
+                generic_damage_weight=generic_damage_weight,
+                weapon_damage_weight=weapon_damage_weight,
+                exo_policy=exo_policy,
+                completion_target=max(top_k, limit * 10),
+            )
+            if candidates:
+                selected_budget_tier = fallback_budget_tier
+                LAST_FIND_BUILD_FALLBACK.update(
+                    {
+                        "requestedBudgetTier": budget_tier,
+                        "usedBudgetTier": fallback_budget_tier,
+                    }
+                )
+                break
 
     selected: list[BuildState] = []
     seen_item_signatures: set[tuple[str, ...]] = set()
@@ -3871,6 +3900,8 @@ def find_diverse_builds(
         if len(selected) >= limit:
             break
 
+    if not selected and selected_budget_tier == budget_tier:
+        LAST_FIND_BUILD_FALLBACK.clear()
     return selected
 
 
@@ -3883,6 +3914,15 @@ def query_warnings(query: BuildDiscoveryQuery) -> list[str]:
     if query.budget_tier != 4 and query.exo_policy == "opti":
         warnings.append("exoPolicy=opti may conflict with non-opti budget tiers.")
     return warnings
+
+
+def fallback_budget_warning() -> str | None:
+    if not LAST_FIND_BUILD_FALLBACK:
+        return None
+    return (
+        "Requested budget tier search returned no builds; results were generated "
+        f"from stricter budget tier {LAST_FIND_BUILD_FALLBACK['usedBudgetTier']}."
+    )
 
 
 def result_warnings(query: BuildDiscoveryQuery, builds: list[BuildState]) -> list[str]:
@@ -3944,6 +3984,11 @@ def build_discovery_response(
     elapsed_ms = round((time.perf_counter() - start) * 1000, 1)
     sets = load_sets()
 
+    warnings = result_warnings(query, builds)
+    fallback_warning = fallback_budget_warning()
+    if fallback_warning:
+        warnings.append(fallback_warning)
+
     response = {
         "datasetVersion": current_dataset_version,
         "solverVersion": SOLVER_VERSION,
@@ -3967,12 +4012,13 @@ def build_discovery_response(
             "genericDamageWeight": query.generic_damage_weight,
             "weaponDamageWeight": query.weapon_damage_weight,
         },
-        "warnings": result_warnings(query, builds),
+        "warnings": warnings,
         "diagnostics": {
             "elapsedMs": elapsed_ms,
             "cacheHit": False,
             "timings": {key: round(value, 1) for key, value in LAST_FIND_BUILD_TIMINGS.items()},
             "resultCount": len(builds),
+            "fallbackBudget": dict(LAST_FIND_BUILD_FALLBACK) if LAST_FIND_BUILD_FALLBACK else None,
         },
         "builds": [serialize_build(build, sets) for build in builds],
     }
