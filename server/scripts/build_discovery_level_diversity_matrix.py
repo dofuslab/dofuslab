@@ -24,6 +24,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
 from scripts.build_discovery_level_diversity_targets import (  # noqa: E402
     AP_MP_RANGE_COVERAGE_TARGETS,
     AP_MP_RANGE_GRID_NEXT_CAP_TARGETS,
+    AP_MP_RANGE_GRID_NEXT_MINIMUM_2_TARGETS,
     AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS,
     BOUNDARY_LEVEL_TARGETS,
     LEVEL_DIVERSITY_TARGETS,
@@ -72,6 +73,8 @@ def targets_for_set(target_set: str) -> tuple[LevelDiversityTarget, ...]:
         return AP_MP_RANGE_COVERAGE_TARGETS
     if target_set == "grid-next-minimum":
         return AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS
+    if target_set == "grid-next-minimum-2":
+        return AP_MP_RANGE_GRID_NEXT_MINIMUM_2_TARGETS
     if target_set == "grid-next-cap":
         return AP_MP_RANGE_GRID_NEXT_CAP_TARGETS
     if target_set == "all":
@@ -80,6 +83,7 @@ def targets_for_set(target_set: str) -> tuple[LevelDiversityTarget, ...]:
             + BOUNDARY_LEVEL_TARGETS
             + AP_MP_RANGE_COVERAGE_TARGETS
             + AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS
+            + AP_MP_RANGE_GRID_NEXT_MINIMUM_2_TARGETS
             + AP_MP_RANGE_GRID_NEXT_CAP_TARGETS
         )
     raise ValueError(f"Unsupported target set: {target_set}")
@@ -92,10 +96,12 @@ def target_source_for_set(target_set: str) -> str:
         return "scripts.build_discovery_level_diversity_targets.AP_MP_RANGE_COVERAGE_TARGETS"
     if target_set == "grid-next-minimum":
         return "scripts.build_discovery_level_diversity_targets.AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS"
+    if target_set == "grid-next-minimum-2":
+        return "scripts.build_discovery_level_diversity_targets.AP_MP_RANGE_GRID_NEXT_MINIMUM_2_TARGETS"
     if target_set == "grid-next-cap":
         return "scripts.build_discovery_level_diversity_targets.AP_MP_RANGE_GRID_NEXT_CAP_TARGETS"
     if target_set == "all":
-        return "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS+BOUNDARY_LEVEL_TARGETS+AP_MP_RANGE_COVERAGE_TARGETS+AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS+AP_MP_RANGE_GRID_NEXT_CAP_TARGETS"
+        return "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS+BOUNDARY_LEVEL_TARGETS+AP_MP_RANGE_COVERAGE_TARGETS+AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS+AP_MP_RANGE_GRID_NEXT_MINIMUM_2_TARGETS+AP_MP_RANGE_GRID_NEXT_CAP_TARGETS"
     return "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS"
 
 
@@ -340,7 +346,7 @@ def main() -> None:
     parser.add_argument("--targets", help="Comma-separated target ids to include.")
     parser.add_argument(
         "--target-set",
-        choices=("level-diversity", "boundary", "coverage", "grid-next-minimum", "grid-next-cap", "all"),
+        choices=("level-diversity", "boundary", "coverage", "grid-next-minimum", "grid-next-minimum-2", "grid-next-cap", "all"),
         default="level-diversity",
     )
     parser.add_argument("--levels", help="Comma-separated levels to include.")
