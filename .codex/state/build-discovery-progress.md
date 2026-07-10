@@ -2182,3 +2182,26 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_uncommon_action_sources.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile oneoff/build_discovery_prototype.py scripts/test_build_discovery_uncommon_action_sources.py"`
+
+### 2026-07-10 Remaining Cap Witness Diagnostic
+
+- Added witness-search metadata to action-stat diagnostics:
+  - whether witness search was enabled
+  - `maxStatesPerSlot`
+  - whether the state cap was hit
+  - whether a witness was found
+- Generated remaining cap witness artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-remaining-witness-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-remaining-witness-diagnostics.md`
+- Result:
+  - level 1 `12/6/6` tier 4: no witness found, state cap not hit
+  - level 20 `12/6/6` tier 4: no witness found, state cap hit
+- Interpretation:
+  - level 1 has stronger no-witness evidence under the current exact witness
+    search
+  - level 20 remains bounded/inconclusive and needs either a tighter exact
+    diagnostic, a larger search, or a set-bonus-aware proof before calling it
+    infeasible
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_action_stat_diagnostics.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py"`

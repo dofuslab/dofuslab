@@ -187,11 +187,11 @@ def witness_slot_choices(
     return []
 
 
-def find_action_stat_witness(
+def find_action_stat_witness_result(
     query: BuildDiscoveryQuery,
     *,
     max_states_per_slot: int = 20_000,
-) -> dict[str, Any] | None:
+) -> dict[str, Any]:
     items = load_items(query.target, budget_tier=query.budget_tier)
     sets = load_sets()
     action_set_ids = action_bonus_set_ids(sets)
@@ -204,9 +204,16 @@ def find_action_stat_witness(
         for slot_name, slot_types in SLOTS
     ]
     if any(not choices for _, choices in slot_choices):
-        return None
+        return {
+            "enabled": True,
+            "maxStatesPerSlot": max_states_per_slot,
+            "stateLimitHit": False,
+            "found": False,
+            "witness": None,
+        }
 
     states = [BuildState()]
+    state_limit_hit = False
     for slot_name, choices in slot_choices:
         next_states: list[BuildState] = []
         for state in states:
@@ -241,6 +248,8 @@ def find_action_stat_witness(
                 ),
             )
             buckets.setdefault(key, state)
+        if len(buckets) > max_states_per_slot:
+            state_limit_hit = True
         states = sorted(
             buckets.values(),
             key=lambda state: (
@@ -255,8 +264,20 @@ def find_action_stat_witness(
     for state in states:
         state_with_exos = apply_missing_exos(state, query.target, effective_exo_policy(query))
         if state_with_exos and action_stats_meet_target(state_with_exos, query.target):
-            return compact_witness_state(state_with_exos)
-    return None
+            return {
+                "enabled": True,
+                "maxStatesPerSlot": max_states_per_slot,
+                "stateLimitHit": state_limit_hit,
+                "found": True,
+                "witness": compact_witness_state(state_with_exos),
+            }
+    return {
+        "enabled": True,
+        "maxStatesPerSlot": max_states_per_slot,
+        "stateLimitHit": state_limit_hit,
+        "found": False,
+        "witness": None,
+    }
 
 
 def diagnostic_reasons(query: BuildDiscoveryQuery, upper_bound: dict[str, int]) -> list[str]:
@@ -285,11 +306,18 @@ def diagnose_entry(
     summaries = slot_action_summaries(items)
     upper_bound = optimistic_upper_bound(query, summaries)
     reasons = diagnostic_reasons(query, upper_bound)
-    witness = (
-        find_action_stat_witness(query, max_states_per_slot=witness_max_states_per_slot)
+    witness_search_result = (
+        find_action_stat_witness_result(query, max_states_per_slot=witness_max_states_per_slot)
         if witness_search
-        else None
+        else {
+            "enabled": False,
+            "maxStatesPerSlot": witness_max_states_per_slot,
+            "stateLimitHit": False,
+            "found": False,
+            "witness": None,
+        }
     )
+    witness = witness_search_result["witness"]
     return {
         "target": target,
         "query": query_summary(query),
@@ -306,6 +334,9 @@ def diagnose_entry(
             else "not_proven_infeasible"
         ),
         "reasons": reasons,
+        "witnessSearch": {
+            key: value for key, value in witness_search_result.items() if key != "witness"
+        },
         "actionStatWitness": witness,
         "slotSummaries": summaries,
     }
@@ -369,8 +400,8 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Not proven infeasible: `{report['notProvenInfeasibleCount']}`",
         f"Action-stat witnesses found: `{report.get('actionStatWitnessFoundCount', 0)}`",
         "",
-        "| Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness AP/MP/Range | Reasons |",
-        "|---|---|---|---|---|---|",
+        "| Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness search | Witness AP/MP/Range | Reasons |",
+        "|---|---|---|---|---|---|---|",
     ]
     for diagnostic in report["diagnostics"]:
         upper = diagnostic["optimisticIndependentSlotUpperBound"]
@@ -381,14 +412,25 @@ def render_markdown(report: dict[str, Any]) -> str:
             if witness_totals
             else ""
         )
+        witness_search = diagnostic.get("witnessSearch") or {}
+        witness_search_label = (
+            "not run"
+            if not witness_search.get("enabled")
+            else "found"
+            if witness_search.get("found")
+            else "not found, state cap hit"
+            if witness_search.get("stateLimitHit")
+            else "not found"
+        )
         lines.append(
-            "| {} | {} | {} | {}/{}/{} | {} | {} |".format(
+            "| {} | {} | {} | {}/{}/{} | {} | {} | {} |".format(
                 target_label(diagnostic["target"]),
                 diagnostic["matrixStatus"],
                 diagnostic["diagnosticStatus"],
                 upper.get("AP", ""),
                 upper.get("MP", ""),
                 upper.get("Range", ""),
+                witness_search_label,
                 witness_label,
                 "; ".join(diagnostic["reasons"]),
             )

@@ -1,0 +1,614 @@
+{
+  "reportVersion": "build-discovery-action-stat-diagnostics-v1",
+  "sourceMatrix": "Iop grid-next-cap generated target matrix",
+  "sourceGeneratedAt": "2026-07-10T11:51:32.496558+00:00",
+  "diagnosticCount": 2,
+  "itemStatUpperBoundBelowTargetCount": 2,
+  "notProvenInfeasibleCount": 0,
+  "actionStatWitnessFoundCount": 0,
+  "diagnostics": [
+    {
+      "target": {
+        "id": "grid_next_cap_level_1_strength_12_6_6_budget4",
+        "className": "Iop",
+        "level": 1,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 1,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "matrixStatus": "no_build",
+      "catalogItemCount": 41,
+      "effectiveExoPolicy": "allow",
+      "optimisticIndependentSlotUpperBound": {
+        "AP": 7,
+        "MP": 4,
+        "Range": 1
+      },
+      "diagnosticStatus": "item_stat_upper_bound_below_target",
+      "reasons": [
+        "AP optimistic upper bound 7 is below target 12",
+        "MP optimistic upper bound 4 is below target 6",
+        "Range optimistic upper bound 1 is below target 6"
+      ],
+      "witnessSearch": {
+        "enabled": true,
+        "maxStatesPerSlot": 50000,
+        "stateLimitHit": false,
+        "found": false
+      },
+      "actionStatWitness": null,
+      "slotSummaries": [
+        {
+          "slot": "amulet",
+          "compatibleCount": 4,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "belt",
+          "compatibleCount": 5,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "weapon",
+          "compatibleCount": 8,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "shield",
+          "compatibleCount": 3,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "ring_1",
+          "compatibleCount": 6,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "ring_2",
+          "compatibleCount": 6,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "boots",
+          "compatibleCount": 6,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "hat",
+          "compatibleCount": 4,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "cloak",
+          "compatibleCount": 3,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "pet",
+          "compatibleCount": 2,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "dofus_1",
+          "compatibleCount": 0,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "dofus_2",
+          "compatibleCount": 0,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "dofus_3",
+          "compatibleCount": 0,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "dofus_4",
+          "compatibleCount": 0,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "dofus_5",
+          "compatibleCount": 0,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "dofus_6",
+          "compatibleCount": 0,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        }
+      ]
+    },
+    {
+      "target": {
+        "id": "grid_next_cap_level_20_strength_12_6_6_budget4",
+        "className": "Iop",
+        "level": 20,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 20,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "matrixStatus": "no_build",
+      "catalogItemCount": 448,
+      "effectiveExoPolicy": "allow",
+      "optimisticIndependentSlotUpperBound": {
+        "AP": 10,
+        "MP": 6,
+        "Range": 4
+      },
+      "diagnosticStatus": "item_stat_upper_bound_below_target",
+      "reasons": [
+        "AP optimistic upper bound 10 is below target 12",
+        "Range optimistic upper bound 4 is below target 6"
+      ],
+      "witnessSearch": {
+        "enabled": true,
+        "maxStatesPerSlot": 50000,
+        "stateLimitHit": true,
+        "found": false
+      },
+      "actionStatWitness": null,
+      "slotSummaries": [
+        {
+          "slot": "amulet",
+          "compatibleCount": 44,
+          "actionSourceCount": 2,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 1
+          },
+          "topActionSources": [
+            {
+              "id": "6723",
+              "name": "Bearman's Necklace",
+              "level": 20,
+              "itemType": "Amulet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            },
+            {
+              "id": "12421",
+              "name": "Tetra Amulet",
+              "level": 10,
+              "itemType": "Amulet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 1
+              }
+            }
+          ]
+        },
+        {
+          "slot": "belt",
+          "compatibleCount": 36,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "weapon",
+          "compatibleCount": 73,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "shield",
+          "compatibleCount": 9,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "ring_1",
+          "compatibleCount": 52,
+          "actionSourceCount": 1,
+          "maxActionStats": {
+            "AP": 1,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": [
+            {
+              "id": "841",
+              "name": "Ring of Satisfaction",
+              "level": 8,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 1,
+                "MP": 0,
+                "Range": 0
+              }
+            }
+          ]
+        },
+        {
+          "slot": "ring_2",
+          "compatibleCount": 52,
+          "actionSourceCount": 1,
+          "maxActionStats": {
+            "AP": 1,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": [
+            {
+              "id": "841",
+              "name": "Ring of Satisfaction",
+              "level": 8,
+              "itemType": "Ring",
+              "stats": {
+                "AP": 1,
+                "MP": 0,
+                "Range": 0
+              }
+            }
+          ]
+        },
+        {
+          "slot": "boots",
+          "compatibleCount": 38,
+          "actionSourceCount": 1,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 1,
+            "Range": 0
+          },
+          "topActionSources": [
+            {
+              "id": "3207",
+              "name": "Satisfaction Boots",
+              "level": 12,
+              "itemType": "Boots",
+              "stats": {
+                "AP": 0,
+                "MP": 1,
+                "Range": 0
+              }
+            }
+          ]
+        },
+        {
+          "slot": "hat",
+          "compatibleCount": 35,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "cloak",
+          "compatibleCount": 39,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "pet",
+          "compatibleCount": 119,
+          "actionSourceCount": 11,
+          "maxActionStats": {
+            "AP": 1,
+            "MP": 1,
+            "Range": 2
+          },
+          "topActionSources": [
+            {
+              "id": "15254",
+              "name": "Drhellbert",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 0,
+                "MP": 1,
+                "Range": 2
+              }
+            },
+            {
+              "id": "7710",
+              "name": "Pink Piwin",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "13230",
+              "name": "Krolimea",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "12982",
+              "name": "Mouselet",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "10802",
+              "name": "Golden Dragoone",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "31862",
+              "name": "Oddnipup",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 0,
+                "MP": 0,
+                "Range": 2
+              }
+            },
+            {
+              "id": "31885",
+              "name": "Mikrosmoglob",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 1,
+                "MP": 0,
+                "Range": 0
+              }
+            },
+            {
+              "id": "8693",
+              "name": "Feanor",
+              "level": 20,
+              "itemType": "Pet",
+              "stats": {
+                "AP": 1,
+                "MP": 0,
+                "Range": 0
+              }
+            }
+          ]
+        },
+        {
+          "slot": "dofus_1",
+          "compatibleCount": 3,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "dofus_2",
+          "compatibleCount": 3,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "dofus_3",
+          "compatibleCount": 3,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "dofus_4",
+          "compatibleCount": 3,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "dofus_5",
+          "compatibleCount": 3,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        },
+        {
+          "slot": "dofus_6",
+          "compatibleCount": 3,
+          "actionSourceCount": 0,
+          "maxActionStats": {
+            "AP": 0,
+            "MP": 0,
+            "Range": 0
+          },
+          "topActionSources": []
+        }
+      ]
+    }
+  ]
+}
