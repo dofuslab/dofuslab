@@ -630,6 +630,7 @@ class BuildTarget:
     range: int = REQUIRED_RANGE
     level: int = TARGET_LEVEL
     min_ap: int = MIN_AP
+    range_required: bool = True
 
     def __post_init__(self) -> None:
         if self.ap < self.min_ap:
@@ -695,6 +696,7 @@ class BuildDiscoveryQuery:
             range=normalize_range_target(self.range_target),
             level=self.level,
             min_ap=base_ap_for_level(self.level),
+            range_required=self.range_target is not None,
         )
 
     def validate(self) -> None:
@@ -771,11 +773,12 @@ def effective_exo_policy(query: BuildDiscoveryQuery) -> str:
 def target_semantics_response() -> dict[str, Any]:
     return {
         "type": "minimum_with_hard_caps",
-        "targets": {"AP": "minimum", "MP": "minimum", "Range": "minimum"},
+        "targets": {"AP": "minimum", "MP": "minimum", "Range": "minimum_when_requested"},
         "minimums": {
             "AP": {"1-99": base_ap_for_level(1), "100-200": base_ap_for_level(100)},
             "MP": MIN_MP,
             "Range": MIN_RANGE,
+            "RangeNone": "unconstrained_lower_bound",
         },
         "caps": {"AP": MAX_AP, "MP": MAX_MP, "Range": MAX_RANGE},
         "surplusScoring": "light_reward_with_cap",
@@ -943,6 +946,7 @@ def exo_search_target(final_target: BuildTarget) -> BuildTarget:
         range=max(0, final_target.range - 1),
         level=final_target.level,
         min_ap=final_target.min_ap,
+        range_required=final_target.range_required,
     )
 
 
@@ -957,6 +961,7 @@ def pending_dofus_search_target(final_target: BuildTarget) -> BuildTarget:
         range=max(0, final_target.range - 1),
         level=final_target.level,
         min_ap=final_target.min_ap,
+        range_required=final_target.range_required,
     )
 
 
@@ -1792,7 +1797,7 @@ def action_gear_seed_signature(state: BuildState, target: BuildTarget) -> tuple[
     return (
         min(state.stats.get("AP", 0), target.ap),
         min(state.stats.get("MP", 0), target.mp),
-        min(state.stats.get("Range", 0), target.range),
+        min(state.stats.get("Range", 0), target.range) if target.range_required else 0,
         tuple(sorted(state.slots)),
     )
 
@@ -1954,7 +1959,7 @@ def action_stat_witness_seed_states(
                 key = (
                     min(state.stats.get("AP", 0), target.ap),
                     min(state.stats.get("MP", 0), target.mp),
-                    min(state.stats.get("Range", 0), target.range),
+                    min(state.stats.get("Range", 0), target.range) if target.range_required else 0,
                     tuple(sorted((set_id, min(count, 8)) for set_id, count in state.set_counts.items() if set_id in action_set_ids)),
                     tuple(sorted(state.slots)),
                 )
@@ -1966,7 +1971,7 @@ def action_stat_witness_seed_states(
                 key=lambda state: (
                     min(state.stats.get("AP", 0), target.ap),
                     min(state.stats.get("MP", 0), target.mp),
-                    min(state.stats.get("Range", 0), target.range),
+                    min(state.stats.get("Range", 0), target.range) if target.range_required else 0,
                     len(state.slots),
                     state.score,
                 ),
@@ -1994,7 +1999,10 @@ def apply_missing_exos(
     exo_policy: str = "allow",
 ) -> BuildState | None:
     next_state = state.clone()
-    for stat, target_value in (("AP", target.ap), ("MP", target.mp), ("Range", target.range)):
+    target_stats = [("AP", target.ap), ("MP", target.mp)]
+    if target.range_required:
+        target_stats.append(("Range", target.range))
+    for stat, target_value in target_stats:
         missing = target_value - next_state.stats.get(stat, 0)
         if missing <= 0:
             continue
@@ -2040,7 +2048,7 @@ def score_state(
     score = score_stats(state.stats)
     ap_gap = max(target.ap - state.stats.get("AP", 0), 0)
     mp_gap = max(target.mp - state.stats.get("MP", 0), 0)
-    range_gap = max(target.range - state.stats.get("Range", 0), 0)
+    range_gap = max(target.range - state.stats.get("Range", 0), 0) if target.range_required else 0
     score -= ap_gap * 500
     score -= mp_gap * 75
     score -= range_gap * 25
@@ -2050,10 +2058,16 @@ def score_state(
 
 
 def action_stats_meet_target(state: BuildState, target: BuildTarget) -> bool:
+    range_value = state.stats.get("Range", 0)
+    range_ok = (
+        range_value <= MAX_RANGE
+        if not target.range_required
+        else target.range <= range_value <= MAX_RANGE
+    )
     return (
         target.ap <= state.stats.get("AP", 0) <= MAX_AP
         and target.mp <= state.stats.get("MP", 0) <= MAX_MP
-        and target.range <= state.stats.get("Range", 0) <= MAX_RANGE
+        and range_ok
     )
 
 
@@ -2913,7 +2927,7 @@ def budget_beam_signature(state: BuildState, target: BuildTarget) -> tuple[Any, 
     return (
         min(state.stats.get("AP", 0), target.ap),
         min(state.stats.get("MP", 0), target.mp),
-        min(state.stats.get("Range", 0), max(target.range, 1)),
+        min(state.stats.get("Range", 0), max(target.range, 1)) if target.range_required else 0,
         min(set_bonus_count(state.set_counts), 3),
         set_signature(state),
     )
@@ -2955,11 +2969,11 @@ def trim_action_completion_beam(
             -(
                 max(target.ap - state.stats.get("AP", 0), 0)
                 + max(target.mp - state.stats.get("MP", 0), 0)
-                + max(target.range - state.stats.get("Range", 0), 0)
+                + (max(target.range - state.stats.get("Range", 0), 0) if target.range_required else 0)
             ),
             min(state.stats.get("AP", 0), target.ap)
             + min(state.stats.get("MP", 0), target.mp)
-            + min(state.stats.get("Range", 0), target.range),
+            + (min(state.stats.get("Range", 0), target.range) if target.range_required else 0),
             state.score,
         ),
         reverse=True,
@@ -3578,7 +3592,7 @@ def dofus_combination_can_meet_target(
         and mp <= natural_cap_target.mp
         and ap >= target.ap - 1
         and mp >= target.mp - 1
-        and range_value >= target.range - 1
+        and (not target.range_required or range_value >= target.range - 1)
     )
 
 

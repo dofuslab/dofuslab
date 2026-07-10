@@ -78,6 +78,28 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(target.mp, 5)
         self.assertEqual(target.range, 3)
 
+    def test_range_none_query_has_no_minimum_range_requirement(self):
+        target = BuildDiscoveryQuery(ap_target=10, mp_target=5, range_target=None).target
+
+        self.assertFalse(target.range_required)
+        self.assertTrue(action_stats_meet_target(BuildState(stats={"AP": 10, "MP": 5, "Range": -2}), target))
+
+    def test_range_zero_query_requires_non_negative_range(self):
+        target = BuildDiscoveryQuery(ap_target=10, mp_target=5, range_target=0).target
+
+        self.assertTrue(target.range_required)
+        self.assertFalse(action_stats_meet_target(BuildState(stats={"AP": 10, "MP": 5, "Range": -1}), target))
+
+    def test_score_state_does_not_penalize_range_when_range_target_is_none(self):
+        no_range_target = BuildDiscoveryQuery(ap_target=7, mp_target=3, range_target=None).target
+        zero_range_target = BuildDiscoveryQuery(ap_target=7, mp_target=3, range_target=0).target
+        negative_range = BuildState(stats={"AP": 7, "MP": 3, "Range": -3})
+
+        self.assertEqual(
+            score_state(negative_range, {}, no_range_target) - score_state(negative_range, {}, zero_range_target),
+            3 * 25,
+        )
+
     def test_db_item_dofus_id_uses_mount_id_for_mounts(self):
         class Item:
             dofus_db_id = None
@@ -2104,7 +2126,11 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         semantics = build_discovery_prototype.target_semantics_response()
 
         self.assertEqual(semantics["type"], "minimum_with_hard_caps")
-        self.assertEqual(semantics["targets"], {"AP": "minimum", "MP": "minimum", "Range": "minimum"})
+        self.assertEqual(
+            semantics["targets"],
+            {"AP": "minimum", "MP": "minimum", "Range": "minimum_when_requested"},
+        )
+        self.assertEqual(semantics["minimums"]["RangeNone"], "unconstrained_lower_bound")
         self.assertEqual(semantics["caps"], {"AP": 12, "MP": 6, "Range": 6})
         self.assertEqual(semantics["surplusScoring"], "light_reward_with_cap")
 
@@ -2138,7 +2164,7 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(response["targetSemantics"]["type"], "minimum_with_hard_caps")
         self.assertEqual(
             response["targetSemantics"]["targets"],
-            {"AP": "minimum", "MP": "minimum", "Range": "minimum"},
+            {"AP": "minimum", "MP": "minimum", "Range": "minimum_when_requested"},
         )
         self.assertEqual(response["targetSemantics"]["surplusScoring"], "light_reward_with_cap")
         self.assertEqual(response["diagnostics"]["resultCount"], 0)

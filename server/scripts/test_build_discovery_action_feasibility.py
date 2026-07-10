@@ -20,6 +20,13 @@ class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
         self.assertEqual(target_to_build_target(low_level).min_ap, 6)
         self.assertEqual(target_to_build_target(high_level).min_ap, 7)
 
+    def test_target_to_build_target_preserves_none_range_semantics(self):
+        target = target_to_build_target(
+            LevelDiversityTarget("none-range", 200, "strength", 1, 10, 5, None)
+        )
+
+        self.assertFalse(target.range_required)
+
     def test_action_progress_helpers_cap_at_target(self):
         target = target_to_build_target(
             LevelDiversityTarget("target", 200, "strength", 1, 12, 6, 6)
@@ -27,6 +34,14 @@ class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
 
         self.assertEqual(action_stat_total({"AP": 13, "MP": 6, "Range": 8}, target), 24)
         self.assertEqual(action_deficit({"AP": 10, "MP": 5, "Range": 2}, target), 7)
+
+    def test_action_progress_helpers_ignore_range_when_target_is_none(self):
+        target = target_to_build_target(
+            LevelDiversityTarget("target", 200, "strength", 1, 10, 5, None)
+        )
+
+        self.assertEqual(action_stat_total({"AP": 10, "MP": 5, "Range": -4}, target), 15)
+        self.assertEqual(action_deficit({"AP": 9, "MP": 4, "Range": -4}, target), 2)
 
     def test_render_markdown_reports_status_and_example(self):
         report = {

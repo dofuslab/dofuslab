@@ -164,6 +164,7 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         self.assertIsNone(query.range_target)
         self.assertEqual(normalize_range_target(query.range_target), MIN_RANGE)
         self.assertEqual(query.target.range, MIN_RANGE)
+        self.assertFalse(query.target.range_required)
         self.assertIsNone(query_cache_identity(query)["rangeTarget"])
 
     def test_cli_query_args_include_level_and_optional_range(self):
@@ -424,8 +425,12 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
     def test_target_semantics_are_minimum_with_hard_caps(self):
         semantics = target_semantics_response()
         self.assertEqual(semantics["type"], "minimum_with_hard_caps")
-        self.assertEqual(semantics["targets"], {"AP": "minimum", "MP": "minimum", "Range": "minimum"})
+        self.assertEqual(
+            semantics["targets"],
+            {"AP": "minimum", "MP": "minimum", "Range": "minimum_when_requested"},
+        )
         self.assertEqual(semantics["minimums"]["AP"], {"1-99": 6, "100-200": 7})
+        self.assertEqual(semantics["minimums"]["RangeNone"], "unconstrained_lower_bound")
         self.assertEqual(semantics["caps"], {"AP": MAX_AP, "MP": MAX_MP, "Range": MAX_RANGE})
         self.assertEqual(semantics["surplusScoring"], "light_reward_with_cap")
 

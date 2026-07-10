@@ -45,6 +45,7 @@ def target_to_build_target(target: LevelDiversityTarget) -> solver.BuildTarget:
         range=solver.normalize_range_target(target.range_target),
         level=target.level,
         min_ap=solver.base_ap_for_level(target.level),
+        range_required=target.range_target is not None,
     )
 
 
@@ -57,19 +58,17 @@ def action_stats(stats: dict[str, int]) -> dict[str, int]:
 
 
 def action_stat_total(stats: dict[str, int], target: solver.BuildTarget) -> int:
-    return (
-        min(stats.get("AP", 0), target.ap)
-        + min(stats.get("MP", 0), target.mp)
-        + min(stats.get("Range", 0), target.range)
-    )
+    total = min(stats.get("AP", 0), target.ap) + min(stats.get("MP", 0), target.mp)
+    if target.range_required:
+        total += min(stats.get("Range", 0), target.range)
+    return total
 
 
 def action_deficit(stats: dict[str, int], target: solver.BuildTarget) -> int:
-    return (
-        max(target.ap - stats.get("AP", 0), 0)
-        + max(target.mp - stats.get("MP", 0), 0)
-        + max(target.range - stats.get("Range", 0), 0)
-    )
+    deficit = max(target.ap - stats.get("AP", 0), 0) + max(target.mp - stats.get("MP", 0), 0)
+    if target.range_required:
+        deficit += max(target.range - stats.get("Range", 0), 0)
+    return deficit
 
 
 def state_sort_key(state: solver.BuildState, target: solver.BuildTarget) -> tuple[float, int, float]:
@@ -121,7 +120,7 @@ def state_signature(state: solver.BuildState, target: solver.BuildTarget) -> tup
     return (
         min(state.stats.get("AP", 0), target.ap),
         min(state.stats.get("MP", 0), target.mp),
-        min(state.stats.get("Range", 0), target.range),
+        min(state.stats.get("Range", 0), target.range) if target.range_required else 0,
         tuple(sorted((set_id, min(count, 8)) for set_id, count in state.set_counts.items() if count)),
         tuple(sorted(state.used_item_ids)),
     )
