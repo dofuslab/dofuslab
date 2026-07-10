@@ -2102,3 +2102,33 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix_check.py scripts/build_discovery_ap_mp_range_grid_inventory.py scripts/test_build_discovery_ap_mp_range_grid_inventory.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-grid-next-cap-matrix.json --target-set grid-next-cap --allow-no-build"`
+
+### 2026-07-10 Cap No-Build Action-Stat Diagnostics
+
+- Added `server/scripts/build_discovery_action_stat_diagnostics.py`.
+- Added `server/scripts/test_build_discovery_action_stat_diagnostics.py`.
+- Generated cap no-build diagnostic artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-diagnostics.md`
+- Diagnostic method:
+  - computes an optimistic independent per-slot AP/MP/Range upper bound from
+    currently available catalog items under the row's level and budget rules
+  - adds one optimistic AP/MP/Range exo when exos are allowed
+  - does not include set bonuses yet
+  - treats upper-bound misses as strong item-stat-only evidence, not full
+    catalog-infeasibility proof
+  - treats upper-bound success as inconclusive rather than feasible
+- Diagnostic result:
+  - level 1 `12/6/6` tier 4: item-stat upper bound `7/4/1`, below target
+  - level 20 `12/6/6` tier 4: item-stat upper bound `10/6/4`, below target
+  - level 50 `12/6/6` tier 4: optimistic upper bound `13/8/26`, so the
+    diagnostic does not prove catalog infeasibility
+- Next implication:
+  - level 1 and 20 cap no-build rows have strong item-stat-only evidence
+    against feasibility, but need set-bonus-aware diagnostics before claiming
+    full catalog infeasibility
+  - level 50 cap no-build should be investigated with deeper exact/witness
+    diagnostics or solver recall work
+- Verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_action_stat_diagnostics.py"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py"`
