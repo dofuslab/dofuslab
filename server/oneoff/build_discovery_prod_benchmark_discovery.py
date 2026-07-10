@@ -82,7 +82,13 @@ def enforce_bounds(sample_limit: int, top_items: int, statement_timeout_ms: int)
         raise ValueError("--statement-timeout-ms must be between 100 and 30000.")
 
 
-def recent_build_rows(connection, sample_limit: int, locale: str) -> list[dict[str, Any]]:
+def recent_build_rows(
+    connection,
+    *,
+    sample_limit: int,
+    locale: str,
+    class_name: str | None,
+) -> list[dict[str, Any]]:
     _, sql_text = require_sqlalchemy()
     query = sql_text(
         """
@@ -102,6 +108,7 @@ def recent_build_rows(connection, sample_limit: int, locale: str) -> list[dict[s
             LEFT JOIN custom_set_stat css
                 ON css.custom_set_id = cs.uuid
             WHERE cs.level = 200
+              AND (:class_name IS NULL OR ct.name = :class_name)
             ORDER BY cs.last_modified DESC NULLS LAST
             LIMIT :sample_limit
         ),
@@ -131,6 +138,30 @@ def recent_build_rows(connection, sample_limit: int, locale: str) -> list[dict[s
             WHERE eix.stat::text = ANY(:target_stats)
             GROUP BY rs.uuid, eix.stat
         ),
+        set_counts AS (
+            SELECT
+                rs.uuid AS custom_set_id,
+                item.set_id,
+                COUNT(*) AS equipped_count
+            FROM recent_sets rs
+            JOIN equipped_item ei
+                ON ei.custom_set_id = rs.uuid
+            JOIN item
+                ON item.uuid = ei.item_id
+            WHERE item.set_id IS NOT NULL
+            GROUP BY rs.uuid, item.set_id
+        ),
+        set_bonus_totals AS (
+            SELECT
+                sc.custom_set_id,
+                sb.stat::text AS stat,
+                COALESCE(SUM(sb.value), 0) AS set_bonus_total
+            FROM set_counts sc
+            JOIN set_bonus sb
+                ON sb.set_id = sc.set_id AND sb.num_items = sc.equipped_count
+            WHERE sb.stat::text = ANY(:target_stats)
+            GROUP BY sc.custom_set_id, sb.stat
+        ),
         item_names AS (
             SELECT
                 rs.uuid AS custom_set_id,
@@ -155,9 +186,15 @@ def recent_build_rows(connection, sample_limit: int, locale: str) -> list[dict[s
             rs.intelligence_points,
             rs.chance_points,
             rs.agility_points,
-            COALESCE(ap.item_total, 0) + COALESCE(ap_exo.exo_total, 0) AS ap,
-            COALESCE(mp.item_total, 0) + COALESCE(mp_exo.exo_total, 0) AS mp,
-            COALESCE(range_stat.item_total, 0) + COALESCE(range_exo.exo_total, 0) AS range,
+            COALESCE(ap.item_total, 0)
+                + COALESCE(ap_exo.exo_total, 0)
+                + COALESCE(ap_set.set_bonus_total, 0) AS ap,
+            COALESCE(mp.item_total, 0)
+                + COALESCE(mp_exo.exo_total, 0)
+                + COALESCE(mp_set.set_bonus_total, 0) AS mp,
+            COALESCE(range_stat.item_total, 0)
+                + COALESCE(range_exo.exo_total, 0)
+                + COALESCE(range_set.set_bonus_total, 0) AS range,
             COALESCE(strength_stat.item_total, 0) AS item_strength,
             COALESCE(intelligence_stat.item_total, 0) AS item_intelligence,
             COALESCE(chance_stat.item_total, 0) AS item_chance,
@@ -168,14 +205,20 @@ def recent_build_rows(connection, sample_limit: int, locale: str) -> list[dict[s
             ON ap.custom_set_id = rs.uuid AND ap.stat = 'AP'
         LEFT JOIN exo_totals ap_exo
             ON ap_exo.custom_set_id = rs.uuid AND ap_exo.stat = 'AP'
+        LEFT JOIN set_bonus_totals ap_set
+            ON ap_set.custom_set_id = rs.uuid AND ap_set.stat = 'AP'
         LEFT JOIN item_stat_totals mp
             ON mp.custom_set_id = rs.uuid AND mp.stat = 'MP'
         LEFT JOIN exo_totals mp_exo
             ON mp_exo.custom_set_id = rs.uuid AND mp_exo.stat = 'MP'
+        LEFT JOIN set_bonus_totals mp_set
+            ON mp_set.custom_set_id = rs.uuid AND mp_set.stat = 'MP'
         LEFT JOIN item_stat_totals range_stat
             ON range_stat.custom_set_id = rs.uuid AND range_stat.stat = 'RANGE'
         LEFT JOIN exo_totals range_exo
             ON range_exo.custom_set_id = rs.uuid AND range_exo.stat = 'RANGE'
+        LEFT JOIN set_bonus_totals range_set
+            ON range_set.custom_set_id = rs.uuid AND range_set.stat = 'RANGE'
         LEFT JOIN item_stat_totals strength_stat
             ON strength_stat.custom_set_id = rs.uuid AND strength_stat.stat = 'STRENGTH'
         LEFT JOIN item_stat_totals intelligence_stat
@@ -194,6 +237,7 @@ def recent_build_rows(connection, sample_limit: int, locale: str) -> list[dict[s
         {
             "sample_limit": sample_limit,
             "locale": locale,
+            "class_name": class_name,
             "target_stats": list(TARGET_STATS),
         },
     )
@@ -305,6 +349,7 @@ def discover_prod_benchmarks(
     sample_limit: int = DEFAULT_SAMPLE_LIMIT,
     top_items: int = DEFAULT_TOP_ITEMS,
     locale: str = "en",
+    class_name: str | None = SUPPORTED_CLASS_NAME,
     statement_timeout_ms: int = DEFAULT_STATEMENT_TIMEOUT_MS,
 ) -> dict[str, Any]:
     enforce_bounds(sample_limit, top_items, statement_timeout_ms)
@@ -315,7 +360,12 @@ def discover_prod_benchmarks(
             with connection.begin():
                 connection.execute(sql_text("SET TRANSACTION READ ONLY"))
                 connection.execute(sql_text("SET LOCAL statement_timeout = :timeout_ms"), {"timeout_ms": statement_timeout_ms})
-                rows = recent_build_rows(connection, sample_limit=sample_limit, locale=locale)
+                rows = recent_build_rows(
+                    connection,
+                    sample_limit=sample_limit,
+                    locale=locale,
+                    class_name=class_name,
+                )
     finally:
         engine.dispose()
 
@@ -326,8 +376,8 @@ def discover_prod_benchmarks(
         "assumptions": [
             "custom_set has no explicit popularity metric in the local model, so sampleCount means frequency within the bounded recent level-200 sample.",
             "dominant element is inferred from base/scrolled points plus equipped item primary stats.",
-            "AP/MP buckets add base character AP/MP to equipped item max stats plus recorded exos; Range buckets use equipped item max stats plus recorded exos.",
-            "Set bonuses are not included in AP/MP/Range discovery buckets.",
+            "AP/MP buckets add base character AP/MP to equipped item max stats, recorded exos, and exact active set bonuses.",
+            "Range buckets use equipped item max stats, recorded exos, and exact active set bonuses.",
             "Report output is aggregate-only and intentionally omits custom set IDs, names, and owner identifiers.",
             "generatedQueryCandidate marks whether the aggregate profile can be compared with the current v1 generator.",
         ],
@@ -337,6 +387,7 @@ def discover_prod_benchmarks(
             "minProfileSampleCount": MIN_PROFILE_SAMPLE_COUNT,
             "statementTimeoutMs": statement_timeout_ms,
             "locale": locale,
+            "className": class_name,
         },
         "sample": {
             "rowCount": len(rows),
@@ -350,6 +401,8 @@ def main() -> None:
     parser.add_argument("--sample-limit", type=int, default=DEFAULT_SAMPLE_LIMIT)
     parser.add_argument("--top-items", type=int, default=DEFAULT_TOP_ITEMS)
     parser.add_argument("--locale", default="en")
+    parser.add_argument("--class-name", default=SUPPORTED_CLASS_NAME)
+    parser.add_argument("--all-classes", action="store_true")
     parser.add_argument("--statement-timeout-ms", type=int, default=DEFAULT_STATEMENT_TIMEOUT_MS)
     parser.add_argument(
         "--check-env",
@@ -366,6 +419,7 @@ def main() -> None:
         sample_limit=args.sample_limit,
         top_items=args.top_items,
         locale=args.locale,
+        class_name=None if args.all_classes else args.class_name,
         statement_timeout_ms=args.statement_timeout_ms,
     )
     print(json.dumps(report, indent=2))
