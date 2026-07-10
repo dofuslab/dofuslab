@@ -208,23 +208,35 @@ def select_next_unproven_targets(
     }
     element_rank = {element: index for index, element in enumerate(DEFAULT_ELEMENTS)}
 
-    def candidate_sort_key(row: dict[str, Any]) -> tuple[Any, ...]:
+    def element_sort_rank(element: str, preferred_element: str | None) -> int:
+        rank = element_rank.get(element, len(element_rank))
+        if preferred_element is None:
+            return rank
+        preferred_rank = element_rank.get(preferred_element, 0)
+        return (rank - preferred_rank) % max(len(element_rank), 1)
+
+    def candidate_sort_key(row: dict[str, Any], preferred_element: str | None = None) -> tuple[Any, ...]:
         bucket = profile_bucket(row)
         budget_sort = row["budgetTier"] if bucket == "minimum" else -row["budgetTier"]
         return (
             profile_rank[bucket],
-            element_rank.get(row["element"], len(element_rank)),
+            element_sort_rank(row["element"], preferred_element),
             budget_sort,
             row["apTarget"],
             row["mpTarget"],
             -1 if row["rangeTarget"] is None else row["rangeTarget"],
         )
 
-    for level in levels:
+    for level_index, level in enumerate(levels):
         level_rows = [row for row in unproven if row["level"] == level]
         if not level_rows:
             continue
-        selected.append(with_bucket(sorted(level_rows, key=candidate_sort_key)[0]))
+        preferred_element = DEFAULT_ELEMENTS[level_index % len(DEFAULT_ELEMENTS)]
+        selected.append(
+            with_bucket(
+                sorted(level_rows, key=lambda row: candidate_sort_key(row, preferred_element))[0]
+            )
+        )
         if len(selected) >= limit:
             return selected
 
@@ -233,8 +245,8 @@ def select_next_unproven_targets(
         for row in selected
     }
     profile_order = ("cap", "mp_heavy", "range_heavy", "ap_heavy", "middle", "minimum")
-    for bucket in profile_order:
-        for level in levels:
+    for bucket_index, bucket in enumerate(profile_order):
+        for level_index, level in enumerate(levels):
             level_bucket_rows = [
                 row
                 for row in unproven
@@ -242,7 +254,8 @@ def select_next_unproven_targets(
             ]
             if not level_bucket_rows:
                 continue
-            row = sorted(level_bucket_rows, key=candidate_sort_key)[0]
+            preferred_element = DEFAULT_ELEMENTS[(level_index + bucket_index + 1) % len(DEFAULT_ELEMENTS)]
+            row = sorted(level_bucket_rows, key=lambda row: candidate_sort_key(row, preferred_element))[0]
             signature = (row["level"], row["element"], row["budgetTier"], profile_bucket(row))
             if signature in seen_profile_signatures:
                 continue

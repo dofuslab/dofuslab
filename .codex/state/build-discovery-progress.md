@@ -2232,3 +2232,21 @@ Run the initial evaluator pass:
   - the next selector suggestions are another minimum budget pass and a lower
     budget cap pass, with level 1/20 cap rows still needing diagnostics before
     retrying broad generation work
+
+### 2026-07-10 Grid Selector Element Rotation
+
+- Fixed the AP/MP/Range grid inventory's next-target selector so suggested
+  generated rows rotate preferred elements by representative level and stress
+  profile.
+- Regenerated the grid inventory with the same evidence counts:
+  - valid query rows: 39,424
+  - exact generated evidence rows: 71
+  - attempted evidence rows: 73
+- New next suggestions include Strength, Intelligence, Chance, and Agility rows
+  instead of repeatedly selecting Strength first for every level.
+- Interpretation:
+  - this is selector planning behavior only; it does not add generated build
+    evidence by itself
+  - it better matches the Milestone 3 objective that any single-element Iop
+    query should eventually work across all levels, budgets, and action-stat
+    targets

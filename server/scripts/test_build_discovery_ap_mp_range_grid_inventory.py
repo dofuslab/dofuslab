@@ -110,6 +110,7 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
             {"level": 1, "element": "strength", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None},
             {"level": 1, "element": "strength", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": 0},
             {"level": 1, "element": "chance", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None},
+            {"level": 20, "element": "intelligence", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None},
             {"level": 20, "element": "strength", "budgetTier": 1, "apTarget": 6, "mpTarget": 6, "rangeTarget": 0},
         ]
 
@@ -117,7 +118,7 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
 
         self.assertEqual(
             [(row["level"], row["element"], row["profileBucket"]) for row in selected[:2]],
-            [(1, "strength", "minimum"), (20, "strength", "mp_heavy")],
+            [(1, "strength", "minimum"), (20, "intelligence", "minimum")],
         )
         self.assertEqual(len(selected), 3)
 
