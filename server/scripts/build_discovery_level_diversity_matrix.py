@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -12,12 +13,15 @@ from typing import Any, Callable, Iterable
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from oneoff.build_discovery_prototype import (  # noqa: E402
+    MAX_AP,
+    MAX_MP,
+    MAX_RANGE,
     SLOTS,
     BuildDiscoveryQuery,
     build_discovery_response,
     query_summary,
 )
-from scripts.test_build_discovery_level_diversity_generation_smoke import (  # noqa: E402
+from scripts.build_discovery_level_diversity_targets import (  # noqa: E402
     LEVEL_DIVERSITY_TARGETS,
     LevelDiversityTarget,
     query_for_target,
@@ -93,6 +97,57 @@ def compact_build_summary(build: dict[str, Any] | None) -> dict[str, Any] | None
     }
 
 
+def current_git_sha() -> str | None:
+    repo_root = Path(__file__).resolve().parents[2]
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=repo_root,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    return result.stdout.strip() or None
+
+
+def validate_best_build(target: LevelDiversityTarget, query: BuildDiscoveryQuery, build: dict[str, Any] | None) -> list[str]:
+    if not build:
+        return ["no build returned"]
+
+    errors = []
+    condition_failures = build.get("conditionFailures") or []
+    if condition_failures:
+        errors.append(f"condition failures present: {condition_failures}")
+
+    totals = build.get("totals") or {}
+    ap = totals.get("AP")
+    mp = totals.get("MP")
+    range_value = totals.get("Range")
+    if not isinstance(ap, (int, float)):
+        errors.append("missing numeric AP total")
+    elif ap < query.ap_target or ap > MAX_AP:
+        errors.append(f"AP total {ap} outside target/cap {query.ap_target}-{MAX_AP}")
+    if not isinstance(mp, (int, float)):
+        errors.append("missing numeric MP total")
+    elif mp < query.mp_target or mp > MAX_MP:
+        errors.append(f"MP total {mp} outside target/cap {query.mp_target}-{MAX_MP}")
+    if not isinstance(range_value, (int, float)):
+        errors.append("missing numeric Range total")
+    elif range_value > MAX_RANGE:
+        errors.append(f"Range total {range_value} exceeds cap {MAX_RANGE}")
+    elif query.range_target is not None and range_value < query.range_target:
+        errors.append(f"Range total {range_value} below target {query.range_target}")
+
+    for slot_name, item in (build.get("items") or {}).items():
+        item_level = item.get("level")
+        if isinstance(item_level, (int, float)) and item_level > target.level:
+            errors.append(f"{slot_name} item level {item_level} exceeds target level {target.level}")
+
+    return errors
+
+
 def matrix_entry(
     target: LevelDiversityTarget,
     response: dict[str, Any],
@@ -100,11 +155,14 @@ def matrix_entry(
 ) -> dict[str, Any]:
     builds = response.get("builds", [])
     best_build = builds[0] if builds else None
+    validation_errors = validate_best_build(target, query, best_build)
+    status = "no_build" if not best_build else "invalid" if validation_errors else "generated"
     return {
         "target": target_summary(target),
         "query": query_summary(query),
-        "status": "generated" if best_build else "no_build",
+        "status": status,
         "resultCount": len(builds),
+        "validationErrors": validation_errors,
         "bestBuild": best_build,
         "bestBuildSummary": compact_build_summary(best_build),
         "warnings": response.get("warnings", []),
@@ -132,9 +190,15 @@ def build_matrix_report(
         "reportVersion": REPORT_VERSION,
         "generatedAt": generated_at or datetime.now(timezone.utc).isoformat(),
         "scope": "Iop level-diversity sampled targets from prod aggregate discovery",
+        "provenance": {
+            "gitSha": current_git_sha(),
+            "targetSource": "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS",
+            "generator": "scripts/build_discovery_level_diversity_matrix.py",
+        },
         "targetCount": len(entries),
         "generatedCount": sum(1 for entry in entries if entry["status"] == "generated"),
         "noBuildCount": sum(1 for entry in entries if entry["status"] == "no_build"),
+        "invalidCount": sum(1 for entry in entries if entry["status"] == "invalid"),
         "results": entries,
     }
 
@@ -164,9 +228,10 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Targets: `{report['targetCount']}`",
         f"Generated: `{report['generatedCount']}`",
         f"No build: `{report['noBuildCount']}`",
+        f"Invalid: `{report.get('invalidCount', 0)}`",
         "",
-        "| Target | Status | Score | Miss ms | AP/MP/Range | Main stat | Vitality | Sets | Items |",
-        "|---|---:|---:|---:|---|---:|---:|---|---|",
+        "| Target | Status | Score | Miss ms | AP/MP/Range | Main stat | Vitality | Validation | Sets | Items |",
+        "|---|---:|---:|---:|---|---:|---:|---|---|---|",
     ]
     for entry in report["results"]:
         target = entry["target"]
@@ -190,8 +255,9 @@ def render_markdown(report: dict[str, Any]) -> str:
         )
         sets = ", ".join(f"{name} x{count}" for name, count in summary.get("sets", {}).items())
         items = ", ".join(summary.get("items", []))
+        validation = "; ".join(entry.get("validationErrors", []))
         lines.append(
-            "| {} | {} | {} | {} | {} | {} | {} | {} | {} |".format(
+            "| {} | {} | {} | {} | {} | {} | {} | {} | {} | {} |".format(
                 target_label(target),
                 entry["status"],
                 summary.get("score", ""),
@@ -199,6 +265,7 @@ def render_markdown(report: dict[str, Any]) -> str:
                 action_stats,
                 main_stat,
                 totals.get("Vitality", ""),
+                validation,
                 sets,
                 items,
             )

@@ -9,6 +9,7 @@ def valid_result(target):
         "target": {"id": target.name},
         "status": "generated",
         "resultCount": 1,
+        "validationErrors": [],
         "bestBuildSummary": {
             "score": 100.0,
             "totals": {"AP": target.ap, "MP": target.mp, "Range": target.range_target or 0, "Vitality": 1000},
@@ -24,6 +25,7 @@ def valid_report():
         "targetCount": len(results),
         "generatedCount": len(results),
         "noBuildCount": 0,
+        "invalidCount": 0,
         "results": results,
     }
 
@@ -53,6 +55,19 @@ class BuildDiscoveryLevelDiversityMatrixCheckTest(unittest.TestCase):
         self.assertTrue(any("noBuildCount" in failure for failure in failures))
         self.assertTrue(any("status is no_build" in failure for failure in failures))
         self.assertTrue(any("missing bestBuildSummary" in failure for failure in failures))
+
+    def test_validate_report_rejects_invalid_rows(self):
+        report = valid_report()
+        report["invalidCount"] = 1
+        report["generatedCount"] -= 1
+        report["results"][0]["status"] = "invalid"
+        report["results"][0]["validationErrors"] = ["AP total 13 exceeds cap 12"]
+
+        failures = validate_report(report)
+
+        self.assertTrue(any("invalidCount" in failure for failure in failures))
+        self.assertTrue(any("status is invalid" in failure for failure in failures))
+        self.assertTrue(any("validationErrors is not empty" in failure for failure in failures))
 
 
 if __name__ == "__main__":

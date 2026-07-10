@@ -5,7 +5,9 @@ from build_discovery_level_diversity_matrix import (
     build_matrix_report,
     render_markdown,
     selected_targets,
+    validate_best_build,
 )
+from build_discovery_level_diversity_targets import query_for_target
 
 
 class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
@@ -57,8 +59,29 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(report["targetCount"], 1)
         self.assertEqual(report["generatedCount"], 1)
         self.assertEqual(report["noBuildCount"], 0)
+        self.assertEqual(report["invalidCount"], 0)
         self.assertEqual(seen_queries[0].level, 50)
+        self.assertEqual(report["results"][0]["validationErrors"], [])
         self.assertEqual(report["results"][0]["bestBuildSummary"]["items"], ["Example Amulet", "Example Sword"])
+
+    def test_validate_best_build_rejects_condition_and_target_violations(self):
+        target = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]
+
+        errors = validate_best_build(
+            target,
+            query_for_target(target),
+            {
+                "conditionFailures": ["bad condition"],
+                "totals": {"AP": 13, "MP": 2, "Range": 0, "Vitality": 100},
+                "items": {"amulet": {"level": 60}},
+            },
+        )
+
+        self.assertTrue(any("condition failures" in error for error in errors))
+        self.assertTrue(any("AP total" in error for error in errors))
+        self.assertTrue(any("MP total" in error for error in errors))
+        self.assertTrue(any("Range total" in error for error in errors))
+        self.assertTrue(any("item level" in error for error in errors))
 
     def test_render_markdown_includes_review_table(self):
         report = {
@@ -66,6 +89,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
             "targetCount": 1,
             "generatedCount": 1,
             "noBuildCount": 0,
+            "invalidCount": 0,
             "results": [
                 {
                     "target": {
@@ -77,6 +101,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
                         "rangeTarget": None,
                     },
                     "status": "generated",
+                    "validationErrors": [],
                     "diagnostics": {"elapsedMs": 12.3},
                     "bestBuildSummary": {
                         "score": 42.0,

@@ -50,11 +50,16 @@ def validate_report(report: dict[str, Any]) -> list[str]:
         )
     if report.get("noBuildCount") != 0:
         failures.append(f"noBuildCount is {report.get('noBuildCount')}, expected 0")
+    if report.get("invalidCount", 0) != 0:
+        failures.append(f"invalidCount is {report.get('invalidCount')}, expected 0")
 
     for result in results:
         target_id = result.get("target", {}).get("id", "unknown")
         if result.get("status") != "generated":
             failures.append(f"{target_id}: status is {result.get('status')}, expected generated")
+        validation_errors = result.get("validationErrors") or []
+        if validation_errors:
+            failures.append(f"{target_id}: validationErrors is not empty: {validation_errors}")
         if result.get("resultCount", 0) < 1:
             failures.append(f"{target_id}: resultCount is {result.get('resultCount')}, expected >= 1")
         summary = result.get("bestBuildSummary")
