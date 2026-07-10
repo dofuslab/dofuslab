@@ -112,6 +112,19 @@ class BuildDiscoveryLevelDiversityMatrixCheckTest(unittest.TestCase):
 
         self.assertEqual(validate_report(report, target_set="grid-next-cap"), [])
 
+    def test_validate_report_accepts_grid_next_cap_2_target_set(self):
+        results = [valid_result(target) for target in targets_for_set("grid-next-cap-2")]
+        report = {
+            "reportVersion": REPORT_VERSION,
+            "targetCount": len(results),
+            "generatedCount": len(results),
+            "noBuildCount": 0,
+            "invalidCount": 0,
+            "results": results,
+        }
+
+        self.assertEqual(validate_report(report, target_set="grid-next-cap-2"), [])
+
     def test_validate_report_rejects_missing_target(self):
         report = valid_report()
         report["results"] = report["results"][1:]

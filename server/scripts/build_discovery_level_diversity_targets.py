@@ -137,6 +137,21 @@ AP_MP_RANGE_GRID_NEXT_CAP_TARGETS = (
     LevelDiversityTarget("grid_next_cap_level_200_strength_12_6_6_budget4", 200, "strength", 4, 12, 6, 6),
 )
 
+AP_MP_RANGE_GRID_NEXT_CAP_2_TARGETS = (
+    LevelDiversityTarget("grid_next_cap2_level_1_intelligence_12_6_6_budget4", 1, "intelligence", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap2_level_20_chance_12_6_6_budget4", 20, "chance", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap2_level_50_agility_12_6_6_budget4", 50, "agility", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap2_level_80_strength_12_6_6_budget3", 80, "strength", 3, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap2_level_99_intelligence_12_6_6_budget4", 99, "intelligence", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap2_level_100_chance_12_6_6_budget4", 100, "chance", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap2_level_120_agility_12_6_6_budget4", 120, "agility", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap2_level_150_strength_12_6_6_budget3", 150, "strength", 3, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap2_level_179_intelligence_12_6_6_budget4", 179, "intelligence", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap2_level_180_chance_12_6_6_budget4", 180, "chance", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap2_level_199_agility_12_6_6_budget4", 199, "agility", 4, 12, 6, 6),
+    LevelDiversityTarget("grid_next_cap2_level_200_strength_12_6_6_budget3", 200, "strength", 3, 12, 6, 6),
+)
+
 
 def query_for_target(target: LevelDiversityTarget) -> BuildDiscoveryQuery:
     return BuildDiscoveryQuery(
