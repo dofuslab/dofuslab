@@ -52,6 +52,7 @@ from oneoff.build_discovery_prototype import (
     query_cache_key,
     ranked_dofus_combinations,
     base_stats_for_strength_allocation,
+    build_action_set_package_index,
     build_discovery_response,
     build_package_index,
     strength_point_cost,
@@ -1484,6 +1485,74 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(len(package_index.packages), 1)
         self.assertEqual(len(seeds), 1)
         self.assertEqual(seeds[0].stats["Strength"], build_discovery_prototype.BASE_STATS["Strength"] + 120)
+
+    def test_action_set_package_index_keeps_low_score_action_package(self):
+        target = BuildTarget(ap=7, mp=4, range=1)
+        set_id = "action_set"
+        weak_ring = {
+            "dofusID": "weak_ring",
+            "itemType": "Ring",
+            "setID": set_id,
+            "level": 200,
+            "stats": [{"stat": "Prospecting", "value": 1}],
+            "_stats": {"Prospecting": 1},
+            "_score": 1,
+        }
+        weak_belt = {
+            "dofusID": "weak_belt",
+            "itemType": "Belt",
+            "setID": set_id,
+            "level": 200,
+            "stats": [{"stat": "Prospecting", "value": 1}],
+            "_stats": {"Prospecting": 1},
+            "_score": 1,
+        }
+        high_score_belt = {
+            "dofusID": "high_score_belt",
+            "itemType": "Belt",
+            "setID": None,
+            "level": 200,
+            "stats": [{"stat": "Strength", "value": 500}],
+            "_stats": {"Strength": 500},
+            "_score": 500,
+        }
+        sets = {
+            set_id: {
+                "_name": "Action Set",
+                "_bonus_stats": {"2": {"AP": 1, "MP": 1, "Range": 1}},
+            }
+        }
+        normal_pools = {
+            "ring_1": [weak_ring],
+            "belt": [high_score_belt],
+        }
+
+        normal_index = build_package_index(
+            normal_pools,
+            sets,
+            target,
+            exo_search_target(target),
+            exo_natural_cap_target(target),
+        )
+        action_index = build_action_set_package_index(
+            [weak_ring, weak_belt, high_score_belt],
+            sets,
+            target,
+            exo_search_target(target),
+            exo_natural_cap_target(target),
+        )
+        action_seeds = package_seed_states(
+            normal_pools,
+            sets,
+            target,
+            exo_search_target(target),
+            exo_natural_cap_target(target),
+            package_index=action_index,
+        )
+
+        self.assertEqual(len(normal_index.packages), 0)
+        self.assertTrue(any({"weak_ring", "weak_belt"} <= seed.used_item_ids for seed in action_seeds))
+        self.assertTrue(any(seed.stats["AP"] >= 8 and seed.stats["MP"] >= 4 for seed in action_seeds))
 
     def test_packages_compatible_rejects_slot_conflicts(self):
         first = build_discovery_prototype.PackageCandidate(

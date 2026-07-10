@@ -2917,3 +2917,57 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
   - copied changed diagnostic scripts into the Docker server container, then ran
     `python scripts/test_build_discovery_action_stat_diagnostics.py && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py`
+
+### 2026-07-10 Bounded Action-Package Solver Seeds
+
+- Added a bounded action-set package seed path to
+  `server/oneoff/build_discovery_prototype.py`.
+- The new path:
+  - scans the full eligible item catalog, not only the already-pruned slot pools
+  - considers only sets with AP/MP/Range set-bonus thresholds
+  - builds packages at the first action-stat threshold
+  - ranks packages primarily by AP/MP/Range threshold value, then by package
+    action stats and normal package score
+  - feeds those packages into the existing package seed/completion flow
+- Also tightened candidate-pool action-source retention so high-level searches
+  do not retain arbitrary sub-180 AP/MP/Range gear through the generic action
+  stat/vector paths. Explicit uncommon-source retention and low-level target
+  behavior remain separate.
+- Cap-target matrix queries now use deeper search settings:
+  - `beam_width=250`
+  - `per_signature_cap=40`
+  - `relevant_set_limit=60`
+  - ordinary non-cap sampled targets keep the lighter `100/10/40` settings
+- Added regression coverage:
+  - action package indexing can recover a low-score AP/MP/Range set package
+    that normal pruned pools cannot form
+  - cap-target matrix queries use deeper search settings
+- Generated focused Docker artifact:
+  - `.codex/state/build-discovery-action-package-cap4-focus-matrix.json`
+  - `.codex/state/build-discovery-action-package-cap4-focus-matrix.md`
+- Focused cap-4 result:
+  - level 199 Agility tier 2 `12/6/6`: generated, `12/6/6`, 116604.2ms
+  - level 200 Strength tier 1 `12/6/6`: generated, `12/6/6`, 153369.1ms
+- Interpretation:
+  - the two corrected witness-backed cap-4 recall gaps now have generated
+    builds under the deeper cap-target matrix settings
+  - cache-miss runtime for these hard rows is far above the Milestone 2 p95
+    goal and must remain a performance/optimization follow-up
+  - full cap-4 regeneration is still pending; this checkpoint proves the two
+    witness-backed rows, not the entire target set
+- Verification passed:
+  - `python scripts\test_build_discovery_prototype.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\oneoff\build_discovery_prototype.py scripts\test_build_discovery_prototype.py server\scripts\build_discovery_level_diversity_targets.py server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `git diff --check`
+  - copied changed files into Docker, then ran
+    `PYTHONPATH=/home/dofuslab python scripts/test_build_discovery_prototype.py BuildDiscoveryPrototypeTest.test_action_set_package_index_keeps_low_score_action_package`
+  - copied changed files into Docker, then ran
+    `PYTHONPATH=/home/dofuslab python scripts/test_build_discovery_level_diversity_matrix.py`
+  - copied changed files into Docker, then ran
+    `python -m py_compile oneoff/build_discovery_prototype.py scripts/test_build_discovery_prototype.py scripts/build_discovery_level_diversity_targets.py scripts/test_build_discovery_level_diversity_matrix.py`
+- Docker caveat:
+  - the full Docker prototype unittest suite still fails on
+    `test_strength_spell_damage_profile_falls_back_to_generic_profile` because
+    this container can read real spell data, so the fallback path is not used
+    there; the full host prototype suite passed.

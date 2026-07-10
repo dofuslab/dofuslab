@@ -148,6 +148,28 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
             ],
         )
 
+    def test_cap_target_queries_use_deeper_search_settings(self):
+        cap_target = next(
+            target
+            for target in targets_for_set("grid-next-cap-4")
+            if target.name == "grid_next_cap4_level_200_strength_12_6_6_budget1"
+        )
+        minimum_target = next(
+            target
+            for target in targets_for_set("grid-next-minimum-3")
+            if target.name == "grid_next_min3_level_200_agility_7_3_none_budget1"
+        )
+
+        cap_query = query_for_target(cap_target)
+        minimum_query = query_for_target(minimum_target)
+
+        self.assertEqual(cap_query.beam_width, 250)
+        self.assertEqual(cap_query.per_signature_cap, 40)
+        self.assertEqual(cap_query.relevant_set_limit, 60)
+        self.assertEqual(minimum_query.beam_width, 100)
+        self.assertEqual(minimum_query.per_signature_cap, 10)
+        self.assertEqual(minimum_query.relevant_set_limit, 40)
+
     def test_build_matrix_report_records_generated_and_empty_results(self):
         selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})
         seen_queries = []

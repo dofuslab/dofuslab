@@ -145,6 +145,8 @@ AP_SET_BONUS_SEED_LIMIT_PER_SET = 12
 SET_PACKAGE_SIZES = (2, 3)
 SET_PACKAGE_KEEP_PER_SET_SIZE = 10
 SET_PACKAGE_GLOBAL_LIMIT = 500
+ACTION_SET_PACKAGE_KEEP_PER_SET = 8
+ACTION_SET_PACKAGE_GLOBAL_LIMIT = 180
 SET_PACKAGE_PAIR_SEED_LIMIT = 800
 SET_PACKAGE_TRIPLE_SOURCE_LIMIT = 250
 SET_PACKAGE_TRIPLE_CANDIDATE_SCAN_LIMIT = 3000000
@@ -1585,6 +1587,7 @@ def candidate_pool_for_slot(
             item
             for item in compatible
             if item["_stats"].get(stat, 0) > 0
+            and (is_dofus_slot or target_level < ACTION_STAT_SOURCE_MIN_LEVEL or item.get("level", 0) >= ACTION_STAT_SOURCE_MIN_LEVEL)
         ]
         retained_stat_sources = (
             stat_sources
@@ -1601,6 +1604,8 @@ def candidate_pool_for_slot(
     if not is_dofus_slot:
         vector_representatives: dict[tuple[int, int, int], list[dict[str, Any]]] = defaultdict(list)
         for item in search_compatible:
+            if target_level >= ACTION_STAT_SOURCE_MIN_LEVEL and item.get("level", 0) < ACTION_STAT_SOURCE_MIN_LEVEL:
+                continue
             vector = tuple(max(0, item["_stats"].get(stat, 0)) for stat in ACTION_STATS)
             if not any(vector):
                 continue
@@ -3113,6 +3118,80 @@ def build_package_index(
     return PackageIndex(tuple(deduped.values())[:global_limit])
 
 
+def action_set_bonus_thresholds(set_obj: dict[str, Any]) -> list[tuple[int, dict[str, int]]]:
+    thresholds = []
+    for count, stats in sorted(set_bonus_stats(set_obj).items(), key=lambda entry: int(entry[0])):
+        action_stats = {stat: stats.get(stat, 0) for stat in ACTION_STATS if stats.get(stat, 0) > 0}
+        if action_stats:
+            thresholds.append((int(count), action_stats))
+    return thresholds
+
+
+def action_package_score(state: BuildState, threshold_stats: dict[str, int]) -> float:
+    action_score = sum(state.stats.get(stat, 0) * STAT_WEIGHTS[stat] for stat in ACTION_STATS)
+    threshold_score = sum(threshold_stats.get(stat, 0) * STAT_WEIGHTS[stat] for stat in ACTION_STATS)
+    return threshold_score * 1000 + action_score * 10 + package_delta_score(state)
+
+
+def build_action_set_package_index(
+    items: list[dict[str, Any]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+    keep_per_set: int = ACTION_SET_PACKAGE_KEEP_PER_SET,
+    global_limit: int = ACTION_SET_PACKAGE_GLOBAL_LIMIT,
+) -> PackageIndex:
+    slot_order = tuple(slot_name for slot_name, _ in SLOTS)
+    items_by_set: dict[str, dict[str, tuple[dict[str, Any], set[str]]]] = defaultdict(dict)
+    for item in items:
+        set_id = item.get("setID")
+        if not set_id or set_id not in sets:
+            continue
+        item_slots = compatible_slots_for_item(item)
+        if not item_slots:
+            continue
+        items_by_set[set_id][item["dofusID"]] = (item, set(item_slots))
+
+    packages: list[PackageCandidate] = []
+    for set_id, set_items_by_id in items_by_set.items():
+        thresholds = action_set_bonus_thresholds(sets[set_id])
+        if not thresholds:
+            continue
+        threshold, threshold_stats = thresholds[0]
+        if len(set_items_by_id) < threshold:
+            continue
+
+        set_packages: list[PackageCandidate] = []
+        for item_entries in combinations(set_items_by_id.values(), threshold):
+            slot_options = [sorted(entry[1], key=slot_order.index) for entry in item_entries]
+            for slots in product(*slot_options):
+                if len(set(slots)) != len(slots):
+                    continue
+                entries = tuple(zip(slots, (entry[0] for entry in item_entries)))
+                state = state_from_entries(
+                    entries,
+                    sets,
+                    target,
+                    search_target,
+                    natural_cap_target,
+                )
+                if state is None:
+                    continue
+                if not any(set_stat_total(state, stat) > 0 for stat in ACTION_STATS):
+                    continue
+                set_packages.append(
+                    PackageCandidate(entries=entries, score=action_package_score(state, threshold_stats))
+                )
+        packages.extend(sorted(set_packages, key=lambda package: package.score, reverse=True)[:keep_per_set])
+
+    deduped: dict[tuple[tuple[str, str], ...], PackageCandidate] = {}
+    for package in sorted(packages, key=lambda candidate: candidate.score, reverse=True):
+        signature = tuple(sorted((slot, item["dofusID"]) for slot, item in package.entries))
+        deduped.setdefault(signature, package)
+    return PackageIndex(tuple(deduped.values())[:global_limit])
+
+
 def generate_set_core_packages(
     pools: dict[str, list[dict[str, Any]]],
     sets: dict[str, dict[str, Any]],
@@ -3390,7 +3469,7 @@ def ranked_dofus_combinations(
         (
             combo
             for combo in combinations(dofus_pool, combo_size)
-            if any(item["_stats"].get(stat, 0) for item in combo for stat in ACTION_STATS)
+            if any(item.get("_stats", {}).get(stat, 0) for item in combo for stat in ACTION_STATS)
         ),
         key=lambda combo: (
             sum(item["_stats"].get("AP", 0) for item in combo),
@@ -3926,6 +4005,13 @@ def find_builds(
         search_target,
         natural_cap_target,
     )
+    action_package_index = build_action_set_package_index(
+        items,
+        sets,
+        target,
+        search_target,
+        natural_cap_target,
+    )
     timings["packageIndexMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
@@ -3937,6 +4023,14 @@ def find_builds(
         natural_cap_target,
         package_index=package_index,
     )
+    action_package_seeds = package_seed_states(
+        pools,
+        sets,
+        target,
+        search_target,
+        natural_cap_target,
+        package_index=action_package_index,
+    )
     ap_set_bonus_seeds = ap_set_bonus_seed_states(
         pools,
         sets,
@@ -3947,6 +4041,7 @@ def find_builds(
     initial_seeds = dedupe_builds(
         sorted(
             initial_seeds
+            + action_package_seeds
             + ap_set_bonus_seeds
             + required_seeds
             + budget_action_trophy_seeds

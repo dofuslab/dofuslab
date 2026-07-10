@@ -184,6 +184,7 @@ AP_MP_RANGE_GRID_NEXT_CAP_4_TARGETS = (
 
 
 def query_for_target(target: LevelDiversityTarget) -> BuildDiscoveryQuery:
+    hard_cap_target = target.ap == 12 and target.mp == 6 and target.range_target == 6
     return BuildDiscoveryQuery(
         level=target.level,
         elements=(target.element,),
@@ -194,7 +195,7 @@ def query_for_target(target: LevelDiversityTarget) -> BuildDiscoveryQuery:
         exo_policy="none" if target.budget_tier < 3 else "allow",
         limit=1,
         top_k=25,
-        beam_width=100,
-        per_signature_cap=10,
-        relevant_set_limit=40,
+        beam_width=250 if hard_cap_target else 100,
+        per_signature_cap=40 if hard_cap_target else 10,
+        relevant_set_limit=60 if hard_cap_target else 40,
     )

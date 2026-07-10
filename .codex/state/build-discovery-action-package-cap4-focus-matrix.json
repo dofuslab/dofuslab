@@ -1,0 +1,535 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-10T20:21:30.392654+00:00",
+  "scope": "Iop grid-next-cap-4 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": "d4071a1e2046f2c0064818b3660c2ee83d61298b",
+    "targetSource": "scripts.build_discovery_level_diversity_targets.AP_MP_RANGE_GRID_NEXT_CAP_4_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 2,
+  "generatedCount": 2,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "grid_next_cap4_level_199_agility_12_6_6_budget2",
+        "className": "Iop",
+        "level": 199,
+        "element": "agility",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 199,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1665.04,
+        "weightedStatScore": 3296.75,
+        "utilityStatScore": 327.23,
+        "genericDamageScore": 2784.08,
+        "rawRotationDamageScore": 1726.71,
+        "spellDamageScore": 1726.71,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 0.928,
+        "weaponDamageScore": 93.74,
+        "survivabilityScore": 84.98,
+        "weakestElementEhp": 2533.76,
+        "apStrategy": "budget_no_exo_set_bonus",
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Agility": 1038,
+          "Power": 185,
+          "Vitality": 2423,
+          "Damage": 8,
+          "Air Damage": 89,
+          "Critical": 32,
+          "Critical Damage": 72
+        },
+        "sets": {
+          "Celestial Bearbarian Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "11720",
+            "internalId": null,
+            "name": "Celestial Bearbarian Amulet",
+            "type": "Amulet",
+            "level": 198,
+            "set": "Celestial Bearbarian Set"
+          },
+          "belt": {
+            "id": "11721",
+            "internalId": null,
+            "name": "Celestial Bearbarian Belt",
+            "type": "Belt",
+            "level": 195,
+            "set": "Celestial Bearbarian Set"
+          },
+          "weapon": {
+            "id": "7195",
+            "internalId": null,
+            "name": "Furritung",
+            "type": "Sword",
+            "level": 158,
+            "set": null
+          },
+          "ring_1": {
+            "id": "14054",
+            "internalId": null,
+            "name": "Vicious Ring",
+            "type": "Ring",
+            "level": 199,
+            "set": "Vicious Set"
+          },
+          "ring_2": {
+            "id": "13642",
+            "internalId": null,
+            "name": "Nomarow's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Nomarow Set"
+          },
+          "boots": {
+            "id": "12110",
+            "internalId": null,
+            "name": "Professor Xa's Boots",
+            "type": "Boots",
+            "level": 193,
+            "set": "Professor Xa Set"
+          },
+          "hat": {
+            "id": "11718",
+            "internalId": null,
+            "name": "Celestial Bearbarian Mask",
+            "type": "Hat",
+            "level": 199,
+            "set": "Celestial Bearbarian Set"
+          },
+          "cloak": {
+            "id": "12117",
+            "internalId": null,
+            "name": "Fuji Snowfoux Cloak",
+            "type": "Cloak",
+            "level": 193,
+            "set": "Fuji Snowfoux Set"
+          },
+          "pet": {
+            "id": "13465",
+            "internalId": null,
+            "name": "Boarhog",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "shield": {
+            "id": "30060",
+            "internalId": null,
+            "name": "Allister's Aegis",
+            "type": "Shield",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "16245",
+            "internalId": null,
+            "name": "Major Stunter",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16193",
+            "internalId": null,
+            "name": "Major Miracle Man",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16333",
+            "internalId": null,
+            "name": "Shaker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1665.04,
+        "apStrategy": "budget_no_exo_set_bonus",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Agility": 1038,
+          "Power": 185,
+          "Vitality": 2423,
+          "Damage": 8,
+          "Air Damage": 89,
+          "Critical": 32,
+          "Critical Damage": 72
+        },
+        "sets": {
+          "Celestial Bearbarian Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Celestial Bearbarian Amulet",
+          "Celestial Bearbarian Belt",
+          "Furritung",
+          "Allister's Aegis",
+          "Vicious Ring",
+          "Nomarow's Ring",
+          "Professor Xa's Boots",
+          "Celestial Bearbarian Mask",
+          "Fuji Snowfoux Cloak",
+          "Boarhog",
+          "Ice Dofus",
+          "Major Stunter",
+          "Major Miracle Man",
+          "Crimson Dofus",
+          "Major Vigour",
+          "Shaker"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 116604.2,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 232.8,
+          "candidatePoolsMs": 47200.0,
+          "packageIndexMs": 173.5,
+          "packageSeedsMs": 6479.1,
+          "directCompletionMs": 5888.8,
+          "beamSearchMs": 56626.8,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 116601.1
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "grid_next_cap4_level_200_strength_12_6_6_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 2096.32,
+        "weightedStatScore": 4077.57,
+        "utilityStatScore": 377.99,
+        "genericDamageScore": 3509.23,
+        "rawRotationDamageScore": 3215.17,
+        "spellDamageScore": 3215.17,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.1697,
+        "weaponDamageScore": 191.11,
+        "survivabilityScore": 139.19,
+        "weakestElementEhp": 4388.08,
+        "apStrategy": "budget_no_exo_no_ochre",
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 1068,
+          "Power": 390,
+          "Vitality": 3423,
+          "Damage": 0,
+          "Earth Damage": 115,
+          "Critical": 49,
+          "Critical Damage": 25,
+          "Neutral Damage": 55
+        },
+        "sets": {
+          "Corruption Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "31789",
+            "internalId": null,
+            "name": "Gargandyas's Necklace",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "31800",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "shield": {
+            "id": "30858",
+            "internalId": null,
+            "name": "Mama Ayuto's Parasail",
+            "type": "Shield",
+            "level": 200,
+            "set": "Mama Ayuto Set"
+          },
+          "ring_1": {
+            "id": "15190",
+            "internalId": null,
+            "name": "Hairsh Bracelet",
+            "type": "Ring",
+            "level": 200,
+            "set": "Hairsh Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "20360",
+            "internalId": null,
+            "name": "Ganymede's Diadem",
+            "type": "Hat",
+            "level": 200,
+            "set": null
+          },
+          "cloak": {
+            "id": "14168",
+            "internalId": null,
+            "name": "Cloak of a Thousand Excuses",
+            "type": "Cloak",
+            "level": 198,
+            "set": null
+          },
+          "pet": {
+            "id": "33268",
+            "internalId": null,
+            "name": "Amber and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "ring_2": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "dofus_1": {
+            "id": "16196",
+            "internalId": null,
+            "name": "Major Rabid",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "16193",
+            "internalId": null,
+            "name": "Major Miracle Man",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16254",
+            "internalId": null,
+            "name": "Major Earth Devastator",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16333",
+            "internalId": null,
+            "name": "Shaker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2096.32,
+        "apStrategy": "budget_no_exo_no_ochre",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 1068,
+          "Power": 390,
+          "Vitality": 3423,
+          "Damage": 0,
+          "Earth Damage": 115,
+          "Critical": 49,
+          "Critical Damage": 25,
+          "Neutral Damage": 55
+        },
+        "sets": {
+          "Corruption Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Gargandyas's Necklace",
+          "Corruption's Brambelt",
+          "Sleeping Venerable One's Bow",
+          "Mama Ayuto's Parasail",
+          "Hairsh Bracelet",
+          "Corruption's Ring",
+          "Meriana's Clairvoyance",
+          "Ganymede's Diadem",
+          "Cloak of a Thousand Excuses",
+          "Amber and Emerald Seemyool",
+          "Major Rabid",
+          "Major Miracle Man",
+          "Major Earth Devastator",
+          "Major Vigour",
+          "Shaker",
+          "Twitcher"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 153369.1,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 111.2,
+          "candidatePoolsMs": 62289.0,
+          "packageIndexMs": 323.6,
+          "packageSeedsMs": 6789.2,
+          "directCompletionMs": 7541.3,
+          "beamSearchMs": 76307.5,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 153361.9
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

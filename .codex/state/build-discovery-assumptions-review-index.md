@@ -69,6 +69,7 @@ These need gameplay or product review before calling the feature shippable.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/manifest.json`.
    - Review `.codex/state/build-discovery-action-set-recall-plan.md`.
+   - Review `.codex/state/build-discovery-action-package-cap4-focus-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-level50-witness-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-remaining-witness-diagnostics.md`.
@@ -122,6 +123,10 @@ These need gameplay or product review before calling the feature shippable.
    - The next solver-recall direction should be a bounded action-set package
      stage plus a small mount/pet recall check, not named-item allowlisting or
      including every AP/MP/Range-bonus set.
+   - The bounded action-package seed checkpoint now generates the corrected
+     witness-backed level 199 Agility tier 2 and level 200 Strength tier 1
+     `12/6/6` rows in the focused cap-4 artifact, but cache-miss runtime is
+     still above two minutes per row.
    - The cap-2 item-stat diagnostic shows level 1 Intelligence and level 20
      Chance are below target under the item-stat-only upper bound.
    - Level 50 Agility, level 80 Strength, and level 99 Intelligence previously
