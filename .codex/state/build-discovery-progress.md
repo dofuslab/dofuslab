@@ -2427,3 +2427,28 @@ Run the initial evaluator pass:
   - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python scripts/test_build_discovery_action_stat_diagnostics.py"`
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py"`
+- Reviewer findings fixed in the next checkpoint:
+  - review-index language now says witness-backed cap-2 no-build rows are
+    recall/search gaps for action-stat validity, not full build-quality proof
+  - witness Markdown now shows `found, state cap hit` when both are true
+
+### 2026-07-10 Cap 2 Recall Tuning Probe
+
+- Ran a wider no-cache generation probe for the three witness-backed cap-2
+  rows:
+  - level 50 Agility `12/6/6` tier 4
+  - level 80 Strength `12/6/6` tier 3
+  - level 99 Intelligence `12/6/6` tier 4
+- Probe settings:
+  - `top_k=60`
+  - `beam_width=600`
+  - `per_signature_cap=40`
+  - `relevant_set_limit=80`
+- Result:
+  - the combined three-row probe hit the 30-minute command timeout before
+    returning a completed result
+  - no generated-build evidence was added by this probe
+- Interpretation:
+  - brute-force widening is too expensive as the next path
+  - next recall work should be targeted, using witness item/pool membership
+    diagnostics and pruning-specific tests before changing broad beam limits

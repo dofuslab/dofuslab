@@ -12,4 +12,4 @@ Action-stat witnesses found: `1`
 
 | Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness search | Witness AP/MP/Range | Reasons |
 |---|---|---|---|---|---|---|
-| L99 intelligence 12/6/6 tier 4 | no_build | action_stat_witness_found | 14/10/29 | found | 12/6/6 | Optimistic item-stat-only independent slot upper bound reaches the target; no-build remains a solver/search, set-bonus, uniqueness, condition, or interaction question. |
+| L99 intelligence 12/6/6 tier 4 | no_build | action_stat_witness_found | 14/10/29 | found, state cap hit | 12/6/6 | Optimistic item-stat-only independent slot upper bound reaches the target; no-build remains a solver/search, set-bonus, uniqueness, condition, or interaction question. |

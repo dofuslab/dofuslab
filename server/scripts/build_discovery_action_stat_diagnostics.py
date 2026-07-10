@@ -432,6 +432,8 @@ def render_markdown(report: dict[str, Any]) -> str:
         witness_search_label = (
             "not run"
             if not witness_search.get("enabled")
+            else "found, state cap hit"
+            if witness_search.get("found") and witness_search.get("stateLimitHit")
             else "found"
             if witness_search.get("found")
             else "not found, state cap hit"

@@ -116,7 +116,8 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
                     "matrixStatus": "no_build",
                     "diagnosticStatus": "item_stat_upper_bound_below_target",
                     "optimisticIndependentSlotUpperBound": {"AP": 8, "MP": 4, "Range": 1},
-                    "witnessSearch": {"enabled": True, "found": False, "stateLimitHit": True},
+                    "witnessSearch": {"enabled": True, "found": True, "stateLimitHit": True},
+                    "actionStatWitness": {"totals": {"AP": 12, "MP": 6, "Range": 6}},
                     "reasons": ["AP optimistic upper bound 8 is below target 12"],
                 }
             ],
@@ -126,7 +127,7 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
 
         self.assertIn("L1 strength 12/6/6 tier 4", markdown)
         self.assertIn("8/4/1", markdown)
-        self.assertIn("not found, state cap hit", markdown)
+        self.assertIn("found, state cap hit", markdown)
         self.assertIn("AP optimistic upper bound", markdown)
 
     def test_diagnostics_use_matrix_query_exo_policy(self):

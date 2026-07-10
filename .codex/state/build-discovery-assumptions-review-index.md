@@ -81,7 +81,8 @@ These need gameplay or product review before calling the feature shippable.
      Chance are below target under the item-stat-only upper bound. Level 50
      Agility, level 80 Strength, and level 99 Intelligence all have exact
      `12/6/6` action-stat witnesses, so their no-build rows are solver
-     recall/search gaps rather than action-stat catalog impossibility.
+     recall/search gaps for action-stat validity rather than action-stat
+     catalog impossibility. The witnesses are not full build-quality proof.
    - The current cap diagnostics show levels 1 and 20 are below target under
      an optimistic item-stat-only independent-slot upper bound. Because set
      bonuses are not included yet, this is strong evidence but not a full
