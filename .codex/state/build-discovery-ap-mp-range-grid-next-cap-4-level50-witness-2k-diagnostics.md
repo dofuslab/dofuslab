@@ -7,10 +7,10 @@ If the upper bound reaches target, no-build remains a solver/search, set-bonus, 
 
 Diagnostics: `1`
 Item-stat upper-bound below target: `0`
-Not proven infeasible: `0`
+Not proven infeasible: `1`
 Witness searches run: `1`
-Action-stat witnesses found: `1` of `1` searched
+Action-stat witnesses found: `0` of `1` searched
 
 | Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness search | Witness AP/MP/Range | Default solver pool missing | Reasons |
 |---|---|---|---|---|---|---|---|
-| L50 agility 12/6/6 tier 2 | no_build | action_stat_witness_found | 12/7/25 | found, state cap hit | 12/6/6 | 1: Sponghield (topK 25, sets 60, 52.2ms) | Optimistic item-stat-only independent slot upper bound reaches the target; no-build remains a solver/search, set-bonus, uniqueness, condition, or interaction question. |
+| L50 agility 12/6/6 tier 2 | no_build | not_proven_infeasible | 12/7/25 | not found, state cap hit |  | not checked | Optimistic item-stat-only independent slot upper bound reaches the target; no-build remains a solver/search, set-bonus, uniqueness, condition, or interaction question. |

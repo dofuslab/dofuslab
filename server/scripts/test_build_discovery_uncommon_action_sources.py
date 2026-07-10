@@ -5,11 +5,15 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from oneoff.build_discovery_prototype import (
+    ApStrategy,
+    BuildState,
     BuildTarget,
     SHAKER_TROPHY_ID,
+    SLOTS,
     action_stat_witness_seed_states,
     candidate_pool_for_slot,
     base_ap_for_level,
+    direct_complete_package_seeds,
     load_all_item_records,
     load_items,
     load_sets,
@@ -32,6 +36,47 @@ def test_item(item_id, item_type, stats, score=0):
 
 
 class BuildDiscoveryUncommonActionSourceTest(unittest.TestCase):
+    def test_direct_completion_accepts_already_valid_open_dofus_seed(self):
+        target = BuildTarget(ap=12, mp=6, range=6, level=99, min_ap=base_ap_for_level(99))
+        seed = BuildState(stats={"AP": 12, "MP": 6, "Range": 6, "Vitality": 1000})
+        for slot_name, item_type in (
+            ("amulet", "Amulet"),
+            ("belt", "Belt"),
+            ("weapon", "Sword"),
+            ("shield", "Shield"),
+            ("ring_1", "Ring"),
+            ("ring_2", "Ring"),
+            ("boots", "Boots"),
+            ("hat", "Hat"),
+            ("cloak", "Cloak"),
+            ("pet", "Pet"),
+            ("dofus_1", "Trophy"),
+        ):
+            item = test_item(f"{slot_name}_item", item_type, {})
+            seed.slots[slot_name] = item
+            seed.used_item_ids.add(item["dofusID"])
+
+        completed = direct_complete_package_seeds(
+            [seed],
+            pools={slot_name: [] for slot_name, _ in SLOTS},
+            sets={},
+            target=target,
+            search_target=target,
+            natural_cap_target=target,
+            ap_strategies=(
+                ApStrategy(
+                    name="test_no_fill_required",
+                    require_amulet_ap=False,
+                    require_ap_exo=False,
+                    min_secondary_ap_sources=0,
+                ),
+            ),
+            exo_policy="none",
+        )
+
+        self.assertTrue(completed)
+        self.assertTrue(any("dofus_2" not in state.slots for state in completed))
+
     def test_low_level_positive_action_sources_survive_small_candidate_pools(self):
         bad_score_ap_ring = {
             "dofusID": "bad-score-ap-ring",

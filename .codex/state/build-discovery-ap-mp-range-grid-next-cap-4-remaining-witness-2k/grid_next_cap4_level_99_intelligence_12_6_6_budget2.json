@@ -4,8 +4,8 @@
   "sourceGeneratedAt": "2026-07-10T18:29:41.220389+00:00",
   "diagnosticCount": 1,
   "itemStatUpperBoundBelowTargetCount": 0,
-  "notProvenInfeasibleCount": 0,
-  "actionStatWitnessFoundCount": 1,
+  "notProvenInfeasibleCount": 1,
+  "actionStatWitnessFoundCount": 0,
   "witnessSearchRunCount": 1,
   "diagnostics": [
     {
@@ -44,7 +44,7 @@
         "MP": 9,
         "Range": 28
       },
-      "diagnosticStatus": "action_stat_witness_found",
+      "diagnosticStatus": "not_proven_infeasible",
       "reasons": [
         "Optimistic item-stat-only independent slot upper bound reaches the target; no-build remains a solver/search, set-bonus, uniqueness, condition, or interaction question."
       ],
@@ -52,237 +52,10 @@
         "enabled": true,
         "maxStatesPerSlot": 2000,
         "stateLimitHit": true,
-        "found": true
+        "found": false
       },
-      "actionStatWitness": {
-        "totals": {
-          "AP": 12,
-          "MP": 6,
-          "Range": 6
-        },
-        "exos": {},
-        "items": [
-          {
-            "slot": "amulet",
-            "id": "7880",
-            "name": "Gobkool Amulet",
-            "level": 84,
-            "itemType": "Amulet",
-            "stats": {
-              "AP": 1,
-              "MP": 0,
-              "Range": 0
-            }
-          },
-          {
-            "slot": "belt",
-            "id": "7885",
-            "name": "Gobkool Belt",
-            "level": 85,
-            "itemType": "Belt",
-            "stats": {
-              "AP": 0,
-              "MP": 0,
-              "Range": 0
-            }
-          },
-          {
-            "slot": "weapon",
-            "id": "7882",
-            "name": "Gobkool Hammer",
-            "level": 88,
-            "itemType": "Hammer",
-            "stats": {
-              "AP": 0,
-              "MP": 0,
-              "Range": 0
-            }
-          },
-          {
-            "slot": "shield",
-            "id": "33576",
-            "name": "Musha Sheyeld",
-            "level": 87,
-            "itemType": "Shield",
-            "stats": {
-              "AP": 0,
-              "MP": 0,
-              "Range": 2
-            }
-          },
-          {
-            "slot": "ring_1",
-            "id": "836",
-            "name": "Treering",
-            "level": 40,
-            "itemType": "Ring",
-            "stats": {
-              "AP": 1,
-              "MP": 0,
-              "Range": 1
-            }
-          },
-          {
-            "slot": "ring_2",
-            "id": "841",
-            "name": "Ring of Satisfaction",
-            "level": 8,
-            "itemType": "Ring",
-            "stats": {
-              "AP": 1,
-              "MP": 0,
-              "Range": 0
-            }
-          },
-          {
-            "slot": "boots",
-            "id": "9162",
-            "name": "Royal Morello Cherry Bloopts",
-            "level": 80,
-            "itemType": "Boots",
-            "stats": {
-              "AP": 0,
-              "MP": 1,
-              "Range": 1
-            }
-          },
-          {
-            "slot": "hat",
-            "id": "1908",
-            "name": "Chafer Helmet",
-            "level": 49,
-            "itemType": "Hat",
-            "stats": {
-              "AP": 1,
-              "MP": 0,
-              "Range": 0
-            }
-          },
-          {
-            "slot": "cloak",
-            "id": "1693",
-            "name": "Jules Yanos's Cloak",
-            "level": 54,
-            "itemType": "Cloak",
-            "stats": {
-              "AP": 0,
-              "MP": 1,
-              "Range": 1
-            }
-          },
-          {
-            "slot": "pet",
-            "id": "13603",
-            "name": "Razorbuck",
-            "level": 60,
-            "itemType": "Petsmount",
-            "stats": {
-              "AP": 0,
-              "MP": 1,
-              "Range": 0
-            }
-          },
-          {
-            "slot": "dofus_1",
-            "id": "13831",
-            "name": "Twitcher",
-            "level": 50,
-            "itemType": "Trophy",
-            "stats": {
-              "AP": 0,
-              "MP": 0,
-              "Range": 1
-            }
-          }
-        ]
-      },
-      "solverCandidatePoolCoverage": {
-        "topK": 25,
-        "relevantSetLimit": 60,
-        "elapsedMs": 70.5,
-        "missingCount": 0,
-        "witnessItemCount": 11,
-        "missingItems": [],
-        "items": [
-          {
-            "slot": "amulet",
-            "id": "7880",
-            "name": "Gobkool Amulet",
-            "inSolverPool": true,
-            "poolSize": 73
-          },
-          {
-            "slot": "belt",
-            "id": "7885",
-            "name": "Gobkool Belt",
-            "inSolverPool": true,
-            "poolSize": 45
-          },
-          {
-            "slot": "weapon",
-            "id": "7882",
-            "name": "Gobkool Hammer",
-            "inSolverPool": true,
-            "poolSize": 74
-          },
-          {
-            "slot": "shield",
-            "id": "33576",
-            "name": "Musha Sheyeld",
-            "inSolverPool": true,
-            "poolSize": 12
-          },
-          {
-            "slot": "ring_1",
-            "id": "836",
-            "name": "Treering",
-            "inSolverPool": true,
-            "poolSize": 39
-          },
-          {
-            "slot": "ring_2",
-            "id": "841",
-            "name": "Ring of Satisfaction",
-            "inSolverPool": true,
-            "poolSize": 39
-          },
-          {
-            "slot": "boots",
-            "id": "9162",
-            "name": "Royal Morello Cherry Bloopts",
-            "inSolverPool": true,
-            "poolSize": 86
-          },
-          {
-            "slot": "hat",
-            "id": "1908",
-            "name": "Chafer Helmet",
-            "inSolverPool": true,
-            "poolSize": 57
-          },
-          {
-            "slot": "cloak",
-            "id": "1693",
-            "name": "Jules Yanos's Cloak",
-            "inSolverPool": true,
-            "poolSize": 59
-          },
-          {
-            "slot": "pet",
-            "id": "13603",
-            "name": "Razorbuck",
-            "inSolverPool": true,
-            "poolSize": 290
-          },
-          {
-            "slot": "dofus_1",
-            "id": "13831",
-            "name": "Twitcher",
-            "inSolverPool": true,
-            "poolSize": 29
-          }
-        ]
-      },
+      "actionStatWitness": null,
+      "solverCandidatePoolCoverage": null,
       "slotSummaries": [
         {
           "slot": "amulet",

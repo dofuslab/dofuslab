@@ -2726,6 +2726,8 @@ Run the initial evaluator pass:
 
 ### 2026-07-10 Cap 4 Level 50 Witness Diagnostic
 
+Superseded by the 2026-07-10 level-base witness diagnostic fix below.
+
 - Generated bounded 2k witness diagnostics for level 50 Agility tier 2:
   - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-level50-witness-2k-diagnostics.json`
   - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-level50-witness-2k-diagnostics.md`
@@ -2749,6 +2751,8 @@ Run the initial evaluator pass:
     level 50 witness diagnostics with the safer wording
 
 ### 2026-07-10 Cap 4 Remaining Witness Sweep
+
+Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 
 - Generated bounded 2k witness diagnostics for the remaining cap-4 not-proven
   rows:
@@ -2775,6 +2779,8 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc 'rm -rf /tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k && cd /home/dofuslab && python scripts/build_discovery_action_stat_diagnostics.py /tmp/build-discovery-ap-mp-range-grid-next-cap-4-matrix.json --targets grid_next_cap4_level_80_strength_12_6_6_budget1,grid_next_cap4_level_99_intelligence_12_6_6_budget2,grid_next_cap4_level_199_agility_12_6_6_budget2,grid_next_cap4_level_200_strength_12_6_6_budget1 --witness-search --witness-max-states-per-slot 2000 --split-output-dir /tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k --output-json /tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.json --output-md /tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.md'`
 
 ### 2026-07-10 Cap 4 Witness Pool-Coverage Diagnostics
+
+Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 
 - Extended `server/scripts/build_discovery_action_stat_diagnostics.py` so a
   found action-stat witness can also report whether each witness item is
@@ -2810,6 +2816,46 @@ Run the initial evaluator pass:
   - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
   - copied changed diagnostic scripts into the Docker server container, then ran
     `python scripts/test_build_discovery_action_stat_diagnostics.py && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py`
+
+### 2026-07-10 Level-Base Witness Diagnostic Fix
+
+- Fixed `server/scripts/build_discovery_action_stat_diagnostics.py` so witness
+  search runs inside `target_level_context(query.level)`.
+- Before this fix, sub-100 witness diagnostics could accidentally use the
+  ambient level-200 base AP of 7 instead of the correct level-1-99 base AP of
+  6.
+- Added regression coverage that a level 99 AP 7 query with no AP items does
+  not produce a witness from ambient level-200 base AP.
+- Regenerated cap-4 witness diagnostics after the fix:
+  - level 50 Agility tier 2 changed from witness-found to bounded witness miss
+  - level 99 Intelligence tier 2 changed from witness-found to bounded witness
+    miss
+  - level 199 Agility tier 2 and level 200 Strength tier 1 remain
+    witness-backed recall gaps
+- Corrected cap-4 remaining witness result:
+  - diagnostics: 4
+  - witness searches run: 4
+  - action-stat witnesses found: 2 of 4 searched
+  - not proven infeasible: 2
+- Corrected default solver pool coverage:
+  - level 199 Agility tier 2: missing `Bzzegg Supervisor's Fist` and
+    `Golden Dragoone`; coverage check took 40.0ms
+  - level 200 Strength tier 1: missing `Khardboard Moowolf Belt` and
+    `Plum and Almond Dragoturkey`; coverage check took 57.2ms
+  - level 50 Agility tier 2, level 80 Strength tier 1, and level 99
+    Intelligence tier 2: no corrected witness found, so pool coverage is not
+    checked
+- Also fixed direct completion to accept already-valid gear-complete seeds
+  without forcing every open Dofus slot to be filled; this is covered by a
+  focused unit test and supports locked-item/full-skeleton workflows, but it
+  did not by itself turn cap-4 level 99 into a generated row.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_action_stat_diagnostics.py`
+  - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
+  - copied changed diagnostic scripts into the Docker server container, then ran
+    `python scripts/test_build_discovery_action_stat_diagnostics.py && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py`
+  - copied changed solver files into the Docker server container, then ran
+    `python scripts/test_build_discovery_uncommon_action_sources.py && python -m py_compile oneoff/build_discovery_prototype.py scripts/test_build_discovery_uncommon_action_sources.py`
 
 ### 2026-07-10 Action-Set Recall Plan
 

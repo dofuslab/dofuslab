@@ -5,13 +5,15 @@
 Cap-4 witness diagnostics show several valid AP/MP/Range skeletons where
 individual witness items are absent from the solver candidate pools.
 
-Examples:
+Corrected examples after the level-base witness diagnostic fix:
 
-- Level 50 Agility tier 2 `12/6/6`: missing `Sponghield`.
 - Level 199 Agility tier 2 `12/6/6`: missing `Bzzegg Supervisor's Fist` and
   `Golden Dragoone`.
 - Level 200 Strength tier 1 `12/6/6`: missing `Khardboard Moowolf Belt` and
   `Plum and Almond Dragoturkey`.
+
+Level 50 Agility tier 2 was previously listed here, but its witness disappeared
+after fixing witness search to use the level-99-and-below base AP of 6.
 
 These are not singleton item exceptions. The common shape is that an item can
 be individually low-score but useful as part of an AP/MP/Range set or package.

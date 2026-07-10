@@ -107,19 +107,16 @@ These need gameplay or product review before calling the feature shippable.
      level 20 Chance tier 2 are below target under the item-stat-only upper
      bound; the other five no-build rows are not-proven and need witness/search
      diagnostics before interpretation.
-   - The cap-4 2k witness diagnostic found a level 50 Agility tier 2 `12/6/6`
-     action-stat witness and hit the state cap, so that row is a solver recall
-     gap for action-stat validity.
-   - The cap-4 remaining 2k witness sweep found action-stat witnesses for
-     level 99 Intelligence tier 2, level 199 Agility tier 2, and level 200
-     Strength tier 1. Level 80 Strength tier 1 remains a bounded witness miss
-     with state cap hit.
+   - The cap-4 2k witness diagnostics were regenerated after fixing
+     level-specific base AP in witness search. Level 50 Agility tier 2, level
+     80 Strength tier 1, and level 99 Intelligence tier 2 are now bounded
+     witness misses with state cap hit, not witness-backed recall gaps.
+   - The corrected cap-4 remaining 2k witness sweep found action-stat witnesses
+     for level 199 Agility tier 2 and level 200 Strength tier 1.
    - The cap-4 witness diagnostics now include opt-in default solver
-     candidate-pool coverage: level 50 misses `Sponghield`; level 199 misses
+     candidate-pool coverage for corrected found witnesses: level 199 misses
      `Bzzegg Supervisor's Fist` and `Golden Dragoone`; level 200 misses
-     `Khardboard Moowolf Belt` and `Plum and Almond Dragoturkey`; level 99 has
-     full witness-item coverage in the default solver candidate pools, so pool
-     exclusion is not implicated for that found witness.
+     `Khardboard Moowolf Belt` and `Plum and Almond Dragoturkey`.
    - The next solver-recall direction should be a bounded action-set package
      diagnostic/stage, not named-item allowlisting or including every
      AP/MP/Range-bonus set.

@@ -8,6 +8,7 @@ from unittest.mock import patch
 from build_discovery_action_stat_diagnostics import (
     artifact_stem_for_target,
     build_diagnostics_report,
+    find_action_stat_witness_result,
     main,
     render_markdown,
     solver_candidate_pool_coverage,
@@ -248,6 +249,35 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
             },
         )
         self.assertIsNone(diagnostics["diagnostics"][0]["solverCandidatePoolCoverage"])
+
+    def test_witness_search_uses_query_level_base_ap(self):
+        filler_items = []
+        for slot_name, slot_types in [
+            ("amulet", ("Amulet",)),
+            ("belt", ("Belt",)),
+            ("weapon", ("Sword",)),
+            ("shield", ("Shield",)),
+            ("ring_1", ("Ring",)),
+            ("ring_2", ("Ring",)),
+            ("boots", ("Boots",)),
+            ("hat", ("Hat",)),
+            ("cloak", ("Cloak",)),
+        ]:
+            filler_items.append(item(f"{slot_name}_filler", slot_types[0], {}))
+
+        with patch(
+            "build_discovery_action_stat_diagnostics.load_items",
+            return_value=filler_items,
+        ), patch(
+            "build_discovery_action_stat_diagnostics.load_sets",
+            return_value={},
+        ):
+            result = find_action_stat_witness_result(
+                BuildDiscoveryQuery(level=99, ap_target=7, mp_target=3, range_target=0),
+                max_states_per_slot=20,
+            )
+
+        self.assertFalse(result["found"])
 
     def test_artifact_stem_for_target_sanitizes_ids(self):
         entry = {"target": {"id": "cap row/level 20:chance"}}

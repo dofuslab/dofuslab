@@ -31,6 +31,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     query_summary,
     relevant_set_ids,
     set_bonus_stats,
+    target_level_context,
 )
 
 
@@ -266,65 +267,66 @@ def find_action_stat_witness_result(
             "witness": None,
         }
 
-    states = [BuildState()]
-    state_limit_hit = False
-    for slot_name, choices in slot_choices:
-        next_states: list[BuildState] = []
-        for state in states:
-            for item in choices:
-                if item is None:
-                    next_states.append(state)
-                    continue
-                next_state = add_item_to_state(
-                    state,
-                    slot_name,
-                    item,
-                    sets,
-                    query.target,
-                    condition_target=query.target,
-                    cap_target=cap_target,
-                    include_potential_score=False,
-                )
-                if next_state is not None:
-                    next_states.append(next_state)
-        buckets: dict[tuple[Any, ...], BuildState] = {}
-        for state in next_states:
-            key = (
-                min(state.stats.get("AP", 0), query.ap_target),
-                min(state.stats.get("MP", 0), query.mp_target),
-                min(state.stats.get("Range", 0), query.target.range),
-                tuple(
-                    sorted(
-                        (set_id, min(count, 8))
-                        for set_id, count in state.set_counts.items()
-                        if set_id in action_set_ids
+    with target_level_context(query.level):
+        states = [BuildState()]
+        state_limit_hit = False
+        for slot_name, choices in slot_choices:
+            next_states: list[BuildState] = []
+            for state in states:
+                for item in choices:
+                    if item is None:
+                        next_states.append(state)
+                        continue
+                    next_state = add_item_to_state(
+                        state,
+                        slot_name,
+                        item,
+                        sets,
+                        query.target,
+                        condition_target=query.target,
+                        cap_target=cap_target,
+                        include_potential_score=False,
                     )
+                    if next_state is not None:
+                        next_states.append(next_state)
+            buckets: dict[tuple[Any, ...], BuildState] = {}
+            for state in next_states:
+                key = (
+                    min(state.stats.get("AP", 0), query.ap_target),
+                    min(state.stats.get("MP", 0), query.mp_target),
+                    min(state.stats.get("Range", 0), query.target.range),
+                    tuple(
+                        sorted(
+                            (set_id, min(count, 8))
+                            for set_id, count in state.set_counts.items()
+                            if set_id in action_set_ids
+                        )
+                    ),
+                )
+                buckets.setdefault(key, state)
+            if len(buckets) > max_states_per_slot:
+                state_limit_hit = True
+            states = sorted(
+                buckets.values(),
+                key=lambda state: (
+                    state.stats.get("AP", 0),
+                    state.stats.get("MP", 0),
+                    state.stats.get("Range", 0),
+                    len(state.slots),
                 ),
-            )
-            buckets.setdefault(key, state)
-        if len(buckets) > max_states_per_slot:
-            state_limit_hit = True
-        states = sorted(
-            buckets.values(),
-            key=lambda state: (
-                state.stats.get("AP", 0),
-                state.stats.get("MP", 0),
-                state.stats.get("Range", 0),
-                len(state.slots),
-            ),
-            reverse=True,
-        )[:max_states_per_slot]
+                reverse=True,
+            )[:max_states_per_slot]
 
-    for state in states:
-        state_with_exos = apply_missing_exos(state, query.target, effective_exo_policy(query))
-        if state_with_exos and action_stats_meet_target(state_with_exos, query.target):
-            return {
-                "enabled": True,
-                "maxStatesPerSlot": max_states_per_slot,
-                "stateLimitHit": state_limit_hit,
-                "found": True,
-                "witness": compact_witness_state(state_with_exos),
-            }
+        for state in states:
+            state_with_exos = apply_missing_exos(state, query.target, effective_exo_policy(query))
+            if state_with_exos and action_stats_meet_target(state_with_exos, query.target):
+                return {
+                    "enabled": True,
+                    "maxStatesPerSlot": max_states_per_slot,
+                    "stateLimitHit": state_limit_hit,
+                    "found": True,
+                    "witness": compact_witness_state(state_with_exos),
+                }
     return {
         "enabled": True,
         "maxStatesPerSlot": max_states_per_slot,

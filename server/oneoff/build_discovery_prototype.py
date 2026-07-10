@@ -3607,6 +3607,16 @@ def direct_complete_package_seeds(
         gear_state_per_signature_cap,
     )
     for non_dofus_state in completed_gear_states:
+        cheap_valid_state = direct_cheap_valid_completed_state(
+            non_dofus_state,
+            target,
+            ap_strategies,
+            generic_damage_weight,
+            exo_policy=exo_policy,
+        )
+        if cheap_valid_state is not None:
+            cheap_valid_states.append(cheap_valid_state)
+
         open_dofus_slots = [
             slot_name
             for slot_name, _ in SLOTS

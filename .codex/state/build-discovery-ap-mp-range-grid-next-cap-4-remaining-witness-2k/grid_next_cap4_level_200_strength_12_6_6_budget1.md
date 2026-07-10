@@ -13,4 +13,4 @@ Action-stat witnesses found: `1` of `1` searched
 
 | Target | Matrix status | Diagnostic status | Upper AP/MP/Range | Witness search | Witness AP/MP/Range | Default solver pool missing | Reasons |
 |---|---|---|---|---|---|---|---|
-| L200 strength 12/6/6 tier 1 | no_build | action_stat_witness_found | 21/20/30 | found, state cap hit | 12/6/6 | 2: Khardboard Moowolf Belt, Plum and Almond Dragoturkey (topK 25, sets 60, 58.4ms) | Optimistic item-stat-only independent slot upper bound reaches the target; no-build remains a solver/search, set-bonus, uniqueness, condition, or interaction question. |
+| L200 strength 12/6/6 tier 1 | no_build | action_stat_witness_found | 21/20/30 | found, state cap hit | 12/6/6 | 2: Khardboard Moowolf Belt, Plum and Almond Dragoturkey (topK 25, sets 60, 57.2ms) | Optimistic item-stat-only independent slot upper bound reaches the target; no-build remains a solver/search, set-bonus, uniqueness, condition, or interaction question. |

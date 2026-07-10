@@ -14,7 +14,7 @@
       "targetId": "grid_next_cap4_level_99_intelligence_12_6_6_budget2",
       "json": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/grid_next_cap4_level_99_intelligence_12_6_6_budget2.json",
       "markdown": "/tmp/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/grid_next_cap4_level_99_intelligence_12_6_6_budget2.md",
-      "diagnosticStatus": "action_stat_witness_found"
+      "diagnosticStatus": "not_proven_infeasible"
     },
     {
       "targetId": "grid_next_cap4_level_199_agility_12_6_6_budget2",
