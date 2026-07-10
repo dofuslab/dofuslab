@@ -1822,3 +1822,21 @@ Run the initial evaluator pass:
   - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_query_contract"`
   - `python -m oneoff.build_discovery_prototype --level 1 --element strength --ap 6 --mp 3 --range none --budget-tier 1 --exo-policy none --limit 1 --top-k 10 --beam-width 20 --per-signature-cap 5 --relevant-set-limit 10`
 - Level 1 result: one generated build, totals `6/3/0`, no warnings.
+
+### 2026-07-10 Boundary Level Smoke Matrix
+
+- Added `BOUNDARY_LEVEL_TARGETS` in
+  `server/scripts/build_discovery_level_diversity_targets.py`.
+- Added `server/scripts/test_build_discovery_level_boundary_generation_smoke.py`
+  for opt-in no-cache checks around level transition edges:
+  - `1`, `19`, `20`
+  - `99`, `100`
+  - `149`, `150`
+  - `179`, `180`
+  - `200`
+- Verified the first boundary slice:
+  - `BUILD_DISCOVERY_LEVEL_BOUNDARY_SMOKE=1 BUILD_DISCOVERY_LEVEL_DIVERSITY_LEVELS=1,99 python -m unittest scripts.test_build_discovery_level_boundary_generation_smoke.BuildDiscoveryLevelBoundaryGenerationSmokeTest`
+- Result: pass in 45.146 seconds.
+- Cheap verification passed:
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m unittest scripts.test_build_discovery_level_boundary_generation_smoke.BuildDiscoveryLevelBoundarySmokeShapeTest"`
+  - `docker exec dofuslab-server-1 sh -lc "cd /home/dofuslab && python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/test_build_discovery_level_boundary_generation_smoke.py"`

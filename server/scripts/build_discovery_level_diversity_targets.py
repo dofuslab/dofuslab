@@ -49,6 +49,19 @@ LEVEL_DIVERSITY_TARGETS = (
     LevelDiversityTarget("level_199_strength_12_6_5_budget4", 199, "strength", 4, 12, 6, 5),
 )
 
+BOUNDARY_LEVEL_TARGETS = (
+    LevelDiversityTarget("boundary_level_1_strength_6_3_none_budget1", 1, "strength", 1, 6, 3, None),
+    LevelDiversityTarget("boundary_level_19_intelligence_6_3_none_budget1", 19, "intelligence", 1, 6, 3, None),
+    LevelDiversityTarget("boundary_level_20_chance_6_3_none_budget1", 20, "chance", 1, 6, 3, None),
+    LevelDiversityTarget("boundary_level_99_agility_6_3_none_budget1", 99, "agility", 1, 6, 3, None),
+    LevelDiversityTarget("boundary_level_100_strength_7_3_none_budget1", 100, "strength", 1, 7, 3, None),
+    LevelDiversityTarget("boundary_level_149_intelligence_11_5_1_budget2", 149, "intelligence", 2, 11, 5, 1),
+    LevelDiversityTarget("boundary_level_150_chance_11_5_1_budget2", 150, "chance", 2, 11, 5, 1),
+    LevelDiversityTarget("boundary_level_179_agility_12_5_2_budget3", 179, "agility", 3, 12, 5, 2),
+    LevelDiversityTarget("boundary_level_180_strength_12_5_3_budget3", 180, "strength", 3, 12, 5, 3),
+    LevelDiversityTarget("boundary_level_200_strength_10_5_0_budget4", 200, "strength", 4, 10, 5, 0),
+)
+
 
 def query_for_target(target: LevelDiversityTarget) -> BuildDiscoveryQuery:
     return BuildDiscoveryQuery(
