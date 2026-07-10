@@ -2613,3 +2613,35 @@ Run the initial evaluator pass:
   - keep generated artifacts separated from accepted gameplay benchmarks
   - add regression coverage for each new recall stage before using it to
     explain a matrix improvement
+
+### 2026-07-10 Cap 3 Witness Diagnostic Guardrails
+
+- Reviewer finding:
+  - the cap-3 fast diagnostic's `Action-stat witnesses found: 0` was easy to
+    misread because witness search was not run in that artifact
+  - no-build matrix rows are current-search misses, not infeasibility proof
+  - item-stat upper bounds are not set-bonus-aware
+  - bounded witness misses must report state-cap settings
+- Added a CLI guard to `server/scripts/build_discovery_action_stat_diagnostics.py`
+  so diagnostic filters that match zero matrix rows fail with a parser error
+  instead of silently writing empty or missing artifacts.
+- Added regression coverage for the zero-match diagnostic CLI path.
+- Added a restartable cap-3 diagnostic plan:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-diagnostic-plan.md`
+- Generated bounded 2k witness diagnostics for the two cap-3 not-proven rows:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-level80-witness-2k-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-level80-witness-2k-diagnostics.md`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-level200-witness-2k-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-level200-witness-2k-diagnostics.md`
+- Level 80 Strength tier 2 `12/6/6`:
+  - witness search: not found, state cap hit
+  - classification: bounded witness miss, not infeasibility proof
+- Level 200 Strength tier 2 `12/6/6`:
+  - witness search: found, state cap hit
+  - witness totals: `12/6/6`
+  - classification: solver recall gap for action-stat validity
+- Verification passed:
+  - `python server\scripts\test_build_discovery_action_stat_diagnostics.py`
+  - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
+  - copied changed diagnostic scripts into the Docker server container, then ran
+    `python scripts/test_build_discovery_action_stat_diagnostics.py && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py`

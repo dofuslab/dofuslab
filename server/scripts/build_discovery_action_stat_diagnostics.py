@@ -554,6 +554,24 @@ def csv_filter(raw_value: str | None) -> set[str] | None:
     return {value.strip() for value in raw_value.split(",") if value.strip()}
 
 
+def require_selected_entries(
+    parser: argparse.ArgumentParser,
+    entries: list[dict[str, Any]],
+    *,
+    statuses: set[str] | None,
+    target_ids: set[str] | None,
+) -> None:
+    if entries:
+        return
+    filters = []
+    if statuses is not None:
+        filters.append(f"statuses={','.join(sorted(statuses))}")
+    if target_ids is not None:
+        filters.append(f"targets={','.join(sorted(target_ids))}")
+    filter_label = "; ".join(filters) if filters else "no filters"
+    parser.error(f"no matrix rows matched diagnostic filters ({filter_label})")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("matrix_report")
@@ -573,8 +591,10 @@ def main() -> None:
     statuses = csv_filter(args.statuses)
     target_ids = csv_filter(args.targets)
 
+    selected_entries = selected_matrix_entries(matrix_report, statuses=statuses, target_ids=target_ids)
+    require_selected_entries(parser, selected_entries, statuses=statuses, target_ids=target_ids)
+
     if args.split_output_dir:
-        selected_entries = selected_matrix_entries(matrix_report, statuses=statuses, target_ids=target_ids)
         split_result = write_split_reports(
             matrix_report,
             selected_entries,
@@ -596,10 +616,9 @@ def main() -> None:
             print(json.dumps(split_result["manifest"], indent=2, ensure_ascii=False))
         return
 
-    report = build_diagnostics_report(
+    report = build_diagnostics_report_for_entries(
         matrix_report,
-        statuses=statuses,
-        target_ids=target_ids,
+        selected_entries,
         witness_search=args.witness_search,
         witness_max_states_per_slot=args.witness_max_states_per_slot,
     )

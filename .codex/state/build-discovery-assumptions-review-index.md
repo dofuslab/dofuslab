@@ -60,6 +60,9 @@ These need gameplay or product review before calling the feature shippable.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-2-level99-witness-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-matrix.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-diagnostics.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-diagnostic-plan.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-level80-witness-2k-diagnostics.md`.
+   - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-3-level200-witness-2k-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-level50-witness-diagnostics.md`.
    - Review `.codex/state/build-discovery-ap-mp-range-grid-next-cap-remaining-witness-diagnostics.md`.
@@ -85,6 +88,12 @@ These need gameplay or product review before calling the feature shippable.
      Chance are below target under the item-stat-only upper bound; level 80
      Strength tier 2 and level 200 Strength tier 2 remain not-proven rather
      than infeasible.
+   - The cap-3 2k witness diagnostic found no level 80 Strength tier 2 witness
+     and hit the state cap, so it is a bounded witness miss rather than
+     infeasibility proof.
+   - The cap-3 2k witness diagnostic found a level 200 Strength tier 2
+     `12/6/6` action-stat witness and hit the state cap, so that row is a
+     solver recall gap for action-stat validity.
    - The cap-2 item-stat diagnostic shows level 1 Intelligence and level 20
      Chance are below target under the item-stat-only upper bound.
    - Level 50 Agility, level 80 Strength, and level 99 Intelligence previously

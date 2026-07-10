@@ -335,6 +335,28 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
             self.assertTrue(aggregate_md.exists())
             self.assertEqual(json.loads(aggregate_json.read_text(encoding="utf-8"))["diagnosticCount"], 1)
 
+    def test_cli_fails_when_filters_match_no_matrix_rows(self):
+        matrix_report = {"scope": "Iop test matrix", "generatedAt": "now", "results": [matrix_entry(level=1)]}
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            matrix_path = Path(temp_dir) / "matrix.json"
+            output_json = Path(temp_dir) / "diagnostics.json"
+            matrix_path.write_text(json.dumps(matrix_report), encoding="utf-8")
+            argv = [
+                "build_discovery_action_stat_diagnostics.py",
+                str(matrix_path),
+                "--targets",
+                "missing_target",
+                "--output-json",
+                str(output_json),
+            ]
+
+            with patch.object(sys, "argv", argv), self.assertRaises(SystemExit) as raised:
+                main()
+
+            self.assertNotEqual(raised.exception.code, 0)
+            self.assertFalse(output_json.exists())
+
 
 if __name__ == "__main__":
     unittest.main()
