@@ -75,6 +75,11 @@ class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
             stats={"AP": 10, "MP": 5, "Range": 0},
             used_item_ids={"belt-b"},
         )
+        same_vector_hat = solver.BuildState(
+            slots={"hat": {"dofusID": "hat-a", "itemType": "Hat", "conditions": {}}},
+            stats={"AP": 10, "MP": 5, "Range": 0},
+            used_item_ids={"hat-a"},
+        )
         first_ring = solver.BuildState(
             slots={"ring_1": {"dofusID": "ring-a", "itemType": "Ring", "conditions": {}}},
             stats={"AP": 10, "MP": 5, "Range": 0},
@@ -87,6 +92,7 @@ class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
         )
 
         self.assertEqual(state_signature(first_belt, target), state_signature(second_belt, target))
+        self.assertEqual(state_signature(first_belt, target), state_signature(same_vector_hat, target))
         self.assertNotEqual(state_signature(first_ring, target), state_signature(second_ring, target))
 
     def test_render_markdown_reports_status_and_example(self):

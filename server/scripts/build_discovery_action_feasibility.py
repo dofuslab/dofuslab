@@ -153,7 +153,6 @@ def state_signature(state: solver.BuildState, target: solver.BuildTarget) -> tup
         min(state.stats.get("MP", 0), target.mp),
         min(state.stats.get("Range", 0), target.range) if target.range_required else 0,
         tuple(sorted((set_id, min(count, 8)) for set_id, count in state.set_counts.items() if count)),
-        tuple(sorted(state.slots)),
         identity_sensitive_ids,
     )
 
