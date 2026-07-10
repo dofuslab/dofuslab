@@ -107,6 +107,21 @@ AP_MP_RANGE_GRID_NEXT_MINIMUM_2_TARGETS = (
     LevelDiversityTarget("grid_next_min2_level_200_strength_7_3_none_budget2", 200, "strength", 2, 7, 3, None),
 )
 
+AP_MP_RANGE_GRID_NEXT_MINIMUM_3_TARGETS = (
+    LevelDiversityTarget("grid_next_min3_level_1_strength_6_3_none_budget4", 1, "strength", 4, 6, 3, None),
+    LevelDiversityTarget("grid_next_min3_level_20_intelligence_6_3_none_budget1", 20, "intelligence", 1, 6, 3, None),
+    LevelDiversityTarget("grid_next_min3_level_50_chance_6_3_none_budget1", 50, "chance", 1, 6, 3, None),
+    LevelDiversityTarget("grid_next_min3_level_80_agility_6_3_none_budget1", 80, "agility", 1, 6, 3, None),
+    LevelDiversityTarget("grid_next_min3_level_99_strength_6_3_none_budget3", 99, "strength", 3, 6, 3, None),
+    LevelDiversityTarget("grid_next_min3_level_100_intelligence_7_3_none_budget2", 100, "intelligence", 2, 7, 3, None),
+    LevelDiversityTarget("grid_next_min3_level_120_chance_7_3_none_budget1", 120, "chance", 1, 7, 3, None),
+    LevelDiversityTarget("grid_next_min3_level_150_agility_7_3_none_budget1", 150, "agility", 1, 7, 3, None),
+    LevelDiversityTarget("grid_next_min3_level_179_strength_7_3_none_budget3", 179, "strength", 3, 7, 3, None),
+    LevelDiversityTarget("grid_next_min3_level_180_intelligence_7_3_none_budget1", 180, "intelligence", 1, 7, 3, None),
+    LevelDiversityTarget("grid_next_min3_level_199_chance_7_3_none_budget1", 199, "chance", 1, 7, 3, None),
+    LevelDiversityTarget("grid_next_min3_level_200_agility_7_3_none_budget1", 200, "agility", 1, 7, 3, None),
+)
+
 AP_MP_RANGE_GRID_NEXT_CAP_TARGETS = (
     LevelDiversityTarget("grid_next_cap_level_1_strength_12_6_6_budget4", 1, "strength", 4, 12, 6, 6),
     LevelDiversityTarget("grid_next_cap_level_20_strength_12_6_6_budget4", 20, "strength", 4, 12, 6, 6),

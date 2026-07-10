@@ -78,6 +78,20 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
             ],
         )
 
+    def test_selected_targets_can_use_grid_next_minimum_3_target_set(self):
+        targets = selected_targets(
+            all_targets=targets_for_set("grid-next-minimum-3"),
+            levels={1, 200},
+        )
+
+        self.assertEqual(
+            [target.name for target in targets],
+            [
+                "grid_next_min3_level_1_strength_6_3_none_budget4",
+                "grid_next_min3_level_200_agility_7_3_none_budget1",
+            ],
+        )
+
     def test_selected_targets_can_use_grid_next_cap_target_set(self):
         targets = selected_targets(
             all_targets=targets_for_set("grid-next-cap"),
