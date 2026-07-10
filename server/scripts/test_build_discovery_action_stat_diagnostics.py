@@ -168,6 +168,67 @@ class BuildDiscoveryActionStatDiagnosticsTest(unittest.TestCase):
         self.assertEqual(coverage["missingItems"][0]["name"], "Missing Belt")
         self.assertEqual(coverage["items"][0]["inSolverPool"], True)
 
+    def test_solver_candidate_pool_coverage_explains_missing_set_package(self):
+        witness = {
+            "items": [
+                {"slot": "belt", "id": "missing", "name": "Missing Belt"},
+            ]
+        }
+        source_item = item("missing", "Belt", {})
+        source_item["setID"] = "set-1"
+        sets = {
+            "set-1": {
+                "_name": "Action Set",
+                "_bonus_stats": {"2": {"AP": 1, "Range": 1}},
+            }
+        }
+
+        with patch("build_discovery_action_stat_diagnostics.relevant_set_ids", return_value=set()), patch(
+            "build_discovery_action_stat_diagnostics.candidate_pool_for_slot",
+            return_value=[],
+        ):
+            coverage = solver_candidate_pool_coverage(
+                BuildDiscoveryQuery(level=50, top_k=1),
+                witness,
+                items=[source_item],
+                sets=sets,
+            )
+
+        package = coverage["missingItems"][0]["setPackage"]
+        self.assertEqual(package["setName"], "Action Set")
+        self.assertEqual(package["actionBonusThresholds"], [{"count": 2, "actionStats": {"AP": 1, "Range": 1}}])
+
+        markdown = render_markdown(
+            {
+                "diagnosticCount": 1,
+                "itemStatUpperBoundBelowTargetCount": 0,
+                "notProvenInfeasibleCount": 0,
+                "witnessSearchRunCount": 1,
+                "actionStatWitnessFoundCount": 1,
+                "diagnostics": [
+                    {
+                        "target": {
+                            "level": 50,
+                            "element": "agility",
+                            "budgetTier": 2,
+                            "apTarget": 12,
+                            "mpTarget": 6,
+                            "rangeTarget": 6,
+                        },
+                        "matrixStatus": "no_build",
+                        "diagnosticStatus": "action_stat_witness_found",
+                        "optimisticIndependentSlotUpperBound": {"AP": 12, "MP": 6, "Range": 6},
+                        "witnessSearch": {"enabled": True, "found": True, "stateLimitHit": False},
+                        "actionStatWitness": {"totals": {"AP": 12, "MP": 6, "Range": 6}},
+                        "solverCandidatePoolCoverage": coverage,
+                        "reasons": ["reason"],
+                    }
+                ],
+            }
+        )
+
+        self.assertIn("Missing Belt [Action Set 2pc AP+1/Range+1]", markdown)
+
     def test_diagnostics_use_matrix_query_exo_policy(self):
         entry = matrix_entry(level=100)
         entry["query"]["exoPolicy"] = "none"

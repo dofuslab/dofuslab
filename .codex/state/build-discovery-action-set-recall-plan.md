@@ -57,14 +57,22 @@ Add a bounded action-set package stage:
 
 ## Next Probe
 
-Before implementation, add a read-only package diagnostic for witness-backed
-rows:
+Implemented in the 2026-07-10 action-package diagnostic checkpoint:
 
-- identify each missing witness item
-- report its set/package
-- report the smallest AP/MP/Range bonus threshold that explains why the item
+- identifies each missing witness item
+- reports its set/package
+- reports the smallest AP/MP/Range bonus threshold that explains why the item
   matters
-- report whether that package would be selected under a proposed bounded rank
+- reports whether the item's set is inside the current relevant-set selection
 
 Only after that diagnostic is reviewable should the solver start consuming the
 package stage.
+
+Current corrected witness-backed examples:
+
+- Level 199 Agility tier 2 `12/6/6`: missing `Bzzegg Supervisor's Fist`
+  from Bzzegg Supervisor Set, whose 3-piece bonus gives AP; and
+  `Golden Dragoone` from Hax Or Set, whose 5-piece bonus gives MP.
+- Level 200 Strength tier 1 `12/6/6`: missing `Khardboard Moowolf Belt`
+  from Khardboard Set, whose 2-piece bonus gives AP, MP, and Range; and
+  `Plum and Almond Dragoturkey`, a non-set mount.

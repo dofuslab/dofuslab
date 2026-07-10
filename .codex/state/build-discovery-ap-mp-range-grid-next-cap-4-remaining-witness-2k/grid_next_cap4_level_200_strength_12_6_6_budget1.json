@@ -187,7 +187,7 @@
       "solverCandidatePoolCoverage": {
         "topK": 25,
         "relevantSetLimit": 60,
-        "elapsedMs": 57.2,
+        "elapsedMs": 72.1,
         "missingCount": 2,
         "witnessItemCount": 10,
         "missingItems": [
@@ -196,14 +196,85 @@
             "id": "27266",
             "name": "Khardboard Moowolf Belt",
             "inSolverPool": false,
-            "poolSize": 29
+            "poolSize": 29,
+            "setPackage": {
+              "setId": "505",
+              "setName": "Khardboard Set",
+              "inRelevantSetIds": true,
+              "setBonusScore": 2014.0,
+              "availableItemCount": 3,
+              "availableLevels": [
+                150,
+                175,
+                200
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 2,
+                  "actionStats": {
+                    "AP": 1,
+                    "MP": 1,
+                    "Range": 1
+                  }
+                },
+                {
+                  "count": 3,
+                  "actionStats": {
+                    "AP": 2,
+                    "MP": 2,
+                    "Range": 2
+                  }
+                },
+                {
+                  "count": 4,
+                  "actionStats": {
+                    "AP": 3,
+                    "MP": 2,
+                    "Range": 2
+                  }
+                },
+                {
+                  "count": 5,
+                  "actionStats": {
+                    "AP": 3,
+                    "MP": 2,
+                    "Range": 2
+                  }
+                },
+                {
+                  "count": 6,
+                  "actionStats": {
+                    "AP": 4,
+                    "MP": 3,
+                    "Range": 3
+                  }
+                },
+                {
+                  "count": 7,
+                  "actionStats": {
+                    "AP": 4,
+                    "MP": 3,
+                    "Range": 3
+                  }
+                },
+                {
+                  "count": 8,
+                  "actionStats": {
+                    "AP": 4,
+                    "MP": 3,
+                    "Range": 3
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "pet",
             "id": "33053",
             "name": "Plum and Almond Dragoturkey",
             "inSolverPool": false,
-            "poolSize": 32
+            "poolSize": 32,
+            "setPackage": null
           }
         ],
         "items": [
@@ -212,70 +283,279 @@
             "id": "31789",
             "name": "Gargandyas's Necklace",
             "inSolverPool": true,
-            "poolSize": 35
+            "poolSize": 35,
+            "setPackage": {
+              "setId": "1018",
+              "setName": "Gargandyas Set",
+              "inRelevantSetIds": true,
+              "setBonusScore": 42.5,
+              "availableItemCount": 4,
+              "availableLevels": [
+                200
+              ],
+              "actionBonusThresholds": []
+            }
           },
           {
             "slot": "belt",
             "id": "27266",
             "name": "Khardboard Moowolf Belt",
             "inSolverPool": false,
-            "poolSize": 29
+            "poolSize": 29,
+            "setPackage": {
+              "setId": "505",
+              "setName": "Khardboard Set",
+              "inRelevantSetIds": true,
+              "setBonusScore": 2014.0,
+              "availableItemCount": 3,
+              "availableLevels": [
+                150,
+                175,
+                200
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 2,
+                  "actionStats": {
+                    "AP": 1,
+                    "MP": 1,
+                    "Range": 1
+                  }
+                },
+                {
+                  "count": 3,
+                  "actionStats": {
+                    "AP": 2,
+                    "MP": 2,
+                    "Range": 2
+                  }
+                },
+                {
+                  "count": 4,
+                  "actionStats": {
+                    "AP": 3,
+                    "MP": 2,
+                    "Range": 2
+                  }
+                },
+                {
+                  "count": 5,
+                  "actionStats": {
+                    "AP": 3,
+                    "MP": 2,
+                    "Range": 2
+                  }
+                },
+                {
+                  "count": 6,
+                  "actionStats": {
+                    "AP": 4,
+                    "MP": 3,
+                    "Range": 3
+                  }
+                },
+                {
+                  "count": 7,
+                  "actionStats": {
+                    "AP": 4,
+                    "MP": 3,
+                    "Range": 3
+                  }
+                },
+                {
+                  "count": 8,
+                  "actionStats": {
+                    "AP": 4,
+                    "MP": 3,
+                    "Range": 3
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "weapon",
             "id": "6981",
             "name": "Ice Daggers",
             "inSolverPool": true,
-            "poolSize": 44
+            "poolSize": 44,
+            "setPackage": null
           },
           {
             "slot": "shield",
             "id": "30858",
             "name": "Mama Ayuto's Parasail",
             "inSolverPool": true,
-            "poolSize": 19
+            "poolSize": 19,
+            "setPackage": {
+              "setId": "941",
+              "setName": "Mama Ayuto Set",
+              "inRelevantSetIds": true,
+              "setBonusScore": 92.0,
+              "availableItemCount": 3,
+              "availableLevels": [
+                200
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 3,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "ring_1",
             "id": "27284",
             "name": "Khardboard Gelano",
             "inSolverPool": true,
-            "poolSize": 38
+            "poolSize": 38,
+            "setPackage": {
+              "setId": "505",
+              "setName": "Khardboard Set",
+              "inRelevantSetIds": true,
+              "setBonusScore": 2014.0,
+              "availableItemCount": 3,
+              "availableLevels": [
+                150,
+                175,
+                200
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 2,
+                  "actionStats": {
+                    "AP": 1,
+                    "MP": 1,
+                    "Range": 1
+                  }
+                },
+                {
+                  "count": 3,
+                  "actionStats": {
+                    "AP": 2,
+                    "MP": 2,
+                    "Range": 2
+                  }
+                },
+                {
+                  "count": 4,
+                  "actionStats": {
+                    "AP": 3,
+                    "MP": 2,
+                    "Range": 2
+                  }
+                },
+                {
+                  "count": 5,
+                  "actionStats": {
+                    "AP": 3,
+                    "MP": 2,
+                    "Range": 2
+                  }
+                },
+                {
+                  "count": 6,
+                  "actionStats": {
+                    "AP": 4,
+                    "MP": 3,
+                    "Range": 3
+                  }
+                },
+                {
+                  "count": 7,
+                  "actionStats": {
+                    "AP": 4,
+                    "MP": 3,
+                    "Range": 3
+                  }
+                },
+                {
+                  "count": 8,
+                  "actionStats": {
+                    "AP": 4,
+                    "MP": 3,
+                    "Range": 3
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "ring_2",
             "id": "2469",
             "name": "Gelano",
             "inSolverPool": true,
-            "poolSize": 38
+            "poolSize": 38,
+            "setPackage": {
+              "setId": "6",
+              "setName": "Jellix Set",
+              "inRelevantSetIds": false,
+              "setBonusScore": 12.66,
+              "availableItemCount": 1,
+              "availableLevels": [
+                60
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 6,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "boots",
             "id": "32121",
             "name": "Meriana's Clairvoyance",
             "inSolverPool": true,
-            "poolSize": 37
+            "poolSize": 37,
+            "setPackage": null
           },
           {
             "slot": "hat",
             "id": "15183",
             "name": "Staruman Mask",
             "inSolverPool": true,
-            "poolSize": 37
+            "poolSize": 37,
+            "setPackage": {
+              "setId": "330",
+              "setName": "Staruman Set",
+              "inRelevantSetIds": false,
+              "setBonusScore": 40.0,
+              "availableItemCount": 3,
+              "availableLevels": [
+                200
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 3,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "cloak",
             "id": "8876",
             "name": "Inky Veil",
             "inSolverPool": true,
-            "poolSize": 32
+            "poolSize": 32,
+            "setPackage": null
           },
           {
             "slot": "pet",
             "id": "33053",
             "name": "Plum and Almond Dragoturkey",
             "inSolverPool": false,
-            "poolSize": 32
+            "poolSize": 32,
+            "setPackage": null
           }
         ]
       },

@@ -30,6 +30,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     load_sets,
     query_summary,
     relevant_set_ids,
+    set_bonus_score,
     set_bonus_stats,
     target_level_context,
 )
@@ -205,6 +206,9 @@ def solver_candidate_pool_coverage(
             "inSolverPool": present,
             "poolSize": len(pool),
         }
+        source_item = next((item for item in items if str(item.get("dofusID")) == item_id), None)
+        if source_item is not None:
+            row["setPackage"] = missing_item_set_package(source_item, items, sets, relevant_sets)
         by_slot.append(row)
         if not present:
             missing.append(row)
@@ -216,6 +220,39 @@ def solver_candidate_pool_coverage(
         "witnessItemCount": len(by_slot),
         "missingItems": missing,
         "items": by_slot,
+    }
+
+
+def action_bonus_thresholds(set_obj: dict[str, Any]) -> list[dict[str, Any]]:
+    thresholds = []
+    for count, stats in sorted(set_bonus_stats(set_obj).items(), key=lambda entry: int(entry[0])):
+        action_stats = {stat: stats.get(stat, 0) for stat in ACTION_STATS if stats.get(stat, 0)}
+        if action_stats:
+            thresholds.append({"count": int(count), "actionStats": action_stats})
+    return thresholds
+
+
+def missing_item_set_package(
+    item: dict[str, Any],
+    items: list[dict[str, Any]],
+    sets: dict[str, dict[str, Any]],
+    relevant_sets: set[str],
+) -> dict[str, Any] | None:
+    set_id = item.get("setID")
+    if not set_id or set_id not in sets:
+        return None
+
+    set_obj = sets[set_id]
+    set_items = [candidate for candidate in items if candidate.get("setID") == set_id]
+    available_levels = sorted({candidate.get("level") for candidate in set_items if candidate.get("level") is not None})
+    return {
+        "setId": str(set_id),
+        "setName": set_obj.get("_name") or set_obj.get("name") or str(set_id),
+        "inRelevantSetIds": set_id in relevant_sets,
+        "setBonusScore": round(set_bonus_score(set_obj), 2),
+        "availableItemCount": len(set_items),
+        "availableLevels": available_levels[:10],
+        "actionBonusThresholds": action_bonus_thresholds(set_obj),
     }
 
 
@@ -523,7 +560,7 @@ def render_markdown(report: dict[str, Any]) -> str:
             if not missing_items
             else "{}: {}".format(
                 len(missing_items),
-                ", ".join(str(item.get("name") or item.get("id")) for item in missing_items[:6]),
+                ", ".join(missing_item_label(item) for item in missing_items[:6]),
             )
         )
         if pool_coverage:
@@ -549,6 +586,19 @@ def render_markdown(report: dict[str, Any]) -> str:
         )
     lines.append("")
     return "\n".join(lines)
+
+
+def missing_item_label(item: dict[str, Any]) -> str:
+    label = str(item.get("name") or item.get("id"))
+    package = item.get("setPackage") or {}
+    thresholds = package.get("actionBonusThresholds") or []
+    if not package or not thresholds:
+        return label
+    first_threshold = thresholds[0]
+    action_stats = "/".join(
+        f"{stat}+{value}" for stat, value in (first_threshold.get("actionStats") or {}).items()
+    )
+    return f"{label} [{package.get('setName')} {first_threshold.get('count')}pc {action_stats}]"
 
 
 def artifact_stem_for_target(entry: dict[str, Any]) -> str:

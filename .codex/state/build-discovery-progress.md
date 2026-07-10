@@ -2877,3 +2877,43 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     bounded package rank would select it
   - only then add a bounded package seed stage that honors budget, exo policy,
     conditions, level, locked items, and avoided items
+
+### 2026-07-10 Action-Package Diagnostic Checkpoint
+
+- Extended `server/scripts/build_discovery_action_stat_diagnostics.py` so
+  default solver pool coverage explains missing witness items that belong to an
+  AP/MP/Range set package.
+- Package coverage now records:
+  - set id/name
+  - whether the set is inside the current relevant-set selection
+  - set bonus score
+  - available item count/levels
+  - action-stat bonus thresholds such as `3pc AP+1`
+- Regenerated corrected cap-4 remaining witness artifacts with
+  `--solver-pool-coverage`:
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k-diagnostics.md`
+  - split artifacts in `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-remaining-witness-2k/`
+- Corrected result remains:
+  - diagnostics: 4
+  - witness searches run: 4
+  - action-stat witnesses found: 2 of 4 searched
+  - not proven infeasible: 2
+- New package explanations:
+  - level 199 Agility tier 2: missing `Bzzegg Supervisor's Fist` from Bzzegg
+    Supervisor Set's 3-piece AP package and `Golden Dragoone` from Hax Or Set's
+    5-piece MP package
+  - level 200 Strength tier 1: missing `Khardboard Moowolf Belt` from
+    Khardboard Set's 2-piece AP/MP/Range package and `Plum and Almond
+    Dragoturkey`, which is not a set item
+- Interpretation:
+  - three of the four missing witness items are set/package recall misses
+  - the mount miss should be handled by a separate bounded pet/mount recall
+    rule, not by action-set package logic
+  - the next implementation slice should consume bounded action packages in
+    solver seeding and then rerun cap-4 before expanding the all-level matrix
+- Verification passed:
+  - `python server\scripts\test_build_discovery_action_stat_diagnostics.py`
+  - `python -m py_compile server\scripts\build_discovery_action_stat_diagnostics.py server\scripts\test_build_discovery_action_stat_diagnostics.py`
+  - copied changed diagnostic scripts into the Docker server container, then ran
+    `python scripts/test_build_discovery_action_stat_diagnostics.py && python -m py_compile scripts/build_discovery_action_stat_diagnostics.py scripts/test_build_discovery_action_stat_diagnostics.py`

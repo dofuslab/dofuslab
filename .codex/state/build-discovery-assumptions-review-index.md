@@ -115,11 +115,13 @@ These need gameplay or product review before calling the feature shippable.
      for level 199 Agility tier 2 and level 200 Strength tier 1.
    - The cap-4 witness diagnostics now include opt-in default solver
      candidate-pool coverage for corrected found witnesses: level 199 misses
-     `Bzzegg Supervisor's Fist` and `Golden Dragoone`; level 200 misses
-     `Khardboard Moowolf Belt` and `Plum and Almond Dragoturkey`.
+     `Bzzegg Supervisor's Fist` from Bzzegg Supervisor Set's 3-piece AP
+     package and `Golden Dragoone` from Hax Or Set's 5-piece MP package; level
+     200 misses `Khardboard Moowolf Belt` from Khardboard Set's 2-piece
+     AP/MP/Range package and `Plum and Almond Dragoturkey`.
    - The next solver-recall direction should be a bounded action-set package
-     diagnostic/stage, not named-item allowlisting or including every
-     AP/MP/Range-bonus set.
+     stage plus a small mount/pet recall check, not named-item allowlisting or
+     including every AP/MP/Range-bonus set.
    - The cap-2 item-stat diagnostic shows level 1 Intelligence and level 20
      Chance are below target under the item-stat-only upper bound.
    - Level 50 Agility, level 80 Strength, and level 99 Intelligence previously

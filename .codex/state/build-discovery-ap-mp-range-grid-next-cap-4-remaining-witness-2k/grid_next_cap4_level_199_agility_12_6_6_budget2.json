@@ -223,7 +223,7 @@
       "solverCandidatePoolCoverage": {
         "topK": 25,
         "relevantSetLimit": 60,
-        "elapsedMs": 40.0,
+        "elapsedMs": 46.5,
         "missingCount": 2,
         "witnessItemCount": 13,
         "missingItems": [
@@ -232,14 +232,67 @@
             "id": "31753",
             "name": "Bzzegg Supervisor's Fist",
             "inSolverPool": false,
-            "poolSize": 29
+            "poolSize": 29,
+            "setPackage": {
+              "setId": "1011",
+              "setName": "Bzzegg Supervisor Set",
+              "inRelevantSetIds": true,
+              "setBonusScore": 182.99,
+              "availableItemCount": 5,
+              "availableLevels": [
+                178,
+                179,
+                180,
+                181,
+                182
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 3,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                },
+                {
+                  "count": 4,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                },
+                {
+                  "count": 5,
+                  "actionStats": {
+                    "AP": 1,
+                    "MP": 1
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "pet",
             "id": "10802",
             "name": "Golden Dragoone",
             "inSolverPool": false,
-            "poolSize": 37
+            "poolSize": 37,
+            "setPackage": {
+              "setId": "151",
+              "setName": "Hax Or Set",
+              "inRelevantSetIds": false,
+              "setBonusScore": 68.0,
+              "availableItemCount": 1,
+              "availableLevels": [
+                20
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 5,
+                  "actionStats": {
+                    "MP": 1
+                  }
+                }
+              ]
+            }
           }
         ],
         "items": [
@@ -248,91 +301,312 @@
             "id": "11720",
             "name": "Celestial Bearbarian Amulet",
             "inSolverPool": true,
-            "poolSize": 23
+            "poolSize": 23,
+            "setPackage": {
+              "setId": "189",
+              "setName": "Celestial Bearbarian Set",
+              "inRelevantSetIds": true,
+              "setBonusScore": 23.51,
+              "availableItemCount": 5,
+              "availableLevels": [
+                195,
+                196,
+                197,
+                198,
+                199
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 3,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                },
+                {
+                  "count": 4,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                },
+                {
+                  "count": 5,
+                  "actionStats": {
+                    "AP": 1,
+                    "Range": 1
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "belt",
             "id": "11850",
             "name": "Potsan Pants",
             "inSolverPool": true,
-            "poolSize": 30
+            "poolSize": 30,
+            "setPackage": null
           },
           {
             "slot": "weapon",
             "id": "31752",
             "name": "Bzzegg Supervisor's Stinger",
             "inSolverPool": true,
-            "poolSize": 33
+            "poolSize": 33,
+            "setPackage": {
+              "setId": "1011",
+              "setName": "Bzzegg Supervisor Set",
+              "inRelevantSetIds": true,
+              "setBonusScore": 182.99,
+              "availableItemCount": 5,
+              "availableLevels": [
+                178,
+                179,
+                180,
+                181,
+                182
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 3,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                },
+                {
+                  "count": 4,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                },
+                {
+                  "count": 5,
+                  "actionStats": {
+                    "AP": 1,
+                    "MP": 1
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "shield",
             "id": "31751",
             "name": "Bzzegg Supervisor's Armour-Plating",
             "inSolverPool": true,
-            "poolSize": 16
+            "poolSize": 16,
+            "setPackage": {
+              "setId": "1011",
+              "setName": "Bzzegg Supervisor Set",
+              "inRelevantSetIds": true,
+              "setBonusScore": 182.99,
+              "availableItemCount": 5,
+              "availableLevels": [
+                178,
+                179,
+                180,
+                181,
+                182
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 3,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                },
+                {
+                  "count": 4,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                },
+                {
+                  "count": 5,
+                  "actionStats": {
+                    "AP": 1,
+                    "MP": 1
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "ring_1",
             "id": "2469",
             "name": "Gelano",
             "inSolverPool": true,
-            "poolSize": 29
+            "poolSize": 29,
+            "setPackage": {
+              "setId": "6",
+              "setName": "Jellix Set",
+              "inRelevantSetIds": false,
+              "setBonusScore": 12.66,
+              "availableItemCount": 1,
+              "availableLevels": [
+                60
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 6,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "ring_2",
             "id": "31753",
             "name": "Bzzegg Supervisor's Fist",
             "inSolverPool": false,
-            "poolSize": 29
+            "poolSize": 29,
+            "setPackage": {
+              "setId": "1011",
+              "setName": "Bzzegg Supervisor Set",
+              "inRelevantSetIds": true,
+              "setBonusScore": 182.99,
+              "availableItemCount": 5,
+              "availableLevels": [
+                178,
+                179,
+                180,
+                181,
+                182
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 3,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                },
+                {
+                  "count": 4,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                },
+                {
+                  "count": 5,
+                  "actionStats": {
+                    "AP": 1,
+                    "MP": 1
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "boots",
             "id": "12110",
             "name": "Professor Xa's Boots",
             "inSolverPool": true,
-            "poolSize": 30
+            "poolSize": 30,
+            "setPackage": {
+              "setId": "211",
+              "setName": "Professor Xa Set",
+              "inRelevantSetIds": true,
+              "setBonusScore": 115.99,
+              "availableItemCount": 3,
+              "availableLevels": [
+                191,
+                193,
+                195
+              ],
+              "actionBonusThresholds": []
+            }
           },
           {
             "slot": "hat",
             "id": "14000",
             "name": "Nekochief",
             "inSolverPool": true,
-            "poolSize": 29
+            "poolSize": 29,
+            "setPackage": null
           },
           {
             "slot": "cloak",
             "id": "12117",
             "name": "Fuji Snowfoux Cloak",
             "inSolverPool": true,
-            "poolSize": 22
+            "poolSize": 22,
+            "setPackage": {
+              "setId": "213",
+              "setName": "Fuji Snowfoux Set",
+              "inRelevantSetIds": true,
+              "setBonusScore": 220.5,
+              "availableItemCount": 4,
+              "availableLevels": [
+                192,
+                193,
+                194,
+                195
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 3,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                },
+                {
+                  "count": 4,
+                  "actionStats": {
+                    "AP": 1
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "pet",
             "id": "10802",
             "name": "Golden Dragoone",
             "inSolverPool": false,
-            "poolSize": 37
+            "poolSize": 37,
+            "setPackage": {
+              "setId": "151",
+              "setName": "Hax Or Set",
+              "inRelevantSetIds": false,
+              "setBonusScore": 68.0,
+              "availableItemCount": 1,
+              "availableLevels": [
+                20
+              ],
+              "actionBonusThresholds": [
+                {
+                  "count": 5,
+                  "actionStats": {
+                    "MP": 1
+                  }
+                }
+              ]
+            }
           },
           {
             "slot": "dofus_1",
             "id": "13830",
             "name": "Voyager",
             "inSolverPool": true,
-            "poolSize": 35
+            "poolSize": 35,
+            "setPackage": null
           },
           {
             "slot": "dofus_2",
             "id": "16336",
             "name": "Observer",
             "inSolverPool": true,
-            "poolSize": 35
+            "poolSize": 35,
+            "setPackage": null
           },
           {
             "slot": "dofus_3",
             "id": "13831",
             "name": "Twitcher",
             "inSolverPool": true,
-            "poolSize": 35
+            "poolSize": 35,
+            "setPackage": null
           }
         ]
       },
