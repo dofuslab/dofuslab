@@ -506,23 +506,25 @@ def existing_split_report_for_target(path: Path, target: LevelDiversityTarget) -
     return report
 
 
-def completed_target_ids_from_split_reports(split_output_dir: str | Path) -> set[str]:
+def completed_target_ids_from_split_reports(
+    targets: Iterable[LevelDiversityTarget],
+    split_output_dir: str | Path,
+) -> set[str]:
     output_dir = Path(split_output_dir)
     if not output_dir.exists():
         return set()
 
     completed: set[str] = set()
-    for path in sorted(output_dir.glob("*.json")):
-        if path.name == "manifest.json":
+    used_stems: set[str] = set()
+    for target in targets:
+        stem = unique_artifact_stem_for_target(target, used_stems)
+        path = output_dir / f"{stem}.json"
+        report = existing_split_report_for_target(path, target)
+        if report is None:
             continue
-        report = load_json(path)
-        results = report.get("results", [])
-        if len(results) != 1:
-            raise ValueError(f"{path} must contain exactly one split result")
-        target_id = split_report_target_id(report)
-        if target_id is None:
-            raise ValueError(f"{path} is missing a result target id")
-        completed.add(target_id)
+        result = report["results"][0]
+        if result.get("status") == "generated":
+            completed.add(target.name)
     return completed
 
 
@@ -530,8 +532,9 @@ def targets_missing_from_split_reports(
     targets: Iterable[LevelDiversityTarget],
     split_output_dir: str | Path,
 ) -> tuple[LevelDiversityTarget, ...]:
-    completed = completed_target_ids_from_split_reports(split_output_dir)
-    return tuple(target for target in targets if target.name not in completed)
+    selected_targets = tuple(targets)
+    completed = completed_target_ids_from_split_reports(selected_targets, split_output_dir)
+    return tuple(target for target in selected_targets if target.name not in completed)
 
 
 def write_split_matrix_reports(

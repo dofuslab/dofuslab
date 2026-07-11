@@ -604,8 +604,54 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
                     resume_existing=True,
                 )
 
-    def test_targets_missing_from_split_reports_filters_completed_targets(self):
+    def test_targets_missing_from_split_reports_filters_valid_generated_targets(self):
         selected = selected_targets(levels={50}, elements={"strength", "intelligence"})
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            target = selected[0]
+            query = query_for_target(target)
+            report = {
+                "reportVersion": REPORT_VERSION,
+                "results": [
+                    {
+                        "target": target_summary(target),
+                        "query": query_summary(query),
+                        "status": "generated",
+                        "resultCount": 1,
+                        "validationErrors": [],
+                        "bestBuild": {
+                            "score": 1,
+                            "totals": {
+                                "AP": query.ap_target,
+                                "MP": query.mp_target,
+                                "Range": query.target.range,
+                                "Strength": 100,
+                                "Intelligence": 100,
+                                "Vitality": 100,
+                            },
+                            "sets": {},
+                            "exos": {},
+                            "conditionFailures": [],
+                            "items": {"amulet": {"name": "Example Amulet", "level": query.level}},
+                        },
+                        "bestBuildSummary": {"score": 1},
+                    }
+                ],
+            }
+            (output_dir / f"{target.name}.json").write_text(json.dumps(report), encoding="utf-8")
+            stale_manifest = {
+                "splitReportCount": 0,
+                "reports": [],
+            }
+            (output_dir / "manifest.json").write_text(json.dumps(stale_manifest), encoding="utf-8")
+
+            missing = targets_missing_from_split_reports(selected, output_dir)
+
+        self.assertEqual([target.name for target in missing], [selected[1].name])
+
+    def test_targets_missing_from_split_reports_retries_no_build_targets(self):
+        selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})
 
         with tempfile.TemporaryDirectory() as temp_dir:
             output_dir = Path(temp_dir)
@@ -626,20 +672,15 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
                 ],
             }
             (output_dir / f"{target.name}.json").write_text(json.dumps(report), encoding="utf-8")
-            stale_manifest = {
-                "splitReportCount": 0,
-                "reports": [],
-            }
-            (output_dir / "manifest.json").write_text(json.dumps(stale_manifest), encoding="utf-8")
 
             missing = targets_missing_from_split_reports(selected, output_dir)
 
-        self.assertEqual([target.name for target in missing], [selected[1].name])
+        self.assertEqual([target.name for target in missing], [target.name])
 
     def test_completed_target_ids_from_split_reports_missing_dir_is_empty(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             missing_dir = Path(temp_dir) / "missing"
-            self.assertEqual(completed_target_ids_from_split_reports(missing_dir), set())
+            self.assertEqual(completed_target_ids_from_split_reports([], missing_dir), set())
 
     def test_unique_artifact_stem_for_target_preserves_collision_order(self):
         first = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]
