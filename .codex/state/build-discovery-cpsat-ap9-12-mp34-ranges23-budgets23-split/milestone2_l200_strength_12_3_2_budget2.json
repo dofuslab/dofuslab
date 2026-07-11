@@ -1,0 +1,723 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T09:56:45.121082+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_12_3_2_budget2",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 3,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 3,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2448.63,
+        "weightedStatScore": 4139.27,
+        "utilityStatScore": 357.56,
+        "genericDamageScore": 4448.17,
+        "rawRotationDamageScore": 4075.43,
+        "spellDamageScore": 4075.43,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.4827,
+        "weaponDamageScore": 164.15,
+        "survivabilityScore": 89.39,
+        "weakestElementEhp": 2860.18,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 3,
+          "Range": 3,
+          "Strength": 1458,
+          "Power": 110,
+          "Vitality": 2903,
+          "Damage": 0,
+          "Earth Damage": 157,
+          "Critical": 69,
+          "Critical Damage": 24,
+          "Neutral Damage": 90
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 3,
+          "Turtelonia Set": 3,
+          "Depths Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "17997",
+            "internalId": null,
+            "name": "Crabtun Necklace",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "belt": {
+            "id": "13114",
+            "internalId": null,
+            "name": "Broucey Belt",
+            "type": "Belt",
+            "level": 194,
+            "set": "Brouce Boulgoure Set"
+          },
+          "weapon": {
+            "id": "21229",
+            "internalId": null,
+            "name": "Turtelonia Wand",
+            "type": "Wand",
+            "level": 200,
+            "set": "Turtelonia Set"
+          },
+          "shield": {
+            "id": "18693",
+            "internalId": null,
+            "name": "Broucey Bark",
+            "type": "Shield",
+            "level": 196,
+            "set": "Brouce Boulgoure Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "21235",
+            "internalId": null,
+            "name": "Turtelonia Horn",
+            "type": "Hat",
+            "level": 200,
+            "set": "Turtelonia Set"
+          },
+          "cloak": {
+            "id": "21230",
+            "internalId": null,
+            "name": "Turtelonia Carapace",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Turtelonia Set"
+          },
+          "pet": {
+            "id": "29430",
+            "internalId": null,
+            "name": "Mamukil Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13829",
+            "internalId": null,
+            "name": "Jackanapes",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "ring_1": {
+            "id": "13115",
+            "internalId": null,
+            "name": "Broucey Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_2": {
+            "id": "17998",
+            "internalId": null,
+            "name": "Crustic Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Depths Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2448.63,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 3,
+          "Range": 3,
+          "Strength": 1458,
+          "Power": 110,
+          "Vitality": 2903,
+          "Damage": 0,
+          "Earth Damage": 157,
+          "Critical": 69,
+          "Critical Damage": 24,
+          "Neutral Damage": 90
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 3,
+          "Turtelonia Set": 3,
+          "Depths Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Crabtun Necklace",
+          "Broucey Belt",
+          "Turtelonia Wand",
+          "Broucey Bark",
+          "Broucey Ring",
+          "Crustic Ring",
+          "Meriana's Clairvoyance",
+          "Turtelonia Horn",
+          "Turtelonia Carapace",
+          "Mamukil Kolophant",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Jackanapes",
+          "Major Earth Wrecker",
+          "Major Goliath"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2448.63,
+          "weightedStatScore": 4139.27,
+          "utilityStatScore": 357.56,
+          "genericDamageScore": 4448.17,
+          "rawRotationDamageScore": 4075.43,
+          "spellDamageScore": 4075.43,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.4827,
+          "weaponDamageScore": 164.15,
+          "survivabilityScore": 89.39,
+          "weakestElementEhp": 2860.18,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 3,
+            "Range": 3,
+            "Strength": 1458,
+            "Power": 110,
+            "Vitality": 2903,
+            "Damage": 0,
+            "Earth Damage": 157,
+            "Critical": 69,
+            "Critical Damage": 24,
+            "Neutral Damage": 90
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 3,
+            "Turtelonia Set": 3,
+            "Depths Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "17997",
+              "internalId": null,
+              "name": "Crabtun Necklace",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Depths Set"
+            },
+            "belt": {
+              "id": "13114",
+              "internalId": null,
+              "name": "Broucey Belt",
+              "type": "Belt",
+              "level": 194,
+              "set": "Brouce Boulgoure Set"
+            },
+            "weapon": {
+              "id": "21229",
+              "internalId": null,
+              "name": "Turtelonia Wand",
+              "type": "Wand",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "shield": {
+              "id": "18693",
+              "internalId": null,
+              "name": "Broucey Bark",
+              "type": "Shield",
+              "level": 196,
+              "set": "Brouce Boulgoure Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "21235",
+              "internalId": null,
+              "name": "Turtelonia Horn",
+              "type": "Hat",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "cloak": {
+              "id": "21230",
+              "internalId": null,
+              "name": "Turtelonia Carapace",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "pet": {
+              "id": "29430",
+              "internalId": null,
+              "name": "Mamukil Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13829",
+              "internalId": null,
+              "name": "Jackanapes",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13774",
+              "internalId": null,
+              "name": "Major Earth Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "ring_1": {
+              "id": "13115",
+              "internalId": null,
+              "name": "Broucey Ring",
+              "type": "Ring",
+              "level": 198,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_2": {
+              "id": "17998",
+              "internalId": null,
+              "name": "Crustic Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Depths Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2448.63,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 3,
+            "Range": 3,
+            "Strength": 1458,
+            "Power": 110,
+            "Vitality": 2903,
+            "Damage": 0,
+            "Earth Damage": 157,
+            "Critical": 69,
+            "Critical Damage": 24,
+            "Neutral Damage": 90
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 3,
+            "Turtelonia Set": 3,
+            "Depths Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Crabtun Necklace",
+            "Broucey Belt",
+            "Turtelonia Wand",
+            "Broucey Bark",
+            "Broucey Ring",
+            "Crustic Ring",
+            "Meriana's Clairvoyance",
+            "Turtelonia Horn",
+            "Turtelonia Carapace",
+            "Mamukil Kolophant",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Jackanapes",
+            "Major Earth Wrecker",
+            "Major Goliath"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6078.1,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 179.6,
+          "totalSearchMs": 5898.5
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 1481.6,
+            "solveMs": 4286.3,
+            "objective": 2039.08,
+            "solutionCallbackCount": 10,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2080.9,
+                "objective": 606.46,
+                "score": 1266.21,
+                "itemIds": [
+                  "2469",
+                  "11606",
+                  "11607",
+                  "12628",
+                  "12629",
+                  "12723",
+                  "13768",
+                  "13829",
+                  "13830",
+                  "14848",
+                  "19165",
+                  "27266",
+                  "32121",
+                  "32231",
+                  "32232",
+                  "32233"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2301.0,
+                "objective": 1111.86,
+                "score": 1569.07,
+                "itemIds": [
+                  "737",
+                  "11600",
+                  "11631",
+                  "12727",
+                  "13829",
+                  "13831",
+                  "18700",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "27512",
+                  "27514",
+                  "27515",
+                  "30453",
+                  "30455",
+                  "33155"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2451.2,
+                "objective": 1325.48,
+                "score": 1917.59,
+                "itemIds": [
+                  "12722",
+                  "12723",
+                  "12724",
+                  "13344",
+                  "13757",
+                  "13758",
+                  "15693",
+                  "15695",
+                  "15697",
+                  "15700",
+                  "25217",
+                  "25218",
+                  "25219",
+                  "27515",
+                  "27537",
+                  "33202"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2611.8,
+                "objective": 1357.33,
+                "score": 1954.18,
+                "itemIds": [
+                  "12722",
+                  "12723",
+                  "12724",
+                  "13344",
+                  "13757",
+                  "13759",
+                  "15693",
+                  "15695",
+                  "15697",
+                  "15700",
+                  "25217",
+                  "25218",
+                  "25219",
+                  "27515",
+                  "27537",
+                  "33202"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2777.8,
+                "objective": 1409.73,
+                "score": 1926.13,
+                "itemIds": [
+                  "12104",
+                  "12105",
+                  "12107",
+                  "12722",
+                  "12723",
+                  "12724",
+                  "13344",
+                  "13757",
+                  "13758",
+                  "14000",
+                  "15746",
+                  "15747",
+                  "32234",
+                  "32235",
+                  "32236",
+                  "33025"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 199,
+                "shield": 59,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 266,
+                "ring": 134
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1653,
+              "uniqueItemCount": 1653,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 216,
+              "conditionConstraintCount": 285,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1653,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

@@ -1,0 +1,727 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T09:56:45.121082+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_9_4_3_budget2",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 2,
+        "apTarget": 9,
+        "mpTarget": 4,
+        "rangeTarget": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 9,
+        "mpTarget": 4,
+        "rangeTarget": 3,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2505.93,
+        "weightedStatScore": 4424.69,
+        "utilityStatScore": 335.98,
+        "genericDamageScore": 4646.87,
+        "rawRotationDamageScore": 4257.48,
+        "spellDamageScore": 4257.48,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.549,
+        "weaponDamageScore": 190.48,
+        "survivabilityScore": 78.86,
+        "weakestElementEhp": 2324.11,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 9,
+          "MP": 4,
+          "Range": 3,
+          "Strength": 1488,
+          "Power": 110,
+          "Vitality": 2603,
+          "Damage": 0,
+          "Earth Damage": 147,
+          "Critical": 76,
+          "Critical Damage": 112,
+          "Neutral Damage": 92
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Gein Set": 2,
+          "Turtelonia Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "15433",
+            "internalId": null,
+            "name": "Gein's Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "21229",
+            "internalId": null,
+            "name": "Turtelonia Wand",
+            "type": "Wand",
+            "level": 200,
+            "set": "Turtelonia Set"
+          },
+          "shield": {
+            "id": "18693",
+            "internalId": null,
+            "name": "Broucey Bark",
+            "type": "Shield",
+            "level": 196,
+            "set": "Brouce Boulgoure Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "15431",
+            "internalId": null,
+            "name": "Gein's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "cloak": {
+            "id": "21230",
+            "internalId": null,
+            "name": "Turtelonia Carapace",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Turtelonia Set"
+          },
+          "pet": {
+            "id": "29430",
+            "internalId": null,
+            "name": "Mamukil Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "ring_1": {
+            "id": "13115",
+            "internalId": null,
+            "name": "Broucey Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_2": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2505.93,
+        "apStrategy": null,
+        "totals": {
+          "AP": 9,
+          "MP": 4,
+          "Range": 3,
+          "Strength": 1488,
+          "Power": 110,
+          "Vitality": 2603,
+          "Damage": 0,
+          "Earth Damage": 147,
+          "Critical": 76,
+          "Critical Damage": 112,
+          "Neutral Damage": 92
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Gein Set": 2,
+          "Turtelonia Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Gein's Amulet",
+          "Corruption's Brambelt",
+          "Turtelonia Wand",
+          "Broucey Bark",
+          "Broucey Ring",
+          "Corruption's Ring",
+          "Meriana's Clairvoyance",
+          "Gein's Hat",
+          "Turtelonia Carapace",
+          "Mamukil Kolophant",
+          "Dolmanax",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Earth Wrecker",
+          "Major Goliath"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2505.93,
+          "weightedStatScore": 4424.69,
+          "utilityStatScore": 335.98,
+          "genericDamageScore": 4646.87,
+          "rawRotationDamageScore": 4257.48,
+          "spellDamageScore": 4257.48,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.549,
+          "weaponDamageScore": 190.48,
+          "survivabilityScore": 78.86,
+          "weakestElementEhp": 2324.11,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 4,
+            "Range": 3,
+            "Strength": 1488,
+            "Power": 110,
+            "Vitality": 2603,
+            "Damage": 0,
+            "Earth Damage": 147,
+            "Critical": 76,
+            "Critical Damage": 112,
+            "Neutral Damage": 92
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Gein Set": 2,
+            "Turtelonia Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "15433",
+              "internalId": null,
+              "name": "Gein's Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "belt": {
+              "id": "22209",
+              "internalId": null,
+              "name": "Corruption's Brambelt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "weapon": {
+              "id": "21229",
+              "internalId": null,
+              "name": "Turtelonia Wand",
+              "type": "Wand",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "shield": {
+              "id": "18693",
+              "internalId": null,
+              "name": "Broucey Bark",
+              "type": "Shield",
+              "level": 196,
+              "set": "Brouce Boulgoure Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "15431",
+              "internalId": null,
+              "name": "Gein's Hat",
+              "type": "Hat",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "cloak": {
+              "id": "21230",
+              "internalId": null,
+              "name": "Turtelonia Carapace",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "pet": {
+              "id": "29430",
+              "internalId": null,
+              "name": "Mamukil Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13774",
+              "internalId": null,
+              "name": "Major Earth Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "ring_1": {
+              "id": "13115",
+              "internalId": null,
+              "name": "Broucey Ring",
+              "type": "Ring",
+              "level": 198,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_2": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2505.93,
+          "apStrategy": null,
+          "totals": {
+            "AP": 9,
+            "MP": 4,
+            "Range": 3,
+            "Strength": 1488,
+            "Power": 110,
+            "Vitality": 2603,
+            "Damage": 0,
+            "Earth Damage": 147,
+            "Critical": 76,
+            "Critical Damage": 112,
+            "Neutral Damage": 92
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Gein Set": 2,
+            "Turtelonia Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Gein's Amulet",
+            "Corruption's Brambelt",
+            "Turtelonia Wand",
+            "Broucey Bark",
+            "Broucey Ring",
+            "Corruption's Ring",
+            "Meriana's Clairvoyance",
+            "Gein's Hat",
+            "Turtelonia Carapace",
+            "Mamukil Kolophant",
+            "Dolmanax",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Earth Wrecker",
+            "Major Goliath"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6137.5,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 180.7,
+          "totalSearchMs": 5956.8
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 1605.4,
+            "solveMs": 4238.3,
+            "objective": 2175.48,
+            "solutionCallbackCount": 13,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2144.1,
+                "objective": 642.09,
+                "score": 1092.08,
+                "itemIds": [
+                  "2469",
+                  "8714",
+                  "11607",
+                  "12117",
+                  "12628",
+                  "12629",
+                  "12630",
+                  "13768",
+                  "13831",
+                  "15254",
+                  "16336",
+                  "19260",
+                  "27266",
+                  "27541",
+                  "27543",
+                  "32121"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2366.2,
+                "objective": 1019.29,
+                "score": 1497.44,
+                "itemIds": [
+                  "737",
+                  "8843",
+                  "9139",
+                  "13774",
+                  "13829",
+                  "13831",
+                  "15696",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "27549",
+                  "30453",
+                  "30455",
+                  "30949",
+                  "32224",
+                  "33047"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2495.5,
+                "objective": 1646.37,
+                "score": 2086.23,
+                "itemIds": [
+                  "13197",
+                  "13344",
+                  "13774",
+                  "14092",
+                  "15440",
+                  "15442",
+                  "16333",
+                  "16336",
+                  "17997",
+                  "18006",
+                  "18718",
+                  "30453",
+                  "30455",
+                  "32117",
+                  "32121",
+                  "33050"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2626.9,
+                "objective": 1744.33,
+                "score": 2175.32,
+                "itemIds": [
+                  "694",
+                  "7043",
+                  "13197",
+                  "13344",
+                  "13774",
+                  "14092",
+                  "15440",
+                  "15442",
+                  "17997",
+                  "18006",
+                  "18718",
+                  "30453",
+                  "30455",
+                  "32117",
+                  "32121",
+                  "33050"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2759.1,
+                "objective": 1779.68,
+                "score": 2163.46,
+                "itemIds": [
+                  "694",
+                  "7043",
+                  "13197",
+                  "13344",
+                  "13774",
+                  "14092",
+                  "15440",
+                  "15442",
+                  "17997",
+                  "18006",
+                  "18718",
+                  "30453",
+                  "30455",
+                  "31787",
+                  "32121",
+                  "33050"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 266,
+                "ring": 134
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1654,
+              "uniqueItemCount": 1654,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 217,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1654,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

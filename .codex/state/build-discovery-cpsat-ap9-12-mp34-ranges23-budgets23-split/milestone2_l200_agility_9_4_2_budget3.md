@@ -1,0 +1,15 @@
+# Build Discovery Iop Milestone2 Level200 Matrix
+
+Generated at: `2026-07-11T09:56:45.121082+00:00`
+
+This is a generated-output snapshot for the sampled target set. It records the current best solver result for review; it is not yet a human-accepted benchmark list.
+
+
+Targets: `1`
+Generated: `1`
+No build: `0`
+Invalid: `0`
+
+| Target | Status | Candidates | Score | Miss ms | AP/MP/Range | Main stat | Vitality | Validation | Sets | Items |
+|---|---:|---:|---:|---:|---|---:|---:|---|---|---|
+| L200 agility 9/4/2 tier 3 | generated | 1 (1 unique) | 2601.24 | 6995.4 | 9/5/5 | 1303 | 3153 |  | Allister Set x2, Treadfast Set x2, Abyss Set x2 | Treadfast Amulet, Treadfast Belt, Gargandyas's Fury, Cycloid Shield, Allister's Ring, Nomarow's Ring, Tritun Palms, Allister's Crown, Indescribable Cape, Tarkaj Kolophant, Cloudy Dofus, Crimson Dofus, Ice Dofus, Arcanist, Impetuous, Major Gymnast |
