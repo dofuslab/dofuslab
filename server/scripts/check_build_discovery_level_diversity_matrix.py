@@ -29,6 +29,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     characteristic_point_cost,
     characteristic_points_for_level,
     effective_exo_policy,
+    optional_slot_choice,
 )
 
 
@@ -98,7 +99,11 @@ def validate_single_build_artifact(
         items = {}
     expected_slots = set(slot_types)
     actual_slots = set(items)
-    missing_slots = sorted(expected_slots - actual_slots)
+    missing_slots = sorted(
+        slot_name
+        for slot_name in expected_slots - actual_slots
+        if slot_name != "pet" and not optional_slot_choice(slot_name, target.level)
+    )
     extra_slots = sorted(actual_slots - expected_slots)
     if missing_slots:
         failures.append(f"{target_id}: {label} missing item slots: {', '.join(missing_slots)}")

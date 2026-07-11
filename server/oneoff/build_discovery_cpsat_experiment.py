@@ -49,12 +49,14 @@ from oneoff.build_discovery_prototype import (
     normalize_stats,
     negative_resistance_penalty,
     optimize_base_allocation,
+    optional_slot_choice,
     parse_optional_range_target,
     profile_damage_reference_stats,
     query_summary,
     serialize_build,
     set_bonus_stats,
     survivability_score,
+    target_level_context,
 )
 
 
@@ -297,9 +299,14 @@ def build_model(
             item_presence_terms[item_id].append(var)
             slot_vars.append(var)
         if slot_name == DOFUS_GROUP_SLOT:
-            model.Add(sum(slot_vars) == DOFUS_GROUP_SIZE)
+            model.Add(sum(slot_vars) == min(DOFUS_GROUP_SIZE, len(slot_vars)))
         elif slot_name == RING_GROUP_SLOT:
-            model.Add(sum(slot_vars) == RING_GROUP_SIZE)
+            if optional_slot_choice("ring_1", target.level):
+                model.Add(sum(slot_vars) <= RING_GROUP_SIZE)
+            else:
+                model.Add(sum(slot_vars) == RING_GROUP_SIZE)
+        elif slot_name == "pet" or optional_slot_choice(slot_name, target.level):
+            model.Add(sum(slot_vars) <= 1)
         else:
             model.Add(sum(slot_vars) == 1)
 
@@ -763,6 +770,8 @@ def reconstruct_state(
             for (var_slot, item_id), var in slot_item_vars.items()
             if var_slot == slot_name and solver.BooleanValue(var)
         ]
+        if not selected and (slot_name == "pet" or optional_slot_choice(slot_name, target.level)):
+            continue
         if len(selected) != 1:
             return None, {"reason": "slot_selection_count", "slot": slot_name, "selected": selected}
         selected_by_slot[slot_name] = item_by_id[selected[0]]
@@ -772,7 +781,7 @@ def reconstruct_state(
         for (var_slot, item_id), var in slot_item_vars.items()
         if var_slot == DOFUS_GROUP_SLOT and solver.BooleanValue(var)
     ]
-    if len(selected_dofus_ids) != DOFUS_GROUP_SIZE:
+    if len(selected_dofus_ids) > DOFUS_GROUP_SIZE:
         return None, {
             "reason": "slot_selection_count",
             "slot": DOFUS_GROUP_SLOT,
@@ -795,7 +804,13 @@ def reconstruct_state(
             for (var_slot, item_id), var in slot_item_vars.items()
             if var_slot == RING_GROUP_SLOT and solver.BooleanValue(var)
         ]
-        if len(selected_ring_ids) != RING_GROUP_SIZE:
+        if len(selected_ring_ids) > RING_GROUP_SIZE:
+            return None, {
+                "reason": "slot_selection_count",
+                "slot": RING_GROUP_SLOT,
+                "selected": selected_ring_ids,
+            }
+        if len(selected_ring_ids) < RING_GROUP_SIZE and not optional_slot_choice("ring_1", target.level):
             return None, {
                 "reason": "slot_selection_count",
                 "slot": RING_GROUP_SLOT,
@@ -880,6 +895,11 @@ def reconstruct_state(
 
 def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[str, Any]:
     query.validate()
+    with target_level_context(query.level):
+        return solve_query_for_active_level(query, args)
+
+
+def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[str, Any]:
     configure_damage_profile(query.primary_element)
     generic_damage_weight = effective_generic_damage_weight(query)
     survivability_weight = effective_survivability_weight(query)

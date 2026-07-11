@@ -40,7 +40,7 @@ try:
         build_model,
         reconstruct_state,
     )
-    from oneoff.build_discovery_prototype import BuildState, BuildTarget, configure_damage_profile
+    from oneoff.build_discovery_prototype import BuildState, BuildTarget, configure_damage_profile, target_level_context
 except Exception as exc:  # pragma: no cover - exercised only in incomplete envs.
     cp_model = None
     CandidateCollectionCallback = None
@@ -51,6 +51,7 @@ except Exception as exc:  # pragma: no cover - exercised only in incomplete envs
     BuildState = None
     BuildTarget = None
     configure_damage_profile = None
+    target_level_context = None
     IMPORT_ERROR = exc
 else:
     IMPORT_ERROR = None
@@ -109,14 +110,15 @@ def singleton_fixture_sets() -> dict:
 
 
 def base_fixture_items(*, dofus_items: list[dict] | None = None) -> list[dict]:
-    dofus_items = dofus_items or [
-        item("dofus_a", "Dofus", set_id="dofus_set"),
-        item("dofus_b", "Trophy", set_id="dofus_set"),
-        item("dofus_c", "Dofus"),
-        item("dofus_d", "Trophy"),
-        item("dofus_e", "Dofus"),
-        item("dofus_f", "Trophy"),
-    ]
+    if dofus_items is None:
+        dofus_items = [
+            item("dofus_a", "Dofus", set_id="dofus_set"),
+            item("dofus_b", "Trophy", set_id="dofus_set"),
+            item("dofus_c", "Dofus"),
+            item("dofus_d", "Trophy"),
+            item("dofus_e", "Dofus"),
+            item("dofus_f", "Trophy"),
+        ]
     return [
         item("amulet", "Amulet"),
         item("belt", "Belt"),
@@ -132,34 +134,40 @@ def base_fixture_items(*, dofus_items: list[dict] | None = None) -> list[dict]:
     ]
 
 
-def solve_fixture(items: list[dict], *, sets: dict | None = None):
+def solve_fixture(items: list[dict], *, sets: dict | None = None, target: BuildTarget | None = None):
     if IMPORT_ERROR is not None:
         raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
     configure_damage_profile("strength")
-    model, slot_item_vars, exo_vars, model_stats = build_model(
-        items,
-        sets or fixture_sets(),
-        BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
-        forbidden_signatures=[],
-        max_shared_item_cuts=[],
-        max_shared_items=None,
-        objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
-        exo_policy="none",
-    )
+    target = target or BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False)
+    with target_level_context(target.level):
+        model, slot_item_vars, exo_vars, model_stats = build_model(
+            items,
+            sets or fixture_sets(),
+            target,
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
+            exo_policy="none",
+        )
     solver = cp_model.CpSolver()
     solver.parameters.max_time_in_seconds = 2
     solver.parameters.num_search_workers = 1
     status = solver.Solve(model)
     if status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
         return status, None, model_stats
-    state, invalid = reconstruct_state(
-        solver,
-        slot_item_vars,
-        exo_vars,
-        items,
-        sets or fixture_sets(),
-        BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
-    )
+    with target_level_context(target.level):
+        state, invalid = reconstruct_state(
+            solver,
+            slot_item_vars,
+            exo_vars,
+            items,
+            sets or fixture_sets(),
+            target,
+            0.45,
+            1.0,
+            0.0,
+        )
     if invalid:
         raise AssertionError(invalid)
     return status, state, model_stats
@@ -450,6 +458,9 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
             sets=sets,
             target=target,
             candidate_limit=3,
+            generic_damage_weight=0.45,
+            survivability_weight=1.0,
+            negative_resistance_penalty_weight=0.0,
         )
         solver = cp_model.CpSolver()
         solver.parameters.max_time_in_seconds = 2
@@ -487,6 +498,9 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
             sets=sets,
             target=target,
             candidate_limit=1,
+            generic_damage_weight=0.45,
+            survivability_weight=1.0,
+            negative_resistance_penalty_weight=0.0,
             stop_after_candidates=True,
         )
         solver = cp_model.CpSolver()
@@ -535,6 +549,9 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
             sets=sets,
             target=target,
             candidate_limit=3,
+            generic_damage_weight=0.45,
+            survivability_weight=1.0,
+            negative_resistance_penalty_weight=0.0,
         )
         solver = cp_model.CpSolver()
         solver.parameters.max_time_in_seconds = 2
@@ -555,7 +572,7 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
 
         self.assertIn('DOFUS_GROUP_SLOT = "dofus"', source)
         self.assertIn("DOFUS_GROUP_SIZE = 6", source)
-        self.assertIn("model.Add(sum(slot_vars) == DOFUS_GROUP_SIZE)", source)
+        self.assertIn("model.Add(sum(slot_vars) == min(DOFUS_GROUP_SIZE, len(slot_vars)))", source)
         self.assertIn('selected_by_slot[f"dofus_{index}"]', source)
 
     def test_server_requirements_include_ortools_pin(self):
@@ -580,6 +597,24 @@ class BuildDiscoveryCpsatSemanticFixtureTest(unittest.TestCase):
         self.assertEqual(state.set_counts.get("dofus_set"), 2)
         self.assertGreaterEqual(state.stats.get("Strength", 0), 200)
         self.assertEqual(model_stats["slotCandidateCounts"]["dofus"], 6)
+
+    def test_low_level_model_allows_empty_pet_and_dofus_slots(self):
+        items = [
+            fixture_item
+            for fixture_item in base_fixture_items(dofus_items=[])
+            if fixture_item["itemType"] != "Pet"
+        ]
+        target = BuildTarget(ap=6, mp=3, range=0, level=1, range_required=False, min_ap=6)
+
+        status, state, model_stats = solve_fixture(items, target=target)
+
+        self.assertIn(status, (cp_model.OPTIMAL, cp_model.FEASIBLE))
+        self.assertIsNotNone(state)
+        self.assertEqual(model_stats["slotCandidateCounts"]["dofus"], 0)
+        self.assertNotIn("pet", state.slots)
+        self.assertEqual([slot for slot in state.slots if slot.startswith("dofus_")], [])
+        self.assertGreaterEqual(state.stats.get("AP", 0), 6)
+        self.assertGreaterEqual(state.stats.get("MP", 0), 3)
 
     def test_prysmaradite_limit_allows_at_most_one(self):
         dofus_items = [

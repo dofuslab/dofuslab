@@ -14,6 +14,7 @@ from build_discovery_level_diversity_matrix import (
     targets_for_set,
 )
 from oneoff.build_discovery_prototype import (
+    SLOTS,
     characteristic_point_cost,
     characteristic_points_for_level,
     legal_base_allocation_options,
@@ -30,6 +31,19 @@ def valid_result(target):
     }[target.element]
     base_points = legal_base_allocation_options(target.level)[-1]
     vitality_points = characteristic_points_for_level(target.level) - characteristic_point_cost(base_points)
+    items = {}
+    for slot_name, slot_types in SLOTS:
+        if slot_name == "pet" and target.budget_tier < 2:
+            continue
+        if slot_name.startswith("dofus_") and target.budget_tier < 3:
+            continue
+        items[slot_name] = {
+            "id": f"item-{target.name}-{slot_name}",
+            "name": f"Example {slot_name}",
+            "type": slot_types[0],
+            "level": target.level,
+            "stats": [],
+        }
     best_build = {
         "score": 100.0,
         "totals": {"AP": target.ap, "MP": target.mp, "Range": target.range_target or 0, "Vitality": 1000},
@@ -37,15 +51,7 @@ def valid_result(target):
         "exos": {},
         "conditionFailures": [],
         "baseAllocation": {primary_stat: base_points, "Vitality": vitality_points},
-        "items": {
-            "amulet": {
-                "id": f"item-{target.name}",
-                "name": "Example Amulet",
-                "type": "Amulet",
-                "level": target.level,
-                "stats": [],
-            }
-        },
+        "items": items,
     }
     return {
         "target": target_summary(target),
@@ -87,6 +93,32 @@ class BuildDiscoveryLevelDiversityMatrixCheckTest(unittest.TestCase):
             "noBuildCount": 0,
             "invalidCount": 0,
             "results": [valid_result(target)],
+        }
+
+        self.assertEqual(
+            validate_report(
+                report,
+                target_set="prod-level-sample",
+                target_names={target.name},
+            ),
+            [],
+        )
+
+    def test_validate_report_accepts_missing_optional_low_level_slots(self):
+        target = targets_for_set("prod-level-sample")[0]
+        result = valid_result(target)
+        result["bestBuild"]["items"] = {
+            slot_name: item
+            for slot_name, item in result["bestBuild"]["items"].items()
+            if slot_name in {"amulet", "belt", "weapon"}
+        }
+        report = {
+            "reportVersion": REPORT_VERSION,
+            "targetCount": 1,
+            "generatedCount": 1,
+            "noBuildCount": 0,
+            "invalidCount": 0,
+            "results": [result],
         }
 
         self.assertEqual(

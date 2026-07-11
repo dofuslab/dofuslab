@@ -1,0 +1,3535 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T14:49:29.308027+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 5,
+  "generatedCount": 5,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_1_strength_6_3_none_budget1",
+        "className": "Iop",
+        "level": 1,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 1,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 280.1,
+        "weightedStatScore": 307.23,
+        "utilityStatScore": 118.8,
+        "genericDamageScore": 349.61,
+        "rawRotationDamageScore": 78.55,
+        "spellDamageScore": 78.55,
+        "profileBaselineDamageScore": 674.0,
+        "profileRelativeDamage": 0.1165,
+        "weaponDamageScore": 3.39,
+        "survivabilityScore": 3.97,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 132.38,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 0,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 135,
+          "Power": 4,
+          "Vitality": 132,
+          "Damage": 0,
+          "Earth Damage": 2,
+          "Critical": 0,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 5
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "766",
+            "internalId": null,
+            "name": "Koliet Aclou",
+            "type": "Amulet",
+            "level": 1,
+            "set": null
+          },
+          "belt": {
+            "id": "8536",
+            "internalId": null,
+            "name": "Muffin Belt",
+            "type": "Belt",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "weapon": {
+            "id": "9961",
+            "internalId": null,
+            "name": "Hurrian Hammer",
+            "type": "Hammer",
+            "level": 1,
+            "set": null
+          },
+          "shield": {
+            "id": "30701",
+            "internalId": null,
+            "name": "Halt Efkat",
+            "type": "Shield",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "boots": {
+            "id": "861",
+            "internalId": null,
+            "name": "Strength Boots",
+            "type": "Boots",
+            "level": 1,
+            "set": null
+          },
+          "hat": {
+            "id": "8533",
+            "internalId": null,
+            "name": "Flud",
+            "type": "Hat",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "cloak": {
+            "id": "8534",
+            "internalId": null,
+            "name": "S'loque Cape",
+            "type": "Cloak",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "ring_1": {
+            "id": "19622",
+            "internalId": null,
+            "name": "Courageous Ring",
+            "type": "Ring",
+            "level": 1,
+            "set": null
+          },
+          "ring_2": {
+            "id": "8537",
+            "internalId": null,
+            "name": "Pluswan",
+            "type": "Ring",
+            "level": 1,
+            "set": "Boon Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 280.1,
+        "apStrategy": null,
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 135,
+          "Power": 4,
+          "Vitality": 132,
+          "Damage": 0,
+          "Earth Damage": 2,
+          "Critical": 0,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 5
+        },
+        "exos": {},
+        "items": [
+          "Koliet Aclou",
+          "Muffin Belt",
+          "Hurrian Hammer",
+          "Halt Efkat",
+          "Courageous Ring",
+          "Pluswan",
+          "Strength Boots",
+          "Flud",
+          "S'loque Cape"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 280.1,
+          "weightedStatScore": 307.23,
+          "utilityStatScore": 118.8,
+          "genericDamageScore": 349.61,
+          "rawRotationDamageScore": 78.55,
+          "spellDamageScore": 78.55,
+          "profileBaselineDamageScore": 674.0,
+          "profileRelativeDamage": 0.1165,
+          "weaponDamageScore": 3.39,
+          "survivabilityScore": 3.97,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 132.38,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 0,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 135,
+            "Power": 4,
+            "Vitality": 132,
+            "Damage": 0,
+            "Earth Damage": 2,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 5
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "766",
+              "internalId": null,
+              "name": "Koliet Aclou",
+              "type": "Amulet",
+              "level": 1,
+              "set": null
+            },
+            "belt": {
+              "id": "8536",
+              "internalId": null,
+              "name": "Muffin Belt",
+              "type": "Belt",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "weapon": {
+              "id": "9961",
+              "internalId": null,
+              "name": "Hurrian Hammer",
+              "type": "Hammer",
+              "level": 1,
+              "set": null
+            },
+            "shield": {
+              "id": "30701",
+              "internalId": null,
+              "name": "Halt Efkat",
+              "type": "Shield",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "boots": {
+              "id": "861",
+              "internalId": null,
+              "name": "Strength Boots",
+              "type": "Boots",
+              "level": 1,
+              "set": null
+            },
+            "hat": {
+              "id": "8533",
+              "internalId": null,
+              "name": "Flud",
+              "type": "Hat",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "cloak": {
+              "id": "8534",
+              "internalId": null,
+              "name": "S'loque Cape",
+              "type": "Cloak",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "ring_1": {
+              "id": "19622",
+              "internalId": null,
+              "name": "Courageous Ring",
+              "type": "Ring",
+              "level": 1,
+              "set": null
+            },
+            "ring_2": {
+              "id": "8537",
+              "internalId": null,
+              "name": "Pluswan",
+              "type": "Ring",
+              "level": 1,
+              "set": "Boon Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 280.1,
+          "apStrategy": null,
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 135,
+            "Power": 4,
+            "Vitality": 132,
+            "Damage": 0,
+            "Earth Damage": 2,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 5
+          },
+          "exos": {},
+          "items": [
+            "Koliet Aclou",
+            "Muffin Belt",
+            "Hurrian Hammer",
+            "Halt Efkat",
+            "Courageous Ring",
+            "Pluswan",
+            "Strength Boots",
+            "Flud",
+            "S'loque Cape"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 1762.4,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 1739.8,
+          "totalSearchMs": 22.6
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 5.0,
+            "solveMs": 16.0,
+            "objective": 33.93,
+            "solutionCallbackCount": 4,
+            "validCallbackCandidateCount": 4,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 4.2,
+                "objective": 25.55,
+                "score": 269.79,
+                "itemIds": [
+                  "8533",
+                  "8534",
+                  "8535",
+                  "8536",
+                  "8537",
+                  "10784",
+                  "10785",
+                  "30701",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 7.7,
+                "objective": 31.57,
+                "score": 277.23,
+                "itemIds": [
+                  "766",
+                  "8533",
+                  "8534",
+                  "8535",
+                  "8536",
+                  "8537",
+                  "19622",
+                  "30701",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 9.4,
+                "objective": 31.75,
+                "score": 276.15,
+                "itemIds": [
+                  "766",
+                  "789",
+                  "861",
+                  "8533",
+                  "8534",
+                  "8537",
+                  "19622",
+                  "30701",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 11.1,
+                "objective": 33.93,
+                "score": 280.1,
+                "itemIds": [
+                  "766",
+                  "861",
+                  "8533",
+                  "8534",
+                  "8536",
+                  "8537",
+                  "9961",
+                  "19622",
+                  "30701"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 4,
+                "belt": 5,
+                "weapon": 8,
+                "shield": 3,
+                "boots": 6,
+                "hat": 4,
+                "cloak": 3,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 6
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 39,
+              "uniqueItemCount": 39,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 18,
+              "skippedSetCountVarCount": 0,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 0,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 2
+            }
+          }
+        ],
+        "itemCount": 39,
+        "candidateCount": 4,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.003,
+          "% Earth Resistance": 0.003,
+          "% Final Damage": 12.0178,
+          "% Fire Resistance": 0.003,
+          "% Melee Resistance": 0.009,
+          "% Neutral Resistance": 0.003,
+          "% Ranged Damage": 12.0178,
+          "% Ranged Resistance": 0.0211,
+          "% Spell Damage": 12.0178,
+          "% Water Resistance": 0.003,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0009,
+          "Critical": 4.6402,
+          "Critical Damage": 2.003,
+          "Critical Resistance": 0.0017,
+          "Damage": 3.3383,
+          "Dodge": 1.0,
+          "Earth Damage": 3.3383,
+          "Earth Resistance": 0.0009,
+          "Fire Resistance": 0.0009,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0009,
+          "Power": 0.6276,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0002,
+          "Range": 8.0,
+          "Strength": 0.6276,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0009,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_20_intelligence_7_4_1_budget3",
+        "className": "Iop",
+        "level": 20,
+        "element": "intelligence",
+        "budgetTier": 3,
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 20,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 455.41,
+        "weightedStatScore": 936.8,
+        "utilityStatScore": 159.0,
+        "genericDamageScore": 638.95,
+        "rawRotationDamageScore": 245.8,
+        "spellDamageScore": 240.95,
+        "profileBaselineDamageScore": 1154.08,
+        "profileRelativeDamage": 0.213,
+        "weaponDamageScore": 22.65,
+        "survivabilityScore": 8.88,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 296.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 95,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 1,
+          "Intelligence": 275,
+          "Power": 0,
+          "Vitality": 296,
+          "Damage": 0,
+          "Fire Damage": 5,
+          "Critical": 39,
+          "Critical Damage": 40
+        },
+        "sets": {
+          "Bearman Set": 2,
+          "Spacevader Set": 2,
+          "Prototype Pilot Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "12599",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "1365",
+            "slot": "weapon"
+          },
+          "Range": {
+            "itemId": "1021",
+            "slot": "cloak"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "8213",
+            "internalId": null,
+            "name": "Red Piwi Amulet",
+            "type": "Amulet",
+            "level": 11,
+            "set": "Red Piwi Set"
+          },
+          "belt": {
+            "id": "12599",
+            "internalId": null,
+            "name": "Spacevader Belt",
+            "type": "Belt",
+            "level": 10,
+            "set": "Spacevader Set"
+          },
+          "weapon": {
+            "id": "1365",
+            "internalId": null,
+            "name": "Flatu Lance",
+            "type": "Staff",
+            "level": 20,
+            "set": null
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "ring_1": {
+            "id": "12598",
+            "internalId": null,
+            "name": "Spacevader Ring",
+            "type": "Ring",
+            "level": 10,
+            "set": "Spacevader Set"
+          },
+          "ring_2": {
+            "id": "6722",
+            "internalId": null,
+            "name": "Bearman's Wedding Ring",
+            "type": "Ring",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "boots": {
+            "id": "6721",
+            "internalId": null,
+            "name": "Bearman's Boots",
+            "type": "Boots",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "hat": {
+            "id": "1019",
+            "internalId": null,
+            "name": "Helmet",
+            "type": "Hat",
+            "level": 20,
+            "set": "Prototype Pilot Set"
+          },
+          "cloak": {
+            "id": "1021",
+            "internalId": null,
+            "name": "Wooden Wings",
+            "type": "Cloak",
+            "level": 20,
+            "set": "Prototype Pilot Set"
+          },
+          "pet": {
+            "id": "13673",
+            "internalId": null,
+            "name": "Snailmate",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "30356",
+            "internalId": null,
+            "name": "Aiwuztheya Dofus",
+            "type": "Dofus",
+            "level": 20,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7113",
+            "internalId": null,
+            "name": "Dofawa",
+            "type": "Dofus",
+            "level": 6,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "19629",
+            "internalId": null,
+            "name": "Silver Dofus",
+            "type": "Dofus",
+            "level": 20,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 455.41,
+        "apStrategy": null,
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 1,
+          "Intelligence": 275,
+          "Power": 0,
+          "Vitality": 296,
+          "Damage": 0,
+          "Fire Damage": 5,
+          "Critical": 39,
+          "Critical Damage": 40
+        },
+        "sets": {
+          "Bearman Set": 2,
+          "Spacevader Set": 2,
+          "Prototype Pilot Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "12599",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "1365",
+            "slot": "weapon"
+          },
+          "Range": {
+            "itemId": "1021",
+            "slot": "cloak"
+          }
+        },
+        "items": [
+          "Red Piwi Amulet",
+          "Spacevader Belt",
+          "Flatu Lance",
+          "Wild Sunflower Shield",
+          "Spacevader Ring",
+          "Bearman's Wedding Ring",
+          "Bearman's Boots",
+          "Helmet",
+          "Wooden Wings",
+          "Snailmate",
+          "Aiwuztheya Dofus",
+          "Dofawa",
+          "Silver Dofus"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 455.41,
+          "weightedStatScore": 936.8,
+          "utilityStatScore": 159.0,
+          "genericDamageScore": 638.95,
+          "rawRotationDamageScore": 245.8,
+          "spellDamageScore": 240.95,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.213,
+          "weaponDamageScore": 22.65,
+          "survivabilityScore": 8.88,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 296.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 95,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 1,
+            "Intelligence": 275,
+            "Power": 0,
+            "Vitality": 296,
+            "Damage": 0,
+            "Fire Damage": 5,
+            "Critical": 39,
+            "Critical Damage": 40
+          },
+          "sets": {
+            "Bearman Set": 2,
+            "Spacevader Set": 2,
+            "Prototype Pilot Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "12599",
+              "slot": "belt"
+            },
+            "MP": {
+              "itemId": "1365",
+              "slot": "weapon"
+            },
+            "Range": {
+              "itemId": "1021",
+              "slot": "cloak"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "8213",
+              "internalId": null,
+              "name": "Red Piwi Amulet",
+              "type": "Amulet",
+              "level": 11,
+              "set": "Red Piwi Set"
+            },
+            "belt": {
+              "id": "12599",
+              "internalId": null,
+              "name": "Spacevader Belt",
+              "type": "Belt",
+              "level": 10,
+              "set": "Spacevader Set"
+            },
+            "weapon": {
+              "id": "1365",
+              "internalId": null,
+              "name": "Flatu Lance",
+              "type": "Staff",
+              "level": 20,
+              "set": null
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "ring_1": {
+              "id": "12598",
+              "internalId": null,
+              "name": "Spacevader Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Spacevader Set"
+            },
+            "ring_2": {
+              "id": "6722",
+              "internalId": null,
+              "name": "Bearman's Wedding Ring",
+              "type": "Ring",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "boots": {
+              "id": "6721",
+              "internalId": null,
+              "name": "Bearman's Boots",
+              "type": "Boots",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "hat": {
+              "id": "1019",
+              "internalId": null,
+              "name": "Helmet",
+              "type": "Hat",
+              "level": 20,
+              "set": "Prototype Pilot Set"
+            },
+            "cloak": {
+              "id": "1021",
+              "internalId": null,
+              "name": "Wooden Wings",
+              "type": "Cloak",
+              "level": 20,
+              "set": "Prototype Pilot Set"
+            },
+            "pet": {
+              "id": "13673",
+              "internalId": null,
+              "name": "Snailmate",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30356",
+              "internalId": null,
+              "name": "Aiwuztheya Dofus",
+              "type": "Dofus",
+              "level": 20,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7113",
+              "internalId": null,
+              "name": "Dofawa",
+              "type": "Dofus",
+              "level": 6,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "19629",
+              "internalId": null,
+              "name": "Silver Dofus",
+              "type": "Dofus",
+              "level": 20,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 455.41,
+          "apStrategy": null,
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 1,
+            "Intelligence": 275,
+            "Power": 0,
+            "Vitality": 296,
+            "Damage": 0,
+            "Fire Damage": 5,
+            "Critical": 39,
+            "Critical Damage": 40
+          },
+          "sets": {
+            "Bearman Set": 2,
+            "Spacevader Set": 2,
+            "Prototype Pilot Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "12599",
+              "slot": "belt"
+            },
+            "MP": {
+              "itemId": "1365",
+              "slot": "weapon"
+            },
+            "Range": {
+              "itemId": "1021",
+              "slot": "cloak"
+            }
+          },
+          "items": [
+            "Red Piwi Amulet",
+            "Spacevader Belt",
+            "Flatu Lance",
+            "Wild Sunflower Shield",
+            "Spacevader Ring",
+            "Bearman's Wedding Ring",
+            "Bearman's Boots",
+            "Helmet",
+            "Wooden Wings",
+            "Snailmate",
+            "Aiwuztheya Dofus",
+            "Dofawa",
+            "Silver Dofus"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 369.3,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 188.4,
+          "totalSearchMs": 180.9
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 76.2,
+            "solveMs": 94.7,
+            "objective": 429.26,
+            "solutionCallbackCount": 5,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 32.0,
+                "objective": 329.07,
+                "score": 413.04,
+                "itemIds": [
+                  "103",
+                  "355",
+                  "696",
+                  "775",
+                  "1365",
+                  "7113",
+                  "12753",
+                  "12754",
+                  "13673",
+                  "15100",
+                  "18714",
+                  "19629",
+                  "30356"
+                ],
+                "exos": {
+                  "AP": "12753",
+                  "MP": "1365"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 45.2,
+                "objective": 334.47,
+                "score": 390.32,
+                "itemIds": [
+                  "775",
+                  "7113",
+                  "8228",
+                  "8255",
+                  "8259",
+                  "12421",
+                  "12423",
+                  "12598",
+                  "12599",
+                  "13673",
+                  "18714",
+                  "19629",
+                  "30356"
+                ],
+                "exos": {
+                  "AP": "12599",
+                  "MP": "8255",
+                  "Range": "775"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 54.9,
+                "objective": 367.34,
+                "score": 425.08,
+                "itemIds": [
+                  "1019",
+                  "1021",
+                  "1365",
+                  "1496",
+                  "6910",
+                  "7113",
+                  "12753",
+                  "12754",
+                  "13673",
+                  "15100",
+                  "18714",
+                  "19629",
+                  "30356"
+                ],
+                "exos": {
+                  "AP": "12753",
+                  "MP": "1365"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 64.4,
+                "objective": 423.57,
+                "score": 441.2,
+                "itemIds": [
+                  "1019",
+                  "1021",
+                  "1496",
+                  "6721",
+                  "6923",
+                  "6924",
+                  "6925",
+                  "6961",
+                  "7113",
+                  "13673",
+                  "18714",
+                  "19629",
+                  "30356"
+                ],
+                "exos": {
+                  "AP": "6925",
+                  "MP": "6924",
+                  "Range": "1021"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 76.9,
+                "objective": 429.26,
+                "score": 455.41,
+                "itemIds": [
+                  "1019",
+                  "1021",
+                  "1365",
+                  "6721",
+                  "6722",
+                  "7113",
+                  "8213",
+                  "12598",
+                  "12599",
+                  "13673",
+                  "18714",
+                  "19629",
+                  "30356"
+                ],
+                "exos": {
+                  "AP": "12599",
+                  "MP": "1365",
+                  "Range": "1021"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 44,
+                "belt": 36,
+                "weapon": 73,
+                "shield": 9,
+                "ring_1": 52,
+                "ring_2": 52,
+                "boots": 38,
+                "hat": 35,
+                "cloak": 39,
+                "pet": 119,
+                "dofus": 3
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 500,
+              "uniqueItemCount": 448,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 167,
+              "skippedSetCountVarCount": 6,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 1,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 30
+            }
+          }
+        ],
+        "itemCount": 448,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0059,
+          "% Earth Resistance": 0.0059,
+          "% Final Damage": 10.3863,
+          "% Fire Resistance": 0.0059,
+          "% Melee Resistance": 0.0176,
+          "% Neutral Resistance": 0.0059,
+          "% Ranged Damage": 10.3863,
+          "% Ranged Resistance": 0.0412,
+          "% Spell Damage": 10.3863,
+          "% Water Resistance": 0.0059,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0017,
+          "Critical": 5.5492,
+          "Critical Damage": 2.5691,
+          "Critical Resistance": 0.0033,
+          "Damage": 4.4041,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0017,
+          "Fire Damage": 4.4041,
+          "Fire Resistance": 0.0017,
+          "Initiative": 0.005,
+          "Intelligence": 0.5021,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0017,
+          "Power": 0.5021,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0003,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0017,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_40_chance_7_3_none_budget1",
+        "className": "Iop",
+        "level": 40,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 40,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 573.26,
+        "weightedStatScore": 864.62,
+        "utilityStatScore": 143.31,
+        "genericDamageScore": 938.57,
+        "rawRotationDamageScore": 397.58,
+        "spellDamageScore": 397.58,
+        "profileBaselineDamageScore": 1270.81,
+        "profileRelativeDamage": 0.3129,
+        "weaponDamageScore": 28.65,
+        "survivabilityScore": 7.59,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 251.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 147,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 432,
+          "Power": 0,
+          "Vitality": 251,
+          "Damage": 7,
+          "Water Damage": 20,
+          "Critical": 13,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Stellia Blutzell Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "159",
+            "internalId": null,
+            "name": "The Celestial Brooch",
+            "type": "Amulet",
+            "level": 40,
+            "set": null
+          },
+          "belt": {
+            "id": "156",
+            "internalId": null,
+            "name": "Power Belt",
+            "type": "Belt",
+            "level": 31,
+            "set": null
+          },
+          "weapon": {
+            "id": "15990",
+            "internalId": null,
+            "name": "Rikiki Wand",
+            "type": "Wand",
+            "level": 40,
+            "set": null
+          },
+          "shield": {
+            "id": "18687",
+            "internalId": null,
+            "name": "Akwadala Shield",
+            "type": "Shield",
+            "level": 40,
+            "set": "Akwadala Set"
+          },
+          "boots": {
+            "id": "15525",
+            "internalId": null,
+            "name": "Stellia's Boots",
+            "type": "Boots",
+            "level": 30,
+            "set": "Stellia Blutzell Set"
+          },
+          "hat": {
+            "id": "15524",
+            "internalId": null,
+            "name": "Stellia's Mask",
+            "type": "Hat",
+            "level": 28,
+            "set": "Stellia Blutzell Set"
+          },
+          "cloak": {
+            "id": "8112",
+            "internalId": null,
+            "name": "Tofu Cloak",
+            "type": "Cloak",
+            "level": 26,
+            "set": "Tofu Set"
+          },
+          "ring_1": {
+            "id": "1495",
+            "internalId": null,
+            "name": "Soff Ring",
+            "type": "Ring",
+            "level": 36,
+            "set": null
+          },
+          "ring_2": {
+            "id": "15526",
+            "internalId": null,
+            "name": "Stellia's Glove",
+            "type": "Ring",
+            "level": 32,
+            "set": "Stellia Blutzell Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 573.26,
+        "apStrategy": null,
+        "totals": {
+          "AP": 7,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 432,
+          "Power": 0,
+          "Vitality": 251,
+          "Damage": 7,
+          "Water Damage": 20,
+          "Critical": 13,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Stellia Blutzell Set": 3
+        },
+        "exos": {},
+        "items": [
+          "The Celestial Brooch",
+          "Power Belt",
+          "Rikiki Wand",
+          "Akwadala Shield",
+          "Soff Ring",
+          "Stellia's Glove",
+          "Stellia's Boots",
+          "Stellia's Mask",
+          "Tofu Cloak"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 573.26,
+          "weightedStatScore": 864.62,
+          "utilityStatScore": 143.31,
+          "genericDamageScore": 938.57,
+          "rawRotationDamageScore": 397.58,
+          "spellDamageScore": 397.58,
+          "profileBaselineDamageScore": 1270.81,
+          "profileRelativeDamage": 0.3129,
+          "weaponDamageScore": 28.65,
+          "survivabilityScore": 7.59,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 251.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 147,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 0,
+            "Chance": 432,
+            "Power": 0,
+            "Vitality": 251,
+            "Damage": 7,
+            "Water Damage": 20,
+            "Critical": 13,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Stellia Blutzell Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "159",
+              "internalId": null,
+              "name": "The Celestial Brooch",
+              "type": "Amulet",
+              "level": 40,
+              "set": null
+            },
+            "belt": {
+              "id": "156",
+              "internalId": null,
+              "name": "Power Belt",
+              "type": "Belt",
+              "level": 31,
+              "set": null
+            },
+            "weapon": {
+              "id": "15990",
+              "internalId": null,
+              "name": "Rikiki Wand",
+              "type": "Wand",
+              "level": 40,
+              "set": null
+            },
+            "shield": {
+              "id": "18687",
+              "internalId": null,
+              "name": "Akwadala Shield",
+              "type": "Shield",
+              "level": 40,
+              "set": "Akwadala Set"
+            },
+            "boots": {
+              "id": "15525",
+              "internalId": null,
+              "name": "Stellia's Boots",
+              "type": "Boots",
+              "level": 30,
+              "set": "Stellia Blutzell Set"
+            },
+            "hat": {
+              "id": "15524",
+              "internalId": null,
+              "name": "Stellia's Mask",
+              "type": "Hat",
+              "level": 28,
+              "set": "Stellia Blutzell Set"
+            },
+            "cloak": {
+              "id": "8112",
+              "internalId": null,
+              "name": "Tofu Cloak",
+              "type": "Cloak",
+              "level": 26,
+              "set": "Tofu Set"
+            },
+            "ring_1": {
+              "id": "1495",
+              "internalId": null,
+              "name": "Soff Ring",
+              "type": "Ring",
+              "level": 36,
+              "set": null
+            },
+            "ring_2": {
+              "id": "15526",
+              "internalId": null,
+              "name": "Stellia's Glove",
+              "type": "Ring",
+              "level": 32,
+              "set": "Stellia Blutzell Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 573.26,
+          "apStrategy": null,
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 0,
+            "Chance": 432,
+            "Power": 0,
+            "Vitality": 251,
+            "Damage": 7,
+            "Water Damage": 20,
+            "Critical": 13,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Stellia Blutzell Set": 3
+          },
+          "exos": {},
+          "items": [
+            "The Celestial Brooch",
+            "Power Belt",
+            "Rikiki Wand",
+            "Akwadala Shield",
+            "Soff Ring",
+            "Stellia's Glove",
+            "Stellia's Boots",
+            "Stellia's Mask",
+            "Tofu Cloak"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 397.7,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 154.8,
+          "totalSearchMs": 242.9
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 108.6,
+            "solveMs": 107.9,
+            "objective": 307.31,
+            "solutionCallbackCount": 2,
+            "validCallbackCandidateCount": 2,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 46.4,
+                "objective": 210.8,
+                "score": 445.08,
+                "itemIds": [
+                  "121",
+                  "156",
+                  "159",
+                  "299",
+                  "702",
+                  "787",
+                  "952",
+                  "15990",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 79.8,
+                "objective": 307.31,
+                "score": 573.26,
+                "itemIds": [
+                  "156",
+                  "159",
+                  "1495",
+                  "8112",
+                  "15524",
+                  "15525",
+                  "15526",
+                  "15990",
+                  "18687"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 81,
+                "belt": 79,
+                "weapon": 162,
+                "shield": 15,
+                "boots": 82,
+                "hat": 81,
+                "cloak": 64,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 85
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 649,
+              "uniqueItemCount": 649,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 318,
+              "skippedSetCountVarCount": 60,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 11,
+              "conditionConstraintCount": 11,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 69
+            }
+          }
+        ],
+        "itemCount": 649,
+        "candidateCount": 2,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0089,
+          "% Earth Resistance": 0.0089,
+          "% Final Damage": 10.9619,
+          "% Fire Resistance": 0.0089,
+          "% Melee Resistance": 0.0266,
+          "% Neutral Resistance": 0.0089,
+          "% Ranged Damage": 10.9619,
+          "% Ranged Resistance": 0.0624,
+          "% Spell Damage": 10.9619,
+          "% Water Resistance": 0.0089,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0025,
+          "Chance": 0.5591,
+          "Critical": 5.1588,
+          "Critical Damage": 2.3086,
+          "Critical Resistance": 0.0051,
+          "Damage": 3.923,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0025,
+          "Fire Resistance": 0.0025,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0025,
+          "Power": 0.5591,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0005,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 3.923,
+          "Water Resistance": 0.0025,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_50_agility_7_3_1_budget1",
+        "className": "Iop",
+        "level": 50,
+        "element": "agility",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 50,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 669.96,
+        "weightedStatScore": 1019.05,
+        "utilityStatScore": 173.75,
+        "genericDamageScore": 1067.63,
+        "rawRotationDamageScore": 490.13,
+        "spellDamageScore": 490.13,
+        "profileBaselineDamageScore": 1377.25,
+        "profileRelativeDamage": 0.3559,
+        "weaponDamageScore": 30.86,
+        "survivabilityScore": 15.77,
+        "negativeResistancePenalty": 60.0,
+        "weakestElementEhp": 363.13,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 172,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 3,
+          "Agility": 462,
+          "Power": 75,
+          "Vitality": 581,
+          "Damage": 0,
+          "Air Damage": 5,
+          "Critical": 21,
+          "Critical Damage": 8
+        },
+        "sets": {
+          "Invisible Set": 2,
+          "Khardboard Set": 2,
+          "Pippin Blop Set": 2,
+          "Crocoburio's Soul": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9150",
+            "internalId": null,
+            "name": "Pippin Amublop",
+            "type": "Amulet",
+            "level": 50,
+            "set": "Pippin Blop Set"
+          },
+          "belt": {
+            "id": "1720",
+            "internalId": null,
+            "name": "Crocoburio's Power",
+            "type": "Belt",
+            "level": 34,
+            "set": "Crocoburio's Soul"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "19116",
+            "internalId": null,
+            "name": "Invisible Shield",
+            "type": "Shield",
+            "level": 20,
+            "set": "Invisible Set"
+          },
+          "boots": {
+            "id": "1719",
+            "internalId": null,
+            "name": "Crocoburio's Spirit",
+            "type": "Boots",
+            "level": 42,
+            "set": "Crocoburio's Soul"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "16171",
+            "internalId": null,
+            "name": "Invisible Cape",
+            "type": "Cloak",
+            "level": 20,
+            "set": "Invisible Set"
+          },
+          "dofus_1": {
+            "id": "12712",
+            "internalId": null,
+            "name": "Minor Acrobat",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13784",
+            "internalId": null,
+            "name": "Minor Air Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13763",
+            "internalId": null,
+            "name": "Minor Gymnast",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13751",
+            "internalId": null,
+            "name": "Minor Vagabond",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "ring_1": {
+            "id": "1718",
+            "internalId": null,
+            "name": "Crocoburio's Strength",
+            "type": "Ring",
+            "level": 40,
+            "set": "Crocoburio's Soul"
+          },
+          "ring_2": {
+            "id": "9123",
+            "internalId": null,
+            "name": "Pippin Blop Ring",
+            "type": "Ring",
+            "level": 50,
+            "set": "Pippin Blop Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 669.96,
+        "apStrategy": null,
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 3,
+          "Agility": 462,
+          "Power": 75,
+          "Vitality": 581,
+          "Damage": 0,
+          "Air Damage": 5,
+          "Critical": 21,
+          "Critical Damage": 8
+        },
+        "sets": {
+          "Invisible Set": 2,
+          "Khardboard Set": 2,
+          "Pippin Blop Set": 2,
+          "Crocoburio's Soul": 3
+        },
+        "exos": {},
+        "items": [
+          "Pippin Amublop",
+          "Crocoburio's Power",
+          "Khardboard Goultard",
+          "Invisible Shield",
+          "Crocoburio's Strength",
+          "Pippin Blop Ring",
+          "Crocoburio's Spirit",
+          "Khardboard Gobball Headgear",
+          "Invisible Cape",
+          "Minor Acrobat",
+          "Minor Air Wrecker",
+          "Minor Dynamo",
+          "Minor Gymnast",
+          "Minor Vagabond",
+          "Twitcher"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 669.96,
+          "weightedStatScore": 1019.05,
+          "utilityStatScore": 173.75,
+          "genericDamageScore": 1067.63,
+          "rawRotationDamageScore": 490.13,
+          "spellDamageScore": 490.13,
+          "profileBaselineDamageScore": 1377.25,
+          "profileRelativeDamage": 0.3559,
+          "weaponDamageScore": 30.86,
+          "survivabilityScore": 15.77,
+          "negativeResistancePenalty": 60.0,
+          "weakestElementEhp": 363.13,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 172,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 3,
+            "Agility": 462,
+            "Power": 75,
+            "Vitality": 581,
+            "Damage": 0,
+            "Air Damage": 5,
+            "Critical": 21,
+            "Critical Damage": 8
+          },
+          "sets": {
+            "Invisible Set": 2,
+            "Khardboard Set": 2,
+            "Pippin Blop Set": 2,
+            "Crocoburio's Soul": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "9150",
+              "internalId": null,
+              "name": "Pippin Amublop",
+              "type": "Amulet",
+              "level": 50,
+              "set": "Pippin Blop Set"
+            },
+            "belt": {
+              "id": "1720",
+              "internalId": null,
+              "name": "Crocoburio's Power",
+              "type": "Belt",
+              "level": 34,
+              "set": "Crocoburio's Soul"
+            },
+            "weapon": {
+              "id": "27268",
+              "internalId": null,
+              "name": "Khardboard Goultard",
+              "type": "Sword",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "shield": {
+              "id": "19116",
+              "internalId": null,
+              "name": "Invisible Shield",
+              "type": "Shield",
+              "level": 20,
+              "set": "Invisible Set"
+            },
+            "boots": {
+              "id": "1719",
+              "internalId": null,
+              "name": "Crocoburio's Spirit",
+              "type": "Boots",
+              "level": 42,
+              "set": "Crocoburio's Soul"
+            },
+            "hat": {
+              "id": "27282",
+              "internalId": null,
+              "name": "Khardboard Gobball Headgear",
+              "type": "Hat",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "cloak": {
+              "id": "16171",
+              "internalId": null,
+              "name": "Invisible Cape",
+              "type": "Cloak",
+              "level": 20,
+              "set": "Invisible Set"
+            },
+            "dofus_1": {
+              "id": "12712",
+              "internalId": null,
+              "name": "Minor Acrobat",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13784",
+              "internalId": null,
+              "name": "Minor Air Wrecker",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13823",
+              "internalId": null,
+              "name": "Minor Dynamo",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13763",
+              "internalId": null,
+              "name": "Minor Gymnast",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13751",
+              "internalId": null,
+              "name": "Minor Vagabond",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13831",
+              "internalId": null,
+              "name": "Twitcher",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "ring_1": {
+              "id": "1718",
+              "internalId": null,
+              "name": "Crocoburio's Strength",
+              "type": "Ring",
+              "level": 40,
+              "set": "Crocoburio's Soul"
+            },
+            "ring_2": {
+              "id": "9123",
+              "internalId": null,
+              "name": "Pippin Blop Ring",
+              "type": "Ring",
+              "level": 50,
+              "set": "Pippin Blop Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 669.96,
+          "apStrategy": null,
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 3,
+            "Agility": 462,
+            "Power": 75,
+            "Vitality": 581,
+            "Damage": 0,
+            "Air Damage": 5,
+            "Critical": 21,
+            "Critical Damage": 8
+          },
+          "sets": {
+            "Invisible Set": 2,
+            "Khardboard Set": 2,
+            "Pippin Blop Set": 2,
+            "Crocoburio's Soul": 3
+          },
+          "exos": {},
+          "items": [
+            "Pippin Amublop",
+            "Crocoburio's Power",
+            "Khardboard Goultard",
+            "Invisible Shield",
+            "Crocoburio's Strength",
+            "Pippin Blop Ring",
+            "Crocoburio's Spirit",
+            "Khardboard Gobball Headgear",
+            "Invisible Cape",
+            "Minor Acrobat",
+            "Minor Air Wrecker",
+            "Minor Dynamo",
+            "Minor Gymnast",
+            "Minor Vagabond",
+            "Twitcher"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 1215.7,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 181.5,
+          "totalSearchMs": 1034.2
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 411.6,
+            "solveMs": 618.5,
+            "objective": 598.53,
+            "solutionCallbackCount": 6,
+            "validCallbackCandidateCount": 1,
+            "invalidCallbackCandidateCount": 6,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": false,
+            "finalInvalidReason": {
+              "reason": "conditions",
+              "stats": {
+                "AP": 7,
+                "MP": 4,
+                "Vitality": 725,
+                "Strength": 220,
+                "Range": 4
+              },
+              "failures": [
+                {
+                  "slot": "shield",
+                  "itemId": "18691",
+                  "itemName": "Sharkal Shield",
+                  "conditions": {
+                    "operator": ">",
+                    "stat": "KAMAS",
+                    "value": 49999
+                  }
+                }
+              ],
+              "items": {
+                "amulet": {
+                  "id": "9151",
+                  "name": "Coco Amublop"
+                },
+                "belt": {
+                  "id": "9575",
+                  "name": "Black Wab Belt"
+                },
+                "weapon": {
+                  "id": "27268",
+                  "name": "Khardboard Goultard"
+                },
+                "shield": {
+                  "id": "18691",
+                  "name": "Sharkal Shield"
+                },
+                "boots": {
+                  "id": "9576",
+                  "name": "Black Wab Boots"
+                },
+                "hat": {
+                  "id": "27282",
+                  "name": "Khardboard Gobball Headgear"
+                },
+                "cloak": {
+                  "id": "1500",
+                  "name": "Carpet Cape"
+                },
+                "dofus_1": {
+                  "id": "16265",
+                  "name": "Minor Air Devastator"
+                },
+                "dofus_2": {
+                  "id": "13784",
+                  "name": "Minor Air Wrecker"
+                },
+                "dofus_3": {
+                  "id": "13763",
+                  "name": "Minor Gymnast"
+                },
+                "dofus_4": {
+                  "id": "16243",
+                  "name": "Minor Stunter"
+                },
+                "dofus_5": {
+                  "id": "16330",
+                  "name": "Minor Vigour"
+                },
+                "dofus_6": {
+                  "id": "16336",
+                  "name": "Observer"
+                },
+                "ring_1": {
+                  "id": "10171",
+                  "name": "Chisp Fingerless Gloves"
+                },
+                "ring_2": {
+                  "id": "1495",
+                  "name": "Soff Ring"
+                }
+              }
+            },
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 443.2,
+                "objective": 367.73,
+                "score": 669.96,
+                "itemIds": [
+                  "1718",
+                  "1719",
+                  "1720",
+                  "9123",
+                  "9150",
+                  "12712",
+                  "13751",
+                  "13763",
+                  "13784",
+                  "13823",
+                  "13831",
+                  "16171",
+                  "19116",
+                  "27268",
+                  "27282"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [
+              {
+                "callbackIndex": 1,
+                "wallTimeMs": 397.6,
+                "reason": {
+                  "reason": "conditions",
+                  "stats": {
+                    "AP": 7,
+                    "MP": 3,
+                    "Vitality": 485,
+                    "Strength": 100,
+                    "Range": 1
+                  },
+                  "failures": [
+                    {
+                      "slot": "shield",
+                      "itemId": "18691",
+                      "itemName": "Sharkal Shield",
+                      "conditions": {
+                        "operator": ">",
+                        "stat": "KAMAS",
+                        "value": 49999
+                      }
+                    }
+                  ],
+                  "items": {
+                    "amulet": {
+                      "id": "7031",
+                      "name": "Flooey's Clock"
+                    },
+                    "belt": {
+                      "id": "2403",
+                      "name": "Peeka Belt"
+                    },
+                    "weapon": {
+                      "id": "462",
+                      "name": "Treechnid Root Bow"
+                    },
+                    "shield": {
+                      "id": "18691",
+                      "name": "Sharkal Shield"
+                    },
+                    "boots": {
+                      "id": "299",
+                      "name": "Faillette Boots"
+                    },
+                    "hat": {
+                      "id": "702",
+                      "name": "Kritter"
+                    },
+                    "cloak": {
+                      "id": "1500",
+                      "name": "Carpet Cape"
+                    },
+                    "dofus_1": {
+                      "id": "12694",
+                      "name": "Minor Fire Destroyer"
+                    },
+                    "dofus_2": {
+                      "id": "12628",
+                      "name": "Minor Friction"
+                    },
+                    "dofus_3": {
+                      "id": "12696",
+                      "name": "Minor Neutral Destroyer"
+                    },
+                    "dofus_4": {
+                      "id": "12631",
+                      "name": "Minor Oppressor"
+                    },
+                    "dofus_5": {
+                      "id": "12640",
+                      "name": "Minor Repellant"
+                    },
+                    "dofus_6": {
+                      "id": "12691",
+                      "name": "Minor Water Destroyer"
+                    },
+                    "ring_1": {
+                      "id": "12661",
+                      "name": "Handbag"
+                    },
+                    "ring_2": {
+                      "id": "16843",
+                      "name": "Reinforced Handbag"
+                    }
+                  }
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "wallTimeMs": 434.7,
+                "reason": {
+                  "reason": "conditions",
+                  "stats": {
+                    "AP": 7,
+                    "MP": 3,
+                    "Vitality": 555,
+                    "Strength": 100,
+                    "Range": 5
+                  },
+                  "failures": [
+                    {
+                      "slot": "shield",
+                      "itemId": "18691",
+                      "itemName": "Sharkal Shield",
+                      "conditions": {
+                        "operator": ">",
+                        "stat": "KAMAS",
+                        "value": 49999
+                      }
+                    }
+                  ],
+                  "items": {
+                    "amulet": {
+                      "id": "9659",
+                      "name": "Slump Necklace"
+                    },
+                    "belt": {
+                      "id": "2403",
+                      "name": "Peeka Belt"
+                    },
+                    "weapon": {
+                      "id": "462",
+                      "name": "Treechnid Root Bow"
+                    },
+                    "shield": {
+                      "id": "18691",
+                      "name": "Sharkal Shield"
+                    },
+                    "boots": {
+                      "id": "9656",
+                      "name": "Slump Rollers"
+                    },
+                    "hat": {
+                      "id": "702",
+                      "name": "Kritter"
+                    },
+                    "cloak": {
+                      "id": "1500",
+                      "name": "Carpet Cape"
+                    },
+                    "dofus_1": {
+                      "id": "12628",
+                      "name": "Minor Friction"
+                    },
+                    "dofus_2": {
+                      "id": "12631",
+                      "name": "Minor Oppressor"
+                    },
+                    "dofus_3": {
+                      "id": "12717",
+                      "name": "Minor Player"
+                    },
+                    "dofus_4": {
+                      "id": "12640",
+                      "name": "Minor Repellant"
+                    },
+                    "dofus_5": {
+                      "id": "16336",
+                      "name": "Observer"
+                    },
+                    "dofus_6": {
+                      "id": "13831",
+                      "name": "Twitcher"
+                    },
+                    "ring_1": {
+                      "id": "9925",
+                      "name": "Bedazzling Fist"
+                    },
+                    "ring_2": {
+                      "id": "10955",
+                      "name": "The Black Crow's Ring"
+                    }
+                  }
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "wallTimeMs": 487.8,
+                "reason": {
+                  "reason": "conditions",
+                  "stats": {
+                    "AP": 7,
+                    "MP": 4,
+                    "Vitality": 785,
+                    "Strength": 220,
+                    "Range": 4
+                  },
+                  "failures": [
+                    {
+                      "slot": "shield",
+                      "itemId": "18691",
+                      "itemName": "Sharkal Shield",
+                      "conditions": {
+                        "operator": ">",
+                        "stat": "KAMAS",
+                        "value": 49999
+                      }
+                    }
+                  ],
+                  "items": {
+                    "amulet": {
+                      "id": "9659",
+                      "name": "Slump Necklace"
+                    },
+                    "belt": {
+                      "id": "2688",
+                      "name": "Sticky Belt"
+                    },
+                    "weapon": {
+                      "id": "27268",
+                      "name": "Khardboard Goultard"
+                    },
+                    "shield": {
+                      "id": "18691",
+                      "name": "Sharkal Shield"
+                    },
+                    "boots": {
+                      "id": "9656",
+                      "name": "Slump Rollers"
+                    },
+                    "hat": {
+                      "id": "27282",
+                      "name": "Khardboard Gobball Headgear"
+                    },
+                    "cloak": {
+                      "id": "1500",
+                      "name": "Carpet Cape"
+                    },
+                    "dofus_1": {
+                      "id": "16265",
+                      "name": "Minor Air Devastator"
+                    },
+                    "dofus_2": {
+                      "id": "13784",
+                      "name": "Minor Air Wrecker"
+                    },
+                    "dofus_3": {
+                      "id": "13763",
+                      "name": "Minor Gymnast"
+                    },
+                    "dofus_4": {
+                      "id": "16243",
+                      "name": "Minor Stunter"
+                    },
+                    "dofus_5": {
+                      "id": "16330",
+                      "name": "Minor Vigour"
+                    },
+                    "dofus_6": {
+                      "id": "16336",
+                      "name": "Observer"
+                    },
+                    "ring_1": {
+                      "id": "1495",
+                      "name": "Soff Ring"
+                    },
+                    "ring_2": {
+                      "id": "10955",
+                      "name": "The Black Crow's Ring"
+                    }
+                  }
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "wallTimeMs": 537.0,
+                "reason": {
+                  "reason": "conditions",
+                  "stats": {
+                    "AP": 7,
+                    "MP": 4,
+                    "Vitality": 735,
+                    "Strength": 220,
+                    "Range": 4
+                  },
+                  "failures": [
+                    {
+                      "slot": "shield",
+                      "itemId": "18691",
+                      "itemName": "Sharkal Shield",
+                      "conditions": {
+                        "operator": ">",
+                        "stat": "KAMAS",
+                        "value": 49999
+                      }
+                    }
+                  ],
+                  "items": {
+                    "amulet": {
+                      "id": "7031",
+                      "name": "Flooey's Clock"
+                    },
+                    "belt": {
+                      "id": "9575",
+                      "name": "Black Wab Belt"
+                    },
+                    "weapon": {
+                      "id": "27268",
+                      "name": "Khardboard Goultard"
+                    },
+                    "shield": {
+                      "id": "18691",
+                      "name": "Sharkal Shield"
+                    },
+                    "boots": {
+                      "id": "9576",
+                      "name": "Black Wab Boots"
+                    },
+                    "hat": {
+                      "id": "27282",
+                      "name": "Khardboard Gobball Headgear"
+                    },
+                    "cloak": {
+                      "id": "1500",
+                      "name": "Carpet Cape"
+                    },
+                    "dofus_1": {
+                      "id": "16265",
+                      "name": "Minor Air Devastator"
+                    },
+                    "dofus_2": {
+                      "id": "13784",
+                      "name": "Minor Air Wrecker"
+                    },
+                    "dofus_3": {
+                      "id": "13763",
+                      "name": "Minor Gymnast"
+                    },
+                    "dofus_4": {
+                      "id": "16243",
+                      "name": "Minor Stunter"
+                    },
+                    "dofus_5": {
+                      "id": "16330",
+                      "name": "Minor Vigour"
+                    },
+                    "dofus_6": {
+                      "id": "16336",
+                      "name": "Observer"
+                    },
+                    "ring_1": {
+                      "id": "1495",
+                      "name": "Soff Ring"
+                    },
+                    "ring_2": {
+                      "id": "10955",
+                      "name": "The Black Crow's Ring"
+                    }
+                  }
+                }
+              },
+              {
+                "callbackIndex": 6,
+                "wallTimeMs": 595.7,
+                "reason": {
+                  "reason": "conditions",
+                  "stats": {
+                    "AP": 7,
+                    "MP": 4,
+                    "Vitality": 725,
+                    "Strength": 220,
+                    "Range": 4
+                  },
+                  "failures": [
+                    {
+                      "slot": "shield",
+                      "itemId": "18691",
+                      "itemName": "Sharkal Shield",
+                      "conditions": {
+                        "operator": ">",
+                        "stat": "KAMAS",
+                        "value": 49999
+                      }
+                    }
+                  ],
+                  "items": {
+                    "amulet": {
+                      "id": "9151",
+                      "name": "Coco Amublop"
+                    },
+                    "belt": {
+                      "id": "9575",
+                      "name": "Black Wab Belt"
+                    },
+                    "weapon": {
+                      "id": "27268",
+                      "name": "Khardboard Goultard"
+                    },
+                    "shield": {
+                      "id": "18691",
+                      "name": "Sharkal Shield"
+                    },
+                    "boots": {
+                      "id": "9576",
+                      "name": "Black Wab Boots"
+                    },
+                    "hat": {
+                      "id": "27282",
+                      "name": "Khardboard Gobball Headgear"
+                    },
+                    "cloak": {
+                      "id": "1500",
+                      "name": "Carpet Cape"
+                    },
+                    "dofus_1": {
+                      "id": "16265",
+                      "name": "Minor Air Devastator"
+                    },
+                    "dofus_2": {
+                      "id": "13784",
+                      "name": "Minor Air Wrecker"
+                    },
+                    "dofus_3": {
+                      "id": "13763",
+                      "name": "Minor Gymnast"
+                    },
+                    "dofus_4": {
+                      "id": "16243",
+                      "name": "Minor Stunter"
+                    },
+                    "dofus_5": {
+                      "id": "16330",
+                      "name": "Minor Vigour"
+                    },
+                    "dofus_6": {
+                      "id": "16336",
+                      "name": "Observer"
+                    },
+                    "ring_1": {
+                      "id": "10171",
+                      "name": "Chisp Fingerless Gloves"
+                    },
+                    "ring_2": {
+                      "id": "1495",
+                      "name": "Soff Ring"
+                    }
+                  }
+                }
+              }
+            ],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 132,
+                "belt": 133,
+                "weapon": 203,
+                "shield": 17,
+                "boots": 133,
+                "hat": 107,
+                "cloak": 89,
+                "pet": 0,
+                "dofus": 85,
+                "ring": 133
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1032,
+              "uniqueItemCount": 1032,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 583,
+              "skippedSetCountVarCount": 54,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 51,
+              "conditionConstraintCount": 23,
+              "skippedSetBonusConditionCount": 29,
+              "setCountConstraintCount": 131
+            }
+          }
+        ],
+        "itemCount": 1032,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0105,
+          "% Earth Resistance": 0.0105,
+          "% Final Damage": 11.3369,
+          "% Fire Resistance": 0.0105,
+          "% Melee Resistance": 0.0311,
+          "% Neutral Resistance": 0.0105,
+          "% Ranged Damage": 11.3369,
+          "% Ranged Resistance": 0.073,
+          "% Spell Damage": 11.3369,
+          "% Water Resistance": 0.0105,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 0.5897,
+          "Air Damage": 3.673,
+          "Air Resistance": 0.003,
+          "Critical": 4.9953,
+          "Critical Damage": 2.1614,
+          "Critical Resistance": 0.0059,
+          "Damage": 3.673,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.003,
+          "Fire Resistance": 0.003,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.003,
+          "Power": 0.5897,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0006,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.003,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_120_chance_11_5_none_budget2",
+        "className": "Iop",
+        "level": 120,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 120,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 1454.68,
+        "weightedStatScore": 2451.06,
+        "utilityStatScore": 267.75,
+        "genericDamageScore": 2570.55,
+        "rawRotationDamageScore": 1418.45,
+        "spellDamageScore": 1418.45,
+        "profileBaselineDamageScore": 1655.42,
+        "profileRelativeDamage": 0.8569,
+        "weaponDamageScore": 111.67,
+        "survivabilityScore": 30.18,
+        "negativeResistancePenalty": 13.0,
+        "weakestElementEhp": 947.12,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 298,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 4,
+          "Chance": 1093,
+          "Power": 170,
+          "Vitality": 1021,
+          "Damage": 18,
+          "Water Damage": 49,
+          "Critical": 18,
+          "Critical Damage": 50
+        },
+        "sets": {
+          "Ambusher Set": 3,
+          "Khardboard Set": 3,
+          "Herboreals Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "6742",
+            "internalId": null,
+            "name": "Deceitful Amulet",
+            "type": "Amulet",
+            "level": 103,
+            "set": "Ambusher Set"
+          },
+          "belt": {
+            "id": "6745",
+            "internalId": null,
+            "name": "Deceitful Belt",
+            "type": "Belt",
+            "level": 103,
+            "set": "Ambusher Set"
+          },
+          "weapon": {
+            "id": "8878",
+            "internalId": null,
+            "name": "Kidommer",
+            "type": "Hammer",
+            "level": 77,
+            "set": "Herboreals Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "boots": {
+            "id": "14003",
+            "internalId": null,
+            "name": "Styx's Boots",
+            "type": "Boots",
+            "level": 120,
+            "set": "Fluvial Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "pet": {
+            "id": "7708",
+            "internalId": null,
+            "name": "Blue Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12715",
+            "internalId": null,
+            "name": "Player",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13767",
+            "internalId": null,
+            "name": "Tease",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12689",
+            "internalId": null,
+            "name": "Water Destroyer",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13782",
+            "internalId": null,
+            "name": "Water Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "ring_1": {
+            "id": "6743",
+            "internalId": null,
+            "name": "Deceitful Wedding Ring",
+            "type": "Ring",
+            "level": 104,
+            "set": "Ambusher Set"
+          },
+          "ring_2": {
+            "id": "8879",
+            "internalId": null,
+            "name": "Polished Ring",
+            "type": "Ring",
+            "level": 66,
+            "set": "Herboreals Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1454.68,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 4,
+          "Chance": 1093,
+          "Power": 170,
+          "Vitality": 1021,
+          "Damage": 18,
+          "Water Damage": 49,
+          "Critical": 18,
+          "Critical Damage": 50
+        },
+        "sets": {
+          "Ambusher Set": 3,
+          "Khardboard Set": 3,
+          "Herboreals Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Deceitful Amulet",
+          "Deceitful Belt",
+          "Kidommer",
+          "Khardboard Bowisse's Shield",
+          "Deceitful Wedding Ring",
+          "Polished Ring",
+          "Styx's Boots",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Blue Piwin",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Player",
+          "Tease",
+          "Water Destroyer",
+          "Water Wrecker"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 1454.68,
+          "weightedStatScore": 2451.06,
+          "utilityStatScore": 267.75,
+          "genericDamageScore": 2570.55,
+          "rawRotationDamageScore": 1418.45,
+          "spellDamageScore": 1418.45,
+          "profileBaselineDamageScore": 1655.42,
+          "profileRelativeDamage": 0.8569,
+          "weaponDamageScore": 111.67,
+          "survivabilityScore": 30.18,
+          "negativeResistancePenalty": 13.0,
+          "weakestElementEhp": 947.12,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 298,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 6,
+            "Range": 4,
+            "Chance": 1093,
+            "Power": 170,
+            "Vitality": 1021,
+            "Damage": 18,
+            "Water Damage": 49,
+            "Critical": 18,
+            "Critical Damage": 50
+          },
+          "sets": {
+            "Ambusher Set": 3,
+            "Khardboard Set": 3,
+            "Herboreals Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "6742",
+              "internalId": null,
+              "name": "Deceitful Amulet",
+              "type": "Amulet",
+              "level": 103,
+              "set": "Ambusher Set"
+            },
+            "belt": {
+              "id": "6745",
+              "internalId": null,
+              "name": "Deceitful Belt",
+              "type": "Belt",
+              "level": 103,
+              "set": "Ambusher Set"
+            },
+            "weapon": {
+              "id": "8878",
+              "internalId": null,
+              "name": "Kidommer",
+              "type": "Hammer",
+              "level": 77,
+              "set": "Herboreals Set"
+            },
+            "shield": {
+              "id": "27280",
+              "internalId": null,
+              "name": "Khardboard Bowisse's Shield",
+              "type": "Shield",
+              "level": 100,
+              "set": "Khardboard Set"
+            },
+            "boots": {
+              "id": "14003",
+              "internalId": null,
+              "name": "Styx's Boots",
+              "type": "Boots",
+              "level": 120,
+              "set": "Fluvial Set"
+            },
+            "hat": {
+              "id": "27282",
+              "internalId": null,
+              "name": "Khardboard Gobball Headgear",
+              "type": "Hat",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "cloak": {
+              "id": "27267",
+              "internalId": null,
+              "name": "Khardboard Dazzling Cloak",
+              "type": "Cloak",
+              "level": 75,
+              "set": "Khardboard Set"
+            },
+            "pet": {
+              "id": "7708",
+              "internalId": null,
+              "name": "Blue Piwin",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "12715",
+              "internalId": null,
+              "name": "Player",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13767",
+              "internalId": null,
+              "name": "Tease",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "12689",
+              "internalId": null,
+              "name": "Water Destroyer",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13782",
+              "internalId": null,
+              "name": "Water Wrecker",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "ring_1": {
+              "id": "6743",
+              "internalId": null,
+              "name": "Deceitful Wedding Ring",
+              "type": "Ring",
+              "level": 104,
+              "set": "Ambusher Set"
+            },
+            "ring_2": {
+              "id": "8879",
+              "internalId": null,
+              "name": "Polished Ring",
+              "type": "Ring",
+              "level": 66,
+              "set": "Herboreals Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 1454.68,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 6,
+            "Range": 4,
+            "Chance": 1093,
+            "Power": 170,
+            "Vitality": 1021,
+            "Damage": 18,
+            "Water Damage": 49,
+            "Critical": 18,
+            "Critical Damage": 50
+          },
+          "sets": {
+            "Ambusher Set": 3,
+            "Khardboard Set": 3,
+            "Herboreals Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Deceitful Amulet",
+            "Deceitful Belt",
+            "Kidommer",
+            "Khardboard Bowisse's Shield",
+            "Deceitful Wedding Ring",
+            "Polished Ring",
+            "Styx's Boots",
+            "Khardboard Gobball Headgear",
+            "Khardboard Dazzling Cloak",
+            "Blue Piwin",
+            "Crimson Dofus",
+            "Dolmanax",
+            "Player",
+            "Tease",
+            "Water Destroyer",
+            "Water Wrecker"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6110.6,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 97.6,
+          "totalSearchMs": 6013.0
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 940.0,
+            "solveMs": 5007.3,
+            "objective": 1134.23,
+            "solutionCallbackCount": 10,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2278.4,
+                "objective": 201.36,
+                "score": 582.8,
+                "itemIds": [
+                  "180",
+                  "841",
+                  "909",
+                  "2386",
+                  "2531",
+                  "2688",
+                  "7031",
+                  "12628",
+                  "12629",
+                  "12631",
+                  "12632",
+                  "12640",
+                  "12641",
+                  "12661",
+                  "30688",
+                  "33201"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2431.3,
+                "objective": 823.06,
+                "score": 1136.83,
+                "itemIds": [
+                  "694",
+                  "1910",
+                  "2469",
+                  "2811",
+                  "8878",
+                  "8879",
+                  "8880",
+                  "12715",
+                  "13344",
+                  "13465",
+                  "13782",
+                  "13824",
+                  "13829",
+                  "19084",
+                  "19085",
+                  "19086"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2519.8,
+                "objective": 1078.89,
+                "score": 1414.16,
+                "itemIds": [
+                  "694",
+                  "7708",
+                  "8465",
+                  "8468",
+                  "8865",
+                  "12689",
+                  "12715",
+                  "13344",
+                  "13767",
+                  "13782",
+                  "14003",
+                  "27267",
+                  "27268",
+                  "27280",
+                  "27282",
+                  "33579"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2633.8,
+                "objective": 1097.67,
+                "score": 1426.2,
+                "itemIds": [
+                  "694",
+                  "6742",
+                  "6745",
+                  "7708",
+                  "8865",
+                  "12689",
+                  "12715",
+                  "13344",
+                  "13767",
+                  "13782",
+                  "14003",
+                  "27267",
+                  "27268",
+                  "27280",
+                  "27282",
+                  "33579"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2804.5,
+                "objective": 1115.88,
+                "score": 1454.68,
+                "itemIds": [
+                  "694",
+                  "6742",
+                  "6743",
+                  "6745",
+                  "7708",
+                  "8878",
+                  "8879",
+                  "12689",
+                  "12715",
+                  "13344",
+                  "13767",
+                  "13782",
+                  "14003",
+                  "27267",
+                  "27280",
+                  "27282"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 210,
+                "belt": 215,
+                "weapon": 428,
+                "shield": 42,
+                "boots": 243,
+                "hat": 193,
+                "cloak": 175,
+                "pet": 452,
+                "dofus": 175,
+                "ring": 221
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 2354,
+              "uniqueItemCount": 2354,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 1201,
+              "skippedSetCountVarCount": 22,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 100,
+              "conditionConstraintCount": 50,
+              "skippedSetBonusConditionCount": 59,
+              "setCountConstraintCount": 262
+            }
+          }
+        ],
+        "itemCount": 2354,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0211,
+          "% Earth Resistance": 0.0211,
+          "% Final Damage": 12.2049,
+          "% Fire Resistance": 0.0211,
+          "% Melee Resistance": 0.0627,
+          "% Neutral Resistance": 0.0211,
+          "% Ranged Damage": 12.2049,
+          "% Ranged Resistance": 0.147,
+          "% Spell Damage": 12.2049,
+          "% Water Resistance": 0.0211,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.006,
+          "Chance": 0.6831,
+          "Critical": 4.4323,
+          "Critical Damage": 1.813,
+          "Critical Resistance": 0.0119,
+          "Damage": 2.8071,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.006,
+          "Fire Resistance": 0.006,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.006,
+          "Power": 0.6831,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0012,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.8071,
+          "Water Resistance": 0.006,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

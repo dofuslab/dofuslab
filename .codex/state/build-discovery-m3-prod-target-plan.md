@@ -8,8 +8,8 @@ Generated: 2026-07-11
   `.codex/state/build-discovery-prod-level-targets-100-20260711.json`
 - Per-bucket recent-Iop aggregates:
   `.codex/state/build-discovery-prod-level-targets-by-bucket-20260711/`
-- Solver smoke after level-aware base allocation:
-  `.codex/state/build-discovery-m3-prod-level-sample-fixed-base.json`
+- Solver smoke after level-aware base allocation and optional-slot fixes:
+  `.codex/state/build-discovery-m3-prod-level-sample-optional-slots.json`
 
 All prod reads were aggregate-only, read-only, omitted custom set IDs/names/users,
 and used `statement_timeout=5000ms`.
@@ -53,23 +53,18 @@ The per-bucket samples give better all-level signal:
 ## Current M3 Smoke
 
 The existing `prod-level-sample` target set was rerun after fixing base
-allocation to respect target level:
+allocation and optional CP-SAT slot semantics:
 
 - targets: `24`
-- generated: `19`
-- no build: `5`
+- generated: `24`
+- no build: `0`
 - invalid: `0`
-
-Remaining no-build rows:
-
-- `prod_regen_level_1_strength_6_3_none_budget1`
-- `prod_regen_level_20_intelligence_7_4_1_budget3`
-- `prod_regen_level_40_chance_7_3_none_budget1`
-- `prod_regen_level_50_agility_7_3_1_budget1`
-- `prod_regen_level_120_chance_11_5_none_budget2`
+- solver statuses: `21` `OPTIMAL`, `3` `FEASIBLE`
 
 The base-allocation bug is fixed: generated sub-200 rows now use level-legal
-base points instead of spending the level-200 `992` point budget.
+base points instead of spending the level-200 `992` point budget. The previous
+five no-build rows now generate after allowing missing optional pet/Dofus slots
+and low-level sparse gear choices.
 
 ## Next Targets
 
@@ -82,5 +77,6 @@ existing `prod-level-sample` set:
 - post-100 trophy rows: `120/140` with `11/5/0`, `11/6/0`, `12/5/1`
 - high-level rows: `160/180/200` with `12/5/2`, `12/6/2`, `12/6/6`
 
-Focus first on converting the five no-build rows into either generated builds
-or explicit infeasibility/search-gap diagnostics.
+Focus next on broader M3 corner checks outside the current prod-level sample:
+minimum targets, cap targets, and a small custom target file from the per-bucket
+prod shapes above.

@@ -5844,7 +5844,7 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-m2-preset-corners.json --target-set milestone2-level200 --elements strength,intelligence,chance,agility --damage-survivability-presets 1,4 --budget-tiers 1,4 --ap-targets 7,12 --mp-targets 3,6 --range-targets none,6 --expected-solver cpsat`
   - Host: `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m2-preset-corners.json --target-set milestone2-level200 --elements strength,intelligence,chance,agility --damage-survivability-presets 1,4 --budget-tiers 1,4 --ap-targets 7,12 --mp-targets 3,6 --range-targets none,6 --expected-solver cpsat`
 
-### 2026-07-11 Milestone 3 Prod Sampling and Base Allocation Fix
+### 2026-07-11 Milestone 3 Prod Sampling and Optional Slot Fixes
 
 - Confirmed the Windows User environment variable
   `DOFUSLAB_READONLY_DATABASE_URL` is visible and can be passed into Docker
@@ -5876,23 +5876,42 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `base_stats_for_primary_allocation`, `state_with_base_allocation`, and
     `optimize_base_allocation` now accept an explicit `target_level`
   - CP-SAT reconstruction passes `target.level`
+  - CP-SAT `solve_query` now runs inside `target_level_context(query.level)`
+    so model construction, base stats, and reconstruction share the query level
   - prototype behavior remains context-compatible
+- Fixed CP-SAT optional slots:
+  - grouped Dofus/trophy/prysmaradite slots now require
+    `min(6, candidate_count)` instead of exactly `6`, so zero-candidate
+    low-level pools are feasible
+  - pet is optional
+  - low-level ordinary gear and grouped ring slots follow the prototype's
+    `optional_slot_choice` rule
+  - reconstruction now accepts missing optional slots
+- Fixed matrix checker optional-slot validation:
+  - missing pet and Dofus slots are allowed
+  - missing low-level ordinary slots are allowed when
+    `optional_slot_choice(slot, target.level)` is true
 - Added focused regression coverage:
   - `test_base_allocation_can_use_explicit_target_level`
+  - `test_low_level_model_allows_empty_pet_and_dofus_slots`
+  - `test_validate_report_accepts_missing_optional_low_level_slots`
   - patched a stale CLI test fixture to include `damage_survivability_preset`
-- Reran current `prod-level-sample` after the fix:
-  - artifact: `.codex/state/build-discovery-m3-prod-level-sample-fixed-base.json`
+- Reran the five prior no-build rows:
+  - artifact: `.codex/state/build-discovery-m3-prod-level-failures-after-optional.json`
+  - generated: `5 / 5`
+  - solver statuses: all `OPTIMAL`
+- Reran current `prod-level-sample` after the optional-slot fixes:
+  - artifact: `.codex/state/build-discovery-m3-prod-level-sample-optional-slots.json`
   - targets: `24`
-  - generated: `19`
-  - no build: `5`
+  - generated: `24`
+  - no build: `0`
   - invalid: `0`
-  - checker now fails only on no-build rows, not illegal base allocation
-- Remaining no-build rows:
-  - `prod_regen_level_1_strength_6_3_none_budget1`
-  - `prod_regen_level_20_intelligence_7_4_1_budget3`
-  - `prod_regen_level_40_chance_7_3_none_budget1`
-  - `prod_regen_level_50_agility_7_3_1_budget1`
-  - `prod_regen_level_120_chance_11_5_none_budget2`
+  - solver statuses: `21` `OPTIMAL`, `3` `FEASIBLE`
+  - Docker checker passed with `--target-set prod-level-sample --expected-solver cpsat`
 - Verification passed:
   - `python server/scripts/test_build_discovery_query_contract.py`
-  - `python -m py_compile server/oneoff/build_discovery_prototype.py server/oneoff/build_discovery_cpsat_experiment.py server/scripts/test_build_discovery_query_contract.py`
+  - `python server/scripts/test_build_discovery_cpsat_experiment.py`
+  - `python server/scripts/test_build_discovery_level_diversity_matrix_check.py`
+  - `python -m py_compile server/oneoff/build_discovery_prototype.py server/oneoff/build_discovery_cpsat_experiment.py server/scripts/check_build_discovery_level_diversity_matrix.py server/scripts/test_build_discovery_query_contract.py server/scripts/test_build_discovery_cpsat_experiment.py server/scripts/test_build_discovery_level_diversity_matrix_check.py`
+  - Docker: `PYTHONPATH=/home/dofuslab python scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `PYTHONPATH=/home/dofuslab python scripts/test_build_discovery_level_diversity_matrix_check.py`
