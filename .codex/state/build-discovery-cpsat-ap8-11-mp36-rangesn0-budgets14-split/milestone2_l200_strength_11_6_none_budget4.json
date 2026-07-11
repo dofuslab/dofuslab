@@ -1,0 +1,774 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T09:48:19.338272+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_11_6_none_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 11,
+        "mpTarget": 6,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2584.79,
+        "weightedStatScore": 4062.03,
+        "utilityStatScore": 474.15,
+        "genericDamageScore": 4525.87,
+        "rawRotationDamageScore": 4146.61,
+        "spellDamageScore": 4146.61,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.5086,
+        "weaponDamageScore": 202.52,
+        "survivabilityScore": 74.0,
+        "weakestElementEhp": 2348.63,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1378,
+          "Power": 200,
+          "Vitality": 2303,
+          "Damage": 12,
+          "Earth Damage": 98,
+          "Critical": 71,
+          "Critical Damage": 60,
+          "Neutral Damage": 98
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Gein Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "18693",
+            "slot": "shield"
+          },
+          "MP": {
+            "itemId": "15431",
+            "slot": "hat"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "15433",
+            "internalId": null,
+            "name": "Gein's Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "belt": {
+            "id": "13114",
+            "internalId": null,
+            "name": "Broucey Belt",
+            "type": "Belt",
+            "level": 194,
+            "set": "Brouce Boulgoure Set"
+          },
+          "weapon": {
+            "id": "32117",
+            "internalId": null,
+            "name": "Thanatena's Judgement",
+            "type": "Scythe",
+            "level": 200,
+            "set": null
+          },
+          "shield": {
+            "id": "18693",
+            "internalId": null,
+            "name": "Broucey Bark",
+            "type": "Shield",
+            "level": 196,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "22206",
+            "internalId": null,
+            "name": "Corruption's Engagement Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "15431",
+            "internalId": null,
+            "name": "Gein's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "cloak": {
+            "id": "14168",
+            "internalId": null,
+            "name": "Cloak of a Thousand Excuses",
+            "type": "Cloak",
+            "level": 198,
+            "set": null
+          },
+          "pet": {
+            "id": "29430",
+            "internalId": null,
+            "name": "Mamukil Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2584.79,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1378,
+          "Power": 200,
+          "Vitality": 2303,
+          "Damage": 12,
+          "Earth Damage": 98,
+          "Critical": 71,
+          "Critical Damage": 60,
+          "Neutral Damage": 98
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Gein Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "18693",
+            "slot": "shield"
+          },
+          "MP": {
+            "itemId": "15431",
+            "slot": "hat"
+          }
+        },
+        "items": [
+          "Gein's Amulet",
+          "Broucey Belt",
+          "Thanatena's Judgement",
+          "Broucey Bark",
+          "Corruption's Ring",
+          "Corruption's Engagement Ring",
+          "Meriana's Clairvoyance",
+          "Gein's Hat",
+          "Cloak of a Thousand Excuses",
+          "Mamukil Kolophant",
+          "Cloudy Dofus",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Goliath"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2584.79,
+          "weightedStatScore": 4062.03,
+          "utilityStatScore": 474.15,
+          "genericDamageScore": 4525.87,
+          "rawRotationDamageScore": 4146.61,
+          "spellDamageScore": 4146.61,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.5086,
+          "weaponDamageScore": 202.52,
+          "survivabilityScore": 74.0,
+          "weakestElementEhp": 2348.63,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 6,
+            "Range": 4,
+            "Strength": 1378,
+            "Power": 200,
+            "Vitality": 2303,
+            "Damage": 12,
+            "Earth Damage": 98,
+            "Critical": 71,
+            "Critical Damage": 60,
+            "Neutral Damage": 98
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Gein Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "18693",
+              "slot": "shield"
+            },
+            "MP": {
+              "itemId": "15431",
+              "slot": "hat"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "15433",
+              "internalId": null,
+              "name": "Gein's Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "belt": {
+              "id": "13114",
+              "internalId": null,
+              "name": "Broucey Belt",
+              "type": "Belt",
+              "level": 194,
+              "set": "Brouce Boulgoure Set"
+            },
+            "weapon": {
+              "id": "32117",
+              "internalId": null,
+              "name": "Thanatena's Judgement",
+              "type": "Scythe",
+              "level": 200,
+              "set": null
+            },
+            "shield": {
+              "id": "18693",
+              "internalId": null,
+              "name": "Broucey Bark",
+              "type": "Shield",
+              "level": 196,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_1": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "ring_2": {
+              "id": "22206",
+              "internalId": null,
+              "name": "Corruption's Engagement Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "15431",
+              "internalId": null,
+              "name": "Gein's Hat",
+              "type": "Hat",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "cloak": {
+              "id": "14168",
+              "internalId": null,
+              "name": "Cloak of a Thousand Excuses",
+              "type": "Cloak",
+              "level": 198,
+              "set": null
+            },
+            "pet": {
+              "id": "29430",
+              "internalId": null,
+              "name": "Mamukil Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2584.79,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 6,
+            "Range": 4,
+            "Strength": 1378,
+            "Power": 200,
+            "Vitality": 2303,
+            "Damage": 12,
+            "Earth Damage": 98,
+            "Critical": 71,
+            "Critical Damage": 60,
+            "Neutral Damage": 98
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Gein Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "18693",
+              "slot": "shield"
+            },
+            "MP": {
+              "itemId": "15431",
+              "slot": "hat"
+            }
+          },
+          "items": [
+            "Gein's Amulet",
+            "Broucey Belt",
+            "Thanatena's Judgement",
+            "Broucey Bark",
+            "Corruption's Ring",
+            "Corruption's Engagement Ring",
+            "Meriana's Clairvoyance",
+            "Gein's Hat",
+            "Cloak of a Thousand Excuses",
+            "Mamukil Kolophant",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Goliath"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6839.6,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 173.1,
+          "totalSearchMs": 6666.5
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1489.5,
+            "solveMs": 5073.8,
+            "objective": 2149.73,
+            "solutionCallbackCount": 7,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1974.5,
+                "objective": 614.72,
+                "score": 1142.71,
+                "itemIds": [
+                  "2469",
+                  "7754",
+                  "8000",
+                  "8839",
+                  "11607",
+                  "12628",
+                  "12629",
+                  "12630",
+                  "13762",
+                  "15428",
+                  "16335",
+                  "17590",
+                  "20357",
+                  "26011",
+                  "27266",
+                  "27555"
+                ],
+                "exos": {
+                  "AP": "26011"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2152.3,
+                "objective": 1259.18,
+                "score": 1656.14,
+                "itemIds": [
+                  "12104",
+                  "12105",
+                  "12106",
+                  "12107",
+                  "13774",
+                  "13829",
+                  "18695",
+                  "22013",
+                  "23627",
+                  "23628",
+                  "27265",
+                  "27284",
+                  "29430",
+                  "30356",
+                  "30453",
+                  "30455"
+                ],
+                "exos": {
+                  "AP": "23628",
+                  "MP": "12106"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2306.8,
+                "objective": 2032.17,
+                "score": 2298.65,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "8698",
+                  "13774",
+                  "14092",
+                  "14093",
+                  "14168",
+                  "15440",
+                  "15442",
+                  "18718",
+                  "19983",
+                  "19984",
+                  "29430",
+                  "30453",
+                  "30455",
+                  "31800"
+                ],
+                "exos": {
+                  "AP": "31800",
+                  "MP": "19983"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2507.2,
+                "objective": 2039.99,
+                "score": 2365.72,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "8698",
+                  "13759",
+                  "14092",
+                  "14093",
+                  "14168",
+                  "15440",
+                  "15442",
+                  "18718",
+                  "19983",
+                  "19984",
+                  "29430",
+                  "30453",
+                  "30455",
+                  "31800"
+                ],
+                "exos": {
+                  "AP": "14168",
+                  "MP": "15442"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2835.9,
+                "objective": 2073.61,
+                "score": 2378.18,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "8698",
+                  "13759",
+                  "14092",
+                  "14093",
+                  "14168",
+                  "15440",
+                  "15442",
+                  "18718",
+                  "19983",
+                  "19984",
+                  "29430",
+                  "30453",
+                  "30455",
+                  "31787"
+                ],
+                "exos": {
+                  "AP": "18718",
+                  "MP": "19983"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 199,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 316
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1837,
+              "uniqueItemCount": 1703,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 214,
+              "conditionConstraintCount": 285,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1703,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
