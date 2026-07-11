@@ -1,0 +1,715 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T09:19:05.310740+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_agility_10_4_3_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "agility",
+        "budgetTier": 1,
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 3,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2429.68,
+        "weightedStatScore": 4154.6,
+        "utilityStatScore": 389.06,
+        "genericDamageScore": 4337.02,
+        "rawRotationDamageScore": 2689.85,
+        "spellDamageScore": 2689.85,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.4457,
+        "weaponDamageScore": 212.19,
+        "survivabilityScore": 88.97,
+        "weakestElementEhp": 2766.18,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 6,
+          "Agility": 1243,
+          "Power": 270,
+          "Vitality": 3003,
+          "Damage": 0,
+          "Air Damage": 157,
+          "Critical": 58,
+          "Critical Damage": 72
+        },
+        "sets": {
+          "Allister Set": 2,
+          "Putrid Eye Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "19258",
+            "internalId": null,
+            "name": "Amulet of the Putrid Eye",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Putrid Eye Set"
+          },
+          "belt": {
+            "id": "18009",
+            "internalId": null,
+            "name": "Menobelt",
+            "type": "Belt",
+            "level": 200,
+            "set": null
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "30060",
+            "internalId": null,
+            "name": "Allister's Aegis",
+            "type": "Shield",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "19257",
+            "internalId": null,
+            "name": "Hood of the Putrid Eye",
+            "type": "Hat",
+            "level": 200,
+            "set": "Putrid Eye Set"
+          },
+          "cloak": {
+            "id": "18008",
+            "internalId": null,
+            "name": "Indescribable Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "pet": {
+            "id": "33307",
+            "internalId": null,
+            "name": "Aquamarine and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16267",
+            "internalId": null,
+            "name": "Major Air Devastator",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13765",
+            "internalId": null,
+            "name": "Major Gymnast",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16245",
+            "internalId": null,
+            "name": "Major Stunter",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "ring_1": {
+            "id": "13124",
+            "internalId": null,
+            "name": "Allister's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "ring_2": {
+            "id": "13642",
+            "internalId": null,
+            "name": "Nomarow's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Nomarow Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2429.68,
+        "apStrategy": null,
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 6,
+          "Agility": 1243,
+          "Power": 270,
+          "Vitality": 3003,
+          "Damage": 0,
+          "Air Damage": 157,
+          "Critical": 58,
+          "Critical Damage": 72
+        },
+        "sets": {
+          "Allister Set": 2,
+          "Putrid Eye Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Amulet of the Putrid Eye",
+          "Menobelt",
+          "Gargandyas's Fury",
+          "Allister's Aegis",
+          "Allister's Ring",
+          "Nomarow's Ring",
+          "Meriana's Clairvoyance",
+          "Hood of the Putrid Eye",
+          "Indescribable Cape",
+          "Aquamarine and Emerald Seemyool",
+          "Arcanist",
+          "Impetuous",
+          "Major Air Devastator",
+          "Major Gymnast",
+          "Major Stunter",
+          "Major Vigour"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2429.68,
+          "weightedStatScore": 4154.6,
+          "utilityStatScore": 389.06,
+          "genericDamageScore": 4337.02,
+          "rawRotationDamageScore": 2689.85,
+          "spellDamageScore": 2689.85,
+          "profileBaselineDamageScore": 1860.62,
+          "profileRelativeDamage": 1.4457,
+          "weaponDamageScore": 212.19,
+          "survivabilityScore": 88.97,
+          "weakestElementEhp": 2766.18,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 6,
+            "Agility": 1243,
+            "Power": 270,
+            "Vitality": 3003,
+            "Damage": 0,
+            "Air Damage": 157,
+            "Critical": 58,
+            "Critical Damage": 72
+          },
+          "sets": {
+            "Allister Set": 2,
+            "Putrid Eye Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "19258",
+              "internalId": null,
+              "name": "Amulet of the Putrid Eye",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Putrid Eye Set"
+            },
+            "belt": {
+              "id": "18009",
+              "internalId": null,
+              "name": "Menobelt",
+              "type": "Belt",
+              "level": 200,
+              "set": null
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "30060",
+              "internalId": null,
+              "name": "Allister's Aegis",
+              "type": "Shield",
+              "level": 197,
+              "set": "Allister Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "19257",
+              "internalId": null,
+              "name": "Hood of the Putrid Eye",
+              "type": "Hat",
+              "level": 200,
+              "set": "Putrid Eye Set"
+            },
+            "cloak": {
+              "id": "18008",
+              "internalId": null,
+              "name": "Indescribable Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Abyss Set"
+            },
+            "pet": {
+              "id": "33307",
+              "internalId": null,
+              "name": "Aquamarine and Emerald Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "16267",
+              "internalId": null,
+              "name": "Major Air Devastator",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13765",
+              "internalId": null,
+              "name": "Major Gymnast",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "16245",
+              "internalId": null,
+              "name": "Major Stunter",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "16332",
+              "internalId": null,
+              "name": "Major Vigour",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "ring_1": {
+              "id": "13124",
+              "internalId": null,
+              "name": "Allister's Ring",
+              "type": "Ring",
+              "level": 197,
+              "set": "Allister Set"
+            },
+            "ring_2": {
+              "id": "13642",
+              "internalId": null,
+              "name": "Nomarow's Ring",
+              "type": "Ring",
+              "level": 197,
+              "set": "Nomarow Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2429.68,
+          "apStrategy": null,
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 6,
+            "Agility": 1243,
+            "Power": 270,
+            "Vitality": 3003,
+            "Damage": 0,
+            "Air Damage": 157,
+            "Critical": 58,
+            "Critical Damage": 72
+          },
+          "sets": {
+            "Allister Set": 2,
+            "Putrid Eye Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Amulet of the Putrid Eye",
+            "Menobelt",
+            "Gargandyas's Fury",
+            "Allister's Aegis",
+            "Allister's Ring",
+            "Nomarow's Ring",
+            "Meriana's Clairvoyance",
+            "Hood of the Putrid Eye",
+            "Indescribable Cape",
+            "Aquamarine and Emerald Seemyool",
+            "Arcanist",
+            "Impetuous",
+            "Major Air Devastator",
+            "Major Gymnast",
+            "Major Stunter",
+            "Major Vigour"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6776.0,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 176.2,
+          "totalSearchMs": 6599.8
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1401.6,
+            "solveMs": 5047.6,
+            "objective": 2031.32,
+            "solutionCallbackCount": 11,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2134.5,
+                "objective": 559.76,
+                "score": 1005.24,
+                "itemIds": [
+                  "8366",
+                  "8714",
+                  "8715",
+                  "11607",
+                  "12628",
+                  "12629",
+                  "13829",
+                  "16333",
+                  "16335",
+                  "16336",
+                  "18028",
+                  "19165",
+                  "19260",
+                  "27266",
+                  "32232",
+                  "33307"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2385.0,
+                "objective": 1111.87,
+                "score": 1544.34,
+                "itemIds": [
+                  "12716",
+                  "13786",
+                  "13829",
+                  "13831",
+                  "15696",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "27511",
+                  "27514",
+                  "27544",
+                  "27549",
+                  "30453",
+                  "30455",
+                  "30949",
+                  "33050"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2533.5,
+                "objective": 1786.55,
+                "score": 2101.11,
+                "itemIds": [
+                  "12714",
+                  "13124",
+                  "13125",
+                  "13197",
+                  "13641",
+                  "13642",
+                  "13764",
+                  "13765",
+                  "13786",
+                  "16244",
+                  "16333",
+                  "18009",
+                  "18718",
+                  "31761",
+                  "32117",
+                  "33307"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2688.9,
+                "objective": 1790.9,
+                "score": 2105.36,
+                "itemIds": [
+                  "12714",
+                  "13124",
+                  "13125",
+                  "13197",
+                  "13641",
+                  "13642",
+                  "13764",
+                  "13765",
+                  "13786",
+                  "16244",
+                  "16333",
+                  "18009",
+                  "18718",
+                  "20356",
+                  "31761",
+                  "33307"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2877.4,
+                "objective": 1811.39,
+                "score": 2163.36,
+                "itemIds": [
+                  "12714",
+                  "13124",
+                  "13125",
+                  "13197",
+                  "13641",
+                  "13642",
+                  "13764",
+                  "13765",
+                  "16244",
+                  "16333",
+                  "18009",
+                  "18718",
+                  "20356",
+                  "30455",
+                  "31761",
+                  "33307"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 308,
+                "dofus": 261,
+                "ring": 134
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1505,
+              "uniqueItemCount": 1505,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 60,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 217,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3186,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3186,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3186,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 0.7234,
+          "Air Damage": 2.5359,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2201,
+          "Critical Damage": 1.5602,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.5359,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7234,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
