@@ -1,0 +1,784 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T11:56:06.469661+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_intelligence_9_6_4_budget3",
+        "className": "Iop",
+        "level": 200,
+        "element": "intelligence",
+        "budgetTier": 3,
+        "apTarget": 9,
+        "mpTarget": 6,
+        "rangeTarget": 4
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 9,
+        "mpTarget": 6,
+        "rangeTarget": 4,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2407.97,
+        "weightedStatScore": 4465.3,
+        "utilityStatScore": 346.33,
+        "genericDamageScore": 4375.42,
+        "rawRotationDamageScore": 2981.66,
+        "spellDamageScore": 2981.66,
+        "profileBaselineDamageScore": 2044.38,
+        "profileRelativeDamage": 1.4585,
+        "weaponDamageScore": 234.36,
+        "survivabilityScore": 92.71,
+        "weakestElementEhp": 2932.66,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 9,
+          "MP": 6,
+          "Range": 5,
+          "Intelligence": 1453,
+          "Power": 80,
+          "Vitality": 3203,
+          "Damage": 0,
+          "Fire Damage": 185,
+          "Critical": 43,
+          "Critical Damage": 145
+        },
+        "sets": {
+          "Age-Old Set": 2,
+          "War Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "30683",
+            "slot": "shield"
+          },
+          "MP": {
+            "itemId": "31787",
+            "slot": "weapon"
+          },
+          "Range": {
+            "itemId": "19984",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "19984",
+            "internalId": null,
+            "name": "Rhineetle Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "belt": {
+            "id": "14081",
+            "internalId": null,
+            "name": "Age-Old Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "30683",
+            "internalId": null,
+            "name": "Onance Carapace",
+            "type": "Shield",
+            "level": 200,
+            "set": "Wukin Set"
+          },
+          "ring_1": {
+            "id": "22192",
+            "internalId": null,
+            "name": "War's Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "War Set"
+          },
+          "ring_2": {
+            "id": "13897",
+            "internalId": null,
+            "name": "Shylock's Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": null
+          },
+          "boots": {
+            "id": "22189",
+            "internalId": null,
+            "name": "War's Treads",
+            "type": "Boots",
+            "level": 200,
+            "set": "War Set"
+          },
+          "hat": {
+            "id": "14079",
+            "internalId": null,
+            "name": "Age-Old Helmet",
+            "type": "Hat",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "cloak": {
+            "id": "15504",
+            "internalId": null,
+            "name": "Dremoan Cape",
+            "type": "Cloak",
+            "level": 182,
+            "set": "Dremoan Set"
+          },
+          "pet": {
+            "id": "33282",
+            "internalId": null,
+            "name": "Coral and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16204",
+            "internalId": null,
+            "name": "Major Intellectual",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2407.97,
+        "apStrategy": null,
+        "totals": {
+          "AP": 9,
+          "MP": 6,
+          "Range": 5,
+          "Intelligence": 1453,
+          "Power": 80,
+          "Vitality": 3203,
+          "Damage": 0,
+          "Fire Damage": 185,
+          "Critical": 43,
+          "Critical Damage": 145
+        },
+        "sets": {
+          "Age-Old Set": 2,
+          "War Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "30683",
+            "slot": "shield"
+          },
+          "MP": {
+            "itemId": "31787",
+            "slot": "weapon"
+          },
+          "Range": {
+            "itemId": "19984",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Rhineetle Amulet",
+          "Age-Old Belt",
+          "Gargandyas's Fury",
+          "Onance Carapace",
+          "War's Gauntlet",
+          "Shylock's Ring",
+          "War's Treads",
+          "Age-Old Helmet",
+          "Dremoan Cape",
+          "Coral and Emerald Seemyool",
+          "Cloudy Dofus",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Brainbox",
+          "Major Intellectual"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2407.97,
+          "weightedStatScore": 4465.3,
+          "utilityStatScore": 346.33,
+          "genericDamageScore": 4375.42,
+          "rawRotationDamageScore": 2981.66,
+          "spellDamageScore": 2981.66,
+          "profileBaselineDamageScore": 2044.38,
+          "profileRelativeDamage": 1.4585,
+          "weaponDamageScore": 234.36,
+          "survivabilityScore": 92.71,
+          "weakestElementEhp": 2932.66,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 6,
+            "Range": 5,
+            "Intelligence": 1453,
+            "Power": 80,
+            "Vitality": 3203,
+            "Damage": 0,
+            "Fire Damage": 185,
+            "Critical": 43,
+            "Critical Damage": 145
+          },
+          "sets": {
+            "Age-Old Set": 2,
+            "War Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "30683",
+              "slot": "shield"
+            },
+            "MP": {
+              "itemId": "31787",
+              "slot": "weapon"
+            },
+            "Range": {
+              "itemId": "19984",
+              "slot": "amulet"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "19984",
+              "internalId": null,
+              "name": "Rhineetle Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "belt": {
+              "id": "14081",
+              "internalId": null,
+              "name": "Age-Old Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Age-Old Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "30683",
+              "internalId": null,
+              "name": "Onance Carapace",
+              "type": "Shield",
+              "level": 200,
+              "set": "Wukin Set"
+            },
+            "ring_1": {
+              "id": "22192",
+              "internalId": null,
+              "name": "War's Gauntlet",
+              "type": "Ring",
+              "level": 200,
+              "set": "War Set"
+            },
+            "ring_2": {
+              "id": "13897",
+              "internalId": null,
+              "name": "Shylock's Ring",
+              "type": "Ring",
+              "level": 198,
+              "set": null
+            },
+            "boots": {
+              "id": "22189",
+              "internalId": null,
+              "name": "War's Treads",
+              "type": "Boots",
+              "level": 200,
+              "set": "War Set"
+            },
+            "hat": {
+              "id": "14079",
+              "internalId": null,
+              "name": "Age-Old Helmet",
+              "type": "Hat",
+              "level": 200,
+              "set": "Age-Old Set"
+            },
+            "cloak": {
+              "id": "15504",
+              "internalId": null,
+              "name": "Dremoan Cape",
+              "type": "Cloak",
+              "level": 182,
+              "set": "Dremoan Set"
+            },
+            "pet": {
+              "id": "33282",
+              "internalId": null,
+              "name": "Coral and Emerald Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13762",
+              "internalId": null,
+              "name": "Major Brainbox",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "16204",
+              "internalId": null,
+              "name": "Major Intellectual",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2407.97,
+          "apStrategy": null,
+          "totals": {
+            "AP": 9,
+            "MP": 6,
+            "Range": 5,
+            "Intelligence": 1453,
+            "Power": 80,
+            "Vitality": 3203,
+            "Damage": 0,
+            "Fire Damage": 185,
+            "Critical": 43,
+            "Critical Damage": 145
+          },
+          "sets": {
+            "Age-Old Set": 2,
+            "War Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "30683",
+              "slot": "shield"
+            },
+            "MP": {
+              "itemId": "31787",
+              "slot": "weapon"
+            },
+            "Range": {
+              "itemId": "19984",
+              "slot": "amulet"
+            }
+          },
+          "items": [
+            "Rhineetle Amulet",
+            "Age-Old Belt",
+            "Gargandyas's Fury",
+            "Onance Carapace",
+            "War's Gauntlet",
+            "Shylock's Ring",
+            "War's Treads",
+            "Age-Old Helmet",
+            "Dremoan Cape",
+            "Coral and Emerald Seemyool",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Brainbox",
+            "Major Intellectual"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6935.0,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 270.8,
+          "totalSearchMs": 6664.2
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1435.9,
+            "solveMs": 5054.0,
+            "objective": 2169.87,
+            "solutionCallbackCount": 15,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1972.8,
+                "objective": 486.52,
+                "score": 974.32,
+                "itemIds": [
+                  "8366",
+                  "8714",
+                  "8839",
+                  "12628",
+                  "12629",
+                  "12716",
+                  "12723",
+                  "12724",
+                  "13230",
+                  "13830",
+                  "14881",
+                  "15063",
+                  "15064",
+                  "18018",
+                  "19260",
+                  "27284"
+                ],
+                "exos": {
+                  "AP": "8714",
+                  "MP": "18018"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2202.1,
+                "objective": 1109.42,
+                "score": 1515.07,
+                "itemIds": [
+                  "7043",
+                  "8698",
+                  "13657",
+                  "18029",
+                  "18031",
+                  "19248",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "27537",
+                  "27539",
+                  "29136",
+                  "30356",
+                  "30453",
+                  "30455",
+                  "33050"
+                ],
+                "exos": {
+                  "Range": "19248"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2381.0,
+                "objective": 1317.41,
+                "score": 1962.57,
+                "itemIds": [
+                  "8704",
+                  "12719",
+                  "12720",
+                  "13344",
+                  "13760",
+                  "13761",
+                  "13762",
+                  "15693",
+                  "15697",
+                  "18598",
+                  "18599",
+                  "18601",
+                  "22191",
+                  "27265",
+                  "27284",
+                  "33022"
+                ],
+                "exos": {
+                  "AP": "8704",
+                  "Range": "15693"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2526.7,
+                "objective": 1891.98,
+                "score": 2362.73,
+                "itemIds": [
+                  "8698",
+                  "12719",
+                  "13117",
+                  "13344",
+                  "13897",
+                  "14001",
+                  "14079",
+                  "14081",
+                  "14854",
+                  "16203",
+                  "16333",
+                  "30453",
+                  "30689",
+                  "30943",
+                  "32117",
+                  "32121"
+                ],
+                "exos": {
+                  "AP": "14001",
+                  "MP": "32117",
+                  "Range": "30943"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2723.6,
+                "objective": 1925.45,
+                "score": 2380.83,
+                "itemIds": [
+                  "8698",
+                  "12719",
+                  "13117",
+                  "13344",
+                  "13897",
+                  "14001",
+                  "14079",
+                  "14081",
+                  "14854",
+                  "16203",
+                  "16333",
+                  "30453",
+                  "30689",
+                  "30943",
+                  "31787",
+                  "32121"
+                ],
+                "exos": {
+                  "AP": "14001",
+                  "MP": "14081",
+                  "Range": "30943"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 199,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 314
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1835,
+              "uniqueItemCount": 1701,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 214,
+              "conditionConstraintCount": 285,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1701,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.2255,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.2255,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.2255,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2138,
+          "Critical Damage": 1.6163,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.721,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Damage": 2.721,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Intelligence": 0.7048,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7048,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

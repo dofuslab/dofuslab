@@ -1,24 +1,24 @@
 {
   "targetSet": "milestone2-level200",
   "targetCount": 3072,
-  "generatedCpsatTargetCount": 1312,
-  "coveragePercent": 42.71,
+  "generatedCpsatTargetCount": 1376,
+  "coveragePercent": 44.79,
   "byElement": {
-    "agility": 324,
-    "chance": 332,
-    "intelligence": 324,
-    "strength": 332
+    "agility": 340,
+    "chance": 348,
+    "intelligence": 340,
+    "strength": 348
   },
   "byBudgetTier": {
     "1": 360,
-    "2": 328,
-    "3": 296,
+    "2": 360,
+    "3": 328,
     "4": 328
   },
   "byAp": {
-    "7": 200,
+    "7": 232,
     "8": 224,
-    "9": 224,
+    "9": 256,
     "10": 232,
     "11": 224,
     "12": 208
@@ -26,21 +26,21 @@
   "byMp": {
     "3": 336,
     "4": 320,
-    "5": 344,
-    "6": 312
+    "5": 376,
+    "6": 344
   },
   "byRange": {
     "0": 176,
     "1": 160,
-    "2": 152,
+    "2": 184,
     "3": 176,
-    "4": 152,
+    "4": 184,
     "5": 168,
     "6": 152,
     "none": 176
   },
   "bySolverStatus": {
-    "FEASIBLE": 750,
-    "OPTIMAL": 562
+    "FEASIBLE": 782,
+    "OPTIMAL": 594
   }
 }

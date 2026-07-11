@@ -1,34 +1,34 @@
 # Build Discovery CP-SAT Coverage
 
 Target set: `milestone2-level200`
-Generated CP-SAT targets: `1312` / `3072`
-Coverage: `42.71%`
+Generated CP-SAT targets: `1376` / `3072`
+Coverage: `44.79%`
 
 ## Element
 
 | Value | Count |
 |---|---:|
-| agility | 324 |
-| chance | 332 |
-| intelligence | 324 |
-| strength | 332 |
+| agility | 340 |
+| chance | 348 |
+| intelligence | 340 |
+| strength | 348 |
 
 ## Budget Tier
 
 | Value | Count |
 |---|---:|
 | 1 | 360 |
-| 2 | 328 |
-| 3 | 296 |
+| 2 | 360 |
+| 3 | 328 |
 | 4 | 328 |
 
 ## AP
 
 | Value | Count |
 |---|---:|
-| 7 | 200 |
+| 7 | 232 |
 | 8 | 224 |
-| 9 | 224 |
+| 9 | 256 |
 | 10 | 232 |
 | 11 | 224 |
 | 12 | 208 |
@@ -39,8 +39,8 @@ Coverage: `42.71%`
 |---|---:|
 | 3 | 336 |
 | 4 | 320 |
-| 5 | 344 |
-| 6 | 312 |
+| 5 | 376 |
+| 6 | 344 |
 
 ## Range
 
@@ -48,9 +48,9 @@ Coverage: `42.71%`
 |---|---:|
 | 0 | 176 |
 | 1 | 160 |
-| 2 | 152 |
+| 2 | 184 |
 | 3 | 176 |
-| 4 | 152 |
+| 4 | 184 |
 | 5 | 168 |
 | 6 | 152 |
 | none | 176 |
@@ -59,5 +59,5 @@ Coverage: `42.71%`
 
 | Value | Count |
 |---|---:|
-| FEASIBLE | 750 |
-| OPTIMAL | 562 |
+| FEASIBLE | 782 |
+| OPTIMAL | 594 |

@@ -5437,3 +5437,43 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     p95 remains above the Milestone 2 `<5s` target
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap9-10-mp36-rangesn0-budgets14-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 9,10 --mp-targets 3,6 --range-targets none,0 --expected-solver cpsat`
+
+### 2026-07-11 AP7/AP9 MP5/MP6 Range-2/4 Mid-Budget CP-SAT Smoke
+
+- Selected this slice from an explicit missing-target scan, weighted toward
+  weak AP, MP, range, and budget buckets.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-ap7-9-mp56-ranges24-budgets23-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ap7-9-mp56-ranges24-budgets23-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ap7-9-mp56-ranges24-budgets23-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 2, 3
+  - AP: 7, 9
+  - MP: 5, 6
+  - Range: 2, 4
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `64`
+  - generated: `64`
+  - invalid: `0`
+  - newly covered targets: `64`
+  - solver statuses: `32` optimal, `32` feasible
+  - AP coverage: `32` rows each for `7` and `9`
+  - MP coverage: `32` rows each for `5` and `6`
+  - range coverage: `32` rows each for `2` and `4`
+  - budget coverage: `32` rows each for tiers `2` and `3`
+- Runtime:
+  - elapsed min/avg/max: `5257.0ms / 6590.1ms / 7825.1ms`
+  - model min/avg/max: `1355.9ms / 1523.0ms / 1728.7ms`
+  - solve min/avg/max: `3506.1ms / 4685.2ms / 5073.8ms`
+- Interpretation:
+  - Strict CP-SAT Milestone 2 coverage is now `1376 / 3072` targets
+    (`44.79%`)
+  - Range `2/4`, AP `7/9`, MP `5/6`, and mid-budget tiers have stronger
+    committed evidence
+  - Continue using explicit missing-intersection scans for slice selection;
+    p95 remains above the Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap7-9-mp56-ranges24-budgets23-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 7,9 --mp-targets 5,6 --range-targets 2,4 --expected-solver cpsat`
+  - Host: `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-cpsat-ap7-9-mp56-ranges24-budgets23-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 7,9 --mp-targets 5,6 --range-targets 2,4 --expected-solver cpsat`
