@@ -1,0 +1,125 @@
+{
+  "description": "Thin-bucket all-level Iop sample emphasizing non-Strength range-heavy and MP-heavy targets across levels and budgets.",
+  "targets": [
+    {
+      "id": "thin_01_l20_chance_mp_t2",
+      "level": 20,
+      "element": "chance",
+      "budgetTier": 2,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "thin_02_l25_intelligence_range_t2",
+      "level": 25,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "thin_03_l35_agility_mp_t2",
+      "level": 35,
+      "element": "agility",
+      "budgetTier": 2,
+      "apTarget": 7,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "thin_04_l55_chance_range_t1",
+      "level": 55,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 4,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "thin_05_l70_intelligence_mp_t2",
+      "level": 70,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 9,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "thin_06_l95_agility_range_t3",
+      "level": 95,
+      "element": "agility",
+      "budgetTier": 3,
+      "apTarget": 10,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "thin_07_l110_chance_mp_t1",
+      "level": 110,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 6,
+      "rangeTarget": 0,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "thin_08_l125_intelligence_range_t2",
+      "level": 125,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 10,
+      "mpTarget": 4,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "thin_09_l145_agility_mp_t3",
+      "level": 145,
+      "element": "agility",
+      "budgetTier": 3,
+      "apTarget": 11,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "thin_10_l165_chance_range_t3",
+      "level": 165,
+      "element": "chance",
+      "budgetTier": 3,
+      "apTarget": 11,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "thin_11_l185_intelligence_mp_t4",
+      "level": 185,
+      "element": "intelligence",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 0,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "thin_12_l199_agility_range_t4",
+      "level": 199,
+      "element": "agility",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    }
+  ]
+}

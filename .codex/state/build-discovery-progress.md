@@ -6075,6 +6075,39 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server/scripts/test_build_discovery_ap_mp_range_grid_inventory.py`
   - `python -m py_compile server/scripts/build_discovery_ap_mp_range_grid_inventory.py server/scripts/test_build_discovery_ap_mp_range_grid_inventory.py`
 
+### 2026-07-11 M3/M4 Thin-Bucket Sample
+
+- Generated and validated a 12-row sample focused on the thinnest evidence
+  buckets: non-Strength `range_heavy` and `mp_heavy` all-level Iop targets.
+  - target file: `.codex/state/build-discovery-m3-thin-bucket-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-thin-bucket-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-thin-bucket-sample-20260711.md`
+  - generated: `11 / 12`
+  - no build: `1 / 12`
+  - invalid: `0`
+  - solver statuses: `11` `OPTIMAL`, `1` `INFEASIBLE`
+- Sample highlights:
+  - level `25` Intelligence tier `2` generated `6/3/6`
+  - level `35` Agility tier `2` generated `7/6/any`
+  - level `55` Chance tier `1` generated `7/4/6`
+  - level `95` Agility tier `3` generated `10/5/6`
+  - level `199` Agility tier `4` generated `12/5/6`
+  - level `20` Chance tier `2` `6/6/any` returned solver-proven
+    `INFEASIBLE`
+- Refreshed all-level inventory after adding this sample:
+  - valid query rows: `665088`
+  - generated evidence rows: `188`
+  - attempted evidence rows: `210`
+  - proven no-build evidence rows: `14`
+  - resolved evidence rows: `202`
+  - unresolved rows: `664886`
+  - `range_heavy` improved from `6` to `12` resolved rows
+  - `mp_heavy` improved from `18` to `24` resolved rows
+- Verification passed:
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-thin-bucket-targets-20260711.json --output-json /tmp/build-discovery-m3-thin-bucket-sample-20260711.json --output-md /tmp/build-discovery-m3-thin-bucket-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-thin-bucket-sample-20260711.json --target-file .codex/state/build-discovery-m3-thin-bucket-targets-20260711.json --expected-solver cpsat --allow-no-build`
+
 ### 2026-07-11 M3/M4 Next Unresolved Sample
 
 - Generated and validated a 10-row sample from the stricter

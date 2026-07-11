@@ -302,6 +302,11 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   current CP-SAT path generated valid arbitrary-level rows at levels 13, 18,
   37, 42, 75, 98, 101, 111, 137, 141, 171, and 187, but some mid-level rows
   still exceeded the `<5s` cache-miss target.
+- Non-Strength range-heavy and MP-heavy rows need targeted sampling because
+  they were initially underrepresented. Current evidence shows several
+  non-Strength Range 6 rows are feasible from low/mid levels onward, while
+  level 20 Chance `6/6/None` tier 2 is solver-proven infeasible under current
+  assumptions.
 - Level Diversity needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket broadly.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.
