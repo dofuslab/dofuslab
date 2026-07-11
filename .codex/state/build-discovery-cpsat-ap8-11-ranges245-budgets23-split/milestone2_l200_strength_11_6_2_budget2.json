@@ -1,0 +1,719 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T09:00:21.058207+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_11_6_2_budget2",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 2,
+        "apTarget": 11,
+        "mpTarget": 6,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 6,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2364.39,
+        "weightedStatScore": 4219.34,
+        "utilityStatScore": 368.32,
+        "genericDamageScore": 4213.25,
+        "rawRotationDamageScore": 3860.19,
+        "spellDamageScore": 3860.19,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.4044,
+        "weaponDamageScore": 213.39,
+        "survivabilityScore": 100.11,
+        "weakestElementEhp": 3140.12,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 2,
+          "Strength": 1388,
+          "Power": 160,
+          "Vitality": 3053,
+          "Damage": 0,
+          "Earth Damage": 172,
+          "Critical": 42,
+          "Critical Damage": 30,
+          "Neutral Damage": 142
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Depths Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "17997",
+            "internalId": null,
+            "name": "Crabtun Necklace",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "belt": {
+            "id": "19983",
+            "internalId": null,
+            "name": "Rhineetle Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "18693",
+            "internalId": null,
+            "name": "Broucey Bark",
+            "type": "Shield",
+            "level": 196,
+            "set": "Brouce Boulgoure Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "18000",
+            "internalId": null,
+            "name": "Koutoulou Mask",
+            "type": "Hat",
+            "level": 200,
+            "set": null
+          },
+          "cloak": {
+            "id": "14168",
+            "internalId": null,
+            "name": "Cloak of a Thousand Excuses",
+            "type": "Cloak",
+            "level": 198,
+            "set": null
+          },
+          "pet": {
+            "id": "33268",
+            "internalId": null,
+            "name": "Amber and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16196",
+            "internalId": null,
+            "name": "Major Rabid",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16333",
+            "internalId": null,
+            "name": "Shaker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "ring_1": {
+            "id": "13115",
+            "internalId": null,
+            "name": "Broucey Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_2": {
+            "id": "17998",
+            "internalId": null,
+            "name": "Crustic Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Depths Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2364.39,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 2,
+          "Strength": 1388,
+          "Power": 160,
+          "Vitality": 3053,
+          "Damage": 0,
+          "Earth Damage": 172,
+          "Critical": 42,
+          "Critical Damage": 30,
+          "Neutral Damage": 142
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Depths Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Crabtun Necklace",
+          "Rhineetle Belt",
+          "Gargandyas's Fury",
+          "Broucey Bark",
+          "Broucey Ring",
+          "Crustic Ring",
+          "Meriana's Clairvoyance",
+          "Koutoulou Mask",
+          "Cloak of a Thousand Excuses",
+          "Amber and Emerald Seemyool",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Goliath",
+          "Major Rabid",
+          "Shaker"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2364.39,
+          "weightedStatScore": 4219.34,
+          "utilityStatScore": 368.32,
+          "genericDamageScore": 4213.25,
+          "rawRotationDamageScore": 3860.19,
+          "spellDamageScore": 3860.19,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.4044,
+          "weaponDamageScore": 213.39,
+          "survivabilityScore": 100.11,
+          "weakestElementEhp": 3140.12,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 6,
+            "Range": 2,
+            "Strength": 1388,
+            "Power": 160,
+            "Vitality": 3053,
+            "Damage": 0,
+            "Earth Damage": 172,
+            "Critical": 42,
+            "Critical Damage": 30,
+            "Neutral Damage": 142
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Depths Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "17997",
+              "internalId": null,
+              "name": "Crabtun Necklace",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Depths Set"
+            },
+            "belt": {
+              "id": "19983",
+              "internalId": null,
+              "name": "Rhineetle Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "18693",
+              "internalId": null,
+              "name": "Broucey Bark",
+              "type": "Shield",
+              "level": 196,
+              "set": "Brouce Boulgoure Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "18000",
+              "internalId": null,
+              "name": "Koutoulou Mask",
+              "type": "Hat",
+              "level": 200,
+              "set": null
+            },
+            "cloak": {
+              "id": "14168",
+              "internalId": null,
+              "name": "Cloak of a Thousand Excuses",
+              "type": "Cloak",
+              "level": 198,
+              "set": null
+            },
+            "pet": {
+              "id": "33268",
+              "internalId": null,
+              "name": "Amber and Emerald Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "16196",
+              "internalId": null,
+              "name": "Major Rabid",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "16333",
+              "internalId": null,
+              "name": "Shaker",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "ring_1": {
+              "id": "13115",
+              "internalId": null,
+              "name": "Broucey Ring",
+              "type": "Ring",
+              "level": 198,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_2": {
+              "id": "17998",
+              "internalId": null,
+              "name": "Crustic Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Depths Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2364.39,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 6,
+            "Range": 2,
+            "Strength": 1388,
+            "Power": 160,
+            "Vitality": 3053,
+            "Damage": 0,
+            "Earth Damage": 172,
+            "Critical": 42,
+            "Critical Damage": 30,
+            "Neutral Damage": 142
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Depths Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Crabtun Necklace",
+            "Rhineetle Belt",
+            "Gargandyas's Fury",
+            "Broucey Bark",
+            "Broucey Ring",
+            "Crustic Ring",
+            "Meriana's Clairvoyance",
+            "Koutoulou Mask",
+            "Cloak of a Thousand Excuses",
+            "Amber and Emerald Seemyool",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Goliath",
+            "Major Rabid",
+            "Shaker"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6843.4,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 280.3,
+          "totalSearchMs": 6563.1
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1385.2,
+            "solveMs": 5074.9,
+            "objective": 1974.55,
+            "solutionCallbackCount": 12,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2062.2,
+                "objective": 756.31,
+                "score": 1200.22,
+                "itemIds": [
+                  "2469",
+                  "12117",
+                  "12723",
+                  "13759",
+                  "13768",
+                  "13829",
+                  "13830",
+                  "13831",
+                  "18004",
+                  "18017",
+                  "20364",
+                  "27266",
+                  "31749",
+                  "31751",
+                  "31753",
+                  "33268"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2294.1,
+                "objective": 1071.25,
+                "score": 1537.96,
+                "itemIds": [
+                  "737",
+                  "11600",
+                  "11631",
+                  "12727",
+                  "13829",
+                  "13831",
+                  "21225",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "27512",
+                  "27514",
+                  "27549",
+                  "30453",
+                  "30455",
+                  "33159"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2433.4,
+                "objective": 1077.49,
+                "score": 1527.85,
+                "itemIds": [
+                  "737",
+                  "2469",
+                  "7043",
+                  "9145",
+                  "11600",
+                  "13830",
+                  "14057",
+                  "16333",
+                  "16335",
+                  "21225",
+                  "21226",
+                  "21227",
+                  "21228",
+                  "30455",
+                  "31800",
+                  "33155"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2573.5,
+                "objective": 1547.13,
+                "score": 1931.69,
+                "itemIds": [
+                  "694",
+                  "7043",
+                  "8843",
+                  "12100",
+                  "13344",
+                  "13774",
+                  "14171",
+                  "30453",
+                  "30455",
+                  "32228",
+                  "32229",
+                  "32230",
+                  "32234",
+                  "32235",
+                  "32236",
+                  "33204"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2786.9,
+                "objective": 1573.72,
+                "score": 1904.49,
+                "itemIds": [
+                  "694",
+                  "7043",
+                  "12109",
+                  "13774",
+                  "13829",
+                  "15693",
+                  "15695",
+                  "15697",
+                  "15700",
+                  "17997",
+                  "27549",
+                  "30453",
+                  "30455",
+                  "30858",
+                  "31787",
+                  "33268"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 199,
+                "shield": 59,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 266,
+                "ring": 134
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1653,
+              "uniqueItemCount": 1653,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 216,
+              "conditionConstraintCount": 285,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1653,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

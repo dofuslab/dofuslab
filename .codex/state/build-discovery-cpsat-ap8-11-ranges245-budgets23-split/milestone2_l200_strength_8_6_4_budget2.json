@@ -1,0 +1,719 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T09:00:21.058207+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_8_6_4_budget2",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 2,
+        "apTarget": 8,
+        "mpTarget": 6,
+        "rangeTarget": 4
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 8,
+        "mpTarget": 6,
+        "rangeTarget": 4,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2367.95,
+        "weightedStatScore": 4508.32,
+        "utilityStatScore": 370.97,
+        "genericDamageScore": 4218.01,
+        "rawRotationDamageScore": 3864.55,
+        "spellDamageScore": 3864.55,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.406,
+        "weaponDamageScore": 211.18,
+        "survivabilityScore": 98.88,
+        "weakestElementEhp": 2924.71,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 9,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1298,
+          "Power": 160,
+          "Vitality": 3303,
+          "Damage": 0,
+          "Earth Damage": 180,
+          "Critical": 43,
+          "Critical Damage": 120,
+          "Neutral Damage": 130
+        },
+        "sets": {
+          "Count Harebourg Set": 2,
+          "Gein Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "15433",
+            "internalId": null,
+            "name": "Gein's Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "belt": {
+            "id": "15432",
+            "internalId": null,
+            "name": "Gein's Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "18718",
+            "internalId": null,
+            "name": "Cycloid Shield",
+            "type": "Shield",
+            "level": 200,
+            "set": "Cycloid Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "14076",
+            "internalId": null,
+            "name": "Count Harebourg's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "cloak": {
+            "id": "14168",
+            "internalId": null,
+            "name": "Cloak of a Thousand Excuses",
+            "type": "Cloak",
+            "level": 198,
+            "set": null
+          },
+          "pet": {
+            "id": "33268",
+            "internalId": null,
+            "name": "Amber and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "16254",
+            "internalId": null,
+            "name": "Major Earth Devastator",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16196",
+            "internalId": null,
+            "name": "Major Rabid",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "14077",
+            "internalId": null,
+            "name": "Count Harebourg's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2367.95,
+        "apStrategy": null,
+        "totals": {
+          "AP": 9,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1298,
+          "Power": 160,
+          "Vitality": 3303,
+          "Damage": 0,
+          "Earth Damage": 180,
+          "Critical": 43,
+          "Critical Damage": 120,
+          "Neutral Damage": 130
+        },
+        "sets": {
+          "Count Harebourg Set": 2,
+          "Gein Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Gein's Amulet",
+          "Gein's Belt",
+          "Gargandyas's Fury",
+          "Cycloid Shield",
+          "Corruption's Ring",
+          "Count Harebourg's Ring",
+          "Meriana's Clairvoyance",
+          "Count Harebourg's Hat",
+          "Cloak of a Thousand Excuses",
+          "Amber and Emerald Seemyool",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Earth Devastator",
+          "Major Goliath",
+          "Major Rabid"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2367.95,
+          "weightedStatScore": 4508.32,
+          "utilityStatScore": 370.97,
+          "genericDamageScore": 4218.01,
+          "rawRotationDamageScore": 3864.55,
+          "spellDamageScore": 3864.55,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.406,
+          "weaponDamageScore": 211.18,
+          "survivabilityScore": 98.88,
+          "weakestElementEhp": 2924.71,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 6,
+            "Range": 4,
+            "Strength": 1298,
+            "Power": 160,
+            "Vitality": 3303,
+            "Damage": 0,
+            "Earth Damage": 180,
+            "Critical": 43,
+            "Critical Damage": 120,
+            "Neutral Damage": 130
+          },
+          "sets": {
+            "Count Harebourg Set": 2,
+            "Gein Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "15433",
+              "internalId": null,
+              "name": "Gein's Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "belt": {
+              "id": "15432",
+              "internalId": null,
+              "name": "Gein's Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "18718",
+              "internalId": null,
+              "name": "Cycloid Shield",
+              "type": "Shield",
+              "level": 200,
+              "set": "Cycloid Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "14076",
+              "internalId": null,
+              "name": "Count Harebourg's Hat",
+              "type": "Hat",
+              "level": 200,
+              "set": "Count Harebourg Set"
+            },
+            "cloak": {
+              "id": "14168",
+              "internalId": null,
+              "name": "Cloak of a Thousand Excuses",
+              "type": "Cloak",
+              "level": 198,
+              "set": null
+            },
+            "pet": {
+              "id": "33268",
+              "internalId": null,
+              "name": "Amber and Emerald Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "16254",
+              "internalId": null,
+              "name": "Major Earth Devastator",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "16196",
+              "internalId": null,
+              "name": "Major Rabid",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "ring_1": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "ring_2": {
+              "id": "14077",
+              "internalId": null,
+              "name": "Count Harebourg's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Count Harebourg Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2367.95,
+          "apStrategy": null,
+          "totals": {
+            "AP": 9,
+            "MP": 6,
+            "Range": 4,
+            "Strength": 1298,
+            "Power": 160,
+            "Vitality": 3303,
+            "Damage": 0,
+            "Earth Damage": 180,
+            "Critical": 43,
+            "Critical Damage": 120,
+            "Neutral Damage": 130
+          },
+          "sets": {
+            "Count Harebourg Set": 2,
+            "Gein Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Gein's Amulet",
+            "Gein's Belt",
+            "Gargandyas's Fury",
+            "Cycloid Shield",
+            "Corruption's Ring",
+            "Count Harebourg's Ring",
+            "Meriana's Clairvoyance",
+            "Count Harebourg's Hat",
+            "Cloak of a Thousand Excuses",
+            "Amber and Emerald Seemyool",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Earth Devastator",
+            "Major Goliath",
+            "Major Rabid"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6738.5,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 161.7,
+          "totalSearchMs": 6576.8
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1388.5,
+            "solveMs": 5062.7,
+            "objective": 2094.62,
+            "solutionCallbackCount": 9,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2036.8,
+                "objective": 861.5,
+                "score": 1286.28,
+                "itemIds": [
+                  "2469",
+                  "8366",
+                  "8840",
+                  "9138",
+                  "12628",
+                  "12629",
+                  "12630",
+                  "12716",
+                  "13115",
+                  "13830",
+                  "16335",
+                  "18693",
+                  "19241",
+                  "19242",
+                  "27266",
+                  "33202"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2216.8,
+                "objective": 1148.98,
+                "score": 1647.43,
+                "itemIds": [
+                  "737",
+                  "11600",
+                  "11631",
+                  "12727",
+                  "13829",
+                  "13831",
+                  "18711",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "27512",
+                  "27515",
+                  "30453",
+                  "30455",
+                  "32121",
+                  "33159"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2365.9,
+                "objective": 2014.58,
+                "score": 2292.31,
+                "itemIds": [
+                  "7043",
+                  "13114",
+                  "13115",
+                  "13774",
+                  "14168",
+                  "15440",
+                  "15442",
+                  "16196",
+                  "16254",
+                  "18718",
+                  "19244",
+                  "30453",
+                  "30455",
+                  "32117",
+                  "32121",
+                  "33268"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2494.1,
+                "objective": 2049.93,
+                "score": 2286.48,
+                "itemIds": [
+                  "7043",
+                  "13114",
+                  "13115",
+                  "13774",
+                  "14168",
+                  "15440",
+                  "15442",
+                  "16196",
+                  "16254",
+                  "18718",
+                  "19244",
+                  "30453",
+                  "30455",
+                  "31787",
+                  "32121",
+                  "33268"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2983.6,
+                "objective": 2052.99,
+                "score": 2305.19,
+                "itemIds": [
+                  "7043",
+                  "13114",
+                  "13115",
+                  "13774",
+                  "14168",
+                  "15440",
+                  "15442",
+                  "16196",
+                  "16254",
+                  "17997",
+                  "18718",
+                  "30453",
+                  "30455",
+                  "31787",
+                  "32121",
+                  "33268"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 199,
+                "shield": 59,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 266,
+                "ring": 134
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1653,
+              "uniqueItemCount": 1653,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 216,
+              "conditionConstraintCount": 285,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1653,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

@@ -1,0 +1,783 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T09:00:21.058207+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_chance_11_3_4_budget3",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 3,
+        "apTarget": 11,
+        "mpTarget": 3,
+        "rangeTarget": 4
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 3,
+        "rangeTarget": 4,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2498.63,
+        "weightedStatScore": 3888.18,
+        "utilityStatScore": 366.14,
+        "genericDamageScore": 4548.13,
+        "rawRotationDamageScore": 3009.79,
+        "spellDamageScore": 3009.79,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.516,
+        "weaponDamageScore": 206.39,
+        "survivabilityScore": 85.82,
+        "weakestElementEhp": 2734.9,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 4,
+          "Chance": 1288,
+          "Power": 360,
+          "Vitality": 2603,
+          "Damage": 0,
+          "Water Damage": 105,
+          "Critical": 62,
+          "Critical Damage": 29
+        },
+        "sets": {
+          "Rhineetle Set": 2,
+          "Slickster Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "19254",
+            "slot": "hat"
+          },
+          "MP": {
+            "itemId": "19986",
+            "slot": "weapon"
+          },
+          "Range": {
+            "itemId": "32121",
+            "slot": "boots"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14169",
+            "internalId": null,
+            "name": "White Lai Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Slickster Set"
+          },
+          "belt": {
+            "id": "14162",
+            "internalId": null,
+            "name": "Epeni's Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Slickster Set"
+          },
+          "weapon": {
+            "id": "19986",
+            "internalId": null,
+            "name": "Rhineetle Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "shield": {
+            "id": "32245",
+            "internalId": null,
+            "name": "Psychopump Button",
+            "type": "Shield",
+            "level": 200,
+            "set": "Psychopump Set"
+          },
+          "ring_1": {
+            "id": "24035",
+            "internalId": null,
+            "name": "Spilling Ryng",
+            "type": "Ring",
+            "level": 200,
+            "set": null
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "19254",
+            "internalId": null,
+            "name": "Hood of the Sharp Eye",
+            "type": "Hat",
+            "level": 200,
+            "set": "Sharp Eye Set"
+          },
+          "cloak": {
+            "id": "14161",
+            "internalId": null,
+            "name": "Pauper's Robe",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Slickster Set"
+          },
+          "pet": {
+            "id": "29433",
+            "internalId": null,
+            "name": "Zenusha Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2498.63,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 4,
+          "Chance": 1288,
+          "Power": 360,
+          "Vitality": 2603,
+          "Damage": 0,
+          "Water Damage": 105,
+          "Critical": 62,
+          "Critical Damage": 29
+        },
+        "sets": {
+          "Rhineetle Set": 2,
+          "Slickster Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "19254",
+            "slot": "hat"
+          },
+          "MP": {
+            "itemId": "19986",
+            "slot": "weapon"
+          },
+          "Range": {
+            "itemId": "32121",
+            "slot": "boots"
+          }
+        },
+        "items": [
+          "White Lai Amulet",
+          "Epeni's Belt",
+          "Rhineetle Bow",
+          "Psychopump Button",
+          "Spilling Ryng",
+          "Rhineetle Ring",
+          "Meriana's Clairvoyance",
+          "Hood of the Sharp Eye",
+          "Pauper's Robe",
+          "Zenusha Kolophant",
+          "Cloudy Dofus",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Arcanist",
+          "Impetuous",
+          "Major Tease"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2498.63,
+          "weightedStatScore": 3888.18,
+          "utilityStatScore": 366.14,
+          "genericDamageScore": 4548.13,
+          "rawRotationDamageScore": 3009.79,
+          "spellDamageScore": 3009.79,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.516,
+          "weaponDamageScore": 206.39,
+          "survivabilityScore": 85.82,
+          "weakestElementEhp": 2734.9,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 6,
+            "Range": 4,
+            "Chance": 1288,
+            "Power": 360,
+            "Vitality": 2603,
+            "Damage": 0,
+            "Water Damage": 105,
+            "Critical": 62,
+            "Critical Damage": 29
+          },
+          "sets": {
+            "Rhineetle Set": 2,
+            "Slickster Set": 3
+          },
+          "exos": {
+            "AP": {
+              "itemId": "19254",
+              "slot": "hat"
+            },
+            "MP": {
+              "itemId": "19986",
+              "slot": "weapon"
+            },
+            "Range": {
+              "itemId": "32121",
+              "slot": "boots"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "14169",
+              "internalId": null,
+              "name": "White Lai Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Slickster Set"
+            },
+            "belt": {
+              "id": "14162",
+              "internalId": null,
+              "name": "Epeni's Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Slickster Set"
+            },
+            "weapon": {
+              "id": "19986",
+              "internalId": null,
+              "name": "Rhineetle Bow",
+              "type": "Bow",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "shield": {
+              "id": "32245",
+              "internalId": null,
+              "name": "Psychopump Button",
+              "type": "Shield",
+              "level": 200,
+              "set": "Psychopump Set"
+            },
+            "ring_1": {
+              "id": "24035",
+              "internalId": null,
+              "name": "Spilling Ryng",
+              "type": "Ring",
+              "level": 200,
+              "set": null
+            },
+            "ring_2": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "19254",
+              "internalId": null,
+              "name": "Hood of the Sharp Eye",
+              "type": "Hat",
+              "level": 200,
+              "set": "Sharp Eye Set"
+            },
+            "cloak": {
+              "id": "14161",
+              "internalId": null,
+              "name": "Pauper's Robe",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Slickster Set"
+            },
+            "pet": {
+              "id": "29433",
+              "internalId": null,
+              "name": "Zenusha Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2498.63,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 6,
+            "Range": 4,
+            "Chance": 1288,
+            "Power": 360,
+            "Vitality": 2603,
+            "Damage": 0,
+            "Water Damage": 105,
+            "Critical": 62,
+            "Critical Damage": 29
+          },
+          "sets": {
+            "Rhineetle Set": 2,
+            "Slickster Set": 3
+          },
+          "exos": {
+            "AP": {
+              "itemId": "19254",
+              "slot": "hat"
+            },
+            "MP": {
+              "itemId": "19986",
+              "slot": "weapon"
+            },
+            "Range": {
+              "itemId": "32121",
+              "slot": "boots"
+            }
+          },
+          "items": [
+            "White Lai Amulet",
+            "Epeni's Belt",
+            "Rhineetle Bow",
+            "Psychopump Button",
+            "Spilling Ryng",
+            "Rhineetle Ring",
+            "Meriana's Clairvoyance",
+            "Hood of the Sharp Eye",
+            "Pauper's Robe",
+            "Zenusha Kolophant",
+            "Cloudy Dofus",
+            "Crimson Dofus",
+            "Dolmanax",
+            "Arcanist",
+            "Impetuous",
+            "Major Tease"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6996.2,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 191.9,
+          "totalSearchMs": 6804.3
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1660.1,
+            "solveMs": 5017.2,
+            "objective": 1978.89,
+            "solutionCallbackCount": 9,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2321.0,
+                "objective": 937.0,
+                "score": 1446.91,
+                "itemIds": [
+                  "737",
+                  "12100",
+                  "12103",
+                  "12713",
+                  "12716",
+                  "12720",
+                  "12723",
+                  "13768",
+                  "15434",
+                  "15435",
+                  "15436",
+                  "18594",
+                  "18595",
+                  "23618",
+                  "23621",
+                  "33205"
+                ],
+                "exos": {
+                  "AP": "15436",
+                  "MP": "23621"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2545.8,
+                "objective": 1010.7,
+                "score": 1499.96,
+                "itemIds": [
+                  "12100",
+                  "12103",
+                  "12713",
+                  "12716",
+                  "12720",
+                  "12723",
+                  "13768",
+                  "15434",
+                  "15435",
+                  "15436",
+                  "18594",
+                  "18595",
+                  "23618",
+                  "23621",
+                  "30453",
+                  "33205"
+                ],
+                "exos": {
+                  "AP": "15436",
+                  "MP": "23621",
+                  "Range": "15435"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2672.3,
+                "objective": 1108.14,
+                "score": 1469.9,
+                "itemIds": [
+                  "11715",
+                  "11716",
+                  "12109",
+                  "12112",
+                  "12720",
+                  "13829",
+                  "18029",
+                  "18030",
+                  "22004",
+                  "30356",
+                  "30453",
+                  "30455",
+                  "31751",
+                  "32210",
+                  "32211",
+                  "33170"
+                ],
+                "exos": {
+                  "AP": "11715",
+                  "MP": "32210",
+                  "Range": "18029"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2845.7,
+                "objective": 1142.49,
+                "score": 1603.01,
+                "itemIds": [
+                  "8698",
+                  "9117",
+                  "9130",
+                  "9146",
+                  "12852",
+                  "12853",
+                  "12855",
+                  "22020",
+                  "27547",
+                  "27548",
+                  "29136",
+                  "30356",
+                  "30453",
+                  "30455",
+                  "31751",
+                  "33286"
+                ],
+                "exos": {
+                  "AP": "12855",
+                  "MP": "12853",
+                  "Range": "12852"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 3015.9,
+                "objective": 1149.09,
+                "score": 1576.83,
+                "itemIds": [
+                  "8000",
+                  "8698",
+                  "12716",
+                  "12723",
+                  "13759",
+                  "14049",
+                  "15693",
+                  "15694",
+                  "18017",
+                  "19601",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "29136",
+                  "30453",
+                  "30683"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 314
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1836,
+              "uniqueItemCount": 1702,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 215,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1702,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

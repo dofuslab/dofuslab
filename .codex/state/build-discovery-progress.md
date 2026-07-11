@@ -4717,3 +4717,39 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - p95 remains above the Milestone 2 `<5s` target
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap9-range1-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,2,3,4 --ap-targets 9 --mp-targets 3,6 --range-targets 1 --expected-solver cpsat`
+
+### 2026-07-11 AP8/AP11 Range-2/4/5 Mid-Budget CP-SAT Smoke
+
+- Ran a larger Milestone 2 coverage slice targeting thin AP and range buckets.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-ap8-11-ranges245-budgets23-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ap8-11-ranges245-budgets23-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ap8-11-ranges245-budgets23-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 2, 3
+  - AP: 8, 11
+  - MP: 3, 6
+  - Range: 2, 4, 5
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `96`
+  - generated: `96`
+  - invalid: `0`
+  - solver statuses: `31` optimal, `65` feasible
+  - AP coverage: `48` rows each for `8` and `11`
+  - MP coverage: `48` rows each for `3` and `6`
+  - range coverage: `32` rows each for `2`, `4`, and `5`
+  - budget coverage: `48` rows each for tiers `2` and `3`
+- Runtime:
+  - elapsed min/avg/max: `4834.4ms / 6688.1ms / 7217.8ms`
+  - model min/avg/max: `1312.9ms / 1510.5ms / 1731.2ms`
+  - solve min/avg/max: `3120.8ms / 4817.1ms / 5082.2ms`
+- Interpretation:
+  - CP-SAT can generate valid builds for a larger mid-budget AP/range coverage
+    slice
+  - feasible-heavy statuses show this remains coverage evidence rather than
+    final-best proof
+  - p95 remains above the Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap8-11-ranges245-budgets23-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 8,11 --mp-targets 3,6 --range-targets 2,4,5 --expected-solver cpsat`

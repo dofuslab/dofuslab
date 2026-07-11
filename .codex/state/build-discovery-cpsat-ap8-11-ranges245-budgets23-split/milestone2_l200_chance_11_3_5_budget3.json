@@ -1,0 +1,785 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T09:00:21.058207+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_chance_11_3_5_budget3",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 3,
+        "apTarget": 11,
+        "mpTarget": 3,
+        "rangeTarget": 5
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 3,
+        "rangeTarget": 5,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2619.6,
+        "weightedStatScore": 4168.7,
+        "utilityStatScore": 437.0,
+        "genericDamageScore": 4636.9,
+        "rawRotationDamageScore": 3068.53,
+        "spellDamageScore": 3068.53,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.5456,
+        "weaponDamageScore": 229.9,
+        "survivabilityScore": 96.0,
+        "weakestElementEhp": 2978.54,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 5,
+          "Chance": 1248,
+          "Power": 370,
+          "Vitality": 3053,
+          "Damage": 5,
+          "Water Damage": 145,
+          "Critical": 57,
+          "Critical Damage": 20
+        },
+        "sets": {
+          "Ice Knight Set": 2,
+          "Sharp Eye Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "32231",
+            "slot": "ring_1"
+          },
+          "MP": {
+            "itemId": "19254",
+            "slot": "hat"
+          },
+          "Range": {
+            "itemId": "32233",
+            "slot": "shield"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "19255",
+            "internalId": null,
+            "name": "Amulet of the Sharp Eye",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Sharp Eye Set"
+          },
+          "belt": {
+            "id": "18598",
+            "internalId": null,
+            "name": "Sneerena Loincloth",
+            "type": "Belt",
+            "level": 200,
+            "set": "Cursed Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "32233",
+            "internalId": null,
+            "name": "Ice Knight's Frigid Pavise",
+            "type": "Shield",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "ring_1": {
+            "id": "32231",
+            "internalId": null,
+            "name": "Ice Knight's Frozen Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "19254",
+            "internalId": null,
+            "name": "Hood of the Sharp Eye",
+            "type": "Hat",
+            "level": 200,
+            "set": "Sharp Eye Set"
+          },
+          "cloak": {
+            "id": "19253",
+            "internalId": null,
+            "name": "Cape of the Sharp Eye",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Sharp Eye Set"
+          },
+          "pet": {
+            "id": "29433",
+            "internalId": null,
+            "name": "Zenusha Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2619.6,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 5,
+          "Chance": 1248,
+          "Power": 370,
+          "Vitality": 3053,
+          "Damage": 5,
+          "Water Damage": 145,
+          "Critical": 57,
+          "Critical Damage": 20
+        },
+        "sets": {
+          "Ice Knight Set": 2,
+          "Sharp Eye Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "32231",
+            "slot": "ring_1"
+          },
+          "MP": {
+            "itemId": "19254",
+            "slot": "hat"
+          },
+          "Range": {
+            "itemId": "32233",
+            "slot": "shield"
+          }
+        },
+        "items": [
+          "Amulet of the Sharp Eye",
+          "Sneerena Loincloth",
+          "Gargandyas's Fury",
+          "Ice Knight's Frigid Pavise",
+          "Ice Knight's Frozen Gauntlet",
+          "Rhineetle Ring",
+          "Meriana's Clairvoyance",
+          "Hood of the Sharp Eye",
+          "Cape of the Sharp Eye",
+          "Zenusha Kolophant",
+          "Cloudy Dofus",
+          "Crimson Dofus",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Tease"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2619.6,
+          "weightedStatScore": 4168.7,
+          "utilityStatScore": 437.0,
+          "genericDamageScore": 4636.9,
+          "rawRotationDamageScore": 3068.53,
+          "spellDamageScore": 3068.53,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.5456,
+          "weaponDamageScore": 229.9,
+          "survivabilityScore": 96.0,
+          "weakestElementEhp": 2978.54,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 5,
+            "Chance": 1248,
+            "Power": 370,
+            "Vitality": 3053,
+            "Damage": 5,
+            "Water Damage": 145,
+            "Critical": 57,
+            "Critical Damage": 20
+          },
+          "sets": {
+            "Ice Knight Set": 2,
+            "Sharp Eye Set": 3
+          },
+          "exos": {
+            "AP": {
+              "itemId": "32231",
+              "slot": "ring_1"
+            },
+            "MP": {
+              "itemId": "19254",
+              "slot": "hat"
+            },
+            "Range": {
+              "itemId": "32233",
+              "slot": "shield"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "19255",
+              "internalId": null,
+              "name": "Amulet of the Sharp Eye",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Sharp Eye Set"
+            },
+            "belt": {
+              "id": "18598",
+              "internalId": null,
+              "name": "Sneerena Loincloth",
+              "type": "Belt",
+              "level": 200,
+              "set": "Cursed Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "32233",
+              "internalId": null,
+              "name": "Ice Knight's Frigid Pavise",
+              "type": "Shield",
+              "level": 200,
+              "set": "Ice Knight Set"
+            },
+            "ring_1": {
+              "id": "32231",
+              "internalId": null,
+              "name": "Ice Knight's Frozen Gauntlet",
+              "type": "Ring",
+              "level": 200,
+              "set": "Ice Knight Set"
+            },
+            "ring_2": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "19254",
+              "internalId": null,
+              "name": "Hood of the Sharp Eye",
+              "type": "Hat",
+              "level": 200,
+              "set": "Sharp Eye Set"
+            },
+            "cloak": {
+              "id": "19253",
+              "internalId": null,
+              "name": "Cape of the Sharp Eye",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Sharp Eye Set"
+            },
+            "pet": {
+              "id": "29433",
+              "internalId": null,
+              "name": "Zenusha Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2619.6,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 5,
+            "Chance": 1248,
+            "Power": 370,
+            "Vitality": 3053,
+            "Damage": 5,
+            "Water Damage": 145,
+            "Critical": 57,
+            "Critical Damage": 20
+          },
+          "sets": {
+            "Ice Knight Set": 2,
+            "Sharp Eye Set": 3
+          },
+          "exos": {
+            "AP": {
+              "itemId": "32231",
+              "slot": "ring_1"
+            },
+            "MP": {
+              "itemId": "19254",
+              "slot": "hat"
+            },
+            "Range": {
+              "itemId": "32233",
+              "slot": "shield"
+            }
+          },
+          "items": [
+            "Amulet of the Sharp Eye",
+            "Sneerena Loincloth",
+            "Gargandyas's Fury",
+            "Ice Knight's Frigid Pavise",
+            "Ice Knight's Frozen Gauntlet",
+            "Rhineetle Ring",
+            "Meriana's Clairvoyance",
+            "Hood of the Sharp Eye",
+            "Cape of the Sharp Eye",
+            "Zenusha Kolophant",
+            "Cloudy Dofus",
+            "Crimson Dofus",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Tease"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7042.1,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 203.3,
+          "totalSearchMs": 6838.8
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1667.3,
+            "solveMs": 5051.9,
+            "objective": 2112.48,
+            "solutionCallbackCount": 11,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2163.6,
+                "objective": 768.29,
+                "score": 1249.95,
+                "itemIds": [
+                  "8840",
+                  "9140",
+                  "9144",
+                  "11711",
+                  "11713",
+                  "11714",
+                  "12117",
+                  "12628",
+                  "12714",
+                  "13765",
+                  "13768",
+                  "13831",
+                  "21996",
+                  "32217",
+                  "32218",
+                  "33159"
+                ],
+                "exos": {
+                  "MP": "32217",
+                  "Range": "11714"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2394.4,
+                "objective": 1108.14,
+                "score": 1469.9,
+                "itemIds": [
+                  "11715",
+                  "11716",
+                  "12109",
+                  "12112",
+                  "12720",
+                  "13829",
+                  "18029",
+                  "18030",
+                  "22004",
+                  "30356",
+                  "30453",
+                  "30455",
+                  "31751",
+                  "32210",
+                  "32211",
+                  "33170"
+                ],
+                "exos": {
+                  "AP": "11715",
+                  "MP": "32210",
+                  "Range": "18029"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2582.3,
+                "objective": 1317.27,
+                "score": 1700.16,
+                "itemIds": [
+                  "8698",
+                  "12716",
+                  "13831",
+                  "14159",
+                  "15693",
+                  "15695",
+                  "15700",
+                  "22004",
+                  "27265",
+                  "27284",
+                  "30453",
+                  "30455",
+                  "32234",
+                  "32235",
+                  "32236",
+                  "33060"
+                ],
+                "exos": {
+                  "AP": "15695",
+                  "Range": "14159"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2787.6,
+                "objective": 1417.09,
+                "score": 1832.55,
+                "itemIds": [
+                  "694",
+                  "8698",
+                  "12716",
+                  "13768",
+                  "14159",
+                  "15693",
+                  "15695",
+                  "15700",
+                  "27265",
+                  "27284",
+                  "30453",
+                  "30455",
+                  "32234",
+                  "32235",
+                  "32236",
+                  "33060"
+                ],
+                "exos": {
+                  "AP": "15695",
+                  "Range": "14159"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2973.2,
+                "objective": 1930.44,
+                "score": 2465.17,
+                "itemIds": [
+                  "8698",
+                  "13120",
+                  "13344",
+                  "16005",
+                  "16248",
+                  "17104",
+                  "19253",
+                  "19984",
+                  "19985",
+                  "19986",
+                  "22020",
+                  "30453",
+                  "30455",
+                  "32121",
+                  "32236",
+                  "33037"
+                ],
+                "exos": {
+                  "AP": "13120",
+                  "MP": "19986",
+                  "Range": "19985"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 314
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1836,
+              "uniqueItemCount": 1702,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 215,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1702,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
