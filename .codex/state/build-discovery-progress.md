@@ -5358,3 +5358,43 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     gaps; p95 remains above the Milestone 2 `<5s` target
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap7-9-mp34-ranges34-budgets14-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 7,9 --mp-targets 3,4 --range-targets 3,4 --expected-solver cpsat`
+
+### 2026-07-11 AP8/AP11 MP4/MP5 Range-3/5 Budget-1/2 CP-SAT Smoke
+
+- Switched the next-slice choice from bucket eyeballing to an explicit missing
+  target-id scan to reduce overlap with existing split artifacts.
+- Ran a 64-target slice selected from the high-yield missing intersections.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-ap8-11-mp45-ranges35-budgets12-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ap8-11-mp45-ranges35-budgets12-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ap8-11-mp45-ranges35-budgets12-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 1, 2
+  - AP: 8, 11
+  - MP: 4, 5
+  - Range: 3, 5
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `64`
+  - generated: `64`
+  - invalid: `0`
+  - newly covered targets: `64`
+  - solver statuses: `23` optimal, `41` feasible
+  - AP coverage: `32` rows each for `8` and `11`
+  - MP coverage: `32` rows each for `4` and `5`
+  - range coverage: `32` rows each for `3` and `5`
+  - budget coverage: `32` rows each for tiers `1` and `2`
+- Runtime:
+  - elapsed min/avg/max: `5295.3ms / 6645.1ms / 7968.4ms`
+  - model min/avg/max: `1316.9ms / 1479.5ms / 1716.7ms`
+  - solve min/avg/max: `3447.8ms / 4801.6ms / 5071.9ms`
+- Interpretation:
+  - Strict CP-SAT Milestone 2 coverage is now `1248 / 3072` targets
+    (`40.62%`)
+  - Range `3/5`, AP `8/11`, MP `4/5`, and budget tiers `1/2` have stronger
+    committed evidence
+  - Coverage selection should continue using explicit missing-intersection
+    scans where possible; p95 remains above the Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap8-11-mp45-ranges35-budgets12-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,2 --ap-targets 8,11 --mp-targets 4,5 --range-targets 3,5 --expected-solver cpsat`

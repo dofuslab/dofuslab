@@ -1,0 +1,719 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T11:36:50.476752+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_intelligence_11_4_5_budget2",
+        "className": "Iop",
+        "level": 200,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 11,
+        "mpTarget": 4,
+        "rangeTarget": 5
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 4,
+        "rangeTarget": 5,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2217.59,
+        "weightedStatScore": 4352.77,
+        "utilityStatScore": 351.57,
+        "genericDamageScore": 3938.36,
+        "rawRotationDamageScore": 2683.83,
+        "spellDamageScore": 2683.83,
+        "profileBaselineDamageScore": 2044.38,
+        "profileRelativeDamage": 1.3128,
+        "weaponDamageScore": 133.37,
+        "survivabilityScore": 93.76,
+        "weakestElementEhp": 2840.54,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 4,
+          "Range": 6,
+          "Intelligence": 1363,
+          "Power": 205,
+          "Vitality": 3153,
+          "Damage": 0,
+          "Fire Damage": 167,
+          "Critical": 34,
+          "Critical Damage": 130
+        },
+        "sets": {
+          "Flasho Set": 3,
+          "Age-Old Set": 2,
+          "War Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "19984",
+            "internalId": null,
+            "name": "Rhineetle Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "belt": {
+            "id": "14081",
+            "internalId": null,
+            "name": "Age-Old Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "weapon": {
+            "id": "32223",
+            "internalId": null,
+            "name": "Flaschythe",
+            "type": "Scythe",
+            "level": 190,
+            "set": "Flasho Set"
+          },
+          "shield": {
+            "id": "32224",
+            "internalId": null,
+            "name": "Flasho's Flashy Shield",
+            "type": "Shield",
+            "level": 192,
+            "set": "Flasho Set"
+          },
+          "boots": {
+            "id": "22189",
+            "internalId": null,
+            "name": "War's Treads",
+            "type": "Boots",
+            "level": 200,
+            "set": "War Set"
+          },
+          "hat": {
+            "id": "14079",
+            "internalId": null,
+            "name": "Age-Old Helmet",
+            "type": "Hat",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "cloak": {
+            "id": "18002",
+            "internalId": null,
+            "name": "Merdiodon Cloak",
+            "type": "Cloak",
+            "level": 200,
+            "set": null
+          },
+          "pet": {
+            "id": "13465",
+            "internalId": null,
+            "name": "Boarhog",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13780",
+            "internalId": null,
+            "name": "Major Fire Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "ring_1": {
+            "id": "32222",
+            "internalId": null,
+            "name": "Flasho Ring",
+            "type": "Ring",
+            "level": 194,
+            "set": "Flasho Set"
+          },
+          "ring_2": {
+            "id": "22192",
+            "internalId": null,
+            "name": "War's Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "War Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2217.59,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 4,
+          "Range": 6,
+          "Intelligence": 1363,
+          "Power": 205,
+          "Vitality": 3153,
+          "Damage": 0,
+          "Fire Damage": 167,
+          "Critical": 34,
+          "Critical Damage": 130
+        },
+        "sets": {
+          "Flasho Set": 3,
+          "Age-Old Set": 2,
+          "War Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Rhineetle Amulet",
+          "Age-Old Belt",
+          "Flaschythe",
+          "Flasho's Flashy Shield",
+          "Flasho Ring",
+          "War's Gauntlet",
+          "War's Treads",
+          "Age-Old Helmet",
+          "Merdiodon Cloak",
+          "Boarhog",
+          "Crimson Dofus",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Brainbox",
+          "Major Fire Wrecker"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2217.59,
+          "weightedStatScore": 4352.77,
+          "utilityStatScore": 351.57,
+          "genericDamageScore": 3938.36,
+          "rawRotationDamageScore": 2683.83,
+          "spellDamageScore": 2683.83,
+          "profileBaselineDamageScore": 2044.38,
+          "profileRelativeDamage": 1.3128,
+          "weaponDamageScore": 133.37,
+          "survivabilityScore": 93.76,
+          "weakestElementEhp": 2840.54,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 4,
+            "Range": 6,
+            "Intelligence": 1363,
+            "Power": 205,
+            "Vitality": 3153,
+            "Damage": 0,
+            "Fire Damage": 167,
+            "Critical": 34,
+            "Critical Damage": 130
+          },
+          "sets": {
+            "Flasho Set": 3,
+            "Age-Old Set": 2,
+            "War Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "19984",
+              "internalId": null,
+              "name": "Rhineetle Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "belt": {
+              "id": "14081",
+              "internalId": null,
+              "name": "Age-Old Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Age-Old Set"
+            },
+            "weapon": {
+              "id": "32223",
+              "internalId": null,
+              "name": "Flaschythe",
+              "type": "Scythe",
+              "level": 190,
+              "set": "Flasho Set"
+            },
+            "shield": {
+              "id": "32224",
+              "internalId": null,
+              "name": "Flasho's Flashy Shield",
+              "type": "Shield",
+              "level": 192,
+              "set": "Flasho Set"
+            },
+            "boots": {
+              "id": "22189",
+              "internalId": null,
+              "name": "War's Treads",
+              "type": "Boots",
+              "level": 200,
+              "set": "War Set"
+            },
+            "hat": {
+              "id": "14079",
+              "internalId": null,
+              "name": "Age-Old Helmet",
+              "type": "Hat",
+              "level": 200,
+              "set": "Age-Old Set"
+            },
+            "cloak": {
+              "id": "18002",
+              "internalId": null,
+              "name": "Merdiodon Cloak",
+              "type": "Cloak",
+              "level": 200,
+              "set": null
+            },
+            "pet": {
+              "id": "13465",
+              "internalId": null,
+              "name": "Boarhog",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13762",
+              "internalId": null,
+              "name": "Major Brainbox",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13780",
+              "internalId": null,
+              "name": "Major Fire Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "ring_1": {
+              "id": "32222",
+              "internalId": null,
+              "name": "Flasho Ring",
+              "type": "Ring",
+              "level": 194,
+              "set": "Flasho Set"
+            },
+            "ring_2": {
+              "id": "22192",
+              "internalId": null,
+              "name": "War's Gauntlet",
+              "type": "Ring",
+              "level": 200,
+              "set": "War Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2217.59,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 4,
+            "Range": 6,
+            "Intelligence": 1363,
+            "Power": 205,
+            "Vitality": 3153,
+            "Damage": 0,
+            "Fire Damage": 167,
+            "Critical": 34,
+            "Critical Damage": 130
+          },
+          "sets": {
+            "Flasho Set": 3,
+            "Age-Old Set": 2,
+            "War Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Rhineetle Amulet",
+            "Age-Old Belt",
+            "Flaschythe",
+            "Flasho's Flashy Shield",
+            "Flasho Ring",
+            "War's Gauntlet",
+            "War's Treads",
+            "Age-Old Helmet",
+            "Merdiodon Cloak",
+            "Boarhog",
+            "Crimson Dofus",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Brainbox",
+            "Major Fire Wrecker"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6935.7,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 186.1,
+          "totalSearchMs": 6749.6
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1513.7,
+            "solveMs": 5055.1,
+            "objective": 2020.36,
+            "solutionCallbackCount": 11,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2176.3,
+                "objective": 741.75,
+                "score": 1098.21,
+                "itemIds": [
+                  "2469",
+                  "8366",
+                  "11607",
+                  "12713",
+                  "12716",
+                  "13768",
+                  "13829",
+                  "16333",
+                  "16336",
+                  "19165",
+                  "19270",
+                  "21226",
+                  "21228",
+                  "27266",
+                  "30692",
+                  "33282"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2468.0,
+                "objective": 983.15,
+                "score": 1413.06,
+                "itemIds": [
+                  "7043",
+                  "12723",
+                  "13829",
+                  "13831",
+                  "15188",
+                  "15696",
+                  "19075",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "27544",
+                  "27549",
+                  "30453",
+                  "30455",
+                  "30949",
+                  "33036"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2671.1,
+                "objective": 1225.75,
+                "score": 1661.07,
+                "itemIds": [
+                  "737",
+                  "7043",
+                  "12719",
+                  "12720",
+                  "13230",
+                  "13762",
+                  "13831",
+                  "15696",
+                  "15699",
+                  "18594",
+                  "22191",
+                  "30949",
+                  "31749",
+                  "32121",
+                  "33602",
+                  "33603"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2853.9,
+                "objective": 1366.65,
+                "score": 1793.49,
+                "itemIds": [
+                  "7043",
+                  "9142",
+                  "9143",
+                  "12723",
+                  "13829",
+                  "16333",
+                  "19597",
+                  "19984",
+                  "24035",
+                  "30453",
+                  "30455",
+                  "32116",
+                  "32121",
+                  "32213",
+                  "32215",
+                  "33200"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 3176.1,
+                "objective": 1843.94,
+                "score": 2067.68,
+                "itemIds": [
+                  "13762",
+                  "13829",
+                  "13897",
+                  "14079",
+                  "14081",
+                  "16204",
+                  "16333",
+                  "18001",
+                  "18003",
+                  "18718",
+                  "21223",
+                  "30453",
+                  "30455",
+                  "32117",
+                  "32237",
+                  "33282"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 266,
+                "ring": 134
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1654,
+              "uniqueItemCount": 1654,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 217,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1654,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.2255,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.2255,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.2255,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2138,
+          "Critical Damage": 1.6163,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.721,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Damage": 2.721,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Intelligence": 0.7048,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7048,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

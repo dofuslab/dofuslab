@@ -1,0 +1,715 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T11:36:50.476752+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_intelligence_8_5_5_budget2",
+        "className": "Iop",
+        "level": 200,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 8,
+        "mpTarget": 5,
+        "rangeTarget": 5
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 8,
+        "mpTarget": 5,
+        "rangeTarget": 5,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2381.85,
+        "weightedStatScore": 3941.18,
+        "utilityStatScore": 390.32,
+        "genericDamageScore": 4262.87,
+        "rawRotationDamageScore": 2904.97,
+        "spellDamageScore": 2904.97,
+        "profileBaselineDamageScore": 2044.38,
+        "profileRelativeDamage": 1.421,
+        "weaponDamageScore": 197.49,
+        "survivabilityScore": 73.24,
+        "weakestElementEhp": 2186.56,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 5,
+          "Intelligence": 1443,
+          "Power": 250,
+          "Vitality": 2303,
+          "Damage": 12,
+          "Fire Damage": 59,
+          "Critical": 44,
+          "Critical Damage": 110
+        },
+        "sets": {
+          "Gein Set": 2,
+          "King Playa Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "15433",
+            "internalId": null,
+            "name": "Gein's Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "belt": {
+            "id": "15432",
+            "internalId": null,
+            "name": "Gein's Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "weapon": {
+            "id": "32117",
+            "internalId": null,
+            "name": "Thanatena's Judgement",
+            "type": "Scythe",
+            "level": 200,
+            "set": null
+          },
+          "shield": {
+            "id": "22191",
+            "internalId": null,
+            "name": "War's Fortress",
+            "type": "Shield",
+            "level": 200,
+            "set": "War Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "17573",
+            "internalId": null,
+            "name": "King Playa Crown",
+            "type": "Hat",
+            "level": 200,
+            "set": "King Playa Set"
+          },
+          "cloak": {
+            "id": "14001",
+            "internalId": null,
+            "name": "Augilol's Tippet",
+            "type": "Cloak",
+            "level": 151,
+            "set": null
+          },
+          "pet": {
+            "id": "7711",
+            "internalId": null,
+            "name": "Red Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16204",
+            "internalId": null,
+            "name": "Major Intellectual",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "12719",
+            "internalId": null,
+            "name": "Major Scholar",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "ring_1": {
+            "id": "17574",
+            "internalId": null,
+            "name": "King Playa Signet Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "King Playa Set"
+          },
+          "ring_2": {
+            "id": "13897",
+            "internalId": null,
+            "name": "Shylock's Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2381.85,
+        "apStrategy": null,
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 5,
+          "Intelligence": 1443,
+          "Power": 250,
+          "Vitality": 2303,
+          "Damage": 12,
+          "Fire Damage": 59,
+          "Critical": 44,
+          "Critical Damage": 110
+        },
+        "sets": {
+          "Gein Set": 2,
+          "King Playa Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Gein's Amulet",
+          "Gein's Belt",
+          "Thanatena's Judgement",
+          "War's Fortress",
+          "King Playa Signet Ring",
+          "Shylock's Ring",
+          "Meriana's Clairvoyance",
+          "King Playa Crown",
+          "Augilol's Tippet",
+          "Red Piwin",
+          "Dolmanax",
+          "Arcanist",
+          "Impetuous",
+          "Major Brainbox",
+          "Major Intellectual",
+          "Major Scholar"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2381.85,
+          "weightedStatScore": 3941.18,
+          "utilityStatScore": 390.32,
+          "genericDamageScore": 4262.87,
+          "rawRotationDamageScore": 2904.97,
+          "spellDamageScore": 2904.97,
+          "profileBaselineDamageScore": 2044.38,
+          "profileRelativeDamage": 1.421,
+          "weaponDamageScore": 197.49,
+          "survivabilityScore": 73.24,
+          "weakestElementEhp": 2186.56,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 5,
+            "Intelligence": 1443,
+            "Power": 250,
+            "Vitality": 2303,
+            "Damage": 12,
+            "Fire Damage": 59,
+            "Critical": 44,
+            "Critical Damage": 110
+          },
+          "sets": {
+            "Gein Set": 2,
+            "King Playa Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "15433",
+              "internalId": null,
+              "name": "Gein's Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "belt": {
+              "id": "15432",
+              "internalId": null,
+              "name": "Gein's Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "weapon": {
+              "id": "32117",
+              "internalId": null,
+              "name": "Thanatena's Judgement",
+              "type": "Scythe",
+              "level": 200,
+              "set": null
+            },
+            "shield": {
+              "id": "22191",
+              "internalId": null,
+              "name": "War's Fortress",
+              "type": "Shield",
+              "level": 200,
+              "set": "War Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "17573",
+              "internalId": null,
+              "name": "King Playa Crown",
+              "type": "Hat",
+              "level": 200,
+              "set": "King Playa Set"
+            },
+            "cloak": {
+              "id": "14001",
+              "internalId": null,
+              "name": "Augilol's Tippet",
+              "type": "Cloak",
+              "level": 151,
+              "set": null
+            },
+            "pet": {
+              "id": "7711",
+              "internalId": null,
+              "name": "Red Piwin",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13762",
+              "internalId": null,
+              "name": "Major Brainbox",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "16204",
+              "internalId": null,
+              "name": "Major Intellectual",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "12719",
+              "internalId": null,
+              "name": "Major Scholar",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "ring_1": {
+              "id": "17574",
+              "internalId": null,
+              "name": "King Playa Signet Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "King Playa Set"
+            },
+            "ring_2": {
+              "id": "13897",
+              "internalId": null,
+              "name": "Shylock's Ring",
+              "type": "Ring",
+              "level": 198,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2381.85,
+          "apStrategy": null,
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 5,
+            "Intelligence": 1443,
+            "Power": 250,
+            "Vitality": 2303,
+            "Damage": 12,
+            "Fire Damage": 59,
+            "Critical": 44,
+            "Critical Damage": 110
+          },
+          "sets": {
+            "Gein Set": 2,
+            "King Playa Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Gein's Amulet",
+            "Gein's Belt",
+            "Thanatena's Judgement",
+            "War's Fortress",
+            "King Playa Signet Ring",
+            "Shylock's Ring",
+            "Meriana's Clairvoyance",
+            "King Playa Crown",
+            "Augilol's Tippet",
+            "Red Piwin",
+            "Dolmanax",
+            "Arcanist",
+            "Impetuous",
+            "Major Brainbox",
+            "Major Intellectual",
+            "Major Scholar"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6922.8,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 170.4,
+          "totalSearchMs": 6752.4
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1530.1,
+            "solveMs": 5052.0,
+            "objective": 2103.25,
+            "solutionCallbackCount": 8,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2210.5,
+                "objective": 410.74,
+                "score": 920.78,
+                "itemIds": [
+                  "2469",
+                  "8000",
+                  "8366",
+                  "8714",
+                  "11607",
+                  "12628",
+                  "12629",
+                  "12630",
+                  "13129",
+                  "13830",
+                  "13831",
+                  "16336",
+                  "18711",
+                  "19165",
+                  "27266",
+                  "32117"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2454.7,
+                "objective": 1017.94,
+                "score": 1465.97,
+                "itemIds": [
+                  "7043",
+                  "12723",
+                  "13829",
+                  "13831",
+                  "15188",
+                  "15696",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "27544",
+                  "27549",
+                  "30453",
+                  "30455",
+                  "30949",
+                  "31768",
+                  "33036"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2647.4,
+                "objective": 1919.16,
+                "score": 2135.78,
+                "itemIds": [
+                  "7043",
+                  "7711",
+                  "12719",
+                  "13344",
+                  "13762",
+                  "13897",
+                  "14001",
+                  "15432",
+                  "15433",
+                  "16204",
+                  "17573",
+                  "17574",
+                  "22191",
+                  "30455",
+                  "32117",
+                  "32121"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2903.0,
+                "objective": 1921.51,
+                "score": 2381.85,
+                "itemIds": [
+                  "7711",
+                  "12719",
+                  "13344",
+                  "13762",
+                  "13897",
+                  "14001",
+                  "15432",
+                  "15433",
+                  "16204",
+                  "17573",
+                  "17574",
+                  "22191",
+                  "30453",
+                  "30455",
+                  "32117",
+                  "32121"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 3125.5,
+                "objective": 1925.06,
+                "score": 2159.63,
+                "itemIds": [
+                  "7043",
+                  "7711",
+                  "12719",
+                  "13344",
+                  "13897",
+                  "14001",
+                  "15432",
+                  "15433",
+                  "16204",
+                  "17573",
+                  "17574",
+                  "22191",
+                  "30453",
+                  "30455",
+                  "32117",
+                  "32121"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 266,
+                "ring": 134
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1654,
+              "uniqueItemCount": 1654,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 217,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1654,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.2255,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.2255,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.2255,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2138,
+          "Critical Damage": 1.6163,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.721,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Damage": 2.721,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Intelligence": 0.7048,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7048,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
