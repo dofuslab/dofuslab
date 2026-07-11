@@ -47,7 +47,10 @@
           ],
           "apTarget": 12,
           "mpTarget": 6,
-          "rangeTarget": 5
+          "rangeTarget": 5,
+          "damageSurvivabilityPreset": 2,
+          "budgetTier": 4,
+          "exoPolicy": "opti"
         }
       },
       "commonItems": [
@@ -96,7 +99,10 @@
           ],
           "apTarget": 12,
           "mpTarget": 6,
-          "rangeTarget": 6
+          "rangeTarget": 6,
+          "damageSurvivabilityPreset": 2,
+          "budgetTier": 4,
+          "exoPolicy": "opti"
         }
       },
       "commonItems": [
@@ -145,7 +151,10 @@
           ],
           "apTarget": 12,
           "mpTarget": 6,
-          "rangeTarget": 6
+          "rangeTarget": 6,
+          "damageSurvivabilityPreset": 2,
+          "budgetTier": 4,
+          "exoPolicy": "opti"
         }
       },
       "commonItems": [

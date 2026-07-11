@@ -146,9 +146,9 @@ Evidence:
 
 Follow-up evidence:
 - `.codex/state/build-discovery-prod-candidate-generated-results-representative-20260711.md` records CP-SAT generation against supported candidates from the six representative prod slices.
-- 11 supported prod-shaped candidates generated one feasible build each.
+- 11 supported prod-shaped candidates generated one feasible build each using balanced `damageSurvivabilityPreset=2`, `budgetTier=4`, and `exoPolicy=opti`.
 - The only skipped profile was Enutrof Chance `12/6/7`, which is outside the current hard Range cap.
-- Max observed `totalSearchMs` in this checkpoint was 3587.0ms.
+- Max observed `totalSearchMs` in this checkpoint was 3696.5ms.
 
 Residual risk:
 - This proves sampled query feasibility, not build quality. Several generated builds have low vitality or odd item packages, so non-Iop scoring/optimization should not be treated as accepted.

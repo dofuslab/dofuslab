@@ -50,64 +50,57 @@
         ],
         "apTarget": 12,
         "mpTarget": 5,
-        "rangeTarget": null
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "opti"
       },
       "resultCount": 1,
-      "bestGeneratedScore": 1955.99,
+      "bestGeneratedScore": 1352.06,
       "bestGeneratedTotals": {
         "AP": 12,
         "MP": 5,
-        "Range": 3,
-        "Agility": 668,
+        "Range": 2,
+        "Agility": 608,
         "Power": 55,
-        "Vitality": 1082,
-        "Damage": 33,
-        "Air Damage": 45,
-        "Critical": 5,
-        "Critical Damage": -37
+        "Vitality": 1272,
+        "Damage": 15,
+        "Air Damage": 25,
+        "Critical": 33,
+        "Critical Damage": 0
       },
       "bestGeneratedSets": {
-        "Nevark Set": 2,
-        "Minotot Set": 2
+        "Lost Set": 2
       },
-      "bestGeneratedExos": {
-        "AP": {
-          "itemId": "31770",
-          "slot": "ring_2"
-        },
-        "MP": {
-          "itemId": "8275",
-          "slot": "weapon"
-        }
-      },
+      "bestGeneratedExos": {},
       "bestGeneratedItems": [
-        "Nevark's Amulet",
-        "Khardboard Moowolf Belt",
-        "Minotot Sandals",
-        "Nevark's Cape",
+        "Boy's Own Chain",
+        "Sawya Sash",
+        "Benj Boots",
+        "Fuji Snowfoux Cloak",
+        "Aiwuztheya Dofus",
+        "Cawwot Dofus",
         "Ochre Dofus",
-        "Major Goliath",
-        "Major Maniac",
-        "Major Player",
-        "Major Tease",
-        "Maniac",
+        "Jackanapes",
+        "Nomad",
+        "Shaker",
         "Thierry Voodoo Mask",
         "Crimson and Indigo Rhineetle",
-        "Gelano",
-        "Voyager Glove",
-        "Madura Pupil",
-        "Minotot Sceptre"
+        "Khardboard Gelano",
+        "Honoh Ring",
+        "Stalak Shield",
+        "Daguanos"
       ],
       "responseStatus": "complete",
       "solverStatus": "FEASIBLE",
       "timings": {
-        "loadMs": 1828.0,
-        "totalSearchMs": 3144.4
+        "loadMs": 1832.0,
+        "totalSearchMs": 3220.3
       },
       "scoring": {
-        "damageSurvivabilityPreset": 4,
-        "genericDamageWeight": 0.6,
-        "survivabilityWeight": 0.7,
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
         "negativeResistancePenaltyWeight": 0.0,
         "rangeSoftWeight": 0.5,
         "rotationModel": "spell_profile_v0_weighted_candidates",
@@ -162,69 +155,73 @@
         ],
         "apTarget": 12,
         "mpTarget": 5,
-        "rangeTarget": 2
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "opti"
       },
       "resultCount": 1,
-      "bestGeneratedScore": 2322.58,
+      "bestGeneratedScore": 2366.66,
       "bestGeneratedTotals": {
         "AP": 12,
-        "MP": 6,
-        "Range": 6,
-        "Agility": 758,
-        "Power": 290,
-        "Vitality": 2923,
-        "Damage": 0,
-        "Air Damage": 55,
-        "Critical": 1,
-        "Critical Damage": 0
+        "MP": 5,
+        "Range": 4,
+        "Agility": 1238,
+        "Power": 100,
+        "Vitality": 2683,
+        "Damage": 14,
+        "Air Damage": 82,
+        "Critical": 12,
+        "Critical Damage": 20
       },
       "bestGeneratedSets": {
-        "Salvatory Spirit Set": 2,
-        "Khardboard Set": 3,
+        "Wukang Set": 2,
+        "Khardboard Set": 2,
+        "Sovereign Set": 2,
         "Whale Set": 2
       },
       "bestGeneratedExos": {
         "AP": {
-          "itemId": "19248",
+          "itemId": "18007",
           "slot": "boots"
         },
         "MP": {
-          "itemId": "19249",
-          "slot": "hat"
+          "itemId": "8818",
+          "slot": "cloak"
         },
         "Range": {
-          "itemId": "15696",
-          "slot": "cloak"
+          "itemId": "24026",
+          "slot": "hat"
         }
       },
       "bestGeneratedItems": [
         "Khardboard Celestial Brooch",
-        "Khardboard Moowolf Belt",
-        "Boots of the Salvatory Spirit",
-        "Whailtail",
-        "Aiwuztheya Dofus",
+        "Belteen",
+        "Tritun Palms",
+        "Mopy King Sovereign Cape",
+        "Dolmanax",
         "Emerald Dofus",
-        "Sylvan Dofus",
-        "Prygenerate",
+        "Iridescent Prysipitate",
         "Jackanapes",
-        "Major Player",
-        "Mask of the Salvatory Spirit",
-        "Kobrapid",
+        "Major Acrobat",
+        "Survivor",
+        "Capsonant",
+        "Aquamarine and Almond Seemyool",
+        "Mopy King Sovereign Seal",
         "Khardboard Gelano",
-        "Grithril Ring",
-        "Cubist Shield",
+        "Ponym Shield",
         "Macetacean"
       ],
       "responseStatus": "complete",
       "solverStatus": "FEASIBLE",
       "timings": {
-        "loadMs": 18.8,
-        "totalSearchMs": 3587.0
+        "loadMs": 19.3,
+        "totalSearchMs": 3557.4
       },
       "scoring": {
-        "damageSurvivabilityPreset": 4,
-        "genericDamageWeight": 0.6,
-        "survivabilityWeight": 0.7,
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
         "negativeResistancePenaltyWeight": 0.0,
         "rangeSoftWeight": 0.5,
         "rotationModel": "spell_profile_v0_weighted_candidates",

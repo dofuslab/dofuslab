@@ -123,6 +123,9 @@ class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
                     "apTarget": 11,
                     "mpTarget": 6,
                     "rangeTarget": 0,
+                    "damageSurvivabilityPreset": 2,
+                    "budgetTier": 4,
+                    "exoPolicy": "opti",
                 },
             },
         )
@@ -166,6 +169,9 @@ class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
         self.assertTrue(candidate["supported"])
         self.assertEqual(candidate["query"]["className"], "Cra")
         self.assertEqual(candidate["query"]["elements"], ["intelligence"])
+        self.assertEqual(candidate["query"]["damageSurvivabilityPreset"], 2)
+        self.assertEqual(candidate["query"]["budgetTier"], 4)
+        self.assertEqual(candidate["query"]["exoPolicy"], "opti")
 
     def test_generated_query_candidate_marks_unsupported_prod_profiles(self):
         candidate = generated_query_candidate("Cra", "intelligence", 11, 6, 7)

@@ -50,67 +50,68 @@
         ],
         "apTarget": 12,
         "mpTarget": 6,
-        "rangeTarget": 6
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "opti"
       },
       "resultCount": 1,
-      "bestGeneratedScore": 2246.99,
+      "bestGeneratedScore": 1431.91,
       "bestGeneratedTotals": {
         "AP": 12,
         "MP": 6,
         "Range": 6,
-        "Chance": 688,
-        "Power": 205,
-        "Vitality": 1552,
-        "Damage": 26,
-        "Water Damage": 68,
-        "Critical": 14,
-        "Critical Damage": 30
+        "Chance": 658,
+        "Power": 30,
+        "Vitality": 1202,
+        "Damage": 15,
+        "Water Damage": 34,
+        "Critical": 15,
+        "Critical Damage": 0
       },
-      "bestGeneratedSets": {
-        "Ice Knight Set": 3
-      },
+      "bestGeneratedSets": {},
       "bestGeneratedExos": {
         "AP": {
-          "itemId": "32231",
-          "slot": "ring_2"
-        },
-        "MP": {
-          "itemId": "32232",
+          "itemId": "17589",
           "slot": "weapon"
         },
-        "Range": {
-          "itemId": "2469",
+        "MP": {
+          "itemId": "27555",
           "slot": "ring_1"
+        },
+        "Range": {
+          "itemId": "27266",
+          "slot": "belt"
         }
       },
       "bestGeneratedItems": [
-        "Boy's Own Chain",
+        "Powa Drhell Amulet",
         "Khardboard Moowolf Belt",
-        "Lethaline's Boots",
-        "Pirate Bhey Sail",
+        "Micrab Slippers",
+        "Cape Tivate",
         "Cawwot Dofus",
-        "Sprynt",
-        "Friction",
+        "Ochre Dofus",
+        "Pryssure-O-Mat",
         "Jackanapes",
-        "Maniac",
-        "Minor Friction",
+        "Major Maniac",
+        "Nomad",
         "Thierry Voodoo Mask",
-        "Azure and Emerald Seemyool",
-        "Gelano",
-        "Ice Knight's Frozen Gauntlet",
-        "Ice Knight's Frigid Pavise",
-        "Ice Knight's Frozen Blade"
+        "Drhellbert",
+        "Gloves of the Great",
+        "Honoh Ring",
+        "Ponym Shield",
+        "Ush's Sword"
       ],
       "responseStatus": "complete",
       "solverStatus": "FEASIBLE",
       "timings": {
-        "loadMs": 1763.2,
-        "totalSearchMs": 2452.0
+        "loadMs": 1743.4,
+        "totalSearchMs": 2619.9
       },
       "scoring": {
-        "damageSurvivabilityPreset": 4,
-        "genericDamageWeight": 0.6,
-        "survivabilityWeight": 0.7,
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
         "negativeResistancePenaltyWeight": 0.0,
         "rangeSoftWeight": 8.0,
         "rotationModel": "spell_profile_v0_weighted_candidates",
@@ -165,67 +166,69 @@
         ],
         "apTarget": 12,
         "mpTarget": 6,
-        "rangeTarget": 5
+        "rangeTarget": 5,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "opti"
       },
       "resultCount": 1,
-      "bestGeneratedScore": 2664.36,
+      "bestGeneratedScore": 1535.47,
       "bestGeneratedTotals": {
         "AP": 12,
         "MP": 6,
-        "Range": 5,
-        "Chance": 1048,
-        "Power": 0,
-        "Vitality": 1653,
+        "Range": 6,
+        "Chance": 598,
+        "Power": 145,
+        "Vitality": 2773,
         "Damage": 0,
-        "Water Damage": 86,
-        "Critical": 21,
-        "Critical Damage": 0
+        "Water Damage": 46,
+        "Critical": 37,
+        "Critical Damage": 62
       },
       "bestGeneratedSets": {
-        "Hel Munster Set": 2
+        "Nomarow Set": 2,
+        "Abyss Set": 2,
+        "Father Whupper Set": 2,
+        "Celestial Swashbuckler Set": 2
       },
       "bestGeneratedExos": {
         "AP": {
-          "itemId": "27266",
+          "itemId": "15009",
           "slot": "belt"
         },
         "MP": {
-          "itemId": "13646",
-          "slot": "amulet"
-        },
-        "Range": {
-          "itemId": "27555",
-          "slot": "ring_1"
+          "itemId": "17097",
+          "slot": "cloak"
         }
       },
       "bestGeneratedItems": [
-        "Hel Munster's Amulet",
-        "Khardboard Moowolf Belt",
-        "Odourless Boots",
-        "Cape Tivate",
+        "Missix Amulet",
+        "Father Whupper Belt",
+        "Father Whupper Boots",
+        "Celestial Swashbuckler Cloak",
+        "Emerald Dofus",
         "Ochre Dofus",
         "Vulbis Dofus",
         "Pryssure-O-Mat",
-        "Major Gymnast",
-        "Major Maniac",
-        "Major Player",
-        "Hel Munster's Helmet",
-        "Golden and Indigo Rhineetle",
-        "Gloves of the Great",
-        "Guten Tak's Ring",
-        "Shelld",
-        "Daguanos"
+        "Jackanapes",
+        "Voyager",
+        "Nomarow's Helmet",
+        "Orchid Dragoturkey",
+        "Ringaling",
+        "Nomarow's Ring",
+        "Air Dial",
+        "Celestial Swashbuckler Sword"
       ],
       "responseStatus": "complete",
       "solverStatus": "FEASIBLE",
       "timings": {
-        "loadMs": 15.9,
-        "totalSearchMs": 2641.4
+        "loadMs": 16.5,
+        "totalSearchMs": 2727.8
       },
       "scoring": {
-        "damageSurvivabilityPreset": 4,
-        "genericDamageWeight": 0.6,
-        "survivabilityWeight": 0.7,
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
         "negativeResistancePenaltyWeight": 0.0,
         "rangeSoftWeight": 8.0,
         "rotationModel": "spell_profile_v0_weighted_candidates",
@@ -280,69 +283,71 @@
         ],
         "apTarget": 12,
         "mpTarget": 5,
-        "rangeTarget": 6
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "opti"
       },
       "resultCount": 1,
-      "bestGeneratedScore": 2479.06,
+      "bestGeneratedScore": 1550.28,
       "bestGeneratedTotals": {
         "AP": 12,
         "MP": 5,
         "Range": 6,
-        "Chance": 658,
-        "Power": 290,
-        "Vitality": 3373,
-        "Damage": 5,
-        "Water Damage": 43,
-        "Critical": 34,
-        "Critical Damage": 85
+        "Chance": 738,
+        "Power": 55,
+        "Vitality": 1402,
+        "Damage": 15,
+        "Water Damage": 12,
+        "Critical": 10,
+        "Critical Damage": 0
       },
       "bestGeneratedSets": {
-        "Doctor Gobotnegg Set": 2,
-        "Lethaline Sigisbul Set": 2,
-        "Treadfast Set": 2
+        "K.O. Set": 2,
+        "Pandamonium Set": 2
       },
       "bestGeneratedExos": {
         "AP": {
-          "itemId": "13127",
-          "slot": "cloak"
+          "itemId": "8840",
+          "slot": "hat"
         },
         "MP": {
-          "itemId": "32231",
-          "slot": "ring_2"
+          "itemId": "17119",
+          "slot": "belt"
         },
         "Range": {
-          "itemId": "11574",
-          "slot": "hat"
+          "itemId": "2469",
+          "slot": "ring_2"
         }
       },
       "bestGeneratedItems": [
-        "Treadfast Amulet",
-        "Treadfast Belt",
-        "Lethaline's Boots",
-        "Lethaline's Cloak",
-        "Aiwuztheya Dofus",
+        "Khardboard Celestial Brooch",
+        "KOs' Belt",
+        "KOs' Boots",
+        "Cape Tivate",
         "Ochre Dofus",
-        "Sylvan Dofus",
-        "Prynyang",
-        "Arcanist",
-        "Jackanapes",
-        "Obsidemon Helmet",
-        "Golden Rhineetle",
-        "Doctor Gobotnegg Golden Ring",
-        "Ice Knight's Frozen Gauntlet",
-        "Fallanster's Rectitude",
-        "Doctor Gobotnegg Flail"
+        "Pryssure-O-Mat",
+        "Major Rabid",
+        "Major Tease",
+        "Maniac",
+        "Shaker",
+        "Jav Voodoo Mask",
+        "Kompost",
+        "Pandamonium Wedding Ring",
+        "Gelano",
+        "Psychopump Button",
+        "Pandamonium Wand"
       ],
       "responseStatus": "complete",
       "solverStatus": "FEASIBLE",
       "timings": {
-        "loadMs": 18.1,
-        "totalSearchMs": 3503.5
+        "loadMs": 16.9,
+        "totalSearchMs": 3443.3
       },
       "scoring": {
-        "damageSurvivabilityPreset": 4,
-        "genericDamageWeight": 0.6,
-        "survivabilityWeight": 0.7,
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
         "negativeResistancePenaltyWeight": 0.0,
         "rangeSoftWeight": 8.0,
         "rotationModel": "spell_profile_v0_weighted_candidates",

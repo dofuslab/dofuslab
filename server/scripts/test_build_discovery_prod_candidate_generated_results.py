@@ -28,6 +28,9 @@ def discovery_report():
                         "apTarget": 11,
                         "mpTarget": 6,
                         "rangeTarget": 0,
+                        "damageSurvivabilityPreset": 2,
+                        "budgetTier": 4,
+                        "exoPolicy": "opti",
                     },
                 },
             },
@@ -71,6 +74,9 @@ class BuildDiscoveryProdCandidateGeneratedResultsTest(unittest.TestCase):
         self.assertEqual(seen_queries[0].class_name, "Iop")
         self.assertEqual(seen_queries[0].elements, ("strength",))
         self.assertEqual(seen_queries[0].ap_target, 11)
+        self.assertEqual(seen_queries[0].damage_survivability_preset, 2)
+        self.assertEqual(seen_queries[0].budget_tier, 4)
+        self.assertEqual(seen_queries[0].exo_policy, "opti")
         self.assertEqual(report["generatedCandidates"][0]["bestGeneratedScore"], 1234.5)
         self.assertEqual(report["generatedCandidates"][0]["commonItems"][0]["name"], "Crimson Dofus")
         self.assertEqual(report["skippedCandidates"][0]["status"], "unsupported")

@@ -54,6 +54,7 @@ def build_query(candidate_query: dict[str, Any]) -> BuildDiscoveryQuery:
         ap_target=candidate_query["apTarget"],
         mp_target=candidate_query["mpTarget"],
         range_target=candidate_query["rangeTarget"],
+        damage_survivability_preset=candidate_query.get("damageSurvivabilityPreset", 2),
         budget_tier=candidate_query.get("budgetTier", 4),
         exo_policy=candidate_query.get("exoPolicy", "opti"),
         limit=candidate_query.get("limit", 5),

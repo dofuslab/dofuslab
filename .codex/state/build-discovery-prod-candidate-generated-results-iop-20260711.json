@@ -50,68 +50,68 @@
         ],
         "apTarget": 12,
         "mpTarget": 5,
-        "rangeTarget": 6
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "opti"
       },
       "resultCount": 1,
-      "bestGeneratedScore": 1969.39,
+      "bestGeneratedScore": 2130.01,
       "bestGeneratedTotals": {
         "AP": 12,
         "MP": 5,
         "Range": 6,
-        "Agility": 658,
-        "Power": 185,
-        "Vitality": 1853,
-        "Damage": 0,
-        "Air Damage": 26,
-        "Critical": 16,
-        "Critical Damage": 12
+        "Agility": 1108,
+        "Power": 120,
+        "Vitality": 2853,
+        "Damage": 14,
+        "Air Damage": 37,
+        "Critical": 27,
+        "Critical Damage": 50
       },
       "bestGeneratedSets": {
-        "Orfan Set": 2,
-        "Lunar Set": 2
+        "Khardboard Set": 2,
+        "Sovereign Set": 3,
+        "Whale Set": 3
       },
       "bestGeneratedExos": {
         "AP": {
-          "itemId": "15062",
-          "slot": "hat"
-        },
-        "MP": {
-          "itemId": "15063",
-          "slot": "belt"
+          "itemId": "8818",
+          "slot": "cloak"
         },
         "Range": {
-          "itemId": "21228",
-          "slot": "ring_2"
+          "itemId": "8844",
+          "slot": "hat"
         }
       },
       "bestGeneratedItems": [
         "Khardboard Celestial Brooch",
-        "Orfan Belt",
-        "Lunar Boots",
-        "Cape Tivate",
-        "Cawwot Dofus",
-        "Ochre Dofus",
-        "Jackanapes",
-        "Major Maniac",
-        "Maniac",
-        "Shaker",
-        "Orfan Headgear",
-        "Drhellbert",
-        "Gelano",
-        "Lunar Ring",
-        "Anerice Shield",
-        "Berylbell's Tonfas"
+        "Belteen",
+        "Baleenaboots",
+        "Mopy King Sovereign Cape",
+        "Emerald Dofus",
+        "Sylvan Dofus",
+        "Prynyang",
+        "Acrobat",
+        "Arcanist",
+        "Major Acrobat",
+        "Mopy King Sovereign Hood",
+        "Plum Dragoturkey",
+        "Mopy King Sovereign Seal",
+        "Khardboard Gelano",
+        "Captain Amakna Shield",
+        "Macetacean"
       ],
       "responseStatus": "complete",
       "solverStatus": "FEASIBLE",
       "timings": {
-        "loadMs": 1809.8,
-        "totalSearchMs": 3445.9
+        "loadMs": 1841.3,
+        "totalSearchMs": 3696.5
       },
       "scoring": {
-        "damageSurvivabilityPreset": 4,
-        "genericDamageWeight": 0.6,
-        "survivabilityWeight": 0.7,
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
         "negativeResistancePenaltyWeight": 0.0,
         "rangeSoftWeight": 0.5,
         "rotationModel": "spell_profile_v0_weighted_candidates",

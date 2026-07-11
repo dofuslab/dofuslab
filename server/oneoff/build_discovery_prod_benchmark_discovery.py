@@ -38,6 +38,9 @@ SUPPORTED_CLASS_NAME = "Iop"
 SUPPORTED_LEVEL = 200
 SUPPORTED_MODE = "pvm"
 SUPPORTED_ELEMENTS = ("strength", "intelligence", "chance", "agility")
+PROD_BENCHMARK_DAMAGE_SURVIVABILITY_PRESET = 2
+PROD_BENCHMARK_BUDGET_TIER = 4
+PROD_BENCHMARK_EXO_POLICY = "opti"
 
 
 def preflight_status() -> dict[str, Any]:
@@ -329,6 +332,9 @@ def generated_query_candidate(
             "apTarget": ap,
             "mpTarget": mp,
             "rangeTarget": range_target,
+            "damageSurvivabilityPreset": PROD_BENCHMARK_DAMAGE_SURVIVABILITY_PRESET,
+            "budgetTier": PROD_BENCHMARK_BUDGET_TIER,
+            "exoPolicy": PROD_BENCHMARK_EXO_POLICY,
         }
     return candidate
 

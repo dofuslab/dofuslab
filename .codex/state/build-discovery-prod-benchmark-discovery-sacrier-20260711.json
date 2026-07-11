@@ -47,7 +47,10 @@
           ],
           "apTarget": 12,
           "mpTarget": 5,
-          "rangeTarget": null
+          "rangeTarget": null,
+          "damageSurvivabilityPreset": 2,
+          "budgetTier": 4,
+          "exoPolicy": "opti"
         }
       },
       "commonItems": [
@@ -96,7 +99,10 @@
           ],
           "apTarget": 12,
           "mpTarget": 5,
-          "rangeTarget": 2
+          "rangeTarget": 2,
+          "damageSurvivabilityPreset": 2,
+          "budgetTier": 4,
+          "exoPolicy": "opti"
         }
       },
       "commonItems": [

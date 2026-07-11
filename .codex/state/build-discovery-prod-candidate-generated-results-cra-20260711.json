@@ -50,64 +50,70 @@
         ],
         "apTarget": 12,
         "mpTarget": 6,
-        "rangeTarget": 6
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "opti"
       },
       "resultCount": 1,
-      "bestGeneratedScore": 1744.1,
+      "bestGeneratedScore": 1639.22,
       "bestGeneratedTotals": {
         "AP": 12,
         "MP": 6,
         "Range": 6,
-        "Intelligence": 568,
-        "Power": 100,
-        "Vitality": 1703,
-        "Damage": 0,
-        "Fire Damage": 12,
-        "Critical": 17,
-        "Critical Damage": 0
+        "Intelligence": 708,
+        "Power": 65,
+        "Vitality": 1102,
+        "Damage": 25,
+        "Fire Damage": 55,
+        "Critical": 13,
+        "Critical Damage": 25
       },
       "bestGeneratedSets": {
-        "Doctor Gobotnegg Set": 2,
-        "Sharp Eye Set": 2
+        "Henual Set": 2
       },
       "bestGeneratedExos": {
         "AP": {
-          "itemId": "18022",
-          "slot": "boots"
+          "itemId": "8839",
+          "slot": "hat"
         },
         "MP": {
-          "itemId": "11607",
-          "slot": "amulet"
+          "itemId": "2469",
+          "slot": "ring_1"
+        },
+        "Range": {
+          "itemId": "12100",
+          "slot": "ring_2"
         }
       },
       "bestGeneratedItems": [
-        "Boy's Own Chain",
-        "Khardboard Moowolf Belt",
-        "Meno Boots",
-        "Cape of the Sharp Eye",
+        "Khardboard Celestial Brooch",
+        "Henual's Belt",
+        "Odourless Boots",
+        "Little Red Waddling Cape",
         "Ochre Dofus",
-        "Sprynt",
-        "Major Goliath",
-        "Major Maniac",
-        "Major Player",
+        "Prynyang",
+        "Jackanapes",
+        "Nomad",
         "Shaker",
-        "Hood of the Sharp Eye",
-        "Krolimea",
+        "Twitcher",
+        "Thierry Voodoo Mask",
+        "Coral and Almond Seemyool",
         "Gelano",
-        "Doctor Gobotnegg Golden Ring",
-        "Shelld",
-        "Doctor Gobotnegg Flail"
+        "Guten Tak's Ring",
+        "Ice Knight's Frigid Pavise",
+        "Henual's Hammer"
       ],
       "responseStatus": "complete",
       "solverStatus": "FEASIBLE",
       "timings": {
-        "loadMs": 1772.3,
-        "totalSearchMs": 2550.5
+        "loadMs": 1895.7,
+        "totalSearchMs": 2565.7
       },
       "scoring": {
-        "damageSurvivabilityPreset": 4,
-        "genericDamageWeight": 0.6,
-        "survivabilityWeight": 0.7,
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
         "negativeResistancePenaltyWeight": 0.0,
         "rangeSoftWeight": 8.0,
         "rotationModel": "spell_profile_v0_weighted_candidates",
@@ -162,69 +168,72 @@
         ],
         "apTarget": 12,
         "mpTarget": 6,
-        "rangeTarget": 6
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "opti"
       },
       "resultCount": 1,
-      "bestGeneratedScore": 1413.02,
+      "bestGeneratedScore": 976.23,
       "bestGeneratedTotals": {
         "AP": 12,
         "MP": 6,
         "Range": 6,
-        "Strength": 638,
-        "Power": 215,
-        "Vitality": 1252,
-        "Damage": 21,
-        "Earth Damage": 30,
-        "Critical": 12,
-        "Critical Damage": 0,
-        "Neutral Damage": 0
+        "Strength": 848,
+        "Power": 105,
+        "Vitality": 1152,
+        "Damage": 15,
+        "Earth Damage": 61,
+        "Critical": 25,
+        "Critical Damage": 15,
+        "Neutral Damage": 61
       },
       "bestGeneratedSets": {
-        "Psychopump Set": 2,
-        "Celestial Bearbarian Set": 2
+        "Fuji Snowfoux Set": 2,
+        "Lost Set": 2
       },
       "bestGeneratedExos": {
         "AP": {
-          "itemId": "11722",
-          "slot": "boots"
+          "itemId": "27528",
+          "slot": "weapon"
         },
         "MP": {
-          "itemId": "11721",
+          "itemId": "27266",
           "slot": "belt"
         },
         "Range": {
-          "itemId": "2469",
-          "slot": "ring_1"
+          "itemId": "12120",
+          "slot": "ring_2"
         }
       },
       "bestGeneratedItems": [
-        "Khardboard Celestial Brooch",
-        "Celestial Bearbarian Belt",
-        "Celestial Bearbarian Boots",
-        "Cape Tivate",
+        "Jahn Locket",
+        "Khardboard Moowolf Belt",
+        "Benj Boots",
+        "Fuji Snowfoux Cloak",
         "Ochre Dofus",
-        "Sprynt",
         "Jackanapes",
         "Major Brainbox",
-        "Major Maniac",
-        "Shaker",
+        "Major Player",
+        "Major Tease",
+        "Twitcher",
         "Thierry Voodoo Mask",
-        "Amber and Golden Seemyool",
+        "Drhellbert",
         "Gelano",
-        "Honoh Ring",
-        "Psychopump Button",
-        "Psychopump Needle"
+        "Fuji Snowfoux Ring",
+        "Shieldtastik",
+        "Copperbeard Mace"
       ],
       "responseStatus": "complete",
       "solverStatus": "FEASIBLE",
       "timings": {
-        "loadMs": 270.8,
-        "totalSearchMs": 2693.0
+        "loadMs": 271.3,
+        "totalSearchMs": 2672.1
       },
       "scoring": {
-        "damageSurvivabilityPreset": 4,
-        "genericDamageWeight": 0.6,
-        "survivabilityWeight": 0.7,
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
         "negativeResistancePenaltyWeight": 0.0,
         "rangeSoftWeight": 8.0,
         "rotationModel": "spell_profile_v0_weighted_candidates",

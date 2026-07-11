@@ -7061,8 +7061,9 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - optional CP-SAT solver mode
   - compact generated totals, items, sets, exos, scoring, and timings
 - Ran CP-SAT against 11 supported prod-shaped candidates:
+  - prod-shaped candidates use balanced `damageSurvivabilityPreset=2`, `budgetTier=4`, and `exoPolicy=opti`
   - all 11 returned feasible builds
-  - max observed `totalSearchMs` was 3587.0ms
+  - max observed `totalSearchMs` was 3696.5ms
   - Enutrof Chance `12/6/7` was skipped because explicit hard Range still caps at 6
 - Added `.codex/state/build-discovery-prod-candidate-generated-results-representative-20260711.md`.
 - Verification passed:

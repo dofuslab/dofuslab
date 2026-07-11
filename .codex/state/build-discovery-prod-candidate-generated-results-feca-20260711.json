@@ -50,67 +50,71 @@
         ],
         "apTarget": 12,
         "mpTarget": 6,
-        "rangeTarget": 5
+        "rangeTarget": 5,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "opti"
       },
       "resultCount": 1,
-      "bestGeneratedScore": 2683.41,
+      "bestGeneratedScore": 1341.96,
       "bestGeneratedTotals": {
         "AP": 12,
         "MP": 6,
         "Range": 5,
-        "Chance": 1048,
-        "Power": 0,
-        "Vitality": 1653,
-        "Damage": 0,
-        "Water Damage": 86,
-        "Critical": 21,
-        "Critical Damage": 0
+        "Chance": 498,
+        "Power": 185,
+        "Vitality": 1302,
+        "Damage": 21,
+        "Water Damage": 45,
+        "Critical": 12,
+        "Critical Damage": 10
       },
       "bestGeneratedSets": {
-        "Hel Munster Set": 2
+        "Psychopump Set": 2,
+        "Sylargh Set": 2
       },
       "bestGeneratedExos": {
         "AP": {
-          "itemId": "27266",
+          "itemId": "14072",
           "slot": "belt"
         },
         "MP": {
-          "itemId": "13646",
+          "itemId": "27265",
           "slot": "amulet"
         },
         "Range": {
-          "itemId": "27555",
-          "slot": "ring_1"
+          "itemId": "19248",
+          "slot": "boots"
         }
       },
       "bestGeneratedItems": [
-        "Hel Munster's Amulet",
-        "Khardboard Moowolf Belt",
-        "Odourless Boots",
-        "Cape Tivate",
+        "Khardboard Celestial Brooch",
+        "Sylargh's Strap",
+        "Boots of the Salvatory Spirit",
+        "Sylargh's Cloak",
         "Ochre Dofus",
-        "Vulbis Dofus",
         "Pryssure-O-Mat",
+        "Major Brainbox",
         "Major Gymnast",
-        "Major Maniac",
-        "Major Player",
-        "Hel Munster's Helmet",
-        "Golden and Indigo Rhineetle",
+        "Shaker",
+        "Twitcher",
+        "Thierry Voodoo Mask",
+        "Azure and Almond Seemyool",
         "Gloves of the Great",
-        "Guten Tak's Ring",
-        "Shelld",
-        "Daguanos"
+        "Gelano",
+        "Psychopump Button",
+        "Psychopump Needle"
       ],
       "responseStatus": "complete",
       "solverStatus": "FEASIBLE",
       "timings": {
-        "loadMs": 1904.7,
-        "totalSearchMs": 2628.3
+        "loadMs": 1843.6,
+        "totalSearchMs": 2598.6
       },
       "scoring": {
-        "damageSurvivabilityPreset": 4,
-        "genericDamageWeight": 0.6,
-        "survivabilityWeight": 0.7,
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
         "negativeResistancePenaltyWeight": 0.0,
         "rangeSoftWeight": 8.0,
         "rotationModel": "spell_profile_v0_weighted_candidates",
@@ -165,65 +169,64 @@
         ],
         "apTarget": 12,
         "mpTarget": 6,
-        "rangeTarget": 6
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "opti"
       },
       "resultCount": 1,
-      "bestGeneratedScore": 1564.21,
+      "bestGeneratedScore": 969.97,
       "bestGeneratedTotals": {
         "AP": 12,
         "MP": 6,
         "Range": 6,
-        "Strength": 728,
-        "Power": 285,
-        "Vitality": 1552,
-        "Damage": 26,
-        "Earth Damage": 30,
-        "Critical": -11,
-        "Critical Damage": 0,
-        "Neutral Damage": 30
+        "Strength": 988,
+        "Power": 110,
+        "Vitality": 1703,
+        "Damage": 0,
+        "Earth Damage": 57,
+        "Critical": 31,
+        "Critical Damage": 10,
+        "Neutral Damage": 57
       },
       "bestGeneratedSets": {
-        "Psychopump Set": 2,
-        "Salvatory Spirit Set": 2
+        "Guten Tak Set": 3,
+        "Wulan Set": 2
       },
       "bestGeneratedExos": {
         "AP": {
-          "itemId": "19248",
-          "slot": "boots"
-        },
-        "MP": {
-          "itemId": "11606",
-          "slot": "cloak"
+          "itemId": "27266",
+          "slot": "belt"
         }
       },
       "bestGeneratedItems": [
-        "Khardboard Celestial Brooch",
-        "Belt of the Salvatory Spirit",
-        "Boots of the Salvatory Spirit",
+        "Guten Tak's Amulet",
+        "Khardboard Moowolf Belt",
+        "Meriana's Clairvoyance",
         "Cape Tivate",
         "Ochre Dofus",
-        "Sprynt",
-        "Jackanapes",
+        "Sylvan Dofus",
         "Major Goliath",
         "Major Tease",
-        "Shaker",
-        "Thierry Voodoo Mask",
+        "Maniac",
+        "Voyager",
+        "Wulan's Diadem",
         "Drhellbert",
-        "Tash Ring",
-        "Gelano",
-        "Psychopump Button",
-        "Psychopump Needle"
+        "Guten Tak's Ring",
+        "Guten Tak's Wedding Ring",
+        "Bivalve",
+        "Wulan's Bow"
       ],
       "responseStatus": "complete",
       "solverStatus": "FEASIBLE",
       "timings": {
-        "loadMs": 280.8,
-        "totalSearchMs": 2737.5
+        "loadMs": 306.3,
+        "totalSearchMs": 2734.0
       },
       "scoring": {
-        "damageSurvivabilityPreset": 4,
-        "genericDamageWeight": 0.6,
-        "survivabilityWeight": 0.7,
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
         "negativeResistancePenaltyWeight": 0.0,
         "rangeSoftWeight": 2.0,
         "rotationModel": "spell_profile_v0_weighted_candidates",
@@ -278,67 +281,73 @@
         ],
         "apTarget": 12,
         "mpTarget": 6,
-        "rangeTarget": 6
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "opti"
       },
       "resultCount": 1,
-      "bestGeneratedScore": 2263.32,
+      "bestGeneratedScore": 1979.96,
       "bestGeneratedTotals": {
         "AP": 12,
         "MP": 6,
         "Range": 6,
-        "Chance": 688,
-        "Power": 205,
-        "Vitality": 1552,
-        "Damage": 26,
-        "Water Damage": 68,
-        "Critical": 14,
-        "Critical Damage": 30
+        "Chance": 868,
+        "Power": 200,
+        "Vitality": 3423,
+        "Damage": 0,
+        "Water Damage": 70,
+        "Critical": 28,
+        "Critical Damage": 0
       },
       "bestGeneratedSets": {
-        "Ice Knight Set": 3
+        "Mekstagob Set": 2,
+        "Anerice Set": 2,
+        "Salvatory Spirit Set": 2,
+        "Khardboard Set": 3
       },
       "bestGeneratedExos": {
         "AP": {
-          "itemId": "32231",
-          "slot": "ring_2"
+          "itemId": "19248",
+          "slot": "boots"
         },
         "MP": {
-          "itemId": "32232",
-          "slot": "weapon"
+          "itemId": "19249",
+          "slot": "hat"
         },
         "Range": {
-          "itemId": "2469",
-          "slot": "ring_1"
+          "itemId": "27284",
+          "slot": "ring_2"
         }
       },
       "bestGeneratedItems": [
-        "Boy's Own Chain",
+        "Khardboard Celestial Brooch",
         "Khardboard Moowolf Belt",
-        "Lethaline's Boots",
-        "Pirate Bhey Sail",
-        "Cawwot Dofus",
-        "Sprynt",
-        "Friction",
+        "Boots of the Salvatory Spirit",
+        "Anerice Cloak",
+        "Aiwuztheya Dofus",
+        "Emerald Dofus",
+        "Sylvan Dofus",
+        "Prygenerate",
+        "Arcanist",
         "Jackanapes",
-        "Maniac",
-        "Minor Friction",
-        "Thierry Voodoo Mask",
-        "Azure and Emerald Seemyool",
-        "Gelano",
-        "Ice Knight's Frozen Gauntlet",
-        "Ice Knight's Frigid Pavise",
-        "Ice Knight's Frozen Blade"
+        "Mask of the Salvatory Spirit",
+        "Golden and Indigo Rhineetle",
+        "Mekstagob Bolt",
+        "Khardboard Gelano",
+        "Anerice Shield",
+        "Mekstagob Spade"
       ],
       "responseStatus": "complete",
       "solverStatus": "FEASIBLE",
       "timings": {
-        "loadMs": 18.9,
-        "totalSearchMs": 2605.3
+        "loadMs": 19.2,
+        "totalSearchMs": 2685.8
       },
       "scoring": {
-        "damageSurvivabilityPreset": 4,
-        "genericDamageWeight": 0.6,
-        "survivabilityWeight": 0.7,
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
         "negativeResistancePenaltyWeight": 0.0,
         "rangeSoftWeight": 8.0,
         "rotationModel": "spell_profile_v0_weighted_candidates",
