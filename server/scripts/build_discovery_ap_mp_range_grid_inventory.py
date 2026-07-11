@@ -240,6 +240,42 @@ def summarize_by_level(
     return summaries
 
 
+def summarize_group(
+    rows: list[dict[str, Any]],
+    covered: set[tuple[int, str, int, int, int, int | None]],
+    resolved: set[tuple[int, str, int, int, int, int | None]],
+    *,
+    group_key: str,
+    label_key: str | None = None,
+) -> list[dict[str, Any]]:
+    label_key = label_key or group_key
+    labels = sorted({row[group_key] for row in rows})
+    summaries = []
+    for label in labels:
+        group_rows = [row for row in rows if row[group_key] == label]
+        generated_count = sum(1 for row in group_rows if row_key(row) in covered)
+        resolved_count = sum(1 for row in group_rows if row_key(row) in resolved)
+        summaries.append(
+            {
+                label_key: label,
+                "validQueryCount": len(group_rows),
+                "generatedEvidenceCount": generated_count,
+                "resolvedEvidenceCount": resolved_count,
+                "unresolvedCount": len(group_rows) - resolved_count,
+            }
+        )
+    return summaries
+
+
+def summarize_by_profile_bucket(
+    rows: list[dict[str, Any]],
+    covered: set[tuple[int, str, int, int, int, int | None]],
+    resolved: set[tuple[int, str, int, int, int, int | None]],
+) -> list[dict[str, Any]]:
+    bucket_rows = [{**row, "profileBucket": profile_bucket(row)} for row in rows]
+    return summarize_group(bucket_rows, covered, resolved, group_key="profileBucket")
+
+
 def compact_unproven_examples(
     rows: list[dict[str, Any]],
     covered: set[tuple[int, str, int, int, int, int | None]],
@@ -458,6 +494,9 @@ def build_inventory_report(
         "unresolvedCount": len(rows) - len(resolved_rows),
         "unattemptedCount": len(rows) - len(attempted_rows),
         "byLevel": summarize_by_level(rows, covered, resolved),
+        "byElement": summarize_group(rows, covered, resolved, group_key="element"),
+        "byBudgetTier": summarize_group(rows, covered, resolved, group_key="budgetTier"),
+        "byProfileBucket": summarize_by_profile_bucket(rows, covered, resolved),
         "unprovenExamples": compact_unproven_examples(rows, covered, unproven_example_limit),
         "unresolvedExamples": compact_unresolved_examples(rows, resolved, unproven_example_limit),
         "nextUnprovenTargets": select_next_unproven_targets(
@@ -511,6 +550,12 @@ def render_markdown(report: dict[str, Any]) -> str:
             f"{row.get('resolvedEvidenceCount', row['generatedEvidenceCount'])} | "
             f"{row.get('unresolvedCount', row['unprovenCount'])} |"
         )
+    lines.extend(["", "## Evidence By Element", ""])
+    lines.extend(render_summary_table(report.get("byElement", []), "element"))
+    lines.extend(["", "## Evidence By Budget Tier", ""])
+    lines.extend(render_summary_table(report.get("byBudgetTier", []), "budgetTier"))
+    lines.extend(["", "## Evidence By Profile Bucket", ""])
+    lines.extend(render_summary_table(report.get("byProfileBucket", []), "profileBucket"))
     lines.extend(["", "## Unproven Examples", ""])
     for row in report["unprovenExamples"]:
         range_label = "any" if row["rangeTarget"] is None else row["rangeTarget"]
@@ -542,6 +587,21 @@ def render_markdown(report: dict[str, Any]) -> str:
         )
     lines.append("")
     return "\n".join(lines)
+
+
+def render_summary_table(rows: list[dict[str, Any]], label_key: str) -> list[str]:
+    if not rows:
+        return ["_No rows._"]
+    lines = [
+        f"| {label_key} | Valid rows | Generated evidence | Resolved evidence | Unresolved |",
+        "|---|---:|---:|---:|---:|",
+    ]
+    for row in rows:
+        lines.append(
+            f"| {row[label_key]} | {row['validQueryCount']} | {row['generatedEvidenceCount']} | "
+            f"{row['resolvedEvidenceCount']} | {row['unresolvedCount']} |"
+        )
+    return lines
 
 
 def parse_csv_ints(raw_value: str | None, defaults: tuple[int, ...]) -> tuple[int, ...]:

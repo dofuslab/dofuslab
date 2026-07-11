@@ -218,6 +218,35 @@ Unattempted rows: `664890`
 | 199 | 3072 | 12 | 12 | 3060 |
 | 200 | 3072 | 14 | 14 | 3058 |
 
+## Evidence By Element
+
+| element | Valid rows | Generated evidence | Resolved evidence | Unresolved |
+|---|---:|---:|---:|---:|
+| agility | 166272 | 33 | 36 | 166236 |
+| chance | 166272 | 33 | 35 | 166237 |
+| intelligence | 166272 | 38 | 43 | 166229 |
+| strength | 166272 | 73 | 76 | 166196 |
+
+## Evidence By Budget Tier
+
+| budgetTier | Valid rows | Generated evidence | Resolved evidence | Unresolved |
+|---|---:|---:|---:|---:|
+| 1 | 166272 | 48 | 48 | 166224 |
+| 2 | 166272 | 53 | 53 | 166219 |
+| 3 | 166272 | 35 | 37 | 166235 |
+| 4 | 166272 | 41 | 52 | 166220 |
+
+## Evidence By Profile Bucket
+
+| profileBucket | Valid rows | Generated evidence | Resolved evidence | Unresolved |
+|---|---:|---:|---:|---:|
+| ap_heavy | 134400 | 25 | 25 | 134375 |
+| cap | 3200 | 41 | 48 | 3152 |
+| middle | 298864 | 37 | 37 | 298827 |
+| minimum | 3200 | 56 | 56 | 3144 |
+| mp_heavy | 163072 | 15 | 18 | 163054 |
+| range_heavy | 62352 | 3 | 6 | 62346 |
+
 ## Unproven Examples
 
 - L1 strength tier 1 6/3/0

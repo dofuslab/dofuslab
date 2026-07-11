@@ -196,6 +196,13 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         self.assertEqual(inventory["byLevel"][0]["level"], 1)
         self.assertEqual(inventory["byLevel"][0]["resolvedEvidenceCount"], 1)
         self.assertEqual(inventory["byLevel"][0]["unresolvedCount"], 223)
+        self.assertEqual(inventory["byElement"][0]["element"], "strength")
+        self.assertEqual(inventory["byElement"][0]["resolvedEvidenceCount"], 1)
+        self.assertEqual(inventory["byBudgetTier"][0]["budgetTier"], 1)
+        self.assertEqual(inventory["byBudgetTier"][0]["resolvedEvidenceCount"], 1)
+        self.assertTrue(
+            any(row["profileBucket"] == "minimum" for row in inventory["byProfileBucket"])
+        )
         self.assertEqual(len(inventory["unprovenExamples"]), 3)
         self.assertEqual(len(inventory["unresolvedExamples"]), 3)
         self.assertGreater(len(inventory["nextUnprovenTargets"]), 0)

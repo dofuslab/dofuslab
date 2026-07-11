@@ -1829,6 +1829,110 @@
       "unresolvedCount": 3058
     }
   ],
+  "byElement": [
+    {
+      "element": "agility",
+      "validQueryCount": 166272,
+      "generatedEvidenceCount": 33,
+      "resolvedEvidenceCount": 36,
+      "unresolvedCount": 166236
+    },
+    {
+      "element": "chance",
+      "validQueryCount": 166272,
+      "generatedEvidenceCount": 33,
+      "resolvedEvidenceCount": 35,
+      "unresolvedCount": 166237
+    },
+    {
+      "element": "intelligence",
+      "validQueryCount": 166272,
+      "generatedEvidenceCount": 38,
+      "resolvedEvidenceCount": 43,
+      "unresolvedCount": 166229
+    },
+    {
+      "element": "strength",
+      "validQueryCount": 166272,
+      "generatedEvidenceCount": 73,
+      "resolvedEvidenceCount": 76,
+      "unresolvedCount": 166196
+    }
+  ],
+  "byBudgetTier": [
+    {
+      "budgetTier": 1,
+      "validQueryCount": 166272,
+      "generatedEvidenceCount": 48,
+      "resolvedEvidenceCount": 48,
+      "unresolvedCount": 166224
+    },
+    {
+      "budgetTier": 2,
+      "validQueryCount": 166272,
+      "generatedEvidenceCount": 53,
+      "resolvedEvidenceCount": 53,
+      "unresolvedCount": 166219
+    },
+    {
+      "budgetTier": 3,
+      "validQueryCount": 166272,
+      "generatedEvidenceCount": 35,
+      "resolvedEvidenceCount": 37,
+      "unresolvedCount": 166235
+    },
+    {
+      "budgetTier": 4,
+      "validQueryCount": 166272,
+      "generatedEvidenceCount": 41,
+      "resolvedEvidenceCount": 52,
+      "unresolvedCount": 166220
+    }
+  ],
+  "byProfileBucket": [
+    {
+      "profileBucket": "ap_heavy",
+      "validQueryCount": 134400,
+      "generatedEvidenceCount": 25,
+      "resolvedEvidenceCount": 25,
+      "unresolvedCount": 134375
+    },
+    {
+      "profileBucket": "cap",
+      "validQueryCount": 3200,
+      "generatedEvidenceCount": 41,
+      "resolvedEvidenceCount": 48,
+      "unresolvedCount": 3152
+    },
+    {
+      "profileBucket": "middle",
+      "validQueryCount": 298864,
+      "generatedEvidenceCount": 37,
+      "resolvedEvidenceCount": 37,
+      "unresolvedCount": 298827
+    },
+    {
+      "profileBucket": "minimum",
+      "validQueryCount": 3200,
+      "generatedEvidenceCount": 56,
+      "resolvedEvidenceCount": 56,
+      "unresolvedCount": 3144
+    },
+    {
+      "profileBucket": "mp_heavy",
+      "validQueryCount": 163072,
+      "generatedEvidenceCount": 15,
+      "resolvedEvidenceCount": 18,
+      "unresolvedCount": 163054
+    },
+    {
+      "profileBucket": "range_heavy",
+      "validQueryCount": 62352,
+      "generatedEvidenceCount": 3,
+      "resolvedEvidenceCount": 6,
+      "unresolvedCount": 62346
+    }
+  ],
   "unprovenExamples": [
     {
       "level": 1,

@@ -6103,6 +6103,33 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-unresolved-targets-20260711.json --output-json /tmp/build-discovery-m3-unresolved-sample-20260711.json --output-md /tmp/build-discovery-m3-unresolved-sample-20260711.md`
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-unresolved-sample-20260711.json --target-file .codex/state/build-discovery-m3-unresolved-targets-20260711.json --expected-solver cpsat --allow-no-build`
 
+### 2026-07-11 M3/M4 Inventory Review Summaries
+
+- Added inventory review summaries by:
+  - element
+  - budget tier
+  - profile bucket: `minimum`, `cap`, `mp_heavy`, `range_heavy`,
+    `ap_heavy`, `middle`
+- Refreshed the all-level inventory with these summaries. Current generated
+  evidence is intentionally sampled and skewed:
+  - generated evidence rows: `177`
+  - attempted evidence rows: `198`
+  - proven no-build evidence rows: `13`
+  - resolved evidence rows: `190`
+  - unresolved rows: `664898`
+  - Strength: `73` generated rows
+  - Intelligence: `38` generated rows
+  - Chance: `33` generated rows
+  - Agility: `33` generated rows
+  - `range_heavy`: only `3` generated rows and `6` resolved rows
+  - `mp_heavy`: only `15` generated rows and `18` resolved rows
+- Interpretation: the next high-signal samples should favor non-Strength
+  elements plus `range_heavy` and `mp_heavy` profile buckets rather than adding
+  more Strength cap/minimum evidence.
+- Verification passed:
+  - `python server/scripts/test_build_discovery_ap_mp_range_grid_inventory.py`
+  - `python -m py_compile server/scripts/build_discovery_ap_mp_range_grid_inventory.py server/scripts/test_build_discovery_ap_mp_range_grid_inventory.py`
+
 ### 2026-07-11 M3/M4 Between-Boundary Level Sample
 
 - Generated and validated a targeted between-boundary level sample to avoid
@@ -6118,7 +6145,9 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - invalid: `0`
   - solver statuses: `12` `OPTIMAL`
 - Refreshed the all-level Iop inventory again after adding this sample to the
-  default artifact set:
+  default artifact set. These were historical loose no-build totals from this
+  checkpoint; the stricter canonical inventory totals are recorded in the later
+  Inventory Review Summaries section:
   - valid query rows: `665088`
   - generated evidence rows: `172`
   - no-build evidence rows: `22`
