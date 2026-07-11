@@ -174,6 +174,23 @@ class BuildDiscoveryLevelDiversityMatrixCheckTest(unittest.TestCase):
             failures,
         )
 
+    def test_validate_report_rejects_budget_fallback_evidence(self):
+        report = valid_report()
+        result = report["results"][0]
+        result["diagnostics"] = {
+            "fallbackBudget": {
+                "requestedBudgetTier": 2,
+                "usedBudgetTier": 1,
+            }
+        }
+
+        failures = validate_report(report)
+
+        self.assertTrue(
+            any("budget fallback used; not covering requested budget tier" in failure for failure in failures),
+            failures,
+        )
+
     def test_validate_report_accepts_boundary_target_set(self):
         results = [valid_result(target) for target in targets_for_set("boundary")]
         report = {

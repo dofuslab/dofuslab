@@ -1,0 +1,928 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T03:25:01.603380+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-ap-mp-range-frontier-002-targets.json#nextUnprovenTargets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "grid_frontier_002_level_150_intelligence_7_3_0_budget4",
+        "className": "Iop",
+        "level": 150,
+        "element": "intelligence",
+        "budgetTier": 4,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 0
+      },
+      "query": {
+        "className": "Iop",
+        "level": 150,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 1772.62,
+        "weightedStatScore": 3055.97,
+        "utilityStatScore": 266.16,
+        "genericDamageScore": 3187.91,
+        "rawRotationDamageScore": 1989.53,
+        "spellDamageScore": 1989.53,
+        "profileBaselineDamageScore": 1872.26,
+        "profileRelativeDamage": 1.0626,
+        "weaponDamageScore": 141.57,
+        "survivabilityScore": 71.9,
+        "weakestElementEhp": 2143.81,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Intelligence": 336,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 3,
+          "Intelligence": 1336,
+          "Power": 200,
+          "Vitality": 2251,
+          "Damage": 18,
+          "Fire Damage": 67,
+          "Critical": 18,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Hell Mina Set": 3,
+          "Khardboard Set": 3,
+          "Soft Oak Set": 2
+        },
+        "exos": {},
+        "items": {
+          "belt": {
+            "id": "27266",
+            "internalId": null,
+            "name": "Khardboard Moowolf Belt",
+            "type": "Belt",
+            "level": 150,
+            "set": "Khardboard Set"
+          },
+          "weapon": {
+            "id": "26314",
+            "internalId": null,
+            "name": "Hell Mina's Partisan",
+            "type": "Lance",
+            "level": 150,
+            "set": "Hell Mina Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "26311",
+            "internalId": null,
+            "name": "Hell Mina's Wedding Ring",
+            "type": "Ring",
+            "level": 146,
+            "set": "Hell Mina Set"
+          },
+          "boots": {
+            "id": "27278",
+            "internalId": null,
+            "name": "Khardboard Getas",
+            "type": "Boots",
+            "level": 125,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "26313",
+            "internalId": null,
+            "name": "Hell Mina's Cape",
+            "type": "Cloak",
+            "level": 148,
+            "set": "Hell Mina Set"
+          },
+          "amulet": {
+            "id": "8469",
+            "internalId": null,
+            "name": "Soft Oak Talisman",
+            "type": "Amulet",
+            "level": 138,
+            "set": "Soft Oak Set"
+          },
+          "ring_2": {
+            "id": "14006",
+            "internalId": null,
+            "name": "Ringferno",
+            "type": "Ring",
+            "level": 150,
+            "set": "Infernal Set"
+          },
+          "hat": {
+            "id": "8474",
+            "internalId": null,
+            "name": "Soft Oak Hat",
+            "type": "Hat",
+            "level": 145,
+            "set": "Soft Oak Set"
+          },
+          "pet": {
+            "id": "33043",
+            "internalId": null,
+            "name": "Ivory and Orchid Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13780",
+            "internalId": null,
+            "name": "Major Fire Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12719",
+            "internalId": null,
+            "name": "Major Scholar",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1772.62,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 3,
+          "Intelligence": 1336,
+          "Power": 200,
+          "Vitality": 2251,
+          "Damage": 18,
+          "Fire Damage": 67,
+          "Critical": 18,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Hell Mina Set": 3,
+          "Khardboard Set": 3,
+          "Soft Oak Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Soft Oak Talisman",
+          "Khardboard Moowolf Belt",
+          "Hell Mina's Partisan",
+          "Khardboard Bowisse's Shield",
+          "Hell Mina's Wedding Ring",
+          "Ringferno",
+          "Khardboard Getas",
+          "Soft Oak Hat",
+          "Hell Mina's Cape",
+          "Ivory and Orchid Dragoturkey",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Major Fire Wrecker",
+          "Emerald Dofus",
+          "Major Scholar",
+          "Major Brainbox"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 1772.62,
+          "weightedStatScore": 3055.97,
+          "utilityStatScore": 266.16,
+          "genericDamageScore": 3187.91,
+          "rawRotationDamageScore": 1989.53,
+          "spellDamageScore": 1989.53,
+          "profileBaselineDamageScore": 1872.26,
+          "profileRelativeDamage": 1.0626,
+          "weaponDamageScore": 141.57,
+          "survivabilityScore": 71.9,
+          "weakestElementEhp": 2143.81,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Intelligence": 336,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 3,
+            "Intelligence": 1336,
+            "Power": 200,
+            "Vitality": 2251,
+            "Damage": 18,
+            "Fire Damage": 67,
+            "Critical": 18,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Hell Mina Set": 3,
+            "Khardboard Set": 3,
+            "Soft Oak Set": 2
+          },
+          "exos": {},
+          "items": {
+            "belt": {
+              "id": "27266",
+              "internalId": null,
+              "name": "Khardboard Moowolf Belt",
+              "type": "Belt",
+              "level": 150,
+              "set": "Khardboard Set"
+            },
+            "weapon": {
+              "id": "26314",
+              "internalId": null,
+              "name": "Hell Mina's Partisan",
+              "type": "Lance",
+              "level": 150,
+              "set": "Hell Mina Set"
+            },
+            "shield": {
+              "id": "27280",
+              "internalId": null,
+              "name": "Khardboard Bowisse's Shield",
+              "type": "Shield",
+              "level": 100,
+              "set": "Khardboard Set"
+            },
+            "ring_1": {
+              "id": "26311",
+              "internalId": null,
+              "name": "Hell Mina's Wedding Ring",
+              "type": "Ring",
+              "level": 146,
+              "set": "Hell Mina Set"
+            },
+            "boots": {
+              "id": "27278",
+              "internalId": null,
+              "name": "Khardboard Getas",
+              "type": "Boots",
+              "level": 125,
+              "set": "Khardboard Set"
+            },
+            "cloak": {
+              "id": "26313",
+              "internalId": null,
+              "name": "Hell Mina's Cape",
+              "type": "Cloak",
+              "level": 148,
+              "set": "Hell Mina Set"
+            },
+            "amulet": {
+              "id": "8469",
+              "internalId": null,
+              "name": "Soft Oak Talisman",
+              "type": "Amulet",
+              "level": 138,
+              "set": "Soft Oak Set"
+            },
+            "ring_2": {
+              "id": "14006",
+              "internalId": null,
+              "name": "Ringferno",
+              "type": "Ring",
+              "level": 150,
+              "set": "Infernal Set"
+            },
+            "hat": {
+              "id": "8474",
+              "internalId": null,
+              "name": "Soft Oak Hat",
+              "type": "Hat",
+              "level": 145,
+              "set": "Soft Oak Set"
+            },
+            "pet": {
+              "id": "33043",
+              "internalId": null,
+              "name": "Ivory and Orchid Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13780",
+              "internalId": null,
+              "name": "Major Fire Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "737",
+              "internalId": null,
+              "name": "Emerald Dofus",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "12719",
+              "internalId": null,
+              "name": "Major Scholar",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13762",
+              "internalId": null,
+              "name": "Major Brainbox",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 1724.36,
+          "weightedStatScore": 3046.03,
+          "utilityStatScore": 246.89,
+          "genericDamageScore": 3155.95,
+          "rawRotationDamageScore": 1969.58,
+          "spellDamageScore": 1969.58,
+          "profileBaselineDamageScore": 1872.26,
+          "profileRelativeDamage": 1.052,
+          "weaponDamageScore": 90.34,
+          "survivabilityScore": 57.29,
+          "weakestElementEhp": 1743.63,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Intelligence": 336,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 2,
+            "Intelligence": 1266,
+            "Power": 155,
+            "Vitality": 1751,
+            "Damage": 8,
+            "Fire Damage": 57,
+            "Critical": 52,
+            "Critical Damage": 40
+          },
+          "sets": {
+            "Katigger Set": 3,
+            "Frigostine Set": 2,
+            "Khardboard Set": 2
+          },
+          "exos": {},
+          "items": {
+            "belt": {
+              "id": "27266",
+              "internalId": null,
+              "name": "Khardboard Moowolf Belt",
+              "type": "Belt",
+              "level": 150,
+              "set": "Khardboard Set"
+            },
+            "shield": {
+              "id": "27280",
+              "internalId": null,
+              "name": "Khardboard Bowisse's Shield",
+              "type": "Shield",
+              "level": 100,
+              "set": "Khardboard Set"
+            },
+            "ring_1": {
+              "id": "32209",
+              "internalId": null,
+              "name": "Katigger Glove",
+              "type": "Ring",
+              "level": 142,
+              "set": "Katigger Set"
+            },
+            "boots": {
+              "id": "32208",
+              "internalId": null,
+              "name": "Katigger Paws",
+              "type": "Boots",
+              "level": 146,
+              "set": "Katigger Set"
+            },
+            "cloak": {
+              "id": "32207",
+              "internalId": null,
+              "name": "Katigger Cape",
+              "type": "Cloak",
+              "level": 144,
+              "set": "Katigger Set"
+            },
+            "amulet": {
+              "id": "12089",
+              "internalId": null,
+              "name": "Frigostine's Amulet",
+              "type": "Amulet",
+              "level": 147,
+              "set": "Frigostine Set"
+            },
+            "weapon": {
+              "id": "12088",
+              "internalId": null,
+              "name": "Frigostine's Wand",
+              "type": "Wand",
+              "level": 149,
+              "set": "Frigostine Set"
+            },
+            "ring_2": {
+              "id": "14006",
+              "internalId": null,
+              "name": "Ringferno",
+              "type": "Ring",
+              "level": 150,
+              "set": "Infernal Set"
+            },
+            "hat": {
+              "id": "8474",
+              "internalId": null,
+              "name": "Soft Oak Hat",
+              "type": "Hat",
+              "level": 145,
+              "set": "Soft Oak Set"
+            },
+            "pet": {
+              "id": "7711",
+              "internalId": null,
+              "name": "Red Piwin",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13780",
+              "internalId": null,
+              "name": "Major Fire Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "737",
+              "internalId": null,
+              "name": "Emerald Dofus",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "12719",
+              "internalId": null,
+              "name": "Major Scholar",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13762",
+              "internalId": null,
+              "name": "Major Brainbox",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 1723.67,
+          "weightedStatScore": 3109.77,
+          "utilityStatScore": 244.48,
+          "genericDamageScore": 3097.02,
+          "rawRotationDamageScore": 1932.81,
+          "spellDamageScore": 1932.81,
+          "profileBaselineDamageScore": 1872.26,
+          "profileRelativeDamage": 1.0323,
+          "weaponDamageScore": 131.9,
+          "survivabilityScore": 85.53,
+          "weakestElementEhp": 2560.39,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Intelligence": 336,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 4,
+            "Range": 3,
+            "Intelligence": 1286,
+            "Power": 200,
+            "Vitality": 2441,
+            "Damage": 8,
+            "Fire Damage": 63,
+            "Critical": 31,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Mister Penguin Set": 2,
+            "Katigger Set": 3,
+            "Hell Mina Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "32204",
+              "internalId": null,
+              "name": "Mister Penguin Chain",
+              "type": "Amulet",
+              "level": 142,
+              "set": "Mister Penguin Set"
+            },
+            "belt": {
+              "id": "32205",
+              "internalId": null,
+              "name": "Mister Penguin Belt",
+              "type": "Belt",
+              "level": 140,
+              "set": "Mister Penguin Set"
+            },
+            "ring_1": {
+              "id": "32209",
+              "internalId": null,
+              "name": "Katigger Glove",
+              "type": "Ring",
+              "level": 142,
+              "set": "Katigger Set"
+            },
+            "boots": {
+              "id": "32208",
+              "internalId": null,
+              "name": "Katigger Paws",
+              "type": "Boots",
+              "level": 146,
+              "set": "Katigger Set"
+            },
+            "cloak": {
+              "id": "32207",
+              "internalId": null,
+              "name": "Katigger Cape",
+              "type": "Cloak",
+              "level": 144,
+              "set": "Katigger Set"
+            },
+            "weapon": {
+              "id": "26314",
+              "internalId": null,
+              "name": "Hell Mina's Partisan",
+              "type": "Lance",
+              "level": 150,
+              "set": "Hell Mina Set"
+            },
+            "shield": {
+              "id": "30685",
+              "internalId": null,
+              "name": "Bontarian Gobbowler Shield",
+              "type": "Shield",
+              "level": 135,
+              "set": null
+            },
+            "ring_2": {
+              "id": "26311",
+              "internalId": null,
+              "name": "Hell Mina's Wedding Ring",
+              "type": "Ring",
+              "level": 146,
+              "set": "Hell Mina Set"
+            },
+            "hat": {
+              "id": "8474",
+              "internalId": null,
+              "name": "Soft Oak Hat",
+              "type": "Hat",
+              "level": 145,
+              "set": "Soft Oak Set"
+            },
+            "pet": {
+              "id": "33043",
+              "internalId": null,
+              "name": "Ivory and Orchid Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13780",
+              "internalId": null,
+              "name": "Major Fire Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "737",
+              "internalId": null,
+              "name": "Emerald Dofus",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "12719",
+              "internalId": null,
+              "name": "Major Scholar",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13762",
+              "internalId": null,
+              "name": "Major Brainbox",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 1772.62,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 3,
+            "Intelligence": 1336,
+            "Power": 200,
+            "Vitality": 2251,
+            "Damage": 18,
+            "Fire Damage": 67,
+            "Critical": 18,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Hell Mina Set": 3,
+            "Khardboard Set": 3,
+            "Soft Oak Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Soft Oak Talisman",
+            "Khardboard Moowolf Belt",
+            "Hell Mina's Partisan",
+            "Khardboard Bowisse's Shield",
+            "Hell Mina's Wedding Ring",
+            "Ringferno",
+            "Khardboard Getas",
+            "Soft Oak Hat",
+            "Hell Mina's Cape",
+            "Ivory and Orchid Dragoturkey",
+            "Crimson Dofus",
+            "Dolmanax",
+            "Major Fire Wrecker",
+            "Emerald Dofus",
+            "Major Scholar",
+            "Major Brainbox"
+          ]
+        },
+        {
+          "score": 1724.36,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 2,
+            "Intelligence": 1266,
+            "Power": 155,
+            "Vitality": 1751,
+            "Damage": 8,
+            "Fire Damage": 57,
+            "Critical": 52,
+            "Critical Damage": 40
+          },
+          "sets": {
+            "Katigger Set": 3,
+            "Frigostine Set": 2,
+            "Khardboard Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Frigostine's Amulet",
+            "Khardboard Moowolf Belt",
+            "Frigostine's Wand",
+            "Khardboard Bowisse's Shield",
+            "Katigger Glove",
+            "Ringferno",
+            "Katigger Paws",
+            "Soft Oak Hat",
+            "Katigger Cape",
+            "Red Piwin",
+            "Crimson Dofus",
+            "Dolmanax",
+            "Major Fire Wrecker",
+            "Emerald Dofus",
+            "Major Scholar",
+            "Major Brainbox"
+          ]
+        },
+        {
+          "score": 1723.67,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 9,
+            "MP": 4,
+            "Range": 3,
+            "Intelligence": 1286,
+            "Power": 200,
+            "Vitality": 2441,
+            "Damage": 8,
+            "Fire Damage": 63,
+            "Critical": 31,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Mister Penguin Set": 2,
+            "Katigger Set": 3,
+            "Hell Mina Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Mister Penguin Chain",
+            "Mister Penguin Belt",
+            "Hell Mina's Partisan",
+            "Bontarian Gobbowler Shield",
+            "Katigger Glove",
+            "Hell Mina's Wedding Ring",
+            "Katigger Paws",
+            "Soft Oak Hat",
+            "Katigger Cape",
+            "Ivory and Orchid Dragoturkey",
+            "Crimson Dofus",
+            "Dolmanax",
+            "Major Fire Wrecker",
+            "Emerald Dofus",
+            "Major Scholar",
+            "Major Brainbox"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 10
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 319179.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 117.2,
+          "candidatePoolsMs": 43.9,
+          "packageIndexMs": 427.7,
+          "packageSeedsMs": 2600.5,
+          "directCompletionMs": 315982.8,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.8,
+          "totalFindBuildsMs": 319173.9
+        },
+        "resultCount": 3,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

@@ -220,23 +220,23 @@
   ],
   "budgetTierCount": 4,
   "validQueryCount": 665088,
-  "generatedEvidenceCount": 138,
-  "attemptedEvidenceCount": 153,
-  "noBuildEvidenceCount": 15,
-  "unprovenCount": 664950,
-  "unattemptedCount": 664935,
+  "generatedEvidenceCount": 145,
+  "attemptedEvidenceCount": 162,
+  "noBuildEvidenceCount": 17,
+  "unprovenCount": 664943,
+  "unattemptedCount": 664926,
   "byLevel": [
     {
       "level": 1,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 4,
-      "unprovenCount": 3580
+      "generatedEvidenceCount": 5,
+      "unprovenCount": 3579
     },
     {
       "level": 2,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "unprovenCount": 3584
+      "generatedEvidenceCount": 1,
+      "unprovenCount": 3583
     },
     {
       "level": 3,
@@ -523,8 +523,8 @@
     {
       "level": 50,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 12,
-      "unprovenCount": 3572
+      "generatedEvidenceCount": 13,
+      "unprovenCount": 3571
     },
     {
       "level": 51,
@@ -703,8 +703,8 @@
     {
       "level": 80,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 11,
-      "unprovenCount": 3573
+      "generatedEvidenceCount": 12,
+      "unprovenCount": 3572
     },
     {
       "level": 81,
@@ -823,8 +823,8 @@
     {
       "level": 100,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 12,
-      "unprovenCount": 3060
+      "generatedEvidenceCount": 13,
+      "unprovenCount": 3059
     },
     {
       "level": 101,
@@ -1123,8 +1123,8 @@
     {
       "level": 150,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 13,
-      "unprovenCount": 3059
+      "generatedEvidenceCount": 14,
+      "unprovenCount": 3058
     },
     {
       "level": 151,
@@ -1423,8 +1423,8 @@
     {
       "level": 200,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 11,
-      "unprovenCount": 3061
+      "generatedEvidenceCount": 12,
+      "unprovenCount": 3060
     }
   ],
   "unprovenExamples": [
@@ -1813,7 +1813,7 @@
     {
       "level": 1,
       "element": "intelligence",
-      "budgetTier": 1,
+      "budgetTier": 2,
       "apTarget": 6,
       "mpTarget": 3,
       "rangeTarget": null,

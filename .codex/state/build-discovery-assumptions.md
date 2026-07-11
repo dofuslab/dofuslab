@@ -72,6 +72,9 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - `exoPolicy=allow` means the solver may add at most one AP, one MP, and one Range exo when needed.
 - `exoPolicy=opti` is currently accepted by the query contract but does not yet differ materially from `allow`.
 - Budget tier filtering currently removes candidates above the selected tier before search.
+- If the solver falls back from the requested budget tier to a stricter/lower
+  tier, that result is useful diagnostic evidence but does not cover the
+  requested budget row in generated matrices or inventory.
 
 ## Item Availability Assumptions
 
@@ -185,6 +188,10 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Diversity filtering by item overlap and approach is required.
 - Cheap final prefiltering is acceptable only if benchmark reports prove it does not drop important valid/diverse builds.
 - Ranked Dofus slot filling was previously rejected because it dropped a valid/diverse build.
+- Curated AP/MP/Range source IDs are acceptable as temporary recall aids, but
+  they are a bandaid risk. Future correctness work should prefer generic stat
+  vector, set-package, and feasibility diagnostics over adding more handpicked
+  item IDs.
 
 ## Generated Index Assumptions
 

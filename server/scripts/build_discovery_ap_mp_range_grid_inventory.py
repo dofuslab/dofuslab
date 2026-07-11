@@ -39,6 +39,8 @@ DEFAULT_ARTIFACTS = (
     ".codex/state/build-discovery-ap-mp-range-grid-next-cap-4-matrix.json",
     ".codex/state/build-discovery-prod-level-sample-matrix.json",
     ".codex/state/build-discovery-prod-level-sample-multicandidate-smoke.json",
+    ".codex/state/build-discovery-ap-mp-range-frontier-001-matrix.json",
+    ".codex/state/build-discovery-ap-mp-range-frontier-002-matrix.json",
 )
 
 
@@ -254,10 +256,20 @@ def select_next_unproven_targets(
     covered: set[tuple[int, str, int, int, int, int | None]],
     attempted: set[tuple[int, str, int, int, int, int | None]] | None,
     limit: int,
+    evidence_statuses: set[str] | None = None,
+    profile_buckets: set[str] | None = None,
 ) -> list[dict[str, Any]]:
     selected = []
     attempted = attempted or set()
     unproven = [row for row in rows if row_key(row) not in covered]
+    if evidence_statuses is not None:
+        unproven = [
+            row
+            for row in unproven
+            if ("retry" if row_key(row) in attempted else "unattempted") in evidence_statuses
+        ]
+    if profile_buckets is not None:
+        unproven = [row for row in unproven if profile_bucket(row) in profile_buckets]
     levels = sorted({row["level"] for row in unproven})
 
     def with_bucket(row: dict[str, Any]) -> dict[str, Any]:
@@ -378,6 +390,8 @@ def build_inventory_report(
     budget_tiers: Iterable[int] = DEFAULT_BUDGET_TIERS,
     unproven_example_limit: int = 40,
     next_target_limit: int = 24,
+    next_evidence_statuses: set[str] | None = None,
+    next_profile_buckets: set[str] | None = None,
 ) -> dict[str, Any]:
     levels = tuple(levels)
     elements = tuple(elements)
@@ -407,7 +421,14 @@ def build_inventory_report(
         "unattemptedCount": len(rows) - len(attempted_rows),
         "byLevel": summarize_by_level(rows, covered),
         "unprovenExamples": compact_unproven_examples(rows, covered, unproven_example_limit),
-        "nextUnprovenTargets": select_next_unproven_targets(rows, covered, attempted, next_target_limit),
+        "nextUnprovenTargets": select_next_unproven_targets(
+            rows,
+            covered,
+            attempted,
+            next_target_limit,
+            evidence_statuses=next_evidence_statuses,
+            profile_buckets=next_profile_buckets,
+        ),
     }
 
 
@@ -486,6 +507,16 @@ def parse_csv_strings(raw_value: str | None, defaults: tuple[str, ...]) -> tuple
     return tuple(value.strip() for value in raw_value.split(",") if value.strip())
 
 
+def parse_csv_string_set(raw_value: str | None, allowed: set[str], label: str) -> set[str] | None:
+    if not raw_value:
+        return None
+    values = {value.strip() for value in raw_value.split(",") if value.strip()}
+    unknown = values - allowed
+    if unknown:
+        raise ValueError(f"Unknown {label}: {', '.join(sorted(unknown))}")
+    return values
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--artifact", action="append")
@@ -496,6 +527,14 @@ def main() -> None:
     parser.add_argument("--budget-tiers")
     parser.add_argument("--unproven-example-limit", type=int, default=40)
     parser.add_argument("--next-target-limit", type=int, default=24)
+    parser.add_argument(
+        "--next-evidence-statuses",
+        help="Comma-separated evidence statuses for next targets: retry,unattempted.",
+    )
+    parser.add_argument(
+        "--next-profile-buckets",
+        help="Comma-separated profile buckets for next targets: minimum,cap,mp_heavy,range_heavy,ap_heavy,middle.",
+    )
     parser.add_argument("--output-json")
     parser.add_argument("--output-md")
     args = parser.parse_args()
@@ -510,6 +549,16 @@ def main() -> None:
         budget_tiers=parse_csv_ints(args.budget_tiers, DEFAULT_BUDGET_TIERS),
         unproven_example_limit=args.unproven_example_limit,
         next_target_limit=args.next_target_limit,
+        next_evidence_statuses=parse_csv_string_set(
+            args.next_evidence_statuses,
+            {"retry", "unattempted"},
+            "next evidence statuses",
+        ),
+        next_profile_buckets=parse_csv_string_set(
+            args.next_profile_buckets,
+            {"minimum", "cap", "mp_heavy", "range_heavy", "ap_heavy", "middle"},
+            "next profile buckets",
+        ),
     )
 
     if args.output_json:

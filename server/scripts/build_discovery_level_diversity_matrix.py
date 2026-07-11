@@ -444,6 +444,10 @@ def matrix_entry(
 ) -> dict[str, Any]:
     builds = response.get("builds", [])
     best_build = builds[0] if builds else None
+    diagnostics = response.get("diagnostics", {})
+    coverage_errors = []
+    if diagnostics.get("fallbackBudget"):
+        coverage_errors.append("budget fallback used; not covering requested budget tier")
     candidate_validation_errors = [
         {
             "index": index,
@@ -454,8 +458,8 @@ def matrix_entry(
     invalid_candidates = [
         validation for validation in candidate_validation_errors if validation["errors"]
     ]
-    validation_errors = validate_best_build(target, query, best_build)
-    status = "no_build" if not best_build else "invalid" if invalid_candidates else "generated"
+    validation_errors = validate_best_build(target, query, best_build) + coverage_errors
+    status = "no_build" if not best_build else "invalid" if invalid_candidates or coverage_errors else "generated"
     return {
         "target": target_summary(target),
         "query": query_summary(query),
@@ -469,7 +473,7 @@ def matrix_entry(
         "candidateBuildSummaries": [compact_build_summary(build) for build in builds],
         "candidateDiversity": candidate_diversity_summary(builds),
         "warnings": response.get("warnings", []),
-        "diagnostics": response.get("diagnostics", {}),
+        "diagnostics": diagnostics,
         "cache": response.get("cache", {}),
         "datasetVersion": response.get("datasetVersion"),
         "solverVersion": response.get("solverVersion"),

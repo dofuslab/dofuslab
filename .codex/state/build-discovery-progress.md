@@ -3533,3 +3533,59 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   and should be generated deliberately, not hidden inside this smoke.
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-frontier-001-matrix.json --target-file /tmp/build-discovery-ap-mp-range-frontier-001-targets.json --target-file-limit 1 --target-file-prefix grid_frontier_001`
+
+### 2026-07-10 Frontier Selection And Budget Fallback Guardrail
+
+- Added inventory selector filters for `nextUnprovenTargets`:
+  - `--next-evidence-statuses`
+  - `--next-profile-buckets`
+- Added `.codex/state/build-discovery-ap-mp-range-frontier-001-matrix.json`
+  and `.codex/state/build-discovery-ap-mp-range-frontier-002-matrix.json` to
+  the default inventory evidence inputs.
+- Reviewer finding addressed: budget fallback responses no longer count as
+  covering the requested budget tier.
+  - matrix generation marks fallback-budget rows `invalid`
+  - checker rejects stale/generated artifacts with `diagnostics.fallbackBudget`
+  - assumption documented in `.codex/state/build-discovery-assumptions.md`
+- Generated frontier 002 targets from unattempted, non-cap profiles:
+  - `.codex/state/build-discovery-ap-mp-range-frontier-002-targets.json`
+  - `.codex/state/build-discovery-ap-mp-range-frontier-002-targets.md`
+- Generated frontier 002 matrix in Docker with `--query-limit 3`:
+  - `.codex/state/build-discovery-ap-mp-range-frontier-002-matrix.json`
+  - `.codex/state/build-discovery-ap-mp-range-frontier-002-matrix.md`
+  - `.codex/state/build-discovery-ap-mp-range-frontier-002/`
+- Result:
+  - targets: `8`
+  - generated: `6`
+  - no build: `2`
+  - invalid: `0`
+  - no-build rows: L20 Intelligence tier 4 `6/6/any`, L1 Chance tier 4
+    `6/6/any`
+- Notable generated rows:
+  - L1 Intelligence tier 1 `6/3/any`: `128` Intelligence, `141` Vitality,
+    `1570.0ms`
+  - L50 Chance tier 4 `6/6/any`: Slump + Khardboard packages, `637` Chance,
+    `596` Vitality, `88684.1ms`
+  - L80 Agility tier 4 `6/3/6`: Brrrbli + Khardboard packages, `791`
+    Agility, `722` Vitality, `226395.9ms`
+  - L100 Strength tier 4 `11/3/any`: Royal Rainbow Blop + Khardboard packages,
+    `905` Strength, `1430` Vitality, `337096.5ms`
+  - L150 Intelligence tier 4 `7/3/0`: Hell Mina + Khardboard + Soft Oak
+    packages, `1336` Intelligence, `2251` Vitality, `319179.9ms`
+  - L200 Chance tier 1 `7/3/any`: Rhoarim + Queen of Fate + Unsound Mind
+    packages, `1458` Chance, `3353` Vitality, `128044.4ms`
+- Refreshed inventory counts after frontier 002:
+  - representative grid: `39,424` valid rows, `127` generated evidence rows,
+    `144` attempted evidence rows, `17` no-build evidence rows, `39,297`
+    unproven rows
+  - full grid: `665,088` valid rows, `145` generated evidence rows, `162`
+    attempted evidence rows, `17` no-build evidence rows, `664,943`
+    unproven rows
+- The Docker checker passes frontier 002 only with `--allow-no-build`; this is
+  honest attempted evidence, not completed coverage for the two no-build rows.
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-frontier-002-matrix.json --target-file /tmp/build-discovery-ap-mp-range-frontier-002-targets.json --target-file-limit 8 --target-file-prefix grid_frontier_002 --allow-no-build`
+  - `python server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+  - `python -m py_compile server\scripts\build_discovery_ap_mp_range_grid_inventory.py server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix_check.py`

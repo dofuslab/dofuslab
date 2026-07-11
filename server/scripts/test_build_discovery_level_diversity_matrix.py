@@ -457,6 +457,51 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(len(report["results"][0]["candidateBuilds"]), 3)
         self.assertEqual(report["results"][0]["candidateDiversity"]["candidateCount"], 3)
 
+    def test_build_matrix_report_marks_budget_fallback_invalid(self):
+        selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})
+
+        def fake_generator(query):
+            return {
+                "diagnostics": {
+                    "fallbackBudget": {
+                        "requestedBudgetTier": query.budget_tier,
+                        "usedBudgetTier": query.budget_tier - 1,
+                    }
+                },
+                "builds": [
+                    {
+                        "score": 1.0,
+                        "totals": {
+                            "AP": query.ap_target,
+                            "MP": query.mp_target,
+                            "Range": query.target.range,
+                            "Strength": 100,
+                            "Vitality": 100,
+                        },
+                        "sets": {},
+                        "exos": {},
+                        "conditionFailures": [],
+                        "items": {"amulet": {"name": "Example Amulet", "level": query.level}},
+                    }
+                ],
+            }
+
+        report = build_matrix_report(
+            selected,
+            generator=fake_generator,
+            generated_at="now",
+            target_set="level-diversity",
+            git_sha="abc123",
+        )
+
+        self.assertEqual(report["generatedCount"], 0)
+        self.assertEqual(report["invalidCount"], 1)
+        self.assertEqual(report["results"][0]["status"], "invalid")
+        self.assertEqual(
+            report["results"][0]["validationErrors"],
+            ["budget fallback used; not covering requested budget tier"],
+        )
+
     def test_target_manifest_report_records_targets_without_build_results(self):
         selected = targets_for_set("prod-level-sample")[:1]
 

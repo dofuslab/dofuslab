@@ -1,0 +1,91 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T03:25:01.603380+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-ap-mp-range-frontier-002-targets.json#nextUnprovenTargets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 0,
+  "noBuildCount": 1,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "grid_frontier_002_level_20_intelligence_6_6_none_budget4",
+        "className": "Iop",
+        "level": 20,
+        "element": "intelligence",
+        "budgetTier": 4,
+        "apTarget": 6,
+        "mpTarget": 6,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 20,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "candidateValidationErrors": [],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "candidateBuilds": [],
+      "candidateBuildSummaries": [],
+      "candidateDiversity": {
+        "candidateCount": 0,
+        "uniqueItemSignatureCount": 0,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "No builds found; this may be infeasible for the selected constraints or a remaining search coverage gap."
+      ],
+      "diagnostics": {
+        "elapsedMs": 9612.8,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 113.8,
+          "candidatePoolsMs": 35.0,
+          "packageIndexMs": 24.1,
+          "packageSeedsMs": 19.5,
+          "directCompletionMs": 91.8,
+          "beamSearchMs": 890.2,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 1174.4
+        },
+        "resultCount": 0,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

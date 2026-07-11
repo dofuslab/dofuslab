@@ -1,0 +1,928 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T03:25:01.603380+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-ap-mp-range-frontier-002-targets.json#nextUnprovenTargets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "grid_frontier_002_level_200_chance_7_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2285.1,
+        "weightedStatScore": 4678.11,
+        "utilityStatScore": 279.69,
+        "genericDamageScore": 4175.3,
+        "rawRotationDamageScore": 2763.06,
+        "spellDamageScore": 2763.06,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.3918,
+        "weaponDamageScore": 193.83,
+        "survivabilityScore": 126.52,
+        "weakestElementEhp": 3562.04,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 2,
+          "Chance": 1458,
+          "Power": 170,
+          "Vitality": 3353,
+          "Damage": 0,
+          "Water Damage": 159,
+          "Critical": 56,
+          "Critical Damage": 139
+        },
+        "sets": {
+          "Rhoarim Set": 2,
+          "Queen of Fate Set": 2,
+          "Unsound Mind Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "31761",
+            "internalId": null,
+            "name": "Rhoarim Necklace",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Rhoarim Set"
+          },
+          "belt": {
+            "id": "19250",
+            "internalId": null,
+            "name": "Belt of the Unsound Mind",
+            "type": "Belt",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "weapon": {
+            "id": "31760",
+            "internalId": null,
+            "name": "Bony Mace",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Rhoarim Set"
+          },
+          "boots": {
+            "id": "17575",
+            "internalId": null,
+            "name": "Queen of Fate Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Queen of Fate Set"
+          },
+          "hat": {
+            "id": "19252",
+            "internalId": null,
+            "name": "Mask of the Unsound Mind",
+            "type": "Hat",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "cloak": {
+            "id": "17577",
+            "internalId": null,
+            "name": "Queen of Fate Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Queen of Fate Set"
+          },
+          "shield": {
+            "id": "18700",
+            "internalId": null,
+            "name": "Four-Leaf",
+            "type": "Shield",
+            "level": 193,
+            "set": null
+          },
+          "ring_1": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "ring_2": {
+            "id": "16005",
+            "internalId": null,
+            "name": "Deep Sea Bracelet",
+            "type": "Ring",
+            "level": 200,
+            "set": "Deep Sea Set"
+          },
+          "pet": {
+            "id": "33037",
+            "internalId": null,
+            "name": "Indigo and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13783",
+            "internalId": null,
+            "name": "Major Water Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12716",
+            "internalId": null,
+            "name": "Major Player",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12690",
+            "internalId": null,
+            "name": "Major Water Destroyer",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13825",
+            "internalId": null,
+            "name": "Major Dynamo",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13782",
+            "internalId": null,
+            "name": "Water Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2285.1,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 2,
+          "Chance": 1458,
+          "Power": 170,
+          "Vitality": 3353,
+          "Damage": 0,
+          "Water Damage": 159,
+          "Critical": 56,
+          "Critical Damage": 139
+        },
+        "sets": {
+          "Rhoarim Set": 2,
+          "Queen of Fate Set": 2,
+          "Unsound Mind Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Rhoarim Necklace",
+          "Belt of the Unsound Mind",
+          "Bony Mace",
+          "Four-Leaf",
+          "Rhineetle Ring",
+          "Deep Sea Bracelet",
+          "Queen of Fate Boots",
+          "Mask of the Unsound Mind",
+          "Queen of Fate Cape",
+          "Indigo and Ivory Dragoturkey",
+          "Major Water Wrecker",
+          "Major Player",
+          "Major Water Destroyer",
+          "Major Tease",
+          "Major Dynamo",
+          "Water Wrecker"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2285.1,
+          "weightedStatScore": 4678.11,
+          "utilityStatScore": 279.69,
+          "genericDamageScore": 4175.3,
+          "rawRotationDamageScore": 2763.06,
+          "spellDamageScore": 2763.06,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.3918,
+          "weaponDamageScore": 193.83,
+          "survivabilityScore": 126.52,
+          "weakestElementEhp": 3562.04,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 2,
+            "Chance": 1458,
+            "Power": 170,
+            "Vitality": 3353,
+            "Damage": 0,
+            "Water Damage": 159,
+            "Critical": 56,
+            "Critical Damage": 139
+          },
+          "sets": {
+            "Rhoarim Set": 2,
+            "Queen of Fate Set": 2,
+            "Unsound Mind Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "31761",
+              "internalId": null,
+              "name": "Rhoarim Necklace",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Rhoarim Set"
+            },
+            "belt": {
+              "id": "19250",
+              "internalId": null,
+              "name": "Belt of the Unsound Mind",
+              "type": "Belt",
+              "level": 200,
+              "set": "Unsound Mind Set"
+            },
+            "weapon": {
+              "id": "31760",
+              "internalId": null,
+              "name": "Bony Mace",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Rhoarim Set"
+            },
+            "boots": {
+              "id": "17575",
+              "internalId": null,
+              "name": "Queen of Fate Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Queen of Fate Set"
+            },
+            "hat": {
+              "id": "19252",
+              "internalId": null,
+              "name": "Mask of the Unsound Mind",
+              "type": "Hat",
+              "level": 200,
+              "set": "Unsound Mind Set"
+            },
+            "cloak": {
+              "id": "17577",
+              "internalId": null,
+              "name": "Queen of Fate Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Queen of Fate Set"
+            },
+            "shield": {
+              "id": "18700",
+              "internalId": null,
+              "name": "Four-Leaf",
+              "type": "Shield",
+              "level": 193,
+              "set": null
+            },
+            "ring_1": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "ring_2": {
+              "id": "16005",
+              "internalId": null,
+              "name": "Deep Sea Bracelet",
+              "type": "Ring",
+              "level": 200,
+              "set": "Deep Sea Set"
+            },
+            "pet": {
+              "id": "33037",
+              "internalId": null,
+              "name": "Indigo and Ivory Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "13783",
+              "internalId": null,
+              "name": "Major Water Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "12716",
+              "internalId": null,
+              "name": "Major Player",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "12690",
+              "internalId": null,
+              "name": "Major Water Destroyer",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13825",
+              "internalId": null,
+              "name": "Major Dynamo",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13782",
+              "internalId": null,
+              "name": "Water Wrecker",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 2252.31,
+          "weightedStatScore": 4675.83,
+          "utilityStatScore": 254.36,
+          "genericDamageScore": 4116.48,
+          "rawRotationDamageScore": 2724.14,
+          "spellDamageScore": 2724.14,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.3722,
+          "weaponDamageScore": 168.73,
+          "survivabilityScore": 145.53,
+          "weakestElementEhp": 4249.1,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 2,
+            "Chance": 1538,
+            "Power": 130,
+            "Vitality": 3763,
+            "Damage": 0,
+            "Water Damage": 163,
+            "Critical": 52,
+            "Critical Damage": 103
+          },
+          "sets": {
+            "Rhoarim Set": 2,
+            "Unsound Mind Set": 2,
+            "Servitude Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "31761",
+              "internalId": null,
+              "name": "Rhoarim Necklace",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Rhoarim Set"
+            },
+            "belt": {
+              "id": "19250",
+              "internalId": null,
+              "name": "Belt of the Unsound Mind",
+              "type": "Belt",
+              "level": 200,
+              "set": "Unsound Mind Set"
+            },
+            "weapon": {
+              "id": "31760",
+              "internalId": null,
+              "name": "Bony Mace",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Rhoarim Set"
+            },
+            "boots": {
+              "id": "19251",
+              "internalId": null,
+              "name": "Boots of the Unsound Mind",
+              "type": "Boots",
+              "level": 200,
+              "set": "Unsound Mind Set"
+            },
+            "hat": {
+              "id": "22202",
+              "internalId": null,
+              "name": "Servitude's Dora",
+              "type": "Hat",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "cloak": {
+              "id": "22201",
+              "internalId": null,
+              "name": "Servitude's Coat",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "shield": {
+              "id": "18700",
+              "internalId": null,
+              "name": "Four-Leaf",
+              "type": "Shield",
+              "level": 193,
+              "set": null
+            },
+            "ring_1": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "ring_2": {
+              "id": "24035",
+              "internalId": null,
+              "name": "Spilling Ryng",
+              "type": "Ring",
+              "level": 200,
+              "set": null
+            },
+            "pet": {
+              "id": "33037",
+              "internalId": null,
+              "name": "Indigo and Ivory Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "13783",
+              "internalId": null,
+              "name": "Major Water Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "12716",
+              "internalId": null,
+              "name": "Major Player",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "12690",
+              "internalId": null,
+              "name": "Major Water Destroyer",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "12726",
+              "internalId": null,
+              "name": "Major Survivor",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "12715",
+              "internalId": null,
+              "name": "Player",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 2189.55,
+          "weightedStatScore": 4644.55,
+          "utilityStatScore": 320.18,
+          "genericDamageScore": 3787.96,
+          "rawRotationDamageScore": 2506.74,
+          "spellDamageScore": 2506.74,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.2627,
+          "weaponDamageScore": 93.72,
+          "survivabilityScore": 164.79,
+          "weakestElementEhp": 4849.15,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 4,
+            "Range": 4,
+            "Chance": 1268,
+            "Power": 290,
+            "Vitality": 3863,
+            "Damage": 0,
+            "Water Damage": 176,
+            "Critical": 34,
+            "Critical Damage": 96
+          },
+          "sets": {
+            "Armarines Set": 3,
+            "Queen of Fate Set": 2,
+            "Unsound Mind Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "33608",
+              "internalId": null,
+              "name": "Potbellion Collar",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Armarines Set"
+            },
+            "belt": {
+              "id": "19250",
+              "internalId": null,
+              "name": "Belt of the Unsound Mind",
+              "type": "Belt",
+              "level": 200,
+              "set": "Unsound Mind Set"
+            },
+            "weapon": {
+              "id": "33607",
+              "internalId": null,
+              "name": "Karkanik Bow",
+              "type": "Bow",
+              "level": 200,
+              "set": "Armarines Set"
+            },
+            "shield": {
+              "id": "18715",
+              "internalId": null,
+              "name": "Stalak Shield",
+              "type": "Shield",
+              "level": 200,
+              "set": "Armarines Set"
+            },
+            "boots": {
+              "id": "17575",
+              "internalId": null,
+              "name": "Queen of Fate Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Queen of Fate Set"
+            },
+            "hat": {
+              "id": "19252",
+              "internalId": null,
+              "name": "Mask of the Unsound Mind",
+              "type": "Hat",
+              "level": 200,
+              "set": "Unsound Mind Set"
+            },
+            "cloak": {
+              "id": "17577",
+              "internalId": null,
+              "name": "Queen of Fate Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Queen of Fate Set"
+            },
+            "ring_1": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "ring_2": {
+              "id": "24035",
+              "internalId": null,
+              "name": "Spilling Ryng",
+              "type": "Ring",
+              "level": 200,
+              "set": null
+            },
+            "pet": {
+              "id": "33037",
+              "internalId": null,
+              "name": "Indigo and Ivory Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "13783",
+              "internalId": null,
+              "name": "Major Water Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "12716",
+              "internalId": null,
+              "name": "Major Player",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "12690",
+              "internalId": null,
+              "name": "Major Water Destroyer",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "12726",
+              "internalId": null,
+              "name": "Major Survivor",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "12715",
+              "internalId": null,
+              "name": "Player",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2285.1,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 2,
+            "Chance": 1458,
+            "Power": 170,
+            "Vitality": 3353,
+            "Damage": 0,
+            "Water Damage": 159,
+            "Critical": 56,
+            "Critical Damage": 139
+          },
+          "sets": {
+            "Rhoarim Set": 2,
+            "Queen of Fate Set": 2,
+            "Unsound Mind Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Rhoarim Necklace",
+            "Belt of the Unsound Mind",
+            "Bony Mace",
+            "Four-Leaf",
+            "Rhineetle Ring",
+            "Deep Sea Bracelet",
+            "Queen of Fate Boots",
+            "Mask of the Unsound Mind",
+            "Queen of Fate Cape",
+            "Indigo and Ivory Dragoturkey",
+            "Major Water Wrecker",
+            "Major Player",
+            "Major Water Destroyer",
+            "Major Tease",
+            "Major Dynamo",
+            "Water Wrecker"
+          ]
+        },
+        {
+          "score": 2252.31,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 2,
+            "Chance": 1538,
+            "Power": 130,
+            "Vitality": 3763,
+            "Damage": 0,
+            "Water Damage": 163,
+            "Critical": 52,
+            "Critical Damage": 103
+          },
+          "sets": {
+            "Rhoarim Set": 2,
+            "Unsound Mind Set": 2,
+            "Servitude Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Rhoarim Necklace",
+            "Belt of the Unsound Mind",
+            "Bony Mace",
+            "Four-Leaf",
+            "Rhineetle Ring",
+            "Spilling Ryng",
+            "Boots of the Unsound Mind",
+            "Servitude's Dora",
+            "Servitude's Coat",
+            "Indigo and Ivory Dragoturkey",
+            "Major Water Wrecker",
+            "Major Player",
+            "Major Water Destroyer",
+            "Major Survivor",
+            "Major Tease",
+            "Player"
+          ]
+        },
+        {
+          "score": 2189.55,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 9,
+            "MP": 4,
+            "Range": 4,
+            "Chance": 1268,
+            "Power": 290,
+            "Vitality": 3863,
+            "Damage": 0,
+            "Water Damage": 176,
+            "Critical": 34,
+            "Critical Damage": 96
+          },
+          "sets": {
+            "Armarines Set": 3,
+            "Queen of Fate Set": 2,
+            "Unsound Mind Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Potbellion Collar",
+            "Belt of the Unsound Mind",
+            "Karkanik Bow",
+            "Stalak Shield",
+            "Rhineetle Ring",
+            "Spilling Ryng",
+            "Queen of Fate Boots",
+            "Mask of the Unsound Mind",
+            "Queen of Fate Cape",
+            "Indigo and Ivory Dragoturkey",
+            "Major Water Wrecker",
+            "Major Player",
+            "Major Water Destroyer",
+            "Major Survivor",
+            "Major Tease",
+            "Player"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 10
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 128044.4,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 117.5,
+          "candidatePoolsMs": 75.5,
+          "packageIndexMs": 429.0,
+          "packageSeedsMs": 7528.2,
+          "directCompletionMs": 119878.3,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.4,
+          "totalFindBuildsMs": 128030.8
+        },
+        "resultCount": 3,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

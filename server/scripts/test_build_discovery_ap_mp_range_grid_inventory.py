@@ -14,6 +14,7 @@ from build_discovery_ap_mp_range_grid_inventory import (
     load_reports_from_artifacts,
     load_reports_from_artifact_dirs,
     parse_csv_ints,
+    parse_csv_string_set,
     profile_bucket,
     row_key,
     select_next_unproven_targets,
@@ -62,6 +63,14 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
             ".codex/state/build-discovery-prod-level-sample-multicandidate-smoke.json",
             DEFAULT_ARTIFACTS,
         )
+        self.assertIn(
+            ".codex/state/build-discovery-ap-mp-range-frontier-001-matrix.json",
+            DEFAULT_ARTIFACTS,
+        )
+        self.assertIn(
+            ".codex/state/build-discovery-ap-mp-range-frontier-002-matrix.json",
+            DEFAULT_ARTIFACTS,
+        )
 
     def test_valid_query_rows_count_full_milestone_three_query_space(self):
         rows = list(
@@ -100,6 +109,11 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
 
     def test_parse_csv_ints_accepts_ranges(self):
         self.assertEqual(parse_csv_ints("1,3-5,5", ()), (1, 3, 4, 5))
+
+    def test_parse_csv_string_set_rejects_unknown_values(self):
+        self.assertEqual(parse_csv_string_set("retry,unattempted", {"retry", "unattempted"}, "status"), {"retry", "unattempted"})
+        with self.assertRaises(ValueError):
+            parse_csv_string_set("retry,stale", {"retry", "unattempted"}, "status")
 
     def test_covered_keys_ignore_invalid_or_no_build_results(self):
         report = {
@@ -270,6 +284,28 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         selected = select_next_unproven_targets(rows, set(), attempted, limit=2)
 
         self.assertEqual([row["evidenceStatus"] for row in selected], ["retry", "unattempted"])
+
+    def test_select_next_unproven_targets_can_filter_status_and_profile(self):
+        rows = [
+            {"level": 1, "element": "strength", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None},
+            {"level": 1, "element": "chance", "budgetTier": 4, "apTarget": 12, "mpTarget": 6, "rangeTarget": 6},
+            {"level": 20, "element": "agility", "budgetTier": 4, "apTarget": 6, "mpTarget": 6, "rangeTarget": 0},
+        ]
+        attempted = {row_key(rows[1])}
+
+        selected = select_next_unproven_targets(
+            rows,
+            set(),
+            attempted,
+            limit=3,
+            evidence_statuses={"unattempted"},
+            profile_buckets={"mp_heavy"},
+        )
+
+        self.assertEqual(len(selected), 1)
+        self.assertEqual(selected[0]["element"], "agility")
+        self.assertEqual(selected[0]["evidenceStatus"], "unattempted")
+        self.assertEqual(selected[0]["profileBucket"], "mp_heavy")
 
     def test_select_next_unproven_targets_rotates_profile_buckets_across_levels(self):
         rows = []

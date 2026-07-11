@@ -7,26 +7,26 @@ Level scope: `selected_levels` (`12` levels)
 Element count: `4`
 Budget tier count: `4`
 Valid query rows: `39424`
-Generated evidence rows: `121`
-Attempted evidence rows: `136`
-No-build evidence rows: `15`
-Unproven rows: `39303`
-Unattempted rows: `39288`
+Generated evidence rows: `127`
+Attempted evidence rows: `144`
+No-build evidence rows: `17`
+Unproven rows: `39297`
+Unattempted rows: `39280`
 
 | Level | Valid rows | Generated evidence | Unproven |
 |---:|---:|---:|---:|
-| 1 | 3584 | 4 | 3580 |
+| 1 | 3584 | 5 | 3579 |
 | 20 | 3584 | 6 | 3578 |
-| 50 | 3584 | 12 | 3572 |
-| 80 | 3584 | 11 | 3573 |
+| 50 | 3584 | 13 | 3571 |
+| 80 | 3584 | 12 | 3572 |
 | 99 | 3584 | 8 | 3576 |
-| 100 | 3072 | 12 | 3060 |
+| 100 | 3072 | 13 | 3059 |
 | 120 | 3072 | 13 | 3059 |
-| 150 | 3072 | 13 | 3059 |
+| 150 | 3072 | 14 | 3058 |
 | 179 | 3072 | 9 | 3063 |
 | 180 | 3072 | 10 | 3062 |
 | 199 | 3072 | 12 | 3060 |
-| 200 | 3072 | 11 | 3061 |
+| 200 | 3072 | 12 | 3060 |
 
 ## Unproven Examples
 
@@ -79,10 +79,10 @@ Unattempted rows: `39288`
 - L200 strength tier 2 12/6/6 `cap` `retry`
 - L80 strength tier 1 12/6/6 `cap` `retry`
 - L200 strength tier 1 12/6/6 `cap` `retry`
-- L1 intelligence tier 1 6/3/any `minimum` `unattempted`
+- L1 intelligence tier 2 6/3/any `minimum` `unattempted`
 - L20 intelligence tier 4 12/6/6 `cap` `unattempted`
-- L50 chance tier 4 6/6/any `mp_heavy` `unattempted`
-- L80 agility tier 4 6/3/6 `range_heavy` `unattempted`
+- L50 chance tier 4 6/6/0 `mp_heavy` `unattempted`
+- L80 agility tier 4 6/4/6 `range_heavy` `unattempted`
 - L99 strength tier 4 11/3/any `ap_heavy` `unattempted`
 - L100 intelligence tier 4 7/3/0 `middle` `unattempted`
 - L120 chance tier 2 7/3/any `minimum` `unattempted`

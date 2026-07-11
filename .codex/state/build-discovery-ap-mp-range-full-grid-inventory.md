@@ -7,16 +7,16 @@ Level scope: `all_levels` (`200` levels)
 Element count: `4`
 Budget tier count: `4`
 Valid query rows: `665088`
-Generated evidence rows: `138`
-Attempted evidence rows: `153`
-No-build evidence rows: `15`
-Unproven rows: `664950`
-Unattempted rows: `664935`
+Generated evidence rows: `145`
+Attempted evidence rows: `162`
+No-build evidence rows: `17`
+Unproven rows: `664943`
+Unattempted rows: `664926`
 
 | Level | Valid rows | Generated evidence | Unproven |
 |---:|---:|---:|---:|
-| 1 | 3584 | 4 | 3580 |
-| 2 | 3584 | 0 | 3584 |
+| 1 | 3584 | 5 | 3579 |
+| 2 | 3584 | 1 | 3583 |
 | 3 | 3584 | 0 | 3584 |
 | 4 | 3584 | 0 | 3584 |
 | 5 | 3584 | 0 | 3584 |
@@ -64,7 +64,7 @@ Unattempted rows: `664935`
 | 47 | 3584 | 0 | 3584 |
 | 48 | 3584 | 0 | 3584 |
 | 49 | 3584 | 0 | 3584 |
-| 50 | 3584 | 12 | 3572 |
+| 50 | 3584 | 13 | 3571 |
 | 51 | 3584 | 0 | 3584 |
 | 52 | 3584 | 0 | 3584 |
 | 53 | 3584 | 0 | 3584 |
@@ -94,7 +94,7 @@ Unattempted rows: `664935`
 | 77 | 3584 | 0 | 3584 |
 | 78 | 3584 | 0 | 3584 |
 | 79 | 3584 | 0 | 3584 |
-| 80 | 3584 | 11 | 3573 |
+| 80 | 3584 | 12 | 3572 |
 | 81 | 3584 | 0 | 3584 |
 | 82 | 3584 | 0 | 3584 |
 | 83 | 3584 | 0 | 3584 |
@@ -114,7 +114,7 @@ Unattempted rows: `664935`
 | 97 | 3584 | 0 | 3584 |
 | 98 | 3584 | 0 | 3584 |
 | 99 | 3584 | 8 | 3576 |
-| 100 | 3072 | 12 | 3060 |
+| 100 | 3072 | 13 | 3059 |
 | 101 | 3072 | 0 | 3072 |
 | 102 | 3072 | 0 | 3072 |
 | 103 | 3072 | 0 | 3072 |
@@ -164,7 +164,7 @@ Unattempted rows: `664935`
 | 147 | 3072 | 0 | 3072 |
 | 148 | 3072 | 0 | 3072 |
 | 149 | 3072 | 1 | 3071 |
-| 150 | 3072 | 13 | 3059 |
+| 150 | 3072 | 14 | 3058 |
 | 151 | 3072 | 0 | 3072 |
 | 152 | 3072 | 0 | 3072 |
 | 153 | 3072 | 0 | 3072 |
@@ -214,7 +214,7 @@ Unattempted rows: `664935`
 | 197 | 3072 | 0 | 3072 |
 | 198 | 3072 | 0 | 3072 |
 | 199 | 3072 | 12 | 3060 |
-| 200 | 3072 | 11 | 3061 |
+| 200 | 3072 | 12 | 3060 |
 
 ## Unproven Examples
 
@@ -267,7 +267,7 @@ Unattempted rows: `664935`
 - L200 strength tier 2 12/6/6 `cap` `retry`
 - L80 strength tier 1 12/6/6 `cap` `retry`
 - L200 strength tier 1 12/6/6 `cap` `retry`
-- L1 intelligence tier 1 6/3/any `minimum` `unattempted`
+- L1 intelligence tier 2 6/3/any `minimum` `unattempted`
 - L2 intelligence tier 4 12/6/6 `cap` `unattempted`
 - L3 chance tier 4 6/6/any `mp_heavy` `unattempted`
 - L4 agility tier 4 6/3/6 `range_heavy` `unattempted`

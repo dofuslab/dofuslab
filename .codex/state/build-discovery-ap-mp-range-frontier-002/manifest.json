@@ -1,0 +1,61 @@
+{
+  "splitReportCount": 8,
+  "reports": [
+    {
+      "targetId": "grid_frontier_002_level_1_intelligence_6_3_none_budget1",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_1_intelligence_6_3_none_budget1.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_1_intelligence_6_3_none_budget1.md"
+    },
+    {
+      "targetId": "grid_frontier_002_level_20_intelligence_6_6_none_budget4",
+      "status": "no_build",
+      "resumed": false,
+      "json": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_20_intelligence_6_6_none_budget4.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_20_intelligence_6_6_none_budget4.md"
+    },
+    {
+      "targetId": "grid_frontier_002_level_50_chance_6_6_none_budget4",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_50_chance_6_6_none_budget4.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_50_chance_6_6_none_budget4.md"
+    },
+    {
+      "targetId": "grid_frontier_002_level_80_agility_6_3_6_budget4",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_80_agility_6_3_6_budget4.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_80_agility_6_3_6_budget4.md"
+    },
+    {
+      "targetId": "grid_frontier_002_level_100_strength_11_3_none_budget4",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_100_strength_11_3_none_budget4.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_100_strength_11_3_none_budget4.md"
+    },
+    {
+      "targetId": "grid_frontier_002_level_150_intelligence_7_3_0_budget4",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_150_intelligence_7_3_0_budget4.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_150_intelligence_7_3_0_budget4.md"
+    },
+    {
+      "targetId": "grid_frontier_002_level_200_chance_7_3_none_budget1",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_200_chance_7_3_none_budget1.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_200_chance_7_3_none_budget1.md"
+    },
+    {
+      "targetId": "grid_frontier_002_level_1_chance_6_6_none_budget4",
+      "status": "no_build",
+      "resumed": false,
+      "json": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_1_chance_6_6_none_budget4.json",
+      "markdown": "/tmp/build-discovery-ap-mp-range-frontier-002/grid_frontier_002_level_1_chance_6_6_none_budget4.md"
+    }
+  ]
+}

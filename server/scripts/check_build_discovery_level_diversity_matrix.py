@@ -127,6 +127,8 @@ def validate_full_build_artifact(result: dict[str, Any], target_by_id: dict[str,
         failures.append(f"{target_id}: target does not match current target definition")
     if not query_payload_matches_artifact(target, query, result.get("query")):
         failures.append(f"{target_id}: query does not match current query definition")
+    if (result.get("diagnostics") or {}).get("fallbackBudget"):
+        failures.append(f"{target_id}: budget fallback used; not covering requested budget tier")
 
     best_build = result.get("bestBuild")
     if not isinstance(best_build, dict):
