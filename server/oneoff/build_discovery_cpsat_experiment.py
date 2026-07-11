@@ -37,6 +37,9 @@ from oneoff.build_discovery_prototype import (
     cheap_profile_damage_score,
     configure_damage_profile,
     effective_scoring_stats,
+    effective_generic_damage_weight,
+    effective_negative_resistance_penalty_weight,
+    effective_survivability_weight,
     expected_item_effect_stats,
     final_score_state,
     final_utility_score,
@@ -44,6 +47,7 @@ from oneoff.build_discovery_prototype import (
     load_items,
     load_sets,
     normalize_stats,
+    negative_resistance_penalty,
     optimize_base_allocation,
     parse_optional_range_target,
     profile_damage_reference_stats,
@@ -99,11 +103,17 @@ def score_stat_lines(stats: dict[str, float], weights: dict[str, float]) -> floa
     )
 
 
-def cheap_final_score_for_stats(stats: dict[str, int], generic_damage_weight: float) -> float:
+def cheap_final_score_for_stats(
+    stats: dict[str, int],
+    generic_damage_weight: float,
+    survivability_weight: float = 1.0,
+    negative_resistance_penalty_weight: float = 0.0,
+) -> float:
     return (
         final_utility_score(stats)
         + cheap_profile_damage_score(stats) * generic_damage_weight
-        + survivability_score(stats)
+        + survivability_score(stats) * survivability_weight
+        - negative_resistance_penalty(stats) * negative_resistance_penalty_weight
     )
 
 
@@ -168,18 +178,33 @@ def collect_objective_stats(metadata: ModelMetadata) -> set[str]:
 def linearized_final_score_weights(
     metadata: ModelMetadata,
     generic_damage_weight: float,
+    survivability_weight: float = 1.0,
+    negative_resistance_penalty_weight: float = 0.0,
 ) -> dict[str, float]:
     reference_stats = profile_damage_reference_stats()
     objective_stats = collect_objective_stats(metadata)
     for stat in objective_stats:
         reference_stats.setdefault(stat, active_base_stats().get(stat, 0))
-    baseline = cheap_final_score_for_stats(reference_stats, generic_damage_weight)
+    baseline = cheap_final_score_for_stats(
+        reference_stats,
+        generic_damage_weight,
+        survivability_weight,
+        negative_resistance_penalty_weight,
+    )
     weights: dict[str, float] = {}
     for stat in objective_stats:
         step = 100 if stat in {"Strength", "Intelligence", "Chance", "Agility", "Power", "Vitality", "Initiative"} else 1
         next_stats = dict(reference_stats)
         next_stats[stat] = next_stats.get(stat, 0) + step
-        weights[stat] = (cheap_final_score_for_stats(next_stats, generic_damage_weight) - baseline) / step
+        weights[stat] = (
+            cheap_final_score_for_stats(
+                next_stats,
+                generic_damage_weight,
+                survivability_weight,
+                negative_resistance_penalty_weight,
+            )
+            - baseline
+        ) / step
     for stat in ACTION_STATS:
         weights[stat] = STAT_WEIGHTS.get(stat, 0.0)
     return weights
@@ -189,11 +214,18 @@ def objective_weights_for_mode(
     mode: str,
     metadata: ModelMetadata,
     generic_damage_weight: float,
+    survivability_weight: float = 1.0,
+    negative_resistance_penalty_weight: float = 0.0,
 ) -> dict[str, float]:
     if mode == "stat-linear":
         return dict(STAT_WEIGHTS)
     if mode == "final-linear":
-        return linearized_final_score_weights(metadata, generic_damage_weight)
+        return linearized_final_score_weights(
+            metadata,
+            generic_damage_weight,
+            survivability_weight,
+            negative_resistance_penalty_weight,
+        )
     raise ValueError(f"Unsupported objective mode: {mode}")
 
 
@@ -609,6 +641,9 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
         sets: dict[str, dict[str, Any]],
         target: BuildTarget,
         candidate_limit: int,
+        generic_damage_weight: float,
+        survivability_weight: float,
+        negative_resistance_penalty_weight: float,
         stop_after_candidates: bool = False,
     ) -> None:
         super().__init__()
@@ -618,6 +653,9 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
         self.sets = sets
         self.target = target
         self.candidate_limit = candidate_limit
+        self.generic_damage_weight = generic_damage_weight
+        self.survivability_weight = survivability_weight
+        self.negative_resistance_penalty_weight = negative_resistance_penalty_weight
         self.stop_after_candidates = stop_after_candidates
         self.stopped_after_candidate_limit = False
         self.solution_count = 0
@@ -639,6 +677,9 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
             self.items,
             self.sets,
             self.target,
+            self.generic_damage_weight,
+            self.survivability_weight,
+            self.negative_resistance_penalty_weight,
         )
         if state is None:
             self.invalid_solution_count += 1
@@ -704,6 +745,9 @@ def reconstruct_state(
     items: list[dict[str, Any]],
     sets: dict[str, dict[str, Any]],
     target: BuildTarget,
+    generic_damage_weight: float,
+    survivability_weight: float,
+    negative_resistance_penalty_weight: float,
 ) -> tuple[BuildState | None, dict[str, Any] | None]:
     item_by_id = items_by_id(items)
     state = BuildState()
@@ -808,14 +852,27 @@ def reconstruct_state(
                 for slot, item in state.slots.items()
             },
         }
-    state = optimize_base_allocation(state)
-    state.score = final_score_state(state)
+    state = optimize_base_allocation(
+        state,
+        generic_damage_weight=generic_damage_weight,
+        survivability_weight=survivability_weight,
+        negative_resistance_penalty_weight=negative_resistance_penalty_weight,
+    )
+    state.score = final_score_state(
+        state,
+        generic_damage_weight=generic_damage_weight,
+        survivability_weight=survivability_weight,
+        negative_resistance_penalty_weight=negative_resistance_penalty_weight,
+    )
     return state, None
 
 
 def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[str, Any]:
     query.validate()
     configure_damage_profile(query.primary_element)
+    generic_damage_weight = effective_generic_damage_weight(query)
+    survivability_weight = effective_survivability_weight(query)
+    negative_resistance_penalty_weight = effective_negative_resistance_penalty_weight(query)
     target = query.target
     load_start = time.perf_counter()
     items = load_items(
@@ -828,7 +885,9 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
     objective_weights = objective_weights_for_mode(
         args.objective_mode,
         metadata,
-        args.generic_damage_weight,
+        generic_damage_weight,
+        survivability_weight,
+        negative_resistance_penalty_weight,
     )
     load_ms = (time.perf_counter() - load_start) * 1000
 
@@ -864,6 +923,9 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
             sets=sets,
             target=target,
             candidate_limit=args.candidate_limit,
+            generic_damage_weight=generic_damage_weight,
+            survivability_weight=survivability_weight,
+            negative_resistance_penalty_weight=negative_resistance_penalty_weight,
             stop_after_candidates=getattr(args, "stop_after_candidates", False),
         )
         solver = cp_model.CpSolver()
@@ -887,6 +949,9 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
                 items,
                 sets,
                 target,
+                generic_damage_weight,
+                survivability_weight,
+                negative_resistance_penalty_weight,
             )
             if final_state is not None:
                 final_signature = state_signature(final_state)
@@ -958,7 +1023,17 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
             if status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
                 break
 
-            state, invalid_reason = reconstruct_state(solver, slot_item_vars, exo_vars, items, sets, target)
+            state, invalid_reason = reconstruct_state(
+                solver,
+                slot_item_vars,
+                exo_vars,
+                items,
+                sets,
+                target,
+                generic_damage_weight,
+                survivability_weight,
+                negative_resistance_penalty_weight,
+            )
             selected_ids = frozenset(
                 item_id
                 for (_slot_name, item_id), var in slot_item_vars.items()
@@ -1006,6 +1081,12 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
             **query_summary(query),
             "objectiveMode": args.objective_mode,
         },
+        "scoring": {
+            "damageSurvivabilityPreset": query.damage_survivability_preset,
+            "genericDamageWeight": generic_damage_weight,
+            "survivabilityWeight": survivability_weight,
+            "negativeResistancePenaltyWeight": negative_resistance_penalty_weight,
+        },
         "status": "complete" if best_state else "no_valid_build",
         "solverStatus": best_solver_status,
         "timings": {
@@ -1050,6 +1131,7 @@ def query_from_args(args: argparse.Namespace) -> BuildDiscoveryQuery:
         ap_target=args.target_ap,
         mp_target=args.target_mp,
         range_target=args.target_range,
+        damage_survivability_preset=args.damage_survivability_preset,
         budget_tier=args.budget_tier,
         exo_policy=args.exo_policy,
         limit=args.output_build_limit,
@@ -1077,6 +1159,7 @@ def main() -> None:
     parser.add_argument("--target-ap", "--ap", type=int, default=12)
     parser.add_argument("--target-mp", "--mp", type=int, default=6)
     parser.add_argument("--target-range", "--range", type=parse_optional_range_target, default=0)
+    parser.add_argument("--damage-survivability-preset", type=int, default=4)
     parser.add_argument("--budget-tier", type=int, default=4)
     parser.add_argument("--exo-policy", choices=("none", "allow", "opti"), default="allow")
     parser.add_argument("--objective-mode", choices=("stat-linear", "final-linear"), default="final-linear")

@@ -669,6 +669,42 @@ BUILD_DISCOVERY_RESPONSE_CACHE: dict[str, dict[str, Any]] = {}
 
 
 @dataclass(frozen=True)
+class DamageSurvivabilityPreset:
+    generic_damage_weight: float
+    survivability_weight: float
+    negative_resistance_penalty_weight: float
+
+
+DAMAGE_SURVIVABILITY_PRESETS = {
+    1: DamageSurvivabilityPreset(
+        generic_damage_weight=0.15,
+        survivability_weight=2.5,
+        negative_resistance_penalty_weight=12.0,
+    ),
+    2: DamageSurvivabilityPreset(
+        generic_damage_weight=0.25,
+        survivability_weight=1.8,
+        negative_resistance_penalty_weight=8.0,
+    ),
+    3: DamageSurvivabilityPreset(
+        generic_damage_weight=0.35,
+        survivability_weight=1.3,
+        negative_resistance_penalty_weight=4.0,
+    ),
+    4: DamageSurvivabilityPreset(
+        generic_damage_weight=GENERIC_DAMAGE_WEIGHT,
+        survivability_weight=1.0,
+        negative_resistance_penalty_weight=1.0,
+    ),
+    5: DamageSurvivabilityPreset(
+        generic_damage_weight=0.60,
+        survivability_weight=0.7,
+        negative_resistance_penalty_weight=0.25,
+    ),
+}
+
+
+@dataclass(frozen=True)
 class BuildDiscoveryQuery:
     class_name: str = "Iop"
     level: int = TARGET_LEVEL
@@ -677,7 +713,7 @@ class BuildDiscoveryQuery:
     ap_target: int = REQUIRED_AP
     mp_target: int = REQUIRED_MP
     range_target: int | None = REQUIRED_RANGE
-    damage_survivability_preset: int = 3
+    damage_survivability_preset: int = 4
     budget_tier: int = 2
     exo_policy: str = "allow"
     weapon_policy: str = "stat_stick_allowed"
@@ -785,6 +821,24 @@ def effective_exo_policy(query: BuildDiscoveryQuery) -> str:
     if query.budget_tier < 3 and query.exo_policy in {"allow", "opti"}:
         return "none"
     return query.exo_policy
+
+
+def damage_survivability_preset(query: BuildDiscoveryQuery) -> DamageSurvivabilityPreset:
+    return DAMAGE_SURVIVABILITY_PRESETS[query.damage_survivability_preset]
+
+
+def effective_generic_damage_weight(query: BuildDiscoveryQuery) -> float:
+    if query.generic_damage_weight != GENERIC_DAMAGE_WEIGHT:
+        return query.generic_damage_weight
+    return damage_survivability_preset(query).generic_damage_weight
+
+
+def effective_survivability_weight(query: BuildDiscoveryQuery) -> float:
+    return damage_survivability_preset(query).survivability_weight
+
+
+def effective_negative_resistance_penalty_weight(query: BuildDiscoveryQuery) -> float:
+    return damage_survivability_preset(query).negative_resistance_penalty_weight
 
 
 def target_semantics_response() -> dict[str, Any]:
@@ -2799,6 +2853,15 @@ def survivability_score(stats: dict[str, int]) -> float:
     return weighted_ehp * SURVIVABILITY_SCORE_WEIGHT
 
 
+def negative_resistance_penalty(stats: dict[str, int]) -> float:
+    penalty_stats = (
+        *PERCENT_RESISTANCE_STATS,
+        "% Ranged Resistance",
+        "% Melee Resistance",
+    )
+    return float(sum(max(0, -stats.get(stat, 0)) for stat in penalty_stats))
+
+
 def characteristic_point_cost(base_points: int) -> int:
     if base_points < 0:
         raise ValueError("Base characteristic allocation cannot be negative.")
@@ -2878,6 +2941,8 @@ def optimize_base_allocation(
     state: BuildState,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    survivability_weight: float = 1.0,
+    negative_resistance_penalty_weight: float = 0.0,
     primary_stat: str | None = None,
 ) -> BuildState:
     primary_stat = primary_stat or ACTIVE_DAMAGE_PROFILE.primary_stat
@@ -2888,6 +2953,8 @@ def optimize_base_allocation(
             allocated_state,
             generic_damage_weight=generic_damage_weight,
             weapon_damage_weight=weapon_damage_weight,
+            survivability_weight=survivability_weight,
+            negative_resistance_penalty_weight=negative_resistance_penalty_weight,
         )
         if best_state is None or allocated_state.score > best_state.score:
             best_state = allocated_state
@@ -2900,24 +2967,30 @@ def final_score_state(
     state: BuildState,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    survivability_weight: float = 1.0,
+    negative_resistance_penalty_weight: float = 0.0,
 ) -> float:
     stats = effective_scoring_stats(state)
     return (
         final_utility_score(stats)
         + normalized_profile_damage_score(stats, state) * generic_damage_weight
-        + survivability_score(stats)
+        + survivability_score(stats) * survivability_weight
+        - negative_resistance_penalty(stats) * negative_resistance_penalty_weight
     )
 
 
 def cheap_final_score_state(
     state: BuildState,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
+    survivability_weight: float = 1.0,
+    negative_resistance_penalty_weight: float = 0.0,
 ) -> float:
     stats = effective_scoring_stats(state)
     return (
         final_utility_score(stats)
         + cheap_profile_damage_score(stats) * generic_damage_weight
-        + survivability_score(stats)
+        + survivability_score(stats) * survivability_weight
+        - negative_resistance_penalty(stats) * negative_resistance_penalty_weight
     )
 
 
@@ -3076,6 +3149,8 @@ def completed_valid_builds(
     ap_strategies: tuple[ApStrategy, ...] | None = None,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    survivability_weight: float = 1.0,
+    negative_resistance_penalty_weight: float = 0.0,
     exo_policy: str = "allow",
 ) -> list[BuildState]:
     cheap_valid_states = []
@@ -3107,6 +3182,8 @@ def completed_valid_builds(
         state_with_exos.score = cheap_final_score_state(
             state_with_exos,
             generic_damage_weight=generic_damage_weight,
+            survivability_weight=survivability_weight,
+            negative_resistance_penalty_weight=negative_resistance_penalty_weight,
         )
         cheap_valid_states.append(state_with_exos)
 
@@ -3121,6 +3198,8 @@ def completed_valid_builds(
                 cheap_valid_state,
                 generic_damage_weight=generic_damage_weight,
                 weapon_damage_weight=weapon_damage_weight,
+                survivability_weight=survivability_weight,
+                negative_resistance_penalty_weight=negative_resistance_penalty_weight,
                 primary_stat=ACTIVE_DAMAGE_PROFILE.primary_stat,
             )
             for cheap_valid_state in cheap_valid_states
@@ -3690,6 +3769,8 @@ def direct_valid_completed_state(
     ap_strategies: tuple[ApStrategy, ...],
     generic_damage_weight: float,
     weapon_damage_weight: float,
+    survivability_weight: float,
+    negative_resistance_penalty_weight: float,
     exo_policy: str = "allow",
 ) -> BuildState | None:
     state_with_exos = apply_missing_exos(state, target, exo_policy)
@@ -3717,6 +3798,8 @@ def direct_valid_completed_state(
         state_with_exos,
         generic_damage_weight=generic_damage_weight,
         weapon_damage_weight=weapon_damage_weight,
+        survivability_weight=survivability_weight,
+        negative_resistance_penalty_weight=negative_resistance_penalty_weight,
         primary_stat=ACTIVE_DAMAGE_PROFILE.primary_stat,
     )
     return state_with_exos
@@ -3727,6 +3810,8 @@ def direct_cheap_valid_completed_state(
     target: BuildTarget,
     ap_strategies: tuple[ApStrategy, ...],
     generic_damage_weight: float,
+    survivability_weight: float,
+    negative_resistance_penalty_weight: float,
     exo_policy: str = "allow",
 ) -> BuildState | None:
     state_with_exos = apply_missing_exos(state, target, exo_policy)
@@ -3753,6 +3838,8 @@ def direct_cheap_valid_completed_state(
     state_with_exos.score = cheap_final_score_state(
         state_with_exos,
         generic_damage_weight=generic_damage_weight,
+        survivability_weight=survivability_weight,
+        negative_resistance_penalty_weight=negative_resistance_penalty_weight,
     )
     return state_with_exos
 
@@ -3767,6 +3854,8 @@ def direct_complete_package_seeds(
     ap_strategies: tuple[ApStrategy, ...],
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    survivability_weight: float = 1.0,
+    negative_resistance_penalty_weight: float = 0.0,
     exo_policy: str = "allow",
     seed_limit: int = DIRECT_COMPLETION_SEED_LIMIT,
     gear_state_limit: int = DIRECT_COMPLETION_GEAR_STATE_LIMIT,
@@ -3801,6 +3890,8 @@ def direct_complete_package_seeds(
             target,
             ap_strategies,
             generic_damage_weight,
+            survivability_weight,
+            negative_resistance_penalty_weight,
             exo_policy=exo_policy,
         )
         if cheap_valid_state is not None:
@@ -3842,6 +3933,8 @@ def direct_complete_package_seeds(
                 target,
                 ap_strategies,
                 generic_damage_weight,
+                survivability_weight,
+                negative_resistance_penalty_weight,
                 exo_policy=exo_policy,
             )
             if cheap_valid_state is not None:
@@ -3860,6 +3953,8 @@ def direct_complete_package_seeds(
                 ap_strategies,
                 generic_damage_weight,
                 weapon_damage_weight,
+                survivability_weight,
+                negative_resistance_penalty_weight,
                 exo_policy=exo_policy,
             )
             for cheap_valid_state in cheap_valid_states
@@ -4041,6 +4136,8 @@ def search_slot_order(
     initial_seeds: list[BuildState] | None = None,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    survivability_weight: float = 1.0,
+    negative_resistance_penalty_weight: float = 0.0,
     exo_policy: str = "allow",
 ) -> list[BuildState]:
     strategy_seeds = [BuildState()]
@@ -4082,6 +4179,8 @@ def search_slot_order(
         ap_strategies=ap_strategies,
         generic_damage_weight=generic_damage_weight,
         weapon_damage_weight=weapon_damage_weight,
+        survivability_weight=survivability_weight,
+        negative_resistance_penalty_weight=negative_resistance_penalty_weight,
         exo_policy=exo_policy,
     )
 
@@ -4114,6 +4213,8 @@ def find_builds(
     ap_strategies: tuple[ApStrategy, ...] = DEFAULT_AP_STRATEGIES,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    survivability_weight: float = 1.0,
+    negative_resistance_penalty_weight: float = 0.0,
     exo_policy: str = "allow",
     completion_target: int | None = None,
 ) -> list[BuildState]:
@@ -4228,6 +4329,8 @@ def find_builds(
             ap_strategies,
             generic_damage_weight=generic_damage_weight,
             weapon_damage_weight=weapon_damage_weight,
+            survivability_weight=survivability_weight,
+            negative_resistance_penalty_weight=negative_resistance_penalty_weight,
             exo_policy=exo_policy,
             seed_limit=direct_seed_limit,
             gear_state_limit=direct_gear_state_limit,
@@ -4263,6 +4366,8 @@ def find_builds(
                         initial_seeds=beam_initial_seeds,
                         generic_damage_weight=generic_damage_weight,
                         weapon_damage_weight=weapon_damage_weight,
+                        survivability_weight=survivability_weight,
+                        negative_resistance_penalty_weight=negative_resistance_penalty_weight,
                         exo_policy=exo_policy,
                     )
                 )
@@ -4318,6 +4423,8 @@ def find_diverse_builds(
     budget_tier: int = 4,
     generic_damage_weight: float = GENERIC_DAMAGE_WEIGHT,
     weapon_damage_weight: float = WEAPON_DAMAGE_WEIGHT,
+    survivability_weight: float = 1.0,
+    negative_resistance_penalty_weight: float = 0.0,
     exo_policy: str = "allow",
 ) -> list[BuildState]:
     if budget_tier < 3 and exo_policy in {"allow", "opti"}:
@@ -4337,6 +4444,8 @@ def find_diverse_builds(
         budget_tier=budget_tier,
         generic_damage_weight=generic_damage_weight,
         weapon_damage_weight=weapon_damage_weight,
+        survivability_weight=survivability_weight,
+        negative_resistance_penalty_weight=negative_resistance_penalty_weight,
         exo_policy=exo_policy,
         completion_target=max(top_k, limit * 10),
     )
@@ -4355,6 +4464,8 @@ def find_diverse_builds(
                 budget_tier=fallback_budget_tier,
                 generic_damage_weight=generic_damage_weight,
                 weapon_damage_weight=weapon_damage_weight,
+                survivability_weight=survivability_weight,
+                negative_resistance_penalty_weight=negative_resistance_penalty_weight,
                 exo_policy=exo_policy,
                 completion_target=max(top_k, limit * 10),
             )
@@ -4453,6 +4564,9 @@ def build_discovery_response_for_active_level(
     use_cache: bool = True,
 ) -> dict[str, Any]:
     profile = configure_damage_profile(query.primary_element)
+    generic_damage_weight = effective_generic_damage_weight(query)
+    survivability_weight = effective_survivability_weight(query)
+    negative_resistance_penalty_weight = effective_negative_resistance_penalty_weight(query)
     current_dataset_version = dataset_version()
     cache_key = query_cache_key(query, current_dataset_version)
     if use_cache and cache_key in BUILD_DISCOVERY_RESPONSE_CACHE:
@@ -4477,8 +4591,10 @@ def build_discovery_response_for_active_level(
         excluded_item_ids=set(query.avoided_item_ids),
         required_item_ids=set(query.locked_item_ids),
         budget_tier=query.budget_tier,
-        generic_damage_weight=query.generic_damage_weight,
+        generic_damage_weight=generic_damage_weight,
         weapon_damage_weight=query.weapon_damage_weight,
+        survivability_weight=survivability_weight,
+        negative_resistance_penalty_weight=negative_resistance_penalty_weight,
         exo_policy=effective_exo_policy(query),
     )
     elapsed_ms = round((time.perf_counter() - start) * 1000, 1)
@@ -4509,8 +4625,11 @@ def build_discovery_response_for_active_level(
         },
         "target": {"level": query.level, "AP": query.target.ap, "MP": query.target.mp, "Range": query.target.range},
         "scoring": {
-            "genericDamageWeight": query.generic_damage_weight,
+            "damageSurvivabilityPreset": query.damage_survivability_preset,
+            "genericDamageWeight": generic_damage_weight,
             "weaponDamageWeight": query.weapon_damage_weight,
+            "survivabilityWeight": survivability_weight,
+            "negativeResistancePenaltyWeight": negative_resistance_penalty_weight,
         },
         "warnings": warnings,
         "diagnostics": {
@@ -4562,6 +4681,7 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
         "profileRelativeDamage": round(raw_rotation_damage / profile_baseline_damage, 4),
         "weaponDamageScore": round(state_weapon_damage(state, scoring_stats), 2),
         "survivabilityScore": round(survivability_score(scoring_stats), 2),
+        "negativeResistancePenalty": round(negative_resistance_penalty(scoring_stats), 2),
         "weakestElementEhp": round(min(elemental_effective_hp(scoring_stats)), 2),
         "apStrategy": state.ap_strategy,
         "baseAllocation": state.base_allocation,
@@ -4605,6 +4725,7 @@ def build_query_from_cli_args(args: argparse.Namespace) -> BuildDiscoveryQuery:
         ap_target=args.target_ap,
         mp_target=args.target_mp,
         range_target=args.target_range,
+        damage_survivability_preset=args.damage_survivability_preset,
         budget_tier=args.budget_tier,
         exo_policy=args.exo_policy,
         locked_item_ids=tuple(args.locked_item_id),
@@ -4638,6 +4759,7 @@ def main() -> None:
         default=DEFAULT_TARGET.range,
     )
     parser.add_argument("--element", choices=sorted(ELEMENT_PROFILES), default="strength")
+    parser.add_argument("--damage-survivability-preset", type=int, default=4)
     parser.add_argument("--budget-tier", type=int, default=2)
     parser.add_argument("--exo-policy", choices=("none", "allow", "opti"), default="allow")
     parser.add_argument("--locked-item-id", action="append", default=[])
