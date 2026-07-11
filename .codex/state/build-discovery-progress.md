@@ -5526,3 +5526,44 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap11-12-mp36-ranges16-budgets23-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 11,12 --mp-targets 3,6 --range-targets 1,6 --expected-solver cpsat`
   - Host: `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-cpsat-ap11-12-mp36-ranges16-budgets23-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 11,12 --mp-targets 3,6 --range-targets 1,6 --expected-solver cpsat`
   - Host: `python -m py_compile server\scripts\summarize_build_discovery_cpsat_coverage.py server\scripts\check_build_discovery_level_diversity_matrix.py`
+
+### 2026-07-11 AP7/AP12 MP3/MP4 Range-0/2 Edge-Budget CP-SAT Smoke
+
+- Selected this slice from the strict coverage inventory after hardening
+  duplicate and validation accounting.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-ap7-12-mp34-ranges02-budgets14-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ap7-12-mp34-ranges02-budgets14-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ap7-12-mp34-ranges02-budgets14-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 1, 4
+  - AP: 7, 12
+  - MP: 3, 4
+  - Range: 0, 2
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `64`
+  - generated: `64`
+  - invalid: `0`
+  - newly covered targets: `64`
+  - solver statuses: `24` optimal, `40` feasible
+  - AP coverage: `32` rows each for `7` and `12`
+  - MP coverage: `32` rows each for `3` and `4`
+  - range coverage: `32` rows each for `0` and `2`
+  - budget coverage: `32` rows each for tiers `1` and `4`
+- Runtime:
+  - elapsed min/avg/max: `5281.0ms / 6684.4ms / 8400.6ms`
+  - model min/avg/max: `1309.0ms / 1514.7ms / 1721.1ms`
+  - solve min/avg/max: `3369.2ms / 4785.2ms / 5071.1ms`
+- Interpretation:
+  - strict CP-SAT Milestone 2 coverage is now `1504 / 3072`
+    (`48.96%`)
+  - the lowest coverage buckets after this checkpoint are range `5`, `none`,
+    `3`, `4`, `6`, and AP `8`/`10`
+  - duplicate target count remains `96` with `153` surplus split reports;
+    no strict-validation failures were introduced
+  - p95 remains above the Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap7-12-mp34-ranges02-budgets14-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 7,12 --mp-targets 3,4 --range-targets 0,2 --expected-solver cpsat`
+  - Host: `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-cpsat-ap7-12-mp34-ranges02-budgets14-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 7,12 --mp-targets 3,4 --range-targets 0,2 --expected-solver cpsat`
