@@ -1,0 +1,788 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T08:36:55.886595+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_10_5_3_budget3",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 3,
+        "apTarget": 10,
+        "mpTarget": 5,
+        "rangeTarget": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 5,
+        "rangeTarget": 3,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2407.91,
+        "weightedStatScore": 4250.18,
+        "utilityStatScore": 407.47,
+        "genericDamageScore": 4215.95,
+        "rawRotationDamageScore": 3862.67,
+        "spellDamageScore": 3862.67,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.4053,
+        "weaponDamageScore": 218.13,
+        "survivabilityScore": 103.26,
+        "weakestElementEhp": 3025.13,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 1488,
+          "Power": 80,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Earth Damage": 140,
+          "Critical": 71,
+          "Critical Damage": 5,
+          "Neutral Damage": 110
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Rassler Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "13115",
+            "slot": "ring_1"
+          },
+          "MP": {
+            "itemId": "31800",
+            "slot": "weapon"
+          },
+          "Range": {
+            "itemId": "14168",
+            "slot": "cloak"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "15433",
+            "internalId": null,
+            "name": "Gein's Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "belt": {
+            "id": "19983",
+            "internalId": null,
+            "name": "Rhineetle Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "weapon": {
+            "id": "31800",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "shield": {
+            "id": "18693",
+            "internalId": null,
+            "name": "Broucey Bark",
+            "type": "Shield",
+            "level": 196,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_1": {
+            "id": "13115",
+            "internalId": null,
+            "name": "Broucey Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_2": {
+            "id": "15440",
+            "internalId": null,
+            "name": "Rassler Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rassler Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "15442",
+            "internalId": null,
+            "name": "Rassler Mask",
+            "type": "Hat",
+            "level": 200,
+            "set": "Rassler Set"
+          },
+          "cloak": {
+            "id": "14168",
+            "internalId": null,
+            "name": "Cloak of a Thousand Excuses",
+            "type": "Cloak",
+            "level": 198,
+            "set": null
+          },
+          "pet": {
+            "id": "29430",
+            "internalId": null,
+            "name": "Mamukil Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16196",
+            "internalId": null,
+            "name": "Major Rabid",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2407.91,
+        "apStrategy": null,
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 1488,
+          "Power": 80,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Earth Damage": 140,
+          "Critical": 71,
+          "Critical Damage": 5,
+          "Neutral Damage": 110
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Rassler Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "13115",
+            "slot": "ring_1"
+          },
+          "MP": {
+            "itemId": "31800",
+            "slot": "weapon"
+          },
+          "Range": {
+            "itemId": "14168",
+            "slot": "cloak"
+          }
+        },
+        "items": [
+          "Gein's Amulet",
+          "Rhineetle Belt",
+          "Sleeping Venerable One's Bow",
+          "Broucey Bark",
+          "Broucey Ring",
+          "Rassler Ring",
+          "Meriana's Clairvoyance",
+          "Rassler Mask",
+          "Cloak of a Thousand Excuses",
+          "Mamukil Kolophant",
+          "Dolmanax",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Earth Wrecker",
+          "Major Rabid"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2407.91,
+          "weightedStatScore": 4250.18,
+          "utilityStatScore": 407.47,
+          "genericDamageScore": 4215.95,
+          "rawRotationDamageScore": 3862.67,
+          "spellDamageScore": 3862.67,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.4053,
+          "weaponDamageScore": 218.13,
+          "survivabilityScore": 103.26,
+          "weakestElementEhp": 3025.13,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 6,
+            "Range": 6,
+            "Strength": 1488,
+            "Power": 80,
+            "Vitality": 3503,
+            "Damage": 0,
+            "Earth Damage": 140,
+            "Critical": 71,
+            "Critical Damage": 5,
+            "Neutral Damage": 110
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Rassler Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "13115",
+              "slot": "ring_1"
+            },
+            "MP": {
+              "itemId": "31800",
+              "slot": "weapon"
+            },
+            "Range": {
+              "itemId": "14168",
+              "slot": "cloak"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "15433",
+              "internalId": null,
+              "name": "Gein's Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "belt": {
+              "id": "19983",
+              "internalId": null,
+              "name": "Rhineetle Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "weapon": {
+              "id": "31800",
+              "internalId": null,
+              "name": "Sleeping Venerable One's Bow",
+              "type": "Bow",
+              "level": 200,
+              "set": "Sleeping Venerable One Set"
+            },
+            "shield": {
+              "id": "18693",
+              "internalId": null,
+              "name": "Broucey Bark",
+              "type": "Shield",
+              "level": 196,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_1": {
+              "id": "13115",
+              "internalId": null,
+              "name": "Broucey Ring",
+              "type": "Ring",
+              "level": 198,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_2": {
+              "id": "15440",
+              "internalId": null,
+              "name": "Rassler Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rassler Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "15442",
+              "internalId": null,
+              "name": "Rassler Mask",
+              "type": "Hat",
+              "level": 200,
+              "set": "Rassler Set"
+            },
+            "cloak": {
+              "id": "14168",
+              "internalId": null,
+              "name": "Cloak of a Thousand Excuses",
+              "type": "Cloak",
+              "level": 198,
+              "set": null
+            },
+            "pet": {
+              "id": "29430",
+              "internalId": null,
+              "name": "Mamukil Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13774",
+              "internalId": null,
+              "name": "Major Earth Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "16196",
+              "internalId": null,
+              "name": "Major Rabid",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2407.91,
+          "apStrategy": null,
+          "totals": {
+            "AP": 10,
+            "MP": 6,
+            "Range": 6,
+            "Strength": 1488,
+            "Power": 80,
+            "Vitality": 3503,
+            "Damage": 0,
+            "Earth Damage": 140,
+            "Critical": 71,
+            "Critical Damage": 5,
+            "Neutral Damage": 110
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Rassler Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "13115",
+              "slot": "ring_1"
+            },
+            "MP": {
+              "itemId": "31800",
+              "slot": "weapon"
+            },
+            "Range": {
+              "itemId": "14168",
+              "slot": "cloak"
+            }
+          },
+          "items": [
+            "Gein's Amulet",
+            "Rhineetle Belt",
+            "Sleeping Venerable One's Bow",
+            "Broucey Bark",
+            "Broucey Ring",
+            "Rassler Ring",
+            "Meriana's Clairvoyance",
+            "Rassler Mask",
+            "Cloak of a Thousand Excuses",
+            "Mamukil Kolophant",
+            "Dolmanax",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Earth Wrecker",
+            "Major Rabid"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6974.6,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 167.3,
+          "totalSearchMs": 6807.3
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1641.4,
+            "solveMs": 5057.7,
+            "objective": 2115.63,
+            "solutionCallbackCount": 9,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2013.0,
+                "objective": 597.96,
+                "score": 1069.18,
+                "itemIds": [
+                  "2469",
+                  "8000",
+                  "8839",
+                  "9138",
+                  "9139",
+                  "12628",
+                  "12629",
+                  "12716",
+                  "13762",
+                  "15203",
+                  "16335",
+                  "18703",
+                  "22004",
+                  "27266",
+                  "32210",
+                  "32212"
+                ],
+                "exos": {
+                  "AP": "32212",
+                  "MP": "9138"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2260.1,
+                "objective": 805.88,
+                "score": 1305.53,
+                "itemIds": [
+                  "737",
+                  "9131",
+                  "9137",
+                  "9141",
+                  "12727",
+                  "13344",
+                  "13829",
+                  "15254",
+                  "15693",
+                  "15695",
+                  "15700",
+                  "18670",
+                  "22004",
+                  "27265",
+                  "27284",
+                  "29136"
+                ],
+                "exos": {
+                  "Range": "15693"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2406.0,
+                "objective": 862.95,
+                "score": 1200.86,
+                "itemIds": [
+                  "2469",
+                  "8698",
+                  "8839",
+                  "9138",
+                  "9139",
+                  "12716",
+                  "13762",
+                  "13774",
+                  "15203",
+                  "16335",
+                  "18703",
+                  "22004",
+                  "27266",
+                  "32210",
+                  "32212",
+                  "33268"
+                ],
+                "exos": {
+                  "AP": "32212",
+                  "Range": "2469"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2544.3,
+                "objective": 2006.46,
+                "score": 2384.47,
+                "itemIds": [
+                  "7043",
+                  "13115",
+                  "13344",
+                  "13774",
+                  "14168",
+                  "15433",
+                  "15440",
+                  "15442",
+                  "16196",
+                  "18693",
+                  "19983",
+                  "20353",
+                  "29430",
+                  "30453",
+                  "30455",
+                  "32121"
+                ],
+                "exos": {
+                  "AP": "15440",
+                  "MP": "20353",
+                  "Range": "14168"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2668.1,
+                "objective": 2036.76,
+                "score": 2407.91,
+                "itemIds": [
+                  "7043",
+                  "13115",
+                  "13344",
+                  "13774",
+                  "14168",
+                  "15433",
+                  "15440",
+                  "15442",
+                  "16196",
+                  "18693",
+                  "19983",
+                  "29430",
+                  "30453",
+                  "30455",
+                  "31800",
+                  "32121"
+                ],
+                "exos": {
+                  "AP": "13115",
+                  "MP": "31800",
+                  "Range": "14168"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 314
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1836,
+              "uniqueItemCount": 1702,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 215,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1702,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

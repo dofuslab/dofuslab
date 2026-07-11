@@ -4583,3 +4583,37 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - end-to-end latency still misses the Milestone 2 p95 target
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap12mp6-all-elements-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 12 --mp-targets 6 --range-targets none,6 --expected-solver cpsat`
+
+### 2026-07-11 Mid-Grid AP10/MP5 All-Budget CP-SAT Smoke
+
+- Ran a mid-grid level-200 Iop slice to cover budget tiers `2` and `3`, AP/MP
+  interior values, and explicit mid-range requirements.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-midgrid-ap10mp5-allbudgets-matrix.json`
+  - `.codex/state/build-discovery-cpsat-midgrid-ap10mp5-allbudgets-matrix.md`
+  - `.codex/state/build-discovery-cpsat-midgrid-ap10mp5-allbudgets-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 1, 2, 3, 4
+  - AP: 10
+  - MP: 5
+  - Range: none, 3
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `32`
+  - generated: `32`
+  - invalid: `0`
+  - solver statuses: `14` optimal, `18` feasible
+  - budget coverage: `8` rows for each tier `1-4`
+  - element coverage: `8` rows for each element
+- Runtime:
+  - elapsed min/avg/max: `5233.2ms / 6743.2ms / 8595.5ms`
+  - model min/avg/max: `1391.1ms / 1543.1ms / 1809.3ms`
+  - solve min/avg/max: `3257.3ms / 4773.8ms / 5079.3ms`
+- Interpretation:
+  - CP-SAT can generate valid builds for the first committed mid-budget,
+    mid-AP/MP, explicit-range slice
+  - budget tiers `2` and `3` now have committed level-200 CP-SAT evidence
+  - p95 remains above the Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-midgrid-ap10mp5-allbudgets-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,2,3,4 --ap-targets 10 --mp-targets 5 --range-targets none,3 --expected-solver cpsat`
