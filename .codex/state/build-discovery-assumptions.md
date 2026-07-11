@@ -516,6 +516,10 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - When `rangeTarget` is omitted, +Range should be scored as a soft stat using
   the class/element spell profile. When `rangeTarget` is explicit, it remains a
   hard constraint.
+- The first +Range soft valuation uses weighted spell candidate range evidence:
+  high modifiable max range is valuable, short locked-range damage profiles
+  receive very little +Range value, and missing spell evidence falls back to a
+  modest weight instead of the old global high weight.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.
 - Fashionista links are currently manual comparison references, not automatically parsed/scored.

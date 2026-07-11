@@ -463,6 +463,11 @@ STAT_WEIGHTS = {
     "% Melee Resistance": 3.0,
 }
 BASE_STAT_WEIGHTS = dict(STAT_WEIGHTS)
+RANGE_SOFT_WEIGHT_FALLBACK = 2.0
+RANGE_SOFT_WEIGHT_NEARLY_USELESS = 0.5
+RANGE_SOFT_WEIGHT_MARGINAL = 2.0
+RANGE_SOFT_WEIGHT_USEFUL = 5.0
+RANGE_SOFT_WEIGHT_VITAL = 8.0
 PRE_200_WISDOM_WEIGHT = 0.15
 LEVEL_200_WISDOM_WEIGHT = 0.0
 PRIMARY_STAT_NAMES = ("Strength", "Intelligence", "Chance", "Agility")
@@ -516,6 +521,7 @@ def wisdom_weight_for_level(level: int) -> float:
 def active_stat_weights() -> dict[str, float]:
     weights = dict(STAT_WEIGHTS)
     weights["Wisdom"] = wisdom_weight_for_level(ACTIVE_TARGET_LEVEL)
+    weights["Range"] = active_range_soft_weight()
     return weights
 
 
@@ -548,6 +554,7 @@ def configure_damage_profile(
     STAT_WEIGHTS = next_weights
     active_spell_candidates.cache_clear()
     active_spell_damage_profile.cache_clear()
+    active_range_soft_weight.cache_clear()
     active_profile_spell_damage_baseline.cache_clear()
     cheap_profile_damage_baseline.cache_clear()
     return profile
@@ -1164,6 +1171,9 @@ class SpellDamageCandidate:
     crit_damage_increase: int = 0
     max_damage_increase_stacks: int = 0
     is_weapon: bool = False
+    min_range: int | None = None
+    max_range: int | None = None
+    has_modifiable_range: bool = False
 
 
 @dataclass(frozen=True)
@@ -2287,6 +2297,9 @@ def weapon_rotation_candidate(state: BuildState | None) -> SpellDamageCandidate 
         base_crit_chance=int_or_zero(weapon_stats.get("baseCritChance")),
         damage_lines=damage_lines,
         is_weapon=True,
+        min_range=weapon_stats.get("minRange"),
+        max_range=weapon_stats.get("maxRange"),
+        has_modifiable_range=False,
     )
 
 
@@ -2415,6 +2428,54 @@ def select_variant_spells(
         if current is None or spell_damage_per_ap(spell, stats) > spell_damage_per_ap(current, stats):
             best_by_variant_pair[spell.variant_pair_id] = spell
     return tuple(best_by_variant_pair.values())
+
+
+def spell_range_evidence_weight(spell: SpellDamageCandidate) -> float:
+    line_weight = sum(
+        ((line.base_min + line.base_max) / 2) * line.weight
+        for line in spell.damage_lines
+    )
+    return line_weight / max(spell.ap_cost, 1)
+
+
+@lru_cache(maxsize=1)
+def active_range_soft_weight() -> float:
+    candidates = active_spell_candidates()
+    if not candidates:
+        return RANGE_SOFT_WEIGHT_FALLBACK
+
+    selected = select_variant_spells(candidates, active_base_stats())
+    evidence = [
+        (spell, spell_range_evidence_weight(spell))
+        for spell in selected
+        if spell.damage_lines and spell_range_evidence_weight(spell) > 0
+    ]
+    total_weight = sum(weight for _, weight in evidence)
+    if total_weight <= 0:
+        return RANGE_SOFT_WEIGHT_FALLBACK
+
+    high_modifiable_weight = sum(
+        weight
+        for spell, weight in evidence
+        if spell.has_modifiable_range and (spell.max_range or 0) >= 4
+    )
+    short_locked_weight = sum(
+        weight
+        for spell, weight in evidence
+        if not spell.has_modifiable_range and (spell.max_range or 0) <= 2
+    )
+    high_modifiable_share = high_modifiable_weight / total_weight
+    short_locked_share = short_locked_weight / total_weight
+
+    if short_locked_share >= 0.75:
+        return RANGE_SOFT_WEIGHT_NEARLY_USELESS
+    if high_modifiable_share >= 0.75:
+        return RANGE_SOFT_WEIGHT_VITAL
+    if high_modifiable_share >= 0.5:
+        return RANGE_SOFT_WEIGHT_USEFUL
+    if high_modifiable_share >= 0.25:
+        return RANGE_SOFT_WEIGHT_MARGINAL
+    return RANGE_SOFT_WEIGHT_NEARLY_USELESS
 
 
 def filler_cast_count_for_turn(spell: SpellDamageCandidate, turn_cast_counts: dict[str, int]) -> int:
@@ -2815,6 +2876,9 @@ def spell_candidates_for_profile(
                 damage_increase=int_or_zero(getattr(damage_increase, "base_increase", 0)),
                 crit_damage_increase=int_or_zero(getattr(damage_increase, "crit_base_increase", 0)),
                 max_damage_increase_stacks=int_or_zero(getattr(damage_increase, "max_stacks", 0)),
+                min_range=spell_stat.min_range,
+                max_range=spell_stat.max_range,
+                has_modifiable_range=bool(spell_stat.has_modifiable_range),
             )
         )
 
@@ -4757,6 +4821,7 @@ def build_discovery_response_for_active_level(
             "weaponDamageWeight": query.weapon_damage_weight,
             "survivabilityWeight": survivability_weight,
             "negativeResistancePenaltyWeight": negative_resistance_penalty_weight,
+            "rangeSoftWeight": active_range_soft_weight(),
         },
         "warnings": warnings,
         "diagnostics": {

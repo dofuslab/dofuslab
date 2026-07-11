@@ -6914,3 +6914,29 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Remaining gap: +Range soft valuation is still not wired into objective
   weights; this slice only makes class/element spell damage profile selection
   explicit and safe enough for the next milestone step.
+
+### 2026-07-11 Spell-Derived +Range Soft Valuation Slice
+
+- Replaced the single global soft `Range` score with an active class/element
+  soft weight derived from spell candidate range evidence.
+- Explicit `rangeTarget` remains a hard target. When `rangeTarget=None`,
+  `Range` is now treated as a class/element-dependent soft stat.
+- Added range metadata to `SpellDamageCandidate`:
+  - `min_range`
+  - `max_range`
+  - `has_modifiable_range`
+- Weight bands:
+  - `8.0` for vital high-modifiable-range profiles
+  - `5.0` for useful profiles
+  - `2.0` for marginal/fallback profiles
+  - `0.5` for nearly-useless short locked-range profiles
+- Response diagnostics now include `scoring.rangeSoftWeight`.
+- Validation:
+  - `python -m py_compile server/oneoff/build_discovery_prototype.py server/oneoff/build_discovery_cpsat_experiment.py`
+  - `python -m unittest scripts.test_build_discovery_prototype` passed
+    (`137` tests).
+  - `python -m unittest scripts.test_damage_calculator` passed (`6` tests).
+  - `git diff --check` passed.
+  - Docker mocked response smoke returned `Cra`,
+    `spell_profile_v0_weighted_candidates`, and `rangeSoftWeight=8.0` for
+    range-heavy spell evidence.

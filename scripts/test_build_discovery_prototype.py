@@ -105,6 +105,53 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             3 * 25,
         )
 
+    def test_active_range_weight_uses_spell_range_evidence(self):
+        ranged_spell = build_discovery_prototype.SpellDamageCandidate(
+            name="Ranged",
+            variant_pair_id="ranged",
+            ap_cost=3,
+            cooldown=None,
+            casts_per_turn=None,
+            casts_per_target=None,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 40, 40),),
+            min_range=1,
+            max_range=8,
+            has_modifiable_range=True,
+        )
+        melee_spell = build_discovery_prototype.SpellDamageCandidate(
+            name="Melee",
+            variant_pair_id="melee",
+            ap_cost=3,
+            cooldown=None,
+            casts_per_turn=None,
+            casts_per_target=None,
+            base_crit_chance=0,
+            damage_lines=(build_discovery_prototype.DamageLine("earth", 40, 40),),
+            min_range=1,
+            max_range=1,
+            has_modifiable_range=False,
+        )
+
+        try:
+            build_discovery_prototype.configure_damage_profile("strength", "Cra")
+            with patch.object(build_discovery_prototype, "active_spell_candidates", return_value=(ranged_spell,)):
+                build_discovery_prototype.active_range_soft_weight.cache_clear()
+                self.assertEqual(
+                    build_discovery_prototype.active_stat_weights()["Range"],
+                    build_discovery_prototype.RANGE_SOFT_WEIGHT_VITAL,
+                )
+
+            build_discovery_prototype.configure_damage_profile("strength", "Iop")
+            with patch.object(build_discovery_prototype, "active_spell_candidates", return_value=(melee_spell,)):
+                build_discovery_prototype.active_range_soft_weight.cache_clear()
+                self.assertEqual(
+                    build_discovery_prototype.active_stat_weights()["Range"],
+                    build_discovery_prototype.RANGE_SOFT_WEIGHT_NEARLY_USELESS,
+                )
+        finally:
+            build_discovery_prototype.configure_damage_profile("strength", "Iop")
+
     def test_action_stat_witness_seed_runs_for_non_base_action_targets(self):
         self.assertFalse(
             action_stat_witness_seed_needed(
@@ -266,7 +313,8 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         with_mp_range.stats["MP"] = 6
         with_mp_range.stats["Range"] = 4
 
-        mp_range_stat_score = 3 * 10 + 4 * 8
+        weights = build_discovery_prototype.active_stat_weights()
+        mp_range_stat_score = 3 * weights["MP"] + 4 * weights["Range"]
         removed_gap_penalty = 3 * 75 + 4 * 25
         self.assertEqual(
             score_state(with_mp_range, {}, target) - score_state(baseline, {}, target),
@@ -2500,6 +2548,7 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(response["profile"]["className"], "Cra")
         self.assertEqual(response["profile"]["confidence"], "medium")
         self.assertEqual(response["profile"]["rotationModel"], "spell_profile_v0_weighted_candidates")
+        self.assertEqual(response["scoring"]["rangeSoftWeight"], build_discovery_prototype.RANGE_SOFT_WEIGHT_FALLBACK)
         self.assertIn("rotation-lite", " ".join(response["warnings"]))
 
     def test_query_cache_key_includes_dataset_solver_and_query(self):
