@@ -140,6 +140,7 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         self.assertEqual(inventory["levelCount"], 1)
         self.assertEqual(inventory["generatedEvidenceCount"], 1)
         self.assertEqual(inventory["attemptedEvidenceCount"], 1)
+        self.assertEqual(inventory["noBuildEvidenceCount"], 0)
         self.assertEqual(inventory["unprovenCount"], 223)
         self.assertEqual(inventory["unattemptedCount"], 223)
         self.assertEqual(inventory["byLevel"][0]["level"], 1)
@@ -175,6 +176,7 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         )
         self.assertEqual(inventory["generatedEvidenceCount"], 1)
         self.assertEqual(inventory["attemptedEvidenceCount"], 2)
+        self.assertEqual(inventory["noBuildEvidenceCount"], 1)
 
     def test_artifact_loader_combines_paths_and_dirs(self):
         aggregate_report = {
@@ -239,13 +241,45 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
             {"level": 20, "element": "strength", "budgetTier": 1, "apTarget": 6, "mpTarget": 6, "rangeTarget": 0},
         ]
 
-        selected = select_next_unproven_targets(rows, set(), limit=3)
+        selected = select_next_unproven_targets(rows, set(), set(), limit=3)
 
         self.assertEqual(
             [(row["level"], row["element"], row["profileBucket"]) for row in selected[:2]],
-            [(1, "strength", "minimum"), (20, "intelligence", "minimum")],
+            [(1, "strength", "minimum"), (20, "strength", "mp_heavy")],
         )
         self.assertEqual(len(selected), 3)
+
+    def test_select_next_unproven_targets_keeps_attempted_failures_retryable(self):
+        rows = [
+            {"level": 1, "element": "strength", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None},
+            {"level": 1, "element": "chance", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None},
+        ]
+        attempted = {row_key(rows[0])}
+
+        selected = select_next_unproven_targets(rows, set(), attempted, limit=2)
+
+        self.assertEqual([row["evidenceStatus"] for row in selected], ["retry", "unattempted"])
+
+    def test_select_next_unproven_targets_rotates_profile_buckets_across_levels(self):
+        rows = []
+        for level in range(1, 7):
+            rows.extend(
+                [
+                    {"level": level, "element": "strength", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None},
+                    {"level": level, "element": "strength", "budgetTier": 4, "apTarget": 12, "mpTarget": 6, "rangeTarget": 6},
+                    {"level": level, "element": "strength", "budgetTier": 4, "apTarget": 6, "mpTarget": 6, "rangeTarget": 0},
+                    {"level": level, "element": "strength", "budgetTier": 4, "apTarget": 6, "mpTarget": 3, "rangeTarget": 6},
+                    {"level": level, "element": "strength", "budgetTier": 4, "apTarget": 11, "mpTarget": 3, "rangeTarget": 0},
+                    {"level": level, "element": "strength", "budgetTier": 4, "apTarget": 8, "mpTarget": 4, "rangeTarget": 0},
+                ]
+            )
+
+        selected = select_next_unproven_targets(rows, set(), set(), limit=6)
+
+        self.assertEqual(
+            [row["profileBucket"] for row in selected],
+            ["minimum", "cap", "mp_heavy", "range_heavy", "ap_heavy", "middle"],
+        )
 
 
 if __name__ == "__main__":

@@ -3206,6 +3206,26 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`
   - `git diff --check`
 
+### 2026-07-10 Retryable Full-Grid Inventory Queue
+
+- Updated AP/MP/Range grid inventory so `nextUnprovenTargets` is selected from
+  rows without generated proof, not merely rows that were never attempted.
+- Previously attempted `no_build` rows are now labeled as `evidenceStatus:
+  retry` and get a bounded front-of-queue quota, so search misses remain visible
+  after solver improvements.
+- The suggested queue now rotates profile buckets across levels instead of
+  spending large batches only on minimum AP/MP rows.
+- Regenerated the full-grid inventory artifact:
+  - valid query rows: `665088`
+  - generated evidence rows: `116`
+  - attempted evidence rows: `131`
+  - no-build evidence rows: `15`
+  - suggested next rows: `80`, with `15` retries and `65` unattempted rows
+- Verification passed:
+  - `python server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
+  - `python -m py_compile server\scripts\build_discovery_ap_mp_range_grid_inventory.py server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
+  - `git diff --check`
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range

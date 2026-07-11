@@ -162,6 +162,26 @@ def attempted_keys_from_reports(reports: Iterable[dict[str, Any]]) -> set[tuple[
     return attempted
 
 
+def no_build_keys_from_reports(reports: Iterable[dict[str, Any]]) -> set[tuple[int, str, int, int, int, int | None]]:
+    no_build = set()
+    for report in reports:
+        for result in report.get("results", []):
+            if result.get("status") != "no_build":
+                continue
+            target = result.get("target") or {}
+            no_build.add(
+                target_key(
+                    level=target["level"],
+                    element=target["element"],
+                    budget_tier=target["budgetTier"],
+                    ap=target["apTarget"],
+                    mp=target["mpTarget"],
+                    range_target=target["rangeTarget"],
+                )
+            )
+    return no_build
+
+
 def valid_query_rows(
     levels: Iterable[int],
     elements: Iterable[str],
@@ -230,14 +250,20 @@ def profile_bucket(row: dict[str, Any]) -> str:
 def select_next_unproven_targets(
     rows: list[dict[str, Any]],
     covered: set[tuple[int, str, int, int, int, int | None]],
+    attempted: set[tuple[int, str, int, int, int, int | None]] | None,
     limit: int,
 ) -> list[dict[str, Any]]:
     selected = []
+    attempted = attempted or set()
     unproven = [row for row in rows if row_key(row) not in covered]
     levels = sorted({row["level"] for row in unproven})
 
     def with_bucket(row: dict[str, Any]) -> dict[str, Any]:
-        return {**row, "profileBucket": profile_bucket(row)}
+        return {
+            **row,
+            "profileBucket": profile_bucket(row),
+            "evidenceStatus": "retry" if row_key(row) in attempted else "unattempted",
+        }
 
     def is_selected(row: dict[str, Any]) -> bool:
         return any(row_key(row) == row_key(selected_row) for selected_row in selected)
@@ -259,11 +285,22 @@ def select_next_unproven_targets(
         preferred_rank = element_rank.get(preferred_element, 0)
         return (rank - preferred_rank) % max(len(element_rank), 1)
 
-    def candidate_sort_key(row: dict[str, Any], preferred_element: str | None = None) -> tuple[Any, ...]:
+    def profile_sort_rank(bucket: str, preferred_bucket: str | None = None) -> int:
+        rank = profile_rank[bucket]
+        if preferred_bucket is None:
+            return rank
+        preferred_rank = profile_rank[preferred_bucket]
+        return (rank - preferred_rank) % len(profile_rank)
+
+    def candidate_sort_key(
+        row: dict[str, Any],
+        preferred_element: str | None = None,
+        preferred_bucket: str | None = None,
+    ) -> tuple[Any, ...]:
         bucket = profile_bucket(row)
         budget_sort = row["budgetTier"] if bucket == "minimum" else -row["budgetTier"]
         return (
-            profile_rank[bucket],
+            profile_sort_rank(bucket, preferred_bucket),
             element_sort_rank(row["element"], preferred_element),
             budget_sort,
             row["apTarget"],
@@ -271,14 +308,29 @@ def select_next_unproven_targets(
             -1 if row["rangeTarget"] is None else row["rangeTarget"],
         )
 
+    profile_order = ("minimum", "cap", "mp_heavy", "range_heavy", "ap_heavy", "middle")
+    retry_quota = min(len([row for row in unproven if row_key(row) in attempted]), max(1, limit // 4)) if limit else 0
+    retry_candidates = sorted(
+        (row for row in unproven if row_key(row) in attempted),
+        key=lambda row: candidate_sort_key(row),
+    )
+    for row in retry_candidates[:retry_quota]:
+        selected.append(with_bucket(row))
+        if len(selected) >= limit:
+            return selected
+
     for level_index, level in enumerate(levels):
-        level_rows = [row for row in unproven if row["level"] == level]
+        level_rows = [row for row in unproven if row["level"] == level and not is_selected(row)]
         if not level_rows:
             continue
         preferred_element = DEFAULT_ELEMENTS[level_index % len(DEFAULT_ELEMENTS)]
+        preferred_bucket = profile_order[level_index % len(profile_order)]
         selected.append(
             with_bucket(
-                sorted(level_rows, key=lambda row: candidate_sort_key(row, preferred_element))[0]
+                sorted(
+                    level_rows,
+                    key=lambda row: candidate_sort_key(row, preferred_element, preferred_bucket),
+                )[0]
             )
         )
         if len(selected) >= limit:
@@ -288,8 +340,8 @@ def select_next_unproven_targets(
         (row["level"], row["element"], row["budgetTier"], row["profileBucket"])
         for row in selected
     }
-    profile_order = ("cap", "mp_heavy", "range_heavy", "ap_heavy", "middle", "minimum")
-    for bucket_index, bucket in enumerate(profile_order):
+    refill_profile_order = ("cap", "mp_heavy", "range_heavy", "ap_heavy", "middle", "minimum")
+    for bucket_index, bucket in enumerate(refill_profile_order):
         for level_index, level in enumerate(levels):
             level_bucket_rows = [
                 row
@@ -331,8 +383,10 @@ def build_inventory_report(
     rows = valid_query_rows(levels, elements, budget_tiers)
     covered = covered_keys_from_reports(reports)
     attempted = attempted_keys_from_reports(reports)
+    no_build = no_build_keys_from_reports(reports)
     covered_rows = [row for row in rows if row_key(row) in covered]
     attempted_rows = [row for row in rows if row_key(row) in attempted]
+    no_build_rows = [row for row in rows if row_key(row) in no_build]
     return {
         "reportVersion": REPORT_VERSION,
         "scope": "query-grid inventory, not generated-build proof",
@@ -346,11 +400,12 @@ def build_inventory_report(
         "validQueryCount": len(rows),
         "generatedEvidenceCount": len(covered_rows),
         "attemptedEvidenceCount": len(attempted_rows),
+        "noBuildEvidenceCount": len(no_build_rows),
         "unprovenCount": len(rows) - len(covered_rows),
         "unattemptedCount": len(rows) - len(attempted_rows),
         "byLevel": summarize_by_level(rows, covered),
         "unprovenExamples": compact_unproven_examples(rows, covered, unproven_example_limit),
-        "nextUnprovenTargets": select_next_unproven_targets(rows, attempted, next_target_limit),
+        "nextUnprovenTargets": select_next_unproven_targets(rows, covered, attempted, next_target_limit),
     }
 
 
@@ -371,6 +426,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Valid query rows: `{report['validQueryCount']}`",
         f"Generated evidence rows: `{report['generatedEvidenceCount']}`",
         f"Attempted evidence rows: `{report['attemptedEvidenceCount']}`",
+        f"No-build evidence rows: `{report.get('noBuildEvidenceCount', 0)}`",
         f"Unproven rows: `{report['unprovenCount']}`",
         f"Unattempted rows: `{report['unattemptedCount']}`",
         "",
@@ -395,7 +451,7 @@ def render_markdown(report: dict[str, Any]) -> str:
     for row in report["nextUnprovenTargets"]:
         range_label = "any" if row["rangeTarget"] is None else row["rangeTarget"]
         lines.append(
-            "- L{level} {element} tier {budgetTier} {apTarget}/{mpTarget}/{range} `{profileBucket}`".format(
+            "- L{level} {element} tier {budgetTier} {apTarget}/{mpTarget}/{range} `{profileBucket}` `{evidenceStatus}`".format(
                 **row,
                 range=range_label,
             )

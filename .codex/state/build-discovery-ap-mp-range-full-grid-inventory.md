@@ -9,6 +9,7 @@ Budget tier count: `4`
 Valid query rows: `665088`
 Generated evidence rows: `116`
 Attempted evidence rows: `131`
+No-build evidence rows: `15`
 Unproven rows: `664972`
 Unattempted rows: `664957`
 
@@ -260,43 +261,83 @@ Unattempted rows: `664957`
 
 ## Suggested Next Generated Rows
 
-- L1 intelligence tier 1 6/3/any `minimum`
-- L2 intelligence tier 1 6/3/any `minimum`
-- L3 chance tier 1 6/3/any `minimum`
-- L4 agility tier 1 6/3/any `minimum`
-- L5 strength tier 1 6/3/any `minimum`
-- L6 intelligence tier 1 6/3/any `minimum`
-- L7 chance tier 1 6/3/any `minimum`
-- L8 agility tier 1 6/3/any `minimum`
-- L9 strength tier 1 6/3/any `minimum`
-- L10 intelligence tier 1 6/3/any `minimum`
-- L11 chance tier 1 6/3/any `minimum`
-- L12 agility tier 1 6/3/any `minimum`
-- L13 strength tier 1 6/3/any `minimum`
-- L14 intelligence tier 1 6/3/any `minimum`
-- L15 chance tier 1 6/3/any `minimum`
-- L16 agility tier 1 6/3/any `minimum`
-- L17 strength tier 1 6/3/any `minimum`
-- L18 intelligence tier 1 6/3/any `minimum`
-- L19 chance tier 1 6/3/any `minimum`
-- L20 agility tier 1 6/3/any `minimum`
-- L21 strength tier 1 6/3/any `minimum`
-- L22 intelligence tier 1 6/3/any `minimum`
-- L23 chance tier 1 6/3/any `minimum`
-- L24 agility tier 1 6/3/any `minimum`
-- L25 strength tier 1 6/3/any `minimum`
-- L26 intelligence tier 1 6/3/any `minimum`
-- L27 chance tier 1 6/3/any `minimum`
-- L28 agility tier 1 6/3/any `minimum`
-- L29 strength tier 1 6/3/any `minimum`
-- L30 intelligence tier 1 6/3/any `minimum`
-- L31 chance tier 1 6/3/any `minimum`
-- L32 agility tier 1 6/3/any `minimum`
-- L33 strength tier 1 6/3/any `minimum`
-- L34 intelligence tier 1 6/3/any `minimum`
-- L35 chance tier 1 6/3/any `minimum`
-- L36 agility tier 1 6/3/any `minimum`
-- L37 strength tier 1 6/3/any `minimum`
-- L38 intelligence tier 1 6/3/any `minimum`
-- L39 chance tier 1 6/3/any `minimum`
-- L40 agility tier 1 6/3/any `minimum`
+- L1 strength tier 4 12/6/6 `cap` `retry`
+- L20 strength tier 4 12/6/6 `cap` `retry`
+- L80 strength tier 2 12/6/6 `cap` `retry`
+- L200 strength tier 2 12/6/6 `cap` `retry`
+- L80 strength tier 1 12/6/6 `cap` `retry`
+- L200 strength tier 1 12/6/6 `cap` `retry`
+- L1 intelligence tier 4 12/6/6 `cap` `retry`
+- L1 intelligence tier 3 12/6/6 `cap` `retry`
+- L1 intelligence tier 2 12/6/6 `cap` `retry`
+- L99 intelligence tier 2 12/6/6 `cap` `retry`
+- L20 chance tier 4 12/6/6 `cap` `retry`
+- L20 chance tier 3 12/6/6 `cap` `retry`
+- L20 chance tier 2 12/6/6 `cap` `retry`
+- L50 agility tier 2 12/6/6 `cap` `retry`
+- L199 agility tier 2 12/6/6 `cap` `retry`
+- L1 intelligence tier 1 6/3/any `minimum` `unattempted`
+- L2 intelligence tier 4 12/6/6 `cap` `unattempted`
+- L3 chance tier 4 6/6/any `mp_heavy` `unattempted`
+- L4 agility tier 4 6/3/6 `range_heavy` `unattempted`
+- L5 strength tier 4 11/3/any `ap_heavy` `unattempted`
+- L6 intelligence tier 4 6/3/0 `middle` `unattempted`
+- L7 chance tier 1 6/3/any `minimum` `unattempted`
+- L8 agility tier 4 12/6/6 `cap` `unattempted`
+- L9 strength tier 4 6/6/any `mp_heavy` `unattempted`
+- L10 intelligence tier 4 6/3/6 `range_heavy` `unattempted`
+- L11 chance tier 4 11/3/any `ap_heavy` `unattempted`
+- L12 agility tier 4 6/3/0 `middle` `unattempted`
+- L13 strength tier 1 6/3/any `minimum` `unattempted`
+- L14 intelligence tier 4 12/6/6 `cap` `unattempted`
+- L15 chance tier 4 6/6/any `mp_heavy` `unattempted`
+- L16 agility tier 4 6/3/6 `range_heavy` `unattempted`
+- L17 strength tier 4 11/3/any `ap_heavy` `unattempted`
+- L18 intelligence tier 4 6/3/0 `middle` `unattempted`
+- L19 chance tier 1 6/3/any `minimum` `unattempted`
+- L20 agility tier 4 12/6/6 `cap` `unattempted`
+- L21 strength tier 4 6/6/any `mp_heavy` `unattempted`
+- L22 intelligence tier 4 6/3/6 `range_heavy` `unattempted`
+- L23 chance tier 4 11/3/any `ap_heavy` `unattempted`
+- L24 agility tier 4 6/3/0 `middle` `unattempted`
+- L25 strength tier 1 6/3/any `minimum` `unattempted`
+- L26 intelligence tier 4 12/6/6 `cap` `unattempted`
+- L27 chance tier 4 6/6/any `mp_heavy` `unattempted`
+- L28 agility tier 4 6/3/6 `range_heavy` `unattempted`
+- L29 strength tier 4 11/3/any `ap_heavy` `unattempted`
+- L30 intelligence tier 4 6/3/0 `middle` `unattempted`
+- L31 chance tier 1 6/3/any `minimum` `unattempted`
+- L32 agility tier 4 12/6/6 `cap` `unattempted`
+- L33 strength tier 4 6/6/any `mp_heavy` `unattempted`
+- L34 intelligence tier 4 6/3/6 `range_heavy` `unattempted`
+- L35 chance tier 4 11/3/any `ap_heavy` `unattempted`
+- L36 agility tier 4 6/3/0 `middle` `unattempted`
+- L37 strength tier 1 6/3/any `minimum` `unattempted`
+- L38 intelligence tier 4 12/6/6 `cap` `unattempted`
+- L39 chance tier 4 6/6/any `mp_heavy` `unattempted`
+- L40 agility tier 4 6/3/6 `range_heavy` `unattempted`
+- L41 strength tier 4 11/3/any `ap_heavy` `unattempted`
+- L42 intelligence tier 4 6/3/0 `middle` `unattempted`
+- L43 chance tier 1 6/3/any `minimum` `unattempted`
+- L44 agility tier 4 12/6/6 `cap` `unattempted`
+- L45 strength tier 4 6/6/any `mp_heavy` `unattempted`
+- L46 intelligence tier 4 6/3/6 `range_heavy` `unattempted`
+- L47 chance tier 4 11/3/any `ap_heavy` `unattempted`
+- L48 agility tier 4 6/3/0 `middle` `unattempted`
+- L49 strength tier 1 6/3/any `minimum` `unattempted`
+- L50 intelligence tier 4 12/6/6 `cap` `unattempted`
+- L51 chance tier 4 6/6/any `mp_heavy` `unattempted`
+- L52 agility tier 4 6/3/6 `range_heavy` `unattempted`
+- L53 strength tier 4 11/3/any `ap_heavy` `unattempted`
+- L54 intelligence tier 4 6/3/0 `middle` `unattempted`
+- L55 chance tier 1 6/3/any `minimum` `unattempted`
+- L56 agility tier 4 12/6/6 `cap` `unattempted`
+- L57 strength tier 4 6/6/any `mp_heavy` `unattempted`
+- L58 intelligence tier 4 6/3/6 `range_heavy` `unattempted`
+- L59 chance tier 4 11/3/any `ap_heavy` `unattempted`
+- L60 agility tier 4 6/3/0 `middle` `unattempted`
+- L61 strength tier 1 6/3/any `minimum` `unattempted`
+- L62 intelligence tier 4 12/6/6 `cap` `unattempted`
+- L63 chance tier 4 6/6/any `mp_heavy` `unattempted`
+- L64 agility tier 4 6/3/6 `range_heavy` `unattempted`
+- L65 strength tier 4 11/3/any `ap_heavy` `unattempted`
