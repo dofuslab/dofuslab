@@ -4,6 +4,7 @@ from check_build_discovery_level_diversity_matrix import validate_report
 from build_discovery_level_diversity_matrix import (
     LEVEL_DIVERSITY_TARGETS,
     REPORT_VERSION,
+    query_for_matrix_target,
     query_for_target,
     query_summary,
     target_summary,
@@ -73,6 +74,46 @@ def valid_report():
 class BuildDiscoveryLevelDiversityMatrixCheckTest(unittest.TestCase):
     def test_validate_report_accepts_complete_generated_matrix(self):
         self.assertEqual(validate_report(valid_report()), [])
+
+    def test_validate_report_accepts_target_subset(self):
+        target = targets_for_set("prod-level-sample")[0]
+        report = {
+            "reportVersion": REPORT_VERSION,
+            "targetCount": 1,
+            "generatedCount": 1,
+            "noBuildCount": 0,
+            "invalidCount": 0,
+            "results": [valid_result(target)],
+        }
+
+        self.assertEqual(
+            validate_report(
+                report,
+                target_set="prod-level-sample",
+                target_names={target.name},
+            ),
+            [],
+        )
+
+    def test_validate_report_checks_all_candidate_builds(self):
+        report = valid_report()
+        target = LEVEL_DIVERSITY_TARGETS[0]
+        query = query_for_matrix_target(target, query_limit=2)
+        result = report["results"][0]
+        invalid_candidate = {
+            **result["bestBuild"],
+            "totals": {**result["bestBuild"]["totals"], "AP": 99},
+        }
+        result["query"] = query_summary(query)
+        result["resultCount"] = 2
+        result["candidateBuilds"] = [result["bestBuild"], invalid_candidate]
+
+        failures = validate_report(report)
+
+        self.assertTrue(
+            any("candidateBuilds[1] current-code validation failed" in failure for failure in failures),
+            failures,
+        )
 
     def test_validate_report_accepts_boundary_target_set(self):
         results = [valid_result(target) for target in targets_for_set("boundary")]

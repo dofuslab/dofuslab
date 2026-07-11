@@ -3443,3 +3443,36 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - This addresses the evaluator concern that the generated matrix proves
   structural generation only, not the full PRD requirement for reviewed
   benchmark-quality, meaningfully diverse results.
+
+### 2026-07-10 Multi-Candidate Matrix Smoke
+
+- Added an opt-in `--query-limit` matrix override so selected target rows can
+  request more than the default top `1` generated build without changing the
+  historical target definitions.
+- Matrix artifacts now preserve all returned `candidateBuilds`,
+  `candidateBuildSummaries`, per-candidate validation errors, and a mechanical
+  diversity summary with candidate count, unique item-signature count, and max
+  shared items with the best build.
+- The matrix checker now validates every recorded candidate build, supports
+  target subsets through `--targets`, and remains backward-compatible with
+  legacy query payloads that did not record search parameters.
+- Generated a cheap 3-row prod-level smoke artifact with `--query-limit 3`:
+  - `.codex/state/build-discovery-prod-level-sample-multicandidate-smoke.json`
+  - `.codex/state/build-discovery-prod-level-sample-multicandidate-smoke.md`
+- Smoke result:
+  - level 1 Strength tier 1: `3` candidates, `3` unique item signatures,
+    max `7` shared items with best
+  - level 20 Intelligence tier 3: `3` candidates, `3` unique item signatures,
+    max `9` shared items with best
+  - level 40 Chance tier 1: `3` candidates, `3` unique item signatures,
+    max `8` shared items with best
+- This is still mechanical diversity evidence, not gameplay acceptance. The
+  next review step is deciding whether high-overlap variants count as
+  meaningful alternatives or whether the solver needs stronger package-level
+  diversity.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+  - `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-prod-level-sample-matrix.json --target-set prod-level-sample`
+  - `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-prod-level-sample-multicandidate-smoke.json --target-set prod-level-sample --targets prod_regen_level_1_strength_6_3_none_budget1,prod_regen_level_20_intelligence_7_4_1_budget3,prod_regen_level_40_chance_7_3_none_budget1`
+  - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix_check.py`

@@ -1,0 +1,1993 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T03:06:53.301070+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 3,
+  "generatedCount": 3,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_1_strength_6_3_none_budget1",
+        "className": "Iop",
+        "level": 1,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 1,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 272.13,
+        "weightedStatScore": 297.35,
+        "utilityStatScore": 117.95,
+        "genericDamageScore": 333.42,
+        "rawRotationDamageScore": 74.91,
+        "spellDamageScore": 74.91,
+        "profileBaselineDamageScore": 674.0,
+        "profileRelativeDamage": 0.1111,
+        "weaponDamageScore": 3.26,
+        "survivabilityScore": 4.14,
+        "weakestElementEhp": 138.0,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Strength": 0,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 129,
+          "Power": 0,
+          "Vitality": 138,
+          "Damage": 0,
+          "Earth Damage": 2,
+          "Critical": 0,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "766",
+            "internalId": null,
+            "name": "Koliet Aclou",
+            "type": "Amulet",
+            "level": 1,
+            "set": null
+          },
+          "belt": {
+            "id": "8536",
+            "internalId": null,
+            "name": "Muffin Belt",
+            "type": "Belt",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "weapon": {
+            "id": "9961",
+            "internalId": null,
+            "name": "Hurrian Hammer",
+            "type": "Hammer",
+            "level": 1,
+            "set": null
+          },
+          "shield": {
+            "id": "18676",
+            "internalId": null,
+            "name": "Lumberjack Shield",
+            "type": "Shield",
+            "level": 1,
+            "set": null
+          },
+          "ring_1": {
+            "id": "8537",
+            "internalId": null,
+            "name": "Pluswan",
+            "type": "Ring",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "boots": {
+            "id": "861",
+            "internalId": null,
+            "name": "Strength Boots",
+            "type": "Boots",
+            "level": 1,
+            "set": null
+          },
+          "hat": {
+            "id": "8162",
+            "internalId": null,
+            "name": "Pumpkwin Head",
+            "type": "Hat",
+            "level": 1,
+            "set": null
+          },
+          "cloak": {
+            "id": "8534",
+            "internalId": null,
+            "name": "S'loque Cape",
+            "type": "Cloak",
+            "level": 1,
+            "set": "Boon Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 272.13,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 129,
+          "Power": 0,
+          "Vitality": 138,
+          "Damage": 0,
+          "Earth Damage": 2,
+          "Critical": 0,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Koliet Aclou",
+          "Muffin Belt",
+          "Hurrian Hammer",
+          "Lumberjack Shield",
+          "Pluswan",
+          "Strength Boots",
+          "Pumpkwin Head",
+          "S'loque Cape"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 272.13,
+          "weightedStatScore": 297.35,
+          "utilityStatScore": 117.95,
+          "genericDamageScore": 333.42,
+          "rawRotationDamageScore": 74.91,
+          "spellDamageScore": 74.91,
+          "profileBaselineDamageScore": 674.0,
+          "profileRelativeDamage": 0.1111,
+          "weaponDamageScore": 3.26,
+          "survivabilityScore": 4.14,
+          "weakestElementEhp": 138.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Strength": 0,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 129,
+            "Power": 0,
+            "Vitality": 138,
+            "Damage": 0,
+            "Earth Damage": 2,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "766",
+              "internalId": null,
+              "name": "Koliet Aclou",
+              "type": "Amulet",
+              "level": 1,
+              "set": null
+            },
+            "belt": {
+              "id": "8536",
+              "internalId": null,
+              "name": "Muffin Belt",
+              "type": "Belt",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "weapon": {
+              "id": "9961",
+              "internalId": null,
+              "name": "Hurrian Hammer",
+              "type": "Hammer",
+              "level": 1,
+              "set": null
+            },
+            "shield": {
+              "id": "18676",
+              "internalId": null,
+              "name": "Lumberjack Shield",
+              "type": "Shield",
+              "level": 1,
+              "set": null
+            },
+            "ring_1": {
+              "id": "8537",
+              "internalId": null,
+              "name": "Pluswan",
+              "type": "Ring",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "boots": {
+              "id": "861",
+              "internalId": null,
+              "name": "Strength Boots",
+              "type": "Boots",
+              "level": 1,
+              "set": null
+            },
+            "hat": {
+              "id": "8162",
+              "internalId": null,
+              "name": "Pumpkwin Head",
+              "type": "Hat",
+              "level": 1,
+              "set": null
+            },
+            "cloak": {
+              "id": "8534",
+              "internalId": null,
+              "name": "S'loque Cape",
+              "type": "Cloak",
+              "level": 1,
+              "set": "Boon Set"
+            }
+          }
+        },
+        {
+          "score": 270.55,
+          "weightedStatScore": 298.4,
+          "utilityStatScore": 118.1,
+          "genericDamageScore": 329.38,
+          "rawRotationDamageScore": 74.0,
+          "spellDamageScore": 74.0,
+          "profileBaselineDamageScore": 674.0,
+          "profileRelativeDamage": 0.1098,
+          "weaponDamageScore": 9.75,
+          "survivabilityScore": 4.23,
+          "weakestElementEhp": 141.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Strength": 0,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 127,
+            "Power": 0,
+            "Vitality": 141,
+            "Damage": 1,
+            "Earth Damage": 1,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 4
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "766",
+              "internalId": null,
+              "name": "Koliet Aclou",
+              "type": "Amulet",
+              "level": 1,
+              "set": null
+            },
+            "belt": {
+              "id": "8536",
+              "internalId": null,
+              "name": "Muffin Belt",
+              "type": "Belt",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "weapon": {
+              "id": "30828",
+              "internalId": null,
+              "name": "Bounihime",
+              "type": "Sword",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "shield": {
+              "id": "18676",
+              "internalId": null,
+              "name": "Lumberjack Shield",
+              "type": "Shield",
+              "level": 1,
+              "set": null
+            },
+            "ring_1": {
+              "id": "8537",
+              "internalId": null,
+              "name": "Pluswan",
+              "type": "Ring",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "boots": {
+              "id": "861",
+              "internalId": null,
+              "name": "Strength Boots",
+              "type": "Boots",
+              "level": 1,
+              "set": null
+            },
+            "hat": {
+              "id": "8162",
+              "internalId": null,
+              "name": "Pumpkwin Head",
+              "type": "Hat",
+              "level": 1,
+              "set": null
+            },
+            "cloak": {
+              "id": "8534",
+              "internalId": null,
+              "name": "S'loque Cape",
+              "type": "Cloak",
+              "level": 1,
+              "set": "Boon Set"
+            }
+          }
+        },
+        {
+          "score": 269.59,
+          "weightedStatScore": 290.3,
+          "utilityStatScore": 117.8,
+          "genericDamageScore": 328.97,
+          "rawRotationDamageScore": 73.91,
+          "spellDamageScore": 73.91,
+          "profileBaselineDamageScore": 674.0,
+          "profileRelativeDamage": 0.1097,
+          "weaponDamageScore": 3.26,
+          "survivabilityScore": 3.75,
+          "weakestElementEhp": 125.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Strength": 0,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 126,
+            "Power": 0,
+            "Vitality": 125,
+            "Damage": 0,
+            "Earth Damage": 2,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "766",
+              "internalId": null,
+              "name": "Koliet Aclou",
+              "type": "Amulet",
+              "level": 1,
+              "set": null
+            },
+            "weapon": {
+              "id": "9961",
+              "internalId": null,
+              "name": "Hurrian Hammer",
+              "type": "Hammer",
+              "level": 1,
+              "set": null
+            },
+            "shield": {
+              "id": "18676",
+              "internalId": null,
+              "name": "Lumberjack Shield",
+              "type": "Shield",
+              "level": 1,
+              "set": null
+            },
+            "ring_1": {
+              "id": "8537",
+              "internalId": null,
+              "name": "Pluswan",
+              "type": "Ring",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "boots": {
+              "id": "861",
+              "internalId": null,
+              "name": "Strength Boots",
+              "type": "Boots",
+              "level": 1,
+              "set": null
+            },
+            "hat": {
+              "id": "8162",
+              "internalId": null,
+              "name": "Pumpkwin Head",
+              "type": "Hat",
+              "level": 1,
+              "set": null
+            },
+            "cloak": {
+              "id": "8534",
+              "internalId": null,
+              "name": "S'loque Cape",
+              "type": "Cloak",
+              "level": 1,
+              "set": "Boon Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 272.13,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 129,
+            "Power": 0,
+            "Vitality": 138,
+            "Damage": 0,
+            "Earth Damage": 2,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Koliet Aclou",
+            "Muffin Belt",
+            "Hurrian Hammer",
+            "Lumberjack Shield",
+            "Pluswan",
+            "Strength Boots",
+            "Pumpkwin Head",
+            "S'loque Cape"
+          ]
+        },
+        {
+          "score": 270.55,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 127,
+            "Power": 0,
+            "Vitality": 141,
+            "Damage": 1,
+            "Earth Damage": 1,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 4
+          },
+          "exos": {},
+          "items": [
+            "Koliet Aclou",
+            "Muffin Belt",
+            "Bounihime",
+            "Lumberjack Shield",
+            "Pluswan",
+            "Strength Boots",
+            "Pumpkwin Head",
+            "S'loque Cape"
+          ]
+        },
+        {
+          "score": 269.59,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 126,
+            "Power": 0,
+            "Vitality": 125,
+            "Damage": 0,
+            "Earth Damage": 2,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Koliet Aclou",
+            "Hurrian Hammer",
+            "Lumberjack Shield",
+            "Pluswan",
+            "Strength Boots",
+            "Pumpkwin Head",
+            "S'loque Cape"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 7
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 1498.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 244.3,
+          "candidatePoolsMs": 29.7,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 1.5,
+          "directCompletionMs": 0.0,
+          "beamSearchMs": 1223.1,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 1498.8
+        },
+        "resultCount": 3,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_20_intelligence_7_4_1_budget3",
+        "className": "Iop",
+        "level": 20,
+        "element": "intelligence",
+        "budgetTier": 3,
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 20,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 532.58,
+        "weightedStatScore": 802.72,
+        "utilityStatScore": 151.05,
+        "genericDamageScore": 834.33,
+        "rawRotationDamageScore": 320.96,
+        "spellDamageScore": 316.62,
+        "profileBaselineDamageScore": 1154.08,
+        "profileRelativeDamage": 0.2781,
+        "weaponDamageScore": 28.07,
+        "survivabilityScore": 6.08,
+        "weakestElementEhp": 194.37,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 95,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 1,
+          "Intelligence": 462,
+          "Power": 10,
+          "Vitality": 205,
+          "Damage": 0,
+          "Fire Damage": 26,
+          "Critical": 4,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Bearman Set": 7
+        },
+        "exos": {
+          "MP": {
+            "itemId": "6723",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "6723",
+            "internalId": null,
+            "name": "Bearman's Necklace",
+            "type": "Amulet",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "belt": {
+            "id": "6724",
+            "internalId": null,
+            "name": "Bearman's Belt",
+            "type": "Belt",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "weapon": {
+            "id": "6725",
+            "internalId": null,
+            "name": "Bearman's Staff",
+            "type": "Staff",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "ring_1": {
+            "id": "6722",
+            "internalId": null,
+            "name": "Bearman's Wedding Ring",
+            "type": "Ring",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "boots": {
+            "id": "6721",
+            "internalId": null,
+            "name": "Bearman's Boots",
+            "type": "Boots",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "hat": {
+            "id": "6719",
+            "internalId": null,
+            "name": "Bearman's Headgear",
+            "type": "Hat",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "cloak": {
+            "id": "6720",
+            "internalId": null,
+            "name": "Bearman's Cloak",
+            "type": "Cloak",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "shield": {
+            "id": "18666",
+            "internalId": null,
+            "name": "Gobball Shield",
+            "type": "Shield",
+            "level": 20,
+            "set": "Gobball Set"
+          },
+          "ring_2": {
+            "id": "8219",
+            "internalId": null,
+            "name": "Red Piwi Ring",
+            "type": "Ring",
+            "level": 10,
+            "set": "Red Piwi Set"
+          },
+          "pet": {
+            "id": "11971",
+            "internalId": null,
+            "name": "Teddybearbarian",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 532.58,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 1,
+          "Intelligence": 462,
+          "Power": 10,
+          "Vitality": 205,
+          "Damage": 0,
+          "Fire Damage": 26,
+          "Critical": 4,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Bearman Set": 7
+        },
+        "exos": {
+          "MP": {
+            "itemId": "6723",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Bearman's Necklace",
+          "Bearman's Belt",
+          "Bearman's Staff",
+          "Gobball Shield",
+          "Bearman's Wedding Ring",
+          "Red Piwi Ring",
+          "Bearman's Boots",
+          "Bearman's Headgear",
+          "Bearman's Cloak",
+          "Teddybearbarian"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 532.58,
+          "weightedStatScore": 802.72,
+          "utilityStatScore": 151.05,
+          "genericDamageScore": 834.33,
+          "rawRotationDamageScore": 320.96,
+          "spellDamageScore": 316.62,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.2781,
+          "weaponDamageScore": 28.07,
+          "survivabilityScore": 6.08,
+          "weakestElementEhp": 194.37,
+          "apStrategy": "level_diversity_flexible_ap",
+          "baseAllocation": {
+            "Intelligence": 95,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 1,
+            "Intelligence": 462,
+            "Power": 10,
+            "Vitality": 205,
+            "Damage": 0,
+            "Fire Damage": 26,
+            "Critical": 4,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Bearman Set": 7
+          },
+          "exos": {
+            "MP": {
+              "itemId": "6723",
+              "slot": "amulet"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "6723",
+              "internalId": null,
+              "name": "Bearman's Necklace",
+              "type": "Amulet",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "belt": {
+              "id": "6724",
+              "internalId": null,
+              "name": "Bearman's Belt",
+              "type": "Belt",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "weapon": {
+              "id": "6725",
+              "internalId": null,
+              "name": "Bearman's Staff",
+              "type": "Staff",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "ring_1": {
+              "id": "6722",
+              "internalId": null,
+              "name": "Bearman's Wedding Ring",
+              "type": "Ring",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "boots": {
+              "id": "6721",
+              "internalId": null,
+              "name": "Bearman's Boots",
+              "type": "Boots",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "hat": {
+              "id": "6719",
+              "internalId": null,
+              "name": "Bearman's Headgear",
+              "type": "Hat",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "cloak": {
+              "id": "6720",
+              "internalId": null,
+              "name": "Bearman's Cloak",
+              "type": "Cloak",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "shield": {
+              "id": "18666",
+              "internalId": null,
+              "name": "Gobball Shield",
+              "type": "Shield",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "ring_2": {
+              "id": "8219",
+              "internalId": null,
+              "name": "Red Piwi Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Red Piwi Set"
+            },
+            "pet": {
+              "id": "11971",
+              "internalId": null,
+              "name": "Teddybearbarian",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 528.07,
+          "weightedStatScore": 804.72,
+          "utilityStatScore": 151.05,
+          "genericDamageScore": 825.64,
+          "rawRotationDamageScore": 317.62,
+          "spellDamageScore": 313.95,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.2752,
+          "weaponDamageScore": 27.78,
+          "survivabilityScore": 5.48,
+          "weakestElementEhp": 175.4,
+          "apStrategy": "level_diversity_flexible_ap",
+          "baseAllocation": {
+            "Intelligence": 95,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 1,
+            "Intelligence": 462,
+            "Power": 0,
+            "Vitality": 185,
+            "Damage": 0,
+            "Fire Damage": 26,
+            "Critical": 7,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Bearman Set": 7
+          },
+          "exos": {
+            "MP": {
+              "itemId": "6723",
+              "slot": "amulet"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "6723",
+              "internalId": null,
+              "name": "Bearman's Necklace",
+              "type": "Amulet",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "belt": {
+              "id": "6724",
+              "internalId": null,
+              "name": "Bearman's Belt",
+              "type": "Belt",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "weapon": {
+              "id": "6725",
+              "internalId": null,
+              "name": "Bearman's Staff",
+              "type": "Staff",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "ring_1": {
+              "id": "6722",
+              "internalId": null,
+              "name": "Bearman's Wedding Ring",
+              "type": "Ring",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "boots": {
+              "id": "6721",
+              "internalId": null,
+              "name": "Bearman's Boots",
+              "type": "Boots",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "hat": {
+              "id": "6719",
+              "internalId": null,
+              "name": "Bearman's Headgear",
+              "type": "Hat",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "cloak": {
+              "id": "6720",
+              "internalId": null,
+              "name": "Bearman's Cloak",
+              "type": "Cloak",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "ring_2": {
+              "id": "8219",
+              "internalId": null,
+              "name": "Red Piwi Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Red Piwi Set"
+            },
+            "pet": {
+              "id": "11971",
+              "internalId": null,
+              "name": "Teddybearbarian",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 517.81,
+          "weightedStatScore": 803.0,
+          "utilityStatScore": 148.5,
+          "genericDamageScore": 799.69,
+          "rawRotationDamageScore": 307.64,
+          "spellDamageScore": 307.64,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.2666,
+          "weaponDamageScore": 21.38,
+          "survivabilityScore": 9.45,
+          "weakestElementEhp": 315.0,
+          "apStrategy": "level_diversity_flexible_ap",
+          "baseAllocation": {
+            "Intelligence": 95,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 1,
+            "Intelligence": 435,
+            "Power": 25,
+            "Vitality": 315,
+            "Damage": 0,
+            "Fire Damage": 25,
+            "Critical": 0,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Gobball Set": 8
+          },
+          "exos": {
+            "MP": {
+              "itemId": "2425",
+              "slot": "amulet"
+            },
+            "Range": {
+              "itemId": "2428",
+              "slot": "belt"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "2425",
+              "internalId": null,
+              "name": "Gobball Amulet",
+              "type": "Amulet",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "belt": {
+              "id": "2428",
+              "internalId": null,
+              "name": "Gobball Belt",
+              "type": "Belt",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "weapon": {
+              "id": "2416",
+              "internalId": null,
+              "name": "Gobball Hammer",
+              "type": "Hammer",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "shield": {
+              "id": "18666",
+              "internalId": null,
+              "name": "Gobball Shield",
+              "type": "Shield",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "ring_1": {
+              "id": "2419",
+              "internalId": null,
+              "name": "Bouze Lite Yeah's Ring",
+              "type": "Ring",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "boots": {
+              "id": "2422",
+              "internalId": null,
+              "name": "Gobboots",
+              "type": "Boots",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "hat": {
+              "id": "2411",
+              "internalId": null,
+              "name": "Gobball Headgear",
+              "type": "Hat",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "cloak": {
+              "id": "2414",
+              "internalId": null,
+              "name": "Gobball Cape",
+              "type": "Cloak",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "ring_2": {
+              "id": "8219",
+              "internalId": null,
+              "name": "Red Piwi Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Red Piwi Set"
+            },
+            "pet": {
+              "id": "11971",
+              "internalId": null,
+              "name": "Teddybearbarian",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 532.58,
+          "apStrategy": "level_diversity_flexible_ap",
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 1,
+            "Intelligence": 462,
+            "Power": 10,
+            "Vitality": 205,
+            "Damage": 0,
+            "Fire Damage": 26,
+            "Critical": 4,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Bearman Set": 7
+          },
+          "exos": {
+            "MP": {
+              "itemId": "6723",
+              "slot": "amulet"
+            }
+          },
+          "items": [
+            "Bearman's Necklace",
+            "Bearman's Belt",
+            "Bearman's Staff",
+            "Gobball Shield",
+            "Bearman's Wedding Ring",
+            "Red Piwi Ring",
+            "Bearman's Boots",
+            "Bearman's Headgear",
+            "Bearman's Cloak",
+            "Teddybearbarian"
+          ]
+        },
+        {
+          "score": 528.07,
+          "apStrategy": "level_diversity_flexible_ap",
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 1,
+            "Intelligence": 462,
+            "Power": 0,
+            "Vitality": 185,
+            "Damage": 0,
+            "Fire Damage": 26,
+            "Critical": 7,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Bearman Set": 7
+          },
+          "exos": {
+            "MP": {
+              "itemId": "6723",
+              "slot": "amulet"
+            }
+          },
+          "items": [
+            "Bearman's Necklace",
+            "Bearman's Belt",
+            "Bearman's Staff",
+            "Wild Sunflower Shield",
+            "Bearman's Wedding Ring",
+            "Red Piwi Ring",
+            "Bearman's Boots",
+            "Bearman's Headgear",
+            "Bearman's Cloak",
+            "Teddybearbarian"
+          ]
+        },
+        {
+          "score": 517.81,
+          "apStrategy": "level_diversity_flexible_ap",
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 1,
+            "Intelligence": 435,
+            "Power": 25,
+            "Vitality": 315,
+            "Damage": 0,
+            "Fire Damage": 25,
+            "Critical": 0,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Gobball Set": 8
+          },
+          "exos": {
+            "MP": {
+              "itemId": "2425",
+              "slot": "amulet"
+            },
+            "Range": {
+              "itemId": "2428",
+              "slot": "belt"
+            }
+          },
+          "items": [
+            "Gobball Amulet",
+            "Gobball Belt",
+            "Gobball Hammer",
+            "Gobball Shield",
+            "Bouze Lite Yeah's Ring",
+            "Red Piwi Ring",
+            "Gobboots",
+            "Gobball Headgear",
+            "Gobball Cape",
+            "Teddybearbarian"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 9
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 2403.7,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 111.1,
+          "candidatePoolsMs": 36.6,
+          "packageIndexMs": 18.3,
+          "packageSeedsMs": 25.8,
+          "directCompletionMs": 2211.2,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 0.2,
+          "totalFindBuildsMs": 2403.2
+        },
+        "resultCount": 3,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_40_chance_7_3_none_budget1",
+        "className": "Iop",
+        "level": 40,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 40,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 586.88,
+        "weightedStatScore": 869.1,
+        "utilityStatScore": 138.8,
+        "genericDamageScore": 975.4,
+        "rawRotationDamageScore": 413.18,
+        "spellDamageScore": 413.18,
+        "profileBaselineDamageScore": 1270.81,
+        "profileRelativeDamage": 0.3251,
+        "weaponDamageScore": 27.27,
+        "survivabilityScore": 9.15,
+        "weakestElementEhp": 301.0,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Chance": 147,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 432,
+          "Power": 70,
+          "Vitality": 301,
+          "Damage": 4,
+          "Water Damage": 15,
+          "Critical": 5,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Microset": 4
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "15995",
+            "internalId": null,
+            "name": "Pearl Amulet",
+            "type": "Amulet",
+            "level": 37,
+            "set": "Microset"
+          },
+          "ring_1": {
+            "id": "15992",
+            "internalId": null,
+            "name": "Tinkly Bell Ring",
+            "type": "Ring",
+            "level": 36,
+            "set": "Microset"
+          },
+          "hat": {
+            "id": "15994",
+            "internalId": null,
+            "name": "Nut Helmet",
+            "type": "Hat",
+            "level": 40,
+            "set": "Microset"
+          },
+          "cloak": {
+            "id": "15993",
+            "internalId": null,
+            "name": "Match Cape",
+            "type": "Cloak",
+            "level": 38,
+            "set": "Microset"
+          },
+          "belt": {
+            "id": "156",
+            "internalId": null,
+            "name": "Power Belt",
+            "type": "Belt",
+            "level": 31,
+            "set": null
+          },
+          "weapon": {
+            "id": "1368",
+            "internalId": null,
+            "name": "Arson Fire Lance",
+            "type": "Lance",
+            "level": 29,
+            "set": null
+          },
+          "shield": {
+            "id": "18687",
+            "internalId": null,
+            "name": "Akwadala Shield",
+            "type": "Shield",
+            "level": 40,
+            "set": "Akwadala Set"
+          },
+          "ring_2": {
+            "id": "1495",
+            "internalId": null,
+            "name": "Soff Ring",
+            "type": "Ring",
+            "level": 36,
+            "set": null
+          },
+          "boots": {
+            "id": "2374",
+            "internalId": null,
+            "name": "Tarsy's Boots",
+            "type": "Boots",
+            "level": 38,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 586.88,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 7,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 432,
+          "Power": 70,
+          "Vitality": 301,
+          "Damage": 4,
+          "Water Damage": 15,
+          "Critical": 5,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Microset": 4
+        },
+        "exos": {},
+        "items": [
+          "Pearl Amulet",
+          "Power Belt",
+          "Arson Fire Lance",
+          "Akwadala Shield",
+          "Tinkly Bell Ring",
+          "Soff Ring",
+          "Tarsy's Boots",
+          "Nut Helmet",
+          "Match Cape"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 586.88,
+          "weightedStatScore": 869.1,
+          "utilityStatScore": 138.8,
+          "genericDamageScore": 975.4,
+          "rawRotationDamageScore": 413.18,
+          "spellDamageScore": 413.18,
+          "profileBaselineDamageScore": 1270.81,
+          "profileRelativeDamage": 0.3251,
+          "weaponDamageScore": 27.27,
+          "survivabilityScore": 9.15,
+          "weakestElementEhp": 301.0,
+          "apStrategy": "level_diversity_flexible_ap",
+          "baseAllocation": {
+            "Chance": 147,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 0,
+            "Chance": 432,
+            "Power": 70,
+            "Vitality": 301,
+            "Damage": 4,
+            "Water Damage": 15,
+            "Critical": 5,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Microset": 4
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "15995",
+              "internalId": null,
+              "name": "Pearl Amulet",
+              "type": "Amulet",
+              "level": 37,
+              "set": "Microset"
+            },
+            "ring_1": {
+              "id": "15992",
+              "internalId": null,
+              "name": "Tinkly Bell Ring",
+              "type": "Ring",
+              "level": 36,
+              "set": "Microset"
+            },
+            "hat": {
+              "id": "15994",
+              "internalId": null,
+              "name": "Nut Helmet",
+              "type": "Hat",
+              "level": 40,
+              "set": "Microset"
+            },
+            "cloak": {
+              "id": "15993",
+              "internalId": null,
+              "name": "Match Cape",
+              "type": "Cloak",
+              "level": 38,
+              "set": "Microset"
+            },
+            "belt": {
+              "id": "156",
+              "internalId": null,
+              "name": "Power Belt",
+              "type": "Belt",
+              "level": 31,
+              "set": null
+            },
+            "weapon": {
+              "id": "1368",
+              "internalId": null,
+              "name": "Arson Fire Lance",
+              "type": "Lance",
+              "level": 29,
+              "set": null
+            },
+            "shield": {
+              "id": "18687",
+              "internalId": null,
+              "name": "Akwadala Shield",
+              "type": "Shield",
+              "level": 40,
+              "set": "Akwadala Set"
+            },
+            "ring_2": {
+              "id": "1495",
+              "internalId": null,
+              "name": "Soff Ring",
+              "type": "Ring",
+              "level": 36,
+              "set": null
+            },
+            "boots": {
+              "id": "2374",
+              "internalId": null,
+              "name": "Tarsy's Boots",
+              "type": "Boots",
+              "level": 38,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 585.2,
+          "weightedStatScore": 877.1,
+          "utilityStatScore": 138.8,
+          "genericDamageScore": 968.96,
+          "rawRotationDamageScore": 410.45,
+          "spellDamageScore": 410.45,
+          "profileBaselineDamageScore": 1270.81,
+          "profileRelativeDamage": 0.323,
+          "weaponDamageScore": 31.94,
+          "survivabilityScore": 10.37,
+          "weakestElementEhp": 341.0,
+          "apStrategy": "level_diversity_flexible_ap",
+          "baseAllocation": {
+            "Chance": 147,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 0,
+            "Chance": 432,
+            "Power": 70,
+            "Vitality": 341,
+            "Damage": 4,
+            "Water Damage": 14,
+            "Critical": 5,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Microset": 4
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "15995",
+              "internalId": null,
+              "name": "Pearl Amulet",
+              "type": "Amulet",
+              "level": 37,
+              "set": "Microset"
+            },
+            "ring_1": {
+              "id": "15992",
+              "internalId": null,
+              "name": "Tinkly Bell Ring",
+              "type": "Ring",
+              "level": 36,
+              "set": "Microset"
+            },
+            "hat": {
+              "id": "15994",
+              "internalId": null,
+              "name": "Nut Helmet",
+              "type": "Hat",
+              "level": 40,
+              "set": "Microset"
+            },
+            "cloak": {
+              "id": "15993",
+              "internalId": null,
+              "name": "Match Cape",
+              "type": "Cloak",
+              "level": 38,
+              "set": "Microset"
+            },
+            "belt": {
+              "id": "156",
+              "internalId": null,
+              "name": "Power Belt",
+              "type": "Belt",
+              "level": 31,
+              "set": null
+            },
+            "weapon": {
+              "id": "237",
+              "internalId": null,
+              "name": "Sargasse",
+              "type": "Hammer",
+              "level": 27,
+              "set": null
+            },
+            "shield": {
+              "id": "18687",
+              "internalId": null,
+              "name": "Akwadala Shield",
+              "type": "Shield",
+              "level": 40,
+              "set": "Akwadala Set"
+            },
+            "ring_2": {
+              "id": "1495",
+              "internalId": null,
+              "name": "Soff Ring",
+              "type": "Ring",
+              "level": 36,
+              "set": null
+            },
+            "boots": {
+              "id": "2374",
+              "internalId": null,
+              "name": "Tarsy's Boots",
+              "type": "Boots",
+              "level": 38,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 579.34,
+          "weightedStatScore": 868.6,
+          "utilityStatScore": 145.3,
+          "genericDamageScore": 942.84,
+          "rawRotationDamageScore": 399.39,
+          "spellDamageScore": 399.39,
+          "profileBaselineDamageScore": 1270.81,
+          "profileRelativeDamage": 0.3143,
+          "weaponDamageScore": 25.8,
+          "survivabilityScore": 9.76,
+          "weakestElementEhp": 321.0,
+          "apStrategy": "level_diversity_flexible_ap",
+          "baseAllocation": {
+            "Chance": 147,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 0,
+            "Chance": 407,
+            "Power": 70,
+            "Vitality": 321,
+            "Damage": 4,
+            "Water Damage": 15,
+            "Critical": 7,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Microset": 4
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "15995",
+              "internalId": null,
+              "name": "Pearl Amulet",
+              "type": "Amulet",
+              "level": 37,
+              "set": "Microset"
+            },
+            "ring_1": {
+              "id": "15992",
+              "internalId": null,
+              "name": "Tinkly Bell Ring",
+              "type": "Ring",
+              "level": 36,
+              "set": "Microset"
+            },
+            "hat": {
+              "id": "15994",
+              "internalId": null,
+              "name": "Nut Helmet",
+              "type": "Hat",
+              "level": 40,
+              "set": "Microset"
+            },
+            "cloak": {
+              "id": "15993",
+              "internalId": null,
+              "name": "Match Cape",
+              "type": "Cloak",
+              "level": 38,
+              "set": "Microset"
+            },
+            "belt": {
+              "id": "156",
+              "internalId": null,
+              "name": "Power Belt",
+              "type": "Belt",
+              "level": 31,
+              "set": null
+            },
+            "weapon": {
+              "id": "15990",
+              "internalId": null,
+              "name": "Rikiki Wand",
+              "type": "Wand",
+              "level": 40,
+              "set": null
+            },
+            "shield": {
+              "id": "18687",
+              "internalId": null,
+              "name": "Akwadala Shield",
+              "type": "Shield",
+              "level": 40,
+              "set": "Akwadala Set"
+            },
+            "ring_2": {
+              "id": "1495",
+              "internalId": null,
+              "name": "Soff Ring",
+              "type": "Ring",
+              "level": 36,
+              "set": null
+            },
+            "boots": {
+              "id": "2374",
+              "internalId": null,
+              "name": "Tarsy's Boots",
+              "type": "Boots",
+              "level": 38,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 586.88,
+          "apStrategy": "level_diversity_flexible_ap",
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 0,
+            "Chance": 432,
+            "Power": 70,
+            "Vitality": 301,
+            "Damage": 4,
+            "Water Damage": 15,
+            "Critical": 5,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Microset": 4
+          },
+          "exos": {},
+          "items": [
+            "Pearl Amulet",
+            "Power Belt",
+            "Arson Fire Lance",
+            "Akwadala Shield",
+            "Tinkly Bell Ring",
+            "Soff Ring",
+            "Tarsy's Boots",
+            "Nut Helmet",
+            "Match Cape"
+          ]
+        },
+        {
+          "score": 585.2,
+          "apStrategy": "level_diversity_flexible_ap",
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 0,
+            "Chance": 432,
+            "Power": 70,
+            "Vitality": 341,
+            "Damage": 4,
+            "Water Damage": 14,
+            "Critical": 5,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Microset": 4
+          },
+          "exos": {},
+          "items": [
+            "Pearl Amulet",
+            "Power Belt",
+            "Sargasse",
+            "Akwadala Shield",
+            "Tinkly Bell Ring",
+            "Soff Ring",
+            "Tarsy's Boots",
+            "Nut Helmet",
+            "Match Cape"
+          ]
+        },
+        {
+          "score": 579.34,
+          "apStrategy": "level_diversity_flexible_ap",
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 0,
+            "Chance": 407,
+            "Power": 70,
+            "Vitality": 321,
+            "Damage": 4,
+            "Water Damage": 15,
+            "Critical": 7,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Microset": 4
+          },
+          "exos": {},
+          "items": [
+            "Pearl Amulet",
+            "Power Belt",
+            "Rikiki Wand",
+            "Akwadala Shield",
+            "Tinkly Bell Ring",
+            "Soff Ring",
+            "Tarsy's Boots",
+            "Nut Helmet",
+            "Match Cape"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 8
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 6948.0,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 110.0,
+          "candidatePoolsMs": 48.6,
+          "packageIndexMs": 47.9,
+          "packageSeedsMs": 312.0,
+          "directCompletionMs": 6428.6,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 0.2,
+          "totalFindBuildsMs": 6947.4
+        },
+        "resultCount": 3,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

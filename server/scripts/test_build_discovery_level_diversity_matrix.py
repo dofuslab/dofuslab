@@ -8,6 +8,7 @@ from build_discovery_level_diversity_matrix import (
     build_matrix_report,
     completed_target_ids_from_split_reports,
     load_targets_from_file,
+    query_for_matrix_target,
     query_summary,
     render_markdown,
     selected_targets,
@@ -343,6 +344,15 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(minimum_query.per_signature_cap, 10)
         self.assertEqual(minimum_query.relevant_set_limit, 40)
 
+    def test_query_for_matrix_target_can_override_limit(self):
+        target = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]
+
+        query = query_for_matrix_target(target, query_limit=3)
+
+        self.assertEqual(query.limit, 3)
+        self.assertEqual(query.level, target.level)
+        self.assertEqual(query.ap_target, target.ap)
+
     def test_build_matrix_report_records_generated_and_empty_results(self):
         selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})
         seen_queries = []
@@ -398,6 +408,54 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(seen_queries[0].level, 50)
         self.assertEqual(report["results"][0]["validationErrors"], [])
         self.assertEqual(report["results"][0]["bestBuildSummary"]["items"], ["Example Amulet", "Example Sword"])
+        self.assertEqual(report["results"][0]["candidateValidationErrors"], [{"index": 0, "errors": []}])
+        self.assertEqual(report["results"][0]["candidateBuilds"], [report["results"][0]["bestBuild"]])
+        self.assertEqual(report["results"][0]["candidateBuildSummaries"], [report["results"][0]["bestBuildSummary"]])
+        self.assertEqual(
+            report["results"][0]["candidateDiversity"],
+            {"candidateCount": 1, "uniqueItemSignatureCount": 1, "maxSharedItemsWithBest": 0},
+        )
+
+    def test_build_matrix_report_passes_query_limit_override(self):
+        selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})
+        seen_limits = []
+
+        def fake_generator(query):
+            seen_limits.append(query.limit)
+            return {
+                "builds": [
+                    {
+                        "score": score,
+                        "totals": {
+                            "AP": query.ap_target,
+                            "MP": query.mp_target,
+                            "Range": query.target.range,
+                            "Strength": 100 + score,
+                            "Vitality": 100,
+                        },
+                        "sets": {},
+                        "exos": {},
+                        "conditionFailures": [],
+                        "items": {"amulet": {"name": f"Example Amulet {score}", "level": query.level}},
+                    }
+                    for score in range(query.limit)
+                ],
+            }
+
+        report = build_matrix_report(
+            selected,
+            generator=fake_generator,
+            generated_at="now",
+            target_set="level-diversity",
+            git_sha="abc123",
+            query_limit=3,
+        )
+
+        self.assertEqual(seen_limits, [3])
+        self.assertEqual(report["results"][0]["query"]["limit"], 3)
+        self.assertEqual(report["results"][0]["resultCount"], 3)
+        self.assertEqual(len(report["results"][0]["candidateBuilds"]), 3)
+        self.assertEqual(report["results"][0]["candidateDiversity"]["candidateCount"], 3)
 
     def test_target_manifest_report_records_targets_without_build_results(self):
         selected = targets_for_set("prod-level-sample")[:1]
@@ -416,6 +474,19 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(report["targets"][0]["query"]["className"], "Iop")
         self.assertEqual(report["targets"][0]["search"]["topK"], 25)
         self.assertNotIn("results", report)
+
+    def test_target_manifest_report_records_query_limit_override(self):
+        selected = targets_for_set("prod-level-sample")[:1]
+
+        report = target_manifest_report(
+            selected,
+            generated_at="now",
+            target_set="prod-level-sample",
+            git_sha="abc123",
+            query_limit=3,
+        )
+
+        self.assertEqual(report["targets"][0]["query"]["limit"], 3)
 
     def test_render_target_manifest_markdown_marks_non_evidence(self):
         selected = targets_for_set("prod-level-sample")[:1]
@@ -677,6 +748,45 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
 
         self.assertEqual([target.name for target in missing], [target.name])
 
+    def test_targets_missing_from_split_reports_treats_different_query_limit_as_stale(self):
+        selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            target = selected[0]
+            query = query_for_matrix_target(target, query_limit=1)
+            report = {
+                "reportVersion": REPORT_VERSION,
+                "results": [
+                    {
+                        "target": target_summary(target),
+                        "query": query_summary(query),
+                        "status": "generated",
+                        "resultCount": 1,
+                        "validationErrors": [],
+                        "bestBuild": {
+                            "score": 1,
+                            "totals": {
+                                "AP": query.ap_target,
+                                "MP": query.mp_target,
+                                "Range": query.target.range,
+                                "Strength": 100,
+                                "Vitality": 100,
+                            },
+                            "sets": {},
+                            "exos": {},
+                            "conditionFailures": [],
+                            "items": {"amulet": {"name": "Example Amulet", "level": query.level}},
+                        },
+                        "bestBuildSummary": {"score": 1},
+                    }
+                ],
+            }
+            (output_dir / f"{target.name}.json").write_text(json.dumps(report), encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "query payload is stale"):
+                targets_missing_from_split_reports(selected, output_dir, query_limit=3)
+
     def test_completed_target_ids_from_split_reports_missing_dir_is_empty(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             missing_dir = Path(temp_dir) / "missing"
@@ -720,6 +830,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(report["evidenceType"], "action_stat_feasibility")
         self.assertEqual(report["provenance"]["gitSha"], "def456")
         self.assertIn("action-stat feasibility evidence", markdown)
+        self.assertIn("| Target | Status | Candidates |", markdown)
 
     def test_target_file_report_records_target_file_provenance(self):
         payload = {

@@ -12,7 +12,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.build_discovery_level_diversity_matrix import (  # noqa: E402
     REPORT_VERSION,
-    query_for_target,
+    query_for_matrix_target,
+    query_summary,
     target_summary,
     targets_for_set,
     validate_best_build,
@@ -24,7 +25,6 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     characteristic_point_cost,
     characteristic_points_for_level,
     effective_exo_policy,
-    query_summary,
 )
 
 
@@ -33,34 +33,47 @@ def load_json(path: str | Path) -> dict[str, Any]:
         return json.load(file)
 
 
+def csv_filter(raw_value: str | None) -> set[str] | None:
+    if not raw_value or raw_value == "all":
+        return None
+    return {value.strip() for value in raw_value.split(",") if value.strip()}
+
+
 def slot_types_by_name() -> dict[str, tuple[str, ...]]:
     return dict(SLOTS)
 
 
-def validate_full_build_artifact(result: dict[str, Any], target_by_id: dict[str, Any]) -> list[str]:
+SEARCH_QUERY_FIELDS = {"limit", "topK", "beamWidth", "perSignatureCap", "relevantSetLimit"}
+
+
+def query_payload_matches_artifact(query: Any, artifact_query: Any) -> bool:
+    if not isinstance(artifact_query, dict):
+        return False
+    expected = query_summary(query)
+    legacy_expected = {
+        key: value
+        for key, value in expected.items()
+        if key not in SEARCH_QUERY_FIELDS
+    }
+    return artifact_query == expected or artifact_query == legacy_expected
+
+
+def validate_single_build_artifact(
+    *,
+    target_id: str,
+    target: Any,
+    query: Any,
+    build: dict[str, Any],
+    label: str,
+) -> list[str]:
     failures: list[str] = []
-    target_id = result.get("target", {}).get("id", "unknown")
-    target = target_by_id.get(target_id)
-    if target is None:
-        return failures
 
-    query = query_for_target(target)
-    if result.get("target") != target_summary(target):
-        failures.append(f"{target_id}: target does not match current target definition")
-    if result.get("query") != query_summary(query):
-        failures.append(f"{target_id}: query does not match current query definition")
+    for error in validate_best_build(target, query, build):
+        failures.append(f"{target_id}: {label} current-code validation failed: {error}")
 
-    best_build = result.get("bestBuild")
-    if not isinstance(best_build, dict):
-        failures.append(f"{target_id}: missing full bestBuild artifact")
-        return failures
-
-    for error in validate_best_build(target, query, best_build):
-        failures.append(f"{target_id}: current-code validation failed: {error}")
-
-    base_allocation = best_build.get("baseAllocation")
+    base_allocation = build.get("baseAllocation")
     if not isinstance(base_allocation, dict):
-        failures.append(f"{target_id}: missing baseAllocation")
+        failures.append(f"{target_id}: {label} missing baseAllocation")
     else:
         available_points = characteristic_points_for_level(target.level)
         allocated_primary_stats = {
@@ -72,7 +85,7 @@ def validate_full_build_artifact(result: dict[str, Any], target_by_id: dict[str,
         spent_points = sum(characteristic_point_cost(int(value)) for value in allocated_primary_stats.values())
         if spent_points > available_points:
             failures.append(
-                f"{target_id}: baseAllocation spends {spent_points} characteristic points, "
+                f"{target_id}: {label} baseAllocation spends {spent_points} characteristic points, "
                 f"above level {target.level} budget {available_points}"
             )
         vitality_allocation = base_allocation.get("Vitality")
@@ -80,31 +93,92 @@ def validate_full_build_artifact(result: dict[str, Any], target_by_id: dict[str,
             expected_vitality = available_points - spent_points
             if int(vitality_allocation) != expected_vitality:
                 failures.append(
-                    f"{target_id}: baseAllocation Vitality is {vitality_allocation}, expected {expected_vitality}"
+                    f"{target_id}: {label} baseAllocation Vitality is {vitality_allocation}, expected {expected_vitality}"
                 )
 
     slot_types = slot_types_by_name()
     seen_item_ids: set[str] = set()
-    for slot_name, item in (best_build.get("items") or {}).items():
+    for slot_name, item in (build.get("items") or {}).items():
         allowed_types = slot_types.get(slot_name)
         if allowed_types is None:
-            failures.append(f"{target_id}: unknown item slot {slot_name}")
+            failures.append(f"{target_id}: {label} unknown item slot {slot_name}")
             continue
         item_type = item.get("type") or item.get("itemType")
         if item_type not in allowed_types:
-            failures.append(f"{target_id}: {slot_name} item type {item_type} not in {allowed_types}")
+            failures.append(f"{target_id}: {label} {slot_name} item type {item_type} not in {allowed_types}")
         item_id = item.get("id") or item.get("dofusID")
         if item_id:
             if item_id in seen_item_ids:
-                failures.append(f"{target_id}: duplicate item id {item_id}")
+                failures.append(f"{target_id}: {label} duplicate item id {item_id}")
             seen_item_ids.add(item_id)
         tier = availability_tier_for_item(item)
         if tier > query.budget_tier:
-            failures.append(f"{target_id}: {slot_name} item availability tier {tier} exceeds budget tier {query.budget_tier}")
+            failures.append(
+                f"{target_id}: {label} {slot_name} item availability tier {tier} exceeds budget tier {query.budget_tier}"
+            )
 
-    exos = best_build.get("exos") or {}
+    exos = build.get("exos") or {}
     if effective_exo_policy(query) == "none" and exos:
-        failures.append(f"{target_id}: generated exos present under effective exoPolicy=none")
+        failures.append(f"{target_id}: {label} generated exos present under effective exoPolicy=none")
+
+    return failures
+
+
+def validate_full_build_artifact(result: dict[str, Any], target_by_id: dict[str, Any]) -> list[str]:
+    failures: list[str] = []
+    target_id = result.get("target", {}).get("id", "unknown")
+    target = target_by_id.get(target_id)
+    if target is None:
+        return failures
+
+    artifact_query = result.get("query") or {}
+    query_limit = artifact_query.get("limit")
+    query = query_for_matrix_target(
+        target,
+        query_limit=query_limit if isinstance(query_limit, int) else None,
+    )
+    if result.get("target") != target_summary(target):
+        failures.append(f"{target_id}: target does not match current target definition")
+    if not query_payload_matches_artifact(query, result.get("query")):
+        failures.append(f"{target_id}: query does not match current query definition")
+
+    best_build = result.get("bestBuild")
+    if not isinstance(best_build, dict):
+        failures.append(f"{target_id}: missing full bestBuild artifact")
+        return failures
+
+    failures.extend(
+        validate_single_build_artifact(
+            target_id=target_id,
+            target=target,
+            query=query,
+            build=best_build,
+            label="bestBuild",
+        )
+    )
+
+    candidate_builds = result.get("candidateBuilds")
+    if candidate_builds is not None:
+        if not isinstance(candidate_builds, list):
+            failures.append(f"{target_id}: candidateBuilds must be a list")
+        elif len(candidate_builds) != result.get("resultCount"):
+            failures.append(
+                f"{target_id}: candidateBuilds length {len(candidate_builds)} does not match resultCount {result.get('resultCount')}"
+            )
+        else:
+            for index, candidate in enumerate(candidate_builds):
+                if not isinstance(candidate, dict):
+                    failures.append(f"{target_id}: candidateBuilds[{index}] must be an object")
+                    continue
+                failures.extend(
+                    validate_single_build_artifact(
+                        target_id=target_id,
+                        target=target,
+                        query=query,
+                        build=candidate,
+                        label=f"candidateBuilds[{index}]",
+                    )
+                )
 
     return failures
 
@@ -114,6 +188,7 @@ def validate_report(
     target_set: str = "level-diversity",
     *,
     allow_no_build: bool = False,
+    target_names: set[str] | None = None,
 ) -> list[str]:
     failures: list[str] = []
     if report.get("reportVersion") != REPORT_VERSION:
@@ -122,6 +197,8 @@ def validate_report(
         )
 
     targets = targets_for_set(target_set)
+    if target_names is not None:
+        targets = tuple(target for target in targets if target.name in target_names)
     target_by_id = {target.name: target for target in targets}
     expected_ids = set(target_by_id)
     results = report.get("results", [])
@@ -190,12 +267,14 @@ def main() -> None:
         default="level-diversity",
     )
     parser.add_argument("--allow-no-build", action="store_true")
+    parser.add_argument("--targets", help="Comma-separated target ids to validate as a subset.")
     args = parser.parse_args()
 
     failures = validate_report(
         load_json(args.report),
         target_set=args.target_set,
         allow_no_build=args.allow_no_build,
+        target_names=csv_filter(args.targets),
     )
     if failures:
         for failure in failures:

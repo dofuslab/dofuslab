@@ -7,7 +7,7 @@ import json
 import re
 import subprocess
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable, Iterable
@@ -21,7 +21,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     SLOTS,
     BuildDiscoveryQuery,
     build_discovery_response,
-    query_summary,
+    query_summary as prototype_query_summary,
 )
 from scripts.build_discovery_level_diversity_targets import (  # noqa: E402
     AP_MP_RANGE_COVERAGE_TARGETS,
@@ -41,6 +41,17 @@ from scripts.build_discovery_level_diversity_targets import (  # noqa: E402
 
 
 REPORT_VERSION = "build-discovery-level-diversity-matrix-v1"
+
+
+def query_summary(query: BuildDiscoveryQuery) -> dict[str, Any]:
+    return {
+        **prototype_query_summary(query),
+        "limit": query.limit,
+        "topK": query.top_k,
+        "beamWidth": query.beam_width,
+        "perSignatureCap": query.per_signature_cap,
+        "relevantSetLimit": query.relevant_set_limit,
+    }
 
 
 def load_json(path: str | Path) -> dict[str, Any]:
@@ -250,6 +261,17 @@ def targets_for_set(target_set: str) -> tuple[LevelDiversityTarget, ...]:
     raise ValueError(f"Unsupported target set: {target_set}")
 
 
+def query_for_matrix_target(
+    target: LevelDiversityTarget,
+    *,
+    query_limit: int | None = None,
+) -> BuildDiscoveryQuery:
+    query = query_for_target(target)
+    if query_limit is not None:
+        query = replace(query, limit=query_limit)
+    return query
+
+
 def target_source_for_set(target_set: str) -> str:
     if target_set == "target-file":
         return "target file"
@@ -317,6 +339,32 @@ def compact_build_summary(build: dict[str, Any] | None) -> dict[str, Any] | None
     }
 
 
+def build_item_signature(build: dict[str, Any]) -> tuple[str, ...]:
+    signature = []
+    for item in (build.get("items") or {}).values():
+        item_id = item.get("id") or item.get("dofusID") or item.get("name")
+        if item_id:
+            signature.append(str(item_id))
+    return tuple(sorted(signature))
+
+
+def candidate_diversity_summary(builds: list[dict[str, Any]]) -> dict[str, Any]:
+    signatures = [build_item_signature(build) for build in builds]
+    unique_signatures = {signature for signature in signatures}
+    best_signature = set(signatures[0]) if signatures else set()
+    max_shared_with_best = 0
+    if len(signatures) > 1:
+        max_shared_with_best = max(
+            len(best_signature & set(signature))
+            for signature in signatures[1:]
+        )
+    return {
+        "candidateCount": len(builds),
+        "uniqueItemSignatureCount": len(unique_signatures),
+        "maxSharedItemsWithBest": max_shared_with_best,
+    }
+
+
 def current_git_sha() -> str | None:
     repo_root = Path(__file__).resolve().parents[2]
     try:
@@ -375,16 +423,30 @@ def matrix_entry(
 ) -> dict[str, Any]:
     builds = response.get("builds", [])
     best_build = builds[0] if builds else None
+    candidate_validation_errors = [
+        {
+            "index": index,
+            "errors": validate_best_build(target, query, build),
+        }
+        for index, build in enumerate(builds)
+    ]
+    invalid_candidates = [
+        validation for validation in candidate_validation_errors if validation["errors"]
+    ]
     validation_errors = validate_best_build(target, query, best_build)
-    status = "no_build" if not best_build else "invalid" if validation_errors else "generated"
+    status = "no_build" if not best_build else "invalid" if invalid_candidates else "generated"
     return {
         "target": target_summary(target),
         "query": query_summary(query),
         "status": status,
         "resultCount": len(builds),
         "validationErrors": validation_errors,
+        "candidateValidationErrors": candidate_validation_errors,
         "bestBuild": best_build,
         "bestBuildSummary": compact_build_summary(best_build),
+        "candidateBuilds": builds,
+        "candidateBuildSummaries": [compact_build_summary(build) for build in builds],
+        "candidateDiversity": candidate_diversity_summary(builds),
         "warnings": response.get("warnings", []),
         "diagnostics": response.get("diagnostics", {}),
         "cache": response.get("cache", {}),
@@ -431,10 +493,11 @@ def build_matrix_report(
     target_set: str = "level-diversity",
     git_sha: str | None = None,
     target_source: str | None = None,
+    query_limit: int | None = None,
 ) -> dict[str, Any]:
     entries = []
     for target in targets:
-        query = query_for_target(target)
+        query = query_for_matrix_target(target, query_limit=query_limit)
         query.validate()
         response = generator(query)
         entries.append(matrix_entry(target, response, query))
@@ -477,6 +540,7 @@ def split_report_target_id(report: dict[str, Any]) -> str | None:
 def validate_existing_split_report_for_target(
     report: dict[str, Any],
     target: LevelDiversityTarget,
+    query: BuildDiscoveryQuery,
     path: Path,
 ) -> None:
     if report.get("reportVersion") != REPORT_VERSION:
@@ -485,7 +549,6 @@ def validate_existing_split_report_for_target(
         raise ValueError(f"Existing split report {path} does not match target {target.name}.")
 
     result = report["results"][0]
-    query = query_for_target(target)
     if result.get("target") != target_summary(target):
         raise ValueError(f"Existing split report {path} target payload is stale for {target.name}.")
     if result.get("query") != query_summary(query):
@@ -498,17 +561,22 @@ def validate_existing_split_report_for_target(
             )
 
 
-def existing_split_report_for_target(path: Path, target: LevelDiversityTarget) -> dict[str, Any] | None:
+def existing_split_report_for_target(
+    path: Path,
+    target: LevelDiversityTarget,
+    query: BuildDiscoveryQuery,
+) -> dict[str, Any] | None:
     if not path.exists():
         return None
     report = load_json(path)
-    validate_existing_split_report_for_target(report, target, path)
+    validate_existing_split_report_for_target(report, target, query, path)
     return report
 
 
 def completed_target_ids_from_split_reports(
     targets: Iterable[LevelDiversityTarget],
     split_output_dir: str | Path,
+    query_limit: int | None = None,
 ) -> set[str]:
     output_dir = Path(split_output_dir)
     if not output_dir.exists():
@@ -517,9 +585,10 @@ def completed_target_ids_from_split_reports(
     completed: set[str] = set()
     used_stems: set[str] = set()
     for target in targets:
+        query = query_for_matrix_target(target, query_limit=query_limit)
         stem = unique_artifact_stem_for_target(target, used_stems)
         path = output_dir / f"{stem}.json"
-        report = existing_split_report_for_target(path, target)
+        report = existing_split_report_for_target(path, target, query)
         if report is None:
             continue
         result = report["results"][0]
@@ -531,9 +600,14 @@ def completed_target_ids_from_split_reports(
 def targets_missing_from_split_reports(
     targets: Iterable[LevelDiversityTarget],
     split_output_dir: str | Path,
+    query_limit: int | None = None,
 ) -> tuple[LevelDiversityTarget, ...]:
     selected_targets = tuple(targets)
-    completed = completed_target_ids_from_split_reports(selected_targets, split_output_dir)
+    completed = completed_target_ids_from_split_reports(
+        selected_targets,
+        split_output_dir,
+        query_limit=query_limit,
+    )
     return tuple(target for target in selected_targets if target.name not in completed)
 
 
@@ -547,6 +621,7 @@ def write_split_matrix_reports(
     git_sha: str | None = None,
     target_source: str | None = None,
     resume_existing: bool = False,
+    query_limit: int | None = None,
 ) -> dict[str, Any]:
     generated_at = generated_at or datetime.now(timezone.utc).isoformat()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -554,14 +629,14 @@ def write_split_matrix_reports(
     manifest_rows = []
     used_stems: set[str] = set()
     for target in targets:
-        query = query_for_target(target)
+        query = query_for_matrix_target(target, query_limit=query_limit)
         query.validate()
 
         stem = unique_artifact_stem_for_target(target, used_stems)
 
         json_path = output_dir / f"{stem}.json"
         md_path = output_dir / f"{stem}.md"
-        existing_report = existing_split_report_for_target(json_path, target) if resume_existing else None
+        existing_report = existing_split_report_for_target(json_path, target, query) if resume_existing else None
         if existing_report:
             one_row_report = existing_report
             entry = existing_report["results"][0]
@@ -622,10 +697,11 @@ def target_manifest_report(
     target_set: str,
     git_sha: str | None,
     target_source: str | None = None,
+    query_limit: int | None = None,
 ) -> dict[str, Any]:
     rows = []
     for target in targets:
-        query = query_for_target(target)
+        query = query_for_matrix_target(target, query_limit=query_limit)
         rows.append(
             {
                 "target": target_summary(target),
@@ -717,8 +793,8 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"No build: `{report['noBuildCount']}`",
         f"Invalid: `{report.get('invalidCount', 0)}`",
         "",
-        "| Target | Status | Score | Miss ms | AP/MP/Range | Main stat | Vitality | Validation | Sets | Items |",
-        "|---|---:|---:|---:|---|---:|---:|---|---|---|",
+        "| Target | Status | Candidates | Score | Miss ms | AP/MP/Range | Main stat | Vitality | Validation | Sets | Items |",
+        "|---|---:|---:|---:|---:|---|---:|---:|---|---|---|",
     ]
     for entry in report["results"]:
         target = entry["target"]
@@ -743,10 +819,19 @@ def render_markdown(report: dict[str, Any]) -> str:
         sets = ", ".join(f"{name} x{count}" for name, count in summary.get("sets", {}).items())
         items = ", ".join(summary.get("items", []))
         validation = "; ".join(entry.get("validationErrors", []))
+        diversity = entry.get("candidateDiversity") or {}
+        candidates = diversity.get("candidateCount", entry.get("resultCount", ""))
+        unique_signatures = diversity.get("uniqueItemSignatureCount")
+        candidate_label = (
+            f"{candidates} ({unique_signatures} unique)"
+            if unique_signatures is not None
+            else str(candidates)
+        )
         lines.append(
-            "| {} | {} | {} | {} | {} | {} | {} | {} | {} | {} |".format(
+            "| {} | {} | {} | {} | {} | {} | {} | {} | {} | {} | {} |".format(
                 target_label(target),
                 entry["status"],
+                candidate_label,
                 summary.get("score", ""),
                 elapsed,
                 action_stats,
@@ -786,6 +871,7 @@ def main() -> None:
     parser.add_argument("--target-manifest-md", help="Write selected target/query manifest Markdown without running the solver.")
     parser.add_argument("--output-json", help="Write JSON report to this path.")
     parser.add_argument("--output-md", help="Write Markdown summary to this path.")
+    parser.add_argument("--query-limit", type=int, help="Override BuildDiscoveryQuery.limit for generated matrix rows.")
     parser.add_argument("--split-output-dir", help="Write one JSON/Markdown report per selected target.")
     parser.add_argument(
         "--missing-from-split-dir",
@@ -797,6 +883,8 @@ def main() -> None:
     args = parser.parse_args()
     if args.resume_existing and not args.split_output_dir:
         parser.error("--resume-existing requires --split-output-dir.")
+    if args.query_limit is not None and args.query_limit < 1:
+        parser.error("--query-limit must be positive.")
 
     target_source = None
     if args.target_file:
@@ -818,7 +906,11 @@ def main() -> None:
         budget_tiers=parse_int_filter(args.budget_tiers),
     )
     if args.missing_from_split_dir:
-        targets = targets_missing_from_split_reports(targets, args.missing_from_split_dir)
+        targets = targets_missing_from_split_reports(
+            targets,
+            args.missing_from_split_dir,
+            query_limit=args.query_limit,
+        )
     if not targets:
         parser.error(f"No targets selected from {target_source or args.target_set}.")
 
@@ -829,6 +921,7 @@ def main() -> None:
             target_set=target_set,
             git_sha=args.git_sha or current_git_sha(),
             target_source=target_source,
+            query_limit=args.query_limit,
         )
         if args.target_manifest_json:
             target_manifest_json = Path(args.target_manifest_json)
@@ -858,6 +951,7 @@ def main() -> None:
             git_sha=args.git_sha,
             target_source=target_source,
             resume_existing=args.resume_existing,
+            query_limit=args.query_limit,
         )
         report = split_result["aggregateReport"]
     else:
@@ -867,6 +961,7 @@ def main() -> None:
             target_set=target_set,
             git_sha=args.git_sha,
             target_source=target_source,
+            query_limit=args.query_limit,
         )
 
     if args.output_json:
