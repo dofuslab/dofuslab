@@ -114,11 +114,12 @@ def linearized_final_score_weights(
     generic_damage_weight: float,
 ) -> dict[str, float]:
     reference_stats = profile_damage_reference_stats()
-    for stat in collect_objective_stats(items, sets):
+    objective_stats = collect_objective_stats(items, sets)
+    for stat in objective_stats:
         reference_stats.setdefault(stat, active_base_stats().get(stat, 0))
     baseline = cheap_final_score_for_stats(reference_stats, generic_damage_weight)
     weights: dict[str, float] = {}
-    for stat in collect_objective_stats(items, sets):
+    for stat in objective_stats:
         step = 100 if stat in {"Strength", "Intelligence", "Chance", "Agility", "Power", "Vitality", "Initiative"} else 1
         next_stats = dict(reference_stats)
         next_stats[stat] = next_stats.get(stat, 0) + step

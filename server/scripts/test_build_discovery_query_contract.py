@@ -19,10 +19,12 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     BuildState,
     DEFAULT_AP_STRATEGIES,
     BuildTarget,
+    active_profile_item_score,
     build_query_from_cli_args,
     build_discovery_response,
     base_ap_for_level,
     candidate_pool_for_slot,
+    configure_damage_profile,
     find_diverse_builds,
     effective_ap_strategies_for_target,
     effective_exo_policy,
@@ -251,6 +253,24 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
 
         index_mock.assert_called_once_with(50)
         self.assertEqual([item["dofusID"] for item in items], ["low"])
+
+    def test_active_profile_item_score_caches_per_damage_profile(self):
+        item = {
+            "dofusID": "elemental",
+            "stats": [{"stat": "Strength", "maxStat": 100}],
+            "buffs": [],
+        }
+
+        configure_damage_profile("strength")
+        strength_score = active_profile_item_score(item)
+        configure_damage_profile("intelligence")
+        intelligence_score = active_profile_item_score(item)
+        configure_damage_profile("strength")
+
+        self.assertNotEqual(strength_score, intelligence_score)
+        self.assertEqual(item["_score_by_profile"]["strength"], strength_score)
+        self.assertEqual(item["_score_by_profile"]["intelligence"], intelligence_score)
+        self.assertEqual(active_profile_item_score(item), strength_score)
 
     def test_indexed_candidates_include_previous_normal_gear_bucket(self):
         index = {

@@ -143,6 +143,12 @@ review before accepting Milestone 2 evidence.
   final solver assignment, returned 3 builds, and took `8631.0ms` total.
   Callback collection is architecturally aligned
   with the PRD, but still needs static-index/fast-rerank performance work.
+- Item scores are cached per active damage profile on cached item records. This
+  reduces repeated same-process item scoring during matrix slices without
+  reusing a strength score for intelligence/chance/agility rows.
+- An 8-row score-cache smoke had warm load times around `159.2ms-311.1ms`
+  after the first cold row, but model build (`1725.2ms-1902.8ms`) and solve
+  (`3629.8ms-5070.8ms`) remain the main bottlenecks.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.

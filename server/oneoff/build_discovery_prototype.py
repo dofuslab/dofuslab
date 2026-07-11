@@ -1221,6 +1221,14 @@ def item_score(item: dict[str, Any]) -> float:
     return score_stats(dict(stats))
 
 
+def active_profile_item_score(item: dict[str, Any]) -> float:
+    score_by_profile = item.setdefault("_score_by_profile", {})
+    profile_name = ACTIVE_DAMAGE_PROFILE.name
+    if profile_name not in score_by_profile:
+        score_by_profile[profile_name] = item_score(item)
+    return score_by_profile[profile_name]
+
+
 def expected_item_effect_stats(item: dict[str, Any]) -> dict[str, float]:
     stats: dict[str, float] = defaultdict(float)
     item_id = item.get("dofusID")
@@ -1458,7 +1466,7 @@ def load_all_item_records() -> tuple[dict[str, Any], ...]:
     for item in items:
         item["_name"] = get_name(item)
         item["_stats"] = normalize_stats(item.get("stats", []))
-        item["_score"] = item_score(item)
+        item["_score"] = active_profile_item_score(item)
     return items
 
 
@@ -1471,7 +1479,7 @@ def load_items(
     items = load_all_item_records()
     indexed_item_ids = indexed_candidate_item_ids(target.level)
     for item in items:
-        item["_score"] = item_score(item)
+        item["_score"] = active_profile_item_score(item)
     candidates = [
         item
         for item in items

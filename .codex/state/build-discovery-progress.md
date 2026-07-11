@@ -4125,3 +4125,49 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python -m py_compile oneoff/build_discovery_cpsat_experiment.py scripts/build_discovery_level_diversity_matrix.py scripts/test_build_discovery_cpsat_experiment.py scripts/test_build_discovery_level_diversity_matrix.py`
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-callback-smoke-matrix.json --target-set milestone2-level200 --elements strength --budget-tiers 4 --ap-targets 12 --mp-targets 6 --range-targets none --expected-solver cpsat`
   - Host: `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-cpsat-callback-smoke-matrix.json --target-set milestone2-level200 --elements strength --budget-tiers 4 --ap-targets 12 --mp-targets 6 --range-targets none --expected-solver cpsat`
+
+### 2026-07-11 Per-Profile Item Score Cache
+
+- Added per-active-damage-profile item score caching to cached item records.
+- This preserves profile correctness while avoiding full item rescoring on every
+  same-process `load_items` call.
+- Avoided double-scanning objective stats when computing linearized final-score
+  objective weights.
+- Added a query contract test proving the same item caches separate strength
+  and intelligence scores and restores the correct cached strength score.
+- Generated and validated an 8-row Docker CP-SAT score-cache smoke:
+  - `.codex/state/build-discovery-cpsat-scorecache-smoke-matrix.json`
+  - `.codex/state/build-discovery-cpsat-scorecache-smoke-matrix.md`
+  - `.codex/state/build-discovery-cpsat-scorecache-smoke-split/`
+- Slice:
+  - elements: strength, chance
+  - budget tiers: 1, 4
+  - AP: 7
+  - MP: 3
+  - Range: none, 6
+  - callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `8`
+  - generated: `8`
+  - invalid: `0`
+  - solver statuses: `4` optimal, `4` feasible
+- Runtime:
+  - elapsed min/avg/max: `5783.4ms / 6853.1ms / 8878.8ms`
+  - load min/avg/max: `159.2ms / 418.0ms / 1963.2ms`
+  - warm load after first row: roughly `159.2ms-311.1ms`
+  - model min/avg/max: `1725.2ms / 1802.7ms / 1902.8ms`
+  - solve min/avg/max: `3629.8ms / 4503.1ms / 5070.8ms`
+- Interpretation:
+  - score caching helps warm load time
+  - the p95 target is still blocked by model build and solve time
+  - next optimization should move toward static solver/model index structures,
+    not more item-score caching
+- Verification passed:
+  - `python server\scripts\test_build_discovery_query_contract.py`
+  - `python server\scripts\test_build_discovery_cpsat_experiment.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\oneoff\build_discovery_prototype.py server\oneoff\build_discovery_cpsat_experiment.py server\scripts\test_build_discovery_query_contract.py`
+  - Docker: `python scripts/test_build_discovery_query_contract.py`
+  - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python -m py_compile oneoff/build_discovery_prototype.py oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_query_contract.py`
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-scorecache-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`
