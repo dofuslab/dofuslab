@@ -2949,6 +2949,8 @@ def optimize_base_allocation(
     best_state: BuildState | None = None
     for base_points in legal_base_allocation_options(ACTIVE_TARGET_LEVEL):
         allocated_state = state_with_base_allocation(state, base_points, primary_stat)
+        if unmet_item_conditions(allocated_state):
+            continue
         allocated_state.score = final_score_state(
             allocated_state,
             generic_damage_weight=generic_damage_weight,
@@ -2959,7 +2961,7 @@ def optimize_base_allocation(
         if best_state is None or allocated_state.score > best_state.score:
             best_state = allocated_state
     if best_state is None:
-        raise RuntimeError("No legal base stat allocation found.")
+        raise RuntimeError("No legal base stat allocation satisfies item conditions.")
     return best_state
 
 
@@ -3191,21 +3193,21 @@ def completed_valid_builds(
         cheap_valid_states,
         BEAM_FINAL_SCORE_LIMIT,
     )
-    valid_final_states = [
-        valid_state
-        for valid_state in (
-            optimize_base_allocation(
-                cheap_valid_state,
-                generic_damage_weight=generic_damage_weight,
-                weapon_damage_weight=weapon_damage_weight,
-                survivability_weight=survivability_weight,
-                negative_resistance_penalty_weight=negative_resistance_penalty_weight,
-                primary_stat=ACTIVE_DAMAGE_PROFILE.primary_stat,
+    valid_final_states = []
+    for cheap_valid_state in cheap_valid_states:
+        try:
+            valid_final_states.append(
+                optimize_base_allocation(
+                    cheap_valid_state,
+                    generic_damage_weight=generic_damage_weight,
+                    weapon_damage_weight=weapon_damage_weight,
+                    survivability_weight=survivability_weight,
+                    negative_resistance_penalty_weight=negative_resistance_penalty_weight,
+                    primary_stat=ACTIVE_DAMAGE_PROFILE.primary_stat,
+                )
             )
-            for cheap_valid_state in cheap_valid_states
-        )
-        if valid_state is not None
-    ]
+        except RuntimeError:
+            continue
     return valid_final_states
 
 
@@ -3794,14 +3796,17 @@ def direct_valid_completed_state(
         return None
 
     state_with_exos.ap_strategy = matched_strategy.name
-    state_with_exos = optimize_base_allocation(
-        state_with_exos,
-        generic_damage_weight=generic_damage_weight,
-        weapon_damage_weight=weapon_damage_weight,
-        survivability_weight=survivability_weight,
-        negative_resistance_penalty_weight=negative_resistance_penalty_weight,
-        primary_stat=ACTIVE_DAMAGE_PROFILE.primary_stat,
-    )
+    try:
+        state_with_exos = optimize_base_allocation(
+            state_with_exos,
+            generic_damage_weight=generic_damage_weight,
+            weapon_damage_weight=weapon_damage_weight,
+            survivability_weight=survivability_weight,
+            negative_resistance_penalty_weight=negative_resistance_penalty_weight,
+            primary_stat=ACTIVE_DAMAGE_PROFILE.primary_stat,
+        )
+    except RuntimeError:
+        return None
     return state_with_exos
 
 

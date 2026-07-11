@@ -852,12 +852,22 @@ def reconstruct_state(
                 for slot, item in state.slots.items()
             },
         }
-    state = optimize_base_allocation(
-        state,
-        generic_damage_weight=generic_damage_weight,
-        survivability_weight=survivability_weight,
-        negative_resistance_penalty_weight=negative_resistance_penalty_weight,
-    )
+    try:
+        state = optimize_base_allocation(
+            state,
+            generic_damage_weight=generic_damage_weight,
+            survivability_weight=survivability_weight,
+            negative_resistance_penalty_weight=negative_resistance_penalty_weight,
+        )
+    except RuntimeError as exc:
+        return None, {
+            "reason": "base_allocation_conditions",
+            "message": str(exc),
+            "items": {
+                slot: {"id": item["dofusID"], "name": item["_name"]}
+                for slot, item in state.slots.items()
+            },
+        }
     state.score = final_score_state(
         state,
         generic_damage_weight=generic_damage_weight,
