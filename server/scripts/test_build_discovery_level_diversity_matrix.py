@@ -7,9 +7,11 @@ from build_discovery_level_diversity_matrix import (
     REPORT_VERSION,
     build_matrix_report,
     load_targets_from_file,
+    query_summary,
     render_markdown,
     selected_targets,
     target_name_from_row,
+    target_summary,
     targets_from_file,
     targets_for_set,
     unique_artifact_stem_for_target,
@@ -461,6 +463,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             output_dir = Path(temp_dir)
             first_target = selected[0]
+            first_query = query_for_target(first_target)
             first_report = {
                 "reportVersion": REPORT_VERSION,
                 "generatedAt": "old",
@@ -473,17 +476,8 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
                 "invalidCount": 0,
                 "results": [
                     {
-                        "target": {
-                            "id": first_target.name,
-                            "className": "Iop",
-                            "level": first_target.level,
-                            "element": first_target.element,
-                            "budgetTier": first_target.budget_tier,
-                            "apTarget": first_target.ap,
-                            "mpTarget": first_target.mp,
-                            "rangeTarget": first_target.range_target,
-                        },
-                        "query": {},
+                        "target": target_summary(first_target),
+                        "query": query_summary(first_query),
                         "status": "no_build",
                         "resultCount": 0,
                         "validationErrors": ["no build returned"],
@@ -519,11 +513,43 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
             output_dir = Path(temp_dir)
             target = selected[0]
             bad_report = {
+                "reportVersion": REPORT_VERSION,
                 "results": [{"target": {"id": "different_target"}}],
             }
             (output_dir / f"{target.name}.json").write_text(json.dumps(bad_report), encoding="utf-8")
 
             with self.assertRaisesRegex(ValueError, "does not match target"):
+                write_split_matrix_reports(
+                    selected,
+                    output_dir=output_dir,
+                    generator=lambda query: {"builds": []},
+                    resume_existing=True,
+                )
+
+    def test_write_split_matrix_reports_resume_existing_rejects_stale_query(self):
+        selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            target = selected[0]
+            query = query_for_target(target)
+            stale_report = {
+                "reportVersion": REPORT_VERSION,
+                "results": [
+                    {
+                        "target": target_summary(target),
+                        "query": {**query_summary(query), "budgetTier": 99},
+                        "status": "no_build",
+                        "resultCount": 0,
+                        "validationErrors": ["no build returned"],
+                        "bestBuild": None,
+                        "bestBuildSummary": None,
+                    }
+                ],
+            }
+            (output_dir / f"{target.name}.json").write_text(json.dumps(stale_report), encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "query payload is stale"):
                 write_split_matrix_reports(
                     selected,
                     output_dir=output_dir,

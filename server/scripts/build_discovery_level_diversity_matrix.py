@@ -468,12 +468,35 @@ def split_report_target_id(report: dict[str, Any]) -> str | None:
     return target.get("id")
 
 
+def validate_existing_split_report_for_target(
+    report: dict[str, Any],
+    target: LevelDiversityTarget,
+    path: Path,
+) -> None:
+    if report.get("reportVersion") != REPORT_VERSION:
+        raise ValueError(f"Existing split report {path} has unsupported reportVersion {report.get('reportVersion')}.")
+    if split_report_target_id(report) != target.name:
+        raise ValueError(f"Existing split report {path} does not match target {target.name}.")
+
+    result = report["results"][0]
+    query = query_for_target(target)
+    if result.get("target") != target_summary(target):
+        raise ValueError(f"Existing split report {path} target payload is stale for {target.name}.")
+    if result.get("query") != query_summary(query):
+        raise ValueError(f"Existing split report {path} query payload is stale for {target.name}.")
+    if result.get("status") == "generated":
+        validation_errors = validate_best_build(target, query, result.get("bestBuild"))
+        if validation_errors:
+            raise ValueError(
+                f"Existing split report {path} generated build no longer validates for {target.name}: {validation_errors}"
+            )
+
+
 def existing_split_report_for_target(path: Path, target: LevelDiversityTarget) -> dict[str, Any] | None:
     if not path.exists():
         return None
     report = load_json(path)
-    if split_report_target_id(report) != target.name:
-        raise ValueError(f"Existing split report {path} does not match target {target.name}.")
+    validate_existing_split_report_for_target(report, target, path)
     return report
 
 

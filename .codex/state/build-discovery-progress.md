@@ -3250,6 +3250,20 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
   - `python -m py_compile server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix_check.py`
 
+### 2026-07-10 Safer Split Resume Validation
+
+- Tightened `--resume-existing` split matrix behavior so existing one-row JSON
+  reports are reusable only when:
+  - report version matches the current matrix report version
+  - target payload matches the current target definition
+  - query payload matches the current `query_for_target()` serialization
+  - generated rows still pass current `validate_best_build()`
+- This reduces the risk that a restarted batch silently mixes stale query
+  evidence into a fresh aggregate report.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range
