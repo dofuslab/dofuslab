@@ -20,6 +20,16 @@ import oneoff.sync_buff
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+def regenerate_build_discovery_index():
+    if os.getenv("SKIP_BUILD_DISCOVERY_INDEX_REGEN") == "1":
+        return
+
+    from oneoff.generate_build_discovery_index import write_index
+
+    print("\nRegenerating build discovery index...")
+    write_index(source="db")
+
+
 def wipeSpellsAndBuffs():
     db.session.query(ModelSpell).delete()
     db.session.query(ModelSpellVariantPair).delete()
@@ -118,3 +128,4 @@ def add_buffs():
 add_class_to_classes()
 add_classes_and_spells()
 add_buffs()
+regenerate_build_discovery_index()

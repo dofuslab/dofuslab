@@ -145,6 +145,7 @@ class GenerateBuildDiscoveryIndexTest(unittest.TestCase):
             candidate_ids,
             {
                 "endgame_normal",
+                "late_mid_normal",
                 "low_dofus",
                 "mid_trophy",
                 "late_mid_dofus",
@@ -176,11 +177,20 @@ class GenerateBuildDiscoveryIndexTest(unittest.TestCase):
     def test_generated_index_includes_dataset_version(self):
         with patch("oneoff.generate_build_discovery_index.load_db_item_records", return_value=[]):
             with patch("oneoff.generate_build_discovery_index.load_db_sets", return_value={}):
-                index = build_index(source="db")
+                with patch(
+                    "oneoff.generate_build_discovery_index.derive_all_spell_profiles",
+                    return_value={
+                        "profileVersion": "test-profile-version",
+                        "levels": [200],
+                        "profiles": [{"className": "Cra"}],
+                    },
+                ):
+                    index = build_index(source="db")
 
         self.assertEqual(index["schemaVersion"], 1)
         self.assertIn("generatedAt", index)
         self.assertEqual(index["datasetVersion"], index["generatedAt"])
+        self.assertEqual(index["spellProfiles"]["profiles"], [{"className": "Cra"}])
 
     def test_build_index_defaults_to_db_source_for_importable_generated_builds(self):
         db_item = {
@@ -219,6 +229,8 @@ class GenerateBuildDiscoveryIndexTest(unittest.TestCase):
         db_items.assert_not_called()
         db_sets.assert_not_called()
         self.assertEqual(index["items"], [])
+        self.assertEqual(index["spellProfiles"]["profiles"], [])
+        self.assertEqual(index["spellProfiles"]["source"], "unavailable_for_json_index_source")
 
     def test_db_item_loader_disables_generated_index_path_during_call(self):
         original_path = "existing-generated-index.json"

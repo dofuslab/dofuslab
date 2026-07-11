@@ -30,6 +30,10 @@ from oneoff.build_discovery_prototype import (
     get_name,
     normalize_stats,
 )
+from oneoff.build_discovery_spell_profiles import (
+    PROFILE_VERSION as SPELL_PROFILE_VERSION,
+    derive_all_spell_profiles,
+)
 
 LEVEL_BUCKETS: tuple[tuple[str, int, int], ...] = (
     ("1-99", 1, 99),
@@ -233,6 +237,17 @@ def load_db_sets() -> dict[str, dict[str, Any]]:
         return prototype.load_sets()
 
 
+def build_spell_profiles(source: str) -> dict[str, Any]:
+    if source == "db":
+        return derive_all_spell_profiles()
+    return {
+        "profileVersion": SPELL_PROFILE_VERSION,
+        "levels": [],
+        "profiles": [],
+        "source": "unavailable_for_json_index_source",
+    }
+
+
 
 def item_flags(item: dict[str, Any]) -> dict[str, Any]:
     stats = item.get("_stats") or normalize_stats(item.get("stats", []))
@@ -343,6 +358,7 @@ def build_index(source: str = "db") -> dict[str, Any]:
             for set_id, set_obj in sets.items()
         },
         "indexes": build_item_indexes(items),
+        "spellProfiles": build_spell_profiles(source),
     }
 
 
@@ -370,7 +386,8 @@ def write_index(output_path: str | None = None, source: str = "db") -> dict[str,
 
     print(
         f"Wrote build discovery index to {output_path} "
-        f"({len(index['items'])} items, {len(index['sets'])} sets)."
+        f"({len(index['items'])} items, {len(index['sets'])} sets, "
+        f"{len(index['spellProfiles']['profiles'])} spell profiles)."
     )
     return index
 

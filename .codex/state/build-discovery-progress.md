@@ -7071,3 +7071,19 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python -m unittest discover -s server/scripts -p "test_build_discovery_prod_candidate_generated_results.py"`
   - `git diff --check`
 - Status: this substantially strengthens complete-query feasibility evidence, but does not prove build quality. Several non-Iop generated builds still look odd or low-vitality and should be treated as pre-optimization review candidates.
+
+### 2026-07-11 Derived Spell/Range Profiles From Game Data
+
+- Added `oneoff.build_discovery_spell_profiles`:
+  - derives stateless class/element spell profiles from synced DB spell data
+  - selects one spell per variant pair by expected damage/AP at reference stats
+  - records selected spell metadata, cast limits, range, expected damage/AP, and range evidence
+  - derives `rangeImportance` and `rangeSoftWeight` from weighted spell range evidence
+- Embedded derived spell profiles into `build_discovery_index.json` under `spellProfiles`.
+- Hooked `sync_class` to regenerate the Build Discovery index after class/spell/buff sync, so derived spell/range profiles refresh when class spell data changes.
+- Added `.codex/state/build-discovery-derived-game-data-plan-20260711.md` with the generated profile contract and next derived data targets.
+- Docker DB smoke generated `/tmp/build_discovery_index_with_spell_profiles.json`:
+  - `3753` items
+  - `519` sets
+  - `304` spell profiles
+  - sample outputs: Cra Strength level 200 `vital` Range, Iop Strength level 200 `low` Range, Enutrof Chance level 200 `vital` Range
