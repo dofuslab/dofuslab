@@ -629,6 +629,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
                 "requestedCandidateLimit": 3,
                 "collectionMode": "callback",
                 "maxSharedItems": 8,
+                "maxSharedItemsEnforced": False,
                 "objectiveWeights": {"Strength": 1.0},
             }
 
@@ -665,6 +666,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(response["diagnostics"]["requestedCandidateLimit"], 3)
         self.assertEqual(response["diagnostics"]["collectionMode"], "callback")
         self.assertEqual(response["diagnostics"]["maxSharedItems"], 8)
+        self.assertFalse(response["diagnostics"]["maxSharedItemsEnforced"])
         self.assertEqual(response["diagnostics"]["objectiveWeights"], {"Strength": 1.0})
         self.assertEqual(response["solverVersion"], "oneoff.build_discovery_cpsat_experiment")
 

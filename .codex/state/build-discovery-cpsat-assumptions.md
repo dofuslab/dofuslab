@@ -139,8 +139,9 @@ review before accepting Milestone 2 evidence.
   strength/chance, budget tiers 1/4, AP `7/12`, MP `3/6`, Range `none/6`;
   elapsed times were `5306.4ms-8987.8ms`, so all rows remain above `5s`.
 - First real-data callback smoke for strength tier 4 `12/6/None` collected
-  10 valid callback candidates from 14 feasible callbacks, returned 3 builds,
-  and took `8318.3ms` total. Callback collection is architecturally aligned
+  10 valid callback candidates from 14 feasible callbacks, represented the
+  final solver assignment, returned 3 builds, and took `8631.0ms` total.
+  Callback collection is architecturally aligned
   with the PRD, but still needs static-index/fast-rerank performance work.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay

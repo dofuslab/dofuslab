@@ -490,13 +490,20 @@ def next_item_by_id(items: list[dict[str, Any]], item_id: str) -> dict[str, Any]
     raise KeyError(item_id)
 
 
-def state_signature(state: BuildState) -> frozenset[str]:
+def item_signature(state: BuildState) -> frozenset[str]:
     return frozenset(item["dofusID"] for item in state.slots.values())
+
+
+def state_signature(state: BuildState) -> tuple[frozenset[str], tuple[tuple[str, str], ...]]:
+    return (
+        item_signature(state),
+        tuple(sorted(state.exos.items())),
+    )
 
 
 def append_unique_candidate(
     candidates: list[BuildState],
-    seen_valid_signatures: set[frozenset[str]],
+    seen_valid_signatures: set[tuple[frozenset[str], tuple[tuple[str, str], ...]]],
     state: BuildState,
 ) -> bool:
     signature = state_signature(state)
@@ -529,7 +536,9 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
         self.valid_solution_count = 0
         self.invalid_solution_count = 0
         self.candidates: list[BuildState] = []
-        self.seen_valid_signatures: set[frozenset[str]] = set()
+        self.seen_valid_signatures: set[tuple[frozenset[str], tuple[tuple[str, str], ...]]] = set()
+        self.candidate_events: list[dict[str, Any]] = []
+        self.invalid_events: list[dict[str, Any]] = []
 
     def OnSolutionCallback(self) -> None:
         self.solution_count += 1
@@ -545,9 +554,28 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
         )
         if state is None:
             self.invalid_solution_count += 1
+            if len(self.invalid_events) < 5:
+                self.invalid_events.append(
+                    {
+                        "callbackIndex": self.solution_count,
+                        "wallTimeMs": round(self.WallTime() * 1000, 1),
+                        "reason": invalid_reason,
+                    }
+                )
             return
         if append_unique_candidate(self.candidates, self.seen_valid_signatures, state):
             self.valid_solution_count += 1
+            self.candidate_events.append(
+                {
+                    "callbackIndex": self.solution_count,
+                    "rankBeforeRerank": len(self.candidate_events) + 1,
+                    "wallTimeMs": round(self.WallTime() * 1000, 1),
+                    "objective": round(self.ObjectiveValue() / SCALE, 2),
+                    "score": round(state.score, 2),
+                    "itemIds": sorted(item_signature(state), key=lambda value: (len(value), value)),
+                    "exos": dict(sorted(state.exos.items())),
+                }
+            )
 
 
 def build_summary(state: BuildState) -> dict[str, Any]:
@@ -692,7 +720,7 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
     max_shared_item_cuts: list[frozenset[str]] = []
     attempts = []
     candidates: list[BuildState] = []
-    seen_valid_signatures: set[frozenset[str]] = set()
+    seen_valid_signatures: set[tuple[frozenset[str], tuple[tuple[str, str], ...]]] = set()
     best_solver_status = None
     total_start = time.perf_counter()
 
@@ -730,7 +758,10 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
         candidates = list(collector.candidates)
         seen_valid_signatures = set(collector.seen_valid_signatures)
 
-        if status in (cp_model.OPTIMAL, cp_model.FEASIBLE) and len(candidates) < args.candidate_limit:
+        final_considered = status in (cp_model.OPTIMAL, cp_model.FEASIBLE)
+        final_added = False
+        final_represented = False
+        if status in (cp_model.OPTIMAL, cp_model.FEASIBLE):
             final_state, final_invalid_reason = reconstruct_state(
                 solver,
                 slot_item_vars,
@@ -740,7 +771,9 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
                 target,
             )
             if final_state is not None:
-                append_unique_candidate(candidates, seen_valid_signatures, final_state)
+                final_signature = state_signature(final_state)
+                final_added = append_unique_candidate(candidates, seen_valid_signatures, final_state)
+                final_represented = final_added or final_signature in seen_valid_signatures
             else:
                 collector.invalid_solution_count += 1
         else:
@@ -757,7 +790,12 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
                 "solutionCallbackCount": collector.solution_count,
                 "validCallbackCandidateCount": collector.valid_solution_count,
                 "invalidCallbackCandidateCount": collector.invalid_solution_count,
+                "finalAssignmentConsidered": final_considered,
+                "finalAssignmentAdded": final_added,
+                "finalAssignmentRepresented": final_represented,
                 "finalInvalidReason": final_invalid_reason,
+                "callbackCandidateEvents": collector.candidate_events,
+                "callbackInvalidEvents": collector.invalid_events,
                 "modelStats": model_stats,
             }
         )
@@ -809,7 +847,7 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
             if state is not None:
                 if append_unique_candidate(candidates, seen_valid_signatures, state):
                     if args.max_shared_items is not None:
-                        max_shared_item_cuts.append(state_signature(state))
+                        max_shared_item_cuts.append(item_signature(state))
                     attempt["validCandidate"] = {
                         "score": round(state.score, 2),
                         "totals": {
@@ -834,7 +872,15 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
 
     total_ms = (time.perf_counter() - total_start) * 1000
     ranked_candidates = sorted(candidates, key=lambda state: state.score, reverse=True)
+    if len(ranked_candidates) > args.candidate_limit:
+        ranked_candidates = ranked_candidates[: args.candidate_limit]
     best_state = ranked_candidates[0] if ranked_candidates else None
+    warnings = []
+    max_shared_items_enforced = collection_mode != "callback" or args.max_shared_items is None
+    if collection_mode == "callback" and args.max_shared_items is not None:
+        warnings.append(
+            "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+        )
     response = {
         "query": {
             **query_summary(query),
@@ -848,10 +894,12 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
         },
         "attempts": attempts,
         "itemCount": len(items),
-        "candidateCount": len(candidates),
+        "candidateCount": len(ranked_candidates),
         "requestedCandidateLimit": args.candidate_limit,
         "collectionMode": collection_mode,
         "maxSharedItems": args.max_shared_items,
+        "maxSharedItemsEnforced": max_shared_items_enforced,
+        "warnings": warnings,
         "objectiveWeights": {
             stat: round(weight, 4)
             for stat, weight in sorted(objective_weights.items())
@@ -869,6 +917,8 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
             serialize_build(state, sets)
             for state in ranked_candidates[: args.output_build_limit]
         ]
+    if warnings:
+        response["warnings"] = warnings
     return response
 
 

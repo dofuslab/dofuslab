@@ -4078,9 +4078,12 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - builds one CP-SAT model
   - uses `CpSolverSolutionCallback` to collect feasible candidates during the
     optimization solve
-  - dedupes valid candidate item signatures
+  - dedupes valid candidate signatures by item shell plus exo choices
   - reconstructs the final solver assignment after solve completion so the
-    final optimal/feasible assignment is not missed
+    final optimal/feasible assignment is represented even when the callback
+    buffer filled earlier
+  - records per-candidate callback order, wall time, objective, score, item
+    IDs, and exo choices
 - Kept the previous repeated no-good solve path as `collectionMode=repeated` for
   diagnostics.
 - Wired callback mode through the matrix harness:
@@ -4103,15 +4106,16 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Result:
   - generated: `1/1`
   - result count: `3`
-  - solver status: `OPTIMAL`
+  - solver status: `FEASIBLE`
   - callback feasible solution count: `14`
   - valid callback candidate count: `10`
+  - final assignment considered/added/represented: `true/true/true`
   - candidate diversity: `3` unique item signatures returned, max shared
-    items with best `7`
+    items with best `8`
 - Runtime:
-  - model: `1521.5ms`
-  - solve: `4877.8ms`
-  - total elapsed: `8318.3ms`
+  - model: `1526.1ms`
+  - solve: `5084.1ms`
+  - total elapsed: `8631.0ms`
 - Verification passed:
   - `python server\scripts\test_build_discovery_cpsat_experiment.py`
   - `python server\scripts\test_build_discovery_level_diversity_matrix.py`

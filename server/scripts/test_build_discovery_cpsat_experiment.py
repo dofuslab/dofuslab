@@ -35,15 +35,18 @@ try:
     from ortools.sat.python import cp_model
     from oneoff.build_discovery_cpsat_experiment import (
         CandidateCollectionCallback,
+        state_signature,
         build_model,
         reconstruct_state,
     )
-    from oneoff.build_discovery_prototype import BuildTarget, configure_damage_profile
+    from oneoff.build_discovery_prototype import BuildState, BuildTarget, configure_damage_profile
 except Exception as exc:  # pragma: no cover - exercised only in incomplete envs.
     cp_model = None
     CandidateCollectionCallback = None
+    state_signature = None
     build_model = None
     reconstruct_state = None
+    BuildState = None
     BuildTarget = None
     configure_damage_profile = None
     IMPORT_ERROR = exc
@@ -262,6 +265,57 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertGreaterEqual(len(collector.candidates), 1)
         self.assertEqual(collector.candidates[0].stats["AP"], 7)
         self.assertEqual(model_stats["slotVarCount"], len(slot_item_vars))
+
+    def test_candidate_signature_distinguishes_exo_choices(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        gear = {
+            "amulet": item("amulet", "Amulet"),
+            "ring_1": item("ring", "Ring"),
+        }
+        ap_exo_state = BuildState(slots=gear, exos={"AP": "ring"})
+        mp_exo_state = BuildState(slots=gear, exos={"MP": "ring"})
+
+        self.assertNotEqual(state_signature(ap_exo_state), state_signature(mp_exo_state))
+
+    def test_callback_records_candidate_event_metadata(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        configure_damage_profile("strength")
+        target = BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False)
+        items = base_fixture_items()
+        sets = fixture_sets()
+        model, slot_item_vars, exo_vars, _model_stats = build_model(
+            items,
+            sets,
+            target,
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
+            exo_policy="none",
+        )
+        collector = CandidateCollectionCallback(
+            slot_item_vars=slot_item_vars,
+            exo_vars=exo_vars,
+            items=items,
+            sets=sets,
+            target=target,
+            candidate_limit=3,
+        )
+        solver = cp_model.CpSolver()
+        solver.parameters.max_time_in_seconds = 2
+        solver.parameters.num_search_workers = 1
+
+        solver.Solve(model, collector)
+
+        self.assertGreaterEqual(len(collector.candidate_events), 1)
+        event = collector.candidate_events[0]
+        self.assertIn("callbackIndex", event)
+        self.assertIn("wallTimeMs", event)
+        self.assertIn("objective", event)
+        self.assertIn("itemIds", event)
+        self.assertIn("exos", event)
 
     def test_experiment_groups_equivalent_dofus_slots(self):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")

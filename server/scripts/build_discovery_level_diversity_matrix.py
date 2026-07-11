@@ -989,6 +989,7 @@ def cpsat_build_discovery_response(query: BuildDiscoveryQuery, args: argparse.Na
         "requestedCandidateLimit",
         "collectionMode",
         "maxSharedItems",
+        "maxSharedItemsEnforced",
         "objectiveWeights",
     ):
         if key in response:
