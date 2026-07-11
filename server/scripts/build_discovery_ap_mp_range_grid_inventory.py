@@ -34,6 +34,7 @@ DEFAULT_ARTIFACTS = (
     ".codex/state/build-discovery-m3-level-coverage-sample-20260711.json",
     ".codex/state/build-discovery-m3-level-coverage-2-sample-20260711.json",
     ".codex/state/build-discovery-m3-level-coverage-3-sample-20260711.json",
+    ".codex/state/build-discovery-m3-level-coverage-4-sample-20260711.json",
     ".codex/state/build-discovery-m3-next-level-sample-20260711.json",
     ".codex/state/build-discovery-m3-prod-level-sample-optional-slots.json",
     ".codex/state/build-discovery-m3-thin-bucket-sample-20260711.json",
@@ -456,6 +457,56 @@ def select_next_unproven_targets(
     return selected
 
 
+def select_next_zero_resolved_level_targets(
+    rows: list[dict[str, Any]],
+    resolved: set[tuple[int, str, int, int, int, int | None]],
+    attempted: set[tuple[int, str, int, int, int, int | None]] | None,
+    limit: int,
+) -> list[dict[str, Any]]:
+    selected = []
+    attempted = attempted or set()
+    zero_levels = [
+        level
+        for level in sorted({row["level"] for row in rows})
+        if all(row_key(row) not in resolved for row in rows if row["level"] == level)
+    ]
+    element_rank = {element: index for index, element in enumerate(DEFAULT_ELEMENTS)}
+    profile_rank = {
+        "minimum": 0,
+        "middle": 1,
+        "mp_heavy": 2,
+        "range_heavy": 3,
+        "ap_heavy": 4,
+        "cap": 5,
+    }
+
+    def with_bucket(row: dict[str, Any]) -> dict[str, Any]:
+        return {
+            **row,
+            "profileBucket": profile_bucket(row),
+            "evidenceStatus": "retry" if row_key(row) in attempted else "unattempted",
+        }
+
+    def target_sort_key(row: dict[str, Any], preferred_element: str) -> tuple[Any, ...]:
+        range_sort = -1 if row["rangeTarget"] is None else row["rangeTarget"]
+        return (
+            profile_rank[profile_bucket(row)],
+            (element_rank.get(row["element"], len(element_rank)) - element_rank[preferred_element]) % len(element_rank),
+            row["budgetTier"],
+            row["apTarget"],
+            row["mpTarget"],
+            range_sort,
+        )
+
+    for index, level in enumerate(zero_levels):
+        level_rows = [row for row in rows if row["level"] == level and row_key(row) not in resolved]
+        preferred_element = DEFAULT_ELEMENTS[index % len(DEFAULT_ELEMENTS)]
+        selected.append(with_bucket(sorted(level_rows, key=lambda row: target_sort_key(row, preferred_element))[0]))
+        if len(selected) >= limit:
+            break
+    return selected
+
+
 def build_inventory_report(
     reports: Iterable[dict[str, Any]],
     *,
@@ -518,6 +569,12 @@ def build_inventory_report(
             next_target_limit,
             evidence_statuses=next_evidence_statuses,
             profile_buckets=next_profile_buckets,
+        ),
+        "nextZeroResolvedLevelTargets": select_next_zero_resolved_level_targets(
+            rows,
+            resolved,
+            attempted,
+            next_target_limit,
         ),
     }
 
@@ -582,6 +639,16 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines.append("")
     lines.extend(["## Suggested Next Generated Rows", ""])
     for row in report.get("nextUnresolvedTargets", report["nextUnprovenTargets"]):
+        range_label = "any" if row["rangeTarget"] is None else row["rangeTarget"]
+        lines.append(
+            "- L{level} {element} tier {budgetTier} {apTarget}/{mpTarget}/{range} `{profileBucket}` `{evidenceStatus}`".format(
+                **row,
+                range=range_label,
+            )
+        )
+    lines.append("")
+    lines.extend(["## Suggested Zero-Resolved Level Rows", ""])
+    for row in report.get("nextZeroResolvedLevelTargets", []):
         range_label = "any" if row["rangeTarget"] is None else row["rangeTarget"]
         lines.append(
             "- L{level} {element} tier {budgetTier} {apTarget}/{mpTarget}/{range} `{profileBucket}` `{evidenceStatus}`".format(

@@ -6189,6 +6189,34 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-level-coverage-3-targets-20260711.json --output-json /tmp/build-discovery-m3-level-coverage-3-sample-20260711.json --output-md /tmp/build-discovery-m3-level-coverage-3-sample-20260711.md`
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-level-coverage-3-sample-20260711.json --target-file .codex/state/build-discovery-m3-level-coverage-3-targets-20260711.json --expected-solver cpsat --allow-no-build`
 
+### 2026-07-11 M3/M4 Zero-Level Selector And Sample 4
+
+- Added `nextZeroResolvedLevelTargets` to the AP/MP/Range inventory report.
+  This selector picks one plausible minimum-style target for each level with no
+  resolved evidence, cycling elements across suggested levels.
+- Generated and validated the first selector-driven 16-row sample:
+  - target file: `.codex/state/build-discovery-m3-level-coverage-4-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-level-coverage-4-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-level-coverage-4-sample-20260711.md`
+  - generated: `16 / 16`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `16` `OPTIMAL`
+- Covered levels: `32`, `34`, `36`, `38`, `39`, `41`, `43`, `45`, `46`,
+  `47`, `49`, `51`, `52`, `53`, `54`, `57`.
+- Refreshed all-level inventory after adding this sample:
+  - valid query rows: `665088`
+  - generated evidence rows: `240`
+  - attempted evidence rows: `262`
+  - proven no-build evidence rows: `14`
+  - resolved evidence rows: `254`
+  - unresolved rows: `664834`
+  - zero-resolved levels: `99`, down from `115`
+- Verification passed:
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-level-coverage-4-targets-20260711.json --output-json /tmp/build-discovery-m3-level-coverage-4-sample-20260711.json --output-md /tmp/build-discovery-m3-level-coverage-4-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-level-coverage-4-sample-20260711.json --target-file .codex/state/build-discovery-m3-level-coverage-4-targets-20260711.json --expected-solver cpsat --allow-no-build`
+
 ### 2026-07-11 M3/M4 Next Unresolved Sample
 
 - Generated and validated a 10-row sample from the stricter

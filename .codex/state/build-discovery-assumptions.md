@@ -317,6 +317,9 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Low-level coverage samples currently generate quickly and validate cleanly,
   but some item choices are odd-looking because scoring is still generic and
   human quality review is separate from validity.
+- `nextZeroResolvedLevelTargets` intentionally suggests one low-pressure row
+  per level with no resolved evidence. It is a level-coverage queue, not a
+  substitute for AP/MP/Range profile-bucket coverage inside each level.
 - Level Diversity needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket broadly.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.

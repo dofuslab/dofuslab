@@ -17,6 +17,7 @@ from build_discovery_ap_mp_range_grid_inventory import (
     parse_csv_string_set,
     profile_bucket,
     row_key,
+    select_next_zero_resolved_level_targets,
     select_next_unproven_targets,
     valid_query_rows,
 )
@@ -88,6 +89,10 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         )
         self.assertIn(
             ".codex/state/build-discovery-m3-level-coverage-3-sample-20260711.json",
+            DEFAULT_ARTIFACTS,
+        )
+        self.assertIn(
+            ".codex/state/build-discovery-m3-level-coverage-4-sample-20260711.json",
             DEFAULT_ARTIFACTS,
         )
         self.assertIn(
@@ -223,6 +228,7 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         self.assertEqual(len(inventory["unresolvedExamples"]), 3)
         self.assertGreater(len(inventory["nextUnprovenTargets"]), 0)
         self.assertGreater(len(inventory["nextUnresolvedTargets"]), 0)
+        self.assertEqual(inventory["nextZeroResolvedLevelTargets"], [])
 
     def test_artifact_dir_loader_includes_split_matrix_reports_only(self):
         no_build_result = infeasible_result(element="chance")
@@ -417,6 +423,22 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
             [row["profileBucket"] for row in selected],
             ["minimum", "cap", "mp_heavy", "range_heavy", "ap_heavy", "middle"],
         )
+
+    def test_select_next_zero_resolved_level_targets_skips_levels_with_resolved_evidence(self):
+        rows = [
+            {"level": 1, "element": "strength", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None},
+            {"level": 1, "element": "chance", "budgetTier": 4, "apTarget": 12, "mpTarget": 6, "rangeTarget": 6},
+            {"level": 2, "element": "strength", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None},
+            {"level": 2, "element": "intelligence", "budgetTier": 2, "apTarget": 7, "mpTarget": 4, "rangeTarget": 1},
+            {"level": 3, "element": "agility", "budgetTier": 1, "apTarget": 6, "mpTarget": 3, "rangeTarget": None},
+        ]
+        resolved = {row_key(rows[0])}
+
+        selected = select_next_zero_resolved_level_targets(rows, resolved, set(), limit=2)
+
+        self.assertEqual([row["level"] for row in selected], [2, 3])
+        self.assertEqual([row["profileBucket"] for row in selected], ["minimum", "minimum"])
+        self.assertEqual([row["evidenceStatus"] for row in selected], ["unattempted", "unattempted"])
 
 
 if __name__ == "__main__":
