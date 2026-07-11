@@ -6715,3 +6715,29 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   `mixed` or `melee` when the weapon looks like a stat-stick or utility choice.
 - Added required guardrail fixtures for these cases before wiring prod-derived
   combat range defaults into generation.
+
+### 2026-07-11 Prod Combat Range 200-Row Reclass Sample
+
+- Ran a bounded readonly prod sample over `200` complete level `200` builds
+  modified since `2025-07-11`, requiring known/default class.
+- Query was split into scoped ID, stat, weapon, and tag reads to avoid heavy
+  prod joins; then the same rows were locally reclassified with stricter v4
+  weapon/archetype guardrails.
+- Artifacts:
+  - `.codex/state/build-discovery-prod-combat-range-known-class-200-20260711.json`
+  - `.codex/state/build-discovery-prod-combat-range-known-class-200-20260711.md`
+  - `.codex/state/build-discovery-prod-combat-range-known-class-200-v4-20260711.json`
+  - `.codex/state/build-discovery-prod-combat-range-known-class-200-v4-20260711.md`
+- v4 classifier distribution: `mixed=147`, `melee=32`, `ranged=21`.
+- Useful reviewed examples:
+  - Cra with Sword/Hammer/Dagger and no strong melee stats now becomes `mixed`,
+    not pure melee or pure ranged from weapon/archetype alone.
+  - Iop with Bow and no ranged damage context becomes `mixed`, not ranged.
+  - Enutrof with Dagger/Sword and no strong melee damage context becomes
+    `mixed`.
+  - Intelligence Sacrier with Wand and no ranged damage context remains
+    `melee`.
+  - Strong ranged stat context can still override archetype, e.g. Strength Iop
+    with Wand plus `% Ranged Damage` and `% Spell Damage` classifies `ranged`.
+- Caveat: v4 still uses rough class priors. The planned spell-archetype report
+  should replace these priors before defaults are wired into generation.
