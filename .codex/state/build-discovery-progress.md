@@ -5317,3 +5317,44 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - p95 remains above the Milestone 2 `<5s` target
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap9-12-mp45-ranges13-budgets23-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 9,12 --mp-targets 4,5 --range-targets 1,3 --expected-solver cpsat`
+
+### 2026-07-11 AP7/AP9 MP3/MP4 Range-3/4 Edge-Budget CP-SAT Smoke
+
+- Ran a targeted Milestone 2 slice to strengthen range `3/4`, AP `7/9`,
+  MP `3/4`, and edge budget tiers.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-ap7-9-mp34-ranges34-budgets14-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ap7-9-mp34-ranges34-budgets14-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ap7-9-mp34-ranges34-budgets14-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 1, 4
+  - AP: 7, 9
+  - MP: 3, 4
+  - Range: 3, 4
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `64`
+  - generated: `64`
+  - invalid: `0`
+  - newly covered targets: `24`
+  - solver statuses: `26` optimal, `38` feasible
+  - AP coverage: `32` rows each for `7` and `9`
+  - MP coverage: `32` rows each for `3` and `4`
+  - range coverage: `32` rows each for `3` and `4`
+  - budget coverage: `32` rows each for tiers `1` and `4`
+- Runtime:
+  - elapsed min/avg/max: `5337.0ms / 6628.6ms / 8475.8ms`
+  - model min/avg/max: `1342.7ms / 1540.2ms / 1713.4ms`
+  - solve min/avg/max: `3501.0ms / 4731.8ms / 5083.4ms`
+- Interpretation:
+  - Strict CP-SAT Milestone 2 coverage is now `1184 / 3072` targets
+    (`38.54%`)
+  - Budget tiers are now evenly represented at `296` targets each
+  - This slice overlapped `40` previously generated targets; future slices
+    should favor more explicit intersection-gap selection over single-bucket
+    balancing
+  - Range `5`, range `none/0/3`, and MP `6` are now the clearest coverage
+    gaps; p95 remains above the Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap7-9-mp34-ranges34-budgets14-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 7,9 --mp-targets 3,4 --range-targets 3,4 --expected-solver cpsat`
