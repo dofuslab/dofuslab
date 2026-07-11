@@ -6840,3 +6840,30 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     and utility are not modeled
   - some profiles may be polluted by generic/best-element lines and need class
     review before becoming production weights
+
+### 2026-07-11 Spell Damage Profiles v0
+
+- Derived first-pass spell damage profiles for `76` `(class, element)` pairs.
+- Artifacts:
+  - `.codex/state/build-discovery-spell-damage-profiles-v0-20260711.json`
+  - `.codex/state/build-discovery-spell-damage-profiles-v0-20260711.md`
+- Method:
+  - use highest local `spell_stats` row per spell
+  - identify damaging spells by elemental damage/steal effects
+  - weight spells by average base damage per AP, casts per turn, cooldown
+    penalty, and a best-element penalty
+  - compute rough sensitivity to `+100 primary`, `+100 Power`, `+10 flat
+    elemental damage`, and `+10% Spell Damage`
+- Current confidence: `high=1`, `medium=75`. Only Strength Iop is marked high
+  because it already has the most reviewed local spell scoring path.
+- Sanity-check examples:
+  - Strength Iop: `+100 Strength ~= 6.52%`, `+10 flat ~= 1.53%`, top spells
+    include Concentration, Accumulation, and Sword of Iop.
+  - Cra profiles have `mod-range share=1.0` and strong primary-stat
+    sensitivity.
+  - Enutrof profiles have meaningful modifiable-range shares, matching the
+    +Range usefulness report.
+- Caveat: this is rotation-lite, not a true rotation model. It does not model
+  summons, turrets, portals, bombs, AoE value, utility, class states, setup
+  turns, or variant exclusivity. Some classes show suspicious huge base-damage
+  rows and need class review before production scoring uses these weights.

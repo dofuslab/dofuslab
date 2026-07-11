@@ -234,6 +234,14 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 
 - Damage should be a component score, not one huge user-facing stat table.
 - Damage should normalize against a class/element baseline.
+- All-class damage scoring should start from spell-derived profiles per
+  `(class, element)`, but these are scoring priors until class mechanics are
+  reviewed. Do not treat v0 spell profiles as accurate rotations for classes
+  with summons, turrets, portals, bombs, charge/setup states, or major utility
+  effects.
+- v0 all-class spell profiles can estimate primary-stat vs flat-damage
+  sensitivity and identify top damaging spells, but they do not yet prove that
+  generated builds are high quality for that class.
 - Reference damage profile currently assumes roughly:
   - 1000 primary stat
   - 200 power
