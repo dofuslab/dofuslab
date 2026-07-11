@@ -3431,3 +3431,15 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-prod-level-sample-matrix.json --target-set prod-level-sample`
   - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
   - `python -m py_compile server\scripts\build_discovery_level_diversity_targets.py server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`
+
+### 2026-07-10 Prod-Level Sample Review Packet
+
+- Added `.codex/state/build-discovery-prod-level-sample-review.md` to make the
+  generated 24-row sample reviewable without opening the full JSON artifact.
+- The packet explicitly marks the matrix as review input, not accepted
+  benchmark evidence.
+- It lists promotion criteria, runtime concerns, overshoot rows, recurring
+  package patterns, and the level 20 tier-3 rationale.
+- This addresses the evaluator concern that the generated matrix proves
+  structural generation only, not the full PRD requirement for reviewed
+  benchmark-quality, meaningfully diverse results.
