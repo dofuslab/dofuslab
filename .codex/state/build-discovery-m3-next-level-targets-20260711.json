@@ -1,0 +1,149 @@
+{
+  "description": "Next sampled all-level Iop rows selected from 2026-07-11 AP/MP/Range inventory; excludes already proven level 1/20 12/6/6 cap infeasible retries to spend solver time on new coverage.",
+  "targets": [
+    {
+      "id": "m3_next_01_cap_level_80_strength_12_6_6_budget2",
+      "level": 80,
+      "element": "strength",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "cap",
+      "evidenceStatus": "retry"
+    },
+    {
+      "id": "m3_next_02_cap_level_200_strength_12_6_6_budget2",
+      "level": 200,
+      "element": "strength",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "cap",
+      "evidenceStatus": "retry"
+    },
+    {
+      "id": "m3_next_03_minimum_level_1_intelligence_6_3_none_budget3",
+      "level": 1,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_next_04_cap_level_2_intelligence_12_6_6_budget4",
+      "level": 2,
+      "element": "intelligence",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "cap",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_next_05_mp_heavy_level_3_chance_6_6_none_budget4",
+      "level": 3,
+      "element": "chance",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "mp_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_next_06_range_heavy_level_4_agility_6_3_6_budget4",
+      "level": 4,
+      "element": "agility",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "range_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_next_07_minimum_level_5_strength_6_3_none_budget1",
+      "level": 5,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_next_08_minimum_level_6_intelligence_6_3_none_budget1",
+      "level": 6,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_next_09_minimum_level_7_chance_6_3_none_budget1",
+      "level": 7,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_next_10_cap_level_8_agility_12_6_6_budget4",
+      "level": 8,
+      "element": "agility",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "cap",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_next_11_mp_heavy_level_9_strength_6_6_none_budget4",
+      "level": 9,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "mp_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_next_12_range_heavy_level_10_intelligence_6_3_6_budget4",
+      "level": 10,
+      "element": "intelligence",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "range_heavy",
+      "evidenceStatus": "unattempted"
+    }
+  ]
+}

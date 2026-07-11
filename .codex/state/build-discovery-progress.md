@@ -5997,3 +5997,57 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   response with diagnostics for impossible AP/MP/range caps.
 - Verification passed:
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-grid-next-cap-wisdom-flat.json --target-set grid-next-cap --expected-solver cpsat --allow-no-build`
+
+### 2026-07-11 M3/M4 All-Level Inventory And Next Sample
+
+- Re-read the Notion PRD. Current Notion numbering now treats:
+  - Milestone 2: level-200 Iop single-element matrix
+  - Milestone 3: level-200 all-class expansion
+  - Milestone 4: all-level Iop expansion
+- The active loop request still calls the all-level Iop expansion `M3`; current
+  local artifacts keep the existing `m3` filename convention while documenting
+  that this maps to the Notion all-level Iop gate.
+- Updated the AP/MP/Range grid inventory defaults so current M3 evidence is
+  counted by default:
+  - `.codex/state/build-discovery-m3-boundary-wisdom-flat.json`
+  - `.codex/state/build-discovery-m3-coverage-wisdom-flat.json`
+  - `.codex/state/build-discovery-m3-grid-next-cap-wisdom-flat.json`
+  - `.codex/state/build-discovery-m3-next-level-sample-20260711.json`
+  - `.codex/state/build-discovery-m3-prod-level-sample-optional-slots.json`
+- Added resolved-evidence accounting to the inventory:
+  - `generatedEvidenceCount`: generated valid build rows only
+  - `noBuildEvidenceCount`: explicit no-build rows
+  - `resolvedEvidenceCount`: generated rows plus no-build rows, for milestone
+    accounting where solver-proven infeasibility is a valid outcome
+  - `unresolvedCount`: valid query rows without generated or no-build evidence
+- Refreshed the all-level Iop inventory:
+  - artifact: `.codex/state/build-discovery-m3-all-level-inventory-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-all-level-inventory-20260711.md`
+  - valid query rows: `665088`
+  - generated evidence rows: `160`
+  - no-build evidence rows: `22`
+  - resolved evidence rows: `180`
+  - attempted evidence rows: `180`
+  - unresolved rows: `664908`
+- Generated a targeted 12-row next-level sample from inventory suggestions:
+  - target file: `.codex/state/build-discovery-m3-next-level-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-next-level-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-next-level-sample-20260711.md`
+  - generated: `6 / 12`
+  - no build: `6 / 12`
+  - invalid: `0`
+  - solver statuses: `6` `OPTIMAL`, `6` `INFEASIBLE`
+- Sample highlights:
+  - level `80` Strength tier `2` generated `12/6/6`
+  - level `200` Strength tier `2` generated `12/6/6`
+  - levels `5`, `6`, and `7` tier `1` minimum rows generated sparse low-level
+    builds
+  - tiny-level MP-heavy, range-heavy, and cap stress rows correctly returned
+    solver-proven `INFEASIBLE`
+- Verification passed:
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-next-level-targets-20260711.json --output-json /tmp/build-discovery-m3-next-level-sample-20260711.json --output-md /tmp/build-discovery-m3-next-level-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-next-level-sample-20260711.json --target-file .codex/state/build-discovery-m3-next-level-targets-20260711.json --expected-solver cpsat --allow-no-build`
+  - `python server/scripts/test_build_discovery_ap_mp_range_grid_inventory.py`
+  - `python server/scripts/test_build_discovery_level_diversity_matrix_check.py`
+  - Docker: `PYTHONPATH=/home/dofuslab python scripts/test_build_discovery_ap_mp_range_grid_inventory.py`

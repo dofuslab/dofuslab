@@ -1,0 +1,5034 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T15:10:29.831476+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-m3-next-level-targets-20260711.json#targets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 12,
+  "generatedCount": 6,
+  "noBuildCount": 6,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "m3_next_01_cap_level_80_strength_12_6_6_budget2",
+        "className": "Iop",
+        "level": 80,
+        "element": "strength",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 80,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 250,
+        "perSignatureCap": 40,
+        "relevantSetLimit": 60
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 932.74,
+        "weightedStatScore": 1613.76,
+        "utilityStatScore": 291.16,
+        "genericDamageScore": 1384.06,
+        "rawRotationDamageScore": 753.6,
+        "spellDamageScore": 753.6,
+        "profileBaselineDamageScore": 1633.46,
+        "profileRelativeDamage": 0.4614,
+        "weaponDamageScore": 59.34,
+        "survivabilityScore": 18.75,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 612.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 231,
+          "Vitality": 2
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 646,
+          "Power": 40,
+          "Vitality": 612,
+          "Damage": 5,
+          "Earth Damage": 18,
+          "Critical": 19,
+          "Critical Damage": 50,
+          "Neutral Damage": 5
+        },
+        "sets": {
+          "Royal Pippin Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9154",
+            "internalId": null,
+            "name": "Royal Pippin Amublop",
+            "type": "Amulet",
+            "level": 80,
+            "set": "Royal Pippin Blop Set"
+          },
+          "belt": {
+            "id": "9172",
+            "internalId": null,
+            "name": "Royal Pippin Blop Belt",
+            "type": "Belt",
+            "level": 80,
+            "set": "Royal Pippin Blop Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "18672",
+            "internalId": null,
+            "name": "Bawbawian Shield",
+            "type": "Shield",
+            "level": 60,
+            "set": null
+          },
+          "boots": {
+            "id": "9163",
+            "internalId": null,
+            "name": "Royal Pippin Bloopts",
+            "type": "Boots",
+            "level": 80,
+            "set": "Royal Pippin Blop Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "pet": {
+            "id": "13465",
+            "internalId": null,
+            "name": "Boarhog",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12748",
+            "internalId": null,
+            "name": "Minor Earth Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13772",
+            "internalId": null,
+            "name": "Minor Earth Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13757",
+            "internalId": null,
+            "name": "Minor Goliath",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12722",
+            "internalId": null,
+            "name": "Minor Maniac",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "ring_1": {
+            "id": "9127",
+            "internalId": null,
+            "name": "Royal Pippin Blop Ring",
+            "type": "Ring",
+            "level": 80,
+            "set": "Royal Pippin Blop Set"
+          },
+          "ring_2": {
+            "id": "836",
+            "internalId": null,
+            "name": "Treering",
+            "type": "Ring",
+            "level": 40,
+            "set": "Treechnid Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 932.74,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 646,
+          "Power": 40,
+          "Vitality": 612,
+          "Damage": 5,
+          "Earth Damage": 18,
+          "Critical": 19,
+          "Critical Damage": 50,
+          "Neutral Damage": 5
+        },
+        "sets": {
+          "Royal Pippin Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Royal Pippin Amublop",
+          "Royal Pippin Blop Belt",
+          "Khardboard Goultard",
+          "Bawbawian Shield",
+          "Royal Pippin Blop Ring",
+          "Treering",
+          "Royal Pippin Bloopts",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Boarhog",
+          "Minor Dynamo",
+          "Minor Earth Destroyer",
+          "Minor Earth Wrecker",
+          "Minor Goliath",
+          "Minor Maniac",
+          "Twitcher"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 932.74,
+          "weightedStatScore": 1613.76,
+          "utilityStatScore": 291.16,
+          "genericDamageScore": 1384.06,
+          "rawRotationDamageScore": 753.6,
+          "spellDamageScore": 753.6,
+          "profileBaselineDamageScore": 1633.46,
+          "profileRelativeDamage": 0.4614,
+          "weaponDamageScore": 59.34,
+          "survivabilityScore": 18.75,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 612.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 231,
+            "Vitality": 2
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 6,
+            "Strength": 646,
+            "Power": 40,
+            "Vitality": 612,
+            "Damage": 5,
+            "Earth Damage": 18,
+            "Critical": 19,
+            "Critical Damage": 50,
+            "Neutral Damage": 5
+          },
+          "sets": {
+            "Royal Pippin Blop Set": 4,
+            "Khardboard Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "9154",
+              "internalId": null,
+              "name": "Royal Pippin Amublop",
+              "type": "Amulet",
+              "level": 80,
+              "set": "Royal Pippin Blop Set"
+            },
+            "belt": {
+              "id": "9172",
+              "internalId": null,
+              "name": "Royal Pippin Blop Belt",
+              "type": "Belt",
+              "level": 80,
+              "set": "Royal Pippin Blop Set"
+            },
+            "weapon": {
+              "id": "27268",
+              "internalId": null,
+              "name": "Khardboard Goultard",
+              "type": "Sword",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "shield": {
+              "id": "18672",
+              "internalId": null,
+              "name": "Bawbawian Shield",
+              "type": "Shield",
+              "level": 60,
+              "set": null
+            },
+            "boots": {
+              "id": "9163",
+              "internalId": null,
+              "name": "Royal Pippin Bloopts",
+              "type": "Boots",
+              "level": 80,
+              "set": "Royal Pippin Blop Set"
+            },
+            "hat": {
+              "id": "27282",
+              "internalId": null,
+              "name": "Khardboard Gobball Headgear",
+              "type": "Hat",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "cloak": {
+              "id": "27267",
+              "internalId": null,
+              "name": "Khardboard Dazzling Cloak",
+              "type": "Cloak",
+              "level": 75,
+              "set": "Khardboard Set"
+            },
+            "pet": {
+              "id": "13465",
+              "internalId": null,
+              "name": "Boarhog",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "13823",
+              "internalId": null,
+              "name": "Minor Dynamo",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "12748",
+              "internalId": null,
+              "name": "Minor Earth Destroyer",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13772",
+              "internalId": null,
+              "name": "Minor Earth Wrecker",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13757",
+              "internalId": null,
+              "name": "Minor Goliath",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "12722",
+              "internalId": null,
+              "name": "Minor Maniac",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13831",
+              "internalId": null,
+              "name": "Twitcher",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "ring_1": {
+              "id": "9127",
+              "internalId": null,
+              "name": "Royal Pippin Blop Ring",
+              "type": "Ring",
+              "level": 80,
+              "set": "Royal Pippin Blop Set"
+            },
+            "ring_2": {
+              "id": "836",
+              "internalId": null,
+              "name": "Treering",
+              "type": "Ring",
+              "level": 40,
+              "set": "Treechnid Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 932.74,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 6,
+            "Strength": 646,
+            "Power": 40,
+            "Vitality": 612,
+            "Damage": 5,
+            "Earth Damage": 18,
+            "Critical": 19,
+            "Critical Damage": 50,
+            "Neutral Damage": 5
+          },
+          "sets": {
+            "Royal Pippin Blop Set": 4,
+            "Khardboard Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Royal Pippin Amublop",
+            "Royal Pippin Blop Belt",
+            "Khardboard Goultard",
+            "Bawbawian Shield",
+            "Royal Pippin Blop Ring",
+            "Treering",
+            "Royal Pippin Bloopts",
+            "Khardboard Gobball Headgear",
+            "Khardboard Dazzling Cloak",
+            "Boarhog",
+            "Minor Dynamo",
+            "Minor Earth Destroyer",
+            "Minor Earth Wrecker",
+            "Minor Goliath",
+            "Minor Maniac",
+            "Twitcher"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 3891.8,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 1798.1,
+          "totalSearchMs": 2093.7
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 498.7,
+            "solveMs": 1517.6,
+            "objective": 681.92,
+            "solutionCallbackCount": 6,
+            "validCallbackCandidateCount": 6,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 631.8,
+                "objective": 435.95,
+                "score": 773.21,
+                "itemIds": [
+                  "836",
+                  "2469",
+                  "7241",
+                  "7245",
+                  "7253",
+                  "12722",
+                  "12748",
+                  "13230",
+                  "13751",
+                  "13757",
+                  "13772",
+                  "13831",
+                  "18661",
+                  "27267",
+                  "27268",
+                  "27282"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 772.7,
+                "objective": 438.17,
+                "score": 775.92,
+                "itemIds": [
+                  "836",
+                  "2469",
+                  "7241",
+                  "7245",
+                  "7253",
+                  "12722",
+                  "12748",
+                  "13230",
+                  "13757",
+                  "13772",
+                  "13823",
+                  "13831",
+                  "18661",
+                  "27267",
+                  "27268",
+                  "27282"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 1039.0,
+                "objective": 612.95,
+                "score": 854.07,
+                "itemIds": [
+                  "836",
+                  "2469",
+                  "7253",
+                  "12672",
+                  "12722",
+                  "12748",
+                  "13303",
+                  "13465",
+                  "13757",
+                  "13772",
+                  "13831",
+                  "16336",
+                  "27267",
+                  "27268",
+                  "27282",
+                  "30688"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 1134.8,
+                "objective": 613.93,
+                "score": 851.35,
+                "itemIds": [
+                  "836",
+                  "2469",
+                  "7253",
+                  "12672",
+                  "12748",
+                  "13303",
+                  "13465",
+                  "13757",
+                  "13772",
+                  "13831",
+                  "16336",
+                  "16337",
+                  "27267",
+                  "27268",
+                  "27282",
+                  "30688"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 1228.9,
+                "objective": 615.43,
+                "score": 852.84,
+                "itemIds": [
+                  "836",
+                  "2469",
+                  "7253",
+                  "12672",
+                  "12748",
+                  "13303",
+                  "13465",
+                  "13772",
+                  "13831",
+                  "16194",
+                  "16336",
+                  "16337",
+                  "27267",
+                  "27268",
+                  "27282",
+                  "30688"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 6,
+                "rankBeforeRerank": 6,
+                "wallTimeMs": 1315.4,
+                "objective": 681.92,
+                "score": 932.74,
+                "itemIds": [
+                  "836",
+                  "9127",
+                  "9154",
+                  "9163",
+                  "9172",
+                  "12722",
+                  "12748",
+                  "13465",
+                  "13757",
+                  "13772",
+                  "13823",
+                  "13831",
+                  "18672",
+                  "27267",
+                  "27268",
+                  "27282"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 177,
+                "belt": 179,
+                "weapon": 294,
+                "shield": 27,
+                "boots": 189,
+                "hat": 141,
+                "cloak": 142,
+                "pet": 452,
+                "dofus": 85,
+                "ring": 190
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1876,
+              "uniqueItemCount": 1876,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 936,
+              "skippedSetCountVarCount": 4,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 44,
+              "conditionConstraintCount": 16,
+              "skippedSetBonusConditionCount": 29,
+              "setCountConstraintCount": 214
+            }
+          }
+        ],
+        "itemCount": 1876,
+        "candidateCount": 6,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.015,
+          "% Earth Resistance": 0.015,
+          "% Final Damage": 11.7729,
+          "% Fire Resistance": 0.015,
+          "% Melee Resistance": 0.0447,
+          "% Neutral Resistance": 0.015,
+          "% Ranged Damage": 11.7729,
+          "% Ranged Resistance": 0.1047,
+          "% Spell Damage": 11.7729,
+          "% Water Resistance": 0.015,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0043,
+          "Critical": 4.9171,
+          "Critical Damage": 1.9802,
+          "Critical Resistance": 0.0085,
+          "Damage": 3.436,
+          "Dodge": 1.0,
+          "Earth Damage": 3.436,
+          "Earth Resistance": 0.0043,
+          "Fire Resistance": 0.0043,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0043,
+          "Power": 0.6218,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0008,
+          "Range": 8.0,
+          "Strength": 0.6218,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0043,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "m3_next_02_cap_level_200_strength_12_6_6_budget2",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 250,
+        "perSignatureCap": 40,
+        "relevantSetLimit": 60
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2307.01,
+        "weightedStatScore": 3889.22,
+        "utilityStatScore": 374.52,
+        "genericDamageScore": 4108.58,
+        "rawRotationDamageScore": 3764.29,
+        "spellDamageScore": 3764.29,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.3695,
+        "weaponDamageScore": 216.55,
+        "survivabilityScore": 83.63,
+        "negativeResistancePenalty": 36.0,
+        "weakestElementEhp": 2597.17,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 1018,
+          "Power": 460,
+          "Vitality": 2753,
+          "Damage": 0,
+          "Earth Damage": 142,
+          "Critical": 53,
+          "Critical Damage": 25,
+          "Neutral Damage": 92
+        },
+        "sets": {
+          "Erotegg Set": 3,
+          "Harpiset": 2,
+          "Corruption Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "15746",
+            "internalId": null,
+            "name": "Neckross",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Harpiset"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "32235",
+            "internalId": null,
+            "name": "Erotegg Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "shield": {
+            "id": "32236",
+            "internalId": null,
+            "name": "Erotegg Disc",
+            "type": "Shield",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "20360",
+            "internalId": null,
+            "name": "Ganymede's Diadem",
+            "type": "Hat",
+            "level": 200,
+            "set": null
+          },
+          "cloak": {
+            "id": "15747",
+            "internalId": null,
+            "name": "Krosscape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Harpiset"
+          },
+          "pet": {
+            "id": "33268",
+            "internalId": null,
+            "name": "Amber and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "32234",
+            "internalId": null,
+            "name": "Erotegg Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Erotegg Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2307.01,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 1018,
+          "Power": 460,
+          "Vitality": 2753,
+          "Damage": 0,
+          "Earth Damage": 142,
+          "Critical": 53,
+          "Critical Damage": 25,
+          "Neutral Damage": 92
+        },
+        "sets": {
+          "Erotegg Set": 3,
+          "Harpiset": 2,
+          "Corruption Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Neckross",
+          "Corruption's Brambelt",
+          "Erotegg Bow",
+          "Erotegg Disc",
+          "Corruption's Ring",
+          "Erotegg Ring",
+          "Meriana's Clairvoyance",
+          "Ganymede's Diadem",
+          "Krosscape",
+          "Amber and Emerald Seemyool",
+          "Crimson Dofus",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Earth Wrecker",
+          "Major Goliath"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2307.01,
+          "weightedStatScore": 3889.22,
+          "utilityStatScore": 374.52,
+          "genericDamageScore": 4108.58,
+          "rawRotationDamageScore": 3764.29,
+          "spellDamageScore": 3764.29,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.3695,
+          "weaponDamageScore": 216.55,
+          "survivabilityScore": 83.63,
+          "negativeResistancePenalty": 36.0,
+          "weakestElementEhp": 2597.17,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 6,
+            "Strength": 1018,
+            "Power": 460,
+            "Vitality": 2753,
+            "Damage": 0,
+            "Earth Damage": 142,
+            "Critical": 53,
+            "Critical Damage": 25,
+            "Neutral Damage": 92
+          },
+          "sets": {
+            "Erotegg Set": 3,
+            "Harpiset": 2,
+            "Corruption Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "15746",
+              "internalId": null,
+              "name": "Neckross",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Harpiset"
+            },
+            "belt": {
+              "id": "22209",
+              "internalId": null,
+              "name": "Corruption's Brambelt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "weapon": {
+              "id": "32235",
+              "internalId": null,
+              "name": "Erotegg Bow",
+              "type": "Bow",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "shield": {
+              "id": "32236",
+              "internalId": null,
+              "name": "Erotegg Disc",
+              "type": "Shield",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "20360",
+              "internalId": null,
+              "name": "Ganymede's Diadem",
+              "type": "Hat",
+              "level": 200,
+              "set": null
+            },
+            "cloak": {
+              "id": "15747",
+              "internalId": null,
+              "name": "Krosscape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Harpiset"
+            },
+            "pet": {
+              "id": "33268",
+              "internalId": null,
+              "name": "Amber and Emerald Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13774",
+              "internalId": null,
+              "name": "Major Earth Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "ring_1": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "ring_2": {
+              "id": "32234",
+              "internalId": null,
+              "name": "Erotegg Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Erotegg Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2307.01,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 6,
+            "Strength": 1018,
+            "Power": 460,
+            "Vitality": 2753,
+            "Damage": 0,
+            "Earth Damage": 142,
+            "Critical": 53,
+            "Critical Damage": 25,
+            "Neutral Damage": 92
+          },
+          "sets": {
+            "Erotegg Set": 3,
+            "Harpiset": 2,
+            "Corruption Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Neckross",
+            "Corruption's Brambelt",
+            "Erotegg Bow",
+            "Erotegg Disc",
+            "Corruption's Ring",
+            "Erotegg Ring",
+            "Meriana's Clairvoyance",
+            "Ganymede's Diadem",
+            "Krosscape",
+            "Amber and Emerald Seemyool",
+            "Crimson Dofus",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Earth Wrecker",
+            "Major Goliath"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7382.9,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 159.9,
+          "totalSearchMs": 7223.0
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 1218.7,
+            "solveMs": 5872.9,
+            "objective": 1892.34,
+            "solutionCallbackCount": 11,
+            "validCallbackCandidateCount": 11,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1511.8,
+                "objective": 781.85,
+                "score": 1310.58,
+                "itemIds": [
+                  "737",
+                  "8843",
+                  "9131",
+                  "9137",
+                  "9141",
+                  "12720",
+                  "12726",
+                  "13230",
+                  "13829",
+                  "15700",
+                  "16005",
+                  "16333",
+                  "16335",
+                  "18025",
+                  "30858",
+                  "32121"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 1700.8,
+                "objective": 844.26,
+                "score": 1380.22,
+                "itemIds": [
+                  "737",
+                  "9131",
+                  "12720",
+                  "12726",
+                  "12727",
+                  "13344",
+                  "13829",
+                  "14000",
+                  "15254",
+                  "15747",
+                  "15748",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "31757",
+                  "31758"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 1837.7,
+                "objective": 1174.96,
+                "score": 1682.35,
+                "itemIds": [
+                  "12720",
+                  "12724",
+                  "13344",
+                  "13758",
+                  "13829",
+                  "13830",
+                  "14091",
+                  "14092",
+                  "15747",
+                  "15748",
+                  "18718",
+                  "27266",
+                  "27284",
+                  "31749",
+                  "31800",
+                  "33059"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 1992.5,
+                "objective": 1223.53,
+                "score": 1760.5,
+                "itemIds": [
+                  "13344",
+                  "13774",
+                  "13829",
+                  "13831",
+                  "14000",
+                  "15747",
+                  "15748",
+                  "26021",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "30453",
+                  "30455",
+                  "30858",
+                  "31800",
+                  "33059"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2160.0,
+                "objective": 1225.0,
+                "score": 1710.32,
+                "itemIds": [
+                  "12720",
+                  "12724",
+                  "13114",
+                  "13344",
+                  "13758",
+                  "13829",
+                  "13830",
+                  "14091",
+                  "14092",
+                  "15747",
+                  "15748",
+                  "18718",
+                  "19608",
+                  "31749",
+                  "31800",
+                  "33199"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 6,
+                "rankBeforeRerank": 6,
+                "wallTimeMs": 2310.8,
+                "objective": 1264.33,
+                "score": 1734.37,
+                "itemIds": [
+                  "12720",
+                  "12724",
+                  "13114",
+                  "13344",
+                  "13829",
+                  "13830",
+                  "14091",
+                  "14092",
+                  "15747",
+                  "15748",
+                  "18718",
+                  "19608",
+                  "30455",
+                  "31749",
+                  "31800",
+                  "33199"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 7,
+                "rankBeforeRerank": 7,
+                "wallTimeMs": 2470.9,
+                "objective": 1293.69,
+                "score": 1747.17,
+                "itemIds": [
+                  "12720",
+                  "13114",
+                  "13344",
+                  "13829",
+                  "13830",
+                  "14091",
+                  "14092",
+                  "15747",
+                  "15748",
+                  "18718",
+                  "19608",
+                  "30453",
+                  "30455",
+                  "31749",
+                  "31800",
+                  "33199"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 8,
+                "rankBeforeRerank": 8,
+                "wallTimeMs": 2695.9,
+                "objective": 1414.31,
+                "score": 1865.52,
+                "itemIds": [
+                  "7043",
+                  "13344",
+                  "13465",
+                  "13829",
+                  "13830",
+                  "13831",
+                  "14170",
+                  "18008",
+                  "19983",
+                  "19985",
+                  "19986",
+                  "21226",
+                  "21227",
+                  "21228",
+                  "30453",
+                  "30858"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 9,
+                "rankBeforeRerank": 9,
+                "wallTimeMs": 3080.2,
+                "objective": 1749.54,
+                "score": 2223.92,
+                "itemIds": [
+                  "7043",
+                  "13114",
+                  "13465",
+                  "13759",
+                  "14076",
+                  "14077",
+                  "15216",
+                  "15746",
+                  "15747",
+                  "16196",
+                  "16333",
+                  "22205",
+                  "30453",
+                  "30455",
+                  "30858",
+                  "32121"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 10,
+                "rankBeforeRerank": 10,
+                "wallTimeMs": 3321.9,
+                "objective": 1889.57,
+                "score": 1950.94,
+                "itemIds": [
+                  "7043",
+                  "13115",
+                  "13465",
+                  "13759",
+                  "14076",
+                  "15746",
+                  "15747",
+                  "16196",
+                  "16333",
+                  "22205",
+                  "22209",
+                  "30453",
+                  "30455",
+                  "30858",
+                  "31787",
+                  "32121"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 11,
+                "rankBeforeRerank": 11,
+                "wallTimeMs": 5126.3,
+                "objective": 1892.34,
+                "score": 2307.01,
+                "itemIds": [
+                  "694",
+                  "7043",
+                  "13759",
+                  "13774",
+                  "15746",
+                  "15747",
+                  "20360",
+                  "22205",
+                  "22209",
+                  "30453",
+                  "30455",
+                  "32121",
+                  "32234",
+                  "32235",
+                  "32236",
+                  "33268"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 99,
+                "belt": 93,
+                "weapon": 197,
+                "shield": 59,
+                "boots": 102,
+                "hat": 131,
+                "cloak": 92,
+                "pet": 452,
+                "dofus": 266,
+                "ring": 132
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1623,
+              "uniqueItemCount": 1623,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 847,
+              "skippedSetCountVarCount": 74,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 186,
+              "conditionConstraintCount": 192,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 202
+            }
+          }
+        ],
+        "itemCount": 1623,
+        "candidateCount": 11,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "m3_next_03_minimum_level_1_intelligence_6_3_none_budget3",
+        "className": "Iop",
+        "level": 1,
+        "element": "intelligence",
+        "budgetTier": 3,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 1,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 464.57,
+        "weightedStatScore": 333.84,
+        "utilityStatScore": 284.7,
+        "genericDamageScore": 390.28,
+        "rawRotationDamageScore": 219.5,
+        "spellDamageScore": 219.5,
+        "profileBaselineDamageScore": 1687.25,
+        "profileRelativeDamage": 0.1301,
+        "weaponDamageScore": 9.75,
+        "survivabilityScore": 4.24,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 141.4,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 0,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 0,
+          "Intelligence": 140,
+          "Power": 0,
+          "Vitality": 141,
+          "Damage": 1,
+          "Fire Damage": 0,
+          "Critical": 0,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Boon Set": 8
+        },
+        "exos": {
+          "AP": {
+            "itemId": "8538",
+            "slot": "amulet"
+          },
+          "MP": {
+            "itemId": "8536",
+            "slot": "belt"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "8538",
+            "internalId": null,
+            "name": "Issa Mess",
+            "type": "Amulet",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "belt": {
+            "id": "8536",
+            "internalId": null,
+            "name": "Muffin Belt",
+            "type": "Belt",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "weapon": {
+            "id": "30828",
+            "internalId": null,
+            "name": "Bounihime",
+            "type": "Sword",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "shield": {
+            "id": "30701",
+            "internalId": null,
+            "name": "Halt Efkat",
+            "type": "Shield",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "ring_1": {
+            "id": "8537",
+            "internalId": null,
+            "name": "Pluswan",
+            "type": "Ring",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "ring_2": {
+            "id": "852",
+            "internalId": null,
+            "name": "Small Magic Ring",
+            "type": "Ring",
+            "level": 1,
+            "set": null
+          },
+          "boots": {
+            "id": "8535",
+            "internalId": null,
+            "name": "Crashers",
+            "type": "Boots",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "hat": {
+            "id": "8533",
+            "internalId": null,
+            "name": "Flud",
+            "type": "Hat",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "cloak": {
+            "id": "8534",
+            "internalId": null,
+            "name": "S'loque Cape",
+            "type": "Cloak",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "pet": {
+            "id": "1711",
+            "internalId": null,
+            "name": "Bow Wow",
+            "type": "Pet",
+            "level": 1,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 464.57,
+        "apStrategy": null,
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 0,
+          "Intelligence": 140,
+          "Power": 0,
+          "Vitality": 141,
+          "Damage": 1,
+          "Fire Damage": 0,
+          "Critical": 0,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Boon Set": 8
+        },
+        "exos": {
+          "AP": {
+            "itemId": "8538",
+            "slot": "amulet"
+          },
+          "MP": {
+            "itemId": "8536",
+            "slot": "belt"
+          }
+        },
+        "items": [
+          "Issa Mess",
+          "Muffin Belt",
+          "Bounihime",
+          "Halt Efkat",
+          "Pluswan",
+          "Small Magic Ring",
+          "Crashers",
+          "Flud",
+          "S'loque Cape",
+          "Bow Wow"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 464.57,
+          "weightedStatScore": 333.84,
+          "utilityStatScore": 284.7,
+          "genericDamageScore": 390.28,
+          "rawRotationDamageScore": 219.5,
+          "spellDamageScore": 219.5,
+          "profileBaselineDamageScore": 1687.25,
+          "profileRelativeDamage": 0.1301,
+          "weaponDamageScore": 9.75,
+          "survivabilityScore": 4.24,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 141.4,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 0,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 0,
+            "Intelligence": 140,
+            "Power": 0,
+            "Vitality": 141,
+            "Damage": 1,
+            "Fire Damage": 0,
+            "Critical": 0,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Boon Set": 8
+          },
+          "exos": {
+            "AP": {
+              "itemId": "8538",
+              "slot": "amulet"
+            },
+            "MP": {
+              "itemId": "8536",
+              "slot": "belt"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "8538",
+              "internalId": null,
+              "name": "Issa Mess",
+              "type": "Amulet",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "belt": {
+              "id": "8536",
+              "internalId": null,
+              "name": "Muffin Belt",
+              "type": "Belt",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "weapon": {
+              "id": "30828",
+              "internalId": null,
+              "name": "Bounihime",
+              "type": "Sword",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "shield": {
+              "id": "30701",
+              "internalId": null,
+              "name": "Halt Efkat",
+              "type": "Shield",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "ring_1": {
+              "id": "8537",
+              "internalId": null,
+              "name": "Pluswan",
+              "type": "Ring",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "ring_2": {
+              "id": "852",
+              "internalId": null,
+              "name": "Small Magic Ring",
+              "type": "Ring",
+              "level": 1,
+              "set": null
+            },
+            "boots": {
+              "id": "8535",
+              "internalId": null,
+              "name": "Crashers",
+              "type": "Boots",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "hat": {
+              "id": "8533",
+              "internalId": null,
+              "name": "Flud",
+              "type": "Hat",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "cloak": {
+              "id": "8534",
+              "internalId": null,
+              "name": "S'loque Cape",
+              "type": "Cloak",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "pet": {
+              "id": "1711",
+              "internalId": null,
+              "name": "Bow Wow",
+              "type": "Pet",
+              "level": 1,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 464.57,
+          "apStrategy": null,
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 0,
+            "Intelligence": 140,
+            "Power": 0,
+            "Vitality": 141,
+            "Damage": 1,
+            "Fire Damage": 0,
+            "Critical": 0,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Boon Set": 8
+          },
+          "exos": {
+            "AP": {
+              "itemId": "8538",
+              "slot": "amulet"
+            },
+            "MP": {
+              "itemId": "8536",
+              "slot": "belt"
+            }
+          },
+          "items": [
+            "Issa Mess",
+            "Muffin Belt",
+            "Bounihime",
+            "Halt Efkat",
+            "Pluswan",
+            "Small Magic Ring",
+            "Crashers",
+            "Flud",
+            "S'loque Cape",
+            "Bow Wow"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 155.9,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 139.4,
+          "totalSearchMs": 16.5
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 7.3,
+            "solveMs": 8.4,
+            "objective": 100.38,
+            "solutionCallbackCount": 2,
+            "validCallbackCandidateCount": 2,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 4.1,
+                "objective": 76.48,
+                "score": 440.88,
+                "itemIds": [
+                  "766",
+                  "1711",
+                  "8533",
+                  "8535",
+                  "8536",
+                  "8537",
+                  "10798",
+                  "10800",
+                  "19622",
+                  "30828"
+                ],
+                "exos": {
+                  "AP": "8533",
+                  "MP": "10800"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 5.4,
+                "objective": 100.38,
+                "score": 464.57,
+                "itemIds": [
+                  "852",
+                  "1711",
+                  "8533",
+                  "8534",
+                  "8535",
+                  "8536",
+                  "8537",
+                  "8538",
+                  "30701",
+                  "30828"
+                ],
+                "exos": {
+                  "AP": "8538",
+                  "MP": "8536"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 4,
+                "belt": 5,
+                "weapon": 8,
+                "shield": 3,
+                "ring_1": 6,
+                "ring_2": 6,
+                "boots": 6,
+                "hat": 4,
+                "cloak": 3,
+                "pet": 2,
+                "dofus": 0
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 47,
+              "uniqueItemCount": 41,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 18,
+              "skippedSetCountVarCount": 0,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 0,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 2
+            }
+          }
+        ],
+        "itemCount": 41,
+        "candidateCount": 2,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.003,
+          "% Earth Resistance": 0.003,
+          "% Final Damage": 12.1618,
+          "% Fire Resistance": 0.003,
+          "% Melee Resistance": 0.009,
+          "% Neutral Resistance": 0.003,
+          "% Ranged Damage": 12.1618,
+          "% Ranged Resistance": 0.0211,
+          "% Spell Damage": 12.1618,
+          "% Water Resistance": 0.003,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0009,
+          "Critical": 2.4004,
+          "Critical Damage": 1.6602,
+          "Critical Resistance": 0.0017,
+          "Damage": 2.4004,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0009,
+          "Fire Damage": 2.4004,
+          "Fire Resistance": 0.0009,
+          "Initiative": 0.005,
+          "Intelligence": 1.7261,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0009,
+          "Power": 0.7261,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0002,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0009,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "m3_next_04_cap_level_2_intelligence_12_6_6_budget4",
+        "className": "Iop",
+        "level": 2,
+        "element": "intelligence",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 2,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 250,
+        "perSignatureCap": 40,
+        "relevantSetLimit": 60
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "candidateValidationErrors": [],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "candidateBuilds": [],
+      "candidateBuildSummaries": [],
+      "candidateDiversity": {
+        "candidateCount": 0,
+        "uniqueItemSignatureCount": 0,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 37.4,
+        "solverStatus": "INFEASIBLE",
+        "timings": {
+          "loadMs": 25.1,
+          "totalSearchMs": 12.3
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "INFEASIBLE",
+            "modelMs": 9.9,
+            "solveMs": 2.4,
+            "objective": null,
+            "solutionCallbackCount": 0,
+            "validCallbackCandidateCount": 0,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": false,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": false,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 4,
+                "belt": 5,
+                "weapon": 10,
+                "shield": 3,
+                "ring_1": 9,
+                "ring_2": 9,
+                "boots": 7,
+                "hat": 5,
+                "cloak": 3,
+                "pet": 2,
+                "dofus": 0
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 57,
+              "uniqueItemCount": 48,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 18,
+              "skippedSetCountVarCount": 0,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 0,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 2
+            }
+          }
+        ],
+        "itemCount": 48,
+        "candidateCount": 0,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0032,
+          "% Earth Resistance": 0.0032,
+          "% Final Damage": 12.1618,
+          "% Fire Resistance": 0.0032,
+          "% Melee Resistance": 0.0095,
+          "% Neutral Resistance": 0.0032,
+          "% Ranged Damage": 12.1618,
+          "% Ranged Resistance": 0.0222,
+          "% Spell Damage": 12.1618,
+          "% Water Resistance": 0.0032,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0009,
+          "Critical": 2.4004,
+          "Critical Damage": 1.6602,
+          "Critical Resistance": 0.0018,
+          "Damage": 2.4004,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0009,
+          "Fire Damage": 2.4004,
+          "Fire Resistance": 0.0009,
+          "Initiative": 0.005,
+          "Intelligence": 1.7261,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0009,
+          "Power": 0.7261,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0002,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0009,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "m3_next_05_mp_heavy_level_3_chance_6_6_none_budget4",
+        "className": "Iop",
+        "level": 3,
+        "element": "chance",
+        "budgetTier": 4,
+        "apTarget": 6,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 3,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "candidateValidationErrors": [],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "candidateBuilds": [],
+      "candidateBuildSummaries": [],
+      "candidateDiversity": {
+        "candidateCount": 0,
+        "uniqueItemSignatureCount": 0,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 145.9,
+        "solverStatus": "INFEASIBLE",
+        "timings": {
+          "loadMs": 134.9,
+          "totalSearchMs": 11.0
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "INFEASIBLE",
+            "modelMs": 9.1,
+            "solveMs": 1.8,
+            "objective": null,
+            "solutionCallbackCount": 0,
+            "validCallbackCandidateCount": 0,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": false,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": false,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 5,
+                "belt": 5,
+                "weapon": 11,
+                "shield": 3,
+                "ring_1": 9,
+                "ring_2": 9,
+                "boots": 8,
+                "hat": 7,
+                "cloak": 3,
+                "pet": 2,
+                "dofus": 0
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 62,
+              "uniqueItemCount": 53,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 18,
+              "skippedSetCountVarCount": 0,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 0,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 2
+            }
+          }
+        ],
+        "itemCount": 53,
+        "candidateCount": 0,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0033,
+          "% Earth Resistance": 0.0033,
+          "% Final Damage": 11.73,
+          "% Fire Resistance": 0.0033,
+          "% Melee Resistance": 0.0099,
+          "% Neutral Resistance": 0.0033,
+          "% Ranged Damage": 11.73,
+          "% Ranged Resistance": 0.0233,
+          "% Spell Damage": 11.73,
+          "% Water Resistance": 0.0033,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0009,
+          "Chance": 1.7058,
+          "Critical": 4.1547,
+          "Critical Damage": 1.7038,
+          "Critical Resistance": 0.0019,
+          "Damage": 2.6212,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0009,
+          "Fire Resistance": 0.0009,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0009,
+          "Power": 0.7058,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0002,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.6212,
+          "Water Resistance": 0.0009,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "m3_next_06_range_heavy_level_4_agility_6_3_6_budget4",
+        "className": "Iop",
+        "level": 4,
+        "element": "agility",
+        "budgetTier": 4,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 4,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "candidateValidationErrors": [],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "candidateBuilds": [],
+      "candidateBuildSummaries": [],
+      "candidateDiversity": {
+        "candidateCount": 0,
+        "uniqueItemSignatureCount": 0,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 177.2,
+        "solverStatus": "INFEASIBLE",
+        "timings": {
+          "loadMs": 164.0,
+          "totalSearchMs": 13.2
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "INFEASIBLE",
+            "modelMs": 10.7,
+            "solveMs": 2.4,
+            "objective": null,
+            "solutionCallbackCount": 0,
+            "validCallbackCandidateCount": 0,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": false,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": false,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 5,
+                "belt": 5,
+                "weapon": 11,
+                "shield": 3,
+                "ring_1": 11,
+                "ring_2": 11,
+                "boots": 10,
+                "hat": 8,
+                "cloak": 3,
+                "pet": 2,
+                "dofus": 0
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 69,
+              "uniqueItemCount": 58,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 18,
+              "skippedSetCountVarCount": 2,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 0,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 2
+            }
+          }
+        ],
+        "itemCount": 58,
+        "candidateCount": 0,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0035,
+          "% Earth Resistance": 0.0035,
+          "% Final Damage": 12.0178,
+          "% Fire Resistance": 0.0035,
+          "% Melee Resistance": 0.0104,
+          "% Neutral Resistance": 0.0035,
+          "% Ranged Damage": 12.0178,
+          "% Ranged Resistance": 0.0243,
+          "% Spell Damage": 12.0178,
+          "% Water Resistance": 0.0035,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 1.6276,
+          "Air Damage": 3.3383,
+          "Air Resistance": 0.001,
+          "Critical": 4.6402,
+          "Critical Damage": 2.003,
+          "Critical Resistance": 0.002,
+          "Damage": 3.3383,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.001,
+          "Fire Resistance": 0.001,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.001,
+          "Power": 0.6276,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0002,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.001,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "m3_next_07_minimum_level_5_strength_6_3_none_budget1",
+        "className": "Iop",
+        "level": 5,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 5,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 292.03,
+        "weightedStatScore": 341.2,
+        "utilityStatScore": 122.4,
+        "genericDamageScore": 368.55,
+        "rawRotationDamageScore": 82.8,
+        "spellDamageScore": 82.8,
+        "profileBaselineDamageScore": 674.0,
+        "profileRelativeDamage": 0.1228,
+        "weaponDamageScore": 3.67,
+        "survivabilityScore": 3.78,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 126.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 20,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 154,
+          "Power": 0,
+          "Vitality": 126,
+          "Damage": 0,
+          "Earth Damage": 2,
+          "Critical": 3,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "766",
+            "internalId": null,
+            "name": "Koliet Aclou",
+            "type": "Amulet",
+            "level": 1,
+            "set": null
+          },
+          "belt": {
+            "id": "8536",
+            "internalId": null,
+            "name": "Muffin Belt",
+            "type": "Belt",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "weapon": {
+            "id": "9961",
+            "internalId": null,
+            "name": "Hurrian Hammer",
+            "type": "Hammer",
+            "level": 1,
+            "set": null
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "boots": {
+            "id": "8341",
+            "internalId": null,
+            "name": "Pineapi Boots",
+            "type": "Boots",
+            "level": 1,
+            "set": null
+          },
+          "hat": {
+            "id": "7177",
+            "internalId": null,
+            "name": "Pandawushu Headband",
+            "type": "Hat",
+            "level": 4,
+            "set": null
+          },
+          "cloak": {
+            "id": "8534",
+            "internalId": null,
+            "name": "S'loque Cape",
+            "type": "Cloak",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "ring_1": {
+            "id": "8537",
+            "internalId": null,
+            "name": "Pluswan",
+            "type": "Ring",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "ring_2": {
+            "id": "849",
+            "internalId": null,
+            "name": "Strong Ring",
+            "type": "Ring",
+            "level": 2,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 292.03,
+        "apStrategy": null,
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 154,
+          "Power": 0,
+          "Vitality": 126,
+          "Damage": 0,
+          "Earth Damage": 2,
+          "Critical": 3,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Koliet Aclou",
+          "Muffin Belt",
+          "Hurrian Hammer",
+          "Wild Sunflower Shield",
+          "Pluswan",
+          "Strong Ring",
+          "Pineapi Boots",
+          "Pandawushu Headband",
+          "S'loque Cape"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 292.03,
+          "weightedStatScore": 341.2,
+          "utilityStatScore": 122.4,
+          "genericDamageScore": 368.55,
+          "rawRotationDamageScore": 82.8,
+          "spellDamageScore": 82.8,
+          "profileBaselineDamageScore": 674.0,
+          "profileRelativeDamage": 0.1228,
+          "weaponDamageScore": 3.67,
+          "survivabilityScore": 3.78,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 126.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 20,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 154,
+            "Power": 0,
+            "Vitality": 126,
+            "Damage": 0,
+            "Earth Damage": 2,
+            "Critical": 3,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "766",
+              "internalId": null,
+              "name": "Koliet Aclou",
+              "type": "Amulet",
+              "level": 1,
+              "set": null
+            },
+            "belt": {
+              "id": "8536",
+              "internalId": null,
+              "name": "Muffin Belt",
+              "type": "Belt",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "weapon": {
+              "id": "9961",
+              "internalId": null,
+              "name": "Hurrian Hammer",
+              "type": "Hammer",
+              "level": 1,
+              "set": null
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "boots": {
+              "id": "8341",
+              "internalId": null,
+              "name": "Pineapi Boots",
+              "type": "Boots",
+              "level": 1,
+              "set": null
+            },
+            "hat": {
+              "id": "7177",
+              "internalId": null,
+              "name": "Pandawushu Headband",
+              "type": "Hat",
+              "level": 4,
+              "set": null
+            },
+            "cloak": {
+              "id": "8534",
+              "internalId": null,
+              "name": "S'loque Cape",
+              "type": "Cloak",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "ring_1": {
+              "id": "8537",
+              "internalId": null,
+              "name": "Pluswan",
+              "type": "Ring",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "ring_2": {
+              "id": "849",
+              "internalId": null,
+              "name": "Strong Ring",
+              "type": "Ring",
+              "level": 2,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 292.03,
+          "apStrategy": null,
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 154,
+            "Power": 0,
+            "Vitality": 126,
+            "Damage": 0,
+            "Earth Damage": 2,
+            "Critical": 3,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Koliet Aclou",
+            "Muffin Belt",
+            "Hurrian Hammer",
+            "Wild Sunflower Shield",
+            "Pluswan",
+            "Strong Ring",
+            "Pineapi Boots",
+            "Pandawushu Headband",
+            "S'loque Cape"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 68.5,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 23.8,
+          "totalSearchMs": 44.7
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 6.8,
+            "solveMs": 35.0,
+            "objective": 48.9,
+            "solutionCallbackCount": 10,
+            "validCallbackCandidateCount": 10,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 4.0,
+                "objective": 32.97,
+                "score": 290.04,
+                "itemIds": [
+                  "2475",
+                  "2478",
+                  "8533",
+                  "8534",
+                  "8535",
+                  "8536",
+                  "8537",
+                  "30701",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 8.4,
+                "objective": 36.58,
+                "score": 279.8,
+                "itemIds": [
+                  "789",
+                  "2475",
+                  "2478",
+                  "7177",
+                  "8537",
+                  "10794",
+                  "10800",
+                  "18714",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 11.5,
+                "objective": 36.65,
+                "score": 280.23,
+                "itemIds": [
+                  "2475",
+                  "2478",
+                  "7177",
+                  "8341",
+                  "8534",
+                  "8536",
+                  "10785",
+                  "10797",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 14.2,
+                "objective": 37.96,
+                "score": 282.45,
+                "itemIds": [
+                  "766",
+                  "8534",
+                  "8535",
+                  "8536",
+                  "8537",
+                  "10785",
+                  "10801",
+                  "18714",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 16.7,
+                "objective": 38.82,
+                "score": 283.0,
+                "itemIds": [
+                  "7177",
+                  "8534",
+                  "8535",
+                  "8536",
+                  "8537",
+                  "10784",
+                  "10785",
+                  "18714",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 6,
+                "rankBeforeRerank": 6,
+                "wallTimeMs": 19.1,
+                "objective": 42.36,
+                "score": 286.84,
+                "itemIds": [
+                  "766",
+                  "7177",
+                  "8534",
+                  "8535",
+                  "8536",
+                  "8537",
+                  "10785",
+                  "18714",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 7,
+                "rankBeforeRerank": 7,
+                "wallTimeMs": 21.5,
+                "objective": 46.23,
+                "score": 290.15,
+                "itemIds": [
+                  "2475",
+                  "2478",
+                  "7177",
+                  "8534",
+                  "8535",
+                  "8536",
+                  "8537",
+                  "18714",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 8,
+                "rankBeforeRerank": 8,
+                "wallTimeMs": 23.9,
+                "objective": 46.97,
+                "score": 291.49,
+                "itemIds": [
+                  "766",
+                  "789",
+                  "849",
+                  "7177",
+                  "8341",
+                  "8534",
+                  "8537",
+                  "9961",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 9,
+                "rankBeforeRerank": 9,
+                "wallTimeMs": 26.6,
+                "objective": 48.14,
+                "score": 292.03,
+                "itemIds": [
+                  "766",
+                  "849",
+                  "7177",
+                  "8341",
+                  "8534",
+                  "8536",
+                  "8537",
+                  "9961",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 10,
+                "rankBeforeRerank": 10,
+                "wallTimeMs": 29.4,
+                "objective": 48.9,
+                "score": 291.73,
+                "itemIds": [
+                  "2475",
+                  "2478",
+                  "7177",
+                  "8341",
+                  "8534",
+                  "8536",
+                  "8537",
+                  "9961",
+                  "18714"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 7,
+                "belt": 5,
+                "weapon": 13,
+                "shield": 4,
+                "boots": 11,
+                "hat": 8,
+                "cloak": 3,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 12
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 63,
+              "uniqueItemCount": 63,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 21,
+              "skippedSetCountVarCount": 0,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 0,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 3
+            }
+          }
+        ],
+        "itemCount": 63,
+        "candidateCount": 10,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0036,
+          "% Earth Resistance": 0.0036,
+          "% Final Damage": 12.0178,
+          "% Fire Resistance": 0.0036,
+          "% Melee Resistance": 0.0108,
+          "% Neutral Resistance": 0.0036,
+          "% Ranged Damage": 12.0178,
+          "% Ranged Resistance": 0.0254,
+          "% Spell Damage": 12.0178,
+          "% Water Resistance": 0.0036,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.001,
+          "Critical": 4.6402,
+          "Critical Damage": 2.003,
+          "Critical Resistance": 0.0021,
+          "Damage": 3.3383,
+          "Dodge": 1.0,
+          "Earth Damage": 3.3383,
+          "Earth Resistance": 0.001,
+          "Fire Resistance": 0.001,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.001,
+          "Power": 0.6276,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0002,
+          "Range": 8.0,
+          "Strength": 0.6276,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.001,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "m3_next_08_minimum_level_6_intelligence_6_3_none_budget1",
+        "className": "Iop",
+        "level": 6,
+        "element": "intelligence",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 6,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 487.68,
+        "weightedStatScore": 354.85,
+        "utilityStatScore": 297.15,
+        "genericDamageScore": 415.47,
+        "rawRotationDamageScore": 107.4,
+        "spellDamageScore": 107.4,
+        "profileBaselineDamageScore": 775.5,
+        "profileRelativeDamage": 0.1385,
+        "weaponDamageScore": 4.38,
+        "survivabilityScore": 3.57,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 119.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 25,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Intelligence": 177,
+          "Power": 0,
+          "Vitality": 119,
+          "Damage": 0,
+          "Fire Damage": 1,
+          "Critical": 3,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Boon Set": 4
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "786",
+            "internalId": null,
+            "name": "Puny Owl Pendant",
+            "type": "Amulet",
+            "level": 3,
+            "set": null
+          },
+          "belt": {
+            "id": "8536",
+            "internalId": null,
+            "name": "Muffin Belt",
+            "type": "Belt",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "weapon": {
+            "id": "829",
+            "internalId": null,
+            "name": "Com Bow",
+            "type": "Bow",
+            "level": 5,
+            "set": null
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "boots": {
+            "id": "862",
+            "internalId": null,
+            "name": "Intelligence Sandals",
+            "type": "Boots",
+            "level": 6,
+            "set": null
+          },
+          "hat": {
+            "id": "8533",
+            "internalId": null,
+            "name": "Flud",
+            "type": "Hat",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "cloak": {
+            "id": "8534",
+            "internalId": null,
+            "name": "S'loque Cape",
+            "type": "Cloak",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "ring_1": {
+            "id": "8537",
+            "internalId": null,
+            "name": "Pluswan",
+            "type": "Ring",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "ring_2": {
+            "id": "852",
+            "internalId": null,
+            "name": "Small Magic Ring",
+            "type": "Ring",
+            "level": 1,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 487.68,
+        "apStrategy": null,
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Intelligence": 177,
+          "Power": 0,
+          "Vitality": 119,
+          "Damage": 0,
+          "Fire Damage": 1,
+          "Critical": 3,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Boon Set": 4
+        },
+        "exos": {},
+        "items": [
+          "Puny Owl Pendant",
+          "Muffin Belt",
+          "Com Bow",
+          "Wild Sunflower Shield",
+          "Pluswan",
+          "Small Magic Ring",
+          "Intelligence Sandals",
+          "Flud",
+          "S'loque Cape"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 487.68,
+          "weightedStatScore": 354.85,
+          "utilityStatScore": 297.15,
+          "genericDamageScore": 415.47,
+          "rawRotationDamageScore": 107.4,
+          "spellDamageScore": 107.4,
+          "profileBaselineDamageScore": 775.5,
+          "profileRelativeDamage": 0.1385,
+          "weaponDamageScore": 4.38,
+          "survivabilityScore": 3.57,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 119.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 25,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Intelligence": 177,
+            "Power": 0,
+            "Vitality": 119,
+            "Damage": 0,
+            "Fire Damage": 1,
+            "Critical": 3,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Boon Set": 4
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "786",
+              "internalId": null,
+              "name": "Puny Owl Pendant",
+              "type": "Amulet",
+              "level": 3,
+              "set": null
+            },
+            "belt": {
+              "id": "8536",
+              "internalId": null,
+              "name": "Muffin Belt",
+              "type": "Belt",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "weapon": {
+              "id": "829",
+              "internalId": null,
+              "name": "Com Bow",
+              "type": "Bow",
+              "level": 5,
+              "set": null
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "boots": {
+              "id": "862",
+              "internalId": null,
+              "name": "Intelligence Sandals",
+              "type": "Boots",
+              "level": 6,
+              "set": null
+            },
+            "hat": {
+              "id": "8533",
+              "internalId": null,
+              "name": "Flud",
+              "type": "Hat",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "cloak": {
+              "id": "8534",
+              "internalId": null,
+              "name": "S'loque Cape",
+              "type": "Cloak",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "ring_1": {
+              "id": "8537",
+              "internalId": null,
+              "name": "Pluswan",
+              "type": "Ring",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "ring_2": {
+              "id": "852",
+              "internalId": null,
+              "name": "Small Magic Ring",
+              "type": "Ring",
+              "level": 1,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 487.68,
+          "apStrategy": null,
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Intelligence": 177,
+            "Power": 0,
+            "Vitality": 119,
+            "Damage": 0,
+            "Fire Damage": 1,
+            "Critical": 3,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Boon Set": 4
+          },
+          "exos": {},
+          "items": [
+            "Puny Owl Pendant",
+            "Muffin Belt",
+            "Com Bow",
+            "Wild Sunflower Shield",
+            "Pluswan",
+            "Small Magic Ring",
+            "Intelligence Sandals",
+            "Flud",
+            "S'loque Cape"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 61.0,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 32.1,
+          "totalSearchMs": 28.9
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 8.1,
+            "solveMs": 20.2,
+            "objective": 120.66,
+            "solutionCallbackCount": 6,
+            "validCallbackCandidateCount": 3,
+            "invalidCallbackCandidateCount": 4,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": false,
+            "finalInvalidReason": {
+              "reason": "conditions",
+              "stats": {
+                "AP": 6,
+                "MP": 3,
+                "Vitality": 125,
+                "Strength": 112
+              },
+              "failures": [
+                {
+                  "slot": "cloak",
+                  "itemId": "778",
+                  "itemName": "Mori Arty's Cloak",
+                  "conditions": {
+                    "operator": ">",
+                    "stat": "ALIGNMENT_LEVEL",
+                    "value": 30
+                  }
+                }
+              ],
+              "items": {
+                "amulet": {
+                  "id": "786",
+                  "name": "Puny Owl Pendant"
+                },
+                "belt": {
+                  "id": "2477",
+                  "name": "Adventurer Belt"
+                },
+                "weapon": {
+                  "id": "829",
+                  "name": "Com Bow"
+                },
+                "shield": {
+                  "id": "18714",
+                  "name": "Wild Sunflower Shield"
+                },
+                "boots": {
+                  "id": "862",
+                  "name": "Intelligence Sandals"
+                },
+                "hat": {
+                  "id": "7177",
+                  "name": "Pandawushu Headband"
+                },
+                "cloak": {
+                  "id": "778",
+                  "name": "Mori Arty's Cloak"
+                },
+                "ring_1": {
+                  "id": "2475",
+                  "name": "Adventurer Ring"
+                },
+                "ring_2": {
+                  "id": "852",
+                  "name": "Small Magic Ring"
+                }
+              }
+            },
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 5.3,
+                "objective": 73.64,
+                "score": 467.77,
+                "itemIds": [
+                  "852",
+                  "8533",
+                  "8534",
+                  "8535",
+                  "8536",
+                  "8537",
+                  "8538",
+                  "30701",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 10.1,
+                "objective": 87.29,
+                "score": 467.44,
+                "itemIds": [
+                  "829",
+                  "2475",
+                  "2478",
+                  "8533",
+                  "8534",
+                  "8535",
+                  "8536",
+                  "10785",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 13.0,
+                "objective": 106.69,
+                "score": 487.68,
+                "itemIds": [
+                  "786",
+                  "829",
+                  "852",
+                  "862",
+                  "8533",
+                  "8534",
+                  "8536",
+                  "8537",
+                  "18714"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [
+              {
+                "callbackIndex": 2,
+                "wallTimeMs": 9.5,
+                "reason": {
+                  "reason": "conditions",
+                  "stats": {
+                    "AP": 6,
+                    "MP": 3,
+                    "Vitality": 142,
+                    "Strength": 105
+                  },
+                  "failures": [
+                    {
+                      "slot": "cloak",
+                      "itemId": "778",
+                      "itemName": "Mori Arty's Cloak",
+                      "conditions": {
+                        "operator": ">",
+                        "stat": "ALIGNMENT_LEVEL",
+                        "value": 30
+                      }
+                    }
+                  ],
+                  "items": {
+                    "amulet": {
+                      "id": "786",
+                      "name": "Puny Owl Pendant"
+                    },
+                    "belt": {
+                      "id": "8536",
+                      "name": "Muffin Belt"
+                    },
+                    "weapon": {
+                      "id": "10797",
+                      "name": "Exuberant Sword"
+                    },
+                    "shield": {
+                      "id": "18714",
+                      "name": "Wild Sunflower Shield"
+                    },
+                    "boots": {
+                      "id": "8535",
+                      "name": "Crashers"
+                    },
+                    "hat": {
+                      "id": "7177",
+                      "name": "Pandawushu Headband"
+                    },
+                    "cloak": {
+                      "id": "778",
+                      "name": "Mori Arty's Cloak"
+                    },
+                    "ring_1": {
+                      "id": "2475",
+                      "name": "Adventurer Ring"
+                    },
+                    "ring_2": {
+                      "id": "10785",
+                      "name": "Intrepid Ring"
+                    }
+                  }
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "wallTimeMs": 15.5,
+                "reason": {
+                  "reason": "conditions",
+                  "stats": {
+                    "AP": 6,
+                    "MP": 3,
+                    "Vitality": 144,
+                    "Strength": 115
+                  },
+                  "failures": [
+                    {
+                      "slot": "cloak",
+                      "itemId": "778",
+                      "itemName": "Mori Arty's Cloak",
+                      "conditions": {
+                        "operator": ">",
+                        "stat": "ALIGNMENT_LEVEL",
+                        "value": 30
+                      }
+                    }
+                  ],
+                  "items": {
+                    "amulet": {
+                      "id": "786",
+                      "name": "Puny Owl Pendant"
+                    },
+                    "belt": {
+                      "id": "8536",
+                      "name": "Muffin Belt"
+                    },
+                    "weapon": {
+                      "id": "30828",
+                      "name": "Bounihime"
+                    },
+                    "shield": {
+                      "id": "18714",
+                      "name": "Wild Sunflower Shield"
+                    },
+                    "boots": {
+                      "id": "862",
+                      "name": "Intelligence Sandals"
+                    },
+                    "hat": {
+                      "id": "8533",
+                      "name": "Flud"
+                    },
+                    "cloak": {
+                      "id": "778",
+                      "name": "Mori Arty's Cloak"
+                    },
+                    "ring_1": {
+                      "id": "8537",
+                      "name": "Pluswan"
+                    },
+                    "ring_2": {
+                      "id": "852",
+                      "name": "Small Magic Ring"
+                    }
+                  }
+                }
+              },
+              {
+                "callbackIndex": 6,
+                "wallTimeMs": 16.7,
+                "reason": {
+                  "reason": "conditions",
+                  "stats": {
+                    "AP": 6,
+                    "MP": 3,
+                    "Vitality": 125,
+                    "Strength": 112
+                  },
+                  "failures": [
+                    {
+                      "slot": "cloak",
+                      "itemId": "778",
+                      "itemName": "Mori Arty's Cloak",
+                      "conditions": {
+                        "operator": ">",
+                        "stat": "ALIGNMENT_LEVEL",
+                        "value": 30
+                      }
+                    }
+                  ],
+                  "items": {
+                    "amulet": {
+                      "id": "786",
+                      "name": "Puny Owl Pendant"
+                    },
+                    "belt": {
+                      "id": "2477",
+                      "name": "Adventurer Belt"
+                    },
+                    "weapon": {
+                      "id": "829",
+                      "name": "Com Bow"
+                    },
+                    "shield": {
+                      "id": "18714",
+                      "name": "Wild Sunflower Shield"
+                    },
+                    "boots": {
+                      "id": "862",
+                      "name": "Intelligence Sandals"
+                    },
+                    "hat": {
+                      "id": "7177",
+                      "name": "Pandawushu Headband"
+                    },
+                    "cloak": {
+                      "id": "778",
+                      "name": "Mori Arty's Cloak"
+                    },
+                    "ring_1": {
+                      "id": "2475",
+                      "name": "Adventurer Ring"
+                    },
+                    "ring_2": {
+                      "id": "852",
+                      "name": "Small Magic Ring"
+                    }
+                  }
+                }
+              }
+            ],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 7,
+                "belt": 6,
+                "weapon": 15,
+                "shield": 4,
+                "boots": 13,
+                "hat": 9,
+                "cloak": 5,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 13
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 72,
+              "uniqueItemCount": 72,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 22,
+              "skippedSetCountVarCount": 0,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 1,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 3
+            }
+          }
+        ],
+        "itemCount": 72,
+        "candidateCount": 3,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0038,
+          "% Earth Resistance": 0.0038,
+          "% Final Damage": 11.5329,
+          "% Fire Resistance": 0.0038,
+          "% Melee Resistance": 0.0113,
+          "% Neutral Resistance": 0.0038,
+          "% Ranged Damage": 11.5329,
+          "% Ranged Resistance": 0.0264,
+          "% Spell Damage": 11.5329,
+          "% Water Resistance": 0.0038,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0011,
+          "Critical": 4.4101,
+          "Critical Damage": 1.8859,
+          "Critical Resistance": 0.0021,
+          "Damage": 2.9014,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0011,
+          "Fire Damage": 2.9014,
+          "Fire Resistance": 0.0011,
+          "Initiative": 0.005,
+          "Intelligence": 1.6702,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0011,
+          "Power": 0.6702,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0002,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0011,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "m3_next_09_minimum_level_7_chance_6_3_none_budget1",
+        "className": "Iop",
+        "level": 7,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 7,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 515.83,
+        "weightedStatScore": 367.5,
+        "utilityStatScore": 304.5,
+        "genericDamageScore": 462.29,
+        "rawRotationDamageScore": 132.27,
+        "spellDamageScore": 132.27,
+        "profileBaselineDamageScore": 858.38,
+        "profileRelativeDamage": 0.1541,
+        "weaponDamageScore": 8.16,
+        "survivabilityScore": 3.3,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 110.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 30,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 183,
+          "Power": 0,
+          "Vitality": 110,
+          "Damage": 0,
+          "Water Damage": 3,
+          "Critical": 3,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Young Adventurer Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "2478",
+            "internalId": null,
+            "name": "Adventurer Amulet",
+            "type": "Amulet",
+            "level": 5,
+            "set": "Young Adventurer Set"
+          },
+          "belt": {
+            "id": "2803",
+            "internalId": null,
+            "name": "Crab Belt",
+            "type": "Belt",
+            "level": 7,
+            "set": null
+          },
+          "weapon": {
+            "id": "153",
+            "internalId": null,
+            "name": "Twiggy Shovel",
+            "type": "Shovel",
+            "level": 6,
+            "set": null
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "boots": {
+            "id": "864",
+            "internalId": null,
+            "name": "Chance Boots",
+            "type": "Boots",
+            "level": 7,
+            "set": null
+          },
+          "hat": {
+            "id": "7177",
+            "internalId": null,
+            "name": "Pandawushu Headband",
+            "type": "Hat",
+            "level": 4,
+            "set": null
+          },
+          "cloak": {
+            "id": "937",
+            "internalId": null,
+            "name": "Bluish Cloak",
+            "type": "Cloak",
+            "level": 7,
+            "set": null
+          },
+          "ring_1": {
+            "id": "2475",
+            "internalId": null,
+            "name": "Adventurer Ring",
+            "type": "Ring",
+            "level": 4,
+            "set": "Young Adventurer Set"
+          },
+          "ring_2": {
+            "id": "853",
+            "internalId": null,
+            "name": "Small Chance Ring",
+            "type": "Ring",
+            "level": 1,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 515.83,
+        "apStrategy": null,
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 183,
+          "Power": 0,
+          "Vitality": 110,
+          "Damage": 0,
+          "Water Damage": 3,
+          "Critical": 3,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Young Adventurer Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Adventurer Amulet",
+          "Crab Belt",
+          "Twiggy Shovel",
+          "Wild Sunflower Shield",
+          "Adventurer Ring",
+          "Small Chance Ring",
+          "Chance Boots",
+          "Pandawushu Headband",
+          "Bluish Cloak"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 515.83,
+          "weightedStatScore": 367.5,
+          "utilityStatScore": 304.5,
+          "genericDamageScore": 462.29,
+          "rawRotationDamageScore": 132.27,
+          "spellDamageScore": 132.27,
+          "profileBaselineDamageScore": 858.38,
+          "profileRelativeDamage": 0.1541,
+          "weaponDamageScore": 8.16,
+          "survivabilityScore": 3.3,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 110.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 30,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Chance": 183,
+            "Power": 0,
+            "Vitality": 110,
+            "Damage": 0,
+            "Water Damage": 3,
+            "Critical": 3,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Young Adventurer Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "2478",
+              "internalId": null,
+              "name": "Adventurer Amulet",
+              "type": "Amulet",
+              "level": 5,
+              "set": "Young Adventurer Set"
+            },
+            "belt": {
+              "id": "2803",
+              "internalId": null,
+              "name": "Crab Belt",
+              "type": "Belt",
+              "level": 7,
+              "set": null
+            },
+            "weapon": {
+              "id": "153",
+              "internalId": null,
+              "name": "Twiggy Shovel",
+              "type": "Shovel",
+              "level": 6,
+              "set": null
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "boots": {
+              "id": "864",
+              "internalId": null,
+              "name": "Chance Boots",
+              "type": "Boots",
+              "level": 7,
+              "set": null
+            },
+            "hat": {
+              "id": "7177",
+              "internalId": null,
+              "name": "Pandawushu Headband",
+              "type": "Hat",
+              "level": 4,
+              "set": null
+            },
+            "cloak": {
+              "id": "937",
+              "internalId": null,
+              "name": "Bluish Cloak",
+              "type": "Cloak",
+              "level": 7,
+              "set": null
+            },
+            "ring_1": {
+              "id": "2475",
+              "internalId": null,
+              "name": "Adventurer Ring",
+              "type": "Ring",
+              "level": 4,
+              "set": "Young Adventurer Set"
+            },
+            "ring_2": {
+              "id": "853",
+              "internalId": null,
+              "name": "Small Chance Ring",
+              "type": "Ring",
+              "level": 1,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 515.83,
+          "apStrategy": null,
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Chance": 183,
+            "Power": 0,
+            "Vitality": 110,
+            "Damage": 0,
+            "Water Damage": 3,
+            "Critical": 3,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Young Adventurer Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Adventurer Amulet",
+            "Crab Belt",
+            "Twiggy Shovel",
+            "Wild Sunflower Shield",
+            "Adventurer Ring",
+            "Small Chance Ring",
+            "Chance Boots",
+            "Pandawushu Headband",
+            "Bluish Cloak"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 73.2,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 31.2,
+          "totalSearchMs": 42.0
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 10.2,
+            "solveMs": 29.1,
+            "objective": 115.53,
+            "solutionCallbackCount": 7,
+            "validCallbackCandidateCount": 7,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 3.8,
+                "objective": 74.78,
+                "score": 486.39,
+                "itemIds": [
+                  "853",
+                  "8533",
+                  "8534",
+                  "8535",
+                  "8536",
+                  "8537",
+                  "8538",
+                  "30701",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 7.2,
+                "objective": 84.1,
+                "score": 483.59,
+                "itemIds": [
+                  "153",
+                  "937",
+                  "2475",
+                  "2478",
+                  "8533",
+                  "8535",
+                  "8536",
+                  "10785",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 10.0,
+                "objective": 88.78,
+                "score": 488.93,
+                "itemIds": [
+                  "853",
+                  "2475",
+                  "2476",
+                  "2477",
+                  "2478",
+                  "7177",
+                  "8534",
+                  "18714",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 13.0,
+                "objective": 93.39,
+                "score": 493.36,
+                "itemIds": [
+                  "153",
+                  "2475",
+                  "2476",
+                  "2477",
+                  "7177",
+                  "8534",
+                  "8537",
+                  "8538",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 16.9,
+                "objective": 93.51,
+                "score": 493.47,
+                "itemIds": [
+                  "153",
+                  "2475",
+                  "2476",
+                  "2803",
+                  "7177",
+                  "8534",
+                  "8537",
+                  "8538",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 6,
+                "rankBeforeRerank": 6,
+                "wallTimeMs": 19.9,
+                "objective": 99.81,
+                "score": 499.59,
+                "itemIds": [
+                  "153",
+                  "279",
+                  "864",
+                  "937",
+                  "2475",
+                  "2477",
+                  "8533",
+                  "8537",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 7,
+                "rankBeforeRerank": 7,
+                "wallTimeMs": 22.4,
+                "objective": 115.53,
+                "score": 515.83,
+                "itemIds": [
+                  "153",
+                  "853",
+                  "864",
+                  "937",
+                  "2475",
+                  "2478",
+                  "2803",
+                  "7177",
+                  "18714"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 10,
+                "belt": 8,
+                "weapon": 18,
+                "shield": 4,
+                "boots": 17,
+                "hat": 11,
+                "cloak": 7,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 14
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 89,
+              "uniqueItemCount": 89,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 23,
+              "skippedSetCountVarCount": 14,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 1,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 3
+            }
+          }
+        ],
+        "itemCount": 89,
+        "candidateCount": 7,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0039,
+          "% Earth Resistance": 0.0039,
+          "% Final Damage": 11.73,
+          "% Fire Resistance": 0.0039,
+          "% Melee Resistance": 0.0117,
+          "% Neutral Resistance": 0.0039,
+          "% Ranged Damage": 11.73,
+          "% Ranged Resistance": 0.0275,
+          "% Spell Damage": 11.73,
+          "% Water Resistance": 0.0039,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0011,
+          "Chance": 1.7058,
+          "Critical": 4.1547,
+          "Critical Damage": 1.7038,
+          "Critical Resistance": 0.0022,
+          "Damage": 2.6212,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0011,
+          "Fire Resistance": 0.0011,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0011,
+          "Power": 0.7058,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0002,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.6212,
+          "Water Resistance": 0.0011,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "m3_next_10_cap_level_8_agility_12_6_6_budget4",
+        "className": "Iop",
+        "level": 8,
+        "element": "agility",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 8,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 250,
+        "perSignatureCap": 40,
+        "relevantSetLimit": 60
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "candidateValidationErrors": [],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "candidateBuilds": [],
+      "candidateBuildSummaries": [],
+      "candidateDiversity": {
+        "candidateCount": 0,
+        "uniqueItemSignatureCount": 0,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 143.4,
+        "solverStatus": "INFEASIBLE",
+        "timings": {
+          "loadMs": 30.2,
+          "totalSearchMs": 113.2
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "INFEASIBLE",
+            "modelMs": 110.3,
+            "solveMs": 2.9,
+            "objective": null,
+            "solutionCallbackCount": 0,
+            "validCallbackCandidateCount": 0,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": false,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": false,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 14,
+                "belt": 11,
+                "weapon": 22,
+                "shield": 4,
+                "ring_1": 17,
+                "ring_2": 17,
+                "boots": 19,
+                "hat": 13,
+                "cloak": 10,
+                "pet": 2,
+                "dofus": 1
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 130,
+              "uniqueItemCount": 113,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 46,
+              "skippedSetCountVarCount": 0,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 1,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 10
+            }
+          }
+        ],
+        "itemCount": 113,
+        "candidateCount": 0,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0041,
+          "% Earth Resistance": 0.0041,
+          "% Final Damage": 12.0178,
+          "% Fire Resistance": 0.0041,
+          "% Melee Resistance": 0.0122,
+          "% Neutral Resistance": 0.0041,
+          "% Ranged Damage": 12.0178,
+          "% Ranged Resistance": 0.0285,
+          "% Spell Damage": 12.0178,
+          "% Water Resistance": 0.0041,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 1.6276,
+          "Air Damage": 3.3383,
+          "Air Resistance": 0.0012,
+          "Critical": 4.6402,
+          "Critical Damage": 2.003,
+          "Critical Resistance": 0.0023,
+          "Damage": 3.3383,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0012,
+          "Fire Resistance": 0.0012,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0012,
+          "Power": 0.6276,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0002,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0012,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "m3_next_11_mp_heavy_level_9_strength_6_6_none_budget4",
+        "className": "Iop",
+        "level": 9,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 6,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 9,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "candidateValidationErrors": [],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "candidateBuilds": [],
+      "candidateBuildSummaries": [],
+      "candidateDiversity": {
+        "candidateCount": 0,
+        "uniqueItemSignatureCount": 0,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 46.8,
+        "solverStatus": "INFEASIBLE",
+        "timings": {
+          "loadMs": 25.7,
+          "totalSearchMs": 21.1
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "INFEASIBLE",
+            "modelMs": 18.0,
+            "solveMs": 3.0,
+            "objective": null,
+            "solutionCallbackCount": 0,
+            "validCallbackCandidateCount": 0,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": false,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": false,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 17,
+                "belt": 14,
+                "weapon": 23,
+                "shield": 4,
+                "ring_1": 22,
+                "ring_2": 22,
+                "boots": 20,
+                "hat": 15,
+                "cloak": 11,
+                "pet": 2,
+                "dofus": 1
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 151,
+              "uniqueItemCount": 129,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 53,
+              "skippedSetCountVarCount": 2,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 1,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 10
+            }
+          }
+        ],
+        "itemCount": 129,
+        "candidateCount": 0,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0042,
+          "% Earth Resistance": 0.0042,
+          "% Final Damage": 12.0178,
+          "% Fire Resistance": 0.0042,
+          "% Melee Resistance": 0.0126,
+          "% Neutral Resistance": 0.0042,
+          "% Ranged Damage": 12.0178,
+          "% Ranged Resistance": 0.0296,
+          "% Spell Damage": 12.0178,
+          "% Water Resistance": 0.0042,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0012,
+          "Critical": 4.6402,
+          "Critical Damage": 2.003,
+          "Critical Resistance": 0.0024,
+          "Damage": 3.3383,
+          "Dodge": 1.0,
+          "Earth Damage": 3.3383,
+          "Earth Resistance": 0.0012,
+          "Fire Resistance": 0.0012,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0012,
+          "Power": 0.6276,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0002,
+          "Range": 8.0,
+          "Strength": 0.6276,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0012,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "m3_next_12_range_heavy_level_10_intelligence_6_3_6_budget4",
+        "className": "Iop",
+        "level": 10,
+        "element": "intelligence",
+        "budgetTier": 4,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 10,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "no_build",
+      "resultCount": 0,
+      "validationErrors": [
+        "no build returned"
+      ],
+      "candidateValidationErrors": [],
+      "bestBuild": null,
+      "bestBuildSummary": null,
+      "candidateBuilds": [],
+      "candidateBuildSummaries": [],
+      "candidateDiversity": {
+        "candidateCount": 0,
+        "uniqueItemSignatureCount": 0,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 60.7,
+        "solverStatus": "INFEASIBLE",
+        "timings": {
+          "loadMs": 30.5,
+          "totalSearchMs": 30.2
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "INFEASIBLE",
+            "modelMs": 26.5,
+            "solveMs": 3.7,
+            "objective": null,
+            "solutionCallbackCount": 0,
+            "validCallbackCandidateCount": 0,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": false,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": false,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 27,
+                "belt": 23,
+                "weapon": 24,
+                "shield": 5,
+                "ring_1": 31,
+                "ring_2": 31,
+                "boots": 26,
+                "hat": 20,
+                "cloak": 13,
+                "pet": 2,
+                "dofus": 1
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 203,
+              "uniqueItemCount": 172,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 81,
+              "skippedSetCountVarCount": 0,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 1,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 17
+            }
+          }
+        ],
+        "itemCount": 172,
+        "candidateCount": 0,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0044,
+          "% Earth Resistance": 0.0044,
+          "% Final Damage": 10.3863,
+          "% Fire Resistance": 0.0044,
+          "% Melee Resistance": 0.0131,
+          "% Neutral Resistance": 0.0044,
+          "% Ranged Damage": 10.3863,
+          "% Ranged Resistance": 0.0307,
+          "% Spell Damage": 10.3863,
+          "% Water Resistance": 0.0044,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0012,
+          "Critical": 5.5492,
+          "Critical Damage": 2.5691,
+          "Critical Resistance": 0.0025,
+          "Damage": 4.4041,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0012,
+          "Fire Damage": 4.4041,
+          "Fire Resistance": 0.0012,
+          "Initiative": 0.005,
+          "Intelligence": 1.5021,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0012,
+          "Power": 0.5021,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0002,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0012,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

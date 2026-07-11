@@ -27,6 +27,11 @@ DEFAULT_LEVELS = (1, 20, 50, 80, 99, 100, 120, 150, 179, 180, 199, 200)
 DEFAULT_ELEMENTS = ("strength", "intelligence", "chance", "agility")
 DEFAULT_BUDGET_TIERS = (1, 2, 3, 4)
 DEFAULT_ARTIFACTS = (
+    ".codex/state/build-discovery-m3-boundary-wisdom-flat.json",
+    ".codex/state/build-discovery-m3-coverage-wisdom-flat.json",
+    ".codex/state/build-discovery-m3-grid-next-cap-wisdom-flat.json",
+    ".codex/state/build-discovery-m3-next-level-sample-20260711.json",
+    ".codex/state/build-discovery-m3-prod-level-sample-optional-slots.json",
     ".codex/state/build-discovery-level-diversity-matrix.json",
     ".codex/state/build-discovery-level-boundary-matrix.json",
     ".codex/state/build-discovery-ap-mp-range-coverage-matrix.json",
@@ -206,17 +211,25 @@ def row_key(row: dict[str, Any]) -> tuple[int, str, int, int, int, int | None]:
     )
 
 
-def summarize_by_level(rows: list[dict[str, Any]], covered: set[tuple[int, str, int, int, int, int | None]]) -> list[dict[str, Any]]:
+def summarize_by_level(
+    rows: list[dict[str, Any]],
+    covered: set[tuple[int, str, int, int, int, int | None]],
+    resolved: set[tuple[int, str, int, int, int, int | None]] | None = None,
+) -> list[dict[str, Any]]:
+    resolved = resolved or covered
     summaries = []
     for level in sorted({row["level"] for row in rows}):
         level_rows = [row for row in rows if row["level"] == level]
         covered_count = sum(1 for row in level_rows if row_key(row) in covered)
+        resolved_count = sum(1 for row in level_rows if row_key(row) in resolved)
         summaries.append(
             {
                 "level": level,
                 "validQueryCount": len(level_rows),
                 "generatedEvidenceCount": covered_count,
+                "resolvedEvidenceCount": resolved_count,
                 "unprovenCount": len(level_rows) - covered_count,
+                "unresolvedCount": len(level_rows) - resolved_count,
             }
         )
     return summaries
@@ -404,6 +417,8 @@ def build_inventory_report(
     covered_rows = [row for row in rows if row_key(row) in covered]
     attempted_rows = [row for row in rows if row_key(row) in attempted]
     no_build_rows = [row for row in rows if row_key(row) in no_build]
+    resolved = covered | no_build
+    resolved_rows = [row for row in rows if row_key(row) in resolved]
     return {
         "reportVersion": REPORT_VERSION,
         "scope": "query-grid inventory, not generated-build proof",
@@ -418,9 +433,11 @@ def build_inventory_report(
         "generatedEvidenceCount": len(covered_rows),
         "attemptedEvidenceCount": len(attempted_rows),
         "noBuildEvidenceCount": len(no_build_rows),
+        "resolvedEvidenceCount": len(resolved_rows),
         "unprovenCount": len(rows) - len(covered_rows),
+        "unresolvedCount": len(rows) - len(resolved_rows),
         "unattemptedCount": len(rows) - len(attempted_rows),
-        "byLevel": summarize_by_level(rows, covered),
+        "byLevel": summarize_by_level(rows, covered, resolved),
         "unprovenExamples": compact_unproven_examples(rows, covered, unproven_example_limit),
         "nextUnprovenTargets": select_next_unproven_targets(
             rows,
@@ -451,15 +468,19 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Generated evidence rows: `{report['generatedEvidenceCount']}`",
         f"Attempted evidence rows: `{report['attemptedEvidenceCount']}`",
         f"No-build evidence rows: `{report.get('noBuildEvidenceCount', 0)}`",
+        f"Resolved evidence rows: `{report.get('resolvedEvidenceCount', report['generatedEvidenceCount'])}`",
         f"Unproven rows: `{report['unprovenCount']}`",
+        f"Unresolved rows: `{report.get('unresolvedCount', report['unprovenCount'])}`",
         f"Unattempted rows: `{report['unattemptedCount']}`",
         "",
-        "| Level | Valid rows | Generated evidence | Unproven |",
-        "|---:|---:|---:|---:|",
+        "| Level | Valid rows | Generated evidence | Resolved evidence | Unresolved |",
+        "|---:|---:|---:|---:|---:|",
     ]
     for row in report["byLevel"]:
         lines.append(
-            f"| {row['level']} | {row['validQueryCount']} | {row['generatedEvidenceCount']} | {row['unprovenCount']} |"
+            f"| {row['level']} | {row['validQueryCount']} | {row['generatedEvidenceCount']} | "
+            f"{row.get('resolvedEvidenceCount', row['generatedEvidenceCount'])} | "
+            f"{row.get('unresolvedCount', row['unprovenCount'])} |"
         )
     lines.extend(["", "## Unproven Examples", ""])
     for row in report["unprovenExamples"]:

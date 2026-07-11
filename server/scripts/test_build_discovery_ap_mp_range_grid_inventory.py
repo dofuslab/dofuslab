@@ -56,6 +56,10 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
 
     def test_default_artifacts_include_prod_level_samples(self):
         self.assertIn(
+            ".codex/state/build-discovery-m3-next-level-sample-20260711.json",
+            DEFAULT_ARTIFACTS,
+        )
+        self.assertIn(
             ".codex/state/build-discovery-prod-level-sample-matrix.json",
             DEFAULT_ARTIFACTS,
         )
@@ -170,9 +174,13 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         self.assertEqual(inventory["generatedEvidenceCount"], 1)
         self.assertEqual(inventory["attemptedEvidenceCount"], 1)
         self.assertEqual(inventory["noBuildEvidenceCount"], 0)
+        self.assertEqual(inventory["resolvedEvidenceCount"], 1)
         self.assertEqual(inventory["unprovenCount"], 223)
+        self.assertEqual(inventory["unresolvedCount"], 223)
         self.assertEqual(inventory["unattemptedCount"], 223)
         self.assertEqual(inventory["byLevel"][0]["level"], 1)
+        self.assertEqual(inventory["byLevel"][0]["resolvedEvidenceCount"], 1)
+        self.assertEqual(inventory["byLevel"][0]["unresolvedCount"], 223)
         self.assertEqual(len(inventory["unprovenExamples"]), 3)
         self.assertGreater(len(inventory["nextUnprovenTargets"]), 0)
 
@@ -206,6 +214,8 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         self.assertEqual(inventory["generatedEvidenceCount"], 1)
         self.assertEqual(inventory["attemptedEvidenceCount"], 2)
         self.assertEqual(inventory["noBuildEvidenceCount"], 1)
+        self.assertEqual(inventory["resolvedEvidenceCount"], 2)
+        self.assertEqual(inventory["unresolvedCount"], 446)
 
     def test_artifact_loader_combines_paths_and_dirs(self):
         aggregate_report = {
