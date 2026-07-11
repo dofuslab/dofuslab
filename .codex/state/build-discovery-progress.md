@@ -5238,3 +5238,42 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     Milestone 2 `<5s` target
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap7-8-mp45-rangesn0-budgets23-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 7,8 --mp-targets 4,5 --range-targets none,0 --expected-solver cpsat`
+
+### 2026-07-11 AP10/AP11 MP3/MP6 Range-2/6 Edge-Budget CP-SAT Smoke
+
+- Ran a targeted Milestone 2 slice to strengthen range `2/6`, AP `10/11`,
+  MP `3/6`, and edge budget tiers.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-ap10-11-mp36-ranges26-budgets14-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ap10-11-mp36-ranges26-budgets14-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ap10-11-mp36-ranges26-budgets14-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 1, 4
+  - AP: 10, 11
+  - MP: 3, 6
+  - Range: 2, 6
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `64`
+  - generated: `64`
+  - invalid: `0`
+  - newly covered targets: `64`
+  - solver statuses: `23` optimal, `41` feasible
+  - AP coverage: `32` rows each for `10` and `11`
+  - MP coverage: `32` rows each for `3` and `6`
+  - range coverage: `32` rows each for `2` and `6`
+  - budget coverage: `32` rows each for tiers `1` and `4`
+- Runtime:
+  - elapsed min/avg/max: `5412.6ms / 6718.0ms / 8441.5ms`
+  - model min/avg/max: `1304.4ms / 1515.9ms / 1815.5ms`
+  - solve min/avg/max: `3507.0ms / 4832.5ms / 5081.0ms`
+- Interpretation:
+  - Strict CP-SAT Milestone 2 coverage is now `1112 / 3072` targets
+    (`36.2%`)
+  - Range `2/6`, AP `10/11`, MP `3/6`, and edge budgets have stronger
+    committed evidence
+  - Range `3` and Range `1` are now the lowest coverage buckets; p95 remains
+    above the Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap10-11-mp36-ranges26-budgets14-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 10,11 --mp-targets 3,6 --range-targets 2,6 --expected-solver cpsat`
