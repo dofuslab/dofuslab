@@ -4617,3 +4617,36 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - p95 remains above the Milestone 2 `<5s` target
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-midgrid-ap10mp5-allbudgets-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,2,3,4 --ap-targets 10 --mp-targets 5 --range-targets none,3 --expected-solver cpsat`
+
+### 2026-07-11 Interior AP/MP Range-0 CP-SAT Smoke
+
+- Ran an explicit range-0 interior AP/MP slice to avoid relying on `range none`
+  as a proxy for low-range requirements.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-interior-apmp-range0-matrix.json`
+  - `.codex/state/build-discovery-cpsat-interior-apmp-range0-matrix.md`
+  - `.codex/state/build-discovery-cpsat-interior-apmp-range0-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 1, 4
+  - AP: 8, 11
+  - MP: 4, 5
+  - Range: 0
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `32`
+  - generated: `32`
+  - invalid: `0`
+  - solver statuses: `15` optimal, `17` feasible
+  - AP coverage: `16` rows each for `8` and `11`
+  - MP coverage: `16` rows each for `4` and `5`
+- Runtime:
+  - elapsed min/avg/max: `5370.9ms / 6581.7ms / 8207.1ms`
+  - model min/avg/max: `1315.6ms / 1507.7ms / 1713.0ms`
+  - solve min/avg/max: `3457.2ms / 4656.7ms / 5074.8ms`
+- Interpretation:
+  - CP-SAT can generate valid explicit range-0 builds for sampled AP/MP
+    interior requirements across all elements and budget extremes
+  - p95 remains above the Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-interior-apmp-range0-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 8,11 --mp-targets 4,5 --range-targets 0 --expected-solver cpsat`
