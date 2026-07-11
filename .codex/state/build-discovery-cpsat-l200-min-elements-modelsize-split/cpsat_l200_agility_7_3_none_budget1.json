@@ -1,0 +1,561 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T06:32:23.493773+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-cpsat-l200-min-elements-targets.json#targets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "cpsat_l200_agility_7_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "agility",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 1886.75,
+        "weightedStatScore": 3291.73,
+        "utilityStatScore": 290.99,
+        "genericDamageScore": 3365.0,
+        "rawRotationDamageScore": 2087.0,
+        "spellDamageScore": 2087.0,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.1217,
+        "weaponDamageScore": 154.84,
+        "survivabilityScore": 81.51,
+        "weakestElementEhp": 2335.38,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 3,
+          "Agility": 1058,
+          "Power": 270,
+          "Vitality": 2603,
+          "Damage": 12,
+          "Air Damage": 67,
+          "Critical": 52,
+          "Critical Damage": 29
+        },
+        "sets": {},
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "14094",
+            "internalId": null,
+            "name": "Treadfast Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Treadfast Set"
+          },
+          "belt": {
+            "id": "19599",
+            "internalId": null,
+            "name": "Bluster Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Submerged Set"
+          },
+          "weapon": {
+            "id": "32117",
+            "internalId": null,
+            "name": "Thanatena's Judgement",
+            "type": "Scythe",
+            "level": 200,
+            "set": null
+          },
+          "shield": {
+            "id": "18712",
+            "internalId": null,
+            "name": "Honeycomb Shield",
+            "type": "Shield",
+            "level": 199,
+            "set": "Beekeeper Set"
+          },
+          "ring_1": {
+            "id": "13642",
+            "internalId": null,
+            "name": "Nomarow's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Nomarow Set"
+          },
+          "ring_2": {
+            "id": "11714",
+            "internalId": null,
+            "name": "Korriander Ring",
+            "type": "Ring",
+            "level": 176,
+            "set": "Korriander Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "13644",
+            "internalId": null,
+            "name": "Hel Munster's Helmet",
+            "type": "Hat",
+            "level": 198,
+            "set": "Hel Munster Set"
+          },
+          "cloak": {
+            "id": "14051",
+            "internalId": null,
+            "name": "Klime's Cloak",
+            "type": "Cloak",
+            "level": 197,
+            "set": "Klime Set"
+          },
+          "pet": {
+            "id": "33022",
+            "internalId": null,
+            "name": "Ebony and Indigo Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "16245",
+            "internalId": null,
+            "name": "Major Stunter",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "12622",
+            "internalId": null,
+            "name": "Minor Locker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13830",
+            "internalId": null,
+            "name": "Voyager",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13815",
+            "internalId": null,
+            "name": "Fire Bulwark",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1886.75,
+        "apStrategy": null,
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 3,
+          "Agility": 1058,
+          "Power": 270,
+          "Vitality": 2603,
+          "Damage": 12,
+          "Air Damage": 67,
+          "Critical": 52,
+          "Critical Damage": 29
+        },
+        "sets": {},
+        "exos": {},
+        "items": [
+          "Treadfast Amulet",
+          "Bluster Belt",
+          "Thanatena's Judgement",
+          "Honeycomb Shield",
+          "Nomarow's Ring",
+          "Korriander Ring",
+          "Meriana's Clairvoyance",
+          "Hel Munster's Helmet",
+          "Klime's Cloak",
+          "Ebony and Indigo Dragoturkey",
+          "Major Stunter",
+          "Arcanist",
+          "Impetuous",
+          "Minor Locker",
+          "Voyager",
+          "Fire Bulwark"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 1886.75,
+          "weightedStatScore": 3291.73,
+          "utilityStatScore": 290.99,
+          "genericDamageScore": 3365.0,
+          "rawRotationDamageScore": 2087.0,
+          "spellDamageScore": 2087.0,
+          "profileBaselineDamageScore": 1860.62,
+          "profileRelativeDamage": 1.1217,
+          "weaponDamageScore": 154.84,
+          "survivabilityScore": 81.51,
+          "weakestElementEhp": 2335.38,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 3,
+            "Agility": 1058,
+            "Power": 270,
+            "Vitality": 2603,
+            "Damage": 12,
+            "Air Damage": 67,
+            "Critical": 52,
+            "Critical Damage": 29
+          },
+          "sets": {},
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "14094",
+              "internalId": null,
+              "name": "Treadfast Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Treadfast Set"
+            },
+            "belt": {
+              "id": "19599",
+              "internalId": null,
+              "name": "Bluster Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Submerged Set"
+            },
+            "weapon": {
+              "id": "32117",
+              "internalId": null,
+              "name": "Thanatena's Judgement",
+              "type": "Scythe",
+              "level": 200,
+              "set": null
+            },
+            "shield": {
+              "id": "18712",
+              "internalId": null,
+              "name": "Honeycomb Shield",
+              "type": "Shield",
+              "level": 199,
+              "set": "Beekeeper Set"
+            },
+            "ring_1": {
+              "id": "13642",
+              "internalId": null,
+              "name": "Nomarow's Ring",
+              "type": "Ring",
+              "level": 197,
+              "set": "Nomarow Set"
+            },
+            "ring_2": {
+              "id": "11714",
+              "internalId": null,
+              "name": "Korriander Ring",
+              "type": "Ring",
+              "level": 176,
+              "set": "Korriander Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "13644",
+              "internalId": null,
+              "name": "Hel Munster's Helmet",
+              "type": "Hat",
+              "level": 198,
+              "set": "Hel Munster Set"
+            },
+            "cloak": {
+              "id": "14051",
+              "internalId": null,
+              "name": "Klime's Cloak",
+              "type": "Cloak",
+              "level": 197,
+              "set": "Klime Set"
+            },
+            "pet": {
+              "id": "33022",
+              "internalId": null,
+              "name": "Ebony and Indigo Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "16245",
+              "internalId": null,
+              "name": "Major Stunter",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "12622",
+              "internalId": null,
+              "name": "Minor Locker",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13830",
+              "internalId": null,
+              "name": "Voyager",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13815",
+              "internalId": null,
+              "name": "Fire Bulwark",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 1886.75,
+          "apStrategy": null,
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 3,
+            "Agility": 1058,
+            "Power": 270,
+            "Vitality": 2603,
+            "Damage": 12,
+            "Air Damage": 67,
+            "Critical": 52,
+            "Critical Damage": 29
+          },
+          "sets": {},
+          "exos": {},
+          "items": [
+            "Treadfast Amulet",
+            "Bluster Belt",
+            "Thanatena's Judgement",
+            "Honeycomb Shield",
+            "Nomarow's Ring",
+            "Korriander Ring",
+            "Meriana's Clairvoyance",
+            "Hel Munster's Helmet",
+            "Klime's Cloak",
+            "Ebony and Indigo Dragoturkey",
+            "Major Stunter",
+            "Arcanist",
+            "Impetuous",
+            "Minor Locker",
+            "Voyager",
+            "Fire Bulwark"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7168.4,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 271.6,
+          "totalSearchMs": 6896.8
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 1625.6,
+            "solveMs": 5037.4,
+            "objective": 1498.98,
+            "validCandidate": {
+              "score": 1886.75,
+              "totals": {
+                "AP": 9,
+                "MP": 5,
+                "Range": 3,
+                "Strength": 100,
+                "Power": 270,
+                "Earth Damage": 0,
+                "Vitality": 2603
+              },
+              "items": {
+                "amulet": "Treadfast Amulet",
+                "belt": "Bluster Belt",
+                "weapon": "Thanatena's Judgement",
+                "shield": "Honeycomb Shield",
+                "ring_1": "Nomarow's Ring",
+                "ring_2": "Korriander Ring",
+                "boots": "Meriana's Clairvoyance",
+                "hat": "Hel Munster's Helmet",
+                "cloak": "Klime's Cloak",
+                "pet": "Ebony and Indigo Dragoturkey",
+                "dofus_1": "Major Stunter",
+                "dofus_2": "Arcanist",
+                "dofus_3": "Impetuous",
+                "dofus_4": "Minor Locker",
+                "dofus_5": "Voyager",
+                "dofus_6": "Fire Bulwark"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3186,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3186,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3186,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 0.7234,
+          "Air Damage": 2.5359,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2201,
+          "Critical Damage": 1.5602,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.5359,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7234,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

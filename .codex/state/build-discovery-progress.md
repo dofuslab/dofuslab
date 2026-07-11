@@ -3812,3 +3812,33 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   performance evidence.
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-l200-min-elements.json --target-file /tmp/build-discovery-cpsat-l200-min-elements-targets.json --target-file-prefix cpsat_min`
+
+### 2026-07-11 CP-SAT Model-Size Reduction
+
+- Added a correctness-preserving cache for CP-SAT total-stat linear
+  expressions.
+- Tightened exact set-count variable domains to achievable upper bounds from
+  compatible slots and distinct compatible items.
+- Reason:
+  - CP-SAT was rebuilding the same full AP/MP/Range/stat expressions for target
+    constraints and item conditions.
+  - The first 4-row level-200 element slice spent roughly `5.8s-6.1s` per row
+    in model construction before solving.
+- Generated and validated an updated 4-row Docker slice:
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-modelsize-matrix.json`
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-modelsize-matrix.md`
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-modelsize-split/`
+- Before/after timing:
+  - Strength: model `5765.8ms -> 1664.0ms`, elapsed `12777.7ms -> 8962.6ms`
+  - Intelligence: model `6150.9ms -> 1657.4ms`, elapsed `11756.2ms -> 7310.9ms`
+  - Chance: model `5994.1ms -> 1819.1ms`, elapsed `11522.2ms -> 7312.8ms`
+  - Agility: model `5949.0ms -> 1625.6ms`, elapsed `11506.1ms -> 7168.4ms`
+- The next bottleneck is solver search time, which still hits the configured
+  `5s` solve cap for these rows.
+- The solver status for these rows is `FEASIBLE`, not `OPTIMAL`; generated
+  builds are valid but should not yet be treated as stable best-build evidence.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_cpsat_experiment.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-l200-min-elements-setbounds.json --target-file /tmp/build-discovery-cpsat-l200-min-elements-targets.json --target-file-prefix cpsat_min`

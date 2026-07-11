@@ -1,0 +1,573 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T06:32:23.493773+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-cpsat-l200-min-elements-targets.json#targets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "cpsat_l200_strength_7_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2117.93,
+        "weightedStatScore": 3911.26,
+        "utilityStatScore": 294.8,
+        "genericDamageScore": 3824.75,
+        "rawRotationDamageScore": 3504.25,
+        "spellDamageScore": 3504.25,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.2749,
+        "weaponDamageScore": 210.9,
+        "survivabilityScore": 101.99,
+        "weakestElementEhp": 3038.04,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 3,
+          "Strength": 1428,
+          "Power": 50,
+          "Vitality": 3403,
+          "Damage": 0,
+          "Earth Damage": 157,
+          "Critical": 41,
+          "Critical Damage": 10,
+          "Neutral Damage": 107
+        },
+        "sets": {
+          "Bethel Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "14281",
+            "internalId": null,
+            "name": "Sulph Phylactery",
+            "type": "Amulet",
+            "level": 197,
+            "set": "Magmatic Set"
+          },
+          "belt": {
+            "id": "19602",
+            "internalId": null,
+            "name": "Bethel's Panties",
+            "type": "Belt",
+            "level": 200,
+            "set": "Bethel Set"
+          },
+          "weapon": {
+            "id": "31800",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "shield": {
+            "id": "21225",
+            "internalId": null,
+            "name": "Crocoshield",
+            "type": "Shield",
+            "level": 200,
+            "set": "Crocuzko Set"
+          },
+          "ring_1": {
+            "id": "17998",
+            "internalId": null,
+            "name": "Crustic Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "ring_2": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "boots": {
+            "id": "19603",
+            "internalId": null,
+            "name": "Micrab Slippers",
+            "type": "Boots",
+            "level": 200,
+            "set": "Bethel Set"
+          },
+          "hat": {
+            "id": "19604",
+            "internalId": null,
+            "name": "Funerbroadsword Mask",
+            "type": "Hat",
+            "level": 200,
+            "set": "Bethel Set"
+          },
+          "cloak": {
+            "id": "14168",
+            "internalId": null,
+            "name": "Cloak of a Thousand Excuses",
+            "type": "Cloak",
+            "level": 198,
+            "set": null
+          },
+          "pet": {
+            "id": "33025",
+            "internalId": null,
+            "name": "Ebony and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "16196",
+            "internalId": null,
+            "name": "Major Rabid",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16254",
+            "internalId": null,
+            "name": "Major Earth Devastator",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2117.93,
+        "apStrategy": null,
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 3,
+          "Strength": 1428,
+          "Power": 50,
+          "Vitality": 3403,
+          "Damage": 0,
+          "Earth Damage": 157,
+          "Critical": 41,
+          "Critical Damage": 10,
+          "Neutral Damage": 107
+        },
+        "sets": {
+          "Bethel Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Sulph Phylactery",
+          "Bethel's Panties",
+          "Sleeping Venerable One's Bow",
+          "Crocoshield",
+          "Crustic Ring",
+          "Corruption's Ring",
+          "Micrab Slippers",
+          "Funerbroadsword Mask",
+          "Cloak of a Thousand Excuses",
+          "Ebony and Crimson Dragoturkey",
+          "Major Rabid",
+          "Major Earth Wrecker",
+          "Impetuous",
+          "Arcanist",
+          "Major Goliath",
+          "Major Earth Devastator"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2117.93,
+          "weightedStatScore": 3911.26,
+          "utilityStatScore": 294.8,
+          "genericDamageScore": 3824.75,
+          "rawRotationDamageScore": 3504.25,
+          "spellDamageScore": 3504.25,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.2749,
+          "weaponDamageScore": 210.9,
+          "survivabilityScore": 101.99,
+          "weakestElementEhp": 3038.04,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 3,
+            "Strength": 1428,
+            "Power": 50,
+            "Vitality": 3403,
+            "Damage": 0,
+            "Earth Damage": 157,
+            "Critical": 41,
+            "Critical Damage": 10,
+            "Neutral Damage": 107
+          },
+          "sets": {
+            "Bethel Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "14281",
+              "internalId": null,
+              "name": "Sulph Phylactery",
+              "type": "Amulet",
+              "level": 197,
+              "set": "Magmatic Set"
+            },
+            "belt": {
+              "id": "19602",
+              "internalId": null,
+              "name": "Bethel's Panties",
+              "type": "Belt",
+              "level": 200,
+              "set": "Bethel Set"
+            },
+            "weapon": {
+              "id": "31800",
+              "internalId": null,
+              "name": "Sleeping Venerable One's Bow",
+              "type": "Bow",
+              "level": 200,
+              "set": "Sleeping Venerable One Set"
+            },
+            "shield": {
+              "id": "21225",
+              "internalId": null,
+              "name": "Crocoshield",
+              "type": "Shield",
+              "level": 200,
+              "set": "Crocuzko Set"
+            },
+            "ring_1": {
+              "id": "17998",
+              "internalId": null,
+              "name": "Crustic Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Depths Set"
+            },
+            "ring_2": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "boots": {
+              "id": "19603",
+              "internalId": null,
+              "name": "Micrab Slippers",
+              "type": "Boots",
+              "level": 200,
+              "set": "Bethel Set"
+            },
+            "hat": {
+              "id": "19604",
+              "internalId": null,
+              "name": "Funerbroadsword Mask",
+              "type": "Hat",
+              "level": 200,
+              "set": "Bethel Set"
+            },
+            "cloak": {
+              "id": "14168",
+              "internalId": null,
+              "name": "Cloak of a Thousand Excuses",
+              "type": "Cloak",
+              "level": 198,
+              "set": null
+            },
+            "pet": {
+              "id": "33025",
+              "internalId": null,
+              "name": "Ebony and Crimson Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "16196",
+              "internalId": null,
+              "name": "Major Rabid",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13774",
+              "internalId": null,
+              "name": "Major Earth Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "16254",
+              "internalId": null,
+              "name": "Major Earth Devastator",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2117.93,
+          "apStrategy": null,
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 3,
+            "Strength": 1428,
+            "Power": 50,
+            "Vitality": 3403,
+            "Damage": 0,
+            "Earth Damage": 157,
+            "Critical": 41,
+            "Critical Damage": 10,
+            "Neutral Damage": 107
+          },
+          "sets": {
+            "Bethel Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Sulph Phylactery",
+            "Bethel's Panties",
+            "Sleeping Venerable One's Bow",
+            "Crocoshield",
+            "Crustic Ring",
+            "Corruption's Ring",
+            "Micrab Slippers",
+            "Funerbroadsword Mask",
+            "Cloak of a Thousand Excuses",
+            "Ebony and Crimson Dragoturkey",
+            "Major Rabid",
+            "Major Earth Wrecker",
+            "Impetuous",
+            "Arcanist",
+            "Major Goliath",
+            "Major Earth Devastator"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 8962.6,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 2025.2,
+          "totalSearchMs": 6937.4
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 1664.0,
+            "solveMs": 5051.5,
+            "objective": 1733.14,
+            "validCandidate": {
+              "score": 2117.93,
+              "totals": {
+                "AP": 9,
+                "MP": 5,
+                "Range": 3,
+                "Strength": 1428,
+                "Power": 50,
+                "Earth Damage": 157,
+                "Vitality": 3403
+              },
+              "items": {
+                "amulet": "Sulph Phylactery",
+                "belt": "Bethel's Panties",
+                "weapon": "Sleeping Venerable One's Bow",
+                "shield": "Crocoshield",
+                "ring_1": "Crustic Ring",
+                "ring_2": "Corruption's Ring",
+                "boots": "Micrab Slippers",
+                "hat": "Funerbroadsword Mask",
+                "cloak": "Cloak of a Thousand Excuses",
+                "pet": "Ebony and Crimson Dragoturkey",
+                "dofus_1": "Major Rabid",
+                "dofus_2": "Major Earth Wrecker",
+                "dofus_3": "Impetuous",
+                "dofus_4": "Arcanist",
+                "dofus_5": "Major Goliath",
+                "dofus_6": "Major Earth Devastator"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

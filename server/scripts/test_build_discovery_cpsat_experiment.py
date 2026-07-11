@@ -73,6 +73,19 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertIn("add_condition_constraints", source)
         self.assertIn("OnlyEnforceIf(presence)", source)
 
+    def test_experiment_caches_total_stat_expressions(self):
+        source = EXPERIMENT_PATH.read_text(encoding="utf-8")
+
+        self.assertIn("total_stat_expr_cache", source)
+        self.assertIn("if stat in total_stat_expr_cache", source)
+
+    def test_experiment_bounds_set_count_domains_by_compatible_slots(self):
+        source = EXPERIMENT_PATH.read_text(encoding="utf-8")
+
+        self.assertIn("slots_by_set", source)
+        self.assertIn("item_ids_by_set", source)
+        self.assertIn("len(slots_by_set[set_id])", source)
+
     def test_server_requirements_include_ortools_pin(self):
         requirements = REQUIREMENTS_PATH.read_text(encoding="utf-8")
 

@@ -1,0 +1,2234 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T06:32:23.493773+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-cpsat-l200-min-elements-targets.json#targets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 4,
+  "generatedCount": 4,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "cpsat_l200_strength_7_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2117.93,
+        "weightedStatScore": 3911.26,
+        "utilityStatScore": 294.8,
+        "genericDamageScore": 3824.75,
+        "rawRotationDamageScore": 3504.25,
+        "spellDamageScore": 3504.25,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.2749,
+        "weaponDamageScore": 210.9,
+        "survivabilityScore": 101.99,
+        "weakestElementEhp": 3038.04,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 3,
+          "Strength": 1428,
+          "Power": 50,
+          "Vitality": 3403,
+          "Damage": 0,
+          "Earth Damage": 157,
+          "Critical": 41,
+          "Critical Damage": 10,
+          "Neutral Damage": 107
+        },
+        "sets": {
+          "Bethel Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "14281",
+            "internalId": null,
+            "name": "Sulph Phylactery",
+            "type": "Amulet",
+            "level": 197,
+            "set": "Magmatic Set"
+          },
+          "belt": {
+            "id": "19602",
+            "internalId": null,
+            "name": "Bethel's Panties",
+            "type": "Belt",
+            "level": 200,
+            "set": "Bethel Set"
+          },
+          "weapon": {
+            "id": "31800",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "shield": {
+            "id": "21225",
+            "internalId": null,
+            "name": "Crocoshield",
+            "type": "Shield",
+            "level": 200,
+            "set": "Crocuzko Set"
+          },
+          "ring_1": {
+            "id": "17998",
+            "internalId": null,
+            "name": "Crustic Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "ring_2": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "boots": {
+            "id": "19603",
+            "internalId": null,
+            "name": "Micrab Slippers",
+            "type": "Boots",
+            "level": 200,
+            "set": "Bethel Set"
+          },
+          "hat": {
+            "id": "19604",
+            "internalId": null,
+            "name": "Funerbroadsword Mask",
+            "type": "Hat",
+            "level": 200,
+            "set": "Bethel Set"
+          },
+          "cloak": {
+            "id": "14168",
+            "internalId": null,
+            "name": "Cloak of a Thousand Excuses",
+            "type": "Cloak",
+            "level": 198,
+            "set": null
+          },
+          "pet": {
+            "id": "33025",
+            "internalId": null,
+            "name": "Ebony and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "16196",
+            "internalId": null,
+            "name": "Major Rabid",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16254",
+            "internalId": null,
+            "name": "Major Earth Devastator",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2117.93,
+        "apStrategy": null,
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 3,
+          "Strength": 1428,
+          "Power": 50,
+          "Vitality": 3403,
+          "Damage": 0,
+          "Earth Damage": 157,
+          "Critical": 41,
+          "Critical Damage": 10,
+          "Neutral Damage": 107
+        },
+        "sets": {
+          "Bethel Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Sulph Phylactery",
+          "Bethel's Panties",
+          "Sleeping Venerable One's Bow",
+          "Crocoshield",
+          "Crustic Ring",
+          "Corruption's Ring",
+          "Micrab Slippers",
+          "Funerbroadsword Mask",
+          "Cloak of a Thousand Excuses",
+          "Ebony and Crimson Dragoturkey",
+          "Major Rabid",
+          "Major Earth Wrecker",
+          "Impetuous",
+          "Arcanist",
+          "Major Goliath",
+          "Major Earth Devastator"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2117.93,
+          "weightedStatScore": 3911.26,
+          "utilityStatScore": 294.8,
+          "genericDamageScore": 3824.75,
+          "rawRotationDamageScore": 3504.25,
+          "spellDamageScore": 3504.25,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.2749,
+          "weaponDamageScore": 210.9,
+          "survivabilityScore": 101.99,
+          "weakestElementEhp": 3038.04,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 3,
+            "Strength": 1428,
+            "Power": 50,
+            "Vitality": 3403,
+            "Damage": 0,
+            "Earth Damage": 157,
+            "Critical": 41,
+            "Critical Damage": 10,
+            "Neutral Damage": 107
+          },
+          "sets": {
+            "Bethel Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "14281",
+              "internalId": null,
+              "name": "Sulph Phylactery",
+              "type": "Amulet",
+              "level": 197,
+              "set": "Magmatic Set"
+            },
+            "belt": {
+              "id": "19602",
+              "internalId": null,
+              "name": "Bethel's Panties",
+              "type": "Belt",
+              "level": 200,
+              "set": "Bethel Set"
+            },
+            "weapon": {
+              "id": "31800",
+              "internalId": null,
+              "name": "Sleeping Venerable One's Bow",
+              "type": "Bow",
+              "level": 200,
+              "set": "Sleeping Venerable One Set"
+            },
+            "shield": {
+              "id": "21225",
+              "internalId": null,
+              "name": "Crocoshield",
+              "type": "Shield",
+              "level": 200,
+              "set": "Crocuzko Set"
+            },
+            "ring_1": {
+              "id": "17998",
+              "internalId": null,
+              "name": "Crustic Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Depths Set"
+            },
+            "ring_2": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "boots": {
+              "id": "19603",
+              "internalId": null,
+              "name": "Micrab Slippers",
+              "type": "Boots",
+              "level": 200,
+              "set": "Bethel Set"
+            },
+            "hat": {
+              "id": "19604",
+              "internalId": null,
+              "name": "Funerbroadsword Mask",
+              "type": "Hat",
+              "level": 200,
+              "set": "Bethel Set"
+            },
+            "cloak": {
+              "id": "14168",
+              "internalId": null,
+              "name": "Cloak of a Thousand Excuses",
+              "type": "Cloak",
+              "level": 198,
+              "set": null
+            },
+            "pet": {
+              "id": "33025",
+              "internalId": null,
+              "name": "Ebony and Crimson Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "16196",
+              "internalId": null,
+              "name": "Major Rabid",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13774",
+              "internalId": null,
+              "name": "Major Earth Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "16254",
+              "internalId": null,
+              "name": "Major Earth Devastator",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2117.93,
+          "apStrategy": null,
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 3,
+            "Strength": 1428,
+            "Power": 50,
+            "Vitality": 3403,
+            "Damage": 0,
+            "Earth Damage": 157,
+            "Critical": 41,
+            "Critical Damage": 10,
+            "Neutral Damage": 107
+          },
+          "sets": {
+            "Bethel Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Sulph Phylactery",
+            "Bethel's Panties",
+            "Sleeping Venerable One's Bow",
+            "Crocoshield",
+            "Crustic Ring",
+            "Corruption's Ring",
+            "Micrab Slippers",
+            "Funerbroadsword Mask",
+            "Cloak of a Thousand Excuses",
+            "Ebony and Crimson Dragoturkey",
+            "Major Rabid",
+            "Major Earth Wrecker",
+            "Impetuous",
+            "Arcanist",
+            "Major Goliath",
+            "Major Earth Devastator"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 8962.6,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 2025.2,
+          "totalSearchMs": 6937.4
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 1664.0,
+            "solveMs": 5051.5,
+            "objective": 1733.14,
+            "validCandidate": {
+              "score": 2117.93,
+              "totals": {
+                "AP": 9,
+                "MP": 5,
+                "Range": 3,
+                "Strength": 1428,
+                "Power": 50,
+                "Earth Damage": 157,
+                "Vitality": 3403
+              },
+              "items": {
+                "amulet": "Sulph Phylactery",
+                "belt": "Bethel's Panties",
+                "weapon": "Sleeping Venerable One's Bow",
+                "shield": "Crocoshield",
+                "ring_1": "Crustic Ring",
+                "ring_2": "Corruption's Ring",
+                "boots": "Micrab Slippers",
+                "hat": "Funerbroadsword Mask",
+                "cloak": "Cloak of a Thousand Excuses",
+                "pet": "Ebony and Crimson Dragoturkey",
+                "dofus_1": "Major Rabid",
+                "dofus_2": "Major Earth Wrecker",
+                "dofus_3": "Impetuous",
+                "dofus_4": "Arcanist",
+                "dofus_5": "Major Goliath",
+                "dofus_6": "Major Earth Devastator"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "cpsat_l200_intelligence_7_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "intelligence",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2126.29,
+        "weightedStatScore": 4230.68,
+        "utilityStatScore": 261.47,
+        "genericDamageScore": 3906.85,
+        "rawRotationDamageScore": 2662.35,
+        "spellDamageScore": 2662.35,
+        "profileBaselineDamageScore": 2044.38,
+        "profileRelativeDamage": 1.3023,
+        "weaponDamageScore": 149.11,
+        "survivabilityScore": 106.74,
+        "weakestElementEhp": 3279.45,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 0,
+          "Intelligence": 1583,
+          "Power": 100,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Fire Damage": 135,
+          "Critical": 44,
+          "Critical Damage": 80
+        },
+        "sets": {
+          "Rhoarim Set": 2,
+          "Otomai Set": 2,
+          "War Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "13117",
+            "internalId": null,
+            "name": "Otomai's Amulet",
+            "type": "Amulet",
+            "level": 197,
+            "set": "Otomai Set"
+          },
+          "belt": {
+            "id": "31762",
+            "internalId": null,
+            "name": "Rhoarim Loincloth",
+            "type": "Belt",
+            "level": 200,
+            "set": "Rhoarim Set"
+          },
+          "weapon": {
+            "id": "31760",
+            "internalId": null,
+            "name": "Bony Mace",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Rhoarim Set"
+          },
+          "shield": {
+            "id": "30689",
+            "internalId": null,
+            "name": "Otomai's Vial",
+            "type": "Shield",
+            "level": 196,
+            "set": "Otomai Set"
+          },
+          "ring_1": {
+            "id": "22192",
+            "internalId": null,
+            "name": "War's Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "War Set"
+          },
+          "ring_2": {
+            "id": "13897",
+            "internalId": null,
+            "name": "Shylock's Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": null
+          },
+          "boots": {
+            "id": "22189",
+            "internalId": null,
+            "name": "War's Treads",
+            "type": "Boots",
+            "level": 200,
+            "set": "War Set"
+          },
+          "hat": {
+            "id": "27525",
+            "internalId": null,
+            "name": "Copperbeard Helm",
+            "type": "Hat",
+            "level": 198,
+            "set": "Copperbeard Set"
+          },
+          "cloak": {
+            "id": "31797",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Coat",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "pet": {
+            "id": "33043",
+            "internalId": null,
+            "name": "Ivory and Orchid Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "12719",
+            "internalId": null,
+            "name": "Major Scholar",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13753",
+            "internalId": null,
+            "name": "Major Vagabond",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13780",
+            "internalId": null,
+            "name": "Major Fire Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2126.29,
+        "apStrategy": null,
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 0,
+          "Intelligence": 1583,
+          "Power": 100,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Fire Damage": 135,
+          "Critical": 44,
+          "Critical Damage": 80
+        },
+        "sets": {
+          "Rhoarim Set": 2,
+          "Otomai Set": 2,
+          "War Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Otomai's Amulet",
+          "Rhoarim Loincloth",
+          "Bony Mace",
+          "Otomai's Vial",
+          "War's Gauntlet",
+          "Shylock's Ring",
+          "War's Treads",
+          "Copperbeard Helm",
+          "Sleeping Venerable One's Coat",
+          "Ivory and Orchid Dragoturkey",
+          "Major Scholar",
+          "Impetuous",
+          "Major Vagabond",
+          "Major Brainbox",
+          "Major Fire Wrecker",
+          "Arcanist"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2126.29,
+          "weightedStatScore": 4230.68,
+          "utilityStatScore": 261.47,
+          "genericDamageScore": 3906.85,
+          "rawRotationDamageScore": 2662.35,
+          "spellDamageScore": 2662.35,
+          "profileBaselineDamageScore": 2044.38,
+          "profileRelativeDamage": 1.3023,
+          "weaponDamageScore": 149.11,
+          "survivabilityScore": 106.74,
+          "weakestElementEhp": 3279.45,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 0,
+            "Intelligence": 1583,
+            "Power": 100,
+            "Vitality": 3503,
+            "Damage": 0,
+            "Fire Damage": 135,
+            "Critical": 44,
+            "Critical Damage": 80
+          },
+          "sets": {
+            "Rhoarim Set": 2,
+            "Otomai Set": 2,
+            "War Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "13117",
+              "internalId": null,
+              "name": "Otomai's Amulet",
+              "type": "Amulet",
+              "level": 197,
+              "set": "Otomai Set"
+            },
+            "belt": {
+              "id": "31762",
+              "internalId": null,
+              "name": "Rhoarim Loincloth",
+              "type": "Belt",
+              "level": 200,
+              "set": "Rhoarim Set"
+            },
+            "weapon": {
+              "id": "31760",
+              "internalId": null,
+              "name": "Bony Mace",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Rhoarim Set"
+            },
+            "shield": {
+              "id": "30689",
+              "internalId": null,
+              "name": "Otomai's Vial",
+              "type": "Shield",
+              "level": 196,
+              "set": "Otomai Set"
+            },
+            "ring_1": {
+              "id": "22192",
+              "internalId": null,
+              "name": "War's Gauntlet",
+              "type": "Ring",
+              "level": 200,
+              "set": "War Set"
+            },
+            "ring_2": {
+              "id": "13897",
+              "internalId": null,
+              "name": "Shylock's Ring",
+              "type": "Ring",
+              "level": 198,
+              "set": null
+            },
+            "boots": {
+              "id": "22189",
+              "internalId": null,
+              "name": "War's Treads",
+              "type": "Boots",
+              "level": 200,
+              "set": "War Set"
+            },
+            "hat": {
+              "id": "27525",
+              "internalId": null,
+              "name": "Copperbeard Helm",
+              "type": "Hat",
+              "level": 198,
+              "set": "Copperbeard Set"
+            },
+            "cloak": {
+              "id": "31797",
+              "internalId": null,
+              "name": "Sleeping Venerable One's Coat",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Sleeping Venerable One Set"
+            },
+            "pet": {
+              "id": "33043",
+              "internalId": null,
+              "name": "Ivory and Orchid Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "12719",
+              "internalId": null,
+              "name": "Major Scholar",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13753",
+              "internalId": null,
+              "name": "Major Vagabond",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13762",
+              "internalId": null,
+              "name": "Major Brainbox",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13780",
+              "internalId": null,
+              "name": "Major Fire Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2126.29,
+          "apStrategy": null,
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 0,
+            "Intelligence": 1583,
+            "Power": 100,
+            "Vitality": 3503,
+            "Damage": 0,
+            "Fire Damage": 135,
+            "Critical": 44,
+            "Critical Damage": 80
+          },
+          "sets": {
+            "Rhoarim Set": 2,
+            "Otomai Set": 2,
+            "War Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Otomai's Amulet",
+            "Rhoarim Loincloth",
+            "Bony Mace",
+            "Otomai's Vial",
+            "War's Gauntlet",
+            "Shylock's Ring",
+            "War's Treads",
+            "Copperbeard Helm",
+            "Sleeping Venerable One's Coat",
+            "Ivory and Orchid Dragoturkey",
+            "Major Scholar",
+            "Impetuous",
+            "Major Vagabond",
+            "Major Brainbox",
+            "Major Fire Wrecker",
+            "Arcanist"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7310.9,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 268.9,
+          "totalSearchMs": 7042.0
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 1657.4,
+            "solveMs": 5038.8,
+            "objective": 1896.29,
+            "validCandidate": {
+              "score": 2126.29,
+              "totals": {
+                "AP": 8,
+                "MP": 4,
+                "Range": 0,
+                "Strength": 220,
+                "Power": 100,
+                "Earth Damage": 20,
+                "Vitality": 3503
+              },
+              "items": {
+                "amulet": "Otomai's Amulet",
+                "belt": "Rhoarim Loincloth",
+                "weapon": "Bony Mace",
+                "shield": "Otomai's Vial",
+                "ring_1": "War's Gauntlet",
+                "ring_2": "Shylock's Ring",
+                "boots": "War's Treads",
+                "hat": "Copperbeard Helm",
+                "cloak": "Sleeping Venerable One's Coat",
+                "pet": "Ivory and Orchid Dragoturkey",
+                "dofus_1": "Major Scholar",
+                "dofus_2": "Impetuous",
+                "dofus_3": "Major Vagabond",
+                "dofus_4": "Major Brainbox",
+                "dofus_5": "Major Fire Wrecker",
+                "dofus_6": "Arcanist"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.2255,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.2255,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.2255,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2138,
+          "Critical Damage": 1.6163,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.721,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Damage": 2.721,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Intelligence": 0.7048,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7048,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "cpsat_l200_chance_7_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2082.34,
+        "weightedStatScore": 3704.84,
+        "utilityStatScore": 336.14,
+        "genericDamageScore": 3662.69,
+        "rawRotationDamageScore": 2423.84,
+        "spellDamageScore": 2423.84,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.2209,
+        "weaponDamageScore": 150.22,
+        "survivabilityScore": 98.0,
+        "weakestElementEhp": 2804.31,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 4,
+          "Range": 4,
+          "Chance": 1308,
+          "Power": 80,
+          "Vitality": 3253,
+          "Damage": 0,
+          "Water Damage": 84,
+          "Critical": 51,
+          "Critical Damage": 53
+        },
+        "sets": {
+          "Ripper Set": 3,
+          "Corruption Set": 3,
+          "Pit Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "18004",
+            "internalId": null,
+            "name": "Spookkoth Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "31759",
+            "internalId": null,
+            "name": "The Ripper's Claws",
+            "type": "Dagger",
+            "level": 200,
+            "set": "Ripper Set"
+          },
+          "shield": {
+            "id": "31757",
+            "internalId": null,
+            "name": "The Ripper's Trophy",
+            "type": "Shield",
+            "level": 200,
+            "set": "Ripper Set"
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "22206",
+            "internalId": null,
+            "name": "Corruption's Engagement Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "31756",
+            "internalId": null,
+            "name": "The Ripper's Mane",
+            "type": "Hat",
+            "level": 200,
+            "set": "Ripper Set"
+          },
+          "cloak": {
+            "id": "18005",
+            "internalId": null,
+            "name": "Mantaze Cloak",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "pet": {
+            "id": "33036",
+            "internalId": null,
+            "name": "Indigo Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "12716",
+            "internalId": null,
+            "name": "Major Player",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13767",
+            "internalId": null,
+            "name": "Tease",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13783",
+            "internalId": null,
+            "name": "Major Water Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2082.34,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 4,
+          "Range": 4,
+          "Chance": 1308,
+          "Power": 80,
+          "Vitality": 3253,
+          "Damage": 0,
+          "Water Damage": 84,
+          "Critical": 51,
+          "Critical Damage": 53
+        },
+        "sets": {
+          "Ripper Set": 3,
+          "Corruption Set": 3,
+          "Pit Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Spookkoth Amulet",
+          "Corruption's Brambelt",
+          "The Ripper's Claws",
+          "The Ripper's Trophy",
+          "Corruption's Ring",
+          "Corruption's Engagement Ring",
+          "Meriana's Clairvoyance",
+          "The Ripper's Mane",
+          "Mantaze Cloak",
+          "Indigo Dragoturkey",
+          "Major Player",
+          "Arcanist",
+          "Tease",
+          "Major Water Wrecker",
+          "Impetuous",
+          "Major Tease"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2082.34,
+          "weightedStatScore": 3704.84,
+          "utilityStatScore": 336.14,
+          "genericDamageScore": 3662.69,
+          "rawRotationDamageScore": 2423.84,
+          "spellDamageScore": 2423.84,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.2209,
+          "weaponDamageScore": 150.22,
+          "survivabilityScore": 98.0,
+          "weakestElementEhp": 2804.31,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 4,
+            "Range": 4,
+            "Chance": 1308,
+            "Power": 80,
+            "Vitality": 3253,
+            "Damage": 0,
+            "Water Damage": 84,
+            "Critical": 51,
+            "Critical Damage": 53
+          },
+          "sets": {
+            "Ripper Set": 3,
+            "Corruption Set": 3,
+            "Pit Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "18004",
+              "internalId": null,
+              "name": "Spookkoth Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Pit Set"
+            },
+            "belt": {
+              "id": "22209",
+              "internalId": null,
+              "name": "Corruption's Brambelt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "weapon": {
+              "id": "31759",
+              "internalId": null,
+              "name": "The Ripper's Claws",
+              "type": "Dagger",
+              "level": 200,
+              "set": "Ripper Set"
+            },
+            "shield": {
+              "id": "31757",
+              "internalId": null,
+              "name": "The Ripper's Trophy",
+              "type": "Shield",
+              "level": 200,
+              "set": "Ripper Set"
+            },
+            "ring_1": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "ring_2": {
+              "id": "22206",
+              "internalId": null,
+              "name": "Corruption's Engagement Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "31756",
+              "internalId": null,
+              "name": "The Ripper's Mane",
+              "type": "Hat",
+              "level": 200,
+              "set": "Ripper Set"
+            },
+            "cloak": {
+              "id": "18005",
+              "internalId": null,
+              "name": "Mantaze Cloak",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Pit Set"
+            },
+            "pet": {
+              "id": "33036",
+              "internalId": null,
+              "name": "Indigo Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "12716",
+              "internalId": null,
+              "name": "Major Player",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13767",
+              "internalId": null,
+              "name": "Tease",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13783",
+              "internalId": null,
+              "name": "Major Water Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2082.34,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 4,
+            "Range": 4,
+            "Chance": 1308,
+            "Power": 80,
+            "Vitality": 3253,
+            "Damage": 0,
+            "Water Damage": 84,
+            "Critical": 51,
+            "Critical Damage": 53
+          },
+          "sets": {
+            "Ripper Set": 3,
+            "Corruption Set": 3,
+            "Pit Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Spookkoth Amulet",
+            "Corruption's Brambelt",
+            "The Ripper's Claws",
+            "The Ripper's Trophy",
+            "Corruption's Ring",
+            "Corruption's Engagement Ring",
+            "Meriana's Clairvoyance",
+            "The Ripper's Mane",
+            "Mantaze Cloak",
+            "Indigo Dragoturkey",
+            "Major Player",
+            "Arcanist",
+            "Tease",
+            "Major Water Wrecker",
+            "Impetuous",
+            "Major Tease"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7312.8,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 281.2,
+          "totalSearchMs": 7031.6
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 1819.1,
+            "solveMs": 5050.5,
+            "objective": 1645.59,
+            "validCandidate": {
+              "score": 2082.34,
+              "totals": {
+                "AP": 11,
+                "MP": 4,
+                "Range": 4,
+                "Strength": 340,
+                "Power": 80,
+                "Earth Damage": 27,
+                "Vitality": 3253
+              },
+              "items": {
+                "amulet": "Spookkoth Amulet",
+                "belt": "Corruption's Brambelt",
+                "weapon": "The Ripper's Claws",
+                "shield": "The Ripper's Trophy",
+                "ring_1": "Corruption's Ring",
+                "ring_2": "Corruption's Engagement Ring",
+                "boots": "Meriana's Clairvoyance",
+                "hat": "The Ripper's Mane",
+                "cloak": "Mantaze Cloak",
+                "pet": "Indigo Dragoturkey",
+                "dofus_1": "Major Player",
+                "dofus_2": "Arcanist",
+                "dofus_3": "Tease",
+                "dofus_4": "Major Water Wrecker",
+                "dofus_5": "Impetuous",
+                "dofus_6": "Major Tease"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "cpsat_l200_agility_7_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "agility",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 1886.75,
+        "weightedStatScore": 3291.73,
+        "utilityStatScore": 290.99,
+        "genericDamageScore": 3365.0,
+        "rawRotationDamageScore": 2087.0,
+        "spellDamageScore": 2087.0,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.1217,
+        "weaponDamageScore": 154.84,
+        "survivabilityScore": 81.51,
+        "weakestElementEhp": 2335.38,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 3,
+          "Agility": 1058,
+          "Power": 270,
+          "Vitality": 2603,
+          "Damage": 12,
+          "Air Damage": 67,
+          "Critical": 52,
+          "Critical Damage": 29
+        },
+        "sets": {},
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "14094",
+            "internalId": null,
+            "name": "Treadfast Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Treadfast Set"
+          },
+          "belt": {
+            "id": "19599",
+            "internalId": null,
+            "name": "Bluster Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Submerged Set"
+          },
+          "weapon": {
+            "id": "32117",
+            "internalId": null,
+            "name": "Thanatena's Judgement",
+            "type": "Scythe",
+            "level": 200,
+            "set": null
+          },
+          "shield": {
+            "id": "18712",
+            "internalId": null,
+            "name": "Honeycomb Shield",
+            "type": "Shield",
+            "level": 199,
+            "set": "Beekeeper Set"
+          },
+          "ring_1": {
+            "id": "13642",
+            "internalId": null,
+            "name": "Nomarow's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Nomarow Set"
+          },
+          "ring_2": {
+            "id": "11714",
+            "internalId": null,
+            "name": "Korriander Ring",
+            "type": "Ring",
+            "level": 176,
+            "set": "Korriander Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "13644",
+            "internalId": null,
+            "name": "Hel Munster's Helmet",
+            "type": "Hat",
+            "level": 198,
+            "set": "Hel Munster Set"
+          },
+          "cloak": {
+            "id": "14051",
+            "internalId": null,
+            "name": "Klime's Cloak",
+            "type": "Cloak",
+            "level": 197,
+            "set": "Klime Set"
+          },
+          "pet": {
+            "id": "33022",
+            "internalId": null,
+            "name": "Ebony and Indigo Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "16245",
+            "internalId": null,
+            "name": "Major Stunter",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "12622",
+            "internalId": null,
+            "name": "Minor Locker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13830",
+            "internalId": null,
+            "name": "Voyager",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13815",
+            "internalId": null,
+            "name": "Fire Bulwark",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1886.75,
+        "apStrategy": null,
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 3,
+          "Agility": 1058,
+          "Power": 270,
+          "Vitality": 2603,
+          "Damage": 12,
+          "Air Damage": 67,
+          "Critical": 52,
+          "Critical Damage": 29
+        },
+        "sets": {},
+        "exos": {},
+        "items": [
+          "Treadfast Amulet",
+          "Bluster Belt",
+          "Thanatena's Judgement",
+          "Honeycomb Shield",
+          "Nomarow's Ring",
+          "Korriander Ring",
+          "Meriana's Clairvoyance",
+          "Hel Munster's Helmet",
+          "Klime's Cloak",
+          "Ebony and Indigo Dragoturkey",
+          "Major Stunter",
+          "Arcanist",
+          "Impetuous",
+          "Minor Locker",
+          "Voyager",
+          "Fire Bulwark"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 1886.75,
+          "weightedStatScore": 3291.73,
+          "utilityStatScore": 290.99,
+          "genericDamageScore": 3365.0,
+          "rawRotationDamageScore": 2087.0,
+          "spellDamageScore": 2087.0,
+          "profileBaselineDamageScore": 1860.62,
+          "profileRelativeDamage": 1.1217,
+          "weaponDamageScore": 154.84,
+          "survivabilityScore": 81.51,
+          "weakestElementEhp": 2335.38,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 3,
+            "Agility": 1058,
+            "Power": 270,
+            "Vitality": 2603,
+            "Damage": 12,
+            "Air Damage": 67,
+            "Critical": 52,
+            "Critical Damage": 29
+          },
+          "sets": {},
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "14094",
+              "internalId": null,
+              "name": "Treadfast Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Treadfast Set"
+            },
+            "belt": {
+              "id": "19599",
+              "internalId": null,
+              "name": "Bluster Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Submerged Set"
+            },
+            "weapon": {
+              "id": "32117",
+              "internalId": null,
+              "name": "Thanatena's Judgement",
+              "type": "Scythe",
+              "level": 200,
+              "set": null
+            },
+            "shield": {
+              "id": "18712",
+              "internalId": null,
+              "name": "Honeycomb Shield",
+              "type": "Shield",
+              "level": 199,
+              "set": "Beekeeper Set"
+            },
+            "ring_1": {
+              "id": "13642",
+              "internalId": null,
+              "name": "Nomarow's Ring",
+              "type": "Ring",
+              "level": 197,
+              "set": "Nomarow Set"
+            },
+            "ring_2": {
+              "id": "11714",
+              "internalId": null,
+              "name": "Korriander Ring",
+              "type": "Ring",
+              "level": 176,
+              "set": "Korriander Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "13644",
+              "internalId": null,
+              "name": "Hel Munster's Helmet",
+              "type": "Hat",
+              "level": 198,
+              "set": "Hel Munster Set"
+            },
+            "cloak": {
+              "id": "14051",
+              "internalId": null,
+              "name": "Klime's Cloak",
+              "type": "Cloak",
+              "level": 197,
+              "set": "Klime Set"
+            },
+            "pet": {
+              "id": "33022",
+              "internalId": null,
+              "name": "Ebony and Indigo Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "16245",
+              "internalId": null,
+              "name": "Major Stunter",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "12622",
+              "internalId": null,
+              "name": "Minor Locker",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13830",
+              "internalId": null,
+              "name": "Voyager",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13815",
+              "internalId": null,
+              "name": "Fire Bulwark",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 1886.75,
+          "apStrategy": null,
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 3,
+            "Agility": 1058,
+            "Power": 270,
+            "Vitality": 2603,
+            "Damage": 12,
+            "Air Damage": 67,
+            "Critical": 52,
+            "Critical Damage": 29
+          },
+          "sets": {},
+          "exos": {},
+          "items": [
+            "Treadfast Amulet",
+            "Bluster Belt",
+            "Thanatena's Judgement",
+            "Honeycomb Shield",
+            "Nomarow's Ring",
+            "Korriander Ring",
+            "Meriana's Clairvoyance",
+            "Hel Munster's Helmet",
+            "Klime's Cloak",
+            "Ebony and Indigo Dragoturkey",
+            "Major Stunter",
+            "Arcanist",
+            "Impetuous",
+            "Minor Locker",
+            "Voyager",
+            "Fire Bulwark"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7168.4,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 271.6,
+          "totalSearchMs": 6896.8
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 1625.6,
+            "solveMs": 5037.4,
+            "objective": 1498.98,
+            "validCandidate": {
+              "score": 1886.75,
+              "totals": {
+                "AP": 9,
+                "MP": 5,
+                "Range": 3,
+                "Strength": 100,
+                "Power": 270,
+                "Earth Damage": 0,
+                "Vitality": 2603
+              },
+              "items": {
+                "amulet": "Treadfast Amulet",
+                "belt": "Bluster Belt",
+                "weapon": "Thanatena's Judgement",
+                "shield": "Honeycomb Shield",
+                "ring_1": "Nomarow's Ring",
+                "ring_2": "Korriander Ring",
+                "boots": "Meriana's Clairvoyance",
+                "hat": "Hel Munster's Helmet",
+                "cloak": "Klime's Cloak",
+                "pet": "Ebony and Indigo Dragoturkey",
+                "dofus_1": "Major Stunter",
+                "dofus_2": "Arcanist",
+                "dofus_3": "Impetuous",
+                "dofus_4": "Minor Locker",
+                "dofus_5": "Voyager",
+                "dofus_6": "Fire Bulwark"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3186,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3186,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3186,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 0.7234,
+          "Air Damage": 2.5359,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2201,
+          "Critical Damage": 1.5602,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.5359,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7234,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

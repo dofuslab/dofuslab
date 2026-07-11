@@ -1,0 +1,577 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T06:32:23.493773+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-cpsat-l200-min-elements-targets.json#targets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "cpsat_l200_chance_7_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2082.34,
+        "weightedStatScore": 3704.84,
+        "utilityStatScore": 336.14,
+        "genericDamageScore": 3662.69,
+        "rawRotationDamageScore": 2423.84,
+        "spellDamageScore": 2423.84,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.2209,
+        "weaponDamageScore": 150.22,
+        "survivabilityScore": 98.0,
+        "weakestElementEhp": 2804.31,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 4,
+          "Range": 4,
+          "Chance": 1308,
+          "Power": 80,
+          "Vitality": 3253,
+          "Damage": 0,
+          "Water Damage": 84,
+          "Critical": 51,
+          "Critical Damage": 53
+        },
+        "sets": {
+          "Ripper Set": 3,
+          "Corruption Set": 3,
+          "Pit Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "18004",
+            "internalId": null,
+            "name": "Spookkoth Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "31759",
+            "internalId": null,
+            "name": "The Ripper's Claws",
+            "type": "Dagger",
+            "level": 200,
+            "set": "Ripper Set"
+          },
+          "shield": {
+            "id": "31757",
+            "internalId": null,
+            "name": "The Ripper's Trophy",
+            "type": "Shield",
+            "level": 200,
+            "set": "Ripper Set"
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "22206",
+            "internalId": null,
+            "name": "Corruption's Engagement Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "31756",
+            "internalId": null,
+            "name": "The Ripper's Mane",
+            "type": "Hat",
+            "level": 200,
+            "set": "Ripper Set"
+          },
+          "cloak": {
+            "id": "18005",
+            "internalId": null,
+            "name": "Mantaze Cloak",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "pet": {
+            "id": "33036",
+            "internalId": null,
+            "name": "Indigo Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "12716",
+            "internalId": null,
+            "name": "Major Player",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13767",
+            "internalId": null,
+            "name": "Tease",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13783",
+            "internalId": null,
+            "name": "Major Water Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2082.34,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 4,
+          "Range": 4,
+          "Chance": 1308,
+          "Power": 80,
+          "Vitality": 3253,
+          "Damage": 0,
+          "Water Damage": 84,
+          "Critical": 51,
+          "Critical Damage": 53
+        },
+        "sets": {
+          "Ripper Set": 3,
+          "Corruption Set": 3,
+          "Pit Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Spookkoth Amulet",
+          "Corruption's Brambelt",
+          "The Ripper's Claws",
+          "The Ripper's Trophy",
+          "Corruption's Ring",
+          "Corruption's Engagement Ring",
+          "Meriana's Clairvoyance",
+          "The Ripper's Mane",
+          "Mantaze Cloak",
+          "Indigo Dragoturkey",
+          "Major Player",
+          "Arcanist",
+          "Tease",
+          "Major Water Wrecker",
+          "Impetuous",
+          "Major Tease"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2082.34,
+          "weightedStatScore": 3704.84,
+          "utilityStatScore": 336.14,
+          "genericDamageScore": 3662.69,
+          "rawRotationDamageScore": 2423.84,
+          "spellDamageScore": 2423.84,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.2209,
+          "weaponDamageScore": 150.22,
+          "survivabilityScore": 98.0,
+          "weakestElementEhp": 2804.31,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 4,
+            "Range": 4,
+            "Chance": 1308,
+            "Power": 80,
+            "Vitality": 3253,
+            "Damage": 0,
+            "Water Damage": 84,
+            "Critical": 51,
+            "Critical Damage": 53
+          },
+          "sets": {
+            "Ripper Set": 3,
+            "Corruption Set": 3,
+            "Pit Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "18004",
+              "internalId": null,
+              "name": "Spookkoth Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Pit Set"
+            },
+            "belt": {
+              "id": "22209",
+              "internalId": null,
+              "name": "Corruption's Brambelt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "weapon": {
+              "id": "31759",
+              "internalId": null,
+              "name": "The Ripper's Claws",
+              "type": "Dagger",
+              "level": 200,
+              "set": "Ripper Set"
+            },
+            "shield": {
+              "id": "31757",
+              "internalId": null,
+              "name": "The Ripper's Trophy",
+              "type": "Shield",
+              "level": 200,
+              "set": "Ripper Set"
+            },
+            "ring_1": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "ring_2": {
+              "id": "22206",
+              "internalId": null,
+              "name": "Corruption's Engagement Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "31756",
+              "internalId": null,
+              "name": "The Ripper's Mane",
+              "type": "Hat",
+              "level": 200,
+              "set": "Ripper Set"
+            },
+            "cloak": {
+              "id": "18005",
+              "internalId": null,
+              "name": "Mantaze Cloak",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Pit Set"
+            },
+            "pet": {
+              "id": "33036",
+              "internalId": null,
+              "name": "Indigo Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "12716",
+              "internalId": null,
+              "name": "Major Player",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13767",
+              "internalId": null,
+              "name": "Tease",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13783",
+              "internalId": null,
+              "name": "Major Water Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2082.34,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 4,
+            "Range": 4,
+            "Chance": 1308,
+            "Power": 80,
+            "Vitality": 3253,
+            "Damage": 0,
+            "Water Damage": 84,
+            "Critical": 51,
+            "Critical Damage": 53
+          },
+          "sets": {
+            "Ripper Set": 3,
+            "Corruption Set": 3,
+            "Pit Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Spookkoth Amulet",
+            "Corruption's Brambelt",
+            "The Ripper's Claws",
+            "The Ripper's Trophy",
+            "Corruption's Ring",
+            "Corruption's Engagement Ring",
+            "Meriana's Clairvoyance",
+            "The Ripper's Mane",
+            "Mantaze Cloak",
+            "Indigo Dragoturkey",
+            "Major Player",
+            "Arcanist",
+            "Tease",
+            "Major Water Wrecker",
+            "Impetuous",
+            "Major Tease"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7312.8,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 281.2,
+          "totalSearchMs": 7031.6
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 1819.1,
+            "solveMs": 5050.5,
+            "objective": 1645.59,
+            "validCandidate": {
+              "score": 2082.34,
+              "totals": {
+                "AP": 11,
+                "MP": 4,
+                "Range": 4,
+                "Strength": 340,
+                "Power": 80,
+                "Earth Damage": 27,
+                "Vitality": 3253
+              },
+              "items": {
+                "amulet": "Spookkoth Amulet",
+                "belt": "Corruption's Brambelt",
+                "weapon": "The Ripper's Claws",
+                "shield": "The Ripper's Trophy",
+                "ring_1": "Corruption's Ring",
+                "ring_2": "Corruption's Engagement Ring",
+                "boots": "Meriana's Clairvoyance",
+                "hat": "The Ripper's Mane",
+                "cloak": "Mantaze Cloak",
+                "pet": "Indigo Dragoturkey",
+                "dofus_1": "Major Player",
+                "dofus_2": "Arcanist",
+                "dofus_3": "Tease",
+                "dofus_4": "Major Water Wrecker",
+                "dofus_5": "Impetuous",
+                "dofus_6": "Major Tease"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

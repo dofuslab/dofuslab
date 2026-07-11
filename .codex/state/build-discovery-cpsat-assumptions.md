@@ -95,6 +95,11 @@ review before accepting Milestone 2 evidence.
 - First 4-row level-200 all-element `7/3/None` slice took roughly
   `11.5s-12.8s` per row, confirming the next CP-SAT work needs performance and
   model-size attention before full Milestone 2 generation.
+- After total-stat expression caching and set-count domain tightening, the same
+  slice took roughly `7.2s-9.0s` per row. This is better but still above the
+  p95 `<5s` target.
+- Current timed CP-SAT slice rows are `FEASIBLE`, not `OPTIMAL`; they prove
+  valid generation but not stable best-build quality.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.

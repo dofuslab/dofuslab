@@ -281,16 +281,24 @@ def build_model(
             max_set_counts[set_id] += 1
 
     item_terms_by_set: dict[str, list[cp_model.IntVar]] = defaultdict(list)
-    for (_slot_name, item_id), var in slot_item_vars.items():
+    slots_by_set: dict[str, set[str]] = defaultdict(set)
+    item_ids_by_set: dict[str, set[str]] = defaultdict(set)
+    for (slot_name, item_id), var in slot_item_vars.items():
         set_id = item_by_id[item_id].get("setID")
         if set_id:
             item_terms_by_set[set_id].append(var)
+            slots_by_set[set_id].add(slot_name)
+            item_ids_by_set[set_id].add(item_id)
 
     for set_id in sorted(selected_set_ids(items)):
         item_terms = item_terms_by_set[set_id]
         if not item_terms:
             continue
-        max_count = min(max_set_counts[set_id], len(SLOTS))
+        max_count = min(
+            max_set_counts[set_id],
+            len(slots_by_set[set_id]),
+            len(item_ids_by_set[set_id]),
+        )
         exact_vars = []
         for count in range(max_count + 1):
             var = model.NewBoolVar(f"set_{set_id}_{count}")
@@ -299,7 +307,11 @@ def build_model(
         model.Add(sum(exact_vars) == 1)
         model.Add(sum(item_terms) == sum(count * exact_set_count_vars[(set_id, count)] for count in range(max_count + 1)))
 
+    total_stat_expr_cache: dict[str, Any] = {}
+
     def total_stat_expr(stat: str) -> Any:
+        if stat in total_stat_expr_cache:
+            return total_stat_expr_cache[stat]
         expr = active_base_stats().get(stat, 0)
         for (slot_name, item_id), var in slot_item_vars.items():
             item = item_by_id[item_id]
@@ -312,6 +324,7 @@ def build_model(
         for (slot_name, exo_stat), var in exo_vars.items():
             if exo_stat == stat:
                 expr += var
+        total_stat_expr_cache[stat] = expr
         return expr
 
     set_bonus_count_expr = sum(
