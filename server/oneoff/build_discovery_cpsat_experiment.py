@@ -32,7 +32,11 @@ from oneoff.build_discovery_prototype import (
     SLOTS,
     STAT_WEIGHTS,
     action_stats_meet_target,
+    active_damage_profile_confidence,
     active_base_stats,
+    active_range_soft_weight,
+    active_rotation_model_name,
+    active_spell_candidates,
     active_stat_weights,
     apply_stat_delta,
     cheap_profile_damage_score,
@@ -208,8 +212,9 @@ def linearized_final_score_weights(
             )
             - baseline
         ) / step
+    active_weights = active_stat_weights()
     for stat in ACTION_STATS:
-        weights[stat] = STAT_WEIGHTS.get(stat, 0.0)
+        weights[stat] = active_weights.get(stat, 0.0)
     return weights
 
 
@@ -1142,6 +1147,10 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
             "genericDamageWeight": generic_damage_weight,
             "survivabilityWeight": survivability_weight,
             "negativeResistancePenaltyWeight": negative_resistance_penalty_weight,
+            "rangeSoftWeight": active_range_soft_weight(),
+            "rotationModel": active_rotation_model_name(),
+            "profileConfidence": active_damage_profile_confidence(),
+            "spellCandidateCount": len(active_spell_candidates()),
         },
         "status": "complete" if best_state else "no_valid_build",
         "solverStatus": best_solver_status,

@@ -152,6 +152,18 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         finally:
             build_discovery_prototype.configure_damage_profile("strength", "Iop")
 
+    def test_action_package_score_uses_active_range_weight(self):
+        state = BuildState(stats={"Range": 4})
+        with patch.object(build_discovery_prototype, "package_delta_score", return_value=0.0):
+            with patch.object(build_discovery_prototype, "active_range_soft_weight", return_value=0.5):
+                low_range_score = build_discovery_prototype.action_package_score(state, {"Range": 1})
+            with patch.object(build_discovery_prototype, "active_range_soft_weight", return_value=8.0):
+                high_range_score = build_discovery_prototype.action_package_score(state, {"Range": 1})
+
+        self.assertEqual(low_range_score, 1 * 0.5 * 1000 + 4 * 0.5 * 10)
+        self.assertEqual(high_range_score, 1 * 8.0 * 1000 + 4 * 8.0 * 10)
+        self.assertGreater(high_range_score, low_range_score)
+
     def test_action_stat_witness_seed_runs_for_non_base_action_targets(self):
         self.assertFalse(
             action_stat_witness_seed_needed(

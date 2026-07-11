@@ -1,0 +1,615 @@
+{
+  "reportVersion": "build-discovery-all-class-cpsat-smoke-v1",
+  "generatedAt": "2026-07-11T18:51:42.514563+00:00",
+  "summary": {
+    "targetCount": 6,
+    "passed": 6,
+    "failed": 0
+  },
+  "rows": [
+    {
+      "target": {
+        "name": "trusted_iop_strength_opti_damage",
+        "class_name": "Iop",
+        "element": "strength",
+        "level": 200,
+        "budget_tier": 4,
+        "ap": 12,
+        "mp": 6,
+        "range_target": null,
+        "preset": 4,
+        "exo_policy": "opti",
+        "purpose": "trusted reviewed profile baseline"
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 4,
+        "budgetTier": 4,
+        "exoPolicy": "opti",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 4688.5,
+      "timings": {
+        "loadMs": 1820.9,
+        "totalSearchMs": 2724.6
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 4,
+        "genericDamageWeight": 0.6,
+        "survivabilityWeight": 0.7,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 0.5,
+        "rotationModel": "reviewed_iop_strength_rotation",
+        "profileConfidence": "high",
+        "spellCandidateCount": 8
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Strength": 0.9295,
+        "Power": 0.9295,
+        "Range": 0.5,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 1,
+        "Strength": 798,
+        "Power": 55,
+        "Vitality": 1102,
+        "Damage": 35,
+        "Earth Damage": 37,
+        "Critical": 21,
+        "Critical Damage": 50,
+        "Neutral Damage": 37
+      },
+      "sets": {
+        "Guten Tak Set": 3
+      },
+      "exos": {
+        "AP": {
+          "itemId": "11471",
+          "slot": "boots"
+        },
+        "MP": {
+          "itemId": "30060",
+          "slot": "shield"
+        }
+      },
+      "items": [
+        "Guten Tak's Amulet",
+        "Khardboard Moowolf Belt",
+        "Hail Boots",
+        "Little Red Waddling Cape",
+        "Cawwot Dofus",
+        "Ochre Dofus",
+        "Friction",
+        "Major Friction",
+        "Minor Friction",
+        "Nomad",
+        "Thierry Voodoo Mask",
+        "Boarhog",
+        "Guten Tak's Ring",
+        "Honoh Ring",
+        "Allister's Aegis",
+        "Guten Tak's Bow"
+      ],
+      "score": 1537.55
+    },
+    {
+      "target": {
+        "name": "cra_strength_opti_range_soft",
+        "class_name": "Cra",
+        "element": "strength",
+        "level": 200,
+        "budget_tier": 4,
+        "ap": 12,
+        "mp": 6,
+        "range_target": null,
+        "preset": 3,
+        "exo_policy": "opti",
+        "purpose": "non-Iop range-vital soft Range path"
+      },
+      "query": {
+        "className": "Cra",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "opti",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 2952.8,
+      "timings": {
+        "loadMs": 415.6,
+        "totalSearchMs": 2535.8
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 3,
+        "genericDamageWeight": 0.45,
+        "survivabilityWeight": 1.0,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 8
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Strength": 0.7609,
+        "Power": 0.7609,
+        "Range": 8.0,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 3,
+        "Strength": 1178,
+        "Power": 30,
+        "Vitality": 2953,
+        "Damage": 20,
+        "Earth Damage": 70,
+        "Critical": 53,
+        "Critical Damage": 0,
+        "Neutral Damage": 64
+      },
+      "sets": {
+        "Shushu Ptidoop Set": 2,
+        "Undergrowth Set": 2,
+        "Valiant Heart Set": 2,
+        "Mama Ayuto Set": 2
+      },
+      "exos": {
+        "AP": {
+          "itemId": "9145",
+          "slot": "belt"
+        },
+        "MP": {
+          "itemId": "30860",
+          "slot": "hat"
+        }
+      },
+      "items": [
+        "Amulet of the Valiant Heart",
+        "Slice of Undergrowth",
+        "Boots of the Valiant Heart",
+        "Ptidoop Cape",
+        "Ochre Dofus",
+        "Pryssure-O-Mat",
+        "Jackanapes",
+        "Major Maniac",
+        "Maniac",
+        "Voyager",
+        "Mama Ayuto's Bandana",
+        "Mamukil Kolophant",
+        "XLII Ring",
+        "Ptidoop Ring",
+        "Mama Ayuto's Parasail",
+        "Canni Blade"
+      ],
+      "score": 1564.27
+    },
+    {
+      "target": {
+        "name": "enutrof_chance_hard_range",
+        "class_name": "Enutrof",
+        "element": "chance",
+        "level": 200,
+        "budget_tier": 3,
+        "ap": 11,
+        "mp": 6,
+        "range_target": 6,
+        "preset": 2,
+        "exo_policy": "allow",
+        "purpose": "non-Iop hard Range 6 corner"
+      },
+      "query": {
+        "className": "Enutrof",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 3809.8,
+      "timings": {
+        "loadMs": 267.0,
+        "totalSearchMs": 3542.0
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 6
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Chance": 1.4037,
+        "Power": 0.4037,
+        "Range": 8.0,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 11,
+        "MP": 6,
+        "Range": 6,
+        "Chance": 888,
+        "Power": 115,
+        "Vitality": 1301,
+        "Damage": 15,
+        "Water Damage": 82,
+        "Critical": 16,
+        "Critical Damage": 0
+      },
+      "sets": {
+        "Luminescent Set": 2,
+        "Pandamonium Set": 2
+      },
+      "exos": {
+        "AP": {
+          "itemId": "18033",
+          "slot": "belt"
+        },
+        "MP": {
+          "itemId": "25219",
+          "slot": "weapon"
+        },
+        "Range": {
+          "itemId": "18699",
+          "slot": "shield"
+        }
+      },
+      "items": [
+        "Luminescent Amulet",
+        "Luminescent Belt",
+        "The Maidartes",
+        "Thermal Cloak",
+        "Jackanapes",
+        "Major Acrobat",
+        "Major Player",
+        "Major Tease",
+        "Twitcher",
+        "Voyager",
+        "Thierry Voodoo Mask",
+        "Azure and Almond Seemyool",
+        "Gelano",
+        "Pandamonium Wedding Ring",
+        "Shelld",
+        "Pandamonium Wand"
+      ],
+      "score": 1814.19
+    },
+    {
+      "target": {
+        "name": "sacrier_intelligence_no_range",
+        "class_name": "Sacrier",
+        "element": "intelligence",
+        "level": 200,
+        "budget_tier": 4,
+        "ap": 12,
+        "mp": 6,
+        "range_target": 0,
+        "preset": 2,
+        "exo_policy": "opti",
+        "purpose": "short-range class should not need positive Range"
+      },
+      "query": {
+        "className": "Sacrier",
+        "level": 200,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "opti",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 2935.2,
+      "timings": {
+        "loadMs": 314.2,
+        "totalSearchMs": 2620.0
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 0.5,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 7
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Intelligence": 1.3822,
+        "Power": 0.3822,
+        "Range": 0.5,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 2,
+        "Intelligence": 498,
+        "Power": 15,
+        "Vitality": 1052,
+        "Damage": 25,
+        "Fire Damage": 0,
+        "Critical": 25,
+        "Critical Damage": 0
+      },
+      "sets": {},
+      "exos": {
+        "MP": {
+          "itemId": "8839",
+          "slot": "hat"
+        }
+      },
+      "items": [
+        "Boy's Own Chain",
+        "Khardboard Moowolf Belt",
+        "Spore Boots",
+        "Cape Tivate",
+        "Ochre Dofus",
+        "Vulbis Dofus",
+        "Pryssure-O-Mat",
+        "Acrobat",
+        "Major Luckster",
+        "Maniac",
+        "Thierry Voodoo Mask",
+        "Crimson and Indigo Rhineetle",
+        "Guten Tak's Ring",
+        "Gelano",
+        "Anerice Shield",
+        "Destroyer Cleaver"
+      ],
+      "score": 1118.45
+    },
+    {
+      "target": {
+        "name": "feca_chance_budget1_realistic_floor",
+        "class_name": "Feca",
+        "element": "chance",
+        "level": 200,
+        "budget_tier": 1,
+        "ap": 10,
+        "mp": 5,
+        "range_target": null,
+        "preset": 2,
+        "exo_policy": "none",
+        "purpose": "tier 1 budget with realistic level-200 floor"
+      },
+      "query": {
+        "className": "Feca",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 5,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 3598.3,
+      "timings": {
+        "loadMs": 353.1,
+        "totalSearchMs": 3244.2
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 9
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Chance": 1.4056,
+        "Power": 0.4056,
+        "Range": 8.0,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 10,
+        "MP": 6,
+        "Range": 0,
+        "Chance": 527,
+        "Power": 110,
+        "Vitality": 1003,
+        "Damage": 0,
+        "Water Damage": 10,
+        "Critical": 20,
+        "Critical Damage": -11
+      },
+      "sets": {},
+      "exos": {},
+      "items": [
+        "Boy's Own Chain",
+        "Khardboard Moowolf Belt",
+        "Kicked Ass Boots",
+        "Fuji Snowfoux Cloak",
+        "Friction",
+        "Jackanapes",
+        "Maniac",
+        "Minor Friction",
+        "Nomad",
+        "Voyager",
+        "Death Mask",
+        "Armoured Dragoturkey",
+        "Gelano",
+        "Honoh Ring",
+        "Bitter-Shield",
+        "Aermyne's Rolling Pin"
+      ],
+      "score": 1047.97
+    },
+    {
+      "target": {
+        "name": "xelor_agility_low_action_validity",
+        "class_name": "Xelor",
+        "element": "agility",
+        "level": 200,
+        "budget_tier": 1,
+        "ap": 7,
+        "mp": 3,
+        "range_target": null,
+        "preset": 2,
+        "exo_policy": "none",
+        "purpose": "valid low-action edge, not player-realistic quality"
+      },
+      "query": {
+        "className": "Xelor",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 3547.5,
+      "timings": {
+        "loadMs": 274.8,
+        "totalSearchMs": 3271.9
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 0.5,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 5
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Agility": 1.4154,
+        "Power": 0.4154,
+        "Range": 0.5,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 10,
+        "MP": 4,
+        "Range": 5,
+        "Agility": 558,
+        "Power": 330,
+        "Vitality": 2153,
+        "Damage": 17,
+        "Air Damage": 45,
+        "Critical": -7,
+        "Critical Damage": 10
+      },
+      "sets": {
+        "Undergrowth Set": 2,
+        "Guten Tak Set": 3,
+        "Salvatory Spirit Set": 2
+      },
+      "exos": {},
+      "items": [
+        "Guten Tak's Amulet",
+        "Belt of the Salvatory Spirit",
+        "Ta Boots",
+        "Fuji Snowfoux Cloak",
+        "Friction",
+        "Jackanapes",
+        "Major Player",
+        "Major Tease",
+        "Minor Friction",
+        "Tease",
+        "Mask of the Salvatory Spirit",
+        "Armoured Dragoturkey",
+        "Guten Tak's Ring",
+        "Guten Tak's Wedding Ring",
+        "Brakmarian Shield",
+        "Canni Blade"
+      ],
+      "score": 1424.18
+    }
+  ]
+}

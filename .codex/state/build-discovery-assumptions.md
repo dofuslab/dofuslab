@@ -520,6 +520,10 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   high modifiable max range is valuable, short locked-range damage profiles
   receive very little +Range value, and missing spell evidence falls back to a
   modest weight instead of the old global high weight.
+- CP-SAT and package-ranking code must consume `active_stat_weights()` whenever
+  action stats are scored. Reading raw `STAT_WEIGHTS` can silently reintroduce
+  a global `Range=8.0` bias for class/element profiles where +Range should be
+  nearly useless.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.
 - Fashionista links are currently manual comparison references, not automatically parsed/scored.

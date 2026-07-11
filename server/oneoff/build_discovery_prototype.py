@@ -2934,6 +2934,9 @@ def clear_spell_damage_profile_caches() -> None:
     active_spell_candidates.cache_clear()
     active_spell_damage_profile.cache_clear()
     spell_candidates_for_profile.cache_clear()
+    active_range_soft_weight.cache_clear()
+    active_profile_spell_damage_baseline.cache_clear()
+    cheap_profile_damage_baseline.cache_clear()
 
 
 strength_spell_damage_profile.cache_clear = clear_spell_damage_profile_caches  # type: ignore[attr-defined]
@@ -3494,8 +3497,9 @@ def action_set_bonus_thresholds(set_obj: dict[str, Any]) -> list[tuple[int, dict
 
 
 def action_package_score(state: BuildState, threshold_stats: dict[str, int]) -> float:
-    action_score = sum(state.stats.get(stat, 0) * STAT_WEIGHTS[stat] for stat in ACTION_STATS)
-    threshold_score = sum(threshold_stats.get(stat, 0) * STAT_WEIGHTS[stat] for stat in ACTION_STATS)
+    weights = active_stat_weights()
+    action_score = sum(state.stats.get(stat, 0) * weights[stat] for stat in ACTION_STATS)
+    threshold_score = sum(threshold_stats.get(stat, 0) * weights[stat] for stat in ACTION_STATS)
     return threshold_score * 1000 + action_score * 10 + package_delta_score(state)
 
 
