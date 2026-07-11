@@ -6418,3 +6418,42 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker generation:
     `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-profile-stress-2-targets-20260711.json --output-json /tmp/build-discovery-m3-profile-stress-2-sample-20260711.json --output-md /tmp/build-discovery-m3-profile-stress-2-sample-20260711.md`
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-profile-stress-2-sample-20260711.json --target-file .codex/state/build-discovery-m3-profile-stress-2-targets-20260711.json --expected-solver cpsat --allow-no-build`
+
+### 2026-07-11 M3 Profile-Stress Slice 3
+
+- Generated and validated the reviewer-recommended plausible transition slice:
+  - target file: `.codex/state/build-discovery-m3-profile-stress-3-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-profile-stress-3-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-profile-stress-3-sample-20260711.md`
+  - generated: `17 / 17`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `17` `OPTIMAL`
+- This slice is stronger M3 evidence than the tiny-level stress rows because it
+  targets plausible non-Strength leveling builds around real transition levels:
+  `50`, `60`, `75`, `80`, `98`, `99`, `100`, `101`, `120`, `137`, `140`,
+  `150`, `160`, `180`, and `199`.
+- Useful generated examples:
+  - level `50` Intelligence tier `2` `7/5/1` generated `7/5/3`
+  - level `98` Agility tier `2` `11/6/3` generated `11/6/4`
+  - level `99` Chance tier `2` `12/6/6` generated `12/6/6`
+  - level `160` Agility tier `2` `12/6/3` generated `12/6/3`
+  - level `199` Intelligence tier `2` `12/6/5` generated `12/6/6`
+- Refreshed all-level inventory after adding the profile-stress-3 artifact:
+  - valid query rows: `665088`
+  - generated evidence rows: `288`
+  - attempted evidence rows: `315`
+  - proven no-build evidence rows: `27`
+  - resolved evidence rows: `315`
+  - unresolved rows: `664773`
+  - zero-resolved levels computed from `byLevel`: `79`
+  - `mp_heavy` generated evidence: `32`
+  - `range_heavy` generated evidence: `13`
+- Quality caveat: Khardboard pieces still appear frequently across mid-level
+  builds. That may be legitimate under v0 availability and set/package scoring,
+  but it should be reviewed as a possible scorer/package bias before claiming
+  the builds are human-plausible.
+- Verification passed:
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-profile-stress-3-targets-20260711.json --output-json /tmp/build-discovery-m3-profile-stress-3-sample-20260711.json --output-md /tmp/build-discovery-m3-profile-stress-3-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-profile-stress-3-sample-20260711.json --target-file .codex/state/build-discovery-m3-profile-stress-3-targets-20260711.json --expected-solver cpsat --allow-no-build`

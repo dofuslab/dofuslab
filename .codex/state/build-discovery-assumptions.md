@@ -344,6 +344,14 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Resolved evidence can grow quickly from low-level infeasibility proofs. Do
   not treat that as equivalent to broad generated-build quality; M3 review
   still needs plausible generated rows around real transition levels.
+- Profile-stress slice 3 generated `17/17` plausible transition rows across
+  levels 50-199 and is stronger M3 evidence than tiny-level no-build proofs.
+  It supports continuing with reviewer-curated transition slices rather than
+  blindly consuming `nextUnresolvedTargets` from the front.
+- Khardboard pieces recur across many mid-level generated builds. Under v0
+  availability this may be a real strong package, but it may also indicate set
+  package/scoring bias. Human review should decide whether repeated Khardboard
+  usage is acceptable or should be diversified/penalized.
 - CP-SAT excludes items whose conditions cannot be encoded by the current
   condition model. This is conservative: it may miss a legal item with an
   unsupported but satisfiable condition, but it prevents invalid
