@@ -154,6 +154,11 @@ review before accepting Milestone 2 evidence.
   item objective stats. This reduces repeated Python-side scans and prepares
   the path toward a static solver index, but model creation still averages
   around `1744.8ms` on the 8-row smoke.
+- CP-SAT skips exact set-count variables for sets that can select at most one
+  item and have no one-item bonus. These sets cannot affect set bonus stats or
+  the aggregate `SET_BONUS` condition count. The 8-row set-skip smoke reduced
+  exact set-count variables to `876` per row and skipped `60-62` variables per
+  row.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.

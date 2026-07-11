@@ -1,0 +1,769 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T07:38:24.108208+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_7_3_none_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2537.97,
+        "weightedStatScore": 4358.27,
+        "utilityStatScore": 379.56,
+        "genericDamageScore": 4566.58,
+        "rawRotationDamageScore": 4183.91,
+        "spellDamageScore": 4183.91,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.5222,
+        "weaponDamageScore": 191.35,
+        "survivabilityScore": 103.45,
+        "weakestElementEhp": 3184.49,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 6,
+          "Strength": 1528,
+          "Power": 130,
+          "Vitality": 3353,
+          "Damage": 0,
+          "Earth Damage": 122,
+          "Critical": 57,
+          "Critical Damage": 89,
+          "Neutral Damage": 90
+        },
+        "sets": {
+          "Erotegg Set": 2,
+          "Brouce Boulgoure Set": 2,
+          "Bleeding Heart Set": 3,
+          "Turtelonia Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "32236",
+            "slot": "shield"
+          },
+          "MP": {
+            "itemId": "21229",
+            "slot": "weapon"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "19244",
+            "internalId": null,
+            "name": "Amulet of the Bleeding Heart",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "belt": {
+            "id": "13114",
+            "internalId": null,
+            "name": "Broucey Belt",
+            "type": "Belt",
+            "level": 194,
+            "set": "Brouce Boulgoure Set"
+          },
+          "weapon": {
+            "id": "21229",
+            "internalId": null,
+            "name": "Turtelonia Wand",
+            "type": "Wand",
+            "level": 200,
+            "set": "Turtelonia Set"
+          },
+          "shield": {
+            "id": "32236",
+            "internalId": null,
+            "name": "Erotegg Disc",
+            "type": "Shield",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_1": {
+            "id": "13115",
+            "internalId": null,
+            "name": "Broucey Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_2": {
+            "id": "32234",
+            "internalId": null,
+            "name": "Erotegg Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "boots": {
+            "id": "19245",
+            "internalId": null,
+            "name": "Boots of the Bleeding Heart",
+            "type": "Boots",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "hat": {
+            "id": "21235",
+            "internalId": null,
+            "name": "Turtelonia Horn",
+            "type": "Hat",
+            "level": 200,
+            "set": "Turtelonia Set"
+          },
+          "cloak": {
+            "id": "19246",
+            "internalId": null,
+            "name": "Cape of the Bleeding Heart",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "pet": {
+            "id": "33044",
+            "internalId": null,
+            "name": "Ivory and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2537.97,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 6,
+          "Strength": 1528,
+          "Power": 130,
+          "Vitality": 3353,
+          "Damage": 0,
+          "Earth Damage": 122,
+          "Critical": 57,
+          "Critical Damage": 89,
+          "Neutral Damage": 90
+        },
+        "sets": {
+          "Erotegg Set": 2,
+          "Brouce Boulgoure Set": 2,
+          "Bleeding Heart Set": 3,
+          "Turtelonia Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "32236",
+            "slot": "shield"
+          },
+          "MP": {
+            "itemId": "21229",
+            "slot": "weapon"
+          }
+        },
+        "items": [
+          "Amulet of the Bleeding Heart",
+          "Broucey Belt",
+          "Turtelonia Wand",
+          "Erotegg Disc",
+          "Broucey Ring",
+          "Erotegg Ring",
+          "Boots of the Bleeding Heart",
+          "Turtelonia Horn",
+          "Cape of the Bleeding Heart",
+          "Ivory and Crimson Dragoturkey",
+          "Cloudy Dofus",
+          "Dolmanax",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Goliath"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2537.97,
+          "weightedStatScore": 4358.27,
+          "utilityStatScore": 379.56,
+          "genericDamageScore": 4566.58,
+          "rawRotationDamageScore": 4183.91,
+          "spellDamageScore": 4183.91,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.5222,
+          "weaponDamageScore": 191.35,
+          "survivabilityScore": 103.45,
+          "weakestElementEhp": 3184.49,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 6,
+            "Strength": 1528,
+            "Power": 130,
+            "Vitality": 3353,
+            "Damage": 0,
+            "Earth Damage": 122,
+            "Critical": 57,
+            "Critical Damage": 89,
+            "Neutral Damage": 90
+          },
+          "sets": {
+            "Erotegg Set": 2,
+            "Brouce Boulgoure Set": 2,
+            "Bleeding Heart Set": 3,
+            "Turtelonia Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "32236",
+              "slot": "shield"
+            },
+            "MP": {
+              "itemId": "21229",
+              "slot": "weapon"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "19244",
+              "internalId": null,
+              "name": "Amulet of the Bleeding Heart",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Bleeding Heart Set"
+            },
+            "belt": {
+              "id": "13114",
+              "internalId": null,
+              "name": "Broucey Belt",
+              "type": "Belt",
+              "level": 194,
+              "set": "Brouce Boulgoure Set"
+            },
+            "weapon": {
+              "id": "21229",
+              "internalId": null,
+              "name": "Turtelonia Wand",
+              "type": "Wand",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "shield": {
+              "id": "32236",
+              "internalId": null,
+              "name": "Erotegg Disc",
+              "type": "Shield",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_1": {
+              "id": "13115",
+              "internalId": null,
+              "name": "Broucey Ring",
+              "type": "Ring",
+              "level": 198,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_2": {
+              "id": "32234",
+              "internalId": null,
+              "name": "Erotegg Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "boots": {
+              "id": "19245",
+              "internalId": null,
+              "name": "Boots of the Bleeding Heart",
+              "type": "Boots",
+              "level": 200,
+              "set": "Bleeding Heart Set"
+            },
+            "hat": {
+              "id": "21235",
+              "internalId": null,
+              "name": "Turtelonia Horn",
+              "type": "Hat",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "cloak": {
+              "id": "19246",
+              "internalId": null,
+              "name": "Cape of the Bleeding Heart",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Bleeding Heart Set"
+            },
+            "pet": {
+              "id": "33044",
+              "internalId": null,
+              "name": "Ivory and Crimson Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2537.97,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 6,
+            "Strength": 1528,
+            "Power": 130,
+            "Vitality": 3353,
+            "Damage": 0,
+            "Earth Damage": 122,
+            "Critical": 57,
+            "Critical Damage": 89,
+            "Neutral Damage": 90
+          },
+          "sets": {
+            "Erotegg Set": 2,
+            "Brouce Boulgoure Set": 2,
+            "Bleeding Heart Set": 3,
+            "Turtelonia Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "32236",
+              "slot": "shield"
+            },
+            "MP": {
+              "itemId": "21229",
+              "slot": "weapon"
+            }
+          },
+          "items": [
+            "Amulet of the Bleeding Heart",
+            "Broucey Belt",
+            "Turtelonia Wand",
+            "Erotegg Disc",
+            "Broucey Ring",
+            "Erotegg Ring",
+            "Boots of the Bleeding Heart",
+            "Turtelonia Horn",
+            "Cape of the Bleeding Heart",
+            "Ivory and Crimson Dragoturkey",
+            "Cloudy Dofus",
+            "Dolmanax",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Goliath"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 5612.1,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 201.3,
+          "totalSearchMs": 5410.8
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 1774.5,
+            "solveMs": 3499.0,
+            "objective": 2254.18,
+            "solutionCallbackCount": 11,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1993.4,
+                "objective": 760.64,
+                "score": 1177.67,
+                "itemIds": [
+                  "7754",
+                  "8714",
+                  "8840",
+                  "11711",
+                  "11712",
+                  "12628",
+                  "12629",
+                  "12630",
+                  "12713",
+                  "14067",
+                  "17120",
+                  "17121",
+                  "18693",
+                  "22018",
+                  "27266",
+                  "33268"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2153.7,
+                "objective": 1177.47,
+                "score": 1743.02,
+                "itemIds": [
+                  "8877",
+                  "9464",
+                  "11765",
+                  "12108",
+                  "12110",
+                  "12722",
+                  "12723",
+                  "12724",
+                  "13344",
+                  "13758",
+                  "13759",
+                  "27266",
+                  "27284",
+                  "27525",
+                  "27528",
+                  "30858"
+                ],
+                "exos": {
+                  "MP": "27266"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2262.3,
+                "objective": 2095.5,
+                "score": 2459.51,
+                "itemIds": [
+                  "7754",
+                  "8698",
+                  "13114",
+                  "13115",
+                  "13344",
+                  "13759",
+                  "13774",
+                  "19244",
+                  "19245",
+                  "19246",
+                  "21229",
+                  "21235",
+                  "30455",
+                  "32234",
+                  "32236",
+                  "33044"
+                ],
+                "exos": {
+                  "AP": "32236",
+                  "MP": "21229"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2407.8,
+                "objective": 2110.8,
+                "score": 2537.97,
+                "itemIds": [
+                  "7754",
+                  "8698",
+                  "13114",
+                  "13115",
+                  "13344",
+                  "13759",
+                  "19244",
+                  "19245",
+                  "19246",
+                  "21229",
+                  "21235",
+                  "30453",
+                  "30455",
+                  "32234",
+                  "32236",
+                  "33044"
+                ],
+                "exos": {
+                  "AP": "32236",
+                  "MP": "21229"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2618.3,
+                "objective": 2135.01,
+                "score": 2508.2,
+                "itemIds": [
+                  "7754",
+                  "8698",
+                  "13344",
+                  "13759",
+                  "14078",
+                  "19244",
+                  "19246",
+                  "21229",
+                  "21235",
+                  "22205",
+                  "22209",
+                  "29430",
+                  "30453",
+                  "30455",
+                  "32234",
+                  "32236"
+                ],
+                "exos": {
+                  "AP": "32234",
+                  "MP": "21229"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 316
+              },
+              "slotVarCount": 1838,
+              "uniqueItemCount": 1704,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "conditionConstraintCount": 375,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1704,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

@@ -322,6 +322,7 @@ def build_model(
     non_dofus_slots_by_set: dict[str, set[str]] = defaultdict(set)
     dofus_item_ids_by_set: dict[str, set[str]] = defaultdict(set)
     item_ids_by_set: dict[str, set[str]] = defaultdict(set)
+    skipped_set_count_var_count = 0
     for (slot_name, item_id), var in slot_item_vars.items():
         set_id = item_by_id[item_id].get("setID")
         if set_id:
@@ -341,6 +342,11 @@ def build_model(
             len(dofus_item_ids_by_set[set_id]),
         )
         max_count = min(metadata.max_set_counts[set_id], len(item_ids_by_set[set_id]), max_selectable_slots)
+        set_bonuses = metadata.set_bonus_by_id.get(set_id, {})
+        has_bonus_to_max_count = any(set_bonuses.get(str(count), {}) for count in range(max_count + 1))
+        if max_count <= 1 and not has_bonus_to_max_count:
+            skipped_set_count_var_count += max_count + 1
+            continue
         exact_vars = []
         for count in range(max_count + 1):
             var = model.NewBoolVar(f"set_{set_id}_{count}")
@@ -496,6 +502,7 @@ def build_model(
         "uniqueItemCount": len(item_by_id),
         "exoVarCount": len(exo_vars),
         "exactSetCountVarCount": len(exact_set_count_vars),
+        "skippedSetCountVarCount": skipped_set_count_var_count,
         "conditionConstraintCount": condition_constraint_count,
         "setCountConstraintCount": len({set_id for set_id, _count in exact_set_count_vars}),
     }

@@ -4221,3 +4221,56 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python -m py_compile oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-metadata-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`
+
+### 2026-07-11 Skip Useless Singleton Set Counts
+
+- Skipped exact set-count variables for sets where:
+  - at most one item can be selected
+  - there is no one-item set bonus
+- These sets cannot contribute set bonus stats and cannot increase the
+  aggregate `SET_BONUS` condition count, so the exact count literals are
+  unnecessary.
+- Added a synthetic fixture test that keeps a one-item bonus set modeled while
+  skipping a no-bonus singleton set.
+- Galileo reviewer findings captured for next checkpoints:
+  - ring slots can likely be grouped like Dofus to remove duplicate ring vars
+  - set-count one-hot encoding should eventually become threshold/delta vars
+  - single-slot item presence vars can reuse the slot var
+  - `SET_BONUS < n` leaf conditions may be duplicated by the upper-bound path
+  - sparse stat coefficient tables should move into static metadata
+- Generated and validated an 8-row Docker CP-SAT set-skip smoke:
+  - `.codex/state/build-discovery-cpsat-setskip-smoke-matrix.json`
+  - `.codex/state/build-discovery-cpsat-setskip-smoke-matrix.md`
+  - `.codex/state/build-discovery-cpsat-setskip-smoke-split/`
+- Slice:
+  - elements: strength, chance
+  - budget tiers: 1, 4
+  - AP: 7
+  - MP: 3
+  - Range: none, 6
+  - callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `8`
+  - generated: `8`
+  - invalid: `0`
+  - solver statuses: `5` optimal, `3` feasible
+- Model-size impact:
+  - exact set-count vars: `876` per row
+  - skipped set-count vars: `60-62` per row
+- Runtime:
+  - elapsed min/avg/max: `5612.1ms / 6927.2ms / 8603.3ms`
+  - load min/avg/max: `172.0ms / 437.6ms / 1827.3ms`
+  - model min/avg/max: `1591.0ms / 1768.2ms / 2024.6ms`
+  - solve min/avg/max: `3499.0ms / 4579.2ms / 5062.0ms`
+- Interpretation:
+  - this is a correctness-preserving model-size cleanup
+  - timing remains noisy and still above the p95 target
+  - next low-risk reduction is reusing existing slot vars for single-slot
+    presence constraints
+- Verification passed:
+  - `python server\scripts\test_build_discovery_cpsat_experiment.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\oneoff\build_discovery_cpsat_experiment.py server\scripts\test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python -m py_compile oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-setskip-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`

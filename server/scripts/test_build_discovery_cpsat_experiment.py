@@ -92,6 +92,22 @@ def fixture_sets() -> dict:
     }
 
 
+def singleton_fixture_sets() -> dict:
+    return {
+        **fixture_sets(),
+        "singleton_set": {
+            "id": "singleton_set",
+            "_name": "Singleton Fixture Set",
+            "_bonus_stats": {"0": {}, "1": {}},
+        },
+        "one_item_bonus_set": {
+            "id": "one_item_bonus_set",
+            "_name": "One Item Bonus Fixture Set",
+            "_bonus_stats": {"0": {}, "1": {"Strength": 1}},
+        },
+    }
+
+
 def base_fixture_items(*, dofus_items: list[dict] | None = None) -> list[dict]:
     dofus_items = dofus_items or [
         item("dofus_a", "Dofus", set_id="dofus_set"),
@@ -235,6 +251,28 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertEqual(metadata.max_set_counts["dofus_set"], 2)
         self.assertEqual(metadata.set_bonus_by_id["dofus_set"]["2"], {"Strength": 200})
         self.assertIn("Strength", metadata.item_objective_stats_by_id["ring_good"])
+
+    def test_model_skips_useless_singleton_set_count_vars_only(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        items = [
+            *base_fixture_items(),
+            item("singleton_hat", "Hat", set_id="singleton_set"),
+            item("one_item_bonus_belt", "Belt", set_id="one_item_bonus_set"),
+        ]
+        _model, _slot_item_vars, _exo_vars, model_stats = build_model(
+            items,
+            singleton_fixture_sets(),
+            BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
+            exo_policy="none",
+        )
+
+        self.assertGreaterEqual(model_stats["skippedSetCountVarCount"], 2)
+        self.assertGreater(model_stats["exactSetCountVarCount"], model_stats["skippedSetCountVarCount"])
 
     def test_experiment_exposes_callback_candidate_collection(self):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")
