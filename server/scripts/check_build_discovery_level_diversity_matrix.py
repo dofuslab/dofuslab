@@ -18,8 +18,11 @@ from scripts.build_discovery_level_diversity_matrix import (  # noqa: E402
     validate_best_build,
 )
 from oneoff.build_discovery_prototype import (  # noqa: E402
+    PRIMARY_STAT_NAMES,
     SLOTS,
     availability_tier_for_item,
+    characteristic_point_cost,
+    characteristic_points_for_level,
     effective_exo_policy,
     query_summary,
 )
@@ -54,6 +57,31 @@ def validate_full_build_artifact(result: dict[str, Any], target_by_id: dict[str,
 
     for error in validate_best_build(target, query, best_build):
         failures.append(f"{target_id}: current-code validation failed: {error}")
+
+    base_allocation = best_build.get("baseAllocation")
+    if not isinstance(base_allocation, dict):
+        failures.append(f"{target_id}: missing baseAllocation")
+    else:
+        available_points = characteristic_points_for_level(target.level)
+        allocated_primary_stats = {
+            stat: value
+            for stat in PRIMARY_STAT_NAMES
+            for value in [base_allocation.get(stat)]
+            if isinstance(value, (int, float)) and value > 0
+        }
+        spent_points = sum(characteristic_point_cost(int(value)) for value in allocated_primary_stats.values())
+        if spent_points > available_points:
+            failures.append(
+                f"{target_id}: baseAllocation spends {spent_points} characteristic points, "
+                f"above level {target.level} budget {available_points}"
+            )
+        vitality_allocation = base_allocation.get("Vitality")
+        if isinstance(vitality_allocation, (int, float)) and spent_points <= available_points:
+            expected_vitality = available_points - spent_points
+            if int(vitality_allocation) != expected_vitality:
+                failures.append(
+                    f"{target_id}: baseAllocation Vitality is {vitality_allocation}, expected {expected_vitality}"
+                )
 
     slot_types = slot_types_by_name()
     seen_item_ids: set[str] = set()

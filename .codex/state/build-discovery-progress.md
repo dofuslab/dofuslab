@@ -3278,6 +3278,29 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
   - `python -m py_compile server\oneoff\build_discovery_prototype.py scripts\test_build_discovery_prototype.py server\scripts\check_build_discovery_level_diversity_matrix.py`
 
+### 2026-07-10 Level-Aware Characteristic Allocation Gate
+
+- Fixed the non-200 base-stat model so available characteristic points now scale
+  by level as `5 * (level - 1)` instead of silently using level-200 points for
+  every target.
+- Base stats remain intentionally scrolled (`100`) for now; this assumption is
+  now explicit in `.codex/state/build-discovery-assumptions.md`.
+- Base allocation optimization now derives legal allocation options for the
+  active target level; for example, level 50 can use up to `172` primary stat
+  points, not `398`.
+- Strengthened matrix artifact verification so generated rows fail if
+  `baseAllocation` spends more characteristic points than the target level
+  allows.
+- Existing historical non-200 matrix artifacts are now known stale under this
+  verifier and must be regenerated before they count as Milestone 3 proof.
+  Example failure:
+  `level_50_strength_7_3_1_budget1` spent `992` characteristic points against a
+  level 50 budget of `245`.
+- Verification passed:
+  - `python -m unittest scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_base_stats_for_level_scale_characteristic_points scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_legal_base_allocation_options_scale_by_level scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_optimize_base_allocation_uses_level_legal_points`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+  - `python -m py_compile server\oneoff\build_discovery_prototype.py scripts\test_build_discovery_prototype.py server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range

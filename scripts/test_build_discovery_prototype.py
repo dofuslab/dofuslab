@@ -309,6 +309,27 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(stats["Vitality"], 103)
         self.assertEqual(stats["Intelligence"], 100)
 
+    def test_base_stats_for_level_scale_characteristic_points(self):
+        self.assertEqual(build_discovery_prototype.characteristic_points_for_level(1), 0)
+        self.assertEqual(build_discovery_prototype.characteristic_points_for_level(50), 245)
+        self.assertEqual(build_discovery_prototype.characteristic_points_for_level(100), 495)
+        self.assertEqual(build_discovery_prototype.characteristic_points_for_level(150), 745)
+        self.assertEqual(build_discovery_prototype.characteristic_points_for_level(200), 995)
+
+        level_one = build_discovery_prototype.base_stats_for_level(1)
+        level_hundred = build_discovery_prototype.base_stats_for_level(100)
+
+        self.assertEqual(level_one["AP"], 6)
+        self.assertEqual(level_one["Vitality"], 100)
+        self.assertEqual(level_one["Strength"], 100)
+        self.assertEqual(level_hundred["AP"], 7)
+        self.assertEqual(level_hundred["Vitality"], 595)
+
+    def test_legal_base_allocation_options_scale_by_level(self):
+        self.assertEqual(build_discovery_prototype.legal_base_allocation_options(1), (0,))
+        self.assertEqual(build_discovery_prototype.legal_base_allocation_options(50), (0, 172))
+        self.assertEqual(build_discovery_prototype.legal_base_allocation_options(200), (0, 300, 398))
+
     def test_base_stats_for_primary_allocation_resets_non_primary_elements(self):
         stats = build_discovery_prototype.base_stats_for_primary_allocation(398, "Chance")
 
@@ -327,6 +348,18 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         self.assertEqual(optimized.base_allocation["Strength"], 398)
         self.assertEqual(optimized.stats["Strength"], 498)
+
+    def test_optimize_base_allocation_uses_level_legal_points(self):
+        with build_discovery_prototype.target_level_context(50):
+            state = BuildState()
+            optimized = optimize_base_allocation(
+                state,
+                generic_damage_weight=10,
+                weapon_damage_weight=0,
+            )
+
+        self.assertEqual(optimized.base_allocation["Strength"], 172)
+        self.assertEqual(optimized.stats["Strength"], 272)
 
     def test_optimize_base_allocation_uses_active_profile_primary_stat(self):
         build_discovery_prototype.configure_damage_profile("chance")

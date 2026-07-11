@@ -238,23 +238,34 @@ EXO_ELIGIBLE_ITEM_TYPES = {
     "Scythe",
     "Shield",
 }
-BASE_STATS = {
-    "AP": BASE_AP,
-    "MP": BASE_MP,
-    "Vitality": 495,
-    "Wisdom": 100,
-    "Strength": 400,
-    "Intelligence": 100,
-    "Chance": 100,
-    "Agility": 100,
-}
+BASE_CHARACTERISTIC_POINTS_PER_LEVEL = 5
+BASE_CHARACTERISTIC_POINTS = BASE_CHARACTERISTIC_POINTS_PER_LEVEL * (TARGET_LEVEL - 1)
+SCROLLED_BASE_STAT = 100
+BASE_STRENGTH_ALLOCATION_OPTIONS = (0, 300, 398)
 ACTIVE_TARGET_LEVEL = TARGET_LEVEL
 
 
+def characteristic_points_for_level(level: int) -> int:
+    if not 1 <= level <= TARGET_LEVEL:
+        raise ValueError(f"Level must be between 1 and {TARGET_LEVEL}.")
+    return BASE_CHARACTERISTIC_POINTS_PER_LEVEL * (level - 1)
+
+
 def base_stats_for_level(level: int) -> dict[str, int]:
-    stats = dict(BASE_STATS)
-    stats["AP"] = base_ap_for_level(level)
-    return stats
+    characteristic_points = characteristic_points_for_level(level)
+    return {
+        "AP": base_ap_for_level(level),
+        "MP": BASE_MP,
+        "Vitality": SCROLLED_BASE_STAT + characteristic_points,
+        "Wisdom": SCROLLED_BASE_STAT,
+        "Strength": SCROLLED_BASE_STAT,
+        "Intelligence": SCROLLED_BASE_STAT,
+        "Chance": SCROLLED_BASE_STAT,
+        "Agility": SCROLLED_BASE_STAT,
+    }
+
+
+BASE_STATS = base_stats_for_level(TARGET_LEVEL)
 
 
 def active_base_stats() -> dict[str, int]:
@@ -275,10 +286,6 @@ class target_level_context:
         global ACTIVE_TARGET_LEVEL
         ACTIVE_TARGET_LEVEL = self.previous_level
 
-
-BASE_CHARACTERISTIC_POINTS = 995
-SCROLLED_BASE_STAT = 100
-BASE_STRENGTH_ALLOCATION_OPTIONS = (0, 300, 398)
 
 SLOTS: list[tuple[str, tuple[str, ...]]] = [
     ("amulet", ("Amulet",)),
@@ -2794,12 +2801,34 @@ def strength_point_cost(base_strength: int) -> int:
     return characteristic_point_cost(base_strength)
 
 
+def max_base_points_for_available_characteristic_points(available_points: int) -> int:
+    if available_points < 0:
+        raise ValueError("Available characteristic points cannot be negative.")
+    base_points = 0
+    while characteristic_point_cost(base_points + 1) <= available_points:
+        base_points += 1
+    return base_points
+
+
+def legal_base_allocation_options(level: int) -> tuple[int, ...]:
+    available_points = characteristic_points_for_level(level)
+    max_legal_base_points = max_base_points_for_available_characteristic_points(available_points)
+    options = {
+        base_points
+        for base_points in BASE_STRENGTH_ALLOCATION_OPTIONS
+        if characteristic_point_cost(base_points) <= available_points
+    }
+    options.add(max_legal_base_points)
+    return tuple(sorted(options))
+
+
 def base_stats_for_primary_allocation(base_points: int, primary_stat: str | None = None) -> dict[str, int]:
     primary_stat = primary_stat or ACTIVE_DAMAGE_PROFILE.primary_stat
     cost = characteristic_point_cost(base_points)
-    if cost > BASE_CHARACTERISTIC_POINTS:
+    available_points = characteristic_points_for_level(ACTIVE_TARGET_LEVEL)
+    if cost > available_points:
         raise ValueError(f"Base {primary_stat} allocation exceeds available points: {base_points}")
-    base_vitality = BASE_CHARACTERISTIC_POINTS - cost
+    base_vitality = available_points - cost
     allocated_stats = {
         **active_base_stats(),
         **{stat: SCROLLED_BASE_STAT for stat in PRIMARY_STAT_NAMES},
@@ -2841,7 +2870,7 @@ def optimize_base_allocation(
 ) -> BuildState:
     primary_stat = primary_stat or ACTIVE_DAMAGE_PROFILE.primary_stat
     best_state: BuildState | None = None
-    for base_points in BASE_STRENGTH_ALLOCATION_OPTIONS:
+    for base_points in legal_base_allocation_options(ACTIVE_TARGET_LEVEL):
         allocated_state = state_with_base_allocation(state, base_points, primary_stat)
         allocated_state.score = final_score_state(
             allocated_state,

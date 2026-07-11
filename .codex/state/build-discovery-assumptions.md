@@ -21,7 +21,15 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 
 - Query inputs should include class, level, elements, mode, AP target, MP target, Range target, damage/survivability preset, budget tier, exo policy, weapon policy, locked items, and avoided items.
 - `className=Iop`, `level=1-200`, `mode=pvm`, and one single element are the intended Milestone 3 product-shaped query values.
-- `level` belongs in the query/API/cache/provenance contract. Validation now accepts levels 1-200 for Iop, but solver quality is not considered proven for non-200 levels until level-aware candidate loading, base stats, spell selection, and benchmark rows are reviewed.
+- `level` belongs in the query/API/cache/provenance contract. Validation now
+  accepts levels 1-200 for Iop.
+- Characteristic points are modeled as `5 * (level - 1)`.
+- Base AP is level-aware: 6 for levels 1-99 and 7 for levels 100-200.
+- The current level model assumes fully scrolled base stats (`100`) at every
+  level; this is reviewable and may be too generous for low-budget/low-level
+  builds.
+- Solver quality is not considered proven for non-200 levels until level-aware
+  generated artifacts are regenerated and reviewed against benchmark rows.
 - Milestone 1 support means all supported Iop single elements: Strength, Intelligence, Chance, and Agility.
 - Milestone 1 support means any valid AP/MP/Range target within hard caps, not only 11/6/0 and 12/6/0 benchmark rows.
 - Milestone 1 support means product intent controls should affect generation: damage/survivability preset, budget tier, exo policy, weapon policy, locked items, and avoided items.

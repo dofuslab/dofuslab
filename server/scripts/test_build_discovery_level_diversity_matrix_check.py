@@ -9,16 +9,30 @@ from build_discovery_level_diversity_matrix import (
     target_summary,
     targets_for_set,
 )
+from oneoff.build_discovery_prototype import (
+    characteristic_point_cost,
+    characteristic_points_for_level,
+    legal_base_allocation_options,
+)
 
 
 def valid_result(target):
     query = query_for_target(target)
+    primary_stat = {
+        "strength": "Strength",
+        "intelligence": "Intelligence",
+        "chance": "Chance",
+        "agility": "Agility",
+    }[target.element]
+    base_points = legal_base_allocation_options(target.level)[-1]
+    vitality_points = characteristic_points_for_level(target.level) - characteristic_point_cost(base_points)
     best_build = {
         "score": 100.0,
         "totals": {"AP": target.ap, "MP": target.mp, "Range": target.range_target or 0, "Vitality": 1000},
         "sets": {},
         "exos": {},
         "conditionFailures": [],
+        "baseAllocation": {primary_stat: base_points, "Vitality": vitality_points},
         "items": {
             "amulet": {
                 "id": f"item-{target.name}",
@@ -276,6 +290,19 @@ class BuildDiscoveryLevelDiversityMatrixCheckTest(unittest.TestCase):
         failures = validate_report(report)
 
         self.assertTrue(any("generated exos present under effective exoPolicy=none" in failure for failure in failures))
+
+    def test_validate_report_rejects_base_allocation_above_level_budget(self):
+        report = valid_report()
+        low_level_index = next(
+            index
+            for index, result in enumerate(report["results"])
+            if result["target"]["level"] < 100
+        )
+        report["results"][low_level_index]["bestBuild"]["baseAllocation"] = {"Strength": 398, "Vitality": 3}
+
+        failures = validate_report(report)
+
+        self.assertTrue(any("baseAllocation spends" in failure for failure in failures))
 
 
 if __name__ == "__main__":
