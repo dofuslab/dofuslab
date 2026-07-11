@@ -3301,6 +3301,17 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
   - `python -m py_compile server\oneoff\build_discovery_prototype.py scripts\test_build_discovery_prototype.py server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix_check.py`
 
+### 2026-07-10 Availability Policy Fixture
+
+- Converted availability tier coverage into an explicit fixture table covering:
+  normal gear, mounts, trophies, serialized trophies, pets, petsmounts,
+  accessible Dofuses, unclassified Dofuses, Prysmaradites, Ochre, Vulbis,
+  serialized Ochre, and buff/special-effect items.
+- This keeps the hardcoded v0 budget policy reviewable while the full economy
+  model remains out of scope.
+- Verification passed:
+  - `$env:PYTHONPATH='server'; python server\scripts\test_build_discovery_availability_tiers.py`
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range
