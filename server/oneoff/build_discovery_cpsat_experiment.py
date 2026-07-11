@@ -26,9 +26,11 @@ from oneoff.build_discovery_prototype import (
     BuildDiscoveryQuery,
     BuildState,
     BuildTarget,
+    ELEMENT_DAMAGE_STAT_NAMES,
     MAX_AP,
     MAX_MP,
     MAX_RANGE,
+    PRIMARY_STAT_NAMES,
     SLOTS,
     STAT_WEIGHTS,
     action_stats_meet_target,
@@ -748,6 +750,7 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
 
 
 def build_summary(state: BuildState) -> dict[str, Any]:
+    totals = active_profile_totals(state)
     return {
         "score": round(state.score, 2),
         "items": {
@@ -758,21 +761,34 @@ def build_summary(state: BuildState) -> dict[str, Any]:
             slot: item["dofusID"]
             for slot, item in state.slots.items()
         },
-        "totals": {
-            "AP": state.stats.get("AP", 0),
-            "MP": state.stats.get("MP", 0),
-            "Range": state.stats.get("Range", 0),
-            "Strength": state.stats.get("Strength", 0),
-            "Power": state.stats.get("Power", 0),
-            "Earth Damage": state.stats.get("Earth Damage", 0),
-            "Neutral Damage": state.stats.get("Neutral Damage", 0),
-            "Critical": state.stats.get("Critical", 0),
-            "Critical Damage": state.stats.get("Critical Damage", 0),
-            "Vitality": state.stats.get("Vitality", 0),
-        },
+        "totals": totals,
         "exos": dict(state.exos),
         "sets": dict(state.set_counts),
     }
+
+
+def active_profile_totals(state: BuildState) -> dict[str, int]:
+    totals = {
+        "AP": state.stats.get("AP", 0),
+        "MP": state.stats.get("MP", 0),
+        "Range": state.stats.get("Range", 0),
+        "Power": state.stats.get("Power", 0),
+        "Critical": state.stats.get("Critical", 0),
+        "Critical Damage": state.stats.get("Critical Damage", 0),
+        "Vitality": state.stats.get("Vitality", 0),
+    }
+    for stat in PRIMARY_STAT_NAMES:
+        value = state.stats.get(stat, 0)
+        if value:
+            totals[stat] = value
+    for stat in ELEMENT_DAMAGE_STAT_NAMES:
+        value = state.stats.get(stat, 0)
+        if value:
+            totals[stat] = value
+    damage = state.stats.get("Damage", 0)
+    if damage:
+        totals["Damage"] = damage
+    return totals
 
 
 def reconstruct_state(
@@ -890,7 +906,7 @@ def reconstruct_state(
     if state.condition_failures:
         return None, {
             "reason": "conditions",
-            "stats": {stat: state.stats.get(stat, 0) for stat in state.stats if stat in {"AP", "MP", "Range", "Strength", "Vitality"}},
+            "stats": active_profile_totals(state),
             "failures": state.condition_failures,
             "items": {
                 slot: {"id": item["dofusID"], "name": item["_name"]}
@@ -1106,15 +1122,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
                         max_shared_item_cuts.append(item_signature(state))
                     attempt["validCandidate"] = {
                         "score": round(state.score, 2),
-                        "totals": {
-                            "AP": state.stats.get("AP", 0),
-                            "MP": state.stats.get("MP", 0),
-                            "Range": state.stats.get("Range", 0),
-                            "Strength": state.stats.get("Strength", 0),
-                            "Power": state.stats.get("Power", 0),
-                            "Earth Damage": state.stats.get("Earth Damage", 0),
-                            "Vitality": state.stats.get("Vitality", 0),
-                        },
+                        "totals": active_profile_totals(state),
                         "items": {
                             slot: item["_name"]
                             for slot, item in state.slots.items()

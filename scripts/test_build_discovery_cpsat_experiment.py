@@ -6,6 +6,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 
 import oneoff.build_discovery_cpsat_experiment as cpsat
+from oneoff.build_discovery_prototype import BuildState, configure_damage_profile
 
 
 class BuildDiscoveryCpsatExperimentTest(unittest.TestCase):
@@ -34,6 +35,31 @@ class BuildDiscoveryCpsatExperimentTest(unittest.TestCase):
         self.assertEqual(weights["Range"], 0.5)
         self.assertEqual(weights["AP"], 12.0)
         self.assertEqual(weights["MP"], 10.0)
+
+    def test_active_profile_totals_include_non_strength_damage_stats(self):
+        configure_damage_profile("chance", "Enutrof")
+        state = BuildState(
+            stats={
+                "AP": 11,
+                "MP": 6,
+                "Range": 6,
+                "Chance": 900,
+                "Water Damage": 80,
+                "Strength": 100,
+                "Earth Damage": 10,
+                "Vitality": 2500,
+            }
+        )
+
+        try:
+            totals = cpsat.active_profile_totals(state)
+        finally:
+            configure_damage_profile("strength", "Iop")
+
+        self.assertEqual(totals["Chance"], 900)
+        self.assertEqual(totals["Water Damage"], 80)
+        self.assertEqual(totals["Strength"], 100)
+        self.assertEqual(totals["Earth Damage"], 10)
 
 
 if __name__ == "__main__":

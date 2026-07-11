@@ -6957,13 +6957,14 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 
 - Added `server/scripts/build_discovery_all_class_smoke.py`, a bounded CP-SAT
   smoke/report harness for representative all-class Milestone 2 rows.
-- Default smoke targets:
-  - reviewed Strength Iop opti baseline
-  - Strength Cra range-soft non-Iop baseline
-  - Chance Enutrof hard `Range 6`
-  - Intelligence Sacrier no-positive-range corner
-  - Chance Feca budget tier `1` realistic level-200 floor
-  - Agility Xelor low-action validity edge
+- Default smoke targets now cover one row for every supported class: `19`
+  classes total.
+- Coverage axes:
+  - all four single elements: Strength, Intelligence, Chance, Agility
+  - budget tiers `1`, `2`, `3`, and `4`
+  - `rangeTarget=None`
+  - hard `Range` targets `0`, `3`, `5`, and `6`
+  - a low-action validity edge: Xelor Agility `7/3/Any`
 - The harness validates:
   - condition-valid build returned
   - AP/MP/Range target and caps
@@ -6981,7 +6982,8 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Artifacts:
   - `.codex/state/build-discovery-all-class-cpsat-smoke-20260711.json`
   - `.codex/state/build-discovery-all-class-cpsat-smoke-20260711.md`
-- Docker result: `6/6` rows passed with a `5s` per-row time cap.
+- Docker result: `19/19` rows passed with a `5s` per-row time cap.
+- Max observed `totalSearchMs`: `3657.6`.
 - Corrected Range evidence examples:
   - Strength Cra: `rangeSoftWeight=8.0`, `objectiveWeights.Range=8.0`
   - Chance Enutrof hard range: `rangeSoftWeight=8.0`, `Range=6`
@@ -6989,6 +6991,9 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     `objectiveWeights.Range=0.5`
   - Agility Xelor validity edge: `rangeSoftWeight=0.5`,
     `objectiveWeights.Range=0.5`
+- Summary helper fix: CP-SAT compact build summaries now include all non-zero
+  primary and elemental damage stats, instead of hardcoding Strength/Earth
+  fields for non-strength rows.
 - Caveat: this is still smoke evidence, not broad product acceptance. The
   generated rows are mechanically valid and plausible enough for path coverage,
   but non-Iop class quality remains rotation-lite until benchmarked/reviewed.

@@ -42,84 +42,25 @@ class SmokeTarget:
 
 
 DEFAULT_TARGETS = (
-    SmokeTarget(
-        "trusted_iop_strength_opti_damage",
-        "Iop",
-        "strength",
-        200,
-        4,
-        12,
-        6,
-        None,
-        4,
-        "opti",
-        "trusted reviewed profile baseline",
-    ),
-    SmokeTarget(
-        "cra_strength_opti_range_soft",
-        "Cra",
-        "strength",
-        200,
-        4,
-        12,
-        6,
-        None,
-        3,
-        "opti",
-        "non-Iop range-vital soft Range path",
-    ),
-    SmokeTarget(
-        "enutrof_chance_hard_range",
-        "Enutrof",
-        "chance",
-        200,
-        3,
-        11,
-        6,
-        6,
-        2,
-        "allow",
-        "non-Iop hard Range 6 corner",
-    ),
-    SmokeTarget(
-        "sacrier_intelligence_no_range",
-        "Sacrier",
-        "intelligence",
-        200,
-        4,
-        12,
-        6,
-        0,
-        2,
-        "opti",
-        "short-range class should not need positive Range",
-    ),
-    SmokeTarget(
-        "feca_chance_budget1_realistic_floor",
-        "Feca",
-        "chance",
-        200,
-        1,
-        10,
-        5,
-        None,
-        2,
-        "none",
-        "tier 1 budget with realistic level-200 floor",
-    ),
-    SmokeTarget(
-        "xelor_agility_low_action_validity",
-        "Xelor",
-        "agility",
-        200,
-        1,
-        7,
-        3,
-        None,
-        2,
-        "none",
-        "valid low-action edge, not player-realistic quality",
-    ),
+    SmokeTarget("trusted_iop_strength_opti_damage", "Iop", "strength", 200, 4, 12, 6, None, 4, "opti", "reviewed baseline"),
+    SmokeTarget("cra_strength_soft_range", "Cra", "strength", 200, 4, 12, 6, None, 3, "opti", "soft Range, no hard target"),
+    SmokeTarget("ecaflip_intelligence_range6", "Ecaflip", "intelligence", 200, 4, 12, 6, 6, 3, "opti", "hard Range 6 stress"),
+    SmokeTarget("eliotrope_chance_range5", "Eliotrope", "chance", 200, 3, 11, 6, 5, 2, "allow", "hard Range 5 stress"),
+    SmokeTarget("eniripsa_agility_range6", "Eniripsa", "agility", 200, 4, 12, 6, 6, 2, "opti", "hard Range 6 stress"),
+    SmokeTarget("enutrof_chance_hard_range", "Enutrof", "chance", 200, 3, 11, 6, 6, 2, "allow", "hard Range 6 corner"),
+    SmokeTarget("feca_chance_budget1_floor", "Feca", "chance", 200, 1, 10, 5, None, 2, "none", "cheap accessibility floor"),
+    SmokeTarget("foggernaut_strength_no_range", "Foggernaut", "strength", 200, 3, 12, 6, 0, 2, "allow", "nearly-useless Range guard"),
+    SmokeTarget("forgelance_chance_range6", "Forgelance", "chance", 200, 4, 12, 6, 6, 2, "opti", "hard Range 6 stress"),
+    SmokeTarget("huppermage_strength_range3", "Huppermage", "strength", 200, 3, 11, 6, 3, 2, "allow", "hard Range 3 stress"),
+    SmokeTarget("masqueraider_intelligence_range5", "Masqueraider", "intelligence", 200, 3, 11, 6, 5, 2, "allow", "hard Range 5 stress"),
+    SmokeTarget("osamodas_agility_range5", "Osamodas", "agility", 200, 3, 11, 6, 5, 2, "allow", "hard Range 5 stress"),
+    SmokeTarget("ouginak_chance_no_range", "Ouginak", "chance", 200, 2, 11, 5, 0, 2, "allow", "short-range/no-Range class guard"),
+    SmokeTarget("pandawa_agility_range5", "Pandawa", "agility", 200, 3, 11, 6, 5, 2, "allow", "hard Range 5 stress"),
+    SmokeTarget("rogue_intelligence_range6", "Rogue", "intelligence", 200, 4, 12, 6, 6, 2, "opti", "hard Range 6 stress"),
+    SmokeTarget("sacrier_intelligence_no_range", "Sacrier", "intelligence", 200, 4, 12, 6, 0, 2, "opti", "short-range hard zero"),
+    SmokeTarget("sadida_intelligence_range6", "Sadida", "intelligence", 200, 4, 12, 6, 6, 2, "opti", "hard Range 6 stress"),
+    SmokeTarget("sram_strength_range6", "Sram", "strength", 200, 4, 12, 6, 6, 2, "opti", "hard Range 6 stress"),
+    SmokeTarget("xelor_agility_low_action_validity", "Xelor", "agility", 200, 2, 7, 3, None, 2, "allow", "low-action validity edge"),
 )
 
 
@@ -262,6 +203,11 @@ def write_markdown(report: dict[str, Any], path: Path) -> None:
         f"- Targets: `{report['summary']['targetCount']}`",
         f"- Passed: `{report['summary']['passed']}`",
         f"- Failed: `{report['summary']['failed']}`",
+        f"- Classes: `{report['summary']['classCount']}`",
+        f"- Elements: `{report['summary']['elements']}`",
+        f"- Budget tiers: `{report['summary']['budgetTiers']}`",
+        f"- Range targets: `{report['summary']['rangeTargets']}`",
+        f"- Max total search ms: `{report['summary']['maxTotalSearchMs']}`",
         "",
         "## Rows",
         "",
@@ -303,10 +249,23 @@ def main() -> None:
     target_names = set(args.target or [])
     targets = [target for target in DEFAULT_TARGETS if not target_names or target.name in target_names]
     rows = [run_target(target, args) for target in targets]
+    range_targets = [
+        "None" if row["target"]["range_target"] is None else row["target"]["range_target"]
+        for row in rows
+    ]
     summary = {
         "targetCount": len(rows),
         "passed": sum(1 for row in rows if row["status"] == "passed"),
         "failed": sum(1 for row in rows if row["status"] != "passed"),
+        "classCount": len({row["target"]["class_name"] for row in rows}),
+        "classes": sorted({row["target"]["class_name"] for row in rows}),
+        "elements": sorted({row["target"]["element"] for row in rows}),
+        "budgetTiers": sorted({row["target"]["budget_tier"] for row in rows}),
+        "rangeTargets": sorted(set(range_targets), key=str),
+        "maxTotalSearchMs": max(
+            (row.get("timings") or {}).get("totalSearchMs", 0)
+            for row in rows
+        ) if rows else 0,
     }
     report = {
         "reportVersion": REPORT_VERSION,
