@@ -368,27 +368,53 @@ def build_model(
         return total_stat_expr(stat_name)
 
     condition_constraint_count = 0
+    condition_literal_count = 0
 
-    def add_condition_constraints(condition_obj: dict[str, Any], presence: cp_model.IntVar) -> None:
+    def add_leaf_condition_constraint(
+        condition_obj: dict[str, Any],
+        enforcement_literal: cp_model.IntVar,
+    ) -> bool:
         nonlocal condition_constraint_count
+        expr = condition_expr(condition_obj["stat"])
+        if expr is None:
+            return False
+        value = int(condition_obj["value"])
+        operator = condition_obj["operator"]
+        if operator == "<":
+            model.Add(expr <= value - 1).OnlyEnforceIf(enforcement_literal)
+            condition_constraint_count += 1
+            return True
+        if operator == ">":
+            model.Add(expr >= value + 1).OnlyEnforceIf(enforcement_literal)
+            condition_constraint_count += 1
+            return True
+        return False
+
+    def add_condition_constraints(condition_obj: dict[str, Any], presence: cp_model.IntVar) -> bool:
+        nonlocal condition_constraint_count, condition_literal_count
         if not condition_obj:
-            return
+            return True
         if is_leaf_condition(condition_obj):
-            expr = condition_expr(condition_obj["stat"])
-            if expr is None:
-                return
-            value = int(condition_obj["value"])
-            operator = condition_obj["operator"]
-            if operator == "<":
-                model.Add(expr <= value - 1).OnlyEnforceIf(presence)
-                condition_constraint_count += 1
-            elif operator == ">":
-                model.Add(expr >= value + 1).OnlyEnforceIf(presence)
-                condition_constraint_count += 1
-            return
+            return add_leaf_condition_constraint(condition_obj, presence)
         if condition_obj.get("and"):
             for child in condition_obj["and"]:
-                add_condition_constraints(child, presence)
+                if not add_condition_constraints(child, presence):
+                    return False
+            return True
+        if condition_obj.get("or"):
+            child_literals = []
+            for index, child in enumerate(condition_obj["or"]):
+                condition_literal_count += 1
+                child_literal = model.NewBoolVar(f"condition_or_{condition_literal_count}_{index}")
+                if not add_condition_constraints(child, child_literal):
+                    return False
+                child_literals.append(child_literal)
+            if not child_literals:
+                return False
+            model.AddBoolOr(child_literals).OnlyEnforceIf(presence)
+            condition_constraint_count += 1
+            return True
+        return False
 
     model.Add(total_stat_expr("AP") >= target.ap)
     model.Add(total_stat_expr("AP") <= MAX_AP)

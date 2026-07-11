@@ -3958,3 +3958,21 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\test_build_discovery_cpsat_experiment.py`
   - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
   - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+
+### 2026-07-11 CP-SAT OR Condition Encoding
+
+- Added direct CP-SAT encoding for simple `or` item conditions when all branches
+  can be represented by supported leaf/`and` stat constraints.
+- Unsupported condition shapes still fall through to final post-solve
+  validation rather than being guessed.
+- Added an executable semantic fixture where a high-score weapon has an
+  impossible `AP < 1 OR VITALITY > 99999` condition; CP-SAT now selects the
+  lower-score valid weapon before reconstruction.
+- Docker two-row real-data smoke validated after OR encoding:
+  - Strength tier 1 `7/3/None`: generated, feasible, `9198.1ms`
+  - Intelligence tier 1 `7/3/None`: generated, feasible, `7289.8ms`
+  - condition constraints increased to `375` for these rows
+- Verification passed:
+  - `python server\scripts\test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-or-smoke.json --target-file /tmp/build-discovery-cpsat-l200-min-elements-budgets-targets.json --target-file-prefix cpsat_l200_min_budget --targets cpsat_l200_strength_7_3_none_budget1,cpsat_l200_intelligence_7_3_none_budget1`

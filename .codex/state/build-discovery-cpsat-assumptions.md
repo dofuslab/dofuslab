@@ -56,9 +56,9 @@ review before accepting Milestone 2 evidence.
 - CP-SAT currently models generated AP and MP exos, plus generated Range exos
   only when the query has a positive numeric Range target.
 - Locked-item constraints are not yet modeled in CP-SAT.
-- CP-SAT still only encodes leaf and `and` item conditions directly. `or`
-  conditions are validated after solve, which can waste attempts or return no
-  build if the best model solutions violate an unencoded `or` condition.
+- CP-SAT encodes leaf, `and`, and simple `or` item conditions when every branch
+  is representable as supported stat constraints. Unsupported condition shapes
+  still rely on final post-solve validation.
 
 ## Solver Architecture
 

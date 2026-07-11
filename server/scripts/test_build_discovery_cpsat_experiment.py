@@ -190,6 +190,7 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertIn("CONDITION_STAT_TO_STAT_NAME", source)
         self.assertIn("add_condition_constraints", source)
         self.assertIn("OnlyEnforceIf(presence)", source)
+        self.assertIn("AddBoolOr", source)
 
     def test_experiment_caches_total_stat_expressions(self):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")
@@ -283,6 +284,30 @@ class BuildDiscoveryCpsatSemanticFixtureTest(unittest.TestCase):
                 stats={"Strength": 1000},
                 conditions={
                     "and": [
+                        {"operator": ">", "stat": "VITALITY", "value": 99999},
+                    ]
+                },
+            )
+            if candidate["dofusID"] == "weapon"
+            else candidate
+            for candidate in items
+        ]
+        items.append(item("valid_weapon", "Sword", stats={"Strength": 1}))
+
+        _status, state, _model_stats = solve_fixture(items)
+
+        self.assertEqual(state.slots["weapon"]["dofusID"], "valid_weapon")
+
+    def test_or_condition_is_encoded_before_reconstruction(self):
+        items = base_fixture_items()
+        items = [
+            item(
+                "bad_weapon",
+                "Sword",
+                stats={"Strength": 1000},
+                conditions={
+                    "or": [
+                        {"operator": "<", "stat": "AP", "value": 1},
                         {"operator": ">", "stat": "VITALITY", "value": 99999},
                     ]
                 },
