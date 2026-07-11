@@ -960,6 +960,7 @@ def cpsat_args_for_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -
         summary_limit=getattr(args, "cpsat_summary_limit", 10),
         output_build_limit=requested_limit,
         collection_mode=getattr(args, "cpsat_collection_mode", "callback"),
+        stop_after_candidates=getattr(args, "cpsat_stop_after_candidates", False),
         objective_mode=getattr(args, "cpsat_objective_mode", "final-linear"),
         generic_damage_weight=query.generic_damage_weight,
         max_shared_items=query.max_shared_items,
@@ -988,6 +989,7 @@ def cpsat_build_discovery_response(query: BuildDiscoveryQuery, args: argparse.Na
         "candidateCount",
         "requestedCandidateLimit",
         "collectionMode",
+        "stopAfterCandidates",
         "maxSharedItems",
         "maxSharedItemsEnforced",
         "objectiveWeights",
@@ -1047,6 +1049,7 @@ def main() -> None:
     parser.add_argument("--cpsat-candidate-limit", type=int, default=20)
     parser.add_argument("--cpsat-summary-limit", type=int, default=10)
     parser.add_argument("--cpsat-collection-mode", choices=("callback", "repeated"), default="callback")
+    parser.add_argument("--cpsat-stop-after-candidates", action="store_true")
     parser.add_argument("--cpsat-objective-mode", choices=("stat-linear", "final-linear"), default="final-linear")
     args = parser.parse_args()
     if args.resume_existing and not args.split_output_dir:

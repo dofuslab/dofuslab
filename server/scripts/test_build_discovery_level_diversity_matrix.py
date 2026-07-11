@@ -594,6 +594,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
             cpsat_candidate_limit=2,
             cpsat_summary_limit=5,
             cpsat_collection_mode="callback",
+            cpsat_stop_after_candidates=True,
             cpsat_objective_mode="stat-linear",
         )
 
@@ -606,6 +607,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(cpsat_args.summary_limit, 5)
         self.assertEqual(cpsat_args.output_build_limit, 3)
         self.assertEqual(cpsat_args.collection_mode, "callback")
+        self.assertTrue(cpsat_args.stop_after_candidates)
         self.assertEqual(cpsat_args.objective_mode, "stat-linear")
         self.assertEqual(cpsat_args.generic_damage_weight, query.generic_damage_weight)
         self.assertEqual(cpsat_args.max_shared_items, query.max_shared_items)
@@ -628,6 +630,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
                 "candidateCount": 2,
                 "requestedCandidateLimit": 3,
                 "collectionMode": "callback",
+                "stopAfterCandidates": True,
                 "maxSharedItems": 8,
                 "maxSharedItemsEnforced": False,
                 "objectiveWeights": {"Strength": 1.0},
@@ -642,6 +645,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
             cpsat_candidate_limit=1,
             cpsat_summary_limit=1,
             cpsat_collection_mode="callback",
+            cpsat_stop_after_candidates=True,
             cpsat_objective_mode="final-linear",
         )
 
@@ -665,6 +669,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(response["diagnostics"]["candidateCount"], 2)
         self.assertEqual(response["diagnostics"]["requestedCandidateLimit"], 3)
         self.assertEqual(response["diagnostics"]["collectionMode"], "callback")
+        self.assertTrue(response["diagnostics"]["stopAfterCandidates"])
         self.assertEqual(response["diagnostics"]["maxSharedItems"], 8)
         self.assertFalse(response["diagnostics"]["maxSharedItemsEnforced"])
         self.assertEqual(response["diagnostics"]["objectiveWeights"], {"Strength": 1.0})

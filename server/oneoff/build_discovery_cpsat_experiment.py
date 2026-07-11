@@ -609,6 +609,7 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
         sets: dict[str, dict[str, Any]],
         target: BuildTarget,
         candidate_limit: int,
+        stop_after_candidates: bool = False,
     ) -> None:
         super().__init__()
         self.slot_item_vars = slot_item_vars
@@ -617,6 +618,8 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
         self.sets = sets
         self.target = target
         self.candidate_limit = candidate_limit
+        self.stop_after_candidates = stop_after_candidates
+        self.stopped_after_candidate_limit = False
         self.solution_count = 0
         self.valid_solution_count = 0
         self.invalid_solution_count = 0
@@ -661,6 +664,9 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
                     "exos": dict(sorted(state.exos.items())),
                 }
             )
+            if self.stop_after_candidates and len(self.candidates) >= self.candidate_limit:
+                self.stopped_after_candidate_limit = True
+                self.StopSearch()
 
 
 def build_summary(state: BuildState) -> dict[str, Any]:
@@ -858,6 +864,7 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
             sets=sets,
             target=target,
             candidate_limit=args.candidate_limit,
+            stop_after_candidates=getattr(args, "stop_after_candidates", False),
         )
         solver = cp_model.CpSolver()
         solver.parameters.max_time_in_seconds = args.time_limit_seconds
@@ -905,6 +912,7 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
                 "finalAssignmentAdded": final_added,
                 "finalAssignmentRepresented": final_represented,
                 "finalInvalidReason": final_invalid_reason,
+                "stoppedAfterCandidateLimit": collector.stopped_after_candidate_limit,
                 "callbackCandidateEvents": collector.candidate_events,
                 "callbackInvalidEvents": collector.invalid_events,
                 "modelStats": model_stats,
@@ -1009,6 +1017,7 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
         "candidateCount": len(ranked_candidates),
         "requestedCandidateLimit": args.candidate_limit,
         "collectionMode": collection_mode,
+        "stopAfterCandidates": getattr(args, "stop_after_candidates", False),
         "maxSharedItems": args.max_shared_items,
         "maxSharedItemsEnforced": max_shared_items_enforced,
         "warnings": warnings,
@@ -1062,6 +1071,7 @@ def main() -> None:
     parser.add_argument("--summary-limit", type=int, default=10)
     parser.add_argument("--output-build-limit", type=int, default=5)
     parser.add_argument("--collection-mode", choices=("callback", "repeated"), default="callback")
+    parser.add_argument("--stop-after-candidates", action="store_true")
     parser.add_argument("--level", type=int, default=200)
     parser.add_argument("--element", choices=("agility", "chance", "intelligence", "strength"), default="strength")
     parser.add_argument("--target-ap", "--ap", type=int, default=12)

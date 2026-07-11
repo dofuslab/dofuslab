@@ -4512,3 +4512,42 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - the useful lesson is that reducing Python/model-build time alone is not
     enough; next solver work should target search guidance, candidate packages,
     or static indexed model reuse rather than only variable count
+
+### 2026-07-11 CP-SAT Callback Early-Stop Experiment
+
+- Added an explicit `--stop-after-candidates` / `--cpsat-stop-after-candidates`
+  option for callback collection.
+- The callback now records `stoppedAfterCandidateLimit` on each callback
+  attempt so latency/quality tradeoffs are visible in matrix diagnostics.
+- Defaults are unchanged: callback mode still searches until optimal/proven or
+  time limit unless the flag is enabled.
+- Added focused tests proving:
+  - callback can call `StopSearch()` after collecting the requested valid
+    candidate count
+  - matrix CP-SAT args preserve the early-stop flag
+  - diagnostics expose `stopAfterCandidates`
+- Candidate limit `5` early-stop smoke:
+  - targets: `8`
+  - generated: `8`
+  - invalid: `0`
+  - solver statuses: `8` feasible
+  - elapsed min/avg/max: `4718.8ms / 5084.6ms / 6054.4ms`
+  - solve min/avg/max: `2804.1ms / 3038.5ms / 3522.7ms`
+  - stopped after candidate limit: `8/8`
+  - quality was too low on some rows, e.g. strength tier 1 `7/3/any`
+    scored `1998.19` versus `2354.87` in the prior ring-group smoke
+- Candidate limit `20` early-stop smoke:
+  - targets: `8`
+  - generated: `8`
+  - invalid: `0`
+  - solver statuses: `5` optimal, `3` feasible
+  - elapsed min/avg/max: `6171.0ms / 6892.5ms / 8403.9ms`
+  - solve min/avg/max: `4333.7ms / 4855.8ms / 5105.2ms`
+  - stopped after candidate limit: `0/8`
+  - quality was broadly comparable or better than the prior smoke, but latency
+    stayed above the Milestone 2 target
+- Decision:
+  - keep the option for experiments and future tuning
+  - do not enable it by default for Milestone 2 quality evidence
+  - candidate count alone is too crude; a useful stopping policy likely needs
+    quality gates, benchmark deltas, or package-seeded candidates

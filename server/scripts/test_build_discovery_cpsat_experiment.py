@@ -424,6 +424,7 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertIn("CpSolverSolutionCallback", source)
         self.assertIn("CandidateCollectionCallback", source)
         self.assertIn('collection_mode == "callback"', source)
+        self.assertIn("StopSearch", source)
 
     def test_callback_candidate_collection_produces_valid_fixture_candidate(self):
         if IMPORT_ERROR is not None:
@@ -461,6 +462,42 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertGreaterEqual(len(collector.candidates), 1)
         self.assertEqual(collector.candidates[0].stats["AP"], 7)
         self.assertEqual(model_stats["slotVarCount"], len(slot_item_vars))
+
+    def test_callback_can_stop_after_candidate_limit(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        configure_damage_profile("strength")
+        target = BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False)
+        items = base_fixture_items()
+        sets = fixture_sets()
+        model, slot_item_vars, exo_vars, _model_stats = build_model(
+            items,
+            sets,
+            target,
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
+            exo_policy="none",
+        )
+        collector = CandidateCollectionCallback(
+            slot_item_vars=slot_item_vars,
+            exo_vars=exo_vars,
+            items=items,
+            sets=sets,
+            target=target,
+            candidate_limit=1,
+            stop_after_candidates=True,
+        )
+        solver = cp_model.CpSolver()
+        solver.parameters.max_time_in_seconds = 2
+        solver.parameters.num_search_workers = 1
+
+        status = solver.Solve(model, collector)
+
+        self.assertIn(status, (cp_model.OPTIMAL, cp_model.FEASIBLE))
+        self.assertEqual(len(collector.candidates), 1)
+        self.assertTrue(collector.stopped_after_candidate_limit)
 
     def test_candidate_signature_distinguishes_exo_choices(self):
         if IMPORT_ERROR is not None:
