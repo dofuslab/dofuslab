@@ -6755,3 +6755,21 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   strong damage-specialization stats make the distinction clear.
 - Added a required itemization-difference report before using mixed and ranged
   as separate generation matrix axes.
+
+### 2026-07-11 Ranged/Melee Damage Item Check
+
+- Ran a bounded readonly prod item-stat query for `PCT_RANGED_DAMAGE` and
+  `PCT_MELEE_DAMAGE`.
+- Result: `% Ranged Damage` appears on only `9` items, mostly the level 120
+  elemental Katanas with negative ranged damage, Musamune with negative ranged
+  damage, and the level 150 trophy `Impetuous`.
+- Result: `% Melee Damage` appears on only `4` items: `Helsephine's Love`,
+  `Pugilist`, and two level 150 trophies with negative melee damage
+  (`Audacious`, `Cautious`).
+- Updated the Notion PRD and local assumptions: ranged-vs-mixed should not
+  become a major item-search axis unless later itemization-overlap evidence
+  proves it matters.
+- New emphasis: derive "how important is +Range to this build?" mostly from
+  spell data: key damaging spells, max range, modifiable-range support,
+  minimum range constraints, line-of-sight constraints, practical rotation
+  share, and whether extra Range changes reachable targets.

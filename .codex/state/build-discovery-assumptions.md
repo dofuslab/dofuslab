@@ -42,9 +42,17 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   Range says how much +Range the build must reach; combat range says how the
   build expects to deal damage and survive.
 - Current working hypothesis: item selection differs materially for `melee` vs
-  `non_melee`, but often not much between `mixed` and `ranged`. Treat
+  `non_melee`, but often not much between `mixed` and `ranged`; even the
+  melee-vs-non-melee split may be smaller than expected for many builds. Treat
   mixed-vs-ranged mainly as spell evaluation, score explanation, and +Range
   valuation unless prod/spell evidence shows a real gear-shell difference.
+- `% Ranged Damage` / `% Melee Damage` itemization is sparse in prod data, so
+  these stats should not drive a large generation-axis explosion by default.
+- The key question for non-melee posture is usually "how important is +Range to
+  this class/element spell plan?" That should be derived primarily from spell
+  data: key damaging spells, max range, modifiable-range support, minimum range
+  constraints, line-of-sight constraints, practical rotation share, and whether
+  extra Range materially changes reachable targets.
 - Product UX may default combat range, but the default should be computed from
   bounded readonly prod aggregate evidence by `(class, element)`. The resolved
   value should be explicit in the request, cache key, provenance, and
@@ -201,6 +209,8 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   strong damage-specialization stats make the distinction clear. If mixed and
   ranged itemization is not materially different, do not expand generation
   matrices by both labels.
+- Add a spell-derived +Range usefulness report before making +Range a major
+  scoring/defaulting lever.
 - Strength Iop uses old/local spell data where available.
 - Strength Iop should model spell selection instead of generic made-up spell lines where possible.
 - Strength Iop includes Accumulation setup behavior when relevant.
