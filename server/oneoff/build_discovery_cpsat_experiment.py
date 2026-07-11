@@ -18,6 +18,7 @@ from ortools.sat.python import cp_model
 from oneoff.condition_evaluator import unmet_item_conditions
 from oneoff.build_discovery_prototype import (
     ACTION_STATS,
+    BuildDiscoveryQuery,
     BuildState,
     BuildTarget,
     MAX_AP,
@@ -39,7 +40,9 @@ from oneoff.build_discovery_prototype import (
     load_sets,
     normalize_stats,
     optimize_base_allocation,
+    parse_optional_range_target,
     profile_damage_reference_stats,
+    query_summary,
     serialize_build,
     set_bonus_stats,
     survivability_score,
@@ -178,6 +181,7 @@ def build_model(
     max_shared_item_cuts: list[frozenset[str]],
     max_shared_items: int | None,
     objective_weights: dict[str, float],
+    exo_policy: str,
 ) -> tuple[
     cp_model.CpModel,
     dict[tuple[str, str], cp_model.IntVar],
@@ -212,7 +216,9 @@ def build_model(
         model.Add(sum(prysmaradite_terms) <= 1)
 
     exo_vars: dict[tuple[str, str], cp_model.IntVar] = {}
-    exo_stats = ("AP", "MP") if target.range <= 0 else ("AP", "MP", "Range")
+    exo_stats = () if exo_policy == "none" else ("AP", "MP")
+    if exo_policy != "none" and target.range > 0:
+        exo_stats = ("AP", "MP", "Range")
     for slot_name, candidates in candidates_by_slot.items():
         if slot_name.startswith("dofus_") or slot_name == "pet":
             continue
@@ -469,11 +475,16 @@ def reconstruct_state(
     return state, None
 
 
-def solve_once(args: argparse.Namespace) -> dict[str, Any]:
-    configure_damage_profile("strength")
-    target = BuildTarget(ap=12, mp=6, range=0, level=200)
+def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[str, Any]:
+    query.validate()
+    configure_damage_profile(query.primary_element)
+    target = query.target
     load_start = time.perf_counter()
-    items = load_items(target=target, budget_tier=4)
+    items = load_items(
+        target=target,
+        budget_tier=query.budget_tier,
+        excluded_item_ids=set(query.avoided_item_ids),
+    )
     sets = load_sets()
     objective_weights = objective_weights_for_mode(
         args.objective_mode,
@@ -503,6 +514,7 @@ def solve_once(args: argparse.Namespace) -> dict[str, Any]:
             max_shared_item_cuts=max_shared_item_cuts,
             max_shared_items=args.max_shared_items,
             objective_weights=objective_weights,
+            exo_policy=query.exo_policy,
         )
         model_ms = (time.perf_counter() - model_start) * 1000
 
@@ -566,14 +578,7 @@ def solve_once(args: argparse.Namespace) -> dict[str, Any]:
     best_state = ranked_candidates[0] if ranked_candidates else None
     response = {
         "query": {
-            "className": "Iop",
-            "level": 200,
-            "element": "strength",
-            "apTarget": 12,
-            "mpTarget": 6,
-            "rangeTarget": 0,
-            "budgetTier": 4,
-            "exoPolicy": "allow",
+            **query_summary(query),
             "objectiveMode": args.objective_mode,
         },
         "status": "complete" if best_state else "no_valid_build",
@@ -607,6 +612,25 @@ def solve_once(args: argparse.Namespace) -> dict[str, Any]:
     return response
 
 
+def query_from_args(args: argparse.Namespace) -> BuildDiscoveryQuery:
+    return BuildDiscoveryQuery(
+        level=args.level,
+        elements=(args.element,),
+        ap_target=args.target_ap,
+        mp_target=args.target_mp,
+        range_target=args.target_range,
+        budget_tier=args.budget_tier,
+        exo_policy=args.exo_policy,
+        limit=args.output_build_limit,
+        max_shared_items=args.max_shared_items,
+        generic_damage_weight=args.generic_damage_weight,
+    )
+
+
+def solve_once(args: argparse.Namespace) -> dict[str, Any]:
+    return solve_query(query_from_args(args), args)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--time-limit-seconds", type=float, default=DEFAULT_TIME_LIMIT_SECONDS)
@@ -615,6 +639,13 @@ def main() -> None:
     parser.add_argument("--candidate-limit", type=int, default=20)
     parser.add_argument("--summary-limit", type=int, default=10)
     parser.add_argument("--output-build-limit", type=int, default=5)
+    parser.add_argument("--level", type=int, default=200)
+    parser.add_argument("--element", choices=("agility", "chance", "intelligence", "strength"), default="strength")
+    parser.add_argument("--target-ap", "--ap", type=int, default=12)
+    parser.add_argument("--target-mp", "--mp", type=int, default=6)
+    parser.add_argument("--target-range", "--range", type=parse_optional_range_target, default=0)
+    parser.add_argument("--budget-tier", type=int, default=4)
+    parser.add_argument("--exo-policy", choices=("none", "allow", "opti"), default="allow")
     parser.add_argument("--objective-mode", choices=("stat-linear", "final-linear"), default="final-linear")
     parser.add_argument("--generic-damage-weight", type=float, default=0.45)
     parser.add_argument(

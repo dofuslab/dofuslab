@@ -72,3 +72,28 @@ Dependency note:
 - OR-Tools is not added to `server/requirements.txt` in this checkpoint.
 - The PRD still lists OR-Tools packaging/deploy footprint as an open risk.
 - Production dependency management should be a separate reviewable diff.
+
+## Query Adapter Checkpoint
+
+The experiment now accepts query-shaped fields while staying isolated under
+`server/oneoff/`:
+
+- `--level`
+- `--element`
+- `--target-ap`
+- `--target-mp`
+- `--target-range`
+- `--budget-tier`
+- `--exo-policy`
+
+It also exposes `solve_query(query, args)` so the existing matrix harness can
+eventually call CP-SAT through the same generator seam used by beam artifacts.
+
+Current limitations:
+
+- Still a oneoff experiment, not GraphQL/product wiring.
+- Locked items are not modeled yet.
+- Avoided items are passed into candidate loading.
+- `exoPolicy=none` disables generated exo variables.
+- `exoPolicy=allow` and `exoPolicy=opti` are not yet distinct.
+- OR-Tools dependency packaging is still unresolved.

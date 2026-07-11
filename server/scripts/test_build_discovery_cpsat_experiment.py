@@ -19,6 +19,8 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         }
 
         self.assertIn("solve_once", function_names)
+        self.assertIn("solve_query", function_names)
+        self.assertIn("query_from_args", function_names)
         self.assertIn("build_model", function_names)
         self.assertIn("reconstruct_state", function_names)
         self.assertIn("main", function_names)
@@ -30,6 +32,22 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertIn("DEFAULT_TIME_LIMIT_SECONDS", source)
         self.assertIn("candidate-limit", source)
         self.assertIn("objective-mode", source)
+
+    def test_experiment_accepts_milestone_query_fields(self):
+        source = EXPERIMENT_PATH.read_text(encoding="utf-8")
+
+        self.assertIn("--level", source)
+        self.assertIn("--element", source)
+        self.assertIn("--target-ap", source)
+        self.assertIn("--target-mp", source)
+        self.assertIn("--target-range", source)
+        self.assertIn("--budget-tier", source)
+        self.assertIn("--exo-policy", source)
+
+    def test_experiment_can_disable_exo_variables(self):
+        source = EXPERIMENT_PATH.read_text(encoding="utf-8")
+
+        self.assertIn('exo_stats = () if exo_policy == "none"', source)
 
 
 if __name__ == "__main__":

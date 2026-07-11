@@ -3688,3 +3688,29 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Added a static contract test for the CP-SAT experiment file without requiring
   OR-Tools to be installed in the current environment:
   - `server/scripts/test_build_discovery_cpsat_experiment.py`
+
+### 2026-07-11 CP-SAT Query Adapter
+
+- Kept CP-SAT isolated under `server/oneoff/`.
+- Added a query-shaped adapter:
+  - `solve_query(query, args)`
+  - `query_from_args(args)`
+- Added CP-SAT experiment CLI query fields:
+  - `--level`
+  - `--element`
+  - `--target-ap`
+  - `--target-mp`
+  - `--target-range`
+  - `--budget-tier`
+  - `--exo-policy`
+- Changed model construction so `exoPolicy=none` disables generated exo
+  variables.
+- Avoided item IDs now flow into candidate loading.
+- Still intentionally not done:
+  - no product/GraphQL wiring
+  - no matrix execution through CP-SAT yet
+  - no locked-item constraints
+  - no OR-Tools production dependency packaging
+- Verification passed:
+  - `python server\scripts\test_build_discovery_cpsat_experiment.py`
+  - `python -m py_compile server\oneoff\build_discovery_cpsat_experiment.py server\scripts\test_build_discovery_cpsat_experiment.py`
