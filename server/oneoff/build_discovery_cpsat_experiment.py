@@ -190,6 +190,7 @@ def build_model(
     cp_model.CpModel,
     dict[tuple[str, str], cp_model.IntVar],
     dict[tuple[str, str], cp_model.IntVar],
+    dict[str, Any],
 ]:
     model = cp_model.CpModel()
     candidates_by_slot = slot_candidates(items)
@@ -349,7 +350,10 @@ def build_model(
             return None
         return total_stat_expr(stat_name)
 
+    condition_constraint_count = 0
+
     def add_condition_constraints(condition_obj: dict[str, Any], presence: cp_model.IntVar) -> None:
+        nonlocal condition_constraint_count
         if not condition_obj:
             return
         if is_leaf_condition(condition_obj):
@@ -360,8 +364,10 @@ def build_model(
             operator = condition_obj["operator"]
             if operator == "<":
                 model.Add(expr <= value - 1).OnlyEnforceIf(presence)
+                condition_constraint_count += 1
             elif operator == ">":
                 model.Add(expr >= value + 1).OnlyEnforceIf(presence)
+                condition_constraint_count += 1
             return
         if condition_obj.get("and"):
             for child in condition_obj["and"]:
@@ -418,7 +424,19 @@ def build_model(
         objective_terms.append(scaled_score(objective_weights.get(stat, 0.0)) * var)
     model.Maximize(sum(objective_terms))
 
-    return model, slot_item_vars, exo_vars
+    model_stats = {
+        "slotCandidateCounts": {
+            slot_name: len(candidates)
+            for slot_name, candidates in candidates_by_slot.items()
+        },
+        "slotVarCount": len(slot_item_vars),
+        "uniqueItemCount": len(item_by_id),
+        "exoVarCount": len(exo_vars),
+        "exactSetCountVarCount": len(exact_set_count_vars),
+        "conditionConstraintCount": condition_constraint_count,
+        "setCountConstraintCount": len({set_id for set_id, _count in exact_set_count_vars}),
+    }
+    return model, slot_item_vars, exo_vars, model_stats
 
 
 def next_item_by_id(items: list[dict[str, Any]], item_id: str) -> dict[str, Any]:
@@ -559,7 +577,7 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
         if len(candidates) >= args.candidate_limit:
             break
         model_start = time.perf_counter()
-        model, slot_item_vars, exo_vars = build_model(
+        model, slot_item_vars, exo_vars, model_stats = build_model(
             items,
             sets,
             target,
@@ -585,6 +603,7 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
             "modelMs": round(model_ms, 1),
             "solveMs": round(solve_ms, 1),
             "objective": solver.ObjectiveValue() / SCALE if status in (cp_model.OPTIMAL, cp_model.FEASIBLE) else None,
+            "modelStats": model_stats,
         }
         attempts.append(attempt)
 

@@ -3842,3 +3842,30 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
   - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-l200-min-elements-setbounds.json --target-file /tmp/build-discovery-cpsat-l200-min-elements-targets.json --target-file-prefix cpsat_min`
+
+### 2026-07-11 CP-SAT Model Diagnostics
+
+- Added per-attempt `modelStats` diagnostics to CP-SAT output:
+  - `slotCandidateCounts`
+  - `slotVarCount`
+  - `uniqueItemCount`
+  - `exoVarCount`
+  - `exactSetCountVarCount`
+  - `conditionConstraintCount`
+  - `setCountConstraintCount`
+- Docker one-row diagnostic smoke, level 200 Strength tier 1 `7/3/None`, showed:
+  - `uniqueItemCount`: `1505`
+  - `slotVarCount`: `2944`
+  - `exactSetCountVarCount`: `936`
+  - `conditionConstraintCount`: `267`
+  - `setCountConstraintCount`: `239`
+- Main observed model-size issue:
+  - Dofus/trophy/prysmaradite candidates are duplicated across six equivalent
+    slots: `261` candidates per slot, `1566` slot vars total.
+  - This is likely the next correctness-preserving performance target if we
+    replace equivalent Dofus slot variables with a cardinality-style selection
+    model.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker diagnostic smoke with `--cpsat-time-limit-seconds 2`

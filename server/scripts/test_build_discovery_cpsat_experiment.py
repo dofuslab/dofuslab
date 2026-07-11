@@ -86,6 +86,15 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertIn("item_ids_by_set", source)
         self.assertIn("len(slots_by_set[set_id])", source)
 
+    def test_experiment_reports_model_size_diagnostics(self):
+        source = EXPERIMENT_PATH.read_text(encoding="utf-8")
+
+        self.assertIn("modelStats", source)
+        self.assertIn("slotCandidateCounts", source)
+        self.assertIn("slotVarCount", source)
+        self.assertIn("exactSetCountVarCount", source)
+        self.assertIn("conditionConstraintCount", source)
+
     def test_server_requirements_include_ortools_pin(self):
         requirements = REQUIREMENTS_PATH.read_text(encoding="utf-8")
 
