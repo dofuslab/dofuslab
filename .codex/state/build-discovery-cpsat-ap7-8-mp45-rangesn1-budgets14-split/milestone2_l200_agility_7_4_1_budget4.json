@@ -1,0 +1,791 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T12:47:52.160667+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_agility_7_4_1_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "agility",
+        "budgetTier": 4,
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2617.82,
+        "weightedStatScore": 4300.78,
+        "utilityStatScore": 412.22,
+        "genericDamageScore": 4688.67,
+        "rawRotationDamageScore": 2907.95,
+        "spellDamageScore": 2907.95,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.5629,
+        "weaponDamageScore": 230.48,
+        "survivabilityScore": 95.69,
+        "weakestElementEhp": 2973.76,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 3,
+          "Agility": 1473,
+          "Power": 80,
+          "Vitality": 3103,
+          "Damage": 0,
+          "Air Damage": 147,
+          "Critical": 84,
+          "Critical Damage": 72
+        },
+        "sets": {
+          "Allister Set": 2,
+          "Bubotron Set": 2,
+          "Voldelor Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "30060",
+            "slot": "shield"
+          },
+          "MP": {
+            "itemId": "14082",
+            "slot": "hat"
+          },
+          "Range": {
+            "itemId": "17105",
+            "slot": "boots"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14083",
+            "internalId": null,
+            "name": "Bubotron Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Bubotron Set"
+          },
+          "belt": {
+            "id": "17104",
+            "internalId": null,
+            "name": "Voldelor Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "30060",
+            "internalId": null,
+            "name": "Allister's Aegis",
+            "type": "Shield",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "ring_1": {
+            "id": "13124",
+            "internalId": null,
+            "name": "Allister's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "ring_2": {
+            "id": "13642",
+            "internalId": null,
+            "name": "Nomarow's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Nomarow Set"
+          },
+          "boots": {
+            "id": "17105",
+            "internalId": null,
+            "name": "Voldelor Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "hat": {
+            "id": "14082",
+            "internalId": null,
+            "name": "Bubotron Mask",
+            "type": "Hat",
+            "level": 200,
+            "set": "Bubotron Set"
+          },
+          "cloak": {
+            "id": "18008",
+            "internalId": null,
+            "name": "Indescribable Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "pet": {
+            "id": "29432",
+            "internalId": null,
+            "name": "Tarkaj Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13765",
+            "internalId": null,
+            "name": "Major Gymnast",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2617.82,
+        "apStrategy": null,
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 3,
+          "Agility": 1473,
+          "Power": 80,
+          "Vitality": 3103,
+          "Damage": 0,
+          "Air Damage": 147,
+          "Critical": 84,
+          "Critical Damage": 72
+        },
+        "sets": {
+          "Allister Set": 2,
+          "Bubotron Set": 2,
+          "Voldelor Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "30060",
+            "slot": "shield"
+          },
+          "MP": {
+            "itemId": "14082",
+            "slot": "hat"
+          },
+          "Range": {
+            "itemId": "17105",
+            "slot": "boots"
+          }
+        },
+        "items": [
+          "Bubotron Amulet",
+          "Voldelor Belt",
+          "Gargandyas's Fury",
+          "Allister's Aegis",
+          "Allister's Ring",
+          "Nomarow's Ring",
+          "Voldelor Boots",
+          "Bubotron Mask",
+          "Indescribable Cape",
+          "Tarkaj Kolophant",
+          "Cloudy Dofus",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Gymnast"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2617.82,
+          "weightedStatScore": 4300.78,
+          "utilityStatScore": 412.22,
+          "genericDamageScore": 4688.67,
+          "rawRotationDamageScore": 2907.95,
+          "spellDamageScore": 2907.95,
+          "profileBaselineDamageScore": 1860.62,
+          "profileRelativeDamage": 1.5629,
+          "weaponDamageScore": 230.48,
+          "survivabilityScore": 95.69,
+          "weakestElementEhp": 2973.76,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 6,
+            "Range": 3,
+            "Agility": 1473,
+            "Power": 80,
+            "Vitality": 3103,
+            "Damage": 0,
+            "Air Damage": 147,
+            "Critical": 84,
+            "Critical Damage": 72
+          },
+          "sets": {
+            "Allister Set": 2,
+            "Bubotron Set": 2,
+            "Voldelor Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "30060",
+              "slot": "shield"
+            },
+            "MP": {
+              "itemId": "14082",
+              "slot": "hat"
+            },
+            "Range": {
+              "itemId": "17105",
+              "slot": "boots"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "14083",
+              "internalId": null,
+              "name": "Bubotron Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Bubotron Set"
+            },
+            "belt": {
+              "id": "17104",
+              "internalId": null,
+              "name": "Voldelor Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "30060",
+              "internalId": null,
+              "name": "Allister's Aegis",
+              "type": "Shield",
+              "level": 197,
+              "set": "Allister Set"
+            },
+            "ring_1": {
+              "id": "13124",
+              "internalId": null,
+              "name": "Allister's Ring",
+              "type": "Ring",
+              "level": 197,
+              "set": "Allister Set"
+            },
+            "ring_2": {
+              "id": "13642",
+              "internalId": null,
+              "name": "Nomarow's Ring",
+              "type": "Ring",
+              "level": 197,
+              "set": "Nomarow Set"
+            },
+            "boots": {
+              "id": "17105",
+              "internalId": null,
+              "name": "Voldelor Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "hat": {
+              "id": "14082",
+              "internalId": null,
+              "name": "Bubotron Mask",
+              "type": "Hat",
+              "level": 200,
+              "set": "Bubotron Set"
+            },
+            "cloak": {
+              "id": "18008",
+              "internalId": null,
+              "name": "Indescribable Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Abyss Set"
+            },
+            "pet": {
+              "id": "29432",
+              "internalId": null,
+              "name": "Tarkaj Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13765",
+              "internalId": null,
+              "name": "Major Gymnast",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2617.82,
+          "apStrategy": null,
+          "totals": {
+            "AP": 10,
+            "MP": 6,
+            "Range": 3,
+            "Agility": 1473,
+            "Power": 80,
+            "Vitality": 3103,
+            "Damage": 0,
+            "Air Damage": 147,
+            "Critical": 84,
+            "Critical Damage": 72
+          },
+          "sets": {
+            "Allister Set": 2,
+            "Bubotron Set": 2,
+            "Voldelor Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "30060",
+              "slot": "shield"
+            },
+            "MP": {
+              "itemId": "14082",
+              "slot": "hat"
+            },
+            "Range": {
+              "itemId": "17105",
+              "slot": "boots"
+            }
+          },
+          "items": [
+            "Bubotron Amulet",
+            "Voldelor Belt",
+            "Gargandyas's Fury",
+            "Allister's Aegis",
+            "Allister's Ring",
+            "Nomarow's Ring",
+            "Voldelor Boots",
+            "Bubotron Mask",
+            "Indescribable Cape",
+            "Tarkaj Kolophant",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Gymnast"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7036.9,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 195.3,
+          "totalSearchMs": 6841.6
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1691.5,
+            "solveMs": 4998.8,
+            "objective": 2190.07,
+            "solutionCallbackCount": 8,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2051.7,
+                "objective": 922.38,
+                "score": 1346.15,
+                "itemIds": [
+                  "8000",
+                  "8840",
+                  "12117",
+                  "12628",
+                  "12713",
+                  "12716",
+                  "12723",
+                  "13762",
+                  "13765",
+                  "14097",
+                  "14098",
+                  "16005",
+                  "16006",
+                  "30060",
+                  "31759",
+                  "32119"
+                ],
+                "exos": {
+                  "AP": "16006",
+                  "MP": "30060"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2336.2,
+                "objective": 1264.42,
+                "score": 1741.68,
+                "itemIds": [
+                  "8698",
+                  "12852",
+                  "12855",
+                  "14833",
+                  "19247",
+                  "19249",
+                  "19608",
+                  "19609",
+                  "22013",
+                  "29136",
+                  "30356",
+                  "30453",
+                  "30455",
+                  "31787",
+                  "31788",
+                  "32231"
+                ],
+                "exos": {
+                  "AP": "12855",
+                  "MP": "19249",
+                  "Range": "12852"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2504.7,
+                "objective": 2082.51,
+                "score": 2493.08,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "8698",
+                  "13124",
+                  "13130",
+                  "13132",
+                  "13765",
+                  "14054",
+                  "14056",
+                  "14083",
+                  "18008",
+                  "30060",
+                  "30453",
+                  "30455",
+                  "31787",
+                  "33023"
+                ],
+                "exos": {
+                  "AP": "31787",
+                  "MP": "14083",
+                  "Range": "13124"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2733.5,
+                "objective": 2104.88,
+                "score": 2506.73,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "8698",
+                  "13124",
+                  "13130",
+                  "13132",
+                  "13765",
+                  "14054",
+                  "14056",
+                  "14083",
+                  "18008",
+                  "29432",
+                  "30060",
+                  "30453",
+                  "30455",
+                  "31787"
+                ],
+                "exos": {
+                  "AP": "31787",
+                  "MP": "14083",
+                  "Range": "13130"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2910.7,
+                "objective": 2132.02,
+                "score": 2518.75,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "8698",
+                  "13124",
+                  "13131",
+                  "13132",
+                  "13765",
+                  "14054",
+                  "14056",
+                  "14082",
+                  "14083",
+                  "29432",
+                  "30060",
+                  "30453",
+                  "30455",
+                  "31787"
+                ],
+                "exos": {
+                  "AP": "30060",
+                  "MP": "13124",
+                  "Range": "31787"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 316
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1838,
+              "uniqueItemCount": 1704,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 215,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1704,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3186,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3186,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3186,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 0.7234,
+          "Air Damage": 2.5359,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2201,
+          "Critical Damage": 1.5602,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.5359,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7234,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
