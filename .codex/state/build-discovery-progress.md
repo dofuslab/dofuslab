@@ -5005,3 +5005,41 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     remains above the Milestone 2 `<5s` target
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap7-8-mp56-ranges16-budgets23-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 7,8 --mp-targets 5,6 --range-targets 1,6 --expected-solver cpsat`
+
+### 2026-07-11 AP9/AP11 MP4/MP5 Range-None/4 Edge-Budget CP-SAT Smoke
+
+- Ran a targeted Milestone 2 slice to strengthen range `none`, exact range
+  `4`, AP `9/11`, and edge budget tiers.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-ap9-11-mp45-rangesn4-budgets14-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ap9-11-mp45-rangesn4-budgets14-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ap9-11-mp45-rangesn4-budgets14-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 1, 4
+  - AP: 9, 11
+  - MP: 4, 5
+  - Range: none, 4
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `64`
+  - generated: `64`
+  - invalid: `0`
+  - solver statuses: `32` optimal, `32` feasible
+  - AP coverage: `32` rows each for `9` and `11`
+  - MP coverage: `32` rows each for `4` and `5`
+  - range coverage: `32` rows each for `none` and `4`
+  - budget coverage: `32` rows each for tiers `1` and `4`
+- Runtime:
+  - elapsed min/avg/max: `5264.8ms / 6549.5ms / 8338.8ms`
+  - model min/avg/max: `1336.1ms / 1520.1ms / 1785.0ms`
+  - solve min/avg/max: `3375.7ms / 4658.7ms / 5084.7ms`
+- Interpretation:
+  - Strict CP-SAT Milestone 2 coverage is now `736 / 3072` targets
+    (`23.96%`)
+  - Range `none/4`, AP `9/11`, MP `4/5`, and edge budgets have stronger
+    committed evidence
+  - Range `5` is now the lowest coverage bucket; p95 remains above the
+    Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap9-11-mp45-rangesn4-budgets14-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 9,11 --mp-targets 4,5 --range-targets none,4 --expected-solver cpsat`
