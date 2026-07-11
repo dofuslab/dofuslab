@@ -1,0 +1,715 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T09:13:40.690980+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_chance_7_4_6_budget2",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2546.03,
+        "weightedStatScore": 4250.26,
+        "utilityStatScore": 308.01,
+        "genericDamageScore": 4778.42,
+        "rawRotationDamageScore": 3162.19,
+        "spellDamageScore": 3162.19,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.5928,
+        "weaponDamageScore": 166.88,
+        "survivabilityScore": 87.73,
+        "weakestElementEhp": 2688.01,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 6,
+          "Chance": 1538,
+          "Power": 240,
+          "Vitality": 2953,
+          "Damage": 0,
+          "Water Damage": 121,
+          "Critical": 77,
+          "Critical Damage": 67
+        },
+        "sets": {
+          "Rhoarim Set": 2,
+          "Voldelor Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "31761",
+            "internalId": null,
+            "name": "Rhoarim Necklace",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Rhoarim Set"
+          },
+          "belt": {
+            "id": "17104",
+            "internalId": null,
+            "name": "Voldelor Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "weapon": {
+            "id": "31760",
+            "internalId": null,
+            "name": "Bony Mace",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Rhoarim Set"
+          },
+          "shield": {
+            "id": "18700",
+            "internalId": null,
+            "name": "Four-Leaf",
+            "type": "Shield",
+            "level": 193,
+            "set": null
+          },
+          "boots": {
+            "id": "17105",
+            "internalId": null,
+            "name": "Voldelor Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "hat": {
+            "id": "13120",
+            "internalId": null,
+            "name": "Danathor's Helmet",
+            "type": "Hat",
+            "level": 196,
+            "set": "Danathor Set"
+          },
+          "cloak": {
+            "id": "14057",
+            "internalId": null,
+            "name": "Glacial Cape",
+            "type": "Cloak",
+            "level": 197,
+            "set": "Glacial Set"
+          },
+          "pet": {
+            "id": "29433",
+            "internalId": null,
+            "name": "Zenusha Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "16248",
+            "internalId": null,
+            "name": "Major Luckster",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "ring_1": {
+            "id": "15190",
+            "internalId": null,
+            "name": "Hairsh Bracelet",
+            "type": "Ring",
+            "level": 200,
+            "set": "Hairsh Set"
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2546.03,
+        "apStrategy": null,
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 6,
+          "Chance": 1538,
+          "Power": 240,
+          "Vitality": 2953,
+          "Damage": 0,
+          "Water Damage": 121,
+          "Critical": 77,
+          "Critical Damage": 67
+        },
+        "sets": {
+          "Rhoarim Set": 2,
+          "Voldelor Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Rhoarim Necklace",
+          "Voldelor Belt",
+          "Bony Mace",
+          "Four-Leaf",
+          "Hairsh Bracelet",
+          "Rhineetle Ring",
+          "Voldelor Boots",
+          "Danathor's Helmet",
+          "Glacial Cape",
+          "Zenusha Kolophant",
+          "Crimson Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Luckster",
+          "Major Tease",
+          "Major Vigour"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2546.03,
+          "weightedStatScore": 4250.26,
+          "utilityStatScore": 308.01,
+          "genericDamageScore": 4778.42,
+          "rawRotationDamageScore": 3162.19,
+          "spellDamageScore": 3162.19,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.5928,
+          "weaponDamageScore": 166.88,
+          "survivabilityScore": 87.73,
+          "weakestElementEhp": 2688.01,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 6,
+            "Chance": 1538,
+            "Power": 240,
+            "Vitality": 2953,
+            "Damage": 0,
+            "Water Damage": 121,
+            "Critical": 77,
+            "Critical Damage": 67
+          },
+          "sets": {
+            "Rhoarim Set": 2,
+            "Voldelor Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "31761",
+              "internalId": null,
+              "name": "Rhoarim Necklace",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Rhoarim Set"
+            },
+            "belt": {
+              "id": "17104",
+              "internalId": null,
+              "name": "Voldelor Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "weapon": {
+              "id": "31760",
+              "internalId": null,
+              "name": "Bony Mace",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Rhoarim Set"
+            },
+            "shield": {
+              "id": "18700",
+              "internalId": null,
+              "name": "Four-Leaf",
+              "type": "Shield",
+              "level": 193,
+              "set": null
+            },
+            "boots": {
+              "id": "17105",
+              "internalId": null,
+              "name": "Voldelor Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "hat": {
+              "id": "13120",
+              "internalId": null,
+              "name": "Danathor's Helmet",
+              "type": "Hat",
+              "level": 196,
+              "set": "Danathor Set"
+            },
+            "cloak": {
+              "id": "14057",
+              "internalId": null,
+              "name": "Glacial Cape",
+              "type": "Cloak",
+              "level": 197,
+              "set": "Glacial Set"
+            },
+            "pet": {
+              "id": "29433",
+              "internalId": null,
+              "name": "Zenusha Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "16248",
+              "internalId": null,
+              "name": "Major Luckster",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "16332",
+              "internalId": null,
+              "name": "Major Vigour",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "ring_1": {
+              "id": "15190",
+              "internalId": null,
+              "name": "Hairsh Bracelet",
+              "type": "Ring",
+              "level": 200,
+              "set": "Hairsh Set"
+            },
+            "ring_2": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2546.03,
+          "apStrategy": null,
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 6,
+            "Chance": 1538,
+            "Power": 240,
+            "Vitality": 2953,
+            "Damage": 0,
+            "Water Damage": 121,
+            "Critical": 77,
+            "Critical Damage": 67
+          },
+          "sets": {
+            "Rhoarim Set": 2,
+            "Voldelor Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Rhoarim Necklace",
+            "Voldelor Belt",
+            "Bony Mace",
+            "Four-Leaf",
+            "Hairsh Bracelet",
+            "Rhineetle Ring",
+            "Voldelor Boots",
+            "Danathor's Helmet",
+            "Glacial Cape",
+            "Zenusha Kolophant",
+            "Crimson Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Luckster",
+            "Major Tease",
+            "Major Vigour"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6899.6,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 162.4,
+          "totalSearchMs": 6737.2
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1544.3,
+            "solveMs": 5054.4,
+            "objective": 2062.7,
+            "solutionCallbackCount": 9,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2224.0,
+                "objective": 400.96,
+                "score": 913.56,
+                "itemIds": [
+                  "8366",
+                  "8695",
+                  "8714",
+                  "8715",
+                  "11607",
+                  "12628",
+                  "12629",
+                  "12630",
+                  "12631",
+                  "12632",
+                  "13230",
+                  "16336",
+                  "18028",
+                  "18711",
+                  "19165",
+                  "27266"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2451.4,
+                "objective": 1117.48,
+                "score": 1506.99,
+                "itemIds": [
+                  "737",
+                  "9142",
+                  "11600",
+                  "11626",
+                  "12715",
+                  "12727",
+                  "13829",
+                  "14089",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "30453",
+                  "30455",
+                  "32121",
+                  "32224",
+                  "33052"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2606.6,
+                "objective": 1744.33,
+                "score": 2172.41,
+                "itemIds": [
+                  "12104",
+                  "12715",
+                  "13344",
+                  "13831",
+                  "16248",
+                  "16335",
+                  "18029",
+                  "18030",
+                  "18598",
+                  "19253",
+                  "19254",
+                  "19260",
+                  "22200",
+                  "29433",
+                  "30453",
+                  "32117"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2761.5,
+                "objective": 1806.03,
+                "score": 2252.02,
+                "itemIds": [
+                  "12104",
+                  "12715",
+                  "13344",
+                  "13831",
+                  "16248",
+                  "18029",
+                  "18030",
+                  "18598",
+                  "19253",
+                  "19254",
+                  "19260",
+                  "22200",
+                  "29433",
+                  "30453",
+                  "30455",
+                  "32117"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2939.4,
+                "objective": 1808.62,
+                "score": 2231.74,
+                "itemIds": [
+                  "12104",
+                  "12715",
+                  "13344",
+                  "13783",
+                  "13831",
+                  "18029",
+                  "18030",
+                  "18598",
+                  "19253",
+                  "19254",
+                  "22200",
+                  "29433",
+                  "30453",
+                  "30455",
+                  "31757",
+                  "31759"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 266,
+                "ring": 134
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1654,
+              "uniqueItemCount": 1654,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 217,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1654,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

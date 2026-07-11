@@ -4753,3 +4753,35 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - p95 remains above the Milestone 2 `<5s` target
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap8-11-ranges245-budgets23-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 8,11 --mp-targets 3,6 --range-targets 2,4,5 --expected-solver cpsat`
+
+### 2026-07-11 AP7/MP4 Range-3/6 CP-SAT Smoke
+
+- Ran a focused Milestone 2 slice targeting thin AP, MP, and range buckets.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-ap7-mp4-ranges36-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ap7-mp4-ranges36-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ap7-mp4-ranges36-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 1, 2, 3, 4
+  - AP: 7
+  - MP: 4
+  - Range: 3, 6
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `32`
+  - generated: `32`
+  - invalid: `0`
+  - solver statuses: `13` optimal, `19` feasible
+  - budget coverage: `8` rows for each tier `1-4`
+  - range coverage: `16` rows each for `3` and `6`
+- Runtime:
+  - elapsed min/avg/max: `5155.0ms / 6655.6ms / 8362.1ms`
+  - model min/avg/max: `1326.8ms / 1540.9ms / 1720.2ms`
+  - solve min/avg/max: `3283.1ms / 4706.3ms / 5084.1ms`
+- Interpretation:
+  - MP `4`, AP `7`, Range `3`, and Range `6` have broader committed
+    Milestone 2 CP-SAT evidence
+  - p95 remains above the Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap7-mp4-ranges36-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,2,3,4 --ap-targets 7 --mp-targets 4 --range-targets 3,6 --expected-solver cpsat`
