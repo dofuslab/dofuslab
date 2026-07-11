@@ -4551,3 +4551,35 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - do not enable it by default for Milestone 2 quality evidence
   - candidate count alone is too crude; a useful stopping policy likely needs
     quality gates, benchmark deltas, or package-seeded candidates
+
+### 2026-07-11 AP12/MP6 All-Element CP-SAT Smoke
+
+- Ran the harder level-200 Iop corner across all four single elements after
+  the ring-group checkpoint, using default callback behavior.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-ap12mp6-all-elements-smoke-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ap12mp6-all-elements-smoke-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ap12mp6-all-elements-smoke-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 1, 4
+  - AP: 12
+  - MP: 6
+  - Range: none, 6
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `16`
+  - generated: `16`
+  - invalid: `0`
+  - solver statuses: `6` optimal, `10` feasible
+- Runtime:
+  - elapsed min/avg/max: `4677.4ms / 6350.0ms / 8179.6ms`
+  - model min/avg/max: `1122.2ms / 1291.0ms / 1488.7ms`
+  - solve min/avg/max: `2897.7ms / 4558.1ms / 5072.1ms`
+- Interpretation:
+  - the CP-SAT path can find valid builds for the hardest sampled 12/6
+    level-200 Iop single-element corners across budget extremes
+  - several rows are still only feasible within the 5s solve cap
+  - end-to-end latency still misses the Milestone 2 p95 target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap12mp6-all-elements-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 12 --mp-targets 6 --range-targets none,6 --expected-solver cpsat`

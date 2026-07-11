@@ -1,0 +1,790 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T08:33:17.792482+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_agility_12_6_6_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "agility",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 250,
+        "perSignatureCap": 40,
+        "relevantSetLimit": 60
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2483.8,
+        "weightedStatScore": 3787.28,
+        "utilityStatScore": 488.39,
+        "genericDamageScore": 4242.39,
+        "rawRotationDamageScore": 2631.17,
+        "spellDamageScore": 2578.42,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.4141,
+        "weaponDamageScore": 267.88,
+        "survivabilityScore": 86.33,
+        "weakestElementEhp": 2582.24,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Agility": 1433,
+          "Power": 130,
+          "Vitality": 2703,
+          "Damage": 0,
+          "Air Damage": 98,
+          "Critical": 76,
+          "Critical Damage": 2
+        },
+        "sets": {
+          "Allister Set": 3,
+          "Bubotron Set": 2,
+          "Klime Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14051",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "14084",
+            "slot": "weapon"
+          },
+          "Range": {
+            "itemId": "30060",
+            "slot": "shield"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14083",
+            "internalId": null,
+            "name": "Bubotron Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Bubotron Set"
+          },
+          "belt": {
+            "id": "14052",
+            "internalId": null,
+            "name": "Klime's Belt",
+            "type": "Belt",
+            "level": 198,
+            "set": "Klime Set"
+          },
+          "weapon": {
+            "id": "14084",
+            "internalId": null,
+            "name": "Bubotron Sword",
+            "type": "Sword",
+            "level": 200,
+            "set": "Bubotron Set"
+          },
+          "shield": {
+            "id": "30060",
+            "internalId": null,
+            "name": "Allister's Aegis",
+            "type": "Shield",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "ring_1": {
+            "id": "15190",
+            "internalId": null,
+            "name": "Hairsh Bracelet",
+            "type": "Ring",
+            "level": 200,
+            "set": "Hairsh Set"
+          },
+          "ring_2": {
+            "id": "13124",
+            "internalId": null,
+            "name": "Allister's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "13123",
+            "internalId": null,
+            "name": "Allister's Crown",
+            "type": "Hat",
+            "level": 196,
+            "set": "Allister Set"
+          },
+          "cloak": {
+            "id": "14051",
+            "internalId": null,
+            "name": "Klime's Cloak",
+            "type": "Cloak",
+            "level": 197,
+            "set": "Klime Set"
+          },
+          "pet": {
+            "id": "29432",
+            "internalId": null,
+            "name": "Tarkaj Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "29136",
+            "internalId": null,
+            "name": "Sylvan Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13765",
+            "internalId": null,
+            "name": "Major Gymnast",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2483.8,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Agility": 1433,
+          "Power": 130,
+          "Vitality": 2703,
+          "Damage": 0,
+          "Air Damage": 98,
+          "Critical": 76,
+          "Critical Damage": 2
+        },
+        "sets": {
+          "Allister Set": 3,
+          "Bubotron Set": 2,
+          "Klime Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14051",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "14084",
+            "slot": "weapon"
+          },
+          "Range": {
+            "itemId": "30060",
+            "slot": "shield"
+          }
+        },
+        "items": [
+          "Bubotron Amulet",
+          "Klime's Belt",
+          "Bubotron Sword",
+          "Allister's Aegis",
+          "Hairsh Bracelet",
+          "Allister's Ring",
+          "Meriana's Clairvoyance",
+          "Allister's Crown",
+          "Klime's Cloak",
+          "Tarkaj Kolophant",
+          "Cloudy Dofus",
+          "Ochre Dofus",
+          "Sylvan Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Gymnast"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2483.8,
+          "weightedStatScore": 3787.28,
+          "utilityStatScore": 488.39,
+          "genericDamageScore": 4242.39,
+          "rawRotationDamageScore": 2631.17,
+          "spellDamageScore": 2578.42,
+          "profileBaselineDamageScore": 1860.62,
+          "profileRelativeDamage": 1.4141,
+          "weaponDamageScore": 267.88,
+          "survivabilityScore": 86.33,
+          "weakestElementEhp": 2582.24,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 6,
+            "Agility": 1433,
+            "Power": 130,
+            "Vitality": 2703,
+            "Damage": 0,
+            "Air Damage": 98,
+            "Critical": 76,
+            "Critical Damage": 2
+          },
+          "sets": {
+            "Allister Set": 3,
+            "Bubotron Set": 2,
+            "Klime Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "14051",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "14084",
+              "slot": "weapon"
+            },
+            "Range": {
+              "itemId": "30060",
+              "slot": "shield"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "14083",
+              "internalId": null,
+              "name": "Bubotron Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Bubotron Set"
+            },
+            "belt": {
+              "id": "14052",
+              "internalId": null,
+              "name": "Klime's Belt",
+              "type": "Belt",
+              "level": 198,
+              "set": "Klime Set"
+            },
+            "weapon": {
+              "id": "14084",
+              "internalId": null,
+              "name": "Bubotron Sword",
+              "type": "Sword",
+              "level": 200,
+              "set": "Bubotron Set"
+            },
+            "shield": {
+              "id": "30060",
+              "internalId": null,
+              "name": "Allister's Aegis",
+              "type": "Shield",
+              "level": 197,
+              "set": "Allister Set"
+            },
+            "ring_1": {
+              "id": "15190",
+              "internalId": null,
+              "name": "Hairsh Bracelet",
+              "type": "Ring",
+              "level": 200,
+              "set": "Hairsh Set"
+            },
+            "ring_2": {
+              "id": "13124",
+              "internalId": null,
+              "name": "Allister's Ring",
+              "type": "Ring",
+              "level": 197,
+              "set": "Allister Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "13123",
+              "internalId": null,
+              "name": "Allister's Crown",
+              "type": "Hat",
+              "level": 196,
+              "set": "Allister Set"
+            },
+            "cloak": {
+              "id": "14051",
+              "internalId": null,
+              "name": "Klime's Cloak",
+              "type": "Cloak",
+              "level": 197,
+              "set": "Klime Set"
+            },
+            "pet": {
+              "id": "29432",
+              "internalId": null,
+              "name": "Tarkaj Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "29136",
+              "internalId": null,
+              "name": "Sylvan Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13765",
+              "internalId": null,
+              "name": "Major Gymnast",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2483.8,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 6,
+            "Agility": 1433,
+            "Power": 130,
+            "Vitality": 2703,
+            "Damage": 0,
+            "Air Damage": 98,
+            "Critical": 76,
+            "Critical Damage": 2
+          },
+          "sets": {
+            "Allister Set": 3,
+            "Bubotron Set": 2,
+            "Klime Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "14051",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "14084",
+              "slot": "weapon"
+            },
+            "Range": {
+              "itemId": "30060",
+              "slot": "shield"
+            }
+          },
+          "items": [
+            "Bubotron Amulet",
+            "Klime's Belt",
+            "Bubotron Sword",
+            "Allister's Aegis",
+            "Hairsh Bracelet",
+            "Allister's Ring",
+            "Meriana's Clairvoyance",
+            "Allister's Crown",
+            "Klime's Cloak",
+            "Tarkaj Kolophant",
+            "Cloudy Dofus",
+            "Ochre Dofus",
+            "Sylvan Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Gymnast"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6882.0,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 182.2,
+          "totalSearchMs": 6699.8
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1428.8,
+            "solveMs": 5070.5,
+            "objective": 2044.07,
+            "solutionCallbackCount": 7,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1351.1,
+                "objective": 696.55,
+                "score": 1203.82,
+                "itemIds": [
+                  "2469",
+                  "7754",
+                  "8841",
+                  "11470",
+                  "11514",
+                  "13759",
+                  "13762",
+                  "13768",
+                  "15428",
+                  "15430",
+                  "16333",
+                  "21995",
+                  "27266",
+                  "32211",
+                  "32245",
+                  "33204"
+                ],
+                "exos": {
+                  "MP": "11514"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 1639.4,
+                "objective": 998.15,
+                "score": 1420.29,
+                "itemIds": [
+                  "737",
+                  "11730",
+                  "11757",
+                  "12716",
+                  "12725",
+                  "13344",
+                  "13829",
+                  "15254",
+                  "18670",
+                  "19265",
+                  "19266",
+                  "22013",
+                  "27266",
+                  "27284",
+                  "33601",
+                  "33603"
+                ],
+                "exos": {
+                  "AP": "33601",
+                  "MP": "27284",
+                  "Range": "19266"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 1875.6,
+                "objective": 1823.02,
+                "score": 2183.26,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "12714",
+                  "13344",
+                  "13765",
+                  "15440",
+                  "15441",
+                  "15442",
+                  "15701",
+                  "16333",
+                  "18008",
+                  "19599",
+                  "21225",
+                  "24035",
+                  "29432",
+                  "31787"
+                ],
+                "exos": {
+                  "AP": "15441",
+                  "MP": "31787",
+                  "Range": "15440"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2105.1,
+                "objective": 1830.56,
+                "score": 2201.08,
+                "itemIds": [
+                  "7754",
+                  "12714",
+                  "13344",
+                  "13765",
+                  "15440",
+                  "15441",
+                  "15442",
+                  "15701",
+                  "16333",
+                  "18008",
+                  "19599",
+                  "21225",
+                  "24035",
+                  "29432",
+                  "30455",
+                  "31787"
+                ],
+                "exos": {
+                  "AP": "15441",
+                  "MP": "31787",
+                  "Range": "15440"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2450.3,
+                "objective": 1860.91,
+                "score": 2245.9,
+                "itemIds": [
+                  "7754",
+                  "8698",
+                  "13344",
+                  "15440",
+                  "15441",
+                  "15442",
+                  "15701",
+                  "16245",
+                  "16333",
+                  "18008",
+                  "19599",
+                  "21225",
+                  "24035",
+                  "29432",
+                  "30453",
+                  "31787"
+                ],
+                "exos": {
+                  "AP": "18008",
+                  "MP": "21225",
+                  "Range": "31787"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 99,
+                "belt": 93,
+                "weapon": 197,
+                "shield": 59,
+                "ring_1": 132,
+                "ring_2": 132,
+                "boots": 102,
+                "hat": 131,
+                "cloak": 92,
+                "pet": 452,
+                "dofus": 316
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1805,
+              "uniqueItemCount": 1673,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 847,
+              "skippedSetCountVarCount": 74,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 186,
+              "conditionConstraintCount": 192,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 202
+            }
+          }
+        ],
+        "itemCount": 1673,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3186,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3186,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3186,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 0.7234,
+          "Air Damage": 2.5359,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2201,
+          "Critical Damage": 1.5602,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.5359,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7234,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

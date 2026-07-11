@@ -1,0 +1,787 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T08:33:17.792482+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_chance_12_6_6_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 250,
+        "perSignatureCap": 40,
+        "relevantSetLimit": 60
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2569.62,
+        "weightedStatScore": 4034.19,
+        "utilityStatScore": 501.49,
+        "genericDamageScore": 4386.87,
+        "rawRotationDamageScore": 2903.07,
+        "spellDamageScore": 2903.07,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.4623,
+        "weaponDamageScore": 217.14,
+        "survivabilityScore": 94.04,
+        "weakestElementEhp": 2929.76,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Chance": 1168,
+          "Power": 330,
+          "Vitality": 3003,
+          "Damage": 0,
+          "Water Damage": 160,
+          "Critical": 54,
+          "Critical Damage": 20
+        },
+        "sets": {
+          "Erotegg Set": 2,
+          "Sharp Eye Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "19253",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "19985",
+            "slot": "ring_2"
+          },
+          "Range": {
+            "itemId": "31787",
+            "slot": "weapon"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "19255",
+            "internalId": null,
+            "name": "Amulet of the Sharp Eye",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Sharp Eye Set"
+          },
+          "belt": {
+            "id": "18598",
+            "internalId": null,
+            "name": "Sneerena Loincloth",
+            "type": "Belt",
+            "level": 200,
+            "set": "Cursed Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "32236",
+            "internalId": null,
+            "name": "Erotegg Disc",
+            "type": "Shield",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_1": {
+            "id": "32234",
+            "internalId": null,
+            "name": "Erotegg Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "19254",
+            "internalId": null,
+            "name": "Hood of the Sharp Eye",
+            "type": "Hat",
+            "level": 200,
+            "set": "Sharp Eye Set"
+          },
+          "cloak": {
+            "id": "19253",
+            "internalId": null,
+            "name": "Cape of the Sharp Eye",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Sharp Eye Set"
+          },
+          "pet": {
+            "id": "33286",
+            "internalId": null,
+            "name": "Azure and Golden Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2569.62,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Chance": 1168,
+          "Power": 330,
+          "Vitality": 3003,
+          "Damage": 0,
+          "Water Damage": 160,
+          "Critical": 54,
+          "Critical Damage": 20
+        },
+        "sets": {
+          "Erotegg Set": 2,
+          "Sharp Eye Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "19253",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "19985",
+            "slot": "ring_2"
+          },
+          "Range": {
+            "itemId": "31787",
+            "slot": "weapon"
+          }
+        },
+        "items": [
+          "Amulet of the Sharp Eye",
+          "Sneerena Loincloth",
+          "Gargandyas's Fury",
+          "Erotegg Disc",
+          "Erotegg Ring",
+          "Rhineetle Ring",
+          "Meriana's Clairvoyance",
+          "Hood of the Sharp Eye",
+          "Cape of the Sharp Eye",
+          "Azure and Golden Seemyool",
+          "Cloudy Dofus",
+          "Crimson Dofus",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Tease"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2569.62,
+          "weightedStatScore": 4034.19,
+          "utilityStatScore": 501.49,
+          "genericDamageScore": 4386.87,
+          "rawRotationDamageScore": 2903.07,
+          "spellDamageScore": 2903.07,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.4623,
+          "weaponDamageScore": 217.14,
+          "survivabilityScore": 94.04,
+          "weakestElementEhp": 2929.76,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 6,
+            "Chance": 1168,
+            "Power": 330,
+            "Vitality": 3003,
+            "Damage": 0,
+            "Water Damage": 160,
+            "Critical": 54,
+            "Critical Damage": 20
+          },
+          "sets": {
+            "Erotegg Set": 2,
+            "Sharp Eye Set": 3
+          },
+          "exos": {
+            "AP": {
+              "itemId": "19253",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "19985",
+              "slot": "ring_2"
+            },
+            "Range": {
+              "itemId": "31787",
+              "slot": "weapon"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "19255",
+              "internalId": null,
+              "name": "Amulet of the Sharp Eye",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Sharp Eye Set"
+            },
+            "belt": {
+              "id": "18598",
+              "internalId": null,
+              "name": "Sneerena Loincloth",
+              "type": "Belt",
+              "level": 200,
+              "set": "Cursed Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "32236",
+              "internalId": null,
+              "name": "Erotegg Disc",
+              "type": "Shield",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_1": {
+              "id": "32234",
+              "internalId": null,
+              "name": "Erotegg Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_2": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "19254",
+              "internalId": null,
+              "name": "Hood of the Sharp Eye",
+              "type": "Hat",
+              "level": 200,
+              "set": "Sharp Eye Set"
+            },
+            "cloak": {
+              "id": "19253",
+              "internalId": null,
+              "name": "Cape of the Sharp Eye",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Sharp Eye Set"
+            },
+            "pet": {
+              "id": "33286",
+              "internalId": null,
+              "name": "Azure and Golden Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2569.62,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 6,
+            "Chance": 1168,
+            "Power": 330,
+            "Vitality": 3003,
+            "Damage": 0,
+            "Water Damage": 160,
+            "Critical": 54,
+            "Critical Damage": 20
+          },
+          "sets": {
+            "Erotegg Set": 2,
+            "Sharp Eye Set": 3
+          },
+          "exos": {
+            "AP": {
+              "itemId": "19253",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "19985",
+              "slot": "ring_2"
+            },
+            "Range": {
+              "itemId": "31787",
+              "slot": "weapon"
+            }
+          },
+          "items": [
+            "Amulet of the Sharp Eye",
+            "Sneerena Loincloth",
+            "Gargandyas's Fury",
+            "Erotegg Disc",
+            "Erotegg Ring",
+            "Rhineetle Ring",
+            "Meriana's Clairvoyance",
+            "Hood of the Sharp Eye",
+            "Cape of the Sharp Eye",
+            "Azure and Golden Seemyool",
+            "Cloudy Dofus",
+            "Crimson Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Tease"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6794.2,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 179.1,
+          "totalSearchMs": 6615.1
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1386.0,
+            "solveMs": 5066.3,
+            "objective": 2097.12,
+            "solutionCallbackCount": 11,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1380.4,
+                "objective": 1062.48,
+                "score": 1492.06,
+                "itemIds": [
+                  "2469",
+                  "7754",
+                  "11606",
+                  "11607",
+                  "12714",
+                  "12724",
+                  "13831",
+                  "16245",
+                  "18014",
+                  "18022",
+                  "18023",
+                  "21996",
+                  "27266",
+                  "32231",
+                  "32233",
+                  "33286"
+                ],
+                "exos": {
+                  "AP": "18022",
+                  "MP": "32233",
+                  "Range": "2469"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 1619.6,
+                "objective": 1122.29,
+                "score": 1539.87,
+                "itemIds": [
+                  "11600",
+                  "11631",
+                  "12723",
+                  "13230",
+                  "13829",
+                  "13831",
+                  "22013",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "27512",
+                  "27514",
+                  "27544",
+                  "27549",
+                  "30453",
+                  "30455"
+                ],
+                "exos": {
+                  "AP": "27514",
+                  "MP": "11600",
+                  "Range": "27512"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 1786.9,
+                "objective": 1206.84,
+                "score": 1603.06,
+                "itemIds": [
+                  "7754",
+                  "12714",
+                  "12724",
+                  "13831",
+                  "14001",
+                  "14287",
+                  "16245",
+                  "18014",
+                  "18022",
+                  "18023",
+                  "19985",
+                  "21996",
+                  "27266",
+                  "32231",
+                  "32233",
+                  "33159"
+                ],
+                "exos": {
+                  "AP": "18022",
+                  "MP": "32233"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 1941.4,
+                "objective": 1969.64,
+                "score": 2427.49,
+                "itemIds": [
+                  "7754",
+                  "8698",
+                  "13344",
+                  "13768",
+                  "16005",
+                  "16333",
+                  "17584",
+                  "18598",
+                  "22200",
+                  "22202",
+                  "30453",
+                  "31787",
+                  "32121",
+                  "32231",
+                  "32233",
+                  "33286"
+                ],
+                "exos": {
+                  "AP": "16005",
+                  "MP": "22202",
+                  "Range": "32233"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2153.4,
+                "objective": 1975.64,
+                "score": 2434.23,
+                "itemIds": [
+                  "7754",
+                  "8698",
+                  "13344",
+                  "16005",
+                  "16248",
+                  "16333",
+                  "17584",
+                  "18598",
+                  "22200",
+                  "22202",
+                  "30453",
+                  "31787",
+                  "32121",
+                  "32231",
+                  "32233",
+                  "33286"
+                ],
+                "exos": {
+                  "AP": "16005",
+                  "MP": "32231",
+                  "Range": "32233"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 99,
+                "belt": 93,
+                "weapon": 197,
+                "shield": 59,
+                "ring_1": 132,
+                "ring_2": 132,
+                "boots": 102,
+                "hat": 131,
+                "cloak": 92,
+                "pet": 452,
+                "dofus": 316
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1805,
+              "uniqueItemCount": 1673,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 847,
+              "skippedSetCountVarCount": 74,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 186,
+              "conditionConstraintCount": 192,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 202
+            }
+          }
+        ],
+        "itemCount": 1673,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

@@ -1,0 +1,719 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T08:33:17.792482+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_intelligence_12_6_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "intelligence",
+        "budgetTier": 1,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2374.5,
+        "weightedStatScore": 4007.91,
+        "utilityStatScore": 447.87,
+        "genericDamageScore": 4073.46,
+        "rawRotationDamageScore": 2775.89,
+        "spellDamageScore": 2775.89,
+        "profileBaselineDamageScore": 2044.38,
+        "profileRelativeDamage": 1.3578,
+        "weaponDamageScore": 202.61,
+        "survivabilityScore": 93.58,
+        "weakestElementEhp": 2568.55,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 1,
+          "Intelligence": 1249,
+          "Power": 260,
+          "Vitality": 3003,
+          "Damage": 0,
+          "Fire Damage": 129,
+          "Critical": 47,
+          "Critical Damage": 45
+        },
+        "sets": {
+          "Harpiset": 2,
+          "War Set": 3,
+          "Dark Vlad Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "15746",
+            "internalId": null,
+            "name": "Neckross",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Harpiset"
+          },
+          "belt": {
+            "id": "30862",
+            "internalId": null,
+            "name": "Dark Vlad's Tabard",
+            "type": "Belt",
+            "level": 200,
+            "set": "Dark Vlad Set"
+          },
+          "weapon": {
+            "id": "30861",
+            "internalId": null,
+            "name": "Dark Vlad's Flamberge",
+            "type": "Sword",
+            "level": 200,
+            "set": "Dark Vlad Set"
+          },
+          "shield": {
+            "id": "22191",
+            "internalId": null,
+            "name": "War's Fortress",
+            "type": "Shield",
+            "level": 200,
+            "set": "War Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "22190",
+            "internalId": null,
+            "name": "War's Helm",
+            "type": "Hat",
+            "level": 200,
+            "set": "War Set"
+          },
+          "cloak": {
+            "id": "15747",
+            "internalId": null,
+            "name": "Krosscape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Harpiset"
+          },
+          "pet": {
+            "id": "33282",
+            "internalId": null,
+            "name": "Coral and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "12693",
+            "internalId": null,
+            "name": "Major Fire Destroyer",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13780",
+            "internalId": null,
+            "name": "Major Fire Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "12719",
+            "internalId": null,
+            "name": "Major Scholar",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "ring_1": {
+            "id": "30943",
+            "internalId": null,
+            "name": "Dark Vlad's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Dark Vlad Set"
+          },
+          "ring_2": {
+            "id": "22192",
+            "internalId": null,
+            "name": "War's Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "War Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2374.5,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 1,
+          "Intelligence": 1249,
+          "Power": 260,
+          "Vitality": 3003,
+          "Damage": 0,
+          "Fire Damage": 129,
+          "Critical": 47,
+          "Critical Damage": 45
+        },
+        "sets": {
+          "Harpiset": 2,
+          "War Set": 3,
+          "Dark Vlad Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Neckross",
+          "Dark Vlad's Tabard",
+          "Dark Vlad's Flamberge",
+          "War's Fortress",
+          "Dark Vlad's Ring",
+          "War's Gauntlet",
+          "Meriana's Clairvoyance",
+          "War's Helm",
+          "Krosscape",
+          "Coral and Emerald Seemyool",
+          "Arcanist",
+          "Impetuous",
+          "Major Brainbox",
+          "Major Fire Destroyer",
+          "Major Fire Wrecker",
+          "Major Scholar"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2374.5,
+          "weightedStatScore": 4007.91,
+          "utilityStatScore": 447.87,
+          "genericDamageScore": 4073.46,
+          "rawRotationDamageScore": 2775.89,
+          "spellDamageScore": 2775.89,
+          "profileBaselineDamageScore": 2044.38,
+          "profileRelativeDamage": 1.3578,
+          "weaponDamageScore": 202.61,
+          "survivabilityScore": 93.58,
+          "weakestElementEhp": 2568.55,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 1,
+            "Intelligence": 1249,
+            "Power": 260,
+            "Vitality": 3003,
+            "Damage": 0,
+            "Fire Damage": 129,
+            "Critical": 47,
+            "Critical Damage": 45
+          },
+          "sets": {
+            "Harpiset": 2,
+            "War Set": 3,
+            "Dark Vlad Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "15746",
+              "internalId": null,
+              "name": "Neckross",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Harpiset"
+            },
+            "belt": {
+              "id": "30862",
+              "internalId": null,
+              "name": "Dark Vlad's Tabard",
+              "type": "Belt",
+              "level": 200,
+              "set": "Dark Vlad Set"
+            },
+            "weapon": {
+              "id": "30861",
+              "internalId": null,
+              "name": "Dark Vlad's Flamberge",
+              "type": "Sword",
+              "level": 200,
+              "set": "Dark Vlad Set"
+            },
+            "shield": {
+              "id": "22191",
+              "internalId": null,
+              "name": "War's Fortress",
+              "type": "Shield",
+              "level": 200,
+              "set": "War Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "22190",
+              "internalId": null,
+              "name": "War's Helm",
+              "type": "Hat",
+              "level": 200,
+              "set": "War Set"
+            },
+            "cloak": {
+              "id": "15747",
+              "internalId": null,
+              "name": "Krosscape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Harpiset"
+            },
+            "pet": {
+              "id": "33282",
+              "internalId": null,
+              "name": "Coral and Emerald Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13762",
+              "internalId": null,
+              "name": "Major Brainbox",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "12693",
+              "internalId": null,
+              "name": "Major Fire Destroyer",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13780",
+              "internalId": null,
+              "name": "Major Fire Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "12719",
+              "internalId": null,
+              "name": "Major Scholar",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "ring_1": {
+              "id": "30943",
+              "internalId": null,
+              "name": "Dark Vlad's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Dark Vlad Set"
+            },
+            "ring_2": {
+              "id": "22192",
+              "internalId": null,
+              "name": "War's Gauntlet",
+              "type": "Ring",
+              "level": 200,
+              "set": "War Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2374.5,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 1,
+            "Intelligence": 1249,
+            "Power": 260,
+            "Vitality": 3003,
+            "Damage": 0,
+            "Fire Damage": 129,
+            "Critical": 47,
+            "Critical Damage": 45
+          },
+          "sets": {
+            "Harpiset": 2,
+            "War Set": 3,
+            "Dark Vlad Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Neckross",
+            "Dark Vlad's Tabard",
+            "Dark Vlad's Flamberge",
+            "War's Fortress",
+            "Dark Vlad's Ring",
+            "War's Gauntlet",
+            "Meriana's Clairvoyance",
+            "War's Helm",
+            "Krosscape",
+            "Coral and Emerald Seemyool",
+            "Arcanist",
+            "Impetuous",
+            "Major Brainbox",
+            "Major Fire Destroyer",
+            "Major Fire Wrecker",
+            "Major Scholar"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6738.6,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 271.3,
+          "totalSearchMs": 6467.3
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1215.8,
+            "solveMs": 5052.5,
+            "objective": 1934.84,
+            "solutionCallbackCount": 11,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1349.2,
+                "objective": 462.33,
+                "score": 952.57,
+                "itemIds": [
+                  "2469",
+                  "8714",
+                  "8839",
+                  "11607",
+                  "12716",
+                  "12724",
+                  "13129",
+                  "13766",
+                  "13830",
+                  "16333",
+                  "16335",
+                  "27266",
+                  "31750",
+                  "31751",
+                  "31752",
+                  "33176"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 1647.8,
+                "objective": 793.27,
+                "score": 1229.32,
+                "itemIds": [
+                  "2469",
+                  "8843",
+                  "11850",
+                  "12713",
+                  "13829",
+                  "14163",
+                  "16332",
+                  "16333",
+                  "17997",
+                  "17998",
+                  "21225",
+                  "23627",
+                  "23628",
+                  "30453",
+                  "30455",
+                  "33202"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 1857.8,
+                "objective": 1134.54,
+                "score": 1556.7,
+                "itemIds": [
+                  "11578",
+                  "11585",
+                  "11586",
+                  "12719",
+                  "13780",
+                  "13825",
+                  "13830",
+                  "14000",
+                  "15696",
+                  "19590",
+                  "19592",
+                  "19598",
+                  "19608",
+                  "30453",
+                  "30455",
+                  "33282"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2056.3,
+                "objective": 1314.87,
+                "score": 1915.87,
+                "itemIds": [
+                  "12719",
+                  "12720",
+                  "13761",
+                  "13762",
+                  "13829",
+                  "13830",
+                  "15700",
+                  "15746",
+                  "15747",
+                  "15748",
+                  "30861",
+                  "30943",
+                  "31767",
+                  "31768",
+                  "31770",
+                  "33047"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2265.0,
+                "objective": 1332.28,
+                "score": 1763.41,
+                "itemIds": [
+                  "12719",
+                  "13780",
+                  "13825",
+                  "13829",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "30453",
+                  "30455",
+                  "31749",
+                  "31750",
+                  "31751",
+                  "31752",
+                  "31753",
+                  "32121",
+                  "33043"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 99,
+                "belt": 93,
+                "weapon": 197,
+                "shield": 59,
+                "boots": 102,
+                "hat": 131,
+                "cloak": 92,
+                "pet": 308,
+                "dofus": 261,
+                "ring": 132
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1474,
+              "uniqueItemCount": 1474,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 847,
+              "skippedSetCountVarCount": 72,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 186,
+              "conditionConstraintCount": 192,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 202
+            }
+          }
+        ],
+        "itemCount": 1474,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.2255,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.2255,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.2255,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2138,
+          "Critical Damage": 1.6163,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.721,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Damage": 2.721,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Intelligence": 0.7048,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7048,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
