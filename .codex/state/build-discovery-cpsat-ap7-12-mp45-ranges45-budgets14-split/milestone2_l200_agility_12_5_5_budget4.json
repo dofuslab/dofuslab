@@ -1,0 +1,795 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T09:38:59.808456+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_agility_12_5_5_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "agility",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 5
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 5,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2571.62,
+        "weightedStatScore": 4011.42,
+        "utilityStatScore": 461.21,
+        "genericDamageScore": 4505.74,
+        "rawRotationDamageScore": 2794.5,
+        "spellDamageScore": 2794.5,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.5019,
+        "weaponDamageScore": 177.6,
+        "survivabilityScore": 82.82,
+        "weakestElementEhp": 2310.48,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 6,
+          "Agility": 1373,
+          "Power": 110,
+          "Vitality": 2703,
+          "Damage": 0,
+          "Air Damage": 142,
+          "Critical": 75,
+          "Critical Damage": 42
+        },
+        "sets": {
+          "Erotegg Set": 2,
+          "Allister Set": 2,
+          "Voldelor Set": 2,
+          "Turtelonia Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "17104",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "21230",
+            "slot": "cloak"
+          },
+          "Range": {
+            "itemId": "13124",
+            "slot": "ring_2"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "17103",
+            "internalId": null,
+            "name": "Voldelor Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "belt": {
+            "id": "17104",
+            "internalId": null,
+            "name": "Voldelor Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "weapon": {
+            "id": "21229",
+            "internalId": null,
+            "name": "Turtelonia Wand",
+            "type": "Wand",
+            "level": 200,
+            "set": "Turtelonia Set"
+          },
+          "shield": {
+            "id": "32236",
+            "internalId": null,
+            "name": "Erotegg Disc",
+            "type": "Shield",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_1": {
+            "id": "32234",
+            "internalId": null,
+            "name": "Erotegg Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_2": {
+            "id": "13124",
+            "internalId": null,
+            "name": "Allister's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "13123",
+            "internalId": null,
+            "name": "Allister's Crown",
+            "type": "Hat",
+            "level": 196,
+            "set": "Allister Set"
+          },
+          "cloak": {
+            "id": "21230",
+            "internalId": null,
+            "name": "Turtelonia Carapace",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Turtelonia Set"
+          },
+          "pet": {
+            "id": "33169",
+            "internalId": null,
+            "name": "Emerald and Ebony Rhineetle",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13765",
+            "internalId": null,
+            "name": "Major Gymnast",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2571.62,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 6,
+          "Agility": 1373,
+          "Power": 110,
+          "Vitality": 2703,
+          "Damage": 0,
+          "Air Damage": 142,
+          "Critical": 75,
+          "Critical Damage": 42
+        },
+        "sets": {
+          "Erotegg Set": 2,
+          "Allister Set": 2,
+          "Voldelor Set": 2,
+          "Turtelonia Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "17104",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "21230",
+            "slot": "cloak"
+          },
+          "Range": {
+            "itemId": "13124",
+            "slot": "ring_2"
+          }
+        },
+        "items": [
+          "Voldelor Amulet",
+          "Voldelor Belt",
+          "Turtelonia Wand",
+          "Erotegg Disc",
+          "Erotegg Ring",
+          "Allister's Ring",
+          "Meriana's Clairvoyance",
+          "Allister's Crown",
+          "Turtelonia Carapace",
+          "Emerald and Ebony Rhineetle",
+          "Cloudy Dofus",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Gymnast"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2571.62,
+          "weightedStatScore": 4011.42,
+          "utilityStatScore": 461.21,
+          "genericDamageScore": 4505.74,
+          "rawRotationDamageScore": 2794.5,
+          "spellDamageScore": 2794.5,
+          "profileBaselineDamageScore": 1860.62,
+          "profileRelativeDamage": 1.5019,
+          "weaponDamageScore": 177.6,
+          "survivabilityScore": 82.82,
+          "weakestElementEhp": 2310.48,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 5,
+            "Range": 6,
+            "Agility": 1373,
+            "Power": 110,
+            "Vitality": 2703,
+            "Damage": 0,
+            "Air Damage": 142,
+            "Critical": 75,
+            "Critical Damage": 42
+          },
+          "sets": {
+            "Erotegg Set": 2,
+            "Allister Set": 2,
+            "Voldelor Set": 2,
+            "Turtelonia Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "17104",
+              "slot": "belt"
+            },
+            "MP": {
+              "itemId": "21230",
+              "slot": "cloak"
+            },
+            "Range": {
+              "itemId": "13124",
+              "slot": "ring_2"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "17103",
+              "internalId": null,
+              "name": "Voldelor Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "belt": {
+              "id": "17104",
+              "internalId": null,
+              "name": "Voldelor Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "weapon": {
+              "id": "21229",
+              "internalId": null,
+              "name": "Turtelonia Wand",
+              "type": "Wand",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "shield": {
+              "id": "32236",
+              "internalId": null,
+              "name": "Erotegg Disc",
+              "type": "Shield",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_1": {
+              "id": "32234",
+              "internalId": null,
+              "name": "Erotegg Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_2": {
+              "id": "13124",
+              "internalId": null,
+              "name": "Allister's Ring",
+              "type": "Ring",
+              "level": 197,
+              "set": "Allister Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "13123",
+              "internalId": null,
+              "name": "Allister's Crown",
+              "type": "Hat",
+              "level": 196,
+              "set": "Allister Set"
+            },
+            "cloak": {
+              "id": "21230",
+              "internalId": null,
+              "name": "Turtelonia Carapace",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "pet": {
+              "id": "33169",
+              "internalId": null,
+              "name": "Emerald and Ebony Rhineetle",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13765",
+              "internalId": null,
+              "name": "Major Gymnast",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2571.62,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 5,
+            "Range": 6,
+            "Agility": 1373,
+            "Power": 110,
+            "Vitality": 2703,
+            "Damage": 0,
+            "Air Damage": 142,
+            "Critical": 75,
+            "Critical Damage": 42
+          },
+          "sets": {
+            "Erotegg Set": 2,
+            "Allister Set": 2,
+            "Voldelor Set": 2,
+            "Turtelonia Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "17104",
+              "slot": "belt"
+            },
+            "MP": {
+              "itemId": "21230",
+              "slot": "cloak"
+            },
+            "Range": {
+              "itemId": "13124",
+              "slot": "ring_2"
+            }
+          },
+          "items": [
+            "Voldelor Amulet",
+            "Voldelor Belt",
+            "Turtelonia Wand",
+            "Erotegg Disc",
+            "Erotegg Ring",
+            "Allister's Ring",
+            "Meriana's Clairvoyance",
+            "Allister's Crown",
+            "Turtelonia Carapace",
+            "Emerald and Ebony Rhineetle",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Gymnast"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7119.7,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 198.2,
+          "totalSearchMs": 6921.5
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1669.8,
+            "solveMs": 5050.6,
+            "objective": 2128.1,
+            "solutionCallbackCount": 10,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2096.3,
+                "objective": 804.53,
+                "score": 1229.85,
+                "itemIds": [
+                  "7754",
+                  "8272",
+                  "8284",
+                  "11606",
+                  "12628",
+                  "13116",
+                  "13762",
+                  "13768",
+                  "13829",
+                  "14067",
+                  "14068",
+                  "15254",
+                  "17095",
+                  "17096",
+                  "18693",
+                  "21996"
+                ],
+                "exos": {
+                  "AP": "17096",
+                  "MP": "14067",
+                  "Range": "18693"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2371.3,
+                "objective": 1201.49,
+                "score": 1649.76,
+                "itemIds": [
+                  "7754",
+                  "11600",
+                  "11626",
+                  "12716",
+                  "13829",
+                  "13831",
+                  "14273",
+                  "14833",
+                  "19608",
+                  "19609",
+                  "22013",
+                  "27512",
+                  "27514",
+                  "27544",
+                  "27549",
+                  "29136"
+                ],
+                "exos": {
+                  "AP": "27514",
+                  "MP": "14273",
+                  "Range": "27512"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2577.1,
+                "objective": 1218.8,
+                "score": 1679.4,
+                "itemIds": [
+                  "737",
+                  "13124",
+                  "13230",
+                  "13829",
+                  "13831",
+                  "14082",
+                  "14083",
+                  "14084",
+                  "18022",
+                  "18024",
+                  "21995",
+                  "27266",
+                  "27284",
+                  "29136",
+                  "30356",
+                  "32236"
+                ],
+                "exos": {
+                  "AP": "27284",
+                  "Range": "18024"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2797.7,
+                "objective": 1359.73,
+                "score": 1716.88,
+                "itemIds": [
+                  "7754",
+                  "11600",
+                  "11626",
+                  "12716",
+                  "12969",
+                  "13829",
+                  "13831",
+                  "14094",
+                  "14095",
+                  "14833",
+                  "21996",
+                  "27512",
+                  "27514",
+                  "27544",
+                  "27547",
+                  "29136"
+                ],
+                "exos": {
+                  "AP": "11600",
+                  "MP": "14095",
+                  "Range": "27512"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 3003.3,
+                "objective": 1867.5,
+                "score": 2327.74,
+                "itemIds": [
+                  "7754",
+                  "12714",
+                  "13344",
+                  "13641",
+                  "13642",
+                  "13765",
+                  "14083",
+                  "15692",
+                  "16245",
+                  "18008",
+                  "18009",
+                  "18014",
+                  "19264",
+                  "30453",
+                  "32245",
+                  "33023"
+                ],
+                "exos": {
+                  "AP": "18008",
+                  "MP": "13642",
+                  "Range": "19264"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 199,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 316
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1837,
+              "uniqueItemCount": 1703,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 214,
+              "conditionConstraintCount": 285,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1703,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3186,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3186,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3186,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 0.7234,
+          "Air Damage": 2.5359,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2201,
+          "Critical Damage": 1.5602,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.5359,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7234,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

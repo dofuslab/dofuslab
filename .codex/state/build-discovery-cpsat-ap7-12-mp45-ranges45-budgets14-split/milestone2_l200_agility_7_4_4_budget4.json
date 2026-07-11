@@ -1,0 +1,795 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T09:38:59.808456+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_agility_7_4_4_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "agility",
+        "budgetTier": 4,
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 4
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 4,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2557.08,
+        "weightedStatScore": 4243.71,
+        "utilityStatScore": 439.3,
+        "genericDamageScore": 4483.83,
+        "rawRotationDamageScore": 2780.91,
+        "spellDamageScore": 2780.91,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.4946,
+        "weaponDamageScore": 222.81,
+        "survivabilityScore": 100.06,
+        "weakestElementEhp": 3181.44,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 5,
+          "Agility": 1418,
+          "Power": 80,
+          "Vitality": 3003,
+          "Damage": 0,
+          "Air Damage": 150,
+          "Critical": 74,
+          "Critical Damage": 70
+        },
+        "sets": {
+          "Erotegg Set": 2,
+          "Bubotron Set": 2,
+          "Klime Set": 2,
+          "Vicious Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14051",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "14052",
+            "slot": "belt"
+          },
+          "Range": {
+            "itemId": "32234",
+            "slot": "ring_1"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14083",
+            "internalId": null,
+            "name": "Bubotron Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Bubotron Set"
+          },
+          "belt": {
+            "id": "14052",
+            "internalId": null,
+            "name": "Klime's Belt",
+            "type": "Belt",
+            "level": 198,
+            "set": "Klime Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "32236",
+            "internalId": null,
+            "name": "Erotegg Disc",
+            "type": "Shield",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_1": {
+            "id": "32234",
+            "internalId": null,
+            "name": "Erotegg Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_2": {
+            "id": "14054",
+            "internalId": null,
+            "name": "Vicious Ring",
+            "type": "Ring",
+            "level": 199,
+            "set": "Vicious Set"
+          },
+          "boots": {
+            "id": "14056",
+            "internalId": null,
+            "name": "Vicious Boots",
+            "type": "Boots",
+            "level": 198,
+            "set": "Vicious Set"
+          },
+          "hat": {
+            "id": "14082",
+            "internalId": null,
+            "name": "Bubotron Mask",
+            "type": "Hat",
+            "level": 200,
+            "set": "Bubotron Set"
+          },
+          "cloak": {
+            "id": "14051",
+            "internalId": null,
+            "name": "Klime's Cloak",
+            "type": "Cloak",
+            "level": 197,
+            "set": "Klime Set"
+          },
+          "pet": {
+            "id": "29432",
+            "internalId": null,
+            "name": "Tarkaj Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13765",
+            "internalId": null,
+            "name": "Major Gymnast",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2557.08,
+        "apStrategy": null,
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 5,
+          "Agility": 1418,
+          "Power": 80,
+          "Vitality": 3003,
+          "Damage": 0,
+          "Air Damage": 150,
+          "Critical": 74,
+          "Critical Damage": 70
+        },
+        "sets": {
+          "Erotegg Set": 2,
+          "Bubotron Set": 2,
+          "Klime Set": 2,
+          "Vicious Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14051",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "14052",
+            "slot": "belt"
+          },
+          "Range": {
+            "itemId": "32234",
+            "slot": "ring_1"
+          }
+        },
+        "items": [
+          "Bubotron Amulet",
+          "Klime's Belt",
+          "Gargandyas's Fury",
+          "Erotegg Disc",
+          "Erotegg Ring",
+          "Vicious Ring",
+          "Vicious Boots",
+          "Bubotron Mask",
+          "Klime's Cloak",
+          "Tarkaj Kolophant",
+          "Cloudy Dofus",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Gymnast"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2557.08,
+          "weightedStatScore": 4243.71,
+          "utilityStatScore": 439.3,
+          "genericDamageScore": 4483.83,
+          "rawRotationDamageScore": 2780.91,
+          "spellDamageScore": 2780.91,
+          "profileBaselineDamageScore": 1860.62,
+          "profileRelativeDamage": 1.4946,
+          "weaponDamageScore": 222.81,
+          "survivabilityScore": 100.06,
+          "weakestElementEhp": 3181.44,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 6,
+            "Range": 5,
+            "Agility": 1418,
+            "Power": 80,
+            "Vitality": 3003,
+            "Damage": 0,
+            "Air Damage": 150,
+            "Critical": 74,
+            "Critical Damage": 70
+          },
+          "sets": {
+            "Erotegg Set": 2,
+            "Bubotron Set": 2,
+            "Klime Set": 2,
+            "Vicious Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "14051",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "14052",
+              "slot": "belt"
+            },
+            "Range": {
+              "itemId": "32234",
+              "slot": "ring_1"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "14083",
+              "internalId": null,
+              "name": "Bubotron Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Bubotron Set"
+            },
+            "belt": {
+              "id": "14052",
+              "internalId": null,
+              "name": "Klime's Belt",
+              "type": "Belt",
+              "level": 198,
+              "set": "Klime Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "32236",
+              "internalId": null,
+              "name": "Erotegg Disc",
+              "type": "Shield",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_1": {
+              "id": "32234",
+              "internalId": null,
+              "name": "Erotegg Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_2": {
+              "id": "14054",
+              "internalId": null,
+              "name": "Vicious Ring",
+              "type": "Ring",
+              "level": 199,
+              "set": "Vicious Set"
+            },
+            "boots": {
+              "id": "14056",
+              "internalId": null,
+              "name": "Vicious Boots",
+              "type": "Boots",
+              "level": 198,
+              "set": "Vicious Set"
+            },
+            "hat": {
+              "id": "14082",
+              "internalId": null,
+              "name": "Bubotron Mask",
+              "type": "Hat",
+              "level": 200,
+              "set": "Bubotron Set"
+            },
+            "cloak": {
+              "id": "14051",
+              "internalId": null,
+              "name": "Klime's Cloak",
+              "type": "Cloak",
+              "level": 197,
+              "set": "Klime Set"
+            },
+            "pet": {
+              "id": "29432",
+              "internalId": null,
+              "name": "Tarkaj Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13765",
+              "internalId": null,
+              "name": "Major Gymnast",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2557.08,
+          "apStrategy": null,
+          "totals": {
+            "AP": 10,
+            "MP": 6,
+            "Range": 5,
+            "Agility": 1418,
+            "Power": 80,
+            "Vitality": 3003,
+            "Damage": 0,
+            "Air Damage": 150,
+            "Critical": 74,
+            "Critical Damage": 70
+          },
+          "sets": {
+            "Erotegg Set": 2,
+            "Bubotron Set": 2,
+            "Klime Set": 2,
+            "Vicious Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "14051",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "14052",
+              "slot": "belt"
+            },
+            "Range": {
+              "itemId": "32234",
+              "slot": "ring_1"
+            }
+          },
+          "items": [
+            "Bubotron Amulet",
+            "Klime's Belt",
+            "Gargandyas's Fury",
+            "Erotegg Disc",
+            "Erotegg Ring",
+            "Vicious Ring",
+            "Vicious Boots",
+            "Bubotron Mask",
+            "Klime's Cloak",
+            "Tarkaj Kolophant",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Gymnast"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6853.9,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 170.9,
+          "totalSearchMs": 6683.0
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1467.0,
+            "solveMs": 5073.8,
+            "objective": 2137.61,
+            "solutionCallbackCount": 9,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1935.8,
+                "objective": 715.52,
+                "score": 1147.48,
+                "itemIds": [
+                  "7754",
+                  "8000",
+                  "8714",
+                  "8840",
+                  "11607",
+                  "12100",
+                  "12117",
+                  "12628",
+                  "12629",
+                  "12630",
+                  "13831",
+                  "18030",
+                  "22018",
+                  "27266",
+                  "32232",
+                  "32233"
+                ],
+                "exos": {
+                  "AP": "8714",
+                  "Range": "12100"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2154.1,
+                "objective": 1264.42,
+                "score": 1741.68,
+                "itemIds": [
+                  "8698",
+                  "12852",
+                  "12855",
+                  "14833",
+                  "19247",
+                  "19249",
+                  "19608",
+                  "19609",
+                  "22013",
+                  "29136",
+                  "30356",
+                  "30453",
+                  "30455",
+                  "31787",
+                  "31788",
+                  "32231"
+                ],
+                "exos": {
+                  "AP": "12855",
+                  "MP": "19249",
+                  "Range": "12852"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2303.8,
+                "objective": 2074.04,
+                "score": 2481.28,
+                "itemIds": [
+                  "694",
+                  "7043",
+                  "7754",
+                  "8698",
+                  "13124",
+                  "13130",
+                  "13132",
+                  "14054",
+                  "14056",
+                  "14083",
+                  "18008",
+                  "30060",
+                  "30453",
+                  "30455",
+                  "31787",
+                  "33023"
+                ],
+                "exos": {
+                  "AP": "31787",
+                  "MP": "13124",
+                  "Range": "30060"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2556.2,
+                "objective": 2096.41,
+                "score": 2493.28,
+                "itemIds": [
+                  "694",
+                  "7043",
+                  "7754",
+                  "8698",
+                  "13124",
+                  "13130",
+                  "13132",
+                  "14054",
+                  "14056",
+                  "14083",
+                  "18008",
+                  "29432",
+                  "30060",
+                  "30453",
+                  "30455",
+                  "31787"
+                ],
+                "exos": {
+                  "AP": "18008",
+                  "MP": "14083",
+                  "Range": "13130"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 3062.7,
+                "objective": 2104.88,
+                "score": 2506.73,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "8698",
+                  "13124",
+                  "13130",
+                  "13132",
+                  "13765",
+                  "14054",
+                  "14056",
+                  "14083",
+                  "18008",
+                  "29432",
+                  "30060",
+                  "30453",
+                  "30455",
+                  "31787"
+                ],
+                "exos": {
+                  "AP": "18008",
+                  "MP": "14083",
+                  "Range": "13130"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 316
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1838,
+              "uniqueItemCount": 1704,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 215,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1704,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3186,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3186,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3186,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 0.7234,
+          "Air Damage": 2.5359,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2201,
+          "Critical Damage": 1.5602,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.5359,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7234,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
