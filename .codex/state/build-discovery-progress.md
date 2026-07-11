@@ -7030,3 +7030,19 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Caveat: this is sampled level-diversity evidence. It supports the complete
   query path across important boundaries, but it is not an exhaustive proof for
   every class/element/level/AP/MP/Range/budget combination.
+
+### 2026-07-11 Complete-Query Readiness Audit
+
+- Added `.codex/state/build-discovery-complete-query-readiness-audit-20260711.md`.
+- Audit verdict: not complete yet, but close for path/constraint coverage.
+- Satisfied by current evidence:
+  - multi-agent review loop used for recent milestones
+  - known class validation and sampled all-class CP-SAT coverage
+  - all four single elements
+  - budget tiers `1-4`
+  - sampled valid AP/MP/Range boundaries and cap rows
+  - explicit hard Range and omitted soft Range semantics
+  - sampled level diversity across base AP and item-availability transitions
+  - assumptions list is current and reviewable
+- Remaining completion gate: run bounded prod benchmark discovery/comparison for
+  the new class-aware CP-SAT path before claiming pre-optimization complete.
