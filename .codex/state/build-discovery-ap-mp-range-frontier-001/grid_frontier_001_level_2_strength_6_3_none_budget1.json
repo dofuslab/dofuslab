@@ -1,0 +1,659 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T03:18:25.968495+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-ap-mp-range-frontier-001-targets.json#nextUnprovenTargets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "grid_frontier_001_level_2_strength_6_3_none_budget1",
+        "className": "Iop",
+        "level": 2,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 2,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 279.41,
+        "weightedStatScore": 307.35,
+        "utilityStatScore": 117.95,
+        "genericDamageScore": 349.61,
+        "rawRotationDamageScore": 78.55,
+        "spellDamageScore": 78.55,
+        "profileBaselineDamageScore": 674.0,
+        "profileRelativeDamage": 0.1165,
+        "weaponDamageScore": 3.39,
+        "survivabilityScore": 4.14,
+        "weakestElementEhp": 138.0,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Strength": 5,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 139,
+          "Power": 0,
+          "Vitality": 138,
+          "Damage": 0,
+          "Earth Damage": 2,
+          "Critical": 0,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "766",
+            "internalId": null,
+            "name": "Koliet Aclou",
+            "type": "Amulet",
+            "level": 1,
+            "set": null
+          },
+          "belt": {
+            "id": "8536",
+            "internalId": null,
+            "name": "Muffin Belt",
+            "type": "Belt",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "weapon": {
+            "id": "9961",
+            "internalId": null,
+            "name": "Hurrian Hammer",
+            "type": "Hammer",
+            "level": 1,
+            "set": null
+          },
+          "shield": {
+            "id": "18676",
+            "internalId": null,
+            "name": "Lumberjack Shield",
+            "type": "Shield",
+            "level": 1,
+            "set": null
+          },
+          "ring_1": {
+            "id": "8537",
+            "internalId": null,
+            "name": "Pluswan",
+            "type": "Ring",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "ring_2": {
+            "id": "849",
+            "internalId": null,
+            "name": "Strong Ring",
+            "type": "Ring",
+            "level": 2,
+            "set": null
+          },
+          "boots": {
+            "id": "861",
+            "internalId": null,
+            "name": "Strength Boots",
+            "type": "Boots",
+            "level": 1,
+            "set": null
+          },
+          "hat": {
+            "id": "8162",
+            "internalId": null,
+            "name": "Pumpkwin Head",
+            "type": "Hat",
+            "level": 1,
+            "set": null
+          },
+          "cloak": {
+            "id": "8534",
+            "internalId": null,
+            "name": "S'loque Cape",
+            "type": "Cloak",
+            "level": 1,
+            "set": "Boon Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 279.41,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 139,
+          "Power": 0,
+          "Vitality": 138,
+          "Damage": 0,
+          "Earth Damage": 2,
+          "Critical": 0,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Koliet Aclou",
+          "Muffin Belt",
+          "Hurrian Hammer",
+          "Lumberjack Shield",
+          "Pluswan",
+          "Strong Ring",
+          "Strength Boots",
+          "Pumpkwin Head",
+          "S'loque Cape"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 279.41,
+          "weightedStatScore": 307.35,
+          "utilityStatScore": 117.95,
+          "genericDamageScore": 349.61,
+          "rawRotationDamageScore": 78.55,
+          "spellDamageScore": 78.55,
+          "profileBaselineDamageScore": 674.0,
+          "profileRelativeDamage": 0.1165,
+          "weaponDamageScore": 3.39,
+          "survivabilityScore": 4.14,
+          "weakestElementEhp": 138.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Strength": 5,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 139,
+            "Power": 0,
+            "Vitality": 138,
+            "Damage": 0,
+            "Earth Damage": 2,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "766",
+              "internalId": null,
+              "name": "Koliet Aclou",
+              "type": "Amulet",
+              "level": 1,
+              "set": null
+            },
+            "belt": {
+              "id": "8536",
+              "internalId": null,
+              "name": "Muffin Belt",
+              "type": "Belt",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "weapon": {
+              "id": "9961",
+              "internalId": null,
+              "name": "Hurrian Hammer",
+              "type": "Hammer",
+              "level": 1,
+              "set": null
+            },
+            "shield": {
+              "id": "18676",
+              "internalId": null,
+              "name": "Lumberjack Shield",
+              "type": "Shield",
+              "level": 1,
+              "set": null
+            },
+            "ring_1": {
+              "id": "8537",
+              "internalId": null,
+              "name": "Pluswan",
+              "type": "Ring",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "ring_2": {
+              "id": "849",
+              "internalId": null,
+              "name": "Strong Ring",
+              "type": "Ring",
+              "level": 2,
+              "set": null
+            },
+            "boots": {
+              "id": "861",
+              "internalId": null,
+              "name": "Strength Boots",
+              "type": "Boots",
+              "level": 1,
+              "set": null
+            },
+            "hat": {
+              "id": "8162",
+              "internalId": null,
+              "name": "Pumpkwin Head",
+              "type": "Hat",
+              "level": 1,
+              "set": null
+            },
+            "cloak": {
+              "id": "8534",
+              "internalId": null,
+              "name": "S'loque Cape",
+              "type": "Cloak",
+              "level": 1,
+              "set": "Boon Set"
+            }
+          }
+        },
+        {
+          "score": 276.19,
+          "weightedStatScore": 308.4,
+          "utilityStatScore": 118.1,
+          "genericDamageScore": 341.92,
+          "rawRotationDamageScore": 76.82,
+          "spellDamageScore": 76.82,
+          "profileBaselineDamageScore": 674.0,
+          "profileRelativeDamage": 0.114,
+          "weaponDamageScore": 10.25,
+          "survivabilityScore": 4.23,
+          "weakestElementEhp": 141.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Strength": 5,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 137,
+            "Power": 0,
+            "Vitality": 141,
+            "Damage": 1,
+            "Earth Damage": 1,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 4
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "766",
+              "internalId": null,
+              "name": "Koliet Aclou",
+              "type": "Amulet",
+              "level": 1,
+              "set": null
+            },
+            "belt": {
+              "id": "8536",
+              "internalId": null,
+              "name": "Muffin Belt",
+              "type": "Belt",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "weapon": {
+              "id": "30828",
+              "internalId": null,
+              "name": "Bounihime",
+              "type": "Sword",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "shield": {
+              "id": "18676",
+              "internalId": null,
+              "name": "Lumberjack Shield",
+              "type": "Shield",
+              "level": 1,
+              "set": null
+            },
+            "ring_1": {
+              "id": "8537",
+              "internalId": null,
+              "name": "Pluswan",
+              "type": "Ring",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "ring_2": {
+              "id": "849",
+              "internalId": null,
+              "name": "Strong Ring",
+              "type": "Ring",
+              "level": 2,
+              "set": null
+            },
+            "boots": {
+              "id": "861",
+              "internalId": null,
+              "name": "Strength Boots",
+              "type": "Boots",
+              "level": 1,
+              "set": null
+            },
+            "hat": {
+              "id": "8162",
+              "internalId": null,
+              "name": "Pumpkwin Head",
+              "type": "Hat",
+              "level": 1,
+              "set": null
+            },
+            "cloak": {
+              "id": "8534",
+              "internalId": null,
+              "name": "S'loque Cape",
+              "type": "Cloak",
+              "level": 1,
+              "set": "Boon Set"
+            }
+          }
+        },
+        {
+          "score": 275.23,
+          "weightedStatScore": 300.3,
+          "utilityStatScore": 117.8,
+          "genericDamageScore": 341.52,
+          "rawRotationDamageScore": 76.73,
+          "spellDamageScore": 76.73,
+          "profileBaselineDamageScore": 674.0,
+          "profileRelativeDamage": 0.1138,
+          "weaponDamageScore": 3.39,
+          "survivabilityScore": 3.75,
+          "weakestElementEhp": 125.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Strength": 5,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 136,
+            "Power": 0,
+            "Vitality": 125,
+            "Damage": 0,
+            "Earth Damage": 2,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "766",
+              "internalId": null,
+              "name": "Koliet Aclou",
+              "type": "Amulet",
+              "level": 1,
+              "set": null
+            },
+            "weapon": {
+              "id": "9961",
+              "internalId": null,
+              "name": "Hurrian Hammer",
+              "type": "Hammer",
+              "level": 1,
+              "set": null
+            },
+            "shield": {
+              "id": "18676",
+              "internalId": null,
+              "name": "Lumberjack Shield",
+              "type": "Shield",
+              "level": 1,
+              "set": null
+            },
+            "ring_1": {
+              "id": "8537",
+              "internalId": null,
+              "name": "Pluswan",
+              "type": "Ring",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "ring_2": {
+              "id": "849",
+              "internalId": null,
+              "name": "Strong Ring",
+              "type": "Ring",
+              "level": 2,
+              "set": null
+            },
+            "boots": {
+              "id": "861",
+              "internalId": null,
+              "name": "Strength Boots",
+              "type": "Boots",
+              "level": 1,
+              "set": null
+            },
+            "hat": {
+              "id": "8162",
+              "internalId": null,
+              "name": "Pumpkwin Head",
+              "type": "Hat",
+              "level": 1,
+              "set": null
+            },
+            "cloak": {
+              "id": "8534",
+              "internalId": null,
+              "name": "S'loque Cape",
+              "type": "Cloak",
+              "level": 1,
+              "set": "Boon Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 279.41,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 139,
+            "Power": 0,
+            "Vitality": 138,
+            "Damage": 0,
+            "Earth Damage": 2,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Koliet Aclou",
+            "Muffin Belt",
+            "Hurrian Hammer",
+            "Lumberjack Shield",
+            "Pluswan",
+            "Strong Ring",
+            "Strength Boots",
+            "Pumpkwin Head",
+            "S'loque Cape"
+          ]
+        },
+        {
+          "score": 276.19,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 137,
+            "Power": 0,
+            "Vitality": 141,
+            "Damage": 1,
+            "Earth Damage": 1,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 4
+          },
+          "exos": {},
+          "items": [
+            "Koliet Aclou",
+            "Muffin Belt",
+            "Bounihime",
+            "Lumberjack Shield",
+            "Pluswan",
+            "Strong Ring",
+            "Strength Boots",
+            "Pumpkwin Head",
+            "S'loque Cape"
+          ]
+        },
+        {
+          "score": 275.23,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Strength": 136,
+            "Power": 0,
+            "Vitality": 125,
+            "Damage": 0,
+            "Earth Damage": 2,
+            "Critical": 0,
+            "Critical Damage": 0,
+            "Neutral Damage": 1
+          },
+          "sets": {
+            "Boon Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Koliet Aclou",
+            "Hurrian Hammer",
+            "Lumberjack Shield",
+            "Pluswan",
+            "Strong Ring",
+            "Strength Boots",
+            "Pumpkwin Head",
+            "S'loque Cape"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 8
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 1588.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 268.3,
+          "candidatePoolsMs": 32.8,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 1.9,
+          "directCompletionMs": 0.0,
+          "beamSearchMs": 1285.7,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 1588.8
+        },
+        "resultCount": 3,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

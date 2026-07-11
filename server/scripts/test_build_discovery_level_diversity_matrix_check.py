@@ -1,4 +1,7 @@
+import json
+import tempfile
 import unittest
+from pathlib import Path
 
 from check_build_discovery_level_diversity_matrix import validate_report
 from build_discovery_level_diversity_matrix import (
@@ -94,6 +97,47 @@ class BuildDiscoveryLevelDiversityMatrixCheckTest(unittest.TestCase):
             ),
             [],
         )
+
+    def test_validate_report_accepts_target_file_rows(self):
+        target_row = {
+            "level": 20,
+            "element": "intelligence",
+            "budgetTier": 3,
+            "apTarget": 7,
+            "mpTarget": 4,
+            "rangeTarget": 1,
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            target_file = Path(temp_dir) / "targets.json"
+            target_file.write_text(json.dumps({"nextUnprovenTargets": [target_row]}), encoding="utf-8")
+            target = targets_for_set("prod-level-sample")[1]
+            # Match the generator's target-file naming for the same row.
+            target = type(target)(
+                "frontier_level_20_intelligence_7_4_1_budget3",
+                target.level,
+                target.element,
+                target.budget_tier,
+                target.ap,
+                target.mp,
+                target.range_target,
+            )
+            report = {
+                "reportVersion": REPORT_VERSION,
+                "targetCount": 1,
+                "generatedCount": 1,
+                "noBuildCount": 0,
+                "invalidCount": 0,
+                "results": [valid_result(target)],
+            }
+
+            failures = validate_report(
+                report,
+                target_file=target_file,
+                target_file_prefix="frontier",
+            )
+
+        self.assertEqual(failures, [])
 
     def test_validate_report_checks_all_candidate_builds(self):
         report = valid_report()

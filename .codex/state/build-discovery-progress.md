@@ -3506,3 +3506,30 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python -m py_compile server\scripts\build_discovery_ap_mp_range_grid_inventory.py server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
   - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
   - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+
+### 2026-07-10 Target-File Frontier Smoke
+
+- Added target-file support to the matrix checker so inventory-driven frontier
+  batches can be validated without adding more static target sets.
+- The checker now accepts `--target-file`, `--target-file-limit`, and
+  `--target-file-prefix`, matching the generator's target-file loader.
+- Generated a tiny level 2 frontier target inventory:
+  - `.codex/state/build-discovery-ap-mp-range-frontier-001-targets.json`
+  - `.codex/state/build-discovery-ap-mp-range-frontier-001-targets.md`
+- Generated and validated the first target-file frontier row with
+  `--query-limit 3`:
+  - `.codex/state/build-discovery-ap-mp-range-frontier-001-matrix.json`
+  - `.codex/state/build-discovery-ap-mp-range-frontier-001-matrix.md`
+  - `.codex/state/build-discovery-ap-mp-range-frontier-001/`
+- Result:
+  - target: level 2 Strength tier 1 `6/3/any`
+  - status: generated
+  - candidates: `3`, unique item signatures: `3`, max shared items with best:
+    `8`
+  - best totals: `6/3/0`, Strength `139`, Vitality `138`
+  - miss time: `1588.9ms`
+- This proves the target-file frontier loop works for a cheap unattempted row.
+  The remaining frontier rows in that file include harder cap/MP-heavy shapes
+  and should be generated deliberately, not hidden inside this smoke.
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-frontier-001-matrix.json --target-file /tmp/build-discovery-ap-mp-range-frontier-001-targets.json --target-file-limit 1 --target-file-prefix grid_frontier_001`

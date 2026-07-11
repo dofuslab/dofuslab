@@ -12,6 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.build_discovery_level_diversity_matrix import (  # noqa: E402
     REPORT_VERSION,
+    load_targets_from_file,
     query_for_matrix_target,
     query_payload_matches_artifact,
     target_summary,
@@ -180,6 +181,9 @@ def validate_report(
     *,
     allow_no_build: bool = False,
     target_names: set[str] | None = None,
+    target_file: str | Path | None = None,
+    target_file_limit: int | None = None,
+    target_file_prefix: str = "file",
 ) -> list[str]:
     failures: list[str] = []
     if report.get("reportVersion") != REPORT_VERSION:
@@ -187,7 +191,14 @@ def validate_report(
             f"reportVersion is {report.get('reportVersion')}, expected {REPORT_VERSION}"
         )
 
-    targets = targets_for_set(target_set)
+    if target_file:
+        targets = load_targets_from_file(
+            target_file,
+            limit=target_file_limit,
+            prefix=target_file_prefix,
+        ).targets
+    else:
+        targets = targets_for_set(target_set)
     if target_names is not None:
         targets = tuple(target for target in targets if target.name in target_names)
     target_by_id = {target.name: target for target in targets}
@@ -259,13 +270,21 @@ def main() -> None:
     )
     parser.add_argument("--allow-no-build", action="store_true")
     parser.add_argument("--targets", help="Comma-separated target ids to validate as a subset.")
+    parser.add_argument("--target-file", help="JSON target rows, inventory report, or matrix report to validate against.")
+    parser.add_argument("--target-file-limit", type=int, help="Limit target rows loaded from --target-file.")
+    parser.add_argument("--target-file-prefix", default="file", help="Prefix for generated target ids from --target-file.")
     args = parser.parse_args()
+    if args.target_file_limit is not None and args.target_file_limit < 0:
+        parser.error("--target-file-limit must be non-negative.")
 
     failures = validate_report(
         load_json(args.report),
         target_set=args.target_set,
         allow_no_build=args.allow_no_build,
         target_names=csv_filter(args.targets),
+        target_file=args.target_file,
+        target_file_limit=args.target_file_limit,
+        target_file_prefix=args.target_file_prefix,
     )
     if failures:
         for failure in failures:
