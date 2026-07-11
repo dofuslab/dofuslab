@@ -6543,3 +6543,48 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker generation:
     `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-range-heavy-1-targets-20260711.json --output-json /tmp/build-discovery-m3-range-heavy-1-sample-20260711.json --output-md /tmp/build-discovery-m3-range-heavy-1-sample-20260711.md`
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-range-heavy-1-sample-20260711.json --target-file .codex/state/build-discovery-m3-range-heavy-1-targets-20260711.json --expected-solver cpsat --allow-no-build`
+
+### 2026-07-11 M3 Range-Heavy Slice 2
+
+- Generated and validated the reviewer-guided Range 6 follow-up slice focused
+  on level `80+` and budget tier `1`/`4` gaps:
+  - target file: `.codex/state/build-discovery-m3-range-heavy-2-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-range-heavy-2-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-range-heavy-2-sample-20260711.md`
+  - generated: `20 / 20`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `20` `OPTIMAL`
+- Useful generated rows include:
+  - level `80` Intelligence tier `1` `9/4/6` generated `9/6/6`
+  - level `100` Chance tier `1` `8/4/6` generated `9/6/6`
+  - level `120` Strength tier `1` `10/4/6` generated `11/6/6`
+  - level `180` Intelligence tier `1` `10/5/6` generated exact `10/5/6`
+  - level `199` Agility tier `4` `11/5/6` generated exact `11/5/6`
+  - level `200` Agility tier `4` `11/6/6` generated exact `11/6/6`
+- Refreshed all-level inventory after adding the Range-heavy-2 artifact:
+  - valid query rows: `665088`
+  - generated evidence rows: `344`
+  - attempted evidence rows: `371`
+  - proven no-build evidence rows: `27`
+  - resolved evidence rows: `371`
+  - unresolved rows: `664717`
+  - `range_heavy` generated evidence: `43`, up from `28`
+  - tier `1` generated evidence: `106`
+  - tier `4` generated evidence: `53`
+- Quality caveat: many Range 6 rows oversatisfy MP to `6` even when the target
+  asks for `4` or `5`; this remains valid under minimum-target semantics but
+  needs human review for budget/plausibility.
+- Wisdom scoring check: the Range-heavy-2 artifact keeps direct Wisdom objective
+  weight at `0.15` for levels `80-199`; level `200` rows omit direct Wisdom
+  objective weight, matching the rule that Wisdom should not be double-counted
+  at cap when AP/MP reduction and parry are explicit stats.
+- Performance caveat: several Range 6 rows took more than `10s` in Docker
+  generation, including level `200` Chance and Agility rows over `15s`.
+- Reviewer guidance for a future Range pass: tier `4` is still clustered near
+  `199/200`; consider replacing lower-value tier `2` repeats with tier `4`
+  Chance/Intelligence rows around `150-180`.
+- Verification passed:
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-range-heavy-2-targets-20260711.json --output-json /tmp/build-discovery-m3-range-heavy-2-sample-20260711.json --output-md /tmp/build-discovery-m3-range-heavy-2-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-range-heavy-2-sample-20260711.json --target-file .codex/state/build-discovery-m3-range-heavy-2-targets-20260711.json --expected-solver cpsat --allow-no-build`

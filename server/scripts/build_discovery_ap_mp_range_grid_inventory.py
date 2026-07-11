@@ -43,6 +43,7 @@ DEFAULT_ARTIFACTS = (
     ".codex/state/build-discovery-m3-profile-stress-2-sample-20260711.json",
     ".codex/state/build-discovery-m3-profile-stress-3-sample-20260711.json",
     ".codex/state/build-discovery-m3-range-heavy-1-sample-20260711.json",
+    ".codex/state/build-discovery-m3-range-heavy-2-sample-20260711.json",
     ".codex/state/build-discovery-m3-thin-bucket-sample-20260711.json",
     ".codex/state/build-discovery-m3-unresolved-sample-20260711.json",
     ".codex/state/build-discovery-level-diversity-matrix.json",
