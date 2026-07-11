@@ -288,6 +288,94 @@ optimal or even common globally:
 For level `180+`, sample planning should filter saved-set targets below `10/5`
 because those rows are not realistic benchmark goals for high-level Iop builds.
 
+## Combat Range Classification Plan
+
+Purpose: derive the default `combatRange` value for Build Discovery from prod
+saved builds by `(class, element)`, while keeping user-selected combat range
+explicit in the query contract.
+
+Scope for v0 classification:
+
+- Use only complete level `200` saved builds.
+- A build is complete only when all required equipment slots are occupied:
+  amulet, belt, boots, cloak, hat, shield, weapon, both rings, all six
+  Dofus/trophy slots, and either pet, mount, or petsmount according to the
+  current custom set model.
+- Tagged and untagged builds are both allowed, but generated Build Discovery
+  rows must be excluded once prod provenance exists.
+- Do not use incomplete, lower-level, or partially imported sets to infer
+  defaults; they are too noisy for combat range classification.
+
+Classifier output:
+
+- `ranged`
+- `melee`
+- `mixed`
+- `unknown` for rows that pass completeness filters but have insufficient
+  signals; exclude `unknown` from default selection but report its count.
+
+Signal precedence:
+
+1. Explicit build tag wins when present and unambiguous.
+   - Ranged tags classify as `ranged`.
+   - Melee tags classify as `melee`.
+   - Mixed/hybrid tags classify as `mixed`.
+   - Conflicting tags classify as `mixed` unless one tag family is clearly a
+     DofusLab system tag with higher trust.
+2. Stat specialization.
+   - `% Ranged Damage` is a strong ranged signal.
+   - `% Melee Damage` is a strong melee signal.
+   - If both are present at meaningful values, classify as `mixed` unless one
+     side dominates by a documented ratio.
+3. Range investment.
+   - Positive item/exo/set `Range` is a ranged signal, but weaker than tags and
+     `% Ranged Damage`.
+   - High Range without ranged damage should usually push an otherwise
+     ambiguous build to `mixed`, not automatically to `ranged`.
+4. Weapon type.
+   - Ranged weapons are `Wand` and `Bow`.
+   - Melee weapons are the other weapon families currently equipped through the
+     weapon slot: Sword, Hammer, Staff, Dagger, Axe, Shovel, Lance, and Scythe.
+   - A ranged weapon is a ranged signal; a melee weapon is a melee signal.
+5. Weapon-vs-spell damage context.
+   - For a ranged weapon build, `% Weapon Damage > % Spell Damage` strengthens
+     the ranged classification.
+   - For a melee weapon build, `% Weapon Damage` strengthens the melee
+     classification.
+   - `% Spell Damage` without range/melee specialization should not by itself
+     classify the build.
+
+Aggregation and defaults:
+
+- Classify each complete level `200` prod build independently.
+- Aggregate counts by `(class, dominantElement)`, where dominant element uses
+  base/scrolled characteristic points plus item elemental stats.
+- Choose the default combat range for a `(class, element)` only if:
+  - the classified sample count clears a minimum threshold, and
+  - the top class has a clear majority over the runner-up.
+- If the top class does not clearly win, default to `mixed` and report the
+  ambiguity.
+- If sample count is too low, use a labeled heuristic fallback rather than a
+  prod-derived default.
+- Store diagnostics for each aggregate: sample count, classified counts,
+  unknown count, tag count, top stat signals, common weapon families, chosen
+  default, and default source (`prod_aggregate` or `heuristic_fallback`).
+
+Implementation shape:
+
+- Add a bounded readonly helper that extends the existing prod benchmark
+  discovery path rather than issuing broad exploratory queries.
+- Keep the query sample-limited and statement-timeout bounded.
+- Join only the fields needed for classification: level, default class, tags,
+  equipped slot coverage, item/set/exo stat totals for Range and damage
+  specialization, weapon item type, and characteristic/item elemental stats.
+- Unit-test the classifier with synthetic rows before running against prod:
+  tag precedence, ranged/melee stat precedence, mixed conflict cases, ranged
+  weapon with weapon damage, melee weapon with weapon damage, high Range without
+  ranged damage, incomplete-slot exclusion, and low-sample fallback.
+- The first prod run should produce a JSON/Markdown report only; do not wire
+  defaults into generation until the aggregate output has been reviewed.
+
 After the first sample is reviewed:
 
 - Add one high-confidence generated build per accepted sampled row to a matrix

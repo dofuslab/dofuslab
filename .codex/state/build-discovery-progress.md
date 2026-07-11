@@ -6605,3 +6605,22 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Milestone 2 now explicitly requires level 200 Iop coverage across combat
   range preference, not only melee Strength scoring. `mixed` and `ranged` need
   benchmark rows before they can be marked trusted.
+
+### 2026-07-11 Combat Range Classifier Plan
+
+- Added a PRD plan to classify complete level `200` prod builds as `ranged`,
+  `melee`, `mixed`, or `unknown` before deriving `(class, element)` defaults.
+- Scope is intentionally narrow: complete level `200` builds only, all required
+  slots equipped, generated rows excluded when provenance exists.
+- Signal precedence:
+  1. explicit tag
+  2. `% Ranged Damage` / `% Melee Damage`
+  3. positive `Range`
+  4. ranged weapon family (`Wand`, `Bow`) vs melee weapon family
+  5. `% Weapon Damage` relative to `% Spell Damage`
+- Default selection should aggregate classified rows by `(class, dominant
+  element)`, choose a prod-derived default only with enough samples and a clear
+  winner, use `mixed` for ambiguous majorities, and label sparse fallbacks as
+  `heuristic_fallback`.
+- Implementation should start as a bounded readonly report with unit-tested
+  classifier behavior before wiring defaults into generation.

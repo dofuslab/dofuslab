@@ -133,6 +133,21 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Combat range defaults should be class-and-element-specific first. A
   class-wide fallback is allowed only when prod evidence is too sparse and the
   fallback is labeled.
+- Combat range default discovery should classify only complete level `200` prod
+  builds. Completeness means every required equipment slot is occupied,
+  including both rings, weapon, shield, six Dofus/trophy slots, and a
+  pet/mount/petsmount choice.
+- Combat range classification signal precedence is:
+  explicit tag, then `% Ranged Damage` / `% Melee Damage`, then positive
+  `Range`, then weapon family, then weapon-vs-spell damage context.
+- Ranged weapon families are `Wand` and `Bow`. Other current weapon families
+  are melee for classifier purposes unless tags/stats override them.
+- High `Range` without ranged damage is not enough to force `ranged`; it should
+  usually classify ambiguous builds as `mixed`.
+- A `(class, element)` combat range default should be `prod_aggregate` only
+  when the classified complete-build sample count is high enough and the top
+  class clearly beats the runner-up. Sparse or ambiguous rows should produce
+  `mixed` or a labeled `heuristic_fallback`, not an overconfident default.
 - Strength Iop uses old/local spell data where available.
 - Strength Iop should model spell selection instead of generic made-up spell lines where possible.
 - Strength Iop includes Accumulation setup behavior when relevant.
