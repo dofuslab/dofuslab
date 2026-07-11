@@ -6612,6 +6612,12 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   `melee`, `mixed`, or `unknown` before deriving `(class, element)` defaults.
 - Scope is intentionally narrow: complete level `200` builds only, all required
   slots equipped, generated rows excluded when provenance exists.
+- Added element classification as a prerequisite for combat range defaults:
+  classify complete builds as `strength`, `intelligence`, `chance`, `agility`,
+  `multi`, `omni`, or `unknown`.
+- v1 default derivation should skip `multi`, `omni`, and `unknown` element rows
+  while reporting their counts; only clean single-element rows feed
+  `(class, element)` combat range defaults.
 - Signal precedence:
   1. explicit tag
   2. `% Ranged Damage` / `% Melee Damage`

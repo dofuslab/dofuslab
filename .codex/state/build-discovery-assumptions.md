@@ -137,6 +137,17 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   builds. Completeness means every required equipment slot is occupied,
   including both rings, weapon, shield, six Dofus/trophy slots, and a
   pet/mount/petsmount choice.
+- Complete level `200` prod builds must be classified by element before they
+  are used for combat range defaults. Element classifier outputs are
+  `strength`, `intelligence`, `chance`, `agility`, `multi`, `omni`, and
+  `unknown`.
+- Build Discovery v1 default derivation should use only clean single-element
+  rows. Skip `multi`, `omni`, and `unknown` rows from `(class, element)` combat
+  range defaults, but report their counts.
+- Clean single-element classification should require one elemental stat family
+  to clearly beat the others by a documented threshold, using base/scrolled
+  characteristic points, item elemental stats, Power, and elemental damage
+  lines as signals.
 - Combat range classification signal precedence is:
   explicit tag, then `% Ranged Damage` / `% Melee Damage`, then positive
   `Range`, then weapon family, then weapon-vs-spell damage context.

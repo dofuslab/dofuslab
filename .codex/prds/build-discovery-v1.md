@@ -292,7 +292,8 @@ because those rows are not realistic benchmark goals for high-level Iop builds.
 
 Purpose: derive the default `combatRange` value for Build Discovery from prod
 saved builds by `(class, element)`, while keeping user-selected combat range
-explicit in the query contract.
+explicit in the query contract. This requires classifying each prod build's
+element first; Build Discovery v1 only consumes clean single-element rows.
 
 Scope for v0 classification:
 
@@ -307,6 +308,31 @@ Scope for v0 classification:
   defaults; they are too noisy for combat range classification.
 
 Classifier output:
+
+Element classifier output:
+
+- `strength`
+- `intelligence`
+- `chance`
+- `agility`
+- `multi`
+- `omni`
+- `unknown`
+
+Element classification plan:
+
+- Use base/scrolled characteristic points, item elemental stats, Power, and
+  elemental damage lines to identify the build's intended element.
+- A clean single-element build has one elemental stat family clearly ahead of
+  the others by a documented threshold.
+- `multi` means two or three elemental families are materially represented.
+- `omni` means all four elemental families are materially represented, or the
+  build is primarily Power/flat-damage driven without a clear single element.
+- `unknown` means the build has too little signal after completeness filtering.
+- For v1 default derivation, skip `multi`, `omni`, and `unknown` rows. Report
+  their counts so we know how much prod evidence is being ignored.
+
+Combat range classifier output:
 
 - `ranged`
 - `melee`
@@ -348,8 +374,11 @@ Signal precedence:
 Aggregation and defaults:
 
 - Classify each complete level `200` prod build independently.
-- Aggregate counts by `(class, dominantElement)`, where dominant element uses
-  base/scrolled characteristic points plus item elemental stats.
+- First classify its element. Use only `strength`, `intelligence`, `chance`,
+  and `agility` rows for v1 default derivation; skip `multi`, `omni`, and
+  `unknown` rows from default selection.
+- Then classify its combat range.
+- Aggregate counts by `(class, element)`.
 - Choose the default combat range for a `(class, element)` only if:
   - the classified sample count clears a minimum threshold, and
   - the top class has a clear majority over the runner-up.
@@ -357,9 +386,11 @@ Aggregation and defaults:
   ambiguity.
 - If sample count is too low, use a labeled heuristic fallback rather than a
   prod-derived default.
-- Store diagnostics for each aggregate: sample count, classified counts,
-  unknown count, tag count, top stat signals, common weapon families, chosen
-  default, and default source (`prod_aggregate` or `heuristic_fallback`).
+- Store diagnostics for each aggregate: complete sample count, single-element
+  classified count, skipped `multi`/`omni`/`unknown` counts, combat range
+  classified counts, combat range unknown count, tag count, top stat signals,
+  common weapon families, chosen default, and default source (`prod_aggregate`
+  or `heuristic_fallback`).
 
 Implementation shape:
 
@@ -370,9 +401,10 @@ Implementation shape:
   equipped slot coverage, item/set/exo stat totals for Range and damage
   specialization, weapon item type, and characteristic/item elemental stats.
 - Unit-test the classifier with synthetic rows before running against prod:
-  tag precedence, ranged/melee stat precedence, mixed conflict cases, ranged
-  weapon with weapon damage, melee weapon with weapon damage, high Range without
-  ranged damage, incomplete-slot exclusion, and low-sample fallback.
+  clean single-element classification, multi/omni skip behavior, tag
+  precedence, ranged/melee stat precedence, mixed conflict cases, ranged weapon
+  with weapon damage, melee weapon with weapon damage, high Range without ranged
+  damage, incomplete-slot exclusion, and low-sample fallback.
 - The first prod run should produce a JSON/Markdown report only; do not wire
   defaults into generation until the aggregate output has been reviewed.
 
