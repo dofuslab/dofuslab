@@ -34,6 +34,10 @@ review before accepting Milestone 2 evidence.
 - Base MP is assumed to be 3.
 - Current valid all-level Iop grid starts from `6/3/None` below level 100 and
   `7/3/None` at level 100+.
+- Wisdom has level-dependent utility in M3: it matters at the same modest
+  weight for levels 1-199 as an experience stat, and has zero direct utility at
+  level 200. Level-200 AP/MP reduction and parry value should come from
+  explicit AP/MP reduction/parry stats instead of Wisdom double-counting.
 
 ## Budget And Availability
 

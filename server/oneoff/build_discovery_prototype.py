@@ -439,6 +439,8 @@ STAT_WEIGHTS = {
     "% Melee Resistance": 3.0,
 }
 BASE_STAT_WEIGHTS = dict(STAT_WEIGHTS)
+PRE_200_WISDOM_WEIGHT = 0.15
+LEVEL_200_WISDOM_WEIGHT = 0.0
 PRIMARY_STAT_NAMES = ("Strength", "Intelligence", "Chance", "Agility")
 ELEMENT_DAMAGE_STAT_NAMES = (
     "Neutral Damage",
@@ -479,6 +481,27 @@ FINAL_UTILITY_STAT_WEIGHTS = {
     if stat not in DAMAGE_SCORING_STATS and stat not in SURVIVABILITY_SCORING_STATS
 }
 DOMINANCE_STATS = ("AP", "MP", "Range")
+
+
+def wisdom_weight_for_level(level: int) -> float:
+    if level >= TARGET_LEVEL:
+        return LEVEL_200_WISDOM_WEIGHT
+    return PRE_200_WISDOM_WEIGHT
+
+
+def active_stat_weights() -> dict[str, float]:
+    weights = dict(STAT_WEIGHTS)
+    weights["Wisdom"] = wisdom_weight_for_level(ACTIVE_TARGET_LEVEL)
+    return weights
+
+
+def active_final_utility_stat_weights() -> dict[str, float]:
+    weights = {
+        stat: weight
+        for stat, weight in active_stat_weights().items()
+        if stat not in DAMAGE_SCORING_STATS and stat not in SURVIVABILITY_SCORING_STATS
+    }
+    return weights
 
 
 def configure_damage_profile(profile_name: str) -> DamageProfile:
@@ -1256,11 +1279,11 @@ def score_stats_with_weights(stats: dict[str, int], weights: dict[str, float]) -
 
 
 def score_stats(stats: dict[str, int]) -> float:
-    return score_stats_with_weights(stats, STAT_WEIGHTS)
+    return score_stats_with_weights(stats, active_stat_weights())
 
 
 def final_utility_score(stats: dict[str, int]) -> float:
-    return score_stats_with_weights(stats, FINAL_UTILITY_STAT_WEIGHTS)
+    return score_stats_with_weights(stats, active_final_utility_stat_weights())
 
 
 def item_score(item: dict[str, Any]) -> float:

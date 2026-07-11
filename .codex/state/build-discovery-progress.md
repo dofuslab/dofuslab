@@ -5915,3 +5915,33 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python -m py_compile server/oneoff/build_discovery_prototype.py server/oneoff/build_discovery_cpsat_experiment.py server/scripts/check_build_discovery_level_diversity_matrix.py server/scripts/test_build_discovery_query_contract.py server/scripts/test_build_discovery_cpsat_experiment.py server/scripts/test_build_discovery_level_diversity_matrix_check.py`
   - Docker: `PYTHONPATH=/home/dofuslab python scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `PYTHONPATH=/home/dofuslab python scripts/test_build_discovery_level_diversity_matrix_check.py`
+
+### 2026-07-11 Level-Aware Wisdom Scoring
+
+- Updated Wisdom scoring for level diversity:
+  - levels `1-199`: Wisdom keeps the same modest direct utility weight
+    (`0.15`) because it increases experience gained
+  - level `200`: Wisdom has `0` direct utility weight
+  - AP/MP reduction and parry value at level 200 should come from explicit
+    AP/MP reduction/parry stats, not double-counting Wisdom itself
+- Implementation:
+  - added `wisdom_weight_for_level`
+  - added level-aware `active_stat_weights`
+  - `score_stats` and CP-SAT `stat-linear` objective mode now use active
+    level-aware weights
+  - `final_utility_score` now uses level-aware utility weights
+- Updated local PRD and assumptions files with the flat `1-199`, zero-at-200
+  Wisdom rule.
+- Reran the M3 boundary sample after the corrected Wisdom rule:
+  - artifact: `.codex/state/build-discovery-m3-boundary-wisdom-flat.json`
+  - targets: `10`
+  - generated: `10`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `10` `OPTIMAL`
+  - Docker checker passed with `--target-set boundary --expected-solver cpsat`
+- Verification passed:
+  - `python server/scripts/test_build_discovery_query_contract.py`
+  - `python server/scripts/test_build_discovery_cpsat_experiment.py`
+  - `python server/scripts/test_build_discovery_level_diversity_matrix_check.py`
+  - `python -m py_compile server/oneoff/build_discovery_prototype.py server/oneoff/build_discovery_cpsat_experiment.py server/scripts/test_build_discovery_query_contract.py`

@@ -20,6 +20,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     DEFAULT_AP_STRATEGIES,
     BuildTarget,
     active_profile_item_score,
+    active_stat_weights,
     base_stats_for_primary_allocation,
     build_query_from_cli_args,
     build_discovery_response,
@@ -40,6 +41,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     result_warnings,
     target_level_context,
     target_semantics_response,
+    wisdom_weight_for_level,
 )
 
 
@@ -61,6 +63,21 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         with target_level_context(200):
             with self.assertRaisesRegex(ValueError, "exceeds available points"):
                 base_stats_for_primary_allocation(300, "Strength", target_level=50)
+
+    def test_wisdom_weight_is_flat_before_level_200(self):
+        self.assertEqual(wisdom_weight_for_level(1), wisdom_weight_for_level(100))
+        self.assertEqual(wisdom_weight_for_level(100), wisdom_weight_for_level(199))
+        self.assertGreater(wisdom_weight_for_level(199), wisdom_weight_for_level(200))
+        self.assertEqual(wisdom_weight_for_level(200), 0.0)
+
+    def test_active_stat_weights_use_target_level_wisdom_value(self):
+        with target_level_context(50):
+            low_level_weight = active_stat_weights()["Wisdom"]
+        with target_level_context(200):
+            level_200_weight = active_stat_weights()["Wisdom"]
+
+        self.assertGreater(low_level_weight, level_200_weight)
+        self.assertEqual(level_200_weight, 0.0)
 
     def test_level_200_milestone_one_action_stat_bounds_are_supported(self):
         lower = BuildDiscoveryQuery(

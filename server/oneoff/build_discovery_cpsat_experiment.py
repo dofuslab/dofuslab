@@ -33,6 +33,7 @@ from oneoff.build_discovery_prototype import (
     STAT_WEIGHTS,
     action_stats_meet_target,
     active_base_stats,
+    active_stat_weights,
     apply_stat_delta,
     cheap_profile_damage_score,
     configure_damage_profile,
@@ -220,7 +221,7 @@ def objective_weights_for_mode(
     negative_resistance_penalty_weight: float = 0.0,
 ) -> dict[str, float]:
     if mode == "stat-linear":
-        return dict(STAT_WEIGHTS)
+        return active_stat_weights()
     if mode == "final-linear":
         return linearized_final_score_weights(
             metadata,

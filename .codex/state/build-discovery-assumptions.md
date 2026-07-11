@@ -166,6 +166,13 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 ## Utility Assumptions
 
 - Utility should remain a small v1 component.
+- Wisdom is useful for levels 1-199 because it increases experience gained.
+- Wisdom has no leveling value at level 200.
+- Current Wisdom scoring is level-aware: it uses the same modest utility weight
+  for levels 1-199 and zero direct Wisdom utility at level 200.
+- At level 200, Wisdom's AP/MP reduction and parry implications should be
+  represented by explicit AP/MP reduction/parry stats if those are modeled,
+  rather than double-counted through Wisdom itself.
 - Dodge is worth more than Lock for generic PvM.
 - Initiative has low value.
 - Prospecting has very low value.
