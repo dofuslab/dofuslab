@@ -1,0 +1,784 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T11:18:03.283799+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_chance_12_5_3_budget3",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 3,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2568.39,
+        "weightedStatScore": 4081.66,
+        "utilityStatScore": 381.59,
+        "genericDamageScore": 4652.99,
+        "rawRotationDamageScore": 3079.18,
+        "spellDamageScore": 3079.18,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.551,
+        "weaponDamageScore": 234.97,
+        "survivabilityScore": 92.95,
+        "weakestElementEhp": 2783.77,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 3,
+          "Chance": 1378,
+          "Power": 325,
+          "Vitality": 3053,
+          "Damage": 0,
+          "Water Damage": 115,
+          "Critical": 69,
+          "Critical Damage": 20
+        },
+        "sets": {
+          "Servitude Set": 2,
+          "Crocuzko Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "31787",
+            "slot": "weapon"
+          },
+          "MP": {
+            "itemId": "21225",
+            "slot": "shield"
+          },
+          "Range": {
+            "itemId": "22201",
+            "slot": "cloak"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "22200",
+            "internalId": null,
+            "name": "Servitude's Scarf",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "belt": {
+            "id": "18598",
+            "internalId": null,
+            "name": "Sneerena Loincloth",
+            "type": "Belt",
+            "level": 200,
+            "set": "Cursed Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "21225",
+            "internalId": null,
+            "name": "Crocoshield",
+            "type": "Shield",
+            "level": 200,
+            "set": "Crocuzko Set"
+          },
+          "ring_1": {
+            "id": "21223",
+            "internalId": null,
+            "name": "Crocoring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Crocuzko Set"
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "15694",
+            "internalId": null,
+            "name": "Kideebonnet",
+            "type": "Hat",
+            "level": 200,
+            "set": "Whale Set"
+          },
+          "cloak": {
+            "id": "22201",
+            "internalId": null,
+            "name": "Servitude's Coat",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "pet": {
+            "id": "29433",
+            "internalId": null,
+            "name": "Zenusha Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16248",
+            "internalId": null,
+            "name": "Major Luckster",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2568.39,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 3,
+          "Chance": 1378,
+          "Power": 325,
+          "Vitality": 3053,
+          "Damage": 0,
+          "Water Damage": 115,
+          "Critical": 69,
+          "Critical Damage": 20
+        },
+        "sets": {
+          "Servitude Set": 2,
+          "Crocuzko Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "31787",
+            "slot": "weapon"
+          },
+          "MP": {
+            "itemId": "21225",
+            "slot": "shield"
+          },
+          "Range": {
+            "itemId": "22201",
+            "slot": "cloak"
+          }
+        },
+        "items": [
+          "Servitude's Scarf",
+          "Sneerena Loincloth",
+          "Gargandyas's Fury",
+          "Crocoshield",
+          "Crocoring",
+          "Rhineetle Ring",
+          "Meriana's Clairvoyance",
+          "Kideebonnet",
+          "Servitude's Coat",
+          "Zenusha Kolophant",
+          "Cloudy Dofus",
+          "Dolmanax",
+          "Arcanist",
+          "Impetuous",
+          "Major Luckster",
+          "Major Tease"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2568.39,
+          "weightedStatScore": 4081.66,
+          "utilityStatScore": 381.59,
+          "genericDamageScore": 4652.99,
+          "rawRotationDamageScore": 3079.18,
+          "spellDamageScore": 3079.18,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.551,
+          "weaponDamageScore": 234.97,
+          "survivabilityScore": 92.95,
+          "weakestElementEhp": 2783.77,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 5,
+            "Range": 3,
+            "Chance": 1378,
+            "Power": 325,
+            "Vitality": 3053,
+            "Damage": 0,
+            "Water Damage": 115,
+            "Critical": 69,
+            "Critical Damage": 20
+          },
+          "sets": {
+            "Servitude Set": 2,
+            "Crocuzko Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "31787",
+              "slot": "weapon"
+            },
+            "MP": {
+              "itemId": "21225",
+              "slot": "shield"
+            },
+            "Range": {
+              "itemId": "22201",
+              "slot": "cloak"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "22200",
+              "internalId": null,
+              "name": "Servitude's Scarf",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "belt": {
+              "id": "18598",
+              "internalId": null,
+              "name": "Sneerena Loincloth",
+              "type": "Belt",
+              "level": 200,
+              "set": "Cursed Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "21225",
+              "internalId": null,
+              "name": "Crocoshield",
+              "type": "Shield",
+              "level": 200,
+              "set": "Crocuzko Set"
+            },
+            "ring_1": {
+              "id": "21223",
+              "internalId": null,
+              "name": "Crocoring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Crocuzko Set"
+            },
+            "ring_2": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "15694",
+              "internalId": null,
+              "name": "Kideebonnet",
+              "type": "Hat",
+              "level": 200,
+              "set": "Whale Set"
+            },
+            "cloak": {
+              "id": "22201",
+              "internalId": null,
+              "name": "Servitude's Coat",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "pet": {
+              "id": "29433",
+              "internalId": null,
+              "name": "Zenusha Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "16248",
+              "internalId": null,
+              "name": "Major Luckster",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2568.39,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 5,
+            "Range": 3,
+            "Chance": 1378,
+            "Power": 325,
+            "Vitality": 3053,
+            "Damage": 0,
+            "Water Damage": 115,
+            "Critical": 69,
+            "Critical Damage": 20
+          },
+          "sets": {
+            "Servitude Set": 2,
+            "Crocuzko Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "31787",
+              "slot": "weapon"
+            },
+            "MP": {
+              "itemId": "21225",
+              "slot": "shield"
+            },
+            "Range": {
+              "itemId": "22201",
+              "slot": "cloak"
+            }
+          },
+          "items": [
+            "Servitude's Scarf",
+            "Sneerena Loincloth",
+            "Gargandyas's Fury",
+            "Crocoshield",
+            "Crocoring",
+            "Rhineetle Ring",
+            "Meriana's Clairvoyance",
+            "Kideebonnet",
+            "Servitude's Coat",
+            "Zenusha Kolophant",
+            "Cloudy Dofus",
+            "Dolmanax",
+            "Arcanist",
+            "Impetuous",
+            "Major Luckster",
+            "Major Tease"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6947.2,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 159.1,
+          "totalSearchMs": 6788.1
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1572.2,
+            "solveMs": 5061.6,
+            "objective": 2087.39,
+            "solutionCallbackCount": 17,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2018.3,
+                "objective": 537.1,
+                "score": 1067.51,
+                "itemIds": [
+                  "2469",
+                  "8839",
+                  "12117",
+                  "12628",
+                  "12716",
+                  "13759",
+                  "13829",
+                  "15254",
+                  "16333",
+                  "19247",
+                  "19248",
+                  "19594",
+                  "22013",
+                  "27265",
+                  "27555",
+                  "31751"
+                ],
+                "exos": {
+                  "AP": "19247",
+                  "MP": "19594"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2282.1,
+                "objective": 1298.42,
+                "score": 1782.35,
+                "itemIds": [
+                  "8698",
+                  "12723",
+                  "13829",
+                  "14878",
+                  "21995",
+                  "27511",
+                  "27512",
+                  "27514",
+                  "27515",
+                  "30453",
+                  "30455",
+                  "31767",
+                  "31772",
+                  "32231",
+                  "32232",
+                  "33202"
+                ],
+                "exos": {
+                  "AP": "32231",
+                  "MP": "32232",
+                  "Range": "27511"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2458.5,
+                "objective": 1305.09,
+                "score": 1710.27,
+                "itemIds": [
+                  "737",
+                  "7113",
+                  "11718",
+                  "11719",
+                  "11720",
+                  "11722",
+                  "12716",
+                  "13344",
+                  "18700",
+                  "19985",
+                  "19986",
+                  "22010",
+                  "27266",
+                  "27284",
+                  "30356",
+                  "33200"
+                ],
+                "exos": {
+                  "AP": "27266",
+                  "Range": "19986"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2620.9,
+                "objective": 1488.88,
+                "score": 1856.95,
+                "itemIds": [
+                  "694",
+                  "7043",
+                  "8561",
+                  "8698",
+                  "11738",
+                  "13829",
+                  "15440",
+                  "15442",
+                  "15747",
+                  "15748",
+                  "30453",
+                  "30455",
+                  "31761",
+                  "31762",
+                  "32223",
+                  "32224"
+                ],
+                "exos": {
+                  "AP": "31762",
+                  "MP": "31761",
+                  "Range": "15747"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2798.9,
+                "objective": 1573.99,
+                "score": 1994.78,
+                "itemIds": [
+                  "8211",
+                  "8698",
+                  "12716",
+                  "13344",
+                  "14067",
+                  "14068",
+                  "14069",
+                  "15746",
+                  "15747",
+                  "15748",
+                  "22020",
+                  "30453",
+                  "30455",
+                  "31756",
+                  "31757",
+                  "31759"
+                ],
+                "exos": {
+                  "Range": "31759"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 199,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 314
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1835,
+              "uniqueItemCount": 1701,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 214,
+              "conditionConstraintCount": 285,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1701,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
