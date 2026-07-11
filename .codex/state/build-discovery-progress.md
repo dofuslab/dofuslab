@@ -6884,3 +6884,33 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Next implementation step: wire class/element spell profiles into scoring,
   cache/provenance identity, diagnostics, and +Range soft valuation before any
   non-Iop generation result can be considered product evidence.
+
+### 2026-07-11 Class-Aware Spell Profile Wiring Slice
+
+- Removed the Iop-only query validation guard for known Dofus classes in the
+  prototype and CP-SAT experiment.
+- Generalized spell-candidate loading to key by `(className, element, level)`
+  instead of a hidden Iop class constant.
+- Preserved the reviewed Strength Iop rotation path for Iop-specific mechanics
+  such as Wrath and Accumulation.
+- Routed non-reviewed class/element profiles through
+  `spell_profile_v0_weighted_candidates` instead of the Iop turn planner.
+- Added response diagnostics:
+  - `profile.className`
+  - `profile.confidence`
+  - `profile.rotationModel`
+  - `profile.spellCandidateCount`
+- Added a warning for non-reviewed class/element scoring so non-Iop output is
+  clearly marked as rotation-lite.
+- Validation:
+  - `python -m py_compile server/oneoff/build_discovery_prototype.py server/oneoff/build_discovery_cpsat_experiment.py`
+  - `python -m unittest scripts.test_build_discovery_prototype` passed
+    (`136` tests).
+  - `git diff --check` passed.
+  - Docker server container accepted `BuildDiscoveryQuery(class_name="Cra")`
+    after copying touched server files into `/home/dofuslab`.
+  - Docker mocked response smoke returned `Cra`,
+    `spell_profile_v0_weighted_candidates`, `medium`.
+- Remaining gap: +Range soft valuation is still not wired into objective
+  weights; this slice only makes class/element spell damage profile selection
+  explicit and safe enough for the next milestone step.

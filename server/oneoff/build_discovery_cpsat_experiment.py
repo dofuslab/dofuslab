@@ -925,7 +925,7 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
 
 
 def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[str, Any]:
-    configure_damage_profile(query.primary_element)
+    configure_damage_profile(query.primary_element, query.class_name)
     generic_damage_weight = effective_generic_damage_weight(query)
     survivability_weight = effective_survivability_weight(query)
     negative_resistance_penalty_weight = effective_negative_resistance_penalty_weight(query)
@@ -1182,6 +1182,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
 
 def query_from_args(args: argparse.Namespace) -> BuildDiscoveryQuery:
     return BuildDiscoveryQuery(
+        class_name=args.class_name,
         level=args.level,
         elements=(args.element,),
         ap_target=args.target_ap,
@@ -1211,6 +1212,7 @@ def main() -> None:
     parser.add_argument("--collection-mode", choices=("callback", "repeated"), default="callback")
     parser.add_argument("--stop-after-candidates", action="store_true")
     parser.add_argument("--level", type=int, default=200)
+    parser.add_argument("--class-name", "--class", default="Iop")
     parser.add_argument("--element", choices=("agility", "chance", "intelligence", "strength"), default="strength")
     parser.add_argument("--target-ap", "--ap", type=int, default=12)
     parser.add_argument("--target-mp", "--mp", type=int, default=6)

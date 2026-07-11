@@ -198,7 +198,28 @@ GENERIC_DAMAGE_PROFILE_LINES = (
     (42, 48, 15, 0.75),
     (18, 22, 25, 1.25),
 )
-SPELL_PROFILE_CLASS_NAME = "Iop"
+SUPPORTED_CLASS_NAMES = (
+    "Cra",
+    "Ecaflip",
+    "Eliotrope",
+    "Eniripsa",
+    "Enutrof",
+    "Feca",
+    "Foggernaut",
+    "Forgelance",
+    "Huppermage",
+    "Iop",
+    "Masqueraider",
+    "Osamodas",
+    "Ouginak",
+    "Pandawa",
+    "Rogue",
+    "Sacrier",
+    "Sadida",
+    "Sram",
+    "Xelor",
+)
+DEFAULT_SPELL_PROFILE_CLASS_NAME = "Iop"
 SPELL_DAMAGE_PROFILE_TURN_AP = 10
 SPELL_DAMAGE_PROFILE_TURNS = 7
 IOP_WRATH_SPELL_NAME = "Iop's Wrath"
@@ -507,11 +528,15 @@ def active_final_utility_stat_weights() -> dict[str, float]:
     return weights
 
 
-def configure_damage_profile(profile_name: str) -> DamageProfile:
-    global ACTIVE_DAMAGE_PROFILE, STAT_WEIGHTS
+def configure_damage_profile(
+    profile_name: str,
+    class_name: str = DEFAULT_SPELL_PROFILE_CLASS_NAME,
+) -> DamageProfile:
+    global ACTIVE_DAMAGE_PROFILE, ACTIVE_SPELL_PROFILE_CLASS_NAME, STAT_WEIGHTS
 
     profile = ELEMENT_PROFILES[profile_name]
     ACTIVE_DAMAGE_PROFILE = profile
+    ACTIVE_SPELL_PROFILE_CLASS_NAME = class_name
     next_weights = dict(BASE_STAT_WEIGHTS)
     for stat in PRIMARY_STAT_NAMES:
         next_weights[stat] = 1.0 if stat == profile.primary_stat else 0.0
@@ -521,8 +546,8 @@ def configure_damage_profile(profile_name: str) -> DamageProfile:
     for stat, weight in profile.secondary_damage_weights.items():
         next_weights[stat] = weight
     STAT_WEIGHTS = next_weights
-    strength_spell_candidates.cache_clear()
-    strength_spell_damage_profile.cache_clear()
+    active_spell_candidates.cache_clear()
+    active_spell_damage_profile.cache_clear()
     active_profile_spell_damage_baseline.cache_clear()
     cheap_profile_damage_baseline.cache_clear()
     return profile
@@ -544,19 +569,23 @@ def generic_damage_profile() -> tuple[DamageLine, ...]:
 
 
 def spell_profile_elements() -> dict[str, str]:
+    return spell_profile_elements_for_profile(ACTIVE_DAMAGE_PROFILE)
+
+
+def spell_profile_elements_for_profile(profile: DamageProfile) -> dict[str, str]:
     return {
-        "NEUTRAL_DAMAGE": "neutral" if ACTIVE_DAMAGE_PROFILE.name == "strength" else "",
-        "NEUTRAL_STEAL": "neutral" if ACTIVE_DAMAGE_PROFILE.name == "strength" else "",
-        "EARTH_DAMAGE": "earth" if ACTIVE_DAMAGE_PROFILE.element == "earth" else "",
-        "EARTH_STEAL": "earth" if ACTIVE_DAMAGE_PROFILE.element == "earth" else "",
-        "FIRE_DAMAGE": "fire" if ACTIVE_DAMAGE_PROFILE.element == "fire" else "",
-        "FIRE_STEAL": "fire" if ACTIVE_DAMAGE_PROFILE.element == "fire" else "",
-        "WATER_DAMAGE": "water" if ACTIVE_DAMAGE_PROFILE.element == "water" else "",
-        "WATER_STEAL": "water" if ACTIVE_DAMAGE_PROFILE.element == "water" else "",
-        "AIR_DAMAGE": "air" if ACTIVE_DAMAGE_PROFILE.element == "air" else "",
-        "AIR_STEAL": "air" if ACTIVE_DAMAGE_PROFILE.element == "air" else "",
-        "BEST_ELEMENT_DAMAGE": ACTIVE_DAMAGE_PROFILE.element,
-        "BEST_ELEMENT_STEAL": ACTIVE_DAMAGE_PROFILE.element,
+        "NEUTRAL_DAMAGE": "neutral" if profile.name == "strength" else "",
+        "NEUTRAL_STEAL": "neutral" if profile.name == "strength" else "",
+        "EARTH_DAMAGE": "earth" if profile.element == "earth" else "",
+        "EARTH_STEAL": "earth" if profile.element == "earth" else "",
+        "FIRE_DAMAGE": "fire" if profile.element == "fire" else "",
+        "FIRE_STEAL": "fire" if profile.element == "fire" else "",
+        "WATER_DAMAGE": "water" if profile.element == "water" else "",
+        "WATER_STEAL": "water" if profile.element == "water" else "",
+        "AIR_DAMAGE": "air" if profile.element == "air" else "",
+        "AIR_STEAL": "air" if profile.element == "air" else "",
+        "BEST_ELEMENT_DAMAGE": profile.element,
+        "BEST_ELEMENT_STEAL": profile.element,
     }
 
 EXCLUDED_SET_NAME_PARTS = ("Khardboard",)
@@ -654,6 +683,7 @@ ELEMENT_PROFILES = {
     ),
 }
 ACTIVE_DAMAGE_PROFILE = ELEMENT_PROFILES["strength"]
+ACTIVE_SPELL_PROFILE_CLASS_NAME = DEFAULT_SPELL_PROFILE_CLASS_NAME
 
 
 @dataclass(frozen=True)
@@ -767,8 +797,9 @@ class BuildDiscoveryQuery:
         )
 
     def validate(self) -> None:
-        if self.class_name != "Iop":
-            raise ValueError("Build Discovery v1 currently supports Iop only.")
+        if self.class_name not in SUPPORTED_CLASS_NAMES:
+            supported = ", ".join(SUPPORTED_CLASS_NAMES)
+            raise ValueError(f"Unsupported class: {self.class_name}. Supported classes: {supported}.")
         if not 1 <= self.level <= TARGET_LEVEL:
             raise ValueError(f"Build Discovery supports levels 1-{TARGET_LEVEL}.")
         if self.mode != "pvm":
@@ -1298,7 +1329,7 @@ def item_score(item: dict[str, Any]) -> float:
 
 def active_profile_item_score(item: dict[str, Any]) -> float:
     score_by_profile = item.setdefault("_score_by_profile", {})
-    profile_name = ACTIVE_DAMAGE_PROFILE.name
+    profile_name = f"{ACTIVE_SPELL_PROFILE_CLASS_NAME}:{ACTIVE_DAMAGE_PROFILE.name}"
     if profile_name not in score_by_profile:
         score_by_profile[profile_name] = item_score(item)
     return score_by_profile[profile_name]
@@ -2571,7 +2602,7 @@ def best_filler_sequence(
 def iop_spell_rotation_result(stats: dict[str, int]) -> RotationDamageResult:
     candidates = strength_spell_candidates()
     if not candidates:
-        fallback_damage = profile_damage(list(strength_spell_damage_profile()), stats)
+        fallback_damage = profile_damage(list(GENERIC_STRENGTH_DAMAGE_PROFILE), stats)
         return RotationDamageResult(
             normalized_damage=fallback_damage,
             total_damage=fallback_damage,
@@ -2588,7 +2619,7 @@ def iop_spell_rotation_result(stats: dict[str, int]) -> RotationDamageResult:
         spell for spell in selected_spells if spell.name != IOP_WRATH_SPELL_NAME
     )
     if not filler_spells:
-        fallback_damage = profile_damage(list(strength_spell_damage_profile()), stats)
+        fallback_damage = profile_damage(list(GENERIC_STRENGTH_DAMAGE_PROFILE), stats)
         return RotationDamageResult(
             normalized_damage=fallback_damage,
             total_damage=fallback_damage,
@@ -2683,12 +2714,36 @@ def iop_rotation_damage(stats: dict[str, int], state: BuildState | None = None) 
     return spell_rotation.normalized_damage + weapon_rotation_uplift(state, stats, spell_rotation)
 
 
+def profile_rotation_damage(stats: dict[str, int], state: BuildState | None = None) -> float:
+    if ACTIVE_SPELL_PROFILE_CLASS_NAME == "Iop" and ACTIVE_DAMAGE_PROFILE.name == "strength":
+        return iop_rotation_damage(stats, state)
+    # Non-reviewed class profiles use weighted spell candidates as a scoring
+    # prior. Do not run them through the Iop-specific turn planner.
+    return profile_damage(active_spell_damage_profile(), stats)
+
+
+def active_rotation_model_name() -> str:
+    if ACTIVE_SPELL_PROFILE_CLASS_NAME == "Iop" and ACTIVE_DAMAGE_PROFILE.name == "strength":
+        return "reviewed_iop_strength_rotation"
+    return "spell_profile_v0_weighted_candidates"
+
+
+def active_damage_profile_confidence() -> str:
+    if active_rotation_model_name() == "reviewed_iop_strength_rotation":
+        return "high"
+    return "medium"
+
+
 def strength_iop_rotation_damage(stats: dict[str, int]) -> float:
     return iop_rotation_damage(stats)
 
 
-@lru_cache(maxsize=1)
-def strength_spell_candidates() -> tuple[SpellDamageCandidate, ...]:
+@lru_cache(maxsize=None)
+def spell_candidates_for_profile(
+    class_name: str,
+    profile_name: str,
+    level: int,
+) -> tuple[SpellDamageCandidate, ...]:
     try:
         from sqlalchemy.orm import joinedload
 
@@ -2703,6 +2758,7 @@ def strength_spell_candidates() -> tuple[SpellDamageCandidate, ...]:
     except Exception:
         return tuple()
 
+    profile = ELEMENT_PROFILES[profile_name]
     try:
         with session_scope() as db_session:
             spell_stats = (
@@ -2718,9 +2774,9 @@ def strength_spell_candidates() -> tuple[SpellDamageCandidate, ...]:
                 )
                 .filter(
                     ModelClassTranslation.locale == "en",
-                    ModelClassTranslation.name == SPELL_PROFILE_CLASS_NAME,
+                    ModelClassTranslation.name == class_name,
                     ModelSpellTranslation.locale == "en",
-                    ModelSpellStats.level <= ACTIVE_TARGET_LEVEL,
+                    ModelSpellStats.level <= level,
                 )
                 .order_by(ModelSpellTranslation.name, ModelSpellStats.level.desc())
                 .all()
@@ -2734,7 +2790,7 @@ def strength_spell_candidates() -> tuple[SpellDamageCandidate, ...]:
         if spell_id not in highest_stats_by_spell_id:
             highest_stats_by_spell_id[spell_id] = (spell_stat, spell_name, variant_pair_id, is_trap)
 
-    profile_elements = spell_profile_elements()
+    profile_elements = spell_profile_elements_for_profile(profile)
     candidates = []
     for spell_stat, spell_name, variant_pair_id, is_trap in highest_stats_by_spell_id.values():
         spell_lines = collapse_single_target_spell_effects(
@@ -2766,8 +2822,17 @@ def strength_spell_candidates() -> tuple[SpellDamageCandidate, ...]:
 
 
 @lru_cache(maxsize=1)
-def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
-    candidates = strength_spell_candidates()
+def active_spell_candidates() -> tuple[SpellDamageCandidate, ...]:
+    return spell_candidates_for_profile(
+        ACTIVE_SPELL_PROFILE_CLASS_NAME,
+        ACTIVE_DAMAGE_PROFILE.name,
+        ACTIVE_TARGET_LEVEL,
+    )
+
+
+@lru_cache(maxsize=1)
+def active_spell_damage_profile() -> tuple[DamageLine, ...]:
+    candidates = active_spell_candidates()
     if not candidates:
         return generic_damage_profile()
     selected = select_variant_spells(candidates, active_base_stats())
@@ -2793,8 +2858,25 @@ def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
     )
 
 
+def strength_spell_candidates() -> tuple[SpellDamageCandidate, ...]:
+    return spell_candidates_for_profile("Iop", "strength", ACTIVE_TARGET_LEVEL)
+
+
+def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
+    return active_spell_damage_profile()
+
+
+def clear_spell_damage_profile_caches() -> None:
+    active_spell_candidates.cache_clear()
+    active_spell_damage_profile.cache_clear()
+    spell_candidates_for_profile.cache_clear()
+
+
+strength_spell_damage_profile.cache_clear = clear_spell_damage_profile_caches  # type: ignore[attr-defined]
+
+
 def strength_spell_damage(stats: dict[str, int]) -> float:
-    return iop_rotation_damage(stats)
+    return profile_rotation_damage(stats)
 
 
 def profile_damage_reference_stats() -> dict[str, int]:
@@ -2811,7 +2893,7 @@ def profile_damage_reference_stats() -> dict[str, int]:
 
 @lru_cache(maxsize=1)
 def active_profile_spell_damage_baseline() -> float:
-    return max(iop_rotation_damage(profile_damage_reference_stats()), 1.0)
+    return max(profile_rotation_damage(profile_damage_reference_stats()), 1.0)
 
 
 @lru_cache(maxsize=1)
@@ -2824,7 +2906,7 @@ def cheap_profile_damage_baseline() -> float:
 
 def cheap_profile_damage_score(stats: dict[str, int]) -> float:
     return (
-        profile_damage(strength_spell_damage_profile(), stats)
+        profile_damage(active_spell_damage_profile(), stats)
         / cheap_profile_damage_baseline()
         * PROFILE_DAMAGE_REFERENCE_SCORE
     )
@@ -2832,7 +2914,7 @@ def cheap_profile_damage_score(stats: dict[str, int]) -> float:
 
 def normalized_profile_damage_score(stats: dict[str, int], state: BuildState | None = None) -> float:
     return (
-        iop_rotation_damage(stats, state)
+        profile_rotation_damage(stats, state)
         / active_profile_spell_damage_baseline()
         * PROFILE_DAMAGE_REFERENCE_SCORE
     )
@@ -4547,6 +4629,10 @@ def find_diverse_builds(
 
 def query_warnings(query: BuildDiscoveryQuery) -> list[str]:
     warnings = []
+    if not (query.class_name == "Iop" and query.primary_element == "strength"):
+        warnings.append(
+            "Class/element spell scoring is rotation-lite; only Strength Iop has a reviewed high-confidence rotation profile."
+        )
     if query.locked_item_ids:
         warnings.append("lockedItemIds are used as search seeds and enforced as final result requirements.")
     if query.budget_tier < 3 and query.exo_policy in {"allow", "opti"}:
@@ -4600,7 +4686,7 @@ def build_discovery_response_for_active_level(
     query: BuildDiscoveryQuery,
     use_cache: bool = True,
 ) -> dict[str, Any]:
-    profile = configure_damage_profile(query.primary_element)
+    profile = configure_damage_profile(query.primary_element, query.class_name)
     generic_damage_weight = effective_generic_damage_weight(query)
     survivability_weight = effective_survivability_weight(query)
     negative_resistance_penalty_weight = effective_negative_resistance_penalty_weight(query)
@@ -4653,12 +4739,16 @@ def build_discovery_response_for_active_level(
         "status": "complete",
         "query": query_summary(query),
         "targetSemantics": target_semantics_response(),
-        "prototype": f"level_{query.level}_{profile.name}_pvm_generalist",
+        "prototype": f"level_{query.level}_{query.class_name}_{profile.name}_pvm_generalist",
         "profile": {
+            "className": query.class_name,
             "name": profile.name,
             "primaryStat": profile.primary_stat,
             "element": profile.element,
             "damageStat": profile.damage_stat,
+            "confidence": active_damage_profile_confidence(),
+            "rotationModel": active_rotation_model_name(),
+            "spellCandidateCount": len(active_spell_candidates()),
         },
         "target": {"level": query.level, "AP": query.target.ap, "MP": query.target.mp, "Range": query.target.range},
         "scoring": {
@@ -4704,8 +4794,8 @@ def serialize_build(state: BuildState, sets: dict[str, dict[str, Any]]) -> dict[
         for set_id, count in sorted(state.set_counts.items())
         if count > 1 and set_id in sets
     }
-    raw_rotation_damage = iop_rotation_damage(scoring_stats, state)
-    spell_only_damage = strength_spell_damage(scoring_stats)
+    raw_rotation_damage = profile_rotation_damage(scoring_stats, state)
+    spell_only_damage = profile_damage(active_spell_damage_profile(), scoring_stats)
     profile_baseline_damage = active_profile_spell_damage_baseline()
     return {
         "score": round(state.score, 2),
@@ -4757,6 +4847,7 @@ def parse_optional_range_target(value: str) -> int | None:
 
 def build_query_from_cli_args(args: argparse.Namespace) -> BuildDiscoveryQuery:
     return BuildDiscoveryQuery(
+        class_name=args.class_name,
         level=args.level,
         elements=(args.element,),
         ap_target=args.target_ap,
@@ -4780,6 +4871,7 @@ def build_query_from_cli_args(args: argparse.Namespace) -> BuildDiscoveryQuery:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--class-name", "--class", choices=SUPPORTED_CLASS_NAMES, default="Iop")
     parser.add_argument("--level", type=int, default=TARGET_LEVEL)
     parser.add_argument("--limit", type=int, default=5)
     parser.add_argument("--top-k", type=int, default=25)

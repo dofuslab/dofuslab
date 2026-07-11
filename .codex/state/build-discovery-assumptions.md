@@ -505,6 +505,10 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Non-Iop generation must remain unsupported until class/element spell profiles
   drive scoring and diagnostics. A non-Iop query must not silently reuse Iop
   spell scoring or generic Iop-era rotation assumptions.
+- As of the first class-aware wiring slice, known non-Iop classes may pass
+  query validation, but their damage scoring is still explicitly
+  rotation-lite. Treat generated non-Iop builds as review candidates until
+  class/element benchmarks or human review raise their confidence.
 - Spell-derived damage profiles are currently rotation-lite for all classes
   except reviewed Strength Iop. They can seed stat weights and review evidence,
   but product output should expose profile confidence until each class/element

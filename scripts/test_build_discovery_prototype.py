@@ -922,8 +922,6 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             "% Final Damage",
             "% Spell Damage",
             "% Weapon Damage",
-            "% Melee Damage",
-            "% Ranged Damage",
             "Initiative",
             "Prospecting",
             "AP Parry",
@@ -2468,8 +2466,9 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(find_builds.call_args.kwargs["completion_target"], 30)
 
     def test_build_discovery_query_rejects_out_of_scope_inputs(self):
+        BuildDiscoveryQuery(class_name="Cra").validate()
         with self.assertRaises(ValueError):
-            BuildDiscoveryQuery(class_name="Cra").validate()
+            BuildDiscoveryQuery(class_name="NotAClass").validate()
         with self.assertRaises(ValueError):
             BuildDiscoveryQuery(elements=("strength", "chance")).validate()
         with self.assertRaises(ValueError):
@@ -2488,6 +2487,20 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             BuildDiscoveryQuery(range_target=-1).validate()
         with self.assertRaises(ValueError):
             BuildDiscoveryQuery(locked_item_ids=("same",), avoided_item_ids=("same",)).validate()
+
+    def test_non_iop_profile_reports_rotation_lite_scoring(self):
+        clear_build_discovery_response_cache()
+        query = BuildDiscoveryQuery(class_name="Cra", elements=("strength",), budget_tier=2)
+        with patch.object(build_discovery_prototype, "find_diverse_builds", return_value=[]):
+            with patch.object(build_discovery_prototype, "load_sets", return_value={}):
+                with patch.object(build_discovery_prototype, "dataset_version", return_value="dataset-v1"):
+                    with patch.object(build_discovery_prototype, "active_spell_candidates", return_value=()):
+                        response = build_discovery_response(query)
+
+        self.assertEqual(response["profile"]["className"], "Cra")
+        self.assertEqual(response["profile"]["confidence"], "medium")
+        self.assertEqual(response["profile"]["rotationModel"], "spell_profile_v0_weighted_candidates")
+        self.assertIn("rotation-lite", " ".join(response["warnings"]))
 
     def test_query_cache_key_includes_dataset_solver_and_query(self):
         query = BuildDiscoveryQuery(elements=("strength",), ap_target=11, mp_target=6)
