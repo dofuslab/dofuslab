@@ -4325,3 +4325,53 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python -m py_compile oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-presence-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`
+
+### 2026-07-11 Deduplicate SET_BONUS Upper-Bound Conditions
+
+- Avoided duplicate CP-SAT constraints for `SET_BONUS < n` leaves when the
+  separate set-bonus upper-bound fast path already enforces the same bound.
+- Preserved OR semantics: set-bonus leaves inside OR conditions are still
+  encoded recursively because deriving a hard upper bound from OR would be
+  incorrect.
+- Added diagnostics:
+  - `skippedSetBonusConditionCount`
+- Added synthetic fixture tests:
+  - AND condition skips the duplicate `SET_BONUS < n` leaf but keeps other
+    child constraints
+  - OR condition does not skip the `SET_BONUS < n` branch
+- Generated and validated an 8-row Docker CP-SAT set-bonus-dedupe smoke:
+  - `.codex/state/build-discovery-cpsat-setbonusdedupe-smoke-matrix.json`
+  - `.codex/state/build-discovery-cpsat-setbonusdedupe-smoke-matrix.md`
+  - `.codex/state/build-discovery-cpsat-setbonusdedupe-smoke-split/`
+- Slice:
+  - elements: strength, chance
+  - budget tiers: 1, 4
+  - AP: 7
+  - MP: 3
+  - Range: none, 6
+  - callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `8`
+  - generated: `8`
+  - invalid: `0`
+  - solver statuses: `4` optimal, `4` feasible
+- Model-size impact:
+  - condition constraints: `288` per row
+  - skipped duplicate set-bonus condition constraints: `87` per row
+- Runtime:
+  - elapsed min/avg/max: `5530.6ms / 6797.1ms / 8270.1ms`
+  - load min/avg/max: `150.9ms / 426.1ms / 2017.7ms`
+  - model min/avg/max: `1359.2ms / 1501.7ms / 1646.6ms`
+  - solve min/avg/max: `3704.0ms / 4735.7ms / 5071.6ms`
+- Interpretation:
+  - this produces a clear model-build reduction
+  - solve time still dominates and remains above the p95 target
+  - next higher-leverage reductions are ring grouping or set-threshold/delta
+    variables
+- Verification passed:
+  - `python server\scripts\test_build_discovery_cpsat_experiment.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\oneoff\build_discovery_cpsat_experiment.py server\scripts\test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python -m py_compile oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-setbonusdedupe-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`

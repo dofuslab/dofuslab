@@ -405,6 +405,7 @@ def build_model(
 
     condition_constraint_count = 0
     condition_literal_count = 0
+    skipped_set_bonus_condition_count = 0
 
     def add_leaf_condition_constraint(
         condition_obj: dict[str, Any],
@@ -426,15 +427,31 @@ def build_model(
             return True
         return False
 
-    def add_condition_constraints(condition_obj: dict[str, Any], presence: cp_model.IntVar) -> bool:
-        nonlocal condition_constraint_count, condition_literal_count
+    def add_condition_constraints(
+        condition_obj: dict[str, Any],
+        presence: cp_model.IntVar,
+        *,
+        skip_set_bonus_upper_bound: bool = False,
+    ) -> bool:
+        nonlocal condition_constraint_count, condition_literal_count, skipped_set_bonus_condition_count
         if not condition_obj:
             return True
         if is_leaf_condition(condition_obj):
+            if (
+                skip_set_bonus_upper_bound
+                and condition_obj.get("stat") == "SET_BONUS"
+                and condition_obj.get("operator") == "<"
+            ):
+                skipped_set_bonus_condition_count += 1
+                return True
             return add_leaf_condition_constraint(condition_obj, presence)
         if condition_obj.get("and"):
             for child in condition_obj["and"]:
-                if not add_condition_constraints(child, presence):
+                if not add_condition_constraints(
+                    child,
+                    presence,
+                    skip_set_bonus_upper_bound=skip_set_bonus_upper_bound,
+                ):
                     return False
             return True
         if condition_obj.get("or"):
@@ -462,9 +479,13 @@ def build_model(
 
     for item_id, presence_vars in item_presence_terms.items():
         condition_obj = item_by_id[item_id].get("conditions", {}).get("conditions", {})
-        if condition_obj:
-            add_condition_constraints(condition_obj, presence_var_for_item(item_id))
         set_bonus_upper_bound = set_bonus_upper_bound_condition(condition_obj)
+        if condition_obj:
+            add_condition_constraints(
+                condition_obj,
+                presence_var_for_item(item_id),
+                skip_set_bonus_upper_bound=set_bonus_upper_bound is not None,
+            )
         if set_bonus_upper_bound is None:
             continue
         presence = presence_var_for_item(item_id)
@@ -515,6 +536,7 @@ def build_model(
         "createdPresenceVarCount": created_presence_var_count,
         "reusedPresenceVarCount": reused_presence_var_count,
         "conditionConstraintCount": condition_constraint_count,
+        "skippedSetBonusConditionCount": skipped_set_bonus_condition_count,
         "setCountConstraintCount": len({set_id for set_id, _count in exact_set_count_vars}),
     }
     return model, slot_item_vars, exo_vars, model_stats

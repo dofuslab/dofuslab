@@ -163,6 +163,10 @@ review before accepting Milestone 2 evidence.
   the item can only occupy one modeled slot. On the 8-row presence smoke this
   reused `215` presence literals per row and created only `2` extra presence
   variables for multi-slot items such as rings.
+- CP-SAT does not recursively add duplicate `SET_BONUS < n` leaf constraints
+  when the separate set-bonus upper-bound fast path already enforces them.
+  OR conditions still use recursive condition literals because an OR-derived
+  upper bound would change semantics.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.

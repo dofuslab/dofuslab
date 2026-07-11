@@ -296,6 +296,64 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertGreaterEqual(model_stats["reusedPresenceVarCount"], 1)
         self.assertGreaterEqual(model_stats["createdPresenceVarCount"], 1)
 
+    def test_model_skips_duplicate_set_bonus_upper_bound_leaf_conditions(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        items = [
+            *base_fixture_items(),
+            item(
+                "set_bonus_bound_hat",
+                "Hat",
+                conditions={
+                    "and": [
+                        {"stat": "SET_BONUS", "operator": "<", "value": 2},
+                        {"stat": "VITALITY", "operator": ">", "value": 1},
+                    ]
+                },
+            ),
+        ]
+        _model, _slot_item_vars, _exo_vars, model_stats = build_model(
+            items,
+            fixture_sets(),
+            BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
+            exo_policy="none",
+        )
+
+        self.assertGreaterEqual(model_stats["skippedSetBonusConditionCount"], 1)
+
+    def test_model_preserves_or_set_bonus_condition_constraints(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        items = [
+            *base_fixture_items(),
+            item(
+                "set_bonus_or_hat",
+                "Hat",
+                conditions={
+                    "or": [
+                        {"stat": "SET_BONUS", "operator": "<", "value": 2},
+                        {"stat": "VITALITY", "operator": ">", "value": 99999},
+                    ]
+                },
+            ),
+        ]
+        _model, _slot_item_vars, _exo_vars, model_stats = build_model(
+            items,
+            fixture_sets(),
+            BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
+            exo_policy="none",
+        )
+
+        self.assertEqual(model_stats["skippedSetBonusConditionCount"], 0)
+
     def test_experiment_exposes_callback_candidate_collection(self):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")
 
