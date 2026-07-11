@@ -19,7 +19,9 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 
 ## Query Contract Assumptions
 
-- Query inputs should include class, level, elements, mode, AP target, MP target, Range target, damage/survivability preset, budget tier, exo policy, weapon policy, locked items, and avoided items.
+- Query inputs should include class, level, elements, mode, combat range
+  preference, AP target, MP target, Range target, damage/survivability preset,
+  budget tier, exo policy, weapon policy, locked items, and avoided items.
 - `className=Iop`, `level=1-200`, `mode=pvm`, and one single element are the intended Milestone 3 product-shaped query values.
 - `level` belongs in the query/API/cache/provenance contract. Validation now
   accepts levels 1-200 for Iop.
@@ -32,7 +34,16 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   generated artifacts are regenerated and reviewed against benchmark rows.
 - Milestone 1 support means all supported Iop single elements: Strength, Intelligence, Chance, and Agility.
 - Milestone 1 support means any valid AP/MP/Range target within hard caps, not only 11/6/0 and 12/6/0 benchmark rows.
-- Milestone 1 support means product intent controls should affect generation: damage/survivability preset, budget tier, exo policy, weapon policy, locked items, and avoided items.
+- Milestone 1 support means product intent controls should affect generation:
+  combat range preference, damage/survivability preset, budget tier, exo
+  policy, weapon policy, locked items, and avoided items.
+- Combat range preference is a first-class query axis with supported values
+  `melee`, `mixed`, and `ranged`. It is separate from numeric Range target:
+  Range says how much +Range the build must reach; combat range says how the
+  build expects to deal damage and survive.
+- Product UX may default combat range from class/element/template, but the
+  resolved value should be explicit in the request, cache key, provenance, and
+  diagnostics. Do not silently infer all builds as melee.
 - Locked items are final-result requirements. If the solver cannot find builds containing all locked items, result count can fall.
 - Avoided items are excluded from candidate loading.
 - Locked and avoided item IDs cannot overlap.
@@ -108,7 +119,10 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 
 ## Class And Element Assumptions
 
-- Iop defaults to melee.
+- Iop may default to `melee` in the UI/query builder, but that default must be
+  materialized as an explicit combat range preference in the stored request.
+- `mixed` and `ranged` Iop builds need their own benchmark rows and scoring
+  review before they are trusted.
 - Cra should eventually default to ranged and should not be encouraged into melee weapon reliance.
 - Class defaults should be class-first, then element-specific when data or player feedback justifies it.
 - Strength Iop uses old/local spell data where available.

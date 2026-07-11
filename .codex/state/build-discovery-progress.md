@@ -6588,3 +6588,17 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker generation:
     `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-range-heavy-2-targets-20260711.json --output-json /tmp/build-discovery-m3-range-heavy-2-sample-20260711.json --output-md /tmp/build-discovery-m3-range-heavy-2-sample-20260711.md`
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-range-heavy-2-sample-20260711.json --target-file .codex/state/build-discovery-m3-range-heavy-2-targets-20260711.json --expected-solver cpsat --allow-no-build`
+
+### 2026-07-11 Explicit Combat Range Axis
+
+- Restored combat range preference as a first-class PRD/query axis with
+  supported values `melee`, `mixed`, and `ranged`.
+- Clarified that combat range preference is separate from numeric Range target:
+  numeric Range is an AP/MP/Range build constraint, while combat range controls
+  melee/ranged damage valuation, weapon assumptions, and survivability context.
+- Product/API may infer a default from class/element/template, but must store
+  the resolved combat range preference explicitly in the request, cache key,
+  diagnostics, and generated-build provenance.
+- Milestone 2 now explicitly requires level 200 Iop coverage across combat
+  range preference, not only melee Strength scoring. `mixed` and `ranged` need
+  benchmark rows before they can be marked trusted.

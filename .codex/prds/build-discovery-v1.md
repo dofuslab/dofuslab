@@ -4,7 +4,7 @@ Source: https://app.notion.com/p/395c1a10243880f28008dbeb61b2949c
 
 ## Product Goal
 
-Build Discovery v1 generates plausible, explainable DofusLab builds from structured inputs: class, element, level, AP/MP/range targets, damage-vs-survivability preference, budget tolerance, and optional lock/avoid controls.
+Build Discovery v1 generates plausible, explainable DofusLab builds from structured inputs: class, element, level, combat range preference, AP/MP/range targets, damage-vs-survivability preference, budget tolerance, and optional lock/avoid controls.
 
 The v1 goal is not perfect optimization, PvP meta modeling, a chatbot, or LLM-driven item selection. It is a deterministic, debuggable, bounded build generator that can ship on current DofusLab infrastructure.
 
@@ -16,9 +16,22 @@ The v1 goal is not perfect optimization, PvP meta modeling, a chatbot, or LLM-dr
 - `level` belongs in the query/API/cache/provenance contract. Milestone 3 should support Iop levels 1-200 after level-specific candidate loading, base stats, spell selection, and benchmark rows are validated.
 - Milestone 1 should handle any valid AP/MP/Range target within caps, not only benchmark defaults such as 11/6/0 or 12/6/0.
 - Character baseline AP is 6 from levels 1-99 and 7 from level 100 onward. Valid target bounds are AP `6-12` below level 100, AP `7-12` from level 100 onward, MP `3-6`, and Range `0-6`.
-- Milestone 1 should handle product intent controls for Iop: damage-vs-survivability/playstyle preset, budget tier, exo policy, weapon policy, locked items, and avoided items.
+- Milestone 1 should handle product intent controls for Iop: combat range preference, damage-vs-survivability preset, budget tier, exo policy, weapon policy, locked items, and avoided items.
 - 11/6 and 12/6 variants are benchmark/regression rows, not the full Milestone 1 scope.
 - AP, MP, and Range are minimum targets with caps: AP 12, MP 6, Range 6. Surplus AP/MP/range is valid and usually useful, but should only receive a small marginal score.
+- Combat range preference is separate from the numeric Range target. The
+  supported values are `melee`, `mixed`, and `ranged`.
+  - `melee`: prioritize melee spell/weapon damage, melee positioning, and
+    melee survivability assumptions. Do not overvalue item Range or ranged
+    damage unless the explicit Range target requires it.
+  - `mixed`: support builds that can play both close and at distance; keep
+    melee/ranged damage and resistance valuation balanced.
+  - `ranged`: prioritize ranged spell/weapon damage, item Range, and ranged
+    positioning assumptions. Do not silently infer this from a high Range target;
+    the query should still carry an explicit combat range preference.
+- Product/API should make combat range preference an explicit selectable field.
+  The UI may offer a smart default based on class/element/level/template, but
+  the stored request and cache key must record the resolved explicit value.
 - Item conditions must be evaluated on the backend.
 - Set-aware generation and Dofus/trophy/package diversity are required.
 - Candidate item horizons should include the target level bucket plus the immediately previous bucket for normal gear and set packages.
@@ -47,9 +60,9 @@ Current confidence boundary:
    - Do not spend more effort on market/production-derived availability until
      core build quality is stable.
 2. Level 200 Iop correctness surface.
-   - Support all combinations of supported Iop elements, playstyle/range
-     preference, AP/MP/Range targets, budget tiers, exo policy, locked items,
-     and avoided items.
+   - Support all combinations of supported Iop elements, combat range
+     preference (`melee`, `mixed`, `ranged`), AP/MP/Range targets, budget tiers,
+     exo policy, locked items, and avoided items.
    - Include damage/survivability weighting as part of the Milestone 2 query
      matrix. Support exactly four presets:
      - `1`: defensive. Prefer survivability strongly while still producing a
@@ -61,7 +74,9 @@ Current confidence boundary:
        survivability pressure.
    - Negative resistance is reported as a diagnostic, not separately penalized
      in the score; survivability impact should flow through the EHP model.
-   - Start from the trusted melee Strength Iop scoring model.
+   - Start from the trusted melee Strength Iop scoring model, but do not let
+     `melee` remain an implicit hardcoded assumption. `mixed` and `ranged` need
+     separate scoring presets and benchmark rows before they are marked trusted.
    - Add/keep expensive no-cache regressions for the best known builds found.
    - For every supported query family, remember the top scoring generated build
      and any better human benchmark build.
@@ -90,7 +105,7 @@ Current confidence boundary:
    - For level 200 Iop, avoid using low AP/MP targets as quality benchmarks;
      `10/5/0`, `11/6/0`, and `12/6/0` are the useful reference rows.
    - Remember top generated builds and any better human benchmark builds per
-     sampled level/element/budget/playstyle row.
+     sampled level/element/budget/combat-range row.
 4. Extend to all classes at level 200.
    - Add class-specific scoring defaults and damage baselines before enabling
      each class.
@@ -105,7 +120,7 @@ Current confidence boundary:
    - Define bracket-specific AP/MP/Range defaults, budget assumptions,
      survivability baselines, trophy/Dofus availability, and benchmark
      fixtures.
-   - Remember top scoring builds per class/element/playstyle/level bracket.
+   - Remember top scoring builds per class/element/combat-range/level bracket.
 6. Optimization.
    - Only after correctness milestones are stable, optimize cache misses and
      beam/search paths.
@@ -155,8 +170,9 @@ Proposed product path:
   provenance.
 - Set `source="build_discovery"` for all generated builds.
 - Require `request_payload` to include:
-  - normalized query inputs: class, level, element, AP, MP, Range, budget tier,
-    exo policy, damage/survivability preset, locked/avoided items
+  - normalized query inputs: class, level, element, combat range preference, AP,
+    MP, Range, budget tier, exo policy, damage/survivability preset,
+    locked/avoided items
   - solver diagnostics: score, rank, search limits, matrix target name when
     applicable, warnings, and fallback budget if used
   - reproducibility identifiers: `datasetVersion`, `solverVersion`, index
@@ -298,6 +314,8 @@ checkpoint.
 - Generated builds are valid for supported class/element/level combinations.
 - No condition-invalid builds are shown.
 - AP/MP/range targets are met or exceeded without exceeding caps, and surplus AP/MP/range is only lightly rewarded.
+- Combat range preference is explicit, persisted, cache-keyed, and visible in
+  diagnostics. The generator must not silently treat all builds as melee.
 - At least 3 meaningfully different builds are shown for common queries where possible.
 - Budget tier 1 can use mounts, trophies, and normal equipment not assigned to higher availability tiers.
 - Budget tier 2 can use pets, petsmounts, and accessible Dofuses such as Crimson, Turquoise, Ice, and likely Dolmanax.
@@ -310,7 +328,7 @@ checkpoint.
 - Every generation logs timing breakdowns.
 - UI exposes structured controls, not numeric stat weights.
 - Results are labeled by role and include item list, stats, score breakdown, warnings, and explanations.
-- Milestone 1 is not complete if the generator only handles Strength Iop or only hard-coded 11/6 and 12/6 benchmark profiles; it must support level 200 Iop generation across the supported Iop element, AP/MP/Range, budget, exo, and playstyle/intent query combinations.
+- Milestone 1 is not complete if the generator only handles Strength Iop or only hard-coded 11/6 and 12/6 benchmark profiles; it must support level 200 Iop generation across the supported Iop element, combat range preference, AP/MP/Range, budget, exo, and intent query combinations.
 - Non-200 level generation belongs to the Level Diversity for Iop milestone.
 - Optimization is not complete until cache-miss / fresh-generation p95 is under 5s for the representative level 200 Iop and accepted level-diversity query matrices. Async miss handling is useful fallback infrastructure, but does not by itself satisfy the optimization success goal.
 
