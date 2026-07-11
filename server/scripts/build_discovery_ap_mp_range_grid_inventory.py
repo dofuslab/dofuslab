@@ -21,6 +21,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
 
 
 REPORT_VERSION = "build-discovery-ap-mp-range-grid-inventory-v1"
+ALL_LEVELS = tuple(range(1, 201))
 DEFAULT_LEVELS = (1, 20, 50, 80, 99, 100, 120, 150, 179, 180, 199, 200)
 DEFAULT_ELEMENTS = ("strength", "intelligence", "chance", "agility")
 DEFAULT_BUDGET_TIERS = (1, 2, 3, 4)
@@ -53,6 +54,37 @@ def target_key(
     range_target: int | None,
 ) -> tuple[int, str, int, int, int, int | None]:
     return (level, element, budget_tier, ap, mp, range_target)
+
+
+def iter_valid_iop_target_space(
+    levels: Iterable[int] = ALL_LEVELS,
+    elements: Iterable[str] = DEFAULT_ELEMENTS,
+    budget_tiers: Iterable[int] = DEFAULT_BUDGET_TIERS,
+) -> Iterable[dict[str, Any]]:
+    for level in levels:
+        min_ap = base_ap_for_level(level)
+        for element in elements:
+            for budget_tier in budget_tiers:
+                for ap in range(min_ap, MAX_AP + 1):
+                    for mp in range(MIN_MP, MAX_MP + 1):
+                        for range_target in (None, *range(0, MAX_RANGE + 1)):
+                            query = BuildDiscoveryQuery(
+                                level=level,
+                                elements=(element,),
+                                budget_tier=budget_tier,
+                                ap_target=ap,
+                                mp_target=mp,
+                                range_target=range_target,
+                            )
+                            query.validate()
+                            yield {
+                                "level": level,
+                                "element": element,
+                                "budgetTier": budget_tier,
+                                "apTarget": ap,
+                                "mpTarget": mp,
+                                "rangeTarget": range_target,
+                            }
 
 
 def covered_keys_from_reports(reports: Iterable[dict[str, Any]]) -> set[tuple[int, str, int, int, int, int | None]]:
@@ -100,34 +132,7 @@ def valid_query_rows(
     elements: Iterable[str],
     budget_tiers: Iterable[int],
 ) -> list[dict[str, Any]]:
-    rows = []
-    for level in levels:
-        min_ap = base_ap_for_level(level)
-        for element in elements:
-            for budget_tier in budget_tiers:
-                for ap in range(min_ap, MAX_AP + 1):
-                    for mp in range(MIN_MP, MAX_MP + 1):
-                        for range_target in (None, *range(0, MAX_RANGE + 1)):
-                            query = BuildDiscoveryQuery(
-                                level=level,
-                                elements=(element,),
-                                budget_tier=budget_tier,
-                                ap_target=ap,
-                                mp_target=mp,
-                                range_target=range_target,
-                            )
-                            query.validate()
-                            rows.append(
-                                {
-                                    "level": level,
-                                    "element": element,
-                                    "budgetTier": budget_tier,
-                                    "apTarget": ap,
-                                    "mpTarget": mp,
-                                    "rangeTarget": range_target,
-                                }
-                            )
-    return rows
+    return list(iter_valid_iop_target_space(levels, elements, budget_tiers))
 
 
 def row_key(row: dict[str, Any]) -> tuple[int, str, int, int, int, int | None]:
@@ -285,6 +290,9 @@ def build_inventory_report(
     unproven_example_limit: int = 40,
     next_target_limit: int = 24,
 ) -> dict[str, Any]:
+    levels = tuple(levels)
+    elements = tuple(elements)
+    budget_tiers = tuple(budget_tiers)
     rows = valid_query_rows(levels, elements, budget_tiers)
     covered = covered_keys_from_reports(reports)
     attempted = attempted_keys_from_reports(reports)
@@ -293,9 +301,13 @@ def build_inventory_report(
     return {
         "reportVersion": REPORT_VERSION,
         "scope": "query-grid inventory, not generated-build proof",
+        "levelScope": "all_levels" if levels == ALL_LEVELS else "selected_levels",
         "levels": list(levels),
+        "levelCount": len(levels),
         "elements": list(elements),
+        "elementCount": len(elements),
         "budgetTiers": list(budget_tiers),
+        "budgetTierCount": len(budget_tiers),
         "validQueryCount": len(rows),
         "generatedEvidenceCount": len(covered_rows),
         "attemptedEvidenceCount": len(attempted_rows),
@@ -311,9 +323,16 @@ def render_markdown(report: dict[str, Any]) -> str:
     lines = [
         "# Build Discovery AP/MP/Range Grid Inventory",
         "",
-        "This inventory enumerates valid Iop query-grid targets for representative levels, elements, and budgets.",
+        (
+            "This inventory enumerates valid Iop query-grid targets for every level, element, and budget tier."
+            if report.get("levelScope") == "all_levels"
+            else "This inventory enumerates valid Iop query-grid targets for representative levels, elements, and budgets."
+        ),
         "It is not generated-build proof; it shows how much of the grid currently has generated artifact evidence.",
         "",
+        f"Level scope: `{report.get('levelScope', 'selected_levels')}` (`{report.get('levelCount', len(report.get('levels', [])))}` levels)",
+        f"Element count: `{report.get('elementCount', len(report.get('elements', [])))}`",
+        f"Budget tier count: `{report.get('budgetTierCount', len(report.get('budgetTiers', [])))}`",
         f"Valid query rows: `{report['validQueryCount']}`",
         f"Generated evidence rows: `{report['generatedEvidenceCount']}`",
         f"Attempted evidence rows: `{report['attemptedEvidenceCount']}`",
@@ -353,7 +372,19 @@ def render_markdown(report: dict[str, Any]) -> str:
 def parse_csv_ints(raw_value: str | None, defaults: tuple[int, ...]) -> tuple[int, ...]:
     if not raw_value:
         return defaults
-    return tuple(int(value.strip()) for value in raw_value.split(",") if value.strip())
+    values = []
+    for raw_part in raw_value.split(","):
+        part = raw_part.strip()
+        if not part:
+            continue
+        if "-" in part:
+            start, end = (int(value.strip()) for value in part.split("-", 1))
+            if start > end:
+                raise ValueError(f"Invalid descending range: {part}")
+            values.extend(range(start, end + 1))
+        else:
+            values.append(int(part))
+    return tuple(dict.fromkeys(values))
 
 
 def parse_csv_strings(raw_value: str | None, defaults: tuple[str, ...]) -> tuple[str, ...]:
@@ -366,6 +397,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--artifact", action="append")
     parser.add_argument("--levels")
+    parser.add_argument("--all-levels", action="store_true", help="Inventory levels 1 through 200.")
     parser.add_argument("--elements")
     parser.add_argument("--budget-tiers")
     parser.add_argument("--unproven-example-limit", type=int, default=40)
@@ -376,9 +408,10 @@ def main() -> None:
 
     artifact_paths = args.artifact or list(DEFAULT_ARTIFACTS)
     reports = [load_json(path) for path in artifact_paths]
+    levels = ALL_LEVELS if args.all_levels else parse_csv_ints(args.levels, DEFAULT_LEVELS)
     report = build_inventory_report(
         reports,
-        levels=parse_csv_ints(args.levels, DEFAULT_LEVELS),
+        levels=levels,
         elements=parse_csv_strings(args.elements, DEFAULT_ELEMENTS),
         budget_tiers=parse_csv_ints(args.budget_tiers, DEFAULT_BUDGET_TIERS),
         unproven_example_limit=args.unproven_example_limit,

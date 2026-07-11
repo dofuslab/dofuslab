@@ -1,0 +1,2113 @@
+{
+  "reportVersion": "build-discovery-ap-mp-range-grid-inventory-v1",
+  "scope": "query-grid inventory, not generated-build proof",
+  "levelScope": "all_levels",
+  "levels": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200
+  ],
+  "levelCount": 200,
+  "elements": [
+    "strength",
+    "intelligence",
+    "chance",
+    "agility"
+  ],
+  "elementCount": 4,
+  "budgetTiers": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "budgetTierCount": 4,
+  "validQueryCount": 665088,
+  "generatedEvidenceCount": 116,
+  "attemptedEvidenceCount": 131,
+  "unprovenCount": 664972,
+  "unattemptedCount": 664957,
+  "byLevel": [
+    {
+      "level": 1,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 4,
+      "unprovenCount": 3580
+    },
+    {
+      "level": 2,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 3,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 4,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 5,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 6,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 7,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 8,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 9,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 10,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 11,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 12,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 13,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 14,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 15,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 16,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 17,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 18,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 19,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 1,
+      "unprovenCount": 3583
+    },
+    {
+      "level": 20,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 5,
+      "unprovenCount": 3579
+    },
+    {
+      "level": 21,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 22,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 23,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 24,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 25,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 26,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 27,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 28,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 29,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 30,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 31,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 32,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 33,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 34,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 35,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 36,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 37,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 38,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 39,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 40,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 41,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 42,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 43,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 44,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 45,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 46,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 47,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 48,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 49,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 50,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 10,
+      "unprovenCount": 3574
+    },
+    {
+      "level": 51,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 52,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 53,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 54,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 55,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 56,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 57,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 58,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 59,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 60,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 4,
+      "unprovenCount": 3580
+    },
+    {
+      "level": 61,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 62,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 63,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 64,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 65,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 66,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 67,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 68,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 69,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 70,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 71,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 72,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 73,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 74,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 75,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 76,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 77,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 78,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 79,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 80,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 8,
+      "unprovenCount": 3576
+    },
+    {
+      "level": 81,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 82,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 83,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 84,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 85,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 86,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 87,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 88,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 89,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 90,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 91,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 92,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 93,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 94,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 95,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 96,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 97,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 98,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3584
+    },
+    {
+      "level": 99,
+      "validQueryCount": 3584,
+      "generatedEvidenceCount": 8,
+      "unprovenCount": 3576
+    },
+    {
+      "level": 100,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 10,
+      "unprovenCount": 3062
+    },
+    {
+      "level": 101,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 102,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 103,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 104,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 105,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 106,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 107,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 108,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 109,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 110,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 111,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 112,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 113,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 114,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 115,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 116,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 117,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 118,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 119,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 120,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 11,
+      "unprovenCount": 3061
+    },
+    {
+      "level": 121,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 122,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 123,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 124,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 125,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 126,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 127,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 128,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 129,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 130,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 131,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 132,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 133,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 134,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 135,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 136,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 137,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 138,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 139,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 140,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 141,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 142,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 143,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 144,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 145,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 146,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 147,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 148,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 149,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 1,
+      "unprovenCount": 3071
+    },
+    {
+      "level": 150,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 13,
+      "unprovenCount": 3059
+    },
+    {
+      "level": 151,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 152,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 153,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 154,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 155,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 156,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 157,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 158,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 159,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 160,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 4,
+      "unprovenCount": 3068
+    },
+    {
+      "level": 161,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 162,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 163,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 164,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 165,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 166,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 167,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 168,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 169,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 170,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 171,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 172,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 173,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 174,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 175,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 176,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 177,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 178,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 179,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 9,
+      "unprovenCount": 3063
+    },
+    {
+      "level": 180,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 9,
+      "unprovenCount": 3063
+    },
+    {
+      "level": 181,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 182,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 183,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 184,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 185,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 186,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 187,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 188,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 189,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 190,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 191,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 192,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 193,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 194,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 195,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 196,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 197,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 198,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 0,
+      "unprovenCount": 3072
+    },
+    {
+      "level": 199,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 12,
+      "unprovenCount": 3060
+    },
+    {
+      "level": 200,
+      "validQueryCount": 3072,
+      "generatedEvidenceCount": 7,
+      "unprovenCount": 3065
+    }
+  ],
+  "unprovenExamples": [
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 0
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 1
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 2
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 3
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 4
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 5
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 6
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": null
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 0
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 1
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 2
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 3
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 4
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 5
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 6
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": null
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 0
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 1
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 2
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 3
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 4
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 5
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 6
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": null
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 0
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 1
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 2
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 3
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 4
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 5
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 6
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 0
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 1
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 2
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 3
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 4
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 5
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 6
+    },
+    {
+      "level": 1,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 4,
+      "rangeTarget": null
+    }
+  ],
+  "nextUnprovenTargets": [
+    {
+      "level": 1,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 2,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 3,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 4,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 5,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 6,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 7,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 8,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 9,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 10,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 11,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 12,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 13,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 14,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 15,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 16,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 17,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 18,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 19,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 20,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 21,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 22,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 23,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 24,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 25,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 26,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 27,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 28,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 29,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 30,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 31,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 32,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 33,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 34,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 35,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 36,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 37,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 38,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 39,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    },
+    {
+      "level": 40,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum"
+    }
+  ]
+}

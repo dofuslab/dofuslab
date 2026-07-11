@@ -3109,6 +3109,35 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Docker remains unavailable with the Docker Desktop API internal server error,
   so no container solver artifact was regenerated in this checkpoint.
 
+### 2026-07-10 Full Milestone 3 Query-Space Inventory
+
+- Promoted the AP/MP/Range inventory from representative-level enumeration to
+  an explicit all-level target-space inventory.
+- Added `iter_valid_iop_target_space()` as the shared query-space iterator for:
+  - levels 1 through 200
+  - elements Strength, Intelligence, Chance, and Agility
+  - budget tiers 1 through 4
+  - AP from level minimum to 12
+  - MP from 3 through 6
+  - Range `None` plus 0 through 6
+- Test-locked the full single-element Iop Milestone 3 query universe at
+  `665,088` valid query rows.
+- Added regression coverage proving the static matrix `target-set=all` is only
+  a subset of the full universe, not complete coverage.
+- Generated full-grid inventory artifacts:
+  - `.codex/state/build-discovery-ap-mp-range-full-grid-inventory.json`
+  - `.codex/state/build-discovery-ap-mp-range-full-grid-inventory.md`
+- Current evidence counts from existing artifacts:
+  - valid query rows: `665,088`
+  - generated evidence rows: `116`
+  - attempted evidence rows: `131`
+  - unproven rows: `664,972`
+  - unattempted rows: `664,957`
+- Verification passed:
+  - `python server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
+  - `python -m py_compile server\scripts\build_discovery_ap_mp_range_grid_inventory.py server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
+  - `git diff --check`
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range
