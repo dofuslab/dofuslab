@@ -4437,3 +4437,37 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python -m py_compile oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ringgroup-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`
+
+### 2026-07-11 All-Element Ring-Group CP-SAT Smoke
+
+- Expanded the ring-group smoke from strength/chance to all four single
+  elements while keeping the same small AP/MP/Range shape.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-ringgroup-all-elements-smoke-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ringgroup-all-elements-smoke-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ringgroup-all-elements-smoke-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 1, 4
+  - AP: 7
+  - MP: 3
+  - Range: none, 6
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `16`
+  - generated: `16`
+  - invalid: `0`
+  - solver statuses: `10` optimal, `6` feasible
+  - grouped no-exo rows: `8`
+- Runtime:
+  - elapsed min/avg/max: `5371.6ms / 6726.2ms / 8560.5ms`
+  - model min/avg/max: `1327.7ms / 1540.3ms / 1919.1ms`
+  - solve min/avg/max: `3511.5ms / 4675.3ms / 5093.8ms`
+- Interpretation:
+  - all four single-element level-200 Iop rows can generate valid builds on
+    this narrow Milestone 2 slice
+  - p95 remains above the `<5s` Milestone 2 target
+  - CP-SAT callback rows frequently stop at feasible within the 5s solve cap,
+    so quality is not yet final-best evidence
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ringgroup-all-elements-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`
