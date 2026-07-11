@@ -10,6 +10,7 @@ from build_discovery_action_feasibility import (
     ordered_gear_slots,
     render_markdown,
     state_signature,
+    summarize_frontier,
     target_to_build_target,
 )
 from build_discovery_level_diversity_targets import LevelDiversityTarget
@@ -180,6 +181,17 @@ class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
 
     def test_feasibility_config_defaults_to_full_proof_mode(self):
         self.assertEqual(FeasibilityConfig().proof_mode, "full")
+
+    def test_summarize_frontier_returns_best_action_states(self):
+        target = target_to_build_target(
+            LevelDiversityTarget("target", 200, "strength", 1, 12, 6, 6)
+        )
+        weak = solver.BuildState(stats={"AP": 10, "MP": 5, "Range": 6})
+        strong = solver.BuildState(stats={"AP": 11, "MP": 6, "Range": 6})
+
+        frontier = summarize_frontier([weak, strong], {}, target, 1)
+
+        self.assertEqual(frontier[0]["stats"], {"AP": 11, "MP": 6, "Range": 6})
 
     def test_complete_with_action_dofus_returns_completed_state(self):
         target = target_to_build_target(

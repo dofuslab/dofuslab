@@ -36,6 +36,7 @@ REPORT_VERSION = "build-discovery-action-feasibility-v1"
 class FeasibilityConfig:
     max_states_per_slot: int = 50_000
     max_examples: int = 3
+    max_frontier_examples: int = 5
     proof_mode: str = "full"
 
 
@@ -278,6 +279,16 @@ def summarize_state(state: solver.BuildState, sets: dict[str, dict[str, Any]]) -
     }
 
 
+def summarize_frontier(
+    states: list[solver.BuildState],
+    sets: dict[str, dict[str, Any]],
+    target: solver.BuildTarget,
+    limit: int,
+) -> list[dict[str, Any]]:
+    ranked = sorted(states, key=lambda state: state_sort_key(state, target), reverse=True)
+    return [summarize_state(state, sets) for state in ranked[:limit]]
+
+
 def diagnose_target(
     target_spec: LevelDiversityTarget,
     config: FeasibilityConfig,
@@ -295,8 +306,10 @@ def diagnose_target(
             if not item.get("setID") or not sets.get(item["setID"], {}).get("_excluded")
         ]
         pools = action_relevant_pools(items, sets)
+        original_pool_sizes = {slot_name: len(pool) for slot_name, pool in pools.items()}
         if config.proof_mode == "natural-gear":
             pools = compress_pools_for_action_proof(pools)
+        compressed_pool_sizes = {slot_name: len(pool) for slot_name, pool in pools.items()}
         gear_slots = ordered_gear_slots(pools)
         dofus_by_id = {
             item["dofusID"]: item
@@ -380,12 +393,17 @@ def diagnose_target(
             "status": status,
             "proofMode": config.proof_mode,
             "baseStats": action_stats(solver.active_base_stats()),
+            "poolSizes": {
+                "original": original_pool_sizes,
+                "effective": compressed_pool_sizes,
+            },
             "slotSummaries": slot_summaries,
             "actionDofus": [
                 {"id": item["dofusID"], "name": item["_name"], "stats": action_stats(item["_stats"])}
                 for item in action_dofus
             ],
             "examples": [summarize_state(state, sets) for state in examples],
+            "frontier": [] if examples else summarize_frontier(states, sets, target, config.max_frontier_examples),
         }
 
 
