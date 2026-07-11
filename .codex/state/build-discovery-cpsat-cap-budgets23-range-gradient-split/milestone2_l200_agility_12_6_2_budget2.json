@@ -1,0 +1,719 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T08:46:32.300899+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_agility_12_6_2_budget2",
+        "className": "Iop",
+        "level": 200,
+        "element": "agility",
+        "budgetTier": 2,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2320.17,
+        "weightedStatScore": 3933.1,
+        "utilityStatScore": 368.08,
+        "genericDamageScore": 4139.08,
+        "rawRotationDamageScore": 2567.09,
+        "spellDamageScore": 2567.09,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.3797,
+        "weaponDamageScore": 222.17,
+        "survivabilityScore": 89.51,
+        "weakestElementEhp": 2688.13,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 3,
+          "Agility": 1243,
+          "Power": 290,
+          "Vitality": 2703,
+          "Damage": 0,
+          "Air Damage": 122,
+          "Critical": 67,
+          "Critical Damage": 34
+        },
+        "sets": {
+          "Allister Set": 3,
+          "Submerged Set": 3,
+          "Pawl Ouatnos Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "15701",
+            "internalId": null,
+            "name": "Pawl Ouatnos' Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Pawl Ouatnos Set"
+          },
+          "belt": {
+            "id": "19599",
+            "internalId": null,
+            "name": "Bluster Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Submerged Set"
+          },
+          "weapon": {
+            "id": "19606",
+            "internalId": null,
+            "name": "Ensorcel Lance",
+            "type": "Lance",
+            "level": 200,
+            "set": "Submerged Set"
+          },
+          "shield": {
+            "id": "30060",
+            "internalId": null,
+            "name": "Allister's Aegis",
+            "type": "Shield",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "13123",
+            "internalId": null,
+            "name": "Allister's Crown",
+            "type": "Hat",
+            "level": 196,
+            "set": "Allister Set"
+          },
+          "cloak": {
+            "id": "19601",
+            "internalId": null,
+            "name": "Sucgunner Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Submerged Set"
+          },
+          "pet": {
+            "id": "33169",
+            "internalId": null,
+            "name": "Emerald and Ebony Rhineetle",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13765",
+            "internalId": null,
+            "name": "Major Gymnast",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "ring_1": {
+            "id": "13124",
+            "internalId": null,
+            "name": "Allister's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "ring_2": {
+            "id": "15698",
+            "internalId": null,
+            "name": "Pawl Ouatnos' Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Pawl Ouatnos Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2320.17,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 3,
+          "Agility": 1243,
+          "Power": 290,
+          "Vitality": 2703,
+          "Damage": 0,
+          "Air Damage": 122,
+          "Critical": 67,
+          "Critical Damage": 34
+        },
+        "sets": {
+          "Allister Set": 3,
+          "Submerged Set": 3,
+          "Pawl Ouatnos Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Pawl Ouatnos' Amulet",
+          "Bluster Belt",
+          "Ensorcel Lance",
+          "Allister's Aegis",
+          "Allister's Ring",
+          "Pawl Ouatnos' Ring",
+          "Meriana's Clairvoyance",
+          "Allister's Crown",
+          "Sucgunner Cape",
+          "Emerald and Ebony Rhineetle",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Gymnast"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2320.17,
+          "weightedStatScore": 3933.1,
+          "utilityStatScore": 368.08,
+          "genericDamageScore": 4139.08,
+          "rawRotationDamageScore": 2567.09,
+          "spellDamageScore": 2567.09,
+          "profileBaselineDamageScore": 1860.62,
+          "profileRelativeDamage": 1.3797,
+          "weaponDamageScore": 222.17,
+          "survivabilityScore": 89.51,
+          "weakestElementEhp": 2688.13,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 3,
+            "Agility": 1243,
+            "Power": 290,
+            "Vitality": 2703,
+            "Damage": 0,
+            "Air Damage": 122,
+            "Critical": 67,
+            "Critical Damage": 34
+          },
+          "sets": {
+            "Allister Set": 3,
+            "Submerged Set": 3,
+            "Pawl Ouatnos Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "15701",
+              "internalId": null,
+              "name": "Pawl Ouatnos' Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Pawl Ouatnos Set"
+            },
+            "belt": {
+              "id": "19599",
+              "internalId": null,
+              "name": "Bluster Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Submerged Set"
+            },
+            "weapon": {
+              "id": "19606",
+              "internalId": null,
+              "name": "Ensorcel Lance",
+              "type": "Lance",
+              "level": 200,
+              "set": "Submerged Set"
+            },
+            "shield": {
+              "id": "30060",
+              "internalId": null,
+              "name": "Allister's Aegis",
+              "type": "Shield",
+              "level": 197,
+              "set": "Allister Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "13123",
+              "internalId": null,
+              "name": "Allister's Crown",
+              "type": "Hat",
+              "level": 196,
+              "set": "Allister Set"
+            },
+            "cloak": {
+              "id": "19601",
+              "internalId": null,
+              "name": "Sucgunner Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Submerged Set"
+            },
+            "pet": {
+              "id": "33169",
+              "internalId": null,
+              "name": "Emerald and Ebony Rhineetle",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13765",
+              "internalId": null,
+              "name": "Major Gymnast",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "ring_1": {
+              "id": "13124",
+              "internalId": null,
+              "name": "Allister's Ring",
+              "type": "Ring",
+              "level": 197,
+              "set": "Allister Set"
+            },
+            "ring_2": {
+              "id": "15698",
+              "internalId": null,
+              "name": "Pawl Ouatnos' Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Pawl Ouatnos Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2320.17,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 3,
+            "Agility": 1243,
+            "Power": 290,
+            "Vitality": 2703,
+            "Damage": 0,
+            "Air Damage": 122,
+            "Critical": 67,
+            "Critical Damage": 34
+          },
+          "sets": {
+            "Allister Set": 3,
+            "Submerged Set": 3,
+            "Pawl Ouatnos Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Pawl Ouatnos' Amulet",
+            "Bluster Belt",
+            "Ensorcel Lance",
+            "Allister's Aegis",
+            "Allister's Ring",
+            "Pawl Ouatnos' Ring",
+            "Meriana's Clairvoyance",
+            "Allister's Crown",
+            "Sucgunner Cape",
+            "Emerald and Ebony Rhineetle",
+            "Crimson Dofus",
+            "Dolmanax",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Gymnast"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6673.0,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 165.8,
+          "totalSearchMs": 6507.2
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1288.9,
+            "solveMs": 5031.3,
+            "objective": 1907.93,
+            "solutionCallbackCount": 14,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1544.9,
+                "objective": 966.91,
+                "score": 1388.72,
+                "itemIds": [
+                  "737",
+                  "8843",
+                  "13829",
+                  "13830",
+                  "13831",
+                  "15696",
+                  "26018",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "30453",
+                  "30455",
+                  "30949",
+                  "31767",
+                  "31771",
+                  "33155"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 1806.5,
+                "objective": 969.45,
+                "score": 1453.65,
+                "itemIds": [
+                  "7043",
+                  "11574",
+                  "11576",
+                  "11579",
+                  "11581",
+                  "11583",
+                  "13344",
+                  "13765",
+                  "13829",
+                  "15496",
+                  "18718",
+                  "27266",
+                  "27284",
+                  "30453",
+                  "30455",
+                  "33201"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 1995.2,
+                "objective": 1022.31,
+                "score": 1468.39,
+                "itemIds": [
+                  "737",
+                  "7043",
+                  "8843",
+                  "13829",
+                  "13830",
+                  "15696",
+                  "26018",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "30453",
+                  "30455",
+                  "30949",
+                  "31767",
+                  "31771",
+                  "33155"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2202.4,
+                "objective": 1383.73,
+                "score": 1813.85,
+                "itemIds": [
+                  "7043",
+                  "12713",
+                  "13344",
+                  "13829",
+                  "15747",
+                  "15748",
+                  "19982",
+                  "19983",
+                  "19984",
+                  "19985",
+                  "19986",
+                  "27549",
+                  "30453",
+                  "30455",
+                  "30858",
+                  "33200"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2419.5,
+                "objective": 1385.88,
+                "score": 1765.87,
+                "itemIds": [
+                  "11728",
+                  "13765",
+                  "13829",
+                  "13830",
+                  "13831",
+                  "18712",
+                  "19982",
+                  "19983",
+                  "19984",
+                  "19985",
+                  "19986",
+                  "27549",
+                  "30453",
+                  "30455",
+                  "32121",
+                  "33200"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 99,
+                "belt": 93,
+                "weapon": 197,
+                "shield": 59,
+                "boots": 102,
+                "hat": 131,
+                "cloak": 92,
+                "pet": 452,
+                "dofus": 266,
+                "ring": 132
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1623,
+              "uniqueItemCount": 1623,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 847,
+              "skippedSetCountVarCount": 74,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 186,
+              "conditionConstraintCount": 192,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 202
+            }
+          }
+        ],
+        "itemCount": 1623,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3186,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3186,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3186,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 0.7234,
+          "Air Damage": 2.5359,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2201,
+          "Critical Damage": 1.5602,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.5359,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7234,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

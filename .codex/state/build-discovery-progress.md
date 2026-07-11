@@ -4650,3 +4650,38 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - p95 remains above the Milestone 2 `<5s` target
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-interior-apmp-range0-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 8,11 --mp-targets 4,5 --range-targets 0 --expected-solver cpsat`
+
+### 2026-07-11 Cap-Pressure Mid-Budget Range-Gradient CP-SAT Smoke
+
+- Ran a constrained level-200 Iop slice for budget tiers `2` and `3` at the
+  12/6 cap with non-6 explicit range targets.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-cap-budgets23-range-gradient-matrix.json`
+  - `.codex/state/build-discovery-cpsat-cap-budgets23-range-gradient-matrix.md`
+  - `.codex/state/build-discovery-cpsat-cap-budgets23-range-gradient-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 2, 3
+  - AP: 12
+  - MP: 6
+  - Range: 0, 2, 4, 5
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `32`
+  - generated: `32`
+  - invalid: `0`
+  - solver statuses: `3` optimal, `29` feasible
+  - range coverage: `8` rows each for `0`, `2`, `4`, and `5`
+  - budget coverage: `16` rows each for tiers `2` and `3`
+- Runtime:
+  - elapsed min/avg/max: `6440.4ms / 6785.8ms / 8115.5ms`
+  - model min/avg/max: `1151.7ms / 1324.0ms / 1500.7ms`
+  - solve min/avg/max: `4742.0ms / 5026.0ms / 5086.2ms`
+- Interpretation:
+  - CP-SAT can find valid builds for mid-budget 12/6 cap-pressure rows with
+    explicit range targets below 6
+  - most rows only reach feasible within the 5s cap, so this is coverage
+    evidence, not final-best quality evidence
+  - p95 remains above the Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-cap-budgets23-range-gradient-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 12 --mp-targets 6 --range-targets 0,2,4,5 --expected-solver cpsat`
