@@ -155,6 +155,15 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   are melee for classifier purposes unless tags/stats override them.
 - High `Range` without ranged damage is not enough to force `ranged`; it should
   usually classify ambiguous builds as `mixed`.
+- +Range should be reported as a separate prod analysis dimension, not only as
+  a combat range classifier signal. The current hypothesis is that users may
+  often value Range as a stat tradeoff rather than having a strict hard Range
+  requirement.
+- Prod reports should show +Range distributions by `(class, element,
+  combatRange)` and correlations with combat range classification,
+  `% Ranged Damage`, `% Melee Damage`, weapon family, `% Weapon Damage`,
+  `% Spell Damage`, AP, and MP before we decide whether Range belongs primarily
+  as a hard target, soft preference, or both.
 - A `(class, element)` combat range default should be `prod_aggregate` only
   when the classified complete-build sample count is high enough and the top
   class clearly beats the runner-up. Sparse or ambiguous rows should produce

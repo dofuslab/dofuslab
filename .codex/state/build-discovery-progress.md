@@ -6630,3 +6630,11 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   `heuristic_fallback`.
 - Implementation should start as a bounded readonly report with unit-tested
   classifier behavior before wiring defaults into generation.
+- Added +Range correlation reporting to the plan: the prod classifier report
+  should show Range distributions by `(class, element, combatRange)` and how
+  +Range correlates with combat range classification, ranged/melee damage,
+  weapon family, weapon/spell damage, AP, and MP.
+- Product hypothesis to test: many users may not have a strict hard Range
+  requirement, and may instead expect Range to be evaluated as a useful stat
+  tradeoff. Keep explicit hard Range targets, but use prod evidence before
+  making hard Range the default interaction model.

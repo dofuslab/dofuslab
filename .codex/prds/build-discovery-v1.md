@@ -358,6 +358,11 @@ Signal precedence:
      `% Ranged Damage`.
    - High Range without ranged damage should usually push an otherwise
      ambiguous build to `mixed`, not automatically to `ranged`.
+   - Report +Range as its own distribution and correlation feature, not only as
+     a classifier input. The product hypothesis to test is that many users do
+     not have a strict Range target; they may expect Build Discovery to evaluate
+     Range as a useful stat with tradeoffs against damage, survivability, AP/MP,
+     and budget.
 4. Weapon type.
    - Ranged weapons are `Wand` and `Bow`.
    - Melee weapons are the other weapon families currently equipped through the
@@ -391,6 +396,19 @@ Aggregation and defaults:
   classified counts, combat range unknown count, tag count, top stat signals,
   common weapon families, chosen default, and default source (`prod_aggregate`
   or `heuristic_fallback`).
+- Store +Range diagnostics alongside combat range defaults:
+  - distribution of final Range totals by `(class, element, combatRange)`
+  - distribution of item/exo/set +Range sources
+  - correlation between +Range and `ranged`/`mixed`/`melee` classification
+  - correlation between +Range and `% Ranged Damage`, `% Melee Damage`, weapon
+    family, `% Weapon Damage`, `% Spell Damage`, AP, MP, and score-like stat
+    packages where available
+  - representative examples where high +Range appears on `mixed` or `melee`
+    builds, and where `ranged` builds choose low +Range
+- Use this evidence before deciding whether the product should expose Range as
+  a hard minimum target, a soft preference/slider, or both. Until reviewed,
+  keep supporting explicit hard Range targets but avoid assuming every user
+  wants a strict Range floor by default.
 
 Implementation shape:
 
