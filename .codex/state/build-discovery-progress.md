@@ -4171,3 +4171,53 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python -m py_compile oneoff/build_discovery_prototype.py oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_query_contract.py`
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-scorecache-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`
+
+### 2026-07-11 CP-SAT Model Metadata Precompute
+
+- Added `ModelMetadata` as a per-query precompute layer for CP-SAT model
+  construction.
+- Metadata currently contains:
+  - candidates by slot
+  - item lookup by ID
+  - selected set IDs and max set counts
+  - normalized set bonuses
+  - per-item objective stats including expected item effects
+- `build_model` remains compatible with old callers, but `solve_query` now
+  builds metadata once and reuses it for objective weights and model creation.
+- Removed obsolete repeated scans for selected set IDs, max set counts, set
+  bonuses, and objective item stats during model construction.
+- Added a synthetic metadata test covering slot candidates, set counts, set
+  bonuses, and per-item objective stats.
+- Generated and validated an 8-row Docker CP-SAT metadata smoke:
+  - `.codex/state/build-discovery-cpsat-metadata-smoke-matrix.json`
+  - `.codex/state/build-discovery-cpsat-metadata-smoke-matrix.md`
+  - `.codex/state/build-discovery-cpsat-metadata-smoke-split/`
+- Slice:
+  - elements: strength, chance
+  - budget tiers: 1, 4
+  - AP: 7
+  - MP: 3
+  - Range: none, 6
+  - callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `8`
+  - generated: `8`
+  - invalid: `0`
+  - solver statuses: `4` optimal, `4` feasible
+- Runtime:
+  - elapsed min/avg/max: `5820.1ms / 6997.9ms / 8765.5ms`
+  - load min/avg/max: `158.5ms / 445.0ms / 1925.2ms`
+  - model min/avg/max: `1571.4ms / 1744.8ms / 1879.2ms`
+  - solve min/avg/max: `3713.0ms / 4679.9ms / 5067.2ms`
+- Interpretation:
+  - model metadata moved model build modestly in the right direction
+  - p95 remains well above `<5s`
+  - next work should reduce variable/constraint count or move more of the
+    generated model to static indexed arrays
+- Verification passed:
+  - `python server\scripts\test_build_discovery_cpsat_experiment.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\oneoff\build_discovery_cpsat_experiment.py server\scripts\test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python -m py_compile oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-metadata-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`

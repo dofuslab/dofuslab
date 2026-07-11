@@ -35,6 +35,7 @@ try:
     from ortools.sat.python import cp_model
     from oneoff.build_discovery_cpsat_experiment import (
         CandidateCollectionCallback,
+        build_model_metadata,
         state_signature,
         build_model,
         reconstruct_state,
@@ -43,6 +44,7 @@ try:
 except Exception as exc:  # pragma: no cover - exercised only in incomplete envs.
     cp_model = None
     CandidateCollectionCallback = None
+    build_model_metadata = None
     state_signature = None
     build_model = None
     reconstruct_state = None
@@ -221,6 +223,18 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertIn("slotVarCount", source)
         self.assertIn("exactSetCountVarCount", source)
         self.assertIn("conditionConstraintCount", source)
+
+    def test_model_metadata_precomputes_static_model_inputs(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        metadata = build_model_metadata(base_fixture_items(), fixture_sets())
+
+        self.assertEqual(metadata.item_by_id["amulet"]["itemType"], "Amulet")
+        self.assertEqual(len(metadata.candidates_by_slot["dofus"]), 6)
+        self.assertEqual(metadata.selected_set_ids, {"dofus_set"})
+        self.assertEqual(metadata.max_set_counts["dofus_set"], 2)
+        self.assertEqual(metadata.set_bonus_by_id["dofus_set"]["2"], {"Strength": 200})
+        self.assertIn("Strength", metadata.item_objective_stats_by_id["ring_good"])
 
     def test_experiment_exposes_callback_candidate_collection(self):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")

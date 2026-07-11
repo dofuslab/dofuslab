@@ -1,0 +1,717 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T07:33:21.043924+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_chance_7_3_6_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2456.59,
+        "weightedStatScore": 4280.36,
+        "utilityStatScore": 342.81,
+        "genericDamageScore": 4466.56,
+        "rawRotationDamageScore": 2955.81,
+        "spellDamageScore": 2955.81,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.4889,
+        "weaponDamageScore": 235.37,
+        "survivabilityScore": 103.82,
+        "weakestElementEhp": 2902.27,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 6,
+          "Chance": 1518,
+          "Power": 250,
+          "Vitality": 3603,
+          "Damage": 5,
+          "Water Damage": 147,
+          "Critical": 41,
+          "Critical Damage": 35
+        },
+        "sets": {
+          "Ice Knight Set": 2,
+          "Voldelor Set": 2,
+          "Rhineetle Set": 2,
+          "Pit Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "18004",
+            "internalId": null,
+            "name": "Spookkoth Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "belt": {
+            "id": "17104",
+            "internalId": null,
+            "name": "Voldelor Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "32233",
+            "internalId": null,
+            "name": "Ice Knight's Frigid Pavise",
+            "type": "Shield",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "ring_1": {
+            "id": "32231",
+            "internalId": null,
+            "name": "Ice Knight's Frozen Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "boots": {
+            "id": "17105",
+            "internalId": null,
+            "name": "Voldelor Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "hat": {
+            "id": "19982",
+            "internalId": null,
+            "name": "Rhineetle Helmet",
+            "type": "Hat",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "cloak": {
+            "id": "18005",
+            "internalId": null,
+            "name": "Mantaze Cloak",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "pet": {
+            "id": "33037",
+            "internalId": null,
+            "name": "Indigo and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12716",
+            "internalId": null,
+            "name": "Major Player",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13783",
+            "internalId": null,
+            "name": "Major Water Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13767",
+            "internalId": null,
+            "name": "Tease",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2456.59,
+        "apStrategy": null,
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 6,
+          "Chance": 1518,
+          "Power": 250,
+          "Vitality": 3603,
+          "Damage": 5,
+          "Water Damage": 147,
+          "Critical": 41,
+          "Critical Damage": 35
+        },
+        "sets": {
+          "Ice Knight Set": 2,
+          "Voldelor Set": 2,
+          "Rhineetle Set": 2,
+          "Pit Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Spookkoth Amulet",
+          "Voldelor Belt",
+          "Gargandyas's Fury",
+          "Ice Knight's Frigid Pavise",
+          "Ice Knight's Frozen Gauntlet",
+          "Rhineetle Ring",
+          "Voldelor Boots",
+          "Rhineetle Helmet",
+          "Mantaze Cloak",
+          "Indigo and Ivory Dragoturkey",
+          "Arcanist",
+          "Impetuous",
+          "Major Player",
+          "Major Tease",
+          "Major Water Wrecker",
+          "Tease"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2456.59,
+          "weightedStatScore": 4280.36,
+          "utilityStatScore": 342.81,
+          "genericDamageScore": 4466.56,
+          "rawRotationDamageScore": 2955.81,
+          "spellDamageScore": 2955.81,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.4889,
+          "weaponDamageScore": 235.37,
+          "survivabilityScore": 103.82,
+          "weakestElementEhp": 2902.27,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 6,
+            "Chance": 1518,
+            "Power": 250,
+            "Vitality": 3603,
+            "Damage": 5,
+            "Water Damage": 147,
+            "Critical": 41,
+            "Critical Damage": 35
+          },
+          "sets": {
+            "Ice Knight Set": 2,
+            "Voldelor Set": 2,
+            "Rhineetle Set": 2,
+            "Pit Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "18004",
+              "internalId": null,
+              "name": "Spookkoth Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Pit Set"
+            },
+            "belt": {
+              "id": "17104",
+              "internalId": null,
+              "name": "Voldelor Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "32233",
+              "internalId": null,
+              "name": "Ice Knight's Frigid Pavise",
+              "type": "Shield",
+              "level": 200,
+              "set": "Ice Knight Set"
+            },
+            "ring_1": {
+              "id": "32231",
+              "internalId": null,
+              "name": "Ice Knight's Frozen Gauntlet",
+              "type": "Ring",
+              "level": 200,
+              "set": "Ice Knight Set"
+            },
+            "ring_2": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "boots": {
+              "id": "17105",
+              "internalId": null,
+              "name": "Voldelor Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "hat": {
+              "id": "19982",
+              "internalId": null,
+              "name": "Rhineetle Helmet",
+              "type": "Hat",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "cloak": {
+              "id": "18005",
+              "internalId": null,
+              "name": "Mantaze Cloak",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Pit Set"
+            },
+            "pet": {
+              "id": "33037",
+              "internalId": null,
+              "name": "Indigo and Ivory Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "12716",
+              "internalId": null,
+              "name": "Major Player",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13783",
+              "internalId": null,
+              "name": "Major Water Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13767",
+              "internalId": null,
+              "name": "Tease",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2456.59,
+          "apStrategy": null,
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 6,
+            "Chance": 1518,
+            "Power": 250,
+            "Vitality": 3603,
+            "Damage": 5,
+            "Water Damage": 147,
+            "Critical": 41,
+            "Critical Damage": 35
+          },
+          "sets": {
+            "Ice Knight Set": 2,
+            "Voldelor Set": 2,
+            "Rhineetle Set": 2,
+            "Pit Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Spookkoth Amulet",
+            "Voldelor Belt",
+            "Gargandyas's Fury",
+            "Ice Knight's Frigid Pavise",
+            "Ice Knight's Frozen Gauntlet",
+            "Rhineetle Ring",
+            "Voldelor Boots",
+            "Rhineetle Helmet",
+            "Mantaze Cloak",
+            "Indigo and Ivory Dragoturkey",
+            "Arcanist",
+            "Impetuous",
+            "Major Player",
+            "Major Tease",
+            "Major Water Wrecker",
+            "Tease"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7190.3,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 166.0,
+          "totalSearchMs": 7024.3
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1848.4,
+            "solveMs": 5059.2,
+            "objective": 1988.67,
+            "solutionCallbackCount": 8,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2193.4,
+                "objective": 1185.35,
+                "score": 1597.32,
+                "itemIds": [
+                  "8840",
+                  "9132",
+                  "12108",
+                  "12109",
+                  "12713",
+                  "12714",
+                  "12720",
+                  "13759",
+                  "13768",
+                  "13831",
+                  "18026",
+                  "18028",
+                  "27537",
+                  "27538",
+                  "27540",
+                  "33035"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2446.5,
+                "objective": 1240.31,
+                "score": 1651.47,
+                "itemIds": [
+                  "8840",
+                  "12108",
+                  "12109",
+                  "12713",
+                  "12714",
+                  "12720",
+                  "13768",
+                  "13829",
+                  "13831",
+                  "18026",
+                  "18028",
+                  "27537",
+                  "27538",
+                  "27540",
+                  "32220",
+                  "33035"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2595.5,
+                "objective": 1274.93,
+                "score": 1750.04,
+                "itemIds": [
+                  "9133",
+                  "9463",
+                  "12715",
+                  "12716",
+                  "13767",
+                  "13768",
+                  "13783",
+                  "15693",
+                  "15695",
+                  "15697",
+                  "15700",
+                  "19264",
+                  "30453",
+                  "32235",
+                  "32236",
+                  "33057"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2742.3,
+                "objective": 1299.9,
+                "score": 1783.37,
+                "itemIds": [
+                  "9133",
+                  "9463",
+                  "12715",
+                  "12716",
+                  "13767",
+                  "13768",
+                  "15693",
+                  "15695",
+                  "15697",
+                  "15700",
+                  "19264",
+                  "30453",
+                  "30455",
+                  "32235",
+                  "32236",
+                  "33057"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2951.8,
+                "objective": 1888.58,
+                "score": 2342.37,
+                "itemIds": [
+                  "11738",
+                  "12716",
+                  "13768",
+                  "13783",
+                  "15694",
+                  "16248",
+                  "18004",
+                  "18017",
+                  "18022",
+                  "18024",
+                  "18598",
+                  "19985",
+                  "30453",
+                  "30455",
+                  "32233",
+                  "33037"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 308,
+                "dofus": 261
+              },
+              "slotVarCount": 1639,
+              "uniqueItemCount": 1505,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 936,
+              "conditionConstraintCount": 375,
+              "setCountConstraintCount": 239
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

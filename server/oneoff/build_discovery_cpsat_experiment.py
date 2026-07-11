@@ -11,6 +11,7 @@ import argparse
 import json
 import time
 from collections import defaultdict
+from dataclasses import dataclass
 from typing import Any
 
 from ortools.sat.python import cp_model
@@ -97,24 +98,63 @@ def cheap_final_score_for_stats(stats: dict[str, int], generic_damage_weight: fl
     )
 
 
-def collect_objective_stats(items: list[dict[str, Any]], sets: dict[str, dict[str, Any]]) -> set[str]:
-    stats = set(STAT_WEIGHTS)
+@dataclass(frozen=True)
+class ModelMetadata:
+    candidates_by_slot: dict[str, list[dict[str, Any]]]
+    item_by_id: dict[str, dict[str, Any]]
+    selected_set_ids: set[str]
+    max_set_counts: dict[str, int]
+    set_bonus_by_id: dict[str, dict[str, dict[str, int]]]
+    item_objective_stats_by_id: dict[str, dict[str, float]]
+
+
+def objective_stats_for_item(item: dict[str, Any]) -> dict[str, float]:
+    stats: dict[str, float] = defaultdict(float, item.get("_stats") or normalize_stats(item.get("stats", [])))
+    for stat, value in expected_item_effect_stats(item).items():
+        stats[stat] += value
+    return dict(stats)
+
+
+def build_model_metadata(items: list[dict[str, Any]], sets: dict[str, dict[str, Any]]) -> ModelMetadata:
+    max_set_counts: dict[str, int] = defaultdict(int)
+    selected_sets: set[str] = set()
     for item in items:
-        stats.update((item.get("_stats") or normalize_stats(item.get("stats", []))).keys())
-        stats.update(expected_item_effect_stats(item).keys())
-    for set_obj in sets.values():
-        for bonus_stats in set_bonus_stats(set_obj).values():
+        set_id = item.get("setID")
+        if set_id:
+            selected_sets.add(set_id)
+            max_set_counts[set_id] += 1
+    return ModelMetadata(
+        candidates_by_slot=slot_candidates(items),
+        item_by_id=items_by_id(items),
+        selected_set_ids=selected_sets,
+        max_set_counts=dict(max_set_counts),
+        set_bonus_by_id={
+            set_id: set_bonus_stats(set_obj)
+            for set_id, set_obj in sets.items()
+        },
+        item_objective_stats_by_id={
+            item["dofusID"]: objective_stats_for_item(item)
+            for item in items
+        },
+    )
+
+
+def collect_objective_stats(metadata: ModelMetadata) -> set[str]:
+    stats = set(STAT_WEIGHTS)
+    for item_stats in metadata.item_objective_stats_by_id.values():
+        stats.update(item_stats.keys())
+    for bonus_stats_by_count in metadata.set_bonus_by_id.values():
+        for bonus_stats in bonus_stats_by_count.values():
             stats.update(bonus_stats.keys())
     return stats
 
 
 def linearized_final_score_weights(
-    items: list[dict[str, Any]],
-    sets: dict[str, dict[str, Any]],
+    metadata: ModelMetadata,
     generic_damage_weight: float,
 ) -> dict[str, float]:
     reference_stats = profile_damage_reference_stats()
-    objective_stats = collect_objective_stats(items, sets)
+    objective_stats = collect_objective_stats(metadata)
     for stat in objective_stats:
         reference_stats.setdefault(stat, active_base_stats().get(stat, 0))
     baseline = cheap_final_score_for_stats(reference_stats, generic_damage_weight)
@@ -131,24 +171,18 @@ def linearized_final_score_weights(
 
 def objective_weights_for_mode(
     mode: str,
-    items: list[dict[str, Any]],
-    sets: dict[str, dict[str, Any]],
+    metadata: ModelMetadata,
     generic_damage_weight: float,
 ) -> dict[str, float]:
     if mode == "stat-linear":
         return dict(STAT_WEIGHTS)
     if mode == "final-linear":
-        return linearized_final_score_weights(items, sets, generic_damage_weight)
+        return linearized_final_score_weights(metadata, generic_damage_weight)
     raise ValueError(f"Unsupported objective mode: {mode}")
 
 
-def objective_item_score(item: dict[str, Any], weights: dict[str, float]) -> int:
-    stats: dict[str, float] = defaultdict(float)
-    for stat, value in normalize_stats(item.get("stats", [])).items():
-        stats[stat] += value
-    for stat, value in expected_item_effect_stats(item).items():
-        stats[stat] += value
-    return scaled_score(score_stat_lines(dict(stats), weights))
+def objective_item_score(item_stats: dict[str, float], weights: dict[str, float]) -> int:
+    return scaled_score(score_stat_lines(item_stats, weights))
 
 
 def objective_set_bonus_score(stats: dict[str, int], weights: dict[str, float]) -> int:
@@ -175,14 +209,6 @@ def set_bonus_upper_bound_condition(condition_obj: dict[str, Any]) -> int | None
     return None
 
 
-def selected_set_ids(items: list[dict[str, Any]]) -> set[str]:
-    return {
-        item["setID"]
-        for item in items
-        if item.get("setID")
-    }
-
-
 def items_by_id(items: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return {item["dofusID"]: item for item in items}
 
@@ -197,6 +223,7 @@ def build_model(
     max_shared_items: int | None,
     objective_weights: dict[str, float],
     exo_policy: str,
+    metadata: ModelMetadata | None = None,
 ) -> tuple[
     cp_model.CpModel,
     dict[tuple[str, str], cp_model.IntVar],
@@ -204,8 +231,9 @@ def build_model(
     dict[str, Any],
 ]:
     model = cp_model.CpModel()
-    candidates_by_slot = slot_candidates(items)
-    item_by_id = items_by_id(items)
+    metadata = metadata or build_model_metadata(items, sets)
+    candidates_by_slot = metadata.candidates_by_slot
+    item_by_id = metadata.item_by_id
 
     slot_item_vars: dict[tuple[str, str], cp_model.IntVar] = {}
     item_presence_terms: dict[str, list[cp_model.IntVar]] = defaultdict(list)
@@ -289,11 +317,6 @@ def build_model(
             model.Add(sum(stat_exos) <= 1)
 
     exact_set_count_vars: dict[tuple[str, int], cp_model.IntVar] = {}
-    max_set_counts: dict[str, int] = defaultdict(int)
-    for item in items:
-        set_id = item.get("setID")
-        if set_id:
-            max_set_counts[set_id] += 1
 
     item_terms_by_set: dict[str, list[cp_model.IntVar]] = defaultdict(list)
     non_dofus_slots_by_set: dict[str, set[str]] = defaultdict(set)
@@ -309,7 +332,7 @@ def build_model(
                 non_dofus_slots_by_set[set_id].add(slot_name)
             item_ids_by_set[set_id].add(item_id)
 
-    for set_id in sorted(selected_set_ids(items)):
+    for set_id in sorted(metadata.selected_set_ids):
         item_terms = item_terms_by_set[set_id]
         if not item_terms:
             continue
@@ -317,7 +340,7 @@ def build_model(
             DOFUS_GROUP_SIZE,
             len(dofus_item_ids_by_set[set_id]),
         )
-        max_count = min(max_set_counts[set_id], len(item_ids_by_set[set_id]), max_selectable_slots)
+        max_count = min(metadata.max_set_counts[set_id], len(item_ids_by_set[set_id]), max_selectable_slots)
         exact_vars = []
         for count in range(max_count + 1):
             var = model.NewBoolVar(f"set_{set_id}_{count}")
@@ -336,10 +359,7 @@ def build_model(
             item = item_by_id[item_id]
             expr += item.get("_stats", {}).get(stat, 0) * var
         for (set_id, count), var in exact_set_count_vars.items():
-            set_obj = sets.get(set_id)
-            if not set_obj:
-                continue
-            expr += set_bonus_stats(set_obj).get(str(count), {}).get(stat, 0) * var
+            expr += metadata.set_bonus_by_id.get(set_id, {}).get(str(count), {}).get(stat, 0) * var
         for (slot_name, exo_stat), var in exo_vars.items():
             if exo_stat == stat:
                 expr += var
@@ -456,14 +476,13 @@ def build_model(
 
     objective_terms = []
     for (slot_name, item_id), var in slot_item_vars.items():
-        item = item_by_id[item_id]
-        objective_terms.append(objective_item_score(item, objective_weights) * var)
+        objective_terms.append(
+            objective_item_score(metadata.item_objective_stats_by_id[item_id], objective_weights) * var
+        )
     for (set_id, count), var in exact_set_count_vars.items():
-        set_obj = sets.get(set_id)
-        if set_obj:
-            objective_terms.append(
-                objective_set_bonus_score(set_bonus_stats(set_obj).get(str(count), {}), objective_weights) * var
-            )
+        objective_terms.append(
+            objective_set_bonus_score(metadata.set_bonus_by_id.get(set_id, {}).get(str(count), {}), objective_weights) * var
+        )
     for (slot_name, stat), var in exo_vars.items():
         objective_terms.append(scaled_score(objective_weights.get(stat, 0.0)) * var)
     model.Maximize(sum(objective_terms))
@@ -709,10 +728,10 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
         excluded_item_ids=set(query.avoided_item_ids),
     )
     sets = load_sets()
+    metadata = build_model_metadata(items, sets)
     objective_weights = objective_weights_for_mode(
         args.objective_mode,
-        items,
-        sets,
+        metadata,
         args.generic_damage_weight,
     )
     load_ms = (time.perf_counter() - load_start) * 1000
@@ -738,6 +757,7 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
             max_shared_items=None,
             objective_weights=objective_weights,
             exo_policy=query.exo_policy,
+            metadata=metadata,
         )
         model_ms = (time.perf_counter() - model_start) * 1000
 
@@ -814,6 +834,7 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
                 max_shared_items=args.max_shared_items,
                 objective_weights=objective_weights,
                 exo_policy=query.exo_policy,
+                metadata=metadata,
             )
             model_ms = (time.perf_counter() - model_start) * 1000
 

@@ -149,6 +149,11 @@ review before accepting Milestone 2 evidence.
 - An 8-row score-cache smoke had warm load times around `159.2ms-311.1ms`
   after the first cold row, but model build (`1725.2ms-1902.8ms`) and solve
   (`3629.8ms-5070.8ms`) remain the main bottlenecks.
+- CP-SAT model construction now uses per-query `ModelMetadata` for slot
+  candidates, item lookup, set bonuses, selected set IDs, set counts, and
+  item objective stats. This reduces repeated Python-side scans and prepares
+  the path toward a static solver index, but model creation still averages
+  around `1744.8ms` on the 8-row smoke.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.
