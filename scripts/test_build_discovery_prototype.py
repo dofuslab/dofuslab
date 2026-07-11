@@ -21,6 +21,7 @@ from oneoff.build_discovery_prototype import (
     DEFAULT_AP_STRATEGIES,
     add_item_to_state,
     action_stat_progress_key,
+    action_stat_witness_seed_needed,
     action_stats_meet_target,
     ap_strategy_matches,
     approach_item_ids,
@@ -102,6 +103,28 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(
             score_state(negative_range, {}, no_range_target) - score_state(negative_range, {}, zero_range_target),
             3 * 25,
+        )
+
+    def test_action_stat_witness_seed_runs_for_non_base_action_targets(self):
+        self.assertFalse(
+            action_stat_witness_seed_needed(
+                BuildDiscoveryQuery(level=20, ap_target=6, mp_target=3, range_target=None).target
+            )
+        )
+        self.assertTrue(
+            action_stat_witness_seed_needed(
+                BuildDiscoveryQuery(level=20, ap_target=6, mp_target=6, range_target=None).target
+            )
+        )
+        self.assertTrue(
+            action_stat_witness_seed_needed(
+                BuildDiscoveryQuery(level=100, ap_target=8, mp_target=3, range_target=None).target
+            )
+        )
+        self.assertTrue(
+            action_stat_witness_seed_needed(
+                BuildDiscoveryQuery(level=20, ap_target=6, mp_target=3, range_target=1).target
+            )
         )
 
     def test_range_none_does_not_force_range_item_condition_during_partial_search(self):

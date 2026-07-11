@@ -1,6 +1,6 @@
 {
   "reportVersion": "build-discovery-level-diversity-matrix-v1",
-  "generatedAt": "2026-07-11T03:25:01.603380+00:00",
+  "generatedAt": "2026-07-11T03:53:08.243047+00:00",
   "scope": "Iop target-file generated target matrix",
   "evidenceType": "generated_solver_snapshot",
   "provenance": {
@@ -41,10 +41,10 @@
         "lockedItemIds": [],
         "avoidedItemIds": [],
         "limit": 3,
-        "topK": 25,
-        "beamWidth": 100,
-        "perSignatureCap": 10,
-        "relevantSetLimit": 40
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
       },
       "status": "no_build",
       "resultCount": 0,
@@ -65,17 +65,17 @@
         "No builds found; this may be infeasible for the selected constraints or a remaining search coverage gap."
       ],
       "diagnostics": {
-        "elapsedMs": 665.5,
+        "elapsedMs": 770.5,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 110.9,
-          "candidatePoolsMs": 31.0,
+          "loadDataMs": 114.5,
+          "candidatePoolsMs": 35.6,
           "packageIndexMs": 0.1,
-          "packageSeedsMs": 1.7,
+          "packageSeedsMs": 2.8,
           "directCompletionMs": 0.0,
-          "beamSearchMs": 7.8,
+          "beamSearchMs": 8.5,
           "rankAndDiversifyMs": 0.0,
-          "totalFindBuildsMs": 151.6
+          "totalFindBuildsMs": 161.5
         },
         "resultCount": 0,
         "fallbackBudget": null

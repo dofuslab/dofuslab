@@ -1,6 +1,6 @@
 {
   "reportVersion": "build-discovery-level-diversity-matrix-v1",
-  "generatedAt": "2026-07-11T03:25:01.603380+00:00",
+  "generatedAt": "2026-07-11T03:53:08.243047+00:00",
   "scope": "Iop target-file generated target matrix",
   "evidenceType": "generated_solver_snapshot",
   "provenance": {
@@ -41,10 +41,10 @@
         "lockedItemIds": [],
         "avoidedItemIds": [],
         "limit": 3,
-        "topK": 25,
-        "beamWidth": 100,
-        "perSignatureCap": 10,
-        "relevantSetLimit": 40
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
       },
       "status": "generated",
       "resultCount": 3,
@@ -606,17 +606,17 @@
           }
         },
         {
-          "score": 1513.15,
-          "weightedStatScore": 2269.16,
-          "utilityStatScore": 269.5,
-          "genericDamageScore": 2664.35,
-          "rawRotationDamageScore": 1528.63,
-          "spellDamageScore": 1528.63,
+          "score": 1518.88,
+          "weightedStatScore": 2236.66,
+          "utilityStatScore": 274.0,
+          "genericDamageScore": 2674.43,
+          "rawRotationDamageScore": 1534.41,
+          "spellDamageScore": 1534.41,
           "profileBaselineDamageScore": 1721.21,
-          "profileRelativeDamage": 0.8881,
-          "weaponDamageScore": 73.44,
-          "survivabilityScore": 44.69,
-          "weakestElementEhp": 1451.95,
+          "profileRelativeDamage": 0.8915,
+          "weaponDamageScore": 73.94,
+          "survivabilityScore": 41.39,
+          "weakestElementEhp": 1355.59,
           "apStrategy": "level_diversity_flexible_ap",
           "baseAllocation": {
             "Strength": 265,
@@ -627,9 +627,9 @@
             "AP": 11,
             "MP": 6,
             "Range": 4,
-            "Strength": 935,
-            "Power": 135,
-            "Vitality": 1410,
+            "Strength": 920,
+            "Power": 155,
+            "Vitality": 1330,
             "Damage": 10,
             "Earth Damage": 23,
             "Critical": 27,
@@ -700,12 +700,12 @@
               "set": "Simbadas Set"
             },
             "belt": {
-              "id": "2677",
+              "id": "9175",
               "internalId": null,
-              "name": "Chouquish Belt",
+              "name": "Royal Rainbow Blop Belt",
               "type": "Belt",
-              "level": 96,
-              "set": null
+              "level": 88,
+              "set": "Royal Rainbow Blop Set"
             },
             "ring_2": {
               "id": "33579",
@@ -764,11 +764,11 @@
               "set": null
             },
             "dofus_6": {
-              "id": "12722",
+              "id": "13758",
               "internalId": null,
-              "name": "Minor Maniac",
+              "name": "Goliath",
               "type": "Trophy",
-              "level": 50,
+              "level": 100,
               "set": null
             }
           }
@@ -856,15 +856,15 @@
           ]
         },
         {
-          "score": 1513.15,
+          "score": 1518.88,
           "apStrategy": "level_diversity_flexible_ap",
           "totals": {
             "AP": 11,
             "MP": 6,
             "Range": 4,
-            "Strength": 935,
-            "Power": 135,
-            "Vitality": 1410,
+            "Strength": 920,
+            "Power": 155,
+            "Vitality": 1330,
             "Damage": 10,
             "Earth Damage": 23,
             "Critical": 27,
@@ -879,7 +879,7 @@
           "exos": {},
           "items": [
             "Simbadas Cage",
-            "Chouquish Belt",
+            "Royal Rainbow Blop Belt",
             "Khardboard Goultard",
             "Khardboard Bowisse's Shield",
             "Ourobubble Ring",
@@ -893,7 +893,7 @@
             "Earth Wrecker",
             "Maniac",
             "Earth Destroyer",
-            "Minor Maniac"
+            "Goliath"
           ]
         }
       ],
@@ -904,17 +904,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 337096.5,
+        "elapsedMs": 519283.0,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 117.8,
-          "candidatePoolsMs": 90.0,
-          "packageIndexMs": 1138.3,
-          "packageSeedsMs": 2360.3,
-          "directCompletionMs": 333378.8,
+          "loadDataMs": 126.0,
+          "candidatePoolsMs": 90.1,
+          "packageIndexMs": 1199.7,
+          "packageSeedsMs": 141574.3,
+          "directCompletionMs": 376278.4,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 2.0,
-          "totalFindBuildsMs": 337087.1
+          "rankAndDiversifyMs": 3.0,
+          "totalFindBuildsMs": 519271.5
         },
         "resultCount": 3,
         "fallbackBudget": null

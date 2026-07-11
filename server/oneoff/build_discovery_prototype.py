@@ -1899,7 +1899,11 @@ def budget_action_gear_seed_states(
 
 
 def action_stat_witness_seed_needed(target: BuildTarget) -> bool:
-    return target.ap == MAX_AP and target.mp == MAX_MP and target.range == MAX_RANGE
+    return (
+        target.ap > base_ap_for_level(target.level)
+        or target.mp > MIN_MP
+        or (target.range_required and target.range > 0)
+    )
 
 
 def action_stat_witness_seed_choices(

@@ -1,6 +1,6 @@
 {
   "reportVersion": "build-discovery-level-diversity-matrix-v1",
-  "generatedAt": "2026-07-11T03:25:01.603380+00:00",
+  "generatedAt": "2026-07-11T03:52:32.635753+00:00",
   "scope": "Iop target-file generated target matrix",
   "evidenceType": "generated_solver_snapshot",
   "provenance": {
@@ -9,8 +9,8 @@
     "generator": "scripts/build_discovery_level_diversity_matrix.py"
   },
   "targetCount": 1,
-  "generatedCount": 0,
-  "noBuildCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
   "invalidCount": 0,
   "results": [
     {
@@ -41,43 +41,770 @@
         "lockedItemIds": [],
         "avoidedItemIds": [],
         "limit": 3,
-        "topK": 25,
-        "beamWidth": 100,
-        "perSignatureCap": 10,
-        "relevantSetLimit": 40
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
       },
-      "status": "no_build",
-      "resultCount": 0,
-      "validationErrors": [
-        "no build returned"
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
       ],
-      "candidateValidationErrors": [],
-      "bestBuild": null,
-      "bestBuildSummary": null,
-      "candidateBuilds": [],
-      "candidateBuildSummaries": [],
+      "bestBuild": {
+        "score": 384.27,
+        "weightedStatScore": 577.8,
+        "utilityStatScore": 164.5,
+        "genericDamageScore": 469.65,
+        "rawRotationDamageScore": 180.67,
+        "spellDamageScore": 178.25,
+        "profileBaselineDamageScore": 1154.08,
+        "profileRelativeDamage": 0.1566,
+        "weaponDamageScore": 11.82,
+        "survivabilityScore": 8.43,
+        "weakestElementEhp": 281.0,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Intelligence": 95,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 6,
+          "Range": 2,
+          "Intelligence": 289,
+          "Power": 10,
+          "Vitality": 281,
+          "Damage": 0,
+          "Fire Damage": 3,
+          "Critical": 3,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Gobball Set": 6,
+          "Red Piwi Set": 2
+        },
+        "exos": {
+          "MP": {
+            "itemId": "8213",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "8213",
+            "internalId": null,
+            "name": "Red Piwi Amulet",
+            "type": "Amulet",
+            "level": 11,
+            "set": "Red Piwi Set"
+          },
+          "belt": {
+            "id": "2428",
+            "internalId": null,
+            "name": "Gobball Belt",
+            "type": "Belt",
+            "level": 20,
+            "set": "Gobball Set"
+          },
+          "weapon": {
+            "id": "2416",
+            "internalId": null,
+            "name": "Gobball Hammer",
+            "type": "Hammer",
+            "level": 20,
+            "set": "Gobball Set"
+          },
+          "shield": {
+            "id": "18666",
+            "internalId": null,
+            "name": "Gobball Shield",
+            "type": "Shield",
+            "level": 20,
+            "set": "Gobball Set"
+          },
+          "ring_1": {
+            "id": "8219",
+            "internalId": null,
+            "name": "Red Piwi Ring",
+            "type": "Ring",
+            "level": 10,
+            "set": "Red Piwi Set"
+          },
+          "ring_2": {
+            "id": "2419",
+            "internalId": null,
+            "name": "Bouze Lite Yeah's Ring",
+            "type": "Ring",
+            "level": 20,
+            "set": "Gobball Set"
+          },
+          "boots": {
+            "id": "3207",
+            "internalId": null,
+            "name": "Satisfaction Boots",
+            "type": "Boots",
+            "level": 12,
+            "set": null
+          },
+          "hat": {
+            "id": "2411",
+            "internalId": null,
+            "name": "Gobball Headgear",
+            "type": "Hat",
+            "level": 20,
+            "set": "Gobball Set"
+          },
+          "cloak": {
+            "id": "2414",
+            "internalId": null,
+            "name": "Gobball Cape",
+            "type": "Cloak",
+            "level": 20,
+            "set": "Gobball Set"
+          },
+          "pet": {
+            "id": "15254",
+            "internalId": null,
+            "name": "Drhellbert",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "30356",
+            "internalId": null,
+            "name": "Aiwuztheya Dofus",
+            "type": "Dofus",
+            "level": 20,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7113",
+            "internalId": null,
+            "name": "Dofawa",
+            "type": "Dofus",
+            "level": 6,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 384.27,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 6,
+          "MP": 6,
+          "Range": 2,
+          "Intelligence": 289,
+          "Power": 10,
+          "Vitality": 281,
+          "Damage": 0,
+          "Fire Damage": 3,
+          "Critical": 3,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Gobball Set": 6,
+          "Red Piwi Set": 2
+        },
+        "exos": {
+          "MP": {
+            "itemId": "8213",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Red Piwi Amulet",
+          "Gobball Belt",
+          "Gobball Hammer",
+          "Gobball Shield",
+          "Red Piwi Ring",
+          "Bouze Lite Yeah's Ring",
+          "Satisfaction Boots",
+          "Gobball Headgear",
+          "Gobball Cape",
+          "Drhellbert",
+          "Aiwuztheya Dofus",
+          "Dofawa"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 384.27,
+          "weightedStatScore": 577.8,
+          "utilityStatScore": 164.5,
+          "genericDamageScore": 469.65,
+          "rawRotationDamageScore": 180.67,
+          "spellDamageScore": 178.25,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.1566,
+          "weaponDamageScore": 11.82,
+          "survivabilityScore": 8.43,
+          "weakestElementEhp": 281.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Intelligence": 95,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 6,
+            "Range": 2,
+            "Intelligence": 289,
+            "Power": 10,
+            "Vitality": 281,
+            "Damage": 0,
+            "Fire Damage": 3,
+            "Critical": 3,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Gobball Set": 6,
+            "Red Piwi Set": 2
+          },
+          "exos": {
+            "MP": {
+              "itemId": "8213",
+              "slot": "amulet"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "8213",
+              "internalId": null,
+              "name": "Red Piwi Amulet",
+              "type": "Amulet",
+              "level": 11,
+              "set": "Red Piwi Set"
+            },
+            "belt": {
+              "id": "2428",
+              "internalId": null,
+              "name": "Gobball Belt",
+              "type": "Belt",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "weapon": {
+              "id": "2416",
+              "internalId": null,
+              "name": "Gobball Hammer",
+              "type": "Hammer",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "shield": {
+              "id": "18666",
+              "internalId": null,
+              "name": "Gobball Shield",
+              "type": "Shield",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "ring_1": {
+              "id": "8219",
+              "internalId": null,
+              "name": "Red Piwi Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Red Piwi Set"
+            },
+            "ring_2": {
+              "id": "2419",
+              "internalId": null,
+              "name": "Bouze Lite Yeah's Ring",
+              "type": "Ring",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "boots": {
+              "id": "3207",
+              "internalId": null,
+              "name": "Satisfaction Boots",
+              "type": "Boots",
+              "level": 12,
+              "set": null
+            },
+            "hat": {
+              "id": "2411",
+              "internalId": null,
+              "name": "Gobball Headgear",
+              "type": "Hat",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "cloak": {
+              "id": "2414",
+              "internalId": null,
+              "name": "Gobball Cape",
+              "type": "Cloak",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "pet": {
+              "id": "15254",
+              "internalId": null,
+              "name": "Drhellbert",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30356",
+              "internalId": null,
+              "name": "Aiwuztheya Dofus",
+              "type": "Dofus",
+              "level": 20,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7113",
+              "internalId": null,
+              "name": "Dofawa",
+              "type": "Dofus",
+              "level": 6,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 382.39,
+          "weightedStatScore": 586.3,
+          "utilityStatScore": 164.5,
+          "genericDamageScore": 463.79,
+          "rawRotationDamageScore": 178.42,
+          "spellDamageScore": 178.42,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.1546,
+          "weaponDamageScore": 10.32,
+          "survivabilityScore": 9.18,
+          "weakestElementEhp": 306.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Intelligence": 95,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 6,
+            "Range": 2,
+            "Intelligence": 294,
+            "Power": 10,
+            "Vitality": 306,
+            "Damage": 0,
+            "Fire Damage": 2,
+            "Critical": 3,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Gobball Set": 4,
+            "Bearman Set": 2,
+            "Red Piwi Set": 2
+          },
+          "exos": {
+            "MP": {
+              "itemId": "8213",
+              "slot": "amulet"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "8213",
+              "internalId": null,
+              "name": "Red Piwi Amulet",
+              "type": "Amulet",
+              "level": 11,
+              "set": "Red Piwi Set"
+            },
+            "belt": {
+              "id": "6724",
+              "internalId": null,
+              "name": "Bearman's Belt",
+              "type": "Belt",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "weapon": {
+              "id": "2416",
+              "internalId": null,
+              "name": "Gobball Hammer",
+              "type": "Hammer",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "shield": {
+              "id": "18666",
+              "internalId": null,
+              "name": "Gobball Shield",
+              "type": "Shield",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "ring_1": {
+              "id": "8219",
+              "internalId": null,
+              "name": "Red Piwi Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Red Piwi Set"
+            },
+            "ring_2": {
+              "id": "2419",
+              "internalId": null,
+              "name": "Bouze Lite Yeah's Ring",
+              "type": "Ring",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "boots": {
+              "id": "3207",
+              "internalId": null,
+              "name": "Satisfaction Boots",
+              "type": "Boots",
+              "level": 12,
+              "set": null
+            },
+            "hat": {
+              "id": "6719",
+              "internalId": null,
+              "name": "Bearman's Headgear",
+              "type": "Hat",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "cloak": {
+              "id": "2414",
+              "internalId": null,
+              "name": "Gobball Cape",
+              "type": "Cloak",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "pet": {
+              "id": "15254",
+              "internalId": null,
+              "name": "Drhellbert",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30356",
+              "internalId": null,
+              "name": "Aiwuztheya Dofus",
+              "type": "Dofus",
+              "level": 20,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7113",
+              "internalId": null,
+              "name": "Dofawa",
+              "type": "Dofus",
+              "level": 6,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 371.81,
+          "weightedStatScore": 576.3,
+          "utilityStatScore": 164.5,
+          "genericDamageScore": 442.29,
+          "rawRotationDamageScore": 170.15,
+          "spellDamageScore": 170.15,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.1474,
+          "weaponDamageScore": 3.52,
+          "survivabilityScore": 8.28,
+          "weakestElementEhp": 276.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Intelligence": 95,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 6,
+            "Range": 2,
+            "Intelligence": 279,
+            "Power": 10,
+            "Vitality": 276,
+            "Damage": 0,
+            "Fire Damage": 1,
+            "Critical": 6,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Gobball Set": 4,
+            "Red Piwi Set": 2
+          },
+          "exos": {
+            "MP": {
+              "itemId": "8213",
+              "slot": "amulet"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "8213",
+              "internalId": null,
+              "name": "Red Piwi Amulet",
+              "type": "Amulet",
+              "level": 11,
+              "set": "Red Piwi Set"
+            },
+            "belt": {
+              "id": "2428",
+              "internalId": null,
+              "name": "Gobball Belt",
+              "type": "Belt",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "weapon": {
+              "id": "8127",
+              "internalId": null,
+              "name": "Damaged Farmer Scythe",
+              "type": "Scythe",
+              "level": 17,
+              "set": "Farmer Set"
+            },
+            "shield": {
+              "id": "18666",
+              "internalId": null,
+              "name": "Gobball Shield",
+              "type": "Shield",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "ring_1": {
+              "id": "8219",
+              "internalId": null,
+              "name": "Red Piwi Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Red Piwi Set"
+            },
+            "ring_2": {
+              "id": "2419",
+              "internalId": null,
+              "name": "Bouze Lite Yeah's Ring",
+              "type": "Ring",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "boots": {
+              "id": "3207",
+              "internalId": null,
+              "name": "Satisfaction Boots",
+              "type": "Boots",
+              "level": 12,
+              "set": null
+            },
+            "hat": {
+              "id": "6719",
+              "internalId": null,
+              "name": "Bearman's Headgear",
+              "type": "Hat",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "cloak": {
+              "id": "2414",
+              "internalId": null,
+              "name": "Gobball Cape",
+              "type": "Cloak",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "pet": {
+              "id": "15254",
+              "internalId": null,
+              "name": "Drhellbert",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30356",
+              "internalId": null,
+              "name": "Aiwuztheya Dofus",
+              "type": "Dofus",
+              "level": 20,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7113",
+              "internalId": null,
+              "name": "Dofawa",
+              "type": "Dofus",
+              "level": 6,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 384.27,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 6,
+            "MP": 6,
+            "Range": 2,
+            "Intelligence": 289,
+            "Power": 10,
+            "Vitality": 281,
+            "Damage": 0,
+            "Fire Damage": 3,
+            "Critical": 3,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Gobball Set": 6,
+            "Red Piwi Set": 2
+          },
+          "exos": {
+            "MP": {
+              "itemId": "8213",
+              "slot": "amulet"
+            }
+          },
+          "items": [
+            "Red Piwi Amulet",
+            "Gobball Belt",
+            "Gobball Hammer",
+            "Gobball Shield",
+            "Red Piwi Ring",
+            "Bouze Lite Yeah's Ring",
+            "Satisfaction Boots",
+            "Gobball Headgear",
+            "Gobball Cape",
+            "Drhellbert",
+            "Aiwuztheya Dofus",
+            "Dofawa"
+          ]
+        },
+        {
+          "score": 382.39,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 6,
+            "MP": 6,
+            "Range": 2,
+            "Intelligence": 294,
+            "Power": 10,
+            "Vitality": 306,
+            "Damage": 0,
+            "Fire Damage": 2,
+            "Critical": 3,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Gobball Set": 4,
+            "Bearman Set": 2,
+            "Red Piwi Set": 2
+          },
+          "exos": {
+            "MP": {
+              "itemId": "8213",
+              "slot": "amulet"
+            }
+          },
+          "items": [
+            "Red Piwi Amulet",
+            "Bearman's Belt",
+            "Gobball Hammer",
+            "Gobball Shield",
+            "Red Piwi Ring",
+            "Bouze Lite Yeah's Ring",
+            "Satisfaction Boots",
+            "Bearman's Headgear",
+            "Gobball Cape",
+            "Drhellbert",
+            "Aiwuztheya Dofus",
+            "Dofawa"
+          ]
+        },
+        {
+          "score": 371.81,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 6,
+            "MP": 6,
+            "Range": 2,
+            "Intelligence": 279,
+            "Power": 10,
+            "Vitality": 276,
+            "Damage": 0,
+            "Fire Damage": 1,
+            "Critical": 6,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Gobball Set": 4,
+            "Red Piwi Set": 2
+          },
+          "exos": {
+            "MP": {
+              "itemId": "8213",
+              "slot": "amulet"
+            }
+          },
+          "items": [
+            "Red Piwi Amulet",
+            "Gobball Belt",
+            "Damaged Farmer Scythe",
+            "Gobball Shield",
+            "Red Piwi Ring",
+            "Bouze Lite Yeah's Ring",
+            "Satisfaction Boots",
+            "Bearman's Headgear",
+            "Gobball Cape",
+            "Drhellbert",
+            "Aiwuztheya Dofus",
+            "Dofawa"
+          ]
+        }
+      ],
       "candidateDiversity": {
-        "candidateCount": 0,
-        "uniqueItemSignatureCount": 0,
-        "maxSharedItemsWithBest": 0
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 10
       },
-      "warnings": [
-        "No builds found; this may be infeasible for the selected constraints or a remaining search coverage gap."
-      ],
+      "warnings": [],
       "diagnostics": {
-        "elapsedMs": 9612.8,
+        "elapsedMs": 4531.6,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 113.8,
-          "candidatePoolsMs": 35.0,
-          "packageIndexMs": 24.1,
-          "packageSeedsMs": 19.5,
-          "directCompletionMs": 91.8,
-          "beamSearchMs": 890.2,
+          "loadDataMs": 240.2,
+          "candidatePoolsMs": 35.5,
+          "packageIndexMs": 18.8,
+          "packageSeedsMs": 204.6,
+          "directCompletionMs": 1832.1,
+          "beamSearchMs": 2199.9,
           "rankAndDiversifyMs": 0.0,
-          "totalFindBuildsMs": 1174.4
+          "totalFindBuildsMs": 4531.1
         },
-        "resultCount": 0,
+        "resultCount": 3,
         "fallbackBudget": null
       },
       "cache": {

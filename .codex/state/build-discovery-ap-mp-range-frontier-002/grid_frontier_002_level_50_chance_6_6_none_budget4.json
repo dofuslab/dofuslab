@@ -1,6 +1,6 @@
 {
   "reportVersion": "build-discovery-level-diversity-matrix-v1",
-  "generatedAt": "2026-07-11T03:25:01.603380+00:00",
+  "generatedAt": "2026-07-11T03:53:08.243047+00:00",
   "scope": "Iop target-file generated target matrix",
   "evidenceType": "generated_solver_snapshot",
   "provenance": {
@@ -41,10 +41,10 @@
         "lockedItemIds": [],
         "avoidedItemIds": [],
         "limit": 3,
-        "topK": 25,
-        "beamWidth": 100,
-        "perSignatureCap": 10,
-        "relevantSetLimit": 40
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
       },
       "status": "generated",
       "resultCount": 3,
@@ -906,17 +906,17 @@
       },
       "warnings": [],
       "diagnostics": {
-        "elapsedMs": 88684.1,
+        "elapsedMs": 158536.4,
         "cacheHit": false,
         "timings": {
-          "loadDataMs": 119.3,
-          "candidatePoolsMs": 58.0,
-          "packageIndexMs": 431.0,
-          "packageSeedsMs": 1974.1,
-          "directCompletionMs": 86096.2,
+          "loadDataMs": 242.6,
+          "candidatePoolsMs": 64.6,
+          "packageIndexMs": 374.7,
+          "packageSeedsMs": 42679.6,
+          "directCompletionMs": 115169.2,
           "beamSearchMs": 0.0,
-          "rankAndDiversifyMs": 1.8,
-          "totalFindBuildsMs": 88680.5
+          "rankAndDiversifyMs": 1.5,
+          "totalFindBuildsMs": 158532.2
         },
         "resultCount": 3,
         "fallbackBudget": null

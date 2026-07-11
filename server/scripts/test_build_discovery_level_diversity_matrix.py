@@ -344,6 +344,24 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(minimum_query.per_signature_cap, 10)
         self.assertEqual(minimum_query.relevant_set_limit, 40)
 
+    def test_non_base_action_targets_use_intermediate_search_settings(self):
+        target = type(targets_for_set("level-diversity")[0])(
+            "level_20_intelligence_6_6_none_budget4",
+            20,
+            "intelligence",
+            4,
+            6,
+            6,
+            None,
+        )
+
+        query = query_for_target(target)
+
+        self.assertEqual(query.top_k, 50)
+        self.assertEqual(query.beam_width, 150)
+        self.assertEqual(query.per_signature_cap, 20)
+        self.assertEqual(query.relevant_set_limit, 50)
+
     def test_query_for_matrix_target_can_override_limit(self):
         target = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]
 

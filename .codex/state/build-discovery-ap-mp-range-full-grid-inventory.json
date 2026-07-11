@@ -220,10 +220,10 @@
   ],
   "budgetTierCount": 4,
   "validQueryCount": 665088,
-  "generatedEvidenceCount": 145,
+  "generatedEvidenceCount": 146,
   "attemptedEvidenceCount": 162,
-  "noBuildEvidenceCount": 17,
-  "unprovenCount": 664943,
+  "noBuildEvidenceCount": 16,
+  "unprovenCount": 664942,
   "unattemptedCount": 664926,
   "byLevel": [
     {
@@ -343,8 +343,8 @@
     {
       "level": 20,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 6,
-      "unprovenCount": 3578
+      "generatedEvidenceCount": 7,
+      "unprovenCount": 3577
     },
     {
       "level": 21,

@@ -3589,3 +3589,42 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
   - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
   - `python -m py_compile server\scripts\build_discovery_ap_mp_range_grid_inventory.py server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+
+### 2026-07-10 Low-Level Action Target Recall Fix
+
+- Investigated frontier 002 no-build rows.
+- Raw candidate inspection showed:
+  - L1 Chance tier 4 `6/6/any`: no level-1 MP items exist in the current
+    candidate data, so this remains no-build evidence under current assumptions.
+  - L20 Intelligence tier 4 `6/6/any`: Satisfaction Boots + Drhellbert + one
+    MP exo can satisfy the target, so the previous no-build was a solver recall
+    gap.
+- Broadened action-stat witness seeding so it runs for any target above base
+  action stats:
+  - AP above level base AP
+  - MP above base `3`
+  - requested positive Range
+- Added intermediate matrix search settings for non-base action targets:
+  - `topK=50`
+  - `beamWidth=150`
+  - `perSignatureCap=20`
+  - `relevantSetLimit=50`
+- Regenerated stale frontier 002 action rows in Docker.
+- Updated frontier 002 result:
+  - targets: `8`
+  - generated: `7`
+  - no build: `1`
+  - invalid: `0`
+  - L20 Intelligence tier 4 `6/6/any` now generates in `4531.6ms`
+  - remaining no-build row: L1 Chance tier 4 `6/6/any`
+- Refreshed inventory counts after the fix:
+  - representative grid: `39,424` valid rows, `128` generated evidence rows,
+    `144` attempted evidence rows, `16` no-build evidence rows, `39,296`
+    unproven rows
+  - full grid: `665,088` valid rows, `146` generated evidence rows, `162`
+    attempted evidence rows, `16` no-build evidence rows, `664,942`
+    unproven rows
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-frontier-002-matrix.json --target-file /tmp/build-discovery-ap-mp-range-frontier-002-targets.json --target-file-limit 8 --target-file-prefix grid_frontier_002 --allow-no-build`
+  - `python -m unittest scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_action_stat_witness_seed_runs_for_non_base_action_targets`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`

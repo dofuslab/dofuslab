@@ -7,10 +7,10 @@ Level scope: `all_levels` (`200` levels)
 Element count: `4`
 Budget tier count: `4`
 Valid query rows: `665088`
-Generated evidence rows: `145`
+Generated evidence rows: `146`
 Attempted evidence rows: `162`
-No-build evidence rows: `17`
-Unproven rows: `664943`
+No-build evidence rows: `16`
+Unproven rows: `664942`
 Unattempted rows: `664926`
 
 | Level | Valid rows | Generated evidence | Unproven |
@@ -34,7 +34,7 @@ Unattempted rows: `664926`
 | 17 | 3584 | 0 | 3584 |
 | 18 | 3584 | 0 | 3584 |
 | 19 | 3584 | 1 | 3583 |
-| 20 | 3584 | 6 | 3578 |
+| 20 | 3584 | 7 | 3577 |
 | 21 | 3584 | 0 | 3584 |
 | 22 | 3584 | 0 | 3584 |
 | 23 | 3584 | 0 | 3584 |
