@@ -6108,6 +6108,32 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-thin-bucket-targets-20260711.json --output-json /tmp/build-discovery-m3-thin-bucket-sample-20260711.json --output-md /tmp/build-discovery-m3-thin-bucket-sample-20260711.md`
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-thin-bucket-sample-20260711.json --target-file .codex/state/build-discovery-m3-thin-bucket-targets-20260711.json --expected-solver cpsat --allow-no-build`
 
+### 2026-07-11 M3/M4 Level-Coverage Sample
+
+- Generated and validated a 12-row sample focused on previously zero-resolved
+  levels across the progression:
+  - target file: `.codex/state/build-discovery-m3-level-coverage-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-level-coverage-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-level-coverage-sample-20260711.md`
+  - generated: `12 / 12`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `12` `OPTIMAL`
+- Covered levels: `11`, `22`, `33`, `44`, `56`, `67`, `78`, `89`, `102`,
+  `123`, `157`, `193`.
+- Refreshed all-level inventory after adding this sample:
+  - valid query rows: `665088`
+  - generated evidence rows: `200`
+  - attempted evidence rows: `222`
+  - proven no-build evidence rows: `14`
+  - resolved evidence rows: `214`
+  - unresolved rows: `664874`
+  - zero-resolved levels: `139`, down from `151`
+- Verification passed:
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-level-coverage-targets-20260711.json --output-json /tmp/build-discovery-m3-level-coverage-sample-20260711.json --output-md /tmp/build-discovery-m3-level-coverage-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-level-coverage-sample-20260711.json --target-file .codex/state/build-discovery-m3-level-coverage-targets-20260711.json --expected-solver cpsat --allow-no-build`
+
 ### 2026-07-11 M3/M4 Next Unresolved Sample
 
 - Generated and validated a 10-row sample from the stricter

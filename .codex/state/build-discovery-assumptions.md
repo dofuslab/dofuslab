@@ -307,6 +307,10 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   non-Strength Range 6 rows are feasible from low/mid levels onward, while
   level 20 Chance `6/6/None` tier 2 is solver-proven infeasible under current
   assumptions.
+- One generated row at a previously zero-resolved level is level-coverage smoke
+  evidence, not proof that all AP/MP/Range shapes at that level are desirable
+  or feasible. Broad level enablement still needs profile-bucket sampling and
+  benchmark review inside those levels.
 - Level Diversity needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket broadly.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.
