@@ -6702,3 +6702,16 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Working rule: a 5 Range build with no ranged tag, no ranged-damage stats, no
   ranged weapon context, and no ranged/modifiable spell archetype should be
   `mixed` or `melee`, not `ranged`.
+
+### 2026-07-11 Combat Range Weapon Context Guardrails
+
+- Updated the Notion PRD and local assumptions so weapon family is supporting
+  context, not unconditional combat-range intent.
+- Cra is treated as an archer archetype: Cra with Sword should not become pure
+  `melee` by weapon alone; it should generally be `mixed` unless other melee
+  evidence is overwhelming.
+- Melee-leaning class/build examples such as Iop with Bow, Enutrof with
+  Daggers, and Intelligence Sacrier with Wand should be allowed to remain
+  `mixed` or `melee` when the weapon looks like a stat-stick or utility choice.
+- Added required guardrail fixtures for these cases before wiring prod-derived
+  combat range defaults into generation.

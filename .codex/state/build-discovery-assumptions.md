@@ -158,8 +158,22 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   cooldown/cast limits, and whether +Range actually improves the important
   damage pattern. Exact spell values may be stale, but class-element archetypes
   are expected to be stable enough to guide defaults and diagnostics.
-- Ranged weapon families are `Wand` and `Bow`. Other current weapon families
-  are melee for classifier purposes unless tags/stats override them.
+- Weapon context is supporting evidence, not an unconditional classifier.
+  `Wand` and `Bow` can support ranged classification; Sword, Hammer, Staff,
+  Dagger, Axe, Shovel, Lance, and Scythe can support melee classification.
+  Weapon family alone should not override class/element spell archetype or
+  strong stat signals.
+- For ranged weapons, `% Weapon Damage` and `% Spell Damage` strengthen ranged
+  classification. For melee weapons, `% Weapon Damage` strengthens melee
+  classification. Without matching damage stats or archetype support, treat the
+  weapon as weak evidence or a likely stat-stick/utility choice.
+- Cra is an archer class and should rarely, if ever, classify as pure `melee`;
+  a Cra with a Sword is more likely `mixed` than pure melee unless other melee
+  evidence is overwhelming.
+- Conversely, a melee-leaning class/build such as Iop with a Bow, Enutrof with
+  Daggers, or Intelligence Sacrier with a Wand may still be `mixed` or `melee`
+  when the weapon appears to be a stat stick or utility choice rather than the
+  intended damage pattern.
 - High `Range` without supporting ranged signals is not enough to force
   `ranged`; it should usually classify ambiguous builds as `mixed` or `melee`.
   For example, a 5 Range build with no ranged tag, no ranged-damage stats, no
