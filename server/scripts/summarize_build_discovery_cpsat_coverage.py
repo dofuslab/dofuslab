@@ -13,6 +13,7 @@ if str(SERVER_ROOT) not in sys.path:
     sys.path.insert(0, str(SERVER_ROOT))
 
 from build_discovery_level_diversity_targets import MILESTONE2_LEVEL200_TARGETS
+from check_build_discovery_level_diversity_matrix import validate_full_build_artifact
 
 
 def target_id_set() -> set[str]:
@@ -23,38 +24,90 @@ def split_reports(root: Path) -> list[Path]:
     return sorted(root.glob("build-discovery-cpsat-*-split/*.json"))
 
 
+def solver_status_rank(status: str | None) -> int:
+    return {
+        "OPTIMAL": 3,
+        "FEASIBLE": 2,
+        "UNKNOWN": 1,
+    }.get(status or "", 0)
+
+
+def better_generated_row(existing: dict[str, Any], candidate: dict[str, Any]) -> dict[str, Any]:
+    existing_status = existing.get("solverStatus")
+    candidate_status = candidate.get("solverStatus")
+    if solver_status_rank(candidate_status) != solver_status_rank(existing_status):
+        return candidate if solver_status_rank(candidate_status) > solver_status_rank(existing_status) else existing
+
+    existing_elapsed = existing.get("elapsedMs")
+    candidate_elapsed = candidate.get("elapsedMs")
+    if isinstance(existing_elapsed, (int, float)) and isinstance(candidate_elapsed, (int, float)):
+        return candidate if candidate_elapsed < existing_elapsed else existing
+    return existing
+
+
 def generated_cpsat_targets(root: Path) -> dict[str, dict[str, Any]]:
+    return coverage_inventory(root)["generatedTargets"]
+
+
+def coverage_inventory(root: Path) -> dict[str, Any]:
     valid_targets = target_id_set()
+    target_by_id = {target.name: target for target in MILESTONE2_LEVEL200_TARGETS}
     generated: dict[str, dict[str, Any]] = {}
+    duplicate_paths: dict[str, list[str]] = {}
+    excluded = Counter()
+    examined = 0
     for path in split_reports(root):
         if path.name == "manifest.json":
             continue
+        examined += 1
         try:
             report = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
+            excluded["unreadable_json"] += 1
             continue
         results = report.get("results")
         if not isinstance(results, list) or len(results) != 1:
+            excluded["not_single_result_report"] += 1
             continue
         result = results[0]
         if result.get("status") != "generated":
+            excluded["not_generated"] += 1
             continue
         diagnostics = result.get("diagnostics")
         if not isinstance(diagnostics, dict) or diagnostics.get("solver") != "cpsat":
+            excluded["not_cpsat"] += 1
             continue
         target = result.get("target")
         if not isinstance(target, dict):
+            excluded["missing_target"] += 1
             continue
         target_id = target.get("id")
         if target_id not in valid_targets:
+            excluded["outside_target_set"] += 1
             continue
-        generated[target_id] = {
+        validation_errors = validate_full_build_artifact(result, target_by_id)
+        if validation_errors:
+            excluded["strict_validation_failed"] += 1
+            continue
+        row = {
             "target": target,
             "path": str(path),
             "solverStatus": diagnostics.get("solverStatus"),
             "elapsedMs": diagnostics.get("elapsedMs"),
         }
-    return generated
+        if target_id in generated:
+            duplicate_paths.setdefault(target_id, [generated[target_id]["path"]]).append(str(path))
+            generated[target_id] = better_generated_row(generated[target_id], row)
+        else:
+            generated[target_id] = row
+    return {
+        "generatedTargets": generated,
+        "examinedSplitReports": examined,
+        "excludedSplitReports": dict(sorted(excluded.items())),
+        "duplicateTargetCount": len(duplicate_paths),
+        "duplicateSplitReportSurplus": sum(len(paths) - 1 for paths in duplicate_paths.values()),
+        "duplicateTargets": dict(sorted(duplicate_paths.items())),
+    }
 
 
 def counter_for(generated: dict[str, dict[str, Any]], key: str) -> Counter:
@@ -62,7 +115,8 @@ def counter_for(generated: dict[str, dict[str, Any]], key: str) -> Counter:
 
 
 def coverage_report(root: Path) -> dict[str, Any]:
-    generated = generated_cpsat_targets(root)
+    inventory = coverage_inventory(root)
+    generated = inventory["generatedTargets"]
     total = len(MILESTONE2_LEVEL200_TARGETS)
     return {
         "targetSet": "milestone2-level200",
@@ -83,6 +137,11 @@ def coverage_report(root: Path) -> dict[str, Any]:
             )
         ),
         "bySolverStatus": dict(sorted(Counter(row["solverStatus"] for row in generated.values()).items())),
+        "examinedSplitReports": inventory["examinedSplitReports"],
+        "excludedSplitReports": inventory["excludedSplitReports"],
+        "duplicateTargetCount": inventory["duplicateTargetCount"],
+        "duplicateSplitReportSurplus": inventory["duplicateSplitReportSurplus"],
+        "duplicateTargets": inventory["duplicateTargets"],
     }
 
 
@@ -93,6 +152,10 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Target set: `{report['targetSet']}`",
         f"Generated CP-SAT targets: `{report['generatedCpsatTargetCount']}` / `{report['targetCount']}`",
         f"Coverage: `{report['coveragePercent']}%`",
+        f"Examined split reports: `{report['examinedSplitReports']}`",
+        f"Excluded split reports: `{sum(report['excludedSplitReports'].values())}`",
+        f"Duplicate targets: `{report['duplicateTargetCount']}` "
+        f"(`{report['duplicateSplitReportSurplus']}` surplus reports)",
         "",
     ]
     for title, key in (
@@ -106,6 +169,11 @@ def render_markdown(report: dict[str, Any]) -> str:
         lines.extend([f"## {title}", "", "| Value | Count |", "|---|---:|"])
         for value, count in report[key].items():
             lines.append(f"| {value} | {count} |")
+        lines.append("")
+    if report["excludedSplitReports"]:
+        lines.extend(["## Excluded Split Reports", "", "| Reason | Count |", "|---|---:|"])
+        for reason, count in report["excludedSplitReports"].items():
+            lines.append(f"| {reason} | {count} |")
         lines.append("")
     return "\n".join(lines)
 

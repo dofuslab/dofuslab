@@ -1,0 +1,784 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T12:06:48.113858+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_chance_11_3_6_budget3",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 3,
+        "apTarget": 11,
+        "mpTarget": 3,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 3,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2615.15,
+        "weightedStatScore": 4201.7,
+        "utilityStatScore": 410.0,
+        "genericDamageScore": 4679.48,
+        "rawRotationDamageScore": 3096.71,
+        "spellDamageScore": 3096.71,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.5598,
+        "weaponDamageScore": 252.49,
+        "survivabilityScore": 99.38,
+        "weakestElementEhp": 3072.28,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 6,
+          "Chance": 1348,
+          "Power": 290,
+          "Vitality": 3103,
+          "Damage": 5,
+          "Water Damage": 145,
+          "Critical": 56,
+          "Critical Damage": 22
+        },
+        "sets": {
+          "Ice Knight Set": 2,
+          "Unsound Mind Set": 2,
+          "Pit Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "32231",
+            "slot": "ring_2"
+          },
+          "MP": {
+            "itemId": "19985",
+            "slot": "ring_1"
+          },
+          "Range": {
+            "itemId": "19252",
+            "slot": "hat"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "18004",
+            "internalId": null,
+            "name": "Spookkoth Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "belt": {
+            "id": "19250",
+            "internalId": null,
+            "name": "Belt of the Unsound Mind",
+            "type": "Belt",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "weapon": {
+            "id": "18017",
+            "internalId": null,
+            "name": "Daguanos",
+            "type": "Dagger",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "shield": {
+            "id": "32233",
+            "internalId": null,
+            "name": "Ice Knight's Frigid Pavise",
+            "type": "Shield",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "ring_1": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "ring_2": {
+            "id": "32231",
+            "internalId": null,
+            "name": "Ice Knight's Frozen Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "19252",
+            "internalId": null,
+            "name": "Mask of the Unsound Mind",
+            "type": "Hat",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "cloak": {
+            "id": "18005",
+            "internalId": null,
+            "name": "Mantaze Cloak",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "pet": {
+            "id": "29433",
+            "internalId": null,
+            "name": "Zenusha Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2615.15,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 6,
+          "Chance": 1348,
+          "Power": 290,
+          "Vitality": 3103,
+          "Damage": 5,
+          "Water Damage": 145,
+          "Critical": 56,
+          "Critical Damage": 22
+        },
+        "sets": {
+          "Ice Knight Set": 2,
+          "Unsound Mind Set": 2,
+          "Pit Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "32231",
+            "slot": "ring_2"
+          },
+          "MP": {
+            "itemId": "19985",
+            "slot": "ring_1"
+          },
+          "Range": {
+            "itemId": "19252",
+            "slot": "hat"
+          }
+        },
+        "items": [
+          "Spookkoth Amulet",
+          "Belt of the Unsound Mind",
+          "Daguanos",
+          "Ice Knight's Frigid Pavise",
+          "Rhineetle Ring",
+          "Ice Knight's Frozen Gauntlet",
+          "Meriana's Clairvoyance",
+          "Mask of the Unsound Mind",
+          "Mantaze Cloak",
+          "Zenusha Kolophant",
+          "Cloudy Dofus",
+          "Crimson Dofus",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Tease"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2615.15,
+          "weightedStatScore": 4201.7,
+          "utilityStatScore": 410.0,
+          "genericDamageScore": 4679.48,
+          "rawRotationDamageScore": 3096.71,
+          "spellDamageScore": 3096.71,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.5598,
+          "weaponDamageScore": 252.49,
+          "survivabilityScore": 99.38,
+          "weakestElementEhp": 3072.28,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 6,
+            "Chance": 1348,
+            "Power": 290,
+            "Vitality": 3103,
+            "Damage": 5,
+            "Water Damage": 145,
+            "Critical": 56,
+            "Critical Damage": 22
+          },
+          "sets": {
+            "Ice Knight Set": 2,
+            "Unsound Mind Set": 2,
+            "Pit Set": 3
+          },
+          "exos": {
+            "AP": {
+              "itemId": "32231",
+              "slot": "ring_2"
+            },
+            "MP": {
+              "itemId": "19985",
+              "slot": "ring_1"
+            },
+            "Range": {
+              "itemId": "19252",
+              "slot": "hat"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "18004",
+              "internalId": null,
+              "name": "Spookkoth Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Pit Set"
+            },
+            "belt": {
+              "id": "19250",
+              "internalId": null,
+              "name": "Belt of the Unsound Mind",
+              "type": "Belt",
+              "level": 200,
+              "set": "Unsound Mind Set"
+            },
+            "weapon": {
+              "id": "18017",
+              "internalId": null,
+              "name": "Daguanos",
+              "type": "Dagger",
+              "level": 200,
+              "set": "Pit Set"
+            },
+            "shield": {
+              "id": "32233",
+              "internalId": null,
+              "name": "Ice Knight's Frigid Pavise",
+              "type": "Shield",
+              "level": 200,
+              "set": "Ice Knight Set"
+            },
+            "ring_1": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "ring_2": {
+              "id": "32231",
+              "internalId": null,
+              "name": "Ice Knight's Frozen Gauntlet",
+              "type": "Ring",
+              "level": 200,
+              "set": "Ice Knight Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "19252",
+              "internalId": null,
+              "name": "Mask of the Unsound Mind",
+              "type": "Hat",
+              "level": 200,
+              "set": "Unsound Mind Set"
+            },
+            "cloak": {
+              "id": "18005",
+              "internalId": null,
+              "name": "Mantaze Cloak",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Pit Set"
+            },
+            "pet": {
+              "id": "29433",
+              "internalId": null,
+              "name": "Zenusha Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2615.15,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 6,
+            "Chance": 1348,
+            "Power": 290,
+            "Vitality": 3103,
+            "Damage": 5,
+            "Water Damage": 145,
+            "Critical": 56,
+            "Critical Damage": 22
+          },
+          "sets": {
+            "Ice Knight Set": 2,
+            "Unsound Mind Set": 2,
+            "Pit Set": 3
+          },
+          "exos": {
+            "AP": {
+              "itemId": "32231",
+              "slot": "ring_2"
+            },
+            "MP": {
+              "itemId": "19985",
+              "slot": "ring_1"
+            },
+            "Range": {
+              "itemId": "19252",
+              "slot": "hat"
+            }
+          },
+          "items": [
+            "Spookkoth Amulet",
+            "Belt of the Unsound Mind",
+            "Daguanos",
+            "Ice Knight's Frigid Pavise",
+            "Rhineetle Ring",
+            "Ice Knight's Frozen Gauntlet",
+            "Meriana's Clairvoyance",
+            "Mask of the Unsound Mind",
+            "Mantaze Cloak",
+            "Zenusha Kolophant",
+            "Cloudy Dofus",
+            "Crimson Dofus",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Tease"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6939.7,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 172.5,
+          "totalSearchMs": 6767.2
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1584.3,
+            "solveMs": 5063.4,
+            "objective": 2100.87,
+            "solutionCallbackCount": 12,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2044.8,
+                "objective": 565.62,
+                "score": 1045.49,
+                "itemIds": [
+                  "2469",
+                  "8840",
+                  "12100",
+                  "12103",
+                  "12117",
+                  "12714",
+                  "12724",
+                  "13765",
+                  "13829",
+                  "13831",
+                  "17119",
+                  "17121",
+                  "18679",
+                  "27265",
+                  "29136",
+                  "33203"
+                ],
+                "exos": {
+                  "AP": "17119",
+                  "MP": "27265",
+                  "Range": "12103"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2242.5,
+                "objective": 1108.14,
+                "score": 1469.9,
+                "itemIds": [
+                  "11715",
+                  "11716",
+                  "12109",
+                  "12112",
+                  "12720",
+                  "13829",
+                  "18029",
+                  "18030",
+                  "22004",
+                  "30356",
+                  "30453",
+                  "30455",
+                  "31751",
+                  "32210",
+                  "32211",
+                  "33170"
+                ],
+                "exos": {
+                  "AP": "11715",
+                  "MP": "32210",
+                  "Range": "18029"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2404.1,
+                "objective": 1284.28,
+                "score": 1688.57,
+                "itemIds": [
+                  "8698",
+                  "12716",
+                  "13829",
+                  "13831",
+                  "14159",
+                  "15693",
+                  "15695",
+                  "15700",
+                  "21995",
+                  "27265",
+                  "27284",
+                  "30453",
+                  "32234",
+                  "32235",
+                  "32236",
+                  "33057"
+                ],
+                "exos": {
+                  "Range": "14159"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2567.3,
+                "objective": 1396.65,
+                "score": 1778.82,
+                "itemIds": [
+                  "8698",
+                  "12716",
+                  "13344",
+                  "13829",
+                  "17578",
+                  "17579",
+                  "17580",
+                  "21995",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "30453",
+                  "32234",
+                  "32235",
+                  "32236",
+                  "33059"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2809.5,
+                "objective": 1607.29,
+                "score": 1985.11,
+                "itemIds": [
+                  "12716",
+                  "13344",
+                  "13768",
+                  "13829",
+                  "17578",
+                  "17579",
+                  "17580",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "29433",
+                  "30453",
+                  "30455",
+                  "32234",
+                  "32235",
+                  "32236"
+                ],
+                "exos": {
+                  "MP": "32235"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 314
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1836,
+              "uniqueItemCount": 1702,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 215,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1702,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

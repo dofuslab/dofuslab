@@ -230,10 +230,23 @@ def validate_report(
     target_by_id = {target.name: target for target in targets}
     expected_ids = set(target_by_id)
     results = report.get("results", [])
-    actual_ids = {
+    if len(results) != len(expected_ids):
+        failures.append(f"results length is {len(results)}, expected {len(expected_ids)}")
+    result_ids = [
         result.get("target", {}).get("id")
         for result in results
         if isinstance(result.get("target", {}).get("id"), str)
+    ]
+    duplicate_ids = sorted(
+        target_id
+        for target_id in set(result_ids)
+        if result_ids.count(target_id) > 1
+    )
+    if duplicate_ids:
+        failures.append(f"duplicate target reports: {', '.join(duplicate_ids)}")
+    actual_ids = {
+        target_id
+        for target_id in result_ids
     }
     missing_ids = sorted(expected_ids - actual_ids)
     extra_ids = sorted(actual_ids - expected_ids)
