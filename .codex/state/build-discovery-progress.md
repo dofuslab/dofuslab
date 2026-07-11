@@ -6623,7 +6623,9 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   2. `% Ranged Damage` / `% Melee Damage`
   3. positive `Range`
   4. ranged weapon family (`Wand`, `Bow`) vs melee weapon family
-  5. `% Weapon Damage` relative to `% Spell Damage`
+  5. weapon/spell damage context: for ranged weapons, both `% Weapon Damage`
+     and `% Spell Damage` strengthen ranged classification; for melee weapons,
+     `% Weapon Damage` strengthens melee classification
 - Default selection should aggregate classified rows by `(class, dominant
   element)`, choose a prod-derived default only with enough samples and a clear
   winner, use `mixed` for ambiguous majorities, and label sparse fallbacks as

@@ -369,8 +369,8 @@ Signal precedence:
      weapon slot: Sword, Hammer, Staff, Dagger, Axe, Shovel, Lance, and Scythe.
    - A ranged weapon is a ranged signal; a melee weapon is a melee signal.
 5. Weapon-vs-spell damage context.
-   - For a ranged weapon build, `% Weapon Damage > % Spell Damage` strengthens
-     the ranged classification.
+   - For a ranged weapon build, both `% Weapon Damage` and `% Spell Damage`
+     strengthen the ranged classification.
    - For a melee weapon build, `% Weapon Damage` strengthens the melee
      classification.
    - `% Spell Damage` without range/melee specialization should not by itself
