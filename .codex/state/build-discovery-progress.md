@@ -5945,3 +5945,33 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server/scripts/test_build_discovery_cpsat_experiment.py`
   - `python server/scripts/test_build_discovery_level_diversity_matrix_check.py`
   - `python -m py_compile server/oneoff/build_discovery_prototype.py server/oneoff/build_discovery_cpsat_experiment.py server/scripts/test_build_discovery_query_contract.py`
+
+### 2026-07-11 M3 Boundary and Coverage Evidence
+
+- Generated and validated the M3 boundary target set after level-aware Wisdom
+  scoring:
+  - `.codex/state/build-discovery-m3-boundary-wisdom-flat.json`
+  - `.codex/state/build-discovery-m3-boundary-wisdom-flat.md`
+  - targets: `10`
+  - generated: `10`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `10` `OPTIMAL`
+- Generated and validated the M3 AP/MP/Range coverage target set:
+  - `.codex/state/build-discovery-m3-coverage-wisdom-flat.json`
+  - `.codex/state/build-discovery-m3-coverage-wisdom-flat.md`
+  - targets: `12`
+  - generated: `12`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `12` `OPTIMAL`
+- Coverage examples:
+  - level `1` Strength minimum: `6/3/0`, sparse 9-item build
+  - level `99` Strength cap: `12/6/6`
+  - level `100` Intelligence minimum: generated `9/6/3`, proving surplus
+    action stats remain allowed
+  - level `199` Chance mid: `11/6/4`
+  - level `200` Agility cap: `12/6/6`
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-m3-boundary-wisdom-flat.json --target-set boundary --expected-solver cpsat`
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-m3-coverage-wisdom-flat.json --target-set coverage --expected-solver cpsat`

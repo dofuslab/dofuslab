@@ -1,0 +1,26 @@
+# Build Discovery Iop Coverage Matrix
+
+Generated at: `2026-07-11T15:03:25.397133+00:00`
+
+This is a generated-output snapshot for the sampled target set. It records the current best solver result for review; it is not yet a human-accepted benchmark list.
+Coverage target-set artifacts are action-stat feasibility evidence only. They do not prove realistic build quality at every level.
+
+Targets: `12`
+Generated: `12`
+No build: `0`
+Invalid: `0`
+
+| Target | Preset | Status | Candidates | Score | Miss ms | AP/MP/Range | Main stat | Vitality | Validation | Sets | Items |
+|---|---:|---:|---:|---:|---:|---|---:|---:|---|---|---|
+| L1 strength 6/3/any tier 1 | 3 | generated | 1 (1 unique) | 280.1 | 1737.1 | 6/3/0 | 135 | 132 |  | Boon Set x5 | Koliet Aclou, Muffin Belt, Hurrian Hammer, Halt Efkat, Courageous Ring, Pluswan, Strength Boots, Flud, S'loque Cape |
+| L20 chance 6/3/1 tier 1 | 3 | generated | 1 (1 unique) | 765.97 | 257.4 | 6/3/1 | 355 | 140 |  | Farmer Set x2, Blue Piwi Set x2 | Bearman's Necklace, Farmer Beltudas, Ergot Mina, Wild Sunflower Shield, Blue Piwi Ring, Kardorim's Bracelet, Power Boots, Blue Piwi Hat, Farmer Bag |
+| L50 intelligence 6/6/any tier 1 | 3 | generated | 1 (1 unique) | 1425.0 | 745.5 | 6/6/3 | 682 | 491 |  | Haku Set x2, Khardboard Set x2 | Haku's Amulet, Welt, Khardboard Goultard, Royal Gobball Cuirass, Grouillot's Ring, Haku's Ring, Uggly Boots, Khardboard Gobball Headgear, Mad Tofu Cloak, Minor Brainbox, Minor Fire Devastator, Minor Fire Wrecker, Minor Intellectual, Minor Scholar, Observer |
+| L80 agility 10/5/0 tier 2 | 3 | generated | 1 (1 unique) | 2042.65 | 2145.9 | 10/6/4 | 931 | 642 |  | Royal Coco Blop Set x4, Aerdala Set x2, Khardboard Set x3 | Royal Coco Amublop, Royal Coco Blop Belt, Khardboard Goultard, Aerdala Shield, Aerdala Wedding Ring, Royal Coco Blop Ring, Royal Coco Bloopts, Khardboard Gobball Headgear, Khardboard Dazzling Cloak, Yellow Piwin, Minor Acrobat, Minor Air Destroyer, Minor Air Wrecker, Minor Dynamo, Minor Gymnast, Twitcher |
+| L99 strength 12/6/6 tier 3 | 3 | generated | 1 (1 unique) | 1237.72 | 2226.7 | 12/6/6 | 370 | 1210 |  | Simbadas Set x3, Khardboard Set x3, Black Wab Set x2 | Simbadas Cage, Black Wab Belt, Khardboard Goultard, Simbadas Barrier, Simbadas Paw, Black Rat Glove, Black Wab Boots, Khardboard Gobball Headgear, Khardboard Dazzling Cloak, Boarhog, Cawwot Dofus, Minor Earth Destroyer, Minor Earth Wrecker, Minor Goliath, Minor Maniac, Twitcher |
+| L100 intelligence 7/3/any tier 1 | 3 | generated | 1 (1 unique) | 2424.64 | 3763.2 | 9/6/3 | 1130 | 1015 |  | Khardboard Set x3 | Haku's Amulet, Jellibelt, Dark Treechnid Root Wand, Khardboard Bowisse's Shield, Forester's Ring, Riktus Ring, Cauldini Boots, Khardboard Gobball Headgear, Khardboard Dazzling Cloak, Orchid Dragoturkey, Brainbox, Fire Devastator, Intellectual, Minor Brainbox, Minor Intellectual, Scholar |
+| L120 chance 7/3/6 tier 2 | 3 | generated | 1 (1 unique) | 2687.36 | 7963.4 | 8/5/6 | 1228 | 1061 |  | Naganita Set x2, Khardboard Set x2 | Autumn Leaf, Precious Belt, Naganita Naginata, Khardboard Bowisse's Shield, Bontarian Rat Ring, Snailmet Ring, Styx's Boots, Khardboard Gobball Headgear, Naganita Cape, Blue Piwin, Crimson Dofus, Dolmanax, Luckster, Minor Luckster, Player, Tease |
+| L150 agility 10/5/3 tier 2 | 3 | generated | 1 (1 unique) | 3237.63 | 1924.3 | 10/5/4 | 1426 | 1391 |  | Katigger Set x3, Buddy Dubble Set x2, Frigostine Set x2, Khardboard Set x2 | Frigostine's Amulet, Khardboard Moowolf Belt, Buddy Dubble Sword, Khardboard Bowisse's Shield, Frigostine's Ring, Katigger Glove, Katigger Paws, Buddy Dubble Mask, Katigger Cape, Yellow Piwin, Dolmanax, Arcanist, Gymnast, Impetuous, Major Acrobat, Major Gymnast |
+| L179 strength 12/6/6 tier 3 | 3 | generated | 1 (1 unique) | 1976.04 | 3484.4 | 12/6/6 | 1102 | 1141 |  | Transplent Set x3, Wurmlord Set x3, Abbreviated Set x2 | Amulet Cetera, Transplent Belt, Transplent Sword, Transplent Shield, Wurmring, Notewell Ring, Sharshoes, Thierry Voodoo Mask, Capleworm, Amber and Emerald Seemyool, Crimson Dofus, Arcanist, Impetuous, Jackanapes, Major Earth Wrecker, Major Goliath |
+| L180 intelligence 12/6/6 tier 3 | 3 | generated | 1 (1 unique) | 3209.21 | 2708.4 | 12/6/6 | 1433 | 1632 |  | Ush Galesh Set x3 | Ush's Collar, Tengu Snowfoux Belt, Ush's Sword, Masked Avenger Shell, Koumiho Ring, Ringferno, Ush Boots, Archer Voodoo Mask, Augilol's Tippet, Orchid Rhineetle, Dolmanax, Intellectual, Major Brainbox, Major Intellectual, Major Scholar, Shaker |
+| L199 chance 11/6/3 tier 2 | 3 | generated | 1 (1 unique) | 3662.16 | 4778.0 | 11/6/4 | 1597 | 2602 |  | Glacial Set x2, Berylbell Set x2 | Celestial Bearbarian Amulet, Berylbell's Subligar, Berylbell's Tonfas, Four-Leaf, Awmigawd Band, Glacial Ring, Somboots, Danathor's Helmet, Glacial Cape, Indigo Rhineetle, Dolmanax, Major Luckster, Major Player, Major Tease, Nomad, Shaker |
+| L200 agility 12/6/6 tier 4 | 3 | generated | 1 (1 unique) | 4137.21 | 13384.9 | 12/6/6 | 1833 | 2953 |  | Allister Set x3, Jammy Jack Set x2, Abyss Set x3 | Jammy Jack Collar, Bluster Belt, Mantax, Allister's Aegis, Jammy Jack Glove, Allister's Ring, Tritun Palms, Allister's Crown, Indescribable Cape, Sirocco, Dolmanax, Ochre Dofus, Vulbis Dofus, Gymnast, Major Acrobat, Major Gymnast |
