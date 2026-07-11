@@ -3784,3 +3784,31 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python -m py_compile scripts/build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix.py oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-smoke.json --target-set grid-next-minimum --targets grid_next_min_level_200_strength_7_3_none_budget1`
+
+### 2026-07-11 CP-SAT Level-200 Minimum Element Slice
+
+- Added a target file for a tiny Milestone 2 breadth slice:
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-targets.json`
+- Generated and validated a 4-row Docker CP-SAT matrix:
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-matrix.json`
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-matrix.md`
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-split/`
+- Slice:
+  - level 200 Iop
+  - budget tier 1
+  - target `7/3/None`
+  - elements: Strength, Intelligence, Chance, Agility
+- Result:
+  - targets: `4`
+  - generated: `4`
+  - no build: `0`
+  - invalid: `0`
+- Runtime:
+  - Strength: `12777.7ms`
+  - Intelligence: `11756.2ms`
+  - Chance: `11522.2ms`
+  - Agility: `11506.1ms`
+- This is useful CP-SAT breadth smoke evidence, but it is still not Milestone 2
+  performance evidence.
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-l200-min-elements.json --target-file /tmp/build-discovery-cpsat-l200-min-elements-targets.json --target-file-prefix cpsat_min`

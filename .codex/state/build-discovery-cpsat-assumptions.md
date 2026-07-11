@@ -92,6 +92,9 @@ review before accepting Milestone 2 evidence.
 - Current CP-SAT work has not proven the p95 target.
 - First Docker CP-SAT smoke row took `13554.0ms`, so performance is not yet
   Milestone 2 acceptable.
+- First 4-row level-200 all-element `7/3/None` slice took roughly
+  `11.5s-12.8s` per row, confirming the next CP-SAT work needs performance and
+  model-size attention before full Milestone 2 generation.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.

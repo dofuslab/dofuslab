@@ -1,0 +1,569 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T06:25:44.607381+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-cpsat-l200-min-elements-targets.json#targets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "cpsat_l200_agility_7_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "agility",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2108.72,
+        "weightedStatScore": 3834.49,
+        "utilityStatScore": 262.49,
+        "genericDamageScore": 3878.04,
+        "rawRotationDamageScore": 2405.19,
+        "spellDamageScore": 2392.09,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.2927,
+        "weaponDamageScore": 240.32,
+        "survivabilityScore": 101.12,
+        "weakestElementEhp": 3027.51,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 4,
+          "Agility": 1448,
+          "Power": 140,
+          "Vitality": 3253,
+          "Damage": 0,
+          "Air Damage": 106,
+          "Critical": 35,
+          "Critical Damage": 71
+        },
+        "sets": {
+          "Abyss Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "14094",
+            "internalId": null,
+            "name": "Treadfast Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Treadfast Set"
+          },
+          "belt": {
+            "id": "18009",
+            "internalId": null,
+            "name": "Menobelt",
+            "type": "Belt",
+            "level": 200,
+            "set": null
+          },
+          "weapon": {
+            "id": "18014",
+            "internalId": null,
+            "name": "Mantax",
+            "type": "Axe",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "shield": {
+            "id": "18712",
+            "internalId": null,
+            "name": "Honeycomb Shield",
+            "type": "Shield",
+            "level": 199,
+            "set": "Beekeeper Set"
+          },
+          "ring_1": {
+            "id": "13642",
+            "internalId": null,
+            "name": "Nomarow's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Nomarow Set"
+          },
+          "ring_2": {
+            "id": "24035",
+            "internalId": null,
+            "name": "Spilling Ryng",
+            "type": "Ring",
+            "level": 200,
+            "set": null
+          },
+          "boots": {
+            "id": "18007",
+            "internalId": null,
+            "name": "Tritun Palms",
+            "type": "Boots",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "hat": {
+            "id": "13644",
+            "internalId": null,
+            "name": "Hel Munster's Helmet",
+            "type": "Hat",
+            "level": 198,
+            "set": "Hel Munster Set"
+          },
+          "cloak": {
+            "id": "18008",
+            "internalId": null,
+            "name": "Indescribable Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "pet": {
+            "id": "33023",
+            "internalId": null,
+            "name": "Ebony and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13765",
+            "internalId": null,
+            "name": "Major Gymnast",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "16245",
+            "internalId": null,
+            "name": "Major Stunter",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13830",
+            "internalId": null,
+            "name": "Voyager",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13815",
+            "internalId": null,
+            "name": "Fire Bulwark",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2108.72,
+        "apStrategy": null,
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 4,
+          "Agility": 1448,
+          "Power": 140,
+          "Vitality": 3253,
+          "Damage": 0,
+          "Air Damage": 106,
+          "Critical": 35,
+          "Critical Damage": 71
+        },
+        "sets": {
+          "Abyss Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Treadfast Amulet",
+          "Menobelt",
+          "Mantax",
+          "Honeycomb Shield",
+          "Nomarow's Ring",
+          "Spilling Ryng",
+          "Tritun Palms",
+          "Hel Munster's Helmet",
+          "Indescribable Cape",
+          "Ebony and Ivory Dragoturkey",
+          "Major Gymnast",
+          "Arcanist",
+          "Impetuous",
+          "Major Stunter",
+          "Voyager",
+          "Fire Bulwark"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2108.72,
+          "weightedStatScore": 3834.49,
+          "utilityStatScore": 262.49,
+          "genericDamageScore": 3878.04,
+          "rawRotationDamageScore": 2405.19,
+          "spellDamageScore": 2392.09,
+          "profileBaselineDamageScore": 1860.62,
+          "profileRelativeDamage": 1.2927,
+          "weaponDamageScore": 240.32,
+          "survivabilityScore": 101.12,
+          "weakestElementEhp": 3027.51,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 4,
+            "Agility": 1448,
+            "Power": 140,
+            "Vitality": 3253,
+            "Damage": 0,
+            "Air Damage": 106,
+            "Critical": 35,
+            "Critical Damage": 71
+          },
+          "sets": {
+            "Abyss Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "14094",
+              "internalId": null,
+              "name": "Treadfast Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Treadfast Set"
+            },
+            "belt": {
+              "id": "18009",
+              "internalId": null,
+              "name": "Menobelt",
+              "type": "Belt",
+              "level": 200,
+              "set": null
+            },
+            "weapon": {
+              "id": "18014",
+              "internalId": null,
+              "name": "Mantax",
+              "type": "Axe",
+              "level": 200,
+              "set": "Abyss Set"
+            },
+            "shield": {
+              "id": "18712",
+              "internalId": null,
+              "name": "Honeycomb Shield",
+              "type": "Shield",
+              "level": 199,
+              "set": "Beekeeper Set"
+            },
+            "ring_1": {
+              "id": "13642",
+              "internalId": null,
+              "name": "Nomarow's Ring",
+              "type": "Ring",
+              "level": 197,
+              "set": "Nomarow Set"
+            },
+            "ring_2": {
+              "id": "24035",
+              "internalId": null,
+              "name": "Spilling Ryng",
+              "type": "Ring",
+              "level": 200,
+              "set": null
+            },
+            "boots": {
+              "id": "18007",
+              "internalId": null,
+              "name": "Tritun Palms",
+              "type": "Boots",
+              "level": 200,
+              "set": "Abyss Set"
+            },
+            "hat": {
+              "id": "13644",
+              "internalId": null,
+              "name": "Hel Munster's Helmet",
+              "type": "Hat",
+              "level": 198,
+              "set": "Hel Munster Set"
+            },
+            "cloak": {
+              "id": "18008",
+              "internalId": null,
+              "name": "Indescribable Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Abyss Set"
+            },
+            "pet": {
+              "id": "33023",
+              "internalId": null,
+              "name": "Ebony and Ivory Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "13765",
+              "internalId": null,
+              "name": "Major Gymnast",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "16245",
+              "internalId": null,
+              "name": "Major Stunter",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13830",
+              "internalId": null,
+              "name": "Voyager",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13815",
+              "internalId": null,
+              "name": "Fire Bulwark",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2108.72,
+          "apStrategy": null,
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 4,
+            "Agility": 1448,
+            "Power": 140,
+            "Vitality": 3253,
+            "Damage": 0,
+            "Air Damage": 106,
+            "Critical": 35,
+            "Critical Damage": 71
+          },
+          "sets": {
+            "Abyss Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Treadfast Amulet",
+            "Menobelt",
+            "Mantax",
+            "Honeycomb Shield",
+            "Nomarow's Ring",
+            "Spilling Ryng",
+            "Tritun Palms",
+            "Hel Munster's Helmet",
+            "Indescribable Cape",
+            "Ebony and Ivory Dragoturkey",
+            "Major Gymnast",
+            "Arcanist",
+            "Impetuous",
+            "Major Stunter",
+            "Voyager",
+            "Fire Bulwark"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 11506.1,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 311.3,
+          "totalSearchMs": 11194.8
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 5949.0,
+            "solveMs": 5049.2,
+            "objective": 1690.43,
+            "validCandidate": {
+              "score": 2108.72,
+              "totals": {
+                "AP": 10,
+                "MP": 5,
+                "Range": 4,
+                "Strength": 100,
+                "Power": 140,
+                "Earth Damage": 0,
+                "Vitality": 3253
+              },
+              "items": {
+                "amulet": "Treadfast Amulet",
+                "belt": "Menobelt",
+                "weapon": "Mantax",
+                "shield": "Honeycomb Shield",
+                "ring_1": "Nomarow's Ring",
+                "ring_2": "Spilling Ryng",
+                "boots": "Tritun Palms",
+                "hat": "Hel Munster's Helmet",
+                "cloak": "Indescribable Cape",
+                "pet": "Ebony and Ivory Dragoturkey",
+                "dofus_1": "Major Gymnast",
+                "dofus_2": "Arcanist",
+                "dofus_3": "Impetuous",
+                "dofus_4": "Major Stunter",
+                "dofus_5": "Voyager",
+                "dofus_6": "Fire Bulwark"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3186,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3186,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3186,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 0.7234,
+          "Air Damage": 2.5359,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2201,
+          "Critical Damage": 1.5602,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.5359,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7234,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

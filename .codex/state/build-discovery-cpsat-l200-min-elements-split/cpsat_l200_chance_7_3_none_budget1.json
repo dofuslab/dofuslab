@@ -1,0 +1,577 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T06:25:44.607381+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-cpsat-l200-min-elements-targets.json#targets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "cpsat_l200_chance_7_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2074.89,
+        "weightedStatScore": 3648.52,
+        "utilityStatScore": 299.13,
+        "genericDamageScore": 3760.03,
+        "rawRotationDamageScore": 2488.25,
+        "spellDamageScore": 2488.25,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.2533,
+        "weaponDamageScore": 89.43,
+        "survivabilityScore": 83.74,
+        "weakestElementEhp": 2287.07,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 1,
+          "Chance": 1088,
+          "Power": 250,
+          "Vitality": 2653,
+          "Damage": 12,
+          "Water Damage": 117,
+          "Critical": 55,
+          "Critical Damage": 40
+        },
+        "sets": {
+          "Bzzegg Supervisor Set": 2,
+          "Rhoarim Set": 2,
+          "Ripper Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "18004",
+            "internalId": null,
+            "name": "Spookkoth Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "belt": {
+            "id": "31762",
+            "internalId": null,
+            "name": "Rhoarim Loincloth",
+            "type": "Belt",
+            "level": 200,
+            "set": "Rhoarim Set"
+          },
+          "weapon": {
+            "id": "31763",
+            "internalId": null,
+            "name": "Feral Scythe",
+            "type": "Scythe",
+            "level": 200,
+            "set": "Rhoarim Set"
+          },
+          "shield": {
+            "id": "31757",
+            "internalId": null,
+            "name": "The Ripper's Trophy",
+            "type": "Shield",
+            "level": 200,
+            "set": "Ripper Set"
+          },
+          "ring_1": {
+            "id": "31753",
+            "internalId": null,
+            "name": "Bzzegg Supervisor's Fist",
+            "type": "Ring",
+            "level": 179,
+            "set": "Bzzegg Supervisor Set"
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "31756",
+            "internalId": null,
+            "name": "The Ripper's Mane",
+            "type": "Hat",
+            "level": 200,
+            "set": "Ripper Set"
+          },
+          "cloak": {
+            "id": "31750",
+            "internalId": null,
+            "name": "Bzzegg Supervisor's Winged Shell",
+            "type": "Cloak",
+            "level": 178,
+            "set": "Bzzegg Supervisor Set"
+          },
+          "pet": {
+            "id": "33286",
+            "internalId": null,
+            "name": "Azure and Golden Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13783",
+            "internalId": null,
+            "name": "Major Water Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13781",
+            "internalId": null,
+            "name": "Minor Water Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "12716",
+            "internalId": null,
+            "name": "Major Player",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2074.89,
+        "apStrategy": null,
+        "totals": {
+          "AP": 9,
+          "MP": 5,
+          "Range": 1,
+          "Chance": 1088,
+          "Power": 250,
+          "Vitality": 2653,
+          "Damage": 12,
+          "Water Damage": 117,
+          "Critical": 55,
+          "Critical Damage": 40
+        },
+        "sets": {
+          "Bzzegg Supervisor Set": 2,
+          "Rhoarim Set": 2,
+          "Ripper Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Spookkoth Amulet",
+          "Rhoarim Loincloth",
+          "Feral Scythe",
+          "The Ripper's Trophy",
+          "Bzzegg Supervisor's Fist",
+          "Rhineetle Ring",
+          "Meriana's Clairvoyance",
+          "The Ripper's Mane",
+          "Bzzegg Supervisor's Winged Shell",
+          "Azure and Golden Seemyool",
+          "Major Water Wrecker",
+          "Impetuous",
+          "Minor Water Wrecker",
+          "Major Player",
+          "Major Tease",
+          "Arcanist"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2074.89,
+          "weightedStatScore": 3648.52,
+          "utilityStatScore": 299.13,
+          "genericDamageScore": 3760.03,
+          "rawRotationDamageScore": 2488.25,
+          "spellDamageScore": 2488.25,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.2533,
+          "weaponDamageScore": 89.43,
+          "survivabilityScore": 83.74,
+          "weakestElementEhp": 2287.07,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 1,
+            "Chance": 1088,
+            "Power": 250,
+            "Vitality": 2653,
+            "Damage": 12,
+            "Water Damage": 117,
+            "Critical": 55,
+            "Critical Damage": 40
+          },
+          "sets": {
+            "Bzzegg Supervisor Set": 2,
+            "Rhoarim Set": 2,
+            "Ripper Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "18004",
+              "internalId": null,
+              "name": "Spookkoth Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Pit Set"
+            },
+            "belt": {
+              "id": "31762",
+              "internalId": null,
+              "name": "Rhoarim Loincloth",
+              "type": "Belt",
+              "level": 200,
+              "set": "Rhoarim Set"
+            },
+            "weapon": {
+              "id": "31763",
+              "internalId": null,
+              "name": "Feral Scythe",
+              "type": "Scythe",
+              "level": 200,
+              "set": "Rhoarim Set"
+            },
+            "shield": {
+              "id": "31757",
+              "internalId": null,
+              "name": "The Ripper's Trophy",
+              "type": "Shield",
+              "level": 200,
+              "set": "Ripper Set"
+            },
+            "ring_1": {
+              "id": "31753",
+              "internalId": null,
+              "name": "Bzzegg Supervisor's Fist",
+              "type": "Ring",
+              "level": 179,
+              "set": "Bzzegg Supervisor Set"
+            },
+            "ring_2": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "31756",
+              "internalId": null,
+              "name": "The Ripper's Mane",
+              "type": "Hat",
+              "level": 200,
+              "set": "Ripper Set"
+            },
+            "cloak": {
+              "id": "31750",
+              "internalId": null,
+              "name": "Bzzegg Supervisor's Winged Shell",
+              "type": "Cloak",
+              "level": 178,
+              "set": "Bzzegg Supervisor Set"
+            },
+            "pet": {
+              "id": "33286",
+              "internalId": null,
+              "name": "Azure and Golden Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "13783",
+              "internalId": null,
+              "name": "Major Water Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13781",
+              "internalId": null,
+              "name": "Minor Water Wrecker",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "12716",
+              "internalId": null,
+              "name": "Major Player",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2074.89,
+          "apStrategy": null,
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 1,
+            "Chance": 1088,
+            "Power": 250,
+            "Vitality": 2653,
+            "Damage": 12,
+            "Water Damage": 117,
+            "Critical": 55,
+            "Critical Damage": 40
+          },
+          "sets": {
+            "Bzzegg Supervisor Set": 2,
+            "Rhoarim Set": 2,
+            "Ripper Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Spookkoth Amulet",
+            "Rhoarim Loincloth",
+            "Feral Scythe",
+            "The Ripper's Trophy",
+            "Bzzegg Supervisor's Fist",
+            "Rhineetle Ring",
+            "Meriana's Clairvoyance",
+            "The Ripper's Mane",
+            "Bzzegg Supervisor's Winged Shell",
+            "Azure and Golden Seemyool",
+            "Major Water Wrecker",
+            "Impetuous",
+            "Minor Water Wrecker",
+            "Major Player",
+            "Major Tease",
+            "Arcanist"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 11522.2,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 300.8,
+          "totalSearchMs": 11221.4
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 5994.1,
+            "solveMs": 5049.1,
+            "objective": 1657.32,
+            "validCandidate": {
+              "score": 2074.89,
+              "totals": {
+                "AP": 9,
+                "MP": 5,
+                "Range": 1,
+                "Strength": 250,
+                "Power": 250,
+                "Earth Damage": 20,
+                "Vitality": 2653
+              },
+              "items": {
+                "amulet": "Spookkoth Amulet",
+                "belt": "Rhoarim Loincloth",
+                "weapon": "Feral Scythe",
+                "shield": "The Ripper's Trophy",
+                "ring_1": "Bzzegg Supervisor's Fist",
+                "ring_2": "Rhineetle Ring",
+                "boots": "Meriana's Clairvoyance",
+                "hat": "The Ripper's Mane",
+                "cloak": "Bzzegg Supervisor's Winged Shell",
+                "pet": "Azure and Golden Seemyool",
+                "dofus_1": "Major Water Wrecker",
+                "dofus_2": "Impetuous",
+                "dofus_3": "Minor Water Wrecker",
+                "dofus_4": "Major Player",
+                "dofus_5": "Major Tease",
+                "dofus_6": "Arcanist"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
