@@ -34,12 +34,14 @@ REQUIREMENTS_PATH = requirements_path()
 try:
     from ortools.sat.python import cp_model
     from oneoff.build_discovery_cpsat_experiment import (
+        CandidateCollectionCallback,
         build_model,
         reconstruct_state,
     )
     from oneoff.build_discovery_prototype import BuildTarget, configure_damage_profile
 except Exception as exc:  # pragma: no cover - exercised only in incomplete envs.
     cp_model = None
+    CandidateCollectionCallback = None
     build_model = None
     reconstruct_state = None
     BuildTarget = None
@@ -166,6 +168,7 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertIn("intentionally isolated from the product path", source)
         self.assertIn("DEFAULT_TIME_LIMIT_SECONDS", source)
         self.assertIn("candidate-limit", source)
+        self.assertIn("collection-mode", source)
         self.assertIn("objective-mode", source)
 
     def test_experiment_accepts_milestone_query_fields(self):
@@ -215,6 +218,50 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertIn("slotVarCount", source)
         self.assertIn("exactSetCountVarCount", source)
         self.assertIn("conditionConstraintCount", source)
+
+    def test_experiment_exposes_callback_candidate_collection(self):
+        source = EXPERIMENT_PATH.read_text(encoding="utf-8")
+
+        self.assertIn("CpSolverSolutionCallback", source)
+        self.assertIn("CandidateCollectionCallback", source)
+        self.assertIn('collection_mode == "callback"', source)
+
+    def test_callback_candidate_collection_produces_valid_fixture_candidate(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        configure_damage_profile("strength")
+        target = BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False)
+        items = base_fixture_items()
+        sets = fixture_sets()
+        model, slot_item_vars, exo_vars, model_stats = build_model(
+            items,
+            sets,
+            target,
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
+            exo_policy="none",
+        )
+        collector = CandidateCollectionCallback(
+            slot_item_vars=slot_item_vars,
+            exo_vars=exo_vars,
+            items=items,
+            sets=sets,
+            target=target,
+            candidate_limit=3,
+        )
+        solver = cp_model.CpSolver()
+        solver.parameters.max_time_in_seconds = 2
+        solver.parameters.num_search_workers = 1
+
+        status = solver.Solve(model, collector)
+
+        self.assertIn(status, (cp_model.OPTIMAL, cp_model.FEASIBLE))
+        self.assertGreaterEqual(collector.solution_count, 1)
+        self.assertGreaterEqual(len(collector.candidates), 1)
+        self.assertEqual(collector.candidates[0].stats["AP"], 7)
+        self.assertEqual(model_stats["slotVarCount"], len(slot_item_vars))
 
     def test_experiment_groups_equivalent_dofus_slots(self):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")

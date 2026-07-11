@@ -1,0 +1,1052 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T07:15:01.448279+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_12_6_none_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2373.85,
+        "weightedStatScore": 3777.36,
+        "utilityStatScore": 471.89,
+        "genericDamageScore": 4056.5,
+        "rawRotationDamageScore": 3716.57,
+        "spellDamageScore": 3716.57,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.3522,
+        "weaponDamageScore": 213.32,
+        "survivabilityScore": 76.54,
+        "weakestElementEhp": 2220.12,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 5,
+          "Strength": 1248,
+          "Power": 80,
+          "Vitality": 2613,
+          "Damage": 0,
+          "Earth Damage": 174,
+          "Critical": 46,
+          "Critical Damage": 10,
+          "Neutral Damage": 144
+        },
+        "sets": {
+          "Masked Avenger Set": 3,
+          "Dark Court Set": 2,
+          "Depths Set": 3
+        },
+        "exos": {
+          "MP": {
+            "itemId": "17997",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "17997",
+            "internalId": null,
+            "name": "Crabtun Necklace",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "belt": {
+            "id": "15429",
+            "internalId": null,
+            "name": "Dark Court Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "weapon": {
+            "id": "18018",
+            "internalId": null,
+            "name": "Hammerture",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "shield": {
+            "id": "32215",
+            "internalId": null,
+            "name": "Masked Avenger Shell",
+            "type": "Shield",
+            "level": 166,
+            "set": "Masked Avenger Set"
+          },
+          "ring_1": {
+            "id": "32214",
+            "internalId": null,
+            "name": "Masked Avenger Armband",
+            "type": "Ring",
+            "level": 168,
+            "set": "Masked Avenger Set"
+          },
+          "ring_2": {
+            "id": "17998",
+            "internalId": null,
+            "name": "Crustic Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "32213",
+            "internalId": null,
+            "name": "Masked Avenger Mask",
+            "type": "Hat",
+            "level": 170,
+            "set": "Masked Avenger Set"
+          },
+          "cloak": {
+            "id": "15430",
+            "internalId": null,
+            "name": "Dark Court Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "pet": {
+            "id": "33268",
+            "internalId": null,
+            "name": "Amber and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2373.85,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 5,
+          "Strength": 1248,
+          "Power": 80,
+          "Vitality": 2613,
+          "Damage": 0,
+          "Earth Damage": 174,
+          "Critical": 46,
+          "Critical Damage": 10,
+          "Neutral Damage": 144
+        },
+        "sets": {
+          "Masked Avenger Set": 3,
+          "Dark Court Set": 2,
+          "Depths Set": 3
+        },
+        "exos": {
+          "MP": {
+            "itemId": "17997",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Crabtun Necklace",
+          "Dark Court Belt",
+          "Hammerture",
+          "Masked Avenger Shell",
+          "Masked Avenger Armband",
+          "Crustic Ring",
+          "Meriana's Clairvoyance",
+          "Masked Avenger Mask",
+          "Dark Court Cape",
+          "Amber and Emerald Seemyool",
+          "Cloudy Dofus",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Goliath"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2373.85,
+          "weightedStatScore": 3777.36,
+          "utilityStatScore": 471.89,
+          "genericDamageScore": 4056.5,
+          "rawRotationDamageScore": 3716.57,
+          "spellDamageScore": 3716.57,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.3522,
+          "weaponDamageScore": 213.32,
+          "survivabilityScore": 76.54,
+          "weakestElementEhp": 2220.12,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 5,
+            "Strength": 1248,
+            "Power": 80,
+            "Vitality": 2613,
+            "Damage": 0,
+            "Earth Damage": 174,
+            "Critical": 46,
+            "Critical Damage": 10,
+            "Neutral Damage": 144
+          },
+          "sets": {
+            "Masked Avenger Set": 3,
+            "Dark Court Set": 2,
+            "Depths Set": 3
+          },
+          "exos": {
+            "MP": {
+              "itemId": "17997",
+              "slot": "amulet"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "17997",
+              "internalId": null,
+              "name": "Crabtun Necklace",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Depths Set"
+            },
+            "belt": {
+              "id": "15429",
+              "internalId": null,
+              "name": "Dark Court Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "weapon": {
+              "id": "18018",
+              "internalId": null,
+              "name": "Hammerture",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Depths Set"
+            },
+            "shield": {
+              "id": "32215",
+              "internalId": null,
+              "name": "Masked Avenger Shell",
+              "type": "Shield",
+              "level": 166,
+              "set": "Masked Avenger Set"
+            },
+            "ring_1": {
+              "id": "32214",
+              "internalId": null,
+              "name": "Masked Avenger Armband",
+              "type": "Ring",
+              "level": 168,
+              "set": "Masked Avenger Set"
+            },
+            "ring_2": {
+              "id": "17998",
+              "internalId": null,
+              "name": "Crustic Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Depths Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "32213",
+              "internalId": null,
+              "name": "Masked Avenger Mask",
+              "type": "Hat",
+              "level": 170,
+              "set": "Masked Avenger Set"
+            },
+            "cloak": {
+              "id": "15430",
+              "internalId": null,
+              "name": "Dark Court Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "pet": {
+              "id": "33268",
+              "internalId": null,
+              "name": "Amber and Emerald Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 2065.82,
+          "weightedStatScore": 3070.74,
+          "utilityStatScore": 388.56,
+          "genericDamageScore": 3592.01,
+          "rawRotationDamageScore": 3291.01,
+          "spellDamageScore": 3291.01,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.1973,
+          "weaponDamageScore": 163.42,
+          "survivabilityScore": 60.87,
+          "weakestElementEhp": 1865.33,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 1,
+            "Strength": 1078,
+            "Power": 200,
+            "Vitality": 2103,
+            "Damage": 0,
+            "Earth Damage": 72,
+            "Critical": 67,
+            "Critical Damage": 12,
+            "Neutral Damage": 37
+          },
+          "sets": {
+            "Turtelonia Set": 2,
+            "Khardboard Set": 2,
+            "Superstitious Set": 3
+          },
+          "exos": {
+            "MP": {
+              "itemId": "14160",
+              "slot": "amulet"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "14160",
+              "internalId": null,
+              "name": "Gilded Choker",
+              "type": "Amulet",
+              "level": 196,
+              "set": "Superstitious Set"
+            },
+            "belt": {
+              "id": "27266",
+              "internalId": null,
+              "name": "Khardboard Moowolf Belt",
+              "type": "Belt",
+              "level": 150,
+              "set": "Khardboard Set"
+            },
+            "weapon": {
+              "id": "21229",
+              "internalId": null,
+              "name": "Turtelonia Wand",
+              "type": "Wand",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "shield": {
+              "id": "18701",
+              "internalId": null,
+              "name": "Seven Years Bad Luck",
+              "type": "Shield",
+              "level": 194,
+              "set": "Superstitious Set"
+            },
+            "ring_1": {
+              "id": "27284",
+              "internalId": null,
+              "name": "Khardboard Gelano",
+              "type": "Ring",
+              "level": 200,
+              "set": "Khardboard Set"
+            },
+            "ring_2": {
+              "id": "14049",
+              "internalId": null,
+              "name": "Copper Nickus Ring",
+              "type": "Ring",
+              "level": 196,
+              "set": "Superstitious Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "12118",
+              "internalId": null,
+              "name": "Fuji Snowfoux Headgear",
+              "type": "Hat",
+              "level": 195,
+              "set": "Fuji Snowfoux Set"
+            },
+            "cloak": {
+              "id": "21230",
+              "internalId": null,
+              "name": "Turtelonia Carapace",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "pet": {
+              "id": "29430",
+              "internalId": null,
+              "name": "Mamukil Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 2033.46,
+          "weightedStatScore": 3134.74,
+          "utilityStatScore": 318.56,
+          "genericDamageScore": 3678.05,
+          "rawRotationDamageScore": 3369.84,
+          "spellDamageScore": 3369.84,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.226,
+          "weaponDamageScore": 167.08,
+          "survivabilityScore": 59.78,
+          "weakestElementEhp": 1865.33,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 1,
+            "Strength": 1078,
+            "Power": 200,
+            "Vitality": 2103,
+            "Damage": 0,
+            "Earth Damage": 92,
+            "Critical": 67,
+            "Critical Damage": 12,
+            "Neutral Damage": 37
+          },
+          "sets": {
+            "Turtelonia Set": 2,
+            "Khardboard Set": 2,
+            "Superstitious Set": 3
+          },
+          "exos": {
+            "AP": {
+              "itemId": "12118",
+              "slot": "hat"
+            },
+            "MP": {
+              "itemId": "14160",
+              "slot": "amulet"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "14160",
+              "internalId": null,
+              "name": "Gilded Choker",
+              "type": "Amulet",
+              "level": 196,
+              "set": "Superstitious Set"
+            },
+            "belt": {
+              "id": "27266",
+              "internalId": null,
+              "name": "Khardboard Moowolf Belt",
+              "type": "Belt",
+              "level": 150,
+              "set": "Khardboard Set"
+            },
+            "weapon": {
+              "id": "21229",
+              "internalId": null,
+              "name": "Turtelonia Wand",
+              "type": "Wand",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "shield": {
+              "id": "18701",
+              "internalId": null,
+              "name": "Seven Years Bad Luck",
+              "type": "Shield",
+              "level": 194,
+              "set": "Superstitious Set"
+            },
+            "ring_1": {
+              "id": "27284",
+              "internalId": null,
+              "name": "Khardboard Gelano",
+              "type": "Ring",
+              "level": 200,
+              "set": "Khardboard Set"
+            },
+            "ring_2": {
+              "id": "14049",
+              "internalId": null,
+              "name": "Copper Nickus Ring",
+              "type": "Ring",
+              "level": 196,
+              "set": "Superstitious Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "12118",
+              "internalId": null,
+              "name": "Fuji Snowfoux Headgear",
+              "type": "Hat",
+              "level": 195,
+              "set": "Fuji Snowfoux Set"
+            },
+            "cloak": {
+              "id": "21230",
+              "internalId": null,
+              "name": "Turtelonia Carapace",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "pet": {
+              "id": "29430",
+              "internalId": null,
+              "name": "Mamukil Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13774",
+              "internalId": null,
+              "name": "Major Earth Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2373.85,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 5,
+            "Strength": 1248,
+            "Power": 80,
+            "Vitality": 2613,
+            "Damage": 0,
+            "Earth Damage": 174,
+            "Critical": 46,
+            "Critical Damage": 10,
+            "Neutral Damage": 144
+          },
+          "sets": {
+            "Masked Avenger Set": 3,
+            "Dark Court Set": 2,
+            "Depths Set": 3
+          },
+          "exos": {
+            "MP": {
+              "itemId": "17997",
+              "slot": "amulet"
+            }
+          },
+          "items": [
+            "Crabtun Necklace",
+            "Dark Court Belt",
+            "Hammerture",
+            "Masked Avenger Shell",
+            "Masked Avenger Armband",
+            "Crustic Ring",
+            "Meriana's Clairvoyance",
+            "Masked Avenger Mask",
+            "Dark Court Cape",
+            "Amber and Emerald Seemyool",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Goliath"
+          ]
+        },
+        {
+          "score": 2065.82,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 1,
+            "Strength": 1078,
+            "Power": 200,
+            "Vitality": 2103,
+            "Damage": 0,
+            "Earth Damage": 72,
+            "Critical": 67,
+            "Critical Damage": 12,
+            "Neutral Damage": 37
+          },
+          "sets": {
+            "Turtelonia Set": 2,
+            "Khardboard Set": 2,
+            "Superstitious Set": 3
+          },
+          "exos": {
+            "MP": {
+              "itemId": "14160",
+              "slot": "amulet"
+            }
+          },
+          "items": [
+            "Gilded Choker",
+            "Khardboard Moowolf Belt",
+            "Turtelonia Wand",
+            "Seven Years Bad Luck",
+            "Khardboard Gelano",
+            "Copper Nickus Ring",
+            "Meriana's Clairvoyance",
+            "Fuji Snowfoux Headgear",
+            "Turtelonia Carapace",
+            "Mamukil Kolophant",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Goliath"
+          ]
+        },
+        {
+          "score": 2033.46,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 1,
+            "Strength": 1078,
+            "Power": 200,
+            "Vitality": 2103,
+            "Damage": 0,
+            "Earth Damage": 92,
+            "Critical": 67,
+            "Critical Damage": 12,
+            "Neutral Damage": 37
+          },
+          "sets": {
+            "Turtelonia Set": 2,
+            "Khardboard Set": 2,
+            "Superstitious Set": 3
+          },
+          "exos": {
+            "AP": {
+              "itemId": "12118",
+              "slot": "hat"
+            },
+            "MP": {
+              "itemId": "14160",
+              "slot": "amulet"
+            }
+          },
+          "items": [
+            "Gilded Choker",
+            "Khardboard Moowolf Belt",
+            "Turtelonia Wand",
+            "Seven Years Bad Luck",
+            "Khardboard Gelano",
+            "Copper Nickus Ring",
+            "Meriana's Clairvoyance",
+            "Fuji Snowfoux Headgear",
+            "Turtelonia Carapace",
+            "Mamukil Kolophant",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Earth Wrecker",
+            "Major Goliath"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 7
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 8318.3,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 1918.8,
+          "totalSearchMs": 6399.5
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 1521.5,
+            "solveMs": 4877.8,
+            "objective": 2191.05,
+            "solutionCallbackCount": 14,
+            "validCallbackCandidateCount": 10,
+            "invalidCallbackCandidateCount": 0,
+            "finalInvalidReason": null,
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 99,
+                "belt": 93,
+                "weapon": 197,
+                "shield": 59,
+                "ring_1": 132,
+                "ring_2": 132,
+                "boots": 102,
+                "hat": 131,
+                "cloak": 92,
+                "pet": 452,
+                "dofus": 316
+              },
+              "slotVarCount": 1805,
+              "uniqueItemCount": 1673,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 921,
+              "conditionConstraintCount": 279,
+              "setCountConstraintCount": 239
+            }
+          }
+        ],
+        "itemCount": 1673,
+        "candidateCount": 10,
+        "requestedCandidateLimit": 10,
+        "collectionMode": "callback",
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

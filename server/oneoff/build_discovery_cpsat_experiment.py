@@ -494,6 +494,62 @@ def state_signature(state: BuildState) -> frozenset[str]:
     return frozenset(item["dofusID"] for item in state.slots.values())
 
 
+def append_unique_candidate(
+    candidates: list[BuildState],
+    seen_valid_signatures: set[frozenset[str]],
+    state: BuildState,
+) -> bool:
+    signature = state_signature(state)
+    if signature in seen_valid_signatures:
+        return False
+    candidates.append(state)
+    seen_valid_signatures.add(signature)
+    return True
+
+
+class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
+    def __init__(
+        self,
+        *,
+        slot_item_vars: dict[tuple[str, str], cp_model.IntVar],
+        exo_vars: dict[tuple[str, str], cp_model.IntVar],
+        items: list[dict[str, Any]],
+        sets: dict[str, dict[str, Any]],
+        target: BuildTarget,
+        candidate_limit: int,
+    ) -> None:
+        super().__init__()
+        self.slot_item_vars = slot_item_vars
+        self.exo_vars = exo_vars
+        self.items = items
+        self.sets = sets
+        self.target = target
+        self.candidate_limit = candidate_limit
+        self.solution_count = 0
+        self.valid_solution_count = 0
+        self.invalid_solution_count = 0
+        self.candidates: list[BuildState] = []
+        self.seen_valid_signatures: set[frozenset[str]] = set()
+
+    def OnSolutionCallback(self) -> None:
+        self.solution_count += 1
+        if len(self.candidates) >= self.candidate_limit:
+            return
+        state, invalid_reason = reconstruct_state(
+            self,
+            self.slot_item_vars,
+            self.exo_vars,
+            self.items,
+            self.sets,
+            self.target,
+        )
+        if state is None:
+            self.invalid_solution_count += 1
+            return
+        if append_unique_candidate(self.candidates, self.seen_valid_signatures, state):
+            self.valid_solution_count += 1
+
+
 def build_summary(state: BuildState) -> dict[str, Any]:
     return {
         "score": round(state.score, 2),
@@ -640,77 +696,141 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
     best_solver_status = None
     total_start = time.perf_counter()
 
-    for attempt_index in range(args.max_attempts):
-        if len(candidates) >= args.candidate_limit:
-            break
+    collection_mode = getattr(args, "collection_mode", "repeated")
+
+    if collection_mode == "callback":
         model_start = time.perf_counter()
         model, slot_item_vars, exo_vars, model_stats = build_model(
             items,
             sets,
             target,
-            forbidden_signatures=forbidden,
-            max_shared_item_cuts=max_shared_item_cuts,
-            max_shared_items=args.max_shared_items,
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
             objective_weights=objective_weights,
             exo_policy=query.exo_policy,
         )
         model_ms = (time.perf_counter() - model_start) * 1000
 
+        collector = CandidateCollectionCallback(
+            slot_item_vars=slot_item_vars,
+            exo_vars=exo_vars,
+            items=items,
+            sets=sets,
+            target=target,
+            candidate_limit=args.candidate_limit,
+        )
         solver = cp_model.CpSolver()
         solver.parameters.max_time_in_seconds = args.time_limit_seconds
         solver.parameters.num_search_workers = args.workers
         solve_start = time.perf_counter()
-        status = solver.Solve(model)
+        status = solver.Solve(model, collector)
         solve_ms = (time.perf_counter() - solve_start) * 1000
         best_solver_status = solver.StatusName(status)
+        candidates = list(collector.candidates)
+        seen_valid_signatures = set(collector.seen_valid_signatures)
 
-        attempt = {
-            "attempt": attempt_index + 1,
-            "status": best_solver_status,
-            "modelMs": round(model_ms, 1),
-            "solveMs": round(solve_ms, 1),
-            "objective": solver.ObjectiveValue() / SCALE if status in (cp_model.OPTIMAL, cp_model.FEASIBLE) else None,
-            "modelStats": model_stats,
-        }
-        attempts.append(attempt)
+        if status in (cp_model.OPTIMAL, cp_model.FEASIBLE) and len(candidates) < args.candidate_limit:
+            final_state, final_invalid_reason = reconstruct_state(
+                solver,
+                slot_item_vars,
+                exo_vars,
+                items,
+                sets,
+                target,
+            )
+            if final_state is not None:
+                append_unique_candidate(candidates, seen_valid_signatures, final_state)
+            else:
+                collector.invalid_solution_count += 1
+        else:
+            final_invalid_reason = None
 
-        if status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
-            break
-
-        state, invalid_reason = reconstruct_state(solver, slot_item_vars, exo_vars, items, sets, target)
-        selected_ids = frozenset(
-            item_id
-            for (_slot_name, item_id), var in slot_item_vars.items()
-            if solver.BooleanValue(var)
+        attempts.append(
+            {
+                "attempt": 1,
+                "mode": "callback",
+                "status": best_solver_status,
+                "modelMs": round(model_ms, 1),
+                "solveMs": round(solve_ms, 1),
+                "objective": solver.ObjectiveValue() / SCALE if status in (cp_model.OPTIMAL, cp_model.FEASIBLE) else None,
+                "solutionCallbackCount": collector.solution_count,
+                "validCallbackCandidateCount": collector.valid_solution_count,
+                "invalidCallbackCandidateCount": collector.invalid_solution_count,
+                "finalInvalidReason": final_invalid_reason,
+                "modelStats": model_stats,
+            }
         )
-        if state is not None:
-            signature = state_signature(state)
-            if signature not in seen_valid_signatures:
-                candidates.append(state)
-                seen_valid_signatures.add(signature)
-                if args.max_shared_items is not None:
-                    max_shared_item_cuts.append(signature)
-                attempt["validCandidate"] = {
-                    "score": round(state.score, 2),
-                    "totals": {
-                        "AP": state.stats.get("AP", 0),
-                        "MP": state.stats.get("MP", 0),
-                        "Range": state.stats.get("Range", 0),
-                        "Strength": state.stats.get("Strength", 0),
-                        "Power": state.stats.get("Power", 0),
-                        "Earth Damage": state.stats.get("Earth Damage", 0),
-                        "Vitality": state.stats.get("Vitality", 0),
-                    },
-                    "items": {
-                        slot: item["_name"]
-                        for slot, item in state.slots.items()
-                    },
-                }
+    else:
+        for attempt_index in range(args.max_attempts):
+            if len(candidates) >= args.candidate_limit:
+                break
+            model_start = time.perf_counter()
+            model, slot_item_vars, exo_vars, model_stats = build_model(
+                items,
+                sets,
+                target,
+                forbidden_signatures=forbidden,
+                max_shared_item_cuts=max_shared_item_cuts,
+                max_shared_items=args.max_shared_items,
+                objective_weights=objective_weights,
+                exo_policy=query.exo_policy,
+            )
+            model_ms = (time.perf_counter() - model_start) * 1000
+
+            solver = cp_model.CpSolver()
+            solver.parameters.max_time_in_seconds = args.time_limit_seconds
+            solver.parameters.num_search_workers = args.workers
+            solve_start = time.perf_counter()
+            status = solver.Solve(model)
+            solve_ms = (time.perf_counter() - solve_start) * 1000
+            best_solver_status = solver.StatusName(status)
+
+            attempt = {
+                "attempt": attempt_index + 1,
+                "mode": "repeated",
+                "status": best_solver_status,
+                "modelMs": round(model_ms, 1),
+                "solveMs": round(solve_ms, 1),
+                "objective": solver.ObjectiveValue() / SCALE if status in (cp_model.OPTIMAL, cp_model.FEASIBLE) else None,
+                "modelStats": model_stats,
+            }
+            attempts.append(attempt)
+
+            if status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
+                break
+
+            state, invalid_reason = reconstruct_state(solver, slot_item_vars, exo_vars, items, sets, target)
+            selected_ids = frozenset(
+                item_id
+                for (_slot_name, item_id), var in slot_item_vars.items()
+                if solver.BooleanValue(var)
+            )
+            if state is not None:
+                if append_unique_candidate(candidates, seen_valid_signatures, state):
+                    if args.max_shared_items is not None:
+                        max_shared_item_cuts.append(state_signature(state))
+                    attempt["validCandidate"] = {
+                        "score": round(state.score, 2),
+                        "totals": {
+                            "AP": state.stats.get("AP", 0),
+                            "MP": state.stats.get("MP", 0),
+                            "Range": state.stats.get("Range", 0),
+                            "Strength": state.stats.get("Strength", 0),
+                            "Power": state.stats.get("Power", 0),
+                            "Earth Damage": state.stats.get("Earth Damage", 0),
+                            "Vitality": state.stats.get("Vitality", 0),
+                        },
+                        "items": {
+                            slot: item["_name"]
+                            for slot, item in state.slots.items()
+                        },
+                    }
+                forbidden.append(selected_ids)
+                continue
+            attempt["invalidReason"] = invalid_reason
+            attempt["selectedItemIds"] = sorted(selected_ids, key=lambda value: (len(value), value))
             forbidden.append(selected_ids)
-            continue
-        attempt["invalidReason"] = invalid_reason
-        attempt["selectedItemIds"] = sorted(selected_ids, key=lambda value: (len(value), value))
-        forbidden.append(selected_ids)
 
     total_ms = (time.perf_counter() - total_start) * 1000
     ranked_candidates = sorted(candidates, key=lambda state: state.score, reverse=True)
@@ -730,6 +850,7 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
         "itemCount": len(items),
         "candidateCount": len(candidates),
         "requestedCandidateLimit": args.candidate_limit,
+        "collectionMode": collection_mode,
         "maxSharedItems": args.max_shared_items,
         "objectiveWeights": {
             stat: round(weight, 4)
@@ -778,6 +899,7 @@ def main() -> None:
     parser.add_argument("--candidate-limit", type=int, default=20)
     parser.add_argument("--summary-limit", type=int, default=10)
     parser.add_argument("--output-build-limit", type=int, default=5)
+    parser.add_argument("--collection-mode", choices=("callback", "repeated"), default="callback")
     parser.add_argument("--level", type=int, default=200)
     parser.add_argument("--element", choices=("agility", "chance", "intelligence", "strength"), default="strength")
     parser.add_argument("--target-ap", "--ap", type=int, default=12)

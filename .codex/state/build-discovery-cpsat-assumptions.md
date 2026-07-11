@@ -67,7 +67,12 @@ review before accepting Milestone 2 evidence.
   artifact-generation path, not product wiring.
 - The Notion PRD now prefers CP-SAT callback candidate collection plus a static
   solver index and fast reconstruction/reranking. The current main-repo adapter
-  has not yet reached that final architecture.
+  has started callback candidate collection, but has not yet reached the full
+  static-index/fast-rerank architecture.
+- CP-SAT `collectionMode=callback` collects feasible candidates during one
+  optimization solve and then reconstructs the final solver assignment. This is
+  intended to replace repeated no-good solves for product alternatives.
+- The older repeated no-good collection mode remains available for diagnostics.
 - The old beam solver remains reference material only.
 - Matrix artifacts and checkers remain useful QA evidence if they validate the
   serialized build, target, and query payload independent of solver internals.
@@ -133,6 +138,10 @@ review before accepting Milestone 2 evidence.
 - First 32-row Milestone 2 corner slice generated 32/32 rows for
   strength/chance, budget tiers 1/4, AP `7/12`, MP `3/6`, Range `none/6`;
   elapsed times were `5306.4ms-8987.8ms`, so all rows remain above `5s`.
+- First real-data callback smoke for strength tier 4 `12/6/None` collected
+  10 valid callback candidates from 14 feasible callbacks, returned 3 builds,
+  and took `8318.3ms` total. Callback collection is architecturally aligned
+  with the PRD, but still needs static-index/fast-rerank performance work.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.
