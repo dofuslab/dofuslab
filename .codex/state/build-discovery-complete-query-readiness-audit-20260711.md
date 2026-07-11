@@ -4,9 +4,11 @@ Purpose: audit the current branch against the active goal before claiming the pr
 
 ## Verdict
 
-Status: **not complete yet, but close for path/constraint coverage**.
+Status: **complete for pre-optimization query feasibility under the corner-case standard**.
 
-The current branch has strong sampled evidence that CP-SAT can generate mechanically valid builds across class, element, budget, level, AP/MP, and Range boundaries. A first prod-backed benchmark discovery checkpoint has now run against representative complete level-200 class slices. It supports the current query envelope for common positive-range prod shapes, and negative-range prod shapes are now mapped to omitted/soft Range queries instead of unsupported hard Range targets.
+The current branch has sampled evidence that CP-SAT can generate mechanically valid builds across class, element, budget, level, AP/MP, and Range boundaries. Prod-backed benchmark discovery and generation have now run against representative complete level-200 class slices. The evidence supports the current query envelope for common positive-range prod shapes, maps negative-range prod shapes to omitted/soft Range queries, and generates feasible builds for every supported representative prod-shaped candidate.
+
+This is deliberately a pre-optimization completion claim. It does not claim that generated non-Iop builds are high quality, that class/element scoring is reviewed, or that the product/API/UI path is ready.
 
 ## Requirement Audit
 
@@ -23,6 +25,8 @@ Evidence:
   - `50278fcc Add all-class CP-SAT smoke harness`
   - `e5941ee4 Expand all-class CP-SAT smoke coverage`
   - `052f7460 Add level-diversity CP-SAT smoke coverage`
+  - `1cc7b886 Ground complete-query audit in prod benchmarks`
+  - `b7bd47b7 Use balanced presets for prod-shaped benchmarks`
 
 Status: **satisfied for current milestone work**.
 
@@ -125,7 +129,7 @@ Requirement: list assumptions so they are easy to review.
 
 Evidence:
 - `.codex/state/build-discovery-assumptions.md` contains product, solver, budget, Range, level, scoring, instrumentation, and benchmark assumptions.
-- New assumptions were added for all-class smoke evidence, level-diversity smoke evidence, and `active_stat_weights()` requirements.
+- New assumptions were added for all-class smoke evidence, level-diversity smoke evidence, `active_stat_weights()` requirements, complete prod build sampling, negative prod Range mapping, and prod-shaped CP-SAT feasibility limits.
 
 Status: **satisfied, ongoing**.
 
@@ -136,7 +140,7 @@ Requirement: if we think we are done, use prod to find builds people are using a
 Evidence:
 - Existing prod benchmark discovery scripts/artifacts exist, but no new all-class/level-diversity CP-SAT prod benchmark comparison has been run after the class-aware pivot.
 
-Status: **partially satisfied**.
+Status: **satisfied for pre-optimization query feasibility**.
 
 Evidence:
 - `.codex/state/build-discovery-prod-benchmark-discovery-representative-20260711.md` summarizes six bounded class-specific complete-build slices.
@@ -152,7 +156,17 @@ Follow-up evidence:
 
 Residual risk:
 - This proves sampled query feasibility, not build quality. Several generated builds have low vitality or odd item packages, so non-Iop scoring/optimization should not be treated as accepted.
+- Prod discovery is representative, not exhaustive. The active goal explicitly allowed corner-case sampling instead of filling every possible combination.
 
 ## Current Conclusion
 
-The branch is ready for a prod-benchmark checkpoint. If that produces plausible benchmark comparisons without exposing a major correctness bug, the pre-optimization complete-query path can likely be considered complete enough under the user's corner-case standard.
+The pre-optimization complete-query path is complete enough under the user's corner-case standard:
+
+- all known classes are accepted by the query contract and sampled through CP-SAT
+- all four single elements are sampled
+- budget tiers `1-4` are sampled
+- AP/MP/Range lower bounds, caps, omitted Range, hard Range, and level base-AP transitions are sampled
+- assumptions are listed for review
+- representative prod benchmark discovery and CP-SAT generation have been run and committed
+
+Next work should start the optimization/scoring-quality phase, not keep widening pre-optimization query feasibility unless a specific correctness bug is found.
