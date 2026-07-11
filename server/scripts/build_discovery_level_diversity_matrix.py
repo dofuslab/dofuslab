@@ -42,6 +42,11 @@ from scripts.build_discovery_level_diversity_targets import (  # noqa: E402
 REPORT_VERSION = "build-discovery-level-diversity-matrix-v1"
 
 
+def load_json(path: str | Path) -> dict[str, Any]:
+    with open(path, encoding="utf-8") as file:
+        return json.load(file)
+
+
 @dataclass(frozen=True)
 class TargetFileRows:
     rows: list[dict[str, Any]]
@@ -442,6 +447,36 @@ def artifact_stem_for_target(target: LevelDiversityTarget) -> str:
     return stem or "unknown-target"
 
 
+def unique_artifact_stem_for_target(target: LevelDiversityTarget, used_stems: set[str]) -> str:
+    stem = artifact_stem_for_target(target)
+    base_stem = stem
+    suffix = 2
+    while stem in used_stems:
+        stem = f"{base_stem}-{suffix}"
+        suffix += 1
+    used_stems.add(stem)
+    return stem
+
+
+def split_report_target_id(report: dict[str, Any]) -> str | None:
+    results = report.get("results")
+    if not isinstance(results, list) or len(results) != 1:
+        return None
+    target = results[0].get("target") if isinstance(results[0], dict) else None
+    if not isinstance(target, dict):
+        return None
+    return target.get("id")
+
+
+def existing_split_report_for_target(path: Path, target: LevelDiversityTarget) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    report = load_json(path)
+    if split_report_target_id(report) != target.name:
+        raise ValueError(f"Existing split report {path} does not match target {target.name}.")
+    return report
+
+
 def write_split_matrix_reports(
     targets: Iterable[LevelDiversityTarget],
     *,
@@ -451,6 +486,7 @@ def write_split_matrix_reports(
     target_set: str = "level-diversity",
     git_sha: str | None = None,
     target_source: str | None = None,
+    resume_existing: bool = False,
 ) -> dict[str, Any]:
     generated_at = generated_at or datetime.now(timezone.utc).isoformat()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -460,33 +496,35 @@ def write_split_matrix_reports(
     for target in targets:
         query = query_for_target(target)
         query.validate()
-        response = generator(query)
-        entry = matrix_entry(target, response, query)
-        entries.append(entry)
 
-        stem = artifact_stem_for_target(target)
-        base_stem = stem
-        suffix = 2
-        while stem in used_stems:
-            stem = f"{base_stem}-{suffix}"
-            suffix += 1
-        used_stems.add(stem)
+        stem = unique_artifact_stem_for_target(target, used_stems)
 
-        one_row_report = matrix_report_from_entries(
-            [entry],
-            generated_at=generated_at,
-            target_set=target_set,
-            git_sha=git_sha,
-            target_source=target_source,
-        )
         json_path = output_dir / f"{stem}.json"
         md_path = output_dir / f"{stem}.md"
-        json_path.write_text(json.dumps(one_row_report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-        md_path.write_text(render_markdown(one_row_report), encoding="utf-8")
+        existing_report = existing_split_report_for_target(json_path, target) if resume_existing else None
+        if existing_report:
+            one_row_report = existing_report
+            entry = existing_report["results"][0]
+            if not md_path.exists():
+                md_path.write_text(render_markdown(one_row_report), encoding="utf-8")
+        else:
+            response = generator(query)
+            entry = matrix_entry(target, response, query)
+            one_row_report = matrix_report_from_entries(
+                [entry],
+                generated_at=generated_at,
+                target_set=target_set,
+                git_sha=git_sha,
+                target_source=target_source,
+            )
+            json_path.write_text(json.dumps(one_row_report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+            md_path.write_text(render_markdown(one_row_report), encoding="utf-8")
+        entries.append(entry)
         manifest_rows.append(
             {
                 "targetId": target.name,
                 "status": entry["status"],
+                "resumed": bool(existing_report),
                 "json": str(json_path),
                 "markdown": str(md_path),
             }
@@ -617,9 +655,12 @@ def main() -> None:
     parser.add_argument("--output-json", help="Write JSON report to this path.")
     parser.add_argument("--output-md", help="Write Markdown summary to this path.")
     parser.add_argument("--split-output-dir", help="Write one JSON/Markdown report per selected target.")
+    parser.add_argument("--resume-existing", action="store_true", help="In split-output mode, reuse existing one-row target reports.")
     parser.add_argument("--git-sha", help="Git SHA to record when the runtime cannot see .git.")
     parser.add_argument("--use-cache", action="store_true", help="Use process cache during generation.")
     args = parser.parse_args()
+    if args.resume_existing and not args.split_output_dir:
+        parser.error("--resume-existing requires --split-output-dir.")
 
     target_source = None
     if args.target_file:
@@ -656,6 +697,7 @@ def main() -> None:
             target_set=target_set,
             git_sha=args.git_sha,
             target_source=target_source,
+            resume_existing=args.resume_existing,
         )
         report = split_result["aggregateReport"]
     else:

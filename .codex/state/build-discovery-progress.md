@@ -3186,6 +3186,26 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python -m py_compile server\scripts\build_discovery_ap_mp_range_grid_inventory.py server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
   - `git diff --check`
 
+### 2026-07-10 Resumable Split Matrix Batches
+
+- Added `--resume-existing` for split matrix generation.
+- In `--split-output-dir` mode, existing one-row target JSON files can now be
+  reused instead of regenerating the same target.
+- Resume behavior:
+  - computes the same deterministic artifact stem before deciding whether to
+    skip/generate
+  - validates existing JSON has exactly one result for the current target id
+  - appends resumed entries into the aggregate report
+  - rebuilds the manifest every run with `resumed: true/false`
+  - regenerates missing markdown from the existing JSON if needed
+  - rejects `--resume-existing` without `--split-output-dir`
+- This makes interrupted full-grid batches restartable without losing or
+  duplicating completed target work.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `git diff --check`
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range

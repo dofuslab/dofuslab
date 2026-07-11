@@ -12,6 +12,7 @@ from build_discovery_level_diversity_matrix import (
     target_name_from_row,
     targets_from_file,
     targets_for_set,
+    unique_artifact_stem_for_target,
     validate_best_build,
     write_split_matrix_reports,
 )
@@ -430,6 +431,113 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
                 self.assertTrue(Path(row["markdown"]).exists())
                 one_row = json.loads(Path(row["json"]).read_text(encoding="utf-8"))
                 self.assertEqual(one_row["targetCount"], 1)
+
+    def test_write_split_matrix_reports_resume_existing_skips_completed_target(self):
+        selected = selected_targets(levels={50}, elements={"strength", "intelligence"})
+        calls = []
+
+        def fake_generator(query):
+            calls.append(query.primary_element)
+            return {
+                "builds": [
+                    {
+                        "score": 1,
+                        "totals": {
+                            "AP": query.ap_target,
+                            "MP": query.mp_target,
+                            "Range": query.target.range,
+                            "Strength": 100,
+                            "Intelligence": 100,
+                            "Vitality": 100,
+                        },
+                        "sets": {},
+                        "exos": {},
+                        "conditionFailures": [],
+                        "items": {"amulet": {"name": "Example Amulet", "level": query.level}},
+                    }
+                ],
+            }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            first_target = selected[0]
+            first_report = {
+                "reportVersion": REPORT_VERSION,
+                "generatedAt": "old",
+                "scope": "Iop level-diversity generated target matrix",
+                "evidenceType": "generated_solver_snapshot",
+                "provenance": {"gitSha": "old", "targetSource": "old", "generator": "test"},
+                "targetCount": 1,
+                "generatedCount": 0,
+                "noBuildCount": 1,
+                "invalidCount": 0,
+                "results": [
+                    {
+                        "target": {
+                            "id": first_target.name,
+                            "className": "Iop",
+                            "level": first_target.level,
+                            "element": first_target.element,
+                            "budgetTier": first_target.budget_tier,
+                            "apTarget": first_target.ap,
+                            "mpTarget": first_target.mp,
+                            "rangeTarget": first_target.range_target,
+                        },
+                        "query": {},
+                        "status": "no_build",
+                        "resultCount": 0,
+                        "validationErrors": ["no build returned"],
+                        "bestBuild": None,
+                        "bestBuildSummary": None,
+                    }
+                ],
+            }
+            existing_json = output_dir / f"{first_target.name}.json"
+            existing_json.write_text(json.dumps(first_report), encoding="utf-8")
+
+            split_result = write_split_matrix_reports(
+                selected,
+                output_dir=output_dir,
+                generator=fake_generator,
+                generated_at="now",
+                target_set="level-diversity",
+                git_sha="new",
+                resume_existing=True,
+            )
+            manifest = json.loads((output_dir / "manifest.json").read_text(encoding="utf-8"))
+
+        self.assertEqual(calls, ["intelligence"])
+        self.assertEqual(split_result["aggregateReport"]["targetCount"], 2)
+        self.assertEqual(split_result["aggregateReport"]["noBuildCount"], 1)
+        self.assertEqual(split_result["aggregateReport"]["generatedCount"], 1)
+        self.assertEqual([row["resumed"] for row in manifest["reports"]], [True, False])
+
+    def test_write_split_matrix_reports_resume_existing_rejects_mismatched_target(self):
+        selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            target = selected[0]
+            bad_report = {
+                "results": [{"target": {"id": "different_target"}}],
+            }
+            (output_dir / f"{target.name}.json").write_text(json.dumps(bad_report), encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "does not match target"):
+                write_split_matrix_reports(
+                    selected,
+                    output_dir=output_dir,
+                    generator=lambda query: {"builds": []},
+                    resume_existing=True,
+                )
+
+    def test_unique_artifact_stem_for_target_preserves_collision_order(self):
+        first = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]
+        second = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]
+        used = set()
+
+        self.assertEqual(unique_artifact_stem_for_target(first, used), first.name)
+        self.assertEqual(unique_artifact_stem_for_target(second, used), f"{first.name}-2")
 
     def test_coverage_report_is_labeled_as_action_stat_feasibility(self):
         selected = selected_targets(
