@@ -183,6 +183,13 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             ),
             4,
         )
+        self.assertEqual(availability_tier_for_item({"id": "739", "type": "Dofus"}), 2)
+        self.assertEqual(
+            availability_tier_for_item(
+                {"id": build_discovery_prototype.OCHRE_DOFUS_ID, "type": "Dofus"}
+            ),
+            4,
+        )
 
     def test_item_allowed_by_budget_uses_availability_tier(self):
         ochre = {"dofusID": build_discovery_prototype.OCHRE_DOFUS_ID, "itemType": "Dofus"}

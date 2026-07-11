@@ -3264,6 +3264,20 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
   - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`
 
+### 2026-07-10 Serialized Artifact Availability Check
+
+- Fixed `availability_tier_for_item()` so it accepts both internal item records
+  (`itemType`/`dofusID`) and serialized build artifacts (`type`/`id`).
+- This matters for current-code matrix verification: generated artifact rows
+  serialize item type/id fields differently from solver internals, so budget
+  tier checks could otherwise miss over-budget Dofus/items in committed matrix
+  evidence.
+- Added regression coverage for serialized accessible/opti Dofus shapes.
+- Verification passed:
+  - `python -m unittest scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_availability_tiers_follow_initial_budget_priors`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+  - `python -m py_compile server\oneoff\build_discovery_prototype.py scripts\test_build_discovery_prototype.py server\scripts\check_build_discovery_level_diversity_matrix.py`
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range

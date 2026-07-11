@@ -814,8 +814,8 @@ def clear_build_discovery_response_cache() -> None:
 
 
 def availability_tier_for_item(item: dict[str, Any]) -> int:
-    item_type = item.get("itemType")
-    item_id = item.get("dofusID")
+    item_type = item.get("itemType") or item.get("type")
+    item_id = item.get("dofusID") or item.get("id")
     if item_id in OPTI_DOFUS_IDS:
         return 4
     if item_type == "Prysmaradite":
