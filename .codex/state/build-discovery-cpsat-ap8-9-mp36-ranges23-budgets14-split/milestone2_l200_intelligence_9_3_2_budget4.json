@@ -1,0 +1,792 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T10:32:29.989461+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_intelligence_9_3_2_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "intelligence",
+        "budgetTier": 4,
+        "apTarget": 9,
+        "mpTarget": 3,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 9,
+        "mpTarget": 3,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2725.75,
+        "weightedStatScore": 4273.86,
+        "utilityStatScore": 472.16,
+        "genericDamageScore": 4781.43,
+        "rawRotationDamageScore": 3258.34,
+        "spellDamageScore": 3016.55,
+        "profileBaselineDamageScore": 2044.38,
+        "profileRelativeDamage": 1.5938,
+        "weaponDamageScore": 323.75,
+        "survivabilityScore": 101.95,
+        "weakestElementEhp": 2955.97,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Intelligence": 1728,
+          "Power": 0,
+          "Vitality": 3253,
+          "Damage": 0,
+          "Fire Damage": 102,
+          "Critical": 30,
+          "Critical Damage": 110
+        },
+        "sets": {
+          "Age-Old Set": 2,
+          "War Set": 2,
+          "Deep Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "22191",
+            "slot": "shield"
+          },
+          "MP": {
+            "itemId": "18002",
+            "slot": "cloak"
+          },
+          "Range": {
+            "itemId": "14079",
+            "slot": "hat"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "18001",
+            "internalId": null,
+            "name": "Hungry Pendant",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Deep Set"
+          },
+          "belt": {
+            "id": "14081",
+            "internalId": null,
+            "name": "Age-Old Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "weapon": {
+            "id": "18013",
+            "internalId": null,
+            "name": "Shorpoon",
+            "type": "Shovel",
+            "level": 200,
+            "set": "Deep Set"
+          },
+          "shield": {
+            "id": "22191",
+            "internalId": null,
+            "name": "War's Fortress",
+            "type": "Shield",
+            "level": 200,
+            "set": "War Set"
+          },
+          "ring_1": {
+            "id": "22192",
+            "internalId": null,
+            "name": "War's Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "War Set"
+          },
+          "ring_2": {
+            "id": "18037",
+            "internalId": null,
+            "name": "Horrifing",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rygurgal Set"
+          },
+          "boots": {
+            "id": "18003",
+            "internalId": null,
+            "name": "Unnamable Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Deep Set"
+          },
+          "hat": {
+            "id": "14079",
+            "internalId": null,
+            "name": "Age-Old Helmet",
+            "type": "Hat",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "cloak": {
+            "id": "18002",
+            "internalId": null,
+            "name": "Merdiodon Cloak",
+            "type": "Cloak",
+            "level": 200,
+            "set": null
+          },
+          "pet": {
+            "id": "7711",
+            "internalId": null,
+            "name": "Red Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2725.75,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Intelligence": 1728,
+          "Power": 0,
+          "Vitality": 3253,
+          "Damage": 0,
+          "Fire Damage": 102,
+          "Critical": 30,
+          "Critical Damage": 110
+        },
+        "sets": {
+          "Age-Old Set": 2,
+          "War Set": 2,
+          "Deep Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "22191",
+            "slot": "shield"
+          },
+          "MP": {
+            "itemId": "18002",
+            "slot": "cloak"
+          },
+          "Range": {
+            "itemId": "14079",
+            "slot": "hat"
+          }
+        },
+        "items": [
+          "Hungry Pendant",
+          "Age-Old Belt",
+          "Shorpoon",
+          "War's Fortress",
+          "War's Gauntlet",
+          "Horrifing",
+          "Unnamable Boots",
+          "Age-Old Helmet",
+          "Merdiodon Cloak",
+          "Red Piwin",
+          "Cloudy Dofus",
+          "Dolmanax",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Brainbox"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2725.75,
+          "weightedStatScore": 4273.86,
+          "utilityStatScore": 472.16,
+          "genericDamageScore": 4781.43,
+          "rawRotationDamageScore": 3258.34,
+          "spellDamageScore": 3016.55,
+          "profileBaselineDamageScore": 2044.38,
+          "profileRelativeDamage": 1.5938,
+          "weaponDamageScore": 323.75,
+          "survivabilityScore": 101.95,
+          "weakestElementEhp": 2955.97,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 5,
+            "Range": 4,
+            "Intelligence": 1728,
+            "Power": 0,
+            "Vitality": 3253,
+            "Damage": 0,
+            "Fire Damage": 102,
+            "Critical": 30,
+            "Critical Damage": 110
+          },
+          "sets": {
+            "Age-Old Set": 2,
+            "War Set": 2,
+            "Deep Set": 3
+          },
+          "exos": {
+            "AP": {
+              "itemId": "22191",
+              "slot": "shield"
+            },
+            "MP": {
+              "itemId": "18002",
+              "slot": "cloak"
+            },
+            "Range": {
+              "itemId": "14079",
+              "slot": "hat"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "18001",
+              "internalId": null,
+              "name": "Hungry Pendant",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Deep Set"
+            },
+            "belt": {
+              "id": "14081",
+              "internalId": null,
+              "name": "Age-Old Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Age-Old Set"
+            },
+            "weapon": {
+              "id": "18013",
+              "internalId": null,
+              "name": "Shorpoon",
+              "type": "Shovel",
+              "level": 200,
+              "set": "Deep Set"
+            },
+            "shield": {
+              "id": "22191",
+              "internalId": null,
+              "name": "War's Fortress",
+              "type": "Shield",
+              "level": 200,
+              "set": "War Set"
+            },
+            "ring_1": {
+              "id": "22192",
+              "internalId": null,
+              "name": "War's Gauntlet",
+              "type": "Ring",
+              "level": 200,
+              "set": "War Set"
+            },
+            "ring_2": {
+              "id": "18037",
+              "internalId": null,
+              "name": "Horrifing",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rygurgal Set"
+            },
+            "boots": {
+              "id": "18003",
+              "internalId": null,
+              "name": "Unnamable Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Deep Set"
+            },
+            "hat": {
+              "id": "14079",
+              "internalId": null,
+              "name": "Age-Old Helmet",
+              "type": "Hat",
+              "level": 200,
+              "set": "Age-Old Set"
+            },
+            "cloak": {
+              "id": "18002",
+              "internalId": null,
+              "name": "Merdiodon Cloak",
+              "type": "Cloak",
+              "level": 200,
+              "set": null
+            },
+            "pet": {
+              "id": "7711",
+              "internalId": null,
+              "name": "Red Piwin",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13762",
+              "internalId": null,
+              "name": "Major Brainbox",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2725.75,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 5,
+            "Range": 4,
+            "Intelligence": 1728,
+            "Power": 0,
+            "Vitality": 3253,
+            "Damage": 0,
+            "Fire Damage": 102,
+            "Critical": 30,
+            "Critical Damage": 110
+          },
+          "sets": {
+            "Age-Old Set": 2,
+            "War Set": 2,
+            "Deep Set": 3
+          },
+          "exos": {
+            "AP": {
+              "itemId": "22191",
+              "slot": "shield"
+            },
+            "MP": {
+              "itemId": "18002",
+              "slot": "cloak"
+            },
+            "Range": {
+              "itemId": "14079",
+              "slot": "hat"
+            }
+          },
+          "items": [
+            "Hungry Pendant",
+            "Age-Old Belt",
+            "Shorpoon",
+            "War's Fortress",
+            "War's Gauntlet",
+            "Horrifing",
+            "Unnamable Boots",
+            "Age-Old Helmet",
+            "Merdiodon Cloak",
+            "Red Piwin",
+            "Cloudy Dofus",
+            "Dolmanax",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Brainbox"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6862.6,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 158.9,
+          "totalSearchMs": 6703.7
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1496.3,
+            "solveMs": 5040.6,
+            "objective": 2256.14,
+            "solutionCallbackCount": 6,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1980.0,
+                "objective": 898.39,
+                "score": 1317.88,
+                "itemIds": [
+                  "7754",
+                  "8714",
+                  "9143",
+                  "12628",
+                  "12716",
+                  "12723",
+                  "12724",
+                  "13197",
+                  "13230",
+                  "13829",
+                  "22189",
+                  "22191",
+                  "27265",
+                  "27541",
+                  "27543",
+                  "27555"
+                ],
+                "exos": {
+                  "AP": "27543",
+                  "MP": "27265",
+                  "Range": "27555"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2351.8,
+                "objective": 1069.44,
+                "score": 1603.59,
+                "itemIds": [
+                  "8698",
+                  "9142",
+                  "13829",
+                  "14882",
+                  "19248",
+                  "19249",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "29136",
+                  "30356",
+                  "30453",
+                  "30455",
+                  "32232",
+                  "32233",
+                  "33155"
+                ],
+                "exos": {
+                  "AP": "19248",
+                  "MP": "19249",
+                  "Range": "9142"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2532.0,
+                "objective": 2026.52,
+                "score": 2450.68,
+                "itemIds": [
+                  "7754",
+                  "12719",
+                  "13344",
+                  "13641",
+                  "13642",
+                  "13643",
+                  "13761",
+                  "13762",
+                  "14080",
+                  "14081",
+                  "14854",
+                  "18002",
+                  "22191",
+                  "22192",
+                  "30453",
+                  "32117"
+                ],
+                "exos": {
+                  "AP": "22191",
+                  "MP": "32117",
+                  "Range": "13643"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2944.6,
+                "objective": 2098.93,
+                "score": 2725.75,
+                "itemIds": [
+                  "7711",
+                  "7754",
+                  "8698",
+                  "13344",
+                  "13762",
+                  "14079",
+                  "14081",
+                  "18001",
+                  "18002",
+                  "18003",
+                  "18013",
+                  "18037",
+                  "22191",
+                  "22192",
+                  "30453",
+                  "30455"
+                ],
+                "exos": {
+                  "AP": "22191",
+                  "MP": "18002",
+                  "Range": "14079"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 3175.2,
+                "objective": 2218.91,
+                "score": 2496.84,
+                "itemIds": [
+                  "7043",
+                  "7711",
+                  "7754",
+                  "8698",
+                  "13897",
+                  "14079",
+                  "14081",
+                  "16204",
+                  "19984",
+                  "22191",
+                  "22192",
+                  "30453",
+                  "30455",
+                  "31787",
+                  "31797",
+                  "32121"
+                ],
+                "exos": {
+                  "AP": "31787",
+                  "MP": "19984",
+                  "Range": "32121"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 316
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1838,
+              "uniqueItemCount": 1704,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 215,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1704,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.2255,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.2255,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.2255,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2138,
+          "Critical Damage": 1.6163,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.721,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Damage": 2.721,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Intelligence": 0.7048,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7048,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
