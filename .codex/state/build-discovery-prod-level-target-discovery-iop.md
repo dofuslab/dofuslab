@@ -62,3 +62,33 @@ for level-diversity planning.
 - The samples are recent-row aggregates, not popularity-weighted usage.
 - These targets are planning inputs; generated builds still need current-code
   solver artifacts and benchmark-quality review.
+
+## Added Target Set
+
+The code target set `prod-level-sample` now captures 24 reviewable regeneration
+rows derived from these aggregate shapes:
+
+- L1 Strength tier 1 6/3/any
+- L20 Intelligence tier 1 7/4/1
+- L40 Chance tier 1 7/3/any
+- L50 Agility tier 1 7/3/1
+- L50 Strength tier 2 8/4/1
+- L60 Intelligence tier 2 10/4/2
+- L80 Strength tier 2 9/5/any
+- L80 Chance tier 2 10/5/1
+- L80 Agility tier 2 10/4/any
+- L100 Intelligence tier 2 10/4/1
+- L100 Agility tier 3 12/5/0
+- L120 Chance tier 2 11/5/any
+- L120 Strength tier 3 12/5/1
+- L130 Agility tier 3 12/5/1
+- L150 Strength tier 1 9/4/2
+- L160 Strength tier 3 12/5/2
+- L160 Intelligence tier 3 12/5/any
+- L160 Chance tier 2 10/4/0
+- L165 Intelligence tier 3 12/6/2
+- L180 Agility tier 4 12/5/5
+- L200 Strength tier 4 12/6/3
+- L200 Intelligence tier 4 12/6/4
+- L200 Chance tier 4 12/5/6
+- L200 Agility tier 4 11/6/5

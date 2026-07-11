@@ -60,6 +60,17 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
             ],
         )
 
+    def test_selected_targets_can_use_prod_level_sample_target_set(self):
+        targets = targets_for_set("prod-level-sample")
+
+        self.assertEqual(len(targets), 24)
+        self.assertEqual({target.element for target in targets}, {"strength", "intelligence", "chance", "agility"})
+        self.assertEqual({target.budget_tier for target in targets}, {1, 2, 3, 4})
+        self.assertEqual(targets[0].name, "prod_regen_level_1_strength_6_3_none_budget1")
+        self.assertEqual(targets[-1].name, "prod_regen_level_200_agility_11_6_5_budget4")
+        self.assertIn("prod_regen_level_80_agility_10_4_none_budget2", {target.name for target in targets})
+        self.assertIn("prod_regen_level_160_intelligence_12_5_none_budget3", {target.name for target in targets})
+
     def test_selected_targets_can_use_grid_next_minimum_target_set(self):
         targets = selected_targets(
             all_targets=targets_for_set("grid-next-minimum"),

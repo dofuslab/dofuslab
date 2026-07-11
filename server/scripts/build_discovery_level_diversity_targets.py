@@ -77,6 +77,33 @@ AP_MP_RANGE_COVERAGE_TARGETS = (
     LevelDiversityTarget("coverage_level_200_agility_cap_budget4", 200, "agility", 4, 12, 6, 6),
 )
 
+PROD_LEVEL_SAMPLE_TARGETS = (
+    LevelDiversityTarget("prod_regen_level_1_strength_6_3_none_budget1", 1, "strength", 1, 6, 3, None),
+    LevelDiversityTarget("prod_regen_level_20_intelligence_7_4_1_budget1", 20, "intelligence", 1, 7, 4, 1),
+    LevelDiversityTarget("prod_regen_level_40_chance_7_3_none_budget1", 40, "chance", 1, 7, 3, None),
+    LevelDiversityTarget("prod_regen_level_50_agility_7_3_1_budget1", 50, "agility", 1, 7, 3, 1),
+    LevelDiversityTarget("prod_regen_level_50_strength_8_4_1_budget2", 50, "strength", 2, 8, 4, 1),
+    LevelDiversityTarget("prod_regen_level_60_intelligence_10_4_2_budget2", 60, "intelligence", 2, 10, 4, 2),
+    LevelDiversityTarget("prod_regen_level_80_strength_9_5_none_budget2", 80, "strength", 2, 9, 5, None),
+    LevelDiversityTarget("prod_regen_level_80_chance_10_5_1_budget2", 80, "chance", 2, 10, 5, 1),
+    LevelDiversityTarget("prod_regen_level_80_agility_10_4_none_budget2", 80, "agility", 2, 10, 4, None),
+    LevelDiversityTarget("prod_regen_level_100_intelligence_10_4_1_budget2", 100, "intelligence", 2, 10, 4, 1),
+    LevelDiversityTarget("prod_regen_level_100_agility_12_5_0_budget3", 100, "agility", 3, 12, 5, 0),
+    LevelDiversityTarget("prod_regen_level_120_chance_11_5_none_budget2", 120, "chance", 2, 11, 5, None),
+    LevelDiversityTarget("prod_regen_level_120_strength_12_5_1_budget3", 120, "strength", 3, 12, 5, 1),
+    LevelDiversityTarget("prod_regen_level_130_agility_12_5_1_budget3", 130, "agility", 3, 12, 5, 1),
+    LevelDiversityTarget("prod_regen_level_150_strength_9_4_2_budget1", 150, "strength", 1, 9, 4, 2),
+    LevelDiversityTarget("prod_regen_level_160_strength_12_5_2_budget3", 160, "strength", 3, 12, 5, 2),
+    LevelDiversityTarget("prod_regen_level_160_intelligence_12_5_none_budget3", 160, "intelligence", 3, 12, 5, None),
+    LevelDiversityTarget("prod_regen_level_160_chance_10_4_0_budget2", 160, "chance", 2, 10, 4, 0),
+    LevelDiversityTarget("prod_regen_level_165_intelligence_12_6_2_budget3", 165, "intelligence", 3, 12, 6, 2),
+    LevelDiversityTarget("prod_regen_level_180_agility_12_5_5_budget4", 180, "agility", 4, 12, 5, 5),
+    LevelDiversityTarget("prod_regen_level_200_strength_12_6_3_budget4", 200, "strength", 4, 12, 6, 3),
+    LevelDiversityTarget("prod_regen_level_200_intelligence_12_6_4_budget4", 200, "intelligence", 4, 12, 6, 4),
+    LevelDiversityTarget("prod_regen_level_200_chance_12_5_6_budget4", 200, "chance", 4, 12, 5, 6),
+    LevelDiversityTarget("prod_regen_level_200_agility_11_6_5_budget4", 200, "agility", 4, 11, 6, 5),
+)
+
 AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS = (
     LevelDiversityTarget("grid_next_min_level_1_strength_6_3_none_budget2", 1, "strength", 2, 6, 3, None),
     LevelDiversityTarget("grid_next_min_level_20_strength_6_3_none_budget1", 20, "strength", 1, 6, 3, None),

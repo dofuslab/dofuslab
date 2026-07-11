@@ -3337,6 +3337,21 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - These are target-selection priors only; they do not prove generated build
   quality.
 
+### 2026-07-10 Prod-Derived Level Sample Target Set
+
+- Added `PROD_LEVEL_SAMPLE_TARGETS` / `--target-set prod-level-sample` as the
+  next reviewable regeneration slice after the level-aware base allocation fix.
+- The set has 24 rows across levels 1, 20, 40, 50, 60, 80, 100, 120, 130,
+  150, 160, 165, 180, and 200.
+- It rotates all four Iop elements and all four budget tiers.
+- Rows with real zero/negative Range patterns use `rangeTarget=None` so the
+  solver is not forced into artificial Range when the product request allows
+  any Range.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+  - `python -m py_compile server\scripts\build_discovery_level_diversity_targets.py server\scripts\build_discovery_level_diversity_matrix.py server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range
