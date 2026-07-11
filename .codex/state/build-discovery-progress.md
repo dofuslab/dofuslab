@@ -6793,3 +6793,20 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Caveat: a full `12/6/any` Strength Iop generation smoke timed out after about
   two minutes, so the updated top-build artifact still needs to be regenerated
   with the faster CP-SAT path or a narrower harness command.
+
+### 2026-07-11 Class/Element Stat Valuation Direction
+
+- Updated the Notion PRD and local assumptions: each class/element should have
+  a stat valuation profile derived from spell mechanics, not one global stat
+  weight table.
+- Range importance is one of the most class-specific values and should be
+  derived from spell plans before it becomes a major scoring/defaulting lever.
+- Example direction: Strength Iop has high-base-damage spells such as
+  Accumulation and Iop's Wrath, so Strength should generally be valued more
+  than Earth Damage while both remain useful; +Range is nearly useless for many
+  Iop spell plans.
+- Example direction: +Range can be vital for Enutrof and Cra profiles because
+  their important spell plans depend much more on modifiable range and distance
+  control.
+- Required report: classify +Range usefulness by `(class, element)` as
+  `vital`, `useful`, `marginal`, or `nearly useless`, with spell evidence.

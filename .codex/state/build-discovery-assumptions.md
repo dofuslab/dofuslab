@@ -53,6 +53,15 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   data: key damaging spells, max range, modifiable-range support, minimum range
   constraints, line-of-sight constraints, practical rotation share, and whether
   extra Range materially changes reachable targets.
+- Each class/element should eventually have a stat valuation profile derived
+  from spell mechanics, not one global weight table. Range importance is among
+  the most class-specific values.
+- Example: Strength Iop has high-base-damage spells such as Accumulation and
+  Iop's Wrath, so Strength should generally be valued more than Earth Damage
+  while both remain useful. +Range is nearly useless for many Iop spell plans.
+- Example: +Range can be vital for Enutrof and Cra profiles because their
+  important spell plans depend much more on modifiable range and distance
+  control.
 - Product UX may default combat range, but the default should be computed from
   bounded readonly prod aggregate evidence by `(class, element)`. The resolved
   value should be explicit in the request, cache key, provenance, and
@@ -210,7 +219,8 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   ranged itemization is not materially different, do not expand generation
   matrices by both labels.
 - Add a spell-derived +Range usefulness report before making +Range a major
-  scoring/defaulting lever.
+  scoring/defaulting lever. The report should classify +Range usefulness by
+  `(class, element)` as vital, useful, marginal, or nearly useless.
 - Strength Iop uses old/local spell data where available.
 - Strength Iop should model spell selection instead of generic made-up spell lines where possible.
 - Strength Iop includes Accumulation setup behavior when relevant.
