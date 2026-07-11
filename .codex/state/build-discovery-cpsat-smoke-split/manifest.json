@@ -1,0 +1,12 @@
+{
+  "splitReportCount": 1,
+  "reports": [
+    {
+      "targetId": "grid_next_min_level_200_strength_7_3_none_budget1",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-smoke/grid_next_min_level_200_strength_7_3_none_budget1.json",
+      "markdown": "/tmp/build-discovery-cpsat-smoke/grid_next_min_level_200_strength_7_3_none_budget1.md"
+    }
+  ]
+}

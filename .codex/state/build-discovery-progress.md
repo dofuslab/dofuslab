@@ -3738,3 +3738,49 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
   - `python server\scripts\test_build_discovery_cpsat_experiment.py`
   - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`
+
+### 2026-07-11 CP-SAT OR-Tools Packaging
+
+- Added server dependency pins:
+  - `ortools==9.7.2996`
+  - `absl-py==2.3.1`
+- Chose OR-Tools 9.7 after Docker Python 3.8 dry-run checks:
+  - newer 9.8/9.9 pins attempted to pull pandas/numpy upgrades into the old
+    server stack
+  - 9.7 reused existing `numpy==1.19.5` and `protobuf==4.24.4`
+  - 9.7 only required adding `absl-py`
+- Added a CP-SAT contract test asserting the server requirements include the
+  OR-Tools pin.
+- Installed the selected pins into the running `dofuslab-server-1` container for
+  verification only; a future image rebuild still needs to consume
+  `server/requirements.txt`.
+- Fixed a CP-SAT correctness gap exposed by the first real smoke:
+  - the model now encodes simple item stat conditions and `and` condition trees
+  - example failure fixed: a selected weapon requiring `VITALITY > 3949` while
+    the reconstructed build had only `3945` Vitality
+- Addressed reviewer findings in the matrix adapter:
+  - CP-SAT split resume/missing detection now rejects existing reports that do
+    not record CP-SAT solver provenance
+  - CP-SAT top-level solver status, timings, attempts, item counts, candidate
+    counts, and objective weights are promoted into row diagnostics
+- Generated first Docker CP-SAT matrix smoke artifact:
+  - `.codex/state/build-discovery-cpsat-smoke-matrix.json`
+  - `.codex/state/build-discovery-cpsat-smoke-matrix.md`
+  - `.codex/state/build-discovery-cpsat-smoke-split/`
+- Smoke result:
+  - target: level 200 Strength Iop tier 1 `7/3/None`
+  - status: generated
+  - result count: 1
+  - validation errors: none
+  - totals: `10/5/4`
+  - score: `2165.89`
+  - elapsed: `13554.0ms`
+- Still intentionally not done:
+  - no production/product wiring
+  - no full Milestone 2 CP-SAT matrix artifact
+  - no performance acceptance evidence
+- Verification passed:
+  - Docker: `python scripts/test_build_discovery_level_diversity_matrix.py`
+  - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python -m py_compile scripts/build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix.py oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-smoke.json --target-set grid-next-minimum --targets grid_next_min_level_200_strength_7_3_none_budget1`

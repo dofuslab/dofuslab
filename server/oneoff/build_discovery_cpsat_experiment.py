@@ -15,7 +15,11 @@ from typing import Any
 
 from ortools.sat.python import cp_model
 
-from oneoff.condition_evaluator import unmet_item_conditions
+from oneoff.condition_evaluator import (
+    CONDITION_STAT_TO_STAT_NAME,
+    is_leaf_condition,
+    unmet_item_conditions,
+)
 from oneoff.build_discovery_prototype import (
     ACTION_STATS,
     BuildDiscoveryQuery,
@@ -315,6 +319,41 @@ def build_model(
         for (_set_id, count), var in exact_set_count_vars.items()
     )
 
+    presence_var_by_item: dict[str, cp_model.IntVar] = {}
+
+    def presence_var_for_item(item_id: str) -> cp_model.IntVar:
+        if item_id not in presence_var_by_item:
+            presence = model.NewBoolVar(f"present_{item_id}")
+            model.Add(sum(item_presence_terms[item_id]) == presence)
+            presence_var_by_item[item_id] = presence
+        return presence_var_by_item[item_id]
+
+    def condition_expr(stat: str) -> Any | None:
+        if stat == "SET_BONUS":
+            return set_bonus_count_expr
+        stat_name = CONDITION_STAT_TO_STAT_NAME.get(stat)
+        if not stat_name:
+            return None
+        return total_stat_expr(stat_name)
+
+    def add_condition_constraints(condition_obj: dict[str, Any], presence: cp_model.IntVar) -> None:
+        if not condition_obj:
+            return
+        if is_leaf_condition(condition_obj):
+            expr = condition_expr(condition_obj["stat"])
+            if expr is None:
+                return
+            value = int(condition_obj["value"])
+            operator = condition_obj["operator"]
+            if operator == "<":
+                model.Add(expr <= value - 1).OnlyEnforceIf(presence)
+            elif operator == ">":
+                model.Add(expr >= value + 1).OnlyEnforceIf(presence)
+            return
+        if condition_obj.get("and"):
+            for child in condition_obj["and"]:
+                add_condition_constraints(child, presence)
+
     model.Add(total_stat_expr("AP") >= target.ap)
     model.Add(total_stat_expr("AP") <= MAX_AP)
     model.Add(total_stat_expr("MP") >= target.mp)
@@ -325,11 +364,12 @@ def build_model(
 
     for item_id, presence_vars in item_presence_terms.items():
         condition_obj = item_by_id[item_id].get("conditions", {}).get("conditions", {})
+        if condition_obj:
+            add_condition_constraints(condition_obj, presence_var_for_item(item_id))
         set_bonus_upper_bound = set_bonus_upper_bound_condition(condition_obj)
         if set_bonus_upper_bound is None:
             continue
-        presence = model.NewBoolVar(f"present_{item_id}")
-        model.Add(sum(presence_vars) == presence)
+        presence = presence_var_for_item(item_id)
         model.Add(set_bonus_count_expr <= set_bonus_upper_bound).OnlyEnforceIf(presence)
 
     for forbidden in forbidden_signatures:

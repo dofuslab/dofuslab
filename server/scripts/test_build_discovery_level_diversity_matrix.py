@@ -428,6 +428,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
             "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS",
         )
         self.assertEqual(report["provenance"]["gitSha"], "abc123")
+        self.assertEqual(report["provenance"]["solver"], "prototype")
         self.assertEqual(report["evidenceType"], "generated_solver_snapshot")
         self.assertEqual(seen_queries[0].level, 50)
         self.assertEqual(report["results"][0]["validationErrors"], [])
@@ -513,7 +514,18 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         def fake_solve_query(received_query, received_args):
             seen["query"] = received_query
             seen["args"] = received_args
-            return {"builds": [], "diagnostics": {}}
+            return {
+                "builds": [],
+                "diagnostics": {},
+                "solverStatus": "OPTIMAL",
+                "timings": {"loadMs": 1.2, "totalSearchMs": 3.4},
+                "attempts": [{"attempt": 1, "status": "OPTIMAL"}],
+                "itemCount": 123,
+                "candidateCount": 2,
+                "requestedCandidateLimit": 3,
+                "maxSharedItems": 8,
+                "objectiveWeights": {"Strength": 1.0},
+            }
 
         fake_module = types.ModuleType("oneoff.build_discovery_cpsat_experiment")
         fake_module.solve_query = fake_solve_query
@@ -539,6 +551,14 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertIs(seen["query"], query)
         self.assertEqual(seen["args"].output_build_limit, 1)
         self.assertEqual(response["diagnostics"]["solver"], "cpsat")
+        self.assertEqual(response["diagnostics"]["elapsedMs"], 4.6)
+        self.assertEqual(response["diagnostics"]["solverStatus"], "OPTIMAL")
+        self.assertEqual(response["diagnostics"]["attempts"], [{"attempt": 1, "status": "OPTIMAL"}])
+        self.assertEqual(response["diagnostics"]["itemCount"], 123)
+        self.assertEqual(response["diagnostics"]["candidateCount"], 2)
+        self.assertEqual(response["diagnostics"]["requestedCandidateLimit"], 3)
+        self.assertEqual(response["diagnostics"]["maxSharedItems"], 8)
+        self.assertEqual(response["diagnostics"]["objectiveWeights"], {"Strength": 1.0})
         self.assertEqual(response["solverVersion"], "oneoff.build_discovery_cpsat_experiment")
 
     def test_generator_for_args_rejects_cache_with_cpsat(self):
@@ -758,6 +778,99 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(split_result["aggregateReport"]["noBuildCount"], 1)
         self.assertEqual(split_result["aggregateReport"]["generatedCount"], 1)
         self.assertEqual([row["resumed"] for row in manifest["reports"]], [True, False])
+
+    def test_write_split_matrix_reports_records_requested_solver(self):
+        selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})
+
+        def fake_generator(query):
+            return {
+                "diagnostics": {"solver": "cpsat", "elapsedMs": 12.3},
+                "builds": [
+                    {
+                        "score": 1,
+                        "totals": {
+                            "AP": query.ap_target,
+                            "MP": query.mp_target,
+                            "Range": query.target.range,
+                            "Strength": 100,
+                            "Vitality": 100,
+                        },
+                        "sets": {},
+                        "exos": {},
+                        "conditionFailures": [],
+                        "items": {"amulet": {"name": "Example Amulet", "level": query.level}},
+                    }
+                ],
+            }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            split_result = write_split_matrix_reports(
+                selected,
+                output_dir=Path(temp_dir),
+                generator=fake_generator,
+                generated_at="now",
+                target_set="level-diversity",
+                git_sha="abc123",
+                solver="cpsat",
+            )
+            one_row_path = Path(temp_dir) / f"{selected[0].name}.json"
+            one_row = json.loads(one_row_path.read_text(encoding="utf-8"))
+
+        self.assertEqual(split_result["aggregateReport"]["provenance"]["solver"], "cpsat")
+        self.assertEqual(one_row["provenance"]["solver"], "cpsat")
+        self.assertEqual(one_row["results"][0]["diagnostics"]["solver"], "cpsat")
+
+    def test_write_split_matrix_reports_rejects_existing_non_cpsat_for_cpsat_resume(self):
+        selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            target = selected[0]
+            query = query_for_target(target)
+            report = {
+                "reportVersion": REPORT_VERSION,
+                "generatedAt": "old",
+                "scope": "Iop level-diversity generated target matrix",
+                "evidenceType": "generated_solver_snapshot",
+                "provenance": {"gitSha": "old", "targetSource": "old", "generator": "test"},
+                "targetCount": 1,
+                "generatedCount": 1,
+                "noBuildCount": 0,
+                "invalidCount": 0,
+                "results": [
+                    {
+                        "target": target_summary(target),
+                        "query": query_summary(query),
+                        "status": "generated",
+                        "resultCount": 1,
+                        "validationErrors": [],
+                        "bestBuild": {
+                            "score": 1,
+                            "totals": {
+                                "AP": query.ap_target,
+                                "MP": query.mp_target,
+                                "Range": query.target.range,
+                                "Strength": 100,
+                                "Vitality": 100,
+                            },
+                            "sets": {},
+                            "exos": {},
+                            "conditionFailures": [],
+                            "items": {"amulet": {"name": "Example Amulet", "level": query.level}},
+                        },
+                    }
+                ],
+            }
+            (output_dir / f"{target.name}.json").write_text(json.dumps(report), encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "does not record solver cpsat"):
+                write_split_matrix_reports(
+                    selected,
+                    output_dir=output_dir,
+                    generator=lambda query: {"builds": []},
+                    resume_existing=True,
+                    solver="cpsat",
+                )
 
     def test_write_split_matrix_reports_resume_existing_rejects_mismatched_target(self):
         selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})

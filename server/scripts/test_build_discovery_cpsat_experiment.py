@@ -12,7 +12,16 @@ def experiment_path() -> Path:
     return container_server_path
 
 
+def requirements_path() -> Path:
+    script_path = Path(__file__).resolve()
+    host_repo_path = script_path.parents[2] / "server" / "requirements.txt"
+    if host_repo_path.exists():
+        return host_repo_path
+    return script_path.parents[1] / "requirements.txt"
+
+
 EXPERIMENT_PATH = experiment_path()
+REQUIREMENTS_PATH = requirements_path()
 
 
 class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
@@ -56,6 +65,18 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")
 
         self.assertIn('exo_stats = () if exo_policy == "none"', source)
+
+    def test_experiment_encodes_simple_item_conditions(self):
+        source = EXPERIMENT_PATH.read_text(encoding="utf-8")
+
+        self.assertIn("CONDITION_STAT_TO_STAT_NAME", source)
+        self.assertIn("add_condition_constraints", source)
+        self.assertIn("OnlyEnforceIf(presence)", source)
+
+    def test_server_requirements_include_ortools_pin(self):
+        requirements = REQUIREMENTS_PATH.read_text(encoding="utf-8")
+
+        self.assertIn("ortools==9.7.2996", requirements)
 
 
 if __name__ == "__main__":

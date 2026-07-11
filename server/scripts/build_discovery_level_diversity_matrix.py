@@ -487,6 +487,7 @@ def matrix_report_from_entries(
     target_set: str,
     git_sha: str | None,
     target_source: str | None = None,
+    solver: str = "prototype",
 ) -> dict[str, Any]:
     return {
         "reportVersion": REPORT_VERSION,
@@ -501,6 +502,7 @@ def matrix_report_from_entries(
             "gitSha": git_sha or current_git_sha(),
             "targetSource": target_source or target_source_for_set(target_set),
             "generator": "scripts/build_discovery_level_diversity_matrix.py",
+            "solver": solver,
         },
         "targetCount": len(entries),
         "generatedCount": sum(1 for entry in entries if entry["status"] == "generated"),
@@ -519,6 +521,7 @@ def build_matrix_report(
     git_sha: str | None = None,
     target_source: str | None = None,
     query_limit: int | None = None,
+    solver: str = "prototype",
 ) -> dict[str, Any]:
     entries = []
     for target in targets:
@@ -533,6 +536,7 @@ def build_matrix_report(
         target_set=target_set,
         git_sha=git_sha,
         target_source=target_source,
+        solver=solver,
     )
 
 
@@ -567,6 +571,7 @@ def validate_existing_split_report_for_target(
     target: LevelDiversityTarget,
     query: BuildDiscoveryQuery,
     path: Path,
+    solver: str = "prototype",
 ) -> None:
     if report.get("reportVersion") != REPORT_VERSION:
         raise ValueError(f"Existing split report {path} has unsupported reportVersion {report.get('reportVersion')}.")
@@ -574,6 +579,18 @@ def validate_existing_split_report_for_target(
         raise ValueError(f"Existing split report {path} does not match target {target.name}.")
 
     result = report["results"][0]
+    provenance = report.get("provenance") or {}
+    artifact_solver = provenance.get("solver")
+    if artifact_solver is None and solver != "prototype":
+        raise ValueError(f"Existing split report {path} does not record solver {solver}.")
+    if artifact_solver is not None and artifact_solver != solver:
+        raise ValueError(f"Existing split report {path} solver is {artifact_solver}, expected {solver}.")
+    diagnostics = result.get("diagnostics") if isinstance(result, dict) else None
+    diagnostic_solver = diagnostics.get("solver") if isinstance(diagnostics, dict) else None
+    if solver != "prototype" and diagnostic_solver != solver:
+        raise ValueError(
+            f"Existing split report {path} result solver is {diagnostic_solver}, expected {solver}."
+        )
     if result.get("target") != target_summary(target):
         raise ValueError(f"Existing split report {path} target payload is stale for {target.name}.")
     if not query_payload_matches_artifact(target, query, result.get("query")):
@@ -608,11 +625,12 @@ def existing_split_report_for_target(
     path: Path,
     target: LevelDiversityTarget,
     query: BuildDiscoveryQuery,
+    solver: str = "prototype",
 ) -> dict[str, Any] | None:
     if not path.exists():
         return None
     report = load_json(path)
-    validate_existing_split_report_for_target(report, target, query, path)
+    validate_existing_split_report_for_target(report, target, query, path, solver=solver)
     return report
 
 
@@ -620,6 +638,7 @@ def completed_target_ids_from_split_reports(
     targets: Iterable[LevelDiversityTarget],
     split_output_dir: str | Path,
     query_limit: int | None = None,
+    solver: str = "prototype",
 ) -> set[str]:
     output_dir = Path(split_output_dir)
     if not output_dir.exists():
@@ -631,7 +650,7 @@ def completed_target_ids_from_split_reports(
         query = query_for_matrix_target(target, query_limit=query_limit)
         stem = unique_artifact_stem_for_target(target, used_stems)
         path = output_dir / f"{stem}.json"
-        report = existing_split_report_for_target(path, target, query)
+        report = existing_split_report_for_target(path, target, query, solver=solver)
         if report is None:
             continue
         result = report["results"][0]
@@ -644,12 +663,14 @@ def targets_missing_from_split_reports(
     targets: Iterable[LevelDiversityTarget],
     split_output_dir: str | Path,
     query_limit: int | None = None,
+    solver: str = "prototype",
 ) -> tuple[LevelDiversityTarget, ...]:
     selected_targets = tuple(targets)
     completed = completed_target_ids_from_split_reports(
         selected_targets,
         split_output_dir,
         query_limit=query_limit,
+        solver=solver,
     )
     return tuple(target for target in selected_targets if target.name not in completed)
 
@@ -665,6 +686,7 @@ def write_split_matrix_reports(
     target_source: str | None = None,
     resume_existing: bool = False,
     query_limit: int | None = None,
+    solver: str = "prototype",
 ) -> dict[str, Any]:
     generated_at = generated_at or datetime.now(timezone.utc).isoformat()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -679,7 +701,7 @@ def write_split_matrix_reports(
 
         json_path = output_dir / f"{stem}.json"
         md_path = output_dir / f"{stem}.md"
-        existing_report = existing_split_report_for_target(json_path, target, query) if resume_existing else None
+        existing_report = existing_split_report_for_target(json_path, target, query, solver=solver) if resume_existing else None
         if existing_report:
             one_row_report = existing_report
             entry = existing_report["results"][0]
@@ -694,6 +716,7 @@ def write_split_matrix_reports(
                 target_set=target_set,
                 git_sha=git_sha,
                 target_source=target_source,
+                solver=solver,
             )
             json_path.write_text(json.dumps(one_row_report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
             md_path.write_text(render_markdown(one_row_report), encoding="utf-8")
@@ -716,6 +739,7 @@ def write_split_matrix_reports(
         target_set=target_set,
         git_sha=git_sha,
         target_source=target_source,
+        solver=solver,
     )
     return {
         "manifest": {"splitReportCount": len(manifest_rows), "reports": manifest_rows},
@@ -916,8 +940,28 @@ def cpsat_build_discovery_response(query: BuildDiscoveryQuery, args: argparse.Na
     from oneoff.build_discovery_cpsat_experiment import solve_query
 
     response = solve_query(query, cpsat_args_for_query(query, args))
-    response.setdefault("diagnostics", {})
-    response["diagnostics"].setdefault("solver", "cpsat")
+    diagnostics = response.setdefault("diagnostics", {})
+    diagnostics.setdefault("solver", "cpsat")
+    timings = response.get("timings") if isinstance(response.get("timings"), dict) else {}
+    load_ms = timings.get("loadMs", 0) if isinstance(timings.get("loadMs", 0), (int, float)) else 0
+    total_search_ms = (
+        timings.get("totalSearchMs", 0)
+        if isinstance(timings.get("totalSearchMs", 0), (int, float))
+        else 0
+    )
+    diagnostics.setdefault("elapsedMs", round(load_ms + total_search_ms, 1))
+    for key in (
+        "solverStatus",
+        "timings",
+        "attempts",
+        "itemCount",
+        "candidateCount",
+        "requestedCandidateLimit",
+        "maxSharedItems",
+        "objectiveWeights",
+    ):
+        if key in response:
+            diagnostics.setdefault(key, response[key])
     response.setdefault("solverVersion", "oneoff.build_discovery_cpsat_experiment")
     return response
 
@@ -1010,6 +1054,7 @@ def main() -> None:
             targets,
             args.missing_from_split_dir,
             query_limit=args.query_limit,
+            solver=args.solver,
         )
     if not targets:
         parser.error(f"No targets selected from {target_source or args.target_set}.")
@@ -1048,6 +1093,7 @@ def main() -> None:
             target_source=target_source,
             resume_existing=args.resume_existing,
             query_limit=args.query_limit,
+            solver=args.solver,
         )
         report = split_result["aggregateReport"]
     else:
@@ -1058,6 +1104,7 @@ def main() -> None:
             git_sha=args.git_sha,
             target_source=target_source,
             query_limit=args.query_limit,
+            solver=args.solver,
         )
 
     if args.output_json:

@@ -73,9 +73,11 @@ hardening, and API integration begin.
 
 Dependency note:
 
-- OR-Tools is not added to `server/requirements.txt` in this checkpoint.
-- The PRD still lists OR-Tools packaging/deploy footprint as an open risk.
-- Production dependency management should be a separate reviewable diff.
+- OR-Tools was added in a later reviewable checkpoint as `ortools==9.7.2996`.
+- That pin has a Python 3.8 wheel and reuses the server stack's existing
+  `numpy==1.19.5` and `protobuf==4.24.4` pins.
+- `absl-py==2.3.1` was added as the only new transitive dependency required by
+  the selected OR-Tools pin during Docker dry-run resolution.
 
 ## Query Adapter Checkpoint
 
@@ -100,7 +102,6 @@ Current limitations:
 - Avoided items are passed into candidate loading.
 - `exoPolicy=none` disables generated exo variables.
 - `exoPolicy=allow` and `exoPolicy=opti` are not yet distinct.
-- OR-Tools dependency packaging is still unresolved.
 
 ## Matrix Harness Checkpoint
 
@@ -116,3 +117,19 @@ validation, split-report, and Markdown artifact machinery.
 
 The CP-SAT import is lazy so manifest generation and prototype matrix tests do
 not require OR-Tools in environments where it has not been packaged yet.
+
+First real Docker CP-SAT artifact:
+
+- `.codex/state/build-discovery-cpsat-smoke-matrix.json`
+- `.codex/state/build-discovery-cpsat-smoke-matrix.md`
+- `.codex/state/build-discovery-cpsat-smoke-split/`
+
+Smoke target:
+
+- Level 200 Strength Iop, budget tier 1, `7/3/None`
+- Status: generated
+- Totals: `10/5/4`
+- Elapsed: `13554.0ms`
+
+This is end-to-end correctness smoke evidence only. It is not performance
+acceptance and does not prove Milestone 2 breadth.

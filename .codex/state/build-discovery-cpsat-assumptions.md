@@ -56,6 +56,8 @@ review before accepting Milestone 2 evidence.
 - CP-SAT currently models generated AP and MP exos, plus generated Range exos
   only when the query has a positive numeric Range target.
 - Locked-item constraints are not yet modeled in CP-SAT.
+- CP-SAT currently encodes simple item stat conditions and `and` condition
+  trees. More complex `or` condition trees still rely on final post-validation.
 
 ## Solver Architecture
 
@@ -65,7 +67,12 @@ review before accepting Milestone 2 evidence.
 - The old beam solver remains reference material only.
 - Matrix artifacts and checkers remain useful QA evidence if they validate the
   serialized build, target, and query payload independent of solver internals.
-- OR-Tools is not yet added to production/server requirements.
+- OR-Tools is pinned in server requirements as `ortools==9.7.2996`.
+- The selected OR-Tools pin was chosen because Docker dry-run resolution on
+  Python 3.8 showed it can reuse the existing `numpy==1.19.5` and
+  `protobuf==4.24.4` pins.
+- `absl-py==2.3.1` is the only newly pinned dependency required by that
+  OR-Tools dry run.
 
 ## Quality Evidence
 
@@ -83,6 +90,8 @@ review before accepting Milestone 2 evidence.
 - Milestone 2 success target remains p95 cache-miss time under 5 seconds for the
   accepted target suite.
 - Current CP-SAT work has not proven the p95 target.
+- First Docker CP-SAT smoke row took `13554.0ms`, so performance is not yet
+  Milestone 2 acceptable.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.
