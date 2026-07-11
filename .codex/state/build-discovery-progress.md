@@ -6940,3 +6940,15 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker mocked response smoke returned `Cra`,
     `spell_profile_v0_weighted_candidates`, and `rangeSoftWeight=8.0` for
     range-heavy spell evidence.
+
+### 2026-07-11 First Real Non-Iop CP-SAT Smoke
+
+- Ran a bounded Docker CP-SAT smoke for level `200` Strength Cra, opti,
+  `12/6/Any`, damage/survivability preset `3`, `5s` time limit, one candidate.
+- Result: `FEASIBLE`.
+- Search timing: `loadMs=1808.9`, `totalSearchMs=2461.7`.
+- Objective weights included `Range=8.0`, showing the spell-derived soft range
+  valuation affected the actual CP-SAT objective.
+- Returned build had valid final action stats: `12 AP`, `6 MP`, `3 Range`.
+- Caveat: this is only path/constraint smoke evidence. The build is not yet a
+  quality-approved Cra benchmark.
