@@ -3869,3 +3869,29 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\test_build_discovery_cpsat_experiment.py`
   - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
   - Docker diagnostic smoke with `--cpsat-time-limit-seconds 2`
+
+### 2026-07-11 CP-SAT Grouped Dofus Selection
+
+- Replaced six equivalent CP-SAT Dofus/trophy/prysmaradite slot variable sets
+  with one grouped selection:
+  - one boolean per Dofus/trophy/prysmaradite candidate
+  - constraint: choose exactly `6`
+  - reconstruction assigns the selected items back to `dofus_1` through
+    `dofus_6` for artifact compatibility
+- Generated and validated an updated 4-row Docker slice:
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-dofusgroup-matrix.json`
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-dofusgroup-matrix.md`
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-dofusgroup-split/`
+- Model-size impact:
+  - `slotVarCount`: `2944 -> 1639`
+  - Dofus candidates remain `261`, but are modeled once instead of six times.
+- Runtime after grouped Dofus selection:
+  - Strength: `7300.7ms`
+  - Intelligence: `6678.4ms`
+  - Chance: `4053.3ms`
+  - Agility: `7082.5ms`
+- The slice still does not meet p95 `<5s`, but this is the first CP-SAT run
+  where one row completed below `5s` with a valid build under the same 5-second
+  solve cap.
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-l200-min-elements-dofusgroup.json --target-file /tmp/build-discovery-cpsat-l200-min-elements-targets.json --target-file-prefix cpsat_min`

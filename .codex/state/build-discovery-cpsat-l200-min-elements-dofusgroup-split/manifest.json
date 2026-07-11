@@ -1,0 +1,33 @@
+{
+  "splitReportCount": 4,
+  "reports": [
+    {
+      "targetId": "cpsat_l200_strength_7_3_none_budget1",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-l200-min-elements-dofusgroup/cpsat_l200_strength_7_3_none_budget1.json",
+      "markdown": "/tmp/build-discovery-cpsat-l200-min-elements-dofusgroup/cpsat_l200_strength_7_3_none_budget1.md"
+    },
+    {
+      "targetId": "cpsat_l200_intelligence_7_3_none_budget1",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-l200-min-elements-dofusgroup/cpsat_l200_intelligence_7_3_none_budget1.json",
+      "markdown": "/tmp/build-discovery-cpsat-l200-min-elements-dofusgroup/cpsat_l200_intelligence_7_3_none_budget1.md"
+    },
+    {
+      "targetId": "cpsat_l200_chance_7_3_none_budget1",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-l200-min-elements-dofusgroup/cpsat_l200_chance_7_3_none_budget1.json",
+      "markdown": "/tmp/build-discovery-cpsat-l200-min-elements-dofusgroup/cpsat_l200_chance_7_3_none_budget1.md"
+    },
+    {
+      "targetId": "cpsat_l200_agility_7_3_none_budget1",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-l200-min-elements-dofusgroup/cpsat_l200_agility_7_3_none_budget1.json",
+      "markdown": "/tmp/build-discovery-cpsat-l200-min-elements-dofusgroup/cpsat_l200_agility_7_3_none_budget1.md"
+    }
+  ]
+}

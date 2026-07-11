@@ -100,10 +100,10 @@ review before accepting Milestone 2 evidence.
   p95 `<5s` target.
 - Current timed CP-SAT slice rows are `FEASIBLE`, not `OPTIMAL`; they prove
   valid generation but not stable best-build quality.
-- Current CP-SAT model still treats the six Dofus/trophy/prysmaradite slots as
-  independent equivalent slots. This is correct but creates substantial
-  symmetry and duplicated slot variables; a future cardinality-style Dofus model
-  should preserve correctness while reducing search.
+- Current CP-SAT model treats the six Dofus/trophy/prysmaradite slots as one
+  grouped cardinality selection and reconstructs the six output slots afterward.
+  This assumes those slots are order-equivalent for scoring, conditions, and
+  validation.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.

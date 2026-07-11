@@ -95,6 +95,14 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertIn("exactSetCountVarCount", source)
         self.assertIn("conditionConstraintCount", source)
 
+    def test_experiment_groups_equivalent_dofus_slots(self):
+        source = EXPERIMENT_PATH.read_text(encoding="utf-8")
+
+        self.assertIn('DOFUS_GROUP_SLOT = "dofus"', source)
+        self.assertIn("DOFUS_GROUP_SIZE = 6", source)
+        self.assertIn("model.Add(sum(slot_vars) == DOFUS_GROUP_SIZE)", source)
+        self.assertIn('selected_by_slot[f"dofus_{index}"]', source)
+
     def test_server_requirements_include_ortools_pin(self):
         requirements = REQUIREMENTS_PATH.read_text(encoding="utf-8")
 

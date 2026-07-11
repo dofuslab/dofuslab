@@ -55,6 +55,9 @@ from oneoff.build_discovery_prototype import (
 
 SCALE = 100
 DEFAULT_TIME_LIMIT_SECONDS = 20.0
+DOFUS_GROUP_SLOT = "dofus"
+DOFUS_GROUP_SIZE = 6
+DOFUS_SLOT_TYPES = ("Dofus", "Trophy", "Prysmaradite")
 
 
 def scaled_score(value: float) -> int:
@@ -62,14 +65,21 @@ def scaled_score(value: float) -> int:
 
 
 def slot_candidates(items: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
-    return {
+    candidates = {
         slot_name: [
             item
             for item in items
             if item.get("itemType") in slot_types
         ]
         for slot_name, slot_types in SLOTS
+        if not slot_name.startswith("dofus_")
     }
+    candidates[DOFUS_GROUP_SLOT] = [
+        item
+        for item in items
+        if item.get("itemType") in DOFUS_SLOT_TYPES
+    ]
+    return candidates
 
 
 def score_stat_lines(stats: dict[str, float], weights: dict[str, float]) -> float:
@@ -207,7 +217,10 @@ def build_model(
             slot_item_vars[(slot_name, item_id)] = var
             item_presence_terms[item_id].append(var)
             slot_vars.append(var)
-        model.Add(sum(slot_vars) == 1)
+        if slot_name == DOFUS_GROUP_SLOT:
+            model.Add(sum(slot_vars) == DOFUS_GROUP_SIZE)
+        else:
+            model.Add(sum(slot_vars) == 1)
 
     for item_id, vars_for_item in item_presence_terms.items():
         model.Add(sum(vars_for_item) <= 1)
@@ -225,7 +238,7 @@ def build_model(
     if exo_policy != "none" and target.range > 0:
         exo_stats = ("AP", "MP", "Range")
     for slot_name, candidates in candidates_by_slot.items():
-        if slot_name.startswith("dofus_") or slot_name == "pet":
+        if slot_name == DOFUS_GROUP_SLOT or slot_name == "pet":
             continue
         for stat in exo_stats:
             eligible_vars = [
@@ -491,6 +504,8 @@ def reconstruct_state(
     state = BuildState()
     selected_by_slot: dict[str, dict[str, Any]] = {}
     for slot_name, _slot_types in SLOTS:
+        if slot_name.startswith("dofus_"):
+            continue
         selected = [
             item_id
             for (var_slot, item_id), var in slot_item_vars.items()
@@ -499,6 +514,28 @@ def reconstruct_state(
         if len(selected) != 1:
             return None, {"reason": "slot_selection_count", "slot": slot_name, "selected": selected}
         selected_by_slot[slot_name] = item_by_id[selected[0]]
+
+    selected_dofus_ids = [
+        item_id
+        for (var_slot, item_id), var in slot_item_vars.items()
+        if var_slot == DOFUS_GROUP_SLOT and solver.BooleanValue(var)
+    ]
+    if len(selected_dofus_ids) != DOFUS_GROUP_SIZE:
+        return None, {
+            "reason": "slot_selection_count",
+            "slot": DOFUS_GROUP_SLOT,
+            "selected": selected_dofus_ids,
+        }
+    selected_dofus_items = sorted(
+        (item_by_id[item_id] for item_id in selected_dofus_ids),
+        key=lambda item: (
+            item.get("itemType") or "",
+            item.get("_name") or "",
+            item.get("dofusID") or "",
+        ),
+    )
+    for index, item in enumerate(selected_dofus_items, start=1):
+        selected_by_slot[f"dofus_{index}"] = item
 
     state.slots = dict(selected_by_slot)
     state.used_item_ids = {item["dofusID"] for item in selected_by_slot.values()}
