@@ -21,6 +21,10 @@ from oneoff.condition_evaluator import (
     is_leaf_condition,
     unmet_item_conditions,
 )
+from oneoff.build_discovery_scoring import (
+    RANGE_SOFT_WEIGHT_MARGINAL,
+    STAT_WEIGHTS,
+)
 from oneoff.build_discovery_prototype import (
     ACTION_STATS,
     BuildDiscoveryQuery,
@@ -31,9 +35,7 @@ from oneoff.build_discovery_prototype import (
     MAX_MP,
     MAX_RANGE,
     PRIMARY_STAT_NAMES,
-    RANGE_SOFT_WEIGHT_MARGINAL,
     SLOTS,
-    STAT_WEIGHTS,
     action_stats_meet_target,
     active_damage_profile_confidence,
     active_base_stats,

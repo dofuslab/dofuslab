@@ -7128,3 +7128,11 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker smoke, level 200 Chance Enutrof 12/6/None opti balanced after this
     change: top Dofus/Trophy slots became Cloudy, Crimson, Ice, Ochre,
     Arcanist, Major Tease; Ebony and mid-tier Tease dropped out.
+- Started architectural cleanup after CP-SAT stabilized the search path:
+  extracted generic scoring constants, item expected-effect assumptions,
+  stat caps, utility/damage/survivability stat partitions, Wisdom weighting,
+  and pure weighted-stat helpers into `server/oneoff/build_discovery_scoring.py`.
+  The prototype keeps profile-aware wrappers such as `active_stat_weights()`
+  and spell-derived Range weighting, while CP-SAT and spell-profile derivation
+  import scoring constants from the new module instead of reaching through the
+  prototype for static data.

@@ -7,13 +7,15 @@ import os
 import argparse
 from typing import Any, Iterable
 
-from oneoff.build_discovery_prototype import (
-    ELEMENT_PROFILES,
+from oneoff.build_discovery_scoring import (
     RANGE_SOFT_WEIGHT_FALLBACK,
     RANGE_SOFT_WEIGHT_MARGINAL,
     RANGE_SOFT_WEIGHT_NEARLY_USELESS,
     RANGE_SOFT_WEIGHT_USEFUL,
     RANGE_SOFT_WEIGHT_VITAL,
+)
+from oneoff.build_discovery_prototype import (
+    ELEMENT_PROFILES,
     SUPPORTED_CLASS_NAMES,
     SpellDamageCandidate,
     active_base_stats,

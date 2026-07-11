@@ -36,6 +36,7 @@ try:
     from oneoff.build_discovery_cpsat_experiment import (
         CandidateCollectionCallback,
         build_model_metadata,
+        exo_stats_for_target,
         state_signature,
         build_model,
         reconstruct_state,
@@ -212,9 +213,7 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertIn("--exo-policy", source)
 
     def test_experiment_can_disable_exo_variables(self):
-        source = EXPERIMENT_PATH.read_text(encoding="utf-8")
-
-        self.assertIn('exo_stats = () if exo_policy == "none"', source)
+        self.assertEqual(exo_stats_for_target(BuildTarget(level=200, ap=12, mp=6, range=0), "none"), ())
 
     def test_experiment_encodes_simple_item_conditions(self):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")
