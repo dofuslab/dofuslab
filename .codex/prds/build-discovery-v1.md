@@ -69,11 +69,13 @@ Current confidence boundary:
    - Keep class scope to Iop while proving that the solver can adapt to
      different item pools, AP baselines, trophy availability, budget
      assumptions, and survivability expectations across levels.
-   - Score Wisdom as level-dependent utility: useful at the same modest weight
-     for levels `1-199` because it increases experience gained, but worth `0`
-     as direct Wisdom utility at level `200`. At level `200`, Wisdom's AP/MP
-     reduction/parry implications should be captured by explicit AP/MP
-     reduction/parry stats rather than double-counted through Wisdom itself.
+   - Score Wisdom as level-dependent utility: keep Wisdom at the same modest
+     general utility weight for levels `1-199` because it increases experience
+     gained, but do not inflate it above the normal stat utility just because
+     the character is leveling. At level `200`, Wisdom is worth `0` as direct
+     Wisdom utility; its AP/MP reduction/parry implications should be captured
+     by explicit AP/MP reduction/parry stats rather than double-counted through
+     Wisdom itself.
    - Start with sampled level brackets rather than every possible query
      combination.
    - Use readonly prod aggregate discovery to find common AP/MP/Range targets

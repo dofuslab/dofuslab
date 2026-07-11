@@ -6303,3 +6303,43 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker generation:
     `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-between-boundary-targets-20260711.json --output-json /tmp/build-discovery-m3-between-boundary-sample-20260711.json --output-md /tmp/build-discovery-m3-between-boundary-sample-20260711.md`
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-between-boundary-sample-20260711.json --target-file .codex/state/build-discovery-m3-between-boundary-targets-20260711.json --expected-solver cpsat --allow-no-build`
+
+### 2026-07-11 M3 Unsupported Condition Exclusion and Level-Coverage Sample 5
+
+- Fixed a CP-SAT correctness gap exposed by level `74` Strength tier `1`
+  `6/3/None`: unsupported item conditions such as `ALIGNMENT_LEVEL > 10`
+  were not encoded in the model, so the solver could optimize toward an item
+  that reconstruction later rejected. Items with unsupported conditions are now
+  explicitly excluded from the CP-SAT candidate model and counted in
+  `unsupportedConditionItemCount`.
+- Added a semantic regression where a high-scoring unsupported-condition weapon
+  must lose to a lower-scoring legal fallback before reconstruction.
+- Generated and validated the fifth level-coverage sample:
+  - target file: `.codex/state/build-discovery-m3-level-coverage-5-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-level-coverage-5-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-level-coverage-5-sample-20260711.md`
+  - levels: `58`, `59`, `61`, `62`, `63`, `64`, `65`, `66`, `68`, `69`,
+    `71`, `73`, `74`, `76`, `77`, `79`
+  - generated: `16 / 16`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `16` `OPTIMAL`
+- Refreshed the all-level inventory after adding this sample to the default
+  artifact set:
+  - valid query rows: `665088`
+  - generated evidence rows: `256`
+  - attempted evidence rows: `278`
+  - proven no-build evidence rows: `14`
+  - resolved evidence rows: `270`
+  - unresolved rows: `664818`
+  - zero-resolved levels computed from `byLevel`: `83`
+- Reviewer note: `nextZeroResolvedLevelTargets` has done its smoke-coverage
+  job for this slice, but it still mostly proposes easy minimum rows. Future
+  high-signal samples should favor non-minimum unresolved rows, especially
+  `mp_heavy` and `range_heavy` buckets and non-Strength elements.
+- Verification passed:
+  - `python server/scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `PYTHONPATH=/home/dofuslab python scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-level-coverage-5-targets-20260711.json --output-json /tmp/build-discovery-m3-level-coverage-5-sample-20260711.json --output-md /tmp/build-discovery-m3-level-coverage-5-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-level-coverage-5-sample-20260711.json --target-file .codex/state/build-discovery-m3-level-coverage-5-targets-20260711.json --expected-solver cpsat --allow-no-build`

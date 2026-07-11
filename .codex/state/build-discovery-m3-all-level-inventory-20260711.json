@@ -220,13 +220,13 @@
   ],
   "budgetTierCount": 4,
   "validQueryCount": 665088,
-  "generatedEvidenceCount": 240,
-  "attemptedEvidenceCount": 262,
+  "generatedEvidenceCount": 256,
+  "attemptedEvidenceCount": 278,
   "noBuildEvidenceCount": 14,
-  "resolvedEvidenceCount": 254,
-  "unprovenCount": 664848,
-  "unresolvedCount": 664834,
-  "unattemptedCount": 664826,
+  "resolvedEvidenceCount": 270,
+  "unprovenCount": 664832,
+  "unresolvedCount": 664818,
+  "unattemptedCount": 664810,
   "byLevel": [
     {
       "level": 1,
@@ -687,18 +687,18 @@
     {
       "level": 58,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 59,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 60,
@@ -711,50 +711,50 @@
     {
       "level": 61,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 62,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 63,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 64,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 65,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 66,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 67,
@@ -767,18 +767,18 @@
     {
       "level": 68,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 69,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 70,
@@ -791,10 +791,10 @@
     {
       "level": 71,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 72,
@@ -807,18 +807,18 @@
     {
       "level": 73,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 74,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 75,
@@ -831,18 +831,18 @@
     {
       "level": 76,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 77,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 78,
@@ -855,10 +855,10 @@
     {
       "level": 79,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 80,
@@ -1833,39 +1833,39 @@
     {
       "element": "agility",
       "validQueryCount": 166272,
-      "generatedEvidenceCount": 51,
-      "resolvedEvidenceCount": 54,
-      "unresolvedCount": 166218
+      "generatedEvidenceCount": 55,
+      "resolvedEvidenceCount": 58,
+      "unresolvedCount": 166214
     },
     {
       "element": "chance",
       "validQueryCount": 166272,
-      "generatedEvidenceCount": 51,
-      "resolvedEvidenceCount": 54,
-      "unresolvedCount": 166218
+      "generatedEvidenceCount": 55,
+      "resolvedEvidenceCount": 58,
+      "unresolvedCount": 166214
     },
     {
       "element": "intelligence",
       "validQueryCount": 166272,
-      "generatedEvidenceCount": 56,
-      "resolvedEvidenceCount": 61,
-      "unresolvedCount": 166211
+      "generatedEvidenceCount": 60,
+      "resolvedEvidenceCount": 65,
+      "unresolvedCount": 166207
     },
     {
       "element": "strength",
       "validQueryCount": 166272,
-      "generatedEvidenceCount": 82,
-      "resolvedEvidenceCount": 85,
-      "unresolvedCount": 166187
+      "generatedEvidenceCount": 86,
+      "resolvedEvidenceCount": 89,
+      "unresolvedCount": 166183
     }
   ],
   "byBudgetTier": [
     {
       "budgetTier": 1,
       "validQueryCount": 166272,
-      "generatedEvidenceCount": 81,
-      "resolvedEvidenceCount": 81,
-      "unresolvedCount": 166191
+      "generatedEvidenceCount": 97,
+      "resolvedEvidenceCount": 97,
+      "unresolvedCount": 166175
     },
     {
       "budgetTier": 2,
@@ -1914,9 +1914,9 @@
     {
       "profileBucket": "minimum",
       "validQueryCount": 3200,
-      "generatedEvidenceCount": 78,
-      "resolvedEvidenceCount": 78,
-      "unresolvedCount": 3122
+      "generatedEvidenceCount": 94,
+      "resolvedEvidenceCount": 94,
+      "unresolvedCount": 3106
     },
     {
       "profileBucket": "mp_heavy",
@@ -2620,6 +2620,26 @@
     },
     {
       "level": 1,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap",
+      "evidenceStatus": "retry"
+    },
+    {
+      "level": 2,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap",
+      "evidenceStatus": "retry"
+    },
+    {
+      "level": 1,
       "element": "chance",
       "budgetTier": 1,
       "apTarget": 6,
@@ -2631,12 +2651,12 @@
     {
       "level": 2,
       "element": "intelligence",
-      "budgetTier": 3,
+      "budgetTier": 2,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
       "profileBucket": "cap",
-      "evidenceStatus": "retry"
+      "evidenceStatus": "unattempted"
     },
     {
       "level": 3,
@@ -2661,21 +2681,21 @@
     {
       "level": 5,
       "element": "strength",
-      "budgetTier": 3,
-      "apTarget": 6,
+      "budgetTier": 4,
+      "apTarget": 11,
       "mpTarget": 3,
       "rangeTarget": null,
-      "profileBucket": "minimum",
+      "profileBucket": "ap_heavy",
       "evidenceStatus": "unattempted"
     },
     {
       "level": 6,
       "element": "intelligence",
-      "budgetTier": 3,
+      "budgetTier": 4,
       "apTarget": 6,
       "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "minimum",
+      "rangeTarget": 0,
+      "profileBucket": "middle",
       "evidenceStatus": "unattempted"
     },
     {
@@ -2721,6 +2741,26 @@
     {
       "level": 11,
       "element": "chance",
+      "budgetTier": 4,
+      "apTarget": 11,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "ap_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 12,
+      "element": "agility",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 0,
+      "profileBucket": "middle",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 13,
+      "element": "strength",
       "budgetTier": 2,
       "apTarget": 6,
       "mpTarget": 3,
@@ -2729,13 +2769,53 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 12,
+      "level": 14,
+      "element": "intelligence",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 15,
+      "element": "chance",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "profileBucket": "mp_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 16,
       "element": "agility",
-      "budgetTier": 1,
+      "budgetTier": 4,
       "apTarget": 6,
       "mpTarget": 3,
+      "rangeTarget": 6,
+      "profileBucket": "range_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 17,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 11,
+      "mpTarget": 3,
       "rangeTarget": null,
-      "profileBucket": "minimum",
+      "profileBucket": "ap_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 18,
+      "element": "intelligence",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 0,
+      "profileBucket": "middle",
       "evidenceStatus": "unattempted"
     }
   ],
@@ -2774,6 +2854,26 @@
       "level": 20,
       "element": "chance",
       "budgetTier": 3,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap",
+      "evidenceStatus": "retry"
+    },
+    {
+      "level": 20,
+      "element": "chance",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap",
+      "evidenceStatus": "retry"
+    },
+    {
+      "level": 50,
+      "element": "agility",
+      "budgetTier": 2,
       "apTarget": 12,
       "mpTarget": 6,
       "rangeTarget": 6,
@@ -2823,21 +2923,21 @@
     {
       "level": 5,
       "element": "strength",
-      "budgetTier": 3,
-      "apTarget": 6,
+      "budgetTier": 4,
+      "apTarget": 11,
       "mpTarget": 3,
       "rangeTarget": null,
-      "profileBucket": "minimum",
+      "profileBucket": "ap_heavy",
       "evidenceStatus": "unattempted"
     },
     {
       "level": 6,
       "element": "intelligence",
-      "budgetTier": 3,
+      "budgetTier": 4,
       "apTarget": 6,
       "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "minimum",
+      "rangeTarget": 0,
+      "profileBucket": "middle",
       "evidenceStatus": "unattempted"
     },
     {
@@ -2883,6 +2983,26 @@
     {
       "level": 11,
       "element": "chance",
+      "budgetTier": 4,
+      "apTarget": 11,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "ap_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 12,
+      "element": "agility",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 0,
+      "profileBucket": "middle",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 13,
+      "element": "strength",
       "budgetTier": 2,
       "apTarget": 6,
       "mpTarget": 3,
@@ -2891,19 +3011,59 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 12,
+      "level": 14,
+      "element": "intelligence",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "profileBucket": "cap",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 15,
+      "element": "chance",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "profileBucket": "mp_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 16,
       "element": "agility",
-      "budgetTier": 1,
+      "budgetTier": 4,
       "apTarget": 6,
       "mpTarget": 3,
+      "rangeTarget": 6,
+      "profileBucket": "range_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 17,
+      "element": "strength",
+      "budgetTier": 4,
+      "apTarget": 11,
+      "mpTarget": 3,
       "rangeTarget": null,
-      "profileBucket": "minimum",
+      "profileBucket": "ap_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 18,
+      "element": "intelligence",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 0,
+      "profileBucket": "middle",
       "evidenceStatus": "unattempted"
     }
   ],
   "nextZeroResolvedLevelTargets": [
     {
-      "level": 58,
+      "level": 81,
       "element": "strength",
       "budgetTier": 1,
       "apTarget": 6,
@@ -2913,7 +3073,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 59,
+      "level": 82,
       "element": "intelligence",
       "budgetTier": 1,
       "apTarget": 6,
@@ -2923,7 +3083,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 61,
+      "level": 83,
       "element": "chance",
       "budgetTier": 1,
       "apTarget": 6,
@@ -2933,7 +3093,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 62,
+      "level": 84,
       "element": "agility",
       "budgetTier": 1,
       "apTarget": 6,
@@ -2943,7 +3103,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 63,
+      "level": 85,
       "element": "strength",
       "budgetTier": 1,
       "apTarget": 6,
@@ -2953,7 +3113,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 64,
+      "level": 86,
       "element": "intelligence",
       "budgetTier": 1,
       "apTarget": 6,
@@ -2963,7 +3123,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 65,
+      "level": 87,
       "element": "chance",
       "budgetTier": 1,
       "apTarget": 6,
@@ -2973,7 +3133,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 66,
+      "level": 88,
       "element": "agility",
       "budgetTier": 1,
       "apTarget": 6,
@@ -2983,7 +3143,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 68,
+      "level": 90,
       "element": "strength",
       "budgetTier": 1,
       "apTarget": 6,
@@ -2993,7 +3153,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 69,
+      "level": 91,
       "element": "intelligence",
       "budgetTier": 1,
       "apTarget": 6,
@@ -3003,7 +3163,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 71,
+      "level": 92,
       "element": "chance",
       "budgetTier": 1,
       "apTarget": 6,
@@ -3013,7 +3173,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 73,
+      "level": 93,
       "element": "agility",
       "budgetTier": 1,
       "apTarget": 6,
@@ -3023,7 +3183,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 74,
+      "level": 94,
       "element": "strength",
       "budgetTier": 1,
       "apTarget": 6,
@@ -3033,7 +3193,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 76,
+      "level": 96,
       "element": "intelligence",
       "budgetTier": 1,
       "apTarget": 6,
@@ -3043,7 +3203,7 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 77,
+      "level": 97,
       "element": "chance",
       "budgetTier": 1,
       "apTarget": 6,
@@ -3053,10 +3213,90 @@
       "evidenceStatus": "unattempted"
     },
     {
-      "level": 79,
+      "level": 103,
       "element": "agility",
       "budgetTier": 1,
-      "apTarget": 6,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 105,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 106,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 107,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 108,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 109,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 112,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 113,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "level": 114,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 7,
       "mpTarget": 3,
       "rangeTarget": null,
       "profileBucket": "minimum",

@@ -260,6 +260,24 @@ def set_bonus_upper_bound_condition(condition_obj: dict[str, Any]) -> int | None
     return None
 
 
+def condition_is_cpsat_supported(condition_obj: dict[str, Any]) -> bool:
+    if not condition_obj:
+        return True
+    if is_leaf_condition(condition_obj):
+        stat = condition_obj.get("stat")
+        operator = condition_obj.get("operator")
+        if operator not in {"<", ">"}:
+            return False
+        return stat == "SET_BONUS" or stat in CONDITION_STAT_TO_STAT_NAME
+    if condition_obj.get("and"):
+        return all(condition_is_cpsat_supported(child) for child in condition_obj["and"])
+    if condition_obj.get("or"):
+        return bool(condition_obj["or"]) and all(
+            condition_is_cpsat_supported(child) for child in condition_obj["or"]
+        )
+    return False
+
+
 def items_by_id(items: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return {item["dofusID"]: item for item in items}
 
@@ -470,6 +488,7 @@ def build_model(
     condition_constraint_count = 0
     condition_literal_count = 0
     skipped_set_bonus_condition_count = 0
+    unsupported_condition_item_count = 0
 
     def add_leaf_condition_constraint(
         condition_obj: dict[str, Any],
@@ -545,6 +564,10 @@ def build_model(
         condition_obj = item_by_id[item_id].get("conditions", {}).get("conditions", {})
         set_bonus_upper_bound = set_bonus_upper_bound_condition(condition_obj)
         if condition_obj:
+            if not condition_is_cpsat_supported(condition_obj):
+                model.Add(presence_var_for_item(item_id) == 0)
+                unsupported_condition_item_count += 1
+                continue
             add_condition_constraints(
                 condition_obj,
                 presence_var_for_item(item_id),
@@ -602,6 +625,7 @@ def build_model(
         "reusedPresenceVarCount": reused_presence_var_count,
         "conditionConstraintCount": condition_constraint_count,
         "skippedSetBonusConditionCount": skipped_set_bonus_condition_count,
+        "unsupportedConditionItemCount": unsupported_condition_item_count,
         "setCountConstraintCount": len({set_id for set_id, _count in exact_set_count_vars}),
     }
     return model, slot_item_vars, exo_vars, model_stats

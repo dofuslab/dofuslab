@@ -691,6 +691,26 @@ class BuildDiscoveryCpsatSemanticFixtureTest(unittest.TestCase):
 
         self.assertEqual(state.slots["weapon"]["dofusID"], "valid_weapon")
 
+    def test_unsupported_condition_item_is_excluded_before_reconstruction(self):
+        items = base_fixture_items()
+        items = [
+            item(
+                "unsupported_condition_weapon",
+                "Sword",
+                stats={"Strength": 1000},
+                conditions={"operator": ">", "stat": "ALIGNMENT_LEVEL", "value": 10},
+            )
+            if candidate["dofusID"] == "weapon"
+            else candidate
+            for candidate in items
+        ]
+        items.append(item("valid_weapon", "Sword", stats={"Strength": 1}))
+
+        _status, state, model_stats = solve_fixture(items)
+
+        self.assertEqual(state.slots["weapon"]["dofusID"], "valid_weapon")
+        self.assertEqual(model_stats["unsupportedConditionItemCount"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

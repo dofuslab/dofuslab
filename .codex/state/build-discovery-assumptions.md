@@ -320,6 +320,18 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - `nextZeroResolvedLevelTargets` intentionally suggests one low-pressure row
   per level with no resolved evidence. It is a level-coverage queue, not a
   substitute for AP/MP/Range profile-bucket coverage inside each level.
+- Many levels still have no resolved row in the current inventory, but the
+  zero-level selector is mostly suggesting easy minimum rows. Future sampling
+  should prioritize unresolved `mp_heavy`, `range_heavy`, cap, and non-Strength
+  rows instead of relying only on the zero-level minimum queue.
+- CP-SAT excludes items whose conditions cannot be encoded by the current
+  condition model. This is conservative: it may miss a legal item with an
+  unsupported but satisfiable condition, but it prevents invalid
+  `OPTIMAL`-solver builds from surviving to reconstruction.
+- Wisdom should keep the same modest general utility weight for levels `1-199`
+  because it increases experience gained. At level `200`, direct Wisdom utility
+  should be suppressed so AP/MP reduction and parry are not double-counted when
+  those explicit stats are present.
 - Level Diversity needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket broadly.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.
