@@ -4819,3 +4819,37 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - p95 remains above the Milestone 2 `<5s` target
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap9-10-mp4-5-ranges13-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 9,10 --mp-targets 4,5 --range-targets 1,3 --expected-solver cpsat`
+
+### 2026-07-11 AP10 MP4/MP5 Mid-Budget Range Mix CP-SAT Smoke
+
+- Ran a targeted Milestone 2 slice to strengthen AP `10`, MP `4/5`,
+  budget tiers `2/3`, and range `none/0/2/6`.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-ap10-mp45-budgets23-rangesn026-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ap10-mp45-budgets23-rangesn026-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ap10-mp45-budgets23-rangesn026-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 2, 3
+  - AP: 10
+  - MP: 4, 5
+  - Range: none, 0, 2, 6
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `64`
+  - generated: `64`
+  - invalid: `0`
+  - solver statuses: `28` optimal, `36` feasible
+  - MP coverage: `32` rows each for `4` and `5`
+  - range coverage: `16` rows each for `none`, `0`, `2`, and `6`
+  - budget coverage: `32` rows each for tiers `2` and `3`
+- Runtime:
+  - elapsed min/avg/max: `5380.8ms / 6722.3ms / 8233.3ms`
+  - model min/avg/max: `1346.7ms / 1532.2ms / 1746.4ms`
+  - solve min/avg/max: `3519.8ms / 4801.8ms / 5088.4ms`
+- Interpretation:
+  - AP `10`, mid budgets, MP `4/5`, and range `none/0/2/6` have stronger
+    committed CP-SAT evidence
+  - p95 remains above the Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap10-mp45-budgets23-rangesn026-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 10 --mp-targets 4,5 --range-targets none,0,2,6 --expected-solver cpsat`
