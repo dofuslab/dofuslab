@@ -3937,3 +3937,24 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   performance acceptance.
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-l200-min-elements-budgets-fixed.json --target-file /tmp/build-discovery-cpsat-l200-min-elements-budgets-targets.json --target-file-prefix cpsat_l200_min_budget`
+
+### 2026-07-11 CP-SAT Semantic Fixture Tests
+
+- Added executable synthetic CP-SAT fixture tests to supplement the older
+  source-string contract tests.
+- Covered semantics:
+  - grouped Dofus/trophy/prysmaradite selection reconstructs six
+    `dofus_1..dofus_6` output slots
+  - two Dofus-like items from the same set can both be selected and count toward
+    set bonuses
+  - at most one Prysmaradite can be selected
+  - the same ring item cannot fill both ring slots
+  - simple `and` item conditions are encoded into the CP-SAT model before
+    reconstruction
+- Remaining explicit semantic gap:
+  - `or` item conditions are still not encoded into CP-SAT and rely on
+    post-solve validation.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`

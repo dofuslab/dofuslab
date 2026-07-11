@@ -108,6 +108,9 @@ review before accepting Milestone 2 evidence.
 - Set-count capacity for grouped Dofus selection counts up to six Dofus-like
   items, not just the single synthetic group, so future set-linked Dofus-like
   items can still be represented correctly.
+- Grouped Dofus reconstruction, same-set Dofus counting, one-Prysmaradite
+  selection, ring item uniqueness, and simple `and` condition encoding are now
+  covered by executable synthetic CP-SAT fixture tests.
 - The first 16-row level-200 all-element/all-budget `7/3/None` slice generated
   all rows, but p95 remains above `5s`; only `8/16` rows were under `5s`.
 - Expensive full-grid runs should be split, resumable, and checkpointed.

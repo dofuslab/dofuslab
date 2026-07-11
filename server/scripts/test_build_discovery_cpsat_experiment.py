@@ -1,6 +1,14 @@
+from __future__ import annotations
+
 import ast
+import sys
 import unittest
 from pathlib import Path
+
+
+SERVER_ROOT = Path(__file__).resolve().parents[1]
+if str(SERVER_ROOT) not in sys.path:
+    sys.path.insert(0, str(SERVER_ROOT))
 
 
 def experiment_path() -> Path:
@@ -22,6 +30,116 @@ def requirements_path() -> Path:
 
 EXPERIMENT_PATH = experiment_path()
 REQUIREMENTS_PATH = requirements_path()
+
+try:
+    from ortools.sat.python import cp_model
+    from oneoff.build_discovery_cpsat_experiment import (
+        build_model,
+        reconstruct_state,
+    )
+    from oneoff.build_discovery_prototype import BuildTarget, configure_damage_profile
+except Exception as exc:  # pragma: no cover - exercised only in incomplete envs.
+    cp_model = None
+    build_model = None
+    reconstruct_state = None
+    BuildTarget = None
+    configure_damage_profile = None
+    IMPORT_ERROR = exc
+else:
+    IMPORT_ERROR = None
+
+
+def item(
+    item_id: str,
+    item_type: str,
+    *,
+    stats: dict[str, int] | None = None,
+    set_id: str | None = None,
+    conditions: dict | None = None,
+) -> dict:
+    stats = stats or {}
+    return {
+        "dofusID": item_id,
+        "uuid": item_id,
+        "_name": item_id,
+        "itemType": item_type,
+        "level": 1,
+        "setID": set_id,
+        "_stats": dict(stats),
+        "stats": [{"stat": stat, "maxStat": value} for stat, value in stats.items()],
+        "conditions": {"conditions": conditions or {}, "customConditions": {}},
+    }
+
+
+def fixture_sets() -> dict:
+    return {
+        "dofus_set": {
+            "id": "dofus_set",
+            "_name": "Dofus Fixture Set",
+            "_bonus_stats": {
+                "0": {},
+                "1": {},
+                "2": {"Strength": 200},
+            },
+        }
+    }
+
+
+def base_fixture_items(*, dofus_items: list[dict] | None = None) -> list[dict]:
+    dofus_items = dofus_items or [
+        item("dofus_a", "Dofus", set_id="dofus_set"),
+        item("dofus_b", "Trophy", set_id="dofus_set"),
+        item("dofus_c", "Dofus"),
+        item("dofus_d", "Trophy"),
+        item("dofus_e", "Dofus"),
+        item("dofus_f", "Trophy"),
+    ]
+    return [
+        item("amulet", "Amulet"),
+        item("belt", "Belt"),
+        item("weapon", "Sword"),
+        item("shield", "Shield"),
+        item("ring_good", "Ring", stats={"Strength": 20}),
+        item("ring_other", "Ring"),
+        item("boots", "Boots"),
+        item("hat", "Hat"),
+        item("cloak", "Cloak"),
+        item("pet", "Pet"),
+        *dofus_items,
+    ]
+
+
+def solve_fixture(items: list[dict], *, sets: dict | None = None):
+    if IMPORT_ERROR is not None:
+        raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+    configure_damage_profile("strength")
+    model, slot_item_vars, exo_vars, model_stats = build_model(
+        items,
+        sets or fixture_sets(),
+        BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
+        forbidden_signatures=[],
+        max_shared_item_cuts=[],
+        max_shared_items=None,
+        objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
+        exo_policy="none",
+    )
+    solver = cp_model.CpSolver()
+    solver.parameters.max_time_in_seconds = 2
+    solver.parameters.num_search_workers = 1
+    status = solver.Solve(model)
+    if status not in (cp_model.OPTIMAL, cp_model.FEASIBLE):
+        return status, None, model_stats
+    state, invalid = reconstruct_state(
+        solver,
+        slot_item_vars,
+        exo_vars,
+        items,
+        sets or fixture_sets(),
+        BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
+    )
+    if invalid:
+        raise AssertionError(invalid)
+    return status, state, model_stats
 
 
 class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
@@ -109,6 +227,75 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         requirements = REQUIREMENTS_PATH.read_text(encoding="utf-8")
 
         self.assertIn("ortools==9.7.2996", requirements)
+
+
+class BuildDiscoveryCpsatSemanticFixtureTest(unittest.TestCase):
+    def setUp(self):
+        if IMPORT_ERROR is not None:
+            self.skipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+
+    def test_grouped_dofus_reconstructs_six_output_slots_and_set_bonus(self):
+        status, state, model_stats = solve_fixture(base_fixture_items())
+
+        self.assertIn(status, (cp_model.OPTIMAL, cp_model.FEASIBLE))
+        self.assertIsNotNone(state)
+        dofus_slots = [slot for slot in state.slots if slot.startswith("dofus_")]
+        self.assertEqual(len(dofus_slots), 6)
+        self.assertEqual(len({state.slots[slot]["dofusID"] for slot in dofus_slots}), 6)
+        self.assertEqual(state.set_counts.get("dofus_set"), 2)
+        self.assertGreaterEqual(state.stats.get("Strength", 0), 200)
+        self.assertEqual(model_stats["slotCandidateCounts"]["dofus"], 6)
+
+    def test_prysmaradite_limit_allows_at_most_one(self):
+        dofus_items = [
+            item("prys_a", "Prysmaradite", stats={"Strength": 500}),
+            item("prys_b", "Prysmaradite", stats={"Strength": 400}),
+            item("dofus_c", "Dofus"),
+            item("dofus_d", "Trophy"),
+            item("dofus_e", "Dofus"),
+            item("dofus_f", "Trophy"),
+            item("dofus_g", "Dofus"),
+        ]
+
+        _status, state, _model_stats = solve_fixture(base_fixture_items(dofus_items=dofus_items))
+
+        selected_prys = [
+            slot
+            for slot, selected_item in state.slots.items()
+            if slot.startswith("dofus_") and selected_item["itemType"] == "Prysmaradite"
+        ]
+        self.assertEqual(len(selected_prys), 1)
+
+    def test_same_ring_item_cannot_fill_both_ring_slots(self):
+        _status, state, _model_stats = solve_fixture(base_fixture_items())
+
+        self.assertNotEqual(
+            state.slots["ring_1"]["dofusID"],
+            state.slots["ring_2"]["dofusID"],
+        )
+
+    def test_and_condition_is_encoded_before_reconstruction(self):
+        items = base_fixture_items()
+        items = [
+            item(
+                "bad_weapon",
+                "Sword",
+                stats={"Strength": 1000},
+                conditions={
+                    "and": [
+                        {"operator": ">", "stat": "VITALITY", "value": 99999},
+                    ]
+                },
+            )
+            if candidate["dofusID"] == "weapon"
+            else candidate
+            for candidate in items
+        ]
+        items.append(item("valid_weapon", "Sword", stats={"Strength": 1}))
+
+        _status, state, _model_stats = solve_fixture(items)
+
+        self.assertEqual(state.slots["weapon"]["dofusID"], "valid_weapon")
 
 
 if __name__ == "__main__":
