@@ -1,0 +1,6031 @@
+{
+  "summary": {
+    "reportVersion": "build-discovery-all-class-preopt-smoke-plan-v1",
+    "generatedAt": "2026-07-11",
+    "purpose": "Concrete smoke matrix for expanding Milestone 2 from Iop-only to all level-200 class/element pairs before optimization work.",
+    "profileCount": 76,
+    "classCount": 19,
+    "rangeUsefulnessCounts": {
+      "vital": 21,
+      "marginal": 10,
+      "useful": 13,
+      "nearly useless": 32
+    },
+    "damageProfileConfidenceCounts": {
+      "medium": 75,
+      "high": 1
+    },
+    "queryRowsIfAllPresetsExpanded": 674
+  },
+  "blockers": [
+    "BuildDiscoveryQuery currently rejects class_name != Iop, so all-class generation is not wired through yet.",
+    "CP-SAT solve path configures damage only by element; it imports the Iop-era query/profile machinery and does not consume class-specific spell profiles.",
+    "The existing score path still uses ACTIVE_DAMAGE_PROFILE and generic spell damage fallbacks; non-Iop output would be misleading until class/element profiles drive objective weights.",
+    "Profile confidence must be surfaced in generated result diagnostics so medium-confidence class profiles are reviewable, not silently authoritative.",
+    "+Range should become a soft class/element-specific stat value when rangeTarget is None; hard rangeTarget should remain a constraint only when the user explicitly asks for it.",
+    "The class name, spell profile version, range usefulness version, budget policy version, and scoring preset must be part of cache/provenance identity."
+  ],
+  "acceptanceGates": [
+    "Every planned query either returns a condition-valid build or an explicit infeasible/unsupported reason.",
+    "No non-Iop query may silently fall back to Iop spell scoring.",
+    "Budget tier, exo policy, AP cap, MP cap, and hard range semantics are enforced before a row is marked passing.",
+    "Generated diagnostics include className, element, damage profile confidence, top spell evidence, +Range usefulness, and damage/survivability preset.",
+    "At least one reviewed row per class is plausible before broad cache generation begins."
+  ],
+  "profiles": [
+    {
+      "className": "Cra",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.283,
+        "plus10FlatDamagePct": 1.832,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.47,
+        "weightedModifiableRangeShare": 1.0
+      },
+      "topSpells": [
+        "Arrow of Judgement",
+        "Lashing Arrow",
+        "Covering Fire",
+        "Barricade Shot"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Cra",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.321,
+        "plus10FlatDamagePct": 0.482,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.748,
+        "weightedModifiableRangeShare": 1.0
+      },
+      "topSpells": [
+        "Fulminating Arrow",
+        "Exploding Arrow",
+        "Explosive Arrow",
+        "Tyrannical Arrow"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Cra",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.277,
+        "plus10FlatDamagePct": 1.84,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.56,
+        "weightedModifiableRangeShare": 1.0
+      },
+      "topSpells": [
+        "Redemption Arrow",
+        "Frozen Arrow",
+        "Persecuting Arrow",
+        "Atonement Arrow"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Cra",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.367,
+        "plus10FlatDamagePct": 0.423,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.825,
+        "weightedModifiableRangeShare": 1.0
+      },
+      "topSpells": [
+        "Devouring Arrow",
+        "Piercing Shot",
+        "Tormenting Arrow",
+        "Optical Arrow"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Ecaflip",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.199,
+        "plus10FlatDamagePct": 0.641,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.798,
+        "weightedModifiableRangeShare": 0.604
+      },
+      "topSpells": [
+        "Trickery",
+        "Rekop",
+        "Misadventure",
+        "Heads or Tails"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Ecaflip",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.262,
+        "plus10FlatDamagePct": 0.559,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.712,
+        "weightedModifiableRangeShare": 0.857
+      },
+      "topSpells": [
+        "Trickery",
+        "Rekop",
+        "Topkaj",
+        "Meowch"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Ecaflip",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.235,
+        "plus10FlatDamagePct": 0.594,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.782,
+        "weightedModifiableRangeShare": 0.694
+      },
+      "topSpells": [
+        "Trickery",
+        "Rekop",
+        "All or Nothing",
+        "Misfortune"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Ecaflip",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.264,
+        "plus10FlatDamagePct": 0.557,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.752,
+        "weightedModifiableRangeShare": 0.72
+      },
+      "topSpells": [
+        "Trickery",
+        "Rekop",
+        "Balling Up",
+        "Nerve"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Eliotrope",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 5.918,
+        "plus10FlatDamagePct": 2.307,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.0,
+        "weightedModifiableRangeShare": 0.582
+      },
+      "topSpells": [
+        "Persiflage",
+        "Sarcasm",
+        "Snub",
+        "Therapy"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Eliotrope",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "marginal",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.628,
+        "plus10FlatDamagePct": 1.384,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.582,
+        "weightedModifiableRangeShare": 0.183
+      },
+      "topSpells": [
+        "Parasite",
+        "Lazybeam",
+        "Offence",
+        "Wakfu Ray"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-marginal-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 3,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "guard against overvaluing +Range for profiles where it is only situational"
+        }
+      ]
+    },
+    {
+      "className": "Eliotrope",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.35,
+        "plus10FlatDamagePct": 1.745,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.332,
+        "weightedModifiableRangeShare": 0.364
+      },
+      "topSpells": [
+        "Audacious",
+        "Insolence",
+        "Composure",
+        "Lightning Fist"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Eliotrope",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.018,
+        "plus10FlatDamagePct": 2.176,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.23,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Sermon",
+        "Ridicule",
+        "Insult",
+        "Contempt"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Eniripsa",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.422,
+        "plus10FlatDamagePct": 1.652,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.45,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "War Cry",
+        "Ancestral Ointment",
+        "Profanity",
+        "Tribal Paintbrush"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Eniripsa",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.242,
+        "plus10FlatDamagePct": 1.885,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.408,
+        "weightedModifiableRangeShare": 0.781
+      },
+      "topSpells": [
+        "Deafening Cry",
+        "Raucous Word",
+        "Pilfering",
+        "Scalpel"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Eniripsa",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.253,
+        "plus10FlatDamagePct": 1.871,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.369,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Vampiric Word",
+        "Bloodless Word",
+        "Sobs",
+        "Scalpel"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Eniripsa",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.142,
+        "plus10FlatDamagePct": 0.715,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.557,
+        "weightedModifiableRangeShare": 0.932
+      },
+      "topSpells": [
+        "Secret Word",
+        "Malicious Word",
+        "Mischievous Word",
+        "Flowery Word"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Enutrof",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.27,
+        "plus10FlatDamagePct": 1.848,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.29,
+        "weightedModifiableRangeShare": 0.426
+      },
+      "topSpells": [
+        "Collapse",
+        "Prime of Life",
+        "Shovel Throwing",
+        "Mound"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Enutrof",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.908,
+        "plus10FlatDamagePct": 1.019,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.513,
+        "weightedModifiableRangeShare": 0.824
+      },
+      "topSpells": [
+        "Unsummoning",
+        "Mine Fire",
+        "Shovel Kiss",
+        "Ghostly Shovel"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Enutrof",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.206,
+        "plus10FlatDamagePct": 1.932,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.379,
+        "weightedModifiableRangeShare": 0.783
+      },
+      "topSpells": [
+        "Obsolescence",
+        "Placer Mining",
+        "Auriferous Shovel",
+        "Shovel of the Ancients"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Enutrof",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.168,
+        "plus10FlatDamagePct": 1.982,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.49,
+        "weightedModifiableRangeShare": 0.561
+      },
+      "topSpells": [
+        "Hard Cash",
+        "Bankruptcy",
+        "Opportuneness",
+        "Loafylactic"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Feca",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.798,
+        "plus10FlatDamagePct": 1.162,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.636,
+        "weightedModifiableRangeShare": 0.368
+      },
+      "topSpells": [
+        "Distrust",
+        "Barrier",
+        "Backlash",
+        "Tetany"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Feca",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.776,
+        "plus10FlatDamagePct": 1.191,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.571,
+        "weightedModifiableRangeShare": 0.797
+      },
+      "topSpells": [
+        "Distrust",
+        "Barrier",
+        "Lethargy",
+        "Languor"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Feca",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.778,
+        "plus10FlatDamagePct": 1.188,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.578,
+        "weightedModifiableRangeShare": 0.849
+      },
+      "topSpells": [
+        "Distrust",
+        "Barrier",
+        "Getaway",
+        "Bubble"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Feca",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.813,
+        "plus10FlatDamagePct": 1.143,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.582,
+        "weightedModifiableRangeShare": 0.376
+      },
+      "topSpells": [
+        "Distrust",
+        "Barrier",
+        "Gust",
+        "Typhoon"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Foggernaut",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.565,
+        "plus10FlatDamagePct": 0.165,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.868,
+        "weightedModifiableRangeShare": 0.082
+      },
+      "topSpells": [
+        "Drill",
+        "Harpooner",
+        "Mooring",
+        "Backwash"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Foggernaut",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.571,
+        "plus10FlatDamagePct": 0.158,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.898,
+        "weightedModifiableRangeShare": 0.011
+      },
+      "topSpells": [
+        "Drill",
+        "Harpooner",
+        "Valve",
+        "Hoofbeat"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Foggernaut",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.559,
+        "plus10FlatDamagePct": 0.173,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.91,
+        "weightedModifiableRangeShare": 0.146
+      },
+      "topSpells": [
+        "Drill",
+        "Harpooner",
+        "Torrent",
+        "Periscope"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Foggernaut",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.562,
+        "plus10FlatDamagePct": 0.17,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.864,
+        "weightedModifiableRangeShare": 0.1
+      },
+      "topSpells": [
+        "Drill",
+        "Harpooner",
+        "Pilfer",
+        "Corrosion"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Forgelance",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.018,
+        "plus10FlatDamagePct": 2.176,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.084,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Upheaval",
+        "Slingshot",
+        "Earthen Weakness",
+        "Middle Earth"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Forgelance",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 5.923,
+        "plus10FlatDamagePct": 2.3,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.087,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Burning Estoc",
+        "Fire Lance",
+        "Hot Iron",
+        "Maelstrom"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Forgelance",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.012,
+        "plus10FlatDamagePct": 2.185,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.082,
+        "weightedModifiableRangeShare": 0.585
+      },
+      "topSpells": [
+        "Octave",
+        "Lance of the Lake",
+        "Biting Trident",
+        "Elding"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Forgelance",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.059,
+        "plus10FlatDamagePct": 2.123,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.091,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "No Myr Javelin",
+        "Brass Volley",
+        "Cyclone Lancer",
+        "Windmill"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Huppermage",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "marginal",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.36,
+        "plus10FlatDamagePct": 0.433,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.909,
+        "weightedModifiableRangeShare": 0.235
+      },
+      "topSpells": [
+        "Morph",
+        "Arcane Torrent",
+        "Elemental Drain",
+        "Manifestation"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-marginal-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 3,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "guard against overvaluing +Range for profiles where it is only situational"
+        }
+      ]
+    },
+    {
+      "className": "Huppermage",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.357,
+        "plus10FlatDamagePct": 0.435,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.932,
+        "weightedModifiableRangeShare": 0.121
+      },
+      "topSpells": [
+        "Morph",
+        "Arcane Torrent",
+        "Elemental Drain",
+        "Manifestation"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Huppermage",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.354,
+        "plus10FlatDamagePct": 0.439,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.887,
+        "weightedModifiableRangeShare": 0.091
+      },
+      "topSpells": [
+        "Morph",
+        "Arcane Torrent",
+        "Elemental Drain",
+        "Manifestation"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Huppermage",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.361,
+        "plus10FlatDamagePct": 0.43,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.893,
+        "weightedModifiableRangeShare": 0.146
+      },
+      "topSpells": [
+        "Morph",
+        "Arcane Torrent",
+        "Elemental Drain",
+        "Manifestation"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Iop",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "high",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.519,
+        "plus10FlatDamagePct": 1.525,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.605,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Concentration",
+        "Accumulation",
+        "Sword of Iop",
+        "Pressure"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Iop",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "marginal",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.438,
+        "plus10FlatDamagePct": 0.331,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.899,
+        "weightedModifiableRangeShare": 0.191
+      },
+      "topSpells": [
+        "Tumult",
+        "Strengthstorm",
+        "Sentence",
+        "Destructive Sword"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-marginal-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 3,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "guard against overvaluing +Range for profiles where it is only situational"
+        }
+      ]
+    },
+    {
+      "className": "Iop",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.418,
+        "plus10FlatDamagePct": 1.657,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.488,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Endurance",
+        "Outpouring",
+        "Threat",
+        "Fervour"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Iop",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.194,
+        "plus10FlatDamagePct": 1.948,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.229,
+        "weightedModifiableRangeShare": 0.159
+      },
+      "topSpells": [
+        "Celestial Sword",
+        "Divine Sword",
+        "Destructive Ring",
+        "Fracture"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Masqueraider",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "marginal",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.471,
+        "plus10FlatDamagePct": 1.587,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.515,
+        "weightedModifiableRangeShare": 0.242
+      },
+      "topSpells": [
+        "Furia",
+        "Carnavalo",
+        "Catalepsy",
+        "Martelo"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-marginal-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 3,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "guard against overvaluing +Range for profiles where it is only situational"
+        }
+      ]
+    },
+    {
+      "className": "Masqueraider",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.364,
+        "plus10FlatDamagePct": 1.726,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.326,
+        "weightedModifiableRangeShare": 0.322
+      },
+      "topSpells": [
+        "Inferno",
+        "Apostasy",
+        "Decoy",
+        "Brincaderia"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Masqueraider",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.237,
+        "plus10FlatDamagePct": 1.892,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.13,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Boliche",
+        "Bocciara",
+        "Ponteira",
+        "Carnavalo"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Masqueraider",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.429,
+        "plus10FlatDamagePct": 1.642,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.312,
+        "weightedModifiableRangeShare": 0.172
+      },
+      "topSpells": [
+        "Cavalcade",
+        "Retention",
+        "Picada",
+        "Capering"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Osamodas",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.131,
+        "plus10FlatDamagePct": 2.029,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.359,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Sedimentation",
+        "Woolly Sledgehammer",
+        "Constriction",
+        "Crackler Punch"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Osamodas",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 5.966,
+        "plus10FlatDamagePct": 2.245,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.166,
+        "weightedModifiableRangeShare": 0.495
+      },
+      "topSpells": [
+        "Sparkmeleon",
+        "Dragon's Breath",
+        "Cross Scale",
+        "Dragonic"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Osamodas",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.045,
+        "plus10FlatDamagePct": 2.142,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.159,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Aquatic Wave",
+        "Geyser",
+        "Batra",
+        "Whirlwind"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Osamodas",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 5.808,
+        "plus10FlatDamagePct": 2.45,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.088,
+        "weightedModifiableRangeShare": 0.548
+      },
+      "topSpells": [
+        "Canine",
+        "Gambol",
+        "Plucking",
+        "Repulsive Fang"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Ouginak",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.306,
+        "plus10FlatDamagePct": 1.802,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.625,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Mastiff",
+        "Humerus",
+        "Watchdog",
+        "Amarok"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Ouginak",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.629,
+        "plus10FlatDamagePct": 1.382,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.449,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Hunt",
+        "Woof",
+        "Tally Ho",
+        "Tracking"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Ouginak",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 5.979,
+        "plus10FlatDamagePct": 2.227,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.162,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Ulna",
+        "Radius",
+        "Calcaneus",
+        "Marrow Bone"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Ouginak",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.479,
+        "plus10FlatDamagePct": 0.278,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.714,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Stripping",
+        "Muzzle",
+        "Carrion",
+        "Bloodhound"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Pandawa",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.735,
+        "plus10FlatDamagePct": 1.245,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.518,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Pandatak",
+        "Filthipint",
+        "Debauchery",
+        "Hangover"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Pandawa",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.301,
+        "plus10FlatDamagePct": 1.809,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.315,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Pandilongation",
+        "Absinthe",
+        "Explosive Flask",
+        "Explosive Palm"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Pandawa",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "marginal",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.694,
+        "plus10FlatDamagePct": 1.298,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.464,
+        "weightedModifiableRangeShare": 0.312
+      },
+      "topSpells": [
+        "Melancholy",
+        "Brandy",
+        "Tipple",
+        "Alcoshu"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-marginal-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 3,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "guard against overvaluing +Range for profiles where it is only situational"
+        }
+      ]
+    },
+    {
+      "className": "Pandawa",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.452,
+        "plus10FlatDamagePct": 1.613,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.801,
+        "weightedModifiableRangeShare": 0.406
+      },
+      "topSpells": [
+        "Liqueur",
+        "Nausea",
+        "Propulsion",
+        "Alcoholic Breath"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Rogue",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.491,
+        "plus10FlatDamagePct": 0.261,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.785,
+        "weightedModifiableRangeShare": 0.045
+      },
+      "topSpells": [
+        "Obliteration",
+        "Musket",
+        "Arquebus",
+        "Bombard"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Rogue",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.294,
+        "plus10FlatDamagePct": 1.817,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.502,
+        "weightedModifiableRangeShare": 0.609
+      },
+      "topSpells": [
+        "Extraction",
+        "Shot Pellets",
+        "Weigh Down",
+        "Pulsar"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Rogue",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.006,
+        "plus10FlatDamagePct": 2.192,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.345,
+        "weightedModifiableRangeShare": 0.118
+      },
+      "topSpells": [
+        "Stolen Goods",
+        "Shrapnel",
+        "Blunderbuss",
+        "Deception"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Rogue",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.087,
+        "plus10FlatDamagePct": 2.087,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.272,
+        "weightedModifiableRangeShare": 0.668
+      },
+      "topSpells": [
+        "Cadence",
+        "Machine Gun",
+        "Boomerang Daggers",
+        "Carbine"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Sacrier",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.473,
+        "plus10FlatDamagePct": 0.285,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.819,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Decimation",
+        "Gash",
+        "Torture",
+        "Ravages"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Sacrier",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.438,
+        "plus10FlatDamagePct": 0.331,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.756,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Excruciating Pain",
+        "Hostility",
+        "Absorption",
+        "Immolation"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Sacrier",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.448,
+        "plus10FlatDamagePct": 0.318,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.763,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Nervousness",
+        "Stase",
+        "Clobbering",
+        "Projection"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Sacrier",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "nearly useless",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.493,
+        "plus10FlatDamagePct": 0.26,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.834,
+        "weightedModifiableRangeShare": 0.0
+      },
+      "topSpells": [
+        "Fury",
+        "Hemorrhage",
+        "Assault",
+        "Carnage"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useless-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 0,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "guard against forcing or over-scoring +Range for profiles where spells do not use it"
+        }
+      ]
+    },
+    {
+      "className": "Sadida",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "marginal",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.472,
+        "plus10FlatDamagePct": 0.286,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.786,
+        "weightedModifiableRangeShare": 0.273
+      },
+      "topSpells": [
+        "Force of Nature",
+        "Bramble",
+        "Aggressive Bramble",
+        "Poisoned Undergrowth"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-marginal-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 3,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "guard against overvaluing +Range for profiles where it is only situational"
+        }
+      ]
+    },
+    {
+      "className": "Sadida",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.077,
+        "plus10FlatDamagePct": 2.1,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.155,
+        "weightedModifiableRangeShare": 0.572
+      },
+      "topSpells": [
+        "Plaguing Bramble",
+        "Bush Fire",
+        "Prickly Embers",
+        "Voodoo Curse"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Sadida",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.713,
+        "plus10FlatDamagePct": 1.273,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.747,
+        "weightedModifiableRangeShare": 0.453
+      },
+      "topSpells": [
+        "Bane",
+        "Mangrove",
+        "Dolly Sacrifice",
+        "Bush Fire"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Sadida",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 6.487,
+        "plus10FlatDamagePct": 1.567,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.533,
+        "weightedModifiableRangeShare": 0.507
+      },
+      "topSpells": [
+        "Inoculation",
+        "Paralysing Bramble",
+        "Contagion",
+        "Shake"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Sram",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "vital",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.651,
+        "plus10FlatDamagePct": 0.053,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.959,
+        "weightedModifiableRangeShare": 0.762
+      },
+      "topSpells": [
+        "Malevolent Trap",
+        "Pitfall",
+        "Lethal Attack",
+        "Lethal Trap"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-vital-stress",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range-heavy stress because spell profile depends strongly on modifiable range"
+        }
+      ]
+    },
+    {
+      "className": "Sram",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "marginal",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.185,
+        "plus10FlatDamagePct": 0.66,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.579,
+        "weightedModifiableRangeShare": 0.215
+      },
+      "topSpells": [
+        "Plotter",
+        "Fragmentation Trap",
+        "Deviousness",
+        "Cut-Throat"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-marginal-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 3,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "guard against overvaluing +Range for profiles where it is only situational"
+        }
+      ]
+    },
+    {
+      "className": "Sram",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.194,
+        "plus10FlatDamagePct": 0.647,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.62,
+        "weightedModifiableRangeShare": 0.419
+      },
+      "topSpells": [
+        "Plotter",
+        "Waylaying",
+        "Miry Trap",
+        "Raiding"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Sram",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.27,
+        "plus10FlatDamagePct": 0.55,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.624,
+        "weightedModifiableRangeShare": 0.407
+      },
+      "topSpells": [
+        "Toxines",
+        "Plotter",
+        "Con",
+        "Epidemic"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Xelor",
+      "element": "strength",
+      "primaryStat": "Strength",
+      "rangeUsefulness": "marginal",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.351,
+        "plus10FlatDamagePct": 0.444,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.616,
+        "weightedModifiableRangeShare": 0.188
+      },
+      "topSpells": [
+        "Knell",
+        "Dark Ray",
+        "Shadowy Beam",
+        "Souvenir"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-marginal-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 3,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "guard against overvaluing +Range for profiles where it is only situational"
+        }
+      ]
+    },
+    {
+      "className": "Xelor",
+      "element": "intelligence",
+      "primaryStat": "Intelligence",
+      "rangeUsefulness": "useful",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.388,
+        "plus10FlatDamagePct": 0.395,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.663,
+        "weightedModifiableRangeShare": 0.408
+      },
+      "topSpells": [
+        "Knell",
+        "Temporal Dust",
+        "Temporal Suspension",
+        "Xelor's Sandglass"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-useful-stress",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 5,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "+Range tradeoff row; range should matter but not dominate damage/survivability"
+        }
+      ]
+    },
+    {
+      "className": "Xelor",
+      "element": "chance",
+      "primaryStat": "Chance",
+      "rangeUsefulness": "marginal",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.384,
+        "plus10FlatDamagePct": 0.4,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.705,
+        "weightedModifiableRangeShare": 0.224
+      },
+      "topSpells": [
+        "Knell",
+        "Time Theft",
+        "Clock",
+        "Petrification"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-marginal-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 3,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "guard against overvaluing +Range for profiles where it is only situational"
+        }
+      ]
+    },
+    {
+      "className": "Xelor",
+      "element": "agility",
+      "primaryStat": "Agility",
+      "rangeUsefulness": "marginal",
+      "damageProfileConfidence": "medium",
+      "damageSensitivity": {
+        "plus100PrimaryPct": 7.365,
+        "plus10FlatDamagePct": 0.426,
+        "plus10SpellDamagePct": 10.0,
+        "weightedHighBaseDamageShare": 0.943,
+        "weightedModifiableRangeShare": 0.248
+      },
+      "topSpells": [
+        "Knell",
+        "Drying Up",
+        "Shrivelling",
+        "Pendulum"
+      ],
+      "cornerQueries": [
+        {
+          "name": "opti-baseline",
+          "level": 200,
+          "budgetTier": 4,
+          "exoPolicy": "opti",
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "purpose": "primary level-200 all-class quality row across the four damage/survivability presets"
+        },
+        {
+          "name": "budget-baseline",
+          "level": 200,
+          "budgetTier": 1,
+          "exoPolicy": "none",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2,
+            3
+          ],
+          "purpose": "budget accessibility row; should allow cumulative prior-tier items and trophies"
+        },
+        {
+          "name": "low-action-validity-edge",
+          "level": 200,
+          "budgetTier": 2,
+          "exoPolicy": "allow",
+          "apTarget": 7,
+          "mpTarget": 3,
+          "rangeTarget": null,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "validity edge only; level-200 player-realism warning expected below 10/5"
+        },
+        {
+          "name": "range-marginal-check",
+          "level": 200,
+          "budgetTier": 3,
+          "exoPolicy": "allow",
+          "apTarget": 11,
+          "mpTarget": 6,
+          "rangeTarget": 3,
+          "damageSurvivabilityPresets": [
+            2
+          ],
+          "purpose": "guard against overvaluing +Range for profiles where it is only situational"
+        }
+      ]
+    }
+  ]
+}

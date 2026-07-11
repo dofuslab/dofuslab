@@ -6867,3 +6867,20 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   summons, turrets, portals, bombs, AoE value, utility, class states, setup
   turns, or variant exclusivity. Some classes show suspicious huge base-damage
   rows and need class review before production scoring uses these weights.
+
+### 2026-07-11 All-Class Pre-Optimization Smoke Plan
+
+- Added a concrete smoke matrix for expanding Milestone 2 from Iop-only to all
+  level-200 class/element pairs before optimization work.
+- Artifacts:
+  - `.codex/state/build-discovery-all-class-preopt-smoke-plan-20260711.json`
+  - `.codex/state/build-discovery-all-class-preopt-smoke-plan-20260711.md`
+- Coverage: `76` class/element profiles across `19` classes.
+- Fully expanded row count: `674` solver rows if every listed
+  damage/survivability preset is run.
+- Current blocker: the solver is not truly all-class yet. `BuildDiscoveryQuery`
+  still rejects non-Iop classes, and CP-SAT currently configures damage by
+  element through the Iop-era profile path.
+- Next implementation step: wire class/element spell profiles into scoring,
+  cache/provenance identity, diagnostics, and +Range soft valuation before any
+  non-Iop generation result can be considered product evidence.

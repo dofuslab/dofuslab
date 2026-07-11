@@ -499,6 +499,19 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   should be suppressed so AP/MP reduction and parry are not double-counted when
   those explicit stats are present.
 - Level Diversity needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket broadly.
+- All-class Milestone 2 should begin with a bounded level-200 smoke matrix, not
+  a full cache-fill. Current planned coverage is `76` class/element profiles
+  with baseline opti, budget, low-action validity, and range-stress rows.
+- Non-Iop generation must remain unsupported until class/element spell profiles
+  drive scoring and diagnostics. A non-Iop query must not silently reuse Iop
+  spell scoring or generic Iop-era rotation assumptions.
+- Spell-derived damage profiles are currently rotation-lite for all classes
+  except reviewed Strength Iop. They can seed stat weights and review evidence,
+  but product output should expose profile confidence until each class/element
+  is reviewed or benchmarked.
+- When `rangeTarget` is omitted, +Range should be scored as a soft stat using
+  the class/element spell profile. When `rangeTarget` is explicit, it remains a
+  hard constraint.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.
 - Fashionista links are currently manual comparison references, not automatically parsed/scored.
