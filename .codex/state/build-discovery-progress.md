@@ -7120,11 +7120,11 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     (`5` sets), but Ebony was `0/5` while Crimson was `3/5`.
 - Rejected an Ebony-specific penalty. The real scoring smell was generic PvM
   utility: `40 Dodge` was worth more than `80 Power` in the `final-linear`
-  CP-SAT objective. Lowered generic PvM `Dodge` from `1.0` to `0.25` and
-  `Lock` from `0.5` to `0.15`, keeping Dodge above Lock while making major
-  damage stats beat Ebony-style Dodge filler.
-  - Regression: `80 Power` now beats `40 Dodge` in both prototype stat scoring
-    and CP-SAT `final-linear` marginal scoring.
+  CP-SAT objective. Set generic PvM `Dodge` to `0.4`, so `40 Dodge` is roughly
+  comparable to `40 Power` in `final-linear` scoring, and lowered `Lock` from
+  `0.5` to `0.15`.
+  - Regression: CP-SAT `final-linear` scoring now treats `40 Dodge` roughly
+    like `40 Power`, while `80 Power` still beats `40 Dodge`.
   - Docker smoke, level 200 Chance Enutrof 12/6/None opti balanced after this
     change: top Dofus/Trophy slots became Cloudy, Crimson, Ice, Ochre,
     Arcanist, Major Tease; Ebony and mid-tier Tease dropped out.

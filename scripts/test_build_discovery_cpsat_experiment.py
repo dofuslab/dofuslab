@@ -74,7 +74,7 @@ class BuildDiscoveryCpsatExperimentTest(unittest.TestCase):
 
         self.assertAlmostEqual(weights["Chance"], weights["Power"])
 
-    def test_final_linear_objective_values_major_power_above_ebony_dodge(self):
+    def test_final_linear_objective_values_dodge_like_power_for_generic_pvm(self):
         metadata = cpsat.ModelMetadata(
             candidates_by_slot={},
             item_by_id={},
@@ -90,12 +90,13 @@ class BuildDiscoveryCpsatExperimentTest(unittest.TestCase):
             weights = cpsat.objective_weights_for_mode(
                 "final-linear",
                 metadata,
-                generic_damage_weight=0.45,
+                generic_damage_weight=0.25,
             )
         finally:
             configure_damage_profile("strength", "Iop")
 
         self.assertGreater(weights["Power"] * 80, weights["Dodge"] * 40)
+        self.assertAlmostEqual(weights["Power"] * 40, weights["Dodge"] * 40, delta=1.0)
 
     def test_final_linear_objective_preserves_dodge_above_lock(self):
         metadata = cpsat.ModelMetadata(
