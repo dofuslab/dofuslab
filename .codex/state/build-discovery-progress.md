@@ -5843,3 +5843,56 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-m2-preset-corners.json --target-set milestone2-level200 --elements strength,intelligence,chance,agility --damage-survivability-presets 1,4 --budget-tiers 1,4 --ap-targets 7,12 --mp-targets 3,6 --range-targets none,6 --expected-solver cpsat`
   - Host: `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m2-preset-corners.json --target-set milestone2-level200 --elements strength,intelligence,chance,agility --damage-survivability-presets 1,4 --budget-tiers 1,4 --ap-targets 7,12 --mp-targets 3,6 --range-targets none,6 --expected-solver cpsat`
+
+### 2026-07-11 Milestone 3 Prod Sampling and Base Allocation Fix
+
+- Confirmed the Windows User environment variable
+  `DOFUSLAB_READONLY_DATABASE_URL` is visible and can be passed into Docker
+  without printing the URL.
+- Prod helper preflight passed inside Docker:
+  - readonly DB URL present
+  - SQLAlchemy available
+  - preflight opens no database connection
+  - helper output is aggregate-only and omits custom set IDs/names/users
+- A global `sample-limit=300` prod read hit the 5s statement timeout, so it was
+  abandoned without increasing load.
+- Generated bounded aggregate prod artifacts:
+  - `.codex/state/build-discovery-prod-level-targets-100-20260711.json`
+  - `.codex/state/build-discovery-prod-level-targets-by-bucket-20260711/`
+  - `.codex/state/build-discovery-m3-prod-target-plan.md`
+- Prod sampling finding:
+  - global recent Iop sample is strongly level-200 skewed
+  - per-bucket reads give better all-level target shapes
+  - prod includes some shapes outside the query contract, such as AP below
+    baseline, negative Range, and Range above `6`; these should inform
+    `Range=None` and high-range rows, not expand the valid target bounds
+- Ran current `prod-level-sample` target set with CP-SAT:
+  - before the fix, the checker caught generated sub-200 rows spending the
+    level-200 characteristic budget (`992` points)
+  - root cause: CP-SAT reconstruction called shared base-allocation helpers
+    without an active target-level context, so helpers used `ACTIVE_TARGET_LEVEL`
+    (`200`)
+- Fixed base allocation:
+  - `base_stats_for_primary_allocation`, `state_with_base_allocation`, and
+    `optimize_base_allocation` now accept an explicit `target_level`
+  - CP-SAT reconstruction passes `target.level`
+  - prototype behavior remains context-compatible
+- Added focused regression coverage:
+  - `test_base_allocation_can_use_explicit_target_level`
+  - patched a stale CLI test fixture to include `damage_survivability_preset`
+- Reran current `prod-level-sample` after the fix:
+  - artifact: `.codex/state/build-discovery-m3-prod-level-sample-fixed-base.json`
+  - targets: `24`
+  - generated: `19`
+  - no build: `5`
+  - invalid: `0`
+  - checker now fails only on no-build rows, not illegal base allocation
+- Remaining no-build rows:
+  - `prod_regen_level_1_strength_6_3_none_budget1`
+  - `prod_regen_level_20_intelligence_7_4_1_budget3`
+  - `prod_regen_level_40_chance_7_3_none_budget1`
+  - `prod_regen_level_50_agility_7_3_1_budget1`
+  - `prod_regen_level_120_chance_11_5_none_budget2`
+- Verification passed:
+  - `python server/scripts/test_build_discovery_query_contract.py`
+  - `python -m py_compile server/oneoff/build_discovery_prototype.py server/oneoff/build_discovery_cpsat_experiment.py server/scripts/test_build_discovery_query_contract.py`

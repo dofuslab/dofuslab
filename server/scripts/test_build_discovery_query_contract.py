@@ -20,6 +20,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     DEFAULT_AP_STRATEGIES,
     BuildTarget,
     active_profile_item_score,
+    base_stats_for_primary_allocation,
     build_query_from_cli_args,
     build_discovery_response,
     base_ap_for_level,
@@ -50,6 +51,16 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         self.assertEqual(base_ap_for_level(99), 6)
         self.assertEqual(base_ap_for_level(100), 7)
         self.assertEqual(base_ap_for_level(200), 7)
+
+    def test_base_allocation_can_use_explicit_target_level(self):
+        with target_level_context(200):
+            stats = base_stats_for_primary_allocation(100, "Strength", target_level=50)
+
+        self.assertEqual(stats["Strength"], 200)
+        self.assertEqual(stats["Vitality"], 245)
+        with target_level_context(200):
+            with self.assertRaisesRegex(ValueError, "exceeds available points"):
+                base_stats_for_primary_allocation(300, "Strength", target_level=50)
 
     def test_level_200_milestone_one_action_stat_bounds_are_supported(self):
         lower = BuildDiscoveryQuery(
@@ -186,6 +197,7 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
             per_signature_cap=10,
             relevant_set_limit=40,
             max_shared_items=12,
+            damage_survivability_preset=3,
             generic_damage_weight=0.4,
             weapon_damage_weight=0.1,
         )

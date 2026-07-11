@@ -858,6 +858,7 @@ def reconstruct_state(
             generic_damage_weight=generic_damage_weight,
             survivability_weight=survivability_weight,
             negative_resistance_penalty_weight=negative_resistance_penalty_weight,
+            target_level=target.level,
         )
     except RuntimeError as exc:
         return None, {

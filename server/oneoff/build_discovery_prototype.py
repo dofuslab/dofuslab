@@ -2892,15 +2892,20 @@ def legal_base_allocation_options(level: int) -> tuple[int, ...]:
     return tuple(sorted(options))
 
 
-def base_stats_for_primary_allocation(base_points: int, primary_stat: str | None = None) -> dict[str, int]:
+def base_stats_for_primary_allocation(
+    base_points: int,
+    primary_stat: str | None = None,
+    target_level: int | None = None,
+) -> dict[str, int]:
     primary_stat = primary_stat or ACTIVE_DAMAGE_PROFILE.primary_stat
+    level = target_level if target_level is not None else ACTIVE_TARGET_LEVEL
     cost = characteristic_point_cost(base_points)
-    available_points = characteristic_points_for_level(ACTIVE_TARGET_LEVEL)
+    available_points = characteristic_points_for_level(level)
     if cost > available_points:
         raise ValueError(f"Base {primary_stat} allocation exceeds available points: {base_points}")
     base_vitality = available_points - cost
     allocated_stats = {
-        **active_base_stats(),
+        **base_stats_for_level(level),
         **{stat: SCROLLED_BASE_STAT for stat in PRIMARY_STAT_NAMES},
     }
     return {
@@ -2918,16 +2923,18 @@ def state_with_base_allocation(
     state: BuildState,
     base_points: int,
     primary_stat: str | None = None,
+    target_level: int | None = None,
 ) -> BuildState:
     primary_stat = primary_stat or ACTIVE_DAMAGE_PROFILE.primary_stat
-    allocated_base_stats = base_stats_for_primary_allocation(base_points, primary_stat)
+    level = target_level if target_level is not None else ACTIVE_TARGET_LEVEL
+    allocated_base_stats = base_stats_for_primary_allocation(base_points, primary_stat, level)
     next_state = state.clone()
     next_state.base_allocation = {
         primary_stat: base_points,
         "Vitality": allocated_base_stats["Vitality"] - SCROLLED_BASE_STAT,
     }
     for stat, allocated_value in allocated_base_stats.items():
-        current_base_value = active_base_stats().get(stat, 0)
+        current_base_value = base_stats_for_level(level).get(stat, 0)
         next_state.stats[stat] = next_state.stats.get(stat, 0) - current_base_value + allocated_value
     return next_state
 
@@ -2939,11 +2946,13 @@ def optimize_base_allocation(
     survivability_weight: float = 1.0,
     negative_resistance_penalty_weight: float = 0.0,
     primary_stat: str | None = None,
+    target_level: int | None = None,
 ) -> BuildState:
     primary_stat = primary_stat or ACTIVE_DAMAGE_PROFILE.primary_stat
+    level = target_level if target_level is not None else ACTIVE_TARGET_LEVEL
     best_state: BuildState | None = None
-    for base_points in legal_base_allocation_options(ACTIVE_TARGET_LEVEL):
-        allocated_state = state_with_base_allocation(state, base_points, primary_stat)
+    for base_points in legal_base_allocation_options(level):
+        allocated_state = state_with_base_allocation(state, base_points, primary_stat, level)
         if unmet_item_conditions(allocated_state):
             continue
         allocated_state.score = final_score_state(

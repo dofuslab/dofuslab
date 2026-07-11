@@ -1,0 +1,284 @@
+{
+  "reportVersion": "build-discovery-prod-level-target-discovery-v1",
+  "source": "prod_readonly_recent_custom_set_level_target_sample",
+  "assumptions": [
+    "AP includes level baseline AP, equipped item AP, exos, and exact active set bonus AP.",
+    "MP includes base 3 MP, equipped item MP, exos, and exact active set bonus MP.",
+    "Range includes equipped item Range, exos, and exact active set bonus Range.",
+    "Rows are recent custom_set records, not popularity-weighted usage.",
+    "Report output is aggregate-only and intentionally omits custom set IDs, names, and owners."
+  ],
+  "limits": {
+    "sampleLimit": 25,
+    "topTargets": 6,
+    "locale": "en",
+    "className": "Iop",
+    "minLevel": 161,
+    "maxLevel": 180,
+    "bucketSize": 20,
+    "statementTimeoutMs": 5000
+  },
+  "rowCount": 25,
+  "bucketTargets": [
+    {
+      "bucket": "161-180",
+      "representativeLevel": 180,
+      "sampleCount": 25,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 3
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 0,
+          "sampleCount": 3
+        },
+        {
+          "ap": 12,
+          "mp": 6,
+          "range": 2,
+          "sampleCount": 2
+        },
+        {
+          "ap": 11,
+          "mp": 5,
+          "range": 3,
+          "sampleCount": 2
+        },
+        {
+          "ap": 11,
+          "mp": 6,
+          "range": 2,
+          "sampleCount": 2
+        },
+        {
+          "ap": 11,
+          "mp": 6,
+          "range": 3,
+          "sampleCount": 2
+        }
+      ]
+    }
+  ],
+  "exactLevelTargets": [
+    {
+      "level": 161,
+      "sampleCount": 2,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 6,
+          "range": -1,
+          "sampleCount": 1
+        },
+        {
+          "ap": 11,
+          "mp": 5,
+          "range": -3,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 162,
+      "sampleCount": 2,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 10,
+          "mp": 4,
+          "range": 5,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 0,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 164,
+      "sampleCount": 2,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 8,
+          "mp": 4,
+          "range": -2,
+          "sampleCount": 1
+        },
+        {
+          "ap": 11,
+          "mp": 5,
+          "range": 3,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 165,
+      "sampleCount": 2,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 4,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 167,
+      "sampleCount": 2,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 0,
+          "sampleCount": 2
+        }
+      ]
+    },
+    {
+      "level": 168,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 6,
+          "range": 2,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 170,
+      "sampleCount": 4,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 10,
+          "mp": 5,
+          "range": 4,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 5,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        },
+        {
+          "ap": 11,
+          "mp": 6,
+          "range": 3,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 175,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 2,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 177,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 11,
+          "mp": 5,
+          "range": 3,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 178,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 11,
+          "mp": 6,
+          "range": 3,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 180,
+      "sampleCount": 7,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 11,
+          "mp": 6,
+          "range": 2,
+          "sampleCount": 2
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 3,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        },
+        {
+          "ap": 11,
+          "mp": 4,
+          "range": 3,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 6,
+          "range": 3,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 6,
+          "range": 2,
+          "sampleCount": 1
+        }
+      ]
+    }
+  ]
+}
