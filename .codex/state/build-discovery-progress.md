@@ -6665,3 +6665,25 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - the simplistic smoke classifier can let +Range dominate melee weapon
     signals; the real classifier needs reviewed thresholds before defaults are
     trusted
+
+### 2026-07-11 Prod Combat Range 100-Row Known-Class Sample
+
+- Ran a bounded readonly prod sample over `100` complete level `200` builds
+  modified since `2025-07-11`, requiring a known/default class.
+- Query was split into a recent complete-build ID read plus scoped stat,
+  weapon, and tag reads for those IDs to stay light on prod.
+- Artifacts:
+  - `.codex/state/build-discovery-prod-combat-range-known-class-100-20260711.json`
+  - `.codex/state/build-discovery-prod-combat-range-known-class-100-20260711.md`
+- Class distribution includes `Cra=21`, `Enutrof=13`, `Iop=10`, `Feca=8`,
+  `Sram=7`, `Foggernaut=6`, `Pandawa=6`, plus smaller samples from other
+  classes.
+- Element classifier distribution: `multi=38`, `omni=24`, `intelligence=14`,
+  `chance=10`, `agility=8`, `strength=6`.
+- Combat range classifier distribution with +Range intentionally weak:
+  `melee=58`, `ranged=42`.
+- +Range does not strongly separate inferred combat range in this sample:
+  melee avg Range `3.17`, ranged avg Range `2.98`; both groups include
+  high-Range and low/negative-Range rows.
+- Caveat: prod does not yet have `generation_request`, so generated rows cannot
+  be excluded by provenance.
