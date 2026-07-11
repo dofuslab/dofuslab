@@ -7110,3 +7110,21 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker smoke, level 200 Chance Enutrof 12/6/None opti balanced:
     top Dofus/Trophy slots became Cloudy, Ebony, Ice, Ochre, Arcanist,
     Major Luckster; the earlier Tease/Major Tease stack disappeared.
+- Checked recent prod level-200 complete builds for Dofus usage using a bounded
+  1,000-set sample from the past year:
+  - Ebony Dofus appeared in `61/1000` (`6.1%`).
+  - Crimson Dofus appeared in `732/1000` (`73.2%`).
+  - Ice Dofus appeared in `588/1000` (`58.8%`).
+  - Ochre Dofus appeared in `663/1000` (`66.3%`).
+  - The recent Opti-tagged subset was too small for strong conclusions
+    (`5` sets), but Ebony was `0/5` while Crimson was `3/5`.
+- Rejected an Ebony-specific penalty. The real scoring smell was generic PvM
+  utility: `40 Dodge` was worth more than `80 Power` in the `final-linear`
+  CP-SAT objective. Lowered generic PvM `Dodge` from `1.0` to `0.25` and
+  `Lock` from `0.5` to `0.15`, keeping Dodge above Lock while making major
+  damage stats beat Ebony-style Dodge filler.
+  - Regression: `80 Power` now beats `40 Dodge` in both prototype stat scoring
+    and CP-SAT `final-linear` marginal scoring.
+  - Docker smoke, level 200 Chance Enutrof 12/6/None opti balanced after this
+    change: top Dofus/Trophy slots became Cloudy, Crimson, Ice, Ochre,
+    Arcanist, Major Tease; Ebony and mid-tier Tease dropped out.

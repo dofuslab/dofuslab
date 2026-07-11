@@ -1037,6 +1037,16 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             build_discovery_prototype.STAT_WEIGHTS["Lock"],
         )
 
+    def test_major_power_is_valued_above_ebony_dodge_for_generic_pvm(self):
+        build_discovery_prototype.configure_damage_profile("chance", "Enutrof")
+        try:
+            self.assertGreater(
+                score_stats({"Power": 80}),
+                score_stats({"Dodge": 40}),
+            )
+        finally:
+            build_discovery_prototype.configure_damage_profile("strength", "Iop")
+
     def test_generic_pvm_pushback_exposure_is_low(self):
         self.assertLess(build_discovery_prototype.GENERIC_INCOMING_PUSHBACK_RATE, 0.05)
 

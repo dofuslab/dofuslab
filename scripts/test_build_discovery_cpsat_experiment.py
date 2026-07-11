@@ -74,6 +74,48 @@ class BuildDiscoveryCpsatExperimentTest(unittest.TestCase):
 
         self.assertAlmostEqual(weights["Chance"], weights["Power"])
 
+    def test_final_linear_objective_values_major_power_above_ebony_dodge(self):
+        metadata = cpsat.ModelMetadata(
+            candidates_by_slot={},
+            item_by_id={},
+            group_rings=False,
+            selected_set_ids=set(),
+            max_set_counts={},
+            set_bonus_by_id={},
+            item_objective_stats_by_id={"item": {"Power": 80, "Dodge": 40}},
+        )
+
+        configure_damage_profile("chance", "Enutrof")
+        try:
+            weights = cpsat.objective_weights_for_mode(
+                "final-linear",
+                metadata,
+                generic_damage_weight=0.45,
+            )
+        finally:
+            configure_damage_profile("strength", "Iop")
+
+        self.assertGreater(weights["Power"] * 80, weights["Dodge"] * 40)
+
+    def test_final_linear_objective_preserves_dodge_above_lock(self):
+        metadata = cpsat.ModelMetadata(
+            candidates_by_slot={},
+            item_by_id={},
+            group_rings=False,
+            selected_set_ids=set(),
+            max_set_counts={},
+            set_bonus_by_id={},
+            item_objective_stats_by_id={"item": {"Dodge": 1, "Lock": 1}},
+        )
+
+        weights = cpsat.objective_weights_for_mode(
+            "final-linear",
+            metadata,
+            generic_damage_weight=0.45,
+        )
+
+        self.assertGreater(weights["Dodge"], weights["Lock"])
+
     def test_active_profile_totals_include_non_strength_damage_stats(self):
         configure_damage_profile("chance", "Enutrof")
         state = BuildState(
