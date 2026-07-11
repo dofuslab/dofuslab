@@ -41,6 +41,7 @@ DEFAULT_ARTIFACTS = (
     ".codex/state/build-discovery-prod-level-sample-multicandidate-smoke.json",
     ".codex/state/build-discovery-ap-mp-range-frontier-001-matrix.json",
     ".codex/state/build-discovery-ap-mp-range-frontier-002-matrix.json",
+    ".codex/state/build-discovery-ap-mp-range-frontier-003-matrix.json",
 )
 
 

@@ -1,0 +1,930 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T04:14:37.206543+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-ap-mp-range-frontier-003-targets.json#nextUnprovenTargets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "grid_frontier_003_level_120_chance_7_3_none_budget2",
+        "className": "Iop",
+        "level": 120,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 120,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 1434.13,
+        "weightedStatScore": 2680.04,
+        "utilityStatScore": 236.56,
+        "genericDamageScore": 2561.13,
+        "rawRotationDamageScore": 1413.25,
+        "spellDamageScore": 1413.25,
+        "profileBaselineDamageScore": 1655.42,
+        "profileRelativeDamage": 0.8537,
+        "weaponDamageScore": 140.65,
+        "survivabilityScore": 45.06,
+        "weakestElementEhp": 1417.08,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Chance": 298,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 0,
+          "Chance": 1118,
+          "Power": 90,
+          "Vitality": 1351,
+          "Damage": 19,
+          "Water Damage": 37,
+          "Critical": 33,
+          "Critical Damage": 64
+        },
+        "sets": {
+          "Naganita Set": 3,
+          "Cauldini Set": 2,
+          "Ancestral Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "33587",
+            "internalId": null,
+            "name": "Naganita Necklace",
+            "type": "Amulet",
+            "level": 107,
+            "set": "Naganita Set"
+          },
+          "weapon": {
+            "id": "33588",
+            "internalId": null,
+            "name": "Naganita Naginata",
+            "type": "Lance",
+            "level": 109,
+            "set": "Naganita Set"
+          },
+          "cloak": {
+            "id": "33586",
+            "internalId": null,
+            "name": "Naganita Cape",
+            "type": "Cloak",
+            "level": 105,
+            "set": "Naganita Set"
+          },
+          "belt": {
+            "id": "8468",
+            "internalId": null,
+            "name": "Ancestral Treebelt",
+            "type": "Belt",
+            "level": 111,
+            "set": "Ancestral Set"
+          },
+          "shield": {
+            "id": "19084",
+            "internalId": null,
+            "name": "Cauldini Shield",
+            "type": "Shield",
+            "level": 90,
+            "set": "Cauldini Set"
+          },
+          "ring_1": {
+            "id": "8466",
+            "internalId": null,
+            "name": "Ancestral Ring",
+            "type": "Ring",
+            "level": 113,
+            "set": "Ancestral Set"
+          },
+          "ring_2": {
+            "id": "8865",
+            "internalId": null,
+            "name": "Snailmet Ring",
+            "type": "Ring",
+            "level": 115,
+            "set": "Sloppy Set"
+          },
+          "boots": {
+            "id": "19085",
+            "internalId": null,
+            "name": "Cauldini Boots",
+            "type": "Boots",
+            "level": 92,
+            "set": "Cauldini Set"
+          },
+          "hat": {
+            "id": "8463",
+            "internalId": null,
+            "name": "Ancestral Treechelmet",
+            "type": "Hat",
+            "level": 114,
+            "set": "Ancestral Set"
+          },
+          "pet": {
+            "id": "7708",
+            "internalId": null,
+            "name": "Blue Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13782",
+            "internalId": null,
+            "name": "Water Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12715",
+            "internalId": null,
+            "name": "Player",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13767",
+            "internalId": null,
+            "name": "Tease",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1434.13,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 0,
+          "Chance": 1118,
+          "Power": 90,
+          "Vitality": 1351,
+          "Damage": 19,
+          "Water Damage": 37,
+          "Critical": 33,
+          "Critical Damage": 64
+        },
+        "sets": {
+          "Naganita Set": 3,
+          "Cauldini Set": 2,
+          "Ancestral Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Naganita Necklace",
+          "Ancestral Treebelt",
+          "Naganita Naginata",
+          "Cauldini Shield",
+          "Ancestral Ring",
+          "Snailmet Ring",
+          "Cauldini Boots",
+          "Ancestral Treechelmet",
+          "Naganita Cape",
+          "Blue Piwin",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Water Wrecker",
+          "Player",
+          "Tease"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 1434.13,
+          "weightedStatScore": 2680.04,
+          "utilityStatScore": 236.56,
+          "genericDamageScore": 2561.13,
+          "rawRotationDamageScore": 1413.25,
+          "spellDamageScore": 1413.25,
+          "profileBaselineDamageScore": 1655.42,
+          "profileRelativeDamage": 0.8537,
+          "weaponDamageScore": 140.65,
+          "survivabilityScore": 45.06,
+          "weakestElementEhp": 1417.08,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Chance": 298,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 4,
+            "Range": 0,
+            "Chance": 1118,
+            "Power": 90,
+            "Vitality": 1351,
+            "Damage": 19,
+            "Water Damage": 37,
+            "Critical": 33,
+            "Critical Damage": 64
+          },
+          "sets": {
+            "Naganita Set": 3,
+            "Cauldini Set": 2,
+            "Ancestral Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "33587",
+              "internalId": null,
+              "name": "Naganita Necklace",
+              "type": "Amulet",
+              "level": 107,
+              "set": "Naganita Set"
+            },
+            "weapon": {
+              "id": "33588",
+              "internalId": null,
+              "name": "Naganita Naginata",
+              "type": "Lance",
+              "level": 109,
+              "set": "Naganita Set"
+            },
+            "cloak": {
+              "id": "33586",
+              "internalId": null,
+              "name": "Naganita Cape",
+              "type": "Cloak",
+              "level": 105,
+              "set": "Naganita Set"
+            },
+            "belt": {
+              "id": "8468",
+              "internalId": null,
+              "name": "Ancestral Treebelt",
+              "type": "Belt",
+              "level": 111,
+              "set": "Ancestral Set"
+            },
+            "shield": {
+              "id": "19084",
+              "internalId": null,
+              "name": "Cauldini Shield",
+              "type": "Shield",
+              "level": 90,
+              "set": "Cauldini Set"
+            },
+            "ring_1": {
+              "id": "8466",
+              "internalId": null,
+              "name": "Ancestral Ring",
+              "type": "Ring",
+              "level": 113,
+              "set": "Ancestral Set"
+            },
+            "ring_2": {
+              "id": "8865",
+              "internalId": null,
+              "name": "Snailmet Ring",
+              "type": "Ring",
+              "level": 115,
+              "set": "Sloppy Set"
+            },
+            "boots": {
+              "id": "19085",
+              "internalId": null,
+              "name": "Cauldini Boots",
+              "type": "Boots",
+              "level": 92,
+              "set": "Cauldini Set"
+            },
+            "hat": {
+              "id": "8463",
+              "internalId": null,
+              "name": "Ancestral Treechelmet",
+              "type": "Hat",
+              "level": 114,
+              "set": "Ancestral Set"
+            },
+            "pet": {
+              "id": "7708",
+              "internalId": null,
+              "name": "Blue Piwin",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "737",
+              "internalId": null,
+              "name": "Emerald Dofus",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13782",
+              "internalId": null,
+              "name": "Water Wrecker",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "12715",
+              "internalId": null,
+              "name": "Player",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13767",
+              "internalId": null,
+              "name": "Tease",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 1431.29,
+          "weightedStatScore": 2658.95,
+          "utilityStatScore": 252.65,
+          "genericDamageScore": 2475.06,
+          "rawRotationDamageScore": 1365.75,
+          "spellDamageScore": 1365.75,
+          "profileBaselineDamageScore": 1655.42,
+          "profileRelativeDamage": 0.825,
+          "weaponDamageScore": 129.09,
+          "survivabilityScore": 64.87,
+          "weakestElementEhp": 2057.37,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Chance": 298,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 6,
+            "Range": 2,
+            "Chance": 1063,
+            "Power": 230,
+            "Vitality": 1921,
+            "Damage": 6,
+            "Water Damage": 31,
+            "Critical": 31,
+            "Critical Damage": 15
+          },
+          "sets": {
+            "Naganita Set": 2,
+            "Khardboard Set": 3,
+            "Minotoror Set": 2,
+            "Ancestral Set": 2
+          },
+          "exos": {},
+          "items": {
+            "shield": {
+              "id": "27280",
+              "internalId": null,
+              "name": "Khardboard Bowisse's Shield",
+              "type": "Shield",
+              "level": 100,
+              "set": "Khardboard Set"
+            },
+            "hat": {
+              "id": "27282",
+              "internalId": null,
+              "name": "Khardboard Gobball Headgear",
+              "type": "Hat",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "cloak": {
+              "id": "27267",
+              "internalId": null,
+              "name": "Khardboard Dazzling Cloak",
+              "type": "Cloak",
+              "level": 75,
+              "set": "Khardboard Set"
+            },
+            "amulet": {
+              "id": "33587",
+              "internalId": null,
+              "name": "Naganita Necklace",
+              "type": "Amulet",
+              "level": 107,
+              "set": "Naganita Set"
+            },
+            "belt": {
+              "id": "8468",
+              "internalId": null,
+              "name": "Ancestral Treebelt",
+              "type": "Belt",
+              "level": 111,
+              "set": "Ancestral Set"
+            },
+            "weapon": {
+              "id": "33588",
+              "internalId": null,
+              "name": "Naganita Naginata",
+              "type": "Lance",
+              "level": 109,
+              "set": "Naganita Set"
+            },
+            "ring_1": {
+              "id": "8466",
+              "internalId": null,
+              "name": "Ancestral Ring",
+              "type": "Ring",
+              "level": 113,
+              "set": "Ancestral Set"
+            },
+            "ring_2": {
+              "id": "8269",
+              "internalId": null,
+              "name": "Minotoror Ring",
+              "type": "Ring",
+              "level": 112,
+              "set": "Minotoror Set"
+            },
+            "boots": {
+              "id": "8276",
+              "internalId": null,
+              "name": "Minotoror Boots",
+              "type": "Boots",
+              "level": 113,
+              "set": "Minotoror Set"
+            },
+            "pet": {
+              "id": "33037",
+              "internalId": null,
+              "name": "Indigo and Ivory Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "737",
+              "internalId": null,
+              "name": "Emerald Dofus",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13782",
+              "internalId": null,
+              "name": "Water Wrecker",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "12715",
+              "internalId": null,
+              "name": "Player",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13767",
+              "internalId": null,
+              "name": "Tease",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 1361.68,
+          "weightedStatScore": 2648.54,
+          "utilityStatScore": 241.06,
+          "genericDamageScore": 2368.42,
+          "rawRotationDamageScore": 1306.91,
+          "spellDamageScore": 1306.91,
+          "profileBaselineDamageScore": 1655.42,
+          "profileRelativeDamage": 0.7895,
+          "weaponDamageScore": 68.47,
+          "survivabilityScore": 54.83,
+          "weakestElementEhp": 1728.59,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Chance": 298,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 6,
+            "Range": 2,
+            "Chance": 978,
+            "Power": 180,
+            "Vitality": 1631,
+            "Damage": 17,
+            "Water Damage": 21,
+            "Critical": 28,
+            "Critical Damage": 70
+          },
+          "sets": {
+            "Khardboard Set": 3,
+            "Minotoror Set": 2,
+            "Ancestral Set": 2
+          },
+          "exos": {},
+          "items": {
+            "shield": {
+              "id": "27280",
+              "internalId": null,
+              "name": "Khardboard Bowisse's Shield",
+              "type": "Shield",
+              "level": 100,
+              "set": "Khardboard Set"
+            },
+            "hat": {
+              "id": "27282",
+              "internalId": null,
+              "name": "Khardboard Gobball Headgear",
+              "type": "Hat",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "cloak": {
+              "id": "27267",
+              "internalId": null,
+              "name": "Khardboard Dazzling Cloak",
+              "type": "Cloak",
+              "level": 75,
+              "set": "Khardboard Set"
+            },
+            "amulet": {
+              "id": "8268",
+              "internalId": null,
+              "name": "Minotoror Necklace",
+              "type": "Amulet",
+              "level": 111,
+              "set": "Minotoror Set"
+            },
+            "belt": {
+              "id": "8468",
+              "internalId": null,
+              "name": "Ancestral Treebelt",
+              "type": "Belt",
+              "level": 111,
+              "set": "Ancestral Set"
+            },
+            "weapon": {
+              "id": "4382",
+              "internalId": null,
+              "name": "Tyse Pick",
+              "type": "Sword",
+              "level": 85,
+              "set": null
+            },
+            "ring_1": {
+              "id": "8466",
+              "internalId": null,
+              "name": "Ancestral Ring",
+              "type": "Ring",
+              "level": 113,
+              "set": "Ancestral Set"
+            },
+            "ring_2": {
+              "id": "8865",
+              "internalId": null,
+              "name": "Snailmet Ring",
+              "type": "Ring",
+              "level": 115,
+              "set": "Sloppy Set"
+            },
+            "boots": {
+              "id": "8276",
+              "internalId": null,
+              "name": "Minotoror Boots",
+              "type": "Boots",
+              "level": 113,
+              "set": "Minotoror Set"
+            },
+            "pet": {
+              "id": "7708",
+              "internalId": null,
+              "name": "Blue Piwin",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "737",
+              "internalId": null,
+              "name": "Emerald Dofus",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13782",
+              "internalId": null,
+              "name": "Water Wrecker",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "12689",
+              "internalId": null,
+              "name": "Water Destroyer",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13824",
+              "internalId": null,
+              "name": "Dynamo",
+              "type": "Trophy",
+              "level": 100,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 1434.13,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 10,
+            "MP": 4,
+            "Range": 0,
+            "Chance": 1118,
+            "Power": 90,
+            "Vitality": 1351,
+            "Damage": 19,
+            "Water Damage": 37,
+            "Critical": 33,
+            "Critical Damage": 64
+          },
+          "sets": {
+            "Naganita Set": 3,
+            "Cauldini Set": 2,
+            "Ancestral Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Naganita Necklace",
+            "Ancestral Treebelt",
+            "Naganita Naginata",
+            "Cauldini Shield",
+            "Ancestral Ring",
+            "Snailmet Ring",
+            "Cauldini Boots",
+            "Ancestral Treechelmet",
+            "Naganita Cape",
+            "Blue Piwin",
+            "Crimson Dofus",
+            "Dolmanax",
+            "Emerald Dofus",
+            "Water Wrecker",
+            "Player",
+            "Tease"
+          ]
+        },
+        {
+          "score": 1431.29,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 10,
+            "MP": 6,
+            "Range": 2,
+            "Chance": 1063,
+            "Power": 230,
+            "Vitality": 1921,
+            "Damage": 6,
+            "Water Damage": 31,
+            "Critical": 31,
+            "Critical Damage": 15
+          },
+          "sets": {
+            "Naganita Set": 2,
+            "Khardboard Set": 3,
+            "Minotoror Set": 2,
+            "Ancestral Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Naganita Necklace",
+            "Ancestral Treebelt",
+            "Naganita Naginata",
+            "Khardboard Bowisse's Shield",
+            "Ancestral Ring",
+            "Minotoror Ring",
+            "Minotoror Boots",
+            "Khardboard Gobball Headgear",
+            "Khardboard Dazzling Cloak",
+            "Indigo and Ivory Dragoturkey",
+            "Crimson Dofus",
+            "Dolmanax",
+            "Emerald Dofus",
+            "Water Wrecker",
+            "Player",
+            "Tease"
+          ]
+        },
+        {
+          "score": 1361.68,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 10,
+            "MP": 6,
+            "Range": 2,
+            "Chance": 978,
+            "Power": 180,
+            "Vitality": 1631,
+            "Damage": 17,
+            "Water Damage": 21,
+            "Critical": 28,
+            "Critical Damage": 70
+          },
+          "sets": {
+            "Khardboard Set": 3,
+            "Minotoror Set": 2,
+            "Ancestral Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Minotoror Necklace",
+            "Ancestral Treebelt",
+            "Tyse Pick",
+            "Khardboard Bowisse's Shield",
+            "Ancestral Ring",
+            "Snailmet Ring",
+            "Minotoror Boots",
+            "Khardboard Gobball Headgear",
+            "Khardboard Dazzling Cloak",
+            "Blue Piwin",
+            "Crimson Dofus",
+            "Dolmanax",
+            "Emerald Dofus",
+            "Water Wrecker",
+            "Water Destroyer",
+            "Dynamo"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 10
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 222621.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 126.0,
+          "candidatePoolsMs": 101.5,
+          "packageIndexMs": 1585.8,
+          "packageSeedsMs": 2406.3,
+          "directCompletionMs": 218389.2,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.5,
+          "totalFindBuildsMs": 222611.4
+        },
+        "resultCount": 3,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

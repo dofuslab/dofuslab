@@ -1,0 +1,696 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T04:14:37.206543+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-ap-mp-range-frontier-003-targets.json#nextUnprovenTargets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "grid_frontier_003_level_20_intelligence_6_3_0_budget4",
+        "className": "Iop",
+        "level": 20,
+        "element": "intelligence",
+        "budgetTier": 4,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 0
+      },
+      "query": {
+        "className": "Iop",
+        "level": 20,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 522.58,
+        "weightedStatScore": 792.72,
+        "utilityStatScore": 141.05,
+        "genericDamageScore": 834.33,
+        "rawRotationDamageScore": 320.96,
+        "spellDamageScore": 316.62,
+        "profileBaselineDamageScore": 1154.08,
+        "profileRelativeDamage": 0.2781,
+        "weaponDamageScore": 28.07,
+        "survivabilityScore": 6.08,
+        "weakestElementEhp": 194.37,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Intelligence": 95,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 3,
+          "Range": 1,
+          "Intelligence": 462,
+          "Power": 10,
+          "Vitality": 205,
+          "Damage": 0,
+          "Fire Damage": 26,
+          "Critical": 4,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Bearman Set": 7
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "6723",
+            "internalId": null,
+            "name": "Bearman's Necklace",
+            "type": "Amulet",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "belt": {
+            "id": "6724",
+            "internalId": null,
+            "name": "Bearman's Belt",
+            "type": "Belt",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "weapon": {
+            "id": "6725",
+            "internalId": null,
+            "name": "Bearman's Staff",
+            "type": "Staff",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "ring_1": {
+            "id": "6722",
+            "internalId": null,
+            "name": "Bearman's Wedding Ring",
+            "type": "Ring",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "boots": {
+            "id": "6721",
+            "internalId": null,
+            "name": "Bearman's Boots",
+            "type": "Boots",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "hat": {
+            "id": "6719",
+            "internalId": null,
+            "name": "Bearman's Headgear",
+            "type": "Hat",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "cloak": {
+            "id": "6720",
+            "internalId": null,
+            "name": "Bearman's Cloak",
+            "type": "Cloak",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "shield": {
+            "id": "18666",
+            "internalId": null,
+            "name": "Gobball Shield",
+            "type": "Shield",
+            "level": 20,
+            "set": "Gobball Set"
+          },
+          "ring_2": {
+            "id": "8219",
+            "internalId": null,
+            "name": "Red Piwi Ring",
+            "type": "Ring",
+            "level": 10,
+            "set": "Red Piwi Set"
+          },
+          "pet": {
+            "id": "11971",
+            "internalId": null,
+            "name": "Teddybearbarian",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 522.58,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 7,
+          "MP": 3,
+          "Range": 1,
+          "Intelligence": 462,
+          "Power": 10,
+          "Vitality": 205,
+          "Damage": 0,
+          "Fire Damage": 26,
+          "Critical": 4,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Bearman Set": 7
+        },
+        "exos": {},
+        "items": [
+          "Bearman's Necklace",
+          "Bearman's Belt",
+          "Bearman's Staff",
+          "Gobball Shield",
+          "Bearman's Wedding Ring",
+          "Red Piwi Ring",
+          "Bearman's Boots",
+          "Bearman's Headgear",
+          "Bearman's Cloak",
+          "Teddybearbarian"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 522.58,
+          "weightedStatScore": 792.72,
+          "utilityStatScore": 141.05,
+          "genericDamageScore": 834.33,
+          "rawRotationDamageScore": 320.96,
+          "spellDamageScore": 316.62,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.2781,
+          "weaponDamageScore": 28.07,
+          "survivabilityScore": 6.08,
+          "weakestElementEhp": 194.37,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Intelligence": 95,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 1,
+            "Intelligence": 462,
+            "Power": 10,
+            "Vitality": 205,
+            "Damage": 0,
+            "Fire Damage": 26,
+            "Critical": 4,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Bearman Set": 7
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "6723",
+              "internalId": null,
+              "name": "Bearman's Necklace",
+              "type": "Amulet",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "belt": {
+              "id": "6724",
+              "internalId": null,
+              "name": "Bearman's Belt",
+              "type": "Belt",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "weapon": {
+              "id": "6725",
+              "internalId": null,
+              "name": "Bearman's Staff",
+              "type": "Staff",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "ring_1": {
+              "id": "6722",
+              "internalId": null,
+              "name": "Bearman's Wedding Ring",
+              "type": "Ring",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "boots": {
+              "id": "6721",
+              "internalId": null,
+              "name": "Bearman's Boots",
+              "type": "Boots",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "hat": {
+              "id": "6719",
+              "internalId": null,
+              "name": "Bearman's Headgear",
+              "type": "Hat",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "cloak": {
+              "id": "6720",
+              "internalId": null,
+              "name": "Bearman's Cloak",
+              "type": "Cloak",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "shield": {
+              "id": "18666",
+              "internalId": null,
+              "name": "Gobball Shield",
+              "type": "Shield",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "ring_2": {
+              "id": "8219",
+              "internalId": null,
+              "name": "Red Piwi Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Red Piwi Set"
+            },
+            "pet": {
+              "id": "11971",
+              "internalId": null,
+              "name": "Teddybearbarian",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 518.07,
+          "weightedStatScore": 794.72,
+          "utilityStatScore": 141.05,
+          "genericDamageScore": 825.64,
+          "rawRotationDamageScore": 317.62,
+          "spellDamageScore": 313.95,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.2752,
+          "weaponDamageScore": 27.78,
+          "survivabilityScore": 5.48,
+          "weakestElementEhp": 175.4,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Intelligence": 95,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 1,
+            "Intelligence": 462,
+            "Power": 0,
+            "Vitality": 185,
+            "Damage": 0,
+            "Fire Damage": 26,
+            "Critical": 7,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Bearman Set": 7
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "6723",
+              "internalId": null,
+              "name": "Bearman's Necklace",
+              "type": "Amulet",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "belt": {
+              "id": "6724",
+              "internalId": null,
+              "name": "Bearman's Belt",
+              "type": "Belt",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "weapon": {
+              "id": "6725",
+              "internalId": null,
+              "name": "Bearman's Staff",
+              "type": "Staff",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "ring_1": {
+              "id": "6722",
+              "internalId": null,
+              "name": "Bearman's Wedding Ring",
+              "type": "Ring",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "boots": {
+              "id": "6721",
+              "internalId": null,
+              "name": "Bearman's Boots",
+              "type": "Boots",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "hat": {
+              "id": "6719",
+              "internalId": null,
+              "name": "Bearman's Headgear",
+              "type": "Hat",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "cloak": {
+              "id": "6720",
+              "internalId": null,
+              "name": "Bearman's Cloak",
+              "type": "Cloak",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "ring_2": {
+              "id": "8219",
+              "internalId": null,
+              "name": "Red Piwi Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Red Piwi Set"
+            },
+            "pet": {
+              "id": "11971",
+              "internalId": null,
+              "name": "Teddybearbarian",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 480.01,
+          "weightedStatScore": 860.5,
+          "utilityStatScore": 130.5,
+          "genericDamageScore": 756.68,
+          "rawRotationDamageScore": 291.09,
+          "spellDamageScore": 265.82,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.2522,
+          "weaponDamageScore": 24.35,
+          "survivabilityScore": 9.0,
+          "weakestElementEhp": 300.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Intelligence": 95,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 0,
+            "Intelligence": 435,
+            "Power": 25,
+            "Vitality": 300,
+            "Damage": 0,
+            "Fire Damage": 5,
+            "Critical": 0,
+            "Critical Damage": 40
+          },
+          "sets": {
+            "Gobball Set": 7
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "2425",
+              "internalId": null,
+              "name": "Gobball Amulet",
+              "type": "Amulet",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "belt": {
+              "id": "2428",
+              "internalId": null,
+              "name": "Gobball Belt",
+              "type": "Belt",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "shield": {
+              "id": "18666",
+              "internalId": null,
+              "name": "Gobball Shield",
+              "type": "Shield",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "ring_1": {
+              "id": "2419",
+              "internalId": null,
+              "name": "Bouze Lite Yeah's Ring",
+              "type": "Ring",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "boots": {
+              "id": "2422",
+              "internalId": null,
+              "name": "Gobboots",
+              "type": "Boots",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "hat": {
+              "id": "2411",
+              "internalId": null,
+              "name": "Gobball Headgear",
+              "type": "Hat",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "cloak": {
+              "id": "2414",
+              "internalId": null,
+              "name": "Gobball Cape",
+              "type": "Cloak",
+              "level": 20,
+              "set": "Gobball Set"
+            },
+            "weapon": {
+              "id": "1365",
+              "internalId": null,
+              "name": "Flatu Lance",
+              "type": "Staff",
+              "level": 20,
+              "set": null
+            },
+            "ring_2": {
+              "id": "8219",
+              "internalId": null,
+              "name": "Red Piwi Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Red Piwi Set"
+            },
+            "pet": {
+              "id": "7711",
+              "internalId": null,
+              "name": "Red Piwin",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 522.58,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 1,
+            "Intelligence": 462,
+            "Power": 10,
+            "Vitality": 205,
+            "Damage": 0,
+            "Fire Damage": 26,
+            "Critical": 4,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Bearman Set": 7
+          },
+          "exos": {},
+          "items": [
+            "Bearman's Necklace",
+            "Bearman's Belt",
+            "Bearman's Staff",
+            "Gobball Shield",
+            "Bearman's Wedding Ring",
+            "Red Piwi Ring",
+            "Bearman's Boots",
+            "Bearman's Headgear",
+            "Bearman's Cloak",
+            "Teddybearbarian"
+          ]
+        },
+        {
+          "score": 518.07,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 1,
+            "Intelligence": 462,
+            "Power": 0,
+            "Vitality": 185,
+            "Damage": 0,
+            "Fire Damage": 26,
+            "Critical": 7,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Bearman Set": 7
+          },
+          "exos": {},
+          "items": [
+            "Bearman's Necklace",
+            "Bearman's Belt",
+            "Bearman's Staff",
+            "Wild Sunflower Shield",
+            "Bearman's Wedding Ring",
+            "Red Piwi Ring",
+            "Bearman's Boots",
+            "Bearman's Headgear",
+            "Bearman's Cloak",
+            "Teddybearbarian"
+          ]
+        },
+        {
+          "score": 480.01,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 0,
+            "Intelligence": 435,
+            "Power": 25,
+            "Vitality": 300,
+            "Damage": 0,
+            "Fire Damage": 5,
+            "Critical": 0,
+            "Critical Damage": 40
+          },
+          "sets": {
+            "Gobball Set": 7
+          },
+          "exos": {},
+          "items": [
+            "Gobball Amulet",
+            "Gobball Belt",
+            "Flatu Lance",
+            "Gobball Shield",
+            "Bouze Lite Yeah's Ring",
+            "Red Piwi Ring",
+            "Gobboots",
+            "Gobball Headgear",
+            "Gobball Cape",
+            "Red Piwin"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 9
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 2652.1,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 116.4,
+          "candidatePoolsMs": 35.3,
+          "packageIndexMs": 18.1,
+          "packageSeedsMs": 25.5,
+          "directCompletionMs": 2456.1,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 0.3,
+          "totalFindBuildsMs": 2651.7
+        },
+        "resultCount": 3,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

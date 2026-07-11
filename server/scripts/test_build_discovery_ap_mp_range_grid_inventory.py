@@ -71,6 +71,10 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
             ".codex/state/build-discovery-ap-mp-range-frontier-002-matrix.json",
             DEFAULT_ARTIFACTS,
         )
+        self.assertIn(
+            ".codex/state/build-discovery-ap-mp-range-frontier-003-matrix.json",
+            DEFAULT_ARTIFACTS,
+        )
 
     def test_valid_query_rows_count_full_milestone_three_query_space(self):
         rows = list(

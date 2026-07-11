@@ -220,17 +220,17 @@
   ],
   "budgetTierCount": 4,
   "validQueryCount": 665088,
-  "generatedEvidenceCount": 146,
-  "attemptedEvidenceCount": 162,
+  "generatedEvidenceCount": 154,
+  "attemptedEvidenceCount": 170,
   "noBuildEvidenceCount": 16,
-  "unprovenCount": 664942,
-  "unattemptedCount": 664926,
+  "unprovenCount": 664934,
+  "unattemptedCount": 664918,
   "byLevel": [
     {
       "level": 1,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 5,
-      "unprovenCount": 3579
+      "generatedEvidenceCount": 6,
+      "unprovenCount": 3578
     },
     {
       "level": 2,
@@ -343,8 +343,8 @@
     {
       "level": 20,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 7,
-      "unprovenCount": 3577
+      "generatedEvidenceCount": 8,
+      "unprovenCount": 3576
     },
     {
       "level": 21,
@@ -523,8 +523,8 @@
     {
       "level": 50,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 13,
-      "unprovenCount": 3571
+      "generatedEvidenceCount": 14,
+      "unprovenCount": 3570
     },
     {
       "level": 51,
@@ -703,8 +703,8 @@
     {
       "level": 80,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 12,
-      "unprovenCount": 3572
+      "generatedEvidenceCount": 13,
+      "unprovenCount": 3571
     },
     {
       "level": 81,
@@ -817,14 +817,14 @@
     {
       "level": 99,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 8,
-      "unprovenCount": 3576
+      "generatedEvidenceCount": 9,
+      "unprovenCount": 3575
     },
     {
       "level": 100,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 13,
-      "unprovenCount": 3059
+      "generatedEvidenceCount": 14,
+      "unprovenCount": 3058
     },
     {
       "level": 101,
@@ -943,8 +943,8 @@
     {
       "level": 120,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 13,
-      "unprovenCount": 3059
+      "generatedEvidenceCount": 14,
+      "unprovenCount": 3058
     },
     {
       "level": 121,
@@ -1123,8 +1123,8 @@
     {
       "level": 150,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 14,
-      "unprovenCount": 3058
+      "generatedEvidenceCount": 15,
+      "unprovenCount": 3057
     },
     {
       "level": 151,
@@ -1813,7 +1813,7 @@
     {
       "level": 1,
       "element": "intelligence",
-      "budgetTier": 2,
+      "budgetTier": 3,
       "apTarget": 6,
       "mpTarget": 3,
       "rangeTarget": null,

@@ -3628,3 +3628,42 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-frontier-002-matrix.json --target-file /tmp/build-discovery-ap-mp-range-frontier-002-targets.json --target-file-limit 8 --target-file-prefix grid_frontier_002 --allow-no-build`
   - `python -m unittest scripts.test_build_discovery_prototype.BuildDiscoveryPrototypeTest.test_action_stat_witness_seed_runs_for_non_base_action_targets`
   - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+
+### 2026-07-10 Frontier 003 Minimum/Middle Coverage
+
+- Generated frontier 003 targets from unattempted `minimum` and `middle`
+  profiles across levels 1, 20, 50, 80, 99, 100, 120, and 150:
+  - `.codex/state/build-discovery-ap-mp-range-frontier-003-targets.json`
+  - `.codex/state/build-discovery-ap-mp-range-frontier-003-targets.md`
+- Generated and validated frontier 003 in Docker with `--query-limit 3`:
+  - `.codex/state/build-discovery-ap-mp-range-frontier-003-matrix.json`
+  - `.codex/state/build-discovery-ap-mp-range-frontier-003-matrix.md`
+  - `.codex/state/build-discovery-ap-mp-range-frontier-003/`
+- Result:
+  - targets: `8`
+  - generated: `8`
+  - no build: `0`
+  - invalid: `0`
+- Notable generated rows:
+  - L1 Intelligence tier 2 `6/3/any`: `128` Intelligence, `141` Vitality,
+    `1574.9ms`
+  - L20 Intelligence tier 4 `6/3/0`: Bearman package, `462` Intelligence,
+    `205` Vitality, `2652.1ms`
+  - L80 Agility tier 4 `6/3/0`: Royal Coco Blop + Khardboard packages, `841`
+    Agility, `1042` Vitality, `236030.1ms`
+  - L100 Intelligence tier 4 `7/3/0`: Simbadas + Feudala + Khardboard packages,
+    `980` Intelligence, `1005` Vitality, `300505.6ms`
+  - L120 Chance tier 2 `7/3/any`: Naganita + Cauldini + Ancestral packages,
+    `1118` Chance, `1351` Vitality, `222621.9ms`
+- Performance note: even non-cap level-diversity rows can take several minutes
+  today; frontier 003 is correctness/coverage evidence, not proof of the
+  Milestone 2 cache-miss performance target.
+- Refreshed inventory counts after frontier 003:
+  - representative grid: `39,424` valid rows, `136` generated evidence rows,
+    `152` attempted evidence rows, `16` no-build evidence rows, `39,288`
+    unproven rows
+  - full grid: `665,088` valid rows, `154` generated evidence rows, `170`
+    attempted evidence rows, `16` no-build evidence rows, `664,934`
+    unproven rows
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-frontier-003-matrix.json --target-file /tmp/build-discovery-ap-mp-range-frontier-003-targets.json --target-file-limit 8 --target-file-prefix grid_frontier_003`

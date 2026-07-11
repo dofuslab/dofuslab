@@ -7,15 +7,15 @@ Level scope: `all_levels` (`200` levels)
 Element count: `4`
 Budget tier count: `4`
 Valid query rows: `665088`
-Generated evidence rows: `146`
-Attempted evidence rows: `162`
+Generated evidence rows: `154`
+Attempted evidence rows: `170`
 No-build evidence rows: `16`
-Unproven rows: `664942`
-Unattempted rows: `664926`
+Unproven rows: `664934`
+Unattempted rows: `664918`
 
 | Level | Valid rows | Generated evidence | Unproven |
 |---:|---:|---:|---:|
-| 1 | 3584 | 5 | 3579 |
+| 1 | 3584 | 6 | 3578 |
 | 2 | 3584 | 1 | 3583 |
 | 3 | 3584 | 0 | 3584 |
 | 4 | 3584 | 0 | 3584 |
@@ -34,7 +34,7 @@ Unattempted rows: `664926`
 | 17 | 3584 | 0 | 3584 |
 | 18 | 3584 | 0 | 3584 |
 | 19 | 3584 | 1 | 3583 |
-| 20 | 3584 | 7 | 3577 |
+| 20 | 3584 | 8 | 3576 |
 | 21 | 3584 | 0 | 3584 |
 | 22 | 3584 | 0 | 3584 |
 | 23 | 3584 | 0 | 3584 |
@@ -64,7 +64,7 @@ Unattempted rows: `664926`
 | 47 | 3584 | 0 | 3584 |
 | 48 | 3584 | 0 | 3584 |
 | 49 | 3584 | 0 | 3584 |
-| 50 | 3584 | 13 | 3571 |
+| 50 | 3584 | 14 | 3570 |
 | 51 | 3584 | 0 | 3584 |
 | 52 | 3584 | 0 | 3584 |
 | 53 | 3584 | 0 | 3584 |
@@ -94,7 +94,7 @@ Unattempted rows: `664926`
 | 77 | 3584 | 0 | 3584 |
 | 78 | 3584 | 0 | 3584 |
 | 79 | 3584 | 0 | 3584 |
-| 80 | 3584 | 12 | 3572 |
+| 80 | 3584 | 13 | 3571 |
 | 81 | 3584 | 0 | 3584 |
 | 82 | 3584 | 0 | 3584 |
 | 83 | 3584 | 0 | 3584 |
@@ -113,8 +113,8 @@ Unattempted rows: `664926`
 | 96 | 3584 | 0 | 3584 |
 | 97 | 3584 | 0 | 3584 |
 | 98 | 3584 | 0 | 3584 |
-| 99 | 3584 | 8 | 3576 |
-| 100 | 3072 | 13 | 3059 |
+| 99 | 3584 | 9 | 3575 |
+| 100 | 3072 | 14 | 3058 |
 | 101 | 3072 | 0 | 3072 |
 | 102 | 3072 | 0 | 3072 |
 | 103 | 3072 | 0 | 3072 |
@@ -134,7 +134,7 @@ Unattempted rows: `664926`
 | 117 | 3072 | 0 | 3072 |
 | 118 | 3072 | 0 | 3072 |
 | 119 | 3072 | 0 | 3072 |
-| 120 | 3072 | 13 | 3059 |
+| 120 | 3072 | 14 | 3058 |
 | 121 | 3072 | 0 | 3072 |
 | 122 | 3072 | 0 | 3072 |
 | 123 | 3072 | 0 | 3072 |
@@ -164,7 +164,7 @@ Unattempted rows: `664926`
 | 147 | 3072 | 0 | 3072 |
 | 148 | 3072 | 0 | 3072 |
 | 149 | 3072 | 1 | 3071 |
-| 150 | 3072 | 14 | 3058 |
+| 150 | 3072 | 15 | 3057 |
 | 151 | 3072 | 0 | 3072 |
 | 152 | 3072 | 0 | 3072 |
 | 153 | 3072 | 0 | 3072 |
@@ -267,7 +267,7 @@ Unattempted rows: `664926`
 - L200 strength tier 2 12/6/6 `cap` `retry`
 - L80 strength tier 1 12/6/6 `cap` `retry`
 - L200 strength tier 1 12/6/6 `cap` `retry`
-- L1 intelligence tier 2 6/3/any `minimum` `unattempted`
+- L1 intelligence tier 3 6/3/any `minimum` `unattempted`
 - L2 intelligence tier 4 12/6/6 `cap` `unattempted`
 - L3 chance tier 4 6/6/any `mp_heavy` `unattempted`
 - L4 agility tier 4 6/3/6 `range_heavy` `unattempted`

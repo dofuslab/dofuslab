@@ -1,0 +1,928 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T04:14:37.206543+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-ap-mp-range-frontier-003-targets.json#nextUnprovenTargets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "grid_frontier_003_level_150_agility_7_3_0_budget4",
+        "className": "Iop",
+        "level": 150,
+        "element": "agility",
+        "budgetTier": 4,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 0
+      },
+      "query": {
+        "className": "Iop",
+        "level": 150,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 1772.79,
+        "weightedStatScore": 3136.71,
+        "utilityStatScore": 257.89,
+        "genericDamageScore": 3213.33,
+        "rawRotationDamageScore": 1854.27,
+        "spellDamageScore": 1599.65,
+        "profileBaselineDamageScore": 1731.17,
+        "profileRelativeDamage": 1.0711,
+        "weaponDamageScore": 176.13,
+        "survivabilityScore": 68.89,
+        "weakestElementEhp": 2091.33,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Agility": 336,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 3,
+          "Agility": 1066,
+          "Power": 105,
+          "Vitality": 2161,
+          "Damage": 0,
+          "Air Damage": 86,
+          "Critical": 46,
+          "Critical Damage": 90
+        },
+        "sets": {
+          "Frigostine Set": 2,
+          "Castuc Set": 3,
+          "Khardboard Set": 2
+        },
+        "exos": {},
+        "items": {
+          "belt": {
+            "id": "18433",
+            "internalId": null,
+            "name": "Beltuc",
+            "type": "Belt",
+            "level": 133,
+            "set": "Castuc Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "boots": {
+            "id": "27278",
+            "internalId": null,
+            "name": "Khardboard Getas",
+            "type": "Boots",
+            "level": 125,
+            "set": "Khardboard Set"
+          },
+          "hat": {
+            "id": "18432",
+            "internalId": null,
+            "name": "Capstuc",
+            "type": "Hat",
+            "level": 131,
+            "set": "Castuc Set"
+          },
+          "cloak": {
+            "id": "18431",
+            "internalId": null,
+            "name": "Capetuc",
+            "type": "Cloak",
+            "level": 129,
+            "set": "Castuc Set"
+          },
+          "amulet": {
+            "id": "12089",
+            "internalId": null,
+            "name": "Frigostine's Amulet",
+            "type": "Amulet",
+            "level": 147,
+            "set": "Frigostine Set"
+          },
+          "weapon": {
+            "id": "8296",
+            "internalId": null,
+            "name": "Dreggon Wand",
+            "type": "Wand",
+            "level": 124,
+            "set": "Vagabond Dreggon Set"
+          },
+          "ring_1": {
+            "id": "12090",
+            "internalId": null,
+            "name": "Frigostine's Ring",
+            "type": "Ring",
+            "level": 144,
+            "set": "Frigostine Set"
+          },
+          "ring_2": {
+            "id": "14009",
+            "internalId": null,
+            "name": "Willkills Ring",
+            "type": "Ring",
+            "level": 150,
+            "set": "Murderous Set"
+          },
+          "pet": {
+            "id": "12177",
+            "internalId": null,
+            "name": "Tofume",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13786",
+            "internalId": null,
+            "name": "Major Air Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12714",
+            "internalId": null,
+            "name": "Major Acrobat",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "12687",
+            "internalId": null,
+            "name": "Major Air Destroyer",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1772.79,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 3,
+          "Agility": 1066,
+          "Power": 105,
+          "Vitality": 2161,
+          "Damage": 0,
+          "Air Damage": 86,
+          "Critical": 46,
+          "Critical Damage": 90
+        },
+        "sets": {
+          "Frigostine Set": 2,
+          "Castuc Set": 3,
+          "Khardboard Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Frigostine's Amulet",
+          "Beltuc",
+          "Dreggon Wand",
+          "Khardboard Bowisse's Shield",
+          "Frigostine's Ring",
+          "Willkills Ring",
+          "Khardboard Getas",
+          "Capstuc",
+          "Capetuc",
+          "Tofume",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Major Air Wrecker",
+          "Emerald Dofus",
+          "Major Acrobat",
+          "Major Air Destroyer"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 1772.79,
+          "weightedStatScore": 3136.71,
+          "utilityStatScore": 257.89,
+          "genericDamageScore": 3213.33,
+          "rawRotationDamageScore": 1854.27,
+          "spellDamageScore": 1599.65,
+          "profileBaselineDamageScore": 1731.17,
+          "profileRelativeDamage": 1.0711,
+          "weaponDamageScore": 176.13,
+          "survivabilityScore": 68.89,
+          "weakestElementEhp": 2091.33,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Agility": 336,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 4,
+            "Range": 3,
+            "Agility": 1066,
+            "Power": 105,
+            "Vitality": 2161,
+            "Damage": 0,
+            "Air Damage": 86,
+            "Critical": 46,
+            "Critical Damage": 90
+          },
+          "sets": {
+            "Frigostine Set": 2,
+            "Castuc Set": 3,
+            "Khardboard Set": 2
+          },
+          "exos": {},
+          "items": {
+            "belt": {
+              "id": "18433",
+              "internalId": null,
+              "name": "Beltuc",
+              "type": "Belt",
+              "level": 133,
+              "set": "Castuc Set"
+            },
+            "shield": {
+              "id": "27280",
+              "internalId": null,
+              "name": "Khardboard Bowisse's Shield",
+              "type": "Shield",
+              "level": 100,
+              "set": "Khardboard Set"
+            },
+            "boots": {
+              "id": "27278",
+              "internalId": null,
+              "name": "Khardboard Getas",
+              "type": "Boots",
+              "level": 125,
+              "set": "Khardboard Set"
+            },
+            "hat": {
+              "id": "18432",
+              "internalId": null,
+              "name": "Capstuc",
+              "type": "Hat",
+              "level": 131,
+              "set": "Castuc Set"
+            },
+            "cloak": {
+              "id": "18431",
+              "internalId": null,
+              "name": "Capetuc",
+              "type": "Cloak",
+              "level": 129,
+              "set": "Castuc Set"
+            },
+            "amulet": {
+              "id": "12089",
+              "internalId": null,
+              "name": "Frigostine's Amulet",
+              "type": "Amulet",
+              "level": 147,
+              "set": "Frigostine Set"
+            },
+            "weapon": {
+              "id": "8296",
+              "internalId": null,
+              "name": "Dreggon Wand",
+              "type": "Wand",
+              "level": 124,
+              "set": "Vagabond Dreggon Set"
+            },
+            "ring_1": {
+              "id": "12090",
+              "internalId": null,
+              "name": "Frigostine's Ring",
+              "type": "Ring",
+              "level": 144,
+              "set": "Frigostine Set"
+            },
+            "ring_2": {
+              "id": "14009",
+              "internalId": null,
+              "name": "Willkills Ring",
+              "type": "Ring",
+              "level": 150,
+              "set": "Murderous Set"
+            },
+            "pet": {
+              "id": "12177",
+              "internalId": null,
+              "name": "Tofume",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13786",
+              "internalId": null,
+              "name": "Major Air Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "737",
+              "internalId": null,
+              "name": "Emerald Dofus",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "12714",
+              "internalId": null,
+              "name": "Major Acrobat",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "12687",
+              "internalId": null,
+              "name": "Major Air Destroyer",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 1736.77,
+          "weightedStatScore": 3103.2,
+          "utilityStatScore": 268.23,
+          "genericDamageScore": 3141.22,
+          "rawRotationDamageScore": 1812.66,
+          "spellDamageScore": 1772.04,
+          "profileBaselineDamageScore": 1731.17,
+          "profileRelativeDamage": 1.0471,
+          "weaponDamageScore": 182.01,
+          "survivabilityScore": 54.99,
+          "weakestElementEhp": 1706.86,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Agility": 336,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 4,
+            "Agility": 1336,
+            "Power": 125,
+            "Vitality": 1741,
+            "Damage": 10,
+            "Air Damage": 52,
+            "Critical": 52,
+            "Critical Damage": 50
+          },
+          "sets": {
+            "Katigger Set": 3,
+            "Frigostine Set": 2,
+            "Khardboard Set": 2
+          },
+          "exos": {},
+          "items": {
+            "belt": {
+              "id": "27266",
+              "internalId": null,
+              "name": "Khardboard Moowolf Belt",
+              "type": "Belt",
+              "level": 150,
+              "set": "Khardboard Set"
+            },
+            "shield": {
+              "id": "27280",
+              "internalId": null,
+              "name": "Khardboard Bowisse's Shield",
+              "type": "Shield",
+              "level": 100,
+              "set": "Khardboard Set"
+            },
+            "ring_1": {
+              "id": "32209",
+              "internalId": null,
+              "name": "Katigger Glove",
+              "type": "Ring",
+              "level": 142,
+              "set": "Katigger Set"
+            },
+            "boots": {
+              "id": "32208",
+              "internalId": null,
+              "name": "Katigger Paws",
+              "type": "Boots",
+              "level": 146,
+              "set": "Katigger Set"
+            },
+            "cloak": {
+              "id": "32207",
+              "internalId": null,
+              "name": "Katigger Cape",
+              "type": "Cloak",
+              "level": 144,
+              "set": "Katigger Set"
+            },
+            "amulet": {
+              "id": "12089",
+              "internalId": null,
+              "name": "Frigostine's Amulet",
+              "type": "Amulet",
+              "level": 147,
+              "set": "Frigostine Set"
+            },
+            "weapon": {
+              "id": "33600",
+              "internalId": null,
+              "name": "Buddy Dubble Sword",
+              "type": "Sword",
+              "level": 146,
+              "set": "Buddy Dubble Set"
+            },
+            "ring_2": {
+              "id": "12090",
+              "internalId": null,
+              "name": "Frigostine's Ring",
+              "type": "Ring",
+              "level": 144,
+              "set": "Frigostine Set"
+            },
+            "hat": {
+              "id": "8260",
+              "internalId": null,
+              "name": "Kaliptus Headband",
+              "type": "Hat",
+              "level": 133,
+              "set": null
+            },
+            "pet": {
+              "id": "7709",
+              "internalId": null,
+              "name": "Yellow Piwin",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13786",
+              "internalId": null,
+              "name": "Major Air Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "737",
+              "internalId": null,
+              "name": "Emerald Dofus",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "12714",
+              "internalId": null,
+              "name": "Major Acrobat",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13765",
+              "internalId": null,
+              "name": "Major Gymnast",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 1676.97,
+          "weightedStatScore": 3110.89,
+          "utilityStatScore": 231.07,
+          "genericDamageScore": 3078.73,
+          "rawRotationDamageScore": 1776.6,
+          "spellDamageScore": 1745.24,
+          "profileBaselineDamageScore": 1731.17,
+          "profileRelativeDamage": 1.0262,
+          "weaponDamageScore": 173.77,
+          "survivabilityScore": 60.48,
+          "weakestElementEhp": 1928.63,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Agility": 336,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 2,
+            "Agility": 1256,
+            "Power": 135,
+            "Vitality": 1911,
+            "Damage": 10,
+            "Air Damage": 62,
+            "Critical": 51,
+            "Critical Damage": 60
+          },
+          "sets": {
+            "Katigger Set": 3,
+            "Khardboard Set": 2,
+            "Vagabond Dreggon Set": 2
+          },
+          "exos": {},
+          "items": {
+            "belt": {
+              "id": "27266",
+              "internalId": null,
+              "name": "Khardboard Moowolf Belt",
+              "type": "Belt",
+              "level": 150,
+              "set": "Khardboard Set"
+            },
+            "shield": {
+              "id": "27280",
+              "internalId": null,
+              "name": "Khardboard Bowisse's Shield",
+              "type": "Shield",
+              "level": 100,
+              "set": "Khardboard Set"
+            },
+            "ring_1": {
+              "id": "32209",
+              "internalId": null,
+              "name": "Katigger Glove",
+              "type": "Ring",
+              "level": 142,
+              "set": "Katigger Set"
+            },
+            "boots": {
+              "id": "32208",
+              "internalId": null,
+              "name": "Katigger Paws",
+              "type": "Boots",
+              "level": 146,
+              "set": "Katigger Set"
+            },
+            "cloak": {
+              "id": "32207",
+              "internalId": null,
+              "name": "Katigger Cape",
+              "type": "Cloak",
+              "level": 144,
+              "set": "Katigger Set"
+            },
+            "amulet": {
+              "id": "8290",
+              "internalId": null,
+              "name": "Dreggon Amulet",
+              "type": "Amulet",
+              "level": 124,
+              "set": "Vagabond Dreggon Set"
+            },
+            "weapon": {
+              "id": "8296",
+              "internalId": null,
+              "name": "Dreggon Wand",
+              "type": "Wand",
+              "level": 124,
+              "set": "Vagabond Dreggon Set"
+            },
+            "ring_2": {
+              "id": "14009",
+              "internalId": null,
+              "name": "Willkills Ring",
+              "type": "Ring",
+              "level": 150,
+              "set": "Murderous Set"
+            },
+            "hat": {
+              "id": "7143",
+              "internalId": null,
+              "name": "Solomonk",
+              "type": "Hat",
+              "level": 118,
+              "set": null
+            },
+            "pet": {
+              "id": "7709",
+              "internalId": null,
+              "name": "Yellow Piwin",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "13786",
+              "internalId": null,
+              "name": "Major Air Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "12714",
+              "internalId": null,
+              "name": "Major Acrobat",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "12687",
+              "internalId": null,
+              "name": "Major Air Destroyer",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "12726",
+              "internalId": null,
+              "name": "Major Survivor",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 1772.79,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 10,
+            "MP": 4,
+            "Range": 3,
+            "Agility": 1066,
+            "Power": 105,
+            "Vitality": 2161,
+            "Damage": 0,
+            "Air Damage": 86,
+            "Critical": 46,
+            "Critical Damage": 90
+          },
+          "sets": {
+            "Frigostine Set": 2,
+            "Castuc Set": 3,
+            "Khardboard Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Frigostine's Amulet",
+            "Beltuc",
+            "Dreggon Wand",
+            "Khardboard Bowisse's Shield",
+            "Frigostine's Ring",
+            "Willkills Ring",
+            "Khardboard Getas",
+            "Capstuc",
+            "Capetuc",
+            "Tofume",
+            "Crimson Dofus",
+            "Dolmanax",
+            "Major Air Wrecker",
+            "Emerald Dofus",
+            "Major Acrobat",
+            "Major Air Destroyer"
+          ]
+        },
+        {
+          "score": 1736.77,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 4,
+            "Agility": 1336,
+            "Power": 125,
+            "Vitality": 1741,
+            "Damage": 10,
+            "Air Damage": 52,
+            "Critical": 52,
+            "Critical Damage": 50
+          },
+          "sets": {
+            "Katigger Set": 3,
+            "Frigostine Set": 2,
+            "Khardboard Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Frigostine's Amulet",
+            "Khardboard Moowolf Belt",
+            "Buddy Dubble Sword",
+            "Khardboard Bowisse's Shield",
+            "Katigger Glove",
+            "Frigostine's Ring",
+            "Katigger Paws",
+            "Kaliptus Headband",
+            "Katigger Cape",
+            "Yellow Piwin",
+            "Crimson Dofus",
+            "Dolmanax",
+            "Major Air Wrecker",
+            "Emerald Dofus",
+            "Major Acrobat",
+            "Major Gymnast"
+          ]
+        },
+        {
+          "score": 1676.97,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 2,
+            "Agility": 1256,
+            "Power": 135,
+            "Vitality": 1911,
+            "Damage": 10,
+            "Air Damage": 62,
+            "Critical": 51,
+            "Critical Damage": 60
+          },
+          "sets": {
+            "Katigger Set": 3,
+            "Khardboard Set": 2,
+            "Vagabond Dreggon Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Dreggon Amulet",
+            "Khardboard Moowolf Belt",
+            "Dreggon Wand",
+            "Khardboard Bowisse's Shield",
+            "Katigger Glove",
+            "Willkills Ring",
+            "Katigger Paws",
+            "Solomonk",
+            "Katigger Cape",
+            "Yellow Piwin",
+            "Crimson Dofus",
+            "Dolmanax",
+            "Major Air Wrecker",
+            "Major Acrobat",
+            "Major Air Destroyer",
+            "Major Survivor"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 8
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 328912.7,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 138.7,
+          "candidatePoolsMs": 46.6,
+          "packageIndexMs": 417.4,
+          "packageSeedsMs": 2739.0,
+          "directCompletionMs": 325556.8,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 3.7,
+          "totalFindBuildsMs": 328902.1
+        },
+        "resultCount": 3,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

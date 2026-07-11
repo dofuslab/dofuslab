@@ -1,0 +1,642 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T04:14:37.206543+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-ap-mp-range-frontier-003-targets.json#nextUnprovenTargets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "grid_frontier_003_level_1_intelligence_6_3_none_budget2",
+        "className": "Iop",
+        "level": 1,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 1,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 294.86,
+        "weightedStatScore": 301.4,
+        "utilityStatScore": 121.1,
+        "genericDamageScore": 376.72,
+        "rawRotationDamageScore": 211.88,
+        "spellDamageScore": 211.88,
+        "profileBaselineDamageScore": 1687.25,
+        "profileRelativeDamage": 0.1256,
+        "weaponDamageScore": 9.38,
+        "survivabilityScore": 4.23,
+        "weakestElementEhp": 141.0,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Intelligence": 0,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Intelligence": 128,
+          "Power": 0,
+          "Vitality": 141,
+          "Damage": 1,
+          "Fire Damage": 1,
+          "Critical": 0,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Boon Set": 4
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "766",
+            "internalId": null,
+            "name": "Koliet Aclou",
+            "type": "Amulet",
+            "level": 1,
+            "set": null
+          },
+          "belt": {
+            "id": "8536",
+            "internalId": null,
+            "name": "Muffin Belt",
+            "type": "Belt",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "weapon": {
+            "id": "30828",
+            "internalId": null,
+            "name": "Bounihime",
+            "type": "Sword",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "shield": {
+            "id": "18676",
+            "internalId": null,
+            "name": "Lumberjack Shield",
+            "type": "Shield",
+            "level": 1,
+            "set": null
+          },
+          "ring_1": {
+            "id": "852",
+            "internalId": null,
+            "name": "Small Magic Ring",
+            "type": "Ring",
+            "level": 1,
+            "set": null
+          },
+          "boots": {
+            "id": "8535",
+            "internalId": null,
+            "name": "Crashers",
+            "type": "Boots",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "hat": {
+            "id": "8162",
+            "internalId": null,
+            "name": "Pumpkwin Head",
+            "type": "Hat",
+            "level": 1,
+            "set": null
+          },
+          "cloak": {
+            "id": "8534",
+            "internalId": null,
+            "name": "S'loque Cape",
+            "type": "Cloak",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "pet": {
+            "id": "1711",
+            "internalId": null,
+            "name": "Bow Wow",
+            "type": "Pet",
+            "level": 1,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 294.86,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Intelligence": 128,
+          "Power": 0,
+          "Vitality": 141,
+          "Damage": 1,
+          "Fire Damage": 1,
+          "Critical": 0,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Boon Set": 4
+        },
+        "exos": {},
+        "items": [
+          "Koliet Aclou",
+          "Muffin Belt",
+          "Bounihime",
+          "Lumberjack Shield",
+          "Small Magic Ring",
+          "Crashers",
+          "Pumpkwin Head",
+          "S'loque Cape",
+          "Bow Wow"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 294.86,
+          "weightedStatScore": 301.4,
+          "utilityStatScore": 121.1,
+          "genericDamageScore": 376.72,
+          "rawRotationDamageScore": 211.88,
+          "spellDamageScore": 211.88,
+          "profileBaselineDamageScore": 1687.25,
+          "profileRelativeDamage": 0.1256,
+          "weaponDamageScore": 9.38,
+          "survivabilityScore": 4.23,
+          "weakestElementEhp": 141.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Intelligence": 0,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Intelligence": 128,
+            "Power": 0,
+            "Vitality": 141,
+            "Damage": 1,
+            "Fire Damage": 1,
+            "Critical": 0,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Boon Set": 4
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "766",
+              "internalId": null,
+              "name": "Koliet Aclou",
+              "type": "Amulet",
+              "level": 1,
+              "set": null
+            },
+            "belt": {
+              "id": "8536",
+              "internalId": null,
+              "name": "Muffin Belt",
+              "type": "Belt",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "weapon": {
+              "id": "30828",
+              "internalId": null,
+              "name": "Bounihime",
+              "type": "Sword",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "shield": {
+              "id": "18676",
+              "internalId": null,
+              "name": "Lumberjack Shield",
+              "type": "Shield",
+              "level": 1,
+              "set": null
+            },
+            "ring_1": {
+              "id": "852",
+              "internalId": null,
+              "name": "Small Magic Ring",
+              "type": "Ring",
+              "level": 1,
+              "set": null
+            },
+            "boots": {
+              "id": "8535",
+              "internalId": null,
+              "name": "Crashers",
+              "type": "Boots",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "hat": {
+              "id": "8162",
+              "internalId": null,
+              "name": "Pumpkwin Head",
+              "type": "Hat",
+              "level": 1,
+              "set": null
+            },
+            "cloak": {
+              "id": "8534",
+              "internalId": null,
+              "name": "S'loque Cape",
+              "type": "Cloak",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "pet": {
+              "id": "1711",
+              "internalId": null,
+              "name": "Bow Wow",
+              "type": "Pet",
+              "level": 1,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 291.61,
+          "weightedStatScore": 296.75,
+          "utilityStatScore": 120.35,
+          "genericDamageScore": 371.39,
+          "rawRotationDamageScore": 208.88,
+          "spellDamageScore": 208.88,
+          "profileBaselineDamageScore": 1687.25,
+          "profileRelativeDamage": 0.1238,
+          "weaponDamageScore": 9.0,
+          "survivabilityScore": 4.14,
+          "weakestElementEhp": 138.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Intelligence": 0,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Intelligence": 125,
+            "Power": 0,
+            "Vitality": 138,
+            "Damage": 1,
+            "Fire Damage": 1,
+            "Critical": 0,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Boon Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "766",
+              "internalId": null,
+              "name": "Koliet Aclou",
+              "type": "Amulet",
+              "level": 1,
+              "set": null
+            },
+            "belt": {
+              "id": "8536",
+              "internalId": null,
+              "name": "Muffin Belt",
+              "type": "Belt",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "weapon": {
+              "id": "30828",
+              "internalId": null,
+              "name": "Bounihime",
+              "type": "Sword",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "shield": {
+              "id": "18676",
+              "internalId": null,
+              "name": "Lumberjack Shield",
+              "type": "Shield",
+              "level": 1,
+              "set": null
+            },
+            "ring_1": {
+              "id": "852",
+              "internalId": null,
+              "name": "Small Magic Ring",
+              "type": "Ring",
+              "level": 1,
+              "set": null
+            },
+            "boots": {
+              "id": "8535",
+              "internalId": null,
+              "name": "Crashers",
+              "type": "Boots",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "hat": {
+              "id": "8162",
+              "internalId": null,
+              "name": "Pumpkwin Head",
+              "type": "Hat",
+              "level": 1,
+              "set": null
+            },
+            "pet": {
+              "id": "1711",
+              "internalId": null,
+              "name": "Bow Wow",
+              "type": "Pet",
+              "level": 1,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 286.57,
+          "weightedStatScore": 289.7,
+          "utilityStatScore": 120.2,
+          "genericDamageScore": 360.05,
+          "rawRotationDamageScore": 202.5,
+          "spellDamageScore": 202.5,
+          "profileBaselineDamageScore": 1687.25,
+          "profileRelativeDamage": 0.12,
+          "weaponDamageScore": 3.88,
+          "survivabilityScore": 4.35,
+          "weakestElementEhp": 145.0,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Intelligence": 0,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Intelligence": 122,
+            "Power": 0,
+            "Vitality": 145,
+            "Damage": 0,
+            "Fire Damage": 1,
+            "Critical": 0,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Boon Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "766",
+              "internalId": null,
+              "name": "Koliet Aclou",
+              "type": "Amulet",
+              "level": 1,
+              "set": null
+            },
+            "belt": {
+              "id": "8536",
+              "internalId": null,
+              "name": "Muffin Belt",
+              "type": "Belt",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "weapon": {
+              "id": "2587",
+              "internalId": null,
+              "name": "Lumberjack Hatchet",
+              "type": "Axe",
+              "level": 1,
+              "set": null
+            },
+            "shield": {
+              "id": "18676",
+              "internalId": null,
+              "name": "Lumberjack Shield",
+              "type": "Shield",
+              "level": 1,
+              "set": null
+            },
+            "ring_1": {
+              "id": "852",
+              "internalId": null,
+              "name": "Small Magic Ring",
+              "type": "Ring",
+              "level": 1,
+              "set": null
+            },
+            "boots": {
+              "id": "8535",
+              "internalId": null,
+              "name": "Crashers",
+              "type": "Boots",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "hat": {
+              "id": "8162",
+              "internalId": null,
+              "name": "Pumpkwin Head",
+              "type": "Hat",
+              "level": 1,
+              "set": null
+            },
+            "pet": {
+              "id": "1711",
+              "internalId": null,
+              "name": "Bow Wow",
+              "type": "Pet",
+              "level": 1,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 294.86,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Intelligence": 128,
+            "Power": 0,
+            "Vitality": 141,
+            "Damage": 1,
+            "Fire Damage": 1,
+            "Critical": 0,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Boon Set": 4
+          },
+          "exos": {},
+          "items": [
+            "Koliet Aclou",
+            "Muffin Belt",
+            "Bounihime",
+            "Lumberjack Shield",
+            "Small Magic Ring",
+            "Crashers",
+            "Pumpkwin Head",
+            "S'loque Cape",
+            "Bow Wow"
+          ]
+        },
+        {
+          "score": 291.61,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Intelligence": 125,
+            "Power": 0,
+            "Vitality": 138,
+            "Damage": 1,
+            "Fire Damage": 1,
+            "Critical": 0,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Boon Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Koliet Aclou",
+            "Muffin Belt",
+            "Bounihime",
+            "Lumberjack Shield",
+            "Small Magic Ring",
+            "Crashers",
+            "Pumpkwin Head",
+            "Bow Wow"
+          ]
+        },
+        {
+          "score": 286.57,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Intelligence": 122,
+            "Power": 0,
+            "Vitality": 145,
+            "Damage": 0,
+            "Fire Damage": 1,
+            "Critical": 0,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Boon Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Koliet Aclou",
+            "Muffin Belt",
+            "Lumberjack Hatchet",
+            "Lumberjack Shield",
+            "Small Magic Ring",
+            "Crashers",
+            "Pumpkwin Head",
+            "Bow Wow"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 8
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 1574.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 229.2,
+          "candidatePoolsMs": 32.6,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 1.9,
+          "directCompletionMs": 0.0,
+          "beamSearchMs": 1310.9,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 1574.8
+        },
+        "resultCount": 3,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

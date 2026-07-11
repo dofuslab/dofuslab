@@ -1,0 +1,936 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T04:14:37.206543+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-ap-mp-range-frontier-003-targets.json#nextUnprovenTargets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "grid_frontier_003_level_99_strength_6_3_0_budget4",
+        "className": "Iop",
+        "level": 99,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 0
+      },
+      "query": {
+        "className": "Iop",
+        "level": 99,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 3,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 3,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        },
+        {
+          "index": 1,
+          "errors": []
+        },
+        {
+          "index": 2,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 1427.7,
+        "weightedStatScore": 2174.96,
+        "utilityStatScore": 259.0,
+        "genericDamageScore": 2543.78,
+        "rawRotationDamageScore": 1459.46,
+        "spellDamageScore": 1421.32,
+        "profileBaselineDamageScore": 1721.21,
+        "profileRelativeDamage": 0.8479,
+        "weaponDamageScore": 114.65,
+        "survivabilityScore": 24.0,
+        "weakestElementEhp": 760.13,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Strength": 263,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 9,
+          "MP": 6,
+          "Range": 2,
+          "Strength": 803,
+          "Power": 75,
+          "Vitality": 761,
+          "Damage": 7,
+          "Earth Damage": 18,
+          "Critical": 40,
+          "Critical Damage": 94,
+          "Neutral Damage": 10
+        },
+        "sets": {
+          "Simbadas Set": 2,
+          "Cauldini Set": 2,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "amulet": {
+            "id": "33577",
+            "internalId": null,
+            "name": "Simbadas Cage",
+            "type": "Amulet",
+            "level": 92,
+            "set": "Simbadas Set"
+          },
+          "belt": {
+            "id": "2677",
+            "internalId": null,
+            "name": "Chouquish Belt",
+            "type": "Belt",
+            "level": 96,
+            "set": null
+          },
+          "shield": {
+            "id": "19084",
+            "internalId": null,
+            "name": "Cauldini Shield",
+            "type": "Shield",
+            "level": 90,
+            "set": "Cauldini Set"
+          },
+          "ring_1": {
+            "id": "33579",
+            "internalId": null,
+            "name": "Simbadas Paw",
+            "type": "Ring",
+            "level": 96,
+            "set": "Simbadas Set"
+          },
+          "ring_2": {
+            "id": "8448",
+            "internalId": null,
+            "name": "Black Rat Glove",
+            "type": "Ring",
+            "level": 98,
+            "set": "Black Rat Set"
+          },
+          "boots": {
+            "id": "19085",
+            "internalId": null,
+            "name": "Cauldini Boots",
+            "type": "Boots",
+            "level": 92,
+            "set": "Cauldini Set"
+          },
+          "pet": {
+            "id": "7712",
+            "internalId": null,
+            "name": "Green Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13772",
+            "internalId": null,
+            "name": "Minor Earth Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12722",
+            "internalId": null,
+            "name": "Minor Maniac",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12748",
+            "internalId": null,
+            "name": "Minor Earth Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13757",
+            "internalId": null,
+            "name": "Minor Goliath",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "972",
+            "internalId": null,
+            "name": "Cawwot Dofus",
+            "type": "Dofus",
+            "level": 60,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1427.7,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 9,
+          "MP": 6,
+          "Range": 2,
+          "Strength": 803,
+          "Power": 75,
+          "Vitality": 761,
+          "Damage": 7,
+          "Earth Damage": 18,
+          "Critical": 40,
+          "Critical Damage": 94,
+          "Neutral Damage": 10
+        },
+        "sets": {
+          "Simbadas Set": 2,
+          "Cauldini Set": 2,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Simbadas Cage",
+          "Chouquish Belt",
+          "Khardboard Goultard",
+          "Cauldini Shield",
+          "Simbadas Paw",
+          "Black Rat Glove",
+          "Cauldini Boots",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Green Piwin",
+          "Minor Earth Wrecker",
+          "Minor Maniac",
+          "Minor Earth Destroyer",
+          "Minor Goliath",
+          "Minor Dynamo",
+          "Cawwot Dofus"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 1427.7,
+          "weightedStatScore": 2174.96,
+          "utilityStatScore": 259.0,
+          "genericDamageScore": 2543.78,
+          "rawRotationDamageScore": 1459.46,
+          "spellDamageScore": 1421.32,
+          "profileBaselineDamageScore": 1721.21,
+          "profileRelativeDamage": 0.8479,
+          "weaponDamageScore": 114.65,
+          "survivabilityScore": 24.0,
+          "weakestElementEhp": 760.13,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Strength": 263,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 6,
+            "Range": 2,
+            "Strength": 803,
+            "Power": 75,
+            "Vitality": 761,
+            "Damage": 7,
+            "Earth Damage": 18,
+            "Critical": 40,
+            "Critical Damage": 94,
+            "Neutral Damage": 10
+          },
+          "sets": {
+            "Simbadas Set": 2,
+            "Cauldini Set": 2,
+            "Khardboard Set": 3
+          },
+          "exos": {},
+          "items": {
+            "weapon": {
+              "id": "27268",
+              "internalId": null,
+              "name": "Khardboard Goultard",
+              "type": "Sword",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "hat": {
+              "id": "27282",
+              "internalId": null,
+              "name": "Khardboard Gobball Headgear",
+              "type": "Hat",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "cloak": {
+              "id": "27267",
+              "internalId": null,
+              "name": "Khardboard Dazzling Cloak",
+              "type": "Cloak",
+              "level": 75,
+              "set": "Khardboard Set"
+            },
+            "amulet": {
+              "id": "33577",
+              "internalId": null,
+              "name": "Simbadas Cage",
+              "type": "Amulet",
+              "level": 92,
+              "set": "Simbadas Set"
+            },
+            "belt": {
+              "id": "2677",
+              "internalId": null,
+              "name": "Chouquish Belt",
+              "type": "Belt",
+              "level": 96,
+              "set": null
+            },
+            "shield": {
+              "id": "19084",
+              "internalId": null,
+              "name": "Cauldini Shield",
+              "type": "Shield",
+              "level": 90,
+              "set": "Cauldini Set"
+            },
+            "ring_1": {
+              "id": "33579",
+              "internalId": null,
+              "name": "Simbadas Paw",
+              "type": "Ring",
+              "level": 96,
+              "set": "Simbadas Set"
+            },
+            "ring_2": {
+              "id": "8448",
+              "internalId": null,
+              "name": "Black Rat Glove",
+              "type": "Ring",
+              "level": 98,
+              "set": "Black Rat Set"
+            },
+            "boots": {
+              "id": "19085",
+              "internalId": null,
+              "name": "Cauldini Boots",
+              "type": "Boots",
+              "level": 92,
+              "set": "Cauldini Set"
+            },
+            "pet": {
+              "id": "7712",
+              "internalId": null,
+              "name": "Green Piwin",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "13772",
+              "internalId": null,
+              "name": "Minor Earth Wrecker",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "12722",
+              "internalId": null,
+              "name": "Minor Maniac",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "12748",
+              "internalId": null,
+              "name": "Minor Earth Destroyer",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13757",
+              "internalId": null,
+              "name": "Minor Goliath",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13823",
+              "internalId": null,
+              "name": "Minor Dynamo",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "972",
+              "internalId": null,
+              "name": "Cawwot Dofus",
+              "type": "Dofus",
+              "level": 60,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 1418.77,
+          "weightedStatScore": 2108.79,
+          "utilityStatScore": 273.83,
+          "genericDamageScore": 2458.75,
+          "rawRotationDamageScore": 1410.67,
+          "spellDamageScore": 1410.67,
+          "profileBaselineDamageScore": 1721.21,
+          "profileRelativeDamage": 0.8196,
+          "weaponDamageScore": 77.12,
+          "survivabilityScore": 38.5,
+          "weakestElementEhp": 1257.33,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Strength": 263,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 6,
+            "Range": 4,
+            "Strength": 693,
+            "Power": 275,
+            "Vitality": 1221,
+            "Damage": 25,
+            "Earth Damage": 13,
+            "Critical": 29,
+            "Critical Damage": 15,
+            "Neutral Damage": 5
+          },
+          "sets": {
+            "Royal Rainbow Blop Set": 4,
+            "Simbadas Set": 2,
+            "Khardboard Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "9157",
+              "internalId": null,
+              "name": "Royal Rainbow Amublop",
+              "type": "Amulet",
+              "level": 90,
+              "set": "Royal Rainbow Blop Set"
+            },
+            "belt": {
+              "id": "9175",
+              "internalId": null,
+              "name": "Royal Rainbow Blop Belt",
+              "type": "Belt",
+              "level": 88,
+              "set": "Royal Rainbow Blop Set"
+            },
+            "weapon": {
+              "id": "27268",
+              "internalId": null,
+              "name": "Khardboard Goultard",
+              "type": "Sword",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "ring_1": {
+              "id": "9148",
+              "internalId": null,
+              "name": "Royal Rainbow Blop Ring",
+              "type": "Ring",
+              "level": 90,
+              "set": "Royal Rainbow Blop Set"
+            },
+            "boots": {
+              "id": "9166",
+              "internalId": null,
+              "name": "Royal Rainbow Bloopts",
+              "type": "Boots",
+              "level": 90,
+              "set": "Royal Rainbow Blop Set"
+            },
+            "hat": {
+              "id": "27282",
+              "internalId": null,
+              "name": "Khardboard Gobball Headgear",
+              "type": "Hat",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "cloak": {
+              "id": "27267",
+              "internalId": null,
+              "name": "Khardboard Dazzling Cloak",
+              "type": "Cloak",
+              "level": 75,
+              "set": "Khardboard Set"
+            },
+            "shield": {
+              "id": "33578",
+              "internalId": null,
+              "name": "Simbadas Barrier",
+              "type": "Shield",
+              "level": 94,
+              "set": "Simbadas Set"
+            },
+            "ring_2": {
+              "id": "33579",
+              "internalId": null,
+              "name": "Simbadas Paw",
+              "type": "Ring",
+              "level": 96,
+              "set": "Simbadas Set"
+            },
+            "pet": {
+              "id": "33044",
+              "internalId": null,
+              "name": "Ivory and Crimson Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "13772",
+              "internalId": null,
+              "name": "Minor Earth Wrecker",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "12722",
+              "internalId": null,
+              "name": "Minor Maniac",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "12748",
+              "internalId": null,
+              "name": "Minor Earth Destroyer",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13757",
+              "internalId": null,
+              "name": "Minor Goliath",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13823",
+              "internalId": null,
+              "name": "Minor Dynamo",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "972",
+              "internalId": null,
+              "name": "Cawwot Dofus",
+              "type": "Dofus",
+              "level": 60,
+              "set": null
+            }
+          }
+        },
+        {
+          "score": 1391.56,
+          "weightedStatScore": 2173.21,
+          "utilityStatScore": 230.25,
+          "genericDamageScore": 2487.57,
+          "rawRotationDamageScore": 1427.21,
+          "spellDamageScore": 1427.21,
+          "profileBaselineDamageScore": 1721.21,
+          "profileRelativeDamage": 0.8292,
+          "weaponDamageScore": 73.22,
+          "survivabilityScore": 41.9,
+          "weakestElementEhp": 1339.47,
+          "apStrategy": "base_ap",
+          "baseAllocation": {
+            "Strength": 263,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 3,
+            "Strength": 823,
+            "Power": 140,
+            "Vitality": 1341,
+            "Damage": 10,
+            "Earth Damage": 20,
+            "Critical": 40,
+            "Critical Damage": 30,
+            "Neutral Damage": 12
+          },
+          "sets": {
+            "Simbadas Set": 2,
+            "Terrdala Set": 2,
+            "Khardboard Set": 3
+          },
+          "exos": {},
+          "items": {
+            "weapon": {
+              "id": "27268",
+              "internalId": null,
+              "name": "Khardboard Goultard",
+              "type": "Sword",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "hat": {
+              "id": "27282",
+              "internalId": null,
+              "name": "Khardboard Gobball Headgear",
+              "type": "Hat",
+              "level": 50,
+              "set": "Khardboard Set"
+            },
+            "cloak": {
+              "id": "27267",
+              "internalId": null,
+              "name": "Khardboard Dazzling Cloak",
+              "type": "Cloak",
+              "level": 75,
+              "set": "Khardboard Set"
+            },
+            "amulet": {
+              "id": "33577",
+              "internalId": null,
+              "name": "Simbadas Cage",
+              "type": "Amulet",
+              "level": 92,
+              "set": "Simbadas Set"
+            },
+            "belt": {
+              "id": "7239",
+              "internalId": null,
+              "name": "Terrdala Belt",
+              "type": "Belt",
+              "level": 80,
+              "set": "Terrdala Set"
+            },
+            "shield": {
+              "id": "18663",
+              "internalId": null,
+              "name": "Terrdala Shield",
+              "type": "Shield",
+              "level": 75,
+              "set": "Terrdala Set"
+            },
+            "ring_1": {
+              "id": "33579",
+              "internalId": null,
+              "name": "Simbadas Paw",
+              "type": "Ring",
+              "level": 96,
+              "set": "Simbadas Set"
+            },
+            "ring_2": {
+              "id": "8448",
+              "internalId": null,
+              "name": "Black Rat Glove",
+              "type": "Ring",
+              "level": 98,
+              "set": "Black Rat Set"
+            },
+            "boots": {
+              "id": "7218",
+              "internalId": null,
+              "name": "Sandals Adin",
+              "type": "Boots",
+              "level": 76,
+              "set": null
+            },
+            "pet": {
+              "id": "33044",
+              "internalId": null,
+              "name": "Ivory and Crimson Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "13772",
+              "internalId": null,
+              "name": "Minor Earth Wrecker",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "12722",
+              "internalId": null,
+              "name": "Minor Maniac",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "12727",
+              "internalId": null,
+              "name": "Minor Survivor",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "12748",
+              "internalId": null,
+              "name": "Minor Earth Destroyer",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13757",
+              "internalId": null,
+              "name": "Minor Goliath",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13831",
+              "internalId": null,
+              "name": "Twitcher",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 1427.7,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 9,
+            "MP": 6,
+            "Range": 2,
+            "Strength": 803,
+            "Power": 75,
+            "Vitality": 761,
+            "Damage": 7,
+            "Earth Damage": 18,
+            "Critical": 40,
+            "Critical Damage": 94,
+            "Neutral Damage": 10
+          },
+          "sets": {
+            "Simbadas Set": 2,
+            "Cauldini Set": 2,
+            "Khardboard Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Simbadas Cage",
+            "Chouquish Belt",
+            "Khardboard Goultard",
+            "Cauldini Shield",
+            "Simbadas Paw",
+            "Black Rat Glove",
+            "Cauldini Boots",
+            "Khardboard Gobball Headgear",
+            "Khardboard Dazzling Cloak",
+            "Green Piwin",
+            "Minor Earth Wrecker",
+            "Minor Maniac",
+            "Minor Earth Destroyer",
+            "Minor Goliath",
+            "Minor Dynamo",
+            "Cawwot Dofus"
+          ]
+        },
+        {
+          "score": 1418.77,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 10,
+            "MP": 6,
+            "Range": 4,
+            "Strength": 693,
+            "Power": 275,
+            "Vitality": 1221,
+            "Damage": 25,
+            "Earth Damage": 13,
+            "Critical": 29,
+            "Critical Damage": 15,
+            "Neutral Damage": 5
+          },
+          "sets": {
+            "Royal Rainbow Blop Set": 4,
+            "Simbadas Set": 2,
+            "Khardboard Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Royal Rainbow Amublop",
+            "Royal Rainbow Blop Belt",
+            "Khardboard Goultard",
+            "Simbadas Barrier",
+            "Royal Rainbow Blop Ring",
+            "Simbadas Paw",
+            "Royal Rainbow Bloopts",
+            "Khardboard Gobball Headgear",
+            "Khardboard Dazzling Cloak",
+            "Ivory and Crimson Dragoturkey",
+            "Minor Earth Wrecker",
+            "Minor Maniac",
+            "Minor Earth Destroyer",
+            "Minor Goliath",
+            "Minor Dynamo",
+            "Cawwot Dofus"
+          ]
+        },
+        {
+          "score": 1391.56,
+          "apStrategy": "base_ap",
+          "totals": {
+            "AP": 9,
+            "MP": 5,
+            "Range": 3,
+            "Strength": 823,
+            "Power": 140,
+            "Vitality": 1341,
+            "Damage": 10,
+            "Earth Damage": 20,
+            "Critical": 40,
+            "Critical Damage": 30,
+            "Neutral Damage": 12
+          },
+          "sets": {
+            "Simbadas Set": 2,
+            "Terrdala Set": 2,
+            "Khardboard Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Simbadas Cage",
+            "Terrdala Belt",
+            "Khardboard Goultard",
+            "Terrdala Shield",
+            "Simbadas Paw",
+            "Black Rat Glove",
+            "Sandals Adin",
+            "Khardboard Gobball Headgear",
+            "Khardboard Dazzling Cloak",
+            "Ivory and Crimson Dragoturkey",
+            "Minor Earth Wrecker",
+            "Minor Maniac",
+            "Minor Survivor",
+            "Minor Earth Destroyer",
+            "Minor Goliath",
+            "Twitcher"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 3,
+        "uniqueItemSignatureCount": 3,
+        "maxSharedItemsWithBest": 10
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 361068.8,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 117.0,
+          "candidatePoolsMs": 82.3,
+          "packageIndexMs": 1270.9,
+          "packageSeedsMs": 2408.0,
+          "directCompletionMs": 357182.3,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.5,
+          "totalFindBuildsMs": 361063.0
+        },
+        "resultCount": 3,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}
