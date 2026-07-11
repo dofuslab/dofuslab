@@ -10,8 +10,9 @@ review before accepting Milestone 2 evidence.
 
 - Current solver scope is Iop only.
 - Current Milestone 2 scope is level 200, single-element Iop builds.
-- Milestone 2 target grid is 3,072 rows:
+- Milestone 2 target grid is 12,288 rows:
   - 4 elements
+  - 4 damage/survivability presets
   - 4 budget tiers
   - AP 7-12
   - MP 3-6
@@ -88,13 +89,22 @@ review before accepting Milestone 2 evidence.
 - Previous generated matrices are evidence that target rows and validators work;
   they are not proof that CP-SAT currently finds best builds.
 - Milestone 2 now has a first-class level-200 Iop grid in the harness:
-  4 elements x 4 budget tiers x AP 7-12 x MP 3-6 x Range none/0-6 =
-  3,072 targets.
+  4 elements x 4 damage/survivability presets x 4 budget tiers x AP 7-12 x
+  MP 3-6 x Range none/0-6 = 12,288 targets.
 - This grid is the level-200 single-element AP/MP/Range matrix. It is not yet
   proof of the full product contract for playstyle, locked items, avoided
   items, weapon preference, API, persistence, or UI behavior.
 - Milestone 2 matrix/checker runs can be filtered by element, budget tier,
-  AP target, MP target, and Range target, including `none` Range targets.
+  AP target, MP target, Range target, and damage/survivability preset,
+  including `none` Range targets.
+- Legacy no-preset Milestone 2 artifacts are historical evidence only. They do
+  not count toward the current 12,288-row preset-aware coverage denominator
+  unless regenerated or explicitly normalized as preset `3` rows.
+- The first preset-aware 128-row corner slice generated all rows with zero
+  invalid builds for elements strength/intelligence/chance/agility, presets
+  `1` and `4`, budget tiers `1` and `4`, AP `7/12`, MP `3/6`, and Range
+  `none/6`. This is plausibility evidence for M2 corners, not human acceptance
+  of every item package.
 - The matrix checker can require solver provenance with `--expected-solver`.
   CP-SAT no-build rows only count as allowed no-build evidence when the solver
   reports `INFEASIBLE`, not `UNKNOWN` or a timeout-shaped status.
@@ -120,6 +130,10 @@ review before accepting Milestone 2 evidence.
   p95 `<5s` target.
 - Current timed CP-SAT slice rows are `FEASIBLE`, not `OPTIMAL`; they prove
   valid generation but not stable best-build quality.
+- The first preset-aware 128-row M2 corner slice had `92` `OPTIMAL` rows and
+  `36` `FEASIBLE` rows under a 6-second CP-SAT limit. `FEASIBLE` rows are
+  acceptable corner-smoke evidence but should not be treated as final
+  benchmark-quality optima.
 - Current CP-SAT model treats the six Dofus/trophy/prysmaradite slots as one
   grouped cardinality selection and reconstructs the six output slots afterward.
   This assumes those slots are order-equivalent for scoring, conditions, and

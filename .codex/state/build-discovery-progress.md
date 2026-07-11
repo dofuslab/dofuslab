@@ -5795,3 +5795,51 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server/scripts/test_build_discovery_level_diversity_matrix.py`
   - `python -m py_compile server/scripts/build_discovery_level_diversity_targets.py server/scripts/build_discovery_level_diversity_matrix.py server/scripts/check_build_discovery_level_diversity_matrix.py server/scripts/summarize_build_discovery_cpsat_coverage.py`
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m2-preset-smoke.json --target-set milestone2-level200 --elements strength --damage-survivability-presets 1,4 --budget-tiers 4 --ap-targets 12 --mp-targets 6 --range-targets none --expected-solver cpsat`
+
+### 2026-07-11 Preset-Aware Milestone 2 Corner Evidence
+
+- Generated and validated a preset-aware 128-row Docker CP-SAT corner slice:
+  - `.codex/state/build-discovery-m2-preset-corners.json`
+  - `.codex/state/build-discovery-m2-preset-corners.md`
+- Slice:
+  - elements: strength, intelligence, chance, agility
+  - damage/survivability presets: `1`, `4`
+  - budget tiers: `1`, `4`
+  - AP: `7`, `12`
+  - MP: `3`, `6`
+  - Range: `none`, `6`
+  - solver: CP-SAT callback mode, candidate limit `5`, 6-second row limit
+- Result:
+  - targets: `128`
+  - generated: `128`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `92` `OPTIMAL`, `36` `FEASIBLE`
+- Representative rows:
+  - defensive Strength tier 4 `12/6/None`: Gargandyas/Vampyrina package,
+    `12/6/6`, `880` Strength, `5395` Vitality, generic damage `2915.14`,
+    survivability `191.8`, weakest EHP `6208.88`
+  - glass-cannon Strength tier 4 `12/6/None`: Turtelonia/Corruption package,
+    `12/6/2`, `1268` Strength, `2653` Vitality, generic damage `4533.2`,
+    survivability `82.43`, weakest EHP `2550.96`
+  - glass-cannon Agility tier 4 `12/6/None`: Bubotron/Allister/Submerged
+    package, `12/6/0`, `1443` Agility, `2603` Vitality, generic damage
+    `4655.23`, weakest EHP `2401.3`
+  - glass-cannon Chance tier 4 `12/6/6`: Servitude/Gargandyas package,
+    `12/6/6`, `900` Chance, `4045` Vitality, generic damage `3696.31`,
+    weakest EHP `3658.27`
+- Interpretation:
+  - This is enough to treat the expanded preset-aware Milestone 2 corners as
+    structurally plausible: all selected corners generated valid builds across
+    every element, both budget extremes, low/high AP, low/high MP, and
+    unrestricted/high Range.
+  - It is not proof that each package is human-accepted or final-score optimal.
+    `FEASIBLE` rows only prove a valid candidate was found before the time
+    limit.
+  - Old no-preset coverage percentages are now obsolete for the active M2 grid;
+    the active denominator is `12288` rows.
+  - Low-target rows often overshoot AP/MP/Range because current semantics treat
+    those targets as minimums with small surplus value.
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-m2-preset-corners.json --target-set milestone2-level200 --elements strength,intelligence,chance,agility --damage-survivability-presets 1,4 --budget-tiers 1,4 --ap-targets 7,12 --mp-targets 3,6 --range-targets none,6 --expected-solver cpsat`
+  - Host: `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m2-preset-corners.json --target-set milestone2-level200 --elements strength,intelligence,chance,agility --damage-survivability-presets 1,4 --budget-tiers 1,4 --ap-targets 7,12 --mp-targets 3,6 --range-targets none,6 --expected-solver cpsat`
