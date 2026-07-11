@@ -6373,3 +6373,48 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker generation:
     `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-profile-stress-1-targets-20260711.json --output-json /tmp/build-discovery-m3-profile-stress-1-sample-20260711.json --output-md /tmp/build-discovery-m3-profile-stress-1-sample-20260711.md`
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-profile-stress-1-sample-20260711.json --target-file .codex/state/build-discovery-m3-profile-stress-1-targets-20260711.json --expected-solver cpsat --allow-no-build`
+
+### 2026-07-11 M3 Profile-Stress Slice 2
+
+- Generated and validated a second profile-stress slice balancing unresolved
+  retries, mid/high-level cap/MP/range rows, and a small zero-level smoke pass:
+  - target file: `.codex/state/build-discovery-m3-profile-stress-2-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-profile-stress-2-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-profile-stress-2-sample-20260711.md`
+  - generated: `14 / 16`
+  - no build: `2 / 16`
+  - invalid: `0`
+  - solver statuses: `14` `OPTIMAL`, `2` `INFEASIBLE`
+- Useful generated rows include:
+  - level `199` Agility tier `2` `12/6/6`
+  - level `101` Chance tier `2` `12/6/6`
+  - level `120` Chance tier `2` `12/6/6`
+  - level `150` Chance tier `2` `12/6/6`
+  - level `180` Agility tier `3` `12/5/6`
+- Clean infeasible proofs:
+  - level `20` Chance tier `2` `12/6/6`
+  - level `1` Chance tier `4` `6/6/Any`
+- Quality caveat: minimum target rows can heavily oversatisfy AP/MP/Range
+  because current semantics treat those as minimums with low marginal action
+  stat weight. For example level `81` Strength tier `1` `6/3/Any` generated
+  `9/6/5`. This is valid but needs human quality review so minimum rows do not
+  become weird action-stat builds.
+- Refreshed all-level inventory after adding the profile-stress-2 artifact:
+  - valid query rows: `665088`
+  - generated evidence rows: `271`
+  - attempted evidence rows: `298`
+  - proven no-build evidence rows: `27`
+  - resolved evidence rows: `298`
+  - unresolved rows: `664790`
+  - zero-resolved levels computed from `byLevel`: `79`
+  - `mp_heavy` generated evidence: `27`
+  - `range_heavy` generated evidence: `11`
+- Reviewer guidance after this slice: continue with plausible transition rows
+  around levels `50`, `60`, `75`, `80`, `98-101`, `120`, `137`, `140`,
+  `150`, `160`, `180`, and `199`, mostly tier `2` with selective tier `3`.
+  Avoid letting fast tiny-level infeasibility inflate `resolvedEvidenceCount`
+  without improving generated quality.
+- Verification passed:
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-profile-stress-2-targets-20260711.json --output-json /tmp/build-discovery-m3-profile-stress-2-sample-20260711.json --output-md /tmp/build-discovery-m3-profile-stress-2-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-profile-stress-2-sample-20260711.json --target-file .codex/state/build-discovery-m3-profile-stress-2-targets-20260711.json --expected-solver cpsat --allow-no-build`

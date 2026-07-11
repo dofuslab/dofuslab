@@ -7,17 +7,17 @@ Level scope: `all_levels` (`200` levels)
 Element count: `4`
 Budget tier count: `4`
 Valid query rows: `665088`
-Generated evidence rows: `257`
-Attempted evidence rows: `285`
-Proven no-build evidence rows: `25`
-Resolved evidence rows: `282`
-Unproven rows: `664831`
-Unresolved rows: `664806`
-Unattempted rows: `664803`
+Generated evidence rows: `271`
+Attempted evidence rows: `298`
+Proven no-build evidence rows: `27`
+Resolved evidence rows: `298`
+Unproven rows: `664817`
+Unresolved rows: `664790`
+Unattempted rows: `664790`
 
 | Level | Valid rows | Generated evidence | Resolved evidence | Unresolved |
 |---:|---:|---:|---:|---:|
-| 1 | 3584 | 8 | 12 | 3572 |
+| 1 | 3584 | 8 | 13 | 3571 |
 | 2 | 3584 | 1 | 4 | 3580 |
 | 3 | 3584 | 0 | 3 | 3581 |
 | 4 | 3584 | 0 | 3 | 3581 |
@@ -36,7 +36,7 @@ Unattempted rows: `664803`
 | 17 | 3584 | 1 | 1 | 3583 |
 | 18 | 3584 | 1 | 1 | 3583 |
 | 19 | 3584 | 1 | 1 | 3583 |
-| 20 | 3584 | 8 | 12 | 3572 |
+| 20 | 3584 | 8 | 13 | 3571 |
 | 21 | 3584 | 1 | 1 | 3583 |
 | 22 | 3584 | 1 | 1 | 3583 |
 | 23 | 3584 | 1 | 1 | 3583 |
@@ -96,10 +96,10 @@ Unattempted rows: `664803`
 | 77 | 3584 | 1 | 1 | 3583 |
 | 78 | 3584 | 1 | 1 | 3583 |
 | 79 | 3584 | 1 | 1 | 3583 |
-| 80 | 3584 | 15 | 15 | 3569 |
-| 81 | 3584 | 0 | 0 | 3584 |
-| 82 | 3584 | 0 | 0 | 3584 |
-| 83 | 3584 | 0 | 0 | 3584 |
+| 80 | 3584 | 17 | 17 | 3567 |
+| 81 | 3584 | 1 | 1 | 3583 |
+| 82 | 3584 | 1 | 1 | 3583 |
+| 83 | 3584 | 1 | 1 | 3583 |
 | 84 | 3584 | 0 | 0 | 3584 |
 | 85 | 3584 | 0 | 0 | 3584 |
 | 86 | 3584 | 0 | 0 | 3584 |
@@ -115,11 +115,11 @@ Unattempted rows: `664803`
 | 96 | 3584 | 0 | 0 | 3584 |
 | 97 | 3584 | 0 | 0 | 3584 |
 | 98 | 3584 | 1 | 1 | 3583 |
-| 99 | 3584 | 10 | 10 | 3574 |
-| 100 | 3072 | 14 | 14 | 3058 |
-| 101 | 3072 | 1 | 1 | 3071 |
+| 99 | 3584 | 11 | 11 | 3573 |
+| 100 | 3072 | 15 | 15 | 3057 |
+| 101 | 3072 | 2 | 2 | 3070 |
 | 102 | 3072 | 1 | 1 | 3071 |
-| 103 | 3072 | 0 | 0 | 3072 |
+| 103 | 3072 | 1 | 1 | 3071 |
 | 104 | 3072 | 1 | 1 | 3071 |
 | 105 | 3072 | 0 | 0 | 3072 |
 | 106 | 3072 | 0 | 0 | 3072 |
@@ -136,7 +136,7 @@ Unattempted rows: `664803`
 | 117 | 3072 | 0 | 0 | 3072 |
 | 118 | 3072 | 0 | 0 | 3072 |
 | 119 | 3072 | 0 | 0 | 3072 |
-| 120 | 3072 | 14 | 14 | 3058 |
+| 120 | 3072 | 15 | 15 | 3057 |
 | 121 | 3072 | 0 | 0 | 3072 |
 | 122 | 3072 | 0 | 0 | 3072 |
 | 123 | 3072 | 1 | 1 | 3071 |
@@ -166,7 +166,7 @@ Unattempted rows: `664803`
 | 147 | 3072 | 0 | 0 | 3072 |
 | 148 | 3072 | 0 | 0 | 3072 |
 | 149 | 3072 | 1 | 1 | 3071 |
-| 150 | 3072 | 15 | 15 | 3057 |
+| 150 | 3072 | 16 | 16 | 3056 |
 | 151 | 3072 | 0 | 0 | 3072 |
 | 152 | 3072 | 1 | 1 | 3071 |
 | 153 | 3072 | 0 | 0 | 3072 |
@@ -176,7 +176,7 @@ Unattempted rows: `664803`
 | 157 | 3072 | 1 | 1 | 3071 |
 | 158 | 3072 | 0 | 0 | 3072 |
 | 159 | 3072 | 0 | 0 | 3072 |
-| 160 | 3072 | 7 | 7 | 3065 |
+| 160 | 3072 | 8 | 8 | 3064 |
 | 161 | 3072 | 0 | 0 | 3072 |
 | 162 | 3072 | 0 | 0 | 3072 |
 | 163 | 3072 | 0 | 0 | 3072 |
@@ -196,7 +196,7 @@ Unattempted rows: `664803`
 | 177 | 3072 | 0 | 0 | 3072 |
 | 178 | 3072 | 0 | 0 | 3072 |
 | 179 | 3072 | 9 | 9 | 3063 |
-| 180 | 3072 | 10 | 10 | 3062 |
+| 180 | 3072 | 11 | 11 | 3061 |
 | 181 | 3072 | 0 | 0 | 3072 |
 | 182 | 3072 | 0 | 0 | 3072 |
 | 183 | 3072 | 0 | 0 | 3072 |
@@ -215,37 +215,37 @@ Unattempted rows: `664803`
 | 196 | 3072 | 0 | 0 | 3072 |
 | 197 | 3072 | 0 | 0 | 3072 |
 | 198 | 3072 | 0 | 0 | 3072 |
-| 199 | 3072 | 13 | 13 | 3059 |
+| 199 | 3072 | 14 | 14 | 3058 |
 | 200 | 3072 | 14 | 14 | 3058 |
 
 ## Evidence By Element
 
 | element | Valid rows | Generated evidence | Resolved evidence | Unresolved |
 |---|---:|---:|---:|---:|
-| agility | 166272 | 55 | 62 | 166210 |
-| chance | 166272 | 55 | 62 | 166210 |
-| intelligence | 166272 | 61 | 69 | 166203 |
-| strength | 166272 | 86 | 89 | 166183 |
+| agility | 166272 | 59 | 66 | 166206 |
+| chance | 166272 | 60 | 69 | 166203 |
+| intelligence | 166272 | 65 | 73 | 166199 |
+| strength | 166272 | 87 | 90 | 166182 |
 
 ## Evidence By Budget Tier
 
 | budgetTier | Valid rows | Generated evidence | Resolved evidence | Unresolved |
 |---|---:|---:|---:|---:|
-| 1 | 166272 | 97 | 97 | 166175 |
-| 2 | 166272 | 72 | 76 | 166196 |
-| 3 | 166272 | 42 | 46 | 166226 |
-| 4 | 166272 | 46 | 63 | 166209 |
+| 1 | 166272 | 101 | 101 | 166171 |
+| 2 | 166272 | 80 | 85 | 166187 |
+| 3 | 166272 | 44 | 48 | 166224 |
+| 4 | 166272 | 46 | 64 | 166208 |
 
 ## Evidence By Profile Bucket
 
 | profileBucket | Valid rows | Generated evidence | Resolved evidence | Unresolved |
 |---|---:|---:|---:|---:|
 | ap_heavy | 134400 | 28 | 28 | 134372 |
-| cap | 3200 | 42 | 55 | 3145 |
+| cap | 3200 | 47 | 61 | 3139 |
 | middle | 298864 | 60 | 60 | 298804 |
-| minimum | 3200 | 94 | 94 | 3106 |
-| mp_heavy | 163072 | 24 | 30 | 163042 |
-| range_heavy | 62352 | 9 | 15 | 62337 |
+| minimum | 3200 | 98 | 98 | 3102 |
+| mp_heavy | 163072 | 27 | 34 | 163038 |
+| range_heavy | 62352 | 11 | 17 | 62335 |
 
 ## Unproven Examples
 
@@ -335,9 +335,6 @@ Unattempted rows: `664803`
 
 ## Suggested Next Generated Rows
 
-- L20 chance tier 2 12/6/6 `cap` `retry`
-- L199 agility tier 2 12/6/6 `cap` `retry`
-- L1 chance tier 4 6/6/any `mp_heavy` `retry`
 - L1 chance tier 1 6/3/any `minimum` `unattempted`
 - L2 intelligence tier 1 12/6/6 `cap` `unattempted`
 - L3 chance tier 4 6/6/2 `mp_heavy` `unattempted`
@@ -359,25 +356,24 @@ Unattempted rows: `664803`
 - L19 chance tier 1 6/3/any `minimum` `unattempted`
 - L20 agility tier 4 12/6/6 `cap` `unattempted`
 - L21 strength tier 4 6/6/any `mp_heavy` `unattempted`
+- L22 intelligence tier 4 6/3/6 `range_heavy` `unattempted`
+- L23 chance tier 4 11/3/any `ap_heavy` `unattempted`
+- L24 agility tier 4 6/3/0 `middle` `unattempted`
 
 ## Suggested Zero-Resolved Level Rows
 
-- L81 strength tier 1 6/3/any `minimum` `unattempted`
-- L82 intelligence tier 1 6/3/any `minimum` `unattempted`
-- L83 chance tier 1 6/3/any `minimum` `unattempted`
-- L84 agility tier 1 6/3/any `minimum` `unattempted`
-- L85 strength tier 1 6/3/any `minimum` `unattempted`
-- L86 intelligence tier 1 6/3/any `minimum` `unattempted`
-- L87 chance tier 1 6/3/any `minimum` `unattempted`
-- L88 agility tier 1 6/3/any `minimum` `unattempted`
-- L90 strength tier 1 6/3/any `minimum` `unattempted`
-- L91 intelligence tier 1 6/3/any `minimum` `unattempted`
-- L92 chance tier 1 6/3/any `minimum` `unattempted`
-- L93 agility tier 1 6/3/any `minimum` `unattempted`
-- L94 strength tier 1 6/3/any `minimum` `unattempted`
-- L96 intelligence tier 1 6/3/any `minimum` `unattempted`
-- L97 chance tier 1 6/3/any `minimum` `unattempted`
-- L103 agility tier 1 7/3/any `minimum` `unattempted`
+- L84 strength tier 1 6/3/any `minimum` `unattempted`
+- L85 intelligence tier 1 6/3/any `minimum` `unattempted`
+- L86 chance tier 1 6/3/any `minimum` `unattempted`
+- L87 agility tier 1 6/3/any `minimum` `unattempted`
+- L88 strength tier 1 6/3/any `minimum` `unattempted`
+- L90 intelligence tier 1 6/3/any `minimum` `unattempted`
+- L91 chance tier 1 6/3/any `minimum` `unattempted`
+- L92 agility tier 1 6/3/any `minimum` `unattempted`
+- L93 strength tier 1 6/3/any `minimum` `unattempted`
+- L94 intelligence tier 1 6/3/any `minimum` `unattempted`
+- L96 chance tier 1 6/3/any `minimum` `unattempted`
+- L97 agility tier 1 6/3/any `minimum` `unattempted`
 - L105 strength tier 1 7/3/any `minimum` `unattempted`
 - L106 intelligence tier 1 7/3/any `minimum` `unattempted`
 - L107 chance tier 1 7/3/any `minimum` `unattempted`
@@ -386,3 +382,7 @@ Unattempted rows: `664803`
 - L112 intelligence tier 1 7/3/any `minimum` `unattempted`
 - L113 chance tier 1 7/3/any `minimum` `unattempted`
 - L114 agility tier 1 7/3/any `minimum` `unattempted`
+- L115 strength tier 1 7/3/any `minimum` `unattempted`
+- L117 intelligence tier 1 7/3/any `minimum` `unattempted`
+- L118 chance tier 1 7/3/any `minimum` `unattempted`
+- L119 agility tier 1 7/3/any `minimum` `unattempted`

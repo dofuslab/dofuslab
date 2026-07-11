@@ -332,6 +332,18 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   zero-level selector is mostly suggesting easy minimum rows. Future sampling
   should prioritize unresolved `mp_heavy`, `range_heavy`, cap, and non-Strength
   rows instead of relying only on the zero-level minimum queue.
+- Profile-stress slice 2 showed that plausible mid/high-level tier 2 rows can
+  generate clean cap builds for non-Strength elements, including level 101
+  Chance `12/6/6`, level 120 Chance `12/6/6`, level 150 Chance `12/6/6`, and
+  level 199 Agility `12/6/6`.
+- Minimum AP/MP/Range rows can still produce builds with far more action stats
+  than requested, such as level 81 Strength tier 1 `6/3/Any` producing
+  `9/6/5`. This is allowed by current minimum-target semantics, but the
+  scoring/quality review should check whether surplus AP/MP/Range is crowding
+  out better damage, survivability, or budget plausibility.
+- Resolved evidence can grow quickly from low-level infeasibility proofs. Do
+  not treat that as equivalent to broad generated-build quality; M3 review
+  still needs plausible generated rows around real transition levels.
 - CP-SAT excludes items whose conditions cannot be encoded by the current
   condition model. This is conservative: it may miss a legal item with an
   unsupported but satisfiable condition, but it prevents invalid

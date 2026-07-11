@@ -1,0 +1,165 @@
+{
+  "description": "M3 profile-stress slice 2: mix unresolved retries, mid/high-level MP/range/cap corners, and a small zero-level smoke pass around AP-baseline transitions.",
+  "targets": [
+    {
+      "id": "profilestress2_01_l20_chance_cap_t2",
+      "level": 20,
+      "element": "chance",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_02_l199_agility_cap_t2",
+      "level": 199,
+      "element": "agility",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_03_l1_chance_mpheavy_t4",
+      "level": 1,
+      "element": "chance",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_04_l80_intelligence_mprange_t2",
+      "level": 80,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 10,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_05_l80_chance_rangeheavy_t2",
+      "level": 80,
+      "element": "chance",
+      "budgetTier": 2,
+      "apTarget": 10,
+      "mpTarget": 3,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_06_l99_agility_mpheavy_t2",
+      "level": 99,
+      "element": "agility",
+      "budgetTier": 2,
+      "apTarget": 10,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_07_l101_chance_cap_t2",
+      "level": 101,
+      "element": "chance",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_08_l100_intelligence_cap_t3",
+      "level": 100,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_09_l120_chance_cap_t2",
+      "level": 120,
+      "element": "chance",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_10_l150_chance_cap_t2",
+      "level": 150,
+      "element": "chance",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_11_l160_intelligence_mpheavy_t2",
+      "level": 160,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_12_l180_agility_rangeheavy_t3",
+      "level": 180,
+      "element": "agility",
+      "budgetTier": 3,
+      "apTarget": 12,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_13_l81_strength_min_t1",
+      "level": 81,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_14_l82_intelligence_min_t1",
+      "level": 82,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_15_l83_chance_min_t1",
+      "level": 83,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress2_16_l103_agility_min_t1",
+      "level": 103,
+      "element": "agility",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    }
+  ]
+}
