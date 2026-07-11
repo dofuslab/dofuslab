@@ -6051,3 +6051,33 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server/scripts/test_build_discovery_ap_mp_range_grid_inventory.py`
   - `python server/scripts/test_build_discovery_level_diversity_matrix_check.py`
   - Docker: `PYTHONPATH=/home/dofuslab python scripts/test_build_discovery_ap_mp_range_grid_inventory.py`
+
+### 2026-07-11 M3/M4 Between-Boundary Level Sample
+
+- Generated and validated a targeted between-boundary level sample to avoid
+  proving only the familiar bucket edges:
+  - target file: `.codex/state/build-discovery-m3-between-boundary-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-between-boundary-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-between-boundary-sample-20260711.md`
+  - levels: `13`, `18`, `37`, `42`, `75`, `98`, `101`, `111`, `137`,
+    `141`, `171`, `187`
+  - elements: Strength, Intelligence, Chance, Agility
+  - generated: `12 / 12`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `12` `OPTIMAL`
+- Refreshed the all-level Iop inventory again after adding this sample to the
+  default artifact set:
+  - valid query rows: `665088`
+  - generated evidence rows: `172`
+  - no-build evidence rows: `22`
+  - resolved evidence rows: `192`
+  - attempted evidence rows: `192`
+  - unresolved rows: `664896`
+- Performance observation: the level `111` Agility row took about `14.7s` and
+  the level `137` Strength row took about `11.0s`, so correctness sampling is
+  improving faster than the `<5s` cache-miss target.
+- Verification passed:
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-between-boundary-targets-20260711.json --output-json /tmp/build-discovery-m3-between-boundary-sample-20260711.json --output-md /tmp/build-discovery-m3-between-boundary-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-between-boundary-sample-20260711.json --target-file .codex/state/build-discovery-m3-between-boundary-targets-20260711.json --expected-solver cpsat --allow-no-build`

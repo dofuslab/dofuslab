@@ -1,0 +1,125 @@
+{
+  "description": "Between-boundary all-level Iop correctness sample for arbitrary levels not already emphasized by boundary/prod buckets.",
+  "targets": [
+    {
+      "id": "between_01_l13_strength_min_t1",
+      "level": 13,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "between_02_l18_intelligence_range_t1",
+      "level": 18,
+      "element": "intelligence",
+      "budgetTier": 1,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 1,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "between_03_l37_chance_light_t1",
+      "level": 37,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 4,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "between_04_l42_agility_range_t2",
+      "level": 42,
+      "element": "agility",
+      "budgetTier": 2,
+      "apTarget": 8,
+      "mpTarget": 4,
+      "rangeTarget": 1,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "between_05_l75_strength_mid_t2",
+      "level": 75,
+      "element": "strength",
+      "budgetTier": 2,
+      "apTarget": 10,
+      "mpTarget": 5,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "between_06_l98_intelligence_pressure_t3",
+      "level": 98,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 11,
+      "mpTarget": 5,
+      "rangeTarget": 3,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "between_07_l101_chance_min_t1",
+      "level": 101,
+      "element": "chance",
+      "budgetTier": 1,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "between_08_l111_agility_mid_t2",
+      "level": 111,
+      "element": "agility",
+      "budgetTier": 2,
+      "apTarget": 10,
+      "mpTarget": 4,
+      "rangeTarget": 2,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "between_09_l137_strength_mid_t2",
+      "level": 137,
+      "element": "strength",
+      "budgetTier": 2,
+      "apTarget": 11,
+      "mpTarget": 5,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "between_10_l141_intelligence_pressure_t3",
+      "level": 141,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 12,
+      "mpTarget": 5,
+      "rangeTarget": 2,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "between_11_l171_chance_mp_t3",
+      "level": 171,
+      "element": "chance",
+      "budgetTier": 3,
+      "apTarget": 11,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "between_12_l187_agility_pressure_t4",
+      "level": 187,
+      "element": "agility",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 4,
+      "damageSurvivabilityPreset": 3
+    }
+  ]
+}

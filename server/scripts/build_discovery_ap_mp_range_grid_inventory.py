@@ -28,6 +28,7 @@ DEFAULT_ELEMENTS = ("strength", "intelligence", "chance", "agility")
 DEFAULT_BUDGET_TIERS = (1, 2, 3, 4)
 DEFAULT_ARTIFACTS = (
     ".codex/state/build-discovery-m3-boundary-wisdom-flat.json",
+    ".codex/state/build-discovery-m3-between-boundary-sample-20260711.json",
     ".codex/state/build-discovery-m3-coverage-wisdom-flat.json",
     ".codex/state/build-discovery-m3-grid-next-cap-wisdom-flat.json",
     ".codex/state/build-discovery-m3-next-level-sample-20260711.json",

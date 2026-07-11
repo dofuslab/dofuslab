@@ -287,6 +287,10 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Current evidence shows level 80 and level 200 Strength `12/6/6` are feasible
   at tier 2 under the current availability model, while tier 1 cap retries
   remain unresolved.
+- Between-boundary levels need explicit sampling, not just bucket edges. The
+  current CP-SAT path generated valid arbitrary-level rows at levels 13, 18,
+  37, 42, 75, 98, 101, 111, 137, 141, 171, and 187, but some mid-level rows
+  still exceeded the `<5s` cache-miss target.
 - Level Diversity needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket broadly.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.
