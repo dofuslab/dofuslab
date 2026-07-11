@@ -179,6 +179,9 @@ def no_build_keys_from_reports(reports: Iterable[dict[str, Any]]) -> set[tuple[i
         for result in report.get("results", []):
             if result.get("status") != "no_build":
                 continue
+            diagnostics = result.get("diagnostics") if isinstance(result.get("diagnostics"), dict) else {}
+            if diagnostics.get("solverStatus") != "INFEASIBLE":
+                continue
             target = result.get("target") or {}
             no_build.add(
                 target_key(
@@ -244,6 +247,21 @@ def compact_unproven_examples(
     examples = []
     for row in rows:
         if row_key(row) in covered:
+            continue
+        examples.append(row)
+        if len(examples) >= limit:
+            break
+    return examples
+
+
+def compact_unresolved_examples(
+    rows: list[dict[str, Any]],
+    resolved: set[tuple[int, str, int, int, int, int | None]],
+    limit: int,
+) -> list[dict[str, Any]]:
+    examples = []
+    for row in rows:
+        if row_key(row) in resolved:
             continue
         examples.append(row)
         if len(examples) >= limit:
@@ -440,9 +458,18 @@ def build_inventory_report(
         "unattemptedCount": len(rows) - len(attempted_rows),
         "byLevel": summarize_by_level(rows, covered, resolved),
         "unprovenExamples": compact_unproven_examples(rows, covered, unproven_example_limit),
+        "unresolvedExamples": compact_unresolved_examples(rows, resolved, unproven_example_limit),
         "nextUnprovenTargets": select_next_unproven_targets(
             rows,
             covered,
+            attempted,
+            next_target_limit,
+            evidence_statuses=next_evidence_statuses,
+            profile_buckets=next_profile_buckets,
+        ),
+        "nextUnresolvedTargets": select_next_unproven_targets(
+            rows,
+            resolved,
             attempted,
             next_target_limit,
             evidence_statuses=next_evidence_statuses,
@@ -468,7 +495,7 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Valid query rows: `{report['validQueryCount']}`",
         f"Generated evidence rows: `{report['generatedEvidenceCount']}`",
         f"Attempted evidence rows: `{report['attemptedEvidenceCount']}`",
-        f"No-build evidence rows: `{report.get('noBuildEvidenceCount', 0)}`",
+        f"Proven no-build evidence rows: `{report.get('noBuildEvidenceCount', 0)}`",
         f"Resolved evidence rows: `{report.get('resolvedEvidenceCount', report['generatedEvidenceCount'])}`",
         f"Unproven rows: `{report['unprovenCount']}`",
         f"Unresolved rows: `{report.get('unresolvedCount', report['unprovenCount'])}`",
@@ -493,8 +520,18 @@ def render_markdown(report: dict[str, Any]) -> str:
             )
         )
     lines.append("")
+    lines.extend(["## Unresolved Examples", ""])
+    for row in report.get("unresolvedExamples", report["unprovenExamples"]):
+        range_label = "any" if row["rangeTarget"] is None else row["rangeTarget"]
+        lines.append(
+            "- L{level} {element} tier {budgetTier} {apTarget}/{mpTarget}/{range}".format(
+                **row,
+                range=range_label,
+            )
+        )
+    lines.append("")
     lines.extend(["## Suggested Next Generated Rows", ""])
-    for row in report["nextUnprovenTargets"]:
+    for row in report.get("nextUnresolvedTargets", report["nextUnprovenTargets"]):
         range_label = "any" if row["rangeTarget"] is None else row["rangeTarget"]
         lines.append(
             "- L{level} {element} tier {budgetTier} {apTarget}/{mpTarget}/{range} `{profileBucket}` `{evidenceStatus}`".format(

@@ -6052,6 +6052,29 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server/scripts/test_build_discovery_level_diversity_matrix_check.py`
   - Docker: `PYTHONPATH=/home/dofuslab python scripts/test_build_discovery_ap_mp_range_grid_inventory.py`
 
+### 2026-07-11 M3/M4 Inventory Resolved Semantics
+
+- Tightened all-level inventory accounting:
+  - `noBuildEvidenceCount` now counts only no-build rows whose diagnostics
+    report `solverStatus=INFEASIBLE`
+  - unknown/timeout-shaped no-build rows remain unresolved
+  - inventory JSON now includes `unresolvedExamples`
+  - rendered next rows now use `nextUnresolvedTargets`, so solver-proven
+    infeasible rows are not repeatedly suggested for future solver slices
+- Refreshed the all-level Iop inventory under the stricter semantics:
+  - valid query rows: `665088`
+  - generated evidence rows: `172`
+  - attempted evidence rows: `192`
+  - proven no-build evidence rows: `8`
+  - resolved evidence rows: `180`
+  - unresolved rows: `664908`
+- Interpretation: earlier loose reporting counted every no-build attempt as
+  no-build evidence. The stricter report preserves only proven infeasibility as
+  resolved milestone evidence.
+- Verification passed:
+  - `python server/scripts/test_build_discovery_ap_mp_range_grid_inventory.py`
+  - `python -m py_compile server/scripts/build_discovery_ap_mp_range_grid_inventory.py server/scripts/test_build_discovery_ap_mp_range_grid_inventory.py`
+
 ### 2026-07-11 M3/M4 Between-Boundary Level Sample
 
 - Generated and validated a targeted between-boundary level sample to avoid

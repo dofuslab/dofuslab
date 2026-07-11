@@ -269,6 +269,12 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Broad all-level coverage should be reported with both `generatedEvidenceCount`
   and `resolvedEvidenceCount` so infeasible low-level targets do not look like
   silent search failures.
+- No-build rows only count as resolved evidence when diagnostics report
+  `solverStatus=INFEASIBLE`. Unknown, timeout, or unsupported no-build rows
+  remain unresolved and retryable.
+- Inventory suggestions should prefer `nextUnresolvedTargets` for future
+  generation slices so solver-proven infeasible rows do not consume more solver
+  time.
 - Rows that over-satisfy AP, MP, or Range are valid under current product
   semantics, but reviewers should flag cases where surplus action stats appear
   to crowd out better damage, survivability, or availability.

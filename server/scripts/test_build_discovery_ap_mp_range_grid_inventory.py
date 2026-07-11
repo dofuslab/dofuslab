@@ -38,6 +38,13 @@ def generated_result(level=1, element="strength", budget=1, ap=6, mp=3, range_ta
     }
 
 
+def infeasible_result(level=1, element="strength", budget=1, ap=12, mp=6, range_target=6):
+    result = generated_result(level, element, budget, ap, mp, range_target)
+    result["status"] = "no_build"
+    result["diagnostics"] = {"solverStatus": "INFEASIBLE"}
+    return result
+
+
 class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
     def test_valid_query_rows_use_level_dependent_ap_minimum(self):
         rows = valid_query_rows([99, 100], ["strength"], [1])
@@ -186,11 +193,12 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         self.assertEqual(inventory["byLevel"][0]["resolvedEvidenceCount"], 1)
         self.assertEqual(inventory["byLevel"][0]["unresolvedCount"], 223)
         self.assertEqual(len(inventory["unprovenExamples"]), 3)
+        self.assertEqual(len(inventory["unresolvedExamples"]), 3)
         self.assertGreater(len(inventory["nextUnprovenTargets"]), 0)
+        self.assertGreater(len(inventory["nextUnresolvedTargets"]), 0)
 
     def test_artifact_dir_loader_includes_split_matrix_reports_only(self):
-        no_build_result = generated_result(element="chance")
-        no_build_result["status"] = "no_build"
+        no_build_result = infeasible_result(element="chance")
         matrix_report = {
             "reportVersion": MATRIX_REPORT_VERSION,
             "results": [generated_result(), no_build_result],
@@ -220,6 +228,43 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         self.assertEqual(inventory["noBuildEvidenceCount"], 1)
         self.assertEqual(inventory["resolvedEvidenceCount"], 2)
         self.assertEqual(inventory["unresolvedCount"], 446)
+
+    def test_no_build_evidence_requires_infeasible_solver_status(self):
+        unknown_no_build = generated_result(element="chance")
+        unknown_no_build["status"] = "no_build"
+        unknown_no_build["diagnostics"] = {"solverStatus": "UNKNOWN"}
+        report = {"results": [generated_result(), unknown_no_build]}
+
+        inventory = build_inventory_report(
+            [report],
+            levels=[1],
+            elements=["strength", "chance"],
+            budget_tiers=[1],
+        )
+
+        self.assertEqual(inventory["attemptedEvidenceCount"], 2)
+        self.assertEqual(inventory["noBuildEvidenceCount"], 0)
+        self.assertEqual(inventory["resolvedEvidenceCount"], 1)
+        self.assertEqual(inventory["unresolvedCount"], 447)
+
+    def test_next_unresolved_targets_skips_proven_infeasible_rows(self):
+        impossible = infeasible_result()
+        report = {"results": [impossible]}
+
+        inventory = build_inventory_report(
+            [report],
+            levels=[1],
+            elements=["strength"],
+            budget_tiers=[1],
+            next_target_limit=3,
+        )
+
+        impossible_key = row_key(impossible["target"])
+        next_unproven_keys = {row_key(row) for row in inventory["nextUnprovenTargets"]}
+        next_unresolved_keys = {row_key(row) for row in inventory["nextUnresolvedTargets"]}
+
+        self.assertIn(impossible_key, next_unproven_keys)
+        self.assertNotIn(impossible_key, next_unresolved_keys)
 
     def test_artifact_loader_combines_paths_and_dirs(self):
         aggregate_report = {
