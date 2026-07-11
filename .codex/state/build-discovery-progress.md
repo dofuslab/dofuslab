@@ -5975,3 +5975,25 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-m3-boundary-wisdom-flat.json --target-set boundary --expected-solver cpsat`
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-m3-coverage-wisdom-flat.json --target-set coverage --expected-solver cpsat`
+
+### 2026-07-11 M3 Harsh Cap Evidence
+
+- Generated and validated the M3 `grid-next-cap` target set with no-builds
+  allowed only when CP-SAT proves infeasibility:
+  - `.codex/state/build-discovery-m3-grid-next-cap-wisdom-flat.json`
+  - `.codex/state/build-discovery-m3-grid-next-cap-wisdom-flat.md`
+  - targets: `12`
+  - generated: `10`
+  - no build: `2`
+  - invalid: `0`
+  - solver statuses: `10` `OPTIMAL`, `2` `INFEASIBLE`
+- The infeasible rows are both low-level cap targets:
+  - level `1` Strength `12/6/6` budget tier `4`
+  - level `20` Strength `12/6/6` budget tier `4`
+- Every sampled level from `50` through `200` generated a valid `12/6/6`
+  Strength Iop build.
+- Interpretation: M3 should distinguish impossible syntactic requests from
+  failed search. Current CP-SAT evidence can support a structured `no_build`
+  response with diagnostics for impossible AP/MP/range caps.
+- Verification passed:
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-grid-next-cap-wisdom-flat.json --target-set grid-next-cap --expected-solver cpsat --allow-no-build`
