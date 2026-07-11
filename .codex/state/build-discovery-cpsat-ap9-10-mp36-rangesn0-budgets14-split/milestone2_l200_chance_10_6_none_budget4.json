@@ -1,0 +1,775 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T11:46:24.280027+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_chance_10_6_none_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 4,
+        "apTarget": 10,
+        "mpTarget": 6,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2660.11,
+        "weightedStatScore": 4121.74,
+        "utilityStatScore": 431.17,
+        "genericDamageScore": 4754.58,
+        "rawRotationDamageScore": 3146.41,
+        "spellDamageScore": 3146.41,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.5849,
+        "weaponDamageScore": 199.73,
+        "survivabilityScore": 89.37,
+        "weakestElementEhp": 2760.62,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 3,
+          "Chance": 1378,
+          "Power": 240,
+          "Vitality": 2853,
+          "Damage": 0,
+          "Water Damage": 175,
+          "Critical": 55,
+          "Critical Damage": 22
+        },
+        "sets": {
+          "Erotegg Set": 2,
+          "Unsound Mind Set": 2,
+          "Rhineetle Set": 2,
+          "Servitude Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "19986",
+            "slot": "weapon"
+          },
+          "MP": {
+            "itemId": "22200",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "22200",
+            "internalId": null,
+            "name": "Servitude's Scarf",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "belt": {
+            "id": "19250",
+            "internalId": null,
+            "name": "Belt of the Unsound Mind",
+            "type": "Belt",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "weapon": {
+            "id": "19986",
+            "internalId": null,
+            "name": "Rhineetle Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "shield": {
+            "id": "32236",
+            "internalId": null,
+            "name": "Erotegg Disc",
+            "type": "Shield",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_1": {
+            "id": "32234",
+            "internalId": null,
+            "name": "Erotegg Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "19252",
+            "internalId": null,
+            "name": "Mask of the Unsound Mind",
+            "type": "Hat",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "cloak": {
+            "id": "22201",
+            "internalId": null,
+            "name": "Servitude's Coat",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "pet": {
+            "id": "33286",
+            "internalId": null,
+            "name": "Azure and Golden Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2660.11,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 3,
+          "Chance": 1378,
+          "Power": 240,
+          "Vitality": 2853,
+          "Damage": 0,
+          "Water Damage": 175,
+          "Critical": 55,
+          "Critical Damage": 22
+        },
+        "sets": {
+          "Erotegg Set": 2,
+          "Unsound Mind Set": 2,
+          "Rhineetle Set": 2,
+          "Servitude Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "19986",
+            "slot": "weapon"
+          },
+          "MP": {
+            "itemId": "22200",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Servitude's Scarf",
+          "Belt of the Unsound Mind",
+          "Rhineetle Bow",
+          "Erotegg Disc",
+          "Erotegg Ring",
+          "Rhineetle Ring",
+          "Meriana's Clairvoyance",
+          "Mask of the Unsound Mind",
+          "Servitude's Coat",
+          "Azure and Golden Seemyool",
+          "Cloudy Dofus",
+          "Dolmanax",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Tease"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2660.11,
+          "weightedStatScore": 4121.74,
+          "utilityStatScore": 431.17,
+          "genericDamageScore": 4754.58,
+          "rawRotationDamageScore": 3146.41,
+          "spellDamageScore": 3146.41,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.5849,
+          "weaponDamageScore": 199.73,
+          "survivabilityScore": 89.37,
+          "weakestElementEhp": 2760.62,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 6,
+            "Range": 3,
+            "Chance": 1378,
+            "Power": 240,
+            "Vitality": 2853,
+            "Damage": 0,
+            "Water Damage": 175,
+            "Critical": 55,
+            "Critical Damage": 22
+          },
+          "sets": {
+            "Erotegg Set": 2,
+            "Unsound Mind Set": 2,
+            "Rhineetle Set": 2,
+            "Servitude Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "19986",
+              "slot": "weapon"
+            },
+            "MP": {
+              "itemId": "22200",
+              "slot": "amulet"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "22200",
+              "internalId": null,
+              "name": "Servitude's Scarf",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "belt": {
+              "id": "19250",
+              "internalId": null,
+              "name": "Belt of the Unsound Mind",
+              "type": "Belt",
+              "level": 200,
+              "set": "Unsound Mind Set"
+            },
+            "weapon": {
+              "id": "19986",
+              "internalId": null,
+              "name": "Rhineetle Bow",
+              "type": "Bow",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "shield": {
+              "id": "32236",
+              "internalId": null,
+              "name": "Erotegg Disc",
+              "type": "Shield",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_1": {
+              "id": "32234",
+              "internalId": null,
+              "name": "Erotegg Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_2": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "19252",
+              "internalId": null,
+              "name": "Mask of the Unsound Mind",
+              "type": "Hat",
+              "level": 200,
+              "set": "Unsound Mind Set"
+            },
+            "cloak": {
+              "id": "22201",
+              "internalId": null,
+              "name": "Servitude's Coat",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "pet": {
+              "id": "33286",
+              "internalId": null,
+              "name": "Azure and Golden Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2660.11,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 6,
+            "Range": 3,
+            "Chance": 1378,
+            "Power": 240,
+            "Vitality": 2853,
+            "Damage": 0,
+            "Water Damage": 175,
+            "Critical": 55,
+            "Critical Damage": 22
+          },
+          "sets": {
+            "Erotegg Set": 2,
+            "Unsound Mind Set": 2,
+            "Rhineetle Set": 2,
+            "Servitude Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "19986",
+              "slot": "weapon"
+            },
+            "MP": {
+              "itemId": "22200",
+              "slot": "amulet"
+            }
+          },
+          "items": [
+            "Servitude's Scarf",
+            "Belt of the Unsound Mind",
+            "Rhineetle Bow",
+            "Erotegg Disc",
+            "Erotegg Ring",
+            "Rhineetle Ring",
+            "Meriana's Clairvoyance",
+            "Mask of the Unsound Mind",
+            "Servitude's Coat",
+            "Azure and Golden Seemyool",
+            "Cloudy Dofus",
+            "Dolmanax",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Tease"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6931.0,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 168.9,
+          "totalSearchMs": 6762.1
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1600.8,
+            "solveMs": 5043.7,
+            "objective": 2154.13,
+            "solutionCallbackCount": 13,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1844.9,
+                "objective": 1035.53,
+                "score": 1426.8,
+                "itemIds": [
+                  "7754",
+                  "8366",
+                  "8839",
+                  "11607",
+                  "12100",
+                  "12103",
+                  "12628",
+                  "12713",
+                  "12716",
+                  "12724",
+                  "20357",
+                  "21996",
+                  "22187",
+                  "22188",
+                  "27555",
+                  "33286"
+                ],
+                "exos": {
+                  "AP": "22188",
+                  "MP": "12103"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2055.3,
+                "objective": 1159.42,
+                "score": 1501.15,
+                "itemIds": [
+                  "7754",
+                  "8698",
+                  "12097",
+                  "13127",
+                  "13128",
+                  "13129",
+                  "14060",
+                  "15064",
+                  "21225",
+                  "22020",
+                  "30356",
+                  "30453",
+                  "30455",
+                  "32226",
+                  "32227",
+                  "33199"
+                ],
+                "exos": {
+                  "AP": "13127",
+                  "MP": "14060"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2226.9,
+                "objective": 1869.72,
+                "score": 2330.58,
+                "itemIds": [
+                  "7754",
+                  "8698",
+                  "12716",
+                  "13344",
+                  "13768",
+                  "16335",
+                  "17998",
+                  "18700",
+                  "19253",
+                  "19254",
+                  "19984",
+                  "19985",
+                  "27542",
+                  "31787",
+                  "32121",
+                  "33037"
+                ],
+                "exos": {
+                  "AP": "18700",
+                  "MP": "17998"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2362.6,
+                "objective": 1872.97,
+                "score": 2327.09,
+                "itemIds": [
+                  "7754",
+                  "12716",
+                  "13344",
+                  "13768",
+                  "16335",
+                  "17998",
+                  "18700",
+                  "19253",
+                  "19254",
+                  "19984",
+                  "19985",
+                  "27542",
+                  "30453",
+                  "31787",
+                  "32121",
+                  "33037"
+                ],
+                "exos": {
+                  "AP": "18700",
+                  "MP": "19254"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2498.1,
+                "objective": 1986.63,
+                "score": 2464.56,
+                "itemIds": [
+                  "7754",
+                  "8698",
+                  "13344",
+                  "13768",
+                  "15059",
+                  "16335",
+                  "18598",
+                  "18700",
+                  "19253",
+                  "19254",
+                  "19984",
+                  "19985",
+                  "30455",
+                  "31787",
+                  "32121",
+                  "33037"
+                ],
+                "exos": {
+                  "AP": "19985",
+                  "MP": "19253"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 199,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 316
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1837,
+              "uniqueItemCount": 1703,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 214,
+              "conditionConstraintCount": 285,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1703,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

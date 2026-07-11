@@ -1,0 +1,778 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T11:46:24.280027+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_9_3_0_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 9,
+        "mpTarget": 3,
+        "rangeTarget": 0
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 9,
+        "mpTarget": 3,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2551.77,
+        "weightedStatScore": 4552.64,
+        "utilityStatScore": 416.29,
+        "genericDamageScore": 4504.62,
+        "rawRotationDamageScore": 4127.15,
+        "spellDamageScore": 4127.15,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.5015,
+        "weaponDamageScore": 229.38,
+        "survivabilityScore": 108.4,
+        "weakestElementEhp": 3438.74,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 6,
+          "Strength": 1458,
+          "Power": 80,
+          "Vitality": 3553,
+          "Damage": 0,
+          "Earth Damage": 164,
+          "Critical": 76,
+          "Critical Damage": 65,
+          "Neutral Damage": 164
+        },
+        "sets": {
+          "Count Harebourg Set": 2,
+          "Cycloid Set": 2,
+          "Dark Court Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15430",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "31787",
+            "slot": "weapon"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14091",
+            "internalId": null,
+            "name": "Cycloid Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Cycloid Set"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "18718",
+            "internalId": null,
+            "name": "Cycloid Shield",
+            "type": "Shield",
+            "level": 200,
+            "set": "Cycloid Set"
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "14077",
+            "internalId": null,
+            "name": "Count Harebourg's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "boots": {
+            "id": "15428",
+            "internalId": null,
+            "name": "Dark Court Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "hat": {
+            "id": "14076",
+            "internalId": null,
+            "name": "Count Harebourg's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "cloak": {
+            "id": "15430",
+            "internalId": null,
+            "name": "Dark Court Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "pet": {
+            "id": "29430",
+            "internalId": null,
+            "name": "Mamukil Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2551.77,
+        "apStrategy": null,
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 6,
+          "Strength": 1458,
+          "Power": 80,
+          "Vitality": 3553,
+          "Damage": 0,
+          "Earth Damage": 164,
+          "Critical": 76,
+          "Critical Damage": 65,
+          "Neutral Damage": 164
+        },
+        "sets": {
+          "Count Harebourg Set": 2,
+          "Cycloid Set": 2,
+          "Dark Court Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15430",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "31787",
+            "slot": "weapon"
+          }
+        },
+        "items": [
+          "Cycloid Amulet",
+          "Corruption's Brambelt",
+          "Gargandyas's Fury",
+          "Cycloid Shield",
+          "Corruption's Ring",
+          "Count Harebourg's Ring",
+          "Dark Court Boots",
+          "Count Harebourg's Hat",
+          "Dark Court Cape",
+          "Mamukil Kolophant",
+          "Cloudy Dofus",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Goliath"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2551.77,
+          "weightedStatScore": 4552.64,
+          "utilityStatScore": 416.29,
+          "genericDamageScore": 4504.62,
+          "rawRotationDamageScore": 4127.15,
+          "spellDamageScore": 4127.15,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.5015,
+          "weaponDamageScore": 229.38,
+          "survivabilityScore": 108.4,
+          "weakestElementEhp": 3438.74,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 6,
+            "Strength": 1458,
+            "Power": 80,
+            "Vitality": 3553,
+            "Damage": 0,
+            "Earth Damage": 164,
+            "Critical": 76,
+            "Critical Damage": 65,
+            "Neutral Damage": 164
+          },
+          "sets": {
+            "Count Harebourg Set": 2,
+            "Cycloid Set": 2,
+            "Dark Court Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "15430",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "31787",
+              "slot": "weapon"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "14091",
+              "internalId": null,
+              "name": "Cycloid Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Cycloid Set"
+            },
+            "belt": {
+              "id": "22209",
+              "internalId": null,
+              "name": "Corruption's Brambelt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "18718",
+              "internalId": null,
+              "name": "Cycloid Shield",
+              "type": "Shield",
+              "level": 200,
+              "set": "Cycloid Set"
+            },
+            "ring_1": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "ring_2": {
+              "id": "14077",
+              "internalId": null,
+              "name": "Count Harebourg's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Count Harebourg Set"
+            },
+            "boots": {
+              "id": "15428",
+              "internalId": null,
+              "name": "Dark Court Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "hat": {
+              "id": "14076",
+              "internalId": null,
+              "name": "Count Harebourg's Hat",
+              "type": "Hat",
+              "level": 200,
+              "set": "Count Harebourg Set"
+            },
+            "cloak": {
+              "id": "15430",
+              "internalId": null,
+              "name": "Dark Court Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "pet": {
+              "id": "29430",
+              "internalId": null,
+              "name": "Mamukil Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2551.77,
+          "apStrategy": null,
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 6,
+            "Strength": 1458,
+            "Power": 80,
+            "Vitality": 3553,
+            "Damage": 0,
+            "Earth Damage": 164,
+            "Critical": 76,
+            "Critical Damage": 65,
+            "Neutral Damage": 164
+          },
+          "sets": {
+            "Count Harebourg Set": 2,
+            "Cycloid Set": 2,
+            "Dark Court Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "15430",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "31787",
+              "slot": "weapon"
+            }
+          },
+          "items": [
+            "Cycloid Amulet",
+            "Corruption's Brambelt",
+            "Gargandyas's Fury",
+            "Cycloid Shield",
+            "Corruption's Ring",
+            "Count Harebourg's Ring",
+            "Dark Court Boots",
+            "Count Harebourg's Hat",
+            "Dark Court Cape",
+            "Mamukil Kolophant",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Goliath"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 5784.0,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 176.8,
+          "totalSearchMs": 5607.2
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 1556.4,
+            "solveMs": 3920.3,
+            "objective": 2254.18,
+            "solutionCallbackCount": 7,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 2095.1,
+                "objective": 1773.39,
+                "score": 2154.36,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "12120",
+                  "13344",
+                  "13759",
+                  "14097",
+                  "14838",
+                  "15441",
+                  "15442",
+                  "16196",
+                  "19983",
+                  "19986",
+                  "22205",
+                  "22215",
+                  "30455",
+                  "32236"
+                ],
+                "exos": {
+                  "AP": "15441",
+                  "MP": "19986"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2253.1,
+                "objective": 1857.05,
+                "score": 2260.32,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "8561",
+                  "12120",
+                  "13344",
+                  "13759",
+                  "14097",
+                  "15441",
+                  "15442",
+                  "16196",
+                  "19983",
+                  "19986",
+                  "22205",
+                  "22215",
+                  "30455",
+                  "32236"
+                ],
+                "exos": {
+                  "AP": "15441",
+                  "MP": "19986"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2615.0,
+                "objective": 1888.65,
+                "score": 2355.3,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "8698",
+                  "13759",
+                  "15693",
+                  "15695",
+                  "15697",
+                  "15700",
+                  "17997",
+                  "22205",
+                  "22206",
+                  "29430",
+                  "30453",
+                  "30455",
+                  "30858",
+                  "31787"
+                ],
+                "exos": {
+                  "AP": "31787"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 3023.8,
+                "objective": 2152.27,
+                "score": 2467.64,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "12723",
+                  "13115",
+                  "13759",
+                  "15428",
+                  "15430",
+                  "15431",
+                  "15433",
+                  "18693",
+                  "22206",
+                  "22209",
+                  "29430",
+                  "30453",
+                  "30455",
+                  "31787"
+                ],
+                "exos": {
+                  "AP": "22206",
+                  "MP": "31787"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 3135.8,
+                "objective": 2232.83,
+                "score": 2551.77,
+                "itemIds": [
+                  "7043",
+                  "7754",
+                  "8698",
+                  "13759",
+                  "14076",
+                  "14077",
+                  "14091",
+                  "15428",
+                  "15430",
+                  "18718",
+                  "22205",
+                  "22209",
+                  "29430",
+                  "30453",
+                  "30455",
+                  "31787"
+                ],
+                "exos": {
+                  "AP": "15430",
+                  "MP": "31787"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 316
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1838,
+              "uniqueItemCount": 1704,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 215,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1704,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
