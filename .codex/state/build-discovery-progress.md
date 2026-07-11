@@ -4471,3 +4471,44 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     so quality is not yet final-best evidence
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ringgroup-all-elements-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`
+
+### 2026-07-11 Rejected Threshold Set-Count Experiment
+
+- Tested replacing exact set-count one-hot variables with cumulative
+  `set_at_least_n` threshold variables and set-bonus delta terms.
+- Added local semantic tests during the experiment for:
+  - cumulative 2-piece/3-piece set bonus deltas
+  - `SET_BONUS > n` item conditions
+  - OR conditions passing through a `SET_BONUS` threshold branch
+- Host and Docker focused tests passed during the experiment, but the real-data
+  smoke regressed solve behavior.
+- Smoke slice:
+  - elements: strength, chance
+  - budget tiers: 1, 4
+  - AP: 7
+  - MP: 3
+  - Range: none, 6
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- First threshold run:
+  - targets: `8`
+  - generated: `8`
+  - invalid: `0`
+  - solver statuses: `1` optimal, `7` feasible
+  - elapsed avg/max: `6878.5ms / 8216.0ms`
+  - model avg: `1358.0ms`
+  - solve avg/max: `4957.5ms / 5069.5ms`
+- After removing redundant monotonic constraints:
+  - targets: `8`
+  - generated: `8`
+  - invalid: `0`
+  - solver statuses: `8` feasible
+  - elapsed avg/max: `6965.1ms / 8178.8ms`
+  - model avg: `1351.8ms`
+  - solve avg/max: `5058.2ms / 5083.5ms`
+- Decision:
+  - do not keep this rewrite now
+  - exact set-count one-hot variables are uglier but currently solve better on
+    the real-data smoke
+  - the useful lesson is that reducing Python/model-build time alone is not
+    enough; next solver work should target search guidance, candidate packages,
+    or static indexed model reuse rather than only variable count
