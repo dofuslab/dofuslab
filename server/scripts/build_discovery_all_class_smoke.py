@@ -41,7 +41,7 @@ class SmokeTarget:
     purpose: str
 
 
-DEFAULT_TARGETS = (
+ALL_CLASS_LEVEL_200_TARGETS = (
     SmokeTarget("trusted_iop_strength_opti_damage", "Iop", "strength", 200, 4, 12, 6, None, 4, "opti", "reviewed baseline"),
     SmokeTarget("cra_strength_soft_range", "Cra", "strength", 200, 4, 12, 6, None, 3, "opti", "soft Range, no hard target"),
     SmokeTarget("ecaflip_intelligence_range6", "Ecaflip", "intelligence", 200, 4, 12, 6, 6, 3, "opti", "hard Range 6 stress"),
@@ -62,6 +62,29 @@ DEFAULT_TARGETS = (
     SmokeTarget("sram_strength_range6", "Sram", "strength", 200, 4, 12, 6, 6, 2, "opti", "hard Range 6 stress"),
     SmokeTarget("xelor_agility_low_action_validity", "Xelor", "agility", 200, 2, 7, 3, None, 2, "allow", "low-action validity edge"),
 )
+
+
+LEVEL_DIVERSITY_TARGETS = (
+    SmokeTarget("level1_iop_strength_min", "Iop", "strength", 1, 1, 6, 3, None, 2, "none", "level 1 base AP 6 minimum"),
+    SmokeTarget("level20_cra_intelligence_range1", "Cra", "intelligence", 20, 1, 6, 3, 1, 2, "none", "early pre-100 hard Range 1"),
+    SmokeTarget("level50_ecaflip_chance_budget1", "Ecaflip", "chance", 50, 1, 7, 4, 0, 2, "none", "budget tier 1 low-level action row"),
+    SmokeTarget("level80_feca_agility_budget2", "Feca", "agility", 80, 2, 10, 5, 0, 2, "allow", "mid-level AP/MP row before base AP change"),
+    SmokeTarget("level99_enutrof_chance_cap", "Enutrof", "chance", 99, 4, 12, 6, 6, 2, "allow", "pre-100 hard cap stress"),
+    SmokeTarget("level100_xelor_agility_min", "Xelor", "agility", 100, 2, 7, 3, None, 2, "allow", "level 100 base AP 7 minimum"),
+    SmokeTarget("level120_eniripsa_intelligence_mid", "Eniripsa", "intelligence", 120, 2, 11, 5, 1, 2, "allow", "post-100 mid-level budget row"),
+    SmokeTarget("level150_sacrier_strength_floor", "Sacrier", "strength", 150, 2, 10, 5, 0, 2, "allow", "level 150 realistic floor row"),
+    SmokeTarget("level179_pandawa_agility_mid", "Pandawa", "agility", 179, 3, 12, 5, 2, 2, "allow", "pre-180 high-level transition row"),
+    SmokeTarget("level180_rogue_intelligence_range6", "Rogue", "intelligence", 180, 3, 12, 6, 6, 2, "allow", "level 180 hard Range 6 stress"),
+    SmokeTarget("level199_osamodas_agility_budget2", "Osamodas", "agility", 199, 2, 10, 6, 3, 2, "allow", "near-200 lower-budget row"),
+    SmokeTarget("level200_feca_chance_budget1_floor", "Feca", "chance", 200, 1, 10, 5, None, 2, "none", "level 200 tier 1 realistic floor"),
+)
+
+
+TARGET_SETS = {
+    "all-class-level-200": ALL_CLASS_LEVEL_200_TARGETS,
+    "level-diversity": LEVEL_DIVERSITY_TARGETS,
+    "all": ALL_CLASS_LEVEL_200_TARGETS + LEVEL_DIVERSITY_TARGETS,
+}
 
 
 def target_query(target: SmokeTarget) -> BuildDiscoveryQuery:
@@ -200,6 +223,7 @@ def write_markdown(report: dict[str, Any], path: Path) -> None:
         "",
         f"- Generated: `{report['generatedAt']}`",
         f"- Report version: `{report['reportVersion']}`",
+        f"- Target set: `{report['targetSet']}`",
         f"- Targets: `{report['summary']['targetCount']}`",
         f"- Passed: `{report['summary']['passed']}`",
         f"- Failed: `{report['summary']['failed']}`",
@@ -243,11 +267,17 @@ def main() -> None:
     parser.add_argument("--workers", type=int, default=8)
     parser.add_argument("--output-json", required=True)
     parser.add_argument("--output-md", required=True)
-    parser.add_argument("--target", action="append", choices=[target.name for target in DEFAULT_TARGETS])
+    parser.add_argument("--target-set", choices=sorted(TARGET_SETS), default="all-class-level-200")
+    parser.add_argument(
+        "--target",
+        action="append",
+        choices=sorted({target.name for targets in TARGET_SETS.values() for target in targets}),
+    )
     args = parser.parse_args()
 
     target_names = set(args.target or [])
-    targets = [target for target in DEFAULT_TARGETS if not target_names or target.name in target_names]
+    selected_set = TARGET_SETS[args.target_set]
+    targets = [target for target in selected_set if not target_names or target.name in target_names]
     rows = [run_target(target, args) for target in targets]
     range_targets = [
         "None" if row["target"]["range_target"] is None else row["target"]["range_target"]
@@ -270,6 +300,7 @@ def main() -> None:
     report = {
         "reportVersion": REPORT_VERSION,
         "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "targetSet": args.target_set,
         "summary": summary,
         "rows": rows,
     }

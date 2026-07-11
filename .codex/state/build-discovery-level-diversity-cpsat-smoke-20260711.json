@@ -1,0 +1,1191 @@
+{
+  "reportVersion": "build-discovery-all-class-cpsat-smoke-v1",
+  "generatedAt": "2026-07-11T19:02:40.905010+00:00",
+  "targetSet": "level-diversity",
+  "summary": {
+    "targetCount": 12,
+    "passed": 12,
+    "failed": 0,
+    "classCount": 11,
+    "classes": [
+      "Cra",
+      "Ecaflip",
+      "Eniripsa",
+      "Enutrof",
+      "Feca",
+      "Iop",
+      "Osamodas",
+      "Pandawa",
+      "Rogue",
+      "Sacrier",
+      "Xelor"
+    ],
+    "elements": [
+      "agility",
+      "chance",
+      "intelligence",
+      "strength"
+    ],
+    "budgetTiers": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "rangeTargets": [
+      0,
+      1,
+      2,
+      3,
+      6,
+      "None"
+    ],
+    "maxTotalSearchMs": 3290.8
+  },
+  "rows": [
+    {
+      "target": {
+        "name": "level1_iop_strength_min",
+        "class_name": "Iop",
+        "element": "strength",
+        "level": 1,
+        "budget_tier": 1,
+        "ap": 6,
+        "mp": 3,
+        "range_target": null,
+        "preset": 2,
+        "exo_policy": "none",
+        "purpose": "level 1 base AP 6 minimum"
+      },
+      "query": {
+        "className": "Iop",
+        "level": 1,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 1698.7,
+      "timings": {
+        "loadMs": 1678.1,
+        "totalSearchMs": 17.8
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 0.5,
+        "rotationModel": "reviewed_iop_strength_rotation",
+        "profileConfidence": "high",
+        "spellCandidateCount": 1
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Strength": 0.3487,
+        "Power": 0.3487,
+        "Range": 0.5,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 6,
+        "MP": 3,
+        "Range": 0,
+        "Strength": 130,
+        "Power": 0,
+        "Vitality": 132,
+        "Damage": 1,
+        "Earth Damage": 0,
+        "Critical": 0,
+        "Critical Damage": 0,
+        "Neutral Damage": 0
+      },
+      "sets": {
+        "Intrepid Set": 2,
+        "Boon Set": 7
+      },
+      "exos": {},
+      "items": [
+        "Intrepid Amulet",
+        "Muffin Belt",
+        "Crashers",
+        "S'loque Cape",
+        "Flud",
+        "Intrepid Ring",
+        "Pluswan",
+        "Halt Efkat",
+        "Bounihime"
+      ],
+      "score": 207.9
+    },
+    {
+      "target": {
+        "name": "level20_cra_intelligence_range1",
+        "class_name": "Cra",
+        "element": "intelligence",
+        "level": 20,
+        "budget_tier": 1,
+        "ap": 6,
+        "mp": 3,
+        "range_target": 1,
+        "preset": 2,
+        "exo_policy": "none",
+        "purpose": "early pre-100 hard Range 1"
+      },
+      "query": {
+        "className": "Cra",
+        "level": 20,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 215.7,
+      "timings": {
+        "loadMs": 150.6,
+        "totalSearchMs": 64.6
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 1
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Intelligence": 1.3578,
+        "Power": 0.3578,
+        "Range": 8.0,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 6,
+        "MP": 3,
+        "Range": 1,
+        "Intelligence": 255,
+        "Power": 20,
+        "Vitality": 115,
+        "Damage": 5,
+        "Fire Damage": 1,
+        "Critical": 5,
+        "Critical Damage": 0
+      },
+      "sets": {
+        "King Pong Set": 2
+      },
+      "exos": {},
+      "items": [
+        "Pongulet",
+        "Pongbelt",
+        "Intelligence Sandals",
+        "The Red Cape",
+        "Slob Headgear",
+        "Agility Ring",
+        "Chance Ring",
+        "Wild Sunflower Shield",
+        "Yew Axe"
+      ],
+      "score": 516.02
+    },
+    {
+      "target": {
+        "name": "level50_ecaflip_chance_budget1",
+        "class_name": "Ecaflip",
+        "element": "chance",
+        "level": 50,
+        "budget_tier": 1,
+        "ap": 7,
+        "mp": 4,
+        "range_target": 0,
+        "preset": 2,
+        "exo_policy": "none",
+        "purpose": "budget tier 1 low-level action row"
+      },
+      "query": {
+        "className": "Ecaflip",
+        "level": 50,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 751.8,
+      "timings": {
+        "loadMs": 167.5,
+        "totalSearchMs": 583.7
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 0.5,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 2
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Chance": 1.3919,
+        "Power": 0.3919,
+        "Range": 0.5,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 7,
+        "MP": 4,
+        "Range": 0,
+        "Chance": 272,
+        "Power": 40,
+        "Vitality": 336,
+        "Damage": 16,
+        "Water Damage": 0,
+        "Critical": 13,
+        "Critical Damage": 12
+      },
+      "sets": {},
+      "exos": {},
+      "items": [
+        "Flooey's Clock",
+        "Dazzling Belt",
+        "Faillette Boots",
+        "Carpet Cape",
+        "Minor Air Destroyer",
+        "Minor Fire Destroyer",
+        "Minor Friction",
+        "Minor Neutral Destroyer",
+        "Minor Oppressor",
+        "Minor Repellant",
+        "Daudgee",
+        "Handbag",
+        "Reinforced Handbag",
+        "Chafer Foot Soldier's Shield",
+        "Eurfolles Daggers"
+      ],
+      "score": 613.11
+    },
+    {
+      "target": {
+        "name": "level80_feca_agility_budget2",
+        "class_name": "Feca",
+        "element": "agility",
+        "level": 80,
+        "budget_tier": 2,
+        "ap": 10,
+        "mp": 5,
+        "range_target": 0,
+        "preset": 2,
+        "exo_policy": "allow",
+        "purpose": "mid-level AP/MP row before base AP change"
+      },
+      "query": {
+        "className": "Feca",
+        "level": 80,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 5,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 2,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 1308.5,
+      "timings": {
+        "loadMs": 202.8,
+        "totalSearchMs": 1105.1
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 0.5,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 3
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Agility": 1.3599,
+        "Power": 0.3599,
+        "Range": 0.5,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 10,
+        "MP": 5,
+        "Range": 1,
+        "Agility": 491,
+        "Power": 40,
+        "Vitality": 357,
+        "Damage": 5,
+        "Air Damage": 2,
+        "Critical": 9,
+        "Critical Damage": 5
+      },
+      "sets": {},
+      "exos": {
+        "MP": {
+          "itemId": "30688",
+          "slot": "shield"
+        }
+      },
+      "items": [
+        "Piggy Paupe's Amulet",
+        "Powerful Dazzling Belt",
+        "Royal Coco Bloopts",
+        "Sin Cape",
+        "Minor Fire Destroyer",
+        "Minor Friction",
+        "Minor Neutral Destroyer",
+        "Minor Oppressor",
+        "Minor Repellant",
+        "Minor Water Destroyer",
+        "Caracap",
+        "Sirocco",
+        "Tribal Ring",
+        "Ringnomen Tengu",
+        "Crispy Targe",
+        "God Rod"
+      ],
+      "score": 939.12
+    },
+    {
+      "target": {
+        "name": "level99_enutrof_chance_cap",
+        "class_name": "Enutrof",
+        "element": "chance",
+        "level": 99,
+        "budget_tier": 4,
+        "ap": 12,
+        "mp": 6,
+        "range_target": 6,
+        "preset": 2,
+        "exo_policy": "allow",
+        "purpose": "pre-100 hard cap stress"
+      },
+      "query": {
+        "className": "Enutrof",
+        "level": 99,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 1369.9,
+      "timings": {
+        "loadMs": 186.4,
+        "totalSearchMs": 1182.8
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 4
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Chance": 1.3727,
+        "Power": 0.3727,
+        "Range": 8.0,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 6,
+        "Chance": 723,
+        "Power": 30,
+        "Vitality": 711,
+        "Damage": 3,
+        "Water Damage": 5,
+        "Critical": 13,
+        "Critical Damage": 0
+      },
+      "sets": {
+        "Khardboard Set": 3
+      },
+      "exos": {
+        "AP": {
+          "itemId": "27282",
+          "slot": "hat"
+        },
+        "MP": {
+          "itemId": "27268",
+          "slot": "weapon"
+        },
+        "Range": {
+          "itemId": "15996",
+          "slot": "amulet"
+        }
+      },
+      "items": [
+        "Curative Pendant",
+        "Paper Pants",
+        "Caraboots",
+        "Khardboard Dazzling Cloak",
+        "Cawwot Dofus",
+        "Minor Luckster",
+        "Minor Player",
+        "Minor Tease",
+        "Observer",
+        "Twitcher",
+        "Khardboard Gobball Headgear",
+        "Indigo Rhineetle",
+        "Spynner Ring",
+        "Satisfied Summoner's Ring",
+        "Rok Gnorok Bastione",
+        "Khardboard Goultard"
+      ],
+      "score": 1364.83
+    },
+    {
+      "target": {
+        "name": "level100_xelor_agility_min",
+        "class_name": "Xelor",
+        "element": "agility",
+        "level": 100,
+        "budget_tier": 2,
+        "ap": 7,
+        "mp": 3,
+        "range_target": null,
+        "preset": 2,
+        "exo_policy": "allow",
+        "purpose": "level 100 base AP 7 minimum"
+      },
+      "query": {
+        "className": "Xelor",
+        "level": 100,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 2,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 1834.7,
+      "timings": {
+        "loadMs": 202.2,
+        "totalSearchMs": 1631.9
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 2
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Agility": 1.3267,
+        "Power": 0.3267,
+        "Range": 8.0,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 7,
+        "MP": 3,
+        "Range": 1,
+        "Agility": 465,
+        "Power": 100,
+        "Vitality": 825,
+        "Damage": 6,
+        "Air Damage": 0,
+        "Critical": 11,
+        "Critical Damage": 0
+      },
+      "sets": {},
+      "exos": {},
+      "items": [
+        "Flooey's Clock",
+        "Yellow Turtle Belt",
+        "Tofu Sandals",
+        "Cape Hillary",
+        "Friction",
+        "Minor Friction",
+        "Minor Oppressor",
+        "Minor Repellant",
+        "Oppressor",
+        "Repellant",
+        "King Jellix's Crown",
+        "Armoured Dragoturkey",
+        "Ring o'Stradamus",
+        "Nonsenz Ring",
+        "Dragokart Cup",
+        "Golden Rhizome"
+      ],
+      "score": 890.3
+    },
+    {
+      "target": {
+        "name": "level120_eniripsa_intelligence_mid",
+        "class_name": "Eniripsa",
+        "element": "intelligence",
+        "level": 120,
+        "budget_tier": 2,
+        "ap": 11,
+        "mp": 5,
+        "range_target": 1,
+        "preset": 2,
+        "exo_policy": "allow",
+        "purpose": "post-100 mid-level budget row"
+      },
+      "query": {
+        "className": "Eniripsa",
+        "level": 120,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 2,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 2161.5,
+      "timings": {
+        "loadMs": 231.3,
+        "totalSearchMs": 1929.6
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 4
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Intelligence": 1.3819,
+        "Power": 0.3819,
+        "Range": 8.0,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 11,
+        "MP": 5,
+        "Range": 3,
+        "Intelligence": 438,
+        "Power": 15,
+        "Vitality": 406,
+        "Damage": 7,
+        "Fire Damage": 30,
+        "Critical": 15,
+        "Critical Damage": 0
+      },
+      "sets": {},
+      "exos": {
+        "AP": {
+          "itemId": "18689",
+          "slot": "shield"
+        }
+      },
+      "items": [
+        "Palid Emblem",
+        "Klume's Belt",
+        "Klime's Boots",
+        "Rags",
+        "Friction",
+        "Minor Friction",
+        "Minor Oppressor",
+        "Minor Repellant",
+        "Oppressor",
+        "Shaker",
+        "Caracap",
+        "Coral and Almond Seemyool",
+        "Black Quakhoop",
+        "Ignoah Ring",
+        "Phtalmo",
+        "Limbo Wand"
+      ],
+      "score": 991.58
+    },
+    {
+      "target": {
+        "name": "level150_sacrier_strength_floor",
+        "class_name": "Sacrier",
+        "element": "strength",
+        "level": 150,
+        "budget_tier": 2,
+        "ap": 10,
+        "mp": 5,
+        "range_target": 0,
+        "preset": 2,
+        "exo_policy": "allow",
+        "purpose": "level 150 realistic floor row"
+      },
+      "query": {
+        "className": "Sacrier",
+        "level": 150,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 5,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 2,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 893.7,
+      "timings": {
+        "loadMs": 274.1,
+        "totalSearchMs": 618.9
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 0.5,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 5
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Strength": 0.3703,
+        "Power": 0.3703,
+        "Range": 0.5,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 10,
+        "MP": 5,
+        "Range": 1,
+        "Strength": 516,
+        "Power": 90,
+        "Vitality": 1461,
+        "Damage": 7,
+        "Earth Damage": 12,
+        "Critical": 22,
+        "Critical Damage": 0,
+        "Neutral Damage": 6
+      },
+      "sets": {},
+      "exos": {
+        "AP": {
+          "itemId": "23315",
+          "slot": "weapon"
+        },
+        "MP": {
+          "itemId": "14810",
+          "slot": "amulet"
+        }
+      },
+      "items": [
+        "Baahboh Insignia",
+        "Abdominable Belt",
+        "Royal Mastogob Boots",
+        "Powa Drhell Cloak",
+        "Friction",
+        "Major Friction",
+        "Major Oppressor",
+        "Minor Friction",
+        "Minor Oppressor",
+        "Oppressor",
+        "Zoth Sergeant Mask",
+        "Orchid and Ebony Rhineetle",
+        "Notwithstand Ring",
+        "Bontarian Rat Ring",
+        "Bontarian Gobbowler Shield",
+        "Rock Katana"
+      ],
+      "score": 629.25
+    },
+    {
+      "target": {
+        "name": "level179_pandawa_agility_mid",
+        "class_name": "Pandawa",
+        "element": "agility",
+        "level": 179,
+        "budget_tier": 3,
+        "ap": 12,
+        "mp": 5,
+        "range_target": 2,
+        "preset": 2,
+        "exo_policy": "allow",
+        "purpose": "pre-180 high-level transition row"
+      },
+      "query": {
+        "className": "Pandawa",
+        "level": 179,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 1554.7,
+      "timings": {
+        "loadMs": 245.9,
+        "totalSearchMs": 1308.1
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 2.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 4
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Agility": 1.423,
+        "Power": 0.423,
+        "Range": 2.0,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 12,
+        "MP": 5,
+        "Range": 3,
+        "Agility": 542,
+        "Power": 205,
+        "Vitality": 1682,
+        "Damage": 30,
+        "Air Damage": 0,
+        "Critical": 24,
+        "Critical Damage": 10
+      },
+      "sets": {},
+      "exos": {
+        "AP": {
+          "itemId": "7680",
+          "slot": "hat"
+        }
+      },
+      "items": [
+        "Renewed Amulet",
+        "Grendibelt",
+        "Bootarkies",
+        "Augilol's Tippet",
+        "Friction",
+        "Major Friction",
+        "Minor Friction",
+        "Minor Oppressor",
+        "Oppressor",
+        "Shaker",
+        "Ougaat",
+        "Orchid and Ebony Rhineetle",
+        "Notwithstand Ring",
+        "Gelano",
+        "Inn Shield",
+        "Shovel Tonjon"
+      ],
+      "score": 1290.78
+    },
+    {
+      "target": {
+        "name": "level180_rogue_intelligence_range6",
+        "class_name": "Rogue",
+        "element": "intelligence",
+        "level": 180,
+        "budget_tier": 3,
+        "ap": 12,
+        "mp": 6,
+        "range_target": 6,
+        "preset": 2,
+        "exo_policy": "allow",
+        "purpose": "level 180 hard Range 6 stress"
+      },
+      "query": {
+        "className": "Rogue",
+        "level": 180,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 614.7,
+      "timings": {
+        "loadMs": 230.6,
+        "totalSearchMs": 383.5
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 5.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 2
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Intelligence": 1.4133,
+        "Power": 0.4133,
+        "Range": 5.0,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 6,
+        "Intelligence": 513,
+        "Power": 185,
+        "Vitality": 1272,
+        "Damage": 25,
+        "Fire Damage": 6,
+        "Critical": 16,
+        "Critical Damage": 0
+      },
+      "sets": {},
+      "exos": {
+        "AP": {
+          "itemId": "32210",
+          "slot": "cloak"
+        },
+        "Range": {
+          "itemId": "2469",
+          "slot": "ring_1"
+        }
+      },
+      "items": [
+        "Zothulet",
+        "Potsan Pants",
+        "Cantile's Boots",
+        "Pirate Bhey Sail",
+        "Friction",
+        "Major Friction",
+        "Minor Friction",
+        "Minor Oppressor",
+        "Shaker",
+        "Voyager",
+        "Thierry Voodoo Mask",
+        "Ebony Rhineetle",
+        "Gelano",
+        "Honoh Ring",
+        "Water Dial",
+        "Michael Dougle Axe"
+      ],
+      "score": 1172.85
+    },
+    {
+      "target": {
+        "name": "level199_osamodas_agility_budget2",
+        "class_name": "Osamodas",
+        "element": "agility",
+        "level": 199,
+        "budget_tier": 2,
+        "ap": 10,
+        "mp": 6,
+        "range_target": 3,
+        "preset": 2,
+        "exo_policy": "allow",
+        "purpose": "near-200 lower-budget row"
+      },
+      "query": {
+        "className": "Osamodas",
+        "level": 199,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 6,
+        "rangeTarget": 3,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 2,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 1447.3,
+      "timings": {
+        "loadMs": 243.9,
+        "totalSearchMs": 1202.6
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 2.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 6
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Agility": 1.402,
+        "Power": 0.402,
+        "Range": 2.0,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 10,
+        "MP": 6,
+        "Range": 5,
+        "Agility": 537,
+        "Power": 205,
+        "Vitality": 1501,
+        "Damage": 24,
+        "Air Damage": 20,
+        "Critical": 12,
+        "Critical Damage": 0
+      },
+      "sets": {},
+      "exos": {},
+      "items": [
+        "Ougaamulet",
+        "Unstable Belt",
+        "Voyager Boots",
+        "Thermal Cloak",
+        "Friction",
+        "Major Friction",
+        "Minor Friction",
+        "Minor Oppressor",
+        "Oppressor",
+        "Shaker",
+        "Air Pikoko Helmet",
+        "Bworky",
+        "Professor Xa's Ring",
+        "Gelano",
+        "Seven Years Bad Luck",
+        "Michael Dougle Axe"
+      ],
+      "score": 1297.46
+    },
+    {
+      "target": {
+        "name": "level200_feca_chance_budget1_floor",
+        "class_name": "Feca",
+        "element": "chance",
+        "level": 200,
+        "budget_tier": 1,
+        "ap": 10,
+        "mp": 5,
+        "range_target": null,
+        "preset": 2,
+        "exo_policy": "none",
+        "purpose": "level 200 tier 1 realistic floor"
+      },
+      "query": {
+        "className": "Feca",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 5,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 2,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "objectiveMode": "final-linear"
+      },
+      "status": "passed",
+      "solverStatus": "FEASIBLE",
+      "responseStatus": "complete",
+      "elapsedMs": 3638.5,
+      "timings": {
+        "loadMs": 346.8,
+        "totalSearchMs": 3290.8
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 2,
+        "genericDamageWeight": 0.25,
+        "survivabilityWeight": 1.8,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 9
+      },
+      "validationErrors": [],
+      "objectiveWeights": {
+        "Chance": 1.4056,
+        "Power": 0.4056,
+        "Range": 8.0,
+        "AP": 12.0,
+        "MP": 10.0
+      },
+      "totals": {
+        "AP": 10,
+        "MP": 6,
+        "Range": 0,
+        "Chance": 527,
+        "Power": 110,
+        "Vitality": 1003,
+        "Damage": 0,
+        "Water Damage": 10,
+        "Critical": 20,
+        "Critical Damage": -11
+      },
+      "sets": {},
+      "exos": {},
+      "items": [
+        "Boy's Own Chain",
+        "Khardboard Moowolf Belt",
+        "Kicked Ass Boots",
+        "Fuji Snowfoux Cloak",
+        "Friction",
+        "Jackanapes",
+        "Maniac",
+        "Minor Friction",
+        "Nomad",
+        "Voyager",
+        "Death Mask",
+        "Armoured Dragoturkey",
+        "Gelano",
+        "Honoh Ring",
+        "Bitter-Shield",
+        "Aermyne's Rolling Pin"
+      ],
+      "score": 1047.97
+    }
+  ]
+}

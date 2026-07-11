@@ -6997,3 +6997,36 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Caveat: this is still smoke evidence, not broad product acceptance. The
   generated rows are mechanically valid and plausible enough for path coverage,
   but non-Iop class quality remains rotation-lite until benchmarked/reviewed.
+
+### 2026-07-11 Level-Diversity CP-SAT Smoke Harness
+
+- Extended `server/scripts/build_discovery_all_class_smoke.py` with target
+  sets:
+  - `all-class-level-200`
+  - `level-diversity`
+  - `all`
+- Added a bounded `level-diversity` target set with `12` representative rows.
+- Coverage axes:
+  - levels `1`, `20`, `50`, `80`, `99`, `100`, `120`, `150`, `179`, `180`,
+    `199`, and `200`
+  - pre-100 base AP `6` and post-100 base AP `7`
+  - all four single elements
+  - budget tiers `1`, `2`, `3`, and `4`
+  - `rangeTarget=None`, `0`, `1`, `2`, `3`, and `6`
+  - level `99` pre-100 `12/6/6` cap stress
+  - level `100` `7/3/Any` minimum boundary
+  - level `200` tier `1` realistic floor
+- Artifacts:
+  - `.codex/state/build-discovery-level-diversity-cpsat-smoke-20260711.json`
+  - `.codex/state/build-discovery-level-diversity-cpsat-smoke-20260711.md`
+- Docker result: `12/12` rows passed with a `5s` per-row time cap.
+- Max observed `totalSearchMs`: `3290.8`.
+- Plausibility spot checks:
+  - level `1` Iop Strength minimum returned `6/3/0`
+  - level `99` Enutrof Chance cap returned `12/6/6`
+  - level `100` Xelor Agility minimum returned `7/3/1`
+  - level `180` Rogue Intelligence hard range returned `12/6/6`
+  - level `200` Feca Chance tier `1` floor returned `10/6/0`
+- Caveat: this is sampled level-diversity evidence. It supports the complete
+  query path across important boundaries, but it is not an exhaustive proof for
+  every class/element/level/AP/MP/Range/budget combination.

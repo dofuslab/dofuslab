@@ -528,6 +528,11 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   representative level-200 row per class proves the class dimension is wired
   through the solver, but it does not prove that each class/element scorer is
   high quality.
+- The level-diversity CP-SAT smoke matrix is boundary/path evidence. Passing
+  sampled rows at levels `1`, `20`, `50`, `80`, `99`, `100`, `120`, `150`,
+  `179`, `180`, `199`, and `200` supports the complete-query contract across
+  base AP and item-availability transitions, but does not exhaustively prove
+  every level/class/element/AP/MP/Range/budget combination.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.
 - Fashionista links are currently manual comparison references, not automatically parsed/scored.
