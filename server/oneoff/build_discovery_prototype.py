@@ -421,8 +421,11 @@ STAT_WEIGHTS = {
     "% Final Damage": 8.0,
     "% Spell Damage": 6.0,
     "% Weapon Damage": 2.0,
-    "% Melee Damage": 3.2,
-    "% Ranged Damage": 4.8,
+    # These are only valuable when the spell/weapon plan actually happens at
+    # that distance. Keep unconditional weight at zero until range context is
+    # derived from spell data.
+    "% Melee Damage": 0.0,
+    "% Ranged Damage": 0.0,
     "% Earth Resistance": PERCENT_RESISTANCE_WEIGHT,
     "% Neutral Resistance": PERCENT_RESISTANCE_WEIGHT,
     "% Fire Resistance": PERCENT_RESISTANCE_WEIGHT,
@@ -2360,6 +2363,7 @@ def spell_damage_per_cast(spell: SpellDamageCandidate, stats: dict[str, int], st
             is_weapon=line.is_weapon,
             is_trap=line.is_trap,
             weight=line.weight,
+            distance=line.distance,
         )
         for line in spell.damage_lines
     ]
@@ -2782,6 +2786,7 @@ def strength_spell_damage_profile() -> tuple[DamageLine, ...]:
             is_weapon=line.is_weapon,
             is_trap=line.is_trap,
             weight=line.weight / max(spell.ap_cost, 1),
+            distance=line.distance,
         )
         for spell in filler_spells
         for line in spell.damage_lines

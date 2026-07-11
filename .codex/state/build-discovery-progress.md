@@ -6773,3 +6773,23 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   spell data: key damaging spells, max range, modifiable-range support,
   minimum range constraints, line-of-sight constraints, practical rotation
   share, and whether extra Range changes reachable targets.
+
+### 2026-07-11 Impetuous Overvaluation Fix
+
+- Investigated why `Impetuous` appeared in top generated Strength Iop builds.
+- Found a concrete scorer bug: `damage_calculator.average_line_damage` always
+  used the `"ranged"` damage branch for every modeled damage line, so
+  `% Ranged Damage` applied to generic spell/weapon damage even when action
+  distance was unknown.
+- Fixed damage lines to default to neutral distance. `% Ranged Damage` and
+  `% Melee Damage` now apply only when a `DamageLine` explicitly declares
+  `distance="ranged"` or `distance="melee"`.
+- Set unconditional `% Ranged Damage` and `% Melee Damage` stat weights to
+  zero in the prototype until spell-derived distance context is available.
+- Added a focused unittest covering neutral, ranged, and melee distance
+  behavior.
+- Verification: `python -m unittest oneoff.test_damage_calculator` passed
+  inside the Docker server container.
+- Caveat: a full `12/6/any` Strength Iop generation smoke timed out after about
+  two minutes, so the updated top-build artifact still needs to be regenerated
+  with the faster CP-SAT path or a narrower harness command.

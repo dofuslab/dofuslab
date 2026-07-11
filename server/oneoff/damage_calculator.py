@@ -32,6 +32,7 @@ class DamageLine:
     is_weapon: bool = False
     is_trap: bool = False
     weight: float = 1.0
+    distance: str | None = None
 
 
 def get_stat(stats: dict[str, int], stat: str) -> int:
@@ -69,7 +70,9 @@ def calc_damage(
     else:
         final_damage_mod *= 1 + get_stat(stats, "% Spell Damage") / 100
 
+    neutral = floor(calculated_damage * final_damage_mod)
     return {
+        "neutral": neutral,
         "melee": floor(
             calculated_damage
             * (final_damage_mod * (1 + get_stat(stats, "% Melee Damage") / 100))
@@ -117,8 +120,9 @@ def average_line_damage(line: DamageLine, stats: dict[str, int]) -> float:
         crit_bonus_damage=line.crit_bonus_damage,
     )
 
-    noncrit_average = (noncrit_min["ranged"] + noncrit_max["ranged"]) / 2
-    crit_average = (crit_min["ranged"] + crit_max["ranged"]) / 2
+    distance = line.distance if line.distance in {"melee", "ranged"} else "neutral"
+    noncrit_average = (noncrit_min[distance] + noncrit_max[distance]) / 2
+    crit_average = (crit_min[distance] + crit_max[distance]) / 2
     crit_rate = min(max(line.crit_chance + get_stat(stats, "Critical"), 0), 100) / 100
     return line.weight * (crit_average * crit_rate + noncrit_average * (1 - crit_rate))
 
