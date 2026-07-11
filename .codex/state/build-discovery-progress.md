@@ -6075,6 +6075,34 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server/scripts/test_build_discovery_ap_mp_range_grid_inventory.py`
   - `python -m py_compile server/scripts/build_discovery_ap_mp_range_grid_inventory.py server/scripts/test_build_discovery_ap_mp_range_grid_inventory.py`
 
+### 2026-07-11 M3/M4 Next Unresolved Sample
+
+- Generated and validated a 10-row sample from the stricter
+  `nextUnresolvedTargets` inventory suggestions:
+  - target file: `.codex/state/build-discovery-m3-unresolved-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-unresolved-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-unresolved-sample-20260711.md`
+  - generated: `5 / 10`
+  - no build: `5 / 10`
+  - invalid: `0`
+  - solver statuses: `5` `OPTIMAL`, `5` `INFEASIBLE`
+- Sample highlights:
+  - level `80` Strength tier `1` generated `12/6/6`
+  - level `200` Strength tier `1` generated `12/6/6`
+  - level `1`, `5`, and `6` minimum rows generated
+  - tiny-level cap/MP/range stress rows returned solver-proven `INFEASIBLE`
+- Refreshed all-level inventory after adding this sample:
+  - valid query rows: `665088`
+  - generated evidence rows: `177`
+  - attempted evidence rows: `198`
+  - proven no-build evidence rows: `13`
+  - resolved evidence rows: `190`
+  - unresolved rows: `664898`
+- Verification passed:
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-unresolved-targets-20260711.json --output-json /tmp/build-discovery-m3-unresolved-sample-20260711.json --output-md /tmp/build-discovery-m3-unresolved-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-unresolved-sample-20260711.json --target-file .codex/state/build-discovery-m3-unresolved-targets-20260711.json --expected-solver cpsat --allow-no-build`
+
 ### 2026-07-11 M3/M4 Between-Boundary Level Sample
 
 - Generated and validated a targeted between-boundary level sample to avoid

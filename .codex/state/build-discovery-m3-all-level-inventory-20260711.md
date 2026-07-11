@@ -7,22 +7,22 @@ Level scope: `all_levels` (`200` levels)
 Element count: `4`
 Budget tier count: `4`
 Valid query rows: `665088`
-Generated evidence rows: `172`
-Attempted evidence rows: `192`
-Proven no-build evidence rows: `8`
-Resolved evidence rows: `180`
-Unproven rows: `664916`
-Unresolved rows: `664908`
-Unattempted rows: `664896`
+Generated evidence rows: `177`
+Attempted evidence rows: `198`
+Proven no-build evidence rows: `13`
+Resolved evidence rows: `190`
+Unproven rows: `664911`
+Unresolved rows: `664898`
+Unattempted rows: `664890`
 
 | Level | Valid rows | Generated evidence | Resolved evidence | Unresolved |
 |---:|---:|---:|---:|---:|
-| 1 | 3584 | 7 | 8 | 3576 |
-| 2 | 3584 | 1 | 2 | 3582 |
-| 3 | 3584 | 0 | 1 | 3583 |
-| 4 | 3584 | 0 | 1 | 3583 |
-| 5 | 3584 | 1 | 1 | 3583 |
-| 6 | 3584 | 1 | 1 | 3583 |
+| 1 | 3584 | 8 | 11 | 3573 |
+| 2 | 3584 | 1 | 3 | 3581 |
+| 3 | 3584 | 0 | 2 | 3582 |
+| 4 | 3584 | 0 | 2 | 3582 |
+| 5 | 3584 | 2 | 2 | 3582 |
+| 6 | 3584 | 2 | 2 | 3582 |
 | 7 | 3584 | 1 | 1 | 3583 |
 | 8 | 3584 | 0 | 1 | 3583 |
 | 9 | 3584 | 0 | 1 | 3583 |
@@ -96,7 +96,7 @@ Unattempted rows: `664896`
 | 77 | 3584 | 0 | 0 | 3584 |
 | 78 | 3584 | 0 | 0 | 3584 |
 | 79 | 3584 | 0 | 0 | 3584 |
-| 80 | 3584 | 14 | 14 | 3570 |
+| 80 | 3584 | 15 | 15 | 3569 |
 | 81 | 3584 | 0 | 0 | 3584 |
 | 82 | 3584 | 0 | 0 | 3584 |
 | 83 | 3584 | 0 | 0 | 3584 |
@@ -216,7 +216,7 @@ Unattempted rows: `664896`
 | 197 | 3072 | 0 | 0 | 3072 |
 | 198 | 3072 | 0 | 0 | 3072 |
 | 199 | 3072 | 12 | 12 | 3060 |
-| 200 | 3072 | 13 | 13 | 3059 |
+| 200 | 3072 | 14 | 14 | 3058 |
 
 ## Unproven Examples
 
@@ -306,16 +306,16 @@ Unattempted rows: `664896`
 
 ## Suggested Next Generated Rows
 
-- L80 strength tier 1 12/6/6 `cap` `retry`
-- L200 strength tier 1 12/6/6 `cap` `retry`
-- L1 intelligence tier 4 12/6/6 `cap` `retry`
-- L1 intelligence tier 3 12/6/6 `cap` `retry`
-- L1 intelligence tier 4 6/3/any `minimum` `unattempted`
-- L2 intelligence tier 3 12/6/6 `cap` `unattempted`
-- L3 chance tier 4 6/6/0 `mp_heavy` `unattempted`
-- L4 agility tier 4 6/4/6 `range_heavy` `unattempted`
-- L5 strength tier 2 6/3/any `minimum` `unattempted`
-- L6 intelligence tier 2 6/3/any `minimum` `unattempted`
+- L1 intelligence tier 2 12/6/6 `cap` `retry`
+- L99 intelligence tier 2 12/6/6 `cap` `retry`
+- L20 chance tier 4 12/6/6 `cap` `retry`
+- L20 chance tier 3 12/6/6 `cap` `retry`
+- L1 chance tier 1 6/3/any `minimum` `unattempted`
+- L2 intelligence tier 2 12/6/6 `cap` `unattempted`
+- L3 chance tier 4 6/6/1 `mp_heavy` `unattempted`
+- L4 agility tier 4 6/5/6 `range_heavy` `unattempted`
+- L5 strength tier 3 6/3/any `minimum` `unattempted`
+- L6 intelligence tier 3 6/3/any `minimum` `unattempted`
 - L7 chance tier 2 6/3/any `minimum` `unattempted`
 - L8 agility tier 3 12/6/6 `cap` `unattempted`
 - L9 strength tier 4 6/6/0 `mp_heavy` `unattempted`

@@ -293,6 +293,11 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Current evidence shows level 80 and level 200 Strength `12/6/6` are feasible
   at tier 2 under the current availability model, while tier 1 cap retries
   remain unresolved.
+- Current evidence now also shows level 80 and level 200 Strength `12/6/6` are
+  feasible at tier 1 under v0 assumptions. This depends on tier 1 allowing
+  trophies, mounts/petsmount-style movement sources, normal AP equipment, and
+  no expensive Dofus/exo assumptions; reviewers should verify that this matches
+  the intended budget meaning.
 - Between-boundary levels need explicit sampling, not just bucket edges. The
   current CP-SAT path generated valid arbitrary-level rows at levels 13, 18,
   37, 42, 75, 98, 101, 111, 137, 141, 171, and 187, but some mid-level rows

@@ -1,0 +1,125 @@
+{
+  "description": "Next unresolved all-level Iop rows selected after requiring no-build evidence to be CP-SAT INFEASIBLE.",
+  "targets": [
+    {
+      "id": "m3_unresolved_01_cap_level_80_strength_12_6_6_budget1",
+      "level": 80,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "cap",
+      "evidenceStatus": "retry"
+    },
+    {
+      "id": "m3_unresolved_02_cap_level_200_strength_12_6_6_budget1",
+      "level": 200,
+      "element": "strength",
+      "budgetTier": 1,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "cap",
+      "evidenceStatus": "retry"
+    },
+    {
+      "id": "m3_unresolved_03_cap_level_1_intelligence_12_6_6_budget4",
+      "level": 1,
+      "element": "intelligence",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "cap",
+      "evidenceStatus": "retry"
+    },
+    {
+      "id": "m3_unresolved_04_cap_level_1_intelligence_12_6_6_budget3",
+      "level": 1,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "cap",
+      "evidenceStatus": "retry"
+    },
+    {
+      "id": "m3_unresolved_05_minimum_level_1_intelligence_6_3_none_budget4",
+      "level": 1,
+      "element": "intelligence",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_unresolved_06_cap_level_2_intelligence_12_6_6_budget3",
+      "level": 2,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "cap",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_unresolved_07_mp_heavy_level_3_chance_6_6_0_budget4",
+      "level": 3,
+      "element": "chance",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 0,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "mp_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_unresolved_08_range_heavy_level_4_agility_6_4_6_budget4",
+      "level": 4,
+      "element": "agility",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "range_heavy",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_unresolved_09_minimum_level_5_strength_6_3_none_budget2",
+      "level": 5,
+      "element": "strength",
+      "budgetTier": 2,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    },
+    {
+      "id": "m3_unresolved_10_minimum_level_6_intelligence_6_3_none_budget2",
+      "level": 6,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3,
+      "profileBucket": "minimum",
+      "evidenceStatus": "unattempted"
+    }
+  ]
+}

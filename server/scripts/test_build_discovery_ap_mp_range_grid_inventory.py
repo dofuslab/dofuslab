@@ -71,6 +71,10 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
             DEFAULT_ARTIFACTS,
         )
         self.assertIn(
+            ".codex/state/build-discovery-m3-unresolved-sample-20260711.json",
+            DEFAULT_ARTIFACTS,
+        )
+        self.assertIn(
             ".codex/state/build-discovery-prod-level-sample-matrix.json",
             DEFAULT_ARTIFACTS,
         )
