@@ -11,7 +11,9 @@ from build_discovery_level_diversity_matrix import (
     render_markdown,
     selected_targets,
     target_name_from_row,
+    target_manifest_report,
     target_summary,
+    render_target_manifest_markdown,
     targets_from_file,
     targets_for_set,
     unique_artifact_stem_for_target,
@@ -394,6 +396,38 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(seen_queries[0].level, 50)
         self.assertEqual(report["results"][0]["validationErrors"], [])
         self.assertEqual(report["results"][0]["bestBuildSummary"]["items"], ["Example Amulet", "Example Sword"])
+
+    def test_target_manifest_report_records_targets_without_build_results(self):
+        selected = targets_for_set("prod-level-sample")[:1]
+
+        report = target_manifest_report(
+            selected,
+            generated_at="now",
+            target_set="prod-level-sample",
+            git_sha="abc123",
+        )
+
+        self.assertEqual(report["reportVersion"], "build-discovery-level-target-manifest-v1")
+        self.assertEqual(report["targetCount"], 1)
+        self.assertEqual(report["evidenceType"], "target_selection_manifest")
+        self.assertEqual(report["targets"][0]["target"], target_summary(selected[0]))
+        self.assertEqual(report["targets"][0]["query"]["className"], "Iop")
+        self.assertEqual(report["targets"][0]["search"]["topK"], 25)
+        self.assertNotIn("results", report)
+
+    def test_render_target_manifest_markdown_marks_non_evidence(self):
+        selected = targets_for_set("prod-level-sample")[:1]
+        report = target_manifest_report(
+            selected,
+            generated_at="now",
+            target_set="prod-level-sample",
+            git_sha="abc123",
+        )
+
+        markdown = render_target_manifest_markdown(report)
+
+        self.assertIn("target-selection manifest only", markdown)
+        self.assertIn("L1 strength 6/3/any tier 1", markdown)
 
     def test_write_split_matrix_reports_writes_each_target_as_it_finishes(self):
         selected = selected_targets(levels={50}, elements={"strength", "intelligence"})

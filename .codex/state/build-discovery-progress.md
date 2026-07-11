@@ -3352,6 +3352,22 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
   - `python -m py_compile server\scripts\build_discovery_level_diversity_targets.py server\scripts\build_discovery_level_diversity_matrix.py server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix_check.py`
 
+### 2026-07-10 Target Manifest Dry Run
+
+- Added `--target-manifest-json` and `--target-manifest-md` to
+  `build_discovery_level_diversity_matrix.py`.
+- Manifest mode writes selected target/query/search rows without invoking the
+  solver, so target sets can be reviewed even when Docker or DB-backed solver
+  runtime is unavailable.
+- Generated prod-level sample manifests:
+  - `.codex/state/build-discovery-prod-level-sample-target-manifest.json`
+  - `.codex/state/build-discovery-prod-level-sample-target-manifest.md`
+- The manifest is explicitly labeled as target selection only, not generated
+  build evidence or quality proof.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range

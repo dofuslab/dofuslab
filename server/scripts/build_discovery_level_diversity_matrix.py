@@ -584,6 +584,76 @@ def target_label(target: dict[str, Any]) -> str:
     )
 
 
+def target_manifest_report(
+    targets: Iterable[LevelDiversityTarget],
+    *,
+    generated_at: str,
+    target_set: str,
+    git_sha: str | None,
+    target_source: str | None = None,
+) -> dict[str, Any]:
+    rows = []
+    for target in targets:
+        query = query_for_target(target)
+        rows.append(
+            {
+                "target": target_summary(target),
+                "query": query_summary(query),
+                "search": {
+                    "topK": query.top_k,
+                    "beamWidth": query.beam_width,
+                    "perSignatureCap": query.per_signature_cap,
+                    "relevantSetLimit": query.relevant_set_limit,
+                },
+            }
+        )
+    return {
+        "reportVersion": "build-discovery-level-target-manifest-v1",
+        "generatedAt": generated_at,
+        "scope": f"Iop {target_set} target manifest",
+        "evidenceType": "target_selection_manifest",
+        "provenance": {
+            "gitSha": git_sha,
+            "targetSource": target_source or target_source_for_set(target_set),
+        },
+        "targetCount": len(rows),
+        "targets": rows,
+    }
+
+
+def render_target_manifest_markdown(report: dict[str, Any]) -> str:
+    lines = [
+        "# Build Discovery Iop Target Manifest",
+        "",
+        f"Generated at: `{report['generatedAt']}`",
+        "",
+        "This is a target-selection manifest only. It does not contain generated builds or quality proof.",
+        "",
+        f"Targets: `{report['targetCount']}`",
+        "",
+        "| Target | Query budget | Exo policy | Search |",
+        "|---|---:|---|---|",
+    ]
+    for row in report["targets"]:
+        target = row["target"]
+        query = row["query"]
+        search_config = row.get("search", {})
+        search = (
+            f"topK {search_config.get('topK', '')}, beam {search_config.get('beamWidth', '')}, "
+            f"signature {search_config.get('perSignatureCap', '')}, sets {search_config.get('relevantSetLimit', '')}"
+        )
+        lines.append(
+            "| {} | {} | {} | {} |".format(
+                target_label(target),
+                query["budgetTier"],
+                query["exoPolicy"],
+                search,
+            )
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
 def report_title(report: dict[str, Any]) -> str:
     scope = report.get("scope", "")
     if scope.startswith("Iop ") and scope.endswith(" generated target matrix"):
@@ -681,6 +751,8 @@ def main() -> None:
     parser.add_argument("--levels", help="Comma-separated levels to include.")
     parser.add_argument("--elements", help="Comma-separated elements to include.")
     parser.add_argument("--budget-tiers", help="Comma-separated budget tiers to include.")
+    parser.add_argument("--target-manifest-json", help="Write selected target/query manifest JSON without running the solver.")
+    parser.add_argument("--target-manifest-md", help="Write selected target/query manifest Markdown without running the solver.")
     parser.add_argument("--output-json", help="Write JSON report to this path.")
     parser.add_argument("--output-md", help="Write Markdown summary to this path.")
     parser.add_argument("--split-output-dir", help="Write one JSON/Markdown report per selected target.")
@@ -712,6 +784,28 @@ def main() -> None:
     )
     if not targets:
         parser.error(f"No targets selected from {target_source or args.target_set}.")
+
+    if args.target_manifest_json or args.target_manifest_md:
+        manifest = target_manifest_report(
+            targets,
+            generated_at=datetime.now(timezone.utc).isoformat(),
+            target_set=target_set,
+            git_sha=args.git_sha or current_git_sha(),
+            target_source=target_source,
+        )
+        if args.target_manifest_json:
+            target_manifest_json = Path(args.target_manifest_json)
+            target_manifest_json.parent.mkdir(parents=True, exist_ok=True)
+            target_manifest_json.write_text(
+                json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
+        if args.target_manifest_md:
+            target_manifest_md = Path(args.target_manifest_md)
+            target_manifest_md.parent.mkdir(parents=True, exist_ok=True)
+            target_manifest_md.write_text(render_target_manifest_markdown(manifest), encoding="utf-8")
+        if not args.output_json and not args.output_md and not args.split_output_dir:
+            return
 
     generator = (
         build_discovery_response
