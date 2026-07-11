@@ -3138,6 +3138,31 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python -m py_compile server\scripts\build_discovery_ap_mp_range_grid_inventory.py server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
   - `git diff --check`
 
+### 2026-07-10 Target-File Matrix Batch Harness
+
+- Added `--target-file` support to `build_discovery_level_diversity_matrix.py`
+  so the matrix generator can consume arbitrary full-grid rows from:
+  - inventory reports via `nextUnprovenTargets`
+  - direct `targets` arrays
+  - existing matrix `results[*].target`
+  - bare target-row arrays
+- Added deterministic generated target IDs such as
+  `full_grid_level_100_chance_7_4_6_budget2`.
+- Hardened target-file parsing after reviewer feedback:
+  - coerces numeric string `rangeTarget` values
+  - rejects negative `--target-file-limit`
+  - reports malformed `results` rows with index context
+  - reports missing required row keys with index context
+  - rejects duplicate target rows/ids
+  - records provenance as `path#sourceKind`
+- This creates the handoff from full-grid inventory to reviewable generated
+  matrix batches. Once Docker is healthy, the next runtime command should be:
+  `python scripts/build_discovery_level_diversity_matrix.py --target-file /tmp/build-discovery-ap-mp-range-full-grid-inventory.json --target-file-prefix full_grid --target-file-limit 40 --split-output-dir /tmp/build-discovery-full-grid-next-40`
+- Local verification passed:
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `git diff --check`
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range

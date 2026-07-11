@@ -6,8 +6,11 @@ from pathlib import Path
 from build_discovery_level_diversity_matrix import (
     REPORT_VERSION,
     build_matrix_report,
+    load_targets_from_file,
     render_markdown,
     selected_targets,
+    target_name_from_row,
+    targets_from_file,
     targets_for_set,
     validate_best_build,
     write_split_matrix_reports,
@@ -150,6 +153,154 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
                 "grid_next_cap4_level_1_intelligence_12_6_6_budget2",
                 "grid_next_cap4_level_200_strength_12_6_6_budget1",
             ],
+        )
+
+    def test_target_file_can_load_inventory_next_unproven_targets(self):
+        payload = {
+            "nextUnprovenTargets": [
+                {
+                    "level": 2,
+                    "element": "intelligence",
+                    "budgetTier": 1,
+                    "apTarget": 6,
+                    "mpTarget": 3,
+                    "rangeTarget": None,
+                },
+                {
+                    "level": 100,
+                    "element": "chance",
+                    "budgetTier": 2,
+                    "apTarget": 7,
+                    "mpTarget": 4,
+                    "rangeTarget": 1,
+                },
+            ]
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            target_file = Path(temp_dir) / "targets.json"
+            target_file.write_text(json.dumps(payload), encoding="utf-8")
+
+            targets = targets_from_file(target_file, limit=1, prefix="full_grid")
+
+        self.assertEqual(len(targets), 1)
+        self.assertEqual(targets[0].name, "full_grid_level_2_intelligence_6_3_none_budget1")
+        self.assertEqual(targets[0].level, 2)
+        self.assertEqual(targets[0].element, "intelligence")
+        self.assertIsNone(targets[0].range_target)
+
+    def test_target_file_coerces_string_range_target(self):
+        payload = {
+            "targets": [
+                {
+                    "level": "100",
+                    "element": "chance",
+                    "budgetTier": "2",
+                    "apTarget": "7",
+                    "mpTarget": "4",
+                    "rangeTarget": "6",
+                }
+            ]
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            target_file = Path(temp_dir) / "targets.json"
+            target_file.write_text(json.dumps(payload), encoding="utf-8")
+
+            targets = targets_from_file(target_file, prefix="full_grid")
+
+        self.assertEqual(targets[0].range_target, 6)
+        self.assertEqual(targets[0].name, "full_grid_level_100_chance_7_4_6_budget2")
+
+    def test_target_file_can_load_matrix_results_targets(self):
+        payload = {
+            "results": [
+                {
+                    "target": {
+                        "id": "matrix_target",
+                        "level": 100,
+                        "element": "chance",
+                        "budgetTier": 2,
+                        "apTarget": 7,
+                        "mpTarget": 4,
+                        "rangeTarget": 1,
+                    }
+                }
+            ]
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            target_file = Path(temp_dir) / "matrix.json"
+            target_file.write_text(json.dumps(payload), encoding="utf-8")
+
+            result = load_targets_from_file(target_file, prefix="full_grid")
+
+        self.assertEqual(result.source_kind, "results")
+        self.assertTrue(result.source.endswith("#results"))
+        self.assertEqual(result.targets[0].name, "matrix_target")
+
+    def test_target_file_reports_malformed_result_row_with_context(self):
+        payload = {"results": [{"status": "generated"}]}
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            target_file = Path(temp_dir) / "bad.json"
+            target_file.write_text(json.dumps(payload), encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "results row 0 missing target object"):
+                targets_from_file(target_file)
+
+    def test_target_file_reports_missing_required_key_with_context(self):
+        payload = {"targets": [{"level": 2, "element": "strength"}]}
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            target_file = Path(temp_dir) / "bad.json"
+            target_file.write_text(json.dumps(payload), encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "target row 0 missing budgetTier"):
+                targets_from_file(target_file)
+
+    def test_target_file_rejects_duplicate_synthesized_rows(self):
+        row = {
+            "level": 2,
+            "element": "strength",
+            "budgetTier": 1,
+            "apTarget": 6,
+            "mpTarget": 3,
+            "rangeTarget": None,
+        }
+        payload = {"targets": [row, dict(row)]}
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            target_file = Path(temp_dir) / "dupe.json"
+            target_file.write_text(json.dumps(payload), encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "Duplicate synthesized target row key"):
+                targets_from_file(target_file)
+
+    def test_target_file_rejects_negative_limit(self):
+        payload = {"targets": []}
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            target_file = Path(temp_dir) / "targets.json"
+            target_file.write_text(json.dumps(payload), encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "target-file-limit"):
+                targets_from_file(target_file, limit=-1)
+
+    def test_target_name_from_row_is_deterministic_for_range_targets(self):
+        self.assertEqual(
+            target_name_from_row(
+                {
+                    "level": 100,
+                    "element": "chance",
+                    "budgetTier": 2,
+                    "apTarget": 7,
+                    "mpTarget": 4,
+                    "rangeTarget": 1,
+                },
+                prefix="full_grid",
+            ),
+            "full_grid_level_100_chance_7_4_1_budget2",
         )
 
     def test_cap_target_queries_use_deeper_search_settings(self):
@@ -310,6 +461,54 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(report["evidenceType"], "action_stat_feasibility")
         self.assertEqual(report["provenance"]["gitSha"], "def456")
         self.assertIn("action-stat feasibility evidence", markdown)
+
+    def test_target_file_report_records_target_file_provenance(self):
+        payload = {
+            "targets": [
+                {
+                    "level": 2,
+                    "element": "intelligence",
+                    "budgetTier": 1,
+                    "apTarget": 6,
+                    "mpTarget": 3,
+                    "rangeTarget": None,
+                }
+            ]
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            target_file = Path(temp_dir) / "targets.json"
+            target_file.write_text(json.dumps(payload), encoding="utf-8")
+            load_result = load_targets_from_file(target_file, limit=1, prefix="full_grid")
+
+            report = build_matrix_report(
+                load_result.targets,
+                generator=lambda query: {
+                    "builds": [
+                        {
+                            "score": 1,
+                            "totals": {
+                                "AP": query.ap_target,
+                                "MP": query.mp_target,
+                                "Range": 0,
+                                "Intelligence": 100,
+                                "Vitality": 100,
+                            },
+                            "sets": {},
+                            "exos": {},
+                            "conditionFailures": [],
+                            "items": {"amulet": {"name": "Example Amulet", "level": query.level}},
+                        }
+                    ],
+                },
+                generated_at="now",
+                target_set="target-file",
+                git_sha="file-sha",
+                target_source=load_result.source,
+            )
+
+        self.assertTrue(report["provenance"]["targetSource"].endswith("targets.json#targets"))
+        self.assertEqual(report["scope"], "Iop target-file generated target matrix")
 
     def test_validate_best_build_rejects_condition_and_target_violations(self):
         target = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]

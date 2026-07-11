@@ -7,6 +7,7 @@ import json
 import re
 import subprocess
 import sys
+from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable, Iterable
@@ -41,6 +42,19 @@ from scripts.build_discovery_level_diversity_targets import (  # noqa: E402
 REPORT_VERSION = "build-discovery-level-diversity-matrix-v1"
 
 
+@dataclass(frozen=True)
+class TargetFileRows:
+    rows: list[dict[str, Any]]
+    source_kind: str
+
+
+@dataclass(frozen=True)
+class TargetFileLoadResult:
+    targets: tuple[LevelDiversityTarget, ...]
+    source: str
+    source_kind: str
+
+
 def csv_filter(raw_value: str | None) -> set[str] | None:
     if not raw_value or raw_value == "all":
         return None
@@ -67,6 +81,127 @@ def selected_targets(
             continue
         targets.append(target)
     return targets
+
+
+def target_name_from_row(row: dict[str, Any], prefix: str = "file") -> str:
+    range_value = row.get("rangeTarget")
+    range_label = "none" if range_value is None else str(range_value)
+    return (
+        f"{prefix}_level_{row['level']}_{row['element']}_"
+        f"{row['apTarget']}_{row['mpTarget']}_{range_label}_budget{row['budgetTier']}"
+    )
+
+
+def normalize_range_target(value: Any, *, index: int) -> int | None:
+    if value is None:
+        return None
+    if isinstance(value, str):
+        normalized = value.strip().lower()
+        if normalized in {"", "none", "any", "null"}:
+            return None
+        try:
+            return int(normalized)
+        except ValueError as exc:
+            raise ValueError(f"target row {index} has invalid rangeTarget: {value}") from exc
+    try:
+        return int(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"target row {index} has invalid rangeTarget: {value}") from exc
+
+
+def required_row_value(row: dict[str, Any], key: str, *, index: int) -> Any:
+    if key not in row:
+        raise ValueError(f"target row {index} missing {key}")
+    return row[key]
+
+
+def target_from_row(row: dict[str, Any], prefix: str = "file", *, index: int = 0) -> LevelDiversityTarget:
+    if not isinstance(row, dict):
+        raise ValueError(f"target row {index} must be an object")
+    normalized_row = {
+        "level": int(required_row_value(row, "level", index=index)),
+        "element": str(required_row_value(row, "element", index=index)),
+        "budgetTier": int(required_row_value(row, "budgetTier", index=index)),
+        "apTarget": int(required_row_value(row, "apTarget", index=index)),
+        "mpTarget": int(required_row_value(row, "mpTarget", index=index)),
+        "rangeTarget": normalize_range_target(
+            required_row_value(row, "rangeTarget", index=index),
+            index=index,
+        ),
+    }
+    return LevelDiversityTarget(
+        row.get("id") or target_name_from_row(normalized_row, prefix),
+        normalized_row["level"],
+        normalized_row["element"],
+        normalized_row["budgetTier"],
+        normalized_row["apTarget"],
+        normalized_row["mpTarget"],
+        normalized_row["rangeTarget"],
+    )
+
+
+def rows_from_target_file_payload(payload: Any) -> TargetFileRows:
+    if isinstance(payload, list):
+        return TargetFileRows(payload, "array")
+    if not isinstance(payload, dict):
+        raise ValueError("Target file must contain a JSON object or array.")
+    if isinstance(payload.get("nextUnprovenTargets"), list):
+        return TargetFileRows(payload["nextUnprovenTargets"], "nextUnprovenTargets")
+    if isinstance(payload.get("targets"), list):
+        return TargetFileRows(payload["targets"], "targets")
+    if isinstance(payload.get("results"), list):
+        rows = []
+        for index, result in enumerate(payload["results"]):
+            if not isinstance(result, dict) or not isinstance(result.get("target"), dict):
+                raise ValueError(f"target file results row {index} missing target object")
+            rows.append(result["target"])
+        return TargetFileRows(rows, "results")
+    raise ValueError("Target file must contain nextUnprovenTargets, targets, results, or a target row array.")
+
+
+def target_source_for_file(path: str | Path, source_kind: str) -> str:
+    return f"{path}#{source_kind}"
+
+
+def load_targets_from_file(path: str | Path, *, limit: int | None = None, prefix: str = "file") -> TargetFileLoadResult:
+    if limit is not None and limit < 0:
+        raise ValueError("--target-file-limit must be non-negative")
+    with open(path, encoding="utf-8") as file:
+        payload = json.load(file)
+    target_rows = rows_from_target_file_payload(payload)
+    rows = target_rows.rows
+    if limit is not None:
+        rows = rows[:limit]
+    targets = []
+    seen_names: set[str] = set()
+    seen_row_keys: set[tuple[int, str, int, int, int, int | None]] = set()
+    for index, row in enumerate(rows):
+        target = target_from_row(row, prefix, index=index)
+        row_key = (
+            target.level,
+            target.element,
+            target.budget_tier,
+            target.ap,
+            target.mp,
+            target.range_target,
+        )
+        if target.name in seen_names:
+            duplicate_type = "explicit target id" if isinstance(row, dict) and row.get("id") else "synthesized target row key"
+            raise ValueError(f"Duplicate {duplicate_type} in target file: {target.name}")
+        if row_key in seen_row_keys:
+            raise ValueError(f"Duplicate target row key in target file: {row_key}")
+        seen_names.add(target.name)
+        seen_row_keys.add(row_key)
+        targets.append(target)
+    return TargetFileLoadResult(
+        tuple(targets),
+        target_source_for_file(path, target_rows.source_kind),
+        target_rows.source_kind,
+    )
+
+
+def targets_from_file(path: str | Path, *, limit: int | None = None, prefix: str = "file") -> tuple[LevelDiversityTarget, ...]:
+    return load_targets_from_file(path, limit=limit, prefix=prefix).targets
 
 
 def targets_for_set(target_set: str) -> tuple[LevelDiversityTarget, ...]:
@@ -107,6 +242,8 @@ def targets_for_set(target_set: str) -> tuple[LevelDiversityTarget, ...]:
 
 
 def target_source_for_set(target_set: str) -> str:
+    if target_set == "target-file":
+        return "target file"
     if target_set == "boundary":
         return "scripts.build_discovery_level_diversity_targets.BOUNDARY_LEVEL_TARGETS"
     if target_set == "coverage":
@@ -251,6 +388,7 @@ def matrix_report_from_entries(
     generated_at: str,
     target_set: str,
     git_sha: str | None,
+    target_source: str | None = None,
 ) -> dict[str, Any]:
     return {
         "reportVersion": REPORT_VERSION,
@@ -263,7 +401,7 @@ def matrix_report_from_entries(
         ),
         "provenance": {
             "gitSha": git_sha or current_git_sha(),
-            "targetSource": target_source_for_set(target_set),
+            "targetSource": target_source or target_source_for_set(target_set),
             "generator": "scripts/build_discovery_level_diversity_matrix.py",
         },
         "targetCount": len(entries),
@@ -281,6 +419,7 @@ def build_matrix_report(
     generated_at: str | None = None,
     target_set: str = "level-diversity",
     git_sha: str | None = None,
+    target_source: str | None = None,
 ) -> dict[str, Any]:
     entries = []
     for target in targets:
@@ -294,6 +433,7 @@ def build_matrix_report(
         generated_at=generated_at or datetime.now(timezone.utc).isoformat(),
         target_set=target_set,
         git_sha=git_sha,
+        target_source=target_source,
     )
 
 
@@ -310,6 +450,7 @@ def write_split_matrix_reports(
     generated_at: str | None = None,
     target_set: str = "level-diversity",
     git_sha: str | None = None,
+    target_source: str | None = None,
 ) -> dict[str, Any]:
     generated_at = generated_at or datetime.now(timezone.utc).isoformat()
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -336,6 +477,7 @@ def write_split_matrix_reports(
             generated_at=generated_at,
             target_set=target_set,
             git_sha=git_sha,
+            target_source=target_source,
         )
         json_path = output_dir / f"{stem}.json"
         md_path = output_dir / f"{stem}.md"
@@ -357,6 +499,7 @@ def write_split_matrix_reports(
         generated_at=generated_at,
         target_set=target_set,
         git_sha=git_sha,
+        target_source=target_source,
     )
     return {
         "manifest": {"splitReportCount": len(manifest_rows), "reports": manifest_rows},
@@ -460,6 +603,9 @@ def parse_int_filter(raw_value: str | None) -> set[int] | None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--targets", help="Comma-separated target ids to include.")
+    parser.add_argument("--target-file", help="JSON target rows, inventory report, or matrix report to run.")
+    parser.add_argument("--target-file-limit", type=int, help="Limit target rows loaded from --target-file.")
+    parser.add_argument("--target-file-prefix", default="file", help="Prefix for generated target ids from --target-file.")
     parser.add_argument(
         "--target-set",
         choices=("level-diversity", "boundary", "coverage", "grid-next-minimum", "grid-next-minimum-2", "grid-next-minimum-3", "grid-next-cap", "grid-next-cap-2", "grid-next-cap-3", "grid-next-cap-4", "all"),
@@ -475,15 +621,27 @@ def main() -> None:
     parser.add_argument("--use-cache", action="store_true", help="Use process cache during generation.")
     args = parser.parse_args()
 
+    target_source = None
+    if args.target_file:
+        target_file_result = load_targets_from_file(
+            args.target_file,
+            limit=args.target_file_limit,
+            prefix=args.target_file_prefix,
+        )
+        all_targets = target_file_result.targets
+        target_source = target_file_result.source
+    else:
+        all_targets = targets_for_set(args.target_set)
+    target_set = "target-file" if args.target_file else args.target_set
     targets = selected_targets(
-        all_targets=targets_for_set(args.target_set),
+        all_targets=all_targets,
         target_names=csv_filter(args.targets),
         levels=parse_int_filter(args.levels),
         elements=csv_filter(args.elements),
         budget_tiers=parse_int_filter(args.budget_tiers),
     )
     if not targets:
-        parser.error("No level-diversity targets selected.")
+        parser.error(f"No targets selected from {target_source or args.target_set}.")
 
     generator = (
         build_discovery_response
@@ -495,16 +653,18 @@ def main() -> None:
             targets,
             output_dir=Path(args.split_output_dir),
             generator=generator,
-            target_set=args.target_set,
+            target_set=target_set,
             git_sha=args.git_sha,
+            target_source=target_source,
         )
         report = split_result["aggregateReport"]
     else:
         report = build_matrix_report(
             targets,
             generator=generator,
-            target_set=args.target_set,
+            target_set=target_set,
             git_sha=args.git_sha,
+            target_source=target_source,
         )
 
     if args.output_json:
