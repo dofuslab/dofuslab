@@ -6810,3 +6810,33 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   control.
 - Required report: classify +Range usefulness by `(class, element)` as
   `vital`, `useful`, `marginal`, or `nearly useless`, with spell evidence.
+
+### 2026-07-11 Spell-Derived +Range Usefulness v1
+
+- Derived first-pass +Range usefulness classifications for `76`
+  `(class, element)` profiles from local spell tables.
+- Artifacts:
+  - `.codex/state/build-discovery-spell-range-usefulness-20260711.json`
+  - `.codex/state/build-discovery-spell-range-usefulness-20260711.md`
+- Method:
+  - use highest local `spell_stats` row per spell
+  - identify damaging spells by elemental damage/steal effects
+  - weight spells heuristically by average base damage per AP, casts per turn,
+    cooldown penalty, and a penalty for best-element-only damage
+  - classify +Range usefulness from weighted modifiable-range share,
+    weighted high-range modifiable share, and short-range locked share
+- Distribution: `vital=21`, `useful=13`, `marginal=10`,
+  `nearly useless=32`.
+- Sanity-check examples:
+  - Cra all four single elements classify `vital`.
+  - Enutrof is `vital` for Intelligence/Chance/Agility and `useful` for
+    Strength.
+  - Iop is `nearly useless` for Strength/Chance/Agility and `marginal` for
+    Intelligence.
+  - Sacrier all four single elements classify `nearly useless`.
+- Caveats:
+  - local spell data may be outdated
+  - exact rotations, buffs, AoE value, mobility, erosion, variant exclusivity,
+    and utility are not modeled
+  - some profiles may be polluted by generic/best-element lines and need class
+    review before becoming production weights
