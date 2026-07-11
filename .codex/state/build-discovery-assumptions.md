@@ -311,6 +311,9 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   evidence, not proof that all AP/MP/Range shapes at that level are desirable
   or feasible. Broad level enablement still needs profile-bucket sampling and
   benchmark review inside those levels.
+- Post-100 level-coverage samples are useful correctness checks but are also
+  exposing performance work. Current rows at levels 104, 116, and 128 generated
+  valid builds but took more than eight seconds each in Docker.
 - Level Diversity needs bracket-specific AP/MP/Range defaults, budget assumptions, survivability baselines, and benchmark fixtures before enabling each bracket broadly.
 - Benchmark reports should include raw page stats, normalized mages, base allocation, AP/MP/Range, damage, survivability, utility, availability assumptions, and why generated builds win/lose.
 - DofusLab benchmark URLs can be scored from embedded page data when network and local item data are available.
