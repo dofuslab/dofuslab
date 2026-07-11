@@ -50,6 +50,17 @@ Current confidence boundary:
    - Support all combinations of supported Iop elements, playstyle/range
      preference, AP/MP/Range targets, budget tiers, exo policy, locked items,
      and avoided items.
+   - Include damage/survivability weighting as part of the Milestone 2 query
+     matrix. Support exactly four presets:
+     - `1`: defensive. Prefer survivability strongly while still producing a
+       functional damage build.
+     - `2`: balanced. Trade damage and survivability for general PvM use.
+     - `3`: damage. Preserve the current trusted damage-leaning Strength Iop
+       behavior.
+     - `4`: total glass cannon. Maximize modeled damage with only light
+       survivability pressure.
+   - Negative resistance is reported as a diagnostic, not separately penalized
+     in the score; survivability impact should flow through the EHP model.
    - Start from the trusted melee Strength Iop scoring model.
    - Add/keep expensive no-cache regressions for the best known builds found.
    - For every supported query family, remember the top scoring generated build

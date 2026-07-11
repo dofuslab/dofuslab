@@ -687,16 +687,11 @@ DAMAGE_SURVIVABILITY_PRESETS = {
         negative_resistance_penalty_weight=0.0,
     ),
     3: DamageSurvivabilityPreset(
-        generic_damage_weight=0.35,
-        survivability_weight=1.3,
-        negative_resistance_penalty_weight=0.0,
-    ),
-    4: DamageSurvivabilityPreset(
-        generic_damage_weight=GENERIC_DAMAGE_WEIGHT,
+        generic_damage_weight=0.45,
         survivability_weight=1.0,
         negative_resistance_penalty_weight=0.0,
     ),
-    5: DamageSurvivabilityPreset(
+    4: DamageSurvivabilityPreset(
         generic_damage_weight=0.60,
         survivability_weight=0.7,
         negative_resistance_penalty_weight=0.0,
@@ -754,8 +749,8 @@ class BuildDiscoveryQuery:
             raise ValueError("Build Discovery v1 currently supports PvM only.")
         if self.primary_element not in ELEMENT_PROFILES:
             raise ValueError(f"Unsupported element: {self.primary_element}.")
-        if not 1 <= self.damage_survivability_preset <= 5:
-            raise ValueError("damage_survivability_preset must be between 1 and 5.")
+        if not 1 <= self.damage_survivability_preset <= 4:
+            raise ValueError("damage_survivability_preset must be between 1 and 4.")
         if not 1 <= self.budget_tier <= 4:
             raise ValueError("budget_tier must be between 1 and 4.")
         if self.exo_policy not in {"none", "allow", "opti"}:
