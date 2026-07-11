@@ -21,6 +21,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
 
 
 REPORT_VERSION = "build-discovery-ap-mp-range-grid-inventory-v1"
+MATRIX_REPORT_VERSION = "build-discovery-level-diversity-matrix-v1"
 ALL_LEVELS = tuple(range(1, 201))
 DEFAULT_LEVELS = (1, 20, 50, 80, 99, 100, 120, 150, 179, 180, 199, 200)
 DEFAULT_ELEMENTS = ("strength", "intelligence", "chance", "agility")
@@ -42,6 +43,40 @@ DEFAULT_ARTIFACTS = (
 def load_json(path: str | Path) -> dict[str, Any]:
     with open(path, encoding="utf-8") as file:
         return json.load(file)
+
+
+def is_matrix_report(report: dict[str, Any]) -> bool:
+    return report.get("reportVersion") == MATRIX_REPORT_VERSION and isinstance(report.get("results"), list)
+
+
+def load_reports_from_artifact_paths(paths: Iterable[str | Path]) -> list[dict[str, Any]]:
+    return [load_json(path) for path in paths]
+
+
+def iter_matrix_reports_from_artifact_dir(directory: str | Path) -> Iterable[dict[str, Any]]:
+    directory_path = Path(directory)
+    if not directory_path.is_dir():
+        raise FileNotFoundError(f"Artifact directory does not exist: {directory_path}")
+    for path in sorted(directory_path.glob("*.json")):
+        if path.name == "manifest.json":
+            continue
+        report = load_json(path)
+        if is_matrix_report(report):
+            yield report
+
+
+def load_reports_from_artifacts(
+    paths: Iterable[str | Path],
+    dirs: Iterable[str | Path] = (),
+) -> list[dict[str, Any]]:
+    reports = load_reports_from_artifact_paths(paths)
+    for directory in dirs:
+        reports.extend(iter_matrix_reports_from_artifact_dir(directory))
+    return reports
+
+
+def load_reports_from_artifact_dirs(dirs: Iterable[str | Path]) -> list[dict[str, Any]]:
+    return load_reports_from_artifacts((), dirs)
 
 
 def target_key(
@@ -396,6 +431,7 @@ def parse_csv_strings(raw_value: str | None, defaults: tuple[str, ...]) -> tuple
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--artifact", action="append")
+    parser.add_argument("--artifact-dir", action="append", help="Directory of split matrix JSON reports to include.")
     parser.add_argument("--levels")
     parser.add_argument("--all-levels", action="store_true", help="Inventory levels 1 through 200.")
     parser.add_argument("--elements")
@@ -407,7 +443,7 @@ def main() -> None:
     args = parser.parse_args()
 
     artifact_paths = args.artifact or list(DEFAULT_ARTIFACTS)
-    reports = [load_json(path) for path in artifact_paths]
+    reports = load_reports_from_artifacts(artifact_paths, args.artifact_dir or ())
     levels = ALL_LEVELS if args.all_levels else parse_csv_ints(args.levels, DEFAULT_LEVELS)
     report = build_inventory_report(
         reports,

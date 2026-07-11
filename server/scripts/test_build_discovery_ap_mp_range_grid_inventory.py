@@ -1,11 +1,17 @@
 import unittest
+import json
+import tempfile
+from pathlib import Path
 
 from build_discovery_ap_mp_range_grid_inventory import (
     ALL_LEVELS,
+    MATRIX_REPORT_VERSION,
     attempted_keys_from_reports,
     build_inventory_report,
     covered_keys_from_reports,
     iter_valid_iop_target_space,
+    load_reports_from_artifacts,
+    load_reports_from_artifact_dirs,
     parse_csv_ints,
     profile_bucket,
     row_key,
@@ -139,6 +145,62 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         self.assertEqual(inventory["byLevel"][0]["level"], 1)
         self.assertEqual(len(inventory["unprovenExamples"]), 3)
         self.assertGreater(len(inventory["nextUnprovenTargets"]), 0)
+
+    def test_artifact_dir_loader_includes_split_matrix_reports_only(self):
+        no_build_result = generated_result(element="chance")
+        no_build_result["status"] = "no_build"
+        matrix_report = {
+            "reportVersion": MATRIX_REPORT_VERSION,
+            "results": [generated_result(), no_build_result],
+        }
+        diagnostic_report = {
+            "reportVersion": "build-discovery-action-stat-diagnostics-v1",
+            "results": [generated_result(element="chance")],
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            (root / "target.json").write_text(json.dumps(matrix_report), encoding="utf-8")
+            (root / "manifest.json").write_text(json.dumps({"reports": []}), encoding="utf-8")
+            (root / "diagnostic.json").write_text(json.dumps(diagnostic_report), encoding="utf-8")
+
+            reports = load_reports_from_artifact_dirs([root])
+
+        self.assertEqual(reports, [matrix_report])
+        inventory = build_inventory_report(
+            reports,
+            levels=[1],
+            elements=["strength", "chance"],
+            budget_tiers=[1],
+        )
+        self.assertEqual(inventory["generatedEvidenceCount"], 1)
+        self.assertEqual(inventory["attemptedEvidenceCount"], 2)
+
+    def test_artifact_loader_combines_paths_and_dirs(self):
+        aggregate_report = {
+            "reportVersion": MATRIX_REPORT_VERSION,
+            "results": [generated_result()],
+        }
+        split_report = {
+            "reportVersion": MATRIX_REPORT_VERSION,
+            "results": [generated_result(element="chance")],
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            aggregate_path = root / "aggregate.json"
+            split_dir = root / "split"
+            split_dir.mkdir()
+            aggregate_path.write_text(json.dumps(aggregate_report), encoding="utf-8")
+            (split_dir / "target.json").write_text(json.dumps(split_report), encoding="utf-8")
+
+            reports = load_reports_from_artifacts([aggregate_path], [split_dir])
+
+        self.assertEqual(reports, [aggregate_report, split_report])
+
+    def test_artifact_dir_loader_rejects_missing_directory(self):
+        with self.assertRaises(FileNotFoundError):
+            load_reports_from_artifact_dirs(["does-not-exist"])
 
     def test_build_inventory_report_labels_all_level_scope(self):
         inventory = build_inventory_report(

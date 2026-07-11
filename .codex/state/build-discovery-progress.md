@@ -3163,6 +3163,29 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`
   - `git diff --check`
 
+### 2026-07-10 Split Matrix Output Inventory Ingestion
+
+- Added `--artifact-dir` support to `build_discovery_ap_mp_range_grid_inventory.py`.
+- Split-output directories from target-file matrix batches can now be counted
+  by the inventory even if a long run only completes part of the batch.
+- Directory ingestion:
+  - reads local sibling `*.json` files rather than trusting copied manifests
+  - skips `manifest.json`
+  - includes only `build-discovery-level-diversity-matrix-v1` reports
+  - ignores diagnostic JSON as generated/attempted solver evidence
+  - fails fast for missing artifact directories
+- Added tests that split matrix rows count generated/no-build evidence
+  correctly and that aggregate artifacts can be combined with split-output
+  directories.
+- Local smoke with existing cap-4 split-partial artifacts:
+  - levels: 1, 20, 50, 80
+  - generated evidence: `27`
+  - attempted evidence: `38`
+- Verification passed:
+  - `python server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
+  - `python -m py_compile server\scripts\build_discovery_ap_mp_range_grid_inventory.py server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
+  - `git diff --check`
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range
