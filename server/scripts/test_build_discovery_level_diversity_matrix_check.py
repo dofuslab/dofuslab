@@ -115,6 +115,21 @@ class BuildDiscoveryLevelDiversityMatrixCheckTest(unittest.TestCase):
             failures,
         )
 
+    def test_validate_report_requires_candidate_payload_for_multi_candidate_result(self):
+        report = valid_report()
+        target = LEVEL_DIVERSITY_TARGETS[0]
+        query = query_for_matrix_target(target, query_limit=2)
+        result = report["results"][0]
+        result["query"] = query_summary(query)
+        result["resultCount"] = 2
+
+        failures = validate_report(report)
+
+        self.assertTrue(
+            any("missing candidateBuilds for multi-candidate result" in failure for failure in failures),
+            failures,
+        )
+
     def test_validate_report_accepts_boundary_target_set(self):
         results = [valid_result(target) for target in targets_for_set("boundary")]
         report = {

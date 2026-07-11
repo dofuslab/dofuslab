@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts.build_discovery_level_diversity_matrix import (  # noqa: E402
     REPORT_VERSION,
     query_for_matrix_target,
-    query_summary,
+    query_payload_matches_artifact,
     target_summary,
     targets_for_set,
     validate_best_build,
@@ -41,21 +41,6 @@ def csv_filter(raw_value: str | None) -> set[str] | None:
 
 def slot_types_by_name() -> dict[str, tuple[str, ...]]:
     return dict(SLOTS)
-
-
-SEARCH_QUERY_FIELDS = {"limit", "topK", "beamWidth", "perSignatureCap", "relevantSetLimit"}
-
-
-def query_payload_matches_artifact(query: Any, artifact_query: Any) -> bool:
-    if not isinstance(artifact_query, dict):
-        return False
-    expected = query_summary(query)
-    legacy_expected = {
-        key: value
-        for key, value in expected.items()
-        if key not in SEARCH_QUERY_FIELDS
-    }
-    return artifact_query == expected or artifact_query == legacy_expected
 
 
 def validate_single_build_artifact(
@@ -139,7 +124,7 @@ def validate_full_build_artifact(result: dict[str, Any], target_by_id: dict[str,
     )
     if result.get("target") != target_summary(target):
         failures.append(f"{target_id}: target does not match current target definition")
-    if not query_payload_matches_artifact(query, result.get("query")):
+    if not query_payload_matches_artifact(target, query, result.get("query")):
         failures.append(f"{target_id}: query does not match current query definition")
 
     best_build = result.get("bestBuild")
@@ -158,27 +143,33 @@ def validate_full_build_artifact(result: dict[str, Any], target_by_id: dict[str,
     )
 
     candidate_builds = result.get("candidateBuilds")
-    if candidate_builds is not None:
+    result_count = result.get("resultCount", 0)
+    if result_count > 1 or query.limit > 1:
         if not isinstance(candidate_builds, list):
-            failures.append(f"{target_id}: candidateBuilds must be a list")
-        elif len(candidate_builds) != result.get("resultCount"):
-            failures.append(
-                f"{target_id}: candidateBuilds length {len(candidate_builds)} does not match resultCount {result.get('resultCount')}"
-            )
-        else:
-            for index, candidate in enumerate(candidate_builds):
-                if not isinstance(candidate, dict):
-                    failures.append(f"{target_id}: candidateBuilds[{index}] must be an object")
-                    continue
-                failures.extend(
-                    validate_single_build_artifact(
-                        target_id=target_id,
-                        target=target,
-                        query=query,
-                        build=candidate,
-                        label=f"candidateBuilds[{index}]",
-                    )
+            failures.append(f"{target_id}: missing candidateBuilds for multi-candidate result")
+            return failures
+    if candidate_builds is None:
+        return failures
+    if not isinstance(candidate_builds, list):
+        failures.append(f"{target_id}: candidateBuilds must be a list")
+    elif len(candidate_builds) != result_count:
+        failures.append(
+            f"{target_id}: candidateBuilds length {len(candidate_builds)} does not match resultCount {result_count}"
+        )
+    else:
+        for index, candidate in enumerate(candidate_builds):
+            if not isinstance(candidate, dict):
+                failures.append(f"{target_id}: candidateBuilds[{index}] must be an object")
+                continue
+            failures.extend(
+                validate_single_build_artifact(
+                    target_id=target_id,
+                    target=target,
+                    query=query,
+                    build=candidate,
+                    label=f"candidateBuilds[{index}]",
                 )
+            )
 
     return failures
 

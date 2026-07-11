@@ -41,6 +41,7 @@ from scripts.build_discovery_level_diversity_targets import (  # noqa: E402
 
 
 REPORT_VERSION = "build-discovery-level-diversity-matrix-v1"
+SEARCH_QUERY_FIELDS = {"limit", "topK", "beamWidth", "perSignatureCap", "relevantSetLimit"}
 
 
 def query_summary(query: BuildDiscoveryQuery) -> dict[str, Any]:
@@ -52,6 +53,26 @@ def query_summary(query: BuildDiscoveryQuery) -> dict[str, Any]:
         "perSignatureCap": query.per_signature_cap,
         "relevantSetLimit": query.relevant_set_limit,
     }
+
+
+def legacy_query_summary(query: BuildDiscoveryQuery) -> dict[str, Any]:
+    return {
+        key: value
+        for key, value in query_summary(query).items()
+        if key not in SEARCH_QUERY_FIELDS
+    }
+
+
+def query_payload_matches_artifact(
+    target: LevelDiversityTarget,
+    query: BuildDiscoveryQuery,
+    artifact_query: Any,
+) -> bool:
+    if artifact_query == query_summary(query):
+        return True
+    if query == query_for_target(target) and artifact_query == legacy_query_summary(query):
+        return True
+    return False
 
 
 def load_json(path: str | Path) -> dict[str, Any]:
@@ -551,7 +572,7 @@ def validate_existing_split_report_for_target(
     result = report["results"][0]
     if result.get("target") != target_summary(target):
         raise ValueError(f"Existing split report {path} target payload is stale for {target.name}.")
-    if result.get("query") != query_summary(query):
+    if not query_payload_matches_artifact(target, query, result.get("query")):
         raise ValueError(f"Existing split report {path} query payload is stale for {target.name}.")
     if result.get("status") == "generated":
         validation_errors = validate_best_build(target, query, result.get("bestBuild"))
@@ -559,6 +580,24 @@ def validate_existing_split_report_for_target(
             raise ValueError(
                 f"Existing split report {path} generated build no longer validates for {target.name}: {validation_errors}"
             )
+        candidate_builds = result.get("candidateBuilds")
+        result_count = result.get("resultCount", 0)
+        if result_count > 1 or query.limit > 1:
+            if not isinstance(candidate_builds, list):
+                raise ValueError(f"Existing split report {path} is missing candidateBuilds for {target.name}.")
+            if len(candidate_builds) != result_count:
+                raise ValueError(
+                    f"Existing split report {path} candidateBuilds length {len(candidate_builds)} "
+                    f"does not match resultCount {result_count} for {target.name}."
+                )
+        if isinstance(candidate_builds, list):
+            for index, candidate in enumerate(candidate_builds):
+                candidate_errors = validate_best_build(target, query, candidate)
+                if candidate_errors:
+                    raise ValueError(
+                        f"Existing split report {path} candidateBuilds[{index}] no longer validates "
+                        f"for {target.name}: {candidate_errors}"
+                    )
 
 
 def existing_split_report_for_target(

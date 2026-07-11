@@ -675,6 +675,57 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
                     resume_existing=True,
                 )
 
+    def test_write_split_matrix_reports_resume_existing_rejects_invalid_candidate(self):
+        selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            target = selected[0]
+            query = query_for_matrix_target(target, query_limit=2)
+            valid_build = {
+                "score": 1,
+                "totals": {
+                    "AP": query.ap_target,
+                    "MP": query.mp_target,
+                    "Range": query.target.range,
+                    "Strength": 100,
+                    "Vitality": 100,
+                },
+                "sets": {},
+                "exos": {},
+                "conditionFailures": [],
+                "items": {"amulet": {"name": "Example Amulet", "level": query.level}},
+            }
+            invalid_build = {
+                **valid_build,
+                "totals": {**valid_build["totals"], "AP": 99},
+            }
+            report = {
+                "reportVersion": REPORT_VERSION,
+                "results": [
+                    {
+                        "target": target_summary(target),
+                        "query": query_summary(query),
+                        "status": "generated",
+                        "resultCount": 2,
+                        "validationErrors": [],
+                        "bestBuild": valid_build,
+                        "bestBuildSummary": {"score": 1},
+                        "candidateBuilds": [valid_build, invalid_build],
+                    }
+                ],
+            }
+            (output_dir / f"{target.name}.json").write_text(json.dumps(report), encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, r"candidateBuilds\[1\] no longer validates"):
+                write_split_matrix_reports(
+                    selected,
+                    output_dir=output_dir,
+                    generator=lambda query: {"builds": []},
+                    resume_existing=True,
+                    query_limit=2,
+                )
+
     def test_targets_missing_from_split_reports_filters_valid_generated_targets(self):
         selected = selected_targets(levels={50}, elements={"strength", "intelligence"})
 
