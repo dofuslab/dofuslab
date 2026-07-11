@@ -1,0 +1,594 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T07:03:05.322553+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_chance_12_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 12,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2458.26,
+        "weightedStatScore": 4137.3,
+        "utilityStatScore": 320.86,
+        "genericDamageScore": 4533.88,
+        "rawRotationDamageScore": 3000.36,
+        "spellDamageScore": 3000.36,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.5113,
+        "weaponDamageScore": 230.77,
+        "survivabilityScore": 97.15,
+        "weakestElementEhp": 3001.82,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 4,
+          "Range": 1,
+          "Chance": 1278,
+          "Power": 465,
+          "Vitality": 3203,
+          "Damage": 0,
+          "Water Damage": 137,
+          "Critical": 52,
+          "Critical Damage": 32
+        },
+        "sets": {
+          "Servitude Set": 2,
+          "Whale Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "22200",
+            "internalId": null,
+            "name": "Servitude's Scarf",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "belt": {
+            "id": "15699",
+            "internalId": null,
+            "name": "Belteen",
+            "type": "Belt",
+            "level": 200,
+            "set": "Whale Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "18700",
+            "internalId": null,
+            "name": "Four-Leaf",
+            "type": "Shield",
+            "level": 193,
+            "set": null
+          },
+          "ring_1": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "ring_2": {
+            "id": "11738",
+            "internalId": null,
+            "name": "Awmigawd Band",
+            "type": "Ring",
+            "level": 194,
+            "set": null
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "15694",
+            "internalId": null,
+            "name": "Kideebonnet",
+            "type": "Hat",
+            "level": 200,
+            "set": "Whale Set"
+          },
+          "cloak": {
+            "id": "22201",
+            "internalId": null,
+            "name": "Servitude's Coat",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "pet": {
+            "id": "33037",
+            "internalId": null,
+            "name": "Indigo and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16248",
+            "internalId": null,
+            "name": "Major Luckster",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16264",
+            "internalId": null,
+            "name": "Major Water Devastator",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2458.26,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 4,
+          "Range": 1,
+          "Chance": 1278,
+          "Power": 465,
+          "Vitality": 3203,
+          "Damage": 0,
+          "Water Damage": 137,
+          "Critical": 52,
+          "Critical Damage": 32
+        },
+        "sets": {
+          "Servitude Set": 2,
+          "Whale Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Servitude's Scarf",
+          "Belteen",
+          "Gargandyas's Fury",
+          "Four-Leaf",
+          "Rhineetle Ring",
+          "Awmigawd Band",
+          "Meriana's Clairvoyance",
+          "Kideebonnet",
+          "Servitude's Coat",
+          "Indigo and Ivory Dragoturkey",
+          "Arcanist",
+          "Impetuous",
+          "Major Luckster",
+          "Major Tease",
+          "Major Vigour",
+          "Major Water Devastator"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2458.26,
+          "weightedStatScore": 4137.3,
+          "utilityStatScore": 320.86,
+          "genericDamageScore": 4533.88,
+          "rawRotationDamageScore": 3000.36,
+          "spellDamageScore": 3000.36,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.5113,
+          "weaponDamageScore": 230.77,
+          "survivabilityScore": 97.15,
+          "weakestElementEhp": 3001.82,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 4,
+            "Range": 1,
+            "Chance": 1278,
+            "Power": 465,
+            "Vitality": 3203,
+            "Damage": 0,
+            "Water Damage": 137,
+            "Critical": 52,
+            "Critical Damage": 32
+          },
+          "sets": {
+            "Servitude Set": 2,
+            "Whale Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "22200",
+              "internalId": null,
+              "name": "Servitude's Scarf",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "belt": {
+              "id": "15699",
+              "internalId": null,
+              "name": "Belteen",
+              "type": "Belt",
+              "level": 200,
+              "set": "Whale Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "18700",
+              "internalId": null,
+              "name": "Four-Leaf",
+              "type": "Shield",
+              "level": 193,
+              "set": null
+            },
+            "ring_1": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "ring_2": {
+              "id": "11738",
+              "internalId": null,
+              "name": "Awmigawd Band",
+              "type": "Ring",
+              "level": 194,
+              "set": null
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "15694",
+              "internalId": null,
+              "name": "Kideebonnet",
+              "type": "Hat",
+              "level": 200,
+              "set": "Whale Set"
+            },
+            "cloak": {
+              "id": "22201",
+              "internalId": null,
+              "name": "Servitude's Coat",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "pet": {
+              "id": "33037",
+              "internalId": null,
+              "name": "Indigo and Ivory Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "16248",
+              "internalId": null,
+              "name": "Major Luckster",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "16332",
+              "internalId": null,
+              "name": "Major Vigour",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "16264",
+              "internalId": null,
+              "name": "Major Water Devastator",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2458.26,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 4,
+            "Range": 1,
+            "Chance": 1278,
+            "Power": 465,
+            "Vitality": 3203,
+            "Damage": 0,
+            "Water Damage": 137,
+            "Critical": 52,
+            "Critical Damage": 32
+          },
+          "sets": {
+            "Servitude Set": 2,
+            "Whale Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Servitude's Scarf",
+            "Belteen",
+            "Gargandyas's Fury",
+            "Four-Leaf",
+            "Rhineetle Ring",
+            "Awmigawd Band",
+            "Meriana's Clairvoyance",
+            "Kideebonnet",
+            "Servitude's Coat",
+            "Indigo and Ivory Dragoturkey",
+            "Arcanist",
+            "Impetuous",
+            "Major Luckster",
+            "Major Tease",
+            "Major Vigour",
+            "Major Water Devastator"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6591.9,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 286.1,
+          "totalSearchMs": 6305.8
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "OPTIMAL",
+            "modelMs": 1673.0,
+            "solveMs": 4438.6,
+            "objective": 1991.89,
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 199,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 308,
+                "dofus": 261
+              },
+              "slotVarCount": 1638,
+              "uniqueItemCount": 1504,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 936,
+              "conditionConstraintCount": 372,
+              "setCountConstraintCount": 239
+            },
+            "validCandidate": {
+              "score": 2458.26,
+              "totals": {
+                "AP": 12,
+                "MP": 4,
+                "Range": 1,
+                "Strength": 100,
+                "Power": 465,
+                "Earth Damage": 32,
+                "Vitality": 3203
+              },
+              "items": {
+                "amulet": "Servitude's Scarf",
+                "belt": "Belteen",
+                "weapon": "Gargandyas's Fury",
+                "shield": "Four-Leaf",
+                "ring_1": "Rhineetle Ring",
+                "ring_2": "Awmigawd Band",
+                "boots": "Meriana's Clairvoyance",
+                "hat": "Kideebonnet",
+                "cloak": "Servitude's Coat",
+                "pet": "Indigo and Ivory Dragoturkey",
+                "dofus_1": "Arcanist",
+                "dofus_2": "Impetuous",
+                "dofus_3": "Major Luckster",
+                "dofus_4": "Major Tease",
+                "dofus_5": "Major Vigour",
+                "dofus_6": "Major Water Devastator"
+              }
+            }
+          }
+        ],
+        "itemCount": 1504,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

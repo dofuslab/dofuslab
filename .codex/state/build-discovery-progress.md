@@ -4017,3 +4017,56 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python scripts/test_build_discovery_level_diversity_matrix.py`
   - Docker: `python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix.py`
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-m2-l200-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6`
+
+### 2026-07-11 Milestone 2 Corner Slice and Stronger Checker
+
+- Fetched the current Notion PRD and confirmed the target technical direction:
+  CP-SAT callback candidate collection, static solver index, and fast
+  reconstruction/reranking. The current local adapter is still short of that
+  final architecture.
+- Reviewer Rawls found harness risks:
+  - checker did not enforce CP-SAT solver provenance
+  - `--allow-no-build` could accept CP-SAT `UNKNOWN`/timeout-shaped rows as
+    no-build evidence
+  - split manifests stored Docker `/tmp` paths
+  - the 3,072-row grid is the level-200 single-element AP/MP/Range matrix, not
+    proof of product features like playstyle, lock/avoid, API, persistence, or
+    UI behavior
+- Fixed the checker:
+  - added `--expected-solver prototype|cpsat`
+  - validates report-level `provenance.solver`
+  - validates per-row `diagnostics.solver`
+  - requires CP-SAT no-build rows to have `solverStatus == INFEASIBLE` when
+    `--allow-no-build --expected-solver cpsat` is used
+- Fixed future split manifests to store relative filenames instead of absolute
+  Docker paths.
+- Generated and validated a 32-row Docker CP-SAT Milestone 2 corner slice:
+  - `.codex/state/build-discovery-cpsat-m2-l200-corners-targets.json`
+  - `.codex/state/build-discovery-cpsat-m2-l200-corners-targets.md`
+  - `.codex/state/build-discovery-cpsat-m2-l200-corners-matrix.json`
+  - `.codex/state/build-discovery-cpsat-m2-l200-corners-matrix.md`
+  - `.codex/state/build-discovery-cpsat-m2-l200-corners-split/`
+- Slice:
+  - elements: strength, chance
+  - budget tiers: 1, 4
+  - AP: 7, 12
+  - MP: 3, 6
+  - Range: none, 6
+- Result:
+  - targets: `32`
+  - generated: `32`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `13` optimal, `19` feasible
+- Runtime:
+  - min: `5306.4ms`
+  - avg: `6892.8ms`
+  - max: `8987.8ms`
+  - rows over `5s`: `32/32`
+- Verification passed:
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - Docker: `python scripts/test_build_discovery_level_diversity_matrix.py`
+  - Docker: `python -m py_compile scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix.py`
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-m2-l200-corners-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7,12 --mp-targets 3,6 --range-targets none,6 --expected-solver cpsat`
+  - Host: `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-cpsat-m2-l200-corners-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7,12 --mp-targets 3,6 --range-targets none,6 --expected-solver cpsat`

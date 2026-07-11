@@ -31,6 +31,7 @@ from build_discovery_level_diversity_matrix import (
     write_split_matrix_reports,
 )
 from build_discovery_level_diversity_targets import query_for_target
+from check_build_discovery_level_diversity_matrix import validate_report as checker_validate_report
 
 
 class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
@@ -117,6 +118,71 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
     def test_parse_optional_int_filter_accepts_none_aliases(self):
         self.assertEqual(parse_optional_int_filter("none,0,6"), {None, 0, 6})
         self.assertEqual(parse_optional_int_filter("any,null,1"), {None, 1})
+
+    def test_checker_expected_solver_requires_report_and_row_provenance(self):
+        target = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]
+        query = query_for_target(target)
+        report = {
+            "reportVersion": REPORT_VERSION,
+            "provenance": {"solver": "prototype"},
+            "targetCount": 1,
+            "generatedCount": 0,
+            "noBuildCount": 1,
+            "invalidCount": 0,
+            "results": [
+                {
+                    "target": target_summary(target),
+                    "query": query_summary(query),
+                    "status": "no_build",
+                    "resultCount": 0,
+                    "validationErrors": ["no build returned"],
+                    "bestBuildSummary": None,
+                    "diagnostics": {"solver": "prototype", "solverStatus": "INFEASIBLE"},
+                }
+            ],
+        }
+
+        failures = checker_validate_report(
+            report,
+            allow_no_build=True,
+            expected_solver="cpsat",
+            target_names={target.name},
+        )
+
+        self.assertIn("provenance.solver is prototype, expected cpsat", failures)
+        self.assertIn(f"{target.name}: diagnostics.solver is prototype, expected cpsat", failures)
+
+    def test_checker_expected_cpsat_no_build_requires_infeasible_proof(self):
+        target = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]
+        query = query_for_target(target)
+        report = {
+            "reportVersion": REPORT_VERSION,
+            "provenance": {"solver": "cpsat"},
+            "targetCount": 1,
+            "generatedCount": 0,
+            "noBuildCount": 1,
+            "invalidCount": 0,
+            "results": [
+                {
+                    "target": target_summary(target),
+                    "query": query_summary(query),
+                    "status": "no_build",
+                    "resultCount": 0,
+                    "validationErrors": ["no build returned"],
+                    "bestBuildSummary": None,
+                    "diagnostics": {"solver": "cpsat", "solverStatus": "UNKNOWN"},
+                }
+            ],
+        }
+
+        failures = checker_validate_report(
+            report,
+            allow_no_build=True,
+            expected_solver="cpsat",
+            target_names={target.name},
+        )
+
+        self.assertIn(f"{target.name}: no_build solverStatus is UNKNOWN, expected INFEASIBLE", failures)
 
     def test_selected_targets_can_use_grid_next_minimum_target_set(self):
         targets = selected_targets(
@@ -724,23 +790,26 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
             }
 
         with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
             split_result = write_split_matrix_reports(
                 selected,
-                output_dir=Path(temp_dir),
+                output_dir=output_dir,
                 generator=fake_generator,
                 generated_at="now",
                 target_set="level-diversity",
                 git_sha="abc123",
             )
-            manifest_path = Path(temp_dir) / "manifest.json"
+            manifest_path = output_dir / "manifest.json"
             manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
             self.assertEqual(split_result["aggregateReport"]["targetCount"], 2)
             self.assertEqual(manifest["splitReportCount"], 2)
             for row in manifest["reports"]:
-                self.assertTrue(Path(row["json"]).exists())
-                self.assertTrue(Path(row["markdown"]).exists())
-                one_row = json.loads(Path(row["json"]).read_text(encoding="utf-8"))
+                self.assertFalse(Path(row["json"]).is_absolute())
+                self.assertFalse(Path(row["markdown"]).is_absolute())
+                self.assertTrue((output_dir / row["json"]).exists())
+                self.assertTrue((output_dir / row["markdown"]).exists())
+                one_row = json.loads((output_dir / row["json"]).read_text(encoding="utf-8"))
                 self.assertEqual(one_row["targetCount"], 1)
 
     def test_write_split_matrix_reports_resume_existing_skips_completed_target(self):

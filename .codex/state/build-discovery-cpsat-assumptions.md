@@ -65,6 +65,9 @@ review before accepting Milestone 2 evidence.
 - CP-SAT is still isolated under `server/oneoff/`.
 - The matrix harness can now call CP-SAT with `--solver cpsat`, but this is an
   artifact-generation path, not product wiring.
+- The Notion PRD now prefers CP-SAT callback candidate collection plus a static
+  solver index and fast reconstruction/reranking. The current main-repo adapter
+  has not yet reached that final architecture.
 - The old beam solver remains reference material only.
 - Matrix artifacts and checkers remain useful QA evidence if they validate the
   serialized build, target, and query payload independent of solver internals.
@@ -82,8 +85,14 @@ review before accepting Milestone 2 evidence.
 - Milestone 2 now has a first-class level-200 Iop grid in the harness:
   4 elements x 4 budget tiers x AP 7-12 x MP 3-6 x Range none/0-6 =
   3,072 targets.
+- This grid is the level-200 single-element AP/MP/Range matrix. It is not yet
+  proof of the full product contract for playstyle, locked items, avoided
+  items, weapon preference, API, persistence, or UI behavior.
 - Milestone 2 matrix/checker runs can be filtered by element, budget tier,
   AP target, MP target, and Range target, including `none` Range targets.
+- The matrix checker can require solver provenance with `--expected-solver`.
+  CP-SAT no-build rows only count as allowed no-build evidence when the solver
+  reports `INFEASIBLE`, not `UNKNOWN` or a timeout-shaped status.
 - Previous expensive regression and benchmark fixtures are comparison anchors,
   not exact item-lock requirements unless explicitly promoted.
 - Exact item-by-item regression should be reserved for accepted benchmark builds
@@ -121,6 +130,9 @@ review before accepting Milestone 2 evidence.
 - First first-class Milestone 2 selector smoke generated 8/8 rows for
   strength/chance, budget tiers 1/4, AP `7`, MP `3`, Range `none/6`;
   elapsed times were `5680.3ms-8768.4ms`, so all rows remain above `5s`.
+- First 32-row Milestone 2 corner slice generated 32/32 rows for
+  strength/chance, budget tiers 1/4, AP `7/12`, MP `3/6`, Range `none/6`;
+  elapsed times were `5306.4ms-8987.8ms`, so all rows remain above `5s`.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.

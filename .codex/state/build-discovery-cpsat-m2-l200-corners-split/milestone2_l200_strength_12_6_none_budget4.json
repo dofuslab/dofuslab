@@ -1,0 +1,638 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T07:03:05.322553+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_12_6_none_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2607.96,
+        "weightedStatScore": 4308.68,
+        "utilityStatScore": 483.97,
+        "genericDamageScore": 4491.82,
+        "rawRotationDamageScore": 4115.42,
+        "spellDamageScore": 4115.42,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.4973,
+        "weaponDamageScore": 217.1,
+        "survivabilityScore": 102.67,
+        "weakestElementEhp": 3275.64,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 5,
+          "Strength": 1248,
+          "Power": 210,
+          "Vitality": 3353,
+          "Damage": 0,
+          "Earth Damage": 174,
+          "Critical": 55,
+          "Critical Damage": 45,
+          "Neutral Damage": 144
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 3,
+          "Count Harebourg Set": 2,
+          "Slickster Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "13115",
+            "slot": "ring_1"
+          },
+          "MP": {
+            "itemId": "13114",
+            "slot": "belt"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14169",
+            "internalId": null,
+            "name": "White Lai Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Slickster Set"
+          },
+          "belt": {
+            "id": "13114",
+            "internalId": null,
+            "name": "Broucey Belt",
+            "type": "Belt",
+            "level": 194,
+            "set": "Brouce Boulgoure Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "18693",
+            "internalId": null,
+            "name": "Broucey Bark",
+            "type": "Shield",
+            "level": 196,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_1": {
+            "id": "13115",
+            "internalId": null,
+            "name": "Broucey Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_2": {
+            "id": "14077",
+            "internalId": null,
+            "name": "Count Harebourg's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "14076",
+            "internalId": null,
+            "name": "Count Harebourg's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "cloak": {
+            "id": "14161",
+            "internalId": null,
+            "name": "Pauper's Robe",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Slickster Set"
+          },
+          "pet": {
+            "id": "33268",
+            "internalId": null,
+            "name": "Amber and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2607.96,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 5,
+          "Strength": 1248,
+          "Power": 210,
+          "Vitality": 3353,
+          "Damage": 0,
+          "Earth Damage": 174,
+          "Critical": 55,
+          "Critical Damage": 45,
+          "Neutral Damage": 144
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 3,
+          "Count Harebourg Set": 2,
+          "Slickster Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "13115",
+            "slot": "ring_1"
+          },
+          "MP": {
+            "itemId": "13114",
+            "slot": "belt"
+          }
+        },
+        "items": [
+          "White Lai Amulet",
+          "Broucey Belt",
+          "Gargandyas's Fury",
+          "Broucey Bark",
+          "Broucey Ring",
+          "Count Harebourg's Ring",
+          "Meriana's Clairvoyance",
+          "Count Harebourg's Hat",
+          "Pauper's Robe",
+          "Amber and Emerald Seemyool",
+          "Cloudy Dofus",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Goliath"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2607.96,
+          "weightedStatScore": 4308.68,
+          "utilityStatScore": 483.97,
+          "genericDamageScore": 4491.82,
+          "rawRotationDamageScore": 4115.42,
+          "spellDamageScore": 4115.42,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.4973,
+          "weaponDamageScore": 217.1,
+          "survivabilityScore": 102.67,
+          "weakestElementEhp": 3275.64,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 5,
+            "Strength": 1248,
+            "Power": 210,
+            "Vitality": 3353,
+            "Damage": 0,
+            "Earth Damage": 174,
+            "Critical": 55,
+            "Critical Damage": 45,
+            "Neutral Damage": 144
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 3,
+            "Count Harebourg Set": 2,
+            "Slickster Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "13115",
+              "slot": "ring_1"
+            },
+            "MP": {
+              "itemId": "13114",
+              "slot": "belt"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "14169",
+              "internalId": null,
+              "name": "White Lai Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Slickster Set"
+            },
+            "belt": {
+              "id": "13114",
+              "internalId": null,
+              "name": "Broucey Belt",
+              "type": "Belt",
+              "level": 194,
+              "set": "Brouce Boulgoure Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "18693",
+              "internalId": null,
+              "name": "Broucey Bark",
+              "type": "Shield",
+              "level": 196,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_1": {
+              "id": "13115",
+              "internalId": null,
+              "name": "Broucey Ring",
+              "type": "Ring",
+              "level": 198,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_2": {
+              "id": "14077",
+              "internalId": null,
+              "name": "Count Harebourg's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Count Harebourg Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "14076",
+              "internalId": null,
+              "name": "Count Harebourg's Hat",
+              "type": "Hat",
+              "level": 200,
+              "set": "Count Harebourg Set"
+            },
+            "cloak": {
+              "id": "14161",
+              "internalId": null,
+              "name": "Pauper's Robe",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Slickster Set"
+            },
+            "pet": {
+              "id": "33268",
+              "internalId": null,
+              "name": "Amber and Emerald Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2607.96,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 5,
+            "Strength": 1248,
+            "Power": 210,
+            "Vitality": 3353,
+            "Damage": 0,
+            "Earth Damage": 174,
+            "Critical": 55,
+            "Critical Damage": 45,
+            "Neutral Damage": 144
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 3,
+            "Count Harebourg Set": 2,
+            "Slickster Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "13115",
+              "slot": "ring_1"
+            },
+            "MP": {
+              "itemId": "13114",
+              "slot": "belt"
+            }
+          },
+          "items": [
+            "White Lai Amulet",
+            "Broucey Belt",
+            "Gargandyas's Fury",
+            "Broucey Bark",
+            "Broucey Ring",
+            "Count Harebourg's Ring",
+            "Meriana's Clairvoyance",
+            "Count Harebourg's Hat",
+            "Pauper's Robe",
+            "Amber and Emerald Seemyool",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Goliath"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 5306.4,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 302.8,
+          "totalSearchMs": 5003.6
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "OPTIMAL",
+            "modelMs": 1509.7,
+            "solveMs": 3325.8,
+            "objective": 2191.05,
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 99,
+                "belt": 93,
+                "weapon": 197,
+                "shield": 59,
+                "ring_1": 132,
+                "ring_2": 132,
+                "boots": 102,
+                "hat": 131,
+                "cloak": 92,
+                "pet": 452,
+                "dofus": 316
+              },
+              "slotVarCount": 1805,
+              "uniqueItemCount": 1673,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 921,
+              "conditionConstraintCount": 279,
+              "setCountConstraintCount": 239
+            },
+            "validCandidate": {
+              "score": 2607.96,
+              "totals": {
+                "AP": 12,
+                "MP": 6,
+                "Range": 5,
+                "Strength": 1248,
+                "Power": 210,
+                "Earth Damage": 174,
+                "Vitality": 3353
+              },
+              "items": {
+                "amulet": "White Lai Amulet",
+                "belt": "Broucey Belt",
+                "weapon": "Gargandyas's Fury",
+                "shield": "Broucey Bark",
+                "ring_1": "Broucey Ring",
+                "ring_2": "Count Harebourg's Ring",
+                "boots": "Meriana's Clairvoyance",
+                "hat": "Count Harebourg's Hat",
+                "cloak": "Pauper's Robe",
+                "pet": "Amber and Emerald Seemyool",
+                "dofus_1": "Cloudy Dofus",
+                "dofus_2": "Ice Dofus",
+                "dofus_3": "Ochre Dofus",
+                "dofus_4": "Arcanist",
+                "dofus_5": "Impetuous",
+                "dofus_6": "Major Goliath"
+              }
+            }
+          }
+        ],
+        "itemCount": 1673,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

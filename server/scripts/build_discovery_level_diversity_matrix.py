@@ -741,8 +741,8 @@ def write_split_matrix_reports(
                 "targetId": target.name,
                 "status": entry["status"],
                 "resumed": bool(existing_report),
-                "json": str(json_path),
-                "markdown": str(md_path),
+                "json": json_path.name,
+                "markdown": md_path.name,
             }
         )
         manifest = {"splitReportCount": len(manifest_rows), "reports": manifest_rows}

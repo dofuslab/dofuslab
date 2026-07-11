@@ -185,6 +185,7 @@ def validate_report(
     target_set: str = "level-diversity",
     *,
     allow_no_build: bool = False,
+    expected_solver: str | None = None,
     target_names: set[str] | None = None,
     levels: set[int] | None = None,
     elements: set[str] | None = None,
@@ -201,6 +202,10 @@ def validate_report(
         failures.append(
             f"reportVersion is {report.get('reportVersion')}, expected {REPORT_VERSION}"
         )
+    if expected_solver is not None:
+        provenance_solver = (report.get("provenance") or {}).get("solver")
+        if provenance_solver != expected_solver:
+            failures.append(f"provenance.solver is {provenance_solver}, expected {expected_solver}")
 
     if target_file:
         targets = load_targets_from_file(
@@ -251,11 +256,19 @@ def validate_report(
 
     for result in results:
         target_id = result.get("target", {}).get("id", "unknown")
+        diagnostics = result.get("diagnostics") or {}
+        if expected_solver is not None and diagnostics.get("solver") != expected_solver:
+            failures.append(f"{target_id}: diagnostics.solver is {diagnostics.get('solver')}, expected {expected_solver}")
         if result.get("status") == "no_build" and allow_no_build:
             if result.get("resultCount", 0) != 0:
                 failures.append(f"{target_id}: no_build resultCount is {result.get('resultCount')}, expected 0")
             if result.get("bestBuildSummary") is not None:
                 failures.append(f"{target_id}: no_build bestBuildSummary should be empty")
+            solver_status = diagnostics.get("solverStatus")
+            if expected_solver == "cpsat" and solver_status != "INFEASIBLE":
+                failures.append(
+                    f"{target_id}: no_build solverStatus is {solver_status}, expected INFEASIBLE"
+                )
             continue
         if result.get("status") != "generated":
             failures.append(f"{target_id}: status is {result.get('status')}, expected generated")
@@ -290,6 +303,7 @@ def main() -> None:
         default="level-diversity",
     )
     parser.add_argument("--allow-no-build", action="store_true")
+    parser.add_argument("--expected-solver", choices=("prototype", "cpsat"), help="Require report and row solver provenance.")
     parser.add_argument("--targets", help="Comma-separated target ids to validate as a subset.")
     parser.add_argument("--levels", help="Comma-separated levels to validate as a subset.")
     parser.add_argument("--elements", help="Comma-separated elements to validate as a subset.")
@@ -308,6 +322,7 @@ def main() -> None:
         load_json(args.report),
         target_set=args.target_set,
         allow_no_build=args.allow_no_build,
+        expected_solver=args.expected_solver,
         target_names=csv_filter(args.targets),
         levels=parse_int_filter(args.levels),
         elements=csv_filter(args.elements),
