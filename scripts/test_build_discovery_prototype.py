@@ -164,6 +164,18 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(high_range_score, 1 * 8.0 * 1000 + 4 * 8.0 * 10)
         self.assertGreater(high_range_score, low_range_score)
 
+    def test_final_score_uses_active_range_weight(self):
+        low_range = BuildState(stats={"Range": 0})
+        high_range = BuildState(stats={"Range": 4})
+
+        with patch.object(build_discovery_prototype, "normalized_profile_damage_score", return_value=0.0):
+            with patch.object(build_discovery_prototype, "survivability_score", return_value=0.0):
+                with patch.object(build_discovery_prototype, "active_range_soft_weight", return_value=60.0):
+                    self.assertEqual(
+                        final_score_state(high_range) - final_score_state(low_range),
+                        4 * 60.0,
+                    )
+
     def test_action_stat_witness_seed_runs_for_non_base_action_targets(self):
         self.assertFalse(
             action_stat_witness_seed_needed(

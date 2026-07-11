@@ -102,7 +102,7 @@ Evidence:
 - `BuildTarget.range_required` is false when `range_target=None`.
 - CP-SAT smoke validates `objectiveWeights.Range == scoring.rangeSoftWeight`.
 - Corrected examples:
-  - Cra Strength soft Range: `rangeSoftWeight=8.0`
+  - Cra Strength soft Range: historically `rangeSoftWeight=8.0` in this artifact; current vital Range weight is `60.0`
   - Sacrier Intelligence no-range: `rangeSoftWeight=0.5`
   - Xelor Agility validity edge: `rangeSoftWeight=0.5`
 - CP-SAT `final-linear` no longer overwrites `Range` with raw `STAT_WEIGHTS`.

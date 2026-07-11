@@ -6,10 +6,25 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 
 import oneoff.build_discovery_cpsat_experiment as cpsat
-from oneoff.build_discovery_prototype import BuildState, configure_damage_profile
+from oneoff.build_discovery_prototype import BuildState, BuildTarget, configure_damage_profile
 
 
 class BuildDiscoveryCpsatExperimentTest(unittest.TestCase):
+    def test_exo_stats_include_range_for_hard_or_meaningful_soft_range(self):
+        soft_target = BuildTarget(level=200, ap=12, mp=6, range=0)
+        hard_range_target = BuildTarget(level=200, ap=12, mp=6, range=6)
+
+        self.assertEqual(cpsat.exo_stats_for_target(soft_target, "none"), ())
+
+        with patch.object(cpsat, "active_range_soft_weight", return_value=0.5):
+            self.assertEqual(cpsat.exo_stats_for_target(soft_target, "opti"), ("AP", "MP"))
+
+        with patch.object(cpsat, "active_range_soft_weight", return_value=5.0):
+            self.assertEqual(cpsat.exo_stats_for_target(soft_target, "opti"), ("AP", "MP", "Range"))
+
+        with patch.object(cpsat, "active_range_soft_weight", return_value=0.5):
+            self.assertEqual(cpsat.exo_stats_for_target(hard_range_target, "opti"), ("AP", "MP", "Range"))
+
     def test_final_linear_objective_uses_active_range_soft_weight(self):
         metadata = cpsat.ModelMetadata(
             candidates_by_slot={},

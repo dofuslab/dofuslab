@@ -72,7 +72,7 @@ class BuildDiscoverySpellProfilesTest(unittest.TestCase):
         )
 
         self.assertEqual(range_profile["rangeImportance"], "vital")
-        self.assertEqual(range_profile["rangeSoftWeight"], 8.0)
+        self.assertEqual(range_profile["rangeSoftWeight"], 60.0)
         self.assertEqual(range_profile["evidence"]["highModifiableShare"], 1.0)
 
     def test_range_profile_marks_short_locked_spells_as_low(self):

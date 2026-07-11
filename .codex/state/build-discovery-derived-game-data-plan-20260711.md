@@ -18,9 +18,9 @@ Each profile records:
 
 DB smoke examples:
 
-- Cra Strength level 200: `rangeImportance=vital`, `rangeSoftWeight=8.0`, selected spells start with Arrow of Judgement, Covering Fire, Barricade Shot.
+- Cra Strength level 200: `rangeImportance=vital`, `rangeSoftWeight=60.0`, selected spells start with Arrow of Judgement, Covering Fire, Barricade Shot.
 - Iop Strength level 200: `rangeImportance=low`, `rangeSoftWeight=0.5`, selected spells include Iop's Wrath, Concentration, Sword of Iop.
-- Enutrof Chance level 200: `rangeImportance=vital`, `rangeSoftWeight=8.0`, selected spells start with Shovel of the Ancients, Obsolescence, Auriferous Shovel.
+- Enutrof Chance level 200: `rangeImportance=vital`, `rangeSoftWeight=60.0`, selected spells start with Shovel of the Ancients, Obsolescence, Auriferous Shovel.
 
 Current limitation: runtime scoring still computes spell candidates directly from DB. This slice makes the generated profiles reproducible and inspectable, but does not yet switch CP-SAT/prototype scoring to read from the generated index.
 

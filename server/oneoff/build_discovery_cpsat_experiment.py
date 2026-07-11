@@ -31,6 +31,7 @@ from oneoff.build_discovery_prototype import (
     MAX_MP,
     MAX_RANGE,
     PRIMARY_STAT_NAMES,
+    RANGE_SOFT_WEIGHT_MARGINAL,
     SLOTS,
     STAT_WEIGHTS,
     action_stats_meet_target,
@@ -172,6 +173,14 @@ def build_model_metadata(
             for item in items
         },
     )
+
+
+def exo_stats_for_target(target: BuildTarget, exo_policy: str) -> tuple[str, ...]:
+    if exo_policy == "none":
+        return ()
+    if target.range > 0 or active_range_soft_weight() >= RANGE_SOFT_WEIGHT_MARGINAL:
+        return ("AP", "MP", "Range")
+    return ("AP", "MP")
 
 
 def collect_objective_stats(metadata: ModelMetadata) -> set[str]:
@@ -348,9 +357,7 @@ def build_model(
         model.Add(sum(prysmaradite_terms) <= 1)
 
     exo_vars: dict[tuple[str, str], cp_model.IntVar] = {}
-    exo_stats = () if exo_policy == "none" else ("AP", "MP")
-    if exo_policy != "none" and target.range > 0:
-        exo_stats = ("AP", "MP", "Range")
+    exo_stats = exo_stats_for_target(target, exo_policy)
     for slot_name, candidates in candidates_by_slot.items():
         if slot_name in {DOFUS_GROUP_SLOT, RING_GROUP_SLOT} or slot_name == "pet":
             continue
