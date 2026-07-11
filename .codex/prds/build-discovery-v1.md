@@ -30,8 +30,9 @@ The v1 goal is not perfect optimization, PvP meta modeling, a chatbot, or LLM-dr
     positioning assumptions. Do not silently infer this from a high Range target;
     the query should still carry an explicit combat range preference.
 - Product/API should make combat range preference an explicit selectable field.
-  The UI may offer a smart default based on class/element/level/template, but
-  the stored request and cache key must record the resolved explicit value.
+  The UI may offer a smart default, but that default should be a function of
+  `(class, element)` rooted in bounded readonly prod aggregate evidence. The
+  stored request and cache key must record the resolved explicit value.
 - Item conditions must be evaluated on the backend.
 - Set-aware generation and Dofus/trophy/package diversity are required.
 - Candidate item horizons should include the target level bucket plus the immediately previous bucket for normal gear and set packages.
@@ -96,6 +97,10 @@ Current confidence boundary:
    - Use readonly prod aggregate discovery to find common AP/MP/Range targets
      by level bucket before choosing sample rows. Do not guess target defaults
      when prod data is available.
+   - Use readonly prod aggregate discovery to infer combat range defaults by
+     `(class, element)` before broadening the level-diversity matrix. If prod
+     evidence is unavailable or too sparse for a pair, fall back to a documented
+     class/element heuristic and mark it as untrusted until reviewed.
    - Generate and remember a diverse set of benchmark builds around roughly
      20-level intervals, with heavier attention at transition levels where the
      rules change: level 60, 100, 150, 180, and 200.
@@ -109,6 +114,9 @@ Current confidence boundary:
 4. Extend to all classes at level 200.
    - Add class-specific scoring defaults and damage baselines before enabling
      each class.
+   - Add prod-derived `(class, element)` combat range defaults before enabling
+     each class broadly. Do not rely on a single class-wide default when element
+     usage differs.
    - Establish at least one trusted benchmark path per class before broad query
      support.
    - Continue remembering top scoring generated and human benchmark builds at
@@ -316,6 +324,9 @@ checkpoint.
 - AP/MP/range targets are met or exceeded without exceeding caps, and surplus AP/MP/range is only lightly rewarded.
 - Combat range preference is explicit, persisted, cache-keyed, and visible in
   diagnostics. The generator must not silently treat all builds as melee.
+- Combat range defaults are derived from bounded readonly prod aggregate
+  evidence by `(class, element)` where possible. Heuristic defaults are allowed
+  only as labeled fallback when prod evidence is unavailable or too sparse.
 - At least 3 meaningfully different builds are shown for common queries where possible.
 - Budget tier 1 can use mounts, trophies, and normal equipment not assigned to higher availability tiers.
 - Budget tier 2 can use pets, petsmounts, and accessible Dofuses such as Crimson, Turquoise, Ice, and likely Dolmanax.

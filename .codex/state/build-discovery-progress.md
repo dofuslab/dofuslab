@@ -6596,9 +6596,12 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Clarified that combat range preference is separate from numeric Range target:
   numeric Range is an AP/MP/Range build constraint, while combat range controls
   melee/ranged damage valuation, weapon assumptions, and survivability context.
-- Product/API may infer a default from class/element/template, but must store
-  the resolved combat range preference explicitly in the request, cache key,
-  diagnostics, and generated-build provenance.
+- Product/API may infer a default, but defaults should be computed from bounded
+  readonly prod aggregate evidence by `(class, element)`. Heuristic fallbacks
+  are allowed only when prod evidence is unavailable or sparse, and diagnostics
+  should label the default source.
+- The resolved combat range preference must still be stored explicitly in the
+  request, cache key, diagnostics, and generated-build provenance.
 - Milestone 2 now explicitly requires level 200 Iop coverage across combat
   range preference, not only melee Strength scoring. `mixed` and `ranged` need
   benchmark rows before they can be marked trusted.

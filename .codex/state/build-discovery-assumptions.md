@@ -41,9 +41,13 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   `melee`, `mixed`, and `ranged`. It is separate from numeric Range target:
   Range says how much +Range the build must reach; combat range says how the
   build expects to deal damage and survive.
-- Product UX may default combat range from class/element/template, but the
-  resolved value should be explicit in the request, cache key, provenance, and
+- Product UX may default combat range, but the default should be computed from
+  bounded readonly prod aggregate evidence by `(class, element)`. The resolved
+  value should be explicit in the request, cache key, provenance, and
   diagnostics. Do not silently infer all builds as melee.
+- If prod evidence is unavailable or too sparse for a `(class, element)` pair,
+  a heuristic fallback may be used only if diagnostics label it as an untrusted
+  default source.
 - Locked items are final-result requirements. If the solver cannot find builds containing all locked items, result count can fall.
 - Avoided items are excluded from candidate loading.
 - Locked and avoided item IDs cannot overlap.
@@ -119,12 +123,16 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 
 ## Class And Element Assumptions
 
-- Iop may default to `melee` in the UI/query builder, but that default must be
-  materialized as an explicit combat range preference in the stored request.
+- Iop may currently fall back to `melee` while prod-derived `(class, element)`
+  combat range defaults are not implemented, but that fallback is a heuristic,
+  not the desired long-term defaulting model.
 - `mixed` and `ranged` Iop builds need their own benchmark rows and scoring
   review before they are trusted.
-- Cra should eventually default to ranged and should not be encouraged into melee weapon reliance.
-- Class defaults should be class-first, then element-specific when data or player feedback justifies it.
+- Cra will likely default to `ranged` for many element pairs, but this should be
+  validated against prod evidence rather than assumed globally.
+- Combat range defaults should be class-and-element-specific first. A
+  class-wide fallback is allowed only when prod evidence is too sparse and the
+  fallback is labeled.
 - Strength Iop uses old/local spell data where available.
 - Strength Iop should model spell selection instead of generic made-up spell lines where possible.
 - Strength Iop includes Accumulation setup behavior when relevant.
