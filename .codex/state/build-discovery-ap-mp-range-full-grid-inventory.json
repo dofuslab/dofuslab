@@ -220,11 +220,11 @@
   ],
   "budgetTierCount": 4,
   "validQueryCount": 665088,
-  "generatedEvidenceCount": 116,
-  "attemptedEvidenceCount": 131,
+  "generatedEvidenceCount": 138,
+  "attemptedEvidenceCount": 153,
   "noBuildEvidenceCount": 15,
-  "unprovenCount": 664972,
-  "unattemptedCount": 664957,
+  "unprovenCount": 664950,
+  "unattemptedCount": 664935,
   "byLevel": [
     {
       "level": 1,
@@ -343,8 +343,8 @@
     {
       "level": 20,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 5,
-      "unprovenCount": 3579
+      "generatedEvidenceCount": 6,
+      "unprovenCount": 3578
     },
     {
       "level": 21,
@@ -463,8 +463,8 @@
     {
       "level": 40,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "unprovenCount": 3584
+      "generatedEvidenceCount": 1,
+      "unprovenCount": 3583
     },
     {
       "level": 41,
@@ -523,8 +523,8 @@
     {
       "level": 50,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 10,
-      "unprovenCount": 3574
+      "generatedEvidenceCount": 12,
+      "unprovenCount": 3572
     },
     {
       "level": 51,
@@ -583,8 +583,8 @@
     {
       "level": 60,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 4,
-      "unprovenCount": 3580
+      "generatedEvidenceCount": 5,
+      "unprovenCount": 3579
     },
     {
       "level": 61,
@@ -703,8 +703,8 @@
     {
       "level": 80,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 8,
-      "unprovenCount": 3576
+      "generatedEvidenceCount": 11,
+      "unprovenCount": 3573
     },
     {
       "level": 81,
@@ -823,8 +823,8 @@
     {
       "level": 100,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 10,
-      "unprovenCount": 3062
+      "generatedEvidenceCount": 12,
+      "unprovenCount": 3060
     },
     {
       "level": 101,
@@ -943,8 +943,8 @@
     {
       "level": 120,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 11,
-      "unprovenCount": 3061
+      "generatedEvidenceCount": 13,
+      "unprovenCount": 3059
     },
     {
       "level": 121,
@@ -1003,8 +1003,8 @@
     {
       "level": 130,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 0,
-      "unprovenCount": 3072
+      "generatedEvidenceCount": 1,
+      "unprovenCount": 3071
     },
     {
       "level": 131,
@@ -1183,8 +1183,8 @@
     {
       "level": 160,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 4,
-      "unprovenCount": 3068
+      "generatedEvidenceCount": 7,
+      "unprovenCount": 3065
     },
     {
       "level": 161,
@@ -1213,8 +1213,8 @@
     {
       "level": 165,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 0,
-      "unprovenCount": 3072
+      "generatedEvidenceCount": 1,
+      "unprovenCount": 3071
     },
     {
       "level": 166,
@@ -1303,8 +1303,8 @@
     {
       "level": 180,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 9,
-      "unprovenCount": 3063
+      "generatedEvidenceCount": 10,
+      "unprovenCount": 3062
     },
     {
       "level": 181,
@@ -1423,8 +1423,8 @@
     {
       "level": 200,
       "validQueryCount": 3072,
-      "generatedEvidenceCount": 7,
-      "unprovenCount": 3065
+      "generatedEvidenceCount": 11,
+      "unprovenCount": 3061
     }
   ],
   "unprovenExamples": [
@@ -1813,96 +1813,6 @@
     {
       "level": 1,
       "element": "intelligence",
-      "budgetTier": 4,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "retry"
-    },
-    {
-      "level": 1,
-      "element": "intelligence",
-      "budgetTier": 3,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "retry"
-    },
-    {
-      "level": 1,
-      "element": "intelligence",
-      "budgetTier": 2,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "retry"
-    },
-    {
-      "level": 99,
-      "element": "intelligence",
-      "budgetTier": 2,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "retry"
-    },
-    {
-      "level": 20,
-      "element": "chance",
-      "budgetTier": 4,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "retry"
-    },
-    {
-      "level": 20,
-      "element": "chance",
-      "budgetTier": 3,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "retry"
-    },
-    {
-      "level": 20,
-      "element": "chance",
-      "budgetTier": 2,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "retry"
-    },
-    {
-      "level": 50,
-      "element": "agility",
-      "budgetTier": 2,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "retry"
-    },
-    {
-      "level": 199,
-      "element": "agility",
-      "budgetTier": 2,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "retry"
-    },
-    {
-      "level": 1,
-      "element": "intelligence",
       "budgetTier": 1,
       "apTarget": 6,
       "mpTarget": 3,
@@ -2078,476 +1988,6 @@
       "mpTarget": 3,
       "rangeTarget": 0,
       "profileBucket": "middle",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 19,
-      "element": "chance",
-      "budgetTier": 1,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "minimum",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 20,
-      "element": "agility",
-      "budgetTier": 4,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 21,
-      "element": "strength",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 6,
-      "rangeTarget": null,
-      "profileBucket": "mp_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 22,
-      "element": "intelligence",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 6,
-      "profileBucket": "range_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 23,
-      "element": "chance",
-      "budgetTier": 4,
-      "apTarget": 11,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "ap_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 24,
-      "element": "agility",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 0,
-      "profileBucket": "middle",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 25,
-      "element": "strength",
-      "budgetTier": 1,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "minimum",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 26,
-      "element": "intelligence",
-      "budgetTier": 4,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 27,
-      "element": "chance",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 6,
-      "rangeTarget": null,
-      "profileBucket": "mp_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 28,
-      "element": "agility",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 6,
-      "profileBucket": "range_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 29,
-      "element": "strength",
-      "budgetTier": 4,
-      "apTarget": 11,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "ap_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 30,
-      "element": "intelligence",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 0,
-      "profileBucket": "middle",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 31,
-      "element": "chance",
-      "budgetTier": 1,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "minimum",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 32,
-      "element": "agility",
-      "budgetTier": 4,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 33,
-      "element": "strength",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 6,
-      "rangeTarget": null,
-      "profileBucket": "mp_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 34,
-      "element": "intelligence",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 6,
-      "profileBucket": "range_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 35,
-      "element": "chance",
-      "budgetTier": 4,
-      "apTarget": 11,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "ap_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 36,
-      "element": "agility",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 0,
-      "profileBucket": "middle",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 37,
-      "element": "strength",
-      "budgetTier": 1,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "minimum",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 38,
-      "element": "intelligence",
-      "budgetTier": 4,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 39,
-      "element": "chance",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 6,
-      "rangeTarget": null,
-      "profileBucket": "mp_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 40,
-      "element": "agility",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 6,
-      "profileBucket": "range_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 41,
-      "element": "strength",
-      "budgetTier": 4,
-      "apTarget": 11,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "ap_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 42,
-      "element": "intelligence",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 0,
-      "profileBucket": "middle",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 43,
-      "element": "chance",
-      "budgetTier": 1,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "minimum",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 44,
-      "element": "agility",
-      "budgetTier": 4,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 45,
-      "element": "strength",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 6,
-      "rangeTarget": null,
-      "profileBucket": "mp_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 46,
-      "element": "intelligence",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 6,
-      "profileBucket": "range_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 47,
-      "element": "chance",
-      "budgetTier": 4,
-      "apTarget": 11,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "ap_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 48,
-      "element": "agility",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 0,
-      "profileBucket": "middle",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 49,
-      "element": "strength",
-      "budgetTier": 1,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "minimum",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 50,
-      "element": "intelligence",
-      "budgetTier": 4,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 51,
-      "element": "chance",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 6,
-      "rangeTarget": null,
-      "profileBucket": "mp_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 52,
-      "element": "agility",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 6,
-      "profileBucket": "range_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 53,
-      "element": "strength",
-      "budgetTier": 4,
-      "apTarget": 11,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "ap_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 54,
-      "element": "intelligence",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 0,
-      "profileBucket": "middle",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 55,
-      "element": "chance",
-      "budgetTier": 1,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "minimum",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 56,
-      "element": "agility",
-      "budgetTier": 4,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 57,
-      "element": "strength",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 6,
-      "rangeTarget": null,
-      "profileBucket": "mp_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 58,
-      "element": "intelligence",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 6,
-      "profileBucket": "range_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 59,
-      "element": "chance",
-      "budgetTier": 4,
-      "apTarget": 11,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "ap_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 60,
-      "element": "agility",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 0,
-      "profileBucket": "middle",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 61,
-      "element": "strength",
-      "budgetTier": 1,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "minimum",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 62,
-      "element": "intelligence",
-      "budgetTier": 4,
-      "apTarget": 12,
-      "mpTarget": 6,
-      "rangeTarget": 6,
-      "profileBucket": "cap",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 63,
-      "element": "chance",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 6,
-      "rangeTarget": null,
-      "profileBucket": "mp_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 64,
-      "element": "agility",
-      "budgetTier": 4,
-      "apTarget": 6,
-      "mpTarget": 3,
-      "rangeTarget": 6,
-      "profileBucket": "range_heavy",
-      "evidenceStatus": "unattempted"
-    },
-    {
-      "level": 65,
-      "element": "strength",
-      "budgetTier": 4,
-      "apTarget": 11,
-      "mpTarget": 3,
-      "rangeTarget": null,
-      "profileBucket": "ap_heavy",
       "evidenceStatus": "unattempted"
     }
   ]

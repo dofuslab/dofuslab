@@ -5,6 +5,7 @@ from pathlib import Path
 
 from build_discovery_ap_mp_range_grid_inventory import (
     ALL_LEVELS,
+    DEFAULT_ARTIFACTS,
     MATRIX_REPORT_VERSION,
     attempted_keys_from_reports,
     build_inventory_report,
@@ -51,6 +52,16 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
         self.assertEqual(max(level_100_aps), 12)
         self.assertEqual(mps, {3, 4, 5, 6})
         self.assertEqual(ranges, {None, 0, 1, 2, 3, 4, 5, 6})
+
+    def test_default_artifacts_include_prod_level_samples(self):
+        self.assertIn(
+            ".codex/state/build-discovery-prod-level-sample-matrix.json",
+            DEFAULT_ARTIFACTS,
+        )
+        self.assertIn(
+            ".codex/state/build-discovery-prod-level-sample-multicandidate-smoke.json",
+            DEFAULT_ARTIFACTS,
+        )
 
     def test_valid_query_rows_count_full_milestone_three_query_space(self):
         rows = list(

@@ -3476,3 +3476,33 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-prod-level-sample-matrix.json --target-set prod-level-sample`
   - `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-prod-level-sample-multicandidate-smoke.json --target-set prod-level-sample --targets prod_regen_level_1_strength_6_3_none_budget1,prod_regen_level_20_intelligence_7_4_1_budget3,prod_regen_level_40_chance_7_3_none_budget1`
   - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+
+### 2026-07-10 Full Grid Inventory Refresh
+
+- Added the prod-level sample matrix and the 3-row multi-candidate smoke matrix
+  to the default AP/MP/Range grid inventory evidence inputs.
+- Regenerated:
+  - `.codex/state/build-discovery-ap-mp-range-grid-inventory.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-inventory.md`
+  - `.codex/state/build-discovery-ap-mp-range-full-grid-inventory.json`
+  - `.codex/state/build-discovery-ap-mp-range-full-grid-inventory.md`
+- Current all-level Milestone 3 query grid:
+  - valid rows: `665088`
+  - generated evidence rows: `138`
+  - attempted evidence rows: `153`
+  - no-build evidence rows: `15`
+  - unproven rows: `664950`
+- Current representative-level grid:
+  - valid rows: `39424`
+  - generated evidence rows: `121`
+  - attempted evidence rows: `136`
+  - no-build evidence rows: `15`
+  - unproven rows: `39303`
+- The next suggested rows are still dominated by retry cap targets, starting
+  with level 1, level 20, and level 80 `12/6/6` cap rows. That is useful
+  correctness pressure, but not broad coverage.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
+  - `python -m py_compile server\scripts\build_discovery_ap_mp_range_grid_inventory.py server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`

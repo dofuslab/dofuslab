@@ -37,6 +37,8 @@ DEFAULT_ARTIFACTS = (
     ".codex/state/build-discovery-ap-mp-range-grid-next-cap-2-matrix.json",
     ".codex/state/build-discovery-ap-mp-range-grid-next-cap-3-matrix.json",
     ".codex/state/build-discovery-ap-mp-range-grid-next-cap-4-matrix.json",
+    ".codex/state/build-discovery-prod-level-sample-matrix.json",
+    ".codex/state/build-discovery-prod-level-sample-multicandidate-smoke.json",
 )
 
 

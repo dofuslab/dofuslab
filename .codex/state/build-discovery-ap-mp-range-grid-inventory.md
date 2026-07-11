@@ -3,26 +3,30 @@
 This inventory enumerates valid Iop query-grid targets for representative levels, elements, and budgets.
 It is not generated-build proof; it shows how much of the grid currently has generated artifact evidence.
 
+Level scope: `selected_levels` (`12` levels)
+Element count: `4`
+Budget tier count: `4`
 Valid query rows: `39424`
-Generated evidence rows: `106`
-Attempted evidence rows: `121`
-Unproven rows: `39318`
-Unattempted rows: `39303`
+Generated evidence rows: `121`
+Attempted evidence rows: `136`
+No-build evidence rows: `15`
+Unproven rows: `39303`
+Unattempted rows: `39288`
 
 | Level | Valid rows | Generated evidence | Unproven |
 |---:|---:|---:|---:|
 | 1 | 3584 | 4 | 3580 |
-| 20 | 3584 | 5 | 3579 |
-| 50 | 3584 | 10 | 3574 |
-| 80 | 3584 | 8 | 3576 |
+| 20 | 3584 | 6 | 3578 |
+| 50 | 3584 | 12 | 3572 |
+| 80 | 3584 | 11 | 3573 |
 | 99 | 3584 | 8 | 3576 |
-| 100 | 3072 | 10 | 3062 |
-| 120 | 3072 | 11 | 3061 |
+| 100 | 3072 | 12 | 3060 |
+| 120 | 3072 | 13 | 3059 |
 | 150 | 3072 | 13 | 3059 |
 | 179 | 3072 | 9 | 3063 |
-| 180 | 3072 | 9 | 3063 |
+| 180 | 3072 | 10 | 3062 |
 | 199 | 3072 | 12 | 3060 |
-| 200 | 3072 | 7 | 3065 |
+| 200 | 3072 | 11 | 3061 |
 
 ## Unproven Examples
 
@@ -69,27 +73,27 @@ Unattempted rows: `39303`
 
 ## Suggested Next Generated Rows
 
-- L1 intelligence tier 1 6/3/any `minimum`
-- L20 intelligence tier 2 6/3/any `minimum`
-- L50 chance tier 2 6/3/any `minimum`
-- L80 agility tier 2 6/3/any `minimum`
-- L99 strength tier 4 6/3/any `minimum`
-- L100 intelligence tier 3 7/3/any `minimum`
-- L120 chance tier 2 7/3/any `minimum`
-- L150 agility tier 2 7/3/any `minimum`
-- L179 strength tier 4 7/3/any `minimum`
-- L180 intelligence tier 2 7/3/any `minimum`
-- L199 chance tier 2 7/3/any `minimum`
-- L200 agility tier 2 7/3/any `minimum`
-- L1 intelligence tier 1 12/6/6 `cap`
-- L20 chance tier 1 12/6/6 `cap`
-- L50 agility tier 1 12/6/6 `cap`
-- L80 intelligence tier 4 12/6/6 `cap`
-- L99 intelligence tier 1 12/6/6 `cap`
-- L100 chance tier 1 12/6/6 `cap`
-- L120 agility tier 1 12/6/6 `cap`
-- L150 intelligence tier 4 12/6/6 `cap`
-- L179 intelligence tier 1 12/6/6 `cap`
-- L180 chance tier 1 12/6/6 `cap`
-- L199 agility tier 1 12/6/6 `cap`
-- L200 intelligence tier 4 12/6/6 `cap`
+- L1 strength tier 4 12/6/6 `cap` `retry`
+- L20 strength tier 4 12/6/6 `cap` `retry`
+- L80 strength tier 2 12/6/6 `cap` `retry`
+- L200 strength tier 2 12/6/6 `cap` `retry`
+- L80 strength tier 1 12/6/6 `cap` `retry`
+- L200 strength tier 1 12/6/6 `cap` `retry`
+- L1 intelligence tier 1 6/3/any `minimum` `unattempted`
+- L20 intelligence tier 4 12/6/6 `cap` `unattempted`
+- L50 chance tier 4 6/6/any `mp_heavy` `unattempted`
+- L80 agility tier 4 6/3/6 `range_heavy` `unattempted`
+- L99 strength tier 4 11/3/any `ap_heavy` `unattempted`
+- L100 intelligence tier 4 7/3/0 `middle` `unattempted`
+- L120 chance tier 2 7/3/any `minimum` `unattempted`
+- L150 agility tier 4 12/6/6 `cap` `unattempted`
+- L179 strength tier 4 7/6/any `mp_heavy` `unattempted`
+- L180 intelligence tier 4 7/3/6 `range_heavy` `unattempted`
+- L199 chance tier 4 11/3/any `ap_heavy` `unattempted`
+- L200 agility tier 4 7/3/0 `middle` `unattempted`
+- L1 intelligence tier 4 12/6/6 `cap` `retry`
+- L20 chance tier 4 12/6/6 `cap` `retry`
+- L50 agility tier 2 12/6/6 `cap` `retry`
+- L80 intelligence tier 4 12/6/6 `cap` `unattempted`
+- L99 intelligence tier 2 12/6/6 `cap` `retry`
+- L100 chance tier 1 12/6/6 `cap` `unattempted`
