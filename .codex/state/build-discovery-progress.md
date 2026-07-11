@@ -5750,3 +5750,48 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap10-12-mp36-ranges34-budgets14-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 10,12 --mp-targets 3,6 --range-targets 3,4 --expected-solver cpsat`
   - Host: `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-cpsat-ap10-12-mp36-ranges34-budgets14-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 1,4 --ap-targets 10,12 --mp-targets 3,6 --range-targets 3,4 --expected-solver cpsat`
+
+### 2026-07-11 Milestone 2 Damage/Survivability Preset Scope
+
+- Updated the Milestone 2 target model so level-200 Iop coverage includes the
+  four product damage/survivability presets:
+  - `1`: defensive
+  - `2`: balanced
+  - `3`: damage
+  - `4`: total glass cannon
+- `MILESTONE2_LEVEL200_TARGETS` now covers:
+  - 4 elements
+  - 4 presets
+  - 4 budget tiers
+  - 6 AP targets
+  - 4 MP targets
+  - 8 Range targets
+  - total: `12288` targets
+- Preset is now included in:
+  - generated target IDs, for example
+    `milestone2_l200_strength_preset4_12_6_none_budget4`
+  - target summaries
+  - query construction
+  - matrix/checker filters via `--damage-survivability-presets`
+  - target manifests and generated matrix Markdown tables
+  - CP-SAT coverage denominator and per-preset coverage summary
+- Compatibility assumption:
+  - target files or legacy target rows without `damageSurvivabilityPreset`
+    default to preset `3` and keep their old synthesized target IDs
+  - generated Milestone 2 targets always include `presetN` in their IDs
+- Focused smoke:
+  - generated `.codex/state/build-discovery-m2-preset-smoke.json`
+  - generated `.codex/state/build-discovery-m2-preset-smoke.md`
+  - generated `.codex/state/build-discovery-m2-preset-smoke-manifest.json`
+  - generated `.codex/state/build-discovery-m2-preset-smoke-manifest.md`
+  - slice: Strength Iop, level 200, budget tier `4`, `12/6/None`,
+    presets `1` and `4`
+  - result: `2 / 2` generated, both CP-SAT `OPTIMAL`
+  - preset `1` produced a defensive Gargandyas/Vampyrina build with
+    `5395` Vitality
+  - preset `4` produced the glass-cannon Turtelonia build with `4533.2`
+    generic damage and `2653` Vitality
+- Verification passed:
+  - `python server/scripts/test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server/scripts/build_discovery_level_diversity_targets.py server/scripts/build_discovery_level_diversity_matrix.py server/scripts/check_build_discovery_level_diversity_matrix.py server/scripts/summarize_build_discovery_cpsat_coverage.py`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m2-preset-smoke.json --target-set milestone2-level200 --elements strength --damage-survivability-presets 1,4 --budget-tiers 4 --ap-targets 12 --mp-targets 6 --range-targets none --expected-solver cpsat`

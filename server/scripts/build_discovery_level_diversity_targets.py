@@ -17,10 +17,12 @@ class LevelDiversityTarget:
     ap: int
     mp: int
     range_target: Optional[int]
+    damage_survivability_preset: int = 3
 
 
 MILESTONE2_LEVEL200_ELEMENTS = ("strength", "intelligence", "chance", "agility")
 MILESTONE2_LEVEL200_BUDGET_TIERS = (1, 2, 3, 4)
+MILESTONE2_LEVEL200_DAMAGE_SURVIVABILITY_PRESETS = (1, 2, 3, 4)
 MILESTONE2_LEVEL200_AP_TARGETS = tuple(range(7, 13))
 MILESTONE2_LEVEL200_MP_TARGETS = tuple(range(3, 7))
 MILESTONE2_LEVEL200_RANGE_TARGETS: tuple[Optional[int], ...] = (None, 0, 1, 2, 3, 4, 5, 6)
@@ -29,22 +31,24 @@ MILESTONE2_LEVEL200_RANGE_TARGETS: tuple[Optional[int], ...] = (None, 0, 1, 2, 3
 def milestone2_level200_targets() -> tuple[LevelDiversityTarget, ...]:
     targets = []
     for element in MILESTONE2_LEVEL200_ELEMENTS:
-        for budget_tier in MILESTONE2_LEVEL200_BUDGET_TIERS:
-            for ap in MILESTONE2_LEVEL200_AP_TARGETS:
-                for mp in MILESTONE2_LEVEL200_MP_TARGETS:
-                    for range_target in MILESTONE2_LEVEL200_RANGE_TARGETS:
-                        range_label = "none" if range_target is None else str(range_target)
-                        targets.append(
-                            LevelDiversityTarget(
-                                f"milestone2_l200_{element}_{ap}_{mp}_{range_label}_budget{budget_tier}",
-                                200,
-                                element,
-                                budget_tier,
-                                ap,
-                                mp,
-                                range_target,
+        for preset in MILESTONE2_LEVEL200_DAMAGE_SURVIVABILITY_PRESETS:
+            for budget_tier in MILESTONE2_LEVEL200_BUDGET_TIERS:
+                for ap in MILESTONE2_LEVEL200_AP_TARGETS:
+                    for mp in MILESTONE2_LEVEL200_MP_TARGETS:
+                        for range_target in MILESTONE2_LEVEL200_RANGE_TARGETS:
+                            range_label = "none" if range_target is None else str(range_target)
+                            targets.append(
+                                LevelDiversityTarget(
+                                    f"milestone2_l200_{element}_preset{preset}_{ap}_{mp}_{range_label}_budget{budget_tier}",
+                                    200,
+                                    element,
+                                    budget_tier,
+                                    ap,
+                                    mp,
+                                    range_target,
+                                    preset,
+                                )
                             )
-                        )
     return tuple(targets)
 
 
@@ -256,6 +260,7 @@ def query_for_target(target: LevelDiversityTarget) -> BuildDiscoveryQuery:
         ap_target=target.ap,
         mp_target=target.mp,
         range_target=target.range_target,
+        damage_survivability_preset=target.damage_survivability_preset,
         budget_tier=target.budget_tier,
         exo_policy="none" if target.budget_tier < 3 else "allow",
         limit=1,

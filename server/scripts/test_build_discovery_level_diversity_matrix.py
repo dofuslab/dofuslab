@@ -87,20 +87,22 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
     def test_milestone2_level200_target_set_covers_full_grid(self):
         targets = targets_for_set("milestone2-level200")
 
-        self.assertEqual(len(targets), 3072)
+        self.assertEqual(len(targets), 12288)
         self.assertEqual({target.level for target in targets}, {200})
         self.assertEqual({target.element for target in targets}, {"strength", "intelligence", "chance", "agility"})
+        self.assertEqual({target.damage_survivability_preset for target in targets}, {1, 2, 3, 4})
         self.assertEqual({target.budget_tier for target in targets}, {1, 2, 3, 4})
         self.assertEqual({target.ap for target in targets}, set(range(7, 13)))
         self.assertEqual({target.mp for target in targets}, set(range(3, 7)))
         self.assertEqual({target.range_target for target in targets}, {None, 0, 1, 2, 3, 4, 5, 6})
-        self.assertEqual(targets[0].name, "milestone2_l200_strength_7_3_none_budget1")
-        self.assertEqual(targets[-1].name, "milestone2_l200_agility_12_6_6_budget4")
+        self.assertEqual(targets[0].name, "milestone2_l200_strength_preset1_7_3_none_budget1")
+        self.assertEqual(targets[-1].name, "milestone2_l200_agility_preset4_12_6_6_budget4")
 
-    def test_selected_targets_filters_milestone2_by_ap_mp_range(self):
+    def test_selected_targets_filters_milestone2_by_preset_ap_mp_range(self):
         targets = selected_targets(
             all_targets=targets_for_set("milestone2-level200"),
             elements={"chance"},
+            damage_survivability_presets={2},
             budget_tiers={2},
             ap_targets={11},
             mp_targets={6},
@@ -110,8 +112,8 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(
             [target.name for target in targets],
             [
-                "milestone2_l200_chance_11_6_none_budget2",
-                "milestone2_l200_chance_11_6_6_budget2",
+                "milestone2_l200_chance_preset2_11_6_none_budget2",
+                "milestone2_l200_chance_preset2_11_6_6_budget2",
             ],
         )
 
@@ -1246,7 +1248,7 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(report["evidenceType"], "action_stat_feasibility")
         self.assertEqual(report["provenance"]["gitSha"], "def456")
         self.assertIn("action-stat feasibility evidence", markdown)
-        self.assertIn("| Target | Status | Candidates |", markdown)
+        self.assertIn("| Target | Preset | Status | Candidates |", markdown)
 
     def test_target_file_report_records_target_file_provenance(self):
         payload = {

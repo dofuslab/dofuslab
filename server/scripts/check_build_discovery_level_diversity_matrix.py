@@ -213,6 +213,7 @@ def validate_report(
     ap_targets: set[int] | None = None,
     mp_targets: set[int] | None = None,
     range_targets: set[int | None] | None = None,
+    damage_survivability_presets: set[int] | None = None,
     target_file: str | Path | None = None,
     target_file_limit: int | None = None,
     target_file_prefix: str = "file",
@@ -245,6 +246,7 @@ def validate_report(
             ap_targets=ap_targets,
             mp_targets=mp_targets,
             range_targets=range_targets,
+            damage_survivability_presets=damage_survivability_presets,
         )
     )
     target_by_id = {target.name: target for target in targets}
@@ -344,6 +346,7 @@ def main() -> None:
     parser.add_argument("--ap-targets", help="Comma-separated AP targets to validate as a subset.")
     parser.add_argument("--mp-targets", help="Comma-separated MP targets to validate as a subset.")
     parser.add_argument("--range-targets", help="Comma-separated range targets to validate as a subset; accepts none/any/null.")
+    parser.add_argument("--damage-survivability-presets", help="Comma-separated damage/survivability presets to validate as a subset.")
     parser.add_argument("--target-file", help="JSON target rows, inventory report, or matrix report to validate against.")
     parser.add_argument("--target-file-limit", type=int, help="Limit target rows loaded from --target-file.")
     parser.add_argument("--target-file-prefix", default="file", help="Prefix for generated target ids from --target-file.")
@@ -363,6 +366,7 @@ def main() -> None:
         ap_targets=parse_int_filter(args.ap_targets),
         mp_targets=parse_int_filter(args.mp_targets),
         range_targets=parse_optional_int_filter(args.range_targets),
+        damage_survivability_presets=parse_int_filter(args.damage_survivability_presets),
         target_file=args.target_file,
         target_file_limit=args.target_file_limit,
         target_file_prefix=args.target_file_prefix,

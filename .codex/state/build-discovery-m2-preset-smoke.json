@@ -1,0 +1,1597 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T14:11:11.872317+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 2,
+  "generatedCount": 2,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_preset1_12_6_none_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 1,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 1540.77,
+        "weightedStatScore": 4417.32,
+        "utilityStatScore": 624.0,
+        "genericDamageScore": 2915.14,
+        "rawRotationDamageScore": 2670.86,
+        "spellDamageScore": 2670.86,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 0.9717,
+        "weaponDamageScore": 159.33,
+        "survivabilityScore": 191.8,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 6208.88,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 300,
+          "Vitality": 395
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 880,
+          "Power": 340,
+          "Vitality": 5395,
+          "Damage": 0,
+          "Earth Damage": 112,
+          "Critical": 41,
+          "Critical Damage": 20,
+          "Neutral Damage": 102
+        },
+        "sets": {
+          "Count Harebourg Set": 2,
+          "Rassler Set": 2,
+          "Harpiset": 2,
+          "Chocomancer Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15747",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "20926",
+            "slot": "shield"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "15746",
+            "internalId": null,
+            "name": "Neckross",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Harpiset"
+          },
+          "belt": {
+            "id": "20925",
+            "internalId": null,
+            "name": "Chocomancer Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Chocomancer Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "20926",
+            "internalId": null,
+            "name": "Chocomancer Shield",
+            "type": "Shield",
+            "level": 200,
+            "set": "Chocomancer Set"
+          },
+          "ring_1": {
+            "id": "15440",
+            "internalId": null,
+            "name": "Rassler Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rassler Set"
+          },
+          "ring_2": {
+            "id": "14077",
+            "internalId": null,
+            "name": "Count Harebourg's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "boots": {
+            "id": "15441",
+            "internalId": null,
+            "name": "Rassler Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Rassler Set"
+          },
+          "hat": {
+            "id": "14076",
+            "internalId": null,
+            "name": "Count Harebourg's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "cloak": {
+            "id": "15747",
+            "internalId": null,
+            "name": "Krosscape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Harpiset"
+          },
+          "pet": {
+            "id": "10106",
+            "internalId": null,
+            "name": "Vampyrina",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7114",
+            "internalId": null,
+            "name": "Ebony Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "21996",
+            "internalId": null,
+            "name": "Pryssure-O-Mat",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1540.77,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 6,
+          "Strength": 880,
+          "Power": 340,
+          "Vitality": 5395,
+          "Damage": 0,
+          "Earth Damage": 112,
+          "Critical": 41,
+          "Critical Damage": 20,
+          "Neutral Damage": 102
+        },
+        "sets": {
+          "Count Harebourg Set": 2,
+          "Rassler Set": 2,
+          "Harpiset": 2,
+          "Chocomancer Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15747",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "20926",
+            "slot": "shield"
+          }
+        },
+        "items": [
+          "Neckross",
+          "Chocomancer Belt",
+          "Gargandyas's Fury",
+          "Chocomancer Shield",
+          "Rassler Ring",
+          "Count Harebourg's Ring",
+          "Rassler Boots",
+          "Count Harebourg's Hat",
+          "Krosscape",
+          "Vampyrina",
+          "Cloudy Dofus",
+          "Crimson Dofus",
+          "Ebony Dofus",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Pryssure-O-Mat"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 1540.77,
+          "weightedStatScore": 4417.32,
+          "utilityStatScore": 624.0,
+          "genericDamageScore": 2915.14,
+          "rawRotationDamageScore": 2670.86,
+          "spellDamageScore": 2670.86,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 0.9717,
+          "weaponDamageScore": 159.33,
+          "survivabilityScore": 191.8,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 6208.88,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 300,
+            "Vitality": 395
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 6,
+            "Strength": 880,
+            "Power": 340,
+            "Vitality": 5395,
+            "Damage": 0,
+            "Earth Damage": 112,
+            "Critical": 41,
+            "Critical Damage": 20,
+            "Neutral Damage": 102
+          },
+          "sets": {
+            "Count Harebourg Set": 2,
+            "Rassler Set": 2,
+            "Harpiset": 2,
+            "Chocomancer Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "15747",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "20926",
+              "slot": "shield"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "15746",
+              "internalId": null,
+              "name": "Neckross",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Harpiset"
+            },
+            "belt": {
+              "id": "20925",
+              "internalId": null,
+              "name": "Chocomancer Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Chocomancer Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "20926",
+              "internalId": null,
+              "name": "Chocomancer Shield",
+              "type": "Shield",
+              "level": 200,
+              "set": "Chocomancer Set"
+            },
+            "ring_1": {
+              "id": "15440",
+              "internalId": null,
+              "name": "Rassler Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rassler Set"
+            },
+            "ring_2": {
+              "id": "14077",
+              "internalId": null,
+              "name": "Count Harebourg's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Count Harebourg Set"
+            },
+            "boots": {
+              "id": "15441",
+              "internalId": null,
+              "name": "Rassler Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Rassler Set"
+            },
+            "hat": {
+              "id": "14076",
+              "internalId": null,
+              "name": "Count Harebourg's Hat",
+              "type": "Hat",
+              "level": 200,
+              "set": "Count Harebourg Set"
+            },
+            "cloak": {
+              "id": "15747",
+              "internalId": null,
+              "name": "Krosscape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Harpiset"
+            },
+            "pet": {
+              "id": "10106",
+              "internalId": null,
+              "name": "Vampyrina",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7114",
+              "internalId": null,
+              "name": "Ebony Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "21996",
+              "internalId": null,
+              "name": "Pryssure-O-Mat",
+              "type": "Prysmaradite",
+              "level": 200,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 1540.77,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 6,
+            "Strength": 880,
+            "Power": 340,
+            "Vitality": 5395,
+            "Damage": 0,
+            "Earth Damage": 112,
+            "Critical": 41,
+            "Critical Damage": 20,
+            "Neutral Damage": 102
+          },
+          "sets": {
+            "Count Harebourg Set": 2,
+            "Rassler Set": 2,
+            "Harpiset": 2,
+            "Chocomancer Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "15747",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "20926",
+              "slot": "shield"
+            }
+          },
+          "items": [
+            "Neckross",
+            "Chocomancer Belt",
+            "Gargandyas's Fury",
+            "Chocomancer Shield",
+            "Rassler Ring",
+            "Count Harebourg's Ring",
+            "Rassler Boots",
+            "Count Harebourg's Hat",
+            "Krosscape",
+            "Vampyrina",
+            "Cloudy Dofus",
+            "Crimson Dofus",
+            "Ebony Dofus",
+            "Ice Dofus",
+            "Ochre Dofus",
+            "Pryssure-O-Mat"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 9716.2,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 1904.7,
+          "totalSearchMs": 7811.5
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 1261.7,
+            "solveMs": 6415.5,
+            "objective": 1268.96,
+            "solutionCallbackCount": 11,
+            "validCallbackCandidateCount": 6,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1242.2,
+                "objective": 634.29,
+                "score": 962.82,
+                "itemIds": [
+                  "7754",
+                  "8839",
+                  "11606",
+                  "12713",
+                  "12720",
+                  "13636",
+                  "13759",
+                  "13768",
+                  "16333",
+                  "18593",
+                  "18692",
+                  "19608",
+                  "27266",
+                  "31773",
+                  "32226",
+                  "33203"
+                ],
+                "exos": {
+                  "AP": "8839",
+                  "MP": "18692"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 1598.1,
+                "objective": 649.29,
+                "score": 981.68,
+                "itemIds": [
+                  "7754",
+                  "8839",
+                  "11606",
+                  "12713",
+                  "12720",
+                  "13636",
+                  "13759",
+                  "16248",
+                  "16333",
+                  "18593",
+                  "18692",
+                  "19608",
+                  "27266",
+                  "31773",
+                  "32226",
+                  "33203"
+                ],
+                "exos": {
+                  "AP": "8839",
+                  "MP": "11606"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 1741.0,
+                "objective": 1133.19,
+                "score": 1361.3,
+                "itemIds": [
+                  "737",
+                  "7114",
+                  "7754",
+                  "12724",
+                  "13114",
+                  "13116",
+                  "13344",
+                  "15190",
+                  "15433",
+                  "15440",
+                  "15442",
+                  "18693",
+                  "21996",
+                  "22215",
+                  "31787",
+                  "33050"
+                ],
+                "exos": {
+                  "AP": "31787",
+                  "MP": "18693"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 1915.3,
+                "objective": 1140.85,
+                "score": 1371.61,
+                "itemIds": [
+                  "7114",
+                  "7754",
+                  "8698",
+                  "12724",
+                  "13114",
+                  "13116",
+                  "13344",
+                  "15190",
+                  "15433",
+                  "15440",
+                  "15442",
+                  "18693",
+                  "21996",
+                  "22215",
+                  "31787",
+                  "33050"
+                ],
+                "exos": {
+                  "AP": "31787",
+                  "MP": "18693"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2082.3,
+                "objective": 1246.34,
+                "score": 1509.49,
+                "itemIds": [
+                  "694",
+                  "7043",
+                  "7114",
+                  "7754",
+                  "8698",
+                  "10106",
+                  "13774",
+                  "15440",
+                  "15442",
+                  "15746",
+                  "15747",
+                  "15748",
+                  "22205",
+                  "22209",
+                  "30858",
+                  "31787"
+                ],
+                "exos": {
+                  "AP": "15442"
+                }
+              },
+              {
+                "callbackIndex": 6,
+                "rankBeforeRerank": 6,
+                "wallTimeMs": 2359.0,
+                "objective": 1247.75,
+                "score": 1514.1,
+                "itemIds": [
+                  "694",
+                  "7043",
+                  "7114",
+                  "7754",
+                  "8698",
+                  "10106",
+                  "13774",
+                  "15440",
+                  "15442",
+                  "15746",
+                  "15747",
+                  "22205",
+                  "22209",
+                  "30858",
+                  "31787",
+                  "32121"
+                ],
+                "exos": {
+                  "AP": "30858"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 99,
+                "belt": 93,
+                "weapon": 197,
+                "shield": 59,
+                "ring_1": 132,
+                "ring_2": 132,
+                "boots": 102,
+                "hat": 131,
+                "cloak": 92,
+                "pet": 452,
+                "dofus": 316
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1805,
+              "uniqueItemCount": 1673,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 847,
+              "skippedSetCountVarCount": 74,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 186,
+              "conditionConstraintCount": 192,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 202
+            }
+          }
+        ],
+        "itemCount": 1673,
+        "candidateCount": 6,
+        "requestedCandidateLimit": 6,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.083,
+          "% Earth Resistance": 0.083,
+          "% Final Damage": 4.12,
+          "% Fire Resistance": 0.083,
+          "% Melee Resistance": 0.2471,
+          "% Neutral Resistance": 0.083,
+          "% Ranged Damage": 4.12,
+          "% Ranged Resistance": 0.5789,
+          "% Spell Damage": 4.12,
+          "% Water Resistance": 0.083,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0235,
+          "Critical": 1.4728,
+          "Critical Damage": 0.5432,
+          "Critical Resistance": 0.047,
+          "Damage": 0.9359,
+          "Dodge": 1.0,
+          "Earth Damage": 0.9359,
+          "Earth Resistance": 0.0235,
+          "Fire Resistance": 0.0235,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0235,
+          "Power": 0.2324,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0047,
+          "Range": 8.0,
+          "Strength": 0.2324,
+          "Temporary AP": 60.0,
+          "Vitality": 0.075,
+          "Water Resistance": 0.0235,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "milestone2_l200_strength_preset4_12_6_none_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 4
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 4,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 3201.35,
+        "weightedStatScore": 4238.43,
+        "utilityStatScore": 423.72,
+        "genericDamageScore": 4533.2,
+        "rawRotationDamageScore": 4153.33,
+        "spellDamageScore": 4153.33,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.5111,
+        "weaponDamageScore": 188.79,
+        "survivabilityScore": 82.43,
+        "negativeResistancePenalty": 36.0,
+        "weakestElementEhp": 2550.96,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 2,
+          "Strength": 1268,
+          "Power": 110,
+          "Vitality": 2653,
+          "Damage": 0,
+          "Earth Damage": 154,
+          "Critical": 69,
+          "Critical Damage": 114,
+          "Neutral Damage": 77
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Turtelonia Set": 3,
+          "Corruption Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "21230",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "21229",
+            "slot": "weapon"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "19244",
+            "internalId": null,
+            "name": "Amulet of the Bleeding Heart",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "21229",
+            "internalId": null,
+            "name": "Turtelonia Wand",
+            "type": "Wand",
+            "level": 200,
+            "set": "Turtelonia Set"
+          },
+          "shield": {
+            "id": "18693",
+            "internalId": null,
+            "name": "Broucey Bark",
+            "type": "Shield",
+            "level": 196,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "13115",
+            "internalId": null,
+            "name": "Broucey Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": "Brouce Boulgoure Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "21235",
+            "internalId": null,
+            "name": "Turtelonia Horn",
+            "type": "Hat",
+            "level": 200,
+            "set": "Turtelonia Set"
+          },
+          "cloak": {
+            "id": "21230",
+            "internalId": null,
+            "name": "Turtelonia Carapace",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Turtelonia Set"
+          },
+          "pet": {
+            "id": "33268",
+            "internalId": null,
+            "name": "Amber and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 3201.35,
+        "apStrategy": null,
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 2,
+          "Strength": 1268,
+          "Power": 110,
+          "Vitality": 2653,
+          "Damage": 0,
+          "Earth Damage": 154,
+          "Critical": 69,
+          "Critical Damage": 114,
+          "Neutral Damage": 77
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Turtelonia Set": 3,
+          "Corruption Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "21230",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "21229",
+            "slot": "weapon"
+          }
+        },
+        "items": [
+          "Amulet of the Bleeding Heart",
+          "Corruption's Brambelt",
+          "Turtelonia Wand",
+          "Broucey Bark",
+          "Corruption's Ring",
+          "Broucey Ring",
+          "Meriana's Clairvoyance",
+          "Turtelonia Horn",
+          "Turtelonia Carapace",
+          "Amber and Emerald Seemyool",
+          "Cloudy Dofus",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Goliath"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 3201.35,
+          "weightedStatScore": 4238.43,
+          "utilityStatScore": 423.72,
+          "genericDamageScore": 4533.2,
+          "rawRotationDamageScore": 4153.33,
+          "spellDamageScore": 4153.33,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.5111,
+          "weaponDamageScore": 188.79,
+          "survivabilityScore": 82.43,
+          "negativeResistancePenalty": 36.0,
+          "weakestElementEhp": 2550.96,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 2,
+            "Strength": 1268,
+            "Power": 110,
+            "Vitality": 2653,
+            "Damage": 0,
+            "Earth Damage": 154,
+            "Critical": 69,
+            "Critical Damage": 114,
+            "Neutral Damage": 77
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Turtelonia Set": 3,
+            "Corruption Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "21230",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "21229",
+              "slot": "weapon"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "19244",
+              "internalId": null,
+              "name": "Amulet of the Bleeding Heart",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Bleeding Heart Set"
+            },
+            "belt": {
+              "id": "22209",
+              "internalId": null,
+              "name": "Corruption's Brambelt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "weapon": {
+              "id": "21229",
+              "internalId": null,
+              "name": "Turtelonia Wand",
+              "type": "Wand",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "shield": {
+              "id": "18693",
+              "internalId": null,
+              "name": "Broucey Bark",
+              "type": "Shield",
+              "level": 196,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_1": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "ring_2": {
+              "id": "13115",
+              "internalId": null,
+              "name": "Broucey Ring",
+              "type": "Ring",
+              "level": 198,
+              "set": "Brouce Boulgoure Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "21235",
+              "internalId": null,
+              "name": "Turtelonia Horn",
+              "type": "Hat",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "cloak": {
+              "id": "21230",
+              "internalId": null,
+              "name": "Turtelonia Carapace",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Turtelonia Set"
+            },
+            "pet": {
+              "id": "33268",
+              "internalId": null,
+              "name": "Amber and Emerald Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 3201.35,
+          "apStrategy": null,
+          "totals": {
+            "AP": 12,
+            "MP": 6,
+            "Range": 2,
+            "Strength": 1268,
+            "Power": 110,
+            "Vitality": 2653,
+            "Damage": 0,
+            "Earth Damage": 154,
+            "Critical": 69,
+            "Critical Damage": 114,
+            "Neutral Damage": 77
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Turtelonia Set": 3,
+            "Corruption Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "21230",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "21229",
+              "slot": "weapon"
+            }
+          },
+          "items": [
+            "Amulet of the Bleeding Heart",
+            "Corruption's Brambelt",
+            "Turtelonia Wand",
+            "Broucey Bark",
+            "Corruption's Ring",
+            "Broucey Ring",
+            "Meriana's Clairvoyance",
+            "Turtelonia Horn",
+            "Turtelonia Carapace",
+            "Amber and Emerald Seemyool",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Goliath"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6298.6,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 203.5,
+          "totalSearchMs": 6095.1
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 1332.5,
+            "solveMs": 4585.4,
+            "objective": 2750.02,
+            "solutionCallbackCount": 13,
+            "validCallbackCandidateCount": 6,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1219.0,
+                "objective": 1069.36,
+                "score": 1723.58,
+                "itemIds": [
+                  "2469",
+                  "7754",
+                  "8839",
+                  "12117",
+                  "12628",
+                  "12629",
+                  "16248",
+                  "16333",
+                  "18593",
+                  "18595",
+                  "18715",
+                  "22004",
+                  "27266",
+                  "27555",
+                  "33204",
+                  "33607"
+                ],
+                "exos": {
+                  "MP": "18715"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 1552.3,
+                "objective": 1328.28,
+                "score": 1893.54,
+                "itemIds": [
+                  "2469",
+                  "7043",
+                  "7754",
+                  "8698",
+                  "8839",
+                  "12117",
+                  "12628",
+                  "13774",
+                  "18593",
+                  "18595",
+                  "18715",
+                  "22004",
+                  "27266",
+                  "27555",
+                  "33204",
+                  "33607"
+                ],
+                "exos": {
+                  "AP": "8839",
+                  "MP": "2469"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 1713.6,
+                "objective": 2246.49,
+                "score": 2281.46,
+                "itemIds": [
+                  "737",
+                  "7754",
+                  "12117",
+                  "12120",
+                  "13114",
+                  "13344",
+                  "13759",
+                  "14097",
+                  "15440",
+                  "15442",
+                  "16333",
+                  "18718",
+                  "22004",
+                  "29430",
+                  "31787",
+                  "32121"
+                ],
+                "exos": {
+                  "AP": "12117",
+                  "MP": "18718"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 1821.4,
+                "objective": 2249.01,
+                "score": 2284.46,
+                "itemIds": [
+                  "7754",
+                  "12117",
+                  "12120",
+                  "13114",
+                  "13344",
+                  "13759",
+                  "14097",
+                  "15440",
+                  "15442",
+                  "16193",
+                  "16333",
+                  "18718",
+                  "22004",
+                  "29430",
+                  "31787",
+                  "32121"
+                ],
+                "exos": {
+                  "AP": "12117",
+                  "MP": "18718"
+                }
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 1941.9,
+                "objective": 2307.49,
+                "score": 2352.01,
+                "itemIds": [
+                  "7754",
+                  "12117",
+                  "12120",
+                  "13114",
+                  "13344",
+                  "13759",
+                  "14097",
+                  "15440",
+                  "15442",
+                  "16193",
+                  "16333",
+                  "18718",
+                  "29430",
+                  "30453",
+                  "31787",
+                  "32121"
+                ],
+                "exos": {
+                  "AP": "12117",
+                  "MP": "15442"
+                }
+              },
+              {
+                "callbackIndex": 6,
+                "rankBeforeRerank": 6,
+                "wallTimeMs": 2083.8,
+                "objective": 2309.17,
+                "score": 2356.97,
+                "itemIds": [
+                  "7754",
+                  "12117",
+                  "12120",
+                  "13114",
+                  "13344",
+                  "13465",
+                  "13759",
+                  "14097",
+                  "15440",
+                  "15442",
+                  "16193",
+                  "16196",
+                  "18718",
+                  "30453",
+                  "31787",
+                  "32121"
+                ],
+                "exos": {
+                  "AP": "12117",
+                  "MP": "15442"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 99,
+                "belt": 93,
+                "weapon": 197,
+                "shield": 59,
+                "ring_1": 132,
+                "ring_2": 132,
+                "boots": 102,
+                "hat": 131,
+                "cloak": 92,
+                "pet": 452,
+                "dofus": 316
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1805,
+              "uniqueItemCount": 1673,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 847,
+              "skippedSetCountVarCount": 74,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 186,
+              "conditionConstraintCount": 192,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 202
+            }
+          }
+        ],
+        "itemCount": 1673,
+        "candidateCount": 6,
+        "requestedCandidateLimit": 6,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0232,
+          "% Earth Resistance": 0.0232,
+          "% Final Damage": 16.4798,
+          "% Fire Resistance": 0.0232,
+          "% Melee Resistance": 0.0692,
+          "% Neutral Resistance": 0.0232,
+          "% Ranged Damage": 16.4798,
+          "% Ranged Resistance": 0.1621,
+          "% Spell Damage": 16.4798,
+          "% Water Resistance": 0.0232,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0066,
+          "Critical": 5.8912,
+          "Critical Damage": 2.1729,
+          "Critical Resistance": 0.0131,
+          "Damage": 3.7436,
+          "Dodge": 1.0,
+          "Earth Damage": 3.7436,
+          "Earth Resistance": 0.0066,
+          "Fire Resistance": 0.0066,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0066,
+          "Power": 0.9295,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0013,
+          "Range": 8.0,
+          "Strength": 0.9295,
+          "Temporary AP": 60.0,
+          "Vitality": 0.021,
+          "Water Resistance": 0.0066,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

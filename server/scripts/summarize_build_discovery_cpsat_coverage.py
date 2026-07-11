@@ -15,6 +15,7 @@ if str(SERVER_ROOT) not in sys.path:
 from build_discovery_level_diversity_targets import (
     MILESTONE2_LEVEL200_AP_TARGETS,
     MILESTONE2_LEVEL200_BUDGET_TIERS,
+    MILESTONE2_LEVEL200_DAMAGE_SURVIVABILITY_PRESETS,
     MILESTONE2_LEVEL200_ELEMENTS,
     MILESTONE2_LEVEL200_MP_TARGETS,
     MILESTONE2_LEVEL200_RANGE_TARGETS,
@@ -37,11 +38,12 @@ def milestone2_assumptions() -> dict[str, Any]:
             "mode": "PvM",
             "level": 200,
             "elements": list(MILESTONE2_LEVEL200_ELEMENTS),
+            "damageSurvivabilityPresets": list(MILESTONE2_LEVEL200_DAMAGE_SURVIVABILITY_PRESETS),
             "budgetTiers": list(MILESTONE2_LEVEL200_BUDGET_TIERS),
             "apTargets": list(MILESTONE2_LEVEL200_AP_TARGETS),
             "mpTargets": list(MILESTONE2_LEVEL200_MP_TARGETS),
             "rangeTargets": range_targets,
-            "targetCountFormula": "4 elements * 4 budget tiers * 6 AP targets * 4 MP targets * 8 range targets",
+            "targetCountFormula": "4 elements * 4 presets * 4 budget tiers * 6 AP targets * 4 MP targets * 8 range targets",
         },
         "budgetTierSemantics": {
             "1": "baseline items, trophies, mounts",
@@ -207,6 +209,7 @@ def coverage_report(root: Path) -> dict[str, Any]:
         "coveragePercent": round((len(generated) / total) * 100, 2),
         "assumptions": milestone2_assumptions(),
         "byElement": dict(sorted(counter_for(generated, "element").items())),
+        "byDamageSurvivabilityPreset": dict(sorted(counter_for(generated, "damageSurvivabilityPreset").items())),
         "byBudgetTier": dict(sorted(counter_for(generated, "budgetTier").items())),
         "byAp": dict(sorted(counter_for(generated, "apTarget").items())),
         "byMp": dict(sorted(counter_for(generated, "mpTarget").items())),
@@ -250,7 +253,8 @@ def render_markdown(report: dict[str, Any]) -> str:
         "## Review Assumptions",
         "",
         f"- Target grid: `{target_grid['class']}` `{target_grid['mode']}`, level `{target_grid['level']}`, "
-        f"elements `{', '.join(target_grid['elements'])}`, budget tiers `{', '.join(str(v) for v in target_grid['budgetTiers'])}`, "
+        f"elements `{', '.join(target_grid['elements'])}`, presets `{', '.join(str(v) for v in target_grid['damageSurvivabilityPresets'])}`, "
+        f"budget tiers `{', '.join(str(v) for v in target_grid['budgetTiers'])}`, "
         f"AP `{min(target_grid['apTargets'])}-{max(target_grid['apTargets'])}`, "
         f"MP `{min(target_grid['mpTargets'])}-{max(target_grid['mpTargets'])}`, "
         f"Range `{', '.join(str(v) for v in target_grid['rangeTargets'])}`.",
@@ -268,6 +272,7 @@ def render_markdown(report: dict[str, Any]) -> str:
     ]
     for title, key in (
         ("Element", "byElement"),
+        ("Damage/Survivability Preset", "byDamageSurvivabilityPreset"),
         ("Budget Tier", "byBudgetTier"),
         ("AP", "byAp"),
         ("MP", "byMp"),

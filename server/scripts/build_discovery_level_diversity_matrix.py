@@ -110,6 +110,7 @@ def selected_targets(
     ap_targets: set[int] | None = None,
     mp_targets: set[int] | None = None,
     range_targets: set[int | None] | None = None,
+    damage_survivability_presets: set[int] | None = None,
 ) -> list[LevelDiversityTarget]:
     targets = []
     for target in all_targets:
@@ -127,6 +128,11 @@ def selected_targets(
             continue
         if range_targets is not None and target.range_target not in range_targets:
             continue
+        if (
+            damage_survivability_presets is not None
+            and target.damage_survivability_preset not in damage_survivability_presets
+        ):
+            continue
         targets.append(target)
     return targets
 
@@ -134,8 +140,14 @@ def selected_targets(
 def target_name_from_row(row: dict[str, Any], prefix: str = "file") -> str:
     range_value = row.get("rangeTarget")
     range_label = "none" if range_value is None else str(range_value)
+    preset_label = (
+        f"preset{row['damageSurvivabilityPreset']}_"
+        if "damageSurvivabilityPreset" in row
+        else ""
+    )
     return (
         f"{prefix}_level_{row['level']}_{row['element']}_"
+        f"{preset_label}"
         f"{row['apTarget']}_{row['mpTarget']}_{range_label}_budget{row['budgetTier']}"
     )
 
@@ -166,6 +178,7 @@ def required_row_value(row: dict[str, Any], key: str, *, index: int) -> Any:
 def target_from_row(row: dict[str, Any], prefix: str = "file", *, index: int = 0) -> LevelDiversityTarget:
     if not isinstance(row, dict):
         raise ValueError(f"target row {index} must be an object")
+    has_explicit_preset = "damageSurvivabilityPreset" in row
     normalized_row = {
         "level": int(required_row_value(row, "level", index=index)),
         "element": str(required_row_value(row, "element", index=index)),
@@ -176,15 +189,22 @@ def target_from_row(row: dict[str, Any], prefix: str = "file", *, index: int = 0
             required_row_value(row, "rangeTarget", index=index),
             index=index,
         ),
+        "damageSurvivabilityPreset": int(row.get("damageSurvivabilityPreset", 3)),
+    }
+    name_row = normalized_row if has_explicit_preset else {
+        key: value
+        for key, value in normalized_row.items()
+        if key != "damageSurvivabilityPreset"
     }
     return LevelDiversityTarget(
-        row.get("id") or target_name_from_row(normalized_row, prefix),
+        row.get("id") or target_name_from_row(name_row, prefix),
         normalized_row["level"],
         normalized_row["element"],
         normalized_row["budgetTier"],
         normalized_row["apTarget"],
         normalized_row["mpTarget"],
         normalized_row["rangeTarget"],
+        normalized_row["damageSurvivabilityPreset"],
     )
 
 
@@ -222,7 +242,7 @@ def load_targets_from_file(path: str | Path, *, limit: int | None = None, prefix
         rows = rows[:limit]
     targets = []
     seen_names: set[str] = set()
-    seen_row_keys: set[tuple[int, str, int, int, int, int | None]] = set()
+    seen_row_keys: set[tuple[int, str, int, int, int, int | None, int]] = set()
     for index, row in enumerate(rows):
         target = target_from_row(row, prefix, index=index)
         row_key = (
@@ -232,6 +252,7 @@ def load_targets_from_file(path: str | Path, *, limit: int | None = None, prefix
             target.ap,
             target.mp,
             target.range_target,
+            target.damage_survivability_preset,
         )
         if target.name in seen_names:
             duplicate_type = "explicit target id" if isinstance(row, dict) and row.get("id") else "synthesized target row key"
@@ -346,6 +367,7 @@ def target_summary(target: LevelDiversityTarget) -> dict[str, Any]:
         "apTarget": target.ap,
         "mpTarget": target.mp,
         "rangeTarget": target.range_target,
+        "damageSurvivabilityPreset": target.damage_survivability_preset,
     }
 
 
@@ -820,8 +842,8 @@ def render_target_manifest_markdown(report: dict[str, Any]) -> str:
         "",
         f"Targets: `{report['targetCount']}`",
         "",
-        "| Target | Query budget | Exo policy | Search |",
-        "|---|---:|---|---|",
+        "| Target | Preset | Query budget | Exo policy | Search |",
+        "|---|---:|---:|---|---|",
     ]
     for row in report["targets"]:
         target = row["target"]
@@ -832,8 +854,9 @@ def render_target_manifest_markdown(report: dict[str, Any]) -> str:
             f"signature {search_config.get('perSignatureCap', '')}, sets {search_config.get('relevantSetLimit', '')}"
         )
         lines.append(
-            "| {} | {} | {} | {} |".format(
+            "| {} | {} | {} | {} | {} |".format(
                 target_label(target),
+                query["damageSurvivabilityPreset"],
                 query["budgetTier"],
                 query["exoPolicy"],
                 search,
@@ -875,8 +898,8 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"No build: `{report['noBuildCount']}`",
         f"Invalid: `{report.get('invalidCount', 0)}`",
         "",
-        "| Target | Status | Candidates | Score | Miss ms | AP/MP/Range | Main stat | Vitality | Validation | Sets | Items |",
-        "|---|---:|---:|---:|---:|---|---:|---:|---|---|---|",
+        "| Target | Preset | Status | Candidates | Score | Miss ms | AP/MP/Range | Main stat | Vitality | Validation | Sets | Items |",
+        "|---|---:|---:|---:|---:|---:|---|---:|---:|---|---|---|",
     ]
     for entry in report["results"]:
         target = entry["target"]
@@ -910,8 +933,9 @@ def render_markdown(report: dict[str, Any]) -> str:
             else str(candidates)
         )
         lines.append(
-            "| {} | {} | {} | {} | {} | {} | {} | {} | {} | {} | {} |".format(
+            "| {} | {} | {} | {} | {} | {} | {} | {} | {} | {} | {} | {} |".format(
                 target_label(target),
+                target.get("damageSurvivabilityPreset", 3),
                 entry["status"],
                 candidate_label,
                 summary.get("score", ""),
@@ -1029,6 +1053,7 @@ def main() -> None:
     parser.add_argument("--ap-targets", help="Comma-separated AP targets to include.")
     parser.add_argument("--mp-targets", help="Comma-separated MP targets to include.")
     parser.add_argument("--range-targets", help="Comma-separated range targets to include; accepts none/any/null.")
+    parser.add_argument("--damage-survivability-presets", help="Comma-separated damage/survivability presets to include.")
     parser.add_argument("--target-manifest-json", help="Write selected target/query manifest JSON without running the solver.")
     parser.add_argument("--target-manifest-md", help="Write selected target/query manifest Markdown without running the solver.")
     parser.add_argument("--output-json", help="Write JSON report to this path.")
@@ -1090,6 +1115,7 @@ def main() -> None:
         ap_targets=parse_int_filter(args.ap_targets),
         mp_targets=parse_int_filter(args.mp_targets),
         range_targets=parse_optional_int_filter(args.range_targets),
+        damage_survivability_presets=parse_int_filter(args.damage_survivability_presets),
     )
     if args.missing_from_split_dir:
         targets = targets_missing_from_split_reports(
