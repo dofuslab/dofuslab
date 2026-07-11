@@ -19,6 +19,8 @@ except ImportError:
     create_engine = None
     text = None
 
+from oneoff.build_discovery_prototype import SUPPORTED_CLASS_NAMES
+
 
 REPORT_VERSION = "build-discovery-prod-benchmark-discovery-v1"
 DEFAULT_SAMPLE_LIMIT = 500
@@ -27,6 +29,8 @@ DEFAULT_TOP_ITEMS = 12
 MAX_TOP_ITEMS = 50
 MIN_PROFILE_SAMPLE_COUNT = 3
 DEFAULT_STATEMENT_TIMEOUT_MS = 5000
+MIN_EQUIPPED_SLOT_COUNT = 16
+RECENT_CANDIDATE_MULTIPLIER = 20
 TARGET_STATS = ("AP", "MP", "RANGE", "STRENGTH", "INTELLIGENCE", "CHANCE", "AGILITY")
 BASE_AP = 7
 BASE_MP = 3
@@ -90,9 +94,10 @@ def recent_build_rows(
     class_name: str | None,
 ) -> list[dict[str, Any]]:
     _, sql_text = require_sqlalchemy()
+    candidate_limit = min(sample_limit * RECENT_CANDIDATE_MULTIPLIER, MAX_SAMPLE_LIMIT)
     query = sql_text(
         """
-        WITH recent_sets AS (
+        WITH recent_candidates AS (
             SELECT
                 cs.uuid,
                 cs.level,
@@ -110,6 +115,31 @@ def recent_build_rows(
             WHERE cs.level = 200
               AND (:class_name IS NULL OR ct.name = :class_name)
             ORDER BY cs.last_modified DESC NULLS LAST
+            LIMIT :candidate_limit
+        ),
+        complete_sets AS (
+            SELECT
+                ei.custom_set_id
+            FROM recent_candidates rc
+            JOIN equipped_item ei
+                ON ei.custom_set_id = rc.uuid
+            GROUP BY ei.custom_set_id
+            HAVING COUNT(DISTINCT ei.item_slot_id) >= :min_equipped_slot_count
+        ),
+        recent_sets AS (
+            SELECT
+                rc.uuid,
+                rc.level,
+                rc.last_modified,
+                rc.class_name,
+                rc.strength_points,
+                rc.intelligence_points,
+                rc.chance_points,
+                rc.agility_points
+            FROM recent_candidates rc
+            JOIN complete_sets complete
+                ON complete.custom_set_id = rc.uuid
+            ORDER BY rc.last_modified DESC NULLS LAST
             LIMIT :sample_limit
         ),
         item_stat_totals AS (
@@ -236,9 +266,11 @@ def recent_build_rows(
         query,
         {
             "sample_limit": sample_limit,
+            "candidate_limit": candidate_limit,
             "locale": locale,
             "class_name": class_name,
             "target_stats": list(TARGET_STATS),
+            "min_equipped_slot_count": MIN_EQUIPPED_SLOT_COUNT,
         },
     )
     return [dict(row) for row in result]
@@ -272,15 +304,16 @@ def generated_query_candidate(
     range_value: int,
 ) -> dict[str, Any]:
     unsupported_reasons = []
-    if class_name != SUPPORTED_CLASS_NAME:
-        unsupported_reasons.append("Build Discovery v1 currently supports Iop only.")
+    range_target = range_value if range_value >= 0 else None
+    if class_name not in SUPPORTED_CLASS_NAMES:
+        unsupported_reasons.append(f"Unsupported class: {class_name}.")
     if element not in SUPPORTED_ELEMENTS:
         unsupported_reasons.append(f"Unsupported element: {element}.")
     if ap < 1 or ap > 12:
         unsupported_reasons.append("AP target is outside Build Discovery hard bounds.")
     if mp < 0 or mp > 6:
         unsupported_reasons.append("MP target is outside Build Discovery hard bounds.")
-    if range_value < 0 or range_value > 6:
+    if range_value > 6:
         unsupported_reasons.append("Range target is outside Build Discovery hard bounds.")
 
     candidate = {
@@ -295,7 +328,7 @@ def generated_query_candidate(
             "elements": [element],
             "apTarget": ap,
             "mpTarget": mp,
-            "rangeTarget": range_value,
+            "rangeTarget": range_target,
         }
     return candidate
 
@@ -380,6 +413,7 @@ def discover_prod_benchmarks(
             "Range buckets use equipped item max stats, recorded exos, and exact active set bonuses.",
             "Report output is aggregate-only and intentionally omits custom set IDs, names, and owner identifiers.",
             "generatedQueryCandidate marks whether the aggregate profile can be compared with the current v1 generator.",
+            f"Only builds with at least {MIN_EQUIPPED_SLOT_COUNT} distinct equipped slots are sampled.",
         ],
         "limits": {
             "sampleLimit": sample_limit,

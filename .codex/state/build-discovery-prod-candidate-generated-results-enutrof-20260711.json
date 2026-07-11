@@ -1,0 +1,398 @@
+{
+  "reportVersion": "build-discovery-prod-candidate-generated-results-v1",
+  "sourceReportVersion": "build-discovery-prod-benchmark-discovery-v1",
+  "candidateLimit": 4,
+  "profileCount": 4,
+  "generatedCount": 3,
+  "skippedCount": 1,
+  "generatedCandidates": [
+    {
+      "id": "enutrof_chance_12_6_6",
+      "className": "Enutrof",
+      "element": "chance",
+      "ap": 12,
+      "mp": 6,
+      "range": 6,
+      "sampleCount": 8,
+      "commonItems": [
+        {
+          "name": "Ochre Dofus",
+          "sampleCount": 7
+        },
+        {
+          "name": "Major Shackler",
+          "sampleCount": 7
+        },
+        {
+          "name": "Vulbis Dofus",
+          "sampleCount": 7
+        },
+        {
+          "name": "Ice Dofus",
+          "sampleCount": 6
+        },
+        {
+          "name": "Ice Knight's Frozen Gauntlet",
+          "sampleCount": 6
+        },
+        {
+          "name": "Ice Knight's Frigid Pavise",
+          "sampleCount": 6
+        }
+      ],
+      "status": "generated",
+      "query": {
+        "className": "Enutrof",
+        "level": 200,
+        "mode": "pvm",
+        "elements": [
+          "chance"
+        ],
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "resultCount": 1,
+      "bestGeneratedScore": 2246.99,
+      "bestGeneratedTotals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 6,
+        "Chance": 688,
+        "Power": 205,
+        "Vitality": 1552,
+        "Damage": 26,
+        "Water Damage": 68,
+        "Critical": 14,
+        "Critical Damage": 30
+      },
+      "bestGeneratedSets": {
+        "Ice Knight Set": 3
+      },
+      "bestGeneratedExos": {
+        "AP": {
+          "itemId": "32231",
+          "slot": "ring_2"
+        },
+        "MP": {
+          "itemId": "32232",
+          "slot": "weapon"
+        },
+        "Range": {
+          "itemId": "2469",
+          "slot": "ring_1"
+        }
+      },
+      "bestGeneratedItems": [
+        "Boy's Own Chain",
+        "Khardboard Moowolf Belt",
+        "Lethaline's Boots",
+        "Pirate Bhey Sail",
+        "Cawwot Dofus",
+        "Sprynt",
+        "Friction",
+        "Jackanapes",
+        "Maniac",
+        "Minor Friction",
+        "Thierry Voodoo Mask",
+        "Azure and Emerald Seemyool",
+        "Gelano",
+        "Ice Knight's Frozen Gauntlet",
+        "Ice Knight's Frigid Pavise",
+        "Ice Knight's Frozen Blade"
+      ],
+      "responseStatus": "complete",
+      "solverStatus": "FEASIBLE",
+      "timings": {
+        "loadMs": 1763.2,
+        "totalSearchMs": 2452.0
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 4,
+        "genericDamageWeight": 0.6,
+        "survivabilityWeight": 0.7,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 6
+      },
+      "warnings": [],
+      "cache": {},
+      "diagnostics": {}
+    },
+    {
+      "id": "enutrof_chance_12_6_5",
+      "className": "Enutrof",
+      "element": "chance",
+      "ap": 12,
+      "mp": 6,
+      "range": 5,
+      "sampleCount": 8,
+      "commonItems": [
+        {
+          "name": "Crimson Dofus",
+          "sampleCount": 8
+        },
+        {
+          "name": "Spryritual",
+          "sampleCount": 8
+        },
+        {
+          "name": "Ice Knight's Frozen Gauntlet",
+          "sampleCount": 7
+        },
+        {
+          "name": "Ice Knight's Frigid Pavise",
+          "sampleCount": 7
+        },
+        {
+          "name": "Major Shackler",
+          "sampleCount": 7
+        },
+        {
+          "name": "Ice Knight's Frozen Blade",
+          "sampleCount": 6
+        }
+      ],
+      "status": "generated",
+      "query": {
+        "className": "Enutrof",
+        "level": 200,
+        "mode": "pvm",
+        "elements": [
+          "chance"
+        ],
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 5
+      },
+      "resultCount": 1,
+      "bestGeneratedScore": 2664.36,
+      "bestGeneratedTotals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 5,
+        "Chance": 1048,
+        "Power": 0,
+        "Vitality": 1653,
+        "Damage": 0,
+        "Water Damage": 86,
+        "Critical": 21,
+        "Critical Damage": 0
+      },
+      "bestGeneratedSets": {
+        "Hel Munster Set": 2
+      },
+      "bestGeneratedExos": {
+        "AP": {
+          "itemId": "27266",
+          "slot": "belt"
+        },
+        "MP": {
+          "itemId": "13646",
+          "slot": "amulet"
+        },
+        "Range": {
+          "itemId": "27555",
+          "slot": "ring_1"
+        }
+      },
+      "bestGeneratedItems": [
+        "Hel Munster's Amulet",
+        "Khardboard Moowolf Belt",
+        "Odourless Boots",
+        "Cape Tivate",
+        "Ochre Dofus",
+        "Vulbis Dofus",
+        "Pryssure-O-Mat",
+        "Major Gymnast",
+        "Major Maniac",
+        "Major Player",
+        "Hel Munster's Helmet",
+        "Golden and Indigo Rhineetle",
+        "Gloves of the Great",
+        "Guten Tak's Ring",
+        "Shelld",
+        "Daguanos"
+      ],
+      "responseStatus": "complete",
+      "solverStatus": "FEASIBLE",
+      "timings": {
+        "loadMs": 15.9,
+        "totalSearchMs": 2641.4
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 4,
+        "genericDamageWeight": 0.6,
+        "survivabilityWeight": 0.7,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 6
+      },
+      "warnings": [],
+      "cache": {},
+      "diagnostics": {}
+    },
+    {
+      "id": "enutrof_chance_12_5_6",
+      "className": "Enutrof",
+      "element": "chance",
+      "ap": 12,
+      "mp": 5,
+      "range": 6,
+      "sampleCount": 3,
+      "commonItems": [
+        {
+          "name": "Ochre Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Ice Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Crimson Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Bearbaric Wedding Ring",
+          "sampleCount": 2
+        },
+        {
+          "name": "Ivory Dofus",
+          "sampleCount": 2
+        },
+        {
+          "name": "Abyssal Dofus",
+          "sampleCount": 2
+        }
+      ],
+      "status": "generated",
+      "query": {
+        "className": "Enutrof",
+        "level": 200,
+        "mode": "pvm",
+        "elements": [
+          "chance"
+        ],
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 6
+      },
+      "resultCount": 1,
+      "bestGeneratedScore": 2479.06,
+      "bestGeneratedTotals": {
+        "AP": 12,
+        "MP": 5,
+        "Range": 6,
+        "Chance": 658,
+        "Power": 290,
+        "Vitality": 3373,
+        "Damage": 5,
+        "Water Damage": 43,
+        "Critical": 34,
+        "Critical Damage": 85
+      },
+      "bestGeneratedSets": {
+        "Doctor Gobotnegg Set": 2,
+        "Lethaline Sigisbul Set": 2,
+        "Treadfast Set": 2
+      },
+      "bestGeneratedExos": {
+        "AP": {
+          "itemId": "13127",
+          "slot": "cloak"
+        },
+        "MP": {
+          "itemId": "32231",
+          "slot": "ring_2"
+        },
+        "Range": {
+          "itemId": "11574",
+          "slot": "hat"
+        }
+      },
+      "bestGeneratedItems": [
+        "Treadfast Amulet",
+        "Treadfast Belt",
+        "Lethaline's Boots",
+        "Lethaline's Cloak",
+        "Aiwuztheya Dofus",
+        "Ochre Dofus",
+        "Sylvan Dofus",
+        "Prynyang",
+        "Arcanist",
+        "Jackanapes",
+        "Obsidemon Helmet",
+        "Golden Rhineetle",
+        "Doctor Gobotnegg Golden Ring",
+        "Ice Knight's Frozen Gauntlet",
+        "Fallanster's Rectitude",
+        "Doctor Gobotnegg Flail"
+      ],
+      "responseStatus": "complete",
+      "solverStatus": "FEASIBLE",
+      "timings": {
+        "loadMs": 18.1,
+        "totalSearchMs": 3503.5
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 4,
+        "genericDamageWeight": 0.6,
+        "survivabilityWeight": 0.7,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 6
+      },
+      "warnings": [],
+      "cache": {},
+      "diagnostics": {}
+    }
+  ],
+  "skippedCandidates": [
+    {
+      "id": "enutrof_chance_12_6_7",
+      "className": "Enutrof",
+      "element": "chance",
+      "ap": 12,
+      "mp": 6,
+      "range": 7,
+      "sampleCount": 3,
+      "commonItems": [
+        {
+          "name": "Luminescent Cloak",
+          "sampleCount": 2
+        },
+        {
+          "name": "Ice Knight's Frozen Gauntlet",
+          "sampleCount": 2
+        },
+        {
+          "name": "Luminescent Belt",
+          "sampleCount": 2
+        },
+        {
+          "name": "Ice Knight's Frozen Blade",
+          "sampleCount": 2
+        },
+        {
+          "name": "Ice Knight's Frigid Pavise",
+          "sampleCount": 2
+        },
+        {
+          "name": "Spryritual",
+          "sampleCount": 2
+        }
+      ],
+      "status": "unsupported",
+      "unsupportedReasons": [
+        "Range target is outside Build Discovery hard bounds."
+      ]
+    }
+  ]
+}

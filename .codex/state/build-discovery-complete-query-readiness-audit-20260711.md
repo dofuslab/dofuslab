@@ -6,7 +6,7 @@ Purpose: audit the current branch against the active goal before claiming the pr
 
 Status: **not complete yet, but close for path/constraint coverage**.
 
-The current branch has strong sampled evidence that CP-SAT can generate mechanically valid builds across class, element, budget, level, AP/MP, and Range boundaries. It should not be marked complete yet because the active goal says that if we think we are done, we should use prod builds as benchmarks. That prod-backed benchmark step has not been run for the all-class/level-diversity CP-SAT path.
+The current branch has strong sampled evidence that CP-SAT can generate mechanically valid builds across class, element, budget, level, AP/MP, and Range boundaries. A first prod-backed benchmark discovery checkpoint has now run against representative complete level-200 class slices. It supports the current query envelope for common positive-range prod shapes, and negative-range prod shapes are now mapped to omitted/soft Range queries instead of unsupported hard Range targets.
 
 ## Requirement Audit
 
@@ -136,11 +136,22 @@ Requirement: if we think we are done, use prod to find builds people are using a
 Evidence:
 - Existing prod benchmark discovery scripts/artifacts exist, but no new all-class/level-diversity CP-SAT prod benchmark comparison has been run after the class-aware pivot.
 
-Status: **not satisfied yet**.
+Status: **partially satisfied**.
 
-Next action:
-- Run a bounded prod benchmark discovery/comparison step for recent complete level-200 builds, grouped by class/element/AP/MP/Range where possible.
-- Keep it aggregate/read-only and avoid exposing user-identifying details.
+Evidence:
+- `.codex/state/build-discovery-prod-benchmark-discovery-representative-20260711.md` summarizes six bounded class-specific complete-build slices.
+- JSON artifacts exist for Iop, Cra, Enutrof, Sacrier, Feca, and Xelor.
+- Queries were aggregate-only, class-specific, `sampleLimit=40`, `topItems=6`, `statementTimeoutMs=5000`, and filtered to at least 16 distinct equipped slots.
+- Common supported prod shapes include Cra Intelligence `12/6/6`, Cra Strength `12/6/6`, Enutrof Chance `12/6/6`, Enutrof Chance `12/6/5`, Feca Chance `12/6/5`, Feca Strength `12/6/6`, and Feca Chance `12/6/6`.
+
+Follow-up evidence:
+- `.codex/state/build-discovery-prod-candidate-generated-results-representative-20260711.md` records CP-SAT generation against supported candidates from the six representative prod slices.
+- 11 supported prod-shaped candidates generated one feasible build each.
+- The only skipped profile was Enutrof Chance `12/6/7`, which is outside the current hard Range cap.
+- Max observed `totalSearchMs` in this checkpoint was 3587.0ms.
+
+Residual risk:
+- This proves sampled query feasibility, not build quality. Several generated builds have low vitality or odd item packages, so non-Iop scoring/optimization should not be treated as accepted.
 
 ## Current Conclusion
 

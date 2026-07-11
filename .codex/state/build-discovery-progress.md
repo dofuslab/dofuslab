@@ -7046,3 +7046,27 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - assumptions list is current and reviewable
 - Remaining completion gate: run bounded prod benchmark discovery/comparison for
   the new class-aware CP-SAT path before claiming pre-optimization complete.
+
+### 2026-07-11 Representative Prod Benchmark Checkpoint
+
+- Updated prod benchmark discovery for the all-class CP-SAT path:
+  - supports all known class names instead of Iop-only candidate mapping
+  - samples only recent complete level-200 custom sets with at least 16 distinct equipped slots
+  - limits expensive prod work to class-specific bounded slices after broad all-class aggregate attempts timed out under the 5s statement timeout
+  - maps negative prod Range to `rangeTarget=None` so omitted Range means "any Range is OK"
+- Generated representative complete-build prod slices for Iop, Cra, Enutrof, Sacrier, Feca, and Xelor.
+- Added `.codex/state/build-discovery-prod-benchmark-discovery-representative-20260711.md`.
+- Extended prod candidate generation tooling with:
+  - nullable `rangeTarget` support
+  - optional CP-SAT solver mode
+  - compact generated totals, items, sets, exos, scoring, and timings
+- Ran CP-SAT against 11 supported prod-shaped candidates:
+  - all 11 returned feasible builds
+  - max observed `totalSearchMs` was 3587.0ms
+  - Enutrof Chance `12/6/7` was skipped because explicit hard Range still caps at 6
+- Added `.codex/state/build-discovery-prod-candidate-generated-results-representative-20260711.md`.
+- Verification passed:
+  - `python -m unittest scripts.test_build_discovery_prod_benchmark_discovery scripts.test_build_discovery_cpsat_experiment scripts.test_build_discovery_prototype`
+  - `python -m unittest discover -s server/scripts -p "test_build_discovery_prod_candidate_generated_results.py"`
+  - `git diff --check`
+- Status: this substantially strengthens complete-query feasibility evidence, but does not prove build quality. Several non-Iop generated builds still look odd or low-vitality and should be treated as pre-optimization review candidates.

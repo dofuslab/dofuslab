@@ -1,0 +1,240 @@
+{
+  "reportVersion": "build-discovery-prod-candidate-generated-results-v1",
+  "sourceReportVersion": "build-discovery-prod-benchmark-discovery-v1",
+  "candidateLimit": 4,
+  "profileCount": 2,
+  "generatedCount": 2,
+  "skippedCount": 0,
+  "generatedCandidates": [
+    {
+      "id": "sacrier_agility_12_5_-2",
+      "className": "Sacrier",
+      "element": "agility",
+      "ap": 12,
+      "mp": 5,
+      "range": -2,
+      "sampleCount": 10,
+      "commonItems": [
+        {
+          "name": "Bubotron Mask",
+          "sampleCount": 10
+        },
+        {
+          "name": "Wings of Chaos",
+          "sampleCount": 10
+        },
+        {
+          "name": "Bubotron Amulet",
+          "sampleCount": 10
+        },
+        {
+          "name": "Nomarow's Ring",
+          "sampleCount": 10
+        },
+        {
+          "name": "Nomenclatu Ring",
+          "sampleCount": 10
+        },
+        {
+          "name": "Menobelt",
+          "sampleCount": 10
+        }
+      ],
+      "status": "generated",
+      "query": {
+        "className": "Sacrier",
+        "level": 200,
+        "mode": "pvm",
+        "elements": [
+          "agility"
+        ],
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": null
+      },
+      "resultCount": 1,
+      "bestGeneratedScore": 1955.99,
+      "bestGeneratedTotals": {
+        "AP": 12,
+        "MP": 5,
+        "Range": 3,
+        "Agility": 668,
+        "Power": 55,
+        "Vitality": 1082,
+        "Damage": 33,
+        "Air Damage": 45,
+        "Critical": 5,
+        "Critical Damage": -37
+      },
+      "bestGeneratedSets": {
+        "Nevark Set": 2,
+        "Minotot Set": 2
+      },
+      "bestGeneratedExos": {
+        "AP": {
+          "itemId": "31770",
+          "slot": "ring_2"
+        },
+        "MP": {
+          "itemId": "8275",
+          "slot": "weapon"
+        }
+      },
+      "bestGeneratedItems": [
+        "Nevark's Amulet",
+        "Khardboard Moowolf Belt",
+        "Minotot Sandals",
+        "Nevark's Cape",
+        "Ochre Dofus",
+        "Major Goliath",
+        "Major Maniac",
+        "Major Player",
+        "Major Tease",
+        "Maniac",
+        "Thierry Voodoo Mask",
+        "Crimson and Indigo Rhineetle",
+        "Gelano",
+        "Voyager Glove",
+        "Madura Pupil",
+        "Minotot Sceptre"
+      ],
+      "responseStatus": "complete",
+      "solverStatus": "FEASIBLE",
+      "timings": {
+        "loadMs": 1828.0,
+        "totalSearchMs": 3144.4
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 4,
+        "genericDamageWeight": 0.6,
+        "survivabilityWeight": 0.7,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 0.5,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 7
+      },
+      "warnings": [],
+      "cache": {},
+      "diagnostics": {}
+    },
+    {
+      "id": "sacrier_agility_12_5_2",
+      "className": "Sacrier",
+      "element": "agility",
+      "ap": 12,
+      "mp": 5,
+      "range": 2,
+      "sampleCount": 3,
+      "commonItems": [
+        {
+          "name": "Crimson Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Allister's Crown",
+          "sampleCount": 2
+        },
+        {
+          "name": "Wings of Chaos",
+          "sampleCount": 2
+        },
+        {
+          "name": "Bubotron Amulet",
+          "sampleCount": 2
+        },
+        {
+          "name": "Allister's Ring",
+          "sampleCount": 2
+        },
+        {
+          "name": "Nomenclatu Ring",
+          "sampleCount": 2
+        }
+      ],
+      "status": "generated",
+      "query": {
+        "className": "Sacrier",
+        "level": 200,
+        "mode": "pvm",
+        "elements": [
+          "agility"
+        ],
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 2
+      },
+      "resultCount": 1,
+      "bestGeneratedScore": 2322.58,
+      "bestGeneratedTotals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 6,
+        "Agility": 758,
+        "Power": 290,
+        "Vitality": 2923,
+        "Damage": 0,
+        "Air Damage": 55,
+        "Critical": 1,
+        "Critical Damage": 0
+      },
+      "bestGeneratedSets": {
+        "Salvatory Spirit Set": 2,
+        "Khardboard Set": 3,
+        "Whale Set": 2
+      },
+      "bestGeneratedExos": {
+        "AP": {
+          "itemId": "19248",
+          "slot": "boots"
+        },
+        "MP": {
+          "itemId": "19249",
+          "slot": "hat"
+        },
+        "Range": {
+          "itemId": "15696",
+          "slot": "cloak"
+        }
+      },
+      "bestGeneratedItems": [
+        "Khardboard Celestial Brooch",
+        "Khardboard Moowolf Belt",
+        "Boots of the Salvatory Spirit",
+        "Whailtail",
+        "Aiwuztheya Dofus",
+        "Emerald Dofus",
+        "Sylvan Dofus",
+        "Prygenerate",
+        "Jackanapes",
+        "Major Player",
+        "Mask of the Salvatory Spirit",
+        "Kobrapid",
+        "Khardboard Gelano",
+        "Grithril Ring",
+        "Cubist Shield",
+        "Macetacean"
+      ],
+      "responseStatus": "complete",
+      "solverStatus": "FEASIBLE",
+      "timings": {
+        "loadMs": 18.8,
+        "totalSearchMs": 3587.0
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 4,
+        "genericDamageWeight": 0.6,
+        "survivabilityWeight": 0.7,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 0.5,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 7
+      },
+      "warnings": [],
+      "cache": {},
+      "diagnostics": {}
+    }
+  ],
+  "skippedCandidates": []
+}

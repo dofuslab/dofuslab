@@ -541,6 +541,16 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - The current committed local query fixture proves importable result shape for Iop element profiles, but it intentionally records fresh p95 threshold failures where observed.
 - Prod benchmark discovery must remain bounded, aggregate-first, and read-only.
 - Prod benchmark discovery should not expose custom set names, owner IDs, or singleton-identifying build details.
+- Complete prod build sampling currently means at least 16 distinct equipped
+  slots. This is a data-cleanliness proxy, not proof that the build is a
+  high-quality human benchmark.
+- Negative prod Range should map to an omitted `rangeTarget` benchmark query,
+  because "any Range is OK" can include negative Range while explicit hard
+  Range targets remain bounded to `0..6`.
+- CP-SAT generation against representative prod-shaped candidates is query
+  feasibility evidence, not optimization evidence. Feasible builds with odd
+  packages or low vitality should keep the milestone pre-optimization until
+  class/element scoring is reviewed.
 
 ## Instrumentation Assumptions
 

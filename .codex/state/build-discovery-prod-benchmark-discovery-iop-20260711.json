@@ -1,0 +1,81 @@
+{
+  "reportVersion": "build-discovery-prod-benchmark-discovery-v1",
+  "source": "prod_readonly_recent_custom_set_sample",
+  "assumptions": [
+    "custom_set has no explicit popularity metric in the local model, so sampleCount means frequency within the bounded recent level-200 sample.",
+    "dominant element is inferred from base/scrolled points plus equipped item primary stats.",
+    "AP/MP buckets add base character AP/MP to equipped item max stats, recorded exos, and exact active set bonuses.",
+    "Range buckets use equipped item max stats, recorded exos, and exact active set bonuses.",
+    "Report output is aggregate-only and intentionally omits custom set IDs, names, and owner identifiers.",
+    "generatedQueryCandidate marks whether the aggregate profile can be compared with the current v1 generator.",
+    "Only builds with at least 16 distinct equipped slots are sampled."
+  ],
+  "limits": {
+    "sampleLimit": 40,
+    "topItems": 6,
+    "minProfileSampleCount": 3,
+    "statementTimeoutMs": 5000,
+    "locale": "en",
+    "className": "Iop"
+  },
+  "sample": {
+    "rowCount": 40
+  },
+  "classDistribution": [
+    {
+      "className": "Iop",
+      "sampleCount": 40
+    }
+  ],
+  "profiles": [
+    {
+      "className": "Iop",
+      "element": "agility",
+      "ap": 12,
+      "mp": 5,
+      "range": 6,
+      "sampleCount": 3,
+      "generatedQueryCandidate": {
+        "supported": true,
+        "unsupportedReasons": [],
+        "query": {
+          "className": "Iop",
+          "level": 200,
+          "mode": "pvm",
+          "elements": [
+            "agility"
+          ],
+          "apTarget": 12,
+          "mpTarget": 5,
+          "rangeTarget": 6
+        }
+      },
+      "commonItems": [
+        {
+          "name": "Jammy Jack Collar",
+          "sampleCount": 3
+        },
+        {
+          "name": "Jammy Jack Glove",
+          "sampleCount": 3
+        },
+        {
+          "name": "Psychopump Glove",
+          "sampleCount": 3
+        },
+        {
+          "name": "Psychopump Needle",
+          "sampleCount": 3
+        },
+        {
+          "name": "Psychopump Button",
+          "sampleCount": 3
+        },
+        {
+          "name": "Ivory Dofus",
+          "sampleCount": 3
+        }
+      ]
+    }
+  ]
+}

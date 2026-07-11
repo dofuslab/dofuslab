@@ -1,0 +1,354 @@
+{
+  "reportVersion": "build-discovery-prod-candidate-generated-results-v1",
+  "sourceReportVersion": "build-discovery-prod-benchmark-discovery-v1",
+  "candidateLimit": 4,
+  "profileCount": 3,
+  "generatedCount": 3,
+  "skippedCount": 0,
+  "generatedCandidates": [
+    {
+      "id": "feca_chance_12_6_5",
+      "className": "Feca",
+      "element": "chance",
+      "ap": 12,
+      "mp": 6,
+      "range": 5,
+      "sampleCount": 4,
+      "commonItems": [
+        {
+          "name": "Crimson Dofus",
+          "sampleCount": 4
+        },
+        {
+          "name": "Ice Dofus",
+          "sampleCount": 4
+        },
+        {
+          "name": "Turquoise Dofus",
+          "sampleCount": 4
+        },
+        {
+          "name": "Ochre Dofus",
+          "sampleCount": 4
+        },
+        {
+          "name": "Vulbis Dofus",
+          "sampleCount": 4
+        },
+        {
+          "name": "Snailmate",
+          "sampleCount": 3
+        }
+      ],
+      "status": "generated",
+      "query": {
+        "className": "Feca",
+        "level": 200,
+        "mode": "pvm",
+        "elements": [
+          "chance"
+        ],
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 5
+      },
+      "resultCount": 1,
+      "bestGeneratedScore": 2683.41,
+      "bestGeneratedTotals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 5,
+        "Chance": 1048,
+        "Power": 0,
+        "Vitality": 1653,
+        "Damage": 0,
+        "Water Damage": 86,
+        "Critical": 21,
+        "Critical Damage": 0
+      },
+      "bestGeneratedSets": {
+        "Hel Munster Set": 2
+      },
+      "bestGeneratedExos": {
+        "AP": {
+          "itemId": "27266",
+          "slot": "belt"
+        },
+        "MP": {
+          "itemId": "13646",
+          "slot": "amulet"
+        },
+        "Range": {
+          "itemId": "27555",
+          "slot": "ring_1"
+        }
+      },
+      "bestGeneratedItems": [
+        "Hel Munster's Amulet",
+        "Khardboard Moowolf Belt",
+        "Odourless Boots",
+        "Cape Tivate",
+        "Ochre Dofus",
+        "Vulbis Dofus",
+        "Pryssure-O-Mat",
+        "Major Gymnast",
+        "Major Maniac",
+        "Major Player",
+        "Hel Munster's Helmet",
+        "Golden and Indigo Rhineetle",
+        "Gloves of the Great",
+        "Guten Tak's Ring",
+        "Shelld",
+        "Daguanos"
+      ],
+      "responseStatus": "complete",
+      "solverStatus": "FEASIBLE",
+      "timings": {
+        "loadMs": 1904.7,
+        "totalSearchMs": 2628.3
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 4,
+        "genericDamageWeight": 0.6,
+        "survivabilityWeight": 0.7,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 9
+      },
+      "warnings": [],
+      "cache": {},
+      "diagnostics": {}
+    },
+    {
+      "id": "feca_strength_12_6_6",
+      "className": "Feca",
+      "element": "strength",
+      "ap": 12,
+      "mp": 6,
+      "range": 6,
+      "sampleCount": 3,
+      "commonItems": [
+        {
+          "name": "Turquoise Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Crimson Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Ochre Dofus",
+          "sampleCount": 2
+        },
+        {
+          "name": "Sylvan Dofus",
+          "sampleCount": 2
+        },
+        {
+          "name": "Vulbis Dofus",
+          "sampleCount": 2
+        },
+        {
+          "name": "Black-Spotted Dofus",
+          "sampleCount": 2
+        }
+      ],
+      "status": "generated",
+      "query": {
+        "className": "Feca",
+        "level": 200,
+        "mode": "pvm",
+        "elements": [
+          "strength"
+        ],
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "resultCount": 1,
+      "bestGeneratedScore": 1564.21,
+      "bestGeneratedTotals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 6,
+        "Strength": 728,
+        "Power": 285,
+        "Vitality": 1552,
+        "Damage": 26,
+        "Earth Damage": 30,
+        "Critical": -11,
+        "Critical Damage": 0,
+        "Neutral Damage": 30
+      },
+      "bestGeneratedSets": {
+        "Psychopump Set": 2,
+        "Salvatory Spirit Set": 2
+      },
+      "bestGeneratedExos": {
+        "AP": {
+          "itemId": "19248",
+          "slot": "boots"
+        },
+        "MP": {
+          "itemId": "11606",
+          "slot": "cloak"
+        }
+      },
+      "bestGeneratedItems": [
+        "Khardboard Celestial Brooch",
+        "Belt of the Salvatory Spirit",
+        "Boots of the Salvatory Spirit",
+        "Cape Tivate",
+        "Ochre Dofus",
+        "Sprynt",
+        "Jackanapes",
+        "Major Goliath",
+        "Major Tease",
+        "Shaker",
+        "Thierry Voodoo Mask",
+        "Drhellbert",
+        "Tash Ring",
+        "Gelano",
+        "Psychopump Button",
+        "Psychopump Needle"
+      ],
+      "responseStatus": "complete",
+      "solverStatus": "FEASIBLE",
+      "timings": {
+        "loadMs": 280.8,
+        "totalSearchMs": 2737.5
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 4,
+        "genericDamageWeight": 0.6,
+        "survivabilityWeight": 0.7,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 2.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 9
+      },
+      "warnings": [],
+      "cache": {},
+      "diagnostics": {}
+    },
+    {
+      "id": "feca_chance_12_6_6",
+      "className": "Feca",
+      "element": "chance",
+      "ap": 12,
+      "mp": 6,
+      "range": 6,
+      "sampleCount": 3,
+      "commonItems": [
+        {
+          "name": "Ochre Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Vulbis Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Crimson Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Erotegg Ring",
+          "sampleCount": 2
+        },
+        {
+          "name": "Erotegg Bow",
+          "sampleCount": 2
+        },
+        {
+          "name": "Erotegg Disc",
+          "sampleCount": 2
+        }
+      ],
+      "status": "generated",
+      "query": {
+        "className": "Feca",
+        "level": 200,
+        "mode": "pvm",
+        "elements": [
+          "chance"
+        ],
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "resultCount": 1,
+      "bestGeneratedScore": 2263.32,
+      "bestGeneratedTotals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 6,
+        "Chance": 688,
+        "Power": 205,
+        "Vitality": 1552,
+        "Damage": 26,
+        "Water Damage": 68,
+        "Critical": 14,
+        "Critical Damage": 30
+      },
+      "bestGeneratedSets": {
+        "Ice Knight Set": 3
+      },
+      "bestGeneratedExos": {
+        "AP": {
+          "itemId": "32231",
+          "slot": "ring_2"
+        },
+        "MP": {
+          "itemId": "32232",
+          "slot": "weapon"
+        },
+        "Range": {
+          "itemId": "2469",
+          "slot": "ring_1"
+        }
+      },
+      "bestGeneratedItems": [
+        "Boy's Own Chain",
+        "Khardboard Moowolf Belt",
+        "Lethaline's Boots",
+        "Pirate Bhey Sail",
+        "Cawwot Dofus",
+        "Sprynt",
+        "Friction",
+        "Jackanapes",
+        "Maniac",
+        "Minor Friction",
+        "Thierry Voodoo Mask",
+        "Azure and Emerald Seemyool",
+        "Gelano",
+        "Ice Knight's Frozen Gauntlet",
+        "Ice Knight's Frigid Pavise",
+        "Ice Knight's Frozen Blade"
+      ],
+      "responseStatus": "complete",
+      "solverStatus": "FEASIBLE",
+      "timings": {
+        "loadMs": 18.9,
+        "totalSearchMs": 2605.3
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 4,
+        "genericDamageWeight": 0.6,
+        "survivabilityWeight": 0.7,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 9
+      },
+      "warnings": [],
+      "cache": {},
+      "diagnostics": {}
+    }
+  ],
+  "skippedCandidates": []
+}

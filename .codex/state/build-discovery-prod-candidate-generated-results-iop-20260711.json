@@ -1,0 +1,127 @@
+{
+  "reportVersion": "build-discovery-prod-candidate-generated-results-v1",
+  "sourceReportVersion": "build-discovery-prod-benchmark-discovery-v1",
+  "candidateLimit": 4,
+  "profileCount": 1,
+  "generatedCount": 1,
+  "skippedCount": 0,
+  "generatedCandidates": [
+    {
+      "id": "iop_agility_12_5_6",
+      "className": "Iop",
+      "element": "agility",
+      "ap": 12,
+      "mp": 5,
+      "range": 6,
+      "sampleCount": 3,
+      "commonItems": [
+        {
+          "name": "Jammy Jack Collar",
+          "sampleCount": 3
+        },
+        {
+          "name": "Jammy Jack Glove",
+          "sampleCount": 3
+        },
+        {
+          "name": "Psychopump Glove",
+          "sampleCount": 3
+        },
+        {
+          "name": "Psychopump Needle",
+          "sampleCount": 3
+        },
+        {
+          "name": "Psychopump Button",
+          "sampleCount": 3
+        },
+        {
+          "name": "Ivory Dofus",
+          "sampleCount": 3
+        }
+      ],
+      "status": "generated",
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "mode": "pvm",
+        "elements": [
+          "agility"
+        ],
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 6
+      },
+      "resultCount": 1,
+      "bestGeneratedScore": 1969.39,
+      "bestGeneratedTotals": {
+        "AP": 12,
+        "MP": 5,
+        "Range": 6,
+        "Agility": 658,
+        "Power": 185,
+        "Vitality": 1853,
+        "Damage": 0,
+        "Air Damage": 26,
+        "Critical": 16,
+        "Critical Damage": 12
+      },
+      "bestGeneratedSets": {
+        "Orfan Set": 2,
+        "Lunar Set": 2
+      },
+      "bestGeneratedExos": {
+        "AP": {
+          "itemId": "15062",
+          "slot": "hat"
+        },
+        "MP": {
+          "itemId": "15063",
+          "slot": "belt"
+        },
+        "Range": {
+          "itemId": "21228",
+          "slot": "ring_2"
+        }
+      },
+      "bestGeneratedItems": [
+        "Khardboard Celestial Brooch",
+        "Orfan Belt",
+        "Lunar Boots",
+        "Cape Tivate",
+        "Cawwot Dofus",
+        "Ochre Dofus",
+        "Jackanapes",
+        "Major Maniac",
+        "Maniac",
+        "Shaker",
+        "Orfan Headgear",
+        "Drhellbert",
+        "Gelano",
+        "Lunar Ring",
+        "Anerice Shield",
+        "Berylbell's Tonfas"
+      ],
+      "responseStatus": "complete",
+      "solverStatus": "FEASIBLE",
+      "timings": {
+        "loadMs": 1809.8,
+        "totalSearchMs": 3445.9
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 4,
+        "genericDamageWeight": 0.6,
+        "survivabilityWeight": 0.7,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 0.5,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 7
+      },
+      "warnings": [],
+      "cache": {},
+      "diagnostics": {}
+    }
+  ],
+  "skippedCandidates": []
+}

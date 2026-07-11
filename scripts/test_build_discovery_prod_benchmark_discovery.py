@@ -10,6 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "server"))
 
 from oneoff.build_discovery_prod_benchmark_discovery import (
     MAX_SAMPLE_LIMIT,
+    MIN_EQUIPPED_SLOT_COUNT,
     MIN_PROFILE_SAMPLE_COUNT,
     REPORT_VERSION,
     bucket_key,
@@ -159,13 +160,25 @@ class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
         self.assertEqual(summary["classDistribution"], [{"className": "Iop", "sampleCount": 1}])
         self.assertEqual(summary["profiles"], [])
 
+    def test_generated_query_candidate_supports_known_non_iop_classes(self):
+        candidate = generated_query_candidate("Cra", "intelligence", 11, 6, 6)
+
+        self.assertTrue(candidate["supported"])
+        self.assertEqual(candidate["query"]["className"], "Cra")
+        self.assertEqual(candidate["query"]["elements"], ["intelligence"])
+
     def test_generated_query_candidate_marks_unsupported_prod_profiles(self):
         candidate = generated_query_candidate("Cra", "intelligence", 11, 6, 7)
 
         self.assertFalse(candidate["supported"])
         self.assertNotIn("query", candidate)
-        self.assertIn("supports Iop only", " ".join(candidate["unsupportedReasons"]))
         self.assertIn("Range target", " ".join(candidate["unsupportedReasons"]))
+
+    def test_generated_query_candidate_maps_negative_range_to_any_range(self):
+        candidate = generated_query_candidate("Sacrier", "agility", 12, 5, -2)
+
+        self.assertTrue(candidate["supported"])
+        self.assertIsNone(candidate["query"]["rangeTarget"])
 
     def test_discover_prod_benchmarks_uses_readonly_connection_and_limits(self):
         connection = Mock()
@@ -223,7 +236,7 @@ class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
         connection.begin.assert_called_once_with()
         transaction_context.__enter__.assert_called_once_with()
         transaction_context.__exit__.assert_called_once()
-        recent_rows.assert_called_once_with(connection, sample_limit=25, locale="en")
+        recent_rows.assert_called_once_with(connection, sample_limit=25, locale="en", class_name="Iop")
         engine.dispose.assert_called_once_with()
         self.assertEqual(report["reportVersion"], REPORT_VERSION)
         self.assertEqual(report["limits"]["sampleLimit"], 25)
@@ -263,13 +276,15 @@ class BuildDiscoveryProdBenchmarkDiscoveryTest(unittest.TestCase):
 
         with patch("oneoff.build_discovery_prod_benchmark_discovery.create_engine", Mock()):
             with patch("oneoff.build_discovery_prod_benchmark_discovery.text", side_effect=lambda value: value):
-                rows = recent_build_rows(connection, sample_limit=25, locale="en")
+                rows = recent_build_rows(connection, sample_limit=25, locale="en", class_name=None)
 
         query, params = connection.execute.call_args.args
         self.assertIn("LIMIT :sample_limit", query)
         self.assertNotIn("cs.name", query)
         self.assertEqual(params["sample_limit"], 25)
         self.assertEqual(params["locale"], "en")
+        self.assertIsNone(params["class_name"])
+        self.assertEqual(params["min_equipped_slot_count"], MIN_EQUIPPED_SLOT_COUNT)
         self.assertEqual(rows[0]["custom_set_id"], "set-1")
 
 

@@ -107,6 +107,22 @@ class BuildDiscoveryProdCandidateGeneratedResultsTest(unittest.TestCase):
         self.assertEqual(result["skippedCandidates"][0]["status"], "malformed")
         self.assertIn("apTarget", result["skippedCandidates"][0]["missingQueryFields"])
 
+    def test_build_prod_candidate_generated_results_allows_any_range_candidate(self):
+        report = discovery_report()
+        report["profiles"][0]["generatedQueryCandidate"]["query"]["rangeTarget"] = None
+        seen_queries = []
+
+        result = build_prod_candidate_generated_results(
+            report,
+            candidate_limit=5,
+            generator=lambda query: seen_queries.append(query) or {"build": {"score": 42}},
+        )
+
+        self.assertEqual(result["generatedCount"], 1)
+        self.assertIsNone(seen_queries[0].range_target)
+        self.assertEqual(result["generatedCandidates"][0]["resultCount"], 1)
+        self.assertEqual(result["generatedCandidates"][0]["bestGeneratedScore"], 42)
+
     def test_build_prod_candidate_generated_results_rejects_unbounded_limit(self):
         with self.assertRaises(ValueError):
             build_prod_candidate_generated_results(discovery_report(), candidate_limit=0)

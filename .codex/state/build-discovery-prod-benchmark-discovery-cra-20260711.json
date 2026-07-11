@@ -1,0 +1,130 @@
+{
+  "reportVersion": "build-discovery-prod-benchmark-discovery-v1",
+  "source": "prod_readonly_recent_custom_set_sample",
+  "assumptions": [
+    "custom_set has no explicit popularity metric in the local model, so sampleCount means frequency within the bounded recent level-200 sample.",
+    "dominant element is inferred from base/scrolled points plus equipped item primary stats.",
+    "AP/MP buckets add base character AP/MP to equipped item max stats, recorded exos, and exact active set bonuses.",
+    "Range buckets use equipped item max stats, recorded exos, and exact active set bonuses.",
+    "Report output is aggregate-only and intentionally omits custom set IDs, names, and owner identifiers.",
+    "generatedQueryCandidate marks whether the aggregate profile can be compared with the current v1 generator.",
+    "Only builds with at least 16 distinct equipped slots are sampled."
+  ],
+  "limits": {
+    "sampleLimit": 40,
+    "topItems": 6,
+    "minProfileSampleCount": 3,
+    "statementTimeoutMs": 5000,
+    "locale": "en",
+    "className": "Cra"
+  },
+  "sample": {
+    "rowCount": 40
+  },
+  "classDistribution": [
+    {
+      "className": "Cra",
+      "sampleCount": 40
+    }
+  ],
+  "profiles": [
+    {
+      "className": "Cra",
+      "element": "intelligence",
+      "ap": 12,
+      "mp": 6,
+      "range": 6,
+      "sampleCount": 9,
+      "generatedQueryCandidate": {
+        "supported": true,
+        "unsupportedReasons": [],
+        "query": {
+          "className": "Cra",
+          "level": 200,
+          "mode": "pvm",
+          "elements": [
+            "intelligence"
+          ],
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6
+        }
+      },
+      "commonItems": [
+        {
+          "name": "Ice Dofus",
+          "sampleCount": 9
+        },
+        {
+          "name": "Turquoise Dofus",
+          "sampleCount": 9
+        },
+        {
+          "name": "Ochre Dofus",
+          "sampleCount": 8
+        },
+        {
+          "name": "Cloudy Dofus",
+          "sampleCount": 8
+        },
+        {
+          "name": "Snailmate",
+          "sampleCount": 8
+        },
+        {
+          "name": "Nomarow's Ring",
+          "sampleCount": 7
+        }
+      ]
+    },
+    {
+      "className": "Cra",
+      "element": "strength",
+      "ap": 12,
+      "mp": 6,
+      "range": 6,
+      "sampleCount": 3,
+      "generatedQueryCandidate": {
+        "supported": true,
+        "unsupportedReasons": [],
+        "query": {
+          "className": "Cra",
+          "level": 200,
+          "mode": "pvm",
+          "elements": [
+            "strength"
+          ],
+          "apTarget": 12,
+          "mpTarget": 6,
+          "rangeTarget": 6
+        }
+      },
+      "commonItems": [
+        {
+          "name": "Ochre Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Vulbis Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Turquoise Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Ice Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Cloudy Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Snailmate",
+          "sampleCount": 3
+        }
+      ]
+    }
+  ]
+}

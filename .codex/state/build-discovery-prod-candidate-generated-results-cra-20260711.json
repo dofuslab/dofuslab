@@ -1,0 +1,240 @@
+{
+  "reportVersion": "build-discovery-prod-candidate-generated-results-v1",
+  "sourceReportVersion": "build-discovery-prod-benchmark-discovery-v1",
+  "candidateLimit": 4,
+  "profileCount": 2,
+  "generatedCount": 2,
+  "skippedCount": 0,
+  "generatedCandidates": [
+    {
+      "id": "cra_intelligence_12_6_6",
+      "className": "Cra",
+      "element": "intelligence",
+      "ap": 12,
+      "mp": 6,
+      "range": 6,
+      "sampleCount": 9,
+      "commonItems": [
+        {
+          "name": "Ice Dofus",
+          "sampleCount": 9
+        },
+        {
+          "name": "Turquoise Dofus",
+          "sampleCount": 9
+        },
+        {
+          "name": "Ochre Dofus",
+          "sampleCount": 8
+        },
+        {
+          "name": "Cloudy Dofus",
+          "sampleCount": 8
+        },
+        {
+          "name": "Snailmate",
+          "sampleCount": 8
+        },
+        {
+          "name": "Nomarow's Ring",
+          "sampleCount": 7
+        }
+      ],
+      "status": "generated",
+      "query": {
+        "className": "Cra",
+        "level": 200,
+        "mode": "pvm",
+        "elements": [
+          "intelligence"
+        ],
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "resultCount": 1,
+      "bestGeneratedScore": 1744.1,
+      "bestGeneratedTotals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 6,
+        "Intelligence": 568,
+        "Power": 100,
+        "Vitality": 1703,
+        "Damage": 0,
+        "Fire Damage": 12,
+        "Critical": 17,
+        "Critical Damage": 0
+      },
+      "bestGeneratedSets": {
+        "Doctor Gobotnegg Set": 2,
+        "Sharp Eye Set": 2
+      },
+      "bestGeneratedExos": {
+        "AP": {
+          "itemId": "18022",
+          "slot": "boots"
+        },
+        "MP": {
+          "itemId": "11607",
+          "slot": "amulet"
+        }
+      },
+      "bestGeneratedItems": [
+        "Boy's Own Chain",
+        "Khardboard Moowolf Belt",
+        "Meno Boots",
+        "Cape of the Sharp Eye",
+        "Ochre Dofus",
+        "Sprynt",
+        "Major Goliath",
+        "Major Maniac",
+        "Major Player",
+        "Shaker",
+        "Hood of the Sharp Eye",
+        "Krolimea",
+        "Gelano",
+        "Doctor Gobotnegg Golden Ring",
+        "Shelld",
+        "Doctor Gobotnegg Flail"
+      ],
+      "responseStatus": "complete",
+      "solverStatus": "FEASIBLE",
+      "timings": {
+        "loadMs": 1772.3,
+        "totalSearchMs": 2550.5
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 4,
+        "genericDamageWeight": 0.6,
+        "survivabilityWeight": 0.7,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 8
+      },
+      "warnings": [],
+      "cache": {},
+      "diagnostics": {}
+    },
+    {
+      "id": "cra_strength_12_6_6",
+      "className": "Cra",
+      "element": "strength",
+      "ap": 12,
+      "mp": 6,
+      "range": 6,
+      "sampleCount": 3,
+      "commonItems": [
+        {
+          "name": "Ochre Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Vulbis Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Turquoise Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Ice Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Cloudy Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Snailmate",
+          "sampleCount": 3
+        }
+      ],
+      "status": "generated",
+      "query": {
+        "className": "Cra",
+        "level": 200,
+        "mode": "pvm",
+        "elements": [
+          "strength"
+        ],
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 6
+      },
+      "resultCount": 1,
+      "bestGeneratedScore": 1413.02,
+      "bestGeneratedTotals": {
+        "AP": 12,
+        "MP": 6,
+        "Range": 6,
+        "Strength": 638,
+        "Power": 215,
+        "Vitality": 1252,
+        "Damage": 21,
+        "Earth Damage": 30,
+        "Critical": 12,
+        "Critical Damage": 0,
+        "Neutral Damage": 0
+      },
+      "bestGeneratedSets": {
+        "Psychopump Set": 2,
+        "Celestial Bearbarian Set": 2
+      },
+      "bestGeneratedExos": {
+        "AP": {
+          "itemId": "11722",
+          "slot": "boots"
+        },
+        "MP": {
+          "itemId": "11721",
+          "slot": "belt"
+        },
+        "Range": {
+          "itemId": "2469",
+          "slot": "ring_1"
+        }
+      },
+      "bestGeneratedItems": [
+        "Khardboard Celestial Brooch",
+        "Celestial Bearbarian Belt",
+        "Celestial Bearbarian Boots",
+        "Cape Tivate",
+        "Ochre Dofus",
+        "Sprynt",
+        "Jackanapes",
+        "Major Brainbox",
+        "Major Maniac",
+        "Shaker",
+        "Thierry Voodoo Mask",
+        "Amber and Golden Seemyool",
+        "Gelano",
+        "Honoh Ring",
+        "Psychopump Button",
+        "Psychopump Needle"
+      ],
+      "responseStatus": "complete",
+      "solverStatus": "FEASIBLE",
+      "timings": {
+        "loadMs": 270.8,
+        "totalSearchMs": 2693.0
+      },
+      "scoring": {
+        "damageSurvivabilityPreset": 4,
+        "genericDamageWeight": 0.6,
+        "survivabilityWeight": 0.7,
+        "negativeResistancePenaltyWeight": 0.0,
+        "rangeSoftWeight": 8.0,
+        "rotationModel": "spell_profile_v0_weighted_candidates",
+        "profileConfidence": "medium",
+        "spellCandidateCount": 8
+      },
+      "warnings": [],
+      "cache": {},
+      "diagnostics": {}
+    }
+  ],
+  "skippedCandidates": []
+}

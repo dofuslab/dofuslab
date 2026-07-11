@@ -6,6 +6,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any, Callable
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -35,11 +36,13 @@ def load_json(path: str | Path) -> dict[str, Any]:
 
 
 def missing_query_fields(candidate_query: dict[str, Any]) -> list[str]:
-    return [
-        field
-        for field in REQUIRED_QUERY_FIELDS
-        if field not in candidate_query or candidate_query[field] in (None, [])
-    ]
+    missing = []
+    for field in REQUIRED_QUERY_FIELDS:
+        if field not in candidate_query:
+            missing.append(field)
+        elif field != "rangeTarget" and candidate_query[field] in (None, []):
+            missing.append(field)
+    return missing
 
 
 def build_query(candidate_query: dict[str, Any]) -> BuildDiscoveryQuery:
@@ -55,6 +58,61 @@ def build_query(candidate_query: dict[str, Any]) -> BuildDiscoveryQuery:
         exo_policy=candidate_query.get("exoPolicy", "opti"),
         limit=candidate_query.get("limit", 5),
     )
+
+
+def cpsat_args(args: argparse.Namespace) -> SimpleNamespace:
+    return SimpleNamespace(
+        time_limit_seconds=args.cpsat_time_limit_seconds,
+        workers=args.cpsat_workers,
+        max_attempts=1,
+        candidate_limit=1,
+        summary_limit=1,
+        output_build_limit=1,
+        collection_mode="callback",
+        stop_after_candidates=True,
+        objective_mode="final-linear",
+        max_shared_items=None,
+        generic_damage_weight=0.45,
+    )
+
+
+def cpsat_generator(args: argparse.Namespace) -> Callable[[BuildDiscoveryQuery], dict[str, Any]]:
+    from oneoff.build_discovery_cpsat_experiment import solve_query
+
+    def generate(query: BuildDiscoveryQuery) -> dict[str, Any]:
+        return solve_query(query, cpsat_args(args))
+
+    return generate
+
+
+def response_result_count(response: dict[str, Any]) -> int:
+    if isinstance(response.get("builds"), list):
+        return len(response["builds"])
+    return 1 if response.get("build") else 0
+
+
+def response_best_score(response: dict[str, Any]) -> float | None:
+    build = response_best_build(response)
+    if build:
+        return build.get("score")
+    return None
+
+
+def response_best_build(response: dict[str, Any]) -> dict[str, Any] | None:
+    if response.get("builds"):
+        return response["builds"][0]
+    if response.get("build"):
+        return response["build"]
+    return None
+
+
+def compact_items(build: dict[str, Any] | None) -> list[str]:
+    if not build:
+        return []
+    return [
+        item.get("name") or item.get("id") or slot
+        for slot, item in sorted((build.get("items") or {}).items())
+    ]
 
 
 def profile_id(profile: dict[str, Any]) -> str:
@@ -129,17 +187,23 @@ def build_prod_candidate_generated_results(
         query = build_query(candidate_query)
         query.validate()
         response = generator(query)
+        best_build = response_best_build(response)
         generated_results.append(
             {
                 **summary,
                 "status": "generated",
                 "query": candidate_query,
-                "resultCount": len(response.get("builds", [])),
-                "bestGeneratedScore": (
-                    response.get("builds", [{}])[0].get("score")
-                    if response.get("builds")
-                    else None
-                ),
+                "resultCount": response_result_count(response),
+                "bestGeneratedScore": response_best_score(response),
+                "bestGeneratedTotals": (best_build or {}).get("totals", {}),
+                "bestGeneratedSets": (best_build or {}).get("sets", {}),
+                "bestGeneratedExos": (best_build or {}).get("exos", {}),
+                "bestGeneratedItems": compact_items(best_build),
+                "responseStatus": response.get("status"),
+                "solverStatus": response.get("solverStatus"),
+                "timings": response.get("timings", {}),
+                "scoring": response.get("scoring", {}),
+                "warnings": response.get("warnings", []),
                 "cache": response.get("cache", {}),
                 "diagnostics": response.get("diagnostics", {}),
             }
@@ -161,13 +225,24 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("discovery_report", help="Path to a prod benchmark discovery JSON report.")
     parser.add_argument("--candidate-limit", type=int, default=DEFAULT_CANDIDATE_LIMIT)
+    parser.add_argument("--solver", choices=("prototype", "cpsat"), default="prototype")
+    parser.add_argument("--cpsat-time-limit-seconds", type=float, default=5.0)
+    parser.add_argument("--cpsat-workers", type=int, default=8)
     parser.add_argument("--output", help="Write generated candidate results JSON to this path.")
     args = parser.parse_args()
 
     try:
+        generator = build_discovery_response
+        if args.solver == "cpsat":
+            if args.cpsat_time_limit_seconds <= 0:
+                parser.error("--cpsat-time-limit-seconds must be positive.")
+            if args.cpsat_workers < 1:
+                parser.error("--cpsat-workers must be positive.")
+            generator = cpsat_generator(args)
         report = build_prod_candidate_generated_results(
             load_json(args.discovery_report),
             candidate_limit=args.candidate_limit,
+            generator=generator,
         )
     except ValueError as error:
         parser.error(str(error))

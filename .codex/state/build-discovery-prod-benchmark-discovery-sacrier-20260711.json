@@ -1,0 +1,130 @@
+{
+  "reportVersion": "build-discovery-prod-benchmark-discovery-v1",
+  "source": "prod_readonly_recent_custom_set_sample",
+  "assumptions": [
+    "custom_set has no explicit popularity metric in the local model, so sampleCount means frequency within the bounded recent level-200 sample.",
+    "dominant element is inferred from base/scrolled points plus equipped item primary stats.",
+    "AP/MP buckets add base character AP/MP to equipped item max stats, recorded exos, and exact active set bonuses.",
+    "Range buckets use equipped item max stats, recorded exos, and exact active set bonuses.",
+    "Report output is aggregate-only and intentionally omits custom set IDs, names, and owner identifiers.",
+    "generatedQueryCandidate marks whether the aggregate profile can be compared with the current v1 generator.",
+    "Only builds with at least 16 distinct equipped slots are sampled."
+  ],
+  "limits": {
+    "sampleLimit": 40,
+    "topItems": 6,
+    "minProfileSampleCount": 3,
+    "statementTimeoutMs": 5000,
+    "locale": "en",
+    "className": "Sacrier"
+  },
+  "sample": {
+    "rowCount": 40
+  },
+  "classDistribution": [
+    {
+      "className": "Sacrier",
+      "sampleCount": 40
+    }
+  ],
+  "profiles": [
+    {
+      "className": "Sacrier",
+      "element": "agility",
+      "ap": 12,
+      "mp": 5,
+      "range": -2,
+      "sampleCount": 10,
+      "generatedQueryCandidate": {
+        "supported": true,
+        "unsupportedReasons": [],
+        "query": {
+          "className": "Sacrier",
+          "level": 200,
+          "mode": "pvm",
+          "elements": [
+            "agility"
+          ],
+          "apTarget": 12,
+          "mpTarget": 5,
+          "rangeTarget": null
+        }
+      },
+      "commonItems": [
+        {
+          "name": "Bubotron Mask",
+          "sampleCount": 10
+        },
+        {
+          "name": "Wings of Chaos",
+          "sampleCount": 10
+        },
+        {
+          "name": "Bubotron Amulet",
+          "sampleCount": 10
+        },
+        {
+          "name": "Nomarow's Ring",
+          "sampleCount": 10
+        },
+        {
+          "name": "Nomenclatu Ring",
+          "sampleCount": 10
+        },
+        {
+          "name": "Menobelt",
+          "sampleCount": 10
+        }
+      ]
+    },
+    {
+      "className": "Sacrier",
+      "element": "agility",
+      "ap": 12,
+      "mp": 5,
+      "range": 2,
+      "sampleCount": 3,
+      "generatedQueryCandidate": {
+        "supported": true,
+        "unsupportedReasons": [],
+        "query": {
+          "className": "Sacrier",
+          "level": 200,
+          "mode": "pvm",
+          "elements": [
+            "agility"
+          ],
+          "apTarget": 12,
+          "mpTarget": 5,
+          "rangeTarget": 2
+        }
+      },
+      "commonItems": [
+        {
+          "name": "Crimson Dofus",
+          "sampleCount": 3
+        },
+        {
+          "name": "Allister's Crown",
+          "sampleCount": 2
+        },
+        {
+          "name": "Wings of Chaos",
+          "sampleCount": 2
+        },
+        {
+          "name": "Bubotron Amulet",
+          "sampleCount": 2
+        },
+        {
+          "name": "Allister's Ring",
+          "sampleCount": 2
+        },
+        {
+          "name": "Nomenclatu Ring",
+          "sampleCount": 2
+        }
+      ]
+    }
+  ]
+}
