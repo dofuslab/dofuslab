@@ -1,0 +1,622 @@
+﻿{
+  "reportVersion": "build-discovery-prod-level-target-discovery-v1",
+  "source": "prod_readonly_recent_custom_set_level_target_sample",
+  "assumptions": [
+    "AP includes level baseline AP, equipped item AP, exos, and exact active set bonus AP.",
+    "MP includes base 3 MP, equipped item MP, exos, and exact active set bonus MP.",
+    "Range includes equipped item Range, exos, and exact active set bonus Range.",
+    "Rows are recent custom_set records, not popularity-weighted usage.",
+    "Report output is aggregate-only and intentionally omits custom set IDs, names, and owners."
+  ],
+  "limits": {
+    "sampleLimit": 50,
+    "topTargets": 8,
+    "locale": "en",
+    "className": "Iop",
+    "minLevel": 101,
+    "maxLevel": 180,
+    "bucketSize": 20,
+    "statementTimeoutMs": 5000
+  },
+  "rowCount": 50,
+  "bucketTargets": [
+    {
+      "bucket": "101-120",
+      "representativeLevel": 120,
+      "sampleCount": 12,
+      "topTargets": [
+        {
+          "ap": 7,
+          "mp": 3,
+          "range": 0,
+          "sampleCount": 3
+        },
+        {
+          "ap": 11,
+          "mp": 5,
+          "range": 0,
+          "sampleCount": 2
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 2
+        },
+        {
+          "ap": 11,
+          "mp": 4,
+          "range": 1,
+          "sampleCount": 2
+        },
+        {
+          "ap": 11,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        },
+        {
+          "ap": 11,
+          "mp": 6,
+          "range": 1,
+          "sampleCount": 1
+        },
+        {
+          "ap": 9,
+          "mp": 5,
+          "range": 3,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "bucket": "121-140",
+      "representativeLevel": 130,
+      "sampleCount": 3,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        },
+        {
+          "ap": 11,
+          "mp": 4,
+          "range": 2,
+          "sampleCount": 1
+        },
+        {
+          "ap": 10,
+          "mp": 4,
+          "range": 1,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "bucket": "141-160",
+      "representativeLevel": 160,
+      "sampleCount": 25,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 2,
+          "sampleCount": 4
+        },
+        {
+          "ap": 10,
+          "mp": 4,
+          "range": 0,
+          "sampleCount": 2
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 3,
+          "sampleCount": 2
+        },
+        {
+          "ap": 12,
+          "mp": 4,
+          "range": 2,
+          "sampleCount": 2
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 2
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": -1,
+          "sampleCount": 2
+        },
+        {
+          "ap": 7,
+          "mp": 3,
+          "range": 0,
+          "sampleCount": 2
+        },
+        {
+          "ap": 9,
+          "mp": 4,
+          "range": 2,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "bucket": "161-180",
+      "representativeLevel": 165,
+      "sampleCount": 10,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 2
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 4,
+          "sampleCount": 1
+        },
+        {
+          "ap": 10,
+          "mp": 5,
+          "range": 4,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 5,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 0,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 3,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 6,
+          "range": 2,
+          "sampleCount": 1
+        },
+        {
+          "ap": 10,
+          "mp": 4,
+          "range": 5,
+          "sampleCount": 1
+        }
+      ]
+    }
+  ],
+  "exactLevelTargets": [
+    {
+      "level": 103,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 11,
+          "mp": 5,
+          "range": 0,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 108,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 110,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 9,
+          "mp": 5,
+          "range": 3,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 112,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 11,
+          "mp": 4,
+          "range": 1,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 114,
+      "sampleCount": 2,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 11,
+          "mp": 6,
+          "range": 1,
+          "sampleCount": 1
+        },
+        {
+          "ap": 11,
+          "mp": 5,
+          "range": 0,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 115,
+      "sampleCount": 2,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 7,
+          "mp": 3,
+          "range": 0,
+          "sampleCount": 2
+        }
+      ]
+    },
+    {
+      "level": 120,
+      "sampleCount": 4,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 11,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        },
+        {
+          "ap": 11,
+          "mp": 4,
+          "range": 1,
+          "sampleCount": 1
+        },
+        {
+          "ap": 7,
+          "mp": 3,
+          "range": 0,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 130,
+      "sampleCount": 2,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        },
+        {
+          "ap": 10,
+          "mp": 4,
+          "range": 1,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 140,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 11,
+          "mp": 4,
+          "range": 2,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 143,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 11,
+          "mp": 4,
+          "range": 1,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 150,
+      "sampleCount": 8,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 4,
+          "range": 2,
+          "sampleCount": 2
+        },
+        {
+          "ap": 9,
+          "mp": 4,
+          "range": 2,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 2,
+          "sampleCount": 1
+        },
+        {
+          "ap": 11,
+          "mp": 5,
+          "range": 2,
+          "sampleCount": 1
+        },
+        {
+          "ap": 11,
+          "mp": 5,
+          "range": 3,
+          "sampleCount": 1
+        },
+        {
+          "ap": 7,
+          "mp": 3,
+          "range": 0,
+          "sampleCount": 1
+        },
+        {
+          "ap": 7,
+          "mp": 4,
+          "range": 2,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 152,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 10,
+          "mp": 4,
+          "range": 0,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 155,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 156,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 2,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 160,
+      "sampleCount": 13,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 3,
+          "sampleCount": 2
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 2,
+          "sampleCount": 2
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": -1,
+          "sampleCount": 2
+        },
+        {
+          "ap": 10,
+          "mp": 4,
+          "range": 0,
+          "sampleCount": 1
+        },
+        {
+          "ap": 11,
+          "mp": 6,
+          "range": -2,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 6,
+          "range": 3,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        },
+        {
+          "ap": 7,
+          "mp": 3,
+          "range": 0,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 162,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 10,
+          "mp": 4,
+          "range": 5,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 165,
+      "sampleCount": 2,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 4,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 167,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 0,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 168,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 6,
+          "range": 2,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 170,
+      "sampleCount": 2,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 10,
+          "mp": 5,
+          "range": 4,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 5,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 177,
+      "sampleCount": 1,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 11,
+          "mp": 5,
+          "range": 3,
+          "sampleCount": 1
+        }
+      ]
+    },
+    {
+      "level": 180,
+      "sampleCount": 2,
+      "baseAP": 7,
+      "topTargets": [
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 3,
+          "sampleCount": 1
+        },
+        {
+          "ap": 12,
+          "mp": 5,
+          "range": 1,
+          "sampleCount": 1
+        }
+      ]
+    }
+  ]
+}

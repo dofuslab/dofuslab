@@ -3312,6 +3312,31 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Verification passed:
   - `$env:PYTHONPATH='server'; python server\scripts\test_build_discovery_availability_tiers.py`
 
+### 2026-07-10 Prod Iop Level Target Samples
+
+- Used the Windows User `DOFUSLAB_READONLY_DATABASE_URL` with the repo `venv`
+  to run bounded readonly prod aggregate target discovery.
+- A larger `sampleLimit=500` query hit the configured 5s statement timeout and
+  was canceled; follow-up samples used `sampleLimit=50` without raising the
+  timeout.
+- Added aggregate-only artifacts:
+  - `.codex/state/build-discovery-prod-level-target-discovery-iop-1-100.json`
+  - `.codex/state/build-discovery-prod-level-target-discovery-iop-101-180.json`
+  - `.codex/state/build-discovery-prod-level-target-discovery-iop.json`
+  - `.codex/state/build-discovery-prod-level-target-discovery-iop.md`
+- Safety scan found only the helper's own safety text mentioning omitted names,
+  owners, and custom set IDs; the artifacts do not include raw custom set IDs,
+  owner IDs, custom set names, or item lists.
+- Planning signal:
+  - levels 1-100 sample includes real targets around 7/3/1 at 50, 9/5/0 at
+    80, and 10/4/1 at 100
+  - levels 101-180 sample includes 11/5/0 and 12/5/1 around 120, 12/5/2
+    around 160, and 12/6/2 around 165
+  - recent all-level sample is heavily level-200 skewed, with 48/50 rows in
+    bucket 181-200
+- These are target-selection priors only; they do not prove generated build
+  quality.
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range
