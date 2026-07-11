@@ -159,6 +159,10 @@ review before accepting Milestone 2 evidence.
   the aggregate `SET_BONUS` condition count. The 8-row set-skip smoke reduced
   exact set-count variables to `876` per row and skipped `60-62` variables per
   row.
+- CP-SAT reuses an item's existing slot variable as its presence literal when
+  the item can only occupy one modeled slot. On the 8-row presence smoke this
+  reused `215` presence literals per row and created only `2` extra presence
+  variables for multi-slot items such as rings.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.

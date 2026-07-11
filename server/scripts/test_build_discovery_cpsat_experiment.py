@@ -274,6 +274,28 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertGreaterEqual(model_stats["skippedSetCountVarCount"], 2)
         self.assertGreater(model_stats["exactSetCountVarCount"], model_stats["skippedSetCountVarCount"])
 
+    def test_model_reuses_single_slot_presence_vars(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        items = [
+            *base_fixture_items(),
+            item("conditioned_hat", "Hat", conditions={"stat": "VITALITY", "operator": ">", "value": 1}),
+            item("conditioned_ring", "Ring", conditions={"stat": "VITALITY", "operator": ">", "value": 1}),
+        ]
+        _model, _slot_item_vars, _exo_vars, model_stats = build_model(
+            items,
+            fixture_sets(),
+            BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
+            exo_policy="none",
+        )
+
+        self.assertGreaterEqual(model_stats["reusedPresenceVarCount"], 1)
+        self.assertGreaterEqual(model_stats["createdPresenceVarCount"], 1)
+
     def test_experiment_exposes_callback_candidate_collection(self):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")
 

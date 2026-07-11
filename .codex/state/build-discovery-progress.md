@@ -4274,3 +4274,54 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python -m py_compile oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-setskip-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`
+
+### 2026-07-11 Reuse Single-Slot Presence Literals
+
+- Reused an item's existing slot variable as its presence literal when the item
+  has exactly one modeled slot term.
+- Kept the previous explicit `present_<item>` BoolVar/equality fallback for
+  multi-slot items, currently mostly duplicated ring candidates.
+- Added model diagnostics:
+  - `createdPresenceVarCount`
+  - `reusedPresenceVarCount`
+- Added a synthetic fixture test that exercises both paths:
+  - a conditioned hat reuses its slot var
+  - a conditioned ring still creates a separate presence var because it can
+    appear in `ring_1` or `ring_2`
+- Generated and validated an 8-row Docker CP-SAT presence smoke:
+  - `.codex/state/build-discovery-cpsat-presence-smoke-matrix.json`
+  - `.codex/state/build-discovery-cpsat-presence-smoke-matrix.md`
+  - `.codex/state/build-discovery-cpsat-presence-smoke-split/`
+- Slice:
+  - elements: strength, chance
+  - budget tiers: 1, 4
+  - AP: 7
+  - MP: 3
+  - Range: none, 6
+  - callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `8`
+  - generated: `8`
+  - invalid: `0`
+  - solver statuses: `3` optimal, `5` feasible
+- Model-size impact:
+  - created presence vars: `2` per row
+  - reused presence literals: `215` per row
+- Runtime:
+  - elapsed min/avg/max: `5530.7ms / 6859.4ms / 8499.2ms`
+  - load min/avg/max: `152.4ms / 422.1ms / 1774.8ms`
+  - model min/avg/max: `1582.8ms / 1694.7ms / 1867.7ms`
+  - solve min/avg/max: `3586.3ms / 4611.7ms / 5081.4ms`
+- Interpretation:
+  - this removes a large class of unnecessary presence variables/equality
+    constraints for condition enforcement
+  - model build is modestly lower than the prior metadata/set-skip smokes
+  - the p95 target remains unmet; larger reductions likely need ring grouping
+    or threshold set-bonus literals
+- Verification passed:
+  - `python server\scripts\test_build_discovery_cpsat_experiment.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\oneoff\build_discovery_cpsat_experiment.py server\scripts\test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python -m py_compile oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-presence-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`

@@ -378,11 +378,20 @@ def build_model(
     )
 
     presence_var_by_item: dict[str, cp_model.IntVar] = {}
+    created_presence_var_count = 0
+    reused_presence_var_count = 0
 
     def presence_var_for_item(item_id: str) -> cp_model.IntVar:
+        nonlocal created_presence_var_count, reused_presence_var_count
         if item_id not in presence_var_by_item:
-            presence = model.NewBoolVar(f"present_{item_id}")
-            model.Add(sum(item_presence_terms[item_id]) == presence)
+            item_terms = item_presence_terms[item_id]
+            if len(item_terms) == 1:
+                presence = item_terms[0]
+                reused_presence_var_count += 1
+            else:
+                presence = model.NewBoolVar(f"present_{item_id}")
+                model.Add(sum(item_terms) == presence)
+                created_presence_var_count += 1
             presence_var_by_item[item_id] = presence
         return presence_var_by_item[item_id]
 
@@ -503,6 +512,8 @@ def build_model(
         "exoVarCount": len(exo_vars),
         "exactSetCountVarCount": len(exact_set_count_vars),
         "skippedSetCountVarCount": skipped_set_count_var_count,
+        "createdPresenceVarCount": created_presence_var_count,
+        "reusedPresenceVarCount": reused_presence_var_count,
         "conditionConstraintCount": condition_constraint_count,
         "setCountConstraintCount": len({set_id for set_id, _count in exact_set_count_vars}),
     }
