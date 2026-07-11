@@ -5615,3 +5615,49 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap8-11-mp45-ranges35-budgets34-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 3,4 --ap-targets 8,11 --mp-targets 4,5 --range-targets 3,5 --expected-solver cpsat`
   - Host: `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-cpsat-ap8-11-mp45-ranges35-budgets34-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 3,4 --ap-targets 8,11 --mp-targets 4,5 --range-targets 3,5 --expected-solver cpsat`
   - Host: `python -m py_compile server\scripts\summarize_build_discovery_cpsat_coverage.py server\scripts\check_build_discovery_level_diversity_matrix.py`
+
+### 2026-07-11 AP9/AP10 MP3/MP6 Range-None/6 Mid-Budget CP-SAT Smoke
+
+- Selected this slice from the strict coverage inventory, weighted toward
+  under-covered AP `10`, Range `none`, and Range `6`.
+- Generated and validated:
+  - `.codex/state/build-discovery-cpsat-ap9-10-mp36-rangesn6-budgets23-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ap9-10-mp36-rangesn6-budgets23-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ap9-10-mp36-rangesn6-budgets23-split/`
+- Slice:
+  - elements: strength, chance, intelligence, agility
+  - budget tiers: 2, 3
+  - AP: 9, 10
+  - MP: 3, 6
+  - Range: none, 6
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `64`
+  - generated: `64`
+  - invalid: `0`
+  - newly covered targets: `64`
+  - solver statuses: `30` optimal, `34` feasible
+  - AP coverage: `32` rows each for `9` and `10`
+  - MP coverage: `32` rows each for `3` and `6`
+  - range coverage: `32` rows each for `none` and `6`
+  - budget coverage: `32` rows each for tiers `2` and `3`
+- Runtime:
+  - elapsed min/avg/max: `5284.5ms / 6611.4ms / 7487.4ms`
+  - model min/avg/max: `1342.4ms / 1520.4ms / 1748.6ms`
+  - solve min/avg/max: `3544.5ms / 4724.1ms / 5080.5ms`
+- Harness accounting update:
+  - coverage summary Markdown now includes a reviewable assumptions section
+    for target grid, budget-tier semantics, exo semantics, range semantics,
+    coverage-counting rules, duplicate tie-breaks, and exclusions
+  - duplicate paths now use the same relative POSIX format as selected
+    coverage evidence paths
+- Interpretation:
+  - strict CP-SAT Milestone 2 coverage is now `1632 / 3072`
+    (`53.12%`)
+  - duplicate target count remains `96` with `153` surplus split reports
+  - excluded reports remain outside the target set
+  - p95 remains above the Milestone 2 `<5s` target
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ap9-10-mp36-rangesn6-budgets23-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 9,10 --mp-targets 3,6 --range-targets none,6 --expected-solver cpsat`
+  - Host: `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-cpsat-ap9-10-mp36-rangesn6-budgets23-matrix.json --target-set milestone2-level200 --elements strength,chance,intelligence,agility --budget-tiers 2,3 --ap-targets 9,10 --mp-targets 3,6 --range-targets none,6 --expected-solver cpsat`
+  - Host: `python -m py_compile server\scripts\summarize_build_discovery_cpsat_coverage.py server\scripts\check_build_discovery_level_diversity_matrix.py`

@@ -12,7 +12,14 @@ SERVER_ROOT = Path(__file__).resolve().parents[1]
 if str(SERVER_ROOT) not in sys.path:
     sys.path.insert(0, str(SERVER_ROOT))
 
-from build_discovery_level_diversity_targets import MILESTONE2_LEVEL200_TARGETS
+from build_discovery_level_diversity_targets import (
+    MILESTONE2_LEVEL200_AP_TARGETS,
+    MILESTONE2_LEVEL200_BUDGET_TIERS,
+    MILESTONE2_LEVEL200_ELEMENTS,
+    MILESTONE2_LEVEL200_MP_TARGETS,
+    MILESTONE2_LEVEL200_RANGE_TARGETS,
+    MILESTONE2_LEVEL200_TARGETS,
+)
 from check_build_discovery_level_diversity_matrix import validate_full_build_artifact
 
 EXCLUSION_SAMPLE_LIMIT = 10
@@ -20,6 +27,53 @@ EXCLUSION_SAMPLE_LIMIT = 10
 
 def target_id_set() -> set[str]:
     return {target.name for target in MILESTONE2_LEVEL200_TARGETS}
+
+
+def milestone2_assumptions() -> dict[str, Any]:
+    range_targets = ["none" if value is None else value for value in MILESTONE2_LEVEL200_RANGE_TARGETS]
+    return {
+        "targetGrid": {
+            "class": "Iop",
+            "mode": "PvM",
+            "level": 200,
+            "elements": list(MILESTONE2_LEVEL200_ELEMENTS),
+            "budgetTiers": list(MILESTONE2_LEVEL200_BUDGET_TIERS),
+            "apTargets": list(MILESTONE2_LEVEL200_AP_TARGETS),
+            "mpTargets": list(MILESTONE2_LEVEL200_MP_TARGETS),
+            "rangeTargets": range_targets,
+            "targetCountFormula": "4 elements * 4 budget tiers * 6 AP targets * 4 MP targets * 8 range targets",
+        },
+        "budgetTierSemantics": {
+            "1": "baseline items, trophies, mounts",
+            "2": "tier 1 plus accessible Dofus, pets, and petsmounts",
+            "3": "tier 2 plus other Dofus and prysmaradites; generated exos may be used",
+            "4": "tier 3 plus opti-only Dofus and buffed/opti items",
+        },
+        "exoSemantics": {
+            "tier1And2": "effective exo policy is none",
+            "tier3And4": "exo policy is allow",
+            "generationLimit": "at most one missing AP, MP, or Range exo per stat is applied by the current generator",
+            "eligibleItemTypes": [
+                "Hat",
+                "Cloak",
+                "Amulet",
+                "Ring",
+                "Belt",
+                "Boots",
+                "Weapon",
+                "Shield",
+            ],
+        },
+        "rangeSemantics": {
+            "none": "unconstrained lower bound; not equivalent to 0",
+            "numeric": "minimum requested Range, capped at 6",
+        },
+        "coverageSemantics": {
+            "counted": "generated CP-SAT split report, current target id, no budget fallback, strict current-code build validation passes",
+            "duplicates": "presence coverage picks OPTIMAL over FEASIBLE, then lower elapsedMs",
+            "excluded": "outside-target, invalid, non-CP-SAT, non-generated, unreadable, or strict-validation-failed reports do not count",
+        },
+    }
 
 
 def split_reports(root: Path) -> list[Path]:
@@ -123,7 +177,7 @@ def coverage_inventory(root: Path) -> dict[str, Any]:
             "elapsedMs": diagnostics.get("elapsedMs"),
         }
         if target_id in generated:
-            duplicate_paths.setdefault(target_id, [generated[target_id]["path"]]).append(str(path))
+            duplicate_paths.setdefault(target_id, [generated[target_id]["path"]]).append(report_path(root, path))
             generated[target_id] = better_generated_row(generated[target_id], row)
         else:
             generated[target_id] = row
@@ -151,6 +205,7 @@ def coverage_report(root: Path) -> dict[str, Any]:
         "targetCount": total,
         "generatedCpsatTargetCount": len(generated),
         "coveragePercent": round((len(generated) / total) * 100, 2),
+        "assumptions": milestone2_assumptions(),
         "byElement": dict(sorted(counter_for(generated, "element").items())),
         "byBudgetTier": dict(sorted(counter_for(generated, "budgetTier").items())),
         "byAp": dict(sorted(counter_for(generated, "apTarget").items())),
@@ -175,6 +230,12 @@ def coverage_report(root: Path) -> dict[str, Any]:
 
 
 def render_markdown(report: dict[str, Any]) -> str:
+    assumptions = report["assumptions"]
+    target_grid = assumptions["targetGrid"]
+    budget_tiers = assumptions["budgetTierSemantics"]
+    exos = assumptions["exoSemantics"]
+    ranges = assumptions["rangeSemantics"]
+    coverage = assumptions["coverageSemantics"]
     lines = [
         "# Build Discovery CP-SAT Coverage",
         "",
@@ -185,6 +246,24 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"Excluded split reports: `{sum(report['excludedSplitReports'].values())}`",
         f"Duplicate targets: `{report['duplicateTargetCount']}` "
         f"(`{report['duplicateSplitReportSurplus']}` surplus reports)",
+        "",
+        "## Review Assumptions",
+        "",
+        f"- Target grid: `{target_grid['class']}` `{target_grid['mode']}`, level `{target_grid['level']}`, "
+        f"elements `{', '.join(target_grid['elements'])}`, budget tiers `{', '.join(str(v) for v in target_grid['budgetTiers'])}`, "
+        f"AP `{min(target_grid['apTargets'])}-{max(target_grid['apTargets'])}`, "
+        f"MP `{min(target_grid['mpTargets'])}-{max(target_grid['mpTargets'])}`, "
+        f"Range `{', '.join(str(v) for v in target_grid['rangeTargets'])}`.",
+        f"- Target count formula: `{target_grid['targetCountFormula']}`.",
+        f"- Budget tier 1: {budget_tiers['1']}.",
+        f"- Budget tier 2: {budget_tiers['2']}.",
+        f"- Budget tier 3: {budget_tiers['3']}.",
+        f"- Budget tier 4: {budget_tiers['4']}.",
+        f"- Exos: {exos['tier1And2']} for tiers `1/2`; {exos['tier3And4']} for tiers `3/4`; {exos['generationLimit']}.",
+        f"- Range: `none` means {ranges['none']}; numeric range means {ranges['numeric']}.",
+        f"- Coverage counting: {coverage['counted']}.",
+        f"- Duplicate evidence: {coverage['duplicates']}.",
+        f"- Exclusions: {coverage['excluded']}.",
         "",
     ]
     for title, key in (
