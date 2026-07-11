@@ -19,7 +19,7 @@ class BuildDiscoveryCpsatExperimentTest(unittest.TestCase):
         with patch.object(cpsat, "active_range_soft_weight", return_value=0.5):
             self.assertEqual(cpsat.exo_stats_for_target(soft_target, "opti"), ("AP", "MP"))
 
-        with patch.object(cpsat, "active_range_soft_weight", return_value=5.0):
+        with patch.object(cpsat, "active_range_soft_weight", return_value=12.0):
             self.assertEqual(cpsat.exo_stats_for_target(soft_target, "opti"), ("AP", "MP", "Range"))
 
         with patch.object(cpsat, "active_range_soft_weight", return_value=0.5):
@@ -50,6 +50,29 @@ class BuildDiscoveryCpsatExperimentTest(unittest.TestCase):
         self.assertEqual(weights["Range"], 0.5)
         self.assertEqual(weights["AP"], 12.0)
         self.assertEqual(weights["MP"], 10.0)
+
+    def test_final_linear_objective_does_not_double_count_non_strength_primary_stats(self):
+        metadata = cpsat.ModelMetadata(
+            candidates_by_slot={},
+            item_by_id={},
+            group_rings=False,
+            selected_set_ids=set(),
+            max_set_counts={},
+            set_bonus_by_id={},
+            item_objective_stats_by_id={"item": {"Chance": 1, "Power": 1}},
+        )
+
+        configure_damage_profile("chance", "Enutrof")
+        try:
+            weights = cpsat.objective_weights_for_mode(
+                "final-linear",
+                metadata,
+                generic_damage_weight=0.45,
+            )
+        finally:
+            configure_damage_profile("strength", "Iop")
+
+        self.assertAlmostEqual(weights["Chance"], weights["Power"])
 
     def test_active_profile_totals_include_non_strength_damage_stats(self):
         configure_damage_profile("chance", "Enutrof")

@@ -6985,8 +6985,8 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Docker result: `19/19` rows passed with a `5s` per-row time cap.
 - Max observed `totalSearchMs`: `3657.6`.
 - Corrected Range evidence examples:
-  - Strength Cra: historical artifact `rangeSoftWeight=8.0`, `objectiveWeights.Range=8.0`; current vital Range weight is `60.0`
-  - Chance Enutrof hard range: historical artifact `rangeSoftWeight=8.0`, `Range=6`; current vital Range weight is `60.0`
+  - Strength Cra: historical artifact `rangeSoftWeight=8.0`, `objectiveWeights.Range=8.0`; current vital Range weight is `40.0`
+  - Chance Enutrof hard range: historical artifact `rangeSoftWeight=8.0`, `Range=6`; current vital Range weight is `40.0`
   - Intelligence Sacrier: `rangeSoftWeight=0.5`,
     `objectiveWeights.Range=0.5`
   - Agility Xelor validity edge: `rangeSoftWeight=0.5`,
@@ -7088,15 +7088,25 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `304` spell profiles
   - sample outputs: Cra Strength level 200 `vital` Range, Iop Strength level 200 `low` Range, Enutrof Chance level 200 `vital` Range
 - Tuned soft Range weights upward after Enutrof opti smoke exposed `Range=0-1` outputs on vital-range profiles:
-  - marginal Range: `5.0`
-  - useful Range: `14.0`
-  - vital Range: `60.0`
+  - marginal Range: `12.0`
+  - useful Range: `24.0`
+  - vital Range: `40.0`
   - CP-SAT soft-range opti searches now include Range exo variables for
     marginal-or-higher range profiles, instead of only when Range is a hard
     target. This matters for Enutrof-like profiles where the best soft-range
     build may need an exo Range line.
-  - Docker smoke, level 200 Enutrof 12/6/None opti balanced: Strength
-    `Range=6` with `rangeSoftWeight=14.0`; Intelligence/Chance/Agility
-    `Range=6` with `rangeSoftWeight=60.0`; all runs had
-    `objectiveWeights.Range == scoring.rangeSoftWeight`.
+  - Initial Docker smoke at `vital=60.0` moved level 200 Enutrof
+    12/6/None opti balanced builds to `Range=6`, but that made vital Range
+    too spiky versus adjacent tiers. Rebalanced to `marginal=12.0`,
+    `useful=24.0`, `vital=40.0`.
   - low and fallback weights unchanged
+- Fixed final utility damage-stat filtering so `Intelligence`, `Chance`, and
+  `Agility` are treated like `Strength` and excluded from utility scoring.
+  Before this, non-Strength primary stats were counted once as damage and
+  again as utility, making mono-stat trophies look artificially strong versus
+  Power/Dofus alternatives in `final-linear` CP-SAT objectives.
+  - Regression: Chance Enutrof `final-linear` objective now gives matching
+    marginal weights to `Chance` and `Power`.
+  - Docker smoke, level 200 Chance Enutrof 12/6/None opti balanced:
+    top Dofus/Trophy slots became Cloudy, Ebony, Ice, Ochre, Arcanist,
+    Major Luckster; the earlier Tease/Major Tease stack disappeared.

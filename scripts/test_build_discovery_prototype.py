@@ -170,10 +170,10 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
 
         with patch.object(build_discovery_prototype, "normalized_profile_damage_score", return_value=0.0):
             with patch.object(build_discovery_prototype, "survivability_score", return_value=0.0):
-                with patch.object(build_discovery_prototype, "active_range_soft_weight", return_value=60.0):
+                with patch.object(build_discovery_prototype, "active_range_soft_weight", return_value=40.0):
                     self.assertEqual(
                         final_score_state(high_range) - final_score_state(low_range),
-                        4 * 60.0,
+                        4 * 40.0,
                     )
 
     def test_action_stat_witness_seed_runs_for_non_base_action_targets(self):
@@ -937,8 +937,14 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         with_damage = {
             **utility_only,
             "Strength": 500,
+            "Intelligence": 500,
+            "Chance": 500,
+            "Agility": 500,
             "Power": 100,
             "Earth Damage": 80,
+            "Fire Damage": 80,
+            "Water Damage": 80,
+            "Air Damage": 80,
             "Critical": 40,
             "Critical Damage": 100,
             "% Final Damage": 10,
