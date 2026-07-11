@@ -679,27 +679,27 @@ DAMAGE_SURVIVABILITY_PRESETS = {
     1: DamageSurvivabilityPreset(
         generic_damage_weight=0.15,
         survivability_weight=2.5,
-        negative_resistance_penalty_weight=12.0,
+        negative_resistance_penalty_weight=0.0,
     ),
     2: DamageSurvivabilityPreset(
         generic_damage_weight=0.25,
         survivability_weight=1.8,
-        negative_resistance_penalty_weight=8.0,
+        negative_resistance_penalty_weight=0.0,
     ),
     3: DamageSurvivabilityPreset(
         generic_damage_weight=0.35,
         survivability_weight=1.3,
-        negative_resistance_penalty_weight=4.0,
+        negative_resistance_penalty_weight=0.0,
     ),
     4: DamageSurvivabilityPreset(
         generic_damage_weight=GENERIC_DAMAGE_WEIGHT,
         survivability_weight=1.0,
-        negative_resistance_penalty_weight=1.0,
+        negative_resistance_penalty_weight=0.0,
     ),
     5: DamageSurvivabilityPreset(
         generic_damage_weight=0.60,
         survivability_weight=0.7,
-        negative_resistance_penalty_weight=0.25,
+        negative_resistance_penalty_weight=0.0,
     ),
 }
 
