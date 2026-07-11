@@ -6640,3 +6640,28 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   requirement, and may instead expect Range to be evaluated as a useful stat
   tradeoff. Keep explicit hard Range targets, but use prod evidence before
   making hard Range the default interaction model.
+
+### 2026-07-11 Prod Combat Range 20-Row Smoke
+
+- Ran a bounded readonly prod smoke over `20` complete level `200` builds
+  modified since `2025-07-11`.
+- Artifacts:
+  - `.codex/state/build-discovery-prod-combat-range-small-sample-20260711.json`
+  - `.codex/state/build-discovery-prod-combat-range-small-sample-20260711.md`
+- Privacy: custom set IDs, owner IDs, and custom set names are omitted.
+- Caveat: prod does not yet have `generation_request`, so generated rows cannot
+  be excluded by provenance.
+- Summary from the tiny sample:
+  - element classes: `chance=3`, `intelligence=2`, `strength=3`, `multi=8`,
+    `omni=4`
+  - combat range classes: `ranged=13`, `mixed=5`, `melee=2`
+  - Range by combat range: melee avg `1.0`, mixed avg `3.6`, ranged avg `4.85`
+  - weapon families: `Bow=6`, `Wand=5`, `Hammer=4`, `Dagger=3`, `Sword=2`
+- Early caveats for implementation:
+  - no sampled rows had useful explicit tags, so stat/weapon inference did all
+    classification work
+  - many sampled rows had unknown default class, so class/element defaults need
+    class presence diagnostics
+  - the simplistic smoke classifier can let +Range dominate melee weapon
+    signals; the real classifier needs reviewed thresholds before defaults are
+    trusted

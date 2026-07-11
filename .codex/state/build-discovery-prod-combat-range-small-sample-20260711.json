@@ -1,0 +1,808 @@
+{
+  "reportVersion": "build-discovery-prod-combat-range-small-sample-v1",
+  "generatedAt": "2026-07-11",
+  "source": "prod_readonly_recent_complete_level_200_sample",
+  "privacy": "custom_set_ids_owner_ids_and_names_omitted",
+  "provenanceCaveat": "prod has no generation_request table, so generated rows cannot be excluded by provenance",
+  "queryBounds": {
+    "sampleLimit": 20,
+    "recentCandidateLimit": 200,
+    "sinceDate": "2025-07-11",
+    "statementTimeoutMs": 5000
+  },
+  "summary": {
+    "sampleCount": 20,
+    "sinceDate": "2025-07-11",
+    "level": 200,
+    "completeSlotCountRequired": 16,
+    "elementCounts": {
+      "chance": 3,
+      "intelligence": 2,
+      "strength": 3,
+      "omni": 4,
+      "multi": 8
+    },
+    "combatRangeCounts": {
+      "ranged": 13,
+      "mixed": 5,
+      "melee": 2
+    },
+    "rangeByCombatRange": {
+      "melee": {
+        "count": 2,
+        "min": 1,
+        "median": 1,
+        "max": 1,
+        "avg": 1.0
+      },
+      "mixed": {
+        "count": 5,
+        "min": 2,
+        "median": 4,
+        "max": 5,
+        "avg": 3.6
+      },
+      "ranged": {
+        "count": 13,
+        "min": 2,
+        "median": 5,
+        "max": 7,
+        "avg": 4.85
+      }
+    },
+    "rangeByElement": {
+      "chance": {
+        "count": 3,
+        "min": 5,
+        "median": 6,
+        "max": 7,
+        "avg": 6.0
+      },
+      "intelligence": {
+        "count": 2,
+        "min": 1,
+        "median": 4,
+        "max": 4,
+        "avg": 2.5
+      },
+      "multi": {
+        "count": 8,
+        "min": 4,
+        "median": 5,
+        "max": 6,
+        "avg": 5.12
+      },
+      "omni": {
+        "count": 4,
+        "min": 1,
+        "median": 3,
+        "max": 4,
+        "avg": 2.5
+      },
+      "strength": {
+        "count": 3,
+        "min": 2,
+        "median": 3,
+        "max": 4,
+        "avg": 3.0
+      }
+    },
+    "weaponTypeCounts": {
+      "Bow": 6,
+      "Wand": 5,
+      "Hammer": 4,
+      "Dagger": 3,
+      "Sword": 2
+    }
+  },
+  "rows": [
+    {
+      "sampleIndex": 1,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "chance",
+      "elementScores": {
+        "strength": 296,
+        "intelligence": 387,
+        "chance": 1287,
+        "agility": 212
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "range",
+        "melee_weapon"
+      ],
+      "totals": {
+        "AP": 11,
+        "MP": 5,
+        "Range": 6,
+        "Strength": 220,
+        "Intelligence": 320,
+        "Chance": 1130,
+        "Agility": 160,
+        "Power": 80,
+        "Damage": 0,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Dagger"
+    },
+    {
+      "sampleIndex": 2,
+      "level": 200,
+      "className": "Eniripsa",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "intelligence",
+      "elementScores": {
+        "strength": 225,
+        "intelligence": 1189,
+        "chance": 439,
+        "agility": 165
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "range",
+        "ranged_weapon"
+      ],
+      "totals": {
+        "AP": 11,
+        "MP": 6,
+        "Range": 4,
+        "Strength": 140,
+        "Intelligence": 1035,
+        "Chance": 320,
+        "Agility": 100,
+        "Power": 130,
+        "Damage": 0,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Wand"
+    },
+    {
+      "sampleIndex": 3,
+      "level": 200,
+      "className": "Iop",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "strength",
+      "elementScores": {
+        "strength": 1394,
+        "intelligence": 195,
+        "chance": 195,
+        "agility": 422
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "pct_ranged_damage",
+        "range",
+        "ranged_weapon",
+        "ranged_weapon_pct_spell_damage"
+      ],
+      "totals": {
+        "AP": 11,
+        "MP": 6,
+        "Range": 2,
+        "Strength": 1148,
+        "Intelligence": 100,
+        "Chance": 100,
+        "Agility": 280,
+        "Power": 190,
+        "Damage": 0,
+        "% Ranged Damage": 6,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 10
+      },
+      "weaponType": "Wand"
+    },
+    {
+      "sampleIndex": 4,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "omni",
+      "elementScores": {
+        "strength": 964,
+        "intelligence": 669,
+        "chance": 557,
+        "agility": 879
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "pct_ranged_damage",
+        "range",
+        "ranged_weapon",
+        "ranged_weapon_pct_spell_damage"
+      ],
+      "totals": {
+        "AP": 8,
+        "MP": 4,
+        "Range": 3,
+        "Strength": 695,
+        "Intelligence": 550,
+        "Chance": 470,
+        "Agility": 690,
+        "Power": 125,
+        "Damage": 0,
+        "% Ranged Damage": 6,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 6
+      },
+      "weaponType": "Wand"
+    },
+    {
+      "sampleIndex": 5,
+      "level": 200,
+      "className": "Cra",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "strength",
+      "elementScores": {
+        "strength": 1380,
+        "intelligence": 545,
+        "chance": 140,
+        "agility": 310
+      },
+      "combatRangeClass": "mixed",
+      "combatRangeSignals": [
+        "range",
+        "melee_weapon"
+      ],
+      "totals": {
+        "AP": 9,
+        "MP": 5,
+        "Range": 4,
+        "Strength": 1130,
+        "Intelligence": 450,
+        "Chance": 100,
+        "Agility": 250,
+        "Power": 80,
+        "Damage": 0,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Hammer"
+    },
+    {
+      "sampleIndex": 6,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "multi",
+      "elementScores": {
+        "strength": 505,
+        "intelligence": 717,
+        "chance": 445,
+        "agility": 1045
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "pct_ranged_damage",
+        "range",
+        "ranged_weapon"
+      ],
+      "totals": {
+        "AP": 10,
+        "MP": 6,
+        "Range": 4,
+        "Strength": 280,
+        "Intelligence": 540,
+        "Chance": 280,
+        "Agility": 843,
+        "Power": 210,
+        "Damage": 0,
+        "% Ranged Damage": 6,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Bow"
+    },
+    {
+      "sampleIndex": 7,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "multi",
+      "elementScores": {
+        "strength": 625,
+        "intelligence": 762,
+        "chance": 255,
+        "agility": 1050
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "pct_ranged_damage",
+        "range",
+        "ranged_weapon"
+      ],
+      "totals": {
+        "AP": 11,
+        "MP": 6,
+        "Range": 4,
+        "Strength": 360,
+        "Intelligence": 570,
+        "Chance": 100,
+        "Agility": 823,
+        "Power": 240,
+        "Damage": 0,
+        "% Ranged Damage": 6,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Wand"
+    },
+    {
+      "sampleIndex": 8,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "multi",
+      "elementScores": {
+        "strength": 1178,
+        "intelligence": 869,
+        "chance": 376,
+        "agility": 355
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "pct_ranged_damage",
+        "range",
+        "ranged_weapon"
+      ],
+      "totals": {
+        "AP": 10,
+        "MP": 7,
+        "Range": 5,
+        "Strength": 893,
+        "Intelligence": 710,
+        "Chance": 260,
+        "Agility": 250,
+        "Power": 120,
+        "Damage": 0,
+        "% Ranged Damage": 6,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Bow"
+    },
+    {
+      "sampleIndex": 9,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "omni",
+      "elementScores": {
+        "strength": 677,
+        "intelligence": 759,
+        "chance": 589,
+        "agility": 654
+      },
+      "combatRangeClass": "mixed",
+      "combatRangeSignals": [
+        "range",
+        "melee_weapon"
+      ],
+      "totals": {
+        "AP": 9,
+        "MP": 5,
+        "Range": 4,
+        "Strength": 550,
+        "Intelligence": 650,
+        "Chance": 500,
+        "Agility": 545,
+        "Power": 95,
+        "Damage": 0,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Sword"
+    },
+    {
+      "sampleIndex": 10,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "omni",
+      "elementScores": {
+        "strength": 739,
+        "intelligence": 567,
+        "chance": 534,
+        "agility": 942
+      },
+      "combatRangeClass": "mixed",
+      "combatRangeSignals": [
+        "range",
+        "melee_weapon"
+      ],
+      "totals": {
+        "AP": 9,
+        "MP": 5,
+        "Range": 2,
+        "Strength": 600,
+        "Intelligence": 435,
+        "Chance": 395,
+        "Agility": 810,
+        "Power": 185,
+        "Damage": 20,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Dagger"
+    },
+    {
+      "sampleIndex": 11,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "multi",
+      "elementScores": {
+        "strength": 690,
+        "intelligence": 235,
+        "chance": 640,
+        "agility": 540
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "range",
+        "ranged_weapon"
+      ],
+      "totals": {
+        "AP": 9,
+        "MP": 5,
+        "Range": 6,
+        "Strength": 480,
+        "Intelligence": 100,
+        "Chance": 480,
+        "Agility": 380,
+        "Power": 220,
+        "Damage": 0,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Bow"
+    },
+    {
+      "sampleIndex": 12,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "multi",
+      "elementScores": {
+        "strength": 690,
+        "intelligence": 235,
+        "chance": 640,
+        "agility": 540
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "range",
+        "ranged_weapon"
+      ],
+      "totals": {
+        "AP": 9,
+        "MP": 5,
+        "Range": 6,
+        "Strength": 480,
+        "Intelligence": 100,
+        "Chance": 480,
+        "Agility": 380,
+        "Power": 220,
+        "Damage": 0,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Bow"
+    },
+    {
+      "sampleIndex": 13,
+      "level": 200,
+      "className": "Cra",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "multi",
+      "elementScores": {
+        "strength": 610,
+        "intelligence": 737,
+        "chance": 150,
+        "agility": 737
+      },
+      "combatRangeClass": "mixed",
+      "combatRangeSignals": [
+        "range",
+        "melee_weapon"
+      ],
+      "totals": {
+        "AP": 10,
+        "MP": 4,
+        "Range": 5,
+        "Strength": 491,
+        "Intelligence": 640,
+        "Chance": 100,
+        "Agility": 640,
+        "Power": 50,
+        "Damage": 0,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 6
+      },
+      "weaponType": "Hammer"
+    },
+    {
+      "sampleIndex": 14,
+      "level": 200,
+      "className": "Cra",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "multi",
+      "elementScores": {
+        "strength": 370,
+        "intelligence": 209,
+        "chance": 1025,
+        "agility": 980
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "pct_ranged_damage",
+        "range",
+        "ranged_weapon"
+      ],
+      "totals": {
+        "AP": 10,
+        "MP": 6,
+        "Range": 6,
+        "Strength": 280,
+        "Intelligence": 160,
+        "Chance": 885,
+        "Agility": 840,
+        "Power": 80,
+        "Damage": 0,
+        "% Ranged Damage": 6,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Bow"
+    },
+    {
+      "sampleIndex": 15,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-11",
+      "tags": [],
+      "elementClass": "chance",
+      "elementScores": {
+        "strength": 220,
+        "intelligence": 195,
+        "chance": 1558,
+        "agility": 267
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "range",
+        "melee_weapon"
+      ],
+      "totals": {
+        "AP": 10,
+        "MP": 6,
+        "Range": 7,
+        "Strength": 100,
+        "Intelligence": 100,
+        "Chance": 1298,
+        "Agility": 160,
+        "Power": 140,
+        "Damage": 0,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Dagger"
+    },
+    {
+      "sampleIndex": 16,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-10",
+      "tags": [],
+      "elementClass": "intelligence",
+      "elementScores": {
+        "strength": 255,
+        "intelligence": 1038,
+        "chance": 230,
+        "agility": 230
+      },
+      "combatRangeClass": "melee",
+      "combatRangeSignals": [
+        "range",
+        "melee_weapon"
+      ],
+      "totals": {
+        "AP": 11,
+        "MP": 6,
+        "Range": 1,
+        "Strength": 160,
+        "Intelligence": 928,
+        "Chance": 160,
+        "Agility": 160,
+        "Power": 70,
+        "Damage": 0,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Hammer"
+    },
+    {
+      "sampleIndex": 17,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-10",
+      "tags": [],
+      "elementClass": "multi",
+      "elementScores": {
+        "strength": 586,
+        "intelligence": 162,
+        "chance": 975,
+        "agility": 162
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "range",
+        "ranged_weapon"
+      ],
+      "totals": {
+        "AP": 9,
+        "MP": 5,
+        "Range": 5,
+        "Strength": 380,
+        "Intelligence": 100,
+        "Chance": 790,
+        "Agility": 100,
+        "Power": 125,
+        "Damage": 0,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Bow"
+    },
+    {
+      "sampleIndex": 18,
+      "level": 200,
+      "className": "Enutrof",
+      "lastModifiedDate": "2026-07-10",
+      "tags": [],
+      "elementClass": "chance",
+      "elementScores": {
+        "strength": 235,
+        "intelligence": 598,
+        "chance": 1191,
+        "agility": 270
+      },
+      "combatRangeClass": "ranged",
+      "combatRangeSignals": [
+        "range",
+        "ranged_weapon"
+      ],
+      "totals": {
+        "AP": 10,
+        "MP": 6,
+        "Range": 5,
+        "Strength": 100,
+        "Intelligence": 420,
+        "Chance": 995,
+        "Agility": 150,
+        "Power": 150,
+        "Damage": 5,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Wand"
+    },
+    {
+      "sampleIndex": 19,
+      "level": 200,
+      "className": "unknown",
+      "lastModifiedDate": "2026-07-10",
+      "tags": [],
+      "elementClass": "strength",
+      "elementScores": {
+        "strength": 1266,
+        "intelligence": 470,
+        "chance": 235,
+        "agility": 235
+      },
+      "combatRangeClass": "mixed",
+      "combatRangeSignals": [
+        "range",
+        "melee_weapon"
+      ],
+      "totals": {
+        "AP": 9,
+        "MP": 5,
+        "Range": 3,
+        "Strength": 920,
+        "Intelligence": 370,
+        "Chance": 170,
+        "Agility": 170,
+        "Power": 80,
+        "Damage": 0,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Hammer"
+    },
+    {
+      "sampleIndex": 20,
+      "level": 200,
+      "className": "Feca",
+      "lastModifiedDate": "2026-07-10",
+      "tags": [],
+      "elementClass": "omni",
+      "elementScores": {
+        "strength": 649,
+        "intelligence": 614,
+        "chance": 756,
+        "agility": 696
+      },
+      "combatRangeClass": "melee",
+      "combatRangeSignals": [
+        "range",
+        "melee_weapon"
+      ],
+      "totals": {
+        "AP": 10,
+        "MP": 4,
+        "Range": 1,
+        "Strength": 300,
+        "Intelligence": 300,
+        "Chance": 430,
+        "Agility": 380,
+        "Power": 420,
+        "Damage": 0,
+        "% Ranged Damage": 0,
+        "% Melee Damage": 0,
+        "% Weapon Damage": 0,
+        "% Spell Damage": 0
+      },
+      "weaponType": "Sword"
+    }
+  ]
+}
