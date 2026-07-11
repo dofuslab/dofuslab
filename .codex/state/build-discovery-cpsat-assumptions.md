@@ -56,8 +56,9 @@ review before accepting Milestone 2 evidence.
 - CP-SAT currently models generated AP and MP exos, plus generated Range exos
   only when the query has a positive numeric Range target.
 - Locked-item constraints are not yet modeled in CP-SAT.
-- CP-SAT currently encodes simple item stat conditions and `and` condition
-  trees. More complex `or` condition trees still rely on final post-validation.
+- CP-SAT still only encodes leaf and `and` item conditions directly. `or`
+  conditions are validated after solve, which can waste attempts or return no
+  build if the best model solutions violate an unencoded `or` condition.
 
 ## Solver Architecture
 
@@ -104,6 +105,11 @@ review before accepting Milestone 2 evidence.
   grouped cardinality selection and reconstructs the six output slots afterward.
   This assumes those slots are order-equivalent for scoring, conditions, and
   validation.
+- Set-count capacity for grouped Dofus selection counts up to six Dofus-like
+  items, not just the single synthetic group, so future set-linked Dofus-like
+  items can still be represented correctly.
+- The first 16-row level-200 all-element/all-budget `7/3/None` slice generated
+  all rows, but p95 remains above `5s`; only `8/16` rows were under `5s`.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.

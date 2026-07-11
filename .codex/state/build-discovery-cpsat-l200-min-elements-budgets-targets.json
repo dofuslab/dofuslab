@@ -1,0 +1,20 @@
+{
+  "targets": [
+    {"id": "cpsat_l200_strength_7_3_none_budget1", "level": 200, "element": "strength", "budgetTier": 1, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_strength_7_3_none_budget2", "level": 200, "element": "strength", "budgetTier": 2, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_strength_7_3_none_budget3", "level": 200, "element": "strength", "budgetTier": 3, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_strength_7_3_none_budget4", "level": 200, "element": "strength", "budgetTier": 4, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_intelligence_7_3_none_budget1", "level": 200, "element": "intelligence", "budgetTier": 1, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_intelligence_7_3_none_budget2", "level": 200, "element": "intelligence", "budgetTier": 2, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_intelligence_7_3_none_budget3", "level": 200, "element": "intelligence", "budgetTier": 3, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_intelligence_7_3_none_budget4", "level": 200, "element": "intelligence", "budgetTier": 4, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_chance_7_3_none_budget1", "level": 200, "element": "chance", "budgetTier": 1, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_chance_7_3_none_budget2", "level": 200, "element": "chance", "budgetTier": 2, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_chance_7_3_none_budget3", "level": 200, "element": "chance", "budgetTier": 3, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_chance_7_3_none_budget4", "level": 200, "element": "chance", "budgetTier": 4, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_agility_7_3_none_budget1", "level": 200, "element": "agility", "budgetTier": 1, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_agility_7_3_none_budget2", "level": 200, "element": "agility", "budgetTier": 2, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_agility_7_3_none_budget3", "level": 200, "element": "agility", "budgetTier": 3, "apTarget": 7, "mpTarget": 3, "rangeTarget": null},
+    {"id": "cpsat_l200_agility_7_3_none_budget4", "level": 200, "element": "agility", "budgetTier": 4, "apTarget": 7, "mpTarget": 3, "rangeTarget": null}
+  ]
+}

@@ -3895,3 +3895,45 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   solve cap.
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-l200-min-elements-dofusgroup.json --target-file /tmp/build-discovery-cpsat-l200-min-elements-targets.json --target-file-prefix cpsat_min`
+
+### 2026-07-11 Grouped Dofus Set-Capacity Fix
+
+- Reviewer finding addressed:
+  - grouped Dofus selection initially counted the synthetic Dofus group as one
+    compatible slot for set-count domains
+  - this was latent with current data, but wrong for any future set containing
+    multiple Dofus/trophy/prysmaradite items
+- Fixed set-count upper bounds to count:
+  - normal compatible slots
+  - plus up to six grouped Dofus-like items
+- This preserves the grouped Dofus speedup while keeping future set semantics
+  correct.
+
+### 2026-07-11 CP-SAT Level-200 Minimum Elements/Budgets Slice
+
+- Added target file:
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-budgets-targets.json`
+- Generated and validated the first 16-row CP-SAT Milestone 2 minimum slice:
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-budgets-matrix.json`
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-budgets-matrix.md`
+  - `.codex/state/build-discovery-cpsat-l200-min-elements-budgets-split/`
+- Slice:
+  - level 200 Iop
+  - all 4 elements
+  - all 4 budget tiers
+  - target `7/3/None`
+- Result:
+  - targets: `16`
+  - generated: `16`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `15` optimal, `1` feasible
+- Runtime:
+  - min: `4287.8ms`
+  - avg: `5582.8ms`
+  - max: `8048.5ms`
+  - rows over `5s`: `8/16`
+- This is meaningful Milestone 2 breadth evidence, but still not p95
+  performance acceptance.
+- Verification passed:
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-l200-min-elements-budgets-fixed.json --target-file /tmp/build-discovery-cpsat-l200-min-elements-budgets-targets.json --target-file-prefix cpsat_l200_min_budget`

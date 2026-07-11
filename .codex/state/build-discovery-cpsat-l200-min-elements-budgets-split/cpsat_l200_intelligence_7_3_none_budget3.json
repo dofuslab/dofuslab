@@ -1,0 +1,634 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T06:44:20.186638+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-cpsat-l200-min-elements-budgets-targets.json#targets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "cpsat_l200_intelligence_7_3_none_budget3",
+        "className": "Iop",
+        "level": 200,
+        "element": "intelligence",
+        "budgetTier": 3,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2526.28,
+        "weightedStatScore": 4715.27,
+        "utilityStatScore": 313.32,
+        "genericDamageScore": 4667.63,
+        "rawRotationDamageScore": 3180.8,
+        "spellDamageScore": 3180.8,
+        "profileBaselineDamageScore": 2044.38,
+        "profileRelativeDamage": 1.5559,
+        "weaponDamageScore": 256.61,
+        "survivabilityScore": 112.53,
+        "weakestElementEhp": 3633.31,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 0,
+          "Intelligence": 1598,
+          "Power": 160,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Fire Damage": 138,
+          "Critical": 60,
+          "Critical Damage": 135
+        },
+        "sets": {
+          "Sleeping Venerable One Set": 2,
+          "Age-Old Set": 2,
+          "War Set": 4
+        },
+        "exos": {
+          "AP": {
+            "itemId": "31797",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "22190",
+            "slot": "hat"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14080",
+            "internalId": null,
+            "name": "Age-Old Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "belt": {
+            "id": "14081",
+            "internalId": null,
+            "name": "Age-Old Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "22191",
+            "internalId": null,
+            "name": "War's Fortress",
+            "type": "Shield",
+            "level": 200,
+            "set": "War Set"
+          },
+          "ring_1": {
+            "id": "31799",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Curse",
+            "type": "Ring",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "ring_2": {
+            "id": "22192",
+            "internalId": null,
+            "name": "War's Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "War Set"
+          },
+          "boots": {
+            "id": "22189",
+            "internalId": null,
+            "name": "War's Treads",
+            "type": "Boots",
+            "level": 200,
+            "set": "War Set"
+          },
+          "hat": {
+            "id": "22190",
+            "internalId": null,
+            "name": "War's Helm",
+            "type": "Hat",
+            "level": 200,
+            "set": "War Set"
+          },
+          "cloak": {
+            "id": "31797",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Coat",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "pet": {
+            "id": "7711",
+            "internalId": null,
+            "name": "Red Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2526.28,
+        "apStrategy": null,
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 0,
+          "Intelligence": 1598,
+          "Power": 160,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Fire Damage": 138,
+          "Critical": 60,
+          "Critical Damage": 135
+        },
+        "sets": {
+          "Sleeping Venerable One Set": 2,
+          "Age-Old Set": 2,
+          "War Set": 4
+        },
+        "exos": {
+          "AP": {
+            "itemId": "31797",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "22190",
+            "slot": "hat"
+          }
+        },
+        "items": [
+          "Age-Old Amulet",
+          "Age-Old Belt",
+          "Gargandyas's Fury",
+          "War's Fortress",
+          "Sleeping Venerable One's Curse",
+          "War's Gauntlet",
+          "War's Treads",
+          "War's Helm",
+          "Sleeping Venerable One's Coat",
+          "Red Piwin",
+          "Cloudy Dofus",
+          "Crimson Dofus",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Brainbox"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2526.28,
+          "weightedStatScore": 4715.27,
+          "utilityStatScore": 313.32,
+          "genericDamageScore": 4667.63,
+          "rawRotationDamageScore": 3180.8,
+          "spellDamageScore": 3180.8,
+          "profileBaselineDamageScore": 2044.38,
+          "profileRelativeDamage": 1.5559,
+          "weaponDamageScore": 256.61,
+          "survivabilityScore": 112.53,
+          "weakestElementEhp": 3633.31,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 0,
+            "Intelligence": 1598,
+            "Power": 160,
+            "Vitality": 3503,
+            "Damage": 0,
+            "Fire Damage": 138,
+            "Critical": 60,
+            "Critical Damage": 135
+          },
+          "sets": {
+            "Sleeping Venerable One Set": 2,
+            "Age-Old Set": 2,
+            "War Set": 4
+          },
+          "exos": {
+            "AP": {
+              "itemId": "31797",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "22190",
+              "slot": "hat"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "14080",
+              "internalId": null,
+              "name": "Age-Old Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Age-Old Set"
+            },
+            "belt": {
+              "id": "14081",
+              "internalId": null,
+              "name": "Age-Old Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Age-Old Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "22191",
+              "internalId": null,
+              "name": "War's Fortress",
+              "type": "Shield",
+              "level": 200,
+              "set": "War Set"
+            },
+            "ring_1": {
+              "id": "31799",
+              "internalId": null,
+              "name": "Sleeping Venerable One's Curse",
+              "type": "Ring",
+              "level": 200,
+              "set": "Sleeping Venerable One Set"
+            },
+            "ring_2": {
+              "id": "22192",
+              "internalId": null,
+              "name": "War's Gauntlet",
+              "type": "Ring",
+              "level": 200,
+              "set": "War Set"
+            },
+            "boots": {
+              "id": "22189",
+              "internalId": null,
+              "name": "War's Treads",
+              "type": "Boots",
+              "level": 200,
+              "set": "War Set"
+            },
+            "hat": {
+              "id": "22190",
+              "internalId": null,
+              "name": "War's Helm",
+              "type": "Hat",
+              "level": 200,
+              "set": "War Set"
+            },
+            "cloak": {
+              "id": "31797",
+              "internalId": null,
+              "name": "Sleeping Venerable One's Coat",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Sleeping Venerable One Set"
+            },
+            "pet": {
+              "id": "7711",
+              "internalId": null,
+              "name": "Red Piwin",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13762",
+              "internalId": null,
+              "name": "Major Brainbox",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2526.28,
+          "apStrategy": null,
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 0,
+            "Intelligence": 1598,
+            "Power": 160,
+            "Vitality": 3503,
+            "Damage": 0,
+            "Fire Damage": 138,
+            "Critical": 60,
+            "Critical Damage": 135
+          },
+          "sets": {
+            "Sleeping Venerable One Set": 2,
+            "Age-Old Set": 2,
+            "War Set": 4
+          },
+          "exos": {
+            "AP": {
+              "itemId": "31797",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "22190",
+              "slot": "hat"
+            }
+          },
+          "items": [
+            "Age-Old Amulet",
+            "Age-Old Belt",
+            "Gargandyas's Fury",
+            "War's Fortress",
+            "Sleeping Venerable One's Curse",
+            "War's Gauntlet",
+            "War's Treads",
+            "War's Helm",
+            "Sleeping Venerable One's Coat",
+            "Red Piwin",
+            "Cloudy Dofus",
+            "Crimson Dofus",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Brainbox"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 5985.2,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 323.4,
+          "totalSearchMs": 5661.8
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "OPTIMAL",
+            "modelMs": 1587.5,
+            "solveMs": 3818.1,
+            "objective": 2233.77,
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 314
+              },
+              "slotVarCount": 1836,
+              "uniqueItemCount": 1702,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 938,
+              "conditionConstraintCount": 267,
+              "setCountConstraintCount": 240
+            },
+            "validCandidate": {
+              "score": 2526.28,
+              "totals": {
+                "AP": 10,
+                "MP": 5,
+                "Range": 0,
+                "Strength": 160,
+                "Power": 160,
+                "Earth Damage": 51,
+                "Vitality": 3503
+              },
+              "items": {
+                "amulet": "Age-Old Amulet",
+                "belt": "Age-Old Belt",
+                "weapon": "Gargandyas's Fury",
+                "shield": "War's Fortress",
+                "ring_1": "Sleeping Venerable One's Curse",
+                "ring_2": "War's Gauntlet",
+                "boots": "War's Treads",
+                "hat": "War's Helm",
+                "cloak": "Sleeping Venerable One's Coat",
+                "pet": "Red Piwin",
+                "dofus_1": "Cloudy Dofus",
+                "dofus_2": "Crimson Dofus",
+                "dofus_3": "Ice Dofus",
+                "dofus_4": "Arcanist",
+                "dofus_5": "Impetuous",
+                "dofus_6": "Major Brainbox"
+              }
+            }
+          }
+        ],
+        "itemCount": 1702,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.2255,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.2255,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.2255,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2138,
+          "Critical Damage": 1.6163,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.721,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Damage": 2.721,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Intelligence": 0.7048,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7048,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

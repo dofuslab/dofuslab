@@ -82,9 +82,11 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
     def test_experiment_bounds_set_count_domains_by_compatible_slots(self):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")
 
-        self.assertIn("slots_by_set", source)
+        self.assertIn("non_dofus_slots_by_set", source)
+        self.assertIn("dofus_item_ids_by_set", source)
         self.assertIn("item_ids_by_set", source)
-        self.assertIn("len(slots_by_set[set_id])", source)
+        self.assertIn("max_selectable_slots", source)
+        self.assertIn("min(\n            DOFUS_GROUP_SIZE", source)
 
     def test_experiment_reports_model_size_diagnostics(self):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")

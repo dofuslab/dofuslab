@@ -295,24 +295,28 @@ def build_model(
             max_set_counts[set_id] += 1
 
     item_terms_by_set: dict[str, list[cp_model.IntVar]] = defaultdict(list)
-    slots_by_set: dict[str, set[str]] = defaultdict(set)
+    non_dofus_slots_by_set: dict[str, set[str]] = defaultdict(set)
+    dofus_item_ids_by_set: dict[str, set[str]] = defaultdict(set)
     item_ids_by_set: dict[str, set[str]] = defaultdict(set)
     for (slot_name, item_id), var in slot_item_vars.items():
         set_id = item_by_id[item_id].get("setID")
         if set_id:
             item_terms_by_set[set_id].append(var)
-            slots_by_set[set_id].add(slot_name)
+            if slot_name == DOFUS_GROUP_SLOT:
+                dofus_item_ids_by_set[set_id].add(item_id)
+            else:
+                non_dofus_slots_by_set[set_id].add(slot_name)
             item_ids_by_set[set_id].add(item_id)
 
     for set_id in sorted(selected_set_ids(items)):
         item_terms = item_terms_by_set[set_id]
         if not item_terms:
             continue
-        max_count = min(
-            max_set_counts[set_id],
-            len(slots_by_set[set_id]),
-            len(item_ids_by_set[set_id]),
+        max_selectable_slots = len(non_dofus_slots_by_set[set_id]) + min(
+            DOFUS_GROUP_SIZE,
+            len(dofus_item_ids_by_set[set_id]),
         )
+        max_count = min(max_set_counts[set_id], len(item_ids_by_set[set_id]), max_selectable_slots)
         exact_vars = []
         for count in range(max_count + 1):
             var = model.NewBoolVar(f"set_{set_id}_{count}")
