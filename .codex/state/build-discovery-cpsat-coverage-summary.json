@@ -1,8 +1,8 @@
 {
   "targetSet": "milestone2-level200",
   "targetCount": 3072,
-  "generatedCpsatTargetCount": 1696,
-  "coveragePercent": 55.21,
+  "generatedCpsatTargetCount": 1760,
+  "coveragePercent": 57.29,
   "assumptions": {
     "targetGrid": {
       "class": "Iop",
@@ -78,46 +78,46 @@
     }
   },
   "byElement": {
-    "agility": 420,
-    "chance": 428,
-    "intelligence": 420,
-    "strength": 428
+    "agility": 436,
+    "chance": 444,
+    "intelligence": 436,
+    "strength": 444
   },
   "byBudgetTier": {
-    "1": 424,
+    "1": 456,
     "2": 424,
     "3": 424,
-    "4": 424
+    "4": 456
   },
   "byAp": {
     "7": 296,
     "8": 288,
     "9": 288,
-    "10": 264,
+    "10": 296,
     "11": 288,
-    "12": 272
+    "12": 304
   },
   "byMp": {
-    "3": 432,
+    "3": 464,
     "4": 416,
     "5": 440,
-    "6": 408
+    "6": 440
   },
   "byRange": {
     "0": 208,
     "1": 224,
     "2": 216,
-    "3": 208,
-    "4": 184,
+    "3": 240,
+    "4": 216,
     "5": 200,
     "6": 216,
     "none": 240
   },
   "bySolverStatus": {
-    "FEASIBLE": 968,
-    "OPTIMAL": 728
+    "FEASIBLE": 1007,
+    "OPTIMAL": 753
   },
-  "examinedSplitReports": 1878,
+  "examinedSplitReports": 1942,
   "excludedSplitReports": {
     "outside_target_set": 29
   },
