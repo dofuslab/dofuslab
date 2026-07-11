@@ -149,12 +149,22 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   characteristic points, item elemental stats, Power, and elemental damage
   lines as signals.
 - Combat range classification signal precedence is:
-  explicit tag, then `% Ranged Damage` / `% Melee Damage`, then positive
-  `Range`, then weapon family, then weapon-vs-spell damage context.
+  explicit tag, then class/element spell archetype, then `% Ranged Damage` /
+  `% Melee Damage`, then weapon family, then weapon-vs-spell damage context,
+  then positive `Range` as a weak utility/tradeoff signal.
+- Spell archetype should use available spell data to estimate whether a
+  class/element profile is naturally ranged, melee, or mixed: important spell
+  min/max range, whether range is modifiable, line-of-sight constraints,
+  cooldown/cast limits, and whether +Range actually improves the important
+  damage pattern. Exact spell values may be stale, but class-element archetypes
+  are expected to be stable enough to guide defaults and diagnostics.
 - Ranged weapon families are `Wand` and `Bow`. Other current weapon families
   are melee for classifier purposes unless tags/stats override them.
-- High `Range` without ranged damage is not enough to force `ranged`; it should
-  usually classify ambiguous builds as `mixed`.
+- High `Range` without supporting ranged signals is not enough to force
+  `ranged`; it should usually classify ambiguous builds as `mixed` or `melee`.
+  For example, a 5 Range build with no ranged tag, no ranged-damage stats, no
+  ranged weapon context, and no ranged/modifiable spell archetype should not be
+  classified as `ranged`.
 - +Range should be reported as a separate prod analysis dimension, not only as
   a combat range classifier signal. The current hypothesis is that users may
   often value Range as a stat tradeoff rather than having a strict hard Range

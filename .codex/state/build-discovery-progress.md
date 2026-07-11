@@ -6687,3 +6687,18 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   high-Range and low/negative-Range rows.
 - Caveat: prod does not yet have `generation_request`, so generated rows cannot
   be excluded by provenance.
+
+### 2026-07-11 Combat Range Classifier Revision
+
+- Updated the Notion PRD and local assumptions so unsupported +Range cannot
+  classify a build as `ranged` by itself.
+- Revised signal precedence: explicit tag, then class/element spell archetype,
+  then ranged/melee damage stats, then weapon family, then weapon/spell damage
+  context, then +Range as a weak utility/tradeoff signal.
+- Added spell-archetype evidence as a requirement before wiring defaults:
+  important spell range buckets, modifiable-range support, line-of-sight
+  constraints, cooldown/cast limits, and whether +Range helps the main damage
+  pattern.
+- Working rule: a 5 Range build with no ranged tag, no ranged-damage stats, no
+  ranged weapon context, and no ranged/modifiable spell archetype should be
+  `mixed` or `melee`, not `ranged`.
