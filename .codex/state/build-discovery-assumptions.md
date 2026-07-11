@@ -41,6 +41,10 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   `melee`, `mixed`, and `ranged`. It is separate from numeric Range target:
   Range says how much +Range the build must reach; combat range says how the
   build expects to deal damage and survive.
+- Current working hypothesis: item selection differs materially for `melee` vs
+  `non_melee`, but often not much between `mixed` and `ranged`. Treat
+  mixed-vs-ranged mainly as spell evaluation, score explanation, and +Range
+  valuation unless prod/spell evidence shows a real gear-shell difference.
 - Product UX may default combat range, but the default should be computed from
   bounded readonly prod aggregate evidence by `(class, element)`. The resolved
   value should be explicit in the request, cache key, provenance, and
@@ -192,6 +196,11 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   when the classified complete-build sample count is high enough and the top
   class clearly beats the runner-up. Sparse or ambiguous rows should produce
   `mixed` or a labeled `heuristic_fallback`, not an overconfident default.
+- Default derivation should first choose `melee` vs `non_melee`; split
+  `non_melee` into `mixed` vs `ranged` only when spell archetype, tags, or
+  strong damage-specialization stats make the distinction clear. If mixed and
+  ranged itemization is not materially different, do not expand generation
+  matrices by both labels.
 - Strength Iop uses old/local spell data where available.
 - Strength Iop should model spell selection instead of generic made-up spell lines where possible.
 - Strength Iop includes Accumulation setup behavior when relevant.

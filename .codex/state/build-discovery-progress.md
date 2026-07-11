@@ -6741,3 +6741,17 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     with Wand plus `% Ranged Damage` and `% Spell Damage` classifies `ranged`.
 - Caveat: v4 still uses rough class priors. The planned spell-archetype report
   should replace these priors before defaults are wired into generation.
+
+### 2026-07-11 Combat Posture Simplification
+
+- Updated the Notion PRD and local assumptions with the current working
+  hypothesis that item selection differs materially for `melee` vs `non_melee`,
+  but often not much between `mixed` and `ranged`.
+- Mixed-vs-ranged should primarily affect spell evaluation, score explanation,
+  and +Range valuation unless prod/spell evidence shows a real gear-shell
+  difference.
+- Default derivation should first choose `melee` vs `non_melee`; split
+  `non_melee` into `mixed` vs `ranged` only when spell archetype, tags, or
+  strong damage-specialization stats make the distinction clear.
+- Added a required itemization-difference report before using mixed and ranged
+  as separate generation matrix axes.
