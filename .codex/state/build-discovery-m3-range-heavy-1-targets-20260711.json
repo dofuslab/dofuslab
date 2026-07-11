@@ -1,0 +1,185 @@
+{
+  "description": "M3 Range-heavy slice 1: explicit Range 6 corner coverage across levels, elements, and budgets because prod-shaped rows under-cover Range 6.",
+  "targets": [
+    {
+      "id": "rangeheavy1_01_l40_intelligence_7_3_6_t2",
+      "level": 40,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 7,
+      "mpTarget": 3,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_02_l50_chance_8_4_6_t2",
+      "level": 50,
+      "element": "chance",
+      "budgetTier": 2,
+      "apTarget": 8,
+      "mpTarget": 4,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_03_l60_agility_9_4_6_t3",
+      "level": 60,
+      "element": "agility",
+      "budgetTier": 3,
+      "apTarget": 9,
+      "mpTarget": 4,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_04_l75_strength_9_5_6_t2",
+      "level": 75,
+      "element": "strength",
+      "budgetTier": 2,
+      "apTarget": 9,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_05_l85_intelligence_8_4_6_t2",
+      "level": 85,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 8,
+      "mpTarget": 4,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_06_l95_chance_10_5_6_t3",
+      "level": 95,
+      "element": "chance",
+      "budgetTier": 3,
+      "apTarget": 10,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_07_l99_agility_11_5_6_t2",
+      "level": 99,
+      "element": "agility",
+      "budgetTier": 2,
+      "apTarget": 11,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_08_l100_strength_10_4_6_t2",
+      "level": 100,
+      "element": "strength",
+      "budgetTier": 2,
+      "apTarget": 10,
+      "mpTarget": 4,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_09_l110_intelligence_11_5_6_t3",
+      "level": 110,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 11,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_10_l120_chance_10_5_6_t2",
+      "level": 120,
+      "element": "chance",
+      "budgetTier": 2,
+      "apTarget": 10,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_11_l130_agility_12_5_6_t3",
+      "level": 130,
+      "element": "agility",
+      "budgetTier": 3,
+      "apTarget": 12,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_12_l140_strength_11_4_6_t2",
+      "level": 140,
+      "element": "strength",
+      "budgetTier": 2,
+      "apTarget": 11,
+      "mpTarget": 4,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_13_l150_intelligence_12_5_6_t2",
+      "level": 150,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_14_l160_chance_11_6_6_t3",
+      "level": 160,
+      "element": "chance",
+      "budgetTier": 3,
+      "apTarget": 11,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_15_l175_agility_12_5_6_t4",
+      "level": 175,
+      "element": "agility",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_16_l180_strength_11_5_6_t2",
+      "level": 180,
+      "element": "strength",
+      "budgetTier": 2,
+      "apTarget": 11,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_17_l199_intelligence_12_6_6_t3",
+      "level": 199,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "rangeheavy1_18_l200_chance_10_6_6_t4",
+      "level": 200,
+      "element": "chance",
+      "budgetTier": 4,
+      "apTarget": 10,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    }
+  ]
+}

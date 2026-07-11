@@ -6504,3 +6504,42 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker generation:
     `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-prod-shaped-1-targets-20260711.json --output-json /tmp/build-discovery-m3-prod-shaped-1-sample-20260711.json --output-md /tmp/build-discovery-m3-prod-shaped-1-sample-20260711.md`
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-prod-shaped-1-sample-20260711.json --target-file .codex/state/build-discovery-m3-prod-shaped-1-targets-20260711.json --expected-solver cpsat --allow-no-build`
+
+### 2026-07-11 M3 Range-Heavy Slice 1
+
+- Generated and validated an explicit Range 6 corner-case slice because
+  prod-shaped rows under-cover Range 6:
+  - target file: `.codex/state/build-discovery-m3-range-heavy-1-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-range-heavy-1-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-range-heavy-1-sample-20260711.md`
+  - generated: `18 / 18`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `18` `OPTIMAL`
+- This slice covers Range 6 across all elements, levels `40-200`, and budgets
+  `2-4`, with a small mix of MP+Range and cap rows:
+  - level `40` Intelligence tier `2` `7/3/6` generated exact `7/3/6`
+  - level `50` Chance tier `2` `8/4/6` generated exact `8/4/6`
+  - level `99` Agility tier `2` `11/5/6` generated exact `11/5/6`
+  - level `140` Strength tier `2` `11/4/6` generated exact `11/4/6`
+  - level `199` Intelligence tier `3` `12/6/6` generated exact `12/6/6`
+  - level `200` Chance tier `4` `10/6/6` generated exact `10/6/6`
+- Refreshed all-level inventory after adding the Range-heavy artifact:
+  - valid query rows: `665088`
+  - generated evidence rows: `324`
+  - attempted evidence rows: `351`
+  - proven no-build evidence rows: `27`
+  - resolved evidence rows: `351`
+  - unresolved rows: `664737`
+  - `range_heavy` generated evidence: `28`, up from `13`
+  - `mp_heavy` generated evidence: `39`
+- Performance caveat: hard Range 6 rows are slower than prod-shaped rows. The
+  level `140` Strength row took about `14.1s`, and the level `200` Chance row
+  took about `15.4s`, so the later performance milestone still has real work.
+- Reviewer guidance for the next Range pass: prefer level `80+` rows with more
+  tier `1` and tier `4` budget coverage, avoid low-level impossible Range spam,
+  and keep most rows Range 6 without making them full cap rows.
+- Verification passed:
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-range-heavy-1-targets-20260711.json --output-json /tmp/build-discovery-m3-range-heavy-1-sample-20260711.json --output-md /tmp/build-discovery-m3-range-heavy-1-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-range-heavy-1-sample-20260711.json --target-file .codex/state/build-discovery-m3-range-heavy-1-targets-20260711.json --expected-solver cpsat --allow-no-build`

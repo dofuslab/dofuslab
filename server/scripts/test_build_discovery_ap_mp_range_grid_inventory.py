@@ -96,6 +96,10 @@ class BuildDiscoveryApMpRangeGridInventoryTest(unittest.TestCase):
             DEFAULT_ARTIFACTS,
         )
         self.assertIn(
+            ".codex/state/build-discovery-m3-range-heavy-1-sample-20260711.json",
+            DEFAULT_ARTIFACTS,
+        )
+        self.assertIn(
             ".codex/state/build-discovery-m3-level-coverage-sample-20260711.json",
             DEFAULT_ARTIFACTS,
         )

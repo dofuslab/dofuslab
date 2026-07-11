@@ -365,6 +365,13 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Prod-shaped rows tend to be middle/AP/MP-heavy rather than Range 6. M3 still
   needs explicit Range 6 corner-case samples because prod realism alone will
   not cover the full valid AP/MP/Range surface.
+- Range-heavy slice 1 generated `18/18` Range 6 rows across levels `40-200`,
+  all elements, and budgets `2-4`. This substantially improves Range 6
+  confidence, but budget tier `1` Range 6 remains comparatively thin and should
+  be sampled separately around plausible level `80+` rows.
+- Hard Range 6 rows expose performance risk. Several valid rows took more than
+  `10s` in Docker, so correctness evidence should not be mistaken for meeting
+  the later `<5s` cache-miss target.
 - CP-SAT excludes items whose conditions cannot be encoded by the current
   condition model. This is conservative: it may miss a legal item with an
   unsupported but satisfiable condition, but it prevents invalid
