@@ -1,0 +1,6541 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T15:42:28.061578+00:00",
+  "scope": "Iop target-file generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "/tmp/build-discovery-m3-level-coverage-3-targets-20260711.json#targets",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 12,
+  "generatedCount": 12,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "levelcov3_01_l14_strength_min_t1",
+        "className": "Iop",
+        "level": 14,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 14,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 367.33,
+        "weightedStatScore": 492.43,
+        "utilityStatScore": 126.8,
+        "genericDamageScore": 523.41,
+        "rawRotationDamageScore": 183.65,
+        "spellDamageScore": 174.02,
+        "profileBaselineDamageScore": 1052.58,
+        "profileRelativeDamage": 0.1745,
+        "weaponDamageScore": 15.29,
+        "survivabilityScore": 4.99,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 166.48,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 65,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 1,
+          "Strength": 267,
+          "Power": 0,
+          "Vitality": 166,
+          "Damage": 1,
+          "Earth Damage": 6,
+          "Critical": 3,
+          "Critical Damage": 0,
+          "Neutral Damage": 0
+        },
+        "sets": {
+          "Boon Set": 3,
+          "Green Piwi Set": 6
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8217",
+            "internalId": null,
+            "name": "Green Piwi Amulet",
+            "type": "Amulet",
+            "level": 12,
+            "set": "Green Piwi Set"
+          },
+          "belt": {
+            "id": "8241",
+            "internalId": null,
+            "name": "Green Piwi Belt",
+            "type": "Belt",
+            "level": 8,
+            "set": "Green Piwi Set"
+          },
+          "weapon": {
+            "id": "30828",
+            "internalId": null,
+            "name": "Bounihime",
+            "type": "Sword",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "shield": {
+            "id": "30701",
+            "internalId": null,
+            "name": "Halt Efkat",
+            "type": "Shield",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "boots": {
+            "id": "8229",
+            "internalId": null,
+            "name": "Green Piwi Sandals",
+            "type": "Boots",
+            "level": 10,
+            "set": "Green Piwi Set"
+          },
+          "hat": {
+            "id": "8247",
+            "internalId": null,
+            "name": "Green Piwi Hat",
+            "type": "Hat",
+            "level": 7,
+            "set": "Green Piwi Set"
+          },
+          "cloak": {
+            "id": "8236",
+            "internalId": null,
+            "name": "Green Piwi Cape",
+            "type": "Cloak",
+            "level": 9,
+            "set": "Green Piwi Set"
+          },
+          "ring_1": {
+            "id": "8223",
+            "internalId": null,
+            "name": "Green Piwi Ring",
+            "type": "Ring",
+            "level": 11,
+            "set": "Green Piwi Set"
+          },
+          "ring_2": {
+            "id": "8537",
+            "internalId": null,
+            "name": "Pluswan",
+            "type": "Ring",
+            "level": 1,
+            "set": "Boon Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 367.33,
+        "apStrategy": null,
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 1,
+          "Strength": 267,
+          "Power": 0,
+          "Vitality": 166,
+          "Damage": 1,
+          "Earth Damage": 6,
+          "Critical": 3,
+          "Critical Damage": 0,
+          "Neutral Damage": 0
+        },
+        "sets": {
+          "Boon Set": 3,
+          "Green Piwi Set": 6
+        },
+        "exos": {},
+        "items": [
+          "Green Piwi Amulet",
+          "Green Piwi Belt",
+          "Bounihime",
+          "Halt Efkat",
+          "Green Piwi Ring",
+          "Pluswan",
+          "Green Piwi Sandals",
+          "Green Piwi Hat",
+          "Green Piwi Cape"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 367.33,
+          "weightedStatScore": 492.43,
+          "utilityStatScore": 126.8,
+          "genericDamageScore": 523.41,
+          "rawRotationDamageScore": 183.65,
+          "spellDamageScore": 174.02,
+          "profileBaselineDamageScore": 1052.58,
+          "profileRelativeDamage": 0.1745,
+          "weaponDamageScore": 15.29,
+          "survivabilityScore": 4.99,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 166.48,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 65,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 1,
+            "Strength": 267,
+            "Power": 0,
+            "Vitality": 166,
+            "Damage": 1,
+            "Earth Damage": 6,
+            "Critical": 3,
+            "Critical Damage": 0,
+            "Neutral Damage": 0
+          },
+          "sets": {
+            "Boon Set": 3,
+            "Green Piwi Set": 6
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "8217",
+              "internalId": null,
+              "name": "Green Piwi Amulet",
+              "type": "Amulet",
+              "level": 12,
+              "set": "Green Piwi Set"
+            },
+            "belt": {
+              "id": "8241",
+              "internalId": null,
+              "name": "Green Piwi Belt",
+              "type": "Belt",
+              "level": 8,
+              "set": "Green Piwi Set"
+            },
+            "weapon": {
+              "id": "30828",
+              "internalId": null,
+              "name": "Bounihime",
+              "type": "Sword",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "shield": {
+              "id": "30701",
+              "internalId": null,
+              "name": "Halt Efkat",
+              "type": "Shield",
+              "level": 1,
+              "set": "Boon Set"
+            },
+            "boots": {
+              "id": "8229",
+              "internalId": null,
+              "name": "Green Piwi Sandals",
+              "type": "Boots",
+              "level": 10,
+              "set": "Green Piwi Set"
+            },
+            "hat": {
+              "id": "8247",
+              "internalId": null,
+              "name": "Green Piwi Hat",
+              "type": "Hat",
+              "level": 7,
+              "set": "Green Piwi Set"
+            },
+            "cloak": {
+              "id": "8236",
+              "internalId": null,
+              "name": "Green Piwi Cape",
+              "type": "Cloak",
+              "level": 9,
+              "set": "Green Piwi Set"
+            },
+            "ring_1": {
+              "id": "8223",
+              "internalId": null,
+              "name": "Green Piwi Ring",
+              "type": "Ring",
+              "level": 11,
+              "set": "Green Piwi Set"
+            },
+            "ring_2": {
+              "id": "8537",
+              "internalId": null,
+              "name": "Pluswan",
+              "type": "Ring",
+              "level": 1,
+              "set": "Boon Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 367.33,
+          "apStrategy": null,
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 1,
+            "Strength": 267,
+            "Power": 0,
+            "Vitality": 166,
+            "Damage": 1,
+            "Earth Damage": 6,
+            "Critical": 3,
+            "Critical Damage": 0,
+            "Neutral Damage": 0
+          },
+          "sets": {
+            "Boon Set": 3,
+            "Green Piwi Set": 6
+          },
+          "exos": {},
+          "items": [
+            "Green Piwi Amulet",
+            "Green Piwi Belt",
+            "Bounihime",
+            "Halt Efkat",
+            "Green Piwi Ring",
+            "Pluswan",
+            "Green Piwi Sandals",
+            "Green Piwi Hat",
+            "Green Piwi Cape"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 1794.7,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 1684.4,
+          "totalSearchMs": 110.3
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 27.0,
+            "solveMs": 74.4,
+            "objective": 181.36,
+            "solutionCallbackCount": 5,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 14.8,
+                "objective": 102.6,
+                "score": 334.97,
+                "itemIds": [
+                  "208",
+                  "697",
+                  "776",
+                  "837",
+                  "14597",
+                  "17502",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 27.4,
+                "objective": 110.4,
+                "score": 367.33,
+                "itemIds": [
+                  "8217",
+                  "8223",
+                  "8229",
+                  "8236",
+                  "8241",
+                  "8247",
+                  "8537",
+                  "30701",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 38.5,
+                "objective": 116.38,
+                "score": 343.86,
+                "itemIds": [
+                  "8217",
+                  "8223",
+                  "8229",
+                  "8236",
+                  "8241",
+                  "8247",
+                  "10785",
+                  "10797",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 49.0,
+                "objective": 157.46,
+                "score": 353.76,
+                "itemIds": [
+                  "208",
+                  "6911",
+                  "6913",
+                  "8223",
+                  "8229",
+                  "8236",
+                  "14597",
+                  "17502",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 60.0,
+                "objective": 181.36,
+                "score": 356.74,
+                "itemIds": [
+                  "208",
+                  "8223",
+                  "8228",
+                  "8236",
+                  "8245",
+                  "14609",
+                  "17487",
+                  "17502",
+                  "18714"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 33,
+                "belt": 28,
+                "weapon": 44,
+                "shield": 5,
+                "boots": 32,
+                "hat": 25,
+                "cloak": 23,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 40
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 230,
+              "uniqueItemCount": 230,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 109,
+              "skippedSetCountVarCount": 4,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 1,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 20
+            }
+          }
+        ],
+        "itemCount": 230,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.005,
+          "% Earth Resistance": 0.005,
+          "% Final Damage": 10.7348,
+          "% Fire Resistance": 0.005,
+          "% Melee Resistance": 0.0149,
+          "% Neutral Resistance": 0.005,
+          "% Ranged Damage": 10.7348,
+          "% Ranged Resistance": 0.0349,
+          "% Spell Damage": 10.7348,
+          "% Water Resistance": 0.005,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0014,
+          "Critical": 5.5893,
+          "Critical Damage": 2.5818,
+          "Critical Resistance": 0.0028,
+          "Damage": 4.5294,
+          "Dodge": 1.0,
+          "Earth Damage": 4.5294,
+          "Earth Resistance": 0.0014,
+          "Fire Resistance": 0.0014,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0014,
+          "Power": 0.4914,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0003,
+          "Range": 8.0,
+          "Strength": 0.4914,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0014,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "levelcov3_02_l15_chance_min_t1",
+        "className": "Iop",
+        "level": 15,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 15,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 694.69,
+        "weightedStatScore": 542.5,
+        "utilityStatScore": 442.0,
+        "genericDamageScore": 551.21,
+        "rawRotationDamageScore": 227.27,
+        "spellDamageScore": 227.27,
+        "profileBaselineDamageScore": 1236.96,
+        "profileRelativeDamage": 0.1837,
+        "weaponDamageScore": 10.75,
+        "survivabilityScore": 4.65,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 155.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 70,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 325,
+          "Power": 0,
+          "Vitality": 155,
+          "Damage": 0,
+          "Water Damage": 6,
+          "Critical": 5,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Moskito Set": 2,
+          "Kardorim Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "6918",
+            "internalId": null,
+            "name": "Moskito Amulet",
+            "type": "Amulet",
+            "level": 15,
+            "set": "Moskito Set"
+          },
+          "belt": {
+            "id": "14601",
+            "internalId": null,
+            "name": "Adora Briefs",
+            "type": "Belt",
+            "level": 10,
+            "set": null
+          },
+          "weapon": {
+            "id": "771",
+            "internalId": null,
+            "name": "Ash Tree Eater",
+            "type": "Axe",
+            "level": 8,
+            "set": null
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "boots": {
+            "id": "864",
+            "internalId": null,
+            "name": "Chance Boots",
+            "type": "Boots",
+            "level": 7,
+            "set": null
+          },
+          "hat": {
+            "id": "6917",
+            "internalId": null,
+            "name": "Moskabuto",
+            "type": "Hat",
+            "level": 15,
+            "set": "Moskito Set"
+          },
+          "cloak": {
+            "id": "16501",
+            "internalId": null,
+            "name": "Kardorim's Cape",
+            "type": "Cloak",
+            "level": 12,
+            "set": "Kardorim Set"
+          },
+          "ring_1": {
+            "id": "8220",
+            "internalId": null,
+            "name": "Blue Piwi Ring",
+            "type": "Ring",
+            "level": 9,
+            "set": "Blue Piwi Set"
+          },
+          "ring_2": {
+            "id": "16502",
+            "internalId": null,
+            "name": "Kardorim's Bracelet",
+            "type": "Ring",
+            "level": 12,
+            "set": "Kardorim Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 694.69,
+        "apStrategy": null,
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 325,
+          "Power": 0,
+          "Vitality": 155,
+          "Damage": 0,
+          "Water Damage": 6,
+          "Critical": 5,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Moskito Set": 2,
+          "Kardorim Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Moskito Amulet",
+          "Adora Briefs",
+          "Ash Tree Eater",
+          "Wild Sunflower Shield",
+          "Blue Piwi Ring",
+          "Kardorim's Bracelet",
+          "Chance Boots",
+          "Moskabuto",
+          "Kardorim's Cape"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 694.69,
+          "weightedStatScore": 542.5,
+          "utilityStatScore": 442.0,
+          "genericDamageScore": 551.21,
+          "rawRotationDamageScore": 227.27,
+          "spellDamageScore": 227.27,
+          "profileBaselineDamageScore": 1236.96,
+          "profileRelativeDamage": 0.1837,
+          "weaponDamageScore": 10.75,
+          "survivabilityScore": 4.65,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 155.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 70,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Chance": 325,
+            "Power": 0,
+            "Vitality": 155,
+            "Damage": 0,
+            "Water Damage": 6,
+            "Critical": 5,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Moskito Set": 2,
+            "Kardorim Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "6918",
+              "internalId": null,
+              "name": "Moskito Amulet",
+              "type": "Amulet",
+              "level": 15,
+              "set": "Moskito Set"
+            },
+            "belt": {
+              "id": "14601",
+              "internalId": null,
+              "name": "Adora Briefs",
+              "type": "Belt",
+              "level": 10,
+              "set": null
+            },
+            "weapon": {
+              "id": "771",
+              "internalId": null,
+              "name": "Ash Tree Eater",
+              "type": "Axe",
+              "level": 8,
+              "set": null
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "boots": {
+              "id": "864",
+              "internalId": null,
+              "name": "Chance Boots",
+              "type": "Boots",
+              "level": 7,
+              "set": null
+            },
+            "hat": {
+              "id": "6917",
+              "internalId": null,
+              "name": "Moskabuto",
+              "type": "Hat",
+              "level": 15,
+              "set": "Moskito Set"
+            },
+            "cloak": {
+              "id": "16501",
+              "internalId": null,
+              "name": "Kardorim's Cape",
+              "type": "Cloak",
+              "level": 12,
+              "set": "Kardorim Set"
+            },
+            "ring_1": {
+              "id": "8220",
+              "internalId": null,
+              "name": "Blue Piwi Ring",
+              "type": "Ring",
+              "level": 9,
+              "set": "Blue Piwi Set"
+            },
+            "ring_2": {
+              "id": "16502",
+              "internalId": null,
+              "name": "Kardorim's Bracelet",
+              "type": "Ring",
+              "level": 12,
+              "set": "Kardorim Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 694.69,
+          "apStrategy": null,
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 0,
+            "Chance": 325,
+            "Power": 0,
+            "Vitality": 155,
+            "Damage": 0,
+            "Water Damage": 6,
+            "Critical": 5,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Moskito Set": 2,
+            "Kardorim Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Moskito Amulet",
+            "Adora Briefs",
+            "Ash Tree Eater",
+            "Wild Sunflower Shield",
+            "Blue Piwi Ring",
+            "Kardorim's Bracelet",
+            "Chance Boots",
+            "Moskabuto",
+            "Kardorim's Cape"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 247.9,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 148.4,
+          "totalSearchMs": 99.5
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 27.5,
+            "solveMs": 64.6,
+            "objective": 290.59,
+            "solutionCallbackCount": 6,
+            "validCallbackCandidateCount": 6,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 10.0,
+                "objective": 128.58,
+                "score": 533.53,
+                "itemIds": [
+                  "771",
+                  "864",
+                  "937",
+                  "7177",
+                  "14601",
+                  "17508",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 20.5,
+                "objective": 140.75,
+                "score": 558.86,
+                "itemIds": [
+                  "864",
+                  "8214",
+                  "8221",
+                  "8224",
+                  "8244",
+                  "8534",
+                  "8536",
+                  "30701",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 30.2,
+                "objective": 176.04,
+                "score": 565.88,
+                "itemIds": [
+                  "771",
+                  "864",
+                  "937",
+                  "6919",
+                  "6920",
+                  "8244",
+                  "14601",
+                  "17508",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 38.3,
+                "objective": 178.1,
+                "score": 585.94,
+                "itemIds": [
+                  "771",
+                  "2475",
+                  "8214",
+                  "8244",
+                  "8534",
+                  "8535",
+                  "8536",
+                  "16502",
+                  "30701"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 45.7,
+                "objective": 189.98,
+                "score": 582.45,
+                "itemIds": [
+                  "771",
+                  "2476",
+                  "2477",
+                  "8214",
+                  "8220",
+                  "8221",
+                  "8232",
+                  "8248",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 6,
+                "rankBeforeRerank": 6,
+                "wallTimeMs": 53.1,
+                "objective": 290.59,
+                "score": 694.69,
+                "itemIds": [
+                  "771",
+                  "864",
+                  "6917",
+                  "6918",
+                  "8220",
+                  "14601",
+                  "16501",
+                  "16502",
+                  "18714"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 36,
+                "belt": 29,
+                "weapon": 50,
+                "shield": 7,
+                "boots": 32,
+                "hat": 26,
+                "cloak": 24,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 43
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 247,
+              "uniqueItemCount": 247,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 118,
+              "skippedSetCountVarCount": 2,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 1,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 22
+            }
+          }
+        ],
+        "itemCount": 247,
+        "candidateCount": 6,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0052,
+          "% Earth Resistance": 0.0052,
+          "% Final Damage": 10.5499,
+          "% Fire Resistance": 0.0052,
+          "% Melee Resistance": 0.0153,
+          "% Neutral Resistance": 0.0052,
+          "% Ranged Damage": 10.5499,
+          "% Ranged Resistance": 0.036,
+          "% Spell Damage": 10.5499,
+          "% Water Resistance": 0.0052,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0015,
+          "Chance": 1.5296,
+          "Critical": 5.355,
+          "Critical Damage": 2.4373,
+          "Critical Resistance": 0.0029,
+          "Damage": 4.1782,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0015,
+          "Fire Resistance": 0.0015,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0015,
+          "Power": 0.5296,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0003,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 4.1782,
+          "Water Resistance": 0.0015,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "levelcov3_03_l16_intelligence_range_t1",
+        "className": "Iop",
+        "level": 16,
+        "element": "intelligence",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 16,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 649.36,
+        "weightedStatScore": 541.5,
+        "utilityStatScore": 421.5,
+        "genericDamageScore": 494.35,
+        "rawRotationDamageScore": 190.17,
+        "spellDamageScore": 186.64,
+        "profileBaselineDamageScore": 1154.08,
+        "profileRelativeDamage": 0.1648,
+        "weaponDamageScore": 14.04,
+        "survivabilityScore": 5.4,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 180.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 75,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 1,
+          "Intelligence": 295,
+          "Power": 0,
+          "Vitality": 180,
+          "Damage": 0,
+          "Fire Damage": 6,
+          "Critical": 7,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Red Piwi Set": 6
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8213",
+            "internalId": null,
+            "name": "Red Piwi Amulet",
+            "type": "Amulet",
+            "level": 11,
+            "set": "Red Piwi Set"
+          },
+          "belt": {
+            "id": "8237",
+            "internalId": null,
+            "name": "Red Piwi Belt",
+            "type": "Belt",
+            "level": 7,
+            "set": "Red Piwi Set"
+          },
+          "weapon": {
+            "id": "194",
+            "internalId": null,
+            "name": "Sacred Staff",
+            "type": "Staff",
+            "level": 16,
+            "set": null
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "boots": {
+            "id": "8225",
+            "internalId": null,
+            "name": "Red Piwi Sandals",
+            "type": "Boots",
+            "level": 9,
+            "set": "Red Piwi Set"
+          },
+          "hat": {
+            "id": "8243",
+            "internalId": null,
+            "name": "Red Piwi Hat",
+            "type": "Hat",
+            "level": 12,
+            "set": "Red Piwi Set"
+          },
+          "cloak": {
+            "id": "8231",
+            "internalId": null,
+            "name": "Red Piwi Cape",
+            "type": "Cloak",
+            "level": 8,
+            "set": "Red Piwi Set"
+          },
+          "ring_1": {
+            "id": "1087",
+            "internalId": null,
+            "name": "Mental Ring",
+            "type": "Ring",
+            "level": 14,
+            "set": null
+          },
+          "ring_2": {
+            "id": "8219",
+            "internalId": null,
+            "name": "Red Piwi Ring",
+            "type": "Ring",
+            "level": 10,
+            "set": "Red Piwi Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 649.36,
+        "apStrategy": null,
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 1,
+          "Intelligence": 295,
+          "Power": 0,
+          "Vitality": 180,
+          "Damage": 0,
+          "Fire Damage": 6,
+          "Critical": 7,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Red Piwi Set": 6
+        },
+        "exos": {},
+        "items": [
+          "Red Piwi Amulet",
+          "Red Piwi Belt",
+          "Sacred Staff",
+          "Wild Sunflower Shield",
+          "Mental Ring",
+          "Red Piwi Ring",
+          "Red Piwi Sandals",
+          "Red Piwi Hat",
+          "Red Piwi Cape"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 649.36,
+          "weightedStatScore": 541.5,
+          "utilityStatScore": 421.5,
+          "genericDamageScore": 494.35,
+          "rawRotationDamageScore": 190.17,
+          "spellDamageScore": 186.64,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.1648,
+          "weaponDamageScore": 14.04,
+          "survivabilityScore": 5.4,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 180.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 75,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 1,
+            "Intelligence": 295,
+            "Power": 0,
+            "Vitality": 180,
+            "Damage": 0,
+            "Fire Damage": 6,
+            "Critical": 7,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Red Piwi Set": 6
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "8213",
+              "internalId": null,
+              "name": "Red Piwi Amulet",
+              "type": "Amulet",
+              "level": 11,
+              "set": "Red Piwi Set"
+            },
+            "belt": {
+              "id": "8237",
+              "internalId": null,
+              "name": "Red Piwi Belt",
+              "type": "Belt",
+              "level": 7,
+              "set": "Red Piwi Set"
+            },
+            "weapon": {
+              "id": "194",
+              "internalId": null,
+              "name": "Sacred Staff",
+              "type": "Staff",
+              "level": 16,
+              "set": null
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "boots": {
+              "id": "8225",
+              "internalId": null,
+              "name": "Red Piwi Sandals",
+              "type": "Boots",
+              "level": 9,
+              "set": "Red Piwi Set"
+            },
+            "hat": {
+              "id": "8243",
+              "internalId": null,
+              "name": "Red Piwi Hat",
+              "type": "Hat",
+              "level": 12,
+              "set": "Red Piwi Set"
+            },
+            "cloak": {
+              "id": "8231",
+              "internalId": null,
+              "name": "Red Piwi Cape",
+              "type": "Cloak",
+              "level": 8,
+              "set": "Red Piwi Set"
+            },
+            "ring_1": {
+              "id": "1087",
+              "internalId": null,
+              "name": "Mental Ring",
+              "type": "Ring",
+              "level": 14,
+              "set": null
+            },
+            "ring_2": {
+              "id": "8219",
+              "internalId": null,
+              "name": "Red Piwi Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Red Piwi Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 649.36,
+          "apStrategy": null,
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 1,
+            "Intelligence": 295,
+            "Power": 0,
+            "Vitality": 180,
+            "Damage": 0,
+            "Fire Damage": 6,
+            "Critical": 7,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Red Piwi Set": 6
+          },
+          "exos": {},
+          "items": [
+            "Red Piwi Amulet",
+            "Red Piwi Belt",
+            "Sacred Staff",
+            "Wild Sunflower Shield",
+            "Mental Ring",
+            "Red Piwi Ring",
+            "Red Piwi Sandals",
+            "Red Piwi Hat",
+            "Red Piwi Cape"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 238.3,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 142.5,
+          "totalSearchMs": 95.8
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 27.3,
+            "solveMs": 60.9,
+            "objective": 257.41,
+            "solutionCallbackCount": 4,
+            "validCallbackCandidateCount": 4,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 17.4,
+                "objective": 114.6,
+                "score": 526.06,
+                "itemIds": [
+                  "194",
+                  "862",
+                  "7177",
+                  "8521",
+                  "12421",
+                  "14589",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 32.7,
+                "objective": 203.45,
+                "score": 610.88,
+                "itemIds": [
+                  "8213",
+                  "8219",
+                  "8225",
+                  "8231",
+                  "8237",
+                  "8243",
+                  "8537",
+                  "30701",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 40.6,
+                "objective": 218.42,
+                "score": 625.62,
+                "itemIds": [
+                  "194",
+                  "8213",
+                  "8219",
+                  "8225",
+                  "8231",
+                  "8237",
+                  "8243",
+                  "10785",
+                  "10798"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 49.2,
+                "objective": 257.41,
+                "score": 649.36,
+                "itemIds": [
+                  "194",
+                  "1087",
+                  "8213",
+                  "8219",
+                  "8225",
+                  "8231",
+                  "8237",
+                  "8243",
+                  "18714"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 37,
+                "belt": 29,
+                "weapon": 53,
+                "shield": 7,
+                "boots": 33,
+                "hat": 26,
+                "cloak": 26,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 43
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 254,
+              "uniqueItemCount": 254,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 120,
+              "skippedSetCountVarCount": 2,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 1,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 22
+            }
+          }
+        ],
+        "itemCount": 254,
+        "candidateCount": 4,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0053,
+          "% Earth Resistance": 0.0053,
+          "% Final Damage": 10.3863,
+          "% Fire Resistance": 0.0053,
+          "% Melee Resistance": 0.0158,
+          "% Neutral Resistance": 0.0053,
+          "% Ranged Damage": 10.3863,
+          "% Ranged Resistance": 0.037,
+          "% Spell Damage": 10.3863,
+          "% Water Resistance": 0.0053,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0015,
+          "Critical": 5.5492,
+          "Critical Damage": 2.5691,
+          "Critical Resistance": 0.003,
+          "Damage": 4.4041,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0015,
+          "Fire Damage": 4.4041,
+          "Fire Resistance": 0.0015,
+          "Initiative": 0.005,
+          "Intelligence": 1.5021,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0015,
+          "Power": 0.5021,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0003,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0015,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "levelcov3_04_l17_agility_range_t1",
+        "className": "Iop",
+        "level": 17,
+        "element": "agility",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 17,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 669.02,
+        "weightedStatScore": 564.0,
+        "utilityStatScore": 429.0,
+        "genericDamageScore": 522.04,
+        "rawRotationDamageScore": 183.16,
+        "spellDamageScore": 176.95,
+        "profileBaselineDamageScore": 1052.58,
+        "profileRelativeDamage": 0.174,
+        "weaponDamageScore": 14.12,
+        "survivabilityScore": 5.1,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 170.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 80,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 1,
+          "Agility": 302,
+          "Power": 0,
+          "Vitality": 170,
+          "Damage": 0,
+          "Air Damage": 3,
+          "Critical": 12,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Arachnee Set": 3,
+          "Yellow Piwi Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "12421",
+            "internalId": null,
+            "name": "Tetra Amulet",
+            "type": "Amulet",
+            "level": 10,
+            "set": "Tetra Set"
+          },
+          "belt": {
+            "id": "8240",
+            "internalId": null,
+            "name": "Yellow Piwi Belt",
+            "type": "Belt",
+            "level": 9,
+            "set": "Yellow Piwi Set"
+          },
+          "weapon": {
+            "id": "6914",
+            "internalId": null,
+            "name": "Arachnee Cutter",
+            "type": "Axe",
+            "level": 11,
+            "set": "Arachnee Set"
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "boots": {
+            "id": "8228",
+            "internalId": null,
+            "name": "Yellow Piwi Sandals",
+            "type": "Boots",
+            "level": 11,
+            "set": "Yellow Piwi Set"
+          },
+          "hat": {
+            "id": "6913",
+            "internalId": null,
+            "name": "Arachelmet",
+            "type": "Hat",
+            "level": 10,
+            "set": "Arachnee Set"
+          },
+          "cloak": {
+            "id": "8233",
+            "internalId": null,
+            "name": "Yellow Piwi Cape",
+            "type": "Cloak",
+            "level": 10,
+            "set": "Yellow Piwi Set"
+          },
+          "ring_1": {
+            "id": "6911",
+            "internalId": null,
+            "name": "Arachnoring",
+            "type": "Ring",
+            "level": 9,
+            "set": "Arachnee Set"
+          },
+          "ring_2": {
+            "id": "6791",
+            "internalId": null,
+            "name": "Country Ring",
+            "type": "Ring",
+            "level": 15,
+            "set": "Country Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 669.02,
+        "apStrategy": null,
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 1,
+          "Agility": 302,
+          "Power": 0,
+          "Vitality": 170,
+          "Damage": 0,
+          "Air Damage": 3,
+          "Critical": 12,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Arachnee Set": 3,
+          "Yellow Piwi Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Tetra Amulet",
+          "Yellow Piwi Belt",
+          "Arachnee Cutter",
+          "Wild Sunflower Shield",
+          "Arachnoring",
+          "Country Ring",
+          "Yellow Piwi Sandals",
+          "Arachelmet",
+          "Yellow Piwi Cape"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 669.02,
+          "weightedStatScore": 564.0,
+          "utilityStatScore": 429.0,
+          "genericDamageScore": 522.04,
+          "rawRotationDamageScore": 183.16,
+          "spellDamageScore": 176.95,
+          "profileBaselineDamageScore": 1052.58,
+          "profileRelativeDamage": 0.174,
+          "weaponDamageScore": 14.12,
+          "survivabilityScore": 5.1,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 170.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 80,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 1,
+            "Agility": 302,
+            "Power": 0,
+            "Vitality": 170,
+            "Damage": 0,
+            "Air Damage": 3,
+            "Critical": 12,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Arachnee Set": 3,
+            "Yellow Piwi Set": 3
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "12421",
+              "internalId": null,
+              "name": "Tetra Amulet",
+              "type": "Amulet",
+              "level": 10,
+              "set": "Tetra Set"
+            },
+            "belt": {
+              "id": "8240",
+              "internalId": null,
+              "name": "Yellow Piwi Belt",
+              "type": "Belt",
+              "level": 9,
+              "set": "Yellow Piwi Set"
+            },
+            "weapon": {
+              "id": "6914",
+              "internalId": null,
+              "name": "Arachnee Cutter",
+              "type": "Axe",
+              "level": 11,
+              "set": "Arachnee Set"
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "boots": {
+              "id": "8228",
+              "internalId": null,
+              "name": "Yellow Piwi Sandals",
+              "type": "Boots",
+              "level": 11,
+              "set": "Yellow Piwi Set"
+            },
+            "hat": {
+              "id": "6913",
+              "internalId": null,
+              "name": "Arachelmet",
+              "type": "Hat",
+              "level": 10,
+              "set": "Arachnee Set"
+            },
+            "cloak": {
+              "id": "8233",
+              "internalId": null,
+              "name": "Yellow Piwi Cape",
+              "type": "Cloak",
+              "level": 10,
+              "set": "Yellow Piwi Set"
+            },
+            "ring_1": {
+              "id": "6911",
+              "internalId": null,
+              "name": "Arachnoring",
+              "type": "Ring",
+              "level": 9,
+              "set": "Arachnee Set"
+            },
+            "ring_2": {
+              "id": "6791",
+              "internalId": null,
+              "name": "Country Ring",
+              "type": "Ring",
+              "level": 15,
+              "set": "Country Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 669.02,
+          "apStrategy": null,
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 1,
+            "Agility": 302,
+            "Power": 0,
+            "Vitality": 170,
+            "Damage": 0,
+            "Air Damage": 3,
+            "Critical": 12,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Arachnee Set": 3,
+            "Yellow Piwi Set": 3
+          },
+          "exos": {},
+          "items": [
+            "Tetra Amulet",
+            "Yellow Piwi Belt",
+            "Arachnee Cutter",
+            "Wild Sunflower Shield",
+            "Arachnoring",
+            "Country Ring",
+            "Yellow Piwi Sandals",
+            "Arachelmet",
+            "Yellow Piwi Cape"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 303.4,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 156.7,
+          "totalSearchMs": 146.7
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 34.6,
+            "solveMs": 102.8,
+            "objective": 274.73,
+            "solutionCallbackCount": 9,
+            "validCallbackCandidateCount": 9,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 14.5,
+                "objective": 50.99,
+                "score": 485.27,
+                "itemIds": [
+                  "8213",
+                  "8219",
+                  "8225",
+                  "8231",
+                  "8237",
+                  "8243",
+                  "8537",
+                  "30701",
+                  "30828"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 25.8,
+                "objective": 52.23,
+                "score": 480.87,
+                "itemIds": [
+                  "8213",
+                  "8219",
+                  "8225",
+                  "8231",
+                  "8237",
+                  "8243",
+                  "10797",
+                  "10798",
+                  "14593"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 35.4,
+                "objective": 91.73,
+                "score": 502.9,
+                "itemIds": [
+                  "6911",
+                  "6914",
+                  "8214",
+                  "8220",
+                  "8226",
+                  "8232",
+                  "8238",
+                  "8244",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 44.0,
+                "objective": 92.94,
+                "score": 504.04,
+                "itemIds": [
+                  "235",
+                  "8214",
+                  "8220",
+                  "8223",
+                  "8226",
+                  "8232",
+                  "8238",
+                  "8244",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 53.1,
+                "objective": 104.55,
+                "score": 548.02,
+                "itemIds": [
+                  "6912",
+                  "6914",
+                  "8220",
+                  "8226",
+                  "8233",
+                  "8533",
+                  "8537",
+                  "12421",
+                  "30701"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 6,
+                "rankBeforeRerank": 6,
+                "wallTimeMs": 62.1,
+                "objective": 106.6,
+                "score": 526.94,
+                "itemIds": [
+                  "235",
+                  "6791",
+                  "8214",
+                  "8220",
+                  "8226",
+                  "8232",
+                  "8238",
+                  "8244",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 7,
+                "rankBeforeRerank": 7,
+                "wallTimeMs": 71.4,
+                "objective": 123.1,
+                "score": 555.21,
+                "itemIds": [
+                  "6791",
+                  "6792",
+                  "6797",
+                  "8220",
+                  "8226",
+                  "8233",
+                  "8240",
+                  "12421",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 8,
+                "rankBeforeRerank": 8,
+                "wallTimeMs": 80.7,
+                "objective": 153.77,
+                "score": 587.66,
+                "itemIds": [
+                  "924",
+                  "6912",
+                  "6914",
+                  "6961",
+                  "8233",
+                  "8533",
+                  "8537",
+                  "12421",
+                  "30701"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 9,
+                "rankBeforeRerank": 9,
+                "wallTimeMs": 90.1,
+                "objective": 274.73,
+                "score": 669.02,
+                "itemIds": [
+                  "6791",
+                  "6911",
+                  "6913",
+                  "6914",
+                  "8228",
+                  "8233",
+                  "8240",
+                  "12421",
+                  "18714"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 39,
+                "belt": 30,
+                "weapon": 59,
+                "shield": 7,
+                "boots": 33,
+                "hat": 27,
+                "cloak": 27,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 45
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 267,
+              "uniqueItemCount": 267,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 124,
+              "skippedSetCountVarCount": 0,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 1,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 23
+            }
+          }
+        ],
+        "itemCount": 267,
+        "candidateCount": 9,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0055,
+          "% Earth Resistance": 0.0055,
+          "% Final Damage": 10.7348,
+          "% Fire Resistance": 0.0055,
+          "% Melee Resistance": 0.0162,
+          "% Neutral Resistance": 0.0055,
+          "% Ranged Damage": 10.7348,
+          "% Ranged Resistance": 0.0381,
+          "% Spell Damage": 10.7348,
+          "% Water Resistance": 0.0055,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 1.4914,
+          "Air Damage": 4.5294,
+          "Air Resistance": 0.0015,
+          "Critical": 5.5893,
+          "Critical Damage": 2.5818,
+          "Critical Resistance": 0.0031,
+          "Damage": 4.5294,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0015,
+          "Fire Resistance": 0.0015,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0015,
+          "Power": 0.4914,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0003,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0015,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "levelcov3_05_l21_strength_light_t1",
+        "className": "Iop",
+        "level": 21,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 4,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 21,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 4,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 345.41,
+        "weightedStatScore": 523.5,
+        "utilityStatScore": 130.5,
+        "genericDamageScore": 466.9,
+        "rawRotationDamageScore": 163.82,
+        "spellDamageScore": 163.82,
+        "profileBaselineDamageScore": 1052.58,
+        "profileRelativeDamage": 0.1556,
+        "weaponDamageScore": 10.4,
+        "survivabilityScore": 4.8,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 160.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 100,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 4,
+          "Range": 0,
+          "Strength": 249,
+          "Power": 0,
+          "Vitality": 160,
+          "Damage": 0,
+          "Earth Damage": 6,
+          "Critical": 12,
+          "Critical Damage": 0,
+          "Neutral Damage": 0
+        },
+        "sets": {
+          "Green Piwi Set": 5
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8217",
+            "internalId": null,
+            "name": "Green Piwi Amulet",
+            "type": "Amulet",
+            "level": 12,
+            "set": "Green Piwi Set"
+          },
+          "belt": {
+            "id": "8241",
+            "internalId": null,
+            "name": "Green Piwi Belt",
+            "type": "Belt",
+            "level": 8,
+            "set": "Green Piwi Set"
+          },
+          "weapon": {
+            "id": "58",
+            "internalId": null,
+            "name": "The Sad Blade",
+            "type": "Sword",
+            "level": 21,
+            "set": null
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "boots": {
+            "id": "3207",
+            "internalId": null,
+            "name": "Satisfaction Boots",
+            "type": "Boots",
+            "level": 12,
+            "set": null
+          },
+          "hat": {
+            "id": "8247",
+            "internalId": null,
+            "name": "Green Piwi Hat",
+            "type": "Hat",
+            "level": 7,
+            "set": "Green Piwi Set"
+          },
+          "cloak": {
+            "id": "8236",
+            "internalId": null,
+            "name": "Green Piwi Cape",
+            "type": "Cloak",
+            "level": 9,
+            "set": "Green Piwi Set"
+          },
+          "ring_1": {
+            "id": "8223",
+            "internalId": null,
+            "name": "Green Piwi Ring",
+            "type": "Ring",
+            "level": 11,
+            "set": "Green Piwi Set"
+          },
+          "ring_2": {
+            "id": "8254",
+            "internalId": null,
+            "name": "Sponge Ring",
+            "type": "Ring",
+            "level": 20,
+            "set": "Sponge Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 345.41,
+        "apStrategy": null,
+        "totals": {
+          "AP": 6,
+          "MP": 4,
+          "Range": 0,
+          "Strength": 249,
+          "Power": 0,
+          "Vitality": 160,
+          "Damage": 0,
+          "Earth Damage": 6,
+          "Critical": 12,
+          "Critical Damage": 0,
+          "Neutral Damage": 0
+        },
+        "sets": {
+          "Green Piwi Set": 5
+        },
+        "exos": {},
+        "items": [
+          "Green Piwi Amulet",
+          "Green Piwi Belt",
+          "The Sad Blade",
+          "Wild Sunflower Shield",
+          "Green Piwi Ring",
+          "Sponge Ring",
+          "Satisfaction Boots",
+          "Green Piwi Hat",
+          "Green Piwi Cape"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 345.41,
+          "weightedStatScore": 523.5,
+          "utilityStatScore": 130.5,
+          "genericDamageScore": 466.9,
+          "rawRotationDamageScore": 163.82,
+          "spellDamageScore": 163.82,
+          "profileBaselineDamageScore": 1052.58,
+          "profileRelativeDamage": 0.1556,
+          "weaponDamageScore": 10.4,
+          "survivabilityScore": 4.8,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 160.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 100,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 4,
+            "Range": 0,
+            "Strength": 249,
+            "Power": 0,
+            "Vitality": 160,
+            "Damage": 0,
+            "Earth Damage": 6,
+            "Critical": 12,
+            "Critical Damage": 0,
+            "Neutral Damage": 0
+          },
+          "sets": {
+            "Green Piwi Set": 5
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "8217",
+              "internalId": null,
+              "name": "Green Piwi Amulet",
+              "type": "Amulet",
+              "level": 12,
+              "set": "Green Piwi Set"
+            },
+            "belt": {
+              "id": "8241",
+              "internalId": null,
+              "name": "Green Piwi Belt",
+              "type": "Belt",
+              "level": 8,
+              "set": "Green Piwi Set"
+            },
+            "weapon": {
+              "id": "58",
+              "internalId": null,
+              "name": "The Sad Blade",
+              "type": "Sword",
+              "level": 21,
+              "set": null
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "boots": {
+              "id": "3207",
+              "internalId": null,
+              "name": "Satisfaction Boots",
+              "type": "Boots",
+              "level": 12,
+              "set": null
+            },
+            "hat": {
+              "id": "8247",
+              "internalId": null,
+              "name": "Green Piwi Hat",
+              "type": "Hat",
+              "level": 7,
+              "set": "Green Piwi Set"
+            },
+            "cloak": {
+              "id": "8236",
+              "internalId": null,
+              "name": "Green Piwi Cape",
+              "type": "Cloak",
+              "level": 9,
+              "set": "Green Piwi Set"
+            },
+            "ring_1": {
+              "id": "8223",
+              "internalId": null,
+              "name": "Green Piwi Ring",
+              "type": "Ring",
+              "level": 11,
+              "set": "Green Piwi Set"
+            },
+            "ring_2": {
+              "id": "8254",
+              "internalId": null,
+              "name": "Sponge Ring",
+              "type": "Ring",
+              "level": 20,
+              "set": "Sponge Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 345.41,
+          "apStrategy": null,
+          "totals": {
+            "AP": 6,
+            "MP": 4,
+            "Range": 0,
+            "Strength": 249,
+            "Power": 0,
+            "Vitality": 160,
+            "Damage": 0,
+            "Earth Damage": 6,
+            "Critical": 12,
+            "Critical Damage": 0,
+            "Neutral Damage": 0
+          },
+          "sets": {
+            "Green Piwi Set": 5
+          },
+          "exos": {},
+          "items": [
+            "Green Piwi Amulet",
+            "Green Piwi Belt",
+            "The Sad Blade",
+            "Wild Sunflower Shield",
+            "Green Piwi Ring",
+            "Sponge Ring",
+            "Satisfaction Boots",
+            "Green Piwi Hat",
+            "Green Piwi Cape"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 162.9,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 35.2,
+          "totalSearchMs": 127.7
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 43.1,
+            "solveMs": 73.8,
+            "objective": 198.27,
+            "solutionCallbackCount": 4,
+            "validCallbackCandidateCount": 4,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 16.5,
+                "objective": 124.38,
+                "score": 314.22,
+                "itemIds": [
+                  "58",
+                  "112",
+                  "121",
+                  "458",
+                  "696",
+                  "775",
+                  "3207",
+                  "17502",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 32.7,
+                "objective": 133.64,
+                "score": 345.41,
+                "itemIds": [
+                  "58",
+                  "3207",
+                  "8217",
+                  "8223",
+                  "8236",
+                  "8241",
+                  "8247",
+                  "8254",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 48.1,
+                "objective": 183.17,
+                "score": 339.82,
+                "itemIds": [
+                  "58",
+                  "696",
+                  "775",
+                  "3207",
+                  "6923",
+                  "6925",
+                  "6961",
+                  "8223",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 59.1,
+                "objective": 198.27,
+                "score": 341.72,
+                "itemIds": [
+                  "58",
+                  "1019",
+                  "1021",
+                  "3207",
+                  "6923",
+                  "6925",
+                  "6961",
+                  "8223",
+                  "18714"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 44,
+                "belt": 36,
+                "weapon": 78,
+                "shield": 9,
+                "boots": 38,
+                "hat": 36,
+                "cloak": 40,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 54
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 335,
+              "uniqueItemCount": 335,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 168,
+              "skippedSetCountVarCount": 6,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 1,
+              "conditionConstraintCount": 0,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 30
+            }
+          }
+        ],
+        "itemCount": 335,
+        "candidateCount": 4,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0061,
+          "% Earth Resistance": 0.0061,
+          "% Final Damage": 10.7348,
+          "% Fire Resistance": 0.0061,
+          "% Melee Resistance": 0.0181,
+          "% Neutral Resistance": 0.0061,
+          "% Ranged Damage": 10.7348,
+          "% Ranged Resistance": 0.0423,
+          "% Spell Damage": 10.7348,
+          "% Water Resistance": 0.0061,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0017,
+          "Critical": 5.5893,
+          "Critical Damage": 2.5818,
+          "Critical Resistance": 0.0034,
+          "Damage": 4.5294,
+          "Dodge": 1.0,
+          "Earth Damage": 4.5294,
+          "Earth Resistance": 0.0017,
+          "Fire Resistance": 0.0017,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0017,
+          "Power": 0.4914,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0003,
+          "Range": 8.0,
+          "Strength": 0.4914,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0017,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "levelcov3_06_l23_chance_range_t1",
+        "className": "Iop",
+        "level": 23,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 23,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 750.87,
+        "weightedStatScore": 558.05,
+        "utilityStatScore": 487.05,
+        "genericDamageScore": 581.08,
+        "rawRotationDamageScore": 239.59,
+        "spellDamageScore": 239.59,
+        "profileBaselineDamageScore": 1236.96,
+        "profileRelativeDamage": 0.1937,
+        "weaponDamageScore": 9.53,
+        "survivabilityScore": 2.34,
+        "negativeResistancePenalty": 7.0,
+        "weakestElementEhp": 74.77,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 105,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 2,
+          "Chance": 350,
+          "Power": 5,
+          "Vitality": 80,
+          "Damage": 0,
+          "Water Damage": 5,
+          "Critical": 6,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Moskito Set": 2,
+          "Blue Piwi Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "6723",
+            "internalId": null,
+            "name": "Bearman's Necklace",
+            "type": "Amulet",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "belt": {
+            "id": "8124",
+            "internalId": null,
+            "name": "Farmer Beltudas",
+            "type": "Belt",
+            "level": 20,
+            "set": "Farmer Set"
+          },
+          "weapon": {
+            "id": "1432",
+            "internalId": null,
+            "name": "Houze Shovel",
+            "type": "Shovel",
+            "level": 21,
+            "set": null
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "boots": {
+            "id": "1622",
+            "internalId": null,
+            "name": "Power Boots",
+            "type": "Boots",
+            "level": 16,
+            "set": null
+          },
+          "hat": {
+            "id": "8244",
+            "internalId": null,
+            "name": "Blue Piwi Hat",
+            "type": "Hat",
+            "level": 11,
+            "set": "Blue Piwi Set"
+          },
+          "cloak": {
+            "id": "6916",
+            "internalId": null,
+            "name": "Small Moskito Schoolbag",
+            "type": "Cloak",
+            "level": 16,
+            "set": "Moskito Set"
+          },
+          "ring_1": {
+            "id": "8220",
+            "internalId": null,
+            "name": "Blue Piwi Ring",
+            "type": "Ring",
+            "level": 9,
+            "set": "Blue Piwi Set"
+          },
+          "ring_2": {
+            "id": "6915",
+            "internalId": null,
+            "name": "Mos Kitano",
+            "type": "Ring",
+            "level": 21,
+            "set": "Moskito Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 750.87,
+        "apStrategy": null,
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 2,
+          "Chance": 350,
+          "Power": 5,
+          "Vitality": 80,
+          "Damage": 0,
+          "Water Damage": 5,
+          "Critical": 6,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Moskito Set": 2,
+          "Blue Piwi Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Bearman's Necklace",
+          "Farmer Beltudas",
+          "Houze Shovel",
+          "Wild Sunflower Shield",
+          "Blue Piwi Ring",
+          "Mos Kitano",
+          "Power Boots",
+          "Blue Piwi Hat",
+          "Small Moskito Schoolbag"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 750.87,
+          "weightedStatScore": 558.05,
+          "utilityStatScore": 487.05,
+          "genericDamageScore": 581.08,
+          "rawRotationDamageScore": 239.59,
+          "spellDamageScore": 239.59,
+          "profileBaselineDamageScore": 1236.96,
+          "profileRelativeDamage": 0.1937,
+          "weaponDamageScore": 9.53,
+          "survivabilityScore": 2.34,
+          "negativeResistancePenalty": 7.0,
+          "weakestElementEhp": 74.77,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 105,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 2,
+            "Chance": 350,
+            "Power": 5,
+            "Vitality": 80,
+            "Damage": 0,
+            "Water Damage": 5,
+            "Critical": 6,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Moskito Set": 2,
+            "Blue Piwi Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "6723",
+              "internalId": null,
+              "name": "Bearman's Necklace",
+              "type": "Amulet",
+              "level": 20,
+              "set": "Bearman Set"
+            },
+            "belt": {
+              "id": "8124",
+              "internalId": null,
+              "name": "Farmer Beltudas",
+              "type": "Belt",
+              "level": 20,
+              "set": "Farmer Set"
+            },
+            "weapon": {
+              "id": "1432",
+              "internalId": null,
+              "name": "Houze Shovel",
+              "type": "Shovel",
+              "level": 21,
+              "set": null
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "boots": {
+              "id": "1622",
+              "internalId": null,
+              "name": "Power Boots",
+              "type": "Boots",
+              "level": 16,
+              "set": null
+            },
+            "hat": {
+              "id": "8244",
+              "internalId": null,
+              "name": "Blue Piwi Hat",
+              "type": "Hat",
+              "level": 11,
+              "set": "Blue Piwi Set"
+            },
+            "cloak": {
+              "id": "6916",
+              "internalId": null,
+              "name": "Small Moskito Schoolbag",
+              "type": "Cloak",
+              "level": 16,
+              "set": "Moskito Set"
+            },
+            "ring_1": {
+              "id": "8220",
+              "internalId": null,
+              "name": "Blue Piwi Ring",
+              "type": "Ring",
+              "level": 9,
+              "set": "Blue Piwi Set"
+            },
+            "ring_2": {
+              "id": "6915",
+              "internalId": null,
+              "name": "Mos Kitano",
+              "type": "Ring",
+              "level": 21,
+              "set": "Moskito Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 750.87,
+          "apStrategy": null,
+          "totals": {
+            "AP": 6,
+            "MP": 3,
+            "Range": 2,
+            "Chance": 350,
+            "Power": 5,
+            "Vitality": 80,
+            "Damage": 0,
+            "Water Damage": 5,
+            "Critical": 6,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Moskito Set": 2,
+            "Blue Piwi Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Bearman's Necklace",
+            "Farmer Beltudas",
+            "Houze Shovel",
+            "Wild Sunflower Shield",
+            "Blue Piwi Ring",
+            "Mos Kitano",
+            "Power Boots",
+            "Blue Piwi Hat",
+            "Small Moskito Schoolbag"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 152.2,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 36.7,
+          "totalSearchMs": 115.5
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 49.5,
+            "solveMs": 58.1,
+            "objective": 296.88,
+            "solutionCallbackCount": 3,
+            "validCallbackCandidateCount": 3,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 23.6,
+                "objective": 179.43,
+                "score": 647.47,
+                "itemIds": [
+                  "121",
+                  "701",
+                  "744",
+                  "767",
+                  "1432",
+                  "1622",
+                  "12753",
+                  "12754",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 36.6,
+                "objective": 188.66,
+                "score": 647.14,
+                "itemIds": [
+                  "744",
+                  "1432",
+                  "1622",
+                  "6723",
+                  "6791",
+                  "8124",
+                  "8125",
+                  "8126",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 45.4,
+                "objective": 296.88,
+                "score": 750.87,
+                "itemIds": [
+                  "1432",
+                  "1622",
+                  "6723",
+                  "6915",
+                  "6916",
+                  "8124",
+                  "8220",
+                  "8244",
+                  "18714"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 49,
+                "belt": 37,
+                "weapon": 83,
+                "shield": 9,
+                "boots": 42,
+                "hat": 40,
+                "cloak": 43,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 54
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 357,
+              "uniqueItemCount": 357,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 178,
+              "skippedSetCountVarCount": 2,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 2,
+              "conditionConstraintCount": 1,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 32
+            }
+          }
+        ],
+        "itemCount": 357,
+        "candidateCount": 3,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0064,
+          "% Earth Resistance": 0.0064,
+          "% Final Damage": 10.5499,
+          "% Fire Resistance": 0.0064,
+          "% Melee Resistance": 0.019,
+          "% Neutral Resistance": 0.0064,
+          "% Ranged Damage": 10.5499,
+          "% Ranged Resistance": 0.0444,
+          "% Spell Damage": 10.5499,
+          "% Water Resistance": 0.0064,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0018,
+          "Chance": 1.5296,
+          "Critical": 5.355,
+          "Critical Damage": 2.4373,
+          "Critical Resistance": 0.0036,
+          "Damage": 4.1782,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0018,
+          "Fire Resistance": 0.0018,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0018,
+          "Power": 0.5296,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0004,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 4.1782,
+          "Water Resistance": 0.0018,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "levelcov3_07_l26_intelligence_light_t1",
+        "className": "Iop",
+        "level": 26,
+        "element": "intelligence",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 26,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 750.28,
+        "weightedStatScore": 618.8,
+        "utilityStatScore": 493.0,
+        "genericDamageScore": 562.0,
+        "rawRotationDamageScore": 216.2,
+        "spellDamageScore": 216.2,
+        "profileBaselineDamageScore": 1154.08,
+        "profileRelativeDamage": 0.1873,
+        "weaponDamageScore": 6.08,
+        "survivabilityScore": 4.38,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 146.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 112,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 3,
+          "Range": 0,
+          "Intelligence": 387,
+          "Power": 0,
+          "Vitality": 146,
+          "Damage": 0,
+          "Fire Damage": 1,
+          "Critical": 13,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Red Piwi Set": 3,
+          "Spacevader Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8213",
+            "internalId": null,
+            "name": "Red Piwi Amulet",
+            "type": "Amulet",
+            "level": 11,
+            "set": "Red Piwi Set"
+          },
+          "belt": {
+            "id": "12599",
+            "internalId": null,
+            "name": "Spacevader Belt",
+            "type": "Belt",
+            "level": 10,
+            "set": "Spacevader Set"
+          },
+          "weapon": {
+            "id": "462",
+            "internalId": null,
+            "name": "Treechnid Root Bow",
+            "type": "Bow",
+            "level": 25,
+            "set": null
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "boots": {
+            "id": "8225",
+            "internalId": null,
+            "name": "Red Piwi Sandals",
+            "type": "Boots",
+            "level": 9,
+            "set": "Red Piwi Set"
+          },
+          "hat": {
+            "id": "711",
+            "internalId": null,
+            "name": "Jouik Krampe",
+            "type": "Hat",
+            "level": 26,
+            "set": null
+          },
+          "cloak": {
+            "id": "781",
+            "internalId": null,
+            "name": "Itou Lascione Cape",
+            "type": "Cloak",
+            "level": 21,
+            "set": null
+          },
+          "ring_1": {
+            "id": "8219",
+            "internalId": null,
+            "name": "Red Piwi Ring",
+            "type": "Ring",
+            "level": 10,
+            "set": "Red Piwi Set"
+          },
+          "ring_2": {
+            "id": "12598",
+            "internalId": null,
+            "name": "Spacevader Ring",
+            "type": "Ring",
+            "level": 10,
+            "set": "Spacevader Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 750.28,
+        "apStrategy": null,
+        "totals": {
+          "AP": 7,
+          "MP": 3,
+          "Range": 0,
+          "Intelligence": 387,
+          "Power": 0,
+          "Vitality": 146,
+          "Damage": 0,
+          "Fire Damage": 1,
+          "Critical": 13,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Red Piwi Set": 3,
+          "Spacevader Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Red Piwi Amulet",
+          "Spacevader Belt",
+          "Treechnid Root Bow",
+          "Wild Sunflower Shield",
+          "Red Piwi Ring",
+          "Spacevader Ring",
+          "Red Piwi Sandals",
+          "Jouik Krampe",
+          "Itou Lascione Cape"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 750.28,
+          "weightedStatScore": 618.8,
+          "utilityStatScore": 493.0,
+          "genericDamageScore": 562.0,
+          "rawRotationDamageScore": 216.2,
+          "spellDamageScore": 216.2,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.1873,
+          "weaponDamageScore": 6.08,
+          "survivabilityScore": 4.38,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 146.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 112,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 0,
+            "Intelligence": 387,
+            "Power": 0,
+            "Vitality": 146,
+            "Damage": 0,
+            "Fire Damage": 1,
+            "Critical": 13,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Red Piwi Set": 3,
+            "Spacevader Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "8213",
+              "internalId": null,
+              "name": "Red Piwi Amulet",
+              "type": "Amulet",
+              "level": 11,
+              "set": "Red Piwi Set"
+            },
+            "belt": {
+              "id": "12599",
+              "internalId": null,
+              "name": "Spacevader Belt",
+              "type": "Belt",
+              "level": 10,
+              "set": "Spacevader Set"
+            },
+            "weapon": {
+              "id": "462",
+              "internalId": null,
+              "name": "Treechnid Root Bow",
+              "type": "Bow",
+              "level": 25,
+              "set": null
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "boots": {
+              "id": "8225",
+              "internalId": null,
+              "name": "Red Piwi Sandals",
+              "type": "Boots",
+              "level": 9,
+              "set": "Red Piwi Set"
+            },
+            "hat": {
+              "id": "711",
+              "internalId": null,
+              "name": "Jouik Krampe",
+              "type": "Hat",
+              "level": 26,
+              "set": null
+            },
+            "cloak": {
+              "id": "781",
+              "internalId": null,
+              "name": "Itou Lascione Cape",
+              "type": "Cloak",
+              "level": 21,
+              "set": null
+            },
+            "ring_1": {
+              "id": "8219",
+              "internalId": null,
+              "name": "Red Piwi Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Red Piwi Set"
+            },
+            "ring_2": {
+              "id": "12598",
+              "internalId": null,
+              "name": "Spacevader Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Spacevader Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 750.28,
+          "apStrategy": null,
+          "totals": {
+            "AP": 7,
+            "MP": 3,
+            "Range": 0,
+            "Intelligence": 387,
+            "Power": 0,
+            "Vitality": 146,
+            "Damage": 0,
+            "Fire Damage": 1,
+            "Critical": 13,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Red Piwi Set": 3,
+            "Spacevader Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Red Piwi Amulet",
+            "Spacevader Belt",
+            "Treechnid Root Bow",
+            "Wild Sunflower Shield",
+            "Red Piwi Ring",
+            "Spacevader Ring",
+            "Red Piwi Sandals",
+            "Jouik Krampe",
+            "Itou Lascione Cape"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 155.6,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 32.9,
+          "totalSearchMs": 122.7
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 52.9,
+            "solveMs": 62.1,
+            "objective": 329.76,
+            "solutionCallbackCount": 3,
+            "validCallbackCandidateCount": 3,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 28.0,
+                "objective": 225.62,
+                "score": 660.62,
+                "itemIds": [
+                  "121",
+                  "299",
+                  "462",
+                  "711",
+                  "767",
+                  "781",
+                  "2396",
+                  "14589",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 41.2,
+                "objective": 233.27,
+                "score": 667.59,
+                "itemIds": [
+                  "462",
+                  "2419",
+                  "2422",
+                  "6719",
+                  "6720",
+                  "8213",
+                  "12598",
+                  "12599",
+                  "18666"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 49.6,
+                "objective": 329.76,
+                "score": 750.28,
+                "itemIds": [
+                  "462",
+                  "711",
+                  "781",
+                  "8213",
+                  "8219",
+                  "8225",
+                  "12598",
+                  "12599",
+                  "18714"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 51,
+                "belt": 39,
+                "weapon": 96,
+                "shield": 10,
+                "boots": 43,
+                "hat": 42,
+                "cloak": 45,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 60
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 386,
+              "uniqueItemCount": 386,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 186,
+              "skippedSetCountVarCount": 4,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 4,
+              "conditionConstraintCount": 4,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 33
+            }
+          }
+        ],
+        "itemCount": 386,
+        "candidateCount": 3,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0068,
+          "% Earth Resistance": 0.0068,
+          "% Final Damage": 10.3863,
+          "% Fire Resistance": 0.0068,
+          "% Melee Resistance": 0.0203,
+          "% Neutral Resistance": 0.0068,
+          "% Ranged Damage": 10.3863,
+          "% Ranged Resistance": 0.0476,
+          "% Spell Damage": 10.3863,
+          "% Water Resistance": 0.0068,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0019,
+          "Critical": 5.5492,
+          "Critical Damage": 2.5691,
+          "Critical Resistance": 0.0039,
+          "Damage": 4.4041,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0019,
+          "Fire Damage": 4.4041,
+          "Fire Resistance": 0.0019,
+          "Initiative": 0.005,
+          "Intelligence": 1.5021,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0019,
+          "Power": 0.5021,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0004,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0019,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "levelcov3_08_l27_agility_light_t1",
+        "className": "Iop",
+        "level": 27,
+        "element": "agility",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 27,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 696.13,
+        "weightedStatScore": 579.0,
+        "utilityStatScore": 444.0,
+        "genericDamageScore": 550.23,
+        "rawRotationDamageScore": 193.05,
+        "spellDamageScore": 193.05,
+        "profileBaselineDamageScore": 1052.58,
+        "profileRelativeDamage": 0.1834,
+        "weaponDamageScore": 6.7,
+        "survivabilityScore": 4.53,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 150.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 115,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 0,
+          "Agility": 319,
+          "Power": 0,
+          "Vitality": 150,
+          "Damage": 3,
+          "Air Damage": 3,
+          "Critical": 8,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Tofu Set": 3,
+          "Sponge Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8108",
+            "internalId": null,
+            "name": "Tofu Amulet",
+            "type": "Amulet",
+            "level": 22,
+            "set": "Tofu Set"
+          },
+          "belt": {
+            "id": "8257",
+            "internalId": null,
+            "name": "Sponge Belt",
+            "type": "Belt",
+            "level": 20,
+            "set": "Sponge Set"
+          },
+          "weapon": {
+            "id": "462",
+            "internalId": null,
+            "name": "Treechnid Root Bow",
+            "type": "Bow",
+            "level": 25,
+            "set": null
+          },
+          "shield": {
+            "id": "18659",
+            "internalId": null,
+            "name": "Sponghield",
+            "type": "Shield",
+            "level": 25,
+            "set": "Sponge Set"
+          },
+          "boots": {
+            "id": "3207",
+            "internalId": null,
+            "name": "Satisfaction Boots",
+            "type": "Boots",
+            "level": 12,
+            "set": null
+          },
+          "hat": {
+            "id": "6913",
+            "internalId": null,
+            "name": "Arachelmet",
+            "type": "Hat",
+            "level": 10,
+            "set": "Arachnee Set"
+          },
+          "cloak": {
+            "id": "8112",
+            "internalId": null,
+            "name": "Tofu Cloak",
+            "type": "Cloak",
+            "level": 26,
+            "set": "Tofu Set"
+          },
+          "ring_1": {
+            "id": "6791",
+            "internalId": null,
+            "name": "Country Ring",
+            "type": "Ring",
+            "level": 15,
+            "set": "Country Set"
+          },
+          "ring_2": {
+            "id": "8109",
+            "internalId": null,
+            "name": "Tofu Ring",
+            "type": "Ring",
+            "level": 21,
+            "set": "Tofu Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 696.13,
+        "apStrategy": null,
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 0,
+          "Agility": 319,
+          "Power": 0,
+          "Vitality": 150,
+          "Damage": 3,
+          "Air Damage": 3,
+          "Critical": 8,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Tofu Set": 3,
+          "Sponge Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Tofu Amulet",
+          "Sponge Belt",
+          "Treechnid Root Bow",
+          "Sponghield",
+          "Country Ring",
+          "Tofu Ring",
+          "Satisfaction Boots",
+          "Arachelmet",
+          "Tofu Cloak"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 696.13,
+          "weightedStatScore": 579.0,
+          "utilityStatScore": 444.0,
+          "genericDamageScore": 550.23,
+          "rawRotationDamageScore": 193.05,
+          "spellDamageScore": 193.05,
+          "profileBaselineDamageScore": 1052.58,
+          "profileRelativeDamage": 0.1834,
+          "weaponDamageScore": 6.7,
+          "survivabilityScore": 4.53,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 150.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 115,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 0,
+            "Agility": 319,
+            "Power": 0,
+            "Vitality": 150,
+            "Damage": 3,
+            "Air Damage": 3,
+            "Critical": 8,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Tofu Set": 3,
+            "Sponge Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "8108",
+              "internalId": null,
+              "name": "Tofu Amulet",
+              "type": "Amulet",
+              "level": 22,
+              "set": "Tofu Set"
+            },
+            "belt": {
+              "id": "8257",
+              "internalId": null,
+              "name": "Sponge Belt",
+              "type": "Belt",
+              "level": 20,
+              "set": "Sponge Set"
+            },
+            "weapon": {
+              "id": "462",
+              "internalId": null,
+              "name": "Treechnid Root Bow",
+              "type": "Bow",
+              "level": 25,
+              "set": null
+            },
+            "shield": {
+              "id": "18659",
+              "internalId": null,
+              "name": "Sponghield",
+              "type": "Shield",
+              "level": 25,
+              "set": "Sponge Set"
+            },
+            "boots": {
+              "id": "3207",
+              "internalId": null,
+              "name": "Satisfaction Boots",
+              "type": "Boots",
+              "level": 12,
+              "set": null
+            },
+            "hat": {
+              "id": "6913",
+              "internalId": null,
+              "name": "Arachelmet",
+              "type": "Hat",
+              "level": 10,
+              "set": "Arachnee Set"
+            },
+            "cloak": {
+              "id": "8112",
+              "internalId": null,
+              "name": "Tofu Cloak",
+              "type": "Cloak",
+              "level": 26,
+              "set": "Tofu Set"
+            },
+            "ring_1": {
+              "id": "6791",
+              "internalId": null,
+              "name": "Country Ring",
+              "type": "Ring",
+              "level": 15,
+              "set": "Country Set"
+            },
+            "ring_2": {
+              "id": "8109",
+              "internalId": null,
+              "name": "Tofu Ring",
+              "type": "Ring",
+              "level": 21,
+              "set": "Tofu Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 696.13,
+          "apStrategy": null,
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 0,
+            "Agility": 319,
+            "Power": 0,
+            "Vitality": 150,
+            "Damage": 3,
+            "Air Damage": 3,
+            "Critical": 8,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Tofu Set": 3,
+            "Sponge Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Tofu Amulet",
+            "Sponge Belt",
+            "Treechnid Root Bow",
+            "Sponghield",
+            "Country Ring",
+            "Tofu Ring",
+            "Satisfaction Boots",
+            "Arachelmet",
+            "Tofu Cloak"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 185.9,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 33.0,
+          "totalSearchMs": 152.9
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 51.5,
+            "solveMs": 92.2,
+            "objective": 236.54,
+            "solutionCallbackCount": 5,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 30.4,
+                "objective": 108.17,
+                "score": 580.98,
+                "itemIds": [
+                  "462",
+                  "696",
+                  "767",
+                  "785",
+                  "947",
+                  "1484",
+                  "1700",
+                  "3207",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 42.8,
+                "objective": 128.28,
+                "score": 611.99,
+                "itemIds": [
+                  "462",
+                  "3207",
+                  "8216",
+                  "8222",
+                  "8233",
+                  "8240",
+                  "8246",
+                  "8537",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 53.1,
+                "objective": 199.99,
+                "score": 656.85,
+                "itemIds": [
+                  "462",
+                  "696",
+                  "1700",
+                  "3207",
+                  "8108",
+                  "8112",
+                  "8254",
+                  "12851",
+                  "18659"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 64.7,
+                "objective": 209.75,
+                "score": 685.46,
+                "itemIds": [
+                  "462",
+                  "696",
+                  "1700",
+                  "3207",
+                  "6791",
+                  "8108",
+                  "8109",
+                  "8258",
+                  "18659"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 78.2,
+                "objective": 236.54,
+                "score": 696.13,
+                "itemIds": [
+                  "462",
+                  "3207",
+                  "6791",
+                  "6913",
+                  "8108",
+                  "8109",
+                  "8112",
+                  "8257",
+                  "18659"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 53,
+                "belt": 42,
+                "weapon": 103,
+                "shield": 10,
+                "boots": 45,
+                "hat": 42,
+                "cloak": 46,
+                "pet": 0,
+                "dofus": 0,
+                "ring": 60
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 401,
+              "uniqueItemCount": 401,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 189,
+              "skippedSetCountVarCount": 4,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 4,
+              "conditionConstraintCount": 4,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 34
+            }
+          }
+        ],
+        "itemCount": 401,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.007,
+          "% Earth Resistance": 0.007,
+          "% Final Damage": 10.7348,
+          "% Fire Resistance": 0.007,
+          "% Melee Resistance": 0.0208,
+          "% Neutral Resistance": 0.007,
+          "% Ranged Damage": 10.7348,
+          "% Ranged Resistance": 0.0486,
+          "% Spell Damage": 10.7348,
+          "% Water Resistance": 0.007,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 1.4914,
+          "Air Damage": 4.5294,
+          "Air Resistance": 0.002,
+          "Critical": 5.5893,
+          "Critical Damage": 2.5818,
+          "Critical Resistance": 0.0039,
+          "Damage": 4.5294,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.002,
+          "Fire Resistance": 0.002,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.002,
+          "Power": 0.4914,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0004,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.002,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "levelcov3_09_l28_strength_range_t2",
+        "className": "Iop",
+        "level": 28,
+        "element": "strength",
+        "budgetTier": 2,
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 28,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 383.46,
+        "weightedStatScore": 778.0,
+        "utilityStatScore": 127.0,
+        "genericDamageScore": 559.23,
+        "rawRotationDamageScore": 271.18,
+        "spellDamageScore": 271.18,
+        "profileBaselineDamageScore": 1454.75,
+        "profileRelativeDamage": 0.1864,
+        "weaponDamageScore": 23.0,
+        "survivabilityScore": 4.8,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 160.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 117,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 1,
+          "Strength": 216,
+          "Power": 35,
+          "Vitality": 160,
+          "Damage": 2,
+          "Earth Damage": 0,
+          "Critical": 30,
+          "Critical Damage": 40,
+          "Neutral Damage": 0
+        },
+        "sets": {
+          "Spacevader Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9454",
+            "internalId": null,
+            "name": "Bobblamulet",
+            "type": "Amulet",
+            "level": 27,
+            "set": "Bobble Set"
+          },
+          "belt": {
+            "id": "12599",
+            "internalId": null,
+            "name": "Spacevader Belt",
+            "type": "Belt",
+            "level": 10,
+            "set": "Spacevader Set"
+          },
+          "weapon": {
+            "id": "462",
+            "internalId": null,
+            "name": "Treechnid Root Bow",
+            "type": "Bow",
+            "level": 25,
+            "set": null
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "boots": {
+            "id": "3207",
+            "internalId": null,
+            "name": "Satisfaction Boots",
+            "type": "Boots",
+            "level": 12,
+            "set": null
+          },
+          "hat": {
+            "id": "696",
+            "internalId": null,
+            "name": "Slob Headgear",
+            "type": "Hat",
+            "level": 20,
+            "set": null
+          },
+          "cloak": {
+            "id": "12848",
+            "internalId": null,
+            "name": "Goblimp Coat",
+            "type": "Cloak",
+            "level": 25,
+            "set": "Goblimp Set"
+          },
+          "pet": {
+            "id": "13673",
+            "internalId": null,
+            "name": "Snailmate",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "ring_1": {
+            "id": "8223",
+            "internalId": null,
+            "name": "Green Piwi Ring",
+            "type": "Ring",
+            "level": 11,
+            "set": "Green Piwi Set"
+          },
+          "ring_2": {
+            "id": "12598",
+            "internalId": null,
+            "name": "Spacevader Ring",
+            "type": "Ring",
+            "level": 10,
+            "set": "Spacevader Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 383.46,
+        "apStrategy": null,
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 1,
+          "Strength": 216,
+          "Power": 35,
+          "Vitality": 160,
+          "Damage": 2,
+          "Earth Damage": 0,
+          "Critical": 30,
+          "Critical Damage": 40,
+          "Neutral Damage": 0
+        },
+        "sets": {
+          "Spacevader Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Bobblamulet",
+          "Spacevader Belt",
+          "Treechnid Root Bow",
+          "Wild Sunflower Shield",
+          "Green Piwi Ring",
+          "Spacevader Ring",
+          "Satisfaction Boots",
+          "Slob Headgear",
+          "Goblimp Coat",
+          "Snailmate"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 383.46,
+          "weightedStatScore": 778.0,
+          "utilityStatScore": 127.0,
+          "genericDamageScore": 559.23,
+          "rawRotationDamageScore": 271.18,
+          "spellDamageScore": 271.18,
+          "profileBaselineDamageScore": 1454.75,
+          "profileRelativeDamage": 0.1864,
+          "weaponDamageScore": 23.0,
+          "survivabilityScore": 4.8,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 160.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 117,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 1,
+            "Strength": 216,
+            "Power": 35,
+            "Vitality": 160,
+            "Damage": 2,
+            "Earth Damage": 0,
+            "Critical": 30,
+            "Critical Damage": 40,
+            "Neutral Damage": 0
+          },
+          "sets": {
+            "Spacevader Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "9454",
+              "internalId": null,
+              "name": "Bobblamulet",
+              "type": "Amulet",
+              "level": 27,
+              "set": "Bobble Set"
+            },
+            "belt": {
+              "id": "12599",
+              "internalId": null,
+              "name": "Spacevader Belt",
+              "type": "Belt",
+              "level": 10,
+              "set": "Spacevader Set"
+            },
+            "weapon": {
+              "id": "462",
+              "internalId": null,
+              "name": "Treechnid Root Bow",
+              "type": "Bow",
+              "level": 25,
+              "set": null
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "boots": {
+              "id": "3207",
+              "internalId": null,
+              "name": "Satisfaction Boots",
+              "type": "Boots",
+              "level": 12,
+              "set": null
+            },
+            "hat": {
+              "id": "696",
+              "internalId": null,
+              "name": "Slob Headgear",
+              "type": "Hat",
+              "level": 20,
+              "set": null
+            },
+            "cloak": {
+              "id": "12848",
+              "internalId": null,
+              "name": "Goblimp Coat",
+              "type": "Cloak",
+              "level": 25,
+              "set": "Goblimp Set"
+            },
+            "pet": {
+              "id": "13673",
+              "internalId": null,
+              "name": "Snailmate",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "ring_1": {
+              "id": "8223",
+              "internalId": null,
+              "name": "Green Piwi Ring",
+              "type": "Ring",
+              "level": 11,
+              "set": "Green Piwi Set"
+            },
+            "ring_2": {
+              "id": "12598",
+              "internalId": null,
+              "name": "Spacevader Ring",
+              "type": "Ring",
+              "level": 10,
+              "set": "Spacevader Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 383.46,
+          "apStrategy": null,
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 1,
+            "Strength": 216,
+            "Power": 35,
+            "Vitality": 160,
+            "Damage": 2,
+            "Earth Damage": 0,
+            "Critical": 30,
+            "Critical Damage": 40,
+            "Neutral Damage": 0
+          },
+          "sets": {
+            "Spacevader Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Bobblamulet",
+            "Spacevader Belt",
+            "Treechnid Root Bow",
+            "Wild Sunflower Shield",
+            "Green Piwi Ring",
+            "Spacevader Ring",
+            "Satisfaction Boots",
+            "Slob Headgear",
+            "Goblimp Coat",
+            "Snailmate"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 363.6,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 113.5,
+          "totalSearchMs": 250.1
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 87.6,
+            "solveMs": 134.3,
+            "objective": 308.62,
+            "solutionCallbackCount": 3,
+            "validCallbackCandidateCount": 3,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 31.0,
+                "objective": 219.22,
+                "score": 370.84,
+                "itemIds": [
+                  "121",
+                  "696",
+                  "787",
+                  "954",
+                  "1432",
+                  "2443",
+                  "2810",
+                  "3207",
+                  "18714",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 71.3,
+                "objective": 294.18,
+                "score": 383.46,
+                "itemIds": [
+                  "462",
+                  "696",
+                  "3207",
+                  "8223",
+                  "9454",
+                  "12598",
+                  "12599",
+                  "12848",
+                  "13673",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 101.7,
+                "objective": 308.62,
+                "score": 380.92,
+                "itemIds": [
+                  "462",
+                  "3207",
+                  "6723",
+                  "6908",
+                  "6910",
+                  "8112",
+                  "8223",
+                  "8245",
+                  "13673",
+                  "18714"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 55,
+                "belt": 43,
+                "weapon": 105,
+                "shield": 10,
+                "boots": 46,
+                "hat": 43,
+                "cloak": 47,
+                "pet": 119,
+                "dofus": 0,
+                "ring": 60
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 528,
+              "uniqueItemCount": 528,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 189,
+              "skippedSetCountVarCount": 12,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 5,
+              "conditionConstraintCount": 6,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 34
+            }
+          }
+        ],
+        "itemCount": 528,
+        "candidateCount": 3,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0071,
+          "% Earth Resistance": 0.0071,
+          "% Final Damage": 10.7398,
+          "% Fire Resistance": 0.0071,
+          "% Melee Resistance": 0.0212,
+          "% Neutral Resistance": 0.0071,
+          "% Ranged Damage": 10.7398,
+          "% Ranged Resistance": 0.0497,
+          "% Spell Damage": 10.7398,
+          "% Water Resistance": 0.0071,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.002,
+          "Critical": 5.3606,
+          "Critical Damage": 2.3778,
+          "Critical Resistance": 0.004,
+          "Damage": 4.2272,
+          "Dodge": 1.0,
+          "Earth Damage": 4.2272,
+          "Earth Resistance": 0.002,
+          "Fire Resistance": 0.002,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.002,
+          "Power": 0.5304,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0004,
+          "Range": 8.0,
+          "Strength": 0.5304,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.002,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "levelcov3_10_l29_chance_light_t2",
+        "className": "Iop",
+        "level": 29,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 29,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 918.08,
+        "weightedStatScore": 822.0,
+        "utilityStatScore": 582.0,
+        "genericDamageScore": 737.51,
+        "rawRotationDamageScore": 304.09,
+        "spellDamageScore": 304.09,
+        "profileBaselineDamageScore": 1236.96,
+        "profileRelativeDamage": 0.2458,
+        "weaponDamageScore": 11.68,
+        "survivabilityScore": 4.2,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 140.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 120,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 1,
+          "Chance": 454,
+          "Power": 0,
+          "Vitality": 140,
+          "Damage": 0,
+          "Water Damage": 5,
+          "Critical": 3,
+          "Critical Damage": 40
+        },
+        "sets": {
+          "Moskito Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "616",
+            "internalId": null,
+            "name": "Fisherman Amulet",
+            "type": "Amulet",
+            "level": 22,
+            "set": null
+          },
+          "belt": {
+            "id": "12850",
+            "internalId": null,
+            "name": "Goblimp Furry Underpants",
+            "type": "Belt",
+            "level": 25,
+            "set": "Goblimp Set"
+          },
+          "weapon": {
+            "id": "462",
+            "internalId": null,
+            "name": "Treechnid Root Bow",
+            "type": "Bow",
+            "level": 25,
+            "set": null
+          },
+          "shield": {
+            "id": "18714",
+            "internalId": null,
+            "name": "Wild Sunflower Shield",
+            "type": "Shield",
+            "level": 5,
+            "set": null
+          },
+          "boots": {
+            "id": "3207",
+            "internalId": null,
+            "name": "Satisfaction Boots",
+            "type": "Boots",
+            "level": 12,
+            "set": null
+          },
+          "hat": {
+            "id": "6917",
+            "internalId": null,
+            "name": "Moskabuto",
+            "type": "Hat",
+            "level": 15,
+            "set": "Moskito Set"
+          },
+          "cloak": {
+            "id": "744",
+            "internalId": null,
+            "name": "Bowisse's Cloak",
+            "type": "Cloak",
+            "level": 20,
+            "set": "Bowisse Set"
+          },
+          "pet": {
+            "id": "7708",
+            "internalId": null,
+            "name": "Blue Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "ring_1": {
+            "id": "8220",
+            "internalId": null,
+            "name": "Blue Piwi Ring",
+            "type": "Ring",
+            "level": 9,
+            "set": "Blue Piwi Set"
+          },
+          "ring_2": {
+            "id": "6915",
+            "internalId": null,
+            "name": "Mos Kitano",
+            "type": "Ring",
+            "level": 21,
+            "set": "Moskito Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 918.08,
+        "apStrategy": null,
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 1,
+          "Chance": 454,
+          "Power": 0,
+          "Vitality": 140,
+          "Damage": 0,
+          "Water Damage": 5,
+          "Critical": 3,
+          "Critical Damage": 40
+        },
+        "sets": {
+          "Moskito Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Fisherman Amulet",
+          "Goblimp Furry Underpants",
+          "Treechnid Root Bow",
+          "Wild Sunflower Shield",
+          "Blue Piwi Ring",
+          "Mos Kitano",
+          "Satisfaction Boots",
+          "Moskabuto",
+          "Bowisse's Cloak",
+          "Blue Piwin"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 918.08,
+          "weightedStatScore": 822.0,
+          "utilityStatScore": 582.0,
+          "genericDamageScore": 737.51,
+          "rawRotationDamageScore": 304.09,
+          "spellDamageScore": 304.09,
+          "profileBaselineDamageScore": 1236.96,
+          "profileRelativeDamage": 0.2458,
+          "weaponDamageScore": 11.68,
+          "survivabilityScore": 4.2,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 140.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 120,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 1,
+            "Chance": 454,
+            "Power": 0,
+            "Vitality": 140,
+            "Damage": 0,
+            "Water Damage": 5,
+            "Critical": 3,
+            "Critical Damage": 40
+          },
+          "sets": {
+            "Moskito Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "616",
+              "internalId": null,
+              "name": "Fisherman Amulet",
+              "type": "Amulet",
+              "level": 22,
+              "set": null
+            },
+            "belt": {
+              "id": "12850",
+              "internalId": null,
+              "name": "Goblimp Furry Underpants",
+              "type": "Belt",
+              "level": 25,
+              "set": "Goblimp Set"
+            },
+            "weapon": {
+              "id": "462",
+              "internalId": null,
+              "name": "Treechnid Root Bow",
+              "type": "Bow",
+              "level": 25,
+              "set": null
+            },
+            "shield": {
+              "id": "18714",
+              "internalId": null,
+              "name": "Wild Sunflower Shield",
+              "type": "Shield",
+              "level": 5,
+              "set": null
+            },
+            "boots": {
+              "id": "3207",
+              "internalId": null,
+              "name": "Satisfaction Boots",
+              "type": "Boots",
+              "level": 12,
+              "set": null
+            },
+            "hat": {
+              "id": "6917",
+              "internalId": null,
+              "name": "Moskabuto",
+              "type": "Hat",
+              "level": 15,
+              "set": "Moskito Set"
+            },
+            "cloak": {
+              "id": "744",
+              "internalId": null,
+              "name": "Bowisse's Cloak",
+              "type": "Cloak",
+              "level": 20,
+              "set": "Bowisse Set"
+            },
+            "pet": {
+              "id": "7708",
+              "internalId": null,
+              "name": "Blue Piwin",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "ring_1": {
+              "id": "8220",
+              "internalId": null,
+              "name": "Blue Piwi Ring",
+              "type": "Ring",
+              "level": 9,
+              "set": "Blue Piwi Set"
+            },
+            "ring_2": {
+              "id": "6915",
+              "internalId": null,
+              "name": "Mos Kitano",
+              "type": "Ring",
+              "level": 21,
+              "set": "Moskito Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 918.08,
+          "apStrategy": null,
+          "totals": {
+            "AP": 7,
+            "MP": 4,
+            "Range": 1,
+            "Chance": 454,
+            "Power": 0,
+            "Vitality": 140,
+            "Damage": 0,
+            "Water Damage": 5,
+            "Critical": 3,
+            "Critical Damage": 40
+          },
+          "sets": {
+            "Moskito Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Fisherman Amulet",
+            "Goblimp Furry Underpants",
+            "Treechnid Root Bow",
+            "Wild Sunflower Shield",
+            "Blue Piwi Ring",
+            "Mos Kitano",
+            "Satisfaction Boots",
+            "Moskabuto",
+            "Bowisse's Cloak",
+            "Blue Piwin"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 198.8,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 38.8,
+          "totalSearchMs": 160.0
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 71.0,
+            "solveMs": 80.0,
+            "objective": 513.02,
+            "solutionCallbackCount": 4,
+            "validCallbackCandidateCount": 4,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 30.9,
+                "objective": 255.23,
+                "score": 653.35,
+                "itemIds": [
+                  "121",
+                  "616",
+                  "701",
+                  "744",
+                  "787",
+                  "1432",
+                  "2689",
+                  "3207",
+                  "18714",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 43.1,
+                "objective": 255.26,
+                "score": 684.89,
+                "itemIds": [
+                  "359",
+                  "1432",
+                  "3207",
+                  "6915",
+                  "6918",
+                  "8124",
+                  "8533",
+                  "8534",
+                  "30701",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 52.4,
+                "objective": 504.58,
+                "score": 918.08,
+                "itemIds": [
+                  "462",
+                  "616",
+                  "744",
+                  "3207",
+                  "6915",
+                  "6917",
+                  "7708",
+                  "8220",
+                  "12850",
+                  "18714"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 66.0,
+                "objective": 513.02,
+                "score": 914.04,
+                "itemIds": [
+                  "462",
+                  "3207",
+                  "6915",
+                  "6916",
+                  "6918",
+                  "7708",
+                  "8220",
+                  "8244",
+                  "12850",
+                  "18714"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 57,
+                "belt": 44,
+                "weapon": 110,
+                "shield": 10,
+                "boots": 46,
+                "hat": 44,
+                "cloak": 49,
+                "pet": 119,
+                "dofus": 0,
+                "ring": 61
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 540,
+              "uniqueItemCount": 540,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 195,
+              "skippedSetCountVarCount": 8,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 5,
+              "conditionConstraintCount": 6,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 36
+            }
+          }
+        ],
+        "itemCount": 540,
+        "candidateCount": 4,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0073,
+          "% Earth Resistance": 0.0073,
+          "% Final Damage": 10.5499,
+          "% Fire Resistance": 0.0073,
+          "% Melee Resistance": 0.0217,
+          "% Neutral Resistance": 0.0073,
+          "% Ranged Damage": 10.5499,
+          "% Ranged Resistance": 0.0508,
+          "% Spell Damage": 10.5499,
+          "% Water Resistance": 0.0073,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0021,
+          "Chance": 1.5296,
+          "Critical": 5.355,
+          "Critical Damage": 2.4373,
+          "Critical Resistance": 0.0041,
+          "Damage": 4.1782,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0021,
+          "Fire Resistance": 0.0021,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0021,
+          "Power": 0.5296,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0004,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 4.1782,
+          "Water Resistance": 0.0021,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "levelcov3_11_l30_intelligence_mid_t2",
+        "className": "Iop",
+        "level": 30,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 8,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 30,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 8,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 579.25,
+        "weightedStatScore": 551.5,
+        "utilityStatScore": 383.0,
+        "genericDamageScore": 421.82,
+        "rawRotationDamageScore": 162.27,
+        "spellDamageScore": 143.82,
+        "profileBaselineDamageScore": 1154.08,
+        "profileRelativeDamage": 0.1406,
+        "weaponDamageScore": 15.62,
+        "survivabilityScore": 6.43,
+        "negativeResistancePenalty": 2.0,
+        "weakestElementEhp": 210.78,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Intelligence": 122,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 1,
+          "Intelligence": 216,
+          "Power": 0,
+          "Vitality": 215,
+          "Damage": 0,
+          "Fire Damage": 2,
+          "Critical": 15,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Bobble Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9454",
+            "internalId": null,
+            "name": "Bobblamulet",
+            "type": "Amulet",
+            "level": 27,
+            "set": "Bobble Set"
+          },
+          "belt": {
+            "id": "2233",
+            "internalId": null,
+            "name": "The Cruncher",
+            "type": "Belt",
+            "level": 28,
+            "set": null
+          },
+          "weapon": {
+            "id": "832",
+            "internalId": null,
+            "name": "Intelligence Wand",
+            "type": "Wand",
+            "level": 29,
+            "set": null
+          },
+          "shield": {
+            "id": "30687",
+            "internalId": null,
+            "name": "Royal Gobball Cuirass",
+            "type": "Shield",
+            "level": 30,
+            "set": "Royal Gobball's Set"
+          },
+          "boots": {
+            "id": "3207",
+            "internalId": null,
+            "name": "Satisfaction Boots",
+            "type": "Boots",
+            "level": 12,
+            "set": null
+          },
+          "hat": {
+            "id": "711",
+            "internalId": null,
+            "name": "Jouik Krampe",
+            "type": "Hat",
+            "level": 26,
+            "set": null
+          },
+          "cloak": {
+            "id": "781",
+            "internalId": null,
+            "name": "Itou Lascione Cape",
+            "type": "Cloak",
+            "level": 21,
+            "set": null
+          },
+          "pet": {
+            "id": "31885",
+            "internalId": null,
+            "name": "Mikrosmoglob",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "ring_1": {
+            "id": "9455",
+            "internalId": null,
+            "name": "Bobblering",
+            "type": "Ring",
+            "level": 30,
+            "set": "Bobble Set"
+          },
+          "ring_2": {
+            "id": "841",
+            "internalId": null,
+            "name": "Ring of Satisfaction",
+            "type": "Ring",
+            "level": 8,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 579.25,
+        "apStrategy": null,
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 1,
+          "Intelligence": 216,
+          "Power": 0,
+          "Vitality": 215,
+          "Damage": 0,
+          "Fire Damage": 2,
+          "Critical": 15,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Bobble Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Bobblamulet",
+          "The Cruncher",
+          "Intelligence Wand",
+          "Royal Gobball Cuirass",
+          "Bobblering",
+          "Ring of Satisfaction",
+          "Satisfaction Boots",
+          "Jouik Krampe",
+          "Itou Lascione Cape",
+          "Mikrosmoglob"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 579.25,
+          "weightedStatScore": 551.5,
+          "utilityStatScore": 383.0,
+          "genericDamageScore": 421.82,
+          "rawRotationDamageScore": 162.27,
+          "spellDamageScore": 143.82,
+          "profileBaselineDamageScore": 1154.08,
+          "profileRelativeDamage": 0.1406,
+          "weaponDamageScore": 15.62,
+          "survivabilityScore": 6.43,
+          "negativeResistancePenalty": 2.0,
+          "weakestElementEhp": 210.78,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Intelligence": 122,
+            "Vitality": 1
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 1,
+            "Intelligence": 216,
+            "Power": 0,
+            "Vitality": 215,
+            "Damage": 0,
+            "Fire Damage": 2,
+            "Critical": 15,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Bobble Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "9454",
+              "internalId": null,
+              "name": "Bobblamulet",
+              "type": "Amulet",
+              "level": 27,
+              "set": "Bobble Set"
+            },
+            "belt": {
+              "id": "2233",
+              "internalId": null,
+              "name": "The Cruncher",
+              "type": "Belt",
+              "level": 28,
+              "set": null
+            },
+            "weapon": {
+              "id": "832",
+              "internalId": null,
+              "name": "Intelligence Wand",
+              "type": "Wand",
+              "level": 29,
+              "set": null
+            },
+            "shield": {
+              "id": "30687",
+              "internalId": null,
+              "name": "Royal Gobball Cuirass",
+              "type": "Shield",
+              "level": 30,
+              "set": "Royal Gobball's Set"
+            },
+            "boots": {
+              "id": "3207",
+              "internalId": null,
+              "name": "Satisfaction Boots",
+              "type": "Boots",
+              "level": 12,
+              "set": null
+            },
+            "hat": {
+              "id": "711",
+              "internalId": null,
+              "name": "Jouik Krampe",
+              "type": "Hat",
+              "level": 26,
+              "set": null
+            },
+            "cloak": {
+              "id": "781",
+              "internalId": null,
+              "name": "Itou Lascione Cape",
+              "type": "Cloak",
+              "level": 21,
+              "set": null
+            },
+            "pet": {
+              "id": "31885",
+              "internalId": null,
+              "name": "Mikrosmoglob",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "ring_1": {
+              "id": "9455",
+              "internalId": null,
+              "name": "Bobblering",
+              "type": "Ring",
+              "level": 30,
+              "set": "Bobble Set"
+            },
+            "ring_2": {
+              "id": "841",
+              "internalId": null,
+              "name": "Ring of Satisfaction",
+              "type": "Ring",
+              "level": 8,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 579.25,
+          "apStrategy": null,
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 1,
+            "Intelligence": 216,
+            "Power": 0,
+            "Vitality": 215,
+            "Damage": 0,
+            "Fire Damage": 2,
+            "Critical": 15,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Bobble Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Bobblamulet",
+            "The Cruncher",
+            "Intelligence Wand",
+            "Royal Gobball Cuirass",
+            "Bobblering",
+            "Ring of Satisfaction",
+            "Satisfaction Boots",
+            "Jouik Krampe",
+            "Itou Lascione Cape",
+            "Mikrosmoglob"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 279.2,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 43.2,
+          "totalSearchMs": 236.0
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 84.8,
+            "solveMs": 138.7,
+            "objective": 136.47,
+            "solutionCallbackCount": 7,
+            "validCallbackCandidateCount": 7,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 52.8,
+                "objective": -89.51,
+                "score": 258.65,
+                "itemIds": [
+                  "121",
+                  "332",
+                  "702",
+                  "841",
+                  "954",
+                  "3207",
+                  "14589",
+                  "14617",
+                  "18714",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 65.6,
+                "objective": -37.81,
+                "score": 368.36,
+                "itemIds": [
+                  "161",
+                  "832",
+                  "841",
+                  "2444",
+                  "3207",
+                  "8224",
+                  "8235",
+                  "8248",
+                  "30687",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 75.3,
+                "objective": 24.34,
+                "score": 470.74,
+                "itemIds": [
+                  "711",
+                  "790",
+                  "832",
+                  "841",
+                  "1483",
+                  "3207",
+                  "8219",
+                  "17303",
+                  "18714",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 90.4,
+                "objective": 37.61,
+                "score": 463.36,
+                "itemIds": [
+                  "832",
+                  "841",
+                  "2419",
+                  "2444",
+                  "3207",
+                  "6719",
+                  "6720",
+                  "9454",
+                  "30687",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 100.6,
+                "objective": 49.7,
+                "score": 536.02,
+                "itemIds": [
+                  "841",
+                  "6719",
+                  "6720",
+                  "6721",
+                  "6722",
+                  "6723",
+                  "6724",
+                  "6725",
+                  "15254",
+                  "30687"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 6,
+                "rankBeforeRerank": 6,
+                "wallTimeMs": 109.8,
+                "objective": 81.97,
+                "score": 523.0,
+                "itemIds": [
+                  "711",
+                  "832",
+                  "841",
+                  "3207",
+                  "6720",
+                  "6723",
+                  "8219",
+                  "17303",
+                  "30687",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 7,
+                "rankBeforeRerank": 7,
+                "wallTimeMs": 121.3,
+                "objective": 136.47,
+                "score": 579.25,
+                "itemIds": [
+                  "711",
+                  "781",
+                  "832",
+                  "841",
+                  "2233",
+                  "3207",
+                  "9454",
+                  "9455",
+                  "30687",
+                  "31885"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 59,
+                "belt": 50,
+                "weapon": 121,
+                "shield": 12,
+                "boots": 57,
+                "hat": 48,
+                "cloak": 52,
+                "pet": 119,
+                "dofus": 0,
+                "ring": 64
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 582,
+              "uniqueItemCount": 582,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 226,
+              "skippedSetCountVarCount": 6,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 5,
+              "conditionConstraintCount": 5,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 45
+            }
+          }
+        ],
+        "itemCount": 582,
+        "candidateCount": 7,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0074,
+          "% Earth Resistance": 0.0074,
+          "% Final Damage": 10.3863,
+          "% Fire Resistance": 0.0074,
+          "% Melee Resistance": 0.0221,
+          "% Neutral Resistance": 0.0074,
+          "% Ranged Damage": 10.3863,
+          "% Ranged Resistance": 0.0518,
+          "% Spell Damage": 10.3863,
+          "% Water Resistance": 0.0074,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0021,
+          "Critical": 5.5492,
+          "Critical Damage": 2.5691,
+          "Critical Resistance": 0.0042,
+          "Damage": 4.4041,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0021,
+          "Fire Damage": 4.4041,
+          "Fire Resistance": 0.0021,
+          "Initiative": 0.005,
+          "Intelligence": 1.5021,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0021,
+          "Power": 0.5021,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0004,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0021,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "levelcov3_12_l31_agility_mid_t2",
+        "className": "Iop",
+        "level": 31,
+        "element": "agility",
+        "budgetTier": 2,
+        "apTarget": 8,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 31,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 8,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 623.84,
+        "weightedStatScore": 646.25,
+        "utilityStatScore": 403.75,
+        "genericDamageScore": 476.0,
+        "rawRotationDamageScore": 167.01,
+        "spellDamageScore": 167.01,
+        "profileBaselineDamageScore": 1052.58,
+        "profileRelativeDamage": 0.1587,
+        "weaponDamageScore": 9.7,
+        "survivabilityScore": 5.89,
+        "negativeResistancePenalty": 0.0,
+        "weakestElementEhp": 195.0,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 125,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 5,
+          "Range": 1,
+          "Agility": 215,
+          "Power": 0,
+          "Vitality": 195,
+          "Damage": 3,
+          "Air Damage": 7,
+          "Critical": 21,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Tofu Set": 7
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8108",
+            "internalId": null,
+            "name": "Tofu Amulet",
+            "type": "Amulet",
+            "level": 22,
+            "set": "Tofu Set"
+          },
+          "belt": {
+            "id": "8113",
+            "internalId": null,
+            "name": "Tofu Belt",
+            "type": "Belt",
+            "level": 22,
+            "set": "Tofu Set"
+          },
+          "weapon": {
+            "id": "8110",
+            "internalId": null,
+            "name": "Tofu Wand",
+            "type": "Wand",
+            "level": 25,
+            "set": "Tofu Set"
+          },
+          "shield": {
+            "id": "18659",
+            "internalId": null,
+            "name": "Sponghield",
+            "type": "Shield",
+            "level": 25,
+            "set": "Sponge Set"
+          },
+          "boots": {
+            "id": "8111",
+            "internalId": null,
+            "name": "Tofu Slippers",
+            "type": "Boots",
+            "level": 23,
+            "set": "Tofu Set"
+          },
+          "hat": {
+            "id": "8114",
+            "internalId": null,
+            "name": "Helmetofu",
+            "type": "Hat",
+            "level": 23,
+            "set": "Tofu Set"
+          },
+          "cloak": {
+            "id": "8112",
+            "internalId": null,
+            "name": "Tofu Cloak",
+            "type": "Cloak",
+            "level": 26,
+            "set": "Tofu Set"
+          },
+          "pet": {
+            "id": "31885",
+            "internalId": null,
+            "name": "Mikrosmoglob",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "ring_1": {
+            "id": "841",
+            "internalId": null,
+            "name": "Ring of Satisfaction",
+            "type": "Ring",
+            "level": 8,
+            "set": null
+          },
+          "ring_2": {
+            "id": "8109",
+            "internalId": null,
+            "name": "Tofu Ring",
+            "type": "Ring",
+            "level": 21,
+            "set": "Tofu Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 623.84,
+        "apStrategy": null,
+        "totals": {
+          "AP": 8,
+          "MP": 5,
+          "Range": 1,
+          "Agility": 215,
+          "Power": 0,
+          "Vitality": 195,
+          "Damage": 3,
+          "Air Damage": 7,
+          "Critical": 21,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Tofu Set": 7
+        },
+        "exos": {},
+        "items": [
+          "Tofu Amulet",
+          "Tofu Belt",
+          "Tofu Wand",
+          "Sponghield",
+          "Ring of Satisfaction",
+          "Tofu Ring",
+          "Tofu Slippers",
+          "Helmetofu",
+          "Tofu Cloak",
+          "Mikrosmoglob"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 623.84,
+          "weightedStatScore": 646.25,
+          "utilityStatScore": 403.75,
+          "genericDamageScore": 476.0,
+          "rawRotationDamageScore": 167.01,
+          "spellDamageScore": 167.01,
+          "profileBaselineDamageScore": 1052.58,
+          "profileRelativeDamage": 0.1587,
+          "weaponDamageScore": 9.7,
+          "survivabilityScore": 5.89,
+          "negativeResistancePenalty": 0.0,
+          "weakestElementEhp": 195.0,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 125,
+            "Vitality": 0
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 8,
+            "MP": 5,
+            "Range": 1,
+            "Agility": 215,
+            "Power": 0,
+            "Vitality": 195,
+            "Damage": 3,
+            "Air Damage": 7,
+            "Critical": 21,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Tofu Set": 7
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "8108",
+              "internalId": null,
+              "name": "Tofu Amulet",
+              "type": "Amulet",
+              "level": 22,
+              "set": "Tofu Set"
+            },
+            "belt": {
+              "id": "8113",
+              "internalId": null,
+              "name": "Tofu Belt",
+              "type": "Belt",
+              "level": 22,
+              "set": "Tofu Set"
+            },
+            "weapon": {
+              "id": "8110",
+              "internalId": null,
+              "name": "Tofu Wand",
+              "type": "Wand",
+              "level": 25,
+              "set": "Tofu Set"
+            },
+            "shield": {
+              "id": "18659",
+              "internalId": null,
+              "name": "Sponghield",
+              "type": "Shield",
+              "level": 25,
+              "set": "Sponge Set"
+            },
+            "boots": {
+              "id": "8111",
+              "internalId": null,
+              "name": "Tofu Slippers",
+              "type": "Boots",
+              "level": 23,
+              "set": "Tofu Set"
+            },
+            "hat": {
+              "id": "8114",
+              "internalId": null,
+              "name": "Helmetofu",
+              "type": "Hat",
+              "level": 23,
+              "set": "Tofu Set"
+            },
+            "cloak": {
+              "id": "8112",
+              "internalId": null,
+              "name": "Tofu Cloak",
+              "type": "Cloak",
+              "level": 26,
+              "set": "Tofu Set"
+            },
+            "pet": {
+              "id": "31885",
+              "internalId": null,
+              "name": "Mikrosmoglob",
+              "type": "Pet",
+              "level": 20,
+              "set": null
+            },
+            "ring_1": {
+              "id": "841",
+              "internalId": null,
+              "name": "Ring of Satisfaction",
+              "type": "Ring",
+              "level": 8,
+              "set": null
+            },
+            "ring_2": {
+              "id": "8109",
+              "internalId": null,
+              "name": "Tofu Ring",
+              "type": "Ring",
+              "level": 21,
+              "set": "Tofu Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 623.84,
+          "apStrategy": null,
+          "totals": {
+            "AP": 8,
+            "MP": 5,
+            "Range": 1,
+            "Agility": 215,
+            "Power": 0,
+            "Vitality": 195,
+            "Damage": 3,
+            "Air Damage": 7,
+            "Critical": 21,
+            "Critical Damage": 0
+          },
+          "sets": {
+            "Tofu Set": 7
+          },
+          "exos": {},
+          "items": [
+            "Tofu Amulet",
+            "Tofu Belt",
+            "Tofu Wand",
+            "Sponghield",
+            "Ring of Satisfaction",
+            "Tofu Ring",
+            "Tofu Slippers",
+            "Helmetofu",
+            "Tofu Cloak",
+            "Mikrosmoglob"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 248.2,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 38.1,
+          "totalSearchMs": 210.1
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "OPTIMAL",
+            "modelMs": 84.7,
+            "solveMs": 115.2,
+            "objective": 244.91,
+            "solutionCallbackCount": 6,
+            "validCallbackCandidateCount": 6,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": false,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 34.0,
+                "objective": 76.25,
+                "score": 496.76,
+                "itemIds": [
+                  "676",
+                  "841",
+                  "947",
+                  "1484",
+                  "2641",
+                  "2689",
+                  "3207",
+                  "12661",
+                  "18714",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 47.2,
+                "objective": 91.88,
+                "score": 562.14,
+                "itemIds": [
+                  "676",
+                  "790",
+                  "841",
+                  "2641",
+                  "3207",
+                  "8537",
+                  "18639",
+                  "18640",
+                  "30701",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 57.2,
+                "objective": 175.44,
+                "score": 544.04,
+                "itemIds": [
+                  "790",
+                  "841",
+                  "2640",
+                  "2641",
+                  "2689",
+                  "3207",
+                  "7106",
+                  "8881",
+                  "18714",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 67.0,
+                "objective": 212.11,
+                "score": 576.12,
+                "itemIds": [
+                  "841",
+                  "947",
+                  "2640",
+                  "2641",
+                  "2689",
+                  "3207",
+                  "6791",
+                  "15549",
+                  "18714",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 81.8,
+                "objective": 222.39,
+                "score": 623.84,
+                "itemIds": [
+                  "841",
+                  "8108",
+                  "8109",
+                  "8110",
+                  "8111",
+                  "8112",
+                  "8113",
+                  "8114",
+                  "18659",
+                  "31885"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 6,
+                "rankBeforeRerank": 6,
+                "wallTimeMs": 99.4,
+                "objective": 244.91,
+                "score": 610.62,
+                "itemIds": [
+                  "841",
+                  "2640",
+                  "2641",
+                  "2689",
+                  "3207",
+                  "8109",
+                  "8112",
+                  "15549",
+                  "18659",
+                  "31885"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 63,
+                "belt": 53,
+                "weapon": 123,
+                "shield": 12,
+                "boots": 57,
+                "hat": 48,
+                "cloak": 52,
+                "pet": 119,
+                "dofus": 0,
+                "ring": 67
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 594,
+              "uniqueItemCount": 594,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 234,
+              "skippedSetCountVarCount": 6,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 5,
+              "conditionConstraintCount": 5,
+              "skippedSetBonusConditionCount": 0,
+              "setCountConstraintCount": 47
+            }
+          }
+        ],
+        "itemCount": 594,
+        "candidateCount": 6,
+        "requestedCandidateLimit": 20,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0076,
+          "% Earth Resistance": 0.0076,
+          "% Final Damage": 10.7348,
+          "% Fire Resistance": 0.0076,
+          "% Melee Resistance": 0.0226,
+          "% Neutral Resistance": 0.0076,
+          "% Ranged Damage": 10.7348,
+          "% Ranged Resistance": 0.0529,
+          "% Spell Damage": 10.7348,
+          "% Water Resistance": 0.0076,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 1.4914,
+          "Air Damage": 4.5294,
+          "Air Resistance": 0.0021,
+          "Critical": 5.5893,
+          "Critical Damage": 2.5818,
+          "Critical Resistance": 0.0043,
+          "Damage": 4.5294,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0021,
+          "Fire Resistance": 0.0021,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0021,
+          "Power": 0.4914,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0004,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0021,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

@@ -7,13 +7,13 @@ Level scope: `all_levels` (`200` levels)
 Element count: `4`
 Budget tier count: `4`
 Valid query rows: `665088`
-Generated evidence rows: `212`
-Attempted evidence rows: `234`
+Generated evidence rows: `224`
+Attempted evidence rows: `246`
 Proven no-build evidence rows: `14`
-Resolved evidence rows: `226`
-Unproven rows: `664876`
-Unresolved rows: `664862`
-Unattempted rows: `664854`
+Resolved evidence rows: `238`
+Unproven rows: `664864`
+Unresolved rows: `664850`
+Unattempted rows: `664842`
 
 | Level | Valid rows | Generated evidence | Resolved evidence | Unresolved |
 |---:|---:|---:|---:|---:|
@@ -30,24 +30,24 @@ Unattempted rows: `664854`
 | 11 | 3584 | 1 | 1 | 3583 |
 | 12 | 3584 | 1 | 1 | 3583 |
 | 13 | 3584 | 1 | 1 | 3583 |
-| 14 | 3584 | 0 | 0 | 3584 |
-| 15 | 3584 | 0 | 0 | 3584 |
-| 16 | 3584 | 0 | 0 | 3584 |
-| 17 | 3584 | 0 | 0 | 3584 |
+| 14 | 3584 | 1 | 1 | 3583 |
+| 15 | 3584 | 1 | 1 | 3583 |
+| 16 | 3584 | 1 | 1 | 3583 |
+| 17 | 3584 | 1 | 1 | 3583 |
 | 18 | 3584 | 1 | 1 | 3583 |
 | 19 | 3584 | 1 | 1 | 3583 |
 | 20 | 3584 | 8 | 10 | 3574 |
-| 21 | 3584 | 0 | 0 | 3584 |
+| 21 | 3584 | 1 | 1 | 3583 |
 | 22 | 3584 | 1 | 1 | 3583 |
-| 23 | 3584 | 0 | 0 | 3584 |
+| 23 | 3584 | 1 | 1 | 3583 |
 | 24 | 3584 | 1 | 1 | 3583 |
 | 25 | 3584 | 1 | 1 | 3583 |
-| 26 | 3584 | 0 | 0 | 3584 |
-| 27 | 3584 | 0 | 0 | 3584 |
-| 28 | 3584 | 0 | 0 | 3584 |
-| 29 | 3584 | 0 | 0 | 3584 |
-| 30 | 3584 | 0 | 0 | 3584 |
-| 31 | 3584 | 0 | 0 | 3584 |
+| 26 | 3584 | 1 | 1 | 3583 |
+| 27 | 3584 | 1 | 1 | 3583 |
+| 28 | 3584 | 1 | 1 | 3583 |
+| 29 | 3584 | 1 | 1 | 3583 |
+| 30 | 3584 | 1 | 1 | 3583 |
+| 31 | 3584 | 1 | 1 | 3583 |
 | 32 | 3584 | 0 | 0 | 3584 |
 | 33 | 3584 | 1 | 1 | 3583 |
 | 34 | 3584 | 0 | 0 | 3584 |
@@ -222,17 +222,17 @@ Unattempted rows: `664854`
 
 | element | Valid rows | Generated evidence | Resolved evidence | Unresolved |
 |---|---:|---:|---:|---:|
-| agility | 166272 | 44 | 47 | 166225 |
-| chance | 166272 | 44 | 47 | 166225 |
-| intelligence | 166272 | 49 | 54 | 166218 |
-| strength | 166272 | 75 | 78 | 166194 |
+| agility | 166272 | 47 | 50 | 166222 |
+| chance | 166272 | 47 | 50 | 166222 |
+| intelligence | 166272 | 52 | 57 | 166215 |
+| strength | 166272 | 78 | 81 | 166191 |
 
 ## Evidence By Budget Tier
 
 | budgetTier | Valid rows | Generated evidence | Resolved evidence | Unresolved |
 |---|---:|---:|---:|---:|
-| 1 | 166272 | 57 | 57 | 166215 |
-| 2 | 166272 | 67 | 68 | 166204 |
+| 1 | 166272 | 65 | 65 | 166207 |
+| 2 | 166272 | 71 | 72 | 166200 |
 | 3 | 166272 | 42 | 44 | 166228 |
 | 4 | 166272 | 46 | 57 | 166215 |
 
@@ -242,8 +242,8 @@ Unattempted rows: `664854`
 |---|---:|---:|---:|---:|
 | ap_heavy | 134400 | 28 | 28 | 134372 |
 | cap | 3200 | 41 | 48 | 3152 |
-| middle | 298864 | 50 | 50 | 298814 |
-| minimum | 3200 | 60 | 60 | 3140 |
+| middle | 298864 | 60 | 60 | 298804 |
+| minimum | 3200 | 62 | 62 | 3138 |
 | mp_heavy | 163072 | 24 | 28 | 163044 |
 | range_heavy | 62352 | 9 | 12 | 62340 |
 

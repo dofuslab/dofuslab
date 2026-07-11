@@ -220,13 +220,13 @@
   ],
   "budgetTierCount": 4,
   "validQueryCount": 665088,
-  "generatedEvidenceCount": 212,
-  "attemptedEvidenceCount": 234,
+  "generatedEvidenceCount": 224,
+  "attemptedEvidenceCount": 246,
   "noBuildEvidenceCount": 14,
-  "resolvedEvidenceCount": 226,
-  "unprovenCount": 664876,
-  "unresolvedCount": 664862,
-  "unattemptedCount": 664854,
+  "resolvedEvidenceCount": 238,
+  "unprovenCount": 664864,
+  "unresolvedCount": 664850,
+  "unattemptedCount": 664842,
   "byLevel": [
     {
       "level": 1,
@@ -335,34 +335,34 @@
     {
       "level": 14,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 15,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 16,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 17,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 18,
@@ -391,10 +391,10 @@
     {
       "level": 21,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 22,
@@ -407,10 +407,10 @@
     {
       "level": 23,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 24,
@@ -431,50 +431,50 @@
     {
       "level": 26,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 27,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 28,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 29,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 30,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 31,
       "validQueryCount": 3584,
-      "generatedEvidenceCount": 0,
-      "resolvedEvidenceCount": 0,
-      "unprovenCount": 3584,
-      "unresolvedCount": 3584
+      "generatedEvidenceCount": 1,
+      "resolvedEvidenceCount": 1,
+      "unprovenCount": 3583,
+      "unresolvedCount": 3583
     },
     {
       "level": 32,
@@ -1833,46 +1833,46 @@
     {
       "element": "agility",
       "validQueryCount": 166272,
-      "generatedEvidenceCount": 44,
-      "resolvedEvidenceCount": 47,
-      "unresolvedCount": 166225
+      "generatedEvidenceCount": 47,
+      "resolvedEvidenceCount": 50,
+      "unresolvedCount": 166222
     },
     {
       "element": "chance",
       "validQueryCount": 166272,
-      "generatedEvidenceCount": 44,
-      "resolvedEvidenceCount": 47,
-      "unresolvedCount": 166225
+      "generatedEvidenceCount": 47,
+      "resolvedEvidenceCount": 50,
+      "unresolvedCount": 166222
     },
     {
       "element": "intelligence",
       "validQueryCount": 166272,
-      "generatedEvidenceCount": 49,
-      "resolvedEvidenceCount": 54,
-      "unresolvedCount": 166218
+      "generatedEvidenceCount": 52,
+      "resolvedEvidenceCount": 57,
+      "unresolvedCount": 166215
     },
     {
       "element": "strength",
       "validQueryCount": 166272,
-      "generatedEvidenceCount": 75,
-      "resolvedEvidenceCount": 78,
-      "unresolvedCount": 166194
+      "generatedEvidenceCount": 78,
+      "resolvedEvidenceCount": 81,
+      "unresolvedCount": 166191
     }
   ],
   "byBudgetTier": [
     {
       "budgetTier": 1,
       "validQueryCount": 166272,
-      "generatedEvidenceCount": 57,
-      "resolvedEvidenceCount": 57,
-      "unresolvedCount": 166215
+      "generatedEvidenceCount": 65,
+      "resolvedEvidenceCount": 65,
+      "unresolvedCount": 166207
     },
     {
       "budgetTier": 2,
       "validQueryCount": 166272,
-      "generatedEvidenceCount": 67,
-      "resolvedEvidenceCount": 68,
-      "unresolvedCount": 166204
+      "generatedEvidenceCount": 71,
+      "resolvedEvidenceCount": 72,
+      "unresolvedCount": 166200
     },
     {
       "budgetTier": 3,
@@ -1907,16 +1907,16 @@
     {
       "profileBucket": "middle",
       "validQueryCount": 298864,
-      "generatedEvidenceCount": 50,
-      "resolvedEvidenceCount": 50,
-      "unresolvedCount": 298814
+      "generatedEvidenceCount": 60,
+      "resolvedEvidenceCount": 60,
+      "unresolvedCount": 298804
     },
     {
       "profileBucket": "minimum",
       "validQueryCount": 3200,
-      "generatedEvidenceCount": 60,
-      "resolvedEvidenceCount": 60,
-      "unresolvedCount": 3140
+      "generatedEvidenceCount": 62,
+      "resolvedEvidenceCount": 62,
+      "unresolvedCount": 3138
     },
     {
       "profileBucket": "mp_heavy",

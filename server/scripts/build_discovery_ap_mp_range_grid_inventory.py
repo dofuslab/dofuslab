@@ -33,6 +33,7 @@ DEFAULT_ARTIFACTS = (
     ".codex/state/build-discovery-m3-grid-next-cap-wisdom-flat.json",
     ".codex/state/build-discovery-m3-level-coverage-sample-20260711.json",
     ".codex/state/build-discovery-m3-level-coverage-2-sample-20260711.json",
+    ".codex/state/build-discovery-m3-level-coverage-3-sample-20260711.json",
     ".codex/state/build-discovery-m3-next-level-sample-20260711.json",
     ".codex/state/build-discovery-m3-prod-level-sample-optional-slots.json",
     ".codex/state/build-discovery-m3-thin-bucket-sample-20260711.json",
