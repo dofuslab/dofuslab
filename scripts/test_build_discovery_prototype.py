@@ -20,6 +20,7 @@ from oneoff.build_discovery_prototype import (
     ApStrategy,
     DEFAULT_AP_STRATEGIES,
     add_item_to_state,
+    action_stat_progress_key,
     action_stats_meet_target,
     ap_strategy_matches,
     approach_item_ids,
@@ -240,6 +241,16 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
         self.assertEqual(
             score_state(with_mp_range, {}, target) - score_state(baseline, {}, target),
             mp_range_stat_score + removed_gap_penalty,
+        )
+
+    def test_action_stat_progress_key_prioritizes_completed_action_targets(self):
+        target = BuildTarget(ap=12, mp=6, range=6)
+        complete = BuildState(stats={"AP": 12, "MP": 6, "Range": 6}, score=0)
+        incomplete_high_score = BuildState(stats={"AP": 12, "MP": 5, "Range": 6}, score=1000)
+
+        self.assertGreater(
+            action_stat_progress_key(complete, target),
+            action_stat_progress_key(incomplete_high_score, target),
         )
 
     def test_final_score_uses_generic_damage_profile(self):

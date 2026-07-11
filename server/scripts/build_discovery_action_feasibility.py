@@ -59,32 +59,8 @@ def action_stats(stats: dict[str, int]) -> dict[str, int]:
     return {stat: stats.get(stat, 0) for stat in solver.ACTION_STATS}
 
 
-def action_stat_total(stats: dict[str, int], target: solver.BuildTarget) -> int:
-    total = min(stats.get("AP", 0), target.ap) + min(stats.get("MP", 0), target.mp)
-    if target.range_required:
-        total += min(stats.get("Range", 0), target.range)
-    return total
-
-
-def action_deficit(stats: dict[str, int], target: solver.BuildTarget) -> int:
-    deficit = max(target.ap - stats.get("AP", 0), 0) + max(target.mp - stats.get("MP", 0), 0)
-    if target.range_required:
-        deficit += max(target.range - stats.get("Range", 0), 0)
-    return deficit
-
-
-def state_sort_key(state: solver.BuildState, target: solver.BuildTarget) -> tuple[float, int, int, int, int, float]:
-    ap_progress = min(state.stats.get("AP", 0), target.ap)
-    mp_progress = min(state.stats.get("MP", 0), target.mp)
-    range_progress = min(state.stats.get("Range", 0), target.range) if target.range_required else 0
-    return (
-        -action_deficit(state.stats, target),
-        ap_progress,
-        mp_progress,
-        range_progress,
-        action_stat_total(state.stats, target),
-        solver.final_utility_score(state.stats),
-    )
+def state_sort_key(state: solver.BuildState, target: solver.BuildTarget) -> tuple[int, int, int, int, int, float]:
+    return solver.action_stat_progress_key(state, target)
 
 
 def action_set_ids(sets: dict[str, dict[str, Any]]) -> set[str]:

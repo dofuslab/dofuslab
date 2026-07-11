@@ -3087,6 +3087,28 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     solver trims plus feasibility diagnostics so balanced action-stat ranking
     is one explicit contract rather than repeated local sort keys.
 
+### 2026-07-10 Shared Action-Progress Ranking Contract
+
+- Added solver-owned AP/MP/Range progress helpers:
+  - `action_stat_progress_values()`
+  - `action_stat_deficit_total()`
+  - `action_stat_progress_key()`
+- Replaced duplicated action-progress sort logic in:
+  - direct action-completion beam trimming
+  - action-stat witness seed ranking
+  - action feasibility diagnostic frontier sorting
+- Added tests that:
+  - completed `12/6/6` action targets outrank incomplete high-score states
+  - feasibility diagnostics use the solver's action-progress key exactly
+  - range `None` still ignores range deficits/progress
+- Verification passed:
+  - `python scripts\test_build_discovery_prototype.py`
+  - `python server\scripts\test_build_discovery_action_feasibility.py`
+  - `python -m py_compile server\oneoff\build_discovery_prototype.py scripts\test_build_discovery_prototype.py server\scripts\build_discovery_action_feasibility.py server\scripts\test_build_discovery_action_feasibility.py`
+  - `git diff --check`
+- Docker remains unavailable with the Docker Desktop API internal server error,
+  so no container solver artifact was regenerated in this checkpoint.
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range

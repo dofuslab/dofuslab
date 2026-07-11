@@ -3,12 +3,11 @@ import unittest
 from build_discovery_action_feasibility import (
     FeasibilityConfig,
     REPORT_VERSION,
-    action_deficit,
-    action_stat_total,
     compress_pool_for_action_proof,
     complete_with_action_dofus,
     ordered_gear_slots,
     render_markdown,
+    state_sort_key,
     state_signature,
     summarize_frontier,
     target_to_build_target,
@@ -36,17 +35,29 @@ class BuildDiscoveryActionFeasibilityTest(unittest.TestCase):
         target = target_to_build_target(
             LevelDiversityTarget("target", 200, "strength", 1, 12, 6, 6)
         )
+        over_target = solver.BuildState(stats={"AP": 13, "MP": 6, "Range": 8})
+        below_target = solver.BuildState(stats={"AP": 10, "MP": 5, "Range": 2})
 
-        self.assertEqual(action_stat_total({"AP": 13, "MP": 6, "Range": 8}, target), 24)
-        self.assertEqual(action_deficit({"AP": 10, "MP": 5, "Range": 2}, target), 7)
+        self.assertEqual(sum(solver.action_stat_progress_values(over_target, target)), 24)
+        self.assertEqual(solver.action_stat_deficit_total(below_target, target), 7)
 
     def test_action_progress_helpers_ignore_range_when_target_is_none(self):
         target = target_to_build_target(
             LevelDiversityTarget("target", 200, "strength", 1, 10, 5, None)
         )
+        complete = solver.BuildState(stats={"AP": 10, "MP": 5, "Range": -4})
+        incomplete = solver.BuildState(stats={"AP": 9, "MP": 4, "Range": -4})
 
-        self.assertEqual(action_stat_total({"AP": 10, "MP": 5, "Range": -4}, target), 15)
-        self.assertEqual(action_deficit({"AP": 9, "MP": 4, "Range": -4}, target), 2)
+        self.assertEqual(sum(solver.action_stat_progress_values(complete, target)), 15)
+        self.assertEqual(solver.action_stat_deficit_total(incomplete, target), 2)
+
+    def test_state_sort_key_uses_solver_action_progress_contract(self):
+        target = target_to_build_target(
+            LevelDiversityTarget("target", 200, "strength", 1, 12, 6, 6)
+        )
+        state = solver.BuildState(stats={"AP": 12, "MP": 5, "Range": 6}, score=100)
+
+        self.assertEqual(state_sort_key(state, target), solver.action_stat_progress_key(state, target))
 
     def test_ordered_gear_slots_prioritizes_ap_mp_pressure(self):
         pools = {

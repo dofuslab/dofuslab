@@ -1978,13 +1978,7 @@ def action_stat_witness_seed_states(
                     buckets[key] = state
             states = sorted(
                 buckets.values(),
-                key=lambda state: (
-                    min(state.stats.get("AP", 0), target.ap),
-                    min(state.stats.get("MP", 0), target.mp),
-                    min(state.stats.get("Range", 0), target.range) if target.range_required else 0,
-                    len(state.slots),
-                    state.score,
-                ),
+                key=lambda state: action_stat_progress_key(state, target)[:-1] + (len(state.slots), state.score),
                 reverse=True,
             )[:max_states_per_slot]
 
@@ -2078,6 +2072,34 @@ def action_stats_meet_target(state: BuildState, target: BuildTarget) -> bool:
         target.ap <= state.stats.get("AP", 0) <= MAX_AP
         and target.mp <= state.stats.get("MP", 0) <= MAX_MP
         and range_ok
+    )
+
+
+def action_stat_progress_values(state: BuildState, target: BuildTarget) -> tuple[int, int, int]:
+    return (
+        min(state.stats.get("AP", 0), target.ap),
+        min(state.stats.get("MP", 0), target.mp),
+        min(state.stats.get("Range", 0), target.range) if target.range_required else 0,
+    )
+
+
+def action_stat_deficit_total(state: BuildState, target: BuildTarget) -> int:
+    return (
+        max(target.ap - state.stats.get("AP", 0), 0)
+        + max(target.mp - state.stats.get("MP", 0), 0)
+        + (max(target.range - state.stats.get("Range", 0), 0) if target.range_required else 0)
+    )
+
+
+def action_stat_progress_key(state: BuildState, target: BuildTarget) -> tuple[int, int, int, int, int, float]:
+    ap_progress, mp_progress, range_progress = action_stat_progress_values(state, target)
+    return (
+        -action_stat_deficit_total(state, target),
+        ap_progress + mp_progress + range_progress,
+        ap_progress,
+        mp_progress,
+        range_progress,
+        state.score,
     )
 
 
@@ -2975,17 +2997,7 @@ def trim_action_completion_beam(
     diversified = [state for bucket in buckets.values() for state in bucket]
     return sorted(
         diversified,
-        key=lambda state: (
-            -(
-                max(target.ap - state.stats.get("AP", 0), 0)
-                + max(target.mp - state.stats.get("MP", 0), 0)
-                + (max(target.range - state.stats.get("Range", 0), 0) if target.range_required else 0)
-            ),
-            min(state.stats.get("AP", 0), target.ap)
-            + min(state.stats.get("MP", 0), target.mp)
-            + (min(state.stats.get("Range", 0), target.range) if target.range_required else 0),
-            state.score,
-        ),
+        key=lambda state: action_stat_progress_key(state, target),
         reverse=True,
     )[:beam_width]
 
