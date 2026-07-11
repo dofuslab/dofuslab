@@ -1,0 +1,723 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T10:41:34.387542+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_agility_7_6_5_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "agility",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 6,
+        "rangeTarget": 5
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 6,
+        "rangeTarget": 5,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2528.87,
+        "weightedStatScore": 4204.69,
+        "utilityStatScore": 318.97,
+        "genericDamageScore": 4717.29,
+        "rawRotationDamageScore": 2925.7,
+        "spellDamageScore": 2695.77,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.5724,
+        "weaponDamageScore": 328.65,
+        "survivabilityScore": 87.12,
+        "weakestElementEhp": 2425.93,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 6,
+          "Range": 5,
+          "Agility": 1418,
+          "Power": 100,
+          "Vitality": 2753,
+          "Damage": 5,
+          "Air Damage": 157,
+          "Critical": 59,
+          "Critical Damage": 107
+        },
+        "sets": {
+          "Psychopump Set": 2,
+          "Nomarow Set": 2,
+          "Bubotron Set": 2,
+          "Voldelor Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "14083",
+            "internalId": null,
+            "name": "Bubotron Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Bubotron Set"
+          },
+          "belt": {
+            "id": "17104",
+            "internalId": null,
+            "name": "Voldelor Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "weapon": {
+            "id": "14084",
+            "internalId": null,
+            "name": "Bubotron Sword",
+            "type": "Sword",
+            "level": 200,
+            "set": "Bubotron Set"
+          },
+          "shield": {
+            "id": "32245",
+            "internalId": null,
+            "name": "Psychopump Button",
+            "type": "Shield",
+            "level": 200,
+            "set": "Psychopump Set"
+          },
+          "boots": {
+            "id": "17105",
+            "internalId": null,
+            "name": "Voldelor Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "hat": {
+            "id": "13641",
+            "internalId": null,
+            "name": "Nomarow's Helmet",
+            "type": "Hat",
+            "level": 198,
+            "set": "Nomarow Set"
+          },
+          "cloak": {
+            "id": "18008",
+            "internalId": null,
+            "name": "Indescribable Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "pet": {
+            "id": "33307",
+            "internalId": null,
+            "name": "Aquamarine and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12714",
+            "internalId": null,
+            "name": "Major Acrobat",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13786",
+            "internalId": null,
+            "name": "Major Air Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13765",
+            "internalId": null,
+            "name": "Major Gymnast",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "ring_1": {
+            "id": "13642",
+            "internalId": null,
+            "name": "Nomarow's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Nomarow Set"
+          },
+          "ring_2": {
+            "id": "32243",
+            "internalId": null,
+            "name": "Psychopump Glove",
+            "type": "Ring",
+            "level": 200,
+            "set": "Psychopump Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2528.87,
+        "apStrategy": null,
+        "totals": {
+          "AP": 8,
+          "MP": 6,
+          "Range": 5,
+          "Agility": 1418,
+          "Power": 100,
+          "Vitality": 2753,
+          "Damage": 5,
+          "Air Damage": 157,
+          "Critical": 59,
+          "Critical Damage": 107
+        },
+        "sets": {
+          "Psychopump Set": 2,
+          "Nomarow Set": 2,
+          "Bubotron Set": 2,
+          "Voldelor Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Bubotron Amulet",
+          "Voldelor Belt",
+          "Bubotron Sword",
+          "Psychopump Button",
+          "Nomarow's Ring",
+          "Psychopump Glove",
+          "Voldelor Boots",
+          "Nomarow's Helmet",
+          "Indescribable Cape",
+          "Aquamarine and Emerald Seemyool",
+          "Arcanist",
+          "Impetuous",
+          "Major Acrobat",
+          "Major Air Wrecker",
+          "Major Gymnast",
+          "Twitcher"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2528.87,
+          "weightedStatScore": 4204.69,
+          "utilityStatScore": 318.97,
+          "genericDamageScore": 4717.29,
+          "rawRotationDamageScore": 2925.7,
+          "spellDamageScore": 2695.77,
+          "profileBaselineDamageScore": 1860.62,
+          "profileRelativeDamage": 1.5724,
+          "weaponDamageScore": 328.65,
+          "survivabilityScore": 87.12,
+          "weakestElementEhp": 2425.93,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Agility": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 8,
+            "MP": 6,
+            "Range": 5,
+            "Agility": 1418,
+            "Power": 100,
+            "Vitality": 2753,
+            "Damage": 5,
+            "Air Damage": 157,
+            "Critical": 59,
+            "Critical Damage": 107
+          },
+          "sets": {
+            "Psychopump Set": 2,
+            "Nomarow Set": 2,
+            "Bubotron Set": 2,
+            "Voldelor Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "14083",
+              "internalId": null,
+              "name": "Bubotron Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Bubotron Set"
+            },
+            "belt": {
+              "id": "17104",
+              "internalId": null,
+              "name": "Voldelor Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "weapon": {
+              "id": "14084",
+              "internalId": null,
+              "name": "Bubotron Sword",
+              "type": "Sword",
+              "level": 200,
+              "set": "Bubotron Set"
+            },
+            "shield": {
+              "id": "32245",
+              "internalId": null,
+              "name": "Psychopump Button",
+              "type": "Shield",
+              "level": 200,
+              "set": "Psychopump Set"
+            },
+            "boots": {
+              "id": "17105",
+              "internalId": null,
+              "name": "Voldelor Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "hat": {
+              "id": "13641",
+              "internalId": null,
+              "name": "Nomarow's Helmet",
+              "type": "Hat",
+              "level": 198,
+              "set": "Nomarow Set"
+            },
+            "cloak": {
+              "id": "18008",
+              "internalId": null,
+              "name": "Indescribable Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Abyss Set"
+            },
+            "pet": {
+              "id": "33307",
+              "internalId": null,
+              "name": "Aquamarine and Emerald Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "12714",
+              "internalId": null,
+              "name": "Major Acrobat",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13786",
+              "internalId": null,
+              "name": "Major Air Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13765",
+              "internalId": null,
+              "name": "Major Gymnast",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13831",
+              "internalId": null,
+              "name": "Twitcher",
+              "type": "Trophy",
+              "level": 50,
+              "set": null
+            },
+            "ring_1": {
+              "id": "13642",
+              "internalId": null,
+              "name": "Nomarow's Ring",
+              "type": "Ring",
+              "level": 197,
+              "set": "Nomarow Set"
+            },
+            "ring_2": {
+              "id": "32243",
+              "internalId": null,
+              "name": "Psychopump Glove",
+              "type": "Ring",
+              "level": 200,
+              "set": "Psychopump Set"
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2528.87,
+          "apStrategy": null,
+          "totals": {
+            "AP": 8,
+            "MP": 6,
+            "Range": 5,
+            "Agility": 1418,
+            "Power": 100,
+            "Vitality": 2753,
+            "Damage": 5,
+            "Air Damage": 157,
+            "Critical": 59,
+            "Critical Damage": 107
+          },
+          "sets": {
+            "Psychopump Set": 2,
+            "Nomarow Set": 2,
+            "Bubotron Set": 2,
+            "Voldelor Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Bubotron Amulet",
+            "Voldelor Belt",
+            "Bubotron Sword",
+            "Psychopump Button",
+            "Nomarow's Ring",
+            "Psychopump Glove",
+            "Voldelor Boots",
+            "Nomarow's Helmet",
+            "Indescribable Cape",
+            "Aquamarine and Emerald Seemyool",
+            "Arcanist",
+            "Impetuous",
+            "Major Acrobat",
+            "Major Air Wrecker",
+            "Major Gymnast",
+            "Twitcher"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6882.2,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 204.7,
+          "totalSearchMs": 6677.5
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1491.5,
+            "solveMs": 5044.4,
+            "objective": 1981.33,
+            "solutionCallbackCount": 9,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1974.2,
+                "objective": 731.25,
+                "score": 1217.14,
+                "itemIds": [
+                  "8366",
+                  "8714",
+                  "8715",
+                  "8840",
+                  "12628",
+                  "12629",
+                  "12713",
+                  "13830",
+                  "16335",
+                  "16336",
+                  "18028",
+                  "18715",
+                  "27266",
+                  "33035",
+                  "33607",
+                  "33608"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2219.8,
+                "objective": 846.05,
+                "score": 1350.18,
+                "itemIds": [
+                  "9131",
+                  "9137",
+                  "12713",
+                  "12714",
+                  "12724",
+                  "13763",
+                  "13830",
+                  "14049",
+                  "15693",
+                  "15695",
+                  "15697",
+                  "19609",
+                  "23620",
+                  "23621",
+                  "30455",
+                  "33055"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2395.1,
+                "objective": 1143.18,
+                "score": 1553.21,
+                "itemIds": [
+                  "8843",
+                  "12713",
+                  "12725",
+                  "12726",
+                  "12727",
+                  "13829",
+                  "13831",
+                  "20356",
+                  "27265",
+                  "27266",
+                  "27284",
+                  "31767",
+                  "31769",
+                  "31770",
+                  "32121",
+                  "33307"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2599.5,
+                "objective": 1733.57,
+                "score": 2069.2,
+                "itemIds": [
+                  "12712",
+                  "12713",
+                  "12714",
+                  "13124",
+                  "13125",
+                  "13641",
+                  "13642",
+                  "13764",
+                  "13830",
+                  "14051",
+                  "18009",
+                  "18715",
+                  "30453",
+                  "33307",
+                  "33607",
+                  "33608"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 3095.1,
+                "objective": 1839.65,
+                "score": 2194.15,
+                "itemIds": [
+                  "12713",
+                  "12714",
+                  "13124",
+                  "13125",
+                  "13641",
+                  "13642",
+                  "13764",
+                  "13786",
+                  "14001",
+                  "14052",
+                  "18715",
+                  "30453",
+                  "30455",
+                  "33307",
+                  "33607",
+                  "33608"
+                ],
+                "exos": {}
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 199,
+                "shield": 59,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 308,
+                "dofus": 261,
+                "ring": 134
+              },
+              "groupedRingSlot": true,
+              "slotVarCount": 1504,
+              "uniqueItemCount": 1504,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 60,
+              "createdPresenceVarCount": 0,
+              "reusedPresenceVarCount": 216,
+              "conditionConstraintCount": 285,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1504,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3186,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3186,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3186,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Agility": 0.7234,
+          "Air Damage": 2.5359,
+          "Air Resistance": 0.0094,
+          "Critical": 4.2201,
+          "Critical Damage": 1.5602,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.5359,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7234,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
