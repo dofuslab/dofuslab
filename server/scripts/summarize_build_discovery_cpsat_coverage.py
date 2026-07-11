@@ -15,6 +15,8 @@ if str(SERVER_ROOT) not in sys.path:
 from build_discovery_level_diversity_targets import MILESTONE2_LEVEL200_TARGETS
 from check_build_discovery_level_diversity_matrix import validate_full_build_artifact
 
+EXCLUSION_SAMPLE_LIMIT = 10
+
 
 def target_id_set() -> set[str]:
     return {target.name for target in MILESTONE2_LEVEL200_TARGETS}
@@ -45,6 +47,23 @@ def better_generated_row(existing: dict[str, Any], candidate: dict[str, Any]) ->
     return existing
 
 
+def report_path(root: Path, path: Path) -> str:
+    try:
+        return path.relative_to(root).as_posix()
+    except ValueError:
+        return path.as_posix()
+
+
+def record_exclusion(samples: dict[str, list[dict[str, Any]]], reason: str, path: Path, root: Path, target_id: Any = None) -> None:
+    bucket = samples.setdefault(reason, [])
+    if len(bucket) >= EXCLUSION_SAMPLE_LIMIT:
+        return
+    sample: dict[str, Any] = {"path": report_path(root, path)}
+    if isinstance(target_id, str):
+        sample["targetId"] = target_id
+    bucket.append(sample)
+
+
 def generated_cpsat_targets(root: Path) -> dict[str, dict[str, Any]]:
     return coverage_inventory(root)["generatedTargets"]
 
@@ -55,6 +74,7 @@ def coverage_inventory(root: Path) -> dict[str, Any]:
     generated: dict[str, dict[str, Any]] = {}
     duplicate_paths: dict[str, list[str]] = {}
     excluded = Counter()
+    excluded_samples: dict[str, list[dict[str, Any]]] = {}
     examined = 0
     for path in split_reports(root):
         if path.name == "manifest.json":
@@ -64,34 +84,41 @@ def coverage_inventory(root: Path) -> dict[str, Any]:
             report = json.loads(path.read_text(encoding="utf-8"))
         except (OSError, json.JSONDecodeError):
             excluded["unreadable_json"] += 1
+            record_exclusion(excluded_samples, "unreadable_json", path, root)
             continue
         results = report.get("results")
         if not isinstance(results, list) or len(results) != 1:
             excluded["not_single_result_report"] += 1
+            record_exclusion(excluded_samples, "not_single_result_report", path, root)
             continue
         result = results[0]
         if result.get("status") != "generated":
             excluded["not_generated"] += 1
+            record_exclusion(excluded_samples, "not_generated", path, root, result.get("target", {}).get("id"))
             continue
         diagnostics = result.get("diagnostics")
         if not isinstance(diagnostics, dict) or diagnostics.get("solver") != "cpsat":
             excluded["not_cpsat"] += 1
+            record_exclusion(excluded_samples, "not_cpsat", path, root, result.get("target", {}).get("id"))
             continue
         target = result.get("target")
         if not isinstance(target, dict):
             excluded["missing_target"] += 1
+            record_exclusion(excluded_samples, "missing_target", path, root)
             continue
         target_id = target.get("id")
         if target_id not in valid_targets:
             excluded["outside_target_set"] += 1
+            record_exclusion(excluded_samples, "outside_target_set", path, root, target_id)
             continue
         validation_errors = validate_full_build_artifact(result, target_by_id)
         if validation_errors:
             excluded["strict_validation_failed"] += 1
+            record_exclusion(excluded_samples, "strict_validation_failed", path, root, target_id)
             continue
         row = {
             "target": target,
-            "path": str(path),
+            "path": report_path(root, path),
             "solverStatus": diagnostics.get("solverStatus"),
             "elapsedMs": diagnostics.get("elapsedMs"),
         }
@@ -104,6 +131,7 @@ def coverage_inventory(root: Path) -> dict[str, Any]:
         "generatedTargets": generated,
         "examinedSplitReports": examined,
         "excludedSplitReports": dict(sorted(excluded.items())),
+        "excludedSplitReportSamples": dict(sorted(excluded_samples.items())),
         "duplicateTargetCount": len(duplicate_paths),
         "duplicateSplitReportSurplus": sum(len(paths) - 1 for paths in duplicate_paths.values()),
         "duplicateTargets": dict(sorted(duplicate_paths.items())),
@@ -139,6 +167,7 @@ def coverage_report(root: Path) -> dict[str, Any]:
         "bySolverStatus": dict(sorted(Counter(row["solverStatus"] for row in generated.values()).items())),
         "examinedSplitReports": inventory["examinedSplitReports"],
         "excludedSplitReports": inventory["excludedSplitReports"],
+        "excludedSplitReportSamples": inventory["excludedSplitReportSamples"],
         "duplicateTargetCount": inventory["duplicateTargetCount"],
         "duplicateSplitReportSurplus": inventory["duplicateSplitReportSurplus"],
         "duplicateTargets": inventory["duplicateTargets"],

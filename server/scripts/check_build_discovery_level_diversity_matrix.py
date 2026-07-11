@@ -65,11 +65,16 @@ def validate_single_build_artifact(
         failures.append(f"{target_id}: {label} missing baseAllocation")
     else:
         available_points = characteristic_points_for_level(target.level)
+        for stat_name, value in base_allocation.items():
+            if not isinstance(value, int):
+                failures.append(
+                    f"{target_id}: {label} baseAllocation {stat_name} is {value!r}, expected integer"
+                )
         allocated_primary_stats = {
             stat: value
             for stat in PRIMARY_STAT_NAMES
             for value in [base_allocation.get(stat)]
-            if isinstance(value, (int, float)) and value > 0
+            if isinstance(value, int) and value > 0
         }
         spent_points = sum(characteristic_point_cost(int(value)) for value in allocated_primary_stats.values())
         if spent_points > available_points:
@@ -78,19 +83,34 @@ def validate_single_build_artifact(
                 f"above level {target.level} budget {available_points}"
             )
         vitality_allocation = base_allocation.get("Vitality")
-        if isinstance(vitality_allocation, (int, float)) and spent_points <= available_points:
+        if isinstance(vitality_allocation, int) and spent_points <= available_points:
             expected_vitality = available_points - spent_points
-            if int(vitality_allocation) != expected_vitality:
+            if vitality_allocation != expected_vitality:
                 failures.append(
                     f"{target_id}: {label} baseAllocation Vitality is {vitality_allocation}, expected {expected_vitality}"
                 )
 
     slot_types = slot_types_by_name()
     seen_item_ids: set[str] = set()
-    for slot_name, item in (build.get("items") or {}).items():
+    items = build.get("items") or {}
+    if not isinstance(items, dict):
+        failures.append(f"{target_id}: {label} items must be an object")
+        items = {}
+    expected_slots = set(slot_types)
+    actual_slots = set(items)
+    missing_slots = sorted(expected_slots - actual_slots)
+    extra_slots = sorted(actual_slots - expected_slots)
+    if missing_slots:
+        failures.append(f"{target_id}: {label} missing item slots: {', '.join(missing_slots)}")
+    if extra_slots:
+        failures.append(f"{target_id}: {label} unknown item slots: {', '.join(extra_slots)}")
+    for slot_name, item in items.items():
         allowed_types = slot_types.get(slot_name)
         if allowed_types is None:
             failures.append(f"{target_id}: {label} unknown item slot {slot_name}")
+            continue
+        if not isinstance(item, dict):
+            failures.append(f"{target_id}: {label} {slot_name} item must be an object")
             continue
         item_type = item.get("type") or item.get("itemType")
         if item_type not in allowed_types:

@@ -1,9 +1,9 @@
 # Build Discovery CP-SAT Coverage
 
 Target set: `milestone2-level200`
-Generated CP-SAT targets: `1504` / `3072`
-Coverage: `48.96%`
-Examined split reports: `1686`
+Generated CP-SAT targets: `1568` / `3072`
+Coverage: `51.04%`
+Examined split reports: `1750`
 Excluded split reports: `29`
 Duplicate targets: `96` (`153` surplus reports)
 
@@ -11,10 +11,10 @@ Duplicate targets: `96` (`153` surplus reports)
 
 | Value | Count |
 |---|---:|
-| agility | 372 |
-| chance | 380 |
-| intelligence | 372 |
-| strength | 380 |
+| agility | 388 |
+| chance | 396 |
+| intelligence | 388 |
+| strength | 396 |
 
 ## Budget Tier
 
@@ -22,18 +22,18 @@ Duplicate targets: `96` (`153` surplus reports)
 |---|---:|
 | 1 | 392 |
 | 2 | 392 |
-| 3 | 360 |
-| 4 | 360 |
+| 3 | 392 |
+| 4 | 392 |
 
 ## AP
 
 | Value | Count |
 |---|---:|
 | 7 | 264 |
-| 8 | 224 |
+| 8 | 256 |
 | 9 | 256 |
 | 10 | 232 |
-| 11 | 256 |
+| 11 | 288 |
 | 12 | 272 |
 
 ## MP
@@ -41,8 +41,8 @@ Duplicate targets: `96` (`153` surplus reports)
 | Value | Count |
 |---|---:|
 | 3 | 400 |
-| 4 | 352 |
-| 5 | 376 |
+| 4 | 384 |
+| 5 | 408 |
 | 6 | 376 |
 
 ## Range
@@ -52,9 +52,9 @@ Duplicate targets: `96` (`153` surplus reports)
 | 0 | 208 |
 | 1 | 192 |
 | 2 | 216 |
-| 3 | 176 |
+| 3 | 208 |
 | 4 | 184 |
-| 5 | 168 |
+| 5 | 200 |
 | 6 | 184 |
 | none | 176 |
 
@@ -62,8 +62,8 @@ Duplicate targets: `96` (`153` surplus reports)
 
 | Value | Count |
 |---|---:|
-| FEASIBLE | 859 |
-| OPTIMAL | 645 |
+| FEASIBLE | 907 |
+| OPTIMAL | 661 |
 
 ## Excluded Split Reports
 

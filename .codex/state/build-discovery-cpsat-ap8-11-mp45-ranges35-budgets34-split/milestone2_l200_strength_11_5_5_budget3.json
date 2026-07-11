@@ -1,0 +1,787 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T12:26:57.528070+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_11_5_5_budget3",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 3,
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": 5
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": 5,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2386.94,
+        "weightedStatScore": 4326.82,
+        "utilityStatScore": 317.8,
+        "genericDamageScore": 4392.84,
+        "rawRotationDamageScore": 4024.73,
+        "spellDamageScore": 4024.73,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.4643,
+        "weaponDamageScore": 245.48,
+        "survivabilityScore": 92.36,
+        "weakestElementEhp": 2845.6,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 6,
+          "Strength": 1498,
+          "Power": 0,
+          "Vitality": 3003,
+          "Damage": 0,
+          "Earth Damage": 184,
+          "Critical": 70,
+          "Critical Damage": 45,
+          "Neutral Damage": 164
+        },
+        "sets": {
+          "Erotegg Set": 3,
+          "Dark Court Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15430",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "32235",
+            "slot": "weapon"
+          },
+          "Range": {
+            "itemId": "18000",
+            "slot": "hat"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "17997",
+            "internalId": null,
+            "name": "Crabtun Necklace",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "32235",
+            "internalId": null,
+            "name": "Erotegg Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "shield": {
+            "id": "32236",
+            "internalId": null,
+            "name": "Erotegg Disc",
+            "type": "Shield",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_1": {
+            "id": "32234",
+            "internalId": null,
+            "name": "Erotegg Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_2": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "boots": {
+            "id": "15428",
+            "internalId": null,
+            "name": "Dark Court Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "hat": {
+            "id": "18000",
+            "internalId": null,
+            "name": "Koutoulou Mask",
+            "type": "Hat",
+            "level": 200,
+            "set": null
+          },
+          "cloak": {
+            "id": "15430",
+            "internalId": null,
+            "name": "Dark Court Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "pet": {
+            "id": "29430",
+            "internalId": null,
+            "name": "Mamukil Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2386.94,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 6,
+          "Strength": 1498,
+          "Power": 0,
+          "Vitality": 3003,
+          "Damage": 0,
+          "Earth Damage": 184,
+          "Critical": 70,
+          "Critical Damage": 45,
+          "Neutral Damage": 164
+        },
+        "sets": {
+          "Erotegg Set": 3,
+          "Dark Court Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15430",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "32235",
+            "slot": "weapon"
+          },
+          "Range": {
+            "itemId": "18000",
+            "slot": "hat"
+          }
+        },
+        "items": [
+          "Crabtun Necklace",
+          "Corruption's Brambelt",
+          "Erotegg Bow",
+          "Erotegg Disc",
+          "Erotegg Ring",
+          "Corruption's Ring",
+          "Dark Court Boots",
+          "Koutoulou Mask",
+          "Dark Court Cape",
+          "Mamukil Kolophant",
+          "Cloudy Dofus",
+          "Ice Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Earth Wrecker",
+          "Major Goliath"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2386.94,
+          "weightedStatScore": 4326.82,
+          "utilityStatScore": 317.8,
+          "genericDamageScore": 4392.84,
+          "rawRotationDamageScore": 4024.73,
+          "spellDamageScore": 4024.73,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.4643,
+          "weaponDamageScore": 245.48,
+          "survivabilityScore": 92.36,
+          "weakestElementEhp": 2845.6,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 6,
+            "Strength": 1498,
+            "Power": 0,
+            "Vitality": 3003,
+            "Damage": 0,
+            "Earth Damage": 184,
+            "Critical": 70,
+            "Critical Damage": 45,
+            "Neutral Damage": 164
+          },
+          "sets": {
+            "Erotegg Set": 3,
+            "Dark Court Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "15430",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "32235",
+              "slot": "weapon"
+            },
+            "Range": {
+              "itemId": "18000",
+              "slot": "hat"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "17997",
+              "internalId": null,
+              "name": "Crabtun Necklace",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Depths Set"
+            },
+            "belt": {
+              "id": "22209",
+              "internalId": null,
+              "name": "Corruption's Brambelt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "weapon": {
+              "id": "32235",
+              "internalId": null,
+              "name": "Erotegg Bow",
+              "type": "Bow",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "shield": {
+              "id": "32236",
+              "internalId": null,
+              "name": "Erotegg Disc",
+              "type": "Shield",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_1": {
+              "id": "32234",
+              "internalId": null,
+              "name": "Erotegg Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_2": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "boots": {
+              "id": "15428",
+              "internalId": null,
+              "name": "Dark Court Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "hat": {
+              "id": "18000",
+              "internalId": null,
+              "name": "Koutoulou Mask",
+              "type": "Hat",
+              "level": 200,
+              "set": null
+            },
+            "cloak": {
+              "id": "15430",
+              "internalId": null,
+              "name": "Dark Court Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "pet": {
+              "id": "29430",
+              "internalId": null,
+              "name": "Mamukil Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13774",
+              "internalId": null,
+              "name": "Major Earth Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2386.94,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 6,
+            "Strength": 1498,
+            "Power": 0,
+            "Vitality": 3003,
+            "Damage": 0,
+            "Earth Damage": 184,
+            "Critical": 70,
+            "Critical Damage": 45,
+            "Neutral Damage": 164
+          },
+          "sets": {
+            "Erotegg Set": 3,
+            "Dark Court Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "15430",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "32235",
+              "slot": "weapon"
+            },
+            "Range": {
+              "itemId": "18000",
+              "slot": "hat"
+            }
+          },
+          "items": [
+            "Crabtun Necklace",
+            "Corruption's Brambelt",
+            "Erotegg Bow",
+            "Erotegg Disc",
+            "Erotegg Ring",
+            "Corruption's Ring",
+            "Dark Court Boots",
+            "Koutoulou Mask",
+            "Dark Court Cape",
+            "Mamukil Kolophant",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Earth Wrecker",
+            "Major Goliath"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [
+        "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
+      ],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6889.7,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 168.4,
+          "totalSearchMs": 6721.3
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "mode": "callback",
+            "status": "FEASIBLE",
+            "modelMs": 1534.3,
+            "solveMs": 5074.0,
+            "objective": 2086.97,
+            "solutionCallbackCount": 10,
+            "validCallbackCandidateCount": 5,
+            "invalidCallbackCandidateCount": 0,
+            "finalAssignmentConsidered": true,
+            "finalAssignmentAdded": true,
+            "finalAssignmentRepresented": true,
+            "finalInvalidReason": null,
+            "stoppedAfterCandidateLimit": false,
+            "callbackCandidateEvents": [
+              {
+                "callbackIndex": 1,
+                "rankBeforeRerank": 1,
+                "wallTimeMs": 1862.4,
+                "objective": 687.69,
+                "score": 1129.65,
+                "itemIds": [
+                  "2469",
+                  "11607",
+                  "12628",
+                  "12629",
+                  "12630",
+                  "12631",
+                  "12632",
+                  "13197",
+                  "13465",
+                  "16333",
+                  "17098",
+                  "17100",
+                  "18028",
+                  "27266",
+                  "27555",
+                  "32233"
+                ],
+                "exos": {
+                  "MP": "17100",
+                  "Range": "27555"
+                }
+              },
+              {
+                "callbackIndex": 2,
+                "rankBeforeRerank": 2,
+                "wallTimeMs": 2075.4,
+                "objective": 1243.5,
+                "score": 1722.44,
+                "itemIds": [
+                  "12723",
+                  "12724",
+                  "13230",
+                  "13344",
+                  "13633",
+                  "13829",
+                  "15693",
+                  "15695",
+                  "15696",
+                  "22004",
+                  "27266",
+                  "27284",
+                  "29136",
+                  "30949",
+                  "32234",
+                  "32236"
+                ],
+                "exos": {
+                  "Range": "15693"
+                }
+              },
+              {
+                "callbackIndex": 3,
+                "rankBeforeRerank": 3,
+                "wallTimeMs": 2279.7,
+                "objective": 1314.36,
+                "score": 1796.84,
+                "itemIds": [
+                  "8698",
+                  "11726",
+                  "12723",
+                  "13230",
+                  "13344",
+                  "13633",
+                  "13829",
+                  "15693",
+                  "27266",
+                  "27284",
+                  "29136",
+                  "30453",
+                  "30949",
+                  "32114",
+                  "32234",
+                  "32236"
+                ],
+                "exos": {
+                  "AP": "27266",
+                  "MP": "27284"
+                }
+              },
+              {
+                "callbackIndex": 4,
+                "rankBeforeRerank": 4,
+                "wallTimeMs": 2485.0,
+                "objective": 1331.83,
+                "score": 1794.64,
+                "itemIds": [
+                  "12724",
+                  "13230",
+                  "13344",
+                  "13829",
+                  "15693",
+                  "15695",
+                  "15696",
+                  "19244",
+                  "22004",
+                  "27266",
+                  "27284",
+                  "29136",
+                  "30453",
+                  "30949",
+                  "32234",
+                  "32236"
+                ],
+                "exos": {}
+              },
+              {
+                "callbackIndex": 5,
+                "rankBeforeRerank": 5,
+                "wallTimeMs": 2651.9,
+                "objective": 1536.54,
+                "score": 1943.28,
+                "itemIds": [
+                  "7043",
+                  "8698",
+                  "11726",
+                  "13344",
+                  "13633",
+                  "14076",
+                  "15693",
+                  "16196",
+                  "27266",
+                  "27284",
+                  "29136",
+                  "29430",
+                  "30453",
+                  "30949",
+                  "32234",
+                  "32236"
+                ],
+                "exos": {
+                  "AP": "27266",
+                  "Range": "15693"
+                }
+              }
+            ],
+            "callbackInvalidEvents": [],
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 314
+              },
+              "groupedRingSlot": false,
+              "slotVarCount": 1836,
+              "uniqueItemCount": 1702,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 876,
+              "skippedSetCountVarCount": 62,
+              "createdPresenceVarCount": 2,
+              "reusedPresenceVarCount": 215,
+              "conditionConstraintCount": 288,
+              "skippedSetBonusConditionCount": 87,
+              "setCountConstraintCount": 209
+            }
+          }
+        ],
+        "itemCount": 1702,
+        "candidateCount": 5,
+        "requestedCandidateLimit": 5,
+        "collectionMode": "callback",
+        "stopAfterCandidates": false,
+        "maxSharedItems": 10,
+        "maxSharedItemsEnforced": false,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}
