@@ -1,0 +1,6233 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T02:52:15.752879+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 24,
+  "generatedCount": 24,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_1_strength_6_3_none_budget1",
+        "className": "Iop",
+        "level": 1,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 1,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 272.13,
+        "weightedStatScore": 297.35,
+        "utilityStatScore": 117.95,
+        "genericDamageScore": 333.42,
+        "rawRotationDamageScore": 74.91,
+        "spellDamageScore": 74.91,
+        "profileBaselineDamageScore": 674.0,
+        "profileRelativeDamage": 0.1111,
+        "weaponDamageScore": 3.26,
+        "survivabilityScore": 4.14,
+        "weakestElementEhp": 138.0,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Strength": 0,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 129,
+          "Power": 0,
+          "Vitality": 138,
+          "Damage": 0,
+          "Earth Damage": 2,
+          "Critical": 0,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "766",
+            "internalId": null,
+            "name": "Koliet Aclou",
+            "type": "Amulet",
+            "level": 1,
+            "set": null
+          },
+          "belt": {
+            "id": "8536",
+            "internalId": null,
+            "name": "Muffin Belt",
+            "type": "Belt",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "weapon": {
+            "id": "9961",
+            "internalId": null,
+            "name": "Hurrian Hammer",
+            "type": "Hammer",
+            "level": 1,
+            "set": null
+          },
+          "shield": {
+            "id": "18676",
+            "internalId": null,
+            "name": "Lumberjack Shield",
+            "type": "Shield",
+            "level": 1,
+            "set": null
+          },
+          "ring_1": {
+            "id": "8537",
+            "internalId": null,
+            "name": "Pluswan",
+            "type": "Ring",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "boots": {
+            "id": "861",
+            "internalId": null,
+            "name": "Strength Boots",
+            "type": "Boots",
+            "level": 1,
+            "set": null
+          },
+          "hat": {
+            "id": "8162",
+            "internalId": null,
+            "name": "Pumpkwin Head",
+            "type": "Hat",
+            "level": 1,
+            "set": null
+          },
+          "cloak": {
+            "id": "8534",
+            "internalId": null,
+            "name": "S'loque Cape",
+            "type": "Cloak",
+            "level": 1,
+            "set": "Boon Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 272.13,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 129,
+          "Power": 0,
+          "Vitality": 138,
+          "Damage": 0,
+          "Earth Damage": 2,
+          "Critical": 0,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Koliet Aclou",
+          "Muffin Belt",
+          "Hurrian Hammer",
+          "Lumberjack Shield",
+          "Pluswan",
+          "Strength Boots",
+          "Pumpkwin Head",
+          "S'loque Cape"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 2640.2,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 247.6,
+          "candidatePoolsMs": 31.7,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 2.0,
+          "directCompletionMs": 0.0,
+          "beamSearchMs": 2358.6,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 2640.1
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_20_intelligence_7_4_1_budget3",
+        "className": "Iop",
+        "level": 20,
+        "element": "intelligence",
+        "budgetTier": 3,
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 20,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 532.58,
+        "weightedStatScore": 802.72,
+        "utilityStatScore": 151.05,
+        "genericDamageScore": 834.33,
+        "rawRotationDamageScore": 320.96,
+        "spellDamageScore": 316.62,
+        "profileBaselineDamageScore": 1154.08,
+        "profileRelativeDamage": 0.2781,
+        "weaponDamageScore": 28.07,
+        "survivabilityScore": 6.08,
+        "weakestElementEhp": 194.37,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 95,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 1,
+          "Intelligence": 462,
+          "Power": 10,
+          "Vitality": 205,
+          "Damage": 0,
+          "Fire Damage": 26,
+          "Critical": 4,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Bearman Set": 7
+        },
+        "exos": {
+          "MP": {
+            "itemId": "6723",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "6723",
+            "internalId": null,
+            "name": "Bearman's Necklace",
+            "type": "Amulet",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "belt": {
+            "id": "6724",
+            "internalId": null,
+            "name": "Bearman's Belt",
+            "type": "Belt",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "weapon": {
+            "id": "6725",
+            "internalId": null,
+            "name": "Bearman's Staff",
+            "type": "Staff",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "ring_1": {
+            "id": "6722",
+            "internalId": null,
+            "name": "Bearman's Wedding Ring",
+            "type": "Ring",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "boots": {
+            "id": "6721",
+            "internalId": null,
+            "name": "Bearman's Boots",
+            "type": "Boots",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "hat": {
+            "id": "6719",
+            "internalId": null,
+            "name": "Bearman's Headgear",
+            "type": "Hat",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "cloak": {
+            "id": "6720",
+            "internalId": null,
+            "name": "Bearman's Cloak",
+            "type": "Cloak",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "shield": {
+            "id": "18666",
+            "internalId": null,
+            "name": "Gobball Shield",
+            "type": "Shield",
+            "level": 20,
+            "set": "Gobball Set"
+          },
+          "ring_2": {
+            "id": "8219",
+            "internalId": null,
+            "name": "Red Piwi Ring",
+            "type": "Ring",
+            "level": 10,
+            "set": "Red Piwi Set"
+          },
+          "pet": {
+            "id": "11971",
+            "internalId": null,
+            "name": "Teddybearbarian",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 532.58,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 1,
+          "Intelligence": 462,
+          "Power": 10,
+          "Vitality": 205,
+          "Damage": 0,
+          "Fire Damage": 26,
+          "Critical": 4,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Bearman Set": 7
+        },
+        "exos": {
+          "MP": {
+            "itemId": "6723",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Bearman's Necklace",
+          "Bearman's Belt",
+          "Bearman's Staff",
+          "Gobball Shield",
+          "Bearman's Wedding Ring",
+          "Red Piwi Ring",
+          "Bearman's Boots",
+          "Bearman's Headgear",
+          "Bearman's Cloak",
+          "Teddybearbarian"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 3884.2,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 273.7,
+          "candidatePoolsMs": 35.9,
+          "packageIndexMs": 18.5,
+          "packageSeedsMs": 28.5,
+          "directCompletionMs": 3527.0,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 0.2,
+          "totalFindBuildsMs": 3883.9
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_40_chance_7_3_none_budget1",
+        "className": "Iop",
+        "level": 40,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 40,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 586.88,
+        "weightedStatScore": 869.1,
+        "utilityStatScore": 138.8,
+        "genericDamageScore": 975.4,
+        "rawRotationDamageScore": 413.18,
+        "spellDamageScore": 413.18,
+        "profileBaselineDamageScore": 1270.81,
+        "profileRelativeDamage": 0.3251,
+        "weaponDamageScore": 27.27,
+        "survivabilityScore": 9.15,
+        "weakestElementEhp": 301.0,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Chance": 147,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 432,
+          "Power": 70,
+          "Vitality": 301,
+          "Damage": 4,
+          "Water Damage": 15,
+          "Critical": 5,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Microset": 4
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "15995",
+            "internalId": null,
+            "name": "Pearl Amulet",
+            "type": "Amulet",
+            "level": 37,
+            "set": "Microset"
+          },
+          "ring_1": {
+            "id": "15992",
+            "internalId": null,
+            "name": "Tinkly Bell Ring",
+            "type": "Ring",
+            "level": 36,
+            "set": "Microset"
+          },
+          "hat": {
+            "id": "15994",
+            "internalId": null,
+            "name": "Nut Helmet",
+            "type": "Hat",
+            "level": 40,
+            "set": "Microset"
+          },
+          "cloak": {
+            "id": "15993",
+            "internalId": null,
+            "name": "Match Cape",
+            "type": "Cloak",
+            "level": 38,
+            "set": "Microset"
+          },
+          "belt": {
+            "id": "156",
+            "internalId": null,
+            "name": "Power Belt",
+            "type": "Belt",
+            "level": 31,
+            "set": null
+          },
+          "weapon": {
+            "id": "1368",
+            "internalId": null,
+            "name": "Arson Fire Lance",
+            "type": "Lance",
+            "level": 29,
+            "set": null
+          },
+          "shield": {
+            "id": "18687",
+            "internalId": null,
+            "name": "Akwadala Shield",
+            "type": "Shield",
+            "level": 40,
+            "set": "Akwadala Set"
+          },
+          "ring_2": {
+            "id": "1495",
+            "internalId": null,
+            "name": "Soff Ring",
+            "type": "Ring",
+            "level": 36,
+            "set": null
+          },
+          "boots": {
+            "id": "2374",
+            "internalId": null,
+            "name": "Tarsy's Boots",
+            "type": "Boots",
+            "level": 38,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 586.88,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 7,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 432,
+          "Power": 70,
+          "Vitality": 301,
+          "Damage": 4,
+          "Water Damage": 15,
+          "Critical": 5,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Microset": 4
+        },
+        "exos": {},
+        "items": [
+          "Pearl Amulet",
+          "Power Belt",
+          "Arson Fire Lance",
+          "Akwadala Shield",
+          "Tinkly Bell Ring",
+          "Soff Ring",
+          "Tarsy's Boots",
+          "Nut Helmet",
+          "Match Cape"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 7298.7,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 134.5,
+          "candidatePoolsMs": 61.6,
+          "packageIndexMs": 42.3,
+          "packageSeedsMs": 320.3,
+          "directCompletionMs": 6739.2,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 0.2,
+          "totalFindBuildsMs": 7298.2
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_50_agility_7_3_1_budget1",
+        "className": "Iop",
+        "level": 50,
+        "element": "agility",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 50,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 843.69,
+        "weightedStatScore": 1266.22,
+        "utilityStatScore": 187.41,
+        "genericDamageScore": 1423.79,
+        "rawRotationDamageScore": 653.64,
+        "spellDamageScore": 653.64,
+        "profileBaselineDamageScore": 1377.25,
+        "profileRelativeDamage": 0.4746,
+        "weaponDamageScore": 29.2,
+        "survivabilityScore": 15.57,
+        "weakestElementEhp": 347.33,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Agility": 172,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 6,
+          "Range": 3,
+          "Agility": 707,
+          "Power": 45,
+          "Vitality": 521,
+          "Damage": 3,
+          "Air Damage": 11,
+          "Critical": 10,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Coco Blop Set": 4,
+          "Khardboard Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9151",
+            "internalId": null,
+            "name": "Coco Amublop",
+            "type": "Amulet",
+            "level": 50,
+            "set": "Coco Blop Set"
+          },
+          "belt": {
+            "id": "9169",
+            "internalId": null,
+            "name": "Coco Blop Belt",
+            "type": "Belt",
+            "level": 50,
+            "set": "Coco Blop Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "9124",
+            "internalId": null,
+            "name": "Coco Blop Ring",
+            "type": "Ring",
+            "level": 50,
+            "set": "Coco Blop Set"
+          },
+          "boots": {
+            "id": "9160",
+            "internalId": null,
+            "name": "Coco Bloopts",
+            "type": "Boots",
+            "level": 50,
+            "set": "Coco Blop Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "18710",
+            "internalId": null,
+            "name": "Chafer Foot Soldier's Shield",
+            "type": "Shield",
+            "level": 35,
+            "set": null
+          },
+          "ring_2": {
+            "id": "10171",
+            "internalId": null,
+            "name": "Chisp Fingerless Gloves",
+            "type": "Ring",
+            "level": 44,
+            "set": "Chisp Set"
+          },
+          "cloak": {
+            "id": "953",
+            "internalId": null,
+            "name": "Mad Tofu Cloak",
+            "type": "Cloak",
+            "level": 36,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13784",
+            "internalId": null,
+            "name": "Minor Air Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12712",
+            "internalId": null,
+            "name": "Minor Acrobat",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12688",
+            "internalId": null,
+            "name": "Minor Air Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13763",
+            "internalId": null,
+            "name": "Minor Gymnast",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 843.69,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 7,
+          "MP": 6,
+          "Range": 3,
+          "Agility": 707,
+          "Power": 45,
+          "Vitality": 521,
+          "Damage": 3,
+          "Air Damage": 11,
+          "Critical": 10,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Coco Blop Set": 4,
+          "Khardboard Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Coco Amublop",
+          "Coco Blop Belt",
+          "Khardboard Goultard",
+          "Chafer Foot Soldier's Shield",
+          "Coco Blop Ring",
+          "Chisp Fingerless Gloves",
+          "Coco Bloopts",
+          "Khardboard Gobball Headgear",
+          "Mad Tofu Cloak",
+          "Minor Air Wrecker",
+          "Minor Acrobat",
+          "Minor Air Destroyer",
+          "Minor Gymnast",
+          "Minor Dynamo",
+          "Twitcher"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 945029.6,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 139.2,
+          "candidatePoolsMs": 57.9,
+          "packageIndexMs": 373.9,
+          "packageSeedsMs": 1998.1,
+          "directCompletionMs": 942457.0,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.4,
+          "totalFindBuildsMs": 945027.4
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_50_strength_8_4_1_budget2",
+        "className": "Iop",
+        "level": 50,
+        "element": "strength",
+        "budgetTier": 2,
+        "apTarget": 8,
+        "mpTarget": 4,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 50,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 8,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 881.51,
+        "weightedStatScore": 1551.14,
+        "utilityStatScore": 173.0,
+        "genericDamageScore": 1528.15,
+        "rawRotationDamageScore": 741.03,
+        "spellDamageScore": 630.25,
+        "profileBaselineDamageScore": 1454.75,
+        "profileRelativeDamage": 0.5094,
+        "weaponDamageScore": 77.08,
+        "survivabilityScore": 20.84,
+        "weakestElementEhp": 682.35,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 172,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 2,
+          "Strength": 587,
+          "Power": 20,
+          "Vitality": 696,
+          "Damage": 19,
+          "Earth Damage": 21,
+          "Critical": 27,
+          "Critical Damage": 50,
+          "Neutral Damage": 3
+        },
+        "sets": {
+          "Khardboard Set": 2,
+          "Slump Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9659",
+            "internalId": null,
+            "name": "Slump Necklace",
+            "type": "Amulet",
+            "level": 43,
+            "set": "Slump Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "boots": {
+            "id": "9656",
+            "internalId": null,
+            "name": "Slump Rollers",
+            "type": "Boots",
+            "level": 43,
+            "set": "Slump Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "belt": {
+            "id": "968",
+            "internalId": null,
+            "name": "Dazzling Belt",
+            "type": "Belt",
+            "level": 50,
+            "set": "Dazzling Set"
+          },
+          "shield": {
+            "id": "18682",
+            "internalId": null,
+            "name": "Treechnid Shield",
+            "type": "Shield",
+            "level": 45,
+            "set": null
+          },
+          "ring_1": {
+            "id": "11058",
+            "internalId": null,
+            "name": "Pynekone Ring",
+            "type": "Ring",
+            "level": 43,
+            "set": "Pynekone Set"
+          },
+          "ring_2": {
+            "id": "2420",
+            "internalId": null,
+            "name": "Ringtree",
+            "type": "Ring",
+            "level": 40,
+            "set": "Treechnid Set"
+          },
+          "cloak": {
+            "id": "1500",
+            "internalId": null,
+            "name": "Carpet Cape",
+            "type": "Cloak",
+            "level": 43,
+            "set": null
+          },
+          "pet": {
+            "id": "7712",
+            "internalId": null,
+            "name": "Green Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "16191",
+            "internalId": null,
+            "name": "Minor Miracle Man",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "16252",
+            "internalId": null,
+            "name": "Minor Earth Devastator",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16330",
+            "internalId": null,
+            "name": "Minor Vigour",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13772",
+            "internalId": null,
+            "name": "Minor Earth Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16337",
+            "internalId": null,
+            "name": "Minor Bloodthirst",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "12748",
+            "internalId": null,
+            "name": "Minor Earth Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 881.51,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 2,
+          "Strength": 587,
+          "Power": 20,
+          "Vitality": 696,
+          "Damage": 19,
+          "Earth Damage": 21,
+          "Critical": 27,
+          "Critical Damage": 50,
+          "Neutral Damage": 3
+        },
+        "sets": {
+          "Khardboard Set": 2,
+          "Slump Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Slump Necklace",
+          "Dazzling Belt",
+          "Khardboard Goultard",
+          "Treechnid Shield",
+          "Pynekone Ring",
+          "Ringtree",
+          "Slump Rollers",
+          "Khardboard Gobball Headgear",
+          "Carpet Cape",
+          "Green Piwin",
+          "Minor Miracle Man",
+          "Minor Earth Devastator",
+          "Minor Vigour",
+          "Minor Earth Wrecker",
+          "Minor Bloodthirst",
+          "Minor Earth Destroyer"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 89672.3,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 113.6,
+          "candidatePoolsMs": 60.3,
+          "packageIndexMs": 359.0,
+          "packageSeedsMs": 2055.7,
+          "directCompletionMs": 87078.9,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.8,
+          "totalFindBuildsMs": 89669.3
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_60_intelligence_10_4_2_budget2",
+        "className": "Iop",
+        "level": 60,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 60,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 853.28,
+        "weightedStatScore": 1416.88,
+        "utilityStatScore": 219.58,
+        "genericDamageScore": 1373.03,
+        "rawRotationDamageScore": 587.45,
+        "spellDamageScore": 587.45,
+        "profileBaselineDamageScore": 1283.54,
+        "profileRelativeDamage": 0.4577,
+        "weaponDamageScore": 38.72,
+        "survivabilityScore": 15.84,
+        "weakestElementEhp": 521.43,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 197,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 4,
+          "Intelligence": 652,
+          "Power": 70,
+          "Vitality": 511,
+          "Damage": 0,
+          "Fire Damage": 43,
+          "Critical": 19,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Rhineetleset": 3,
+          "Khardboard Set": 2,
+          "Jellix Set": 2,
+          "Brrrbli Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "13893",
+            "internalId": null,
+            "name": "Brrrito Amulet",
+            "type": "Amulet",
+            "level": 57,
+            "set": "Brrrbli Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "34257",
+            "internalId": null,
+            "name": "Rhineetle Shield",
+            "type": "Shield",
+            "level": 60,
+            "set": "Rhineetleset"
+          },
+          "ring_1": {
+            "id": "13891",
+            "internalId": null,
+            "name": "Brrrito Ring",
+            "type": "Ring",
+            "level": 55,
+            "set": "Brrrbli Set"
+          },
+          "boots": {
+            "id": "34255",
+            "internalId": null,
+            "name": "Rhineetle Boots",
+            "type": "Boots",
+            "level": 60,
+            "set": "Rhineetleset"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "34256",
+            "internalId": null,
+            "name": "Rhineetle Cloak",
+            "type": "Cloak",
+            "level": 60,
+            "set": "Rhineetleset"
+          },
+          "belt": {
+            "id": "2471",
+            "internalId": null,
+            "name": "Jellibelt",
+            "type": "Belt",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "ring_2": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "pet": {
+            "id": "33273",
+            "internalId": null,
+            "name": "Coral and Golden Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13778",
+            "internalId": null,
+            "name": "Minor Fire Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12718",
+            "internalId": null,
+            "name": "Minor Scholar",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12694",
+            "internalId": null,
+            "name": "Minor Fire Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13760",
+            "internalId": null,
+            "name": "Minor Brainbox",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 853.28,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 4,
+          "Intelligence": 652,
+          "Power": 70,
+          "Vitality": 511,
+          "Damage": 0,
+          "Fire Damage": 43,
+          "Critical": 19,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Rhineetleset": 3,
+          "Khardboard Set": 2,
+          "Jellix Set": 2,
+          "Brrrbli Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Brrrito Amulet",
+          "Jellibelt",
+          "Khardboard Goultard",
+          "Rhineetle Shield",
+          "Brrrito Ring",
+          "Gelano",
+          "Rhineetle Boots",
+          "Khardboard Gobball Headgear",
+          "Rhineetle Cloak",
+          "Coral and Golden Seemyool",
+          "Minor Fire Wrecker",
+          "Minor Scholar",
+          "Minor Fire Destroyer",
+          "Minor Brainbox",
+          "Minor Dynamo",
+          "Twitcher"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 348830.8,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 269.8,
+          "candidatePoolsMs": 77.5,
+          "packageIndexMs": 391.6,
+          "packageSeedsMs": 2014.9,
+          "directCompletionMs": 346072.3,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.9,
+          "totalFindBuildsMs": 348828.0
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_80_strength_9_5_none_budget2",
+        "className": "Iop",
+        "level": 80,
+        "element": "strength",
+        "budgetTier": 2,
+        "apTarget": 9,
+        "mpTarget": 5,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 80,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 9,
+        "mpTarget": 5,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1091.17,
+        "weightedStatScore": 1839.26,
+        "utilityStatScore": 251.16,
+        "genericDamageScore": 1799.8,
+        "rawRotationDamageScore": 979.96,
+        "spellDamageScore": 979.96,
+        "profileBaselineDamageScore": 1633.46,
+        "profileRelativeDamage": 0.5999,
+        "weaponDamageScore": 53.82,
+        "survivabilityScore": 30.1,
+        "weakestElementEhp": 983.36,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 231,
+          "Vitality": 2
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 5,
+          "Strength": 826,
+          "Power": 165,
+          "Vitality": 1052,
+          "Damage": 10,
+          "Earth Damage": 18,
+          "Critical": 24,
+          "Critical Damage": 5,
+          "Neutral Damage": 5
+        },
+        "sets": {
+          "Royal Pippin Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9154",
+            "internalId": null,
+            "name": "Royal Pippin Amublop",
+            "type": "Amulet",
+            "level": 80,
+            "set": "Royal Pippin Blop Set"
+          },
+          "belt": {
+            "id": "9172",
+            "internalId": null,
+            "name": "Royal Pippin Blop Belt",
+            "type": "Belt",
+            "level": 80,
+            "set": "Royal Pippin Blop Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "9127",
+            "internalId": null,
+            "name": "Royal Pippin Blop Ring",
+            "type": "Ring",
+            "level": 80,
+            "set": "Royal Pippin Blop Set"
+          },
+          "boots": {
+            "id": "9163",
+            "internalId": null,
+            "name": "Royal Pippin Bloopts",
+            "type": "Boots",
+            "level": 80,
+            "set": "Royal Pippin Blop Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "30688",
+            "internalId": null,
+            "name": "Crispy Targe",
+            "type": "Shield",
+            "level": 80,
+            "set": null
+          },
+          "ring_2": {
+            "id": "8879",
+            "internalId": null,
+            "name": "Polished Ring",
+            "type": "Ring",
+            "level": 66,
+            "set": "Herboreals Set"
+          },
+          "pet": {
+            "id": "33044",
+            "internalId": null,
+            "name": "Ivory and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13772",
+            "internalId": null,
+            "name": "Minor Earth Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12722",
+            "internalId": null,
+            "name": "Minor Maniac",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12748",
+            "internalId": null,
+            "name": "Minor Earth Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13757",
+            "internalId": null,
+            "name": "Minor Goliath",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1091.17,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 5,
+          "Strength": 826,
+          "Power": 165,
+          "Vitality": 1052,
+          "Damage": 10,
+          "Earth Damage": 18,
+          "Critical": 24,
+          "Critical Damage": 5,
+          "Neutral Damage": 5
+        },
+        "sets": {
+          "Royal Pippin Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Royal Pippin Amublop",
+          "Royal Pippin Blop Belt",
+          "Khardboard Goultard",
+          "Crispy Targe",
+          "Royal Pippin Blop Ring",
+          "Polished Ring",
+          "Royal Pippin Bloopts",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Ivory and Crimson Dragoturkey",
+          "Minor Earth Wrecker",
+          "Minor Maniac",
+          "Minor Earth Destroyer",
+          "Minor Goliath",
+          "Minor Dynamo",
+          "Twitcher"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 257466.3,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 119.9,
+          "candidatePoolsMs": 79.7,
+          "packageIndexMs": 867.1,
+          "packageSeedsMs": 2286.5,
+          "directCompletionMs": 254107.7,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.1,
+          "totalFindBuildsMs": 257463.0
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_80_chance_10_5_1_budget2",
+        "className": "Iop",
+        "level": 80,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 10,
+        "mpTarget": 5,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 80,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 5,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1132.68,
+        "weightedStatScore": 1834.26,
+        "utilityStatScore": 251.16,
+        "genericDamageScore": 1892.06,
+        "rawRotationDamageScore": 1004.37,
+        "spellDamageScore": 1004.37,
+        "profileBaselineDamageScore": 1592.5,
+        "profileRelativeDamage": 0.6307,
+        "weaponDamageScore": 53.82,
+        "survivabilityScore": 30.1,
+        "weakestElementEhp": 983.36,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Chance": 231,
+          "Vitality": 2
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 5,
+          "Chance": 826,
+          "Power": 165,
+          "Vitality": 1052,
+          "Damage": 10,
+          "Water Damage": 18,
+          "Critical": 24,
+          "Critical Damage": 5
+        },
+        "sets": {
+          "Royal Indigo Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9156",
+            "internalId": null,
+            "name": "Royal Indigo Amublop",
+            "type": "Amulet",
+            "level": 80,
+            "set": "Royal Indigo Blop Set"
+          },
+          "belt": {
+            "id": "9174",
+            "internalId": null,
+            "name": "Royal Indigo Blop Belt",
+            "type": "Belt",
+            "level": 80,
+            "set": "Royal Indigo Blop Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "9129",
+            "internalId": null,
+            "name": "Royal Indigo Blop Ring",
+            "type": "Ring",
+            "level": 80,
+            "set": "Royal Indigo Blop Set"
+          },
+          "boots": {
+            "id": "9165",
+            "internalId": null,
+            "name": "Royal Indigo Bloopts",
+            "type": "Boots",
+            "level": 80,
+            "set": "Royal Indigo Blop Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "30688",
+            "internalId": null,
+            "name": "Crispy Targe",
+            "type": "Shield",
+            "level": 80,
+            "set": null
+          },
+          "ring_2": {
+            "id": "8879",
+            "internalId": null,
+            "name": "Polished Ring",
+            "type": "Ring",
+            "level": 66,
+            "set": "Herboreals Set"
+          },
+          "pet": {
+            "id": "33037",
+            "internalId": null,
+            "name": "Indigo and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13781",
+            "internalId": null,
+            "name": "Minor Water Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12717",
+            "internalId": null,
+            "name": "Minor Player",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12691",
+            "internalId": null,
+            "name": "Minor Water Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13766",
+            "internalId": null,
+            "name": "Minor Tease",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1132.68,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 5,
+          "Chance": 826,
+          "Power": 165,
+          "Vitality": 1052,
+          "Damage": 10,
+          "Water Damage": 18,
+          "Critical": 24,
+          "Critical Damage": 5
+        },
+        "sets": {
+          "Royal Indigo Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Royal Indigo Amublop",
+          "Royal Indigo Blop Belt",
+          "Khardboard Goultard",
+          "Crispy Targe",
+          "Royal Indigo Blop Ring",
+          "Polished Ring",
+          "Royal Indigo Bloopts",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Indigo and Ivory Dragoturkey",
+          "Minor Water Wrecker",
+          "Minor Player",
+          "Minor Water Destroyer",
+          "Minor Tease",
+          "Minor Dynamo",
+          "Twitcher"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 243525.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 118.9,
+          "candidatePoolsMs": 76.0,
+          "packageIndexMs": 858.1,
+          "packageSeedsMs": 2214.2,
+          "directCompletionMs": 240254.1,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 243523.0
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_80_agility_10_4_none_budget2",
+        "className": "Iop",
+        "level": 80,
+        "element": "agility",
+        "budgetTier": 2,
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 80,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1121.69,
+        "weightedStatScore": 1880.26,
+        "utilityStatScore": 246.16,
+        "genericDamageScore": 1875.99,
+        "rawRotationDamageScore": 942.53,
+        "spellDamageScore": 942.53,
+        "profileBaselineDamageScore": 1507.25,
+        "profileRelativeDamage": 0.6253,
+        "weaponDamageScore": 49.31,
+        "survivabilityScore": 31.34,
+        "weakestElementEhp": 1022.71,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Agility": 231,
+          "Vitality": 2
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 4,
+          "Agility": 841,
+          "Power": 150,
+          "Vitality": 1042,
+          "Damage": 5,
+          "Air Damage": 22,
+          "Critical": 27,
+          "Critical Damage": 5
+        },
+        "sets": {
+          "Royal Coco Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9155",
+            "internalId": null,
+            "name": "Royal Coco Amublop",
+            "type": "Amulet",
+            "level": 80,
+            "set": "Royal Coco Blop Set"
+          },
+          "belt": {
+            "id": "9173",
+            "internalId": null,
+            "name": "Royal Coco Blop Belt",
+            "type": "Belt",
+            "level": 80,
+            "set": "Royal Coco Blop Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "9128",
+            "internalId": null,
+            "name": "Royal Coco Blop Ring",
+            "type": "Ring",
+            "level": 80,
+            "set": "Royal Coco Blop Set"
+          },
+          "boots": {
+            "id": "9164",
+            "internalId": null,
+            "name": "Royal Coco Bloopts",
+            "type": "Boots",
+            "level": 80,
+            "set": "Royal Coco Blop Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "30688",
+            "internalId": null,
+            "name": "Crispy Targe",
+            "type": "Shield",
+            "level": 80,
+            "set": null
+          },
+          "ring_2": {
+            "id": "14311",
+            "internalId": null,
+            "name": "Just Ring",
+            "type": "Ring",
+            "level": 60,
+            "set": null
+          },
+          "pet": {
+            "id": "33023",
+            "internalId": null,
+            "name": "Ebony and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13784",
+            "internalId": null,
+            "name": "Minor Air Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12712",
+            "internalId": null,
+            "name": "Minor Acrobat",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12688",
+            "internalId": null,
+            "name": "Minor Air Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13763",
+            "internalId": null,
+            "name": "Minor Gymnast",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1121.69,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 4,
+          "Agility": 841,
+          "Power": 150,
+          "Vitality": 1042,
+          "Damage": 5,
+          "Air Damage": 22,
+          "Critical": 27,
+          "Critical Damage": 5
+        },
+        "sets": {
+          "Royal Coco Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Royal Coco Amublop",
+          "Royal Coco Blop Belt",
+          "Khardboard Goultard",
+          "Crispy Targe",
+          "Royal Coco Blop Ring",
+          "Just Ring",
+          "Royal Coco Bloopts",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Ebony and Ivory Dragoturkey",
+          "Minor Air Wrecker",
+          "Minor Acrobat",
+          "Minor Air Destroyer",
+          "Minor Gymnast",
+          "Minor Dynamo",
+          "Twitcher"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 269420.6,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 117.5,
+          "candidatePoolsMs": 72.7,
+          "packageIndexMs": 831.0,
+          "packageSeedsMs": 2312.1,
+          "directCompletionMs": 266077.4,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 3.6,
+          "totalFindBuildsMs": 269414.3
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_100_intelligence_10_4_1_budget2",
+        "className": "Iop",
+        "level": 100,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 100,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1391.64,
+        "weightedStatScore": 2262.91,
+        "utilityStatScore": 252.25,
+        "genericDamageScore": 2465.71,
+        "rawRotationDamageScore": 1301.92,
+        "spellDamageScore": 1199.7,
+        "profileBaselineDamageScore": 1584.03,
+        "profileRelativeDamage": 0.8219,
+        "weaponDamageScore": 135.43,
+        "survivabilityScore": 29.82,
+        "weakestElementEhp": 968.59,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 265,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 3,
+          "Intelligence": 895,
+          "Power": 210,
+          "Vitality": 960,
+          "Damage": 28,
+          "Fire Damage": 15,
+          "Critical": 21,
+          "Critical Damage": 55
+        },
+        "sets": {
+          "Royal Rainbow Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9157",
+            "internalId": null,
+            "name": "Royal Rainbow Amublop",
+            "type": "Amulet",
+            "level": 90,
+            "set": "Royal Rainbow Blop Set"
+          },
+          "belt": {
+            "id": "9175",
+            "internalId": null,
+            "name": "Royal Rainbow Blop Belt",
+            "type": "Belt",
+            "level": 88,
+            "set": "Royal Rainbow Blop Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "9148",
+            "internalId": null,
+            "name": "Royal Rainbow Blop Ring",
+            "type": "Ring",
+            "level": 90,
+            "set": "Royal Rainbow Blop Set"
+          },
+          "boots": {
+            "id": "9166",
+            "internalId": null,
+            "name": "Royal Rainbow Bloopts",
+            "type": "Boots",
+            "level": 90,
+            "set": "Royal Rainbow Blop Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "weapon": {
+            "id": "8300",
+            "internalId": null,
+            "name": "Shika's Hoe",
+            "type": "Lance",
+            "level": 80,
+            "set": "Shika Ingalsse Set"
+          },
+          "ring_2": {
+            "id": "33579",
+            "internalId": null,
+            "name": "Simbadas Paw",
+            "type": "Ring",
+            "level": 96,
+            "set": "Simbadas Set"
+          },
+          "pet": {
+            "id": "7711",
+            "internalId": null,
+            "name": "Red Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13779",
+            "internalId": null,
+            "name": "Fire Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "12720",
+            "internalId": null,
+            "name": "Scholar",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13761",
+            "internalId": null,
+            "name": "Brainbox",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13824",
+            "internalId": null,
+            "name": "Dynamo",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1391.64,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 3,
+          "Intelligence": 895,
+          "Power": 210,
+          "Vitality": 960,
+          "Damage": 28,
+          "Fire Damage": 15,
+          "Critical": 21,
+          "Critical Damage": 55
+        },
+        "sets": {
+          "Royal Rainbow Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Royal Rainbow Amublop",
+          "Royal Rainbow Blop Belt",
+          "Shika's Hoe",
+          "Khardboard Bowisse's Shield",
+          "Royal Rainbow Blop Ring",
+          "Simbadas Paw",
+          "Royal Rainbow Bloopts",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Red Piwin",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Fire Wrecker",
+          "Scholar",
+          "Brainbox",
+          "Dynamo"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 341251.6,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 185.5,
+          "candidatePoolsMs": 148.3,
+          "packageIndexMs": 1796.0,
+          "packageSeedsMs": 3034.8,
+          "directCompletionMs": 336081.0,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.1,
+          "totalFindBuildsMs": 341247.9
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_100_agility_12_5_0_budget3",
+        "className": "Iop",
+        "level": 100,
+        "element": "agility",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 0
+      },
+      "query": {
+        "className": "Iop",
+        "level": 100,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1295.09,
+        "weightedStatScore": 2246.66,
+        "utilityStatScore": 273.0,
+        "genericDamageScore": 2209.07,
+        "rawRotationDamageScore": 1109.88,
+        "spellDamageScore": 1034.21,
+        "profileBaselineDamageScore": 1507.25,
+        "profileRelativeDamage": 0.7364,
+        "weaponDamageScore": 106.2,
+        "survivabilityScore": 28.01,
+        "weakestElementEhp": 916.48,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Agility": 265,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 2,
+          "Agility": 805,
+          "Power": 90,
+          "Vitality": 890,
+          "Damage": 6,
+          "Air Damage": 56,
+          "Critical": 35,
+          "Critical Damage": 70
+        },
+        "sets": {
+          "Simbadas Set": 2,
+          "Khardboard Set": 4
+        },
+        "exos": {},
+        "items": {
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "amulet": {
+            "id": "33577",
+            "internalId": null,
+            "name": "Simbadas Cage",
+            "type": "Amulet",
+            "level": 92,
+            "set": "Simbadas Set"
+          },
+          "belt": {
+            "id": "14277",
+            "internalId": null,
+            "name": "Ding Dong Belt",
+            "type": "Belt",
+            "level": 100,
+            "set": "Master Nabur Set"
+          },
+          "ring_1": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "ring_2": {
+            "id": "33579",
+            "internalId": null,
+            "name": "Simbadas Paw",
+            "type": "Ring",
+            "level": 96,
+            "set": "Simbadas Set"
+          },
+          "boots": {
+            "id": "7218",
+            "internalId": null,
+            "name": "Sandals Adin",
+            "type": "Boots",
+            "level": 76,
+            "set": null
+          },
+          "pet": {
+            "id": "33307",
+            "internalId": null,
+            "name": "Aquamarine and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13785",
+            "internalId": null,
+            "name": "Air Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "12713",
+            "internalId": null,
+            "name": "Acrobat",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12686",
+            "internalId": null,
+            "name": "Air Destroyer",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13764",
+            "internalId": null,
+            "name": "Gymnast",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1295.09,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 2,
+          "Agility": 805,
+          "Power": 90,
+          "Vitality": 890,
+          "Damage": 6,
+          "Air Damage": 56,
+          "Critical": 35,
+          "Critical Damage": 70
+        },
+        "sets": {
+          "Simbadas Set": 2,
+          "Khardboard Set": 4
+        },
+        "exos": {},
+        "items": [
+          "Simbadas Cage",
+          "Ding Dong Belt",
+          "Khardboard Goultard",
+          "Khardboard Bowisse's Shield",
+          "Gelano",
+          "Simbadas Paw",
+          "Sandals Adin",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Aquamarine and Emerald Seemyool",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Air Wrecker",
+          "Acrobat",
+          "Air Destroyer",
+          "Gymnast"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 301533.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 144.8,
+          "candidatePoolsMs": 79.1,
+          "packageIndexMs": 1258.9,
+          "packageSeedsMs": 2380.7,
+          "directCompletionMs": 297662.7,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.2,
+          "totalFindBuildsMs": 301528.3
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_120_chance_11_5_none_budget2",
+        "className": "Iop",
+        "level": 120,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 120,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1436.03,
+        "weightedStatScore": 2565.8,
+        "utilityStatScore": 270.48,
+        "genericDamageScore": 2454.45,
+        "rawRotationDamageScore": 1354.38,
+        "spellDamageScore": 1354.38,
+        "profileBaselineDamageScore": 1655.42,
+        "profileRelativeDamage": 0.8182,
+        "weaponDamageScore": 75.69,
+        "survivabilityScore": 61.04,
+        "weakestElementEhp": 1895.19,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Chance": 298,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 4,
+          "Chance": 1123,
+          "Power": 200,
+          "Vitality": 1911,
+          "Damage": 25,
+          "Water Damage": 20,
+          "Critical": 14,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Khardboard Set": 3,
+          "Ancestral Set": 5
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8465",
+            "internalId": null,
+            "name": "Ancestral Torc",
+            "type": "Amulet",
+            "level": 110,
+            "set": "Ancestral Set"
+          },
+          "belt": {
+            "id": "8468",
+            "internalId": null,
+            "name": "Ancestral Treebelt",
+            "type": "Belt",
+            "level": 111,
+            "set": "Ancestral Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "8466",
+            "internalId": null,
+            "name": "Ancestral Ring",
+            "type": "Ring",
+            "level": 113,
+            "set": "Ancestral Set"
+          },
+          "boots": {
+            "id": "8467",
+            "internalId": null,
+            "name": "Ancestral Shin Guards",
+            "type": "Boots",
+            "level": 110,
+            "set": "Ancestral Set"
+          },
+          "hat": {
+            "id": "8463",
+            "internalId": null,
+            "name": "Ancestral Treechelmet",
+            "type": "Hat",
+            "level": 114,
+            "set": "Ancestral Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "ring_2": {
+            "id": "25753",
+            "internalId": null,
+            "name": "Bontarian Rat Ring",
+            "type": "Ring",
+            "level": 110,
+            "set": null
+          },
+          "pet": {
+            "id": "33037",
+            "internalId": null,
+            "name": "Indigo and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13782",
+            "internalId": null,
+            "name": "Water Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12715",
+            "internalId": null,
+            "name": "Player",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13767",
+            "internalId": null,
+            "name": "Tease",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1436.03,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 4,
+          "Chance": 1123,
+          "Power": 200,
+          "Vitality": 1911,
+          "Damage": 25,
+          "Water Damage": 20,
+          "Critical": 14,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Khardboard Set": 3,
+          "Ancestral Set": 5
+        },
+        "exos": {},
+        "items": [
+          "Ancestral Torc",
+          "Ancestral Treebelt",
+          "Khardboard Goultard",
+          "Khardboard Bowisse's Shield",
+          "Ancestral Ring",
+          "Bontarian Rat Ring",
+          "Ancestral Shin Guards",
+          "Ancestral Treechelmet",
+          "Khardboard Dazzling Cloak",
+          "Indigo and Ivory Dragoturkey",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Water Wrecker",
+          "Player",
+          "Tease"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 221901.0,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 135.3,
+          "candidatePoolsMs": 107.4,
+          "packageIndexMs": 1599.0,
+          "packageSeedsMs": 2506.5,
+          "directCompletionMs": 217544.6,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 3.0,
+          "totalFindBuildsMs": 221895.8
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_120_strength_12_5_1_budget3",
+        "className": "Iop",
+        "level": 120,
+        "element": "strength",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 120,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1487.04,
+        "weightedStatScore": 2404.09,
+        "utilityStatScore": 285.07,
+        "genericDamageScore": 2564.79,
+        "rawRotationDamageScore": 1884.51,
+        "spellDamageScore": 1884.51,
+        "profileBaselineDamageScore": 2204.28,
+        "profileRelativeDamage": 0.8549,
+        "weaponDamageScore": 55.25,
+        "survivabilityScore": 47.81,
+        "weakestElementEhp": 1487.89,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 298,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1068,
+          "Power": 195,
+          "Vitality": 1501,
+          "Damage": 0,
+          "Earth Damage": 47,
+          "Critical": 20,
+          "Critical Damage": 0,
+          "Neutral Damage": 25
+        },
+        "sets": {
+          "Saurosheller Set": 3,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "12407",
+            "internalId": null,
+            "name": "Saurosheller Amulet",
+            "type": "Amulet",
+            "level": 107,
+            "set": "Saurosheller Set"
+          },
+          "belt": {
+            "id": "12415",
+            "internalId": null,
+            "name": "Saurosheller Belt",
+            "type": "Belt",
+            "level": 104,
+            "set": "Saurosheller Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "12413",
+            "internalId": null,
+            "name": "Saurosheller Cloak",
+            "type": "Cloak",
+            "level": 101,
+            "set": "Saurosheller Set"
+          },
+          "ring_1": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "ring_2": {
+            "id": "15783",
+            "internalId": null,
+            "name": "Fraktal Ring",
+            "type": "Ring",
+            "level": 120,
+            "set": "Fraktal Set"
+          },
+          "boots": {
+            "id": "14004",
+            "internalId": null,
+            "name": "Mandrin's Boots",
+            "type": "Boots",
+            "level": 120,
+            "set": "Contrabanned Set"
+          },
+          "pet": {
+            "id": "33044",
+            "internalId": null,
+            "name": "Ivory and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13773",
+            "internalId": null,
+            "name": "Earth Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12723",
+            "internalId": null,
+            "name": "Maniac",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13758",
+            "internalId": null,
+            "name": "Goliath",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1487.04,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1068,
+          "Power": 195,
+          "Vitality": 1501,
+          "Damage": 0,
+          "Earth Damage": 47,
+          "Critical": 20,
+          "Critical Damage": 0,
+          "Neutral Damage": 25
+        },
+        "sets": {
+          "Saurosheller Set": 3,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Saurosheller Amulet",
+          "Saurosheller Belt",
+          "Khardboard Goultard",
+          "Khardboard Bowisse's Shield",
+          "Gelano",
+          "Fraktal Ring",
+          "Mandrin's Boots",
+          "Khardboard Gobball Headgear",
+          "Saurosheller Cloak",
+          "Ivory and Crimson Dragoturkey",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Earth Wrecker",
+          "Maniac",
+          "Goliath"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 288581.2,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 117.7,
+          "candidatePoolsMs": 91.7,
+          "packageIndexMs": 1524.2,
+          "packageSeedsMs": 2223.7,
+          "directCompletionMs": 284617.4,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.9,
+          "totalFindBuildsMs": 288576.6
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_130_agility_12_5_1_budget3",
+        "className": "Iop",
+        "level": 130,
+        "element": "agility",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 130,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1561.41,
+        "weightedStatScore": 2656.56,
+        "utilityStatScore": 255.07,
+        "genericDamageScore": 2797.36,
+        "rawRotationDamageScore": 1470.79,
+        "spellDamageScore": 1344.58,
+        "profileBaselineDamageScore": 1577.33,
+        "profileRelativeDamage": 0.9325,
+        "weaponDamageScore": 146.17,
+        "survivabilityScore": 47.52,
+        "weakestElementEhp": 1569.18,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Agility": 311,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 3,
+          "Agility": 1061,
+          "Power": 170,
+          "Vitality": 1451,
+          "Damage": 0,
+          "Air Damage": 61,
+          "Critical": 25,
+          "Critical Damage": 70
+        },
+        "sets": {
+          "Khardboard Set": 4,
+          "Vagabond Dreggon Set": 3
+        },
+        "exos": {},
+        "items": {
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "boots": {
+            "id": "27278",
+            "internalId": null,
+            "name": "Khardboard Getas",
+            "type": "Boots",
+            "level": 125,
+            "set": "Khardboard Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "amulet": {
+            "id": "8290",
+            "internalId": null,
+            "name": "Dreggon Amulet",
+            "type": "Amulet",
+            "level": 124,
+            "set": "Vagabond Dreggon Set"
+          },
+          "belt": {
+            "id": "8288",
+            "internalId": null,
+            "name": "Dreggon Belt",
+            "type": "Belt",
+            "level": 126,
+            "set": "Vagabond Dreggon Set"
+          },
+          "weapon": {
+            "id": "8296",
+            "internalId": null,
+            "name": "Dreggon Wand",
+            "type": "Wand",
+            "level": 124,
+            "set": "Vagabond Dreggon Set"
+          },
+          "ring_1": {
+            "id": "12085",
+            "internalId": null,
+            "name": "Mastic Ring",
+            "type": "Ring",
+            "level": 127,
+            "set": "Mastic Set"
+          },
+          "ring_2": {
+            "id": "25752",
+            "internalId": null,
+            "name": "Brakmarian Rat Ring",
+            "type": "Ring",
+            "level": 110,
+            "set": null
+          },
+          "pet": {
+            "id": "7709",
+            "internalId": null,
+            "name": "Yellow Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13785",
+            "internalId": null,
+            "name": "Air Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12686",
+            "internalId": null,
+            "name": "Air Destroyer",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13764",
+            "internalId": null,
+            "name": "Gymnast",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1561.41,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 3,
+          "Agility": 1061,
+          "Power": 170,
+          "Vitality": 1451,
+          "Damage": 0,
+          "Air Damage": 61,
+          "Critical": 25,
+          "Critical Damage": 70
+        },
+        "sets": {
+          "Khardboard Set": 4,
+          "Vagabond Dreggon Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Dreggon Amulet",
+          "Dreggon Belt",
+          "Dreggon Wand",
+          "Khardboard Bowisse's Shield",
+          "Mastic Ring",
+          "Brakmarian Rat Ring",
+          "Khardboard Getas",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Yellow Piwin",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Air Wrecker",
+          "Air Destroyer",
+          "Gymnast"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 261802.3,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 119.6,
+          "candidatePoolsMs": 98.2,
+          "packageIndexMs": 1613.0,
+          "packageSeedsMs": 2497.8,
+          "directCompletionMs": 257466.0,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.8,
+          "totalFindBuildsMs": 261797.4
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_150_strength_9_4_2_budget1",
+        "className": "Iop",
+        "level": 150,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 9,
+        "mpTarget": 4,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 150,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 9,
+        "mpTarget": 4,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1722.43,
+        "weightedStatScore": 3191.2,
+        "utilityStatScore": 266.38,
+        "genericDamageScore": 3085.08,
+        "rawRotationDamageScore": 2032.68,
+        "spellDamageScore": 2032.68,
+        "profileBaselineDamageScore": 1976.62,
+        "profileRelativeDamage": 1.0284,
+        "weaponDamageScore": 132.85,
+        "survivabilityScore": 67.76,
+        "weakestElementEhp": 2157.29,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 336,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 2,
+          "Strength": 1251,
+          "Power": 145,
+          "Vitality": 2071,
+          "Damage": 14,
+          "Earth Damage": 56,
+          "Critical": 61,
+          "Critical Damage": 35,
+          "Neutral Damage": 0
+        },
+        "sets": {
+          "Katigger Set": 3,
+          "Transplent Set": 3,
+          "Moowolf Set": 2
+        },
+        "exos": {},
+        "items": {
+          "belt": {
+            "id": "33595",
+            "internalId": null,
+            "name": "Transplent Belt",
+            "type": "Belt",
+            "level": 135,
+            "set": "Transplent Set"
+          },
+          "weapon": {
+            "id": "33597",
+            "internalId": null,
+            "name": "Transplent Sword",
+            "type": "Sword",
+            "level": 139,
+            "set": "Transplent Set"
+          },
+          "shield": {
+            "id": "33596",
+            "internalId": null,
+            "name": "Transplent Shield",
+            "type": "Shield",
+            "level": 137,
+            "set": "Transplent Set"
+          },
+          "ring_1": {
+            "id": "32209",
+            "internalId": null,
+            "name": "Katigger Glove",
+            "type": "Ring",
+            "level": 142,
+            "set": "Katigger Set"
+          },
+          "boots": {
+            "id": "32208",
+            "internalId": null,
+            "name": "Katigger Paws",
+            "type": "Boots",
+            "level": 146,
+            "set": "Katigger Set"
+          },
+          "cloak": {
+            "id": "32207",
+            "internalId": null,
+            "name": "Katigger Cape",
+            "type": "Cloak",
+            "level": 144,
+            "set": "Katigger Set"
+          },
+          "amulet": {
+            "id": "8262",
+            "internalId": null,
+            "name": "Amoolet",
+            "type": "Amulet",
+            "level": 143,
+            "set": "Moowolf Set"
+          },
+          "ring_2": {
+            "id": "14008",
+            "internalId": null,
+            "name": "Mandring",
+            "type": "Ring",
+            "level": 150,
+            "set": "Contrabanned Set"
+          },
+          "hat": {
+            "id": "8267",
+            "internalId": null,
+            "name": "Moowolf Headgear",
+            "type": "Hat",
+            "level": 141,
+            "set": "Moowolf Set"
+          },
+          "pet": {
+            "id": "33044",
+            "internalId": null,
+            "name": "Ivory and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12724",
+            "internalId": null,
+            "name": "Major Maniac",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12726",
+            "internalId": null,
+            "name": "Major Survivor",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "12747",
+            "internalId": null,
+            "name": "Major Earth Destroyer",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13825",
+            "internalId": null,
+            "name": "Major Dynamo",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1722.43,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 2,
+          "Strength": 1251,
+          "Power": 145,
+          "Vitality": 2071,
+          "Damage": 14,
+          "Earth Damage": 56,
+          "Critical": 61,
+          "Critical Damage": 35,
+          "Neutral Damage": 0
+        },
+        "sets": {
+          "Katigger Set": 3,
+          "Transplent Set": 3,
+          "Moowolf Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Amoolet",
+          "Transplent Belt",
+          "Transplent Sword",
+          "Transplent Shield",
+          "Katigger Glove",
+          "Mandring",
+          "Katigger Paws",
+          "Moowolf Headgear",
+          "Katigger Cape",
+          "Ivory and Crimson Dragoturkey",
+          "Major Earth Wrecker",
+          "Major Maniac",
+          "Major Survivor",
+          "Major Earth Destroyer",
+          "Major Goliath",
+          "Major Dynamo"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 403880.4,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 125.3,
+          "candidatePoolsMs": 50.0,
+          "packageIndexMs": 432.1,
+          "packageSeedsMs": 2846.8,
+          "directCompletionMs": 400416.4,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.3,
+          "totalFindBuildsMs": 403872.9
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_160_strength_12_5_2_budget3",
+        "className": "Iop",
+        "level": 160,
+        "element": "strength",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 160,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1754.18,
+        "weightedStatScore": 3104.82,
+        "utilityStatScore": 338.3,
+        "genericDamageScore": 3045.09,
+        "rawRotationDamageScore": 2208.58,
+        "spellDamageScore": 2208.58,
+        "profileBaselineDamageScore": 2175.88,
+        "profileRelativeDamage": 1.015,
+        "weaponDamageScore": 149.71,
+        "survivabilityScore": 45.58,
+        "weakestElementEhp": 1469.25,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 348,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Strength": 1123,
+          "Power": 155,
+          "Vitality": 1413,
+          "Damage": 0,
+          "Earth Damage": 98,
+          "Critical": 51,
+          "Critical Damage": 75,
+          "Neutral Damage": 34
+        },
+        "sets": {
+          "Transplent Set": 3,
+          "Royal Pingwin Set": 3,
+          "Cantile Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "33595",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "12095",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "12095",
+            "internalId": null,
+            "name": "Cantile's Amulet",
+            "type": "Amulet",
+            "level": 156,
+            "set": "Cantile Set"
+          },
+          "belt": {
+            "id": "33595",
+            "internalId": null,
+            "name": "Transplent Belt",
+            "type": "Belt",
+            "level": 135,
+            "set": "Transplent Set"
+          },
+          "weapon": {
+            "id": "33597",
+            "internalId": null,
+            "name": "Transplent Sword",
+            "type": "Sword",
+            "level": 139,
+            "set": "Transplent Set"
+          },
+          "shield": {
+            "id": "33596",
+            "internalId": null,
+            "name": "Transplent Shield",
+            "type": "Shield",
+            "level": 137,
+            "set": "Transplent Set"
+          },
+          "ring_1": {
+            "id": "12094",
+            "internalId": null,
+            "name": "Cantile's Ring",
+            "type": "Ring",
+            "level": 153,
+            "set": "Cantile Set"
+          },
+          "ring_2": {
+            "id": "11577",
+            "internalId": null,
+            "name": "Royal Pingwin Ring",
+            "type": "Ring",
+            "level": 140,
+            "set": "Royal Pingwin Set"
+          },
+          "boots": {
+            "id": "12096",
+            "internalId": null,
+            "name": "Cantile's Boots",
+            "type": "Boots",
+            "level": 156,
+            "set": "Cantile Set"
+          },
+          "hat": {
+            "id": "11572",
+            "internalId": null,
+            "name": "Royal Pingwin Crown",
+            "type": "Hat",
+            "level": 136,
+            "set": "Royal Pingwin Set"
+          },
+          "cloak": {
+            "id": "11580",
+            "internalId": null,
+            "name": "Royal Pingwin Cloak",
+            "type": "Cloak",
+            "level": 144,
+            "set": "Royal Pingwin Set"
+          },
+          "pet": {
+            "id": "7712",
+            "internalId": null,
+            "name": "Green Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "739",
+            "internalId": null,
+            "name": "Turquoise Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1754.18,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Strength": 1123,
+          "Power": 155,
+          "Vitality": 1413,
+          "Damage": 0,
+          "Earth Damage": 98,
+          "Critical": 51,
+          "Critical Damage": 75,
+          "Neutral Damage": 34
+        },
+        "sets": {
+          "Transplent Set": 3,
+          "Royal Pingwin Set": 3,
+          "Cantile Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "33595",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "12095",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Cantile's Amulet",
+          "Transplent Belt",
+          "Transplent Sword",
+          "Transplent Shield",
+          "Cantile's Ring",
+          "Royal Pingwin Ring",
+          "Cantile's Boots",
+          "Royal Pingwin Crown",
+          "Royal Pingwin Cloak",
+          "Green Piwin",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Major Earth Wrecker",
+          "Emerald Dofus",
+          "Turquoise Dofus",
+          "Major Goliath"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 491233.7,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 114.2,
+          "candidatePoolsMs": 45.5,
+          "packageIndexMs": 473.3,
+          "packageSeedsMs": 2732.2,
+          "directCompletionMs": 487860.1,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.4,
+          "totalFindBuildsMs": 491227.9
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_160_intelligence_12_5_none_budget3",
+        "className": "Iop",
+        "level": 160,
+        "element": "intelligence",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 160,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1745.94,
+        "weightedStatScore": 3031.79,
+        "utilityStatScore": 288.56,
+        "genericDamageScore": 3077.37,
+        "rawRotationDamageScore": 1980.9,
+        "spellDamageScore": 1980.9,
+        "profileBaselineDamageScore": 1931.1,
+        "profileRelativeDamage": 1.0258,
+        "weaponDamageScore": 132.73,
+        "survivabilityScore": 72.56,
+        "weakestElementEhp": 2301.59,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 348,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Intelligence": 1238,
+          "Power": 245,
+          "Vitality": 2233,
+          "Damage": 16,
+          "Fire Damage": 57,
+          "Critical": 29,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Hell Mina Set": 3,
+          "Khardboard Set": 3,
+          "Minotot Set": 3
+        },
+        "exos": {},
+        "items": {
+          "belt": {
+            "id": "27266",
+            "internalId": null,
+            "name": "Khardboard Moowolf Belt",
+            "type": "Belt",
+            "level": 150,
+            "set": "Khardboard Set"
+          },
+          "weapon": {
+            "id": "26314",
+            "internalId": null,
+            "name": "Hell Mina's Partisan",
+            "type": "Lance",
+            "level": 150,
+            "set": "Hell Mina Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "26311",
+            "internalId": null,
+            "name": "Hell Mina's Wedding Ring",
+            "type": "Ring",
+            "level": 146,
+            "set": "Hell Mina Set"
+          },
+          "boots": {
+            "id": "27278",
+            "internalId": null,
+            "name": "Khardboard Getas",
+            "type": "Boots",
+            "level": 125,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "26313",
+            "internalId": null,
+            "name": "Hell Mina's Cape",
+            "type": "Cloak",
+            "level": 148,
+            "set": "Hell Mina Set"
+          },
+          "amulet": {
+            "id": "8272",
+            "internalId": null,
+            "name": "Minotot Necklace",
+            "type": "Amulet",
+            "level": 158,
+            "set": "Minotot Set"
+          },
+          "ring_2": {
+            "id": "8270",
+            "internalId": null,
+            "name": "Minotot Bracelet",
+            "type": "Ring",
+            "level": 149,
+            "set": "Minotot Set"
+          },
+          "hat": {
+            "id": "8284",
+            "internalId": null,
+            "name": "Minotot Headgear",
+            "type": "Hat",
+            "level": 157,
+            "set": "Minotot Set"
+          },
+          "pet": {
+            "id": "33043",
+            "internalId": null,
+            "name": "Ivory and Orchid Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13780",
+            "internalId": null,
+            "name": "Major Fire Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "739",
+            "internalId": null,
+            "name": "Turquoise Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1745.94,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Intelligence": 1238,
+          "Power": 245,
+          "Vitality": 2233,
+          "Damage": 16,
+          "Fire Damage": 57,
+          "Critical": 29,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Hell Mina Set": 3,
+          "Khardboard Set": 3,
+          "Minotot Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Minotot Necklace",
+          "Khardboard Moowolf Belt",
+          "Hell Mina's Partisan",
+          "Khardboard Bowisse's Shield",
+          "Hell Mina's Wedding Ring",
+          "Minotot Bracelet",
+          "Khardboard Getas",
+          "Minotot Headgear",
+          "Hell Mina's Cape",
+          "Ivory and Orchid Dragoturkey",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Major Fire Wrecker",
+          "Emerald Dofus",
+          "Turquoise Dofus",
+          "Major Brainbox"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 300438.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 115.2,
+          "candidatePoolsMs": 52.1,
+          "packageIndexMs": 477.1,
+          "packageSeedsMs": 3009.0,
+          "directCompletionMs": 296776.8,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.1,
+          "totalFindBuildsMs": 300432.2
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_160_chance_10_4_0_budget2",
+        "className": "Iop",
+        "level": 160,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 0
+      },
+      "query": {
+        "className": "Iop",
+        "level": 160,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1814.6,
+        "weightedStatScore": 3237.83,
+        "utilityStatScore": 281.38,
+        "genericDamageScore": 3311.42,
+        "rawRotationDamageScore": 2089.64,
+        "spellDamageScore": 2089.64,
+        "profileBaselineDamageScore": 1893.12,
+        "profileRelativeDamage": 1.1038,
+        "weaponDamageScore": 158.07,
+        "survivabilityScore": 43.08,
+        "weakestElementEhp": 1318.37,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Chance": 348,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 3,
+          "Chance": 1238,
+          "Power": 145,
+          "Vitality": 1292,
+          "Damage": 25,
+          "Water Damage": 44,
+          "Critical": 74,
+          "Critical Damage": 75
+        },
+        "sets": {
+          "Katigger Set": 3,
+          "Transplent Set": 3
+        },
+        "exos": {},
+        "items": {
+          "belt": {
+            "id": "33595",
+            "internalId": null,
+            "name": "Transplent Belt",
+            "type": "Belt",
+            "level": 135,
+            "set": "Transplent Set"
+          },
+          "weapon": {
+            "id": "33597",
+            "internalId": null,
+            "name": "Transplent Sword",
+            "type": "Sword",
+            "level": 139,
+            "set": "Transplent Set"
+          },
+          "shield": {
+            "id": "33596",
+            "internalId": null,
+            "name": "Transplent Shield",
+            "type": "Shield",
+            "level": 137,
+            "set": "Transplent Set"
+          },
+          "ring_1": {
+            "id": "32209",
+            "internalId": null,
+            "name": "Katigger Glove",
+            "type": "Ring",
+            "level": 142,
+            "set": "Katigger Set"
+          },
+          "boots": {
+            "id": "32208",
+            "internalId": null,
+            "name": "Katigger Paws",
+            "type": "Boots",
+            "level": 146,
+            "set": "Katigger Set"
+          },
+          "cloak": {
+            "id": "32207",
+            "internalId": null,
+            "name": "Katigger Cape",
+            "type": "Cloak",
+            "level": 144,
+            "set": "Katigger Set"
+          },
+          "amulet": {
+            "id": "8863",
+            "internalId": null,
+            "name": "Zothulet",
+            "type": "Amulet",
+            "level": 159,
+            "set": null
+          },
+          "ring_2": {
+            "id": "14007",
+            "internalId": null,
+            "name": "Styxring",
+            "type": "Ring",
+            "level": 150,
+            "set": "Fluvial Set"
+          },
+          "hat": {
+            "id": "8840",
+            "internalId": null,
+            "name": "Jav Voodoo Mask",
+            "type": "Hat",
+            "level": 158,
+            "set": null
+          },
+          "pet": {
+            "id": "7708",
+            "internalId": null,
+            "name": "Blue Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13783",
+            "internalId": null,
+            "name": "Major Water Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "739",
+            "internalId": null,
+            "name": "Turquoise Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1814.6,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 3,
+          "Chance": 1238,
+          "Power": 145,
+          "Vitality": 1292,
+          "Damage": 25,
+          "Water Damage": 44,
+          "Critical": 74,
+          "Critical Damage": 75
+        },
+        "sets": {
+          "Katigger Set": 3,
+          "Transplent Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Zothulet",
+          "Transplent Belt",
+          "Transplent Sword",
+          "Transplent Shield",
+          "Katigger Glove",
+          "Styxring",
+          "Katigger Paws",
+          "Jav Voodoo Mask",
+          "Katigger Cape",
+          "Blue Piwin",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Major Water Wrecker",
+          "Emerald Dofus",
+          "Turquoise Dofus",
+          "Major Tease"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 355247.8,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 272.0,
+          "candidatePoolsMs": 53.8,
+          "packageIndexMs": 485.6,
+          "packageSeedsMs": 2732.2,
+          "directCompletionMs": 351696.7,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.3,
+          "totalFindBuildsMs": 355242.7
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_165_intelligence_12_6_2_budget3",
+        "className": "Iop",
+        "level": 165,
+        "element": "intelligence",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 165,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1774.59,
+        "weightedStatScore": 3019.35,
+        "utilityStatScore": 288.82,
+        "genericDamageScore": 3136.67,
+        "rawRotationDamageScore": 2019.08,
+        "spellDamageScore": 2019.08,
+        "profileBaselineDamageScore": 1931.1,
+        "profileRelativeDamage": 1.0456,
+        "weaponDamageScore": 79.18,
+        "survivabilityScore": 74.26,
+        "weakestElementEhp": 2390.5,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 355,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 3,
+          "Intelligence": 1285,
+          "Power": 225,
+          "Vitality": 2170,
+          "Damage": 0,
+          "Fire Damage": 74,
+          "Critical": 31,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Buck Anear Set": 3,
+          "Obsidemon Set": 3,
+          "Khardboard Set": 3
+        },
+        "exos": {
+          "MP": {
+            "itemId": "11576",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "11576",
+            "internalId": null,
+            "name": "Obsidemon Amulet",
+            "type": "Amulet",
+            "level": 164,
+            "set": "Obsidemon Set"
+          },
+          "belt": {
+            "id": "27266",
+            "internalId": null,
+            "name": "Khardboard Moowolf Belt",
+            "type": "Belt",
+            "level": 150,
+            "set": "Khardboard Set"
+          },
+          "weapon": {
+            "id": "11586",
+            "internalId": null,
+            "name": "Buck Anear's Sabre",
+            "type": "Sword",
+            "level": 152,
+            "set": "Buck Anear Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "11579",
+            "internalId": null,
+            "name": "Obsidemon Ring",
+            "type": "Ring",
+            "level": 161,
+            "set": "Obsidemon Set"
+          },
+          "ring_2": {
+            "id": "11578",
+            "internalId": null,
+            "name": "Buck Anear's Hook",
+            "type": "Ring",
+            "level": 155,
+            "set": "Buck Anear Set"
+          },
+          "boots": {
+            "id": "27278",
+            "internalId": null,
+            "name": "Khardboard Getas",
+            "type": "Boots",
+            "level": 125,
+            "set": "Khardboard Set"
+          },
+          "hat": {
+            "id": "11573",
+            "internalId": null,
+            "name": "Buck Anear's Hat",
+            "type": "Hat",
+            "level": 154,
+            "set": "Buck Anear Set"
+          },
+          "cloak": {
+            "id": "11581",
+            "internalId": null,
+            "name": "Obsidemon Cloak",
+            "type": "Cloak",
+            "level": 163,
+            "set": "Obsidemon Set"
+          },
+          "pet": {
+            "id": "33043",
+            "internalId": null,
+            "name": "Ivory and Orchid Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13780",
+            "internalId": null,
+            "name": "Major Fire Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "739",
+            "internalId": null,
+            "name": "Turquoise Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1774.59,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 3,
+          "Intelligence": 1285,
+          "Power": 225,
+          "Vitality": 2170,
+          "Damage": 0,
+          "Fire Damage": 74,
+          "Critical": 31,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Buck Anear Set": 3,
+          "Obsidemon Set": 3,
+          "Khardboard Set": 3
+        },
+        "exos": {
+          "MP": {
+            "itemId": "11576",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Obsidemon Amulet",
+          "Khardboard Moowolf Belt",
+          "Buck Anear's Sabre",
+          "Khardboard Bowisse's Shield",
+          "Obsidemon Ring",
+          "Buck Anear's Hook",
+          "Khardboard Getas",
+          "Buck Anear's Hat",
+          "Obsidemon Cloak",
+          "Ivory and Orchid Dragoturkey",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Major Fire Wrecker",
+          "Emerald Dofus",
+          "Turquoise Dofus",
+          "Major Brainbox"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 266400.4,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 249.8,
+          "candidatePoolsMs": 45.5,
+          "packageIndexMs": 451.9,
+          "packageSeedsMs": 2724.5,
+          "directCompletionMs": 262920.3,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.9,
+          "totalFindBuildsMs": 266393.9
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_180_agility_12_5_5_budget4",
+        "className": "Iop",
+        "level": 180,
+        "element": "agility",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 5
+      },
+      "query": {
+        "className": "Iop",
+        "level": 180,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 5,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1847.51,
+        "weightedStatScore": 3251.23,
+        "utilityStatScore": 405.4,
+        "genericDamageScore": 3025.21,
+        "rawRotationDamageScore": 1876.26,
+        "spellDamageScore": 1876.26,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.0084,
+        "weaponDamageScore": 113.17,
+        "survivabilityScore": 80.76,
+        "weakestElementEhp": 2402.26,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Agility": 373,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 5,
+          "Agility": 1203,
+          "Power": 95,
+          "Vitality": 2033,
+          "Damage": 7,
+          "Air Damage": 84,
+          "Critical": 34,
+          "Critical Damage": 65
+        },
+        "sets": {
+          "YeCh'Ti Set": 3,
+          "Celestial Swashbuckler Set": 3,
+          "Sovereign Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "17096",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "32216",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "17095",
+            "slot": "weapon"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "32216",
+            "internalId": null,
+            "name": "YeCh'Ti Collar",
+            "type": "Amulet",
+            "level": 176,
+            "set": "YeCh'Ti Set"
+          },
+          "belt": {
+            "id": "17096",
+            "internalId": null,
+            "name": "Celestial Swashbuckler Belt",
+            "type": "Belt",
+            "level": 162,
+            "set": "Celestial Swashbuckler Set"
+          },
+          "weapon": {
+            "id": "17095",
+            "internalId": null,
+            "name": "Celestial Swashbuckler Sword",
+            "type": "Sword",
+            "level": 160,
+            "set": "Celestial Swashbuckler Set"
+          },
+          "shield": {
+            "id": "32218",
+            "internalId": null,
+            "name": "YeCh'Ti Arm",
+            "type": "Shield",
+            "level": 180,
+            "set": "YeCh'Ti Set"
+          },
+          "ring_1": {
+            "id": "32217",
+            "internalId": null,
+            "name": "YeCh'Ti Mitten",
+            "type": "Ring",
+            "level": 178,
+            "set": "YeCh'Ti Set"
+          },
+          "ring_2": {
+            "id": "8859",
+            "internalId": null,
+            "name": "Mopy King Sovereign Seal",
+            "type": "Ring",
+            "level": 158,
+            "set": "Sovereign Set"
+          },
+          "hat": {
+            "id": "8844",
+            "internalId": null,
+            "name": "Mopy King Sovereign Hood",
+            "type": "Hat",
+            "level": 168,
+            "set": "Sovereign Set"
+          },
+          "cloak": {
+            "id": "17097",
+            "internalId": null,
+            "name": "Celestial Swashbuckler Cloak",
+            "type": "Cloak",
+            "level": 162,
+            "set": "Celestial Swashbuckler Set"
+          },
+          "boots": {
+            "id": "11619",
+            "internalId": null,
+            "name": "Sandals Bino",
+            "type": "Boots",
+            "level": 166,
+            "set": null
+          },
+          "pet": {
+            "id": "7709",
+            "internalId": null,
+            "name": "Yellow Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "739",
+            "internalId": null,
+            "name": "Turquoise Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1847.51,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 5,
+          "Agility": 1203,
+          "Power": 95,
+          "Vitality": 2033,
+          "Damage": 7,
+          "Air Damage": 84,
+          "Critical": 34,
+          "Critical Damage": 65
+        },
+        "sets": {
+          "YeCh'Ti Set": 3,
+          "Celestial Swashbuckler Set": 3,
+          "Sovereign Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "17096",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "32216",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "17095",
+            "slot": "weapon"
+          }
+        },
+        "items": [
+          "YeCh'Ti Collar",
+          "Celestial Swashbuckler Belt",
+          "Celestial Swashbuckler Sword",
+          "YeCh'Ti Arm",
+          "YeCh'Ti Mitten",
+          "Mopy King Sovereign Seal",
+          "Sandals Bino",
+          "Mopy King Sovereign Hood",
+          "Celestial Swashbuckler Cloak",
+          "Yellow Piwin",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Turquoise Dofus",
+          "Cloudy Dofus"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 70284.7,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 242.6,
+          "candidatePoolsMs": 43.3,
+          "packageIndexMs": 45.9,
+          "packageSeedsMs": 1864.5,
+          "directCompletionMs": 68082.6,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.1,
+          "totalFindBuildsMs": 70280.0
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_200_strength_12_6_3_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 3,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 2472.48,
+        "weightedStatScore": 4716.73,
+        "utilityStatScore": 410.81,
+        "genericDamageScore": 4247.12,
+        "rawRotationDamageScore": 3891.22,
+        "spellDamageScore": 3891.22,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.4157,
+        "weaponDamageScore": 241.99,
+        "survivabilityScore": 150.46,
+        "weakestElementEhp": 4295.84,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1488,
+          "Power": 260,
+          "Vitality": 3853,
+          "Damage": 0,
+          "Earth Damage": 105,
+          "Critical": 47,
+          "Critical Damage": 102,
+          "Neutral Damage": 89
+        },
+        "sets": {
+          "Sleeping Venerable One Set": 2,
+          "Bleeding Heart Set": 3,
+          "Corruption Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "22209",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "19244",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "19244",
+            "internalId": null,
+            "name": "Amulet of the Bleeding Heart",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "31800",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "22206",
+            "internalId": null,
+            "name": "Corruption's Engagement Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "boots": {
+            "id": "19245",
+            "internalId": null,
+            "name": "Boots of the Bleeding Heart",
+            "type": "Boots",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "hat": {
+            "id": "31798",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Horns",
+            "type": "Hat",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "cloak": {
+            "id": "19246",
+            "internalId": null,
+            "name": "Cape of the Bleeding Heart",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "shield": {
+            "id": "30858",
+            "internalId": null,
+            "name": "Mama Ayuto's Parasail",
+            "type": "Shield",
+            "level": 200,
+            "set": "Mama Ayuto Set"
+          },
+          "pet": {
+            "id": "33044",
+            "internalId": null,
+            "name": "Ivory and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2472.48,
+        "apStrategy": "ochre_plus_one",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1488,
+          "Power": 260,
+          "Vitality": 3853,
+          "Damage": 0,
+          "Earth Damage": 105,
+          "Critical": 47,
+          "Critical Damage": 102,
+          "Neutral Damage": 89
+        },
+        "sets": {
+          "Sleeping Venerable One Set": 2,
+          "Bleeding Heart Set": 3,
+          "Corruption Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "22209",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "19244",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Amulet of the Bleeding Heart",
+          "Corruption's Brambelt",
+          "Sleeping Venerable One's Bow",
+          "Mama Ayuto's Parasail",
+          "Corruption's Ring",
+          "Corruption's Engagement Ring",
+          "Boots of the Bleeding Heart",
+          "Sleeping Venerable One's Horns",
+          "Cape of the Bleeding Heart",
+          "Ivory and Crimson Dragoturkey",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Crimson Dofus",
+          "Prywitchment",
+          "Dolmanax",
+          "Cloudy Dofus"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 166969.8,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 259.0,
+          "candidatePoolsMs": 62.5,
+          "packageIndexMs": 449.1,
+          "packageSeedsMs": 8370.0,
+          "directCompletionMs": 157817.6,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.0,
+          "totalFindBuildsMs": 166960.2
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_200_intelligence_12_6_4_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "intelligence",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 4
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 4,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 2479.86,
+        "weightedStatScore": 4622.05,
+        "utilityStatScore": 431.15,
+        "genericDamageScore": 4263.03,
+        "rawRotationDamageScore": 2905.08,
+        "spellDamageScore": 2807.74,
+        "profileBaselineDamageScore": 2044.38,
+        "profileRelativeDamage": 1.421,
+        "weaponDamageScore": 264.61,
+        "survivabilityScore": 130.35,
+        "weakestElementEhp": 4038.36,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Intelligence": 1378,
+          "Power": 175,
+          "Vitality": 3203,
+          "Damage": 0,
+          "Fire Damage": 158,
+          "Critical": 40,
+          "Critical Damage": 149
+        },
+        "sets": {
+          "Age-Old Set": 3,
+          "Atcham Set": 2,
+          "War Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14081",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "14080",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "22192",
+            "slot": "ring_1"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14080",
+            "internalId": null,
+            "name": "Age-Old Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "belt": {
+            "id": "14081",
+            "internalId": null,
+            "name": "Age-Old Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "weapon": {
+            "id": "17586",
+            "internalId": null,
+            "name": "Atcham Sabres",
+            "type": "Sword",
+            "level": 200,
+            "set": "Atcham Set"
+          },
+          "shield": {
+            "id": "22191",
+            "internalId": null,
+            "name": "War's Fortress",
+            "type": "Shield",
+            "level": 200,
+            "set": "War Set"
+          },
+          "ring_1": {
+            "id": "22192",
+            "internalId": null,
+            "name": "War's Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "War Set"
+          },
+          "boots": {
+            "id": "22189",
+            "internalId": null,
+            "name": "War's Treads",
+            "type": "Boots",
+            "level": 200,
+            "set": "War Set"
+          },
+          "hat": {
+            "id": "14079",
+            "internalId": null,
+            "name": "Age-Old Helmet",
+            "type": "Hat",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "cloak": {
+            "id": "17584",
+            "internalId": null,
+            "name": "Atcham Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Atcham Set"
+          },
+          "ring_2": {
+            "id": "24035",
+            "internalId": null,
+            "name": "Spilling Ryng",
+            "type": "Ring",
+            "level": 200,
+            "set": null
+          },
+          "pet": {
+            "id": "33282",
+            "internalId": null,
+            "name": "Coral and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2479.86,
+        "apStrategy": "ochre_plus_one",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Intelligence": 1378,
+          "Power": 175,
+          "Vitality": 3203,
+          "Damage": 0,
+          "Fire Damage": 158,
+          "Critical": 40,
+          "Critical Damage": 149
+        },
+        "sets": {
+          "Age-Old Set": 3,
+          "Atcham Set": 2,
+          "War Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14081",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "14080",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "22192",
+            "slot": "ring_1"
+          }
+        },
+        "items": [
+          "Age-Old Amulet",
+          "Age-Old Belt",
+          "Atcham Sabres",
+          "War's Fortress",
+          "War's Gauntlet",
+          "Spilling Ryng",
+          "War's Treads",
+          "Age-Old Helmet",
+          "Atcham Cape",
+          "Coral and Emerald Seemyool",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Crimson Dofus",
+          "Prywitchment",
+          "Dolmanax",
+          "Cloudy Dofus"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 171490.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 257.3,
+          "candidatePoolsMs": 61.1,
+          "packageIndexMs": 425.5,
+          "packageSeedsMs": 7969.3,
+          "directCompletionMs": 162766.4,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.0,
+          "totalFindBuildsMs": 171481.7
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_200_chance_12_5_6_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 2361.27,
+        "weightedStatScore": 4418.21,
+        "utilityStatScore": 430.31,
+        "genericDamageScore": 4011.94,
+        "rawRotationDamageScore": 2654.96,
+        "spellDamageScore": 2654.07,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.3373,
+        "weaponDamageScore": 247.94,
+        "survivabilityScore": 125.59,
+        "weakestElementEhp": 3799.23,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 6,
+          "Chance": 1278,
+          "Power": 260,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Water Damage": 171,
+          "Critical": 43,
+          "Critical Damage": 85
+        },
+        "sets": {
+          "Danathor Set": 3,
+          "Tritun Set": 2,
+          "Pit Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "13122",
+            "slot": "belt"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "18004",
+            "internalId": null,
+            "name": "Spookkoth Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "belt": {
+            "id": "13122",
+            "internalId": null,
+            "name": "Danathor's Belt",
+            "type": "Belt",
+            "level": 188,
+            "set": "Danathor Set"
+          },
+          "weapon": {
+            "id": "18017",
+            "internalId": null,
+            "name": "Daguanos",
+            "type": "Dagger",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "shield": {
+            "id": "30690",
+            "internalId": null,
+            "name": "Danathor's Escutcheon",
+            "type": "Shield",
+            "level": 195,
+            "set": "Danathor Set"
+          },
+          "ring_1": {
+            "id": "18029",
+            "internalId": null,
+            "name": "Tritun Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Tritun Set"
+          },
+          "boots": {
+            "id": "18030",
+            "internalId": null,
+            "name": "Tritun Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Tritun Set"
+          },
+          "hat": {
+            "id": "13120",
+            "internalId": null,
+            "name": "Danathor's Helmet",
+            "type": "Hat",
+            "level": 196,
+            "set": "Danathor Set"
+          },
+          "cloak": {
+            "id": "18005",
+            "internalId": null,
+            "name": "Mantaze Cloak",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "pet": {
+            "id": "33295",
+            "internalId": null,
+            "name": "Azure and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2361.27,
+        "apStrategy": "ochre_plus_one",
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 6,
+          "Chance": 1278,
+          "Power": 260,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Water Damage": 171,
+          "Critical": 43,
+          "Critical Damage": 85
+        },
+        "sets": {
+          "Danathor Set": 3,
+          "Tritun Set": 2,
+          "Pit Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "13122",
+            "slot": "belt"
+          }
+        },
+        "items": [
+          "Spookkoth Amulet",
+          "Danathor's Belt",
+          "Daguanos",
+          "Danathor's Escutcheon",
+          "Tritun Ring",
+          "Rhineetle Ring",
+          "Tritun Boots",
+          "Danathor's Helmet",
+          "Mantaze Cloak",
+          "Azure and Emerald Seemyool",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Crimson Dofus",
+          "Prywitchment",
+          "Dolmanax",
+          "Cloudy Dofus"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 170407.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 255.3,
+          "candidatePoolsMs": 76.5,
+          "packageIndexMs": 423.6,
+          "packageSeedsMs": 7555.6,
+          "directCompletionMs": 162085.8,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.4,
+          "totalFindBuildsMs": 170399.2
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    },
+    {
+      "target": {
+        "id": "prod_regen_level_200_agility_11_6_5_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "agility",
+        "budgetTier": 4,
+        "apTarget": 11,
+        "mpTarget": 6,
+        "rangeTarget": 5
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 6,
+        "rangeTarget": 5,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 2522.36,
+        "weightedStatScore": 4545.78,
+        "utilityStatScore": 373.06,
+        "genericDamageScore": 4506.89,
+        "rawRotationDamageScore": 2795.21,
+        "spellDamageScore": 2508.84,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.5023,
+        "weaponDamageScore": 274.97,
+        "survivabilityScore": 121.2,
+        "weakestElementEhp": 3342.78,
+        "apStrategy": "set_bonus_ap",
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 5,
+          "Agility": 1323,
+          "Power": 160,
+          "Vitality": 3253,
+          "Damage": 0,
+          "Air Damage": 173,
+          "Critical": 53,
+          "Critical Damage": 119
+        },
+        "sets": {
+          "Allister Set": 3,
+          "Voldelor Set": 3,
+          "Abyss Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "17104",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "17103",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "18014",
+            "slot": "weapon"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "17103",
+            "internalId": null,
+            "name": "Voldelor Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "belt": {
+            "id": "17104",
+            "internalId": null,
+            "name": "Voldelor Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "weapon": {
+            "id": "18014",
+            "internalId": null,
+            "name": "Mantax",
+            "type": "Axe",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "shield": {
+            "id": "30060",
+            "internalId": null,
+            "name": "Allister's Aegis",
+            "type": "Shield",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "ring_1": {
+            "id": "13124",
+            "internalId": null,
+            "name": "Allister's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "boots": {
+            "id": "17105",
+            "internalId": null,
+            "name": "Voldelor Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "hat": {
+            "id": "13123",
+            "internalId": null,
+            "name": "Allister's Crown",
+            "type": "Hat",
+            "level": 196,
+            "set": "Allister Set"
+          },
+          "cloak": {
+            "id": "18008",
+            "internalId": null,
+            "name": "Indescribable Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "ring_2": {
+            "id": "24035",
+            "internalId": null,
+            "name": "Spilling Ryng",
+            "type": "Ring",
+            "level": 200,
+            "set": null
+          },
+          "pet": {
+            "id": "33307",
+            "internalId": null,
+            "name": "Aquamarine and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "22004",
+            "internalId": null,
+            "name": "Prynyang",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "739",
+            "internalId": null,
+            "name": "Turquoise Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2522.36,
+        "apStrategy": "set_bonus_ap",
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 5,
+          "Agility": 1323,
+          "Power": 160,
+          "Vitality": 3253,
+          "Damage": 0,
+          "Air Damage": 173,
+          "Critical": 53,
+          "Critical Damage": 119
+        },
+        "sets": {
+          "Allister Set": 3,
+          "Voldelor Set": 3,
+          "Abyss Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "17104",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "17103",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "18014",
+            "slot": "weapon"
+          }
+        },
+        "items": [
+          "Voldelor Amulet",
+          "Voldelor Belt",
+          "Mantax",
+          "Allister's Aegis",
+          "Allister's Ring",
+          "Spilling Ryng",
+          "Voldelor Boots",
+          "Allister's Crown",
+          "Indescribable Cape",
+          "Aquamarine and Emerald Seemyool",
+          "Ice Dofus",
+          "Prynyang",
+          "Crimson Dofus",
+          "Prywitchment",
+          "Turquoise Dofus",
+          "Cloudy Dofus"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 160405.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 251.2,
+          "candidatePoolsMs": 71.9,
+          "packageIndexMs": 486.1,
+          "packageSeedsMs": 7681.9,
+          "directCompletionMs": 151902.6,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 3.5,
+          "totalFindBuildsMs": 160397.2
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:21:27.041294+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_150_strength_9_4_2_budget1",
+        "className": "Iop",
+        "level": 150,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 9,
+        "mpTarget": 4,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 150,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 9,
+        "mpTarget": 4,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1722.43,
+        "weightedStatScore": 3191.2,
+        "utilityStatScore": 266.38,
+        "genericDamageScore": 3085.08,
+        "rawRotationDamageScore": 2032.68,
+        "spellDamageScore": 2032.68,
+        "profileBaselineDamageScore": 1976.62,
+        "profileRelativeDamage": 1.0284,
+        "weaponDamageScore": 132.85,
+        "survivabilityScore": 67.76,
+        "weakestElementEhp": 2157.29,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 336,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 2,
+          "Strength": 1251,
+          "Power": 145,
+          "Vitality": 2071,
+          "Damage": 14,
+          "Earth Damage": 56,
+          "Critical": 61,
+          "Critical Damage": 35,
+          "Neutral Damage": 0
+        },
+        "sets": {
+          "Katigger Set": 3,
+          "Transplent Set": 3,
+          "Moowolf Set": 2
+        },
+        "exos": {},
+        "items": {
+          "belt": {
+            "id": "33595",
+            "internalId": null,
+            "name": "Transplent Belt",
+            "type": "Belt",
+            "level": 135,
+            "set": "Transplent Set"
+          },
+          "weapon": {
+            "id": "33597",
+            "internalId": null,
+            "name": "Transplent Sword",
+            "type": "Sword",
+            "level": 139,
+            "set": "Transplent Set"
+          },
+          "shield": {
+            "id": "33596",
+            "internalId": null,
+            "name": "Transplent Shield",
+            "type": "Shield",
+            "level": 137,
+            "set": "Transplent Set"
+          },
+          "ring_1": {
+            "id": "32209",
+            "internalId": null,
+            "name": "Katigger Glove",
+            "type": "Ring",
+            "level": 142,
+            "set": "Katigger Set"
+          },
+          "boots": {
+            "id": "32208",
+            "internalId": null,
+            "name": "Katigger Paws",
+            "type": "Boots",
+            "level": 146,
+            "set": "Katigger Set"
+          },
+          "cloak": {
+            "id": "32207",
+            "internalId": null,
+            "name": "Katigger Cape",
+            "type": "Cloak",
+            "level": 144,
+            "set": "Katigger Set"
+          },
+          "amulet": {
+            "id": "8262",
+            "internalId": null,
+            "name": "Amoolet",
+            "type": "Amulet",
+            "level": 143,
+            "set": "Moowolf Set"
+          },
+          "ring_2": {
+            "id": "14008",
+            "internalId": null,
+            "name": "Mandring",
+            "type": "Ring",
+            "level": 150,
+            "set": "Contrabanned Set"
+          },
+          "hat": {
+            "id": "8267",
+            "internalId": null,
+            "name": "Moowolf Headgear",
+            "type": "Hat",
+            "level": 141,
+            "set": "Moowolf Set"
+          },
+          "pet": {
+            "id": "33044",
+            "internalId": null,
+            "name": "Ivory and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12724",
+            "internalId": null,
+            "name": "Major Maniac",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12726",
+            "internalId": null,
+            "name": "Major Survivor",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "12747",
+            "internalId": null,
+            "name": "Major Earth Destroyer",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13825",
+            "internalId": null,
+            "name": "Major Dynamo",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1722.43,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 2,
+          "Strength": 1251,
+          "Power": 145,
+          "Vitality": 2071,
+          "Damage": 14,
+          "Earth Damage": 56,
+          "Critical": 61,
+          "Critical Damage": 35,
+          "Neutral Damage": 0
+        },
+        "sets": {
+          "Katigger Set": 3,
+          "Transplent Set": 3,
+          "Moowolf Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Amoolet",
+          "Transplent Belt",
+          "Transplent Sword",
+          "Transplent Shield",
+          "Katigger Glove",
+          "Mandring",
+          "Katigger Paws",
+          "Moowolf Headgear",
+          "Katigger Cape",
+          "Ivory and Crimson Dragoturkey",
+          "Major Earth Wrecker",
+          "Major Maniac",
+          "Major Survivor",
+          "Major Earth Destroyer",
+          "Major Goliath",
+          "Major Dynamo"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 403880.4,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 125.3,
+          "candidatePoolsMs": 50.0,
+          "packageIndexMs": 432.1,
+          "packageSeedsMs": 2846.8,
+          "directCompletionMs": 400416.4,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.3,
+          "totalFindBuildsMs": 403872.9
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

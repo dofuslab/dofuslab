@@ -1,0 +1,173 @@
+{
+  "splitReportCount": 24,
+  "reports": [
+    {
+      "targetId": "prod_regen_level_1_strength_6_3_none_budget1",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_1_strength_6_3_none_budget1.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_1_strength_6_3_none_budget1.md"
+    },
+    {
+      "targetId": "prod_regen_level_20_intelligence_7_4_1_budget3",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_20_intelligence_7_4_1_budget3.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_20_intelligence_7_4_1_budget3.md"
+    },
+    {
+      "targetId": "prod_regen_level_40_chance_7_3_none_budget1",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_40_chance_7_3_none_budget1.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_40_chance_7_3_none_budget1.md"
+    },
+    {
+      "targetId": "prod_regen_level_50_agility_7_3_1_budget1",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_50_agility_7_3_1_budget1.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_50_agility_7_3_1_budget1.md"
+    },
+    {
+      "targetId": "prod_regen_level_50_strength_8_4_1_budget2",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_50_strength_8_4_1_budget2.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_50_strength_8_4_1_budget2.md"
+    },
+    {
+      "targetId": "prod_regen_level_60_intelligence_10_4_2_budget2",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_60_intelligence_10_4_2_budget2.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_60_intelligence_10_4_2_budget2.md"
+    },
+    {
+      "targetId": "prod_regen_level_80_strength_9_5_none_budget2",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_80_strength_9_5_none_budget2.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_80_strength_9_5_none_budget2.md"
+    },
+    {
+      "targetId": "prod_regen_level_80_chance_10_5_1_budget2",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_80_chance_10_5_1_budget2.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_80_chance_10_5_1_budget2.md"
+    },
+    {
+      "targetId": "prod_regen_level_80_agility_10_4_none_budget2",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_80_agility_10_4_none_budget2.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_80_agility_10_4_none_budget2.md"
+    },
+    {
+      "targetId": "prod_regen_level_100_intelligence_10_4_1_budget2",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_100_intelligence_10_4_1_budget2.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_100_intelligence_10_4_1_budget2.md"
+    },
+    {
+      "targetId": "prod_regen_level_100_agility_12_5_0_budget3",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_100_agility_12_5_0_budget3.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_100_agility_12_5_0_budget3.md"
+    },
+    {
+      "targetId": "prod_regen_level_120_chance_11_5_none_budget2",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_120_chance_11_5_none_budget2.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_120_chance_11_5_none_budget2.md"
+    },
+    {
+      "targetId": "prod_regen_level_120_strength_12_5_1_budget3",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_120_strength_12_5_1_budget3.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_120_strength_12_5_1_budget3.md"
+    },
+    {
+      "targetId": "prod_regen_level_130_agility_12_5_1_budget3",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_130_agility_12_5_1_budget3.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_130_agility_12_5_1_budget3.md"
+    },
+    {
+      "targetId": "prod_regen_level_150_strength_9_4_2_budget1",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_150_strength_9_4_2_budget1.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_150_strength_9_4_2_budget1.md"
+    },
+    {
+      "targetId": "prod_regen_level_160_strength_12_5_2_budget3",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_160_strength_12_5_2_budget3.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_160_strength_12_5_2_budget3.md"
+    },
+    {
+      "targetId": "prod_regen_level_160_intelligence_12_5_none_budget3",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_160_intelligence_12_5_none_budget3.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_160_intelligence_12_5_none_budget3.md"
+    },
+    {
+      "targetId": "prod_regen_level_160_chance_10_4_0_budget2",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_160_chance_10_4_0_budget2.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_160_chance_10_4_0_budget2.md"
+    },
+    {
+      "targetId": "prod_regen_level_165_intelligence_12_6_2_budget3",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_165_intelligence_12_6_2_budget3.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_165_intelligence_12_6_2_budget3.md"
+    },
+    {
+      "targetId": "prod_regen_level_180_agility_12_5_5_budget4",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_180_agility_12_5_5_budget4.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_180_agility_12_5_5_budget4.md"
+    },
+    {
+      "targetId": "prod_regen_level_200_strength_12_6_3_budget4",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_200_strength_12_6_3_budget4.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_200_strength_12_6_3_budget4.md"
+    },
+    {
+      "targetId": "prod_regen_level_200_intelligence_12_6_4_budget4",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_200_intelligence_12_6_4_budget4.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_200_intelligence_12_6_4_budget4.md"
+    },
+    {
+      "targetId": "prod_regen_level_200_chance_12_5_6_budget4",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_200_chance_12_5_6_budget4.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_200_chance_12_5_6_budget4.md"
+    },
+    {
+      "targetId": "prod_regen_level_200_agility_11_6_5_budget4",
+      "status": "generated",
+      "resumed": true,
+      "json": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_200_agility_11_6_5_budget4.json",
+      "markdown": "/tmp/build-discovery-prod-level-sample-split/prod_regen_level_200_agility_11_6_5_budget4.md"
+    }
+  ]
+}

@@ -79,7 +79,7 @@ AP_MP_RANGE_COVERAGE_TARGETS = (
 
 PROD_LEVEL_SAMPLE_TARGETS = (
     LevelDiversityTarget("prod_regen_level_1_strength_6_3_none_budget1", 1, "strength", 1, 6, 3, None),
-    LevelDiversityTarget("prod_regen_level_20_intelligence_7_4_1_budget1", 20, "intelligence", 1, 7, 4, 1),
+    LevelDiversityTarget("prod_regen_level_20_intelligence_7_4_1_budget3", 20, "intelligence", 3, 7, 4, 1),
     LevelDiversityTarget("prod_regen_level_40_chance_7_3_none_budget1", 40, "chance", 1, 7, 3, None),
     LevelDiversityTarget("prod_regen_level_50_agility_7_3_1_budget1", 50, "agility", 1, 7, 3, 1),
     LevelDiversityTarget("prod_regen_level_50_strength_8_4_1_budget2", 50, "strength", 2, 8, 4, 1),

@@ -1,6 +1,6 @@
 # Build Discovery Iop Target Manifest
 
-Generated at: `2026-07-11T01:00:31.400294+00:00`
+Generated at: `2026-07-11T02:51:50.657578+00:00`
 
 This is a target-selection manifest only. It does not contain generated builds or quality proof.
 
@@ -9,7 +9,7 @@ Targets: `24`
 | Target | Query budget | Exo policy | Search |
 |---|---:|---|---|
 | L1 strength 6/3/any tier 1 | 1 | none | topK 25, beam 100, signature 10, sets 40 |
-| L20 intelligence 7/4/1 tier 1 | 1 | none | topK 25, beam 100, signature 10, sets 40 |
+| L20 intelligence 7/4/1 tier 3 | 3 | allow | topK 25, beam 100, signature 10, sets 40 |
 | L40 chance 7/3/any tier 1 | 1 | none | topK 25, beam 100, signature 10, sets 40 |
 | L50 agility 7/3/1 tier 1 | 1 | none | topK 25, beam 100, signature 10, sets 40 |
 | L50 strength 8/4/1 tier 2 | 2 | none | topK 25, beam 100, signature 10, sets 40 |

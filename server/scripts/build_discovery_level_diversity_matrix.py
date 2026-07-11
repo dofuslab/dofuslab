@@ -506,6 +506,34 @@ def existing_split_report_for_target(path: Path, target: LevelDiversityTarget) -
     return report
 
 
+def completed_target_ids_from_split_reports(split_output_dir: str | Path) -> set[str]:
+    output_dir = Path(split_output_dir)
+    if not output_dir.exists():
+        return set()
+
+    completed: set[str] = set()
+    for path in sorted(output_dir.glob("*.json")):
+        if path.name == "manifest.json":
+            continue
+        report = load_json(path)
+        results = report.get("results", [])
+        if len(results) != 1:
+            raise ValueError(f"{path} must contain exactly one split result")
+        target_id = split_report_target_id(report)
+        if target_id is None:
+            raise ValueError(f"{path} is missing a result target id")
+        completed.add(target_id)
+    return completed
+
+
+def targets_missing_from_split_reports(
+    targets: Iterable[LevelDiversityTarget],
+    split_output_dir: str | Path,
+) -> tuple[LevelDiversityTarget, ...]:
+    completed = completed_target_ids_from_split_reports(split_output_dir)
+    return tuple(target for target in targets if target.name not in completed)
+
+
 def write_split_matrix_reports(
     targets: Iterable[LevelDiversityTarget],
     *,
@@ -756,6 +784,10 @@ def main() -> None:
     parser.add_argument("--output-json", help="Write JSON report to this path.")
     parser.add_argument("--output-md", help="Write Markdown summary to this path.")
     parser.add_argument("--split-output-dir", help="Write one JSON/Markdown report per selected target.")
+    parser.add_argument(
+        "--missing-from-split-dir",
+        help="Only run selected targets that do not already have one-row JSON reports in this split dir.",
+    )
     parser.add_argument("--resume-existing", action="store_true", help="In split-output mode, reuse existing one-row target reports.")
     parser.add_argument("--git-sha", help="Git SHA to record when the runtime cannot see .git.")
     parser.add_argument("--use-cache", action="store_true", help="Use process cache during generation.")
@@ -782,6 +814,8 @@ def main() -> None:
         elements=csv_filter(args.elements),
         budget_tiers=parse_int_filter(args.budget_tiers),
     )
+    if args.missing_from_split_dir:
+        targets = targets_missing_from_split_reports(targets, args.missing_from_split_dir)
     if not targets:
         parser.error(f"No targets selected from {target_source or args.target_set}.")
 

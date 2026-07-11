@@ -1,0 +1,277 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:21:27.041294+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_80_chance_10_5_1_budget2",
+        "className": "Iop",
+        "level": 80,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 10,
+        "mpTarget": 5,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 80,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 5,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1132.68,
+        "weightedStatScore": 1834.26,
+        "utilityStatScore": 251.16,
+        "genericDamageScore": 1892.06,
+        "rawRotationDamageScore": 1004.37,
+        "spellDamageScore": 1004.37,
+        "profileBaselineDamageScore": 1592.5,
+        "profileRelativeDamage": 0.6307,
+        "weaponDamageScore": 53.82,
+        "survivabilityScore": 30.1,
+        "weakestElementEhp": 983.36,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Chance": 231,
+          "Vitality": 2
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 5,
+          "Chance": 826,
+          "Power": 165,
+          "Vitality": 1052,
+          "Damage": 10,
+          "Water Damage": 18,
+          "Critical": 24,
+          "Critical Damage": 5
+        },
+        "sets": {
+          "Royal Indigo Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9156",
+            "internalId": null,
+            "name": "Royal Indigo Amublop",
+            "type": "Amulet",
+            "level": 80,
+            "set": "Royal Indigo Blop Set"
+          },
+          "belt": {
+            "id": "9174",
+            "internalId": null,
+            "name": "Royal Indigo Blop Belt",
+            "type": "Belt",
+            "level": 80,
+            "set": "Royal Indigo Blop Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "9129",
+            "internalId": null,
+            "name": "Royal Indigo Blop Ring",
+            "type": "Ring",
+            "level": 80,
+            "set": "Royal Indigo Blop Set"
+          },
+          "boots": {
+            "id": "9165",
+            "internalId": null,
+            "name": "Royal Indigo Bloopts",
+            "type": "Boots",
+            "level": 80,
+            "set": "Royal Indigo Blop Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "30688",
+            "internalId": null,
+            "name": "Crispy Targe",
+            "type": "Shield",
+            "level": 80,
+            "set": null
+          },
+          "ring_2": {
+            "id": "8879",
+            "internalId": null,
+            "name": "Polished Ring",
+            "type": "Ring",
+            "level": 66,
+            "set": "Herboreals Set"
+          },
+          "pet": {
+            "id": "33037",
+            "internalId": null,
+            "name": "Indigo and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13781",
+            "internalId": null,
+            "name": "Minor Water Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12717",
+            "internalId": null,
+            "name": "Minor Player",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12691",
+            "internalId": null,
+            "name": "Minor Water Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13766",
+            "internalId": null,
+            "name": "Minor Tease",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1132.68,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 5,
+          "Chance": 826,
+          "Power": 165,
+          "Vitality": 1052,
+          "Damage": 10,
+          "Water Damage": 18,
+          "Critical": 24,
+          "Critical Damage": 5
+        },
+        "sets": {
+          "Royal Indigo Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Royal Indigo Amublop",
+          "Royal Indigo Blop Belt",
+          "Khardboard Goultard",
+          "Crispy Targe",
+          "Royal Indigo Blop Ring",
+          "Polished Ring",
+          "Royal Indigo Bloopts",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Indigo and Ivory Dragoturkey",
+          "Minor Water Wrecker",
+          "Minor Player",
+          "Minor Water Destroyer",
+          "Minor Tease",
+          "Minor Dynamo",
+          "Twitcher"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 243525.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 118.9,
+          "candidatePoolsMs": 76.0,
+          "packageIndexMs": 858.1,
+          "packageSeedsMs": 2214.2,
+          "directCompletionMs": 240254.1,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.7,
+          "totalFindBuildsMs": 243523.0
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

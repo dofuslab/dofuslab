@@ -1,0 +1,289 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T02:43:14.244076+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_200_chance_12_5_6_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 2361.27,
+        "weightedStatScore": 4418.21,
+        "utilityStatScore": 430.31,
+        "genericDamageScore": 4011.94,
+        "rawRotationDamageScore": 2654.96,
+        "spellDamageScore": 2654.07,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.3373,
+        "weaponDamageScore": 247.94,
+        "survivabilityScore": 125.59,
+        "weakestElementEhp": 3799.23,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 6,
+          "Chance": 1278,
+          "Power": 260,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Water Damage": 171,
+          "Critical": 43,
+          "Critical Damage": 85
+        },
+        "sets": {
+          "Danathor Set": 3,
+          "Tritun Set": 2,
+          "Pit Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "13122",
+            "slot": "belt"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "18004",
+            "internalId": null,
+            "name": "Spookkoth Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "belt": {
+            "id": "13122",
+            "internalId": null,
+            "name": "Danathor's Belt",
+            "type": "Belt",
+            "level": 188,
+            "set": "Danathor Set"
+          },
+          "weapon": {
+            "id": "18017",
+            "internalId": null,
+            "name": "Daguanos",
+            "type": "Dagger",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "shield": {
+            "id": "30690",
+            "internalId": null,
+            "name": "Danathor's Escutcheon",
+            "type": "Shield",
+            "level": 195,
+            "set": "Danathor Set"
+          },
+          "ring_1": {
+            "id": "18029",
+            "internalId": null,
+            "name": "Tritun Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Tritun Set"
+          },
+          "boots": {
+            "id": "18030",
+            "internalId": null,
+            "name": "Tritun Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Tritun Set"
+          },
+          "hat": {
+            "id": "13120",
+            "internalId": null,
+            "name": "Danathor's Helmet",
+            "type": "Hat",
+            "level": 196,
+            "set": "Danathor Set"
+          },
+          "cloak": {
+            "id": "18005",
+            "internalId": null,
+            "name": "Mantaze Cloak",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Pit Set"
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "pet": {
+            "id": "33295",
+            "internalId": null,
+            "name": "Azure and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2361.27,
+        "apStrategy": "ochre_plus_one",
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 6,
+          "Chance": 1278,
+          "Power": 260,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Water Damage": 171,
+          "Critical": 43,
+          "Critical Damage": 85
+        },
+        "sets": {
+          "Danathor Set": 3,
+          "Tritun Set": 2,
+          "Pit Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "13122",
+            "slot": "belt"
+          }
+        },
+        "items": [
+          "Spookkoth Amulet",
+          "Danathor's Belt",
+          "Daguanos",
+          "Danathor's Escutcheon",
+          "Tritun Ring",
+          "Rhineetle Ring",
+          "Tritun Boots",
+          "Danathor's Helmet",
+          "Mantaze Cloak",
+          "Azure and Emerald Seemyool",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Crimson Dofus",
+          "Prywitchment",
+          "Dolmanax",
+          "Cloudy Dofus"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 170407.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 255.3,
+          "candidatePoolsMs": 76.5,
+          "packageIndexMs": 423.6,
+          "packageSeedsMs": 7555.6,
+          "directCompletionMs": 162085.8,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.4,
+          "totalFindBuildsMs": 170399.2
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

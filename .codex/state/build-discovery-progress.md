@@ -3401,3 +3401,33 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `git diff --check`
   - copied changed solver/test files into Docker and ran focused regression
     tests plus `py_compile`
+
+### 2026-07-10 Prod-Level Sample Matrix Completion
+
+- Completed the 24-row `prod-level-sample` generation matrix in Docker and
+  copied the full split artifacts plus aggregate reports to `.codex/state`.
+- Added `--missing-from-split-dir` support to
+  `build_discovery_level_diversity_matrix.py`. Missing-target detection now
+  reads one-row split JSON reports instead of trusting `manifest.json`, because
+  one-target reruns can legitimately rewrite the manifest for only the selected
+  row.
+- Reclassified the prod-derived level 20 Intelligence `7/4/1` row from budget
+  tier 1 to budget tier 3. Under current v0 assumptions, tier 1/no-exo did not
+  generate; tier 3 generates via an MP exo and is the honest label for that
+  prod-shaped target.
+- Result:
+  - targets: `24`
+  - generated: `24`
+  - no build: `0`
+  - invalid: `0`
+- Notable rows:
+  - level 20 Intelligence tier 3 `7/4/1`: Bearman's package, MP exo on
+    Bearman's Necklace, `462` Intelligence, `205` Vitality, `3884.2ms`
+  - level 200 Strength tier 4 `12/6/3`: Corruption + Bleeding Heart package,
+    `1488` Strength, `3853` Vitality, `166969.8ms`
+  - level 200 Agility tier 4 `11/6/5`: Voldelor + Allister package, `1323`
+    Agility, `3253` Vitality, `160405.9ms`
+- Verification passed:
+  - `python server\scripts\check_build_discovery_level_diversity_matrix.py .codex\state\build-discovery-prod-level-sample-matrix.json --target-set prod-level-sample`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\scripts\build_discovery_level_diversity_targets.py server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`

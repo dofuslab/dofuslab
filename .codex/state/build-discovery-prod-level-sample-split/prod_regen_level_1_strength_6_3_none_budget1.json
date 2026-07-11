@@ -1,0 +1,205 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:02:36.186824+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_1_strength_6_3_none_budget1",
+        "className": "Iop",
+        "level": 1,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 1,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 6,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 272.13,
+        "weightedStatScore": 297.35,
+        "utilityStatScore": 117.95,
+        "genericDamageScore": 333.42,
+        "rawRotationDamageScore": 74.91,
+        "spellDamageScore": 74.91,
+        "profileBaselineDamageScore": 674.0,
+        "profileRelativeDamage": 0.1111,
+        "weaponDamageScore": 3.26,
+        "survivabilityScore": 4.14,
+        "weakestElementEhp": 138.0,
+        "apStrategy": "base_ap",
+        "baseAllocation": {
+          "Strength": 0,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 129,
+          "Power": 0,
+          "Vitality": 138,
+          "Damage": 0,
+          "Earth Damage": 2,
+          "Critical": 0,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "766",
+            "internalId": null,
+            "name": "Koliet Aclou",
+            "type": "Amulet",
+            "level": 1,
+            "set": null
+          },
+          "belt": {
+            "id": "8536",
+            "internalId": null,
+            "name": "Muffin Belt",
+            "type": "Belt",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "weapon": {
+            "id": "9961",
+            "internalId": null,
+            "name": "Hurrian Hammer",
+            "type": "Hammer",
+            "level": 1,
+            "set": null
+          },
+          "shield": {
+            "id": "18676",
+            "internalId": null,
+            "name": "Lumberjack Shield",
+            "type": "Shield",
+            "level": 1,
+            "set": null
+          },
+          "ring_1": {
+            "id": "8537",
+            "internalId": null,
+            "name": "Pluswan",
+            "type": "Ring",
+            "level": 1,
+            "set": "Boon Set"
+          },
+          "boots": {
+            "id": "861",
+            "internalId": null,
+            "name": "Strength Boots",
+            "type": "Boots",
+            "level": 1,
+            "set": null
+          },
+          "hat": {
+            "id": "8162",
+            "internalId": null,
+            "name": "Pumpkwin Head",
+            "type": "Hat",
+            "level": 1,
+            "set": null
+          },
+          "cloak": {
+            "id": "8534",
+            "internalId": null,
+            "name": "S'loque Cape",
+            "type": "Cloak",
+            "level": 1,
+            "set": "Boon Set"
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 272.13,
+        "apStrategy": "base_ap",
+        "totals": {
+          "AP": 6,
+          "MP": 3,
+          "Range": 0,
+          "Strength": 129,
+          "Power": 0,
+          "Vitality": 138,
+          "Damage": 0,
+          "Earth Damage": 2,
+          "Critical": 0,
+          "Critical Damage": 0,
+          "Neutral Damage": 1
+        },
+        "sets": {
+          "Boon Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Koliet Aclou",
+          "Muffin Belt",
+          "Hurrian Hammer",
+          "Lumberjack Shield",
+          "Pluswan",
+          "Strength Boots",
+          "Pumpkwin Head",
+          "S'loque Cape"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 2640.2,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 247.6,
+          "candidatePoolsMs": 31.7,
+          "packageIndexMs": 0.1,
+          "packageSeedsMs": 2.0,
+          "directCompletionMs": 0.0,
+          "beamSearchMs": 2358.6,
+          "rankAndDiversifyMs": 0.0,
+          "totalFindBuildsMs": 2640.1
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

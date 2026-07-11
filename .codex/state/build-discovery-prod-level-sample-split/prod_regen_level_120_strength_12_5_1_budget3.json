@@ -1,0 +1,279 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:21:27.041294+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_120_strength_12_5_1_budget3",
+        "className": "Iop",
+        "level": 120,
+        "element": "strength",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 120,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1487.04,
+        "weightedStatScore": 2404.09,
+        "utilityStatScore": 285.07,
+        "genericDamageScore": 2564.79,
+        "rawRotationDamageScore": 1884.51,
+        "spellDamageScore": 1884.51,
+        "profileBaselineDamageScore": 2204.28,
+        "profileRelativeDamage": 0.8549,
+        "weaponDamageScore": 55.25,
+        "survivabilityScore": 47.81,
+        "weakestElementEhp": 1487.89,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 298,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1068,
+          "Power": 195,
+          "Vitality": 1501,
+          "Damage": 0,
+          "Earth Damage": 47,
+          "Critical": 20,
+          "Critical Damage": 0,
+          "Neutral Damage": 25
+        },
+        "sets": {
+          "Saurosheller Set": 3,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "12407",
+            "internalId": null,
+            "name": "Saurosheller Amulet",
+            "type": "Amulet",
+            "level": 107,
+            "set": "Saurosheller Set"
+          },
+          "belt": {
+            "id": "12415",
+            "internalId": null,
+            "name": "Saurosheller Belt",
+            "type": "Belt",
+            "level": 104,
+            "set": "Saurosheller Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "12413",
+            "internalId": null,
+            "name": "Saurosheller Cloak",
+            "type": "Cloak",
+            "level": 101,
+            "set": "Saurosheller Set"
+          },
+          "ring_1": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "ring_2": {
+            "id": "15783",
+            "internalId": null,
+            "name": "Fraktal Ring",
+            "type": "Ring",
+            "level": 120,
+            "set": "Fraktal Set"
+          },
+          "boots": {
+            "id": "14004",
+            "internalId": null,
+            "name": "Mandrin's Boots",
+            "type": "Boots",
+            "level": 120,
+            "set": "Contrabanned Set"
+          },
+          "pet": {
+            "id": "33044",
+            "internalId": null,
+            "name": "Ivory and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13773",
+            "internalId": null,
+            "name": "Earth Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12723",
+            "internalId": null,
+            "name": "Maniac",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13758",
+            "internalId": null,
+            "name": "Goliath",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1487.04,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1068,
+          "Power": 195,
+          "Vitality": 1501,
+          "Damage": 0,
+          "Earth Damage": 47,
+          "Critical": 20,
+          "Critical Damage": 0,
+          "Neutral Damage": 25
+        },
+        "sets": {
+          "Saurosheller Set": 3,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Saurosheller Amulet",
+          "Saurosheller Belt",
+          "Khardboard Goultard",
+          "Khardboard Bowisse's Shield",
+          "Gelano",
+          "Fraktal Ring",
+          "Mandrin's Boots",
+          "Khardboard Gobball Headgear",
+          "Saurosheller Cloak",
+          "Ivory and Crimson Dragoturkey",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Earth Wrecker",
+          "Maniac",
+          "Goliath"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 288581.2,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 117.7,
+          "candidatePoolsMs": 91.7,
+          "packageIndexMs": 1524.2,
+          "packageSeedsMs": 2223.7,
+          "directCompletionMs": 284617.4,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.9,
+          "totalFindBuildsMs": 288576.6
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

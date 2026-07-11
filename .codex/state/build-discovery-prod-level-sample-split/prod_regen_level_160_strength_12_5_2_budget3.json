@@ -1,0 +1,299 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:21:27.041294+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_160_strength_12_5_2_budget3",
+        "className": "Iop",
+        "level": 160,
+        "element": "strength",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 160,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1754.18,
+        "weightedStatScore": 3104.82,
+        "utilityStatScore": 338.3,
+        "genericDamageScore": 3045.09,
+        "rawRotationDamageScore": 2208.58,
+        "spellDamageScore": 2208.58,
+        "profileBaselineDamageScore": 2175.88,
+        "profileRelativeDamage": 1.015,
+        "weaponDamageScore": 149.71,
+        "survivabilityScore": 45.58,
+        "weakestElementEhp": 1469.25,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 348,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Strength": 1123,
+          "Power": 155,
+          "Vitality": 1413,
+          "Damage": 0,
+          "Earth Damage": 98,
+          "Critical": 51,
+          "Critical Damage": 75,
+          "Neutral Damage": 34
+        },
+        "sets": {
+          "Transplent Set": 3,
+          "Royal Pingwin Set": 3,
+          "Cantile Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "33595",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "12095",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "12095",
+            "internalId": null,
+            "name": "Cantile's Amulet",
+            "type": "Amulet",
+            "level": 156,
+            "set": "Cantile Set"
+          },
+          "belt": {
+            "id": "33595",
+            "internalId": null,
+            "name": "Transplent Belt",
+            "type": "Belt",
+            "level": 135,
+            "set": "Transplent Set"
+          },
+          "weapon": {
+            "id": "33597",
+            "internalId": null,
+            "name": "Transplent Sword",
+            "type": "Sword",
+            "level": 139,
+            "set": "Transplent Set"
+          },
+          "shield": {
+            "id": "33596",
+            "internalId": null,
+            "name": "Transplent Shield",
+            "type": "Shield",
+            "level": 137,
+            "set": "Transplent Set"
+          },
+          "ring_1": {
+            "id": "12094",
+            "internalId": null,
+            "name": "Cantile's Ring",
+            "type": "Ring",
+            "level": 153,
+            "set": "Cantile Set"
+          },
+          "ring_2": {
+            "id": "11577",
+            "internalId": null,
+            "name": "Royal Pingwin Ring",
+            "type": "Ring",
+            "level": 140,
+            "set": "Royal Pingwin Set"
+          },
+          "boots": {
+            "id": "12096",
+            "internalId": null,
+            "name": "Cantile's Boots",
+            "type": "Boots",
+            "level": 156,
+            "set": "Cantile Set"
+          },
+          "hat": {
+            "id": "11572",
+            "internalId": null,
+            "name": "Royal Pingwin Crown",
+            "type": "Hat",
+            "level": 136,
+            "set": "Royal Pingwin Set"
+          },
+          "cloak": {
+            "id": "11580",
+            "internalId": null,
+            "name": "Royal Pingwin Cloak",
+            "type": "Cloak",
+            "level": 144,
+            "set": "Royal Pingwin Set"
+          },
+          "pet": {
+            "id": "7712",
+            "internalId": null,
+            "name": "Green Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "739",
+            "internalId": null,
+            "name": "Turquoise Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1754.18,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Strength": 1123,
+          "Power": 155,
+          "Vitality": 1413,
+          "Damage": 0,
+          "Earth Damage": 98,
+          "Critical": 51,
+          "Critical Damage": 75,
+          "Neutral Damage": 34
+        },
+        "sets": {
+          "Transplent Set": 3,
+          "Royal Pingwin Set": 3,
+          "Cantile Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "33595",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "12095",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Cantile's Amulet",
+          "Transplent Belt",
+          "Transplent Sword",
+          "Transplent Shield",
+          "Cantile's Ring",
+          "Royal Pingwin Ring",
+          "Cantile's Boots",
+          "Royal Pingwin Crown",
+          "Royal Pingwin Cloak",
+          "Green Piwin",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Major Earth Wrecker",
+          "Emerald Dofus",
+          "Turquoise Dofus",
+          "Major Goliath"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 491233.7,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 114.2,
+          "candidatePoolsMs": 45.5,
+          "packageIndexMs": 473.3,
+          "packageSeedsMs": 2732.2,
+          "directCompletionMs": 487860.1,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.4,
+          "totalFindBuildsMs": 491227.9
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

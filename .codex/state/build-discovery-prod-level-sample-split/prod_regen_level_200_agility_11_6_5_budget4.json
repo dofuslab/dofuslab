@@ -1,0 +1,305 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T02:46:22.359767+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_200_agility_11_6_5_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "agility",
+        "budgetTier": 4,
+        "apTarget": 11,
+        "mpTarget": 6,
+        "rangeTarget": 5
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 6,
+        "rangeTarget": 5,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 2522.36,
+        "weightedStatScore": 4545.78,
+        "utilityStatScore": 373.06,
+        "genericDamageScore": 4506.89,
+        "rawRotationDamageScore": 2795.21,
+        "spellDamageScore": 2508.84,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.5023,
+        "weaponDamageScore": 274.97,
+        "survivabilityScore": 121.2,
+        "weakestElementEhp": 3342.78,
+        "apStrategy": "set_bonus_ap",
+        "baseAllocation": {
+          "Agility": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 5,
+          "Agility": 1323,
+          "Power": 160,
+          "Vitality": 3253,
+          "Damage": 0,
+          "Air Damage": 173,
+          "Critical": 53,
+          "Critical Damage": 119
+        },
+        "sets": {
+          "Allister Set": 3,
+          "Voldelor Set": 3,
+          "Abyss Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "17104",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "17103",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "18014",
+            "slot": "weapon"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "17103",
+            "internalId": null,
+            "name": "Voldelor Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "belt": {
+            "id": "17104",
+            "internalId": null,
+            "name": "Voldelor Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "weapon": {
+            "id": "18014",
+            "internalId": null,
+            "name": "Mantax",
+            "type": "Axe",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "shield": {
+            "id": "30060",
+            "internalId": null,
+            "name": "Allister's Aegis",
+            "type": "Shield",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "ring_1": {
+            "id": "13124",
+            "internalId": null,
+            "name": "Allister's Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Allister Set"
+          },
+          "boots": {
+            "id": "17105",
+            "internalId": null,
+            "name": "Voldelor Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "hat": {
+            "id": "13123",
+            "internalId": null,
+            "name": "Allister's Crown",
+            "type": "Hat",
+            "level": 196,
+            "set": "Allister Set"
+          },
+          "cloak": {
+            "id": "18008",
+            "internalId": null,
+            "name": "Indescribable Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Abyss Set"
+          },
+          "ring_2": {
+            "id": "24035",
+            "internalId": null,
+            "name": "Spilling Ryng",
+            "type": "Ring",
+            "level": 200,
+            "set": null
+          },
+          "pet": {
+            "id": "33307",
+            "internalId": null,
+            "name": "Aquamarine and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "22004",
+            "internalId": null,
+            "name": "Prynyang",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "739",
+            "internalId": null,
+            "name": "Turquoise Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2522.36,
+        "apStrategy": "set_bonus_ap",
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 5,
+          "Agility": 1323,
+          "Power": 160,
+          "Vitality": 3253,
+          "Damage": 0,
+          "Air Damage": 173,
+          "Critical": 53,
+          "Critical Damage": 119
+        },
+        "sets": {
+          "Allister Set": 3,
+          "Voldelor Set": 3,
+          "Abyss Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "17104",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "17103",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "18014",
+            "slot": "weapon"
+          }
+        },
+        "items": [
+          "Voldelor Amulet",
+          "Voldelor Belt",
+          "Mantax",
+          "Allister's Aegis",
+          "Allister's Ring",
+          "Spilling Ryng",
+          "Voldelor Boots",
+          "Allister's Crown",
+          "Indescribable Cape",
+          "Aquamarine and Emerald Seemyool",
+          "Ice Dofus",
+          "Prynyang",
+          "Crimson Dofus",
+          "Prywitchment",
+          "Turquoise Dofus",
+          "Cloudy Dofus"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 160405.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 251.2,
+          "candidatePoolsMs": 71.9,
+          "packageIndexMs": 486.1,
+          "packageSeedsMs": 7681.9,
+          "directCompletionMs": 151902.6,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 3.5,
+          "totalFindBuildsMs": 160397.2
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

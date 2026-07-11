@@ -1,0 +1,305 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T02:40:03.052820+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_200_intelligence_12_6_4_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "intelligence",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 4
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 4,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 2479.86,
+        "weightedStatScore": 4622.05,
+        "utilityStatScore": 431.15,
+        "genericDamageScore": 4263.03,
+        "rawRotationDamageScore": 2905.08,
+        "spellDamageScore": 2807.74,
+        "profileBaselineDamageScore": 2044.38,
+        "profileRelativeDamage": 1.421,
+        "weaponDamageScore": 264.61,
+        "survivabilityScore": 130.35,
+        "weakestElementEhp": 4038.36,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Intelligence": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Intelligence": 1378,
+          "Power": 175,
+          "Vitality": 3203,
+          "Damage": 0,
+          "Fire Damage": 158,
+          "Critical": 40,
+          "Critical Damage": 149
+        },
+        "sets": {
+          "Age-Old Set": 3,
+          "Atcham Set": 2,
+          "War Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14081",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "14080",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "22192",
+            "slot": "ring_1"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "14080",
+            "internalId": null,
+            "name": "Age-Old Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "belt": {
+            "id": "14081",
+            "internalId": null,
+            "name": "Age-Old Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "weapon": {
+            "id": "17586",
+            "internalId": null,
+            "name": "Atcham Sabres",
+            "type": "Sword",
+            "level": 200,
+            "set": "Atcham Set"
+          },
+          "shield": {
+            "id": "22191",
+            "internalId": null,
+            "name": "War's Fortress",
+            "type": "Shield",
+            "level": 200,
+            "set": "War Set"
+          },
+          "ring_1": {
+            "id": "22192",
+            "internalId": null,
+            "name": "War's Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "War Set"
+          },
+          "boots": {
+            "id": "22189",
+            "internalId": null,
+            "name": "War's Treads",
+            "type": "Boots",
+            "level": 200,
+            "set": "War Set"
+          },
+          "hat": {
+            "id": "14079",
+            "internalId": null,
+            "name": "Age-Old Helmet",
+            "type": "Hat",
+            "level": 200,
+            "set": "Age-Old Set"
+          },
+          "cloak": {
+            "id": "17584",
+            "internalId": null,
+            "name": "Atcham Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Atcham Set"
+          },
+          "ring_2": {
+            "id": "24035",
+            "internalId": null,
+            "name": "Spilling Ryng",
+            "type": "Ring",
+            "level": 200,
+            "set": null
+          },
+          "pet": {
+            "id": "33282",
+            "internalId": null,
+            "name": "Coral and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2479.86,
+        "apStrategy": "ochre_plus_one",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Intelligence": 1378,
+          "Power": 175,
+          "Vitality": 3203,
+          "Damage": 0,
+          "Fire Damage": 158,
+          "Critical": 40,
+          "Critical Damage": 149
+        },
+        "sets": {
+          "Age-Old Set": 3,
+          "Atcham Set": 2,
+          "War Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "14081",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "14080",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "22192",
+            "slot": "ring_1"
+          }
+        },
+        "items": [
+          "Age-Old Amulet",
+          "Age-Old Belt",
+          "Atcham Sabres",
+          "War's Fortress",
+          "War's Gauntlet",
+          "Spilling Ryng",
+          "War's Treads",
+          "Age-Old Helmet",
+          "Atcham Cape",
+          "Coral and Emerald Seemyool",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Crimson Dofus",
+          "Prywitchment",
+          "Dolmanax",
+          "Cloudy Dofus"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 171490.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 257.3,
+          "candidatePoolsMs": 61.1,
+          "packageIndexMs": 425.5,
+          "packageSeedsMs": 7969.3,
+          "directCompletionMs": 162766.4,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.0,
+          "totalFindBuildsMs": 171481.7
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:02:36.186824+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_50_agility_7_3_1_budget1",
+        "className": "Iop",
+        "level": 50,
+        "element": "agility",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 50,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 843.69,
+        "weightedStatScore": 1266.22,
+        "utilityStatScore": 187.41,
+        "genericDamageScore": 1423.79,
+        "rawRotationDamageScore": 653.64,
+        "spellDamageScore": 653.64,
+        "profileBaselineDamageScore": 1377.25,
+        "profileRelativeDamage": 0.4746,
+        "weaponDamageScore": 29.2,
+        "survivabilityScore": 15.57,
+        "weakestElementEhp": 347.33,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Agility": 172,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 6,
+          "Range": 3,
+          "Agility": 707,
+          "Power": 45,
+          "Vitality": 521,
+          "Damage": 3,
+          "Air Damage": 11,
+          "Critical": 10,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Coco Blop Set": 4,
+          "Khardboard Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9151",
+            "internalId": null,
+            "name": "Coco Amublop",
+            "type": "Amulet",
+            "level": 50,
+            "set": "Coco Blop Set"
+          },
+          "belt": {
+            "id": "9169",
+            "internalId": null,
+            "name": "Coco Blop Belt",
+            "type": "Belt",
+            "level": 50,
+            "set": "Coco Blop Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "9124",
+            "internalId": null,
+            "name": "Coco Blop Ring",
+            "type": "Ring",
+            "level": 50,
+            "set": "Coco Blop Set"
+          },
+          "boots": {
+            "id": "9160",
+            "internalId": null,
+            "name": "Coco Bloopts",
+            "type": "Boots",
+            "level": 50,
+            "set": "Coco Blop Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "18710",
+            "internalId": null,
+            "name": "Chafer Foot Soldier's Shield",
+            "type": "Shield",
+            "level": 35,
+            "set": null
+          },
+          "ring_2": {
+            "id": "10171",
+            "internalId": null,
+            "name": "Chisp Fingerless Gloves",
+            "type": "Ring",
+            "level": 44,
+            "set": "Chisp Set"
+          },
+          "cloak": {
+            "id": "953",
+            "internalId": null,
+            "name": "Mad Tofu Cloak",
+            "type": "Cloak",
+            "level": 36,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13784",
+            "internalId": null,
+            "name": "Minor Air Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12712",
+            "internalId": null,
+            "name": "Minor Acrobat",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12688",
+            "internalId": null,
+            "name": "Minor Air Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13763",
+            "internalId": null,
+            "name": "Minor Gymnast",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 843.69,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 7,
+          "MP": 6,
+          "Range": 3,
+          "Agility": 707,
+          "Power": 45,
+          "Vitality": 521,
+          "Damage": 3,
+          "Air Damage": 11,
+          "Critical": 10,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Coco Blop Set": 4,
+          "Khardboard Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Coco Amublop",
+          "Coco Blop Belt",
+          "Khardboard Goultard",
+          "Chafer Foot Soldier's Shield",
+          "Coco Blop Ring",
+          "Chisp Fingerless Gloves",
+          "Coco Bloopts",
+          "Khardboard Gobball Headgear",
+          "Mad Tofu Cloak",
+          "Minor Air Wrecker",
+          "Minor Acrobat",
+          "Minor Air Destroyer",
+          "Minor Gymnast",
+          "Minor Dynamo",
+          "Twitcher"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 945029.6,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 139.2,
+          "candidatePoolsMs": 57.9,
+          "packageIndexMs": 373.9,
+          "packageSeedsMs": 1998.1,
+          "directCompletionMs": 942457.0,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.4,
+          "totalFindBuildsMs": 945027.4
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

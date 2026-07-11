@@ -1,0 +1,277 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:21:27.041294+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_100_intelligence_10_4_1_budget2",
+        "className": "Iop",
+        "level": 100,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 100,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1391.64,
+        "weightedStatScore": 2262.91,
+        "utilityStatScore": 252.25,
+        "genericDamageScore": 2465.71,
+        "rawRotationDamageScore": 1301.92,
+        "spellDamageScore": 1199.7,
+        "profileBaselineDamageScore": 1584.03,
+        "profileRelativeDamage": 0.8219,
+        "weaponDamageScore": 135.43,
+        "survivabilityScore": 29.82,
+        "weakestElementEhp": 968.59,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 265,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 3,
+          "Intelligence": 895,
+          "Power": 210,
+          "Vitality": 960,
+          "Damage": 28,
+          "Fire Damage": 15,
+          "Critical": 21,
+          "Critical Damage": 55
+        },
+        "sets": {
+          "Royal Rainbow Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9157",
+            "internalId": null,
+            "name": "Royal Rainbow Amublop",
+            "type": "Amulet",
+            "level": 90,
+            "set": "Royal Rainbow Blop Set"
+          },
+          "belt": {
+            "id": "9175",
+            "internalId": null,
+            "name": "Royal Rainbow Blop Belt",
+            "type": "Belt",
+            "level": 88,
+            "set": "Royal Rainbow Blop Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "9148",
+            "internalId": null,
+            "name": "Royal Rainbow Blop Ring",
+            "type": "Ring",
+            "level": 90,
+            "set": "Royal Rainbow Blop Set"
+          },
+          "boots": {
+            "id": "9166",
+            "internalId": null,
+            "name": "Royal Rainbow Bloopts",
+            "type": "Boots",
+            "level": 90,
+            "set": "Royal Rainbow Blop Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "weapon": {
+            "id": "8300",
+            "internalId": null,
+            "name": "Shika's Hoe",
+            "type": "Lance",
+            "level": 80,
+            "set": "Shika Ingalsse Set"
+          },
+          "ring_2": {
+            "id": "33579",
+            "internalId": null,
+            "name": "Simbadas Paw",
+            "type": "Ring",
+            "level": 96,
+            "set": "Simbadas Set"
+          },
+          "pet": {
+            "id": "7711",
+            "internalId": null,
+            "name": "Red Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13779",
+            "internalId": null,
+            "name": "Fire Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "12720",
+            "internalId": null,
+            "name": "Scholar",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13761",
+            "internalId": null,
+            "name": "Brainbox",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13824",
+            "internalId": null,
+            "name": "Dynamo",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1391.64,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 3,
+          "Intelligence": 895,
+          "Power": 210,
+          "Vitality": 960,
+          "Damage": 28,
+          "Fire Damage": 15,
+          "Critical": 21,
+          "Critical Damage": 55
+        },
+        "sets": {
+          "Royal Rainbow Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Royal Rainbow Amublop",
+          "Royal Rainbow Blop Belt",
+          "Shika's Hoe",
+          "Khardboard Bowisse's Shield",
+          "Royal Rainbow Blop Ring",
+          "Simbadas Paw",
+          "Royal Rainbow Bloopts",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Red Piwin",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Fire Wrecker",
+          "Scholar",
+          "Brainbox",
+          "Dynamo"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 341251.6,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 185.5,
+          "candidatePoolsMs": 148.3,
+          "packageIndexMs": 1796.0,
+          "packageSeedsMs": 3034.8,
+          "directCompletionMs": 336081.0,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.1,
+          "totalFindBuildsMs": 341247.9
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

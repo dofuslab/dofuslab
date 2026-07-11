@@ -1,0 +1,277 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:21:27.041294+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_100_agility_12_5_0_budget3",
+        "className": "Iop",
+        "level": 100,
+        "element": "agility",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 0
+      },
+      "query": {
+        "className": "Iop",
+        "level": 100,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1295.09,
+        "weightedStatScore": 2246.66,
+        "utilityStatScore": 273.0,
+        "genericDamageScore": 2209.07,
+        "rawRotationDamageScore": 1109.88,
+        "spellDamageScore": 1034.21,
+        "profileBaselineDamageScore": 1507.25,
+        "profileRelativeDamage": 0.7364,
+        "weaponDamageScore": 106.2,
+        "survivabilityScore": 28.01,
+        "weakestElementEhp": 916.48,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Agility": 265,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 2,
+          "Agility": 805,
+          "Power": 90,
+          "Vitality": 890,
+          "Damage": 6,
+          "Air Damage": 56,
+          "Critical": 35,
+          "Critical Damage": 70
+        },
+        "sets": {
+          "Simbadas Set": 2,
+          "Khardboard Set": 4
+        },
+        "exos": {},
+        "items": {
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "amulet": {
+            "id": "33577",
+            "internalId": null,
+            "name": "Simbadas Cage",
+            "type": "Amulet",
+            "level": 92,
+            "set": "Simbadas Set"
+          },
+          "belt": {
+            "id": "14277",
+            "internalId": null,
+            "name": "Ding Dong Belt",
+            "type": "Belt",
+            "level": 100,
+            "set": "Master Nabur Set"
+          },
+          "ring_1": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "ring_2": {
+            "id": "33579",
+            "internalId": null,
+            "name": "Simbadas Paw",
+            "type": "Ring",
+            "level": 96,
+            "set": "Simbadas Set"
+          },
+          "boots": {
+            "id": "7218",
+            "internalId": null,
+            "name": "Sandals Adin",
+            "type": "Boots",
+            "level": 76,
+            "set": null
+          },
+          "pet": {
+            "id": "33307",
+            "internalId": null,
+            "name": "Aquamarine and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13785",
+            "internalId": null,
+            "name": "Air Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "12713",
+            "internalId": null,
+            "name": "Acrobat",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12686",
+            "internalId": null,
+            "name": "Air Destroyer",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13764",
+            "internalId": null,
+            "name": "Gymnast",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1295.09,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 2,
+          "Agility": 805,
+          "Power": 90,
+          "Vitality": 890,
+          "Damage": 6,
+          "Air Damage": 56,
+          "Critical": 35,
+          "Critical Damage": 70
+        },
+        "sets": {
+          "Simbadas Set": 2,
+          "Khardboard Set": 4
+        },
+        "exos": {},
+        "items": [
+          "Simbadas Cage",
+          "Ding Dong Belt",
+          "Khardboard Goultard",
+          "Khardboard Bowisse's Shield",
+          "Gelano",
+          "Simbadas Paw",
+          "Sandals Adin",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Aquamarine and Emerald Seemyool",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Air Wrecker",
+          "Acrobat",
+          "Air Destroyer",
+          "Gymnast"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 301533.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 144.8,
+          "candidatePoolsMs": 79.1,
+          "packageIndexMs": 1258.9,
+          "packageSeedsMs": 2380.7,
+          "directCompletionMs": 297662.7,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.2,
+          "totalFindBuildsMs": 301528.3
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

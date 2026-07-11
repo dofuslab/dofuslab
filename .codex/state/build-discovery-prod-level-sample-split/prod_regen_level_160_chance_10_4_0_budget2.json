@@ -1,0 +1,277 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T02:23:13.705828+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_160_chance_10_4_0_budget2",
+        "className": "Iop",
+        "level": 160,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 0
+      },
+      "query": {
+        "className": "Iop",
+        "level": 160,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 0,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1814.6,
+        "weightedStatScore": 3237.83,
+        "utilityStatScore": 281.38,
+        "genericDamageScore": 3311.42,
+        "rawRotationDamageScore": 2089.64,
+        "spellDamageScore": 2089.64,
+        "profileBaselineDamageScore": 1893.12,
+        "profileRelativeDamage": 1.1038,
+        "weaponDamageScore": 158.07,
+        "survivabilityScore": 43.08,
+        "weakestElementEhp": 1318.37,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Chance": 348,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 3,
+          "Chance": 1238,
+          "Power": 145,
+          "Vitality": 1292,
+          "Damage": 25,
+          "Water Damage": 44,
+          "Critical": 74,
+          "Critical Damage": 75
+        },
+        "sets": {
+          "Katigger Set": 3,
+          "Transplent Set": 3
+        },
+        "exos": {},
+        "items": {
+          "belt": {
+            "id": "33595",
+            "internalId": null,
+            "name": "Transplent Belt",
+            "type": "Belt",
+            "level": 135,
+            "set": "Transplent Set"
+          },
+          "weapon": {
+            "id": "33597",
+            "internalId": null,
+            "name": "Transplent Sword",
+            "type": "Sword",
+            "level": 139,
+            "set": "Transplent Set"
+          },
+          "shield": {
+            "id": "33596",
+            "internalId": null,
+            "name": "Transplent Shield",
+            "type": "Shield",
+            "level": 137,
+            "set": "Transplent Set"
+          },
+          "ring_1": {
+            "id": "32209",
+            "internalId": null,
+            "name": "Katigger Glove",
+            "type": "Ring",
+            "level": 142,
+            "set": "Katigger Set"
+          },
+          "boots": {
+            "id": "32208",
+            "internalId": null,
+            "name": "Katigger Paws",
+            "type": "Boots",
+            "level": 146,
+            "set": "Katigger Set"
+          },
+          "cloak": {
+            "id": "32207",
+            "internalId": null,
+            "name": "Katigger Cape",
+            "type": "Cloak",
+            "level": 144,
+            "set": "Katigger Set"
+          },
+          "amulet": {
+            "id": "8863",
+            "internalId": null,
+            "name": "Zothulet",
+            "type": "Amulet",
+            "level": 159,
+            "set": null
+          },
+          "ring_2": {
+            "id": "14007",
+            "internalId": null,
+            "name": "Styxring",
+            "type": "Ring",
+            "level": 150,
+            "set": "Fluvial Set"
+          },
+          "hat": {
+            "id": "8840",
+            "internalId": null,
+            "name": "Jav Voodoo Mask",
+            "type": "Hat",
+            "level": 158,
+            "set": null
+          },
+          "pet": {
+            "id": "7708",
+            "internalId": null,
+            "name": "Blue Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13783",
+            "internalId": null,
+            "name": "Major Water Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "739",
+            "internalId": null,
+            "name": "Turquoise Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1814.6,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 3,
+          "Chance": 1238,
+          "Power": 145,
+          "Vitality": 1292,
+          "Damage": 25,
+          "Water Damage": 44,
+          "Critical": 74,
+          "Critical Damage": 75
+        },
+        "sets": {
+          "Katigger Set": 3,
+          "Transplent Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Zothulet",
+          "Transplent Belt",
+          "Transplent Sword",
+          "Transplent Shield",
+          "Katigger Glove",
+          "Styxring",
+          "Katigger Paws",
+          "Jav Voodoo Mask",
+          "Katigger Cape",
+          "Blue Piwin",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Major Water Wrecker",
+          "Emerald Dofus",
+          "Turquoise Dofus",
+          "Major Tease"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 355247.8,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 272.0,
+          "candidatePoolsMs": 53.8,
+          "packageIndexMs": 485.6,
+          "packageSeedsMs": 2732.2,
+          "directCompletionMs": 351696.7,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.3,
+          "totalFindBuildsMs": 355242.7
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

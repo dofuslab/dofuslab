@@ -6,6 +6,7 @@ from pathlib import Path
 from build_discovery_level_diversity_matrix import (
     REPORT_VERSION,
     build_matrix_report,
+    completed_target_ids_from_split_reports,
     load_targets_from_file,
     query_summary,
     render_markdown,
@@ -16,6 +17,7 @@ from build_discovery_level_diversity_matrix import (
     render_target_manifest_markdown,
     targets_from_file,
     targets_for_set,
+    targets_missing_from_split_reports,
     unique_artifact_stem_for_target,
     validate_best_build,
     write_split_matrix_reports,
@@ -601,6 +603,43 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
                     generator=lambda query: {"builds": []},
                     resume_existing=True,
                 )
+
+    def test_targets_missing_from_split_reports_filters_completed_targets(self):
+        selected = selected_targets(levels={50}, elements={"strength", "intelligence"})
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_dir = Path(temp_dir)
+            target = selected[0]
+            query = query_for_target(target)
+            report = {
+                "reportVersion": REPORT_VERSION,
+                "results": [
+                    {
+                        "target": target_summary(target),
+                        "query": query_summary(query),
+                        "status": "no_build",
+                        "resultCount": 0,
+                        "validationErrors": ["no build returned"],
+                        "bestBuild": None,
+                        "bestBuildSummary": None,
+                    }
+                ],
+            }
+            (output_dir / f"{target.name}.json").write_text(json.dumps(report), encoding="utf-8")
+            stale_manifest = {
+                "splitReportCount": 0,
+                "reports": [],
+            }
+            (output_dir / "manifest.json").write_text(json.dumps(stale_manifest), encoding="utf-8")
+
+            missing = targets_missing_from_split_reports(selected, output_dir)
+
+        self.assertEqual([target.name for target in missing], [selected[1].name])
+
+    def test_completed_target_ids_from_split_reports_missing_dir_is_empty(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            missing_dir = Path(temp_dir) / "missing"
+            self.assertEqual(completed_target_ids_from_split_reports(missing_dir), set())
 
     def test_unique_artifact_stem_for_target_preserves_collision_order(self):
         first = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]

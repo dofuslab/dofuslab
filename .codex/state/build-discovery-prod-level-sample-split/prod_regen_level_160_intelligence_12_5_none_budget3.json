@@ -1,0 +1,279 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:02:36.186824+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_160_intelligence_12_5_none_budget3",
+        "className": "Iop",
+        "level": 160,
+        "element": "intelligence",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 160,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1745.94,
+        "weightedStatScore": 3031.79,
+        "utilityStatScore": 288.56,
+        "genericDamageScore": 3077.37,
+        "rawRotationDamageScore": 1980.9,
+        "spellDamageScore": 1980.9,
+        "profileBaselineDamageScore": 1931.1,
+        "profileRelativeDamage": 1.0258,
+        "weaponDamageScore": 132.73,
+        "survivabilityScore": 72.56,
+        "weakestElementEhp": 2301.59,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 348,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Intelligence": 1238,
+          "Power": 245,
+          "Vitality": 2233,
+          "Damage": 16,
+          "Fire Damage": 57,
+          "Critical": 29,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Hell Mina Set": 3,
+          "Khardboard Set": 3,
+          "Minotot Set": 3
+        },
+        "exos": {},
+        "items": {
+          "belt": {
+            "id": "27266",
+            "internalId": null,
+            "name": "Khardboard Moowolf Belt",
+            "type": "Belt",
+            "level": 150,
+            "set": "Khardboard Set"
+          },
+          "weapon": {
+            "id": "26314",
+            "internalId": null,
+            "name": "Hell Mina's Partisan",
+            "type": "Lance",
+            "level": 150,
+            "set": "Hell Mina Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "26311",
+            "internalId": null,
+            "name": "Hell Mina's Wedding Ring",
+            "type": "Ring",
+            "level": 146,
+            "set": "Hell Mina Set"
+          },
+          "boots": {
+            "id": "27278",
+            "internalId": null,
+            "name": "Khardboard Getas",
+            "type": "Boots",
+            "level": 125,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "26313",
+            "internalId": null,
+            "name": "Hell Mina's Cape",
+            "type": "Cloak",
+            "level": 148,
+            "set": "Hell Mina Set"
+          },
+          "amulet": {
+            "id": "8272",
+            "internalId": null,
+            "name": "Minotot Necklace",
+            "type": "Amulet",
+            "level": 158,
+            "set": "Minotot Set"
+          },
+          "ring_2": {
+            "id": "8270",
+            "internalId": null,
+            "name": "Minotot Bracelet",
+            "type": "Ring",
+            "level": 149,
+            "set": "Minotot Set"
+          },
+          "hat": {
+            "id": "8284",
+            "internalId": null,
+            "name": "Minotot Headgear",
+            "type": "Hat",
+            "level": 157,
+            "set": "Minotot Set"
+          },
+          "pet": {
+            "id": "33043",
+            "internalId": null,
+            "name": "Ivory and Orchid Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13780",
+            "internalId": null,
+            "name": "Major Fire Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "739",
+            "internalId": null,
+            "name": "Turquoise Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1745.94,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 4,
+          "Intelligence": 1238,
+          "Power": 245,
+          "Vitality": 2233,
+          "Damage": 16,
+          "Fire Damage": 57,
+          "Critical": 29,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Hell Mina Set": 3,
+          "Khardboard Set": 3,
+          "Minotot Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Minotot Necklace",
+          "Khardboard Moowolf Belt",
+          "Hell Mina's Partisan",
+          "Khardboard Bowisse's Shield",
+          "Hell Mina's Wedding Ring",
+          "Minotot Bracelet",
+          "Khardboard Getas",
+          "Minotot Headgear",
+          "Hell Mina's Cape",
+          "Ivory and Orchid Dragoturkey",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Major Fire Wrecker",
+          "Emerald Dofus",
+          "Turquoise Dofus",
+          "Major Brainbox"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 300438.9,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 115.2,
+          "candidatePoolsMs": 52.1,
+          "packageIndexMs": 477.1,
+          "packageSeedsMs": 3009.0,
+          "directCompletionMs": 296776.8,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.1,
+          "totalFindBuildsMs": 300432.2
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "reportVersion": "build-discovery-level-target-manifest-v1",
-  "generatedAt": "2026-07-11T01:00:31.400294+00:00",
+  "generatedAt": "2026-07-11T02:51:50.657578+00:00",
   "scope": "Iop prod-level-sample target manifest",
   "evidenceType": "target_selection_manifest",
   "provenance": {
-    "gitSha": "dff1ae3e55eb802c5f5052c8f92562a49f54a896",
+    "gitSha": "212f9ca83b83d675a36e75f950b8b0f89e30c817",
     "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS"
   },
   "targetCount": 24,
@@ -46,11 +46,11 @@
     },
     {
       "target": {
-        "id": "prod_regen_level_20_intelligence_7_4_1_budget1",
+        "id": "prod_regen_level_20_intelligence_7_4_1_budget3",
         "className": "Iop",
         "level": 20,
         "element": "intelligence",
-        "budgetTier": 1,
+        "budgetTier": 3,
         "apTarget": 7,
         "mpTarget": 4,
         "rangeTarget": 1
@@ -66,8 +66,8 @@
         "mpTarget": 4,
         "rangeTarget": 1,
         "damageSurvivabilityPreset": 3,
-        "budgetTier": 1,
-        "exoPolicy": "none",
+        "budgetTier": 3,
+        "exoPolicy": "allow",
         "weaponPolicy": "stat_stick_allowed",
         "lockedItemIds": [],
         "avoidedItemIds": []

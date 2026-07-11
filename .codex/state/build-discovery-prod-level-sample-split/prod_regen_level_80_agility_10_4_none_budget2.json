@@ -1,0 +1,277 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:21:27.041294+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_80_agility_10_4_none_budget2",
+        "className": "Iop",
+        "level": 80,
+        "element": "agility",
+        "budgetTier": 2,
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 80,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1121.69,
+        "weightedStatScore": 1880.26,
+        "utilityStatScore": 246.16,
+        "genericDamageScore": 1875.99,
+        "rawRotationDamageScore": 942.53,
+        "spellDamageScore": 942.53,
+        "profileBaselineDamageScore": 1507.25,
+        "profileRelativeDamage": 0.6253,
+        "weaponDamageScore": 49.31,
+        "survivabilityScore": 31.34,
+        "weakestElementEhp": 1022.71,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Agility": 231,
+          "Vitality": 2
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 4,
+          "Agility": 841,
+          "Power": 150,
+          "Vitality": 1042,
+          "Damage": 5,
+          "Air Damage": 22,
+          "Critical": 27,
+          "Critical Damage": 5
+        },
+        "sets": {
+          "Royal Coco Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9155",
+            "internalId": null,
+            "name": "Royal Coco Amublop",
+            "type": "Amulet",
+            "level": 80,
+            "set": "Royal Coco Blop Set"
+          },
+          "belt": {
+            "id": "9173",
+            "internalId": null,
+            "name": "Royal Coco Blop Belt",
+            "type": "Belt",
+            "level": 80,
+            "set": "Royal Coco Blop Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "9128",
+            "internalId": null,
+            "name": "Royal Coco Blop Ring",
+            "type": "Ring",
+            "level": 80,
+            "set": "Royal Coco Blop Set"
+          },
+          "boots": {
+            "id": "9164",
+            "internalId": null,
+            "name": "Royal Coco Bloopts",
+            "type": "Boots",
+            "level": 80,
+            "set": "Royal Coco Blop Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "30688",
+            "internalId": null,
+            "name": "Crispy Targe",
+            "type": "Shield",
+            "level": 80,
+            "set": null
+          },
+          "ring_2": {
+            "id": "14311",
+            "internalId": null,
+            "name": "Just Ring",
+            "type": "Ring",
+            "level": 60,
+            "set": null
+          },
+          "pet": {
+            "id": "33023",
+            "internalId": null,
+            "name": "Ebony and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13784",
+            "internalId": null,
+            "name": "Minor Air Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12712",
+            "internalId": null,
+            "name": "Minor Acrobat",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12688",
+            "internalId": null,
+            "name": "Minor Air Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13763",
+            "internalId": null,
+            "name": "Minor Gymnast",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1121.69,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 4,
+          "Agility": 841,
+          "Power": 150,
+          "Vitality": 1042,
+          "Damage": 5,
+          "Air Damage": 22,
+          "Critical": 27,
+          "Critical Damage": 5
+        },
+        "sets": {
+          "Royal Coco Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Royal Coco Amublop",
+          "Royal Coco Blop Belt",
+          "Khardboard Goultard",
+          "Crispy Targe",
+          "Royal Coco Blop Ring",
+          "Just Ring",
+          "Royal Coco Bloopts",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Ebony and Ivory Dragoturkey",
+          "Minor Air Wrecker",
+          "Minor Acrobat",
+          "Minor Air Destroyer",
+          "Minor Gymnast",
+          "Minor Dynamo",
+          "Twitcher"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 269420.6,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 117.5,
+          "candidatePoolsMs": 72.7,
+          "packageIndexMs": 831.0,
+          "packageSeedsMs": 2312.1,
+          "directCompletionMs": 266077.4,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 3.6,
+          "totalFindBuildsMs": 269414.3
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

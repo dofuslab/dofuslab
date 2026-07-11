@@ -1,0 +1,289 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T02:30:40.793078+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_165_intelligence_12_6_2_budget3",
+        "className": "Iop",
+        "level": 165,
+        "element": "intelligence",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 165,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1774.59,
+        "weightedStatScore": 3019.35,
+        "utilityStatScore": 288.82,
+        "genericDamageScore": 3136.67,
+        "rawRotationDamageScore": 2019.08,
+        "spellDamageScore": 2019.08,
+        "profileBaselineDamageScore": 1931.1,
+        "profileRelativeDamage": 1.0456,
+        "weaponDamageScore": 79.18,
+        "survivabilityScore": 74.26,
+        "weakestElementEhp": 2390.5,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 355,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 3,
+          "Intelligence": 1285,
+          "Power": 225,
+          "Vitality": 2170,
+          "Damage": 0,
+          "Fire Damage": 74,
+          "Critical": 31,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Buck Anear Set": 3,
+          "Obsidemon Set": 3,
+          "Khardboard Set": 3
+        },
+        "exos": {
+          "MP": {
+            "itemId": "11576",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "11576",
+            "internalId": null,
+            "name": "Obsidemon Amulet",
+            "type": "Amulet",
+            "level": 164,
+            "set": "Obsidemon Set"
+          },
+          "belt": {
+            "id": "27266",
+            "internalId": null,
+            "name": "Khardboard Moowolf Belt",
+            "type": "Belt",
+            "level": 150,
+            "set": "Khardboard Set"
+          },
+          "weapon": {
+            "id": "11586",
+            "internalId": null,
+            "name": "Buck Anear's Sabre",
+            "type": "Sword",
+            "level": 152,
+            "set": "Buck Anear Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "11579",
+            "internalId": null,
+            "name": "Obsidemon Ring",
+            "type": "Ring",
+            "level": 161,
+            "set": "Obsidemon Set"
+          },
+          "ring_2": {
+            "id": "11578",
+            "internalId": null,
+            "name": "Buck Anear's Hook",
+            "type": "Ring",
+            "level": 155,
+            "set": "Buck Anear Set"
+          },
+          "boots": {
+            "id": "27278",
+            "internalId": null,
+            "name": "Khardboard Getas",
+            "type": "Boots",
+            "level": 125,
+            "set": "Khardboard Set"
+          },
+          "hat": {
+            "id": "11573",
+            "internalId": null,
+            "name": "Buck Anear's Hat",
+            "type": "Hat",
+            "level": 154,
+            "set": "Buck Anear Set"
+          },
+          "cloak": {
+            "id": "11581",
+            "internalId": null,
+            "name": "Obsidemon Cloak",
+            "type": "Cloak",
+            "level": 163,
+            "set": "Obsidemon Set"
+          },
+          "pet": {
+            "id": "33043",
+            "internalId": null,
+            "name": "Ivory and Orchid Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "13780",
+            "internalId": null,
+            "name": "Major Fire Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "739",
+            "internalId": null,
+            "name": "Turquoise Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13762",
+            "internalId": null,
+            "name": "Major Brainbox",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1774.59,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 3,
+          "Intelligence": 1285,
+          "Power": 225,
+          "Vitality": 2170,
+          "Damage": 0,
+          "Fire Damage": 74,
+          "Critical": 31,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Buck Anear Set": 3,
+          "Obsidemon Set": 3,
+          "Khardboard Set": 3
+        },
+        "exos": {
+          "MP": {
+            "itemId": "11576",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Obsidemon Amulet",
+          "Khardboard Moowolf Belt",
+          "Buck Anear's Sabre",
+          "Khardboard Bowisse's Shield",
+          "Obsidemon Ring",
+          "Buck Anear's Hook",
+          "Khardboard Getas",
+          "Buck Anear's Hat",
+          "Obsidemon Cloak",
+          "Ivory and Orchid Dragoturkey",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Major Fire Wrecker",
+          "Emerald Dofus",
+          "Turquoise Dofus",
+          "Major Brainbox"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 266400.4,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 249.8,
+          "candidatePoolsMs": 45.5,
+          "packageIndexMs": 451.9,
+          "packageSeedsMs": 2724.5,
+          "directCompletionMs": 262920.3,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.9,
+          "totalFindBuildsMs": 266393.9
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T02:35:28.558208+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_180_agility_12_5_5_budget4",
+        "className": "Iop",
+        "level": 180,
+        "element": "agility",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 5
+      },
+      "query": {
+        "className": "Iop",
+        "level": 180,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 5,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1847.51,
+        "weightedStatScore": 3251.23,
+        "utilityStatScore": 405.4,
+        "genericDamageScore": 3025.21,
+        "rawRotationDamageScore": 1876.26,
+        "spellDamageScore": 1876.26,
+        "profileBaselineDamageScore": 1860.62,
+        "profileRelativeDamage": 1.0084,
+        "weaponDamageScore": 113.17,
+        "survivabilityScore": 80.76,
+        "weakestElementEhp": 2402.26,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Agility": 373,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 5,
+          "Agility": 1203,
+          "Power": 95,
+          "Vitality": 2033,
+          "Damage": 7,
+          "Air Damage": 84,
+          "Critical": 34,
+          "Critical Damage": 65
+        },
+        "sets": {
+          "YeCh'Ti Set": 3,
+          "Celestial Swashbuckler Set": 3,
+          "Sovereign Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "17096",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "32216",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "17095",
+            "slot": "weapon"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "32216",
+            "internalId": null,
+            "name": "YeCh'Ti Collar",
+            "type": "Amulet",
+            "level": 176,
+            "set": "YeCh'Ti Set"
+          },
+          "belt": {
+            "id": "17096",
+            "internalId": null,
+            "name": "Celestial Swashbuckler Belt",
+            "type": "Belt",
+            "level": 162,
+            "set": "Celestial Swashbuckler Set"
+          },
+          "weapon": {
+            "id": "17095",
+            "internalId": null,
+            "name": "Celestial Swashbuckler Sword",
+            "type": "Sword",
+            "level": 160,
+            "set": "Celestial Swashbuckler Set"
+          },
+          "shield": {
+            "id": "32218",
+            "internalId": null,
+            "name": "YeCh'Ti Arm",
+            "type": "Shield",
+            "level": 180,
+            "set": "YeCh'Ti Set"
+          },
+          "ring_1": {
+            "id": "32217",
+            "internalId": null,
+            "name": "YeCh'Ti Mitten",
+            "type": "Ring",
+            "level": 178,
+            "set": "YeCh'Ti Set"
+          },
+          "ring_2": {
+            "id": "8859",
+            "internalId": null,
+            "name": "Mopy King Sovereign Seal",
+            "type": "Ring",
+            "level": 158,
+            "set": "Sovereign Set"
+          },
+          "hat": {
+            "id": "8844",
+            "internalId": null,
+            "name": "Mopy King Sovereign Hood",
+            "type": "Hat",
+            "level": 168,
+            "set": "Sovereign Set"
+          },
+          "cloak": {
+            "id": "17097",
+            "internalId": null,
+            "name": "Celestial Swashbuckler Cloak",
+            "type": "Cloak",
+            "level": 162,
+            "set": "Celestial Swashbuckler Set"
+          },
+          "boots": {
+            "id": "11619",
+            "internalId": null,
+            "name": "Sandals Bino",
+            "type": "Boots",
+            "level": 166,
+            "set": null
+          },
+          "pet": {
+            "id": "7709",
+            "internalId": null,
+            "name": "Yellow Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "739",
+            "internalId": null,
+            "name": "Turquoise Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1847.51,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 5,
+          "Agility": 1203,
+          "Power": 95,
+          "Vitality": 2033,
+          "Damage": 7,
+          "Air Damage": 84,
+          "Critical": 34,
+          "Critical Damage": 65
+        },
+        "sets": {
+          "YeCh'Ti Set": 3,
+          "Celestial Swashbuckler Set": 3,
+          "Sovereign Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "17096",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "32216",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "17095",
+            "slot": "weapon"
+          }
+        },
+        "items": [
+          "YeCh'Ti Collar",
+          "Celestial Swashbuckler Belt",
+          "Celestial Swashbuckler Sword",
+          "YeCh'Ti Arm",
+          "YeCh'Ti Mitten",
+          "Mopy King Sovereign Seal",
+          "Sandals Bino",
+          "Mopy King Sovereign Hood",
+          "Celestial Swashbuckler Cloak",
+          "Yellow Piwin",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Turquoise Dofus",
+          "Cloudy Dofus"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 70284.7,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 242.6,
+          "candidatePoolsMs": 43.3,
+          "packageIndexMs": 45.9,
+          "packageSeedsMs": 1864.5,
+          "directCompletionMs": 68082.6,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.1,
+          "totalFindBuildsMs": 70280.0
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

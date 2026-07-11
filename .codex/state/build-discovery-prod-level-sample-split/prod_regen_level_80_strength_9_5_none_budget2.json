@@ -1,0 +1,279 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:21:27.041294+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_80_strength_9_5_none_budget2",
+        "className": "Iop",
+        "level": 80,
+        "element": "strength",
+        "budgetTier": 2,
+        "apTarget": 9,
+        "mpTarget": 5,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 80,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 9,
+        "mpTarget": 5,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1091.17,
+        "weightedStatScore": 1839.26,
+        "utilityStatScore": 251.16,
+        "genericDamageScore": 1799.8,
+        "rawRotationDamageScore": 979.96,
+        "spellDamageScore": 979.96,
+        "profileBaselineDamageScore": 1633.46,
+        "profileRelativeDamage": 0.5999,
+        "weaponDamageScore": 53.82,
+        "survivabilityScore": 30.1,
+        "weakestElementEhp": 983.36,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 231,
+          "Vitality": 2
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 5,
+          "Strength": 826,
+          "Power": 165,
+          "Vitality": 1052,
+          "Damage": 10,
+          "Earth Damage": 18,
+          "Critical": 24,
+          "Critical Damage": 5,
+          "Neutral Damage": 5
+        },
+        "sets": {
+          "Royal Pippin Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9154",
+            "internalId": null,
+            "name": "Royal Pippin Amublop",
+            "type": "Amulet",
+            "level": 80,
+            "set": "Royal Pippin Blop Set"
+          },
+          "belt": {
+            "id": "9172",
+            "internalId": null,
+            "name": "Royal Pippin Blop Belt",
+            "type": "Belt",
+            "level": 80,
+            "set": "Royal Pippin Blop Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "9127",
+            "internalId": null,
+            "name": "Royal Pippin Blop Ring",
+            "type": "Ring",
+            "level": 80,
+            "set": "Royal Pippin Blop Set"
+          },
+          "boots": {
+            "id": "9163",
+            "internalId": null,
+            "name": "Royal Pippin Bloopts",
+            "type": "Boots",
+            "level": 80,
+            "set": "Royal Pippin Blop Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "30688",
+            "internalId": null,
+            "name": "Crispy Targe",
+            "type": "Shield",
+            "level": 80,
+            "set": null
+          },
+          "ring_2": {
+            "id": "8879",
+            "internalId": null,
+            "name": "Polished Ring",
+            "type": "Ring",
+            "level": 66,
+            "set": "Herboreals Set"
+          },
+          "pet": {
+            "id": "33044",
+            "internalId": null,
+            "name": "Ivory and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13772",
+            "internalId": null,
+            "name": "Minor Earth Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12722",
+            "internalId": null,
+            "name": "Minor Maniac",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12748",
+            "internalId": null,
+            "name": "Minor Earth Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13757",
+            "internalId": null,
+            "name": "Minor Goliath",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1091.17,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 6,
+          "Range": 5,
+          "Strength": 826,
+          "Power": 165,
+          "Vitality": 1052,
+          "Damage": 10,
+          "Earth Damage": 18,
+          "Critical": 24,
+          "Critical Damage": 5,
+          "Neutral Damage": 5
+        },
+        "sets": {
+          "Royal Pippin Blop Set": 4,
+          "Khardboard Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Royal Pippin Amublop",
+          "Royal Pippin Blop Belt",
+          "Khardboard Goultard",
+          "Crispy Targe",
+          "Royal Pippin Blop Ring",
+          "Polished Ring",
+          "Royal Pippin Bloopts",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Ivory and Crimson Dragoturkey",
+          "Minor Earth Wrecker",
+          "Minor Maniac",
+          "Minor Earth Destroyer",
+          "Minor Goliath",
+          "Minor Dynamo",
+          "Twitcher"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 257466.3,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 119.9,
+          "candidatePoolsMs": 79.7,
+          "packageIndexMs": 867.1,
+          "packageSeedsMs": 2286.5,
+          "directCompletionMs": 254107.7,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.1,
+          "totalFindBuildsMs": 257463.0
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

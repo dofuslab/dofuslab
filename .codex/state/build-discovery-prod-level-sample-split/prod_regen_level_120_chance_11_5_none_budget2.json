@@ -1,0 +1,277 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:21:27.041294+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_120_chance_11_5_none_budget2",
+        "className": "Iop",
+        "level": 120,
+        "element": "chance",
+        "budgetTier": 2,
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 120,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 11,
+        "mpTarget": 5,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1436.03,
+        "weightedStatScore": 2565.8,
+        "utilityStatScore": 270.48,
+        "genericDamageScore": 2454.45,
+        "rawRotationDamageScore": 1354.38,
+        "spellDamageScore": 1354.38,
+        "profileBaselineDamageScore": 1655.42,
+        "profileRelativeDamage": 0.8182,
+        "weaponDamageScore": 75.69,
+        "survivabilityScore": 61.04,
+        "weakestElementEhp": 1895.19,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Chance": 298,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 4,
+          "Chance": 1123,
+          "Power": 200,
+          "Vitality": 1911,
+          "Damage": 25,
+          "Water Damage": 20,
+          "Critical": 14,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Khardboard Set": 3,
+          "Ancestral Set": 5
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "8465",
+            "internalId": null,
+            "name": "Ancestral Torc",
+            "type": "Amulet",
+            "level": 110,
+            "set": "Ancestral Set"
+          },
+          "belt": {
+            "id": "8468",
+            "internalId": null,
+            "name": "Ancestral Treebelt",
+            "type": "Belt",
+            "level": 111,
+            "set": "Ancestral Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "ring_1": {
+            "id": "8466",
+            "internalId": null,
+            "name": "Ancestral Ring",
+            "type": "Ring",
+            "level": 113,
+            "set": "Ancestral Set"
+          },
+          "boots": {
+            "id": "8467",
+            "internalId": null,
+            "name": "Ancestral Shin Guards",
+            "type": "Boots",
+            "level": 110,
+            "set": "Ancestral Set"
+          },
+          "hat": {
+            "id": "8463",
+            "internalId": null,
+            "name": "Ancestral Treechelmet",
+            "type": "Hat",
+            "level": 114,
+            "set": "Ancestral Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "ring_2": {
+            "id": "25753",
+            "internalId": null,
+            "name": "Bontarian Rat Ring",
+            "type": "Ring",
+            "level": 110,
+            "set": null
+          },
+          "pet": {
+            "id": "33037",
+            "internalId": null,
+            "name": "Indigo and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13782",
+            "internalId": null,
+            "name": "Water Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12715",
+            "internalId": null,
+            "name": "Player",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13767",
+            "internalId": null,
+            "name": "Tease",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1436.03,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 11,
+          "MP": 6,
+          "Range": 4,
+          "Chance": 1123,
+          "Power": 200,
+          "Vitality": 1911,
+          "Damage": 25,
+          "Water Damage": 20,
+          "Critical": 14,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Khardboard Set": 3,
+          "Ancestral Set": 5
+        },
+        "exos": {},
+        "items": [
+          "Ancestral Torc",
+          "Ancestral Treebelt",
+          "Khardboard Goultard",
+          "Khardboard Bowisse's Shield",
+          "Ancestral Ring",
+          "Bontarian Rat Ring",
+          "Ancestral Shin Guards",
+          "Ancestral Treechelmet",
+          "Khardboard Dazzling Cloak",
+          "Indigo and Ivory Dragoturkey",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Water Wrecker",
+          "Player",
+          "Tease"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 221901.0,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 135.3,
+          "candidatePoolsMs": 107.4,
+          "packageIndexMs": 1599.0,
+          "packageSeedsMs": 2506.5,
+          "directCompletionMs": 217544.6,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 3.0,
+          "totalFindBuildsMs": 221895.8
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

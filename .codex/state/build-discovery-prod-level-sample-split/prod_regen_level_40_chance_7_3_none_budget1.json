@@ -1,0 +1,212 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:02:36.186824+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_40_chance_7_3_none_budget1",
+        "className": "Iop",
+        "level": 40,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 40,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 586.88,
+        "weightedStatScore": 869.1,
+        "utilityStatScore": 138.8,
+        "genericDamageScore": 975.4,
+        "rawRotationDamageScore": 413.18,
+        "spellDamageScore": 413.18,
+        "profileBaselineDamageScore": 1270.81,
+        "profileRelativeDamage": 0.3251,
+        "weaponDamageScore": 27.27,
+        "survivabilityScore": 9.15,
+        "weakestElementEhp": 301.0,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Chance": 147,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 432,
+          "Power": 70,
+          "Vitality": 301,
+          "Damage": 4,
+          "Water Damage": 15,
+          "Critical": 5,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Microset": 4
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "15995",
+            "internalId": null,
+            "name": "Pearl Amulet",
+            "type": "Amulet",
+            "level": 37,
+            "set": "Microset"
+          },
+          "ring_1": {
+            "id": "15992",
+            "internalId": null,
+            "name": "Tinkly Bell Ring",
+            "type": "Ring",
+            "level": 36,
+            "set": "Microset"
+          },
+          "hat": {
+            "id": "15994",
+            "internalId": null,
+            "name": "Nut Helmet",
+            "type": "Hat",
+            "level": 40,
+            "set": "Microset"
+          },
+          "cloak": {
+            "id": "15993",
+            "internalId": null,
+            "name": "Match Cape",
+            "type": "Cloak",
+            "level": 38,
+            "set": "Microset"
+          },
+          "belt": {
+            "id": "156",
+            "internalId": null,
+            "name": "Power Belt",
+            "type": "Belt",
+            "level": 31,
+            "set": null
+          },
+          "weapon": {
+            "id": "1368",
+            "internalId": null,
+            "name": "Arson Fire Lance",
+            "type": "Lance",
+            "level": 29,
+            "set": null
+          },
+          "shield": {
+            "id": "18687",
+            "internalId": null,
+            "name": "Akwadala Shield",
+            "type": "Shield",
+            "level": 40,
+            "set": "Akwadala Set"
+          },
+          "ring_2": {
+            "id": "1495",
+            "internalId": null,
+            "name": "Soff Ring",
+            "type": "Ring",
+            "level": 36,
+            "set": null
+          },
+          "boots": {
+            "id": "2374",
+            "internalId": null,
+            "name": "Tarsy's Boots",
+            "type": "Boots",
+            "level": 38,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 586.88,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 7,
+          "MP": 3,
+          "Range": 0,
+          "Chance": 432,
+          "Power": 70,
+          "Vitality": 301,
+          "Damage": 4,
+          "Water Damage": 15,
+          "Critical": 5,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Microset": 4
+        },
+        "exos": {},
+        "items": [
+          "Pearl Amulet",
+          "Power Belt",
+          "Arson Fire Lance",
+          "Akwadala Shield",
+          "Tinkly Bell Ring",
+          "Soff Ring",
+          "Tarsy's Boots",
+          "Nut Helmet",
+          "Match Cape"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 7298.7,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 134.5,
+          "candidatePoolsMs": 61.6,
+          "packageIndexMs": 42.3,
+          "packageSeedsMs": 320.3,
+          "directCompletionMs": 6739.2,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 0.2,
+          "totalFindBuildsMs": 7298.2
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

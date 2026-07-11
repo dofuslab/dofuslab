@@ -1,0 +1,277 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:21:27.041294+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_130_agility_12_5_1_budget3",
+        "className": "Iop",
+        "level": 130,
+        "element": "agility",
+        "budgetTier": 3,
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 130,
+        "elements": [
+          "agility"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 5,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 1561.41,
+        "weightedStatScore": 2656.56,
+        "utilityStatScore": 255.07,
+        "genericDamageScore": 2797.36,
+        "rawRotationDamageScore": 1470.79,
+        "spellDamageScore": 1344.58,
+        "profileBaselineDamageScore": 1577.33,
+        "profileRelativeDamage": 0.9325,
+        "weaponDamageScore": 146.17,
+        "survivabilityScore": 47.52,
+        "weakestElementEhp": 1569.18,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Agility": 311,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 3,
+          "Agility": 1061,
+          "Power": 170,
+          "Vitality": 1451,
+          "Damage": 0,
+          "Air Damage": 61,
+          "Critical": 25,
+          "Critical Damage": 70
+        },
+        "sets": {
+          "Khardboard Set": 4,
+          "Vagabond Dreggon Set": 3
+        },
+        "exos": {},
+        "items": {
+          "shield": {
+            "id": "27280",
+            "internalId": null,
+            "name": "Khardboard Bowisse's Shield",
+            "type": "Shield",
+            "level": 100,
+            "set": "Khardboard Set"
+          },
+          "boots": {
+            "id": "27278",
+            "internalId": null,
+            "name": "Khardboard Getas",
+            "type": "Boots",
+            "level": 125,
+            "set": "Khardboard Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "27267",
+            "internalId": null,
+            "name": "Khardboard Dazzling Cloak",
+            "type": "Cloak",
+            "level": 75,
+            "set": "Khardboard Set"
+          },
+          "amulet": {
+            "id": "8290",
+            "internalId": null,
+            "name": "Dreggon Amulet",
+            "type": "Amulet",
+            "level": 124,
+            "set": "Vagabond Dreggon Set"
+          },
+          "belt": {
+            "id": "8288",
+            "internalId": null,
+            "name": "Dreggon Belt",
+            "type": "Belt",
+            "level": 126,
+            "set": "Vagabond Dreggon Set"
+          },
+          "weapon": {
+            "id": "8296",
+            "internalId": null,
+            "name": "Dreggon Wand",
+            "type": "Wand",
+            "level": 124,
+            "set": "Vagabond Dreggon Set"
+          },
+          "ring_1": {
+            "id": "12085",
+            "internalId": null,
+            "name": "Mastic Ring",
+            "type": "Ring",
+            "level": 127,
+            "set": "Mastic Set"
+          },
+          "ring_2": {
+            "id": "25752",
+            "internalId": null,
+            "name": "Brakmarian Rat Ring",
+            "type": "Ring",
+            "level": 110,
+            "set": null
+          },
+          "pet": {
+            "id": "7709",
+            "internalId": null,
+            "name": "Yellow Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "737",
+            "internalId": null,
+            "name": "Emerald Dofus",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13785",
+            "internalId": null,
+            "name": "Air Wrecker",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "12686",
+            "internalId": null,
+            "name": "Air Destroyer",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13764",
+            "internalId": null,
+            "name": "Gymnast",
+            "type": "Trophy",
+            "level": 100,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 1561.41,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 12,
+          "MP": 5,
+          "Range": 3,
+          "Agility": 1061,
+          "Power": 170,
+          "Vitality": 1451,
+          "Damage": 0,
+          "Air Damage": 61,
+          "Critical": 25,
+          "Critical Damage": 70
+        },
+        "sets": {
+          "Khardboard Set": 4,
+          "Vagabond Dreggon Set": 3
+        },
+        "exos": {},
+        "items": [
+          "Dreggon Amulet",
+          "Dreggon Belt",
+          "Dreggon Wand",
+          "Khardboard Bowisse's Shield",
+          "Mastic Ring",
+          "Brakmarian Rat Ring",
+          "Khardboard Getas",
+          "Khardboard Gobball Headgear",
+          "Khardboard Dazzling Cloak",
+          "Yellow Piwin",
+          "Crimson Dofus",
+          "Dolmanax",
+          "Emerald Dofus",
+          "Air Wrecker",
+          "Air Destroyer",
+          "Gymnast"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 261802.3,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 119.6,
+          "candidatePoolsMs": 98.2,
+          "packageIndexMs": 1613.0,
+          "packageSeedsMs": 2497.8,
+          "directCompletionMs": 257466.0,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.8,
+          "totalFindBuildsMs": 261797.4
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

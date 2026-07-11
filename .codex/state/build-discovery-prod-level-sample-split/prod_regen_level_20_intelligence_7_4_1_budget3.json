@@ -1,0 +1,231 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T02:52:01.786130+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_20_intelligence_7_4_1_budget3",
+        "className": "Iop",
+        "level": 20,
+        "element": "intelligence",
+        "budgetTier": 3,
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 20,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 3,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 532.58,
+        "weightedStatScore": 802.72,
+        "utilityStatScore": 151.05,
+        "genericDamageScore": 834.33,
+        "rawRotationDamageScore": 320.96,
+        "spellDamageScore": 316.62,
+        "profileBaselineDamageScore": 1154.08,
+        "profileRelativeDamage": 0.2781,
+        "weaponDamageScore": 28.07,
+        "survivabilityScore": 6.08,
+        "weakestElementEhp": 194.37,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 95,
+          "Vitality": 0
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 1,
+          "Intelligence": 462,
+          "Power": 10,
+          "Vitality": 205,
+          "Damage": 0,
+          "Fire Damage": 26,
+          "Critical": 4,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Bearman Set": 7
+        },
+        "exos": {
+          "MP": {
+            "itemId": "6723",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "6723",
+            "internalId": null,
+            "name": "Bearman's Necklace",
+            "type": "Amulet",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "belt": {
+            "id": "6724",
+            "internalId": null,
+            "name": "Bearman's Belt",
+            "type": "Belt",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "weapon": {
+            "id": "6725",
+            "internalId": null,
+            "name": "Bearman's Staff",
+            "type": "Staff",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "ring_1": {
+            "id": "6722",
+            "internalId": null,
+            "name": "Bearman's Wedding Ring",
+            "type": "Ring",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "boots": {
+            "id": "6721",
+            "internalId": null,
+            "name": "Bearman's Boots",
+            "type": "Boots",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "hat": {
+            "id": "6719",
+            "internalId": null,
+            "name": "Bearman's Headgear",
+            "type": "Hat",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "cloak": {
+            "id": "6720",
+            "internalId": null,
+            "name": "Bearman's Cloak",
+            "type": "Cloak",
+            "level": 20,
+            "set": "Bearman Set"
+          },
+          "shield": {
+            "id": "18666",
+            "internalId": null,
+            "name": "Gobball Shield",
+            "type": "Shield",
+            "level": 20,
+            "set": "Gobball Set"
+          },
+          "ring_2": {
+            "id": "8219",
+            "internalId": null,
+            "name": "Red Piwi Ring",
+            "type": "Ring",
+            "level": 10,
+            "set": "Red Piwi Set"
+          },
+          "pet": {
+            "id": "11971",
+            "internalId": null,
+            "name": "Teddybearbarian",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 532.58,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 7,
+          "MP": 4,
+          "Range": 1,
+          "Intelligence": 462,
+          "Power": 10,
+          "Vitality": 205,
+          "Damage": 0,
+          "Fire Damage": 26,
+          "Critical": 4,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Bearman Set": 7
+        },
+        "exos": {
+          "MP": {
+            "itemId": "6723",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Bearman's Necklace",
+          "Bearman's Belt",
+          "Bearman's Staff",
+          "Gobball Shield",
+          "Bearman's Wedding Ring",
+          "Red Piwi Ring",
+          "Bearman's Boots",
+          "Bearman's Headgear",
+          "Bearman's Cloak",
+          "Teddybearbarian"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 3884.2,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 273.7,
+          "candidatePoolsMs": 35.9,
+          "packageIndexMs": 18.5,
+          "packageSeedsMs": 28.5,
+          "directCompletionMs": 3527.0,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 0.2,
+          "totalFindBuildsMs": 3883.9
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

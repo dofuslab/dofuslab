@@ -1,0 +1,281 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:21:27.041294+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_60_intelligence_10_4_2_budget2",
+        "className": "Iop",
+        "level": 60,
+        "element": "intelligence",
+        "budgetTier": 2,
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 2
+      },
+      "query": {
+        "className": "Iop",
+        "level": 60,
+        "elements": [
+          "intelligence"
+        ],
+        "mode": "pvm",
+        "apTarget": 10,
+        "mpTarget": 4,
+        "rangeTarget": 2,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 853.28,
+        "weightedStatScore": 1416.88,
+        "utilityStatScore": 219.58,
+        "genericDamageScore": 1373.03,
+        "rawRotationDamageScore": 587.45,
+        "spellDamageScore": 587.45,
+        "profileBaselineDamageScore": 1283.54,
+        "profileRelativeDamage": 0.4577,
+        "weaponDamageScore": 38.72,
+        "survivabilityScore": 15.84,
+        "weakestElementEhp": 521.43,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Intelligence": 197,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 4,
+          "Intelligence": 652,
+          "Power": 70,
+          "Vitality": 511,
+          "Damage": 0,
+          "Fire Damage": 43,
+          "Critical": 19,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Rhineetleset": 3,
+          "Khardboard Set": 2,
+          "Jellix Set": 2,
+          "Brrrbli Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "13893",
+            "internalId": null,
+            "name": "Brrrito Amulet",
+            "type": "Amulet",
+            "level": 57,
+            "set": "Brrrbli Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "shield": {
+            "id": "34257",
+            "internalId": null,
+            "name": "Rhineetle Shield",
+            "type": "Shield",
+            "level": 60,
+            "set": "Rhineetleset"
+          },
+          "ring_1": {
+            "id": "13891",
+            "internalId": null,
+            "name": "Brrrito Ring",
+            "type": "Ring",
+            "level": 55,
+            "set": "Brrrbli Set"
+          },
+          "boots": {
+            "id": "34255",
+            "internalId": null,
+            "name": "Rhineetle Boots",
+            "type": "Boots",
+            "level": 60,
+            "set": "Rhineetleset"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "cloak": {
+            "id": "34256",
+            "internalId": null,
+            "name": "Rhineetle Cloak",
+            "type": "Cloak",
+            "level": 60,
+            "set": "Rhineetleset"
+          },
+          "belt": {
+            "id": "2471",
+            "internalId": null,
+            "name": "Jellibelt",
+            "type": "Belt",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "ring_2": {
+            "id": "2469",
+            "internalId": null,
+            "name": "Gelano",
+            "type": "Ring",
+            "level": 60,
+            "set": "Jellix Set"
+          },
+          "pet": {
+            "id": "33273",
+            "internalId": null,
+            "name": "Coral and Golden Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "13778",
+            "internalId": null,
+            "name": "Minor Fire Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "12718",
+            "internalId": null,
+            "name": "Minor Scholar",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12694",
+            "internalId": null,
+            "name": "Minor Fire Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13760",
+            "internalId": null,
+            "name": "Minor Brainbox",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13823",
+            "internalId": null,
+            "name": "Minor Dynamo",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13831",
+            "internalId": null,
+            "name": "Twitcher",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 853.28,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 10,
+          "MP": 4,
+          "Range": 4,
+          "Intelligence": 652,
+          "Power": 70,
+          "Vitality": 511,
+          "Damage": 0,
+          "Fire Damage": 43,
+          "Critical": 19,
+          "Critical Damage": 0
+        },
+        "sets": {
+          "Rhineetleset": 3,
+          "Khardboard Set": 2,
+          "Jellix Set": 2,
+          "Brrrbli Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Brrrito Amulet",
+          "Jellibelt",
+          "Khardboard Goultard",
+          "Rhineetle Shield",
+          "Brrrito Ring",
+          "Gelano",
+          "Rhineetle Boots",
+          "Khardboard Gobball Headgear",
+          "Rhineetle Cloak",
+          "Coral and Golden Seemyool",
+          "Minor Fire Wrecker",
+          "Minor Scholar",
+          "Minor Fire Destroyer",
+          "Minor Brainbox",
+          "Minor Dynamo",
+          "Twitcher"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 348830.8,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 269.8,
+          "candidatePoolsMs": 77.5,
+          "packageIndexMs": 391.6,
+          "packageSeedsMs": 2014.9,
+          "directCompletionMs": 346072.3,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.9,
+          "totalFindBuildsMs": 348828.0
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T02:36:56.558884+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_200_strength_12_6_3_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 3
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 12,
+        "mpTarget": 6,
+        "rangeTarget": 3,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 2472.48,
+        "weightedStatScore": 4716.73,
+        "utilityStatScore": 410.81,
+        "genericDamageScore": 4247.12,
+        "rawRotationDamageScore": 3891.22,
+        "spellDamageScore": 3891.22,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.4157,
+        "weaponDamageScore": 241.99,
+        "survivabilityScore": 150.46,
+        "weakestElementEhp": 4295.84,
+        "apStrategy": "ochre_plus_one",
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1488,
+          "Power": 260,
+          "Vitality": 3853,
+          "Damage": 0,
+          "Earth Damage": 105,
+          "Critical": 47,
+          "Critical Damage": 102,
+          "Neutral Damage": 89
+        },
+        "sets": {
+          "Sleeping Venerable One Set": 2,
+          "Bleeding Heart Set": 3,
+          "Corruption Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "22209",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "19244",
+            "slot": "amulet"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "19244",
+            "internalId": null,
+            "name": "Amulet of the Bleeding Heart",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "31800",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "22206",
+            "internalId": null,
+            "name": "Corruption's Engagement Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "boots": {
+            "id": "19245",
+            "internalId": null,
+            "name": "Boots of the Bleeding Heart",
+            "type": "Boots",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "hat": {
+            "id": "31798",
+            "internalId": null,
+            "name": "Sleeping Venerable One's Horns",
+            "type": "Hat",
+            "level": 200,
+            "set": "Sleeping Venerable One Set"
+          },
+          "cloak": {
+            "id": "19246",
+            "internalId": null,
+            "name": "Cape of the Bleeding Heart",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "shield": {
+            "id": "30858",
+            "internalId": null,
+            "name": "Mama Ayuto's Parasail",
+            "type": "Shield",
+            "level": 200,
+            "set": "Mama Ayuto Set"
+          },
+          "pet": {
+            "id": "33044",
+            "internalId": null,
+            "name": "Ivory and Crimson Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "22020",
+            "internalId": null,
+            "name": "Prywitchment",
+            "type": "Prysmaradite",
+            "level": 200,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2472.48,
+        "apStrategy": "ochre_plus_one",
+        "totals": {
+          "AP": 12,
+          "MP": 6,
+          "Range": 4,
+          "Strength": 1488,
+          "Power": 260,
+          "Vitality": 3853,
+          "Damage": 0,
+          "Earth Damage": 105,
+          "Critical": 47,
+          "Critical Damage": 102,
+          "Neutral Damage": 89
+        },
+        "sets": {
+          "Sleeping Venerable One Set": 2,
+          "Bleeding Heart Set": 3,
+          "Corruption Set": 3
+        },
+        "exos": {
+          "AP": {
+            "itemId": "22209",
+            "slot": "belt"
+          },
+          "MP": {
+            "itemId": "19244",
+            "slot": "amulet"
+          }
+        },
+        "items": [
+          "Amulet of the Bleeding Heart",
+          "Corruption's Brambelt",
+          "Sleeping Venerable One's Bow",
+          "Mama Ayuto's Parasail",
+          "Corruption's Ring",
+          "Corruption's Engagement Ring",
+          "Boots of the Bleeding Heart",
+          "Sleeping Venerable One's Horns",
+          "Cape of the Bleeding Heart",
+          "Ivory and Crimson Dragoturkey",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Crimson Dofus",
+          "Prywitchment",
+          "Dolmanax",
+          "Cloudy Dofus"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 166969.8,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 259.0,
+          "candidatePoolsMs": 62.5,
+          "packageIndexMs": 449.1,
+          "packageSeedsMs": 8370.0,
+          "directCompletionMs": 157817.6,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 2.0,
+          "totalFindBuildsMs": 166960.2
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}

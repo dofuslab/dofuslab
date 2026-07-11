@@ -1,0 +1,279 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T01:02:36.186824+00:00",
+  "scope": "Iop prod-level-sample generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.PROD_LEVEL_SAMPLE_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py"
+  },
+  "targetCount": 1,
+  "generatedCount": 1,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "prod_regen_level_50_strength_8_4_1_budget2",
+        "className": "Iop",
+        "level": 50,
+        "element": "strength",
+        "budgetTier": 2,
+        "apTarget": 8,
+        "mpTarget": 4,
+        "rangeTarget": 1
+      },
+      "query": {
+        "className": "Iop",
+        "level": 50,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 8,
+        "mpTarget": 4,
+        "rangeTarget": 1,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 2,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": []
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "bestBuild": {
+        "score": 881.51,
+        "weightedStatScore": 1551.14,
+        "utilityStatScore": 173.0,
+        "genericDamageScore": 1528.15,
+        "rawRotationDamageScore": 741.03,
+        "spellDamageScore": 630.25,
+        "profileBaselineDamageScore": 1454.75,
+        "profileRelativeDamage": 0.5094,
+        "weaponDamageScore": 77.08,
+        "survivabilityScore": 20.84,
+        "weakestElementEhp": 682.35,
+        "apStrategy": "level_diversity_flexible_ap",
+        "baseAllocation": {
+          "Strength": 172,
+          "Vitality": 1
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 2,
+          "Strength": 587,
+          "Power": 20,
+          "Vitality": 696,
+          "Damage": 19,
+          "Earth Damage": 21,
+          "Critical": 27,
+          "Critical Damage": 50,
+          "Neutral Damage": 3
+        },
+        "sets": {
+          "Khardboard Set": 2,
+          "Slump Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "9659",
+            "internalId": null,
+            "name": "Slump Necklace",
+            "type": "Amulet",
+            "level": 43,
+            "set": "Slump Set"
+          },
+          "weapon": {
+            "id": "27268",
+            "internalId": null,
+            "name": "Khardboard Goultard",
+            "type": "Sword",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "boots": {
+            "id": "9656",
+            "internalId": null,
+            "name": "Slump Rollers",
+            "type": "Boots",
+            "level": 43,
+            "set": "Slump Set"
+          },
+          "hat": {
+            "id": "27282",
+            "internalId": null,
+            "name": "Khardboard Gobball Headgear",
+            "type": "Hat",
+            "level": 50,
+            "set": "Khardboard Set"
+          },
+          "belt": {
+            "id": "968",
+            "internalId": null,
+            "name": "Dazzling Belt",
+            "type": "Belt",
+            "level": 50,
+            "set": "Dazzling Set"
+          },
+          "shield": {
+            "id": "18682",
+            "internalId": null,
+            "name": "Treechnid Shield",
+            "type": "Shield",
+            "level": 45,
+            "set": null
+          },
+          "ring_1": {
+            "id": "11058",
+            "internalId": null,
+            "name": "Pynekone Ring",
+            "type": "Ring",
+            "level": 43,
+            "set": "Pynekone Set"
+          },
+          "ring_2": {
+            "id": "2420",
+            "internalId": null,
+            "name": "Ringtree",
+            "type": "Ring",
+            "level": 40,
+            "set": "Treechnid Set"
+          },
+          "cloak": {
+            "id": "1500",
+            "internalId": null,
+            "name": "Carpet Cape",
+            "type": "Cloak",
+            "level": 43,
+            "set": null
+          },
+          "pet": {
+            "id": "7712",
+            "internalId": null,
+            "name": "Green Piwin",
+            "type": "Pet",
+            "level": 20,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "16191",
+            "internalId": null,
+            "name": "Minor Miracle Man",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "16252",
+            "internalId": null,
+            "name": "Minor Earth Devastator",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16330",
+            "internalId": null,
+            "name": "Minor Vigour",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13772",
+            "internalId": null,
+            "name": "Minor Earth Wrecker",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16337",
+            "internalId": null,
+            "name": "Minor Bloodthirst",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "12748",
+            "internalId": null,
+            "name": "Minor Earth Destroyer",
+            "type": "Trophy",
+            "level": 50,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 881.51,
+        "apStrategy": "level_diversity_flexible_ap",
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 2,
+          "Strength": 587,
+          "Power": 20,
+          "Vitality": 696,
+          "Damage": 19,
+          "Earth Damage": 21,
+          "Critical": 27,
+          "Critical Damage": 50,
+          "Neutral Damage": 3
+        },
+        "sets": {
+          "Khardboard Set": 2,
+          "Slump Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Slump Necklace",
+          "Dazzling Belt",
+          "Khardboard Goultard",
+          "Treechnid Shield",
+          "Pynekone Ring",
+          "Ringtree",
+          "Slump Rollers",
+          "Khardboard Gobball Headgear",
+          "Carpet Cape",
+          "Green Piwin",
+          "Minor Miracle Man",
+          "Minor Earth Devastator",
+          "Minor Vigour",
+          "Minor Earth Wrecker",
+          "Minor Bloodthirst",
+          "Minor Earth Destroyer"
+        ]
+      },
+      "warnings": [],
+      "diagnostics": {
+        "elapsedMs": 89672.3,
+        "cacheHit": false,
+        "timings": {
+          "loadDataMs": 113.6,
+          "candidatePoolsMs": 60.3,
+          "packageIndexMs": 359.0,
+          "packageSeedsMs": 2055.7,
+          "directCompletionMs": 87078.9,
+          "beamSearchMs": 0.0,
+          "rankAndDiversifyMs": 1.8,
+          "totalFindBuildsMs": 89669.3
+        },
+        "resultCount": 1,
+        "fallbackBudget": null
+      },
+      "cache": {
+        "status": "miss",
+        "storage": "process_memory"
+      },
+      "datasetVersion": "2026-07-09T05:31:19.019027+00:00",
+      "solverVersion": "build-discovery-prototype-v1"
+    }
+  ]
+}
