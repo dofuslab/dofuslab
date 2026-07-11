@@ -12,13 +12,73 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.build_discovery_level_diversity_matrix import (  # noqa: E402
     REPORT_VERSION,
+    query_for_target,
+    target_summary,
     targets_for_set,
+    validate_best_build,
+)
+from oneoff.build_discovery_prototype import (  # noqa: E402
+    SLOTS,
+    availability_tier_for_item,
+    effective_exo_policy,
+    query_summary,
 )
 
 
 def load_json(path: str | Path) -> dict[str, Any]:
     with open(path, encoding="utf-8") as file:
         return json.load(file)
+
+
+def slot_types_by_name() -> dict[str, tuple[str, ...]]:
+    return dict(SLOTS)
+
+
+def validate_full_build_artifact(result: dict[str, Any], target_by_id: dict[str, Any]) -> list[str]:
+    failures: list[str] = []
+    target_id = result.get("target", {}).get("id", "unknown")
+    target = target_by_id.get(target_id)
+    if target is None:
+        return failures
+
+    query = query_for_target(target)
+    if result.get("target") != target_summary(target):
+        failures.append(f"{target_id}: target does not match current target definition")
+    if result.get("query") != query_summary(query):
+        failures.append(f"{target_id}: query does not match current query definition")
+
+    best_build = result.get("bestBuild")
+    if not isinstance(best_build, dict):
+        failures.append(f"{target_id}: missing full bestBuild artifact")
+        return failures
+
+    for error in validate_best_build(target, query, best_build):
+        failures.append(f"{target_id}: current-code validation failed: {error}")
+
+    slot_types = slot_types_by_name()
+    seen_item_ids: set[str] = set()
+    for slot_name, item in (best_build.get("items") or {}).items():
+        allowed_types = slot_types.get(slot_name)
+        if allowed_types is None:
+            failures.append(f"{target_id}: unknown item slot {slot_name}")
+            continue
+        item_type = item.get("type") or item.get("itemType")
+        if item_type not in allowed_types:
+            failures.append(f"{target_id}: {slot_name} item type {item_type} not in {allowed_types}")
+        item_id = item.get("id") or item.get("dofusID")
+        if item_id:
+            if item_id in seen_item_ids:
+                failures.append(f"{target_id}: duplicate item id {item_id}")
+            seen_item_ids.add(item_id)
+        tier = availability_tier_for_item(item)
+        if tier > query.budget_tier:
+            failures.append(f"{target_id}: {slot_name} item availability tier {tier} exceeds budget tier {query.budget_tier}")
+
+    exos = best_build.get("exos") or {}
+    if effective_exo_policy(query) == "none" and exos:
+        failures.append(f"{target_id}: generated exos present under effective exoPolicy=none")
+
+    return failures
 
 
 def validate_report(
@@ -33,7 +93,9 @@ def validate_report(
             f"reportVersion is {report.get('reportVersion')}, expected {REPORT_VERSION}"
         )
 
-    expected_ids = {target.name for target in targets_for_set(target_set)}
+    targets = targets_for_set(target_set)
+    target_by_id = {target.name: target for target in targets}
+    expected_ids = set(target_by_id)
     results = report.get("results", [])
     actual_ids = {
         result.get("target", {}).get("id")
@@ -86,6 +148,7 @@ def validate_report(
                 failures.append(f"{target_id}: missing numeric totals.{stat}")
         if not summary.get("items"):
             failures.append(f"{target_id}: bestBuildSummary.items is empty")
+        failures.extend(validate_full_build_artifact(result, target_by_id))
 
     return failures
 

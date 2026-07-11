@@ -1,15 +1,41 @@
 import unittest
 
 from check_build_discovery_level_diversity_matrix import validate_report
-from build_discovery_level_diversity_matrix import LEVEL_DIVERSITY_TARGETS, REPORT_VERSION, targets_for_set
+from build_discovery_level_diversity_matrix import (
+    LEVEL_DIVERSITY_TARGETS,
+    REPORT_VERSION,
+    query_for_target,
+    query_summary,
+    target_summary,
+    targets_for_set,
+)
 
 
 def valid_result(target):
+    query = query_for_target(target)
+    best_build = {
+        "score": 100.0,
+        "totals": {"AP": target.ap, "MP": target.mp, "Range": target.range_target or 0, "Vitality": 1000},
+        "sets": {},
+        "exos": {},
+        "conditionFailures": [],
+        "items": {
+            "amulet": {
+                "id": f"item-{target.name}",
+                "name": "Example Amulet",
+                "type": "Amulet",
+                "level": target.level,
+                "stats": [],
+            }
+        },
+    }
     return {
-        "target": {"id": target.name},
+        "target": target_summary(target),
+        "query": query_summary(query),
         "status": "generated",
         "resultCount": 1,
         "validationErrors": [],
+        "bestBuild": best_build,
         "bestBuildSummary": {
             "score": 100.0,
             "totals": {"AP": target.ap, "MP": target.mp, "Range": target.range_target or 0, "Vitality": 1000},
@@ -205,6 +231,51 @@ class BuildDiscoveryLevelDiversityMatrixCheckTest(unittest.TestCase):
         self.assertTrue(any("invalidCount" in failure for failure in failures))
         self.assertTrue(any("status is invalid" in failure for failure in failures))
         self.assertTrue(any("validationErrors is not empty" in failure for failure in failures))
+
+    def test_validate_report_rejects_stale_query_identity(self):
+        report = valid_report()
+        report["results"][0]["query"]["budgetTier"] = 99
+
+        failures = validate_report(report)
+
+        self.assertTrue(any("query does not match current query definition" in failure for failure in failures))
+
+    def test_validate_report_rejects_missing_full_best_build(self):
+        report = valid_report()
+        report["results"][0].pop("bestBuild")
+
+        failures = validate_report(report)
+
+        self.assertTrue(any("missing full bestBuild artifact" in failure for failure in failures))
+
+    def test_validate_report_rejects_item_over_budget(self):
+        report = valid_report()
+        first_build = report["results"][0]["bestBuild"]
+        first_build["items"]["dofus_1"] = {
+            "id": "7754",
+            "dofusID": "7754",
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "stats": [],
+        }
+
+        failures = validate_report(report)
+
+        self.assertTrue(any("availability tier" in failure for failure in failures))
+
+    def test_validate_report_rejects_exos_when_policy_is_none(self):
+        report = valid_report()
+        tier_one_index = next(
+            index
+            for index, result in enumerate(report["results"])
+            if result["query"]["budgetTier"] == 1
+        )
+        report["results"][tier_one_index]["bestBuild"]["exos"] = {"AP": {"itemId": "item-id"}}
+
+        failures = validate_report(report)
+
+        self.assertTrue(any("generated exos present under effective exoPolicy=none" in failure for failure in failures))
 
 
 if __name__ == "__main__":

@@ -3226,6 +3226,30 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python -m py_compile server\scripts\build_discovery_ap_mp_range_grid_inventory.py server\scripts\test_build_discovery_ap_mp_range_grid_inventory.py`
   - `git diff --check`
 
+### 2026-07-10 Current-Code Matrix Artifact Verification
+
+- Strengthened `check_build_discovery_level_diversity_matrix.py` from a
+  count/shape checker into a current-code artifact verifier.
+- Generated rows now verify:
+  - target identity matches the current target definition
+  - query identity matches `query_for_target()`
+  - the full `bestBuild` artifact is present
+  - current `validate_best_build()` passes
+  - item slots use compatible item types
+  - duplicate item IDs are rejected
+  - item availability tiers do not exceed the requested budget tier
+  - generated exos are rejected when the effective exo policy is `none`
+- Existing historical artifacts checked successfully:
+  - `.codex/state/build-discovery-level-diversity-matrix.json`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-cap-4-matrix.json`
+    with `--allow-no-build`
+  - `.codex/state/build-discovery-ap-mp-range-grid-next-minimum-matrix.json`
+- This still proves artifact correctness, not best-build optimality; benchmark
+  gates remain a separate needed layer.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+  - `python -m py_compile server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix_check.py`
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range
