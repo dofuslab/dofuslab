@@ -3667,3 +3667,24 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
     unproven rows
 - Verification passed:
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-ap-mp-range-frontier-003-matrix.json --target-file /tmp/build-discovery-ap-mp-range-frontier-003-targets.json --target-file-limit 8 --target-file-prefix grid_frontier_003`
+
+### 2026-07-11 CP-SAT Pivot Checkpoint
+
+- Pivoted active work to `codex/build-discovery-cpsat-milestone2`.
+- Preserved old beam/frontier work:
+  - branch: `archive/build-discovery-beam-frontier`
+  - tag: `archive/build-discovery-beam-frontier-20260711`
+- Preserved the CP-SAT spike:
+  - branch: `codex/build-discovery-cpsat-experiment`
+  - tag: `archive/build-discovery-cpsat-spike-20260711`
+- Imported the isolated CP-SAT experiment file into this branch:
+  - `server/oneoff/build_discovery_cpsat_experiment.py`
+- Added `.codex/state/build-discovery-cpsat-pivot.md` to document:
+  - rollback paths
+  - Milestone 2 target grid
+  - QA assets to keep from the old beam loop
+  - old beam assets to treat as reference only
+  - OR-Tools dependency packaging as a separate risk/checkpoint
+- Added a static contract test for the CP-SAT experiment file without requiring
+  OR-Tools to be installed in the current environment:
+  - `server/scripts/test_build_discovery_cpsat_experiment.py`
