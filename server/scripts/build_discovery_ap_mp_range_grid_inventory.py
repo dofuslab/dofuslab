@@ -37,6 +37,7 @@ DEFAULT_ARTIFACTS = (
     ".codex/state/build-discovery-m3-level-coverage-4-sample-20260711.json",
     ".codex/state/build-discovery-m3-level-coverage-5-sample-20260711.json",
     ".codex/state/build-discovery-m3-next-level-sample-20260711.json",
+    ".codex/state/build-discovery-m3-prod-shaped-1-sample-20260711.json",
     ".codex/state/build-discovery-m3-prod-level-sample-optional-slots.json",
     ".codex/state/build-discovery-m3-profile-stress-1-sample-20260711.json",
     ".codex/state/build-discovery-m3-profile-stress-2-sample-20260711.json",

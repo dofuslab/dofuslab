@@ -352,6 +352,19 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
   availability this may be a real strong package, but it may also indicate set
   package/scoring bias. Human review should decide whether repeated Khardboard
   usage is acceptable or should be diversified/penalized.
+- Prod aggregate AP/MP/Range discovery is currently bracket-level only. It can
+  suggest realistic shapes like `10/6/4` at level 200 or `11/5/1` around
+  150-179, but it is not element-specific or budget-specific evidence.
+- Prod does not yet have the local `generation_request` table, so aggregate
+  prod discovery cannot currently exclude generated rows by provenance. Treat
+  the latest-2000 Iop aggregate as a popularity signal, not a clean human-only
+  benchmark source.
+- The full two-year prod aggregate timed out at `15s`; bounded aggregate
+  discovery should use sampled/latest windows or pre-aggregated approaches to
+  avoid loading prod.
+- Prod-shaped rows tend to be middle/AP/MP-heavy rather than Range 6. M3 still
+  needs explicit Range 6 corner-case samples because prod realism alone will
+  not cover the full valid AP/MP/Range surface.
 - CP-SAT excludes items whose conditions cannot be encoded by the current
   condition model. This is conservative: it may miss a legal item with an
   unsupported but satisfiable condition, but it prevents invalid

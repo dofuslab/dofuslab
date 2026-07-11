@@ -1,0 +1,186 @@
+{
+  "description": "M3 prod-shaped slice 1: targets selected from aggregate-only prod Iop AP/MP/Range shapes, with extra tier 3/4 budget coverage.",
+  "source": ".codex/state/build-discovery-prod-iop-ap-mp-range-aggregate-20260711.json",
+  "targets": [
+    {
+      "id": "prodshaped1_01_l30_intelligence_7_4_1_t2",
+      "level": 30,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 7,
+      "mpTarget": 4,
+      "rangeTarget": 1,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_02_l40_chance_8_3_0_t2",
+      "level": 40,
+      "element": "chance",
+      "budgetTier": 2,
+      "apTarget": 8,
+      "mpTarget": 3,
+      "rangeTarget": 0,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_03_l50_agility_9_5_0_t2",
+      "level": 50,
+      "element": "agility",
+      "budgetTier": 2,
+      "apTarget": 9,
+      "mpTarget": 5,
+      "rangeTarget": 0,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_04_l60_chance_10_4_3_t3",
+      "level": 60,
+      "element": "chance",
+      "budgetTier": 3,
+      "apTarget": 10,
+      "mpTarget": 4,
+      "rangeTarget": 3,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_05_l75_intelligence_9_4_1_t3",
+      "level": 75,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 9,
+      "mpTarget": 4,
+      "rangeTarget": 1,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_06_l90_agility_8_4_2_t2",
+      "level": 90,
+      "element": "agility",
+      "budgetTier": 2,
+      "apTarget": 8,
+      "mpTarget": 4,
+      "rangeTarget": 2,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_07_l98_chance_9_5_2_t3",
+      "level": 98,
+      "element": "chance",
+      "budgetTier": 3,
+      "apTarget": 9,
+      "mpTarget": 5,
+      "rangeTarget": 2,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_08_l110_intelligence_10_5_0_t2",
+      "level": 110,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 10,
+      "mpTarget": 5,
+      "rangeTarget": 0,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_09_l119_agility_10_6_0_t3",
+      "level": 119,
+      "element": "agility",
+      "budgetTier": 3,
+      "apTarget": 10,
+      "mpTarget": 6,
+      "rangeTarget": 0,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_10_l125_chance_11_6_1_t2",
+      "level": 125,
+      "element": "chance",
+      "budgetTier": 2,
+      "apTarget": 11,
+      "mpTarget": 6,
+      "rangeTarget": 1,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_11_l140_intelligence_10_4_2_t3",
+      "level": 140,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 10,
+      "mpTarget": 4,
+      "rangeTarget": 2,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_12_l150_agility_11_5_1_t2",
+      "level": 150,
+      "element": "agility",
+      "budgetTier": 2,
+      "apTarget": 11,
+      "mpTarget": 5,
+      "rangeTarget": 1,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_13_l160_chance_10_6_3_t3",
+      "level": 160,
+      "element": "chance",
+      "budgetTier": 3,
+      "apTarget": 10,
+      "mpTarget": 6,
+      "rangeTarget": 3,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_14_l175_intelligence_12_5_1_t4",
+      "level": 175,
+      "element": "intelligence",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 5,
+      "rangeTarget": 1,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_15_l180_agility_11_5_3_t2",
+      "level": 180,
+      "element": "agility",
+      "budgetTier": 2,
+      "apTarget": 11,
+      "mpTarget": 5,
+      "rangeTarget": 3,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_16_l190_chance_10_5_4_t3",
+      "level": 190,
+      "element": "chance",
+      "budgetTier": 3,
+      "apTarget": 10,
+      "mpTarget": 5,
+      "rangeTarget": 4,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_17_l199_intelligence_11_6_2_t3",
+      "level": 199,
+      "element": "intelligence",
+      "budgetTier": 3,
+      "apTarget": 11,
+      "mpTarget": 6,
+      "rangeTarget": 2,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "prodshaped1_18_l200_agility_10_6_4_t4",
+      "level": 200,
+      "element": "agility",
+      "budgetTier": 4,
+      "apTarget": 10,
+      "mpTarget": 6,
+      "rangeTarget": 4,
+      "damageSurvivabilityPreset": 3
+    }
+  ]
+}

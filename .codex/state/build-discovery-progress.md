@@ -6457,3 +6457,50 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker generation:
     `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-profile-stress-3-targets-20260711.json --output-json /tmp/build-discovery-m3-profile-stress-3-sample-20260711.json --output-md /tmp/build-discovery-m3-profile-stress-3-sample-20260711.md`
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-profile-stress-3-sample-20260711.json --target-file .codex/state/build-discovery-m3-profile-stress-3-targets-20260711.json --expected-solver cpsat --allow-no-build`
+
+### 2026-07-11 M3 Prod-Shaped Slice 1
+
+- Queried readonly prod for aggregate-only Iop AP/MP/Range shape frequencies:
+  - JSON: `.codex/state/build-discovery-prod-iop-ap-mp-range-aggregate-20260711.json`
+  - markdown: `.codex/state/build-discovery-prod-iop-ap-mp-range-aggregate-20260711.md`
+  - scope: latest `2000` Iop custom sets modified in the last `2 years`
+  - privacy: aggregate only; no custom set IDs, names, owners, or item lists
+  - generated rows could not be excluded because prod does not yet have the
+    local `generation_request` table
+  - the full 2-year aggregate hit the `15s` timeout, so the final query used a
+    bounded latest-2000 sample and completed in about `6.7s`
+- Generated and validated a prod-shaped target slice based on bracket-level
+  popular AP/MP/Range shapes, with tier `3`/`4` overlays for budget coverage:
+  - target file: `.codex/state/build-discovery-m3-prod-shaped-1-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-prod-shaped-1-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-prod-shaped-1-sample-20260711.md`
+  - generated: `18 / 18`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `18` `OPTIMAL`
+- Useful generated rows include:
+  - level `30` Intelligence tier `2` `7/4/1` generated exact `7/4/1`
+  - level `40` Chance tier `2` `8/3/0` generated exact `8/3/0`
+  - level `125` Chance tier `2` `11/6/1` generated `11/6/2`
+  - level `160` Chance tier `3` `10/6/3` generated `10/6/5`
+  - level `200` Agility tier `4` `10/6/4` generated exact `10/6/4`
+- Refreshed all-level inventory after adding the prod-shaped artifact:
+  - valid query rows: `665088`
+  - generated evidence rows: `306`
+  - attempted evidence rows: `333`
+  - proven no-build evidence rows: `27`
+  - resolved evidence rows: `333`
+  - unresolved rows: `664755`
+  - tier `3` generated evidence: `54`
+  - tier `4` generated evidence: `48`
+  - `mp_heavy` generated evidence: `37`
+  - `range_heavy` generated evidence: `13`
+- Reviewer guidance: this is a good M3 slice, but prod AP/MP/Range shapes are
+  bracket-level popularity signals, not element- or budget-specific proof.
+  Tier `3`/`4` rows here are coverage overlays, not prod-derived budget labels.
+  Future rare-shape rows should prefer higher-count prod shapes unless they are
+  intentionally testing edge diversity.
+- Verification passed:
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-prod-shaped-1-targets-20260711.json --output-json /tmp/build-discovery-m3-prod-shaped-1-sample-20260711.json --output-md /tmp/build-discovery-m3-prod-shaped-1-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-prod-shaped-1-sample-20260711.json --target-file .codex/state/build-discovery-m3-prod-shaped-1-targets-20260711.json --expected-solver cpsat --allow-no-build`
