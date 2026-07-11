@@ -1,0 +1,125 @@
+{
+  "description": "M3 profile-stress slice from inventory nextUnresolvedTargets, emphasizing cap, MP-heavy, and range-heavy rows after level-smoke sampling.",
+  "targets": [
+    {
+      "id": "profilestress1_01_l1_intelligence_cap_t2",
+      "level": 1,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress1_02_l99_intelligence_cap_t2",
+      "level": 99,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress1_03_l20_chance_cap_t4",
+      "level": 20,
+      "element": "chance",
+      "budgetTier": 4,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress1_04_l20_chance_cap_t3",
+      "level": 20,
+      "element": "chance",
+      "budgetTier": 3,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress1_05_l50_agility_cap_t2",
+      "level": 50,
+      "element": "agility",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress1_06_l2_intelligence_cap_t2",
+      "level": 2,
+      "element": "intelligence",
+      "budgetTier": 2,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress1_07_l3_chance_mpheavy_t4",
+      "level": 3,
+      "element": "chance",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": 1,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress1_08_l4_agility_rangeheavy_t4",
+      "level": 4,
+      "element": "agility",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 5,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress1_09_l8_agility_cap_t3",
+      "level": 8,
+      "element": "agility",
+      "budgetTier": 3,
+      "apTarget": 12,
+      "mpTarget": 6,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress1_10_l10_intelligence_rangeheavy_t4",
+      "level": 10,
+      "element": "intelligence",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 4,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress1_11_l15_chance_mpheavy_t4",
+      "level": 15,
+      "element": "chance",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 6,
+      "rangeTarget": null,
+      "damageSurvivabilityPreset": 3
+    },
+    {
+      "id": "profilestress1_12_l16_agility_rangeheavy_t4",
+      "level": 16,
+      "element": "agility",
+      "budgetTier": 4,
+      "apTarget": 6,
+      "mpTarget": 3,
+      "rangeTarget": 6,
+      "damageSurvivabilityPreset": 3
+    }
+  ]
+}

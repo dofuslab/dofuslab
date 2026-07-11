@@ -287,9 +287,17 @@ This file lists the working assumptions embedded in the Build Discovery PRD, pro
 - Tiny-level stress targets such as level 2 `12/6/6`, level 3 `6/6/None`, and
   level 4 `6/3/6` are valid query-shape tests but are expected to return
   structured no-build results when CP-SAT proves infeasibility.
+- The profile-stress slice strengthens that assumption: current evidence proves
+  infeasible several tiny/low-level cap, MP-heavy, and range-heavy rows such as
+  level 1 Intelligence `12/6/6` tier 2, level 2 Intelligence `12/6/6` tier 2,
+  level 3 Chance `6/6/1` tier 4, and level 4 Agility `6/5/6` tier 4.
 - Pre-100 cap targets can require higher-budget assumptions. For example,
   level 99 `12/6/6` currently needs tier 3 exo support in the coverage matrix;
   tier 2 no-exo did not produce a valid build in wide search.
+- Newer profile-stress evidence found a level 99 Intelligence tier 2 no-exo
+  `12/6/6` build using Simbadas, Khardboard, Gelano, trophies, and a mount.
+  This contradicts the earlier broad pre-100 tier 2 concern for at least one
+  element and should be kept as an edge benchmark for review.
 - Current evidence shows level 80 and level 200 Strength `12/6/6` are feasible
   at tier 2 under the current availability model, while tier 1 cap retries
   remain unresolved.

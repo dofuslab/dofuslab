@@ -6343,3 +6343,33 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker generation:
     `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-level-coverage-5-targets-20260711.json --output-json /tmp/build-discovery-m3-level-coverage-5-sample-20260711.json --output-md /tmp/build-discovery-m3-level-coverage-5-sample-20260711.md`
   - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-level-coverage-5-sample-20260711.json --target-file .codex/state/build-discovery-m3-level-coverage-5-targets-20260711.json --expected-solver cpsat --allow-no-build`
+
+### 2026-07-11 M3 Profile-Stress Slice 1
+
+- Generated and validated a non-minimum unresolved slice after the reviewer
+  flagged that zero-level targets were mostly easy minimum rows:
+  - target file: `.codex/state/build-discovery-m3-profile-stress-1-targets-20260711.json`
+  - result artifact: `.codex/state/build-discovery-m3-profile-stress-1-sample-20260711.json`
+  - markdown: `.codex/state/build-discovery-m3-profile-stress-1-sample-20260711.md`
+  - generated: `1 / 12`
+  - no build: `11 / 12`
+  - invalid: `0`
+  - solver statuses: `1` `OPTIMAL`, `11` `INFEASIBLE`
+- Useful generated edge proof:
+  - level `99` Intelligence tier `2` `12/6/6`
+  - items include Simbadas Set x3, Khardboard Set x3, Gelano, Orchid
+    Rhineetle, and low-level trophies.
+- The infeasible rows cleanly resolve several low-level cap, MP-heavy, and
+  range-heavy stress targets instead of leaving them as retry candidates.
+- Refreshed all-level inventory after adding the profile-stress artifact:
+  - valid query rows: `665088`
+  - generated evidence rows: `257`
+  - attempted evidence rows: `285`
+  - proven no-build evidence rows: `25`
+  - resolved evidence rows: `282`
+  - unresolved rows: `664806`
+  - zero-resolved levels computed from `byLevel`: `83`
+- Verification passed:
+  - Docker generation:
+    `python scripts/build_discovery_level_diversity_matrix.py --solver cpsat --target-file /tmp/build-discovery-m3-profile-stress-1-targets-20260711.json --output-json /tmp/build-discovery-m3-profile-stress-1-sample-20260711.json --output-md /tmp/build-discovery-m3-profile-stress-1-sample-20260711.md`
+  - `python server/scripts/check_build_discovery_level_diversity_matrix.py .codex/state/build-discovery-m3-profile-stress-1-sample-20260711.json --target-file .codex/state/build-discovery-m3-profile-stress-1-targets-20260711.json --expected-solver cpsat --allow-no-build`
