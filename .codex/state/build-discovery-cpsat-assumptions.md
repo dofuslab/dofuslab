@@ -167,6 +167,16 @@ review before accepting Milestone 2 evidence.
   when the separate set-bonus upper-bound fast path already enforces them.
   OR conditions still use recursive condition literals because an OR-derived
   upper bound would change semantics.
+- CP-SAT groups the two ring slots into one cardinality-2 selection only when
+  exos are disabled. This removes symmetric no-exo ring choices while
+  preserving normal `ring_1`/`ring_2` reconstruction for downstream build
+  serialization.
+- Exo-enabled rows keep explicit `ring_1` and `ring_2` variables because exos
+  attach to a concrete equipment slot. `build_model` rejects grouped-ring
+  metadata when `exo_policy` is not `none`.
+- Grouped ring reconstruction sorts selected rings by name/id before assigning
+  output slots. This is deterministic but not semantically meaningful; the
+  ring slots remain order-equivalent when no exos are present.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.

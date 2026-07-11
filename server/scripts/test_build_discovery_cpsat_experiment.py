@@ -227,9 +227,11 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
 
         self.assertIn("non_dofus_slots_by_set", source)
         self.assertIn("dofus_item_ids_by_set", source)
+        self.assertIn("ring_item_ids_by_set", source)
         self.assertIn("item_ids_by_set", source)
         self.assertIn("max_selectable_slots", source)
-        self.assertIn("min(\n            DOFUS_GROUP_SIZE", source)
+        self.assertIn("min(DOFUS_GROUP_SIZE", source)
+        self.assertIn("min(RING_GROUP_SIZE", source)
 
     def test_experiment_reports_model_size_diagnostics(self):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")
@@ -290,11 +292,73 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
             max_shared_item_cuts=[],
             max_shared_items=None,
             objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
-            exo_policy="none",
+            exo_policy="allow",
         )
 
         self.assertGreaterEqual(model_stats["reusedPresenceVarCount"], 1)
         self.assertGreaterEqual(model_stats["createdPresenceVarCount"], 1)
+
+    def test_model_groups_rings_when_exos_are_disabled(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        model, slot_item_vars, _exo_vars, model_stats = build_model(
+            base_fixture_items(),
+            fixture_sets(),
+            BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
+            exo_policy="none",
+        )
+
+        self.assertIsNotNone(model)
+        self.assertTrue(model_stats["groupedRingSlot"])
+        self.assertIn("ring", model_stats["slotCandidateCounts"])
+        self.assertNotIn("ring_1", model_stats["slotCandidateCounts"])
+        self.assertNotIn("ring_2", model_stats["slotCandidateCounts"])
+        self.assertEqual(
+            sorted(slot for slot, _item_id in slot_item_vars if slot == "ring"),
+            ["ring", "ring"],
+        )
+
+    def test_model_keeps_explicit_ring_slots_when_exos_are_allowed(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        _model, _slot_item_vars, exo_vars, model_stats = build_model(
+            base_fixture_items(),
+            fixture_sets(),
+            BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
+            exo_policy="allow",
+        )
+
+        self.assertFalse(model_stats["groupedRingSlot"])
+        self.assertNotIn("ring", model_stats["slotCandidateCounts"])
+        self.assertIn("ring_1", model_stats["slotCandidateCounts"])
+        self.assertIn("ring_2", model_stats["slotCandidateCounts"])
+        self.assertTrue(any(slot.startswith("ring_") for slot, _stat in exo_vars))
+
+    def test_model_rejects_grouped_ring_metadata_when_exos_are_allowed(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        metadata = build_model_metadata(base_fixture_items(), fixture_sets(), group_rings=True)
+
+        with self.assertRaisesRegex(ValueError, "Grouped ring metadata"):
+            build_model(
+                base_fixture_items(),
+                fixture_sets(),
+                BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
+                forbidden_signatures=[],
+                max_shared_item_cuts=[],
+                max_shared_items=None,
+                objective_weights={"Strength": 1.0, "AP": 0.0, "MP": 0.0, "Range": 0.0},
+                exo_policy="allow",
+                metadata=metadata,
+            )
 
     def test_model_skips_duplicate_set_bonus_upper_bound_leaf_conditions(self):
         if IMPORT_ERROR is not None:

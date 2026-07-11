@@ -59,13 +59,15 @@ DEFAULT_TIME_LIMIT_SECONDS = 20.0
 DOFUS_GROUP_SLOT = "dofus"
 DOFUS_GROUP_SIZE = 6
 DOFUS_SLOT_TYPES = ("Dofus", "Trophy", "Prysmaradite")
+RING_GROUP_SLOT = "ring"
+RING_GROUP_SIZE = 2
 
 
 def scaled_score(value: float) -> int:
     return int(round(value * SCALE))
 
 
-def slot_candidates(items: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+def slot_candidates(items: list[dict[str, Any]], *, group_rings: bool = False) -> dict[str, list[dict[str, Any]]]:
     candidates = {
         slot_name: [
             item
@@ -74,12 +76,19 @@ def slot_candidates(items: list[dict[str, Any]]) -> dict[str, list[dict[str, Any
         ]
         for slot_name, slot_types in SLOTS
         if not slot_name.startswith("dofus_")
+        and not (group_rings and slot_name.startswith("ring_"))
     }
     candidates[DOFUS_GROUP_SLOT] = [
         item
         for item in items
         if item.get("itemType") in DOFUS_SLOT_TYPES
     ]
+    if group_rings:
+        candidates[RING_GROUP_SLOT] = [
+            item
+            for item in items
+            if item.get("itemType") == "Ring"
+        ]
     return candidates
 
 
@@ -102,6 +111,7 @@ def cheap_final_score_for_stats(stats: dict[str, int], generic_damage_weight: fl
 class ModelMetadata:
     candidates_by_slot: dict[str, list[dict[str, Any]]]
     item_by_id: dict[str, dict[str, Any]]
+    group_rings: bool
     selected_set_ids: set[str]
     max_set_counts: dict[str, int]
     set_bonus_by_id: dict[str, dict[str, dict[str, int]]]
@@ -115,7 +125,12 @@ def objective_stats_for_item(item: dict[str, Any]) -> dict[str, float]:
     return dict(stats)
 
 
-def build_model_metadata(items: list[dict[str, Any]], sets: dict[str, dict[str, Any]]) -> ModelMetadata:
+def build_model_metadata(
+    items: list[dict[str, Any]],
+    sets: dict[str, dict[str, Any]],
+    *,
+    group_rings: bool = False,
+) -> ModelMetadata:
     max_set_counts: dict[str, int] = defaultdict(int)
     selected_sets: set[str] = set()
     for item in items:
@@ -124,8 +139,9 @@ def build_model_metadata(items: list[dict[str, Any]], sets: dict[str, dict[str, 
             selected_sets.add(set_id)
             max_set_counts[set_id] += 1
     return ModelMetadata(
-        candidates_by_slot=slot_candidates(items),
+        candidates_by_slot=slot_candidates(items, group_rings=group_rings),
         item_by_id=items_by_id(items),
+        group_rings=group_rings,
         selected_set_ids=selected_sets,
         max_set_counts=dict(max_set_counts),
         set_bonus_by_id={
@@ -231,7 +247,9 @@ def build_model(
     dict[str, Any],
 ]:
     model = cp_model.CpModel()
-    metadata = metadata or build_model_metadata(items, sets)
+    metadata = metadata or build_model_metadata(items, sets, group_rings=exo_policy == "none")
+    if metadata.group_rings and exo_policy != "none":
+        raise ValueError("Grouped ring metadata is only valid when exos are disabled")
     candidates_by_slot = metadata.candidates_by_slot
     item_by_id = metadata.item_by_id
 
@@ -248,6 +266,8 @@ def build_model(
             slot_vars.append(var)
         if slot_name == DOFUS_GROUP_SLOT:
             model.Add(sum(slot_vars) == DOFUS_GROUP_SIZE)
+        elif slot_name == RING_GROUP_SLOT:
+            model.Add(sum(slot_vars) == RING_GROUP_SIZE)
         else:
             model.Add(sum(slot_vars) == 1)
 
@@ -267,7 +287,7 @@ def build_model(
     if exo_policy != "none" and target.range > 0:
         exo_stats = ("AP", "MP", "Range")
     for slot_name, candidates in candidates_by_slot.items():
-        if slot_name == DOFUS_GROUP_SLOT or slot_name == "pet":
+        if slot_name in {DOFUS_GROUP_SLOT, RING_GROUP_SLOT} or slot_name == "pet":
             continue
         for stat in exo_stats:
             eligible_vars = [
@@ -321,6 +341,7 @@ def build_model(
     item_terms_by_set: dict[str, list[cp_model.IntVar]] = defaultdict(list)
     non_dofus_slots_by_set: dict[str, set[str]] = defaultdict(set)
     dofus_item_ids_by_set: dict[str, set[str]] = defaultdict(set)
+    ring_item_ids_by_set: dict[str, set[str]] = defaultdict(set)
     item_ids_by_set: dict[str, set[str]] = defaultdict(set)
     skipped_set_count_var_count = 0
     for (slot_name, item_id), var in slot_item_vars.items():
@@ -329,6 +350,8 @@ def build_model(
             item_terms_by_set[set_id].append(var)
             if slot_name == DOFUS_GROUP_SLOT:
                 dofus_item_ids_by_set[set_id].add(item_id)
+            elif slot_name == RING_GROUP_SLOT:
+                ring_item_ids_by_set[set_id].add(item_id)
             else:
                 non_dofus_slots_by_set[set_id].add(slot_name)
             item_ids_by_set[set_id].add(item_id)
@@ -337,9 +360,10 @@ def build_model(
         item_terms = item_terms_by_set[set_id]
         if not item_terms:
             continue
-        max_selectable_slots = len(non_dofus_slots_by_set[set_id]) + min(
-            DOFUS_GROUP_SIZE,
-            len(dofus_item_ids_by_set[set_id]),
+        max_selectable_slots = (
+            len(non_dofus_slots_by_set[set_id])
+            + min(DOFUS_GROUP_SIZE, len(dofus_item_ids_by_set[set_id]))
+            + min(RING_GROUP_SIZE, len(ring_item_ids_by_set[set_id]))
         )
         max_count = min(metadata.max_set_counts[set_id], len(item_ids_by_set[set_id]), max_selectable_slots)
         set_bonuses = metadata.set_bonus_by_id.get(set_id, {})
@@ -528,6 +552,7 @@ def build_model(
             slot_name: len(candidates)
             for slot_name, candidates in candidates_by_slot.items()
         },
+        "groupedRingSlot": metadata.group_rings,
         "slotVarCount": len(slot_item_vars),
         "uniqueItemCount": len(item_by_id),
         "exoVarCount": len(exo_vars),
@@ -677,8 +702,11 @@ def reconstruct_state(
     item_by_id = items_by_id(items)
     state = BuildState()
     selected_by_slot: dict[str, dict[str, Any]] = {}
+    grouped_rings = any(var_slot == RING_GROUP_SLOT for (var_slot, _item_id) in slot_item_vars)
     for slot_name, _slot_types in SLOTS:
         if slot_name.startswith("dofus_"):
+            continue
+        if grouped_rings and slot_name.startswith("ring_"):
             continue
         selected = [
             item_id
@@ -710,6 +738,28 @@ def reconstruct_state(
     )
     for index, item in enumerate(selected_dofus_items, start=1):
         selected_by_slot[f"dofus_{index}"] = item
+
+    if grouped_rings:
+        selected_ring_ids = [
+            item_id
+            for (var_slot, item_id), var in slot_item_vars.items()
+            if var_slot == RING_GROUP_SLOT and solver.BooleanValue(var)
+        ]
+        if len(selected_ring_ids) != RING_GROUP_SIZE:
+            return None, {
+                "reason": "slot_selection_count",
+                "slot": RING_GROUP_SLOT,
+                "selected": selected_ring_ids,
+            }
+        selected_ring_items = sorted(
+            (item_by_id[item_id] for item_id in selected_ring_ids),
+            key=lambda item: (
+                item.get("_name") or "",
+                item.get("dofusID") or "",
+            ),
+        )
+        for index, item in enumerate(selected_ring_items, start=1):
+            selected_by_slot[f"ring_{index}"] = item
 
     state.slots = dict(selected_by_slot)
     state.used_item_ids = {item["dofusID"] for item in selected_by_slot.values()}
@@ -768,7 +818,7 @@ def solve_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[st
         excluded_item_ids=set(query.avoided_item_ids),
     )
     sets = load_sets()
-    metadata = build_model_metadata(items, sets)
+    metadata = build_model_metadata(items, sets, group_rings=query.exo_policy == "none")
     objective_weights = objective_weights_for_mode(
         args.objective_mode,
         metadata,

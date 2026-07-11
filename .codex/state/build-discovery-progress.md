@@ -4375,3 +4375,65 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python -m py_compile oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-setbonusdedupe-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`
+
+### 2026-07-11 Group No-Exo CP-SAT Ring Slots
+
+- Grouped `ring_1`/`ring_2` into one cardinality-2 CP-SAT slot when exos are
+  disabled.
+- Preserved explicit ring slots when exos are allowed because exos attach to a
+  concrete equipment slot.
+- Added a guard rejecting grouped-ring metadata with exo-enabled model builds.
+- Updated set-count capacity so grouped rings can still contribute up to two
+  items from the same set.
+- Reconstructs grouped rings back into normal `ring_1` and `ring_2` output
+  slots deterministically.
+- Added synthetic fixture coverage for:
+  - no-exo grouped ring model shape
+  - exo-enabled explicit ring model shape
+  - grouped metadata rejected with exos enabled
+  - existing ring uniqueness through reconstruction
+- Generated and validated an 8-row Docker CP-SAT ring-group smoke:
+  - `.codex/state/build-discovery-cpsat-ringgroup-smoke-matrix.json`
+  - `.codex/state/build-discovery-cpsat-ringgroup-smoke-matrix.md`
+  - `.codex/state/build-discovery-cpsat-ringgroup-smoke-split/`
+- Slice:
+  - elements: strength, chance
+  - budget tiers: 1, 4
+  - AP: 7
+  - MP: 3
+  - Range: none, 6
+  - solver: CP-SAT callback mode, query limit `1`, candidate limit `5`
+- Result:
+  - targets: `8`
+  - generated: `8`
+  - invalid: `0`
+  - solver statuses: `6` optimal, `2` feasible
+- Model-size impact:
+  - no-exo rows: grouped ring slot with `134` ring candidates and `1505`
+    slot vars
+  - exo-enabled rows: explicit `ring_1`/`ring_2` with `134` candidates each
+    and `1838` slot vars
+  - no-exo grouped rows created `0` extra presence vars and reused `217`
+    presence literals
+- Runtime:
+  - elapsed min/avg/max: `5739.3ms / 6571.9ms / 8479.0ms`
+  - model min/avg/max: `1365.4ms / 1517.4ms / 1734.9ms`
+  - solve min/avg/max: `3752.6ms / 4520.7ms / 5054.9ms`
+- Interpretation:
+  - grouping removes ring symmetry for no-exo rows and shrinks the model there
+  - end-to-end p95 is still above the Milestone 2 `<5s` target
+  - solve time remains the dominant bottleneck
+  - next likely checkpoint is threshold/delta set-count variables or a more
+    static per-level solver index
+- Review:
+  - Carver flagged the initial brittle tests and the grouped-metadata/exo
+    footgun. The tests were updated and the model now rejects that mismatch.
+  - An accidental smoke without `--solver cpsat` started the prototype path and
+    was killed after it ran too long; those temp outputs were discarded.
+- Verification passed:
+  - `python server\scripts\test_build_discovery_cpsat_experiment.py`
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\oneoff\build_discovery_cpsat_experiment.py server\scripts\test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python -m py_compile oneoff/build_discovery_cpsat_experiment.py scripts/test_build_discovery_cpsat_experiment.py`
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-ringgroup-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6 --expected-solver cpsat`
