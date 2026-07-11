@@ -723,6 +723,13 @@ class BuildDiscoveryQuery:
             raise ValueError(f"Items cannot be both locked and avoided: {', '.join(sorted(overlap))}.")
 
 
+@dataclass(frozen=True)
+class SearchSeedStage:
+    name: str
+    states: tuple[BuildState, ...]
+    used_for_beam_fallback: bool = False
+
+
 def query_summary(query: BuildDiscoveryQuery) -> dict[str, Any]:
     return {
         "className": query.class_name,
@@ -3810,6 +3817,94 @@ def direct_complete_package_seeds(
     return dedupe_builds(sorted(valid_final_states, key=lambda state: state.score, reverse=True))
 
 
+def collect_search_seed_stages(
+    pools: dict[str, list[dict[str, Any]]],
+    items: list[dict[str, Any]],
+    sets: dict[str, dict[str, Any]],
+    target: BuildTarget,
+    search_target: BuildTarget,
+    natural_cap_target: BuildTarget,
+    package_index: PackageIndex,
+    action_package_index: PackageIndex,
+    required_item_ids: set[str],
+    exo_policy: str,
+) -> tuple[SearchSeedStage, ...]:
+    required_seeds = required_item_seed_states(
+        required_item_ids,
+        items,
+        sets,
+        target,
+        search_target,
+        natural_cap_target,
+    )
+    budget_action_trophy_seeds = (
+        []
+        if required_seeds
+        else budget_action_trophy_seed_states(
+            items,
+            sets,
+            target,
+            search_target,
+            natural_cap_target,
+        )
+    )
+    budget_action_gear_seeds = (
+        []
+        if required_seeds
+        else budget_action_gear_seed_states(
+            pools,
+            sets,
+            target,
+            search_target,
+            natural_cap_target,
+        )
+    )
+    action_stat_witness_seeds = (
+        []
+        if required_seeds
+        else action_stat_witness_seed_states(
+            pools,
+            sets,
+            target,
+            search_target,
+            natural_cap_target,
+            exo_policy=exo_policy,
+        )
+    )
+    set_package_seeds = package_seed_states(
+        pools,
+        sets,
+        target,
+        search_target,
+        natural_cap_target,
+        package_index=package_index,
+    )
+    action_package_seeds = package_seed_states(
+        pools,
+        sets,
+        target,
+        search_target,
+        natural_cap_target,
+        package_index=action_package_index,
+    )
+    ap_set_bonus_seeds = ap_set_bonus_seed_states(
+        pools,
+        sets,
+        target,
+        search_target,
+        natural_cap_target,
+    )
+    return (
+        SearchSeedStage("set_package", tuple(set_package_seeds)),
+        SearchSeedStage("action_set_package", tuple(action_package_seeds), used_for_beam_fallback=True),
+        SearchSeedStage("ap_set_bonus", tuple(ap_set_bonus_seeds)),
+        SearchSeedStage("required_items", tuple(required_seeds), used_for_beam_fallback=bool(required_seeds)),
+        SearchSeedStage("budget_action_trophy", tuple(budget_action_trophy_seeds), used_for_beam_fallback=True),
+        SearchSeedStage("budget_action_gear", tuple(budget_action_gear_seeds), used_for_beam_fallback=True),
+        SearchSeedStage("action_stat_witness", tuple(action_stat_witness_seeds)),
+    )
+
+
 def ap_set_bonus_seed_states(
     pools: dict[str, list[dict[str, Any]]],
     sets: dict[str, dict[str, Any]],
@@ -4003,48 +4098,6 @@ def find_builds(
         )
         for slot_name, slot_types in SLOTS
     }
-    required_seeds = required_item_seed_states(
-        required_item_ids,
-        items,
-        sets,
-        target,
-        search_target,
-        natural_cap_target,
-    )
-    budget_action_trophy_seeds = (
-        []
-        if required_seeds
-        else budget_action_trophy_seed_states(
-            items,
-            sets,
-            target,
-            search_target,
-            natural_cap_target,
-        )
-    )
-    budget_action_gear_seeds = (
-        []
-        if required_seeds
-        else budget_action_gear_seed_states(
-            pools,
-            sets,
-            target,
-            search_target,
-            natural_cap_target,
-        )
-    )
-    action_stat_witness_seeds = (
-        []
-        if required_seeds
-        else action_stat_witness_seed_states(
-            pools,
-            sets,
-            target,
-            search_target,
-            natural_cap_target,
-            exo_policy=exo_policy,
-        )
-    )
     timings["candidatePoolsMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
@@ -4065,42 +4118,37 @@ def find_builds(
     timings["packageIndexMs"] = (time.perf_counter() - phase_started) * 1000
 
     phase_started = time.perf_counter()
-    initial_seeds = package_seed_states(
+    seed_stages = collect_search_seed_stages(
         pools,
+        items,
         sets,
         target,
         search_target,
         natural_cap_target,
-        package_index=package_index,
-    )
-    action_package_seeds = package_seed_states(
-        pools,
-        sets,
-        target,
-        search_target,
-        natural_cap_target,
-        package_index=action_package_index,
-    )
-    ap_set_bonus_seeds = ap_set_bonus_seed_states(
-        pools,
-        sets,
-        target,
-        search_target,
-        natural_cap_target,
+        package_index,
+        action_package_index,
+        required_item_ids,
+        exo_policy,
     )
     initial_seeds = dedupe_builds(
         sorted(
-            initial_seeds
-            + action_package_seeds
-            + ap_set_bonus_seeds
-            + required_seeds
-            + budget_action_trophy_seeds
-            + budget_action_gear_seeds
-            + action_stat_witness_seeds,
+            [
+                state
+                for stage in seed_stages
+                for state in stage.states
+            ],
             key=lambda state: state.score,
             reverse=True,
         )
     )
+    required_stage = next(stage for stage in seed_stages if stage.name == "required_items")
+    required_seeds = list(required_stage.states)
+    fallback_seed_stages = [
+        stage
+        for stage in seed_stages
+        if stage.used_for_beam_fallback and stage.states
+    ]
+
     direct_seed_limit = min(
         DIRECT_COMPLETION_SEED_LIMIT,
         max(top_k * 12, beam_width),
@@ -4142,7 +4190,7 @@ def find_builds(
             beam_seed_groups = (
                 [required_seeds]
                 if required_seeds
-                else [[], budget_action_trophy_seeds, budget_action_gear_seeds, action_package_seeds]
+                else [[]] + [list(stage.states) for stage in fallback_seed_stages]
             )
         else:
             beam_seed_groups = [initial_seeds]

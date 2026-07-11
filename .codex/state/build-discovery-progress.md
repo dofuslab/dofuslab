@@ -3061,6 +3061,32 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - copied changed solver/test files into Docker and ran focused regression
     tests plus `py_compile`
 
+### 2026-07-10 Search Stage Consolidation Checkpoint
+
+- Reviewer pass found the main architecture risk is not the scoring formula
+  itself, but search recall paths accumulating without a shared stage contract.
+- Added `SearchSeedStage` and `collect_search_seed_stages()` so package,
+  action-package, AP-set-bonus, required-item, budget trophy, budget gear, and
+  action-witness seeds are named policy stages instead of anonymous lists inside
+  `find_builds()`.
+- Preserved existing no-exo fallback behavior:
+  - required item seeds still take over fallback search when locked items exist
+  - otherwise beam fallback still tries an empty seed group first, then named
+    budget/action seed stages
+- Added unit coverage that seed collection returns the expected named stages
+  and fallback-stage policy.
+- Docker was unavailable with the Docker Desktop API internal server error, so
+  this checkpoint is local-only verification.
+- Verification passed:
+  - `python scripts\test_build_discovery_prototype.py`
+  - `python server\scripts\test_build_discovery_action_feasibility.py`
+  - `python -m py_compile server\oneoff\build_discovery_prototype.py scripts\test_build_discovery_prototype.py server\scripts\build_discovery_action_feasibility.py`
+  - `git diff --check`
+- Next consolidation target from reviewer:
+  - introduce shared AP/MP/Range progress/signature helpers and use them in
+    solver trims plus feasibility diagnostics so balanced action-stat ranking
+    is one explicit contract rather than repeated local sort keys.
+
 ### 2026-07-10 Level 80 Balanced Action Completion Fix
 
 - Fixed the direct completion beam to rank by total remaining AP/MP/Range

@@ -57,6 +57,7 @@ from oneoff.build_discovery_prototype import (
     build_action_set_package_index,
     build_discovery_response,
     build_package_index,
+    collect_search_seed_stages,
     strength_point_cost,
     score_stats,
     score_state,
@@ -1705,6 +1706,67 @@ class BuildDiscoveryPrototypeTest(unittest.TestCase):
             )
 
         self.assertTrue(any(group == [action_seed] for group in seen_seed_groups))
+
+    def test_search_seed_collection_returns_named_policy_stages(self):
+        set_seed = BuildState(slots={"hat": {"dofusID": "set_hat"}}, used_item_ids={"set_hat"}, score=10)
+        action_seed = BuildState(slots={"belt": {"dofusID": "action_belt"}}, used_item_ids={"action_belt"}, score=9)
+        trophy_seed = BuildState(slots={"dofus_1": {"dofusID": "trophy"}}, used_item_ids={"trophy"}, score=8)
+        gear_seed = BuildState(slots={"boots": {"dofusID": "gear_boots"}}, used_item_ids={"gear_boots"}, score=7)
+
+        with patch(
+            "oneoff.build_discovery_prototype.required_item_seed_states",
+            return_value=[],
+        ), patch(
+            "oneoff.build_discovery_prototype.budget_action_trophy_seed_states",
+            return_value=[trophy_seed],
+        ), patch(
+            "oneoff.build_discovery_prototype.budget_action_gear_seed_states",
+            return_value=[gear_seed],
+        ), patch(
+            "oneoff.build_discovery_prototype.action_stat_witness_seed_states",
+            return_value=[],
+        ), patch(
+            "oneoff.build_discovery_prototype.package_seed_states",
+            side_effect=[[set_seed], [action_seed]],
+        ), patch(
+            "oneoff.build_discovery_prototype.ap_set_bonus_seed_states",
+            return_value=[],
+        ):
+            stages = collect_search_seed_stages(
+                {},
+                [],
+                {},
+                BuildTarget(ap=12, mp=6, range=6),
+                BuildTarget(ap=12, mp=6, range=6),
+                BuildTarget(ap=12, mp=6, range=6),
+                build_discovery_prototype.PackageIndex(tuple()),
+                build_discovery_prototype.PackageIndex(tuple()),
+                set(),
+                "none",
+            )
+
+        self.assertEqual(
+            [stage.name for stage in stages],
+            [
+                "set_package",
+                "action_set_package",
+                "ap_set_bonus",
+                "required_items",
+                "budget_action_trophy",
+                "budget_action_gear",
+                "action_stat_witness",
+            ],
+        )
+        self.assertEqual(next(stage.states for stage in stages if stage.name == "set_package"), (set_seed,))
+        self.assertEqual(next(stage.states for stage in stages if stage.name == "action_set_package"), (action_seed,))
+        self.assertEqual(
+            [
+                stage.name
+                for stage in stages
+                if stage.used_for_beam_fallback and stage.states
+            ],
+            ["action_set_package", "budget_action_trophy", "budget_action_gear"],
+        )
 
     def test_dofus_slots_are_optional_in_beam_search(self):
         self.assertTrue(build_discovery_prototype.optional_slot_choice("dofus_1", target_level=80))
