@@ -1,5 +1,8 @@
+import argparse
 import json
+import sys
 import tempfile
+import types
 import unittest
 from pathlib import Path
 
@@ -7,6 +10,9 @@ from build_discovery_level_diversity_matrix import (
     REPORT_VERSION,
     build_matrix_report,
     completed_target_ids_from_split_reports,
+    cpsat_args_for_query,
+    cpsat_build_discovery_response,
+    generator_for_args,
     load_targets_from_file,
     query_for_matrix_target,
     query_summary,
@@ -474,6 +480,72 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(report["results"][0]["resultCount"], 3)
         self.assertEqual(len(report["results"][0]["candidateBuilds"]), 3)
         self.assertEqual(report["results"][0]["candidateDiversity"]["candidateCount"], 3)
+
+    def test_cpsat_args_for_query_uses_matrix_query_limit(self):
+        target = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]
+        query = query_for_matrix_target(target, query_limit=3)
+        args = argparse.Namespace(
+            cpsat_time_limit_seconds=2.5,
+            cpsat_workers=4,
+            cpsat_max_attempts=12,
+            cpsat_candidate_limit=2,
+            cpsat_summary_limit=5,
+            cpsat_objective_mode="stat-linear",
+        )
+
+        cpsat_args = cpsat_args_for_query(query, args)
+
+        self.assertEqual(cpsat_args.time_limit_seconds, 2.5)
+        self.assertEqual(cpsat_args.workers, 4)
+        self.assertEqual(cpsat_args.max_attempts, 12)
+        self.assertEqual(cpsat_args.candidate_limit, 3)
+        self.assertEqual(cpsat_args.summary_limit, 5)
+        self.assertEqual(cpsat_args.output_build_limit, 3)
+        self.assertEqual(cpsat_args.objective_mode, "stat-linear")
+        self.assertEqual(cpsat_args.generic_damage_weight, query.generic_damage_weight)
+        self.assertEqual(cpsat_args.max_shared_items, query.max_shared_items)
+
+    def test_cpsat_response_adapter_lazy_imports_experiment(self):
+        target = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})[0]
+        query = query_for_matrix_target(target)
+        seen = {}
+
+        def fake_solve_query(received_query, received_args):
+            seen["query"] = received_query
+            seen["args"] = received_args
+            return {"builds": [], "diagnostics": {}}
+
+        fake_module = types.ModuleType("oneoff.build_discovery_cpsat_experiment")
+        fake_module.solve_query = fake_solve_query
+        args = argparse.Namespace(
+            cpsat_time_limit_seconds=1.0,
+            cpsat_workers=1,
+            cpsat_max_attempts=1,
+            cpsat_candidate_limit=1,
+            cpsat_summary_limit=1,
+            cpsat_objective_mode="final-linear",
+        )
+
+        previous = sys.modules.get("oneoff.build_discovery_cpsat_experiment")
+        sys.modules["oneoff.build_discovery_cpsat_experiment"] = fake_module
+        try:
+            response = cpsat_build_discovery_response(query, args)
+        finally:
+            if previous is None:
+                sys.modules.pop("oneoff.build_discovery_cpsat_experiment", None)
+            else:
+                sys.modules["oneoff.build_discovery_cpsat_experiment"] = previous
+
+        self.assertIs(seen["query"], query)
+        self.assertEqual(seen["args"].output_build_limit, 1)
+        self.assertEqual(response["diagnostics"]["solver"], "cpsat")
+        self.assertEqual(response["solverVersion"], "oneoff.build_discovery_cpsat_experiment")
+
+    def test_generator_for_args_rejects_cache_with_cpsat(self):
+        args = argparse.Namespace(solver="cpsat", use_cache=True)
+
+        with self.assertRaisesRegex(ValueError, "use-cache"):
+            generator_for_args(args)
 
     def test_build_matrix_report_marks_budget_fallback_invalid(self):
         selected = selected_targets(target_names={"level_50_strength_7_3_1_budget1"})

@@ -3,8 +3,16 @@ import unittest
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-EXPERIMENT_PATH = REPO_ROOT / "server" / "oneoff" / "build_discovery_cpsat_experiment.py"
+def experiment_path() -> Path:
+    script_path = Path(__file__).resolve()
+    host_repo_path = script_path.parents[2] / "server" / "oneoff" / "build_discovery_cpsat_experiment.py"
+    if host_repo_path.exists():
+        return host_repo_path
+    container_server_path = script_path.parents[1] / "oneoff" / "build_discovery_cpsat_experiment.py"
+    return container_server_path
+
+
+EXPERIMENT_PATH = experiment_path()
 
 
 class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):

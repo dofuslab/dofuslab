@@ -3714,3 +3714,27 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
 - Verification passed:
   - `python server\scripts\test_build_discovery_cpsat_experiment.py`
   - `python -m py_compile server\oneoff\build_discovery_cpsat_experiment.py server\scripts\test_build_discovery_cpsat_experiment.py`
+
+### 2026-07-11 CP-SAT Matrix Harness Adapter
+
+- Added an opt-in CP-SAT solver path to the matrix harness:
+  - `--solver prototype` remains the default.
+  - `--solver cpsat` lazily imports `oneoff.build_discovery_cpsat_experiment`.
+  - CP-SAT-specific options are exposed for time limit, workers, attempts,
+    candidate limit, summary limit, and objective mode.
+- Kept `--use-cache` scoped to the prototype solver; CP-SAT has no matrix cache
+  contract yet.
+- Added `.codex/state/build-discovery-cpsat-assumptions.md` as the active
+  review index for pivot assumptions around scope, target semantics, budgets,
+  exos, solver architecture, quality evidence, and performance.
+- Added focused tests for CP-SAT matrix argument shaping and the lazy adapter
+  without requiring OR-Tools in the host environment.
+- Still intentionally not done:
+  - no full CP-SAT matrix artifact has been generated yet
+  - no OR-Tools production dependency packaging
+  - no product/GraphQL wiring
+  - no CP-SAT locked-item constraints
+- Verification passed:
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python server\scripts\test_build_discovery_cpsat_experiment.py`
+  - `python -m py_compile server\scripts\build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`

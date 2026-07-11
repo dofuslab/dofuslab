@@ -896,6 +896,44 @@ def parse_int_filter(raw_value: str | None) -> set[int] | None:
     return {int(value) for value in values}
 
 
+def cpsat_args_for_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> argparse.Namespace:
+    requested_limit = query.limit or 1
+    candidate_limit = max(getattr(args, "cpsat_candidate_limit", 20), requested_limit)
+    return argparse.Namespace(
+        time_limit_seconds=getattr(args, "cpsat_time_limit_seconds", 20.0),
+        workers=getattr(args, "cpsat_workers", 8),
+        max_attempts=getattr(args, "cpsat_max_attempts", 40),
+        candidate_limit=candidate_limit,
+        summary_limit=getattr(args, "cpsat_summary_limit", 10),
+        output_build_limit=requested_limit,
+        objective_mode=getattr(args, "cpsat_objective_mode", "final-linear"),
+        generic_damage_weight=query.generic_damage_weight,
+        max_shared_items=query.max_shared_items,
+    )
+
+
+def cpsat_build_discovery_response(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[str, Any]:
+    from oneoff.build_discovery_cpsat_experiment import solve_query
+
+    response = solve_query(query, cpsat_args_for_query(query, args))
+    response.setdefault("diagnostics", {})
+    response["diagnostics"].setdefault("solver", "cpsat")
+    response.setdefault("solverVersion", "oneoff.build_discovery_cpsat_experiment")
+    return response
+
+
+def generator_for_args(args: argparse.Namespace) -> Callable[[BuildDiscoveryQuery], dict[str, Any]]:
+    if args.solver == "prototype":
+        return (
+            build_discovery_response
+            if args.use_cache
+            else lambda query: build_discovery_response(query, use_cache=False)
+        )
+    if args.use_cache:
+        raise ValueError("--use-cache is only supported with --solver prototype.")
+    return lambda query: cpsat_build_discovery_response(query, args)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--targets", help="Comma-separated target ids to include.")
@@ -922,12 +960,31 @@ def main() -> None:
     )
     parser.add_argument("--resume-existing", action="store_true", help="In split-output mode, reuse existing one-row target reports.")
     parser.add_argument("--git-sha", help="Git SHA to record when the runtime cannot see .git.")
+    parser.add_argument("--solver", choices=("prototype", "cpsat"), default="prototype")
     parser.add_argument("--use-cache", action="store_true", help="Use process cache during generation.")
+    parser.add_argument("--cpsat-time-limit-seconds", type=float, default=20.0)
+    parser.add_argument("--cpsat-workers", type=int, default=8)
+    parser.add_argument("--cpsat-max-attempts", type=int, default=40)
+    parser.add_argument("--cpsat-candidate-limit", type=int, default=20)
+    parser.add_argument("--cpsat-summary-limit", type=int, default=10)
+    parser.add_argument("--cpsat-objective-mode", choices=("stat-linear", "final-linear"), default="final-linear")
     args = parser.parse_args()
     if args.resume_existing and not args.split_output_dir:
         parser.error("--resume-existing requires --split-output-dir.")
     if args.query_limit is not None and args.query_limit < 1:
         parser.error("--query-limit must be positive.")
+    if args.solver == "cpsat" and args.use_cache:
+        parser.error("--use-cache is only supported with --solver prototype.")
+    if args.cpsat_time_limit_seconds <= 0:
+        parser.error("--cpsat-time-limit-seconds must be positive.")
+    if args.cpsat_workers < 1:
+        parser.error("--cpsat-workers must be positive.")
+    if args.cpsat_max_attempts < 1:
+        parser.error("--cpsat-max-attempts must be positive.")
+    if args.cpsat_candidate_limit < 1:
+        parser.error("--cpsat-candidate-limit must be positive.")
+    if args.cpsat_summary_limit < 1:
+        parser.error("--cpsat-summary-limit must be positive.")
 
     target_source = None
     if args.target_file:
@@ -980,11 +1037,7 @@ def main() -> None:
         if not args.output_json and not args.output_md and not args.split_output_dir:
             return
 
-    generator = (
-        build_discovery_response
-        if args.use_cache
-        else lambda query: build_discovery_response(query, use_cache=False)
-    )
+    generator = generator_for_args(args)
     if args.split_output_dir:
         split_result = write_split_matrix_reports(
             targets,

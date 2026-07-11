@@ -50,6 +50,10 @@ longer the product direction:
 - Expensive regression fixtures as comparison anchors, once they are adapted to
   CP-SAT output.
 
+Active assumption review file:
+
+- `.codex/state/build-discovery-cpsat-assumptions.md`
+
 ## Old Assets To Treat As Reference Only
 
 - `server/oneoff/build_discovery_prototype.py`
@@ -97,3 +101,18 @@ Current limitations:
 - `exoPolicy=none` disables generated exo variables.
 - `exoPolicy=allow` and `exoPolicy=opti` are not yet distinct.
 - OR-Tools dependency packaging is still unresolved.
+
+## Matrix Harness Checkpoint
+
+The level-diversity matrix runner now has an opt-in CP-SAT path:
+
+```powershell
+python server\scripts\build_discovery_level_diversity_matrix.py --solver cpsat ...
+```
+
+This keeps the old prototype/beam generator as the default while allowing small
+CP-SAT Milestone 2 slices to be generated through the existing target,
+validation, split-report, and Markdown artifact machinery.
+
+The CP-SAT import is lazy so manifest generation and prototype matrix tests do
+not require OR-Tools in environments where it has not been packaged yet.
