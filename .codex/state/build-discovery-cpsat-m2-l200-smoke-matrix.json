@@ -1,0 +1,4858 @@
+{
+  "reportVersion": "build-discovery-level-diversity-matrix-v1",
+  "generatedAt": "2026-07-11T06:58:56.121616+00:00",
+  "scope": "Iop milestone2-level200 generated target matrix",
+  "evidenceType": "generated_solver_snapshot",
+  "provenance": {
+    "gitSha": null,
+    "targetSource": "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS",
+    "generator": "scripts/build_discovery_level_diversity_matrix.py",
+    "solver": "cpsat"
+  },
+  "targetCount": 8,
+  "generatedCount": 8,
+  "noBuildCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "target": {
+        "id": "milestone2_l200_strength_7_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2422.49,
+        "weightedStatScore": 4559.81,
+        "utilityStatScore": 359.46,
+        "genericDamageScore": 4339.19,
+        "rawRotationDamageScore": 3975.58,
+        "spellDamageScore": 3975.58,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.4464,
+        "weaponDamageScore": 225.35,
+        "survivabilityScore": 110.39,
+        "weakestElementEhp": 3565.49,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 5,
+          "Range": 6,
+          "Strength": 1508,
+          "Power": 80,
+          "Vitality": 3753,
+          "Damage": 0,
+          "Earth Damage": 207,
+          "Critical": 50,
+          "Critical Damage": 50,
+          "Neutral Damage": 145
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Count Harebourg Set": 2,
+          "Dark Court Set": 2,
+          "Depths Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "17997",
+            "internalId": null,
+            "name": "Crabtun Necklace",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "belt": {
+            "id": "13114",
+            "internalId": null,
+            "name": "Broucey Belt",
+            "type": "Belt",
+            "level": 194,
+            "set": "Brouce Boulgoure Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "18693",
+            "internalId": null,
+            "name": "Broucey Bark",
+            "type": "Shield",
+            "level": 196,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_1": {
+            "id": "17998",
+            "internalId": null,
+            "name": "Crustic Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Depths Set"
+          },
+          "ring_2": {
+            "id": "14077",
+            "internalId": null,
+            "name": "Count Harebourg's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "boots": {
+            "id": "15428",
+            "internalId": null,
+            "name": "Dark Court Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "hat": {
+            "id": "14076",
+            "internalId": null,
+            "name": "Count Harebourg's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "cloak": {
+            "id": "15430",
+            "internalId": null,
+            "name": "Dark Court Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "pet": {
+            "id": "33268",
+            "internalId": null,
+            "name": "Amber and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12747",
+            "internalId": null,
+            "name": "Major Earth Destroyer",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "12724",
+            "internalId": null,
+            "name": "Major Maniac",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2422.49,
+        "apStrategy": null,
+        "totals": {
+          "AP": 8,
+          "MP": 5,
+          "Range": 6,
+          "Strength": 1508,
+          "Power": 80,
+          "Vitality": 3753,
+          "Damage": 0,
+          "Earth Damage": 207,
+          "Critical": 50,
+          "Critical Damage": 50,
+          "Neutral Damage": 145
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Count Harebourg Set": 2,
+          "Dark Court Set": 2,
+          "Depths Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Crabtun Necklace",
+          "Broucey Belt",
+          "Gargandyas's Fury",
+          "Broucey Bark",
+          "Crustic Ring",
+          "Count Harebourg's Ring",
+          "Dark Court Boots",
+          "Count Harebourg's Hat",
+          "Dark Court Cape",
+          "Amber and Emerald Seemyool",
+          "Arcanist",
+          "Impetuous",
+          "Major Earth Destroyer",
+          "Major Earth Wrecker",
+          "Major Goliath",
+          "Major Maniac"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2422.49,
+          "weightedStatScore": 4559.81,
+          "utilityStatScore": 359.46,
+          "genericDamageScore": 4339.19,
+          "rawRotationDamageScore": 3975.58,
+          "spellDamageScore": 3975.58,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.4464,
+          "weaponDamageScore": 225.35,
+          "survivabilityScore": 110.39,
+          "weakestElementEhp": 3565.49,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 8,
+            "MP": 5,
+            "Range": 6,
+            "Strength": 1508,
+            "Power": 80,
+            "Vitality": 3753,
+            "Damage": 0,
+            "Earth Damage": 207,
+            "Critical": 50,
+            "Critical Damage": 50,
+            "Neutral Damage": 145
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Count Harebourg Set": 2,
+            "Dark Court Set": 2,
+            "Depths Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "17997",
+              "internalId": null,
+              "name": "Crabtun Necklace",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Depths Set"
+            },
+            "belt": {
+              "id": "13114",
+              "internalId": null,
+              "name": "Broucey Belt",
+              "type": "Belt",
+              "level": 194,
+              "set": "Brouce Boulgoure Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "18693",
+              "internalId": null,
+              "name": "Broucey Bark",
+              "type": "Shield",
+              "level": 196,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_1": {
+              "id": "17998",
+              "internalId": null,
+              "name": "Crustic Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Depths Set"
+            },
+            "ring_2": {
+              "id": "14077",
+              "internalId": null,
+              "name": "Count Harebourg's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Count Harebourg Set"
+            },
+            "boots": {
+              "id": "15428",
+              "internalId": null,
+              "name": "Dark Court Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "hat": {
+              "id": "14076",
+              "internalId": null,
+              "name": "Count Harebourg's Hat",
+              "type": "Hat",
+              "level": 200,
+              "set": "Count Harebourg Set"
+            },
+            "cloak": {
+              "id": "15430",
+              "internalId": null,
+              "name": "Dark Court Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "pet": {
+              "id": "33268",
+              "internalId": null,
+              "name": "Amber and Emerald Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "12747",
+              "internalId": null,
+              "name": "Major Earth Destroyer",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13774",
+              "internalId": null,
+              "name": "Major Earth Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "12724",
+              "internalId": null,
+              "name": "Major Maniac",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2422.49,
+          "apStrategy": null,
+          "totals": {
+            "AP": 8,
+            "MP": 5,
+            "Range": 6,
+            "Strength": 1508,
+            "Power": 80,
+            "Vitality": 3753,
+            "Damage": 0,
+            "Earth Damage": 207,
+            "Critical": 50,
+            "Critical Damage": 50,
+            "Neutral Damage": 145
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Count Harebourg Set": 2,
+            "Dark Court Set": 2,
+            "Depths Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Crabtun Necklace",
+            "Broucey Belt",
+            "Gargandyas's Fury",
+            "Broucey Bark",
+            "Crustic Ring",
+            "Count Harebourg's Ring",
+            "Dark Court Boots",
+            "Count Harebourg's Hat",
+            "Dark Court Cape",
+            "Amber and Emerald Seemyool",
+            "Arcanist",
+            "Impetuous",
+            "Major Earth Destroyer",
+            "Major Earth Wrecker",
+            "Major Goliath",
+            "Major Maniac"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 8768.4,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 1923.8,
+          "totalSearchMs": 6844.6
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 1644.5,
+            "solveMs": 5062.0,
+            "objective": 2129.78,
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 308,
+                "dofus": 261
+              },
+              "slotVarCount": 1639,
+              "uniqueItemCount": 1505,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 936,
+              "conditionConstraintCount": 375,
+              "setCountConstraintCount": 239
+            },
+            "validCandidate": {
+              "score": 2422.49,
+              "totals": {
+                "AP": 8,
+                "MP": 5,
+                "Range": 6,
+                "Strength": 1508,
+                "Power": 80,
+                "Earth Damage": 207,
+                "Vitality": 3753
+              },
+              "items": {
+                "amulet": "Crabtun Necklace",
+                "belt": "Broucey Belt",
+                "weapon": "Gargandyas's Fury",
+                "shield": "Broucey Bark",
+                "ring_1": "Crustic Ring",
+                "ring_2": "Count Harebourg's Ring",
+                "boots": "Dark Court Boots",
+                "hat": "Count Harebourg's Hat",
+                "cloak": "Dark Court Cape",
+                "pet": "Amber and Emerald Seemyool",
+                "dofus_1": "Arcanist",
+                "dofus_2": "Impetuous",
+                "dofus_3": "Major Earth Destroyer",
+                "dofus_4": "Major Earth Wrecker",
+                "dofus_5": "Major Goliath",
+                "dofus_6": "Major Maniac"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "milestone2_l200_strength_7_3_6_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2304.36,
+        "weightedStatScore": 4616.99,
+        "utilityStatScore": 304.14,
+        "genericDamageScore": 4211.91,
+        "rawRotationDamageScore": 3858.96,
+        "spellDamageScore": 3858.96,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.404,
+        "weaponDamageScore": 216.67,
+        "survivabilityScore": 104.87,
+        "weakestElementEhp": 3360.38,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 5,
+          "Range": 6,
+          "Strength": 1358,
+          "Power": 110,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Earth Damage": 186,
+          "Critical": 51,
+          "Critical Damage": 142,
+          "Neutral Damage": 124
+        },
+        "sets": {
+          "Count Harebourg Set": 2,
+          "Bleeding Heart Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "19244",
+            "internalId": null,
+            "name": "Amulet of the Bleeding Heart",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "18718",
+            "internalId": null,
+            "name": "Cycloid Shield",
+            "type": "Shield",
+            "level": 200,
+            "set": "Cycloid Set"
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "14077",
+            "internalId": null,
+            "name": "Count Harebourg's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "boots": {
+            "id": "19245",
+            "internalId": null,
+            "name": "Boots of the Bleeding Heart",
+            "type": "Boots",
+            "level": 200,
+            "set": "Bleeding Heart Set"
+          },
+          "hat": {
+            "id": "14076",
+            "internalId": null,
+            "name": "Count Harebourg's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Count Harebourg Set"
+          },
+          "cloak": {
+            "id": "15430",
+            "internalId": null,
+            "name": "Dark Court Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "pet": {
+            "id": "33268",
+            "internalId": null,
+            "name": "Amber and Emerald Seemyool",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "12747",
+            "internalId": null,
+            "name": "Major Earth Destroyer",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "13759",
+            "internalId": null,
+            "name": "Major Goliath",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "12724",
+            "internalId": null,
+            "name": "Major Maniac",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2304.36,
+        "apStrategy": null,
+        "totals": {
+          "AP": 8,
+          "MP": 5,
+          "Range": 6,
+          "Strength": 1358,
+          "Power": 110,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Earth Damage": 186,
+          "Critical": 51,
+          "Critical Damage": 142,
+          "Neutral Damage": 124
+        },
+        "sets": {
+          "Count Harebourg Set": 2,
+          "Bleeding Heart Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Amulet of the Bleeding Heart",
+          "Corruption's Brambelt",
+          "Gargandyas's Fury",
+          "Cycloid Shield",
+          "Corruption's Ring",
+          "Count Harebourg's Ring",
+          "Boots of the Bleeding Heart",
+          "Count Harebourg's Hat",
+          "Dark Court Cape",
+          "Amber and Emerald Seemyool",
+          "Arcanist",
+          "Impetuous",
+          "Major Earth Destroyer",
+          "Major Earth Wrecker",
+          "Major Goliath",
+          "Major Maniac"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2304.36,
+          "weightedStatScore": 4616.99,
+          "utilityStatScore": 304.14,
+          "genericDamageScore": 4211.91,
+          "rawRotationDamageScore": 3858.96,
+          "spellDamageScore": 3858.96,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.404,
+          "weaponDamageScore": 216.67,
+          "survivabilityScore": 104.87,
+          "weakestElementEhp": 3360.38,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 8,
+            "MP": 5,
+            "Range": 6,
+            "Strength": 1358,
+            "Power": 110,
+            "Vitality": 3503,
+            "Damage": 0,
+            "Earth Damage": 186,
+            "Critical": 51,
+            "Critical Damage": 142,
+            "Neutral Damage": 124
+          },
+          "sets": {
+            "Count Harebourg Set": 2,
+            "Bleeding Heart Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "19244",
+              "internalId": null,
+              "name": "Amulet of the Bleeding Heart",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Bleeding Heart Set"
+            },
+            "belt": {
+              "id": "22209",
+              "internalId": null,
+              "name": "Corruption's Brambelt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "18718",
+              "internalId": null,
+              "name": "Cycloid Shield",
+              "type": "Shield",
+              "level": 200,
+              "set": "Cycloid Set"
+            },
+            "ring_1": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "ring_2": {
+              "id": "14077",
+              "internalId": null,
+              "name": "Count Harebourg's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Count Harebourg Set"
+            },
+            "boots": {
+              "id": "19245",
+              "internalId": null,
+              "name": "Boots of the Bleeding Heart",
+              "type": "Boots",
+              "level": 200,
+              "set": "Bleeding Heart Set"
+            },
+            "hat": {
+              "id": "14076",
+              "internalId": null,
+              "name": "Count Harebourg's Hat",
+              "type": "Hat",
+              "level": 200,
+              "set": "Count Harebourg Set"
+            },
+            "cloak": {
+              "id": "15430",
+              "internalId": null,
+              "name": "Dark Court Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "pet": {
+              "id": "33268",
+              "internalId": null,
+              "name": "Amber and Emerald Seemyool",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "12747",
+              "internalId": null,
+              "name": "Major Earth Destroyer",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13774",
+              "internalId": null,
+              "name": "Major Earth Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "13759",
+              "internalId": null,
+              "name": "Major Goliath",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "12724",
+              "internalId": null,
+              "name": "Major Maniac",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2304.36,
+          "apStrategy": null,
+          "totals": {
+            "AP": 8,
+            "MP": 5,
+            "Range": 6,
+            "Strength": 1358,
+            "Power": 110,
+            "Vitality": 3503,
+            "Damage": 0,
+            "Earth Damage": 186,
+            "Critical": 51,
+            "Critical Damage": 142,
+            "Neutral Damage": 124
+          },
+          "sets": {
+            "Count Harebourg Set": 2,
+            "Bleeding Heart Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Amulet of the Bleeding Heart",
+            "Corruption's Brambelt",
+            "Gargandyas's Fury",
+            "Cycloid Shield",
+            "Corruption's Ring",
+            "Count Harebourg's Ring",
+            "Boots of the Bleeding Heart",
+            "Count Harebourg's Hat",
+            "Dark Court Cape",
+            "Amber and Emerald Seemyool",
+            "Arcanist",
+            "Impetuous",
+            "Major Earth Destroyer",
+            "Major Earth Wrecker",
+            "Major Goliath",
+            "Major Maniac"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7267.2,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 323.5,
+          "totalSearchMs": 6943.7
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 1716.4,
+            "solveMs": 5068.4,
+            "objective": 2078.69,
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 308,
+                "dofus": 261
+              },
+              "slotVarCount": 1639,
+              "uniqueItemCount": 1505,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 936,
+              "conditionConstraintCount": 375,
+              "setCountConstraintCount": 239
+            },
+            "validCandidate": {
+              "score": 2304.36,
+              "totals": {
+                "AP": 8,
+                "MP": 5,
+                "Range": 6,
+                "Strength": 1358,
+                "Power": 110,
+                "Earth Damage": 186,
+                "Vitality": 3503
+              },
+              "items": {
+                "amulet": "Amulet of the Bleeding Heart",
+                "belt": "Corruption's Brambelt",
+                "weapon": "Gargandyas's Fury",
+                "shield": "Cycloid Shield",
+                "ring_1": "Corruption's Ring",
+                "ring_2": "Count Harebourg's Ring",
+                "boots": "Boots of the Bleeding Heart",
+                "hat": "Count Harebourg's Hat",
+                "cloak": "Dark Court Cape",
+                "pet": "Amber and Emerald Seemyool",
+                "dofus_1": "Arcanist",
+                "dofus_2": "Impetuous",
+                "dofus_3": "Major Earth Destroyer",
+                "dofus_4": "Major Earth Wrecker",
+                "dofus_5": "Major Goliath",
+                "dofus_6": "Major Maniac"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "milestone2_l200_strength_7_3_none_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2520.87,
+        "weightedStatScore": 4580.5,
+        "utilityStatScore": 434.3,
+        "genericDamageScore": 4427.48,
+        "rawRotationDamageScore": 4056.47,
+        "spellDamageScore": 4056.47,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.4758,
+        "weaponDamageScore": 224.71,
+        "survivabilityScore": 94.2,
+        "weakestElementEhp": 2826.9,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 5,
+          "Strength": 1358,
+          "Power": 80,
+          "Vitality": 3153,
+          "Damage": 0,
+          "Earth Damage": 172,
+          "Critical": 70,
+          "Critical Damage": 120,
+          "Neutral Damage": 152
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Dark Court Set": 2,
+          "Gein Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15430",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "31787",
+            "slot": "weapon"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "15433",
+            "internalId": null,
+            "name": "Gein's Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "18693",
+            "internalId": null,
+            "name": "Broucey Bark",
+            "type": "Shield",
+            "level": 196,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "13115",
+            "internalId": null,
+            "name": "Broucey Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": "Brouce Boulgoure Set"
+          },
+          "boots": {
+            "id": "15428",
+            "internalId": null,
+            "name": "Dark Court Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "hat": {
+            "id": "15431",
+            "internalId": null,
+            "name": "Gein's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "cloak": {
+            "id": "15430",
+            "internalId": null,
+            "name": "Dark Court Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "pet": {
+            "id": "29430",
+            "internalId": null,
+            "name": "Mamukil Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2520.87,
+        "apStrategy": null,
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 5,
+          "Strength": 1358,
+          "Power": 80,
+          "Vitality": 3153,
+          "Damage": 0,
+          "Earth Damage": 172,
+          "Critical": 70,
+          "Critical Damage": 120,
+          "Neutral Damage": 152
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Dark Court Set": 2,
+          "Gein Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15430",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "31787",
+            "slot": "weapon"
+          }
+        },
+        "items": [
+          "Gein's Amulet",
+          "Corruption's Brambelt",
+          "Gargandyas's Fury",
+          "Broucey Bark",
+          "Corruption's Ring",
+          "Broucey Ring",
+          "Dark Court Boots",
+          "Gein's Hat",
+          "Dark Court Cape",
+          "Mamukil Kolophant",
+          "Cloudy Dofus",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Earth Wrecker"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2520.87,
+          "weightedStatScore": 4580.5,
+          "utilityStatScore": 434.3,
+          "genericDamageScore": 4427.48,
+          "rawRotationDamageScore": 4056.47,
+          "spellDamageScore": 4056.47,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.4758,
+          "weaponDamageScore": 224.71,
+          "survivabilityScore": 94.2,
+          "weakestElementEhp": 2826.9,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 5,
+            "Strength": 1358,
+            "Power": 80,
+            "Vitality": 3153,
+            "Damage": 0,
+            "Earth Damage": 172,
+            "Critical": 70,
+            "Critical Damage": 120,
+            "Neutral Damage": 152
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Dark Court Set": 2,
+            "Gein Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "15430",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "31787",
+              "slot": "weapon"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "15433",
+              "internalId": null,
+              "name": "Gein's Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "belt": {
+              "id": "22209",
+              "internalId": null,
+              "name": "Corruption's Brambelt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "18693",
+              "internalId": null,
+              "name": "Broucey Bark",
+              "type": "Shield",
+              "level": 196,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_1": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "ring_2": {
+              "id": "13115",
+              "internalId": null,
+              "name": "Broucey Ring",
+              "type": "Ring",
+              "level": 198,
+              "set": "Brouce Boulgoure Set"
+            },
+            "boots": {
+              "id": "15428",
+              "internalId": null,
+              "name": "Dark Court Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "hat": {
+              "id": "15431",
+              "internalId": null,
+              "name": "Gein's Hat",
+              "type": "Hat",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "cloak": {
+              "id": "15430",
+              "internalId": null,
+              "name": "Dark Court Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "pet": {
+              "id": "29430",
+              "internalId": null,
+              "name": "Mamukil Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13774",
+              "internalId": null,
+              "name": "Major Earth Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2520.87,
+          "apStrategy": null,
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 5,
+            "Strength": 1358,
+            "Power": 80,
+            "Vitality": 3153,
+            "Damage": 0,
+            "Earth Damage": 172,
+            "Critical": 70,
+            "Critical Damage": 120,
+            "Neutral Damage": 152
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Dark Court Set": 2,
+            "Gein Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "15430",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "31787",
+              "slot": "weapon"
+            }
+          },
+          "items": [
+            "Gein's Amulet",
+            "Corruption's Brambelt",
+            "Gargandyas's Fury",
+            "Broucey Bark",
+            "Corruption's Ring",
+            "Broucey Ring",
+            "Dark Court Boots",
+            "Gein's Hat",
+            "Dark Court Cape",
+            "Mamukil Kolophant",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Earth Wrecker"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6169.9,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 282.9,
+          "totalSearchMs": 5887.0
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "OPTIMAL",
+            "modelMs": 1915.4,
+            "solveMs": 3800.8,
+            "objective": 2254.18,
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 316
+              },
+              "slotVarCount": 1838,
+              "uniqueItemCount": 1704,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 938,
+              "conditionConstraintCount": 375,
+              "setCountConstraintCount": 240
+            },
+            "validCandidate": {
+              "score": 2520.87,
+              "totals": {
+                "AP": 10,
+                "MP": 5,
+                "Range": 5,
+                "Strength": 1358,
+                "Power": 80,
+                "Earth Damage": 172,
+                "Vitality": 3153
+              },
+              "items": {
+                "amulet": "Gein's Amulet",
+                "belt": "Corruption's Brambelt",
+                "weapon": "Gargandyas's Fury",
+                "shield": "Broucey Bark",
+                "ring_1": "Corruption's Ring",
+                "ring_2": "Broucey Ring",
+                "boots": "Dark Court Boots",
+                "hat": "Gein's Hat",
+                "cloak": "Dark Court Cape",
+                "pet": "Mamukil Kolophant",
+                "dofus_1": "Cloudy Dofus",
+                "dofus_2": "Ice Dofus",
+                "dofus_3": "Ochre Dofus",
+                "dofus_4": "Arcanist",
+                "dofus_5": "Impetuous",
+                "dofus_6": "Major Earth Wrecker"
+              }
+            }
+          }
+        ],
+        "itemCount": 1704,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "milestone2_l200_strength_7_3_6_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "strength",
+        "budgetTier": 4,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "strength"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2528.87,
+        "weightedStatScore": 4588.5,
+        "utilityStatScore": 442.3,
+        "genericDamageScore": 4427.48,
+        "rawRotationDamageScore": 4056.47,
+        "spellDamageScore": 4056.47,
+        "profileBaselineDamageScore": 2748.61,
+        "profileRelativeDamage": 1.4758,
+        "weaponDamageScore": 224.71,
+        "survivabilityScore": 94.2,
+        "weakestElementEhp": 2826.9,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Strength": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 6,
+          "Strength": 1358,
+          "Power": 80,
+          "Vitality": 3153,
+          "Damage": 0,
+          "Earth Damage": 172,
+          "Critical": 70,
+          "Critical Damage": 120,
+          "Neutral Damage": 152
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Dark Court Set": 2,
+          "Gein Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15430",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "18693",
+            "slot": "shield"
+          },
+          "Range": {
+            "itemId": "15428",
+            "slot": "boots"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "15433",
+            "internalId": null,
+            "name": "Gein's Amulet",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "belt": {
+            "id": "22209",
+            "internalId": null,
+            "name": "Corruption's Brambelt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "18693",
+            "internalId": null,
+            "name": "Broucey Bark",
+            "type": "Shield",
+            "level": 196,
+            "set": "Brouce Boulgoure Set"
+          },
+          "ring_1": {
+            "id": "22205",
+            "internalId": null,
+            "name": "Corruption's Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Corruption Set"
+          },
+          "ring_2": {
+            "id": "13115",
+            "internalId": null,
+            "name": "Broucey Ring",
+            "type": "Ring",
+            "level": 198,
+            "set": "Brouce Boulgoure Set"
+          },
+          "boots": {
+            "id": "15428",
+            "internalId": null,
+            "name": "Dark Court Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "hat": {
+            "id": "15431",
+            "internalId": null,
+            "name": "Gein's Hat",
+            "type": "Hat",
+            "level": 200,
+            "set": "Gein Set"
+          },
+          "cloak": {
+            "id": "15430",
+            "internalId": null,
+            "name": "Dark Court Cape",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Dark Court Set"
+          },
+          "pet": {
+            "id": "29430",
+            "internalId": null,
+            "name": "Mamukil Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "7043",
+            "internalId": null,
+            "name": "Ice Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13774",
+            "internalId": null,
+            "name": "Major Earth Wrecker",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2528.87,
+        "apStrategy": null,
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 6,
+          "Strength": 1358,
+          "Power": 80,
+          "Vitality": 3153,
+          "Damage": 0,
+          "Earth Damage": 172,
+          "Critical": 70,
+          "Critical Damage": 120,
+          "Neutral Damage": 152
+        },
+        "sets": {
+          "Brouce Boulgoure Set": 2,
+          "Dark Court Set": 2,
+          "Gein Set": 2,
+          "Corruption Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "15430",
+            "slot": "cloak"
+          },
+          "MP": {
+            "itemId": "18693",
+            "slot": "shield"
+          },
+          "Range": {
+            "itemId": "15428",
+            "slot": "boots"
+          }
+        },
+        "items": [
+          "Gein's Amulet",
+          "Corruption's Brambelt",
+          "Gargandyas's Fury",
+          "Broucey Bark",
+          "Corruption's Ring",
+          "Broucey Ring",
+          "Dark Court Boots",
+          "Gein's Hat",
+          "Dark Court Cape",
+          "Mamukil Kolophant",
+          "Cloudy Dofus",
+          "Ice Dofus",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Earth Wrecker"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2528.87,
+          "weightedStatScore": 4588.5,
+          "utilityStatScore": 442.3,
+          "genericDamageScore": 4427.48,
+          "rawRotationDamageScore": 4056.47,
+          "spellDamageScore": 4056.47,
+          "profileBaselineDamageScore": 2748.61,
+          "profileRelativeDamage": 1.4758,
+          "weaponDamageScore": 224.71,
+          "survivabilityScore": 94.2,
+          "weakestElementEhp": 2826.9,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Strength": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 6,
+            "Strength": 1358,
+            "Power": 80,
+            "Vitality": 3153,
+            "Damage": 0,
+            "Earth Damage": 172,
+            "Critical": 70,
+            "Critical Damage": 120,
+            "Neutral Damage": 152
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Dark Court Set": 2,
+            "Gein Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "15430",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "18693",
+              "slot": "shield"
+            },
+            "Range": {
+              "itemId": "15428",
+              "slot": "boots"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "15433",
+              "internalId": null,
+              "name": "Gein's Amulet",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "belt": {
+              "id": "22209",
+              "internalId": null,
+              "name": "Corruption's Brambelt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "18693",
+              "internalId": null,
+              "name": "Broucey Bark",
+              "type": "Shield",
+              "level": 196,
+              "set": "Brouce Boulgoure Set"
+            },
+            "ring_1": {
+              "id": "22205",
+              "internalId": null,
+              "name": "Corruption's Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Corruption Set"
+            },
+            "ring_2": {
+              "id": "13115",
+              "internalId": null,
+              "name": "Broucey Ring",
+              "type": "Ring",
+              "level": 198,
+              "set": "Brouce Boulgoure Set"
+            },
+            "boots": {
+              "id": "15428",
+              "internalId": null,
+              "name": "Dark Court Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "hat": {
+              "id": "15431",
+              "internalId": null,
+              "name": "Gein's Hat",
+              "type": "Hat",
+              "level": 200,
+              "set": "Gein Set"
+            },
+            "cloak": {
+              "id": "15430",
+              "internalId": null,
+              "name": "Dark Court Cape",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Dark Court Set"
+            },
+            "pet": {
+              "id": "29430",
+              "internalId": null,
+              "name": "Mamukil Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "7043",
+              "internalId": null,
+              "name": "Ice Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13774",
+              "internalId": null,
+              "name": "Major Earth Wrecker",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2528.87,
+          "apStrategy": null,
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 6,
+            "Strength": 1358,
+            "Power": 80,
+            "Vitality": 3153,
+            "Damage": 0,
+            "Earth Damage": 172,
+            "Critical": 70,
+            "Critical Damage": 120,
+            "Neutral Damage": 152
+          },
+          "sets": {
+            "Brouce Boulgoure Set": 2,
+            "Dark Court Set": 2,
+            "Gein Set": 2,
+            "Corruption Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "15430",
+              "slot": "cloak"
+            },
+            "MP": {
+              "itemId": "18693",
+              "slot": "shield"
+            },
+            "Range": {
+              "itemId": "15428",
+              "slot": "boots"
+            }
+          },
+          "items": [
+            "Gein's Amulet",
+            "Corruption's Brambelt",
+            "Gargandyas's Fury",
+            "Broucey Bark",
+            "Corruption's Ring",
+            "Broucey Ring",
+            "Dark Court Boots",
+            "Gein's Hat",
+            "Dark Court Cape",
+            "Mamukil Kolophant",
+            "Cloudy Dofus",
+            "Ice Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Earth Wrecker"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 6047.1,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 286.8,
+          "totalSearchMs": 5760.3
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "OPTIMAL",
+            "modelMs": 1865.5,
+            "solveMs": 3736.5,
+            "objective": 2262.18,
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 316
+              },
+              "slotVarCount": 1838,
+              "uniqueItemCount": 1704,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 938,
+              "conditionConstraintCount": 375,
+              "setCountConstraintCount": 240
+            },
+            "validCandidate": {
+              "score": 2528.87,
+              "totals": {
+                "AP": 10,
+                "MP": 5,
+                "Range": 6,
+                "Strength": 1358,
+                "Power": 80,
+                "Earth Damage": 172,
+                "Vitality": 3153
+              },
+              "items": {
+                "amulet": "Gein's Amulet",
+                "belt": "Corruption's Brambelt",
+                "weapon": "Gargandyas's Fury",
+                "shield": "Broucey Bark",
+                "ring_1": "Corruption's Ring",
+                "ring_2": "Broucey Ring",
+                "boots": "Dark Court Boots",
+                "hat": "Gein's Hat",
+                "cloak": "Dark Court Cape",
+                "pet": "Mamukil Kolophant",
+                "dofus_1": "Cloudy Dofus",
+                "dofus_2": "Ice Dofus",
+                "dofus_3": "Ochre Dofus",
+                "dofus_4": "Arcanist",
+                "dofus_5": "Impetuous",
+                "dofus_6": "Major Earth Wrecker"
+              }
+            }
+          }
+        ],
+        "itemCount": 1704,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.3599,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.3599,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.3599,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Critical": 4.4184,
+          "Critical Damage": 1.6297,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.8077,
+          "Dodge": 1.0,
+          "Earth Damage": 2.8077,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.6971,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Strength": 0.6971,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "milestone2_l200_chance_7_3_none_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2551.4,
+        "weightedStatScore": 4370.96,
+        "utilityStatScore": 299.36,
+        "genericDamageScore": 4782.94,
+        "rawRotationDamageScore": 3165.18,
+        "spellDamageScore": 3165.18,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.5943,
+        "weaponDamageScore": 243.64,
+        "survivabilityScore": 99.72,
+        "weakestElementEhp": 3049.33,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 4,
+          "Chance": 1568,
+          "Power": 230,
+          "Vitality": 3453,
+          "Damage": 0,
+          "Water Damage": 170,
+          "Critical": 57,
+          "Critical Damage": 47
+        },
+        "sets": {
+          "Voldelor Set": 2,
+          "Servitude Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "22200",
+            "internalId": null,
+            "name": "Servitude's Scarf",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "belt": {
+            "id": "17104",
+            "internalId": null,
+            "name": "Voldelor Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "18700",
+            "internalId": null,
+            "name": "Four-Leaf",
+            "type": "Shield",
+            "level": 193,
+            "set": null
+          },
+          "ring_1": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "ring_2": {
+            "id": "14058",
+            "internalId": null,
+            "name": "Glacial Ring",
+            "type": "Ring",
+            "level": 197,
+            "set": "Glacial Set"
+          },
+          "boots": {
+            "id": "17105",
+            "internalId": null,
+            "name": "Voldelor Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "hat": {
+            "id": "13120",
+            "internalId": null,
+            "name": "Danathor's Helmet",
+            "type": "Hat",
+            "level": 196,
+            "set": "Danathor Set"
+          },
+          "cloak": {
+            "id": "22201",
+            "internalId": null,
+            "name": "Servitude's Coat",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "pet": {
+            "id": "33037",
+            "internalId": null,
+            "name": "Indigo and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16248",
+            "internalId": null,
+            "name": "Major Luckster",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16264",
+            "internalId": null,
+            "name": "Major Water Devastator",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2551.4,
+        "apStrategy": null,
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 4,
+          "Chance": 1568,
+          "Power": 230,
+          "Vitality": 3453,
+          "Damage": 0,
+          "Water Damage": 170,
+          "Critical": 57,
+          "Critical Damage": 47
+        },
+        "sets": {
+          "Voldelor Set": 2,
+          "Servitude Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Servitude's Scarf",
+          "Voldelor Belt",
+          "Gargandyas's Fury",
+          "Four-Leaf",
+          "Rhineetle Ring",
+          "Glacial Ring",
+          "Voldelor Boots",
+          "Danathor's Helmet",
+          "Servitude's Coat",
+          "Indigo and Ivory Dragoturkey",
+          "Arcanist",
+          "Impetuous",
+          "Major Luckster",
+          "Major Tease",
+          "Major Vigour",
+          "Major Water Devastator"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2551.4,
+          "weightedStatScore": 4370.96,
+          "utilityStatScore": 299.36,
+          "genericDamageScore": 4782.94,
+          "rawRotationDamageScore": 3165.18,
+          "spellDamageScore": 3165.18,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.5943,
+          "weaponDamageScore": 243.64,
+          "survivabilityScore": 99.72,
+          "weakestElementEhp": 3049.33,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 4,
+            "Chance": 1568,
+            "Power": 230,
+            "Vitality": 3453,
+            "Damage": 0,
+            "Water Damage": 170,
+            "Critical": 57,
+            "Critical Damage": 47
+          },
+          "sets": {
+            "Voldelor Set": 2,
+            "Servitude Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "22200",
+              "internalId": null,
+              "name": "Servitude's Scarf",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "belt": {
+              "id": "17104",
+              "internalId": null,
+              "name": "Voldelor Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "18700",
+              "internalId": null,
+              "name": "Four-Leaf",
+              "type": "Shield",
+              "level": 193,
+              "set": null
+            },
+            "ring_1": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "ring_2": {
+              "id": "14058",
+              "internalId": null,
+              "name": "Glacial Ring",
+              "type": "Ring",
+              "level": 197,
+              "set": "Glacial Set"
+            },
+            "boots": {
+              "id": "17105",
+              "internalId": null,
+              "name": "Voldelor Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "hat": {
+              "id": "13120",
+              "internalId": null,
+              "name": "Danathor's Helmet",
+              "type": "Hat",
+              "level": 196,
+              "set": "Danathor Set"
+            },
+            "cloak": {
+              "id": "22201",
+              "internalId": null,
+              "name": "Servitude's Coat",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "pet": {
+              "id": "33037",
+              "internalId": null,
+              "name": "Indigo and Ivory Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "16248",
+              "internalId": null,
+              "name": "Major Luckster",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "16332",
+              "internalId": null,
+              "name": "Major Vigour",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "16264",
+              "internalId": null,
+              "name": "Major Water Devastator",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2551.4,
+          "apStrategy": null,
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 4,
+            "Chance": 1568,
+            "Power": 230,
+            "Vitality": 3453,
+            "Damage": 0,
+            "Water Damage": 170,
+            "Critical": 57,
+            "Critical Damage": 47
+          },
+          "sets": {
+            "Voldelor Set": 2,
+            "Servitude Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Servitude's Scarf",
+            "Voldelor Belt",
+            "Gargandyas's Fury",
+            "Four-Leaf",
+            "Rhineetle Ring",
+            "Glacial Ring",
+            "Voldelor Boots",
+            "Danathor's Helmet",
+            "Servitude's Coat",
+            "Indigo and Ivory Dragoturkey",
+            "Arcanist",
+            "Impetuous",
+            "Major Luckster",
+            "Major Tease",
+            "Major Vigour",
+            "Major Water Devastator"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 5680.3,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 281.3,
+          "totalSearchMs": 5399.0
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "OPTIMAL",
+            "modelMs": 1758.5,
+            "solveMs": 3474.0,
+            "objective": 2088.21,
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 308,
+                "dofus": 261
+              },
+              "slotVarCount": 1639,
+              "uniqueItemCount": 1505,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 936,
+              "conditionConstraintCount": 375,
+              "setCountConstraintCount": 239
+            },
+            "validCandidate": {
+              "score": 2551.4,
+              "totals": {
+                "AP": 8,
+                "MP": 4,
+                "Range": 4,
+                "Strength": 100,
+                "Power": 230,
+                "Earth Damage": 20,
+                "Vitality": 3453
+              },
+              "items": {
+                "amulet": "Servitude's Scarf",
+                "belt": "Voldelor Belt",
+                "weapon": "Gargandyas's Fury",
+                "shield": "Four-Leaf",
+                "ring_1": "Rhineetle Ring",
+                "ring_2": "Glacial Ring",
+                "boots": "Voldelor Boots",
+                "hat": "Danathor's Helmet",
+                "cloak": "Servitude's Coat",
+                "pet": "Indigo and Ivory Dragoturkey",
+                "dofus_1": "Arcanist",
+                "dofus_2": "Impetuous",
+                "dofus_3": "Major Luckster",
+                "dofus_4": "Major Tease",
+                "dofus_5": "Major Vigour",
+                "dofus_6": "Major Water Devastator"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "milestone2_l200_chance_7_3_6_budget1",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 1,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 1,
+        "exoPolicy": "none",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2534.72,
+        "weightedStatScore": 4376.81,
+        "utilityStatScore": 300.86,
+        "genericDamageScore": 4739.52,
+        "rawRotationDamageScore": 3136.45,
+        "spellDamageScore": 3136.45,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.5798,
+        "weaponDamageScore": 241.72,
+        "survivabilityScore": 101.07,
+        "weakestElementEhp": 3057.53,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 6,
+          "Chance": 1508,
+          "Power": 280,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Water Damage": 165,
+          "Critical": 57,
+          "Critical Damage": 47
+        },
+        "sets": {
+          "Voldelor Set": 2,
+          "Servitude Set": 2
+        },
+        "exos": {},
+        "items": {
+          "amulet": {
+            "id": "22200",
+            "internalId": null,
+            "name": "Servitude's Scarf",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "belt": {
+            "id": "17104",
+            "internalId": null,
+            "name": "Voldelor Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "18700",
+            "internalId": null,
+            "name": "Four-Leaf",
+            "type": "Shield",
+            "level": 193,
+            "set": null
+          },
+          "ring_1": {
+            "id": "15190",
+            "internalId": null,
+            "name": "Hairsh Bracelet",
+            "type": "Ring",
+            "level": 200,
+            "set": "Hairsh Set"
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "boots": {
+            "id": "17105",
+            "internalId": null,
+            "name": "Voldelor Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "hat": {
+            "id": "13120",
+            "internalId": null,
+            "name": "Danathor's Helmet",
+            "type": "Hat",
+            "level": 196,
+            "set": "Danathor Set"
+          },
+          "cloak": {
+            "id": "22201",
+            "internalId": null,
+            "name": "Servitude's Coat",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "pet": {
+            "id": "33037",
+            "internalId": null,
+            "name": "Indigo and Ivory Dragoturkey",
+            "type": "Mount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "16248",
+            "internalId": null,
+            "name": "Major Luckster",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "16332",
+            "internalId": null,
+            "name": "Major Vigour",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "16264",
+            "internalId": null,
+            "name": "Major Water Devastator",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2534.72,
+        "apStrategy": null,
+        "totals": {
+          "AP": 8,
+          "MP": 4,
+          "Range": 6,
+          "Chance": 1508,
+          "Power": 280,
+          "Vitality": 3503,
+          "Damage": 0,
+          "Water Damage": 165,
+          "Critical": 57,
+          "Critical Damage": 47
+        },
+        "sets": {
+          "Voldelor Set": 2,
+          "Servitude Set": 2
+        },
+        "exos": {},
+        "items": [
+          "Servitude's Scarf",
+          "Voldelor Belt",
+          "Gargandyas's Fury",
+          "Four-Leaf",
+          "Hairsh Bracelet",
+          "Rhineetle Ring",
+          "Voldelor Boots",
+          "Danathor's Helmet",
+          "Servitude's Coat",
+          "Indigo and Ivory Dragoturkey",
+          "Arcanist",
+          "Impetuous",
+          "Major Luckster",
+          "Major Tease",
+          "Major Vigour",
+          "Major Water Devastator"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2534.72,
+          "weightedStatScore": 4376.81,
+          "utilityStatScore": 300.86,
+          "genericDamageScore": 4739.52,
+          "rawRotationDamageScore": 3136.45,
+          "spellDamageScore": 3136.45,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.5798,
+          "weaponDamageScore": 241.72,
+          "survivabilityScore": 101.07,
+          "weakestElementEhp": 3057.53,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 6,
+            "Chance": 1508,
+            "Power": 280,
+            "Vitality": 3503,
+            "Damage": 0,
+            "Water Damage": 165,
+            "Critical": 57,
+            "Critical Damage": 47
+          },
+          "sets": {
+            "Voldelor Set": 2,
+            "Servitude Set": 2
+          },
+          "exos": {},
+          "items": {
+            "amulet": {
+              "id": "22200",
+              "internalId": null,
+              "name": "Servitude's Scarf",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "belt": {
+              "id": "17104",
+              "internalId": null,
+              "name": "Voldelor Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "18700",
+              "internalId": null,
+              "name": "Four-Leaf",
+              "type": "Shield",
+              "level": 193,
+              "set": null
+            },
+            "ring_1": {
+              "id": "15190",
+              "internalId": null,
+              "name": "Hairsh Bracelet",
+              "type": "Ring",
+              "level": 200,
+              "set": "Hairsh Set"
+            },
+            "ring_2": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "boots": {
+              "id": "17105",
+              "internalId": null,
+              "name": "Voldelor Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "hat": {
+              "id": "13120",
+              "internalId": null,
+              "name": "Danathor's Helmet",
+              "type": "Hat",
+              "level": 196,
+              "set": "Danathor Set"
+            },
+            "cloak": {
+              "id": "22201",
+              "internalId": null,
+              "name": "Servitude's Coat",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "pet": {
+              "id": "33037",
+              "internalId": null,
+              "name": "Indigo and Ivory Dragoturkey",
+              "type": "Mount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "16248",
+              "internalId": null,
+              "name": "Major Luckster",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "16332",
+              "internalId": null,
+              "name": "Major Vigour",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "16264",
+              "internalId": null,
+              "name": "Major Water Devastator",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2534.72,
+          "apStrategy": null,
+          "totals": {
+            "AP": 8,
+            "MP": 4,
+            "Range": 6,
+            "Chance": 1508,
+            "Power": 280,
+            "Vitality": 3503,
+            "Damage": 0,
+            "Water Damage": 165,
+            "Critical": 57,
+            "Critical Damage": 47
+          },
+          "sets": {
+            "Voldelor Set": 2,
+            "Servitude Set": 2
+          },
+          "exos": {},
+          "items": [
+            "Servitude's Scarf",
+            "Voldelor Belt",
+            "Gargandyas's Fury",
+            "Four-Leaf",
+            "Hairsh Bracelet",
+            "Rhineetle Ring",
+            "Voldelor Boots",
+            "Danathor's Helmet",
+            "Servitude's Coat",
+            "Indigo and Ivory Dragoturkey",
+            "Arcanist",
+            "Impetuous",
+            "Major Luckster",
+            "Major Tease",
+            "Major Vigour",
+            "Major Water Devastator"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7280.1,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 278.6,
+          "totalSearchMs": 7001.5
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 1784.8,
+            "solveMs": 5050.5,
+            "objective": 2071.96,
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 308,
+                "dofus": 261
+              },
+              "slotVarCount": 1639,
+              "uniqueItemCount": 1505,
+              "exoVarCount": 0,
+              "exactSetCountVarCount": 936,
+              "conditionConstraintCount": 375,
+              "setCountConstraintCount": 239
+            },
+            "validCandidate": {
+              "score": 2534.72,
+              "totals": {
+                "AP": 8,
+                "MP": 4,
+                "Range": 6,
+                "Strength": 100,
+                "Power": 280,
+                "Earth Damage": 30,
+                "Vitality": 3503
+              },
+              "items": {
+                "amulet": "Servitude's Scarf",
+                "belt": "Voldelor Belt",
+                "weapon": "Gargandyas's Fury",
+                "shield": "Four-Leaf",
+                "ring_1": "Hairsh Bracelet",
+                "ring_2": "Rhineetle Ring",
+                "boots": "Voldelor Boots",
+                "hat": "Danathor's Helmet",
+                "cloak": "Servitude's Coat",
+                "pet": "Indigo and Ivory Dragoturkey",
+                "dofus_1": "Arcanist",
+                "dofus_2": "Impetuous",
+                "dofus_3": "Major Luckster",
+                "dofus_4": "Major Tease",
+                "dofus_5": "Major Vigour",
+                "dofus_6": "Major Water Devastator"
+              }
+            }
+          }
+        ],
+        "itemCount": 1505,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "milestone2_l200_chance_7_3_none_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 4,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": null,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 25,
+        "beamWidth": 100,
+        "perSignatureCap": 10,
+        "relevantSetLimit": 40
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2694.83,
+        "weightedStatScore": 4141.74,
+        "utilityStatScore": 421.17,
+        "genericDamageScore": 4853.97,
+        "rawRotationDamageScore": 3212.18,
+        "spellDamageScore": 3212.18,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.618,
+        "weaponDamageScore": 192.94,
+        "survivabilityScore": 89.37,
+        "weakestElementEhp": 2760.62,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 3,
+          "Chance": 1498,
+          "Power": 180,
+          "Vitality": 2853,
+          "Damage": 0,
+          "Water Damage": 145,
+          "Critical": 70,
+          "Critical Damage": 22
+        },
+        "sets": {
+          "Erotegg Set": 2,
+          "Unsound Mind Set": 2,
+          "Rhineetle Set": 2,
+          "Servitude Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "19252",
+            "slot": "hat"
+          },
+          "MP": {
+            "itemId": "32236",
+            "slot": "shield"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "22200",
+            "internalId": null,
+            "name": "Servitude's Scarf",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "belt": {
+            "id": "19250",
+            "internalId": null,
+            "name": "Belt of the Unsound Mind",
+            "type": "Belt",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "weapon": {
+            "id": "19986",
+            "internalId": null,
+            "name": "Rhineetle Bow",
+            "type": "Bow",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "shield": {
+            "id": "32236",
+            "internalId": null,
+            "name": "Erotegg Disc",
+            "type": "Shield",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_1": {
+            "id": "32234",
+            "internalId": null,
+            "name": "Erotegg Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Erotegg Set"
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "boots": {
+            "id": "32121",
+            "internalId": null,
+            "name": "Meriana's Clairvoyance",
+            "type": "Boots",
+            "level": 200,
+            "set": null
+          },
+          "hat": {
+            "id": "19252",
+            "internalId": null,
+            "name": "Mask of the Unsound Mind",
+            "type": "Hat",
+            "level": 200,
+            "set": "Unsound Mind Set"
+          },
+          "cloak": {
+            "id": "22201",
+            "internalId": null,
+            "name": "Servitude's Coat",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "pet": {
+            "id": "29433",
+            "internalId": null,
+            "name": "Zenusha Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "13344",
+            "internalId": null,
+            "name": "Dolmanax",
+            "type": "Dofus",
+            "level": 100,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2694.83,
+        "apStrategy": null,
+        "totals": {
+          "AP": 11,
+          "MP": 5,
+          "Range": 3,
+          "Chance": 1498,
+          "Power": 180,
+          "Vitality": 2853,
+          "Damage": 0,
+          "Water Damage": 145,
+          "Critical": 70,
+          "Critical Damage": 22
+        },
+        "sets": {
+          "Erotegg Set": 2,
+          "Unsound Mind Set": 2,
+          "Rhineetle Set": 2,
+          "Servitude Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "19252",
+            "slot": "hat"
+          },
+          "MP": {
+            "itemId": "32236",
+            "slot": "shield"
+          }
+        },
+        "items": [
+          "Servitude's Scarf",
+          "Belt of the Unsound Mind",
+          "Rhineetle Bow",
+          "Erotegg Disc",
+          "Erotegg Ring",
+          "Rhineetle Ring",
+          "Meriana's Clairvoyance",
+          "Mask of the Unsound Mind",
+          "Servitude's Coat",
+          "Zenusha Kolophant",
+          "Cloudy Dofus",
+          "Dolmanax",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Tease"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2694.83,
+          "weightedStatScore": 4141.74,
+          "utilityStatScore": 421.17,
+          "genericDamageScore": 4853.97,
+          "rawRotationDamageScore": 3212.18,
+          "spellDamageScore": 3212.18,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.618,
+          "weaponDamageScore": 192.94,
+          "survivabilityScore": 89.37,
+          "weakestElementEhp": 2760.62,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 3,
+            "Chance": 1498,
+            "Power": 180,
+            "Vitality": 2853,
+            "Damage": 0,
+            "Water Damage": 145,
+            "Critical": 70,
+            "Critical Damage": 22
+          },
+          "sets": {
+            "Erotegg Set": 2,
+            "Unsound Mind Set": 2,
+            "Rhineetle Set": 2,
+            "Servitude Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "19252",
+              "slot": "hat"
+            },
+            "MP": {
+              "itemId": "32236",
+              "slot": "shield"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "22200",
+              "internalId": null,
+              "name": "Servitude's Scarf",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "belt": {
+              "id": "19250",
+              "internalId": null,
+              "name": "Belt of the Unsound Mind",
+              "type": "Belt",
+              "level": 200,
+              "set": "Unsound Mind Set"
+            },
+            "weapon": {
+              "id": "19986",
+              "internalId": null,
+              "name": "Rhineetle Bow",
+              "type": "Bow",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "shield": {
+              "id": "32236",
+              "internalId": null,
+              "name": "Erotegg Disc",
+              "type": "Shield",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_1": {
+              "id": "32234",
+              "internalId": null,
+              "name": "Erotegg Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Erotegg Set"
+            },
+            "ring_2": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "boots": {
+              "id": "32121",
+              "internalId": null,
+              "name": "Meriana's Clairvoyance",
+              "type": "Boots",
+              "level": 200,
+              "set": null
+            },
+            "hat": {
+              "id": "19252",
+              "internalId": null,
+              "name": "Mask of the Unsound Mind",
+              "type": "Hat",
+              "level": 200,
+              "set": "Unsound Mind Set"
+            },
+            "cloak": {
+              "id": "22201",
+              "internalId": null,
+              "name": "Servitude's Coat",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "pet": {
+              "id": "29433",
+              "internalId": null,
+              "name": "Zenusha Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "13344",
+              "internalId": null,
+              "name": "Dolmanax",
+              "type": "Dofus",
+              "level": 100,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2694.83,
+          "apStrategy": null,
+          "totals": {
+            "AP": 11,
+            "MP": 5,
+            "Range": 3,
+            "Chance": 1498,
+            "Power": 180,
+            "Vitality": 2853,
+            "Damage": 0,
+            "Water Damage": 145,
+            "Critical": 70,
+            "Critical Damage": 22
+          },
+          "sets": {
+            "Erotegg Set": 2,
+            "Unsound Mind Set": 2,
+            "Rhineetle Set": 2,
+            "Servitude Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "19252",
+              "slot": "hat"
+            },
+            "MP": {
+              "itemId": "32236",
+              "slot": "shield"
+            }
+          },
+          "items": [
+            "Servitude's Scarf",
+            "Belt of the Unsound Mind",
+            "Rhineetle Bow",
+            "Erotegg Disc",
+            "Erotegg Ring",
+            "Rhineetle Ring",
+            "Meriana's Clairvoyance",
+            "Mask of the Unsound Mind",
+            "Servitude's Coat",
+            "Zenusha Kolophant",
+            "Cloudy Dofus",
+            "Dolmanax",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Tease"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 5763.6,
+        "solverStatus": "OPTIMAL",
+        "timings": {
+          "loadMs": 282.4,
+          "totalSearchMs": 5481.2
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "OPTIMAL",
+            "modelMs": 1757.8,
+            "solveMs": 3567.4,
+            "objective": 2179.71,
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 316
+              },
+              "slotVarCount": 1838,
+              "uniqueItemCount": 1704,
+              "exoVarCount": 18,
+              "exactSetCountVarCount": 938,
+              "conditionConstraintCount": 375,
+              "setCountConstraintCount": 240
+            },
+            "validCandidate": {
+              "score": 2694.83,
+              "totals": {
+                "AP": 11,
+                "MP": 5,
+                "Range": 3,
+                "Strength": 410,
+                "Power": 180,
+                "Earth Damage": 45,
+                "Vitality": 2853
+              },
+              "items": {
+                "amulet": "Servitude's Scarf",
+                "belt": "Belt of the Unsound Mind",
+                "weapon": "Rhineetle Bow",
+                "shield": "Erotegg Disc",
+                "ring_1": "Erotegg Ring",
+                "ring_2": "Rhineetle Ring",
+                "boots": "Meriana's Clairvoyance",
+                "hat": "Mask of the Unsound Mind",
+                "cloak": "Servitude's Coat",
+                "pet": "Zenusha Kolophant",
+                "dofus_1": "Cloudy Dofus",
+                "dofus_2": "Dolmanax",
+                "dofus_3": "Ochre Dofus",
+                "dofus_4": "Arcanist",
+                "dofus_5": "Impetuous",
+                "dofus_6": "Major Tease"
+              }
+            }
+          }
+        ],
+        "itemCount": 1704,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    },
+    {
+      "target": {
+        "id": "milestone2_l200_chance_7_3_6_budget4",
+        "className": "Iop",
+        "level": 200,
+        "element": "chance",
+        "budgetTier": 4,
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 6
+      },
+      "query": {
+        "className": "Iop",
+        "level": 200,
+        "elements": [
+          "chance"
+        ],
+        "mode": "pvm",
+        "apTarget": 7,
+        "mpTarget": 3,
+        "rangeTarget": 6,
+        "damageSurvivabilityPreset": 3,
+        "budgetTier": 4,
+        "exoPolicy": "allow",
+        "weaponPolicy": "stat_stick_allowed",
+        "lockedItemIds": [],
+        "avoidedItemIds": [],
+        "limit": 1,
+        "topK": 50,
+        "beamWidth": 150,
+        "perSignatureCap": 20,
+        "relevantSetLimit": 50
+      },
+      "status": "generated",
+      "resultCount": 1,
+      "validationErrors": [],
+      "candidateValidationErrors": [
+        {
+          "index": 0,
+          "errors": []
+        }
+      ],
+      "bestBuild": {
+        "score": 2681.98,
+        "weightedStatScore": 4237.09,
+        "utilityStatScore": 446.67,
+        "genericDamageScore": 4760.49,
+        "rawRotationDamageScore": 3150.32,
+        "spellDamageScore": 3150.32,
+        "profileBaselineDamageScore": 1985.29,
+        "profileRelativeDamage": 1.5868,
+        "weaponDamageScore": 243.45,
+        "survivabilityScore": 93.09,
+        "weakestElementEhp": 2726.69,
+        "apStrategy": null,
+        "baseAllocation": {
+          "Chance": 398,
+          "Vitality": 3
+        },
+        "conditionFailures": [],
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 6,
+          "Chance": 1458,
+          "Power": 260,
+          "Vitality": 3153,
+          "Damage": 5,
+          "Water Damage": 145,
+          "Critical": 60,
+          "Critical Damage": 35
+        },
+        "sets": {
+          "Ice Knight Set": 2,
+          "Voldelor Set": 2,
+          "Servitude Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "13120",
+            "slot": "hat"
+          },
+          "MP": {
+            "itemId": "22200",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "22201",
+            "slot": "cloak"
+          }
+        },
+        "items": {
+          "amulet": {
+            "id": "22200",
+            "internalId": null,
+            "name": "Servitude's Scarf",
+            "type": "Amulet",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "belt": {
+            "id": "17104",
+            "internalId": null,
+            "name": "Voldelor Belt",
+            "type": "Belt",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "weapon": {
+            "id": "31787",
+            "internalId": null,
+            "name": "Gargandyas's Fury",
+            "type": "Hammer",
+            "level": 200,
+            "set": "Gargandyas Set"
+          },
+          "shield": {
+            "id": "32233",
+            "internalId": null,
+            "name": "Ice Knight's Frigid Pavise",
+            "type": "Shield",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "ring_1": {
+            "id": "32231",
+            "internalId": null,
+            "name": "Ice Knight's Frozen Gauntlet",
+            "type": "Ring",
+            "level": 200,
+            "set": "Ice Knight Set"
+          },
+          "ring_2": {
+            "id": "19985",
+            "internalId": null,
+            "name": "Rhineetle Ring",
+            "type": "Ring",
+            "level": 200,
+            "set": "Rhineetle Set"
+          },
+          "boots": {
+            "id": "17105",
+            "internalId": null,
+            "name": "Voldelor Boots",
+            "type": "Boots",
+            "level": 200,
+            "set": "Voldelor Set"
+          },
+          "hat": {
+            "id": "13120",
+            "internalId": null,
+            "name": "Danathor's Helmet",
+            "type": "Hat",
+            "level": 196,
+            "set": "Danathor Set"
+          },
+          "cloak": {
+            "id": "22201",
+            "internalId": null,
+            "name": "Servitude's Coat",
+            "type": "Cloak",
+            "level": 200,
+            "set": "Servitude Set"
+          },
+          "pet": {
+            "id": "29433",
+            "internalId": null,
+            "name": "Zenusha Kolophant",
+            "type": "Petsmount",
+            "level": 60,
+            "set": null
+          },
+          "dofus_1": {
+            "id": "8698",
+            "internalId": null,
+            "name": "Cloudy Dofus",
+            "type": "Dofus",
+            "level": 180,
+            "set": null
+          },
+          "dofus_2": {
+            "id": "694",
+            "internalId": null,
+            "name": "Crimson Dofus",
+            "type": "Dofus",
+            "level": 110,
+            "set": null
+          },
+          "dofus_3": {
+            "id": "7754",
+            "internalId": null,
+            "name": "Ochre Dofus",
+            "type": "Dofus",
+            "level": 160,
+            "set": null
+          },
+          "dofus_4": {
+            "id": "30455",
+            "internalId": null,
+            "name": "Arcanist",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_5": {
+            "id": "30453",
+            "internalId": null,
+            "name": "Impetuous",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          },
+          "dofus_6": {
+            "id": "13768",
+            "internalId": null,
+            "name": "Major Tease",
+            "type": "Trophy",
+            "level": 150,
+            "set": null
+          }
+        }
+      },
+      "bestBuildSummary": {
+        "score": 2681.98,
+        "apStrategy": null,
+        "totals": {
+          "AP": 10,
+          "MP": 5,
+          "Range": 6,
+          "Chance": 1458,
+          "Power": 260,
+          "Vitality": 3153,
+          "Damage": 5,
+          "Water Damage": 145,
+          "Critical": 60,
+          "Critical Damage": 35
+        },
+        "sets": {
+          "Ice Knight Set": 2,
+          "Voldelor Set": 2,
+          "Servitude Set": 2
+        },
+        "exos": {
+          "AP": {
+            "itemId": "13120",
+            "slot": "hat"
+          },
+          "MP": {
+            "itemId": "22200",
+            "slot": "amulet"
+          },
+          "Range": {
+            "itemId": "22201",
+            "slot": "cloak"
+          }
+        },
+        "items": [
+          "Servitude's Scarf",
+          "Voldelor Belt",
+          "Gargandyas's Fury",
+          "Ice Knight's Frigid Pavise",
+          "Ice Knight's Frozen Gauntlet",
+          "Rhineetle Ring",
+          "Voldelor Boots",
+          "Danathor's Helmet",
+          "Servitude's Coat",
+          "Zenusha Kolophant",
+          "Cloudy Dofus",
+          "Crimson Dofus",
+          "Ochre Dofus",
+          "Arcanist",
+          "Impetuous",
+          "Major Tease"
+        ]
+      },
+      "candidateBuilds": [
+        {
+          "score": 2681.98,
+          "weightedStatScore": 4237.09,
+          "utilityStatScore": 446.67,
+          "genericDamageScore": 4760.49,
+          "rawRotationDamageScore": 3150.32,
+          "spellDamageScore": 3150.32,
+          "profileBaselineDamageScore": 1985.29,
+          "profileRelativeDamage": 1.5868,
+          "weaponDamageScore": 243.45,
+          "survivabilityScore": 93.09,
+          "weakestElementEhp": 2726.69,
+          "apStrategy": null,
+          "baseAllocation": {
+            "Chance": 398,
+            "Vitality": 3
+          },
+          "conditionFailures": [],
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 6,
+            "Chance": 1458,
+            "Power": 260,
+            "Vitality": 3153,
+            "Damage": 5,
+            "Water Damage": 145,
+            "Critical": 60,
+            "Critical Damage": 35
+          },
+          "sets": {
+            "Ice Knight Set": 2,
+            "Voldelor Set": 2,
+            "Servitude Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "13120",
+              "slot": "hat"
+            },
+            "MP": {
+              "itemId": "22200",
+              "slot": "amulet"
+            },
+            "Range": {
+              "itemId": "22201",
+              "slot": "cloak"
+            }
+          },
+          "items": {
+            "amulet": {
+              "id": "22200",
+              "internalId": null,
+              "name": "Servitude's Scarf",
+              "type": "Amulet",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "belt": {
+              "id": "17104",
+              "internalId": null,
+              "name": "Voldelor Belt",
+              "type": "Belt",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "weapon": {
+              "id": "31787",
+              "internalId": null,
+              "name": "Gargandyas's Fury",
+              "type": "Hammer",
+              "level": 200,
+              "set": "Gargandyas Set"
+            },
+            "shield": {
+              "id": "32233",
+              "internalId": null,
+              "name": "Ice Knight's Frigid Pavise",
+              "type": "Shield",
+              "level": 200,
+              "set": "Ice Knight Set"
+            },
+            "ring_1": {
+              "id": "32231",
+              "internalId": null,
+              "name": "Ice Knight's Frozen Gauntlet",
+              "type": "Ring",
+              "level": 200,
+              "set": "Ice Knight Set"
+            },
+            "ring_2": {
+              "id": "19985",
+              "internalId": null,
+              "name": "Rhineetle Ring",
+              "type": "Ring",
+              "level": 200,
+              "set": "Rhineetle Set"
+            },
+            "boots": {
+              "id": "17105",
+              "internalId": null,
+              "name": "Voldelor Boots",
+              "type": "Boots",
+              "level": 200,
+              "set": "Voldelor Set"
+            },
+            "hat": {
+              "id": "13120",
+              "internalId": null,
+              "name": "Danathor's Helmet",
+              "type": "Hat",
+              "level": 196,
+              "set": "Danathor Set"
+            },
+            "cloak": {
+              "id": "22201",
+              "internalId": null,
+              "name": "Servitude's Coat",
+              "type": "Cloak",
+              "level": 200,
+              "set": "Servitude Set"
+            },
+            "pet": {
+              "id": "29433",
+              "internalId": null,
+              "name": "Zenusha Kolophant",
+              "type": "Petsmount",
+              "level": 60,
+              "set": null
+            },
+            "dofus_1": {
+              "id": "8698",
+              "internalId": null,
+              "name": "Cloudy Dofus",
+              "type": "Dofus",
+              "level": 180,
+              "set": null
+            },
+            "dofus_2": {
+              "id": "694",
+              "internalId": null,
+              "name": "Crimson Dofus",
+              "type": "Dofus",
+              "level": 110,
+              "set": null
+            },
+            "dofus_3": {
+              "id": "7754",
+              "internalId": null,
+              "name": "Ochre Dofus",
+              "type": "Dofus",
+              "level": 160,
+              "set": null
+            },
+            "dofus_4": {
+              "id": "30455",
+              "internalId": null,
+              "name": "Arcanist",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_5": {
+              "id": "30453",
+              "internalId": null,
+              "name": "Impetuous",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            },
+            "dofus_6": {
+              "id": "13768",
+              "internalId": null,
+              "name": "Major Tease",
+              "type": "Trophy",
+              "level": 150,
+              "set": null
+            }
+          }
+        }
+      ],
+      "candidateBuildSummaries": [
+        {
+          "score": 2681.98,
+          "apStrategy": null,
+          "totals": {
+            "AP": 10,
+            "MP": 5,
+            "Range": 6,
+            "Chance": 1458,
+            "Power": 260,
+            "Vitality": 3153,
+            "Damage": 5,
+            "Water Damage": 145,
+            "Critical": 60,
+            "Critical Damage": 35
+          },
+          "sets": {
+            "Ice Knight Set": 2,
+            "Voldelor Set": 2,
+            "Servitude Set": 2
+          },
+          "exos": {
+            "AP": {
+              "itemId": "13120",
+              "slot": "hat"
+            },
+            "MP": {
+              "itemId": "22200",
+              "slot": "amulet"
+            },
+            "Range": {
+              "itemId": "22201",
+              "slot": "cloak"
+            }
+          },
+          "items": [
+            "Servitude's Scarf",
+            "Voldelor Belt",
+            "Gargandyas's Fury",
+            "Ice Knight's Frigid Pavise",
+            "Ice Knight's Frozen Gauntlet",
+            "Rhineetle Ring",
+            "Voldelor Boots",
+            "Danathor's Helmet",
+            "Servitude's Coat",
+            "Zenusha Kolophant",
+            "Cloudy Dofus",
+            "Crimson Dofus",
+            "Ochre Dofus",
+            "Arcanist",
+            "Impetuous",
+            "Major Tease"
+          ]
+        }
+      ],
+      "candidateDiversity": {
+        "candidateCount": 1,
+        "uniqueItemSignatureCount": 1,
+        "maxSharedItemsWithBest": 0
+      },
+      "warnings": [],
+      "diagnostics": {
+        "solver": "cpsat",
+        "elapsedMs": 7323.8,
+        "solverStatus": "FEASIBLE",
+        "timings": {
+          "loadMs": 297.8,
+          "totalSearchMs": 7026.0
+        },
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "FEASIBLE",
+            "modelMs": 1798.0,
+            "solveMs": 5062.5,
+            "objective": 2183.43,
+            "modelStats": {
+              "slotCandidateCounts": {
+                "amulet": 100,
+                "belt": 98,
+                "weapon": 200,
+                "shield": 59,
+                "ring_1": 134,
+                "ring_2": 134,
+                "boots": 107,
+                "hat": 140,
+                "cloak": 98,
+                "pet": 452,
+                "dofus": 316
+              },
+              "slotVarCount": 1838,
+              "uniqueItemCount": 1704,
+              "exoVarCount": 27,
+              "exactSetCountVarCount": 938,
+              "conditionConstraintCount": 375,
+              "setCountConstraintCount": 240
+            },
+            "validCandidate": {
+              "score": 2681.98,
+              "totals": {
+                "AP": 10,
+                "MP": 5,
+                "Range": 6,
+                "Strength": 100,
+                "Power": 260,
+                "Earth Damage": 20,
+                "Vitality": 3153
+              },
+              "items": {
+                "amulet": "Servitude's Scarf",
+                "belt": "Voldelor Belt",
+                "weapon": "Gargandyas's Fury",
+                "shield": "Ice Knight's Frigid Pavise",
+                "ring_1": "Ice Knight's Frozen Gauntlet",
+                "ring_2": "Rhineetle Ring",
+                "boots": "Voldelor Boots",
+                "hat": "Danathor's Helmet",
+                "cloak": "Servitude's Coat",
+                "pet": "Zenusha Kolophant",
+                "dofus_1": "Cloudy Dofus",
+                "dofus_2": "Crimson Dofus",
+                "dofus_3": "Ochre Dofus",
+                "dofus_4": "Arcanist",
+                "dofus_5": "Impetuous",
+                "dofus_6": "Major Tease"
+              }
+            }
+          }
+        ],
+        "itemCount": 1704,
+        "candidateCount": 1,
+        "requestedCandidateLimit": 1,
+        "maxSharedItems": 10,
+        "objectiveWeights": {
+          "% Air Resistance": 0.0332,
+          "% Earth Resistance": 0.0332,
+          "% Final Damage": 12.445,
+          "% Fire Resistance": 0.0332,
+          "% Melee Resistance": 0.0988,
+          "% Neutral Resistance": 0.0332,
+          "% Ranged Damage": 12.445,
+          "% Ranged Resistance": 0.2316,
+          "% Spell Damage": 12.445,
+          "% Water Resistance": 0.0332,
+          "AP": 12.0,
+          "AP Parry": 0.167,
+          "Air Resistance": 0.0094,
+          "Chance": 0.7457,
+          "Critical": 4.0889,
+          "Critical Damage": 1.4562,
+          "Critical Resistance": 0.0188,
+          "Damage": 2.35,
+          "Dodge": 1.0,
+          "Earth Resistance": 0.0094,
+          "Fire Resistance": 0.0094,
+          "Initiative": 0.005,
+          "Lock": 0.5,
+          "MP": 10.0,
+          "MP Parry": 0.167,
+          "Neutral Resistance": 0.0094,
+          "Power": 0.7457,
+          "Prospecting": 0.033,
+          "Pushback Resistance": 0.0019,
+          "Range": 8.0,
+          "Temporary AP": 60.0,
+          "Vitality": 0.03,
+          "Water Damage": 2.35,
+          "Water Resistance": 0.0094,
+          "Wisdom": 0.15
+        }
+      },
+      "cache": {},
+      "datasetVersion": null,
+      "solverVersion": "oneoff.build_discovery_cpsat_experiment"
+    }
+  ]
+}

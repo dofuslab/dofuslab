@@ -14,6 +14,7 @@ from build_discovery_level_diversity_matrix import (
     cpsat_build_discovery_response,
     generator_for_args,
     load_targets_from_file,
+    parse_optional_int_filter,
     query_for_matrix_target,
     query_summary,
     render_markdown,
@@ -81,6 +82,41 @@ class BuildDiscoveryLevelDiversityMatrixTest(unittest.TestCase):
         self.assertEqual(targets[-1].name, "prod_regen_level_200_agility_11_6_5_budget4")
         self.assertIn("prod_regen_level_80_agility_10_4_none_budget2", {target.name for target in targets})
         self.assertIn("prod_regen_level_160_intelligence_12_5_none_budget3", {target.name for target in targets})
+
+    def test_milestone2_level200_target_set_covers_full_grid(self):
+        targets = targets_for_set("milestone2-level200")
+
+        self.assertEqual(len(targets), 3072)
+        self.assertEqual({target.level for target in targets}, {200})
+        self.assertEqual({target.element for target in targets}, {"strength", "intelligence", "chance", "agility"})
+        self.assertEqual({target.budget_tier for target in targets}, {1, 2, 3, 4})
+        self.assertEqual({target.ap for target in targets}, set(range(7, 13)))
+        self.assertEqual({target.mp for target in targets}, set(range(3, 7)))
+        self.assertEqual({target.range_target for target in targets}, {None, 0, 1, 2, 3, 4, 5, 6})
+        self.assertEqual(targets[0].name, "milestone2_l200_strength_7_3_none_budget1")
+        self.assertEqual(targets[-1].name, "milestone2_l200_agility_12_6_6_budget4")
+
+    def test_selected_targets_filters_milestone2_by_ap_mp_range(self):
+        targets = selected_targets(
+            all_targets=targets_for_set("milestone2-level200"),
+            elements={"chance"},
+            budget_tiers={2},
+            ap_targets={11},
+            mp_targets={6},
+            range_targets={None, 6},
+        )
+
+        self.assertEqual(
+            [target.name for target in targets],
+            [
+                "milestone2_l200_chance_11_6_none_budget2",
+                "milestone2_l200_chance_11_6_6_budget2",
+            ],
+        )
+
+    def test_parse_optional_int_filter_accepts_none_aliases(self):
+        self.assertEqual(parse_optional_int_filter("none,0,6"), {None, 0, 6})
+        self.assertEqual(parse_optional_int_filter("any,null,1"), {None, 1})
 
     def test_selected_targets_can_use_grid_next_minimum_target_set(self):
         targets = selected_targets(

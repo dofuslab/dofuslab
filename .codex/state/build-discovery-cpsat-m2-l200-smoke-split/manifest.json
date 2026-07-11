@@ -1,0 +1,61 @@
+{
+  "splitReportCount": 8,
+  "reports": [
+    {
+      "targetId": "milestone2_l200_strength_7_3_none_budget1",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_strength_7_3_none_budget1.json",
+      "markdown": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_strength_7_3_none_budget1.md"
+    },
+    {
+      "targetId": "milestone2_l200_strength_7_3_6_budget1",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_strength_7_3_6_budget1.json",
+      "markdown": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_strength_7_3_6_budget1.md"
+    },
+    {
+      "targetId": "milestone2_l200_strength_7_3_none_budget4",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_strength_7_3_none_budget4.json",
+      "markdown": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_strength_7_3_none_budget4.md"
+    },
+    {
+      "targetId": "milestone2_l200_strength_7_3_6_budget4",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_strength_7_3_6_budget4.json",
+      "markdown": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_strength_7_3_6_budget4.md"
+    },
+    {
+      "targetId": "milestone2_l200_chance_7_3_none_budget1",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_chance_7_3_none_budget1.json",
+      "markdown": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_chance_7_3_none_budget1.md"
+    },
+    {
+      "targetId": "milestone2_l200_chance_7_3_6_budget1",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_chance_7_3_6_budget1.json",
+      "markdown": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_chance_7_3_6_budget1.md"
+    },
+    {
+      "targetId": "milestone2_l200_chance_7_3_none_budget4",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_chance_7_3_none_budget4.json",
+      "markdown": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_chance_7_3_none_budget4.md"
+    },
+    {
+      "targetId": "milestone2_l200_chance_7_3_6_budget4",
+      "status": "generated",
+      "resumed": false,
+      "json": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_chance_7_3_6_budget4.json",
+      "markdown": "/tmp/build-discovery-cpsat-m2-l200-smoke-split/milestone2_l200_chance_7_3_6_budget4.md"
+    }
+  ]
+}

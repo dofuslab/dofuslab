@@ -35,6 +35,7 @@ from scripts.build_discovery_level_diversity_targets import (  # noqa: E402
     BOUNDARY_LEVEL_TARGETS,
     LEVEL_DIVERSITY_TARGETS,
     LevelDiversityTarget,
+    MILESTONE2_LEVEL200_TARGETS,
     PROD_LEVEL_SAMPLE_TARGETS,
     query_for_target,
 )
@@ -106,6 +107,9 @@ def selected_targets(
     levels: set[int] | None = None,
     elements: set[str] | None = None,
     budget_tiers: set[int] | None = None,
+    ap_targets: set[int] | None = None,
+    mp_targets: set[int] | None = None,
+    range_targets: set[int | None] | None = None,
 ) -> list[LevelDiversityTarget]:
     targets = []
     for target in all_targets:
@@ -116,6 +120,12 @@ def selected_targets(
         if elements is not None and target.element not in elements:
             continue
         if budget_tiers is not None and target.budget_tier not in budget_tiers:
+            continue
+        if ap_targets is not None and target.ap not in ap_targets:
+            continue
+        if mp_targets is not None and target.mp not in mp_targets:
+            continue
+        if range_targets is not None and target.range_target not in range_targets:
             continue
         targets.append(target)
     return targets
@@ -245,6 +255,8 @@ def targets_from_file(path: str | Path, *, limit: int | None = None, prefix: str
 def targets_for_set(target_set: str) -> tuple[LevelDiversityTarget, ...]:
     if target_set == "level-diversity":
         return LEVEL_DIVERSITY_TARGETS
+    if target_set == "milestone2-level200":
+        return MILESTONE2_LEVEL200_TARGETS
     if target_set == "boundary":
         return BOUNDARY_LEVEL_TARGETS
     if target_set == "coverage":
@@ -268,6 +280,7 @@ def targets_for_set(target_set: str) -> tuple[LevelDiversityTarget, ...]:
     if target_set == "all":
         return (
             LEVEL_DIVERSITY_TARGETS
+            + MILESTONE2_LEVEL200_TARGETS
             + BOUNDARY_LEVEL_TARGETS
             + AP_MP_RANGE_COVERAGE_TARGETS
             + PROD_LEVEL_SAMPLE_TARGETS
@@ -296,6 +309,8 @@ def query_for_matrix_target(
 def target_source_for_set(target_set: str) -> str:
     if target_set == "target-file":
         return "target file"
+    if target_set == "milestone2-level200":
+        return "scripts.build_discovery_level_diversity_targets.MILESTONE2_LEVEL200_TARGETS"
     if target_set == "boundary":
         return "scripts.build_discovery_level_diversity_targets.BOUNDARY_LEVEL_TARGETS"
     if target_set == "coverage":
@@ -317,7 +332,7 @@ def target_source_for_set(target_set: str) -> str:
     if target_set == "grid-next-cap-4":
         return "scripts.build_discovery_level_diversity_targets.AP_MP_RANGE_GRID_NEXT_CAP_4_TARGETS"
     if target_set == "all":
-        return "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS+BOUNDARY_LEVEL_TARGETS+AP_MP_RANGE_COVERAGE_TARGETS+PROD_LEVEL_SAMPLE_TARGETS+AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS+AP_MP_RANGE_GRID_NEXT_MINIMUM_2_TARGETS+AP_MP_RANGE_GRID_NEXT_MINIMUM_3_TARGETS+AP_MP_RANGE_GRID_NEXT_CAP_TARGETS+AP_MP_RANGE_GRID_NEXT_CAP_2_TARGETS+AP_MP_RANGE_GRID_NEXT_CAP_3_TARGETS+AP_MP_RANGE_GRID_NEXT_CAP_4_TARGETS"
+        return "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS+MILESTONE2_LEVEL200_TARGETS+BOUNDARY_LEVEL_TARGETS+AP_MP_RANGE_COVERAGE_TARGETS+PROD_LEVEL_SAMPLE_TARGETS+AP_MP_RANGE_GRID_NEXT_MINIMUM_TARGETS+AP_MP_RANGE_GRID_NEXT_MINIMUM_2_TARGETS+AP_MP_RANGE_GRID_NEXT_MINIMUM_3_TARGETS+AP_MP_RANGE_GRID_NEXT_CAP_TARGETS+AP_MP_RANGE_GRID_NEXT_CAP_2_TARGETS+AP_MP_RANGE_GRID_NEXT_CAP_3_TARGETS+AP_MP_RANGE_GRID_NEXT_CAP_4_TARGETS"
     return "scripts.build_discovery_level_diversity_targets.LEVEL_DIVERSITY_TARGETS"
 
 
@@ -920,6 +935,20 @@ def parse_int_filter(raw_value: str | None) -> set[int] | None:
     return {int(value) for value in values}
 
 
+def parse_optional_int_filter(raw_value: str | None) -> set[int | None] | None:
+    values = csv_filter(raw_value)
+    if values is None:
+        return None
+    parsed: set[int | None] = set()
+    for value in values:
+        normalized = value.strip().lower()
+        if normalized in {"", "none", "any", "null"}:
+            parsed.add(None)
+        else:
+            parsed.add(int(normalized))
+    return parsed
+
+
 def cpsat_args_for_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> argparse.Namespace:
     requested_limit = query.limit or 1
     candidate_limit = max(getattr(args, "cpsat_candidate_limit", 20), requested_limit)
@@ -986,12 +1015,15 @@ def main() -> None:
     parser.add_argument("--target-file-prefix", default="file", help="Prefix for generated target ids from --target-file.")
     parser.add_argument(
         "--target-set",
-        choices=("level-diversity", "boundary", "coverage", "prod-level-sample", "grid-next-minimum", "grid-next-minimum-2", "grid-next-minimum-3", "grid-next-cap", "grid-next-cap-2", "grid-next-cap-3", "grid-next-cap-4", "all"),
+        choices=("level-diversity", "milestone2-level200", "boundary", "coverage", "prod-level-sample", "grid-next-minimum", "grid-next-minimum-2", "grid-next-minimum-3", "grid-next-cap", "grid-next-cap-2", "grid-next-cap-3", "grid-next-cap-4", "all"),
         default="level-diversity",
     )
     parser.add_argument("--levels", help="Comma-separated levels to include.")
     parser.add_argument("--elements", help="Comma-separated elements to include.")
     parser.add_argument("--budget-tiers", help="Comma-separated budget tiers to include.")
+    parser.add_argument("--ap-targets", help="Comma-separated AP targets to include.")
+    parser.add_argument("--mp-targets", help="Comma-separated MP targets to include.")
+    parser.add_argument("--range-targets", help="Comma-separated range targets to include; accepts none/any/null.")
     parser.add_argument("--target-manifest-json", help="Write selected target/query manifest JSON without running the solver.")
     parser.add_argument("--target-manifest-md", help="Write selected target/query manifest Markdown without running the solver.")
     parser.add_argument("--output-json", help="Write JSON report to this path.")
@@ -1048,6 +1080,9 @@ def main() -> None:
         levels=parse_int_filter(args.levels),
         elements=csv_filter(args.elements),
         budget_tiers=parse_int_filter(args.budget_tiers),
+        ap_targets=parse_int_filter(args.ap_targets),
+        mp_targets=parse_int_filter(args.mp_targets),
+        range_targets=parse_optional_int_filter(args.range_targets),
     )
     if args.missing_from_split_dir:
         targets = targets_missing_from_split_reports(

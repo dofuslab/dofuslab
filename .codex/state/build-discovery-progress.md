@@ -3976,3 +3976,44 @@ Partially superseded by the 2026-07-10 level-base witness diagnostic fix below.
   - `python server\scripts\test_build_discovery_cpsat_experiment.py`
   - Docker: `python scripts/test_build_discovery_cpsat_experiment.py`
   - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-or-smoke.json --target-file /tmp/build-discovery-cpsat-l200-min-elements-budgets-targets.json --target-file-prefix cpsat_l200_min_budget --targets cpsat_l200_strength_7_3_none_budget1,cpsat_l200_intelligence_7_3_none_budget1`
+
+### 2026-07-11 First-Class Milestone 2 Grid Harness
+
+- Added a generated `milestone2-level200` target set:
+  - level 200 Iop only
+  - elements: strength, intelligence, chance, agility
+  - budget tiers: 1-4
+  - AP targets: 7-12
+  - MP targets: 3-6
+  - Range targets: none, 0-6
+  - total targets: 3,072
+- Added matrix/checker filters for AP, MP, and Range targets, including
+  `none`/`any`/`null` aliases for optional Range.
+- Added harness tests pinning the Milestone 2 grid shape and filter behavior.
+- Generated and validated an 8-row Docker CP-SAT smoke slice:
+  - `.codex/state/build-discovery-cpsat-m2-l200-smoke-matrix.json`
+  - `.codex/state/build-discovery-cpsat-m2-l200-smoke-matrix.md`
+  - `.codex/state/build-discovery-cpsat-m2-l200-smoke-split/`
+- Slice:
+  - elements: strength, chance
+  - budget tiers: 1, 4
+  - AP: 7
+  - MP: 3
+  - Range: none, 6
+- Result:
+  - targets: `8`
+  - generated: `8`
+  - no build: `0`
+  - invalid: `0`
+  - solver statuses: `4` optimal, `4` feasible
+- Runtime:
+  - min: `5680.3ms`
+  - avg: `6787.6ms`
+  - max: `8768.4ms`
+  - rows over `5s`: `8/8`
+- Verification passed:
+  - `python server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - `python -m py_compile server\scripts\build_discovery_level_diversity_targets.py server\scripts\build_discovery_level_diversity_matrix.py server\scripts\check_build_discovery_level_diversity_matrix.py server\scripts\test_build_discovery_level_diversity_matrix.py`
+  - Docker: `python scripts/test_build_discovery_level_diversity_matrix.py`
+  - Docker: `python -m py_compile scripts/build_discovery_level_diversity_targets.py scripts/build_discovery_level_diversity_matrix.py scripts/check_build_discovery_level_diversity_matrix.py scripts/test_build_discovery_level_diversity_matrix.py`
+  - Docker: `python scripts/check_build_discovery_level_diversity_matrix.py /tmp/build-discovery-cpsat-m2-l200-smoke-matrix.json --target-set milestone2-level200 --elements strength,chance --budget-tiers 1,4 --ap-targets 7 --mp-targets 3 --range-targets none,6`

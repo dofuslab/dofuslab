@@ -79,6 +79,11 @@ review before accepting Milestone 2 evidence.
 
 - Previous generated matrices are evidence that target rows and validators work;
   they are not proof that CP-SAT currently finds best builds.
+- Milestone 2 now has a first-class level-200 Iop grid in the harness:
+  4 elements x 4 budget tiers x AP 7-12 x MP 3-6 x Range none/0-6 =
+  3,072 targets.
+- Milestone 2 matrix/checker runs can be filtered by element, budget tier,
+  AP target, MP target, and Range target, including `none` Range targets.
 - Previous expensive regression and benchmark fixtures are comparison anchors,
   not exact item-lock requirements unless explicitly promoted.
 - Exact item-by-item regression should be reserved for accepted benchmark builds
@@ -113,6 +118,9 @@ review before accepting Milestone 2 evidence.
   covered by executable synthetic CP-SAT fixture tests.
 - The first 16-row level-200 all-element/all-budget `7/3/None` slice generated
   all rows, but p95 remains above `5s`; only `8/16` rows were under `5s`.
+- First first-class Milestone 2 selector smoke generated 8/8 rows for
+  strength/chance, budget tiers 1/4, AP `7`, MP `3`, Range `none/6`;
+  elapsed times were `5680.3ms-8768.4ms`, so all rows remain above `5s`.
 - Expensive full-grid runs should be split, resumable, and checkpointed.
 - Prod database reads are only for bounded benchmark discovery and must stay
   read-only with small samples and query timeouts.

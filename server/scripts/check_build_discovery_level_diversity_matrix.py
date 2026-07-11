@@ -13,8 +13,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts.build_discovery_level_diversity_matrix import (  # noqa: E402
     REPORT_VERSION,
     load_targets_from_file,
+    parse_int_filter,
+    parse_optional_int_filter,
     query_for_matrix_target,
     query_payload_matches_artifact,
+    selected_targets,
     target_summary,
     targets_for_set,
     validate_best_build,
@@ -183,6 +186,12 @@ def validate_report(
     *,
     allow_no_build: bool = False,
     target_names: set[str] | None = None,
+    levels: set[int] | None = None,
+    elements: set[str] | None = None,
+    budget_tiers: set[int] | None = None,
+    ap_targets: set[int] | None = None,
+    mp_targets: set[int] | None = None,
+    range_targets: set[int | None] | None = None,
     target_file: str | Path | None = None,
     target_file_limit: int | None = None,
     target_file_prefix: str = "file",
@@ -201,8 +210,18 @@ def validate_report(
         ).targets
     else:
         targets = targets_for_set(target_set)
-    if target_names is not None:
-        targets = tuple(target for target in targets if target.name in target_names)
+    targets = tuple(
+        selected_targets(
+            all_targets=targets,
+            target_names=target_names,
+            levels=levels,
+            elements=elements,
+            budget_tiers=budget_tiers,
+            ap_targets=ap_targets,
+            mp_targets=mp_targets,
+            range_targets=range_targets,
+        )
+    )
     target_by_id = {target.name: target for target in targets}
     expected_ids = set(target_by_id)
     results = report.get("results", [])
@@ -267,11 +286,17 @@ def main() -> None:
     parser.add_argument("report", help="Path to a level-diversity matrix JSON artifact.")
     parser.add_argument(
         "--target-set",
-        choices=("level-diversity", "boundary", "coverage", "prod-level-sample", "grid-next-minimum", "grid-next-minimum-2", "grid-next-minimum-3", "grid-next-cap", "grid-next-cap-2", "grid-next-cap-3", "grid-next-cap-4", "all"),
+        choices=("level-diversity", "milestone2-level200", "boundary", "coverage", "prod-level-sample", "grid-next-minimum", "grid-next-minimum-2", "grid-next-minimum-3", "grid-next-cap", "grid-next-cap-2", "grid-next-cap-3", "grid-next-cap-4", "all"),
         default="level-diversity",
     )
     parser.add_argument("--allow-no-build", action="store_true")
     parser.add_argument("--targets", help="Comma-separated target ids to validate as a subset.")
+    parser.add_argument("--levels", help="Comma-separated levels to validate as a subset.")
+    parser.add_argument("--elements", help="Comma-separated elements to validate as a subset.")
+    parser.add_argument("--budget-tiers", help="Comma-separated budget tiers to validate as a subset.")
+    parser.add_argument("--ap-targets", help="Comma-separated AP targets to validate as a subset.")
+    parser.add_argument("--mp-targets", help="Comma-separated MP targets to validate as a subset.")
+    parser.add_argument("--range-targets", help="Comma-separated range targets to validate as a subset; accepts none/any/null.")
     parser.add_argument("--target-file", help="JSON target rows, inventory report, or matrix report to validate against.")
     parser.add_argument("--target-file-limit", type=int, help="Limit target rows loaded from --target-file.")
     parser.add_argument("--target-file-prefix", default="file", help="Prefix for generated target ids from --target-file.")
@@ -284,6 +309,12 @@ def main() -> None:
         target_set=args.target_set,
         allow_no_build=args.allow_no_build,
         target_names=csv_filter(args.targets),
+        levels=parse_int_filter(args.levels),
+        elements=csv_filter(args.elements),
+        budget_tiers=parse_int_filter(args.budget_tiers),
+        ap_targets=parse_int_filter(args.ap_targets),
+        mp_targets=parse_int_filter(args.mp_targets),
+        range_targets=parse_optional_int_filter(args.range_targets),
         target_file=args.target_file,
         target_file_limit=args.target_file_limit,
         target_file_prefix=args.target_file_prefix,

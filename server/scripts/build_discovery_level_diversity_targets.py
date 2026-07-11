@@ -19,6 +19,38 @@ class LevelDiversityTarget:
     range_target: Optional[int]
 
 
+MILESTONE2_LEVEL200_ELEMENTS = ("strength", "intelligence", "chance", "agility")
+MILESTONE2_LEVEL200_BUDGET_TIERS = (1, 2, 3, 4)
+MILESTONE2_LEVEL200_AP_TARGETS = tuple(range(7, 13))
+MILESTONE2_LEVEL200_MP_TARGETS = tuple(range(3, 7))
+MILESTONE2_LEVEL200_RANGE_TARGETS: tuple[Optional[int], ...] = (None, 0, 1, 2, 3, 4, 5, 6)
+
+
+def milestone2_level200_targets() -> tuple[LevelDiversityTarget, ...]:
+    targets = []
+    for element in MILESTONE2_LEVEL200_ELEMENTS:
+        for budget_tier in MILESTONE2_LEVEL200_BUDGET_TIERS:
+            for ap in MILESTONE2_LEVEL200_AP_TARGETS:
+                for mp in MILESTONE2_LEVEL200_MP_TARGETS:
+                    for range_target in MILESTONE2_LEVEL200_RANGE_TARGETS:
+                        range_label = "none" if range_target is None else str(range_target)
+                        targets.append(
+                            LevelDiversityTarget(
+                                f"milestone2_l200_{element}_{ap}_{mp}_{range_label}_budget{budget_tier}",
+                                200,
+                                element,
+                                budget_tier,
+                                ap,
+                                mp,
+                                range_target,
+                            )
+                        )
+    return tuple(targets)
+
+
+MILESTONE2_LEVEL200_TARGETS = milestone2_level200_targets()
+
+
 LEVEL_DIVERSITY_TARGETS = (
     LevelDiversityTarget("level_50_strength_7_3_1_budget1", 50, "strength", 1, 7, 3, 1),
     LevelDiversityTarget("level_50_intelligence_7_4_0_budget1", 50, "intelligence", 1, 7, 4, 0),
