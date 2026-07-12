@@ -1,7 +1,11 @@
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
 import importlib
+from threading import Lock
+from time import sleep
 from unittest.mock import Mock, patch
+from redis.exceptions import LockError
 
 from app import build_discovery_service as service
 from oneoff.build_discovery_prototype import BuildDiscoveryQuery
@@ -37,6 +41,11 @@ class FakeLock:
         self.released = True
 
 
+class LostOwnershipLock(FakeLock):
+    def release(self):
+        raise LockError("lock is no longer owned")
+
+
 class FakeRedis:
     def __init__(self, lock=None):
         self.fake_lock = lock or FakeLock()
@@ -45,6 +54,23 @@ class FakeRedis:
     def lock(self, key, **kwargs):
         self.calls.append((key, kwargs))
         return self.fake_lock
+
+
+class SharedFakeRedis:
+    def __init__(self):
+        self.mutex = Lock()
+
+    def lock(self, key, **kwargs):
+        mutex = self.mutex
+
+        class SharedFakeLock:
+            def acquire(self, **acquire_kwargs):
+                return mutex.acquire(timeout=kwargs["blocking_timeout"])
+
+            def release(self):
+                mutex.release()
+
+        return SharedFakeLock()
 
 
 def response():
@@ -58,7 +84,9 @@ def response():
 class BuildDiscoveryServiceTest(unittest.TestCase):
     def setUp(self):
         self.query = BuildDiscoveryQuery(class_name="Iop", elements=("strength",))
-        self.dataset_patch = patch.object(service, "dataset_version", return_value="dataset-v1")
+        self.dataset_patch = patch.object(
+            service, "dataset_version", return_value="dataset-v1"
+        )
         self.dataset_patch.start()
         self.addCleanup(self.dataset_patch.stop)
 
@@ -77,6 +105,7 @@ class BuildDiscoveryServiceTest(unittest.TestCase):
         self.assertEqual(result["solver"], "cpsat")
         self.assertEqual(result["diagnostics"]["cacheStatus"], "hit")
         self.assertTrue(result["diagnostics"]["appCacheHit"])
+        self.assertEqual(result["diagnostics"]["lockWaitMs"], 0.0)
 
     def test_miss_uses_production_args_and_global_serialization(self):
         cache = FakeCache([None, None])
@@ -115,28 +144,100 @@ class BuildDiscoveryServiceTest(unittest.TestCase):
         lock = FakeLock()
         solve = Mock()
 
-        result = service.build_discovery_cached_response(
-            self.query,
-            cache_region=cache,
-            redis_client=FakeRedis(lock),
-            solve_fn=solve,
-        )
+        with patch.object(service, "monotonic", side_effect=[10.0, 10.125]):
+            result = service.build_discovery_cached_response(
+                self.query,
+                cache_region=cache,
+                redis_client=FakeRedis(lock),
+                solve_fn=solve,
+            )
 
         solve.assert_not_called()
         self.assertEqual(len(cache.get_keys), 2)
         self.assertEqual(result["cache"]["status"], "deduplicated")
         self.assertTrue(result["diagnostics"]["solveLockAcquired"])
+        self.assertEqual(result["diagnostics"]["lockWaitMs"], 125.0)
+        self.assertEqual(result["diagnostics"]["elapsedMs"], 12.0)
         self.assertTrue(lock.released)
+
+    def test_lost_lock_ownership_does_not_mask_completed_solve(self):
+        result = service.build_discovery_cached_response(
+            self.query,
+            cache_region=FakeCache([None, None]),
+            redis_client=FakeRedis(LostOwnershipLock()),
+            solve_fn=Mock(return_value=response()),
+        )
+
+        self.assertEqual(result["status"], "complete")
+
+    def test_response_provenance_and_target_metadata_are_preserved(self):
+        solved = response()
+        solved.update(
+            {
+                "cacheKey": "prototype-key",
+                "targets": {"ap": 11, "mp": 6, "range": 3},
+            }
+        )
+
+        result = service.build_discovery_cached_response(
+            self.query,
+            cache_region=FakeCache([None, None]),
+            redis_client=FakeRedis(),
+            solve_fn=Mock(return_value=solved),
+        )
+
+        self.assertEqual(result["datasetVersion"], "dataset-v1")
+        self.assertEqual(result["cacheKey"], "prototype-key")
+        self.assertEqual(result["targets"], {"ap": 11, "mp": 6, "range": 3})
 
     def test_lock_acquisition_failure_is_explicit_and_bounded(self):
         redis = FakeRedis(FakeLock(acquired=False))
-        with self.assertRaisesRegex(service.BuildDiscoverySolveLockTimeout, "6s"):
-            service.build_discovery_cached_response(
-                self.query,
-                cache_region=FakeCache([None]),
+        with patch.object(service, "monotonic", side_effect=[2.0, 8.0]):
+            with self.assertRaisesRegex(
+                service.BuildDiscoverySolveLockTimeout, "6s"
+            ) as raised:
+                service.build_discovery_cached_response(
+                    self.query,
+                    cache_region=FakeCache([None]),
+                    redis_client=redis,
+                    solve_fn=Mock(),
+                )
+
+        self.assertEqual(raised.exception.lock_wait_ms, 6000.0)
+
+    def test_concurrent_misses_never_solve_in_parallel(self):
+        redis = SharedFakeRedis()
+        active = 0
+        maximum_active = 0
+        counter_lock = Lock()
+
+        def solve(query, args):
+            nonlocal active, maximum_active
+            with counter_lock:
+                active += 1
+                maximum_active = max(maximum_active, active)
+            sleep(0.05)
+            with counter_lock:
+                active -= 1
+            return response()
+
+        def run(query):
+            return service.build_discovery_cached_response(
+                query,
+                cache_region=FakeCache([None, None]),
                 redis_client=redis,
-                solve_fn=Mock(),
+                solve_fn=solve,
             )
+
+        queries = [
+            self.query,
+            BuildDiscoveryQuery(class_name="Cra", elements=("chance",)),
+        ]
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            results = list(executor.map(run, queries))
+
+        self.assertEqual(maximum_active, 1)
+        self.assertEqual([result["status"] for result in results], ["complete"] * 2)
 
     def test_cache_key_is_solver_dataset_and_query_specific(self):
         first = service.build_discovery_app_cache_key(self.query, "dataset-v1")
@@ -147,7 +248,9 @@ class BuildDiscoveryServiceTest(unittest.TestCase):
         self.assertNotEqual(first, other_dataset)
         self.assertNotEqual(first, other_query)
         self.assertTrue(first.startswith("build_discovery_response:cpsat:"))
-        self.assertFalse(first.startswith("build_discovery_response:build-discovery-prototype"))
+        self.assertFalse(
+            first.startswith("build_discovery_response:build-discovery-prototype")
+        )
 
 
 class ProductionDelegationTest(unittest.TestCase):
@@ -156,12 +259,14 @@ class ProductionDelegationTest(unittest.TestCase):
 
         query = Mock()
         expected = response()
-        with patch.object(schema, "build_discovery_query_from_args", return_value=query), patch.object(
-            schema, "require_build_discovery_index"
-        ), patch.object(
+        with patch.object(
+            schema, "build_discovery_query_from_args", return_value=query
+        ), patch.object(schema, "require_build_discovery_index"), patch.object(
             schema, "build_discovery_cached_response", return_value=expected
         ) as delegated:
-            result = schema.Query.resolve_build_discovery(Mock(), Mock(), class_name="Iop")
+            result = schema.Query.resolve_build_discovery(
+                Mock(), Mock(), class_name="Iop"
+            )
 
         self.assertIs(result, expected)
         delegated.assert_called_once_with(query)
@@ -205,6 +310,40 @@ class ProductionDelegationTest(unittest.TestCase):
         self.assertIs(job.result_payload, result)
         self.assertEqual(job.dataset_version, "dataset-v1")
         self.assertEqual(job.elapsed_ms, 12.0)
+
+    def test_rq_capacity_contention_requeues_without_failing_job(self):
+        from app import tasks
+
+        job = Mock(status="queued", request_payload={"queryIdentity": {}})
+
+        class FakeDbSession:
+            def query(self, model):
+                return self
+
+            def get(self, job_id):
+                return job
+
+        @contextmanager
+        def fake_session_scope():
+            yield FakeDbSession()
+
+        with patch.object(tasks, "session_scope", fake_session_scope), patch.object(
+            tasks, "build_discovery_query_from_payload", return_value=Mock()
+        ), patch.object(
+            tasks,
+            "build_discovery_cached_response",
+            side_effect=service.BuildDiscoverySolveLockTimeout("capacity", 6000.0),
+        ), patch.object(
+            tasks.q, "enqueue"
+        ) as enqueue:
+            succeeded = tasks.run_build_discovery_job("job-1")
+
+        self.assertFalse(succeeded)
+        self.assertEqual(job.status, "queued")
+        self.assertEqual(job.progress, 0)
+        self.assertTrue(job.error_payload["retryable"])
+        self.assertEqual(job.error_payload["lockWaitMs"], 6000.0)
+        enqueue.assert_called_once_with(tasks.run_build_discovery_job, "job-1")
 
 
 if __name__ == "__main__":

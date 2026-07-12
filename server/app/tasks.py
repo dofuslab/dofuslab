@@ -1,9 +1,11 @@
 import boto3
+from copy import deepcopy
 import os
 import traceback
 
-from app import session_scope
+from app import q, session_scope
 from app.build_discovery_service import (
+    BuildDiscoverySolveLockTimeout,
     CPSAT_SOLVER_VERSION,
     build_discovery_cached_response,
     build_discovery_query_from_payload,
@@ -35,6 +37,18 @@ def send_email(email, subject, content):
         return True
 
 
+def mark_build_discovery_worker_cache_miss(response):
+    result = deepcopy(response)
+    result["cache"] = {
+        **result.get("cache", {}),
+        "status": "miss",
+        "storage": "app_cache",
+    }
+    diagnostics = result.setdefault("diagnostics", {})
+    diagnostics["appCacheHit"] = False
+    return result
+
+
 def run_build_discovery_job(job_id):
     try:
         with session_scope() as db_session:
@@ -46,8 +60,28 @@ def run_build_discovery_job(job_id):
             request_payload = job.request_payload
 
         query = build_discovery_query_from_payload(request_payload)
-        response = build_discovery_cached_response(query)
-        status = "succeeded" if response.get("status", "complete") == "complete" else "failed"
+        try:
+            response = build_discovery_cached_response(query)
+        except BuildDiscoverySolveLockTimeout as error:
+            with session_scope() as db_session:
+                job = db_session.query(ModelBuildDiscoveryJob).get(job_id)
+                if job is None:
+                    return False
+                job.status = "queued"
+                job.progress = 0
+                job.error_payload = {
+                    "message": str(error),
+                    "phase": "capacity",
+                    "retryable": True,
+                    "lockWaitMs": round(error.lock_wait_ms, 3),
+                }
+            q.enqueue(run_build_discovery_job, job_id)
+            return False
+        status = (
+            "succeeded"
+            if response.get("status", "complete") == "complete"
+            else "failed"
+        )
 
         with session_scope() as db_session:
             job = db_session.query(ModelBuildDiscoveryJob).get(job_id)

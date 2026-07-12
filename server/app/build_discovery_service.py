@@ -3,6 +3,9 @@
 from copy import deepcopy
 import hashlib
 import json
+from time import monotonic
+
+from redis.exceptions import LockError
 
 from dogpile.cache.api import NO_VALUE
 
@@ -25,11 +28,15 @@ CPSAT_CACHE_PREFIX = "build_discovery_response:cpsat:"
 
 
 class BuildDiscoverySolveLockTimeout(RuntimeError):
-    pass
+    def __init__(self, message, lock_wait_ms):
+        super().__init__(message)
+        self.lock_wait_ms = lock_wait_ms
 
 
 def build_discovery_query_from_payload(payload):
-    query_payload = (payload or {}).get("queryIdentity") or (payload or {}).get("query") or {}
+    query_payload = (
+        (payload or {}).get("queryIdentity") or (payload or {}).get("query") or {}
+    )
     return BuildDiscoveryQuery(
         class_name=query_payload.get("className", "Iop"),
         level=query_payload.get("level", 200),
@@ -71,7 +78,7 @@ def _cached_value(cache_region, cache_key):
     return None if response is None or response is NO_VALUE else response
 
 
-def _with_cache_diagnostics(response, status, lock_acquired=False):
+def _with_cache_diagnostics(response, status, lock_acquired=False, lock_wait_ms=0.0):
     result = deepcopy(response)
     result["solver"] = "cpsat"
     result["solverVersion"] = CPSAT_SOLVER_VERSION
@@ -86,9 +93,12 @@ def _with_cache_diagnostics(response, status, lock_acquired=False):
     diagnostics["cacheStatus"] = status
     diagnostics["appCacheHit"] = status in {"hit", "deduplicated"}
     diagnostics["solveLockAcquired"] = lock_acquired
-    if diagnostics["appCacheHit"]:
+    diagnostics["lockWaitMs"] = round(lock_wait_ms, 3)
+    if status == "hit":
         diagnostics["cacheHit"] = True
         diagnostics["elapsedMs"] = 0.0
+    elif status == "deduplicated":
+        diagnostics["cacheHit"] = True
     return result
 
 
@@ -125,15 +135,24 @@ def build_discovery_cached_response(
         timeout=CPSAT_SOLVE_LOCK_TIMEOUT_SECONDS,
         blocking_timeout=CPSAT_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS,
     )
+    lock_wait_started = monotonic()
     if not solve_lock.acquire(blocking=True):
+        lock_wait_ms = (monotonic() - lock_wait_started) * 1000.0
         raise BuildDiscoverySolveLockTimeout(
             "CP-SAT solve capacity unavailable after "
-            f"{CPSAT_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS}s."
+            f"{CPSAT_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS}s.",
+            lock_wait_ms=lock_wait_ms,
         )
+    lock_wait_ms = (monotonic() - lock_wait_started) * 1000.0
     try:
         cached = _cached_value(cache_region, cache_key)
         if cached is not None:
-            return _with_cache_diagnostics(cached, "deduplicated", lock_acquired=True)
+            return _with_cache_diagnostics(
+                cached,
+                "deduplicated",
+                lock_acquired=True,
+                lock_wait_ms=lock_wait_ms,
+            )
 
         args = build_cpsat_args(
             query,
@@ -141,9 +160,17 @@ def build_discovery_cached_response(
             workers=CPSAT_WORKERS,
         )
         response = _with_cache_diagnostics(
-            solve_fn(query, args), "miss", lock_acquired=True
+            solve_fn(query, args),
+            "miss",
+            lock_acquired=True,
+            lock_wait_ms=lock_wait_ms,
         )
         cache_region.set(cache_key, response)
         return response
     finally:
-        solve_lock.release()
+        try:
+            solve_lock.release()
+        except LockError:
+            # Redis locks release by token, so an expired/reassigned lock is never
+            # deleted by its former owner.
+            pass
