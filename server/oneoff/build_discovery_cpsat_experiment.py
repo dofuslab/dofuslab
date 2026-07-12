@@ -138,6 +138,8 @@ class ModelMetadata:
     max_set_counts: dict[str, int]
     set_bonus_by_id: dict[str, dict[str, dict[str, int]]]
     item_objective_stats_by_id: dict[str, dict[str, float]]
+    item_stat_coefficients_by_stat: dict[str, dict[str, int]]
+    set_bonus_coefficients_by_stat: dict[str, dict[tuple[str, int], int]]
 
 
 def objective_stats_for_item(item: dict[str, Any]) -> dict[str, float]:
@@ -160,20 +162,35 @@ def build_model_metadata(
         if set_id:
             selected_sets.add(set_id)
             max_set_counts[set_id] += 1
+    set_bonus_by_id = {
+        set_id: set_bonus_stats(sets[set_id])
+        for set_id in selected_sets
+        if set_id in sets
+    }
+    item_stat_coefficients_by_stat: dict[str, dict[str, int]] = defaultdict(dict)
+    for item in items:
+        for stat, coefficient in item.get("_stats", {}).items():
+            if coefficient:
+                item_stat_coefficients_by_stat[stat][item["dofusID"]] = coefficient
+    set_bonus_coefficients_by_stat: dict[str, dict[tuple[str, int], int]] = defaultdict(dict)
+    for set_id, bonus_stats_by_count in set_bonus_by_id.items():
+        for count, bonus_stats in bonus_stats_by_count.items():
+            for stat, coefficient in bonus_stats.items():
+                if coefficient:
+                    set_bonus_coefficients_by_stat[stat][(set_id, int(count))] = coefficient
     return ModelMetadata(
         candidates_by_slot=slot_candidates(items, group_rings=group_rings),
         item_by_id=items_by_id(items),
         group_rings=group_rings,
         selected_set_ids=selected_sets,
         max_set_counts=dict(max_set_counts),
-        set_bonus_by_id={
-            set_id: set_bonus_stats(set_obj)
-            for set_id, set_obj in sets.items()
-        },
+        set_bonus_by_id=set_bonus_by_id,
         item_objective_stats_by_id={
             item["dofusID"]: objective_stats_for_item(item)
             for item in items
         },
+        item_stat_coefficients_by_stat=dict(item_stat_coefficients_by_stat),
+        set_bonus_coefficients_by_stat=dict(set_bonus_coefficients_by_stat),
     )
 
 
@@ -459,11 +476,13 @@ def build_model(
         if stat in total_stat_expr_cache:
             return total_stat_expr_cache[stat]
         expr = active_base_stats().get(stat, 0)
-        for (slot_name, item_id), var in slot_item_vars.items():
-            item = item_by_id[item_id]
-            expr += item.get("_stats", {}).get(stat, 0) * var
-        for (set_id, count), var in exact_set_count_vars.items():
-            expr += metadata.set_bonus_by_id.get(set_id, {}).get(str(count), {}).get(stat, 0) * var
+        for item_id, coefficient in metadata.item_stat_coefficients_by_stat.get(stat, {}).items():
+            for var in item_presence_terms.get(item_id, ()):
+                expr += coefficient * var
+        for set_count, coefficient in metadata.set_bonus_coefficients_by_stat.get(stat, {}).items():
+            var = exact_set_count_vars.get(set_count)
+            if var is not None:
+                expr += coefficient * var
         for (slot_name, exo_stat), var in exo_vars.items():
             if exo_stat == stat:
                 expr += var
@@ -613,17 +632,36 @@ def build_model(
             if terms:
                 model.Add(sum(terms) <= max_shared_items)
 
+    item_objective_coefficients = {
+        item_id: coefficient
+        for item_id, item_stats in metadata.item_objective_stats_by_id.items()
+        if (coefficient := objective_item_score(item_stats, objective_weights)) != 0
+    }
+    set_objective_coefficients = {
+        (set_id, count): coefficient
+        for set_id, bonus_stats_by_count in metadata.set_bonus_by_id.items()
+        for count_text, bonus_stats in bonus_stats_by_count.items()
+        if (count := int(count_text)) >= 0
+        if (coefficient := objective_set_bonus_score(bonus_stats, objective_weights)) != 0
+    }
+    exo_objective_coefficients = {
+        stat: coefficient
+        for stat in exo_stats
+        if (coefficient := scaled_score(objective_weights.get(stat, 0.0))) != 0
+    }
     objective_terms = []
     for (slot_name, item_id), var in slot_item_vars.items():
-        objective_terms.append(
-            objective_item_score(metadata.item_objective_stats_by_id[item_id], objective_weights) * var
-        )
+        coefficient = item_objective_coefficients.get(item_id)
+        if coefficient is not None:
+            objective_terms.append(coefficient * var)
     for (set_id, count), var in exact_set_count_vars.items():
-        objective_terms.append(
-            objective_set_bonus_score(metadata.set_bonus_by_id.get(set_id, {}).get(str(count), {}), objective_weights) * var
-        )
+        coefficient = set_objective_coefficients.get((set_id, count))
+        if coefficient is not None:
+            objective_terms.append(coefficient * var)
     for (slot_name, stat), var in exo_vars.items():
-        objective_terms.append(scaled_score(objective_weights.get(stat, 0.0)) * var)
+        coefficient = exo_objective_coefficients.get(stat)
+        if coefficient is not None:
+            objective_terms.append(coefficient * var)
     model.Maximize(sum(objective_terms))
 
     model_stats = {
@@ -643,6 +681,7 @@ def build_model(
         "skippedSetBonusConditionCount": skipped_set_bonus_condition_count,
         "unsupportedConditionItemCount": unsupported_condition_item_count,
         "setCountConstraintCount": len({set_id for set_id, _count in exact_set_count_vars}),
+        "objectiveTermCount": len(objective_terms),
     }
     return model, slot_item_vars, exo_vars, model_stats
 

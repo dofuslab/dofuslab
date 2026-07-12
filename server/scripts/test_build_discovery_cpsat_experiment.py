@@ -90,7 +90,12 @@ def fixture_sets() -> dict:
                 "1": {},
                 "2": {"Strength": 200},
             },
-        }
+        },
+        "unused_set": {
+            "id": "unused_set",
+            "_name": "Unused Fixture Set",
+            "_bonus_stats": {"2": {"Agility": 999}},
+        },
     }
 
 
@@ -259,7 +264,28 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         self.assertEqual(metadata.selected_set_ids, {"dofus_set"})
         self.assertEqual(metadata.max_set_counts["dofus_set"], 2)
         self.assertEqual(metadata.set_bonus_by_id["dofus_set"]["2"], {"Strength": 200})
+        self.assertNotIn("unused_set", metadata.set_bonus_by_id)
         self.assertIn("Strength", metadata.item_objective_stats_by_id["ring_good"])
+        self.assertEqual(metadata.item_stat_coefficients_by_stat["Strength"], {"ring_good": 20})
+        self.assertEqual(
+            metadata.set_bonus_coefficients_by_stat["Strength"],
+            {("dofus_set", 2): 200},
+        )
+        self.assertNotIn("Agility", metadata.set_bonus_coefficients_by_stat)
+
+    def test_sparse_metadata_and_zero_objective_terms_preserve_model_result(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        items = base_fixture_items()
+        status, state, model_stats = solve_fixture(items)
+
+        self.assertEqual(status, cp_model.OPTIMAL)
+        self.assertIsNotNone(state)
+        self.assertIn("ring_good", state.used_item_ids)
+        self.assertEqual(state.set_counts["dofus_set"], 2)
+        # The Strength ring and its two-piece set bonus are the only nonzero
+        # terms under this objective; all zero coefficients are omitted.
+        self.assertEqual(model_stats["objectiveTermCount"], 2)
 
     def test_model_skips_useless_singleton_set_count_vars_only(self):
         if IMPORT_ERROR is not None:
