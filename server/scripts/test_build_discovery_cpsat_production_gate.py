@@ -52,7 +52,7 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
 
         report = run_gate(
             base_url="https://example.test/api", run_key="release-42", request_fn=request,
-            clock=StepClock([4000] * 19 + [50] * 100),
+            clock=StepClock([4000] * 19 + [50] * 100), peak_rss_bytes=200 * 1024**2,
         )
 
         self.assertEqual(report["status"], "pass")
@@ -78,7 +78,7 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
 
         report = run_gate(
             base_url="http://localhost:5000", run_key="bad-run", request_fn=request,
-            clock=StepClock([5000] * 19 + [100] * 100),
+            clock=StepClock([5000] * 19 + [100] * 100), peak_rss_bytes=500 * 1024**2,
         )
 
         self.assertEqual(report["status"], "fail")
@@ -89,10 +89,14 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
         self.assertTrue(any("solver must be cpsat" in failure for failure in report["failures"]))
         self.assertTrue(any("cold wall p95" in failure for failure in report["failures"]))
         self.assertTrue(any("cache-hit wall p95" in failure for failure in report["failures"]))
+        self.assertTrue(any("peak RSS" in failure for failure in report["failures"]))
 
     def test_rejects_fewer_than_100_warm_requests(self):
         with self.assertRaisesRegex(ValueError, "at least 100"):
-            run_gate(base_url="http://localhost", run_key="x", warm_requests=99)
+            run_gate(
+                base_url="http://localhost", run_key="x", warm_requests=99,
+                peak_rss_bytes=1,
+            )
 
 
 if __name__ == "__main__":

@@ -31,6 +31,7 @@ DEFAULT_BASE_URL = os.environ.get("BUILD_DISCOVERY_GATE_BASE_URL", "http://127.0
 DEFAULT_WARM_REQUESTS = 100
 DEFAULT_MAX_MISS_P95_MS = 5000.0
 DEFAULT_MAX_HIT_P95_MS = 100.0
+DEFAULT_MAX_PEAK_RSS_BYTES = 400 * 1024**2
 
 GRAPHQL_QUERY = """query BuildDiscoveryProductionGate(
   $className: String!, $level: Int!, $elements: [String!], $mode: String!,
@@ -160,6 +161,8 @@ def run_gate(
     warm_requests: int = DEFAULT_WARM_REQUESTS,
     max_miss_p95_ms: float = DEFAULT_MAX_MISS_P95_MS,
     max_hit_p95_ms: float = DEFAULT_MAX_HIT_P95_MS,
+    peak_rss_bytes: int,
+    max_peak_rss_bytes: int = DEFAULT_MAX_PEAK_RSS_BYTES,
     timeout: float = 30.0,
 ) -> dict[str, Any]:
     if warm_requests < 100:
@@ -198,6 +201,10 @@ def run_gate(
         failures.append(f"cold wall p95 must be < {max_miss_p95_ms:g}ms, got {miss_p95}")
     if hit_p95 is None or hit_p95 >= max_hit_p95_ms:
         failures.append(f"cache-hit wall p95 must be < {max_hit_p95_ms:g}ms, got {hit_p95}")
+    if peak_rss_bytes > max_peak_rss_bytes:
+        failures.append(
+            f"peak RSS must be <= {max_peak_rss_bytes} bytes, got {peak_rss_bytes}"
+        )
     invalid_solver_targets = [
         row["target"] for row in cold_rows if row["profile"]["solver"] != "cpsat"
     ]
@@ -228,13 +235,18 @@ def run_gate(
         "percentileMethod": PERCENTILE_METHOD,
         "expectedConfig": {"workers": EXPECTED_WORKERS, "httpConcurrency": EXPECTED_CONCURRENCY},
         "clientRuntime": {"python": platform.python_version(), "implementation": platform.python_implementation()},
-        "thresholds": {"coldWallP95MsExclusive": max_miss_p95_ms, "cacheHitWallP95MsExclusive": max_hit_p95_ms},
+        "thresholds": {
+            "coldWallP95MsExclusive": max_miss_p95_ms,
+            "cacheHitWallP95MsExclusive": max_hit_p95_ms,
+            "maxPeakRssBytesInclusive": max_peak_rss_bytes,
+        },
         "measurements": {
             "complete": complete,
             "total": len(cold_rows),
             "coldWall": timing_summary(cold_times),
             "warmMissWall": timing_summary(warm_miss_times),
             "cacheHitWall": timing_summary(hit_times),
+            "peakRssBytes": peak_rss_bytes,
         },
         "observedProfiles": profiles,
         "failures": failures,
@@ -252,10 +264,12 @@ def main() -> None:
     parser.add_argument("--max-miss-p95-ms", type=float, default=DEFAULT_MAX_MISS_P95_MS)
     parser.add_argument("--max-hit-p95-ms", type=float, default=DEFAULT_MAX_HIT_P95_MS)
     parser.add_argument("--timeout", type=float, default=30.0)
+    parser.add_argument("--peak-rss-bytes", type=int, required=True)
     args = parser.parse_args()
     report = run_gate(
         base_url=args.base_url, run_key=args.run_key, warm_requests=args.warm_requests,
         max_miss_p95_ms=args.max_miss_p95_ms, max_hit_p95_ms=args.max_hit_p95_ms,
+        peak_rss_bytes=args.peak_rss_bytes,
         timeout=args.timeout,
     )
     artifact = json.dumps(report, indent=2) + "\n"
