@@ -79,9 +79,9 @@ def validate_build_discovery_index(index: Any) -> None:
                     errors.append(f"missing spell profile {label}")
                 elif len(matches) > 1:
                     errors.append(f"duplicate spell profile {label}")
-                elif not hydrate_indexed_spell_candidates(matches[0]):
+                elif hydrate_indexed_spell_candidates(matches[0]) is None:
                     errors.append(
-                        f"spell profile {label} is not hydratable or has no selected damage spells"
+                        f"spell profile {label} is not hydratable"
                     )
 
     if errors:
