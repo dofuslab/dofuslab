@@ -1,106 +1,98 @@
-import unittest
 import sys
+import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from build_discovery_cpsat_production_gate import (
-    EXPECTED_MEMORY_BYTES,
-    MAX_PROCESS_RSS_BYTES,
-    run_gate,
-)
+from build_discovery_cpsat_production_gate import nearest_rank, run_gate
 
 
-def passing_smoke(_args):
+class StepClock:
+    def __init__(self, durations_ms):
+        value = 0.0
+        self.values = []
+        for duration in durations_ms:
+            self.values.extend((value, value + duration / 1000.0))
+            value += duration / 1000.0
+        self.index = 0
+
+    def __call__(self):
+        value = self.values[self.index]
+        self.index += 1
+        return value
+
+
+def response(cache_status="miss", status="complete", solver="cpsat", errors=None):
     return {
-        "summary": {
-            "targetCount": 19,
-            "passed": 19,
-            "failed": 0,
-            "failures": [],
-            "totalSearchMs": {"p95Ms": 3900.0},
-            "elapsedMs": {"p95Ms": 4400.0},
-        }
+        "data": {
+            "buildDiscovery": {
+                "status": status,
+                "cache": {"status": cache_status},
+                "cacheKey": "key",
+                "solver": solver,
+                "solverVersion": "cpsat-v1" if solver else None,
+                "diagnostics": {"workers": 2, "ortoolsVersion": "9.12.4544"},
+            }
+        },
+        **({"errors": errors} if errors else {}),
     }
 
 
 class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
-    def test_gate_records_production_profile_measurements(self):
-        calls = []
+    def test_nearest_rank_is_deterministic(self):
+        self.assertEqual(nearest_rank(list(range(1, 101))), 95)
+        self.assertEqual(nearest_rank(list(range(1, 20))), 19)
 
-        def cache_report(**kwargs):
-            calls.append(kwargs)
-            return {
-                "status": "pass",
-                "failures": [],
-                "summary": {"cacheHitElapsed": {"p95Ms": 75.0}},
-            }
+    def test_gate_runs_19_independent_misses_then_100_identical_hits(self):
+        payloads = []
+
+        def request(_url, payload, _timeout):
+            payloads.append(payload)
+            return response("miss" if len(payloads) <= 19 else "hit")
 
         report = run_gate(
-            cache_report_fn=cache_report,
-            smoke_runner=passing_smoke,
-            context_fn=lambda: {
-                "cpuCount": 2.0,
-                "cpuSource": "cgroup-v2",
-                "memoryLimitBytes": EXPECTED_MEMORY_BYTES,
-                "memorySource": "cgroup-v2",
-            },
-            peak_rss_fn=lambda: 256 * 1024**2,
-            ortools_version_fn=lambda: "9.12.4544",
+            base_url="https://example.test/api", run_key="release-42", request_fn=request,
+            clock=StepClock([4000] * 19 + [50] * 100),
         )
 
         self.assertEqual(report["status"], "pass")
-        self.assertEqual(report["profile"]["workers"], 2)
-        self.assertEqual(report["profile"]["concurrency"], 1)
-        self.assertEqual(report["measurements"]["qualityMatrix"], {"passed": 19, "total": 19})
-        self.assertEqual(report["measurements"]["warmCacheMissP95Ms"], 3900.0)
-        self.assertEqual(report["measurements"]["cacheHitP95Ms"], 75.0)
-        self.assertEqual(report["measurements"]["endToEndP95Ms"], 4400.0)
-        self.assertEqual(calls, [
-            {"require_all_hits": False},
-            {"require_all_hits": True, "max_hit_p95_ms": 100.0},
-        ])
+        self.assertEqual(report["measurements"]["complete"], 19)
+        self.assertEqual(report["measurements"]["coldWall"]["p95Ms"], 4000)
+        self.assertEqual(report["measurements"]["warmMissWall"]["count"], 18)
+        self.assertEqual(report["measurements"]["cacheHitWall"]["p95Ms"], 50)
+        cold = [item["variables"] for item in payloads[:19]]
+        warm = [item["variables"] for item in payloads[19:]]
+        self.assertEqual(len({item["topK"] for item in cold}), 19)
+        self.assertTrue(all(item["limit"] == 1 for item in cold))
+        self.assertTrue(all(item == cold[0] for item in warm))
 
-    def test_gate_fails_profile_context_quality_latency_and_rss(self):
-        def failing_smoke(_args):
-            report = passing_smoke(_args)
-            report["summary"].update(targetCount=19, passed=18, failures=["elapsed p95 exceeded"])
-            return report
+    def test_gate_records_status_errors_and_fails_thresholds_and_cache(self):
+        calls = 0
+
+        def request(_url, _payload, _timeout):
+            nonlocal calls
+            calls += 1
+            if calls == 2:
+                return response("hit", status="error", errors=[{"message": "solve failed"}])
+            return response("miss" if calls <= 19 else "miss", solver=None)
 
         report = run_gate(
-            cache_report_fn=lambda **kwargs: {
-                "status": "fail" if kwargs["require_all_hits"] else "pass",
-                "failures": ["one row missed"] if kwargs["require_all_hits"] else [],
-                "summary": {"cacheHitElapsed": {"p95Ms": 700.0}},
-            },
-            workers=4,
-            concurrency=2,
-            smoke_runner=failing_smoke,
-            context_fn=lambda: {"cpuCount": 4.0, "memoryLimitBytes": 1024**3},
-            peak_rss_fn=lambda: MAX_PROCESS_RSS_BYTES + 1,
-            ortools_version_fn=lambda: "9.7.2996",
+            base_url="http://localhost:5000", run_key="bad-run", request_fn=request,
+            clock=StepClock([5000] * 19 + [100] * 100),
         )
 
         self.assertEqual(report["status"], "fail")
-        self.assertTrue(any("workers must be 2" in failure for failure in report["failures"]))
-        self.assertTrue(any("quality matrix" in failure for failure in report["failures"]))
-        self.assertTrue(any("cache hit" in failure for failure in report["failures"]))
-        self.assertTrue(any("peak RSS" in failure for failure in report["failures"]))
-        self.assertTrue(any("OR-Tools must be" in failure for failure in report["failures"]))
+        self.assertEqual(report["coldRequests"][1]["errors"][0]["message"], "solve failed")
+        self.assertTrue(any("19/19" in failure for failure in report["failures"]))
+        self.assertTrue(any("cache miss" in failure for failure in report["failures"]))
+        self.assertTrue(any("cache hits" in failure for failure in report["failures"]))
+        self.assertTrue(any("solver must be cpsat" in failure for failure in report["failures"]))
+        self.assertTrue(any("cold wall p95" in failure for failure in report["failures"]))
+        self.assertTrue(any("cache-hit wall p95" in failure for failure in report["failures"]))
 
-    def test_unobservable_memory_limit_is_recorded_without_context_failure(self):
-        report = run_gate(
-            cache_report_fn=lambda **kwargs: {
-                "status": "pass", "failures": [],
-                "summary": {"cacheHitElapsed": {"p95Ms": 10.0}},
-            },
-            smoke_runner=passing_smoke,
-            context_fn=lambda: {"cpuCount": 2.0, "memoryLimitBytes": None},
-            peak_rss_fn=lambda: None,
-            ortools_version_fn=lambda: "9.12.4544",
-        )
-        self.assertEqual(report["status"], "pass")
-        self.assertIsNone(report["executionContext"]["memoryLimitBytes"])
+    def test_rejects_fewer_than_100_warm_requests(self):
+        with self.assertRaisesRegex(ValueError, "at least 100"):
+            run_gate(base_url="http://localhost", run_key="x", warm_requests=99)
 
 
 if __name__ == "__main__":
