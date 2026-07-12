@@ -370,43 +370,7 @@ def write_markdown(report: dict[str, Any], path: Path) -> None:
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--time-limit-seconds", type=float, default=DEFAULT_FAST_TIME_LIMIT_SECONDS)
-    parser.add_argument("--workers", type=int, default=8)
-    parser.add_argument("--candidate-limit", type=int, default=3)
-    parser.add_argument("--stop-after-candidates", action="store_true")
-    parser.add_argument("--compare-reference", action="store_true")
-    parser.add_argument("--reference-time-limit-seconds", type=float, default=12.0)
-    parser.add_argument("--reference-candidate-limit", type=int, default=12)
-    parser.add_argument("--min-reference-score-ratio", type=float, default=0.97)
-    parser.add_argument("--output-json", required=True)
-    parser.add_argument("--output-md", required=True)
-    parser.add_argument("--target-set", choices=sorted(TARGET_SETS), default="all-class-level-200")
-    parser.add_argument(
-        "--skip-warmup",
-        action="store_true",
-        help="Skip the unmeasured first-target warmup run used to populate in-process item/set caches.",
-    )
-    parser.add_argument(
-        "--max-total-search-p95-ms",
-        type=float,
-        default=None,
-        help="Fail when totalSearchMs p95 exceeds this threshold.",
-    )
-    parser.add_argument(
-        "--max-elapsed-p95-ms",
-        type=float,
-        default=None,
-        help="Fail when end-to-end elapsedMs p95 exceeds this threshold.",
-    )
-    parser.add_argument(
-        "--target",
-        action="append",
-        choices=sorted({target.name for targets in TARGET_SETS.values() for target in targets}),
-    )
-    args = parser.parse_args()
-
+def run_smoke_report(args: argparse.Namespace) -> dict[str, Any]:
     target_names = set(args.target or [])
     selected_set = TARGET_SETS[args.target_set]
     targets = [target for target in selected_set if not target_names or target.name in target_names]
@@ -475,7 +439,7 @@ def main() -> None:
         },
         "failures": failures,
     }
-    report = {
+    return {
         "reportVersion": REPORT_VERSION,
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "targetSet": args.target_set,
@@ -483,6 +447,48 @@ def main() -> None:
         "summary": summary,
         "rows": rows,
     }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--time-limit-seconds", type=float, default=DEFAULT_FAST_TIME_LIMIT_SECONDS)
+    parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument("--candidate-limit", type=int, default=3)
+    parser.add_argument("--stop-after-candidates", action="store_true")
+    parser.add_argument("--compare-reference", action="store_true")
+    parser.add_argument("--reference-time-limit-seconds", type=float, default=12.0)
+    parser.add_argument("--reference-candidate-limit", type=int, default=12)
+    parser.add_argument("--min-reference-score-ratio", type=float, default=0.97)
+    parser.add_argument("--output-json", required=True)
+    parser.add_argument("--output-md", required=True)
+    parser.add_argument("--target-set", choices=sorted(TARGET_SETS), default="all-class-level-200")
+    parser.add_argument(
+        "--skip-warmup",
+        action="store_true",
+        help="Skip the unmeasured first-target warmup run used to populate in-process item/set caches.",
+    )
+    parser.add_argument(
+        "--max-total-search-p95-ms",
+        type=float,
+        default=None,
+        help="Fail when totalSearchMs p95 exceeds this threshold.",
+    )
+    parser.add_argument(
+        "--max-elapsed-p95-ms",
+        type=float,
+        default=None,
+        help="Fail when end-to-end elapsedMs p95 exceeds this threshold.",
+    )
+    parser.add_argument(
+        "--target",
+        action="append",
+        choices=sorted({target.name for targets in TARGET_SETS.values() for target in targets}),
+    )
+    args = parser.parse_args()
+
+    report = run_smoke_report(args)
+    summary = report["summary"]
+    failures = summary["failures"]
     output_json = Path(args.output_json)
     output_json.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     write_markdown(report, Path(args.output_md))

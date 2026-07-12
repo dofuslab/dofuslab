@@ -37,6 +37,7 @@ WARM_CACHE_FILENAME = "cache_prewarm_warm.json"
 STRICT_CACHE_FILENAME = "cache_prewarm_strict.json"
 BENCHMARK_GENERATED_RESULTS_FILENAME = "benchmark_generated_results.json"
 BENCHMARK_COMPARISON_FILENAME = "benchmark_comparison_report.json"
+CPSAT_QUALITY_GATE_FILENAME = "cpsat_quality_gate.json"
 READINESS_FILENAME = "local_readiness_report.json"
 SUMMARY_FILENAME = "local_readiness_pipeline_summary.json"
 READINESS_CHECKLIST_FILENAME = "build-discovery-readiness-checklist.md"
@@ -105,15 +106,66 @@ def default_benchmark_comparison_report(
     )
 
 
+def smoke_args(**overrides: Any) -> SimpleNamespace:
+    defaults = {
+        "time_limit_seconds": 2.8,
+        "workers": 8,
+        "candidate_limit": 3,
+        "stop_after_candidates": False,
+        "compare_reference": False,
+        "reference_time_limit_seconds": 8.0,
+        "reference_candidate_limit": 8,
+        "min_reference_score_ratio": 0.97,
+        "skip_warmup": False,
+        "max_total_search_p95_ms": 5000.0,
+        "max_elapsed_p95_ms": 5000.0,
+        "target": None,
+    }
+    defaults.update(overrides)
+    return SimpleNamespace(**defaults)
+
+
+def default_cpsat_quality_gate_report() -> dict[str, Any]:
+    from scripts.build_discovery_all_class_smoke import run_smoke_report
+
+    reports = {
+        "allClassLevel200": run_smoke_report(smoke_args(target_set="all-class-level-200")),
+        "levelDiversity": run_smoke_report(smoke_args(target_set="level-diversity")),
+        "referenceComparison": run_smoke_report(
+            smoke_args(
+                target_set="all-class-level-200",
+                target=["trusted_iop_strength_opti_damage", "rogue_intelligence_range6"],
+                compare_reference=True,
+            )
+        ),
+    }
+    failures = [
+        report_id
+        for report_id, report in reports.items()
+        if report.get("summary", {}).get("failed", 0)
+        or report.get("summary", {}).get("failures")
+    ]
+    return {
+        "reportVersion": "build-discovery-cpsat-quality-gate-v1",
+        "status": "fail" if failures else "pass",
+        "failures": failures,
+        "reports": reports,
+    }
+
+
 def build_summary(
     warm_cache_report: dict[str, Any],
     strict_cache_report: dict[str, Any],
     benchmark_generated_results: dict[str, Any] | None,
     benchmark_comparison_report: dict[str, Any] | None,
     benchmark_validation_failures: list[str],
+    cpsat_quality_gate_report: dict[str, Any] | None,
     readiness_report: dict[str, Any],
     output_dir: Path,
 ) -> dict[str, Any]:
+    blockers = list(readiness_report.get("blockers", []))
+    if cpsat_quality_gate_report and cpsat_quality_gate_report.get("status") == "fail":
+        blockers.append("CP-SAT quality gate is fail")
     return {
         "reportVersion": REPORT_VERSION,
         "artifacts": {
@@ -125,6 +177,9 @@ def build_summary(
             "benchmarkComparisonReport": None
             if benchmark_comparison_report is None
             else str(output_dir / BENCHMARK_COMPARISON_FILENAME),
+            "cpsatQualityGateReport": None
+            if cpsat_quality_gate_report is None
+            else str(output_dir / CPSAT_QUALITY_GATE_FILENAME),
             "readinessReport": str(output_dir / READINESS_FILENAME),
         },
         "warmCacheStatus": warm_cache_report.get("status"),
@@ -137,13 +192,16 @@ def build_summary(
         if benchmark_comparison_report is None
         else "pass" if not benchmark_validation_failures else "fail",
         "benchmarkValidationFailures": benchmark_validation_failures,
+        "cpsatQualityGateStatus": "not_checked"
+        if cpsat_quality_gate_report is None
+        else cpsat_quality_gate_report.get("status"),
         "prodBenchmarkReviewPacket": readiness_report.get(
             "prodBenchmarkReviewPacket",
             {"status": "not_checked"},
         ),
         "readinessStatus": readiness_report.get("status"),
         "assumptionsReview": readiness_report.get("assumptionsReview", {}),
-        "blockers": readiness_report.get("blockers", []),
+        "blockers": blockers,
     }
 
 
@@ -158,9 +216,11 @@ def run_pipeline(
     prod_benchmark_review_packet_path: Path | None = None,
     benchmark_fixture_path: Path = DEFAULT_FIXTURE_PATH,
     include_benchmark_comparison: bool = True,
+    include_cpsat_quality_gate: bool = True,
     cache_prewarm_fn: Callable[[bool, float | None, float | None], dict[str, Any]] = default_cache_prewarm_report,
     benchmark_generated_results_fn: Callable[[], dict[str, Any]] = default_benchmark_generated_results,
     benchmark_comparison_report_fn: Callable[[dict[str, Any]], dict[str, Any]] = default_benchmark_comparison_report,
+    cpsat_quality_gate_fn: Callable[[], dict[str, Any]] = default_cpsat_quality_gate_report,
     readiness_fn: Callable[..., dict[str, Any]] = build_readiness_report,
 ) -> dict[str, Any]:
     output_path = Path(output_dir)
@@ -171,6 +231,7 @@ def run_pipeline(
     strict_cache_path = output_path / STRICT_CACHE_FILENAME
     benchmark_generated_path = output_path / BENCHMARK_GENERATED_RESULTS_FILENAME
     benchmark_comparison_path = output_path / BENCHMARK_COMPARISON_FILENAME
+    cpsat_quality_gate_path = output_path / CPSAT_QUALITY_GATE_FILENAME
     readiness_path = output_path / READINESS_FILENAME
 
     write_json(warm_cache_path, warm_cache_report)
@@ -191,6 +252,11 @@ def run_pipeline(
         write_json(benchmark_generated_path, benchmark_generated_results)
         write_json(benchmark_comparison_path, benchmark_comparison_report)
 
+    cpsat_quality_gate_report = None
+    if include_cpsat_quality_gate:
+        cpsat_quality_gate_report = cpsat_quality_gate_fn()
+        write_json(cpsat_quality_gate_path, cpsat_quality_gate_report)
+
     readiness_report = readiness_fn(
         readiness_checklist_path=readiness_checklist_path,
         gameplay_review_packet_path=gameplay_review_packet_path,
@@ -210,6 +276,7 @@ def run_pipeline(
         benchmark_generated_results,
         benchmark_comparison_report,
         benchmark_validation_failures,
+        cpsat_quality_gate_report,
         readiness_report,
         output_path,
     )
@@ -245,6 +312,11 @@ def main() -> None:
         action="store_true",
         help="Skip local benchmark generated-result and comparison artifacts.",
     )
+    parser.add_argument(
+        "--skip-cpsat-quality-gate",
+        action="store_true",
+        help="Skip CP-SAT p95 and reference-quality gate artifacts.",
+    )
     args = parser.parse_args()
     state_paths = state_paths_from_dir(args.state_dir) if args.state_dir else {}
 
@@ -263,6 +335,7 @@ def main() -> None:
         prod_benchmark_review_packet_path=args.prod_benchmark_review_packet,
         benchmark_fixture_path=args.benchmark_fixture,
         include_benchmark_comparison=not args.skip_benchmark_comparison,
+        include_cpsat_quality_gate=not args.skip_cpsat_quality_gate,
     )
     print(json.dumps(summary, indent=2, ensure_ascii=False))
 

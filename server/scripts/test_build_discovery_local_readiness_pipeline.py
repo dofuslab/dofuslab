@@ -6,6 +6,7 @@ from pathlib import Path
 from build_discovery_local_readiness_pipeline import (
     BENCHMARK_COMPARISON_FILENAME,
     BENCHMARK_GENERATED_RESULTS_FILENAME,
+    CPSAT_QUALITY_GATE_FILENAME,
     READINESS_FILENAME,
     STRICT_CACHE_FILENAME,
     SUMMARY_FILENAME,
@@ -84,6 +85,15 @@ def benchmark_fixture() -> dict:
     }
 
 
+def cpsat_quality_gate_report(status: str = "pass") -> dict:
+    return {
+        "reportVersion": "build-discovery-cpsat-quality-gate-v1",
+        "status": status,
+        "failures": [] if status == "pass" else ["allClassLevel200"],
+        "reports": {},
+    }
+
+
 class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
     def test_state_paths_from_dir_uses_expected_filenames(self):
         state_dir = Path("/tmp/build-discovery-state")
@@ -116,6 +126,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
             benchmark_generated_results(),
             benchmark_comparison_report(),
             [],
+            cpsat_quality_gate_report(),
             readiness_report(),
             output_dir,
         )
@@ -124,6 +135,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
         self.assertEqual(summary["strictCacheStatus"], "fail")
         self.assertEqual(summary["benchmarkGeneratedStatus"], "pass")
         self.assertEqual(summary["benchmarkComparisonStatus"], "pass")
+        self.assertEqual(summary["cpsatQualityGateStatus"], "pass")
         self.assertEqual(summary["prodBenchmarkReviewPacket"]["status"], "pass")
         self.assertEqual(summary["prodBenchmarkReviewPacket"]["futurePromptCount"], 1)
         self.assertEqual(summary["readinessStatus"], "incomplete")
@@ -143,14 +155,32 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
             None,
             None,
             [],
+            None,
             readiness_report(),
             output_dir,
         )
 
         self.assertEqual(summary["benchmarkGeneratedStatus"], "not_checked")
         self.assertEqual(summary["benchmarkComparisonStatus"], "not_checked")
+        self.assertEqual(summary["cpsatQualityGateStatus"], "not_checked")
         self.assertIsNone(summary["artifacts"]["benchmarkGeneratedResults"])
         self.assertIsNone(summary["artifacts"]["benchmarkComparisonReport"])
+        self.assertIsNone(summary["artifacts"]["cpsatQualityGateReport"])
+
+    def test_build_summary_adds_blocker_for_failing_cpsat_quality_gate(self):
+        summary = build_summary(
+            cache_report("pass"),
+            cache_report("pass"),
+            None,
+            None,
+            [],
+            cpsat_quality_gate_report("fail"),
+            readiness_report(status="ready"),
+            Path("/tmp/local-readiness"),
+        )
+
+        self.assertEqual(summary["cpsatQualityGateStatus"], "fail")
+        self.assertIn("CP-SAT quality gate is fail", summary["blockers"])
 
     def test_run_pipeline_writes_artifacts_and_feeds_evidence_to_readiness(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -185,6 +215,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
                 cache_prewarm_fn=fake_cache_prewarm,
                 benchmark_generated_results_fn=benchmark_generated_results,
                 benchmark_comparison_report_fn=lambda generated: benchmark_comparison_report(),
+                cpsat_quality_gate_fn=cpsat_quality_gate_report,
                 readiness_fn=fake_readiness,
             )
 
@@ -193,6 +224,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
             self.assertTrue((output_path / STRICT_CACHE_FILENAME).exists())
             self.assertTrue((output_path / BENCHMARK_GENERATED_RESULTS_FILENAME).exists())
             self.assertTrue((output_path / BENCHMARK_COMPARISON_FILENAME).exists())
+            self.assertTrue((output_path / CPSAT_QUALITY_GATE_FILENAME).exists())
             self.assertTrue((output_path / READINESS_FILENAME).exists())
             self.assertTrue((output_path / SUMMARY_FILENAME).exists())
             self.assertEqual(calls, [(False, None, None), (True, 250, 400)])
@@ -216,6 +248,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
             self.assertEqual(readiness_kwargs["benchmark_fixture_path"], fixture_path)
             self.assertEqual(readiness_kwargs["max_cache_hit_p95_ms"], 250)
             self.assertEqual(summary["benchmarkComparisonStatus"], "pass")
+            self.assertEqual(summary["cpsatQualityGateStatus"], "pass")
             self.assertEqual(
                 json.loads((output_path / SUMMARY_FILENAME).read_text()),
                 summary,
@@ -232,6 +265,7 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
             summary = run_pipeline(
                 output_dir=temp_dir,
                 include_benchmark_comparison=False,
+                include_cpsat_quality_gate=False,
                 cache_prewarm_fn=lambda require_all_hits, max_p95, max_elapsed: cache_report("pass"),
                 readiness_fn=fake_readiness,
             )
@@ -239,8 +273,10 @@ class BuildDiscoveryLocalReadinessPipelineTest(unittest.TestCase):
             output_path = Path(temp_dir)
             self.assertFalse((output_path / BENCHMARK_GENERATED_RESULTS_FILENAME).exists())
             self.assertFalse((output_path / BENCHMARK_COMPARISON_FILENAME).exists())
+            self.assertFalse((output_path / CPSAT_QUALITY_GATE_FILENAME).exists())
             self.assertIsNone(readiness_kwargs["benchmark_comparison_report_path"])
             self.assertEqual(summary["benchmarkComparisonStatus"], "not_checked")
+            self.assertEqual(summary["cpsatQualityGateStatus"], "not_checked")
 
 
 if __name__ == "__main__":

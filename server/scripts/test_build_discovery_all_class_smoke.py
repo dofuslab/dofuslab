@@ -1,10 +1,13 @@
 import unittest
 import sys
 from pathlib import Path
+from argparse import Namespace
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from build_discovery_all_class_smoke import (
+    run_smoke_report,
     score_ratio_validation_error,
     target_query,
     timing_summary,
@@ -86,6 +89,39 @@ class BuildDiscoveryAllClassSmokeTest(unittest.TestCase):
             score_ratio_validation_error(100.0, None, 0.97),
             "reference score missing for reference comparison",
         )
+
+    def test_run_smoke_report_summarizes_rows_without_cli_io(self):
+        args = Namespace(
+            target_set="all-class-level-200",
+            target=["trusted_iop_strength_opti_damage"],
+            skip_warmup=True,
+            max_total_search_p95_ms=5000,
+            max_elapsed_p95_ms=5000,
+            compare_reference=False,
+            min_reference_score_ratio=0.97,
+        )
+
+        with patch(
+            "build_discovery_all_class_smoke.run_target",
+            return_value={
+                "target": {
+                    "name": "trusted_iop_strength_opti_damage",
+                    "class_name": "Iop",
+                    "element": "strength",
+                    "budget_tier": 4,
+                    "range_target": None,
+                },
+                "status": "passed",
+                "elapsedMs": 123.4,
+                "timings": {"totalSearchMs": 100.0},
+            },
+        ):
+            report = run_smoke_report(args)
+
+        self.assertEqual(report["summary"]["targetCount"], 1)
+        self.assertEqual(report["summary"]["failed"], 0)
+        self.assertEqual(report["summary"]["elapsedMs"]["p95Ms"], 123.4)
+        self.assertFalse(report["summary"]["referenceComparison"]["enabled"])
 
 
 if __name__ == "__main__":
