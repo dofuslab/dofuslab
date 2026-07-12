@@ -94,6 +94,8 @@ from sqlalchemy.sql.expression import true
 from datetime import datetime
 from ddtrace import tracer
 from app.build_discovery_service import (
+    BuildDiscoverySolveLockTimeout,
+    CPSAT_SYNC_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS,
     CPSAT_SOLVER_VERSION,
     build_discovery_cached_response,
     build_discovery_cached_response_hit,
@@ -1983,7 +1985,25 @@ class Query(graphene.ObjectType):
             query = build_discovery_query_from_args(kwargs)
             query.validate()
             require_build_discovery_index()
-            return build_discovery_cached_response(query)
+            cached = build_discovery_cached_response_hit(query)
+            if cached is not None:
+                return cached
+            if query.limit != 1:
+                raise GraphQLError(
+                    "Uncached multi-build discovery must run asynchronously. "
+                    "Use startBuildDiscovery and poll buildDiscoveryJob."
+                )
+            return build_discovery_cached_response(
+                query,
+                lock_blocking_timeout_seconds=(
+                    CPSAT_SYNC_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS
+                ),
+            )
+        except BuildDiscoverySolveLockTimeout:
+            raise GraphQLError(
+                "Build Discovery solve capacity is busy. Retry shortly or use "
+                "startBuildDiscovery."
+            )
         except ValueError as error:
             raise GraphQLError(str(error))
 

@@ -1,11 +1,13 @@
 import unittest
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
+from datetime import timedelta
 import importlib
 from threading import Lock
 from time import sleep
 from unittest.mock import Mock, patch
 from redis.exceptions import LockError
+from graphql import GraphQLError
 
 from app import build_discovery_service as service
 from oneoff.build_discovery_prototype import BuildDiscoveryQuery
@@ -205,6 +207,25 @@ class BuildDiscoveryServiceTest(unittest.TestCase):
 
         self.assertEqual(raised.exception.lock_wait_ms, 6000.0)
 
+    def test_sync_lock_acquisition_fails_within_250ms_policy(self):
+        redis = FakeRedis(FakeLock(acquired=False))
+        with self.assertRaises(service.BuildDiscoverySolveLockTimeout):
+            service.build_discovery_cached_response(
+                self.query,
+                cache_region=FakeCache([None]),
+                redis_client=redis,
+                solve_fn=Mock(),
+                lock_blocking_timeout_seconds=(
+                    service.CPSAT_SYNC_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS
+                ),
+            )
+
+        self.assertEqual(
+            redis.calls[0][1]["blocking_timeout"],
+            service.CPSAT_SYNC_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS,
+        )
+        self.assertLess(redis.calls[0][1]["blocking_timeout"], 0.25)
+
     def test_concurrent_misses_never_solve_in_parallel(self):
         redis = SharedFakeRedis()
         active = 0
@@ -254,22 +275,75 @@ class BuildDiscoveryServiceTest(unittest.TestCase):
 
 
 class ProductionDelegationTest(unittest.TestCase):
-    def test_graphql_delegates_to_service_entry_point(self):
+    def test_query_defaults_to_limit_five_and_default_max_shared(self):
         schema = importlib.import_module("app.schema")
 
-        query = Mock()
+        query = schema.build_discovery_query_from_args({})
+
+        self.assertEqual(query.limit, 5)
+        self.assertEqual(query.max_shared_items, service.DEFAULT_MAX_SHARED_ITEMS)
+
+    def test_graphql_fast_limit_one_delegates_with_fast_lock_wait(self):
+        schema = importlib.import_module("app.schema")
+
+        query = Mock(limit=1)
         expected = response()
         with patch.object(
             schema, "build_discovery_query_from_args", return_value=query
         ), patch.object(schema, "require_build_discovery_index"), patch.object(
+            schema, "build_discovery_cached_response_hit", return_value=None
+        ), patch.object(
             schema, "build_discovery_cached_response", return_value=expected
         ) as delegated:
             result = schema.Query.resolve_build_discovery(
-                Mock(), Mock(), class_name="Iop"
+                Mock(), Mock(), class_name="Iop", limit=1
             )
 
         self.assertIs(result, expected)
-        delegated.assert_called_once_with(query)
+        delegated.assert_called_once_with(
+            query,
+            lock_blocking_timeout_seconds=(
+                service.CPSAT_SYNC_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS
+            ),
+        )
+
+    def test_graphql_uncached_default_query_requires_async_api(self):
+        schema = importlib.import_module("app.schema")
+        query = Mock(limit=5)
+        with patch.object(
+            schema, "build_discovery_query_from_args", return_value=query
+        ), patch.object(schema, "require_build_discovery_index"), patch.object(
+            schema, "build_discovery_cached_response_hit", return_value=None
+        ), self.assertRaisesRegex(GraphQLError, "startBuildDiscovery"):
+            schema.Query.resolve_build_discovery(Mock(), Mock())
+
+    def test_graphql_cached_default_query_remains_synchronous(self):
+        schema = importlib.import_module("app.schema")
+        query = Mock(limit=5)
+        expected = response()
+        with patch.object(
+            schema, "build_discovery_query_from_args", return_value=query
+        ), patch.object(schema, "require_build_discovery_index"), patch.object(
+            schema, "build_discovery_cached_response_hit", return_value=expected
+        ), patch.object(schema, "build_discovery_cached_response") as solve:
+            result = schema.Query.resolve_build_discovery(Mock(), Mock())
+
+        self.assertIs(result, expected)
+        solve.assert_not_called()
+
+    def test_graphql_contention_maps_to_clean_error(self):
+        schema = importlib.import_module("app.schema")
+        query = Mock(limit=1)
+        with patch.object(
+            schema, "build_discovery_query_from_args", return_value=query
+        ), patch.object(schema, "require_build_discovery_index"), patch.object(
+            schema, "build_discovery_cached_response_hit", return_value=None
+        ), patch.object(
+            schema,
+            "build_discovery_cached_response",
+            side_effect=service.BuildDiscoverySolveLockTimeout("internal", 200),
+        ), self.assertRaisesRegex(GraphQLError, "capacity is busy"):
+            schema.Query.resolve_build_discovery(Mock(), Mock(), limit=1)
 
     def test_rq_job_delegates_and_preserves_persistence(self):
         from app import tasks
@@ -311,7 +385,7 @@ class ProductionDelegationTest(unittest.TestCase):
         self.assertEqual(job.dataset_version, "dataset-v1")
         self.assertEqual(job.elapsed_ms, 12.0)
 
-    def test_rq_capacity_contention_requeues_without_failing_job(self):
+    def test_rq_capacity_contention_retries_with_bounded_backoff(self):
         from app import tasks
 
         job = Mock(status="queued", request_payload={"queryIdentity": {}})
@@ -334,16 +408,29 @@ class ProductionDelegationTest(unittest.TestCase):
             "build_discovery_cached_response",
             side_effect=service.BuildDiscoverySolveLockTimeout("capacity", 6000.0),
         ), patch.object(
-            tasks.q, "enqueue"
+            tasks.q, "enqueue_in"
         ) as enqueue:
             succeeded = tasks.run_build_discovery_job("job-1")
 
-        self.assertFalse(succeeded)
-        self.assertEqual(job.status, "queued")
-        self.assertEqual(job.progress, 0)
-        self.assertTrue(job.error_payload["retryable"])
-        self.assertEqual(job.error_payload["lockWaitMs"], 6000.0)
-        enqueue.assert_called_once_with(tasks.run_build_discovery_job, "job-1")
+            self.assertFalse(succeeded)
+            self.assertEqual(job.status, "queued")
+            self.assertEqual(job.progress, 0)
+            self.assertTrue(job.error_payload["retryable"])
+            self.assertEqual(job.error_payload["lockWaitMs"], 6000.0)
+            enqueue.assert_called_once_with(
+                timedelta(seconds=tasks.BUILD_DISCOVERY_RETRY_DELAYS_SECONDS[0]),
+                tasks.run_build_discovery_job,
+                "job-1",
+                1,
+            )
+            enqueue.reset_mock()
+            succeeded = tasks.run_build_discovery_job(
+                "job-1", len(tasks.BUILD_DISCOVERY_RETRY_DELAYS_SECONDS)
+            )
+            self.assertFalse(succeeded)
+            self.assertEqual(job.status, "failed")
+            self.assertFalse(job.error_payload["retryable"])
+            enqueue.assert_not_called()
 
 
 if __name__ == "__main__":

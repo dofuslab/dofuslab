@@ -2,6 +2,7 @@ import boto3
 from copy import deepcopy
 import os
 import traceback
+from datetime import timedelta
 
 from app import q, session_scope
 from app.build_discovery_service import (
@@ -49,7 +50,10 @@ def mark_build_discovery_worker_cache_miss(response):
     return result
 
 
-def run_build_discovery_job(job_id):
+BUILD_DISCOVERY_RETRY_DELAYS_SECONDS = (1, 3, 8)
+
+
+def run_build_discovery_job(job_id, retry_count=0):
     try:
         with session_scope() as db_session:
             job = db_session.query(ModelBuildDiscoveryJob).get(job_id)
@@ -63,19 +67,29 @@ def run_build_discovery_job(job_id):
         try:
             response = build_discovery_cached_response(query)
         except BuildDiscoverySolveLockTimeout as error:
+            retryable = retry_count < len(BUILD_DISCOVERY_RETRY_DELAYS_SECONDS)
             with session_scope() as db_session:
                 job = db_session.query(ModelBuildDiscoveryJob).get(job_id)
                 if job is None:
                     return False
-                job.status = "queued"
+                job.status = "queued" if retryable else "failed"
                 job.progress = 0
                 job.error_payload = {
                     "message": str(error),
                     "phase": "capacity",
-                    "retryable": True,
+                    "retryable": retryable,
+                    "retryCount": retry_count,
                     "lockWaitMs": round(error.lock_wait_ms, 3),
                 }
-            q.enqueue(run_build_discovery_job, job_id)
+            if retryable:
+                q.enqueue_in(
+                    timedelta(
+                        seconds=BUILD_DISCOVERY_RETRY_DELAYS_SECONDS[retry_count]
+                    ),
+                    run_build_discovery_job,
+                    job_id,
+                    retry_count + 1,
+                )
             return False
         status = (
             "succeeded"

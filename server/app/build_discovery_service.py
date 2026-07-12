@@ -24,6 +24,7 @@ CPSAT_WORKERS = 2
 CPSAT_SOLVE_LOCK_KEY = "build_discovery:cpsat:solve_lock"
 CPSAT_SOLVE_LOCK_TIMEOUT_SECONDS = 30
 CPSAT_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS = 6
+CPSAT_SYNC_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS = 0.2
 CPSAT_CACHE_PREFIX = "build_discovery_response:cpsat:"
 
 
@@ -118,6 +119,7 @@ def build_discovery_cached_response(
     cache_region=None,
     redis_client=None,
     solve_fn=solve_cpsat_query,
+    lock_blocking_timeout_seconds=CPSAT_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS,
 ):
     if cache_region is None or redis_client is None:
         from app import cache as app_redis_client, cache_region as app_cache_region
@@ -133,14 +135,14 @@ def build_discovery_cached_response(
     solve_lock = redis_client.lock(
         CPSAT_SOLVE_LOCK_KEY,
         timeout=CPSAT_SOLVE_LOCK_TIMEOUT_SECONDS,
-        blocking_timeout=CPSAT_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS,
+        blocking_timeout=lock_blocking_timeout_seconds,
     )
     lock_wait_started = monotonic()
     if not solve_lock.acquire(blocking=True):
         lock_wait_ms = (monotonic() - lock_wait_started) * 1000.0
         raise BuildDiscoverySolveLockTimeout(
             "CP-SAT solve capacity unavailable after "
-            f"{CPSAT_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS}s.",
+            f"{lock_blocking_timeout_seconds}s.",
             lock_wait_ms=lock_wait_ms,
         )
     lock_wait_ms = (monotonic() - lock_wait_started) * 1000.0
