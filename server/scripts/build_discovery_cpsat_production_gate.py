@@ -30,6 +30,7 @@ EXPECTED_CONCURRENCY = 1
 DEFAULT_BASE_URL = os.environ.get("BUILD_DISCOVERY_GATE_BASE_URL", "http://127.0.0.1:5000")
 DEFAULT_WARM_REQUESTS = 100
 DEFAULT_MAX_MISS_P95_MS = 5000.0
+DEFAULT_MAX_WARM_MISS_P95_MS = 4000.0
 DEFAULT_MAX_HIT_P95_MS = 100.0
 DEFAULT_MAX_PEAK_RSS_BYTES = 400 * 1024**2
 
@@ -164,6 +165,7 @@ def run_gate(
     clock: Callable[[], float] = time.perf_counter,
     warm_requests: int = DEFAULT_WARM_REQUESTS,
     max_miss_p95_ms: float = DEFAULT_MAX_MISS_P95_MS,
+    max_warm_miss_p95_ms: float = DEFAULT_MAX_WARM_MISS_P95_MS,
     max_hit_p95_ms: float = DEFAULT_MAX_HIT_P95_MS,
     peak_rss_bytes: int,
     max_peak_rss_bytes: int = DEFAULT_MAX_PEAK_RSS_BYTES,
@@ -200,9 +202,15 @@ def run_gate(
     if bad_hits:
         failures.append(f"all warmed requests must be error-free cache hits, got {bad_hits} failures")
     miss_p95 = nearest_rank(cold_times)
+    warm_miss_p95 = nearest_rank(warm_miss_times)
     hit_p95 = nearest_rank(hit_times)
     if miss_p95 is None or miss_p95 >= max_miss_p95_ms:
         failures.append(f"cold wall p95 must be < {max_miss_p95_ms:g}ms, got {miss_p95}")
+    if warm_miss_p95 is None or warm_miss_p95 >= max_warm_miss_p95_ms:
+        failures.append(
+            f"warm cache-miss wall p95 must be < {max_warm_miss_p95_ms:g}ms, "
+            f"got {warm_miss_p95}"
+        )
     if hit_p95 is None or hit_p95 >= max_hit_p95_ms:
         failures.append(f"cache-hit wall p95 must be < {max_hit_p95_ms:g}ms, got {hit_p95}")
     if peak_rss_bytes > max_peak_rss_bytes:
@@ -240,6 +248,7 @@ def run_gate(
         "clientRuntime": {"python": platform.python_version(), "implementation": platform.python_implementation()},
         "thresholds": {
             "coldWallP95MsExclusive": max_miss_p95_ms,
+            "warmCacheMissWallP95MsExclusive": max_warm_miss_p95_ms,
             "cacheHitWallP95MsExclusive": max_hit_p95_ms,
             "maxPeakRssBytesInclusive": max_peak_rss_bytes,
         },
@@ -265,6 +274,9 @@ def main() -> None:
     parser.add_argument("--output", type=Path)
     parser.add_argument("--warm-requests", type=int, default=DEFAULT_WARM_REQUESTS)
     parser.add_argument("--max-miss-p95-ms", type=float, default=DEFAULT_MAX_MISS_P95_MS)
+    parser.add_argument(
+        "--max-warm-miss-p95-ms", type=float, default=DEFAULT_MAX_WARM_MISS_P95_MS
+    )
     parser.add_argument("--max-hit-p95-ms", type=float, default=DEFAULT_MAX_HIT_P95_MS)
     parser.add_argument("--timeout", type=float, default=30.0)
     parser.add_argument("--peak-rss-bytes", type=int, required=True)
@@ -272,6 +284,7 @@ def main() -> None:
     report = run_gate(
         base_url=args.base_url, run_key=args.run_key, warm_requests=args.warm_requests,
         max_miss_p95_ms=args.max_miss_p95_ms, max_hit_p95_ms=args.max_hit_p95_ms,
+        max_warm_miss_p95_ms=args.max_warm_miss_p95_ms,
         peak_rss_bytes=args.peak_rss_bytes,
         timeout=args.timeout,
     )

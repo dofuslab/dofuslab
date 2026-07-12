@@ -13,7 +13,7 @@ from typing import Any
 from oneoff.build_discovery_prototype import BuildDiscoveryQuery
 
 
-DEFAULT_FAST_TIME_LIMIT_SECONDS = 3.2
+DEFAULT_FAST_TIME_LIMIT_SECONDS = 3.1
 DEFAULT_FAST_WORKERS = 8
 DEFAULT_FAST_CANDIDATE_LIMIT = 3
 DEFAULT_OBJECTIVE_MODE = "final-linear"

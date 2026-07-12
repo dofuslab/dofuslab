@@ -52,12 +52,12 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
 
         report = run_gate(
             base_url="https://example.test/api", run_key="release-42", request_fn=request,
-            clock=StepClock([4000] * 19 + [50] * 100), peak_rss_bytes=200 * 1024**2,
+            clock=StepClock([3900] * 19 + [50] * 100), peak_rss_bytes=200 * 1024**2,
         )
 
         self.assertEqual(report["status"], "pass")
         self.assertEqual(report["measurements"]["complete"], 19)
-        self.assertEqual(report["measurements"]["coldWall"]["p95Ms"], 4000)
+        self.assertEqual(report["measurements"]["coldWall"]["p95Ms"], 3900)
         self.assertEqual(report["measurements"]["warmMissWall"]["count"], 18)
         self.assertEqual(report["measurements"]["cacheHitWall"]["p95Ms"], 50)
         cold = [item["variables"] for item in payloads[:19]]
@@ -88,6 +88,7 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
         self.assertTrue(any("cache hits" in failure for failure in report["failures"]))
         self.assertTrue(any("solver must be cpsat" in failure for failure in report["failures"]))
         self.assertTrue(any("cold wall p95" in failure for failure in report["failures"]))
+        self.assertTrue(any("warm cache-miss wall p95" in failure for failure in report["failures"]))
         self.assertTrue(any("cache-hit wall p95" in failure for failure in report["failures"]))
         self.assertTrue(any("peak RSS" in failure for failure in report["failures"]))
 
