@@ -739,7 +739,9 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
     def test_server_requirements_include_ortools_pin(self):
         requirements = REQUIREMENTS_PATH.read_text(encoding="utf-8")
 
-        self.assertIn("ortools==9.7.2996", requirements)
+        self.assertNotIn("ortools==", requirements)
+        dockerfile = (server_path / "Dockerfile").read_text(encoding="utf-8")
+        self.assertIn("--no-deps ortools==9.12.4544", dockerfile)
 
 
 class BuildDiscoveryCpsatSemanticFixtureTest(unittest.TestCase):
