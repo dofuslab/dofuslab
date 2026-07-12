@@ -4,6 +4,7 @@ import ast
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 SERVER_ROOT = Path(__file__).resolve().parents[1]
@@ -39,9 +40,19 @@ try:
         exo_stats_for_target,
         state_signature,
         build_model,
+        effective_collection_mode,
         reconstruct_state,
+        solve_query,
+        weapon_damage_weight_for_query,
     )
-    from oneoff.build_discovery_prototype import BuildState, BuildTarget, configure_damage_profile, target_level_context
+    from oneoff.build_discovery_cpsat_runner import build_cpsat_args
+    from oneoff.build_discovery_prototype import (
+        BuildDiscoveryQuery,
+        BuildState,
+        BuildTarget,
+        configure_damage_profile,
+        target_level_context,
+    )
 except Exception as exc:  # pragma: no cover - exercised only in incomplete envs.
     cp_model = None
     CandidateCollectionCallback = None
@@ -49,6 +60,11 @@ except Exception as exc:  # pragma: no cover - exercised only in incomplete envs
     state_signature = None
     build_model = None
     reconstruct_state = None
+    solve_query = None
+    weapon_damage_weight_for_query = None
+    effective_collection_mode = None
+    build_cpsat_args = None
+    BuildDiscoveryQuery = None
     BuildState = None
     BuildTarget = None
     configure_damage_profile = None
@@ -709,6 +725,71 @@ class BuildDiscoveryCpsatSemanticFixtureTest(unittest.TestCase):
     def setUp(self):
         if IMPORT_ERROR is not None:
             self.skipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+
+    def test_locked_item_is_a_hard_model_requirement(self):
+        items = [*base_fixture_items(), item("better_hat", "Hat", stats={"Strength": 999})]
+        model, slot_item_vars, _exo_vars, _stats = build_model(
+            items,
+            fixture_sets(),
+            BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0},
+            exo_policy="none",
+            required_item_ids=frozenset({"hat"}),
+        )
+        solver = cp_model.CpSolver()
+
+        self.assertEqual(solver.Solve(model), cp_model.OPTIMAL)
+        self.assertTrue(solver.BooleanValue(slot_item_vars[("hat", "hat")]))
+        self.assertFalse(solver.BooleanValue(slot_item_vars[("hat", "better_hat")]))
+
+    def test_unavailable_and_wrong_slot_locks_return_clear_no_build(self):
+        query = BuildDiscoveryQuery(
+            ap_target=7,
+            mp_target=3,
+            range_target=None,
+            exo_policy="none",
+            locked_item_ids=("missing", "resource"),
+            limit=1,
+            max_shared_items=None,
+        )
+        args = build_cpsat_args(query, output_build_limit=1)
+        fixture_items = [*base_fixture_items(), item("resource", "Resource")]
+        with patch("oneoff.build_discovery_cpsat_experiment.load_items", return_value=fixture_items), patch(
+            "oneoff.build_discovery_cpsat_experiment.load_sets", return_value=fixture_sets()
+        ):
+            response = solve_query(query, args)
+
+        self.assertEqual(response["status"], "no_valid_build")
+        self.assertEqual(response["solverStatus"], "NOT_RUN")
+        self.assertEqual(response["noBuildReason"]["unavailableItemIds"], ["missing"])
+        self.assertEqual(response["noBuildReason"]["wrongSlotItemIds"], ["resource"])
+
+    def test_weapon_policy_controls_weapon_damage_scoring_exactly(self):
+        self.assertEqual(
+            weapon_damage_weight_for_query(
+                BuildDiscoveryQuery(weapon_policy="stat_stick_allowed")
+            ),
+            0.0,
+        )
+        enabled = BuildDiscoveryQuery(weapon_policy="weapon_damage_allowed", weapon_damage_weight=0.37)
+        self.assertEqual(weapon_damage_weight_for_query(enabled), 0.37)
+        with self.assertRaisesRegex(ValueError, "Unsupported weapon_policy"):
+            weapon_damage_weight_for_query(BuildDiscoveryQuery(weapon_policy="unknown"))
+
+    def test_multi_output_diversity_uses_repeated_collection_but_top_one_stays_fast(self):
+        query = BuildDiscoveryQuery(limit=3, max_shared_items=10)
+        args = build_cpsat_args(query)
+        self.assertEqual(args.max_shared_items, 10)
+        self.assertEqual(effective_collection_mode(args), "repeated")
+
+        top_one = build_cpsat_args(query, output_build_limit=1)
+        self.assertEqual(effective_collection_mode(top_one), "callback")
+
+        disabled = build_cpsat_args(query, max_shared_items=None)
+        self.assertEqual(effective_collection_mode(disabled), "callback")
 
     def test_grouped_dofus_reconstructs_six_output_slots_and_set_bonus(self):
         status, state, model_stats = solve_fixture(base_fixture_items())

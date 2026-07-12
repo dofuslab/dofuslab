@@ -80,6 +80,21 @@ RING_GROUP_SLOT = "ring"
 RING_GROUP_SIZE = 2
 
 
+def weapon_damage_weight_for_query(query: BuildDiscoveryQuery) -> float:
+    if query.weapon_policy == "stat_stick_allowed":
+        return 0.0
+    if query.weapon_policy == "weapon_damage_allowed":
+        return query.weapon_damage_weight
+    raise ValueError(f"Unsupported weapon_policy: {query.weapon_policy}")
+
+
+def effective_collection_mode(args: argparse.Namespace) -> str:
+    requested_mode = getattr(args, "collection_mode", "repeated")
+    if args.max_shared_items is not None and args.output_build_limit > 1:
+        return "repeated"
+    return requested_mode
+
+
 def scaled_score(value: float) -> int:
     return int(round(value * SCALE))
 
@@ -335,6 +350,7 @@ def build_model(
     objective_weights: dict[str, float],
     exo_policy: str,
     metadata: ModelMetadata | None = None,
+    required_item_ids: frozenset[str] = frozenset(),
 ) -> tuple[
     cp_model.CpModel,
     dict[tuple[str, str], cp_model.IntVar],
@@ -373,6 +389,12 @@ def build_model(
 
     for item_id, vars_for_item in item_presence_terms.items():
         model.Add(sum(vars_for_item) <= 1)
+
+    for item_id in required_item_ids:
+        presence_terms = item_presence_terms.get(item_id)
+        if not presence_terms:
+            raise ValueError(f"Locked item is not an equippable candidate: {item_id}")
+        model.Add(sum(presence_terms) == 1)
 
     prysmaradite_terms = [
         var
@@ -736,6 +758,7 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
         generic_damage_weight: float,
         survivability_weight: float,
         negative_resistance_penalty_weight: float,
+        weapon_damage_weight: float = 0.0,
         metadata: ModelMetadata | None = None,
         items: list[dict[str, Any]] | None = None,
         sets: dict[str, dict[str, Any]] | None = None,
@@ -758,6 +781,7 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
         self.generic_damage_weight = generic_damage_weight
         self.survivability_weight = survivability_weight
         self.negative_resistance_penalty_weight = negative_resistance_penalty_weight
+        self.weapon_damage_weight = weapon_damage_weight
         self.stop_after_candidates = stop_after_candidates
         self.stopped_after_candidate_limit = False
         self.solution_count = 0
@@ -782,6 +806,7 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
             self.generic_damage_weight,
             self.survivability_weight,
             self.negative_resistance_penalty_weight,
+            weapon_damage_weight=self.weapon_damage_weight,
         )
         if state is None:
             self.invalid_solution_count += 1
@@ -866,6 +891,7 @@ def reconstruct_state(
     negative_resistance_penalty_weight: float,
     *,
     metadata: ModelMetadata | None = None,
+    weapon_damage_weight: float = 0.0,
 ) -> tuple[BuildState | None, dict[str, Any] | None]:
     item_by_id = metadata.item_by_id if metadata is not None else items_by_id(items)
     set_bonus_by_id = metadata.set_bonus_by_id if metadata is not None else {
@@ -986,6 +1012,7 @@ def reconstruct_state(
         state = optimize_base_allocation(
             state,
             generic_damage_weight=generic_damage_weight,
+            weapon_damage_weight=weapon_damage_weight,
             survivability_weight=survivability_weight,
             negative_resistance_penalty_weight=negative_resistance_penalty_weight,
             target_level=target.level,
@@ -1002,6 +1029,7 @@ def reconstruct_state(
     state.score = final_score_state(
         state,
         generic_damage_weight=generic_damage_weight,
+        weapon_damage_weight=weapon_damage_weight,
         survivability_weight=survivability_weight,
         negative_resistance_penalty_weight=negative_resistance_penalty_weight,
     )
@@ -1019,6 +1047,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
     generic_damage_weight = effective_generic_damage_weight(query)
     survivability_weight = effective_survivability_weight(query)
     negative_resistance_penalty_weight = effective_negative_resistance_penalty_weight(query)
+    weapon_damage_weight = weapon_damage_weight_for_query(query)
     target = query.target
     load_start = time.perf_counter()
     items = load_items(
@@ -1028,6 +1057,35 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
     )
     sets = load_sets()
     metadata = build_model_metadata(items, sets, group_rings=query.exo_policy == "none")
+    locked_item_ids = frozenset(query.locked_item_ids)
+    available_item_ids = set(metadata.item_by_id)
+    equippable_item_ids = {
+        item["dofusID"]
+        for candidates in metadata.candidates_by_slot.values()
+        for item in candidates
+    }
+    unavailable_locks = sorted(locked_item_ids - available_item_ids)
+    wrong_slot_locks = sorted(locked_item_ids - equippable_item_ids - set(unavailable_locks))
+    if unavailable_locks or wrong_slot_locks:
+        return {
+            "query": {**query_summary(query), "objectiveMode": args.objective_mode},
+            "status": "no_valid_build",
+            "solverStatus": "NOT_RUN",
+            "timings": {"loadMs": round((time.perf_counter() - load_start) * 1000, 1), "totalSearchMs": 0.0},
+            "attempts": [],
+            "itemCount": len(items),
+            "candidateCount": 0,
+            "requestedCandidateLimit": args.candidate_limit,
+            "collectionMode": getattr(args, "collection_mode", "repeated"),
+            "maxSharedItems": args.max_shared_items,
+            "maxSharedItemsEnforced": True,
+            "noBuildReason": {
+                "code": "locked_items_unavailable",
+                "unavailableItemIds": unavailable_locks,
+                "wrongSlotItemIds": wrong_slot_locks,
+            },
+            "warnings": ["One or more locked items cannot be selected for this query."],
+        }
     objective_weights = objective_weights_for_mode(
         args.objective_mode,
         metadata,
@@ -1045,7 +1103,9 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
     best_solver_status = None
     total_start = time.perf_counter()
 
-    collection_mode = getattr(args, "collection_mode", "repeated")
+    requested_collection_mode = getattr(args, "collection_mode", "repeated")
+    needs_diverse_outputs = args.max_shared_items is not None and args.output_build_limit > 1
+    collection_mode = effective_collection_mode(args)
 
     if collection_mode == "callback":
         model_start = time.perf_counter()
@@ -1059,6 +1119,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
             objective_weights=objective_weights,
             exo_policy=query.exo_policy,
             metadata=metadata,
+            required_item_ids=locked_item_ids,
         )
         model_ms = (time.perf_counter() - model_start) * 1000
 
@@ -1071,6 +1132,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
             generic_damage_weight=generic_damage_weight,
             survivability_weight=survivability_weight,
             negative_resistance_penalty_weight=negative_resistance_penalty_weight,
+            weapon_damage_weight=weapon_damage_weight,
             stop_after_candidates=getattr(args, "stop_after_candidates", False),
         )
         solver = cp_model.CpSolver()
@@ -1098,6 +1160,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
                 survivability_weight,
                 negative_resistance_penalty_weight,
                 metadata=metadata,
+                weapon_damage_weight=weapon_damage_weight,
             )
             if final_state is not None:
                 final_signature = state_signature(final_state)
@@ -1130,7 +1193,11 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
             }
         )
     else:
-        for attempt_index in range(args.max_attempts):
+        repeated_attempt_limit = max(
+            args.max_attempts,
+            args.output_build_limit if needs_diverse_outputs else 1,
+        )
+        for attempt_index in range(repeated_attempt_limit):
             if len(candidates) >= args.candidate_limit:
                 break
             model_start = time.perf_counter()
@@ -1144,6 +1211,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
                 objective_weights=objective_weights,
                 exo_policy=query.exo_policy,
                 metadata=metadata,
+                required_item_ids=locked_item_ids,
             )
             model_ms = (time.perf_counter() - model_start) * 1000
 
@@ -1180,6 +1248,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
                 survivability_weight,
                 negative_resistance_penalty_weight,
                 metadata=metadata,
+                weapon_damage_weight=weapon_damage_weight,
             )
             selected_ids = frozenset(
                 item_id
@@ -1210,11 +1279,11 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
         ranked_candidates = ranked_candidates[: args.candidate_limit]
     best_state = ranked_candidates[0] if ranked_candidates else None
     warnings = []
-    max_shared_items_enforced = collection_mode != "callback" or args.max_shared_items is None
-    if collection_mode == "callback" and args.max_shared_items is not None:
-        warnings.append(
-            "callback collection uses natural feasible-solution diversity; maxSharedItems is not enforced as a hard cut"
-        )
+    max_shared_items_enforced = (
+        collection_mode != "callback"
+        or args.output_build_limit <= 1
+        or args.max_shared_items is None
+    )
     response = {
         "query": {
             **query_summary(query),
@@ -1241,6 +1310,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
         "candidateCount": len(ranked_candidates),
         "requestedCandidateLimit": args.candidate_limit,
         "collectionMode": collection_mode,
+        "requestedCollectionMode": requested_collection_mode,
         "stopAfterCandidates": getattr(args, "stop_after_candidates", False),
         "maxSharedItems": args.max_shared_items,
         "maxSharedItemsEnforced": max_shared_items_enforced,

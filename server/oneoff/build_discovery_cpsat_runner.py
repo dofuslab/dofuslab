@@ -17,6 +17,7 @@ DEFAULT_FAST_TIME_LIMIT_SECONDS = 2.8
 DEFAULT_FAST_WORKERS = 8
 DEFAULT_FAST_CANDIDATE_LIMIT = 3
 DEFAULT_OBJECTIVE_MODE = "final-linear"
+_QUERY_MAX_SHARED_ITEMS = object()
 
 
 def build_cpsat_args(
@@ -31,7 +32,7 @@ def build_cpsat_args(
     collection_mode: str = "callback",
     stop_after_candidates: bool = False,
     objective_mode: str = DEFAULT_OBJECTIVE_MODE,
-    max_shared_items: int | None = None,
+    max_shared_items: int | None | object = _QUERY_MAX_SHARED_ITEMS,
     generic_damage_weight: float | None = None,
 ) -> argparse.Namespace:
     requested_limit = query.limit or 1
@@ -46,7 +47,11 @@ def build_cpsat_args(
         collection_mode=collection_mode,
         stop_after_candidates=stop_after_candidates,
         objective_mode=objective_mode,
-        max_shared_items=max_shared_items,
+        max_shared_items=(
+            query.max_shared_items
+            if max_shared_items is _QUERY_MAX_SHARED_ITEMS
+            else max_shared_items
+        ),
         generic_damage_weight=generic_damage_weight
         if generic_damage_weight is not None
         else query.generic_damage_weight,
