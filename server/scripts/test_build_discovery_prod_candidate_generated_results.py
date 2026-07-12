@@ -1,7 +1,10 @@
 import unittest
+from argparse import Namespace
 
 from build_discovery_prod_candidate_generated_results import (
     build_prod_candidate_generated_results,
+    build_query,
+    cpsat_args,
 )
 
 
@@ -128,6 +131,18 @@ class BuildDiscoveryProdCandidateGeneratedResultsTest(unittest.TestCase):
         self.assertIsNone(seen_queries[0].range_target)
         self.assertEqual(result["generatedCandidates"][0]["resultCount"], 1)
         self.assertEqual(result["generatedCandidates"][0]["bestGeneratedScore"], 42)
+
+    def test_cpsat_args_use_quality_candidate_buffer(self):
+        query = build_query(discovery_report()["profiles"][0]["generatedQueryCandidate"]["query"])
+        args = cpsat_args(
+            query,
+            Namespace(cpsat_time_limit_seconds=5.0, cpsat_workers=8, cpsat_candidate_limit=3),
+        )
+
+        self.assertEqual(args.candidate_limit, 5)
+        self.assertEqual(args.summary_limit, 3)
+        self.assertEqual(args.output_build_limit, 5)
+        self.assertTrue(args.stop_after_candidates)
 
     def test_build_prod_candidate_generated_results_rejects_unbounded_limit(self):
         with self.assertRaises(ValueError):

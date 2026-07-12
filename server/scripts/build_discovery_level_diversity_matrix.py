@@ -974,54 +974,26 @@ def parse_optional_int_filter(raw_value: str | None) -> set[int | None] | None:
 
 
 def cpsat_args_for_query(query: BuildDiscoveryQuery, args: argparse.Namespace) -> argparse.Namespace:
-    requested_limit = query.limit or 1
-    candidate_limit = max(getattr(args, "cpsat_candidate_limit", 20), requested_limit)
-    return argparse.Namespace(
+    from oneoff.build_discovery_cpsat_runner import build_cpsat_args
+
+    return build_cpsat_args(
+        query,
         time_limit_seconds=getattr(args, "cpsat_time_limit_seconds", 20.0),
         workers=getattr(args, "cpsat_workers", 8),
         max_attempts=getattr(args, "cpsat_max_attempts", 40),
-        candidate_limit=candidate_limit,
+        candidate_limit=getattr(args, "cpsat_candidate_limit", 20),
         summary_limit=getattr(args, "cpsat_summary_limit", 10),
-        output_build_limit=requested_limit,
         collection_mode=getattr(args, "cpsat_collection_mode", "callback"),
         stop_after_candidates=getattr(args, "cpsat_stop_after_candidates", False),
         objective_mode=getattr(args, "cpsat_objective_mode", "final-linear"),
-        generic_damage_weight=query.generic_damage_weight,
         max_shared_items=query.max_shared_items,
     )
 
 
 def cpsat_build_discovery_response(query: BuildDiscoveryQuery, args: argparse.Namespace) -> dict[str, Any]:
-    from oneoff.build_discovery_cpsat_experiment import solve_query
+    from oneoff.build_discovery_cpsat_runner import solve_cpsat_query
 
-    response = solve_query(query, cpsat_args_for_query(query, args))
-    diagnostics = response.setdefault("diagnostics", {})
-    diagnostics.setdefault("solver", "cpsat")
-    timings = response.get("timings") if isinstance(response.get("timings"), dict) else {}
-    load_ms = timings.get("loadMs", 0) if isinstance(timings.get("loadMs", 0), (int, float)) else 0
-    total_search_ms = (
-        timings.get("totalSearchMs", 0)
-        if isinstance(timings.get("totalSearchMs", 0), (int, float))
-        else 0
-    )
-    diagnostics.setdefault("elapsedMs", round(load_ms + total_search_ms, 1))
-    for key in (
-        "solverStatus",
-        "timings",
-        "attempts",
-        "itemCount",
-        "candidateCount",
-        "requestedCandidateLimit",
-        "collectionMode",
-        "stopAfterCandidates",
-        "maxSharedItems",
-        "maxSharedItemsEnforced",
-        "objectiveWeights",
-    ):
-        if key in response:
-            diagnostics.setdefault(key, response[key])
-    response.setdefault("solverVersion", "oneoff.build_discovery_cpsat_experiment")
-    return response
+    return solve_cpsat_query(query, cpsat_args_for_query(query, args))
 
 
 def generator_for_args(args: argparse.Namespace) -> Callable[[BuildDiscoveryQuery], dict[str, Any]]:

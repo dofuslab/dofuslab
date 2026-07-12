@@ -6,7 +6,6 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from types import SimpleNamespace
 from typing import Any, Callable
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -15,6 +14,7 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     BuildDiscoveryQuery,
     build_discovery_response,
 )
+from oneoff.build_discovery_cpsat_runner import build_cpsat_args, solve_cpsat_query  # noqa: E402
 
 REPORT_VERSION = "build-discovery-prod-candidate-generated-results-v1"
 DEFAULT_CANDIDATE_LIMIT = 10
@@ -61,14 +61,14 @@ def build_query(candidate_query: dict[str, Any]) -> BuildDiscoveryQuery:
     )
 
 
-def cpsat_args(args: argparse.Namespace) -> SimpleNamespace:
-    return SimpleNamespace(
+def cpsat_args(query: BuildDiscoveryQuery, args: argparse.Namespace) -> argparse.Namespace:
+    return build_cpsat_args(
+        query,
         time_limit_seconds=args.cpsat_time_limit_seconds,
         workers=args.cpsat_workers,
         max_attempts=1,
-        candidate_limit=1,
-        summary_limit=1,
-        output_build_limit=1,
+        candidate_limit=args.cpsat_candidate_limit,
+        summary_limit=args.cpsat_candidate_limit,
         collection_mode="callback",
         stop_after_candidates=True,
         objective_mode="final-linear",
@@ -78,10 +78,8 @@ def cpsat_args(args: argparse.Namespace) -> SimpleNamespace:
 
 
 def cpsat_generator(args: argparse.Namespace) -> Callable[[BuildDiscoveryQuery], dict[str, Any]]:
-    from oneoff.build_discovery_cpsat_experiment import solve_query
-
     def generate(query: BuildDiscoveryQuery) -> dict[str, Any]:
-        return solve_query(query, cpsat_args(args))
+        return solve_cpsat_query(query, cpsat_args(query, args))
 
     return generate
 
@@ -229,6 +227,7 @@ def main() -> None:
     parser.add_argument("--solver", choices=("prototype", "cpsat"), default="prototype")
     parser.add_argument("--cpsat-time-limit-seconds", type=float, default=5.0)
     parser.add_argument("--cpsat-workers", type=int, default=8)
+    parser.add_argument("--cpsat-candidate-limit", type=int, default=3)
     parser.add_argument("--output", help="Write generated candidate results JSON to this path.")
     args = parser.parse_args()
 
@@ -239,6 +238,8 @@ def main() -> None:
                 parser.error("--cpsat-time-limit-seconds must be positive.")
             if args.cpsat_workers < 1:
                 parser.error("--cpsat-workers must be positive.")
+            if args.cpsat_candidate_limit < 1:
+                parser.error("--cpsat-candidate-limit must be positive.")
             generator = cpsat_generator(args)
         report = build_prod_candidate_generated_results(
             load_json(args.discovery_report),

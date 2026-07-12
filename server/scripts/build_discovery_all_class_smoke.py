@@ -10,12 +10,11 @@ import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from types import SimpleNamespace
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from oneoff.build_discovery_cpsat_experiment import solve_query  # noqa: E402
+from oneoff.build_discovery_cpsat_runner import build_cpsat_args, solve_cpsat_query  # noqa: E402
 from oneoff.build_discovery_prototype import (  # noqa: E402
     MAX_AP,
     MAX_MP,
@@ -118,8 +117,9 @@ def target_query(target: SmokeTarget) -> BuildDiscoveryQuery:
     )
 
 
-def solver_args(args: argparse.Namespace) -> SimpleNamespace:
-    return SimpleNamespace(
+def solver_args(query: BuildDiscoveryQuery, args: argparse.Namespace) -> argparse.Namespace:
+    return build_cpsat_args(
+        query,
         time_limit_seconds=args.time_limit_seconds,
         workers=args.workers,
         max_attempts=1,
@@ -192,7 +192,7 @@ def run_target(target: SmokeTarget, args: argparse.Namespace) -> dict[str, Any]:
     query = target_query(target)
     started = time.perf_counter()
     try:
-        response = solve_query(query, solver_args(args))
+        response = solve_cpsat_query(query, solver_args(query, args))
     except Exception as exc:  # pragma: no cover - report path for smoke scripts
         elapsed_ms = round((time.perf_counter() - started) * 1000, 1)
         return {
