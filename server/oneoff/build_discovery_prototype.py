@@ -2658,8 +2658,94 @@ def strength_iop_rotation_damage(stats: dict[str, int]) -> float:
     return iop_rotation_damage(stats)
 
 
-@lru_cache(maxsize=None)
-def spell_candidates_for_profile(
+def indexed_spell_profile(
+    class_name: str,
+    profile_name: str,
+    level: int,
+) -> dict[str, Any] | None:
+    generated_index = load_build_discovery_index()
+    spell_profiles = generated_index.get("spellProfiles") if generated_index else None
+    profiles = spell_profiles.get("profiles") if isinstance(spell_profiles, dict) else None
+    if not isinstance(profiles, list):
+        return None
+
+    matches = [
+        profile
+        for profile in profiles
+        if isinstance(profile, dict)
+        and profile.get("className") == class_name
+        and profile.get("element") == profile_name
+        and isinstance(profile.get("level"), int)
+    ]
+    if not matches:
+        return None
+    eligible = [profile for profile in matches if profile["level"] <= level]
+    if eligible:
+        return max(eligible, key=lambda profile: profile["level"])
+    return min(matches, key=lambda profile: profile["level"])
+
+
+def hydrate_indexed_spell_candidates(
+    profile: dict[str, Any],
+) -> tuple[SpellDamageCandidate, ...] | None:
+    try:
+        selected_spells = profile["spellProfile"]["selectedSpells"]
+        if not isinstance(selected_spells, list):
+            return None
+        candidates = []
+        for spell in selected_spells:
+            lines = spell["damageLines"]
+            if not isinstance(lines, list) or not lines:
+                return None
+            damage_lines = tuple(
+                DamageLine(
+                    element=line["element"],
+                    base_min=int(line["baseMin"]),
+                    base_max=int(line["baseMax"]),
+                    crit_base_min=(
+                        int(line["critBaseMin"])
+                        if line["critBaseMin"] is not None
+                        else None
+                    ),
+                    crit_base_max=(
+                        int(line["critBaseMax"])
+                        if line["critBaseMax"] is not None
+                        else None
+                    ),
+                    crit_chance=int(line["critChance"]),
+                    crit_bonus_damage=int(line["critBonusDamage"]),
+                    is_weapon=bool(line["isWeapon"]),
+                    is_trap=bool(line["isTrap"]),
+                    weight=float(line["weight"]),
+                    distance=line["distance"],
+                )
+                for line in lines
+            )
+            candidates.append(
+                SpellDamageCandidate(
+                    name=str(spell["name"]),
+                    variant_pair_id=str(spell["variantPairId"]),
+                    ap_cost=int(spell["apCost"]),
+                    cooldown=spell["cooldown"],
+                    casts_per_turn=spell["castsPerTurn"],
+                    casts_per_target=spell["castsPerTarget"],
+                    base_crit_chance=int(spell["baseCritChance"]),
+                    damage_lines=damage_lines,
+                    damage_increase=int(spell["damageIncrease"]),
+                    crit_damage_increase=int(spell["critDamageIncrease"]),
+                    max_damage_increase_stacks=int(spell["maxDamageIncreaseStacks"]),
+                    is_weapon=bool(spell["isWeapon"]),
+                    min_range=spell["minRange"],
+                    max_range=spell["maxRange"],
+                    has_modifiable_range=bool(spell["hasModifiableRange"]),
+                )
+            )
+        return tuple(candidates)
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
+def db_spell_candidates_for_profile(
     class_name: str,
     profile_name: str,
     level: int,
@@ -2742,6 +2828,20 @@ def spell_candidates_for_profile(
         )
 
     return tuple(candidates)
+
+
+@lru_cache(maxsize=None)
+def spell_candidates_for_profile(
+    class_name: str,
+    profile_name: str,
+    level: int,
+) -> tuple[SpellDamageCandidate, ...]:
+    indexed_profile = indexed_spell_profile(class_name, profile_name, level)
+    if indexed_profile is not None:
+        indexed_candidates = hydrate_indexed_spell_candidates(indexed_profile)
+        if indexed_candidates is not None:
+            return indexed_candidates
+    return db_spell_candidates_for_profile(class_name, profile_name, level)
 
 
 @lru_cache(maxsize=1)

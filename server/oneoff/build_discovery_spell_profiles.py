@@ -118,6 +118,27 @@ def serializable_spell(
         "castsPerTurn": spell.casts_per_turn,
         "castsPerTarget": spell.casts_per_target,
         "cooldown": spell.cooldown,
+        "baseCritChance": spell.base_crit_chance,
+        "damageIncrease": spell.damage_increase,
+        "critDamageIncrease": spell.crit_damage_increase,
+        "maxDamageIncreaseStacks": spell.max_damage_increase_stacks,
+        "isWeapon": spell.is_weapon,
+        "damageLines": [
+            {
+                "element": line.element,
+                "baseMin": line.base_min,
+                "baseMax": line.base_max,
+                "critBaseMin": line.crit_base_min,
+                "critBaseMax": line.crit_base_max,
+                "critChance": line.crit_chance,
+                "critBonusDamage": line.crit_bonus_damage,
+                "isWeapon": line.is_weapon,
+                "isTrap": line.is_trap,
+                "weight": line.weight,
+                "distance": line.distance,
+            }
+            for line in spell.damage_lines
+        ],
         "elements": spell_elements(spell),
         "expectedDamagePerApAtReferenceStats": round(
             spell_damage_per_ap(spell, reference_stats),
