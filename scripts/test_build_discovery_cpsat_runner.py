@@ -20,8 +20,8 @@ class BuildDiscoveryCpsatRunnerTest(unittest.TestCase):
         self.assertEqual(args.summary_limit, DEFAULT_FAST_CANDIDATE_LIMIT)
         self.assertEqual(args.output_build_limit, 1)
         self.assertEqual(args.collection_mode, "callback")
-        self.assertTrue(args.stop_after_candidates)
-        self.assertEqual(args.time_limit_seconds, 5.0)
+        self.assertFalse(args.stop_after_candidates)
+        self.assertEqual(args.time_limit_seconds, 2.8)
 
     def test_candidate_limit_never_drops_below_requested_output_limit(self):
         args = build_cpsat_args(BuildDiscoveryQuery(limit=5), candidate_limit=3)

@@ -142,7 +142,7 @@ class BuildDiscoveryProdCandidateGeneratedResultsTest(unittest.TestCase):
         self.assertEqual(args.candidate_limit, 5)
         self.assertEqual(args.summary_limit, 3)
         self.assertEqual(args.output_build_limit, 5)
-        self.assertTrue(args.stop_after_candidates)
+        self.assertFalse(args.stop_after_candidates)
 
     def test_build_prod_candidate_generated_results_rejects_unbounded_limit(self):
         with self.assertRaises(ValueError):

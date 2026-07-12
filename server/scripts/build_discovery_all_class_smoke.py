@@ -14,7 +14,11 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from oneoff.build_discovery_cpsat_runner import build_cpsat_args, solve_cpsat_query  # noqa: E402
+from oneoff.build_discovery_cpsat_runner import (  # noqa: E402
+    DEFAULT_FAST_TIME_LIMIT_SECONDS,
+    build_cpsat_args,
+    solve_cpsat_query,
+)
 from oneoff.build_discovery_prototype import (  # noqa: E402
     MAX_AP,
     MAX_MP,
@@ -127,11 +131,45 @@ def solver_args(query: BuildDiscoveryQuery, args: argparse.Namespace) -> argpars
         summary_limit=args.candidate_limit,
         output_build_limit=1,
         collection_mode="callback",
-        stop_after_candidates=True,
+        stop_after_candidates=args.stop_after_candidates,
         objective_mode="final-linear",
         max_shared_items=None,
         generic_damage_weight=0.45,
     )
+
+
+def reference_solver_args(query: BuildDiscoveryQuery, args: argparse.Namespace) -> argparse.Namespace:
+    return build_cpsat_args(
+        query,
+        time_limit_seconds=args.reference_time_limit_seconds,
+        workers=args.workers,
+        max_attempts=1,
+        candidate_limit=args.reference_candidate_limit,
+        summary_limit=args.reference_candidate_limit,
+        output_build_limit=1,
+        collection_mode="callback",
+        stop_after_candidates=False,
+        objective_mode="final-linear",
+        max_shared_items=None,
+        generic_damage_weight=0.45,
+    )
+
+
+def score_ratio_validation_error(
+    fast_score: float | None,
+    reference_score: float | None,
+    min_ratio: float,
+) -> str | None:
+    if not isinstance(fast_score, (int, float)):
+        return "fast score missing for reference comparison"
+    if not isinstance(reference_score, (int, float)):
+        return "reference score missing for reference comparison"
+    if reference_score <= 0:
+        return None
+    ratio = fast_score / reference_score
+    if ratio < min_ratio:
+        return f"fast score ratio {ratio:.4f} below floor {min_ratio:.4f}"
+    return None
 
 
 def validate_response(
@@ -220,8 +258,47 @@ def run_target(target: SmokeTarget, args: argparse.Namespace) -> dict[str, Any]:
         else ["no complete response"]
     )
     build = response.get("build")
+    reference = None
+    if args.compare_reference and response.get("status") == "complete":
+        reference_started = time.perf_counter()
+        try:
+            reference_response = solve_cpsat_query(query, reference_solver_args(query, args))
+        except Exception as exc:  # pragma: no cover - report path for smoke scripts
+            reference = {
+                "status": "error",
+                "error": str(exc),
+                "elapsedMs": round((time.perf_counter() - reference_started) * 1000, 1),
+            }
+            validation_errors.append(f"reference comparison errored: {exc}")
+        else:
+            reference_build = reference_response.get("build")
+            reference_elapsed_ms = round((time.perf_counter() - reference_started) * 1000, 1)
+            reference_score = (reference_build or {}).get("score")
+            ratio_error = score_ratio_validation_error(
+                (build or {}).get("score"),
+                reference_score,
+                args.min_reference_score_ratio,
+            )
+            if ratio_error:
+                validation_errors.append(ratio_error)
+            reference = {
+                "status": reference_response.get("status"),
+                "solverStatus": reference_response.get("solverStatus"),
+                "elapsedMs": reference_elapsed_ms,
+                "timings": reference_response.get("timings"),
+                "candidateCount": reference_response.get("candidateCount"),
+                "requestedCandidateLimit": reference_response.get("requestedCandidateLimit"),
+                "score": reference_score,
+                "scoreRatio": (
+                    round((build or {}).get("score") / reference_score, 4)
+                    if isinstance((build or {}).get("score"), (int, float))
+                    and isinstance(reference_score, (int, float))
+                    and reference_score > 0
+                    else None
+                ),
+            }
     totals = (build or {}).get("totals") or {}
-    return {
+    row = {
         "target": target.__dict__,
         "query": response.get("query"),
         "status": "passed" if not validation_errors else "failed",
@@ -242,6 +319,9 @@ def run_target(target: SmokeTarget, args: argparse.Namespace) -> dict[str, Any]:
         "items": compact_items(build),
         "score": (build or {}).get("score"),
     }
+    if reference is not None:
+        row["reference"] = reference
+    return row
 
 
 def write_markdown(report: dict[str, Any], path: Path) -> None:
@@ -292,9 +372,14 @@ def write_markdown(report: dict[str, Any], path: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--time-limit-seconds", type=float, default=5.0)
+    parser.add_argument("--time-limit-seconds", type=float, default=DEFAULT_FAST_TIME_LIMIT_SECONDS)
     parser.add_argument("--workers", type=int, default=8)
     parser.add_argument("--candidate-limit", type=int, default=3)
+    parser.add_argument("--stop-after-candidates", action="store_true")
+    parser.add_argument("--compare-reference", action="store_true")
+    parser.add_argument("--reference-time-limit-seconds", type=float, default=12.0)
+    parser.add_argument("--reference-candidate-limit", type=int, default=12)
+    parser.add_argument("--min-reference-score-ratio", type=float, default=0.97)
     parser.add_argument("--output-json", required=True)
     parser.add_argument("--output-md", required=True)
     parser.add_argument("--target-set", choices=sorted(TARGET_SETS), default="all-class-level-200")
@@ -358,6 +443,16 @@ def main() -> None:
             failures.append(
                 f"elapsedMs p95 {p95_ms} exceeded threshold {args.max_elapsed_p95_ms}"
             )
+    reference_rows = [
+        row["reference"]
+        for row in rows
+        if isinstance(row.get("reference"), dict)
+    ]
+    reference_score_ratios = [
+        reference["scoreRatio"]
+        for reference in reference_rows
+        if isinstance(reference.get("scoreRatio"), (int, float))
+    ]
     summary = {
         "targetCount": len(rows),
         "passed": sum(1 for row in rows if row["status"] == "passed"),
@@ -372,6 +467,12 @@ def main() -> None:
         "maxTotalSearchMs": total_search_summary["maxMs"] or 0,
         "maxTotalSearchP95Ms": args.max_total_search_p95_ms,
         "maxElapsedP95Ms": args.max_elapsed_p95_ms,
+        "referenceComparison": {
+            "enabled": args.compare_reference,
+            "minScoreRatio": args.min_reference_score_ratio,
+            "comparedCount": len(reference_rows),
+            "minScoreRatioObserved": min(reference_score_ratios) if reference_score_ratios else None,
+        },
         "failures": failures,
     }
     report = {

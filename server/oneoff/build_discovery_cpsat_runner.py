@@ -13,7 +13,7 @@ from typing import Any
 from oneoff.build_discovery_prototype import BuildDiscoveryQuery
 
 
-DEFAULT_FAST_TIME_LIMIT_SECONDS = 5.0
+DEFAULT_FAST_TIME_LIMIT_SECONDS = 2.8
 DEFAULT_FAST_WORKERS = 8
 DEFAULT_FAST_CANDIDATE_LIMIT = 3
 DEFAULT_OBJECTIVE_MODE = "final-linear"
@@ -29,7 +29,7 @@ def build_cpsat_args(
     summary_limit: int | None = None,
     output_build_limit: int | None = None,
     collection_mode: str = "callback",
-    stop_after_candidates: bool = True,
+    stop_after_candidates: bool = False,
     objective_mode: str = DEFAULT_OBJECTIVE_MODE,
     max_shared_items: int | None = None,
     generic_damage_weight: float | None = None,

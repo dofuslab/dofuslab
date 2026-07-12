@@ -14,7 +14,11 @@ from oneoff.build_discovery_prototype import (  # noqa: E402
     BuildDiscoveryQuery,
     build_discovery_response,
 )
-from oneoff.build_discovery_cpsat_runner import build_cpsat_args, solve_cpsat_query  # noqa: E402
+from oneoff.build_discovery_cpsat_runner import (  # noqa: E402
+    DEFAULT_FAST_TIME_LIMIT_SECONDS,
+    build_cpsat_args,
+    solve_cpsat_query,
+)
 
 REPORT_VERSION = "build-discovery-prod-candidate-generated-results-v1"
 DEFAULT_CANDIDATE_LIMIT = 10
@@ -70,7 +74,6 @@ def cpsat_args(query: BuildDiscoveryQuery, args: argparse.Namespace) -> argparse
         candidate_limit=args.cpsat_candidate_limit,
         summary_limit=args.cpsat_candidate_limit,
         collection_mode="callback",
-        stop_after_candidates=True,
         objective_mode="final-linear",
         max_shared_items=None,
         generic_damage_weight=0.45,
@@ -225,7 +228,7 @@ def main() -> None:
     parser.add_argument("discovery_report", help="Path to a prod benchmark discovery JSON report.")
     parser.add_argument("--candidate-limit", type=int, default=DEFAULT_CANDIDATE_LIMIT)
     parser.add_argument("--solver", choices=("prototype", "cpsat"), default="prototype")
-    parser.add_argument("--cpsat-time-limit-seconds", type=float, default=5.0)
+    parser.add_argument("--cpsat-time-limit-seconds", type=float, default=DEFAULT_FAST_TIME_LIMIT_SECONDS)
     parser.add_argument("--cpsat-workers", type=int, default=8)
     parser.add_argument("--cpsat-candidate-limit", type=int, default=3)
     parser.add_argument("--output", help="Write generated candidate results JSON to this path.")

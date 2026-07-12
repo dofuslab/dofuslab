@@ -4,7 +4,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from build_discovery_all_class_smoke import target_query, timing_summary, validate_response
+from build_discovery_all_class_smoke import (
+    score_ratio_validation_error,
+    target_query,
+    timing_summary,
+    validate_response,
+)
 from build_discovery_all_class_smoke import SmokeTarget
 
 
@@ -62,6 +67,25 @@ class BuildDiscoveryAllClassSmokeTest(unittest.TestCase):
         )
 
         self.assertEqual(errors, [])
+
+    def test_score_ratio_validation_accepts_fast_score_near_reference(self):
+        self.assertIsNone(score_ratio_validation_error(97.0, 100.0, 0.97))
+
+    def test_score_ratio_validation_rejects_fast_score_below_reference_floor(self):
+        self.assertEqual(
+            score_ratio_validation_error(96.0, 100.0, 0.97),
+            "fast score ratio 0.9600 below floor 0.9700",
+        )
+
+    def test_score_ratio_validation_handles_missing_scores(self):
+        self.assertEqual(
+            score_ratio_validation_error(None, 100.0, 0.97),
+            "fast score missing for reference comparison",
+        )
+        self.assertEqual(
+            score_ratio_validation_error(100.0, None, 0.97),
+            "reference score missing for reference comparison",
+        )
 
 
 if __name__ == "__main__":
