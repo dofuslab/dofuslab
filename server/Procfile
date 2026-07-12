@@ -1,1 +1,2 @@
-web: DD_PROFILING_ENABLED=true DD_ENV=production DD_SERVICE=dofus-lab DD_VERSION=1.0 ddtrace-run gunicorn --statsd-host "localhost:8125" app:app
+web: python -m scripts.ensure_build_discovery_index && DD_PROFILING_ENABLED=true DD_ENV=production DD_SERVICE=dofus-lab DD_VERSION=1.0 ddtrace-run gunicorn --statsd-host "localhost:8125" app:app
+worker: python -m scripts.ensure_build_discovery_index && python worker.py

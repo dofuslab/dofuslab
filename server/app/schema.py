@@ -109,6 +109,10 @@ from oneoff.build_discovery_prototype import (
     query_cache_key,
     query_summary,
 )
+from oneoff.generate_build_discovery_index import (
+    BuildDiscoveryIndexValidationError,
+    validate_build_discovery_index,
+)
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
 # without this workaround, graphene complains that there are multiple
@@ -228,8 +232,13 @@ def build_discovery_query_from_args(kwargs):
 
 
 def require_build_discovery_index():
-    if load_build_discovery_index() is None:
-        raise GraphQLError("Build Discovery index is not available.")
+    try:
+        index = load_build_discovery_index()
+        if index is None:
+            raise BuildDiscoveryIndexValidationError("index file is absent")
+        validate_build_discovery_index(index)
+    except (BuildDiscoveryIndexValidationError, OSError, ValueError) as exc:
+        raise GraphQLError(f"Build Discovery index is not production-ready: {exc}")
 
 
 def build_discovery_request_payload(query, result_key=None):

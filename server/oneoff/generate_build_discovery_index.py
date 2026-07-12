@@ -15,25 +15,84 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import tempfile
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from typing import Any
-
-# The generator is the source of the artifact, so it must read synced DB data
-# even if an older generated index already exists.
-os.environ["BUILD_DISCOVERY_INDEX_PATH"] = ""
 
 from oneoff.build_discovery_prototype import (
     ACTION_STATS,
     BUILD_DISCOVERY_INDEX_SCHEMA_VERSION,
     EXO_ELIGIBLE_ITEM_TYPES,
+    ELEMENT_PROFILES,
+    SUPPORTED_CLASS_NAMES,
     get_name,
+    hydrate_indexed_spell_candidates,
     normalize_stats,
 )
 from oneoff.build_discovery_spell_profiles import (
+    PROFILE_LEVELS,
     PROFILE_VERSION as SPELL_PROFILE_VERSION,
     derive_all_spell_profiles,
 )
+
+
+class BuildDiscoveryIndexValidationError(ValueError):
+    """Raised when an index cannot serve production Build Discovery queries."""
+
+
+def validate_build_discovery_index(index: Any) -> None:
+    errors: list[str] = []
+    if not isinstance(index, dict):
+        raise BuildDiscoveryIndexValidationError("index root must be a JSON object")
+    if index.get("schemaVersion") != BUILD_DISCOVERY_INDEX_SCHEMA_VERSION:
+        errors.append(
+            "schemaVersion is {!r}; expected {}".format(
+                index.get("schemaVersion"), BUILD_DISCOVERY_INDEX_SCHEMA_VERSION
+            )
+        )
+    for key, expected_type in (("items", list), ("sets", dict), ("indexes", dict)):
+        if not isinstance(index.get(key), expected_type):
+            errors.append(f"{key} must be a {expected_type.__name__}")
+
+    spell_profiles = index.get("spellProfiles")
+    profiles = spell_profiles.get("profiles") if isinstance(spell_profiles, dict) else None
+    if not isinstance(profiles, list):
+        errors.append("spellProfiles.profiles must be a list")
+        profiles = []
+
+    profiles_by_key: dict[tuple[str, str, int], list[Any]] = {}
+    for profile in profiles:
+        if not isinstance(profile, dict):
+            errors.append("spellProfiles.profiles contains a non-object entry")
+            continue
+        key = (profile.get("className"), profile.get("element"), profile.get("level"))
+        profiles_by_key.setdefault(key, []).append(profile)
+
+    for class_name in SUPPORTED_CLASS_NAMES:
+        for element in ELEMENT_PROFILES:
+            for level in PROFILE_LEVELS:
+                key = (class_name, element, level)
+                matches = profiles_by_key.get(key, [])
+                label = f"{class_name}/{element}/level-{level}"
+                if not matches:
+                    errors.append(f"missing spell profile {label}")
+                elif len(matches) > 1:
+                    errors.append(f"duplicate spell profile {label}")
+                elif not hydrate_indexed_spell_candidates(matches[0]):
+                    errors.append(
+                        f"spell profile {label} is not hydratable or has no selected damage spells"
+                    )
+
+    if errors:
+        preview = errors[:20]
+        if len(errors) > len(preview):
+            preview.append(f"... and {len(errors) - len(preview)} more errors")
+        raise BuildDiscoveryIndexValidationError(
+            "Build Discovery index is incomplete: " + "; ".join(preview)
+            + ". Regenerate it from the synced database with "
+            + "`python -m oneoff.generate_build_discovery_index --source db`."
+        )
 
 LEVEL_BUCKETS: tuple[tuple[str, int, int], ...] = (
     ("1-99", 1, 99),
@@ -379,10 +438,19 @@ def main() -> None:
 def write_index(output_path: str | None = None, source: str = "db") -> dict[str, Any]:
     output_path = output_path or default_output_path()
     index = build_index(source=source)
+    validate_build_discovery_index(index)
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    with open(output_path, "w", encoding="utf-8") as file:
-        json.dump(index, file, indent=2, sort_keys=True)
-        file.write("\n")
+    fd, temporary_path = tempfile.mkstemp(
+        prefix=".build_discovery_index.", suffix=".tmp", dir=os.path.dirname(output_path)
+    )
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as file:
+            json.dump(index, file, indent=2, sort_keys=True)
+            file.write("\n")
+        os.replace(temporary_path, output_path)
+    finally:
+        if os.path.exists(temporary_path):
+            os.unlink(temporary_path)
 
     print(
         f"Wrote build discovery index to {output_path} "
