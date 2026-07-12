@@ -3,6 +3,7 @@
 from copy import deepcopy
 import hashlib
 import json
+from threading import Event, Thread
 from time import monotonic
 
 from redis.exceptions import LockError
@@ -32,6 +33,48 @@ class BuildDiscoverySolveLockTimeout(RuntimeError):
     def __init__(self, message, lock_wait_ms):
         super().__init__(message)
         self.lock_wait_ms = lock_wait_ms
+
+
+class BuildDiscoverySolveLockLost(RuntimeError):
+    pass
+
+
+class _RenewableSolveLock:
+    def __init__(self, lock, lease_seconds, renewal_interval_seconds=None):
+        self.lock = lock
+        self.renewal_interval_seconds = renewal_interval_seconds or lease_seconds / 3.0
+        self.stop_event = Event()
+        self.renewal_error = None
+        self.thread = None
+
+    def start(self):
+        self.thread = Thread(
+            target=self._renew,
+            name="build-discovery-solve-lock-renewal",
+            daemon=True,
+        )
+        self.thread.start()
+
+    def _renew(self):
+        while not self.stop_event.wait(self.renewal_interval_seconds):
+            try:
+                if not self.lock.extend(self.renewal_interval_seconds * 3.0):
+                    raise LockError("solve lock renewal was rejected")
+            except Exception as error:
+                self.renewal_error = error
+                self.stop_event.set()
+                return
+
+    def stop_and_join(self):
+        self.stop_event.set()
+        if self.thread is not None:
+            self.thread.join()
+
+    def raise_if_lost(self):
+        if self.renewal_error is not None:
+            raise BuildDiscoverySolveLockLost(
+                "CP-SAT solve lock ownership could not be renewed."
+            ) from self.renewal_error
 
 
 def build_discovery_query_from_payload(payload):
@@ -120,6 +163,8 @@ def build_discovery_cached_response(
     redis_client=None,
     solve_fn=solve_cpsat_query,
     lock_blocking_timeout_seconds=CPSAT_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS,
+    lock_timeout_seconds=CPSAT_SOLVE_LOCK_TIMEOUT_SECONDS,
+    lock_renewal_interval_seconds=None,
 ):
     if cache_region is None or redis_client is None:
         from app import cache as app_redis_client, cache_region as app_cache_region
@@ -134,8 +179,9 @@ def build_discovery_cached_response(
 
     solve_lock = redis_client.lock(
         CPSAT_SOLVE_LOCK_KEY,
-        timeout=CPSAT_SOLVE_LOCK_TIMEOUT_SECONDS,
+        timeout=lock_timeout_seconds,
         blocking_timeout=lock_blocking_timeout_seconds,
+        thread_local=False,
     )
     lock_wait_started = monotonic()
     if not solve_lock.acquire(blocking=True):
@@ -146,6 +192,10 @@ def build_discovery_cached_response(
             lock_wait_ms=lock_wait_ms,
         )
     lock_wait_ms = (monotonic() - lock_wait_started) * 1000.0
+    renewable_lock = _RenewableSolveLock(
+        solve_lock, lock_timeout_seconds, lock_renewal_interval_seconds
+    )
+    renewable_lock.start()
     try:
         cached = _cached_value(cache_region, cache_key)
         if cached is not None:
@@ -161,8 +211,11 @@ def build_discovery_cached_response(
             time_limit_seconds=CPSAT_TIME_LIMIT_SECONDS,
             workers=CPSAT_WORKERS,
         )
+        solved = solve_fn(query, args)
+        renewable_lock.stop_and_join()
+        renewable_lock.raise_if_lost()
         response = _with_cache_diagnostics(
-            solve_fn(query, args),
+            solved,
             "miss",
             lock_acquired=True,
             lock_wait_ms=lock_wait_ms,
@@ -170,6 +223,7 @@ def build_discovery_cached_response(
         cache_region.set(cache_key, response)
         return response
     finally:
+        renewable_lock.stop_and_join()
         try:
             solve_lock.release()
         except LockError:

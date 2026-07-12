@@ -1,8 +1,8 @@
 import boto3
 from copy import deepcopy
 import os
+from time import sleep
 import traceback
-from datetime import timedelta
 
 from app import q, session_scope
 from app.build_discovery_service import (
@@ -61,6 +61,11 @@ def run_build_discovery_job(job_id, retry_count=0):
                 return False
             job.status = "running"
             job.progress = 10
+            job.result_payload = None
+            job.error_payload = None
+            job.dataset_version = None
+            job.solver_version = None
+            job.elapsed_ms = None
             request_payload = job.request_payload
 
         query = build_discovery_query_from_payload(request_payload)
@@ -74,6 +79,10 @@ def run_build_discovery_job(job_id, retry_count=0):
                     return False
                 job.status = "queued" if retryable else "failed"
                 job.progress = 0
+                job.result_payload = None
+                job.dataset_version = None
+                job.solver_version = None
+                job.elapsed_ms = None
                 job.error_payload = {
                     "message": str(error),
                     "phase": "capacity",
@@ -82,14 +91,8 @@ def run_build_discovery_job(job_id, retry_count=0):
                     "lockWaitMs": round(error.lock_wait_ms, 3),
                 }
             if retryable:
-                q.enqueue_in(
-                    timedelta(
-                        seconds=BUILD_DISCOVERY_RETRY_DELAYS_SECONDS[retry_count]
-                    ),
-                    run_build_discovery_job,
-                    job_id,
-                    retry_count + 1,
-                )
+                sleep(BUILD_DISCOVERY_RETRY_DELAYS_SECONDS[retry_count])
+                q.enqueue(run_build_discovery_job, job_id, retry_count + 1)
             return False
         status = (
             "succeeded"
@@ -104,6 +107,7 @@ def run_build_discovery_job(job_id, retry_count=0):
             job.status = status
             job.progress = 100 if status == "succeeded" else 0
             job.result_payload = response
+            job.error_payload = None
             job.dataset_version = response.get("datasetVersion")
             job.solver_version = response.get("solverVersion")
             job.elapsed_ms = (response.get("diagnostics") or {}).get("elapsedMs")
@@ -114,6 +118,8 @@ def run_build_discovery_job(job_id, retry_count=0):
             if job is not None:
                 job.status = "failed"
                 job.progress = 0
+                job.result_payload = None
+                job.elapsed_ms = None
                 job.error_payload = {
                     "message": str(error),
                     "traceback": traceback.format_exc(),

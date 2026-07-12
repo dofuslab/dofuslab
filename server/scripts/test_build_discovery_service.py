@@ -1,10 +1,9 @@
 import unittest
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import contextmanager
-from datetime import timedelta
 import importlib
-from threading import Lock
-from time import sleep
+from threading import Condition, Lock
+from time import monotonic, sleep
 from unittest.mock import Mock, patch
 from redis.exceptions import LockError
 from graphql import GraphQLError
@@ -34,6 +33,7 @@ class FakeLock:
         self.acquired = acquired
         self.acquire_calls = []
         self.released = False
+        self.extend_calls = []
 
     def acquire(self, **kwargs):
         self.acquire_calls.append(kwargs)
@@ -41,6 +41,10 @@ class FakeLock:
 
     def release(self):
         self.released = True
+
+    def extend(self, seconds):
+        self.extend_calls.append(seconds)
+        return True
 
 
 class LostOwnershipLock(FakeLock):
@@ -72,7 +76,54 @@ class SharedFakeRedis:
             def release(self):
                 mutex.release()
 
+            def extend(self, seconds):
+                return True
+
         return SharedFakeLock()
+
+
+class ExpiringFakeRedis:
+    def __init__(self):
+        self.condition = Condition()
+        self.owner = None
+        self.deadline = 0.0
+
+    def lock(self, key, **kwargs):
+        redis = self
+        token = object()
+        lease_seconds = kwargs["timeout"]
+
+        class ExpiringFakeLock:
+            def acquire(self, **acquire_kwargs):
+                wait_deadline = monotonic() + kwargs["blocking_timeout"]
+                with redis.condition:
+                    while redis.owner is not None and redis.deadline > monotonic():
+                        remaining = min(
+                            redis.deadline - monotonic(), wait_deadline - monotonic()
+                        )
+                        if remaining <= 0:
+                            return False
+                        redis.condition.wait(remaining)
+                    redis.owner = token
+                    redis.deadline = monotonic() + lease_seconds
+                    return True
+
+            def extend(self, seconds):
+                with redis.condition:
+                    if redis.owner is not token or redis.deadline <= monotonic():
+                        raise LockError("lock expired")
+                    redis.deadline += seconds
+                    redis.condition.notify_all()
+                    return True
+
+            def release(self):
+                with redis.condition:
+                    if redis.owner is not token or redis.deadline <= monotonic():
+                        raise LockError("lock is no longer owned")
+                    redis.owner = None
+                    redis.condition.notify_all()
+
+        return ExpiringFakeLock()
 
 
 def response():
@@ -127,6 +178,7 @@ class BuildDiscoveryServiceTest(unittest.TestCase):
                     {
                         "timeout": service.CPSAT_SOLVE_LOCK_TIMEOUT_SECONDS,
                         "blocking_timeout": service.CPSAT_SOLVE_LOCK_BLOCKING_TIMEOUT_SECONDS,
+                        "thread_local": False,
                     },
                 )
             ],
@@ -139,6 +191,89 @@ class BuildDiscoveryServiceTest(unittest.TestCase):
         self.assertEqual(result["cache"]["status"], "miss")
         self.assertEqual(result["solverVersion"], service.CPSAT_SOLVER_VERSION)
         self.assertTrue(next(iter(cache.stored)).startswith(service.CPSAT_CACHE_PREFIX))
+
+    def test_solve_lock_is_renewed_past_its_initial_expiry(self):
+        lock = FakeLock()
+
+        def slow_solve(query, args):
+            sleep(0.08)
+            return response()
+
+        result = service.build_discovery_cached_response(
+            self.query,
+            cache_region=FakeCache([None, None]),
+            redis_client=FakeRedis(lock),
+            solve_fn=slow_solve,
+            lock_timeout_seconds=0.03,
+            lock_renewal_interval_seconds=0.01,
+        )
+
+        self.assertEqual(result["status"], "complete")
+        self.assertGreaterEqual(len(lock.extend_calls), 2)
+        self.assertTrue(lock.released)
+
+    def test_expiring_lock_keeps_long_solves_serialized(self):
+        redis = ExpiringFakeRedis()
+        active = 0
+        maximum_active = 0
+        counter_lock = Lock()
+
+        def slow_solve(query, args):
+            nonlocal active, maximum_active
+            with counter_lock:
+                active += 1
+                maximum_active = max(maximum_active, active)
+            sleep(0.08)
+            with counter_lock:
+                active -= 1
+            return response()
+
+        def run(query):
+            return service.build_discovery_cached_response(
+                query,
+                cache_region=FakeCache([None, None]),
+                redis_client=redis,
+                solve_fn=slow_solve,
+                lock_blocking_timeout_seconds=0.3,
+                lock_timeout_seconds=0.03,
+                lock_renewal_interval_seconds=0.01,
+            )
+
+        queries = [
+            self.query,
+            BuildDiscoveryQuery(class_name="Cra", elements=("chance",)),
+        ]
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            results = list(executor.map(run, queries))
+
+        self.assertEqual(maximum_active, 1)
+        self.assertEqual([result["status"] for result in results], ["complete"] * 2)
+
+    def test_renewal_failure_rejects_result_and_joins_before_release(self):
+        events = []
+
+        class FailingRenewalLock(FakeLock):
+            def extend(self, seconds):
+                events.append("renew-failed")
+                raise LockError("expired")
+
+            def release(self):
+                events.append("release")
+                raise LockError("not owned")
+
+        cache = FakeCache([None, None])
+        with self.assertRaises(service.BuildDiscoverySolveLockLost):
+            service.build_discovery_cached_response(
+                self.query,
+                cache_region=cache,
+                redis_client=FakeRedis(FailingRenewalLock()),
+                solve_fn=lambda query, args: (sleep(0.04), response())[1],
+                lock_timeout_seconds=0.03,
+                lock_renewal_interval_seconds=0.01,
+            )
+
+        self.assertEqual(events, ["renew-failed", "release"])
+        self.assertEqual(cache.stored, {})
 
     def test_recheck_after_lock_deduplicates(self):
         cached = response()
@@ -407,8 +542,8 @@ class ProductionDelegationTest(unittest.TestCase):
             tasks,
             "build_discovery_cached_response",
             side_effect=service.BuildDiscoverySolveLockTimeout("capacity", 6000.0),
-        ), patch.object(
-            tasks.q, "enqueue_in"
+        ), patch.object(tasks, "sleep") as retry_sleep, patch.object(
+            tasks.q, "enqueue"
         ) as enqueue:
             succeeded = tasks.run_build_discovery_job("job-1")
 
@@ -417,8 +552,10 @@ class ProductionDelegationTest(unittest.TestCase):
             self.assertEqual(job.progress, 0)
             self.assertTrue(job.error_payload["retryable"])
             self.assertEqual(job.error_payload["lockWaitMs"], 6000.0)
+            retry_sleep.assert_called_once_with(
+                tasks.BUILD_DISCOVERY_RETRY_DELAYS_SECONDS[0]
+            )
             enqueue.assert_called_once_with(
-                timedelta(seconds=tasks.BUILD_DISCOVERY_RETRY_DELAYS_SECONDS[0]),
                 tasks.run_build_discovery_job,
                 "job-1",
                 1,
