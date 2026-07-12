@@ -1065,13 +1065,25 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
     weapon_damage_weight = weapon_damage_weight_for_query(query)
     target = query.target
     load_start = time.perf_counter()
+    phase_start = load_start
     items = load_items(
         target=target,
         budget_tier=query.budget_tier,
         excluded_item_ids=set(query.avoided_item_ids),
+        score_items=False,
     )
+    load_items_ms = (time.perf_counter() - phase_start) * 1000
+    phase_start = time.perf_counter()
     sets = load_sets()
+    load_sets_ms = (time.perf_counter() - phase_start) * 1000
+    phase_start = time.perf_counter()
     metadata = build_model_metadata(items, sets, group_rings=query.exo_policy == "none")
+    metadata_ms = (time.perf_counter() - phase_start) * 1000
+    load_phase_timings = {
+        "loadItemsMs": round(load_items_ms, 1),
+        "loadSetsMs": round(load_sets_ms, 1),
+        "metadataMs": round(metadata_ms, 1),
+    }
     locked_item_ids = frozenset(query.locked_item_ids)
     available_item_ids = set(metadata.item_by_id)
     equippable_item_ids = {
@@ -1086,7 +1098,11 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
             "query": {**query_summary(query), "objectiveMode": args.objective_mode},
             "status": "no_valid_build",
             "solverStatus": "NOT_RUN",
-            "timings": {"loadMs": round((time.perf_counter() - load_start) * 1000, 1), "totalSearchMs": 0.0},
+            "timings": {
+                "loadMs": round((time.perf_counter() - load_start) * 1000, 1),
+                **load_phase_timings,
+                "totalSearchMs": 0.0,
+            },
             "attempts": [],
             "itemCount": len(items),
             "candidateCount": 0,
@@ -1101,6 +1117,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
             },
             "warnings": ["One or more locked items cannot be selected for this query."],
         }
+    phase_start = time.perf_counter()
     objective_weights = objective_weights_for_mode(
         args.objective_mode,
         metadata,
@@ -1108,6 +1125,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
         survivability_weight,
         negative_resistance_penalty_weight,
     )
+    objective_weights_ms = (time.perf_counter() - phase_start) * 1000
     load_ms = (time.perf_counter() - load_start) * 1000
 
     forbidden: list[frozenset[str]] = []
@@ -1318,6 +1336,8 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
         "solverStatus": best_solver_status,
         "timings": {
             "loadMs": round(load_ms, 1),
+            **load_phase_timings,
+            "objectiveWeightsMs": round(objective_weights_ms, 1),
             "totalSearchMs": round(total_ms, 1),
         },
         "attempts": attempts,

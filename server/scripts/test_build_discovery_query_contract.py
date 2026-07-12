@@ -283,6 +283,28 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         index_mock.assert_called_once_with(50)
         self.assertEqual([item["dofusID"] for item in items], ["low"])
 
+    def test_load_items_scores_by_default_but_can_skip_prototype_scoring(self):
+        candidate = {
+            "dofusID": "candidate",
+            "level": 50,
+            "itemType": "Hat",
+            "_stats": {"Strength": 10},
+            "conditions": {"conditions": {}, "customConditions": {}},
+        }
+        target = BuildDiscoveryQuery(level=50, ap_target=6, mp_target=3).target
+
+        with patch("oneoff.build_discovery_prototype.load_all_item_records", return_value=(candidate,)), patch(
+            "oneoff.build_discovery_prototype.indexed_candidate_item_ids", return_value=None
+        ), patch("oneoff.build_discovery_prototype.active_profile_item_score", return_value=123) as score_mock:
+            load_items(target, budget_tier=1)
+            self.assertEqual(candidate["_score"], 123)
+            score_mock.reset_mock()
+            candidate["_score"] = -456
+            load_items(target, budget_tier=1, score_items=False)
+
+        score_mock.assert_not_called()
+        self.assertEqual(candidate["_score"], -456)
+
     def test_active_profile_item_score_caches_per_damage_profile(self):
         item = {
             "dofusID": "elemental",

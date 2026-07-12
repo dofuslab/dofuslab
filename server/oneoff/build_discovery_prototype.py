@@ -1302,7 +1302,7 @@ def dataset_version() -> str:
     )
 
 
-def item_record_from_index(item: dict[str, Any]) -> dict[str, Any]:
+def item_record_from_index(item: dict[str, Any], *, score_item: bool = True) -> dict[str, Any]:
     record = {
         "uuid": item.get("internalId") or item.get("uuid"),
         "dofusID": item["id"],
@@ -1317,7 +1317,8 @@ def item_record_from_index(item: dict[str, Any]) -> dict[str, Any]:
     }
     record["_name"] = get_name(record)
     record["_stats"] = item.get("normalizedStats") or normalize_stats(record.get("stats", []))
-    record["_score"] = item_score(record)
+    if score_item:
+        record["_score"] = item_score(record)
     return record
 
 
@@ -1387,10 +1388,13 @@ def indexed_candidate_item_ids(target_level: int = TARGET_LEVEL) -> set[str] | N
 
 
 @lru_cache(maxsize=1)
-def load_all_item_records() -> tuple[dict[str, Any], ...]:
+def load_all_item_records(*, score_items: bool = True) -> tuple[dict[str, Any], ...]:
     generated_index = load_build_discovery_index()
     if generated_index is not None:
-        return tuple(item_record_from_index(item) for item in generated_index.get("items", []))
+        return tuple(
+            item_record_from_index(item, score_item=score_items)
+            for item in generated_index.get("items", [])
+        )
 
     from sqlalchemy import or_
     from sqlalchemy.orm import selectinload
@@ -1433,7 +1437,8 @@ def load_all_item_records() -> tuple[dict[str, Any], ...]:
     for item in items:
         item["_name"] = get_name(item)
         item["_stats"] = normalize_stats(item.get("stats", []))
-        item["_score"] = active_profile_item_score(item)
+        if score_items:
+            item["_score"] = active_profile_item_score(item)
     return items
 
 
@@ -1441,12 +1446,15 @@ def load_items(
     target: BuildTarget = DEFAULT_TARGET,
     excluded_item_ids: set[str] | None = None,
     budget_tier: int = 4,
+    *,
+    score_items: bool = True,
 ) -> list[dict[str, Any]]:
     excluded_item_ids = excluded_item_ids or set()
-    items = load_all_item_records()
+    items = load_all_item_records(score_items=score_items)
     indexed_item_ids = indexed_candidate_item_ids(target.level)
-    for item in items:
-        item["_score"] = active_profile_item_score(item)
+    if score_items:
+        for item in items:
+            item["_score"] = active_profile_item_score(item)
     candidates = [
         item
         for item in items

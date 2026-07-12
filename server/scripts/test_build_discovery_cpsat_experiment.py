@@ -196,6 +196,27 @@ def solve_fixture(items: list[dict], *, sets: dict | None = None, target: BuildT
 
 
 class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
+    def test_model_and_result_do_not_depend_on_prototype_item_score(self):
+        if IMPORT_ERROR is not None:
+            self.skipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        low_scores = base_fixture_items()
+        high_scores = base_fixture_items()
+        for fixture_item in low_scores:
+            fixture_item["_score"] = -1_000_000 if fixture_item["dofusID"] == "ring_good" else 1_000_000
+        for fixture_item in high_scores:
+            fixture_item["_score"] = 1_000_000 if fixture_item["dofusID"] == "ring_good" else -1_000_000
+
+        low_metadata = build_model_metadata(low_scores, fixture_sets())
+        high_metadata = build_model_metadata(high_scores, fixture_sets())
+        self.assertEqual(low_metadata.item_objective_stats_by_id, high_metadata.item_objective_stats_by_id)
+
+        low_status, low_state, low_model_stats = solve_fixture(low_scores)
+        high_status, high_state, high_model_stats = solve_fixture(high_scores)
+        self.assertEqual(low_status, high_status)
+        self.assertEqual(low_model_stats, high_model_stats)
+        self.assertEqual(state_signature(low_state), state_signature(high_state))
+        self.assertEqual(low_state.score, high_state.score)
+
     def test_experiment_file_is_preserved_without_product_import_side_effects(self):
         source = EXPERIMENT_PATH.read_text(encoding="utf-8")
         module = ast.parse(source)
@@ -757,11 +778,14 @@ class BuildDiscoveryCpsatSemanticFixtureTest(unittest.TestCase):
         )
         args = build_cpsat_args(query, output_build_limit=1)
         fixture_items = [*base_fixture_items(), item("resource", "Resource")]
-        with patch("oneoff.build_discovery_cpsat_experiment.load_items", return_value=fixture_items), patch(
+        with patch(
+            "oneoff.build_discovery_cpsat_experiment.load_items", return_value=fixture_items
+        ) as load_items_mock, patch(
             "oneoff.build_discovery_cpsat_experiment.load_sets", return_value=fixture_sets()
         ):
             response = solve_query(query, args)
 
+        self.assertFalse(load_items_mock.call_args.kwargs["score_items"])
         self.assertEqual(response["status"], "no_valid_build")
         self.assertEqual(response["solverStatus"], "NOT_RUN")
         self.assertEqual(response["noBuildReason"]["unavailableItemIds"], ["missing"])
