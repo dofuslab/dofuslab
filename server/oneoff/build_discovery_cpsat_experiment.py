@@ -8,6 +8,7 @@ build from the same indexed item data used by the prototype.
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import time
 from collections import defaultdict
@@ -131,6 +132,7 @@ def cheap_final_score_for_stats(
 
 @dataclass(frozen=True)
 class ModelMetadata:
+    items: tuple[dict[str, Any], ...]
     candidates_by_slot: dict[str, list[dict[str, Any]]]
     item_by_id: dict[str, dict[str, Any]]
     group_rings: bool
@@ -155,20 +157,24 @@ def build_model_metadata(
     *,
     group_rings: bool = False,
 ) -> ModelMetadata:
+    # Metadata is reused across model attempts. Own the item graph so later
+    # source normalization or caller mutation cannot split sparse coefficients
+    # from eligibility, conditions, or reconstruction.
+    snapshotted_items = tuple(copy.deepcopy(item) for item in items)
     max_set_counts: dict[str, int] = defaultdict(int)
     selected_sets: set[str] = set()
-    for item in items:
+    for item in snapshotted_items:
         set_id = item.get("setID")
         if set_id:
             selected_sets.add(set_id)
             max_set_counts[set_id] += 1
     set_bonus_by_id = {
-        set_id: set_bonus_stats(sets[set_id])
+        set_id: copy.deepcopy(set_bonus_stats(sets[set_id]))
         for set_id in selected_sets
         if set_id in sets
     }
     item_stat_coefficients_by_stat: dict[str, dict[str, int]] = defaultdict(dict)
-    for item in items:
+    for item in snapshotted_items:
         for stat, coefficient in item.get("_stats", {}).items():
             if coefficient:
                 item_stat_coefficients_by_stat[stat][item["dofusID"]] = coefficient
@@ -179,15 +185,16 @@ def build_model_metadata(
                 if coefficient:
                     set_bonus_coefficients_by_stat[stat][(set_id, int(count))] = coefficient
     return ModelMetadata(
-        candidates_by_slot=slot_candidates(items, group_rings=group_rings),
-        item_by_id=items_by_id(items),
+        items=snapshotted_items,
+        candidates_by_slot=slot_candidates(list(snapshotted_items), group_rings=group_rings),
+        item_by_id=items_by_id(list(snapshotted_items)),
         group_rings=group_rings,
         selected_set_ids=selected_sets,
         max_set_counts=dict(max_set_counts),
         set_bonus_by_id=set_bonus_by_id,
         item_objective_stats_by_id={
             item["dofusID"]: objective_stats_for_item(item)
-            for item in items
+            for item in snapshotted_items
         },
         item_stat_coefficients_by_stat=dict(item_stat_coefficients_by_stat),
         set_bonus_coefficients_by_stat=dict(set_bonus_coefficients_by_stat),
@@ -724,20 +731,28 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
         *,
         slot_item_vars: dict[tuple[str, str], cp_model.IntVar],
         exo_vars: dict[tuple[str, str], cp_model.IntVar],
-        items: list[dict[str, Any]],
-        sets: dict[str, dict[str, Any]],
         target: BuildTarget,
         candidate_limit: int,
         generic_damage_weight: float,
         survivability_weight: float,
         negative_resistance_penalty_weight: float,
+        metadata: ModelMetadata | None = None,
+        items: list[dict[str, Any]] | None = None,
+        sets: dict[str, dict[str, Any]] | None = None,
         stop_after_candidates: bool = False,
     ) -> None:
         super().__init__()
         self.slot_item_vars = slot_item_vars
         self.exo_vars = exo_vars
-        self.items = items
-        self.sets = sets
+        if metadata is None:
+            if items is None or sets is None:
+                raise ValueError("metadata or items and sets are required")
+            metadata = build_model_metadata(
+                items,
+                sets,
+                group_rings=any(slot == RING_GROUP_SLOT for slot, _item_id in slot_item_vars),
+            )
+        self.metadata = metadata
         self.target = target
         self.candidate_limit = candidate_limit
         self.generic_damage_weight = generic_damage_weight
@@ -761,8 +776,8 @@ class CandidateCollectionCallback(cp_model.CpSolverSolutionCallback):
             self,
             self.slot_item_vars,
             self.exo_vars,
-            self.items,
-            self.sets,
+            self.metadata.items,
+            self.metadata.set_bonus_by_id,
             self.target,
             self.generic_damage_weight,
             self.survivability_weight,
@@ -849,8 +864,14 @@ def reconstruct_state(
     generic_damage_weight: float,
     survivability_weight: float,
     negative_resistance_penalty_weight: float,
+    *,
+    metadata: ModelMetadata | None = None,
 ) -> tuple[BuildState | None, dict[str, Any] | None]:
-    item_by_id = items_by_id(items)
+    item_by_id = metadata.item_by_id if metadata is not None else items_by_id(items)
+    set_bonus_by_id = metadata.set_bonus_by_id if metadata is not None else {
+        set_id: set_bonus_stats(set_obj)
+        for set_id, set_obj in sets.items()
+    }
     state = BuildState()
     selected_by_slot: dict[str, dict[str, Any]] = {}
     grouped_rings = any(var_slot == RING_GROUP_SLOT for (var_slot, _item_id) in slot_item_vars)
@@ -931,10 +952,10 @@ def reconstruct_state(
             state.set_counts[set_id] += 1
 
     for set_id, count in state.set_counts.items():
-        set_obj = sets.get(set_id)
-        if not set_obj:
+        bonus_stats_by_count = set_bonus_by_id.get(set_id)
+        if not bonus_stats_by_count:
             continue
-        apply_stat_delta(state.stats, set_bonus_stats(set_obj).get(str(count), {}))
+        apply_stat_delta(state.stats, bonus_stats_by_count.get(str(count), {}))
     state.set_counts = dict(state.set_counts)
 
     for (slot_name, stat), var in sorted(exo_vars.items()):
@@ -1044,8 +1065,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
         collector = CandidateCollectionCallback(
             slot_item_vars=slot_item_vars,
             exo_vars=exo_vars,
-            items=items,
-            sets=sets,
+            metadata=metadata,
             target=target,
             candidate_limit=args.candidate_limit,
             generic_damage_weight=generic_damage_weight,
@@ -1077,6 +1097,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
                 generic_damage_weight,
                 survivability_weight,
                 negative_resistance_penalty_weight,
+                metadata=metadata,
             )
             if final_state is not None:
                 final_signature = state_signature(final_state)
@@ -1158,6 +1179,7 @@ def solve_query_for_active_level(query: BuildDiscoveryQuery, args: argparse.Name
                 generic_damage_weight,
                 survivability_weight,
                 negative_resistance_penalty_weight,
+                metadata=metadata,
             )
             selected_ids = frozenset(
                 item_id

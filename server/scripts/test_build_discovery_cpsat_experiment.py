@@ -273,6 +273,105 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         )
         self.assertNotIn("Agility", metadata.set_bonus_coefficients_by_stat)
 
+    def test_metadata_reuse_is_isolated_from_source_item_and_set_mutation(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        items = base_fixture_items()
+        sets = fixture_sets()
+        metadata = build_model_metadata(items, sets, group_rings=True)
+
+        items_by_id = {source_item["dofusID"]: source_item for source_item in items}
+        items_by_id["ring_good"]["_stats"]["Strength"] = -500
+        items_by_id["ring_good"]["conditions"]["conditions"] = {
+            "stat": "AP",
+            "operator": ">",
+            "value": 99,
+        }
+        items_by_id["amulet"]["itemType"] = "Pet"
+        sets["dofus_set"]["_bonus_stats"]["2"]["Strength"] = -500
+
+        target = BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False)
+        model, slot_item_vars, exo_vars, _model_stats = build_model(
+            items,
+            sets,
+            target,
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0},
+            exo_policy="none",
+            metadata=metadata,
+        )
+        solver = cp_model.CpSolver()
+        self.assertEqual(solver.Solve(model), cp_model.OPTIMAL)
+        state, invalid = reconstruct_state(
+            solver,
+            slot_item_vars,
+            exo_vars,
+            items,
+            sets,
+            target,
+            0.45,
+            1.0,
+            0.0,
+            metadata=metadata,
+        )
+
+        self.assertIsNone(invalid)
+        self.assertIn("ring_good", state.used_item_ids)
+        selected_ring = next(
+            selected_item
+            for selected_item in state.slots.values()
+            if selected_item["dofusID"] == "ring_good"
+        )
+        self.assertEqual(selected_ring["_stats"]["Strength"], 20)
+        self.assertEqual(metadata.set_bonus_by_id["dofus_set"]["2"]["Strength"], 200)
+        with self.assertRaises(TypeError):
+            metadata.items[0] = metadata.items[0]
+
+    def test_sparse_metadata_keeps_signed_coefficients_and_snapshot_exo_eligibility(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        items = base_fixture_items()
+        items.append(item("negative_hat", "Hat", stats={"Strength": -25, "AP": -1}))
+        metadata = build_model_metadata(items, fixture_sets())
+
+        self.assertEqual(metadata.item_stat_coefficients_by_stat["Strength"]["ring_good"], 20)
+        self.assertEqual(metadata.item_stat_coefficients_by_stat["Strength"]["negative_hat"], -25)
+        self.assertEqual(metadata.item_stat_coefficients_by_stat["AP"]["negative_hat"], -1)
+
+        next(source for source in items if source["dofusID"] == "amulet")["_stats"]["AP"] = 1
+        _model, _slot_item_vars, exo_vars, _model_stats = build_model(
+            items,
+            fixture_sets(),
+            BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False),
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0},
+            exo_policy="allow",
+            metadata=metadata,
+        )
+        self.assertIn(("amulet", "AP"), exo_vars)
+
+    def test_condition_only_action_stat_uses_sparse_expression_and_bounds(self):
+        if IMPORT_ERROR is not None:
+            raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        items = base_fixture_items()
+        next(source for source in items if source["dofusID"] == "cloak")["_stats"]["Range"] = 1
+        items.append(item(
+            "conditioned_hat",
+            "Hat",
+            stats={"Strength": 50},
+            conditions={"stat": "RANGE", "operator": ">", "value": 0},
+        ))
+        status, state, model_stats = solve_fixture(items)
+
+        self.assertEqual(status, cp_model.OPTIMAL)
+        self.assertIn("conditioned_hat", state.used_item_ids)
+        self.assertEqual(state.stats["Range"], 1)
+        self.assertGreaterEqual(model_stats["conditionConstraintCount"], 1)
+
     def test_sparse_metadata_and_zero_objective_terms_preserve_model_result(self):
         if IMPORT_ERROR is not None:
             raise unittest.SkipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
