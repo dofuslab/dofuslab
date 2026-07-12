@@ -1,6 +1,5 @@
 from json.encoder import INFINITY
 from math import inf
-from copy import deepcopy
 import json
 import random
 from app import (
@@ -12,7 +11,6 @@ from app import (
     limiter,
     base_url,
     reset_password_salt,
-    cache_region,
 )
 from app.database.model_favorite_item import ModelFavoriteItem
 from app.database.model_item_stat_translation import ModelItemStatTranslation
@@ -95,12 +93,14 @@ from sqlalchemy.orm import aliased
 from sqlalchemy.sql.expression import true
 from datetime import datetime
 from ddtrace import tracer
-from dogpile.cache.api import NO_VALUE
+from app.build_discovery_service import (
+    CPSAT_SOLVER_VERSION,
+    build_discovery_cached_response,
+    build_discovery_cached_response_hit,
+)
 from oneoff.build_discovery_prototype import (
     BuildDiscoveryQuery,
     DEFAULT_MAX_SHARED_ITEMS,
-    SOLVER_VERSION,
-    build_discovery_response,
     dataset_version,
     load_build_discovery_index,
     query_cache_identity,
@@ -230,53 +230,6 @@ def require_build_discovery_index():
         raise GraphQLError("Build Discovery index is not available.")
 
 
-def build_discovery_app_cache_key(query):
-    return "build_discovery_response:" + query_cache_key(query, dataset_version())
-
-
-def mark_build_discovery_app_cache_hit(response):
-    cached = deepcopy(response)
-    cached["cache"] = {
-        **cached.get("cache", {}),
-        "status": "hit",
-        "storage": "app_cache",
-    }
-    cached.setdefault("diagnostics", {})["cacheHit"] = True
-    cached["diagnostics"]["appCacheHit"] = True
-    cached["diagnostics"]["elapsedMs"] = 0.0
-    return cached
-
-
-def mark_build_discovery_app_cache_miss(response):
-    cached = deepcopy(response)
-    cached["cache"] = {
-        **cached.get("cache", {}),
-        "status": "miss",
-        "storage": "app_cache",
-    }
-    cached.setdefault("diagnostics", {})["appCacheHit"] = False
-    return cached
-
-
-def build_discovery_cached_response(query):
-    cache_key = build_discovery_app_cache_key(query)
-    cached_response = cache_region.get(cache_key)
-    if cached_response is not None and cached_response is not NO_VALUE:
-        return mark_build_discovery_app_cache_hit(cached_response)
-
-    response = build_discovery_response(query, use_cache=False)
-    response = mark_build_discovery_app_cache_miss(response)
-    cache_region.set(cache_key, response)
-    return response
-
-
-def build_discovery_cached_response_hit(query):
-    cached_response = cache_region.get(build_discovery_app_cache_key(query))
-    if cached_response is None or cached_response is NO_VALUE:
-        return None
-    return mark_build_discovery_app_cache_hit(cached_response)
-
-
 def build_discovery_request_payload(query, result_key=None):
     payload = {
         "query": query_summary(query),
@@ -337,7 +290,7 @@ def create_queued_build_discovery_job(query, db_session):
         progress=0,
         request_payload=build_discovery_request_payload(query),
         dataset_version=dataset_version(),
-        solver_version=SOLVER_VERSION,
+        solver_version=CPSAT_SOLVER_VERSION,
     )
     db_session.add(job_model)
     db_session.flush()
