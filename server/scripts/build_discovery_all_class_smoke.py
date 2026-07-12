@@ -40,16 +40,17 @@ class SmokeTarget:
     preset: int
     exo_policy: str
     purpose: str
+    min_score: float | None = None
 
 
 ALL_CLASS_LEVEL_200_TARGETS = (
-    SmokeTarget("trusted_iop_strength_opti_damage", "Iop", "strength", 200, 4, 12, 6, None, 4, "opti", "reviewed baseline"),
-    SmokeTarget("cra_strength_soft_range", "Cra", "strength", 200, 4, 12, 6, None, 3, "opti", "soft Range, no hard target"),
-    SmokeTarget("ecaflip_intelligence_range6", "Ecaflip", "intelligence", 200, 4, 12, 6, 6, 3, "opti", "hard Range 6 stress"),
+    SmokeTarget("trusted_iop_strength_opti_damage", "Iop", "strength", 200, 4, 12, 6, None, 4, "opti", "reviewed baseline", min_score=950.0),
+    SmokeTarget("cra_strength_soft_range", "Cra", "strength", 200, 4, 12, 6, None, 3, "opti", "soft Range, no hard target", min_score=1150.0),
+    SmokeTarget("ecaflip_intelligence_range6", "Ecaflip", "intelligence", 200, 4, 12, 6, 6, 3, "opti", "hard Range 6 stress", min_score=1100.0),
     SmokeTarget("eliotrope_chance_range5", "Eliotrope", "chance", 200, 3, 11, 6, 5, 2, "allow", "hard Range 5 stress"),
     SmokeTarget("eniripsa_agility_range6", "Eniripsa", "agility", 200, 4, 12, 6, 6, 2, "opti", "hard Range 6 stress"),
-    SmokeTarget("enutrof_chance_hard_range", "Enutrof", "chance", 200, 3, 11, 6, 6, 2, "allow", "hard Range 6 corner"),
-    SmokeTarget("feca_chance_budget1_floor", "Feca", "chance", 200, 1, 10, 5, None, 2, "none", "cheap accessibility floor"),
+    SmokeTarget("enutrof_chance_hard_range", "Enutrof", "chance", 200, 3, 11, 6, 6, 2, "allow", "hard Range 6 corner", min_score=950.0),
+    SmokeTarget("feca_chance_budget1_floor", "Feca", "chance", 200, 1, 10, 5, None, 2, "none", "cheap accessibility floor", min_score=650.0),
     SmokeTarget("foggernaut_strength_no_range", "Foggernaut", "strength", 200, 3, 12, 6, 0, 2, "allow", "nearly-useless Range guard"),
     SmokeTarget("forgelance_chance_range6", "Forgelance", "chance", 200, 4, 12, 6, 6, 2, "opti", "hard Range 6 stress"),
     SmokeTarget("huppermage_strength_range3", "Huppermage", "strength", 200, 3, 11, 6, 3, 2, "allow", "hard Range 3 stress"),
@@ -57,7 +58,7 @@ ALL_CLASS_LEVEL_200_TARGETS = (
     SmokeTarget("osamodas_agility_range5", "Osamodas", "agility", 200, 3, 11, 6, 5, 2, "allow", "hard Range 5 stress"),
     SmokeTarget("ouginak_chance_no_range", "Ouginak", "chance", 200, 2, 11, 5, 0, 2, "allow", "short-range/no-Range class guard"),
     SmokeTarget("pandawa_agility_range5", "Pandawa", "agility", 200, 3, 11, 6, 5, 2, "allow", "hard Range 5 stress"),
-    SmokeTarget("rogue_intelligence_range6", "Rogue", "intelligence", 200, 4, 12, 6, 6, 2, "opti", "hard Range 6 stress"),
+    SmokeTarget("rogue_intelligence_range6", "Rogue", "intelligence", 200, 4, 12, 6, 6, 2, "opti", "hard Range 6 stress", min_score=1150.0),
     SmokeTarget("sacrier_intelligence_no_range", "Sacrier", "intelligence", 200, 4, 12, 6, 0, 2, "opti", "short-range hard zero"),
     SmokeTarget("sadida_intelligence_range6", "Sadida", "intelligence", 200, 4, 12, 6, 6, 2, "opti", "hard Range 6 stress"),
     SmokeTarget("sram_strength_range6", "Sram", "strength", 200, 4, 12, 6, 6, 2, "opti", "hard Range 6 stress"),
@@ -68,16 +69,16 @@ ALL_CLASS_LEVEL_200_TARGETS = (
 LEVEL_DIVERSITY_TARGETS = (
     SmokeTarget("level1_iop_strength_min", "Iop", "strength", 1, 1, 6, 3, None, 2, "none", "level 1 base AP 6 minimum"),
     SmokeTarget("level20_cra_intelligence_range1", "Cra", "intelligence", 20, 1, 6, 3, 1, 2, "none", "early pre-100 hard Range 1"),
-    SmokeTarget("level50_ecaflip_chance_budget1", "Ecaflip", "chance", 50, 1, 7, 4, 0, 2, "none", "budget tier 1 low-level action row"),
+    SmokeTarget("level50_ecaflip_chance_budget1", "Ecaflip", "chance", 50, 1, 7, 4, 0, 2, "none", "budget tier 1 low-level action row", min_score=275.0),
     SmokeTarget("level80_feca_agility_budget2", "Feca", "agility", 80, 2, 10, 5, 0, 2, "allow", "mid-level AP/MP row before base AP change"),
-    SmokeTarget("level99_enutrof_chance_cap", "Enutrof", "chance", 99, 4, 12, 6, 6, 2, "allow", "pre-100 hard cap stress"),
+    SmokeTarget("level99_enutrof_chance_cap", "Enutrof", "chance", 99, 4, 12, 6, 6, 2, "allow", "pre-100 hard cap stress", min_score=650.0),
     SmokeTarget("level100_xelor_agility_min", "Xelor", "agility", 100, 2, 7, 3, None, 2, "allow", "level 100 base AP 7 minimum"),
     SmokeTarget("level120_eniripsa_intelligence_mid", "Eniripsa", "intelligence", 120, 2, 11, 5, 1, 2, "allow", "post-100 mid-level budget row"),
     SmokeTarget("level150_sacrier_strength_floor", "Sacrier", "strength", 150, 2, 10, 5, 0, 2, "allow", "level 150 realistic floor row"),
     SmokeTarget("level179_pandawa_agility_mid", "Pandawa", "agility", 179, 3, 12, 5, 2, 2, "allow", "pre-180 high-level transition row"),
-    SmokeTarget("level180_rogue_intelligence_range6", "Rogue", "intelligence", 180, 3, 12, 6, 6, 2, "allow", "level 180 hard Range 6 stress"),
+    SmokeTarget("level180_rogue_intelligence_range6", "Rogue", "intelligence", 180, 3, 12, 6, 6, 2, "allow", "level 180 hard Range 6 stress", min_score=750.0),
     SmokeTarget("level199_osamodas_agility_budget2", "Osamodas", "agility", 199, 2, 10, 6, 3, 2, "allow", "near-200 lower-budget row"),
-    SmokeTarget("level200_feca_chance_budget1_floor", "Feca", "chance", 200, 1, 10, 5, None, 2, "none", "level 200 tier 1 realistic floor"),
+    SmokeTarget("level200_feca_chance_budget1_floor", "Feca", "chance", 200, 1, 10, 5, None, 2, "none", "level 200 tier 1 realistic floor", min_score=650.0),
 )
 
 
@@ -122,8 +123,8 @@ def solver_args(args: argparse.Namespace) -> SimpleNamespace:
         time_limit_seconds=args.time_limit_seconds,
         workers=args.workers,
         max_attempts=1,
-        candidate_limit=1,
-        summary_limit=1,
+        candidate_limit=args.candidate_limit,
+        summary_limit=args.candidate_limit,
         output_build_limit=1,
         collection_mode="callback",
         stop_after_candidates=True,
@@ -133,13 +134,21 @@ def solver_args(args: argparse.Namespace) -> SimpleNamespace:
     )
 
 
-def validate_response(query: BuildDiscoveryQuery, response: dict[str, Any]) -> list[str]:
+def validate_response(
+    query: BuildDiscoveryQuery,
+    response: dict[str, Any],
+    *,
+    min_score: float | None = None,
+) -> list[str]:
     errors: list[str] = []
     build = response.get("build")
     if not build:
         return ["no build returned"]
     if build.get("conditionFailures"):
         errors.append(f"condition failures present: {build['conditionFailures']}")
+    score = build.get("score")
+    if min_score is not None and (not isinstance(score, (int, float)) or score < min_score):
+        errors.append(f"score {score} below floor {min_score}")
 
     totals = build.get("totals") or {}
     ap = totals.get("AP")
@@ -205,7 +214,11 @@ def run_target(target: SmokeTarget, args: argparse.Namespace) -> dict[str, Any]:
         }
 
     elapsed_ms = round((time.perf_counter() - started) * 1000, 1)
-    validation_errors = validate_response(query, response) if response.get("status") == "complete" else ["no complete response"]
+    validation_errors = (
+        validate_response(query, response, min_score=target.min_score)
+        if response.get("status") == "complete"
+        else ["no complete response"]
+    )
     build = response.get("build")
     totals = (build or {}).get("totals") or {}
     return {
@@ -238,6 +251,7 @@ def write_markdown(report: dict[str, Any], path: Path) -> None:
         f"- Generated: `{report['generatedAt']}`",
         f"- Report version: `{report['reportVersion']}`",
         f"- Target set: `{report['targetSet']}`",
+        f"- Warmup target: `{(report.get('warmup') or {}).get('target', {}).get('name')}`",
         f"- Targets: `{report['summary']['targetCount']}`",
         f"- Passed: `{report['summary']['passed']}`",
         f"- Failed: `{report['summary']['failed']}`",
@@ -280,14 +294,26 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--time-limit-seconds", type=float, default=5.0)
     parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument("--candidate-limit", type=int, default=3)
     parser.add_argument("--output-json", required=True)
     parser.add_argument("--output-md", required=True)
     parser.add_argument("--target-set", choices=sorted(TARGET_SETS), default="all-class-level-200")
+    parser.add_argument(
+        "--skip-warmup",
+        action="store_true",
+        help="Skip the unmeasured first-target warmup run used to populate in-process item/set caches.",
+    )
     parser.add_argument(
         "--max-total-search-p95-ms",
         type=float,
         default=None,
         help="Fail when totalSearchMs p95 exceeds this threshold.",
+    )
+    parser.add_argument(
+        "--max-elapsed-p95-ms",
+        type=float,
+        default=None,
+        help="Fail when end-to-end elapsedMs p95 exceeds this threshold.",
     )
     parser.add_argument(
         "--target",
@@ -299,6 +325,9 @@ def main() -> None:
     target_names = set(args.target or [])
     selected_set = TARGET_SETS[args.target_set]
     targets = [target for target in selected_set if not target_names or target.name in target_names]
+    warmup = None
+    if targets and not args.skip_warmup:
+        warmup = run_target(targets[0], args)
     rows = [run_target(target, args) for target in targets]
     range_targets = [
         "None" if row["target"]["range_target"] is None else row["target"]["range_target"]
@@ -323,6 +352,12 @@ def main() -> None:
             failures.append(
                 f"totalSearchMs p95 {p95_ms} exceeded threshold {args.max_total_search_p95_ms}"
             )
+    if args.max_elapsed_p95_ms is not None:
+        p95_ms = elapsed_summary["p95Ms"]
+        if p95_ms is None or p95_ms > args.max_elapsed_p95_ms:
+            failures.append(
+                f"elapsedMs p95 {p95_ms} exceeded threshold {args.max_elapsed_p95_ms}"
+            )
     summary = {
         "targetCount": len(rows),
         "passed": sum(1 for row in rows if row["status"] == "passed"),
@@ -336,12 +371,14 @@ def main() -> None:
         "elapsedMs": elapsed_summary,
         "maxTotalSearchMs": total_search_summary["maxMs"] or 0,
         "maxTotalSearchP95Ms": args.max_total_search_p95_ms,
+        "maxElapsedP95Ms": args.max_elapsed_p95_ms,
         "failures": failures,
     }
     report = {
         "reportVersion": REPORT_VERSION,
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "targetSet": args.target_set,
+        "warmup": warmup,
         "summary": summary,
         "rows": rows,
     }
