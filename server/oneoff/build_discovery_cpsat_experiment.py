@@ -23,8 +23,10 @@ from oneoff.condition_evaluator import (
     unmet_item_conditions,
 )
 from oneoff.build_discovery_scoring import (
+    DAMAGE_SCORING_STATS,
     RANGE_SOFT_WEIGHT_MARGINAL,
     STAT_WEIGHTS,
+    SURVIVABILITY_SCORING_STATS,
 )
 from oneoff.build_discovery_prototype import (
     ACTION_STATS,
@@ -244,26 +246,64 @@ def linearized_final_score_weights(
     objective_stats = collect_objective_stats(metadata)
     for stat in objective_stats:
         reference_stats.setdefault(stat, active_base_stats().get(stat, 0))
-    baseline = cheap_final_score_for_stats(
-        reference_stats,
-        generic_damage_weight,
-        survivability_weight,
-        negative_resistance_penalty_weight,
+    utility_stats = {
+        stat
+        for stat, weight in active_stat_weights().items()
+        if weight
+    } - DAMAGE_SCORING_STATS - SURVIVABILITY_SCORING_STATS
+    negative_resistance_stats = {
+        "% Neutral Resistance",
+        "% Earth Resistance",
+        "% Fire Resistance",
+        "% Water Resistance",
+        "% Air Resistance",
+        "% Ranged Resistance",
+        "% Melee Resistance",
+    }
+    baseline_utility = final_utility_score(reference_stats)
+    baseline_damage = cheap_profile_damage_score(reference_stats)
+    baseline_survivability = survivability_score(reference_stats)
+    baseline_negative_resistance = negative_resistance_penalty(reference_stats)
+    baseline = (
+        baseline_utility
+        + baseline_damage * generic_damage_weight
+        + baseline_survivability * survivability_weight
+        - baseline_negative_resistance * negative_resistance_penalty_weight
     )
     weights: dict[str, float] = {}
     for stat in objective_stats:
-        step = 100 if stat in {"Strength", "Intelligence", "Chance", "Agility", "Power", "Vitality", "Initiative"} else 1
+        if stat in ACTION_STATS:
+            continue
+        step = 100 if stat in {
+            "Strength", "Intelligence", "Chance", "Agility", "Power", "Vitality", "Initiative"
+        } else 1
         next_stats = dict(reference_stats)
         next_stats[stat] = next_stats.get(stat, 0) + step
-        weights[stat] = (
-            cheap_final_score_for_stats(
-                next_stats,
-                generic_damage_weight,
-                survivability_weight,
-                negative_resistance_penalty_weight,
-            )
-            - baseline
-        ) / step
+        next_utility = (
+            final_utility_score(next_stats) if stat in utility_stats else baseline_utility
+        )
+        next_damage = (
+            cheap_profile_damage_score(next_stats)
+            if stat in DAMAGE_SCORING_STATS
+            else baseline_damage
+        )
+        next_survivability = (
+            survivability_score(next_stats)
+            if stat in SURVIVABILITY_SCORING_STATS
+            else baseline_survivability
+        )
+        next_negative_resistance = (
+            negative_resistance_penalty(next_stats)
+            if stat in negative_resistance_stats
+            else baseline_negative_resistance
+        )
+        next_score = (
+            next_utility
+            + next_damage * generic_damage_weight
+            + next_survivability * survivability_weight
+            - next_negative_resistance * negative_resistance_penalty_weight
+        )
+        weights[stat] = (next_score - baseline) / step
     active_weights = active_stat_weights()
     for stat in ACTION_STATS:
         weights[stat] = active_weights.get(stat, 0.0)
