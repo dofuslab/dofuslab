@@ -37,13 +37,14 @@ GRAPHQL_QUERY = """query BuildDiscoveryProductionGate(
   $className: String!, $level: Int!, $elements: [String!], $mode: String!,
   $apTarget: Int!, $mpTarget: Int!, $rangeTarget: Int,
   $damageSurvivabilityPreset: Int!, $budgetTier: Int!, $exoPolicy: String!,
-  $limit: Int!, $topK: Int!
+  $limit: Int!, $topK: Int!, $avoidedItemIds: [String!]
 ) {
   buildDiscovery(
     className: $className, level: $level, elements: $elements, mode: $mode,
     apTarget: $apTarget, mpTarget: $mpTarget, rangeTarget: $rangeTarget,
     damageSurvivabilityPreset: $damageSurvivabilityPreset,
-    budgetTier: $budgetTier, exoPolicy: $exoPolicy, limit: $limit, topK: $topK
+    budgetTier: $budgetTier, exoPolicy: $exoPolicy, limit: $limit, topK: $topK,
+    avoidedItemIds: $avoidedItemIds
   )
 }"""
 
@@ -85,9 +86,11 @@ def urllib_json_request(url: str, payload: dict[str, Any], timeout: float) -> di
 
 
 def target_variables(target: Any, run_key: str, index: int) -> dict[str, Any]:
-    # topK participates in cache identity but is ignored by the synchronous CP-SAT runner.
-    digest = hashlib.sha256(f"{run_key}:{index}:{target.name}".encode("utf-8")).digest()
-    independent_top_k = 1000 + int.from_bytes(digest[:4], "big") % 1_000_000_000
+    # The sentinel participates in cache identity but cannot match a numeric
+    # Dofus item id, so it does not alter the candidate set.
+    cache_sentinel = "http-gate-" + hashlib.sha256(
+        f"{run_key}:{index}:{target.name}".encode("utf-8")
+    ).hexdigest()
     return {
         "className": target.class_name,
         "level": target.level,
@@ -100,7 +103,8 @@ def target_variables(target: Any, run_key: str, index: int) -> dict[str, Any]:
         "budgetTier": target.budget_tier,
         "exoPolicy": target.exo_policy,
         "limit": 1,
-        "topK": independent_top_k,
+        "topK": 25 + index,
+        "avoidedItemIds": [cache_sentinel],
     }
 
 
