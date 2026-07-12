@@ -10,7 +10,11 @@ from redis.exceptions import LockError
 
 from dogpile.cache.api import NO_VALUE
 
-from oneoff.build_discovery_cpsat_runner import build_cpsat_args, solve_cpsat_query
+from oneoff.build_discovery_cpsat_runner import (
+    DEFAULT_FAST_TIME_LIMIT_SECONDS,
+    build_cpsat_args,
+    solve_cpsat_query,
+)
 from oneoff.build_discovery_prototype import (
     BuildDiscoveryQuery,
     DEFAULT_MAX_SHARED_ITEMS,
@@ -20,7 +24,7 @@ from oneoff.build_discovery_prototype import (
 
 
 CPSAT_SOLVER_VERSION = "build-discovery-cpsat-production-v1"
-CPSAT_TIME_LIMIT_SECONDS = 2.8
+CPSAT_TIME_LIMIT_SECONDS = DEFAULT_FAST_TIME_LIMIT_SECONDS
 CPSAT_WORKERS = 2
 CPSAT_SOLVE_LOCK_KEY = "build_discovery:cpsat:solve_lock"
 CPSAT_SOLVE_LOCK_TIMEOUT_SECONDS = 30
