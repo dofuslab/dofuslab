@@ -1,5 +1,30 @@
 # Build Discovery Progress
 
+## 2026-07-12 CP-SAT Production Performance Loop
+
+- Integrated CP-SAT behind the GraphQL/RQ product cache boundary with a Redis-backed global solve lock. Production solves use two CP-SAT workers; at most one solve runs across processes.
+- Added bounded synchronous behavior: uncached `limit=1` requests may solve inline, cache hits stay synchronous, and multi-build generation remains on `startBuildDiscovery`. Synchronous lock contention fails cleanly after 200 ms; RQ retries are bounded.
+- Preserved product constraints and provenance in the CP-SAT path: locked items, weapon policy, requested multi-build overlap, dataset version, solver version, cache key, and target metadata.
+- Reduced model overhead without changing feasible solutions:
+  - sparse stat coefficient metadata and selected-set filtering;
+  - immutable metadata snapshots;
+  - native Boolean cardinality constraints and removal of singleton `x <= 1` tautologies;
+  - skipped prototype item pre-scoring unused by CP-SAT;
+  - component-specific final-score linearization.
+- Rejected ordered threshold set-count encoding after A/B testing: variables fell, but construction regressed 9.6% and time-limited solve quality deteriorated.
+- Upgraded the CP-SAT runtime from OR-Tools 9.7 to 9.12. The wheel is installed with `--no-deps` to avoid forcing Pandas 2 onto the legacy analytics stack; runtime dependencies Protobuf 5.29.6 and immutabledict 4.3.1 are pinned explicitly.
+- Made generated spell profiles self-contained by serializing/hydrating complete spell and damage-line data from `build_discovery_index.json`. Runtime scoring no longer needs a database fallback when the current index is present.
+- Verified in a container constrained to exactly 2 CPUs and 2 GB RAM with a freshly generated 304-profile index:
+  - quality matrix: 19/19;
+  - warm search p95: 3377.2 ms;
+  - solver end-to-end p95: 3620.1 ms;
+  - peak RSS: 221,933,568 bytes.
+- Verified the constrained GraphQL HTTP path:
+  - 19/19 complete responses;
+  - cache-miss HTTP p95: 3506.9 ms;
+  - 200-request cache-hit HTTP p95: 31.34 ms;
+  - maximum observed cache-hit latency: 74.64 ms.
+
 Last updated: 2026-07-08
 
 ## Current Workspace Finding

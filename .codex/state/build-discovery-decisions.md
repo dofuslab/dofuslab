@@ -12,6 +12,16 @@
 - The current oversized prototype branch should be committed, stashed, or parked as a baseline before starting clean child PRs.
 - Future stacked PRs should avoid mixing solver, API, sync, UI, and incidental layout changes unless the user explicitly accepts that scope.
 
+## 2026-07-12 Production Performance Decisions
+
+- Production CP-SAT uses exactly two internal search workers on the 2-vCPU droplet.
+- A Redis-backed global lock limits the deployment to one active CP-SAT solve. Cache hits do not acquire the solve lock.
+- Only uncached single-build queries are eligible for synchronous solving. Multi-build requests with diversity constraints remain asynchronous because repeated exact diversity solves cannot satisfy the five-second request budget.
+- Performance changes must preserve the 19-row all-class quality matrix; reducing the solver timeout to 2.4 seconds was rejected after quality fell to 15/19.
+- OR-Tools 9.12 is required for the launch latency target. OR-Tools 9.8 retained 19/19 quality but missed the warm-search target at 4278.5 ms p95.
+- Generated indexes must contain complete spell damage profiles. Database fallback is a development compatibility path, not an acceptable production scoring dependency.
+- Keep exact candidate sets for v1. Do not use objective-ranked pet/Dofus top-N pruning to meet latency, because it removes feasible solutions and benchmark paths.
+
 ## Product Decisions From PRD
 
 - v1 uses structured controls, not chat.
