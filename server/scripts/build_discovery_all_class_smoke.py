@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 import time
 from dataclasses import dataclass
@@ -85,6 +86,19 @@ TARGET_SETS = {
     "level-diversity": LEVEL_DIVERSITY_TARGETS,
     "all": ALL_CLASS_LEVEL_200_TARGETS + LEVEL_DIVERSITY_TARGETS,
 }
+
+
+def timing_summary(values: list[float]) -> dict[str, float | None]:
+    if not values:
+        return {"minMs": None, "avgMs": None, "p95Ms": None, "maxMs": None}
+    ordered = sorted(values)
+    p95_index = max(math.ceil(len(ordered) * 0.95) - 1, 0)
+    return {
+        "minMs": round(ordered[0], 1),
+        "avgMs": round(sum(ordered) / len(ordered), 1),
+        "p95Ms": round(ordered[p95_index], 1),
+        "maxMs": round(ordered[-1], 1),
+    }
 
 
 def target_query(target: SmokeTarget) -> BuildDiscoveryQuery:
@@ -231,7 +245,8 @@ def write_markdown(report: dict[str, Any], path: Path) -> None:
         f"- Elements: `{report['summary']['elements']}`",
         f"- Budget tiers: `{report['summary']['budgetTiers']}`",
         f"- Range targets: `{report['summary']['rangeTargets']}`",
-        f"- Max total search ms: `{report['summary']['maxTotalSearchMs']}`",
+        f"- Total search timings: `{report['summary']['totalSearchMs']}`",
+        f"- Elapsed timings: `{report['summary']['elapsedMs']}`",
         "",
         "## Rows",
         "",
@@ -269,6 +284,12 @@ def main() -> None:
     parser.add_argument("--output-md", required=True)
     parser.add_argument("--target-set", choices=sorted(TARGET_SETS), default="all-class-level-200")
     parser.add_argument(
+        "--max-total-search-p95-ms",
+        type=float,
+        default=None,
+        help="Fail when totalSearchMs p95 exceeds this threshold.",
+    )
+    parser.add_argument(
         "--target",
         action="append",
         choices=sorted({target.name for targets in TARGET_SETS.values() for target in targets}),
@@ -283,6 +304,25 @@ def main() -> None:
         "None" if row["target"]["range_target"] is None else row["target"]["range_target"]
         for row in rows
     ]
+    total_search_values = [
+        (row.get("timings") or {}).get("totalSearchMs", 0)
+        for row in rows
+        if row.get("timings")
+    ]
+    elapsed_values = [
+        row.get("elapsedMs", 0)
+        for row in rows
+        if row.get("elapsedMs") is not None
+    ]
+    total_search_summary = timing_summary(total_search_values)
+    elapsed_summary = timing_summary(elapsed_values)
+    failures = []
+    if args.max_total_search_p95_ms is not None:
+        p95_ms = total_search_summary["p95Ms"]
+        if p95_ms is None or p95_ms > args.max_total_search_p95_ms:
+            failures.append(
+                f"totalSearchMs p95 {p95_ms} exceeded threshold {args.max_total_search_p95_ms}"
+            )
     summary = {
         "targetCount": len(rows),
         "passed": sum(1 for row in rows if row["status"] == "passed"),
@@ -292,10 +332,11 @@ def main() -> None:
         "elements": sorted({row["target"]["element"] for row in rows}),
         "budgetTiers": sorted({row["target"]["budget_tier"] for row in rows}),
         "rangeTargets": sorted(set(range_targets), key=str),
-        "maxTotalSearchMs": max(
-            (row.get("timings") or {}).get("totalSearchMs", 0)
-            for row in rows
-        ) if rows else 0,
+        "totalSearchMs": total_search_summary,
+        "elapsedMs": elapsed_summary,
+        "maxTotalSearchMs": total_search_summary["maxMs"] or 0,
+        "maxTotalSearchP95Ms": args.max_total_search_p95_ms,
+        "failures": failures,
     }
     report = {
         "reportVersion": REPORT_VERSION,
@@ -308,7 +349,7 @@ def main() -> None:
     output_json.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     write_markdown(report, Path(args.output_md))
     print(json.dumps(summary, indent=2))
-    if summary["failed"]:
+    if summary["failed"] or failures:
         raise SystemExit(1)
 
 
