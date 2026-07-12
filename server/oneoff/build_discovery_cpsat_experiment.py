@@ -366,6 +366,8 @@ def build_model(
 
     slot_item_vars: dict[tuple[str, str], cp_model.IntVar] = {}
     item_presence_terms: dict[str, list[cp_model.IntVar]] = defaultdict(list)
+    native_at_most_one_constraint_count = 0
+    native_exactly_one_constraint_count = 0
 
     for slot_name, candidates in candidates_by_slot.items():
         slot_vars = []
@@ -383,12 +385,21 @@ def build_model(
             else:
                 model.Add(sum(slot_vars) == RING_GROUP_SIZE)
         elif slot_name == "pet" or optional_slot_choice(slot_name, target.level):
-            model.Add(sum(slot_vars) <= 1)
+            model.AddAtMostOne(slot_vars)
+            native_at_most_one_constraint_count += 1
         else:
-            model.Add(sum(slot_vars) == 1)
+            model.AddExactlyOne(slot_vars)
+            native_exactly_one_constraint_count += 1
 
-    for item_id, vars_for_item in item_presence_terms.items():
-        model.Add(sum(vars_for_item) <= 1)
+    item_uniqueness_constraint_count = 0
+    skipped_singleton_item_uniqueness_constraint_count = 0
+    for vars_for_item in item_presence_terms.values():
+        if len(vars_for_item) == 1:
+            skipped_singleton_item_uniqueness_constraint_count += 1
+            continue
+        model.AddAtMostOne(vars_for_item)
+        native_at_most_one_constraint_count += 1
+        item_uniqueness_constraint_count += 1
 
     for item_id in required_item_ids:
         presence_terms = item_presence_terms.get(item_id)
@@ -701,6 +712,10 @@ def build_model(
         "groupedRingSlot": metadata.group_rings,
         "slotVarCount": len(slot_item_vars),
         "uniqueItemCount": len(item_by_id),
+        "nativeAtMostOneConstraintCount": native_at_most_one_constraint_count,
+        "nativeExactlyOneConstraintCount": native_exactly_one_constraint_count,
+        "itemUniquenessConstraintCount": item_uniqueness_constraint_count,
+        "skippedSingletonItemUniquenessConstraintCount": skipped_singleton_item_uniqueness_constraint_count,
         "exoVarCount": len(exo_vars),
         "exactSetCountVarCount": len(exact_set_count_vars),
         "skippedSetCountVarCount": skipped_set_count_var_count,

@@ -849,6 +849,62 @@ class BuildDiscoveryCpsatSemanticFixtureTest(unittest.TestCase):
             state.slots["ring_2"]["dofusID"],
         )
 
+    def test_native_cardinality_cleanup_preserves_group_cardinalities(self):
+        target = BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False)
+        items = base_fixture_items()
+        model, _slot_item_vars, _exo_vars, model_stats = build_model(
+            items,
+            fixture_sets(),
+            target,
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0},
+            exo_policy="none",
+        )
+        def has_constraint_kind(constraint, kind):
+            helper_checker = getattr(constraint, f"has_{kind}", None)
+            return helper_checker() if helper_checker is not None else constraint.HasField(kind)
+
+        self.assertEqual(model_stats["nativeExactlyOneConstraintCount"], 7)
+        self.assertEqual(model_stats["nativeAtMostOneConstraintCount"], 1)
+        self.assertEqual(model_stats["itemUniquenessConstraintCount"], 0)
+        self.assertEqual(
+            model_stats["skippedSingletonItemUniquenessConstraintCount"],
+            model_stats["uniqueItemCount"],
+        )
+        self.assertEqual(
+            sum(has_constraint_kind(constraint, "exactly_one") for constraint in model.Proto().constraints),
+            7,
+        )
+        self.assertEqual(
+            sum(has_constraint_kind(constraint, "at_most_one") for constraint in model.Proto().constraints),
+            1,
+        )
+        self.assertGreaterEqual(
+            sum(has_constraint_kind(constraint, "linear") for constraint in model.Proto().constraints),
+            2,
+        )
+
+    def test_native_item_uniqueness_prevents_duplicate_ring_selection(self):
+        target = BuildTarget(ap=7, mp=3, range=0, level=200, range_required=False)
+        model, slot_item_vars, _exo_vars, model_stats = build_model(
+            base_fixture_items(),
+            fixture_sets(),
+            target,
+            forbidden_signatures=[],
+            max_shared_item_cuts=[],
+            max_shared_items=None,
+            objective_weights={"Strength": 1.0},
+            exo_policy="none_or_one",
+        )
+        solver = cp_model.CpSolver()
+        model.Add(slot_item_vars[("ring_1", "ring_good")] == 1)
+        model.Add(slot_item_vars[("ring_2", "ring_good")] == 1)
+
+        self.assertGreaterEqual(model_stats["itemUniquenessConstraintCount"], 2)
+        self.assertEqual(solver.Solve(model), cp_model.INFEASIBLE)
+
     def test_and_condition_is_encoded_before_reconstruction(self):
         items = base_fixture_items()
         items = [
