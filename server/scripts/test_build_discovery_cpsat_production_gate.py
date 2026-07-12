@@ -4,7 +4,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from build_discovery_cpsat_production_gate import EXPECTED_MEMORY_BYTES, run_gate
+from build_discovery_cpsat_production_gate import (
+    EXPECTED_MEMORY_BYTES,
+    MAX_PROCESS_RSS_BYTES,
+    run_gate,
+)
 
 
 def passing_smoke(_args):
@@ -14,7 +18,7 @@ def passing_smoke(_args):
             "passed": 19,
             "failed": 0,
             "failures": [],
-            "totalSearchMs": {"p95Ms": 4100.0},
+            "totalSearchMs": {"p95Ms": 3900.0},
             "elapsedMs": {"p95Ms": 4400.0},
         }
     }
@@ -29,7 +33,7 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
             return {
                 "status": "pass",
                 "failures": [],
-                "summary": {"cacheHitElapsed": {"p95Ms": 125.0}},
+                "summary": {"cacheHitElapsed": {"p95Ms": 75.0}},
             }
 
         report = run_gate(
@@ -41,19 +45,19 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
                 "memoryLimitBytes": EXPECTED_MEMORY_BYTES,
                 "memorySource": "cgroup-v2",
             },
-            peak_rss_fn=lambda: 512 * 1024**2,
+            peak_rss_fn=lambda: 256 * 1024**2,
         )
 
         self.assertEqual(report["status"], "pass")
         self.assertEqual(report["profile"]["workers"], 2)
         self.assertEqual(report["profile"]["concurrency"], 1)
         self.assertEqual(report["measurements"]["qualityMatrix"], {"passed": 19, "total": 19})
-        self.assertEqual(report["measurements"]["warmCacheMissP95Ms"], 4100.0)
-        self.assertEqual(report["measurements"]["cacheHitP95Ms"], 125.0)
+        self.assertEqual(report["measurements"]["warmCacheMissP95Ms"], 3900.0)
+        self.assertEqual(report["measurements"]["cacheHitP95Ms"], 75.0)
         self.assertEqual(report["measurements"]["endToEndP95Ms"], 4400.0)
         self.assertEqual(calls, [
             {"require_all_hits": False},
-            {"require_all_hits": True, "max_hit_p95_ms": 500.0},
+            {"require_all_hits": True, "max_hit_p95_ms": 100.0},
         ])
 
     def test_gate_fails_profile_context_quality_latency_and_rss(self):
@@ -72,7 +76,7 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
             concurrency=2,
             smoke_runner=failing_smoke,
             context_fn=lambda: {"cpuCount": 4.0, "memoryLimitBytes": 1024**3},
-            peak_rss_fn=lambda: EXPECTED_MEMORY_BYTES + 1,
+            peak_rss_fn=lambda: MAX_PROCESS_RSS_BYTES + 1,
         )
 
         self.assertEqual(report["status"], "fail")

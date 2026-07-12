@@ -21,9 +21,10 @@ EXPECTED_WORKERS = 2
 EXPECTED_CONCURRENCY = 1
 EXPECTED_CPU_COUNT = 2.0
 EXPECTED_MEMORY_BYTES = 2 * 1024**3
+MAX_PROCESS_RSS_BYTES = 400 * 1024**2
 EXPECTED_QUALITY_ROWS = 19
-DEFAULT_MAX_WARM_MISS_P95_MS = 5000.0
-DEFAULT_MAX_CACHE_HIT_P95_MS = 500.0
+DEFAULT_MAX_WARM_MISS_P95_MS = 4000.0
+DEFAULT_MAX_CACHE_HIT_P95_MS = 100.0
 DEFAULT_MAX_END_TO_END_P95_MS = 5000.0
 
 
@@ -108,7 +109,7 @@ def process_peak_rss_bytes() -> int | None:
 def smoke_args(max_miss_p95_ms: float, max_end_to_end_p95_ms: float) -> SimpleNamespace:
     return SimpleNamespace(
         target_set="all-class-level-200", target=None, skip_warmup=False,
-        workers=EXPECTED_WORKERS, time_limit_seconds=4.0, candidate_limit=3,
+        workers=EXPECTED_WORKERS, time_limit_seconds=2.8, candidate_limit=3,
         stop_after_candidates=False, compare_reference=False,
         reference_time_limit_seconds=12.0, reference_candidate_limit=12,
         min_reference_score_ratio=0.97,
@@ -157,8 +158,8 @@ def run_gate(
         failures.extend(f"cache hit: {failure}" for failure in cache_hits.get("failures", []))
 
     peak_rss = peak_rss_fn()
-    if peak_rss is not None and peak_rss > EXPECTED_MEMORY_BYTES:
-        failures.append(f"process peak RSS {peak_rss} exceeded {EXPECTED_MEMORY_BYTES} bytes")
+    if peak_rss is not None and peak_rss > MAX_PROCESS_RSS_BYTES:
+        failures.append(f"process peak RSS {peak_rss} exceeded {MAX_PROCESS_RSS_BYTES} bytes")
     return {
         "reportVersion": REPORT_VERSION,
         "status": "pass" if not failures else "fail",
@@ -167,6 +168,7 @@ def run_gate(
             "concurrency": concurrency,
             "expectedCpuCount": EXPECTED_CPU_COUNT,
             "expectedMemoryBytes": EXPECTED_MEMORY_BYTES,
+            "maxProcessRssBytes": MAX_PROCESS_RSS_BYTES,
         },
         "executionContext": context,
         "processPeakRssBytes": peak_rss,
