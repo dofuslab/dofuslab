@@ -740,7 +740,7 @@ class BuildDiscoveryCpsatExperimentContractTest(unittest.TestCase):
         requirements = REQUIREMENTS_PATH.read_text(encoding="utf-8")
 
         self.assertNotIn("ortools==", requirements)
-        dockerfile = (server_path / "Dockerfile").read_text(encoding="utf-8")
+        dockerfile = (REQUIREMENTS_PATH.parent / "Dockerfile").read_text(encoding="utf-8")
         self.assertIn("--no-deps ortools==9.12.4544", dockerfile)
 
 
