@@ -43,6 +43,27 @@ class BuildDiscoverySolveLockLost(RuntimeError):
     pass
 
 
+def compact_product_response(response):
+    """Remove solver-only debug data before Redis and GraphQL serialization."""
+    result = dict(response)
+    for key in (
+        "build",
+        "candidateSummaries",
+        "effectiveScoringStats",
+        "objectiveWeights",
+    ):
+        result.pop(key, None)
+    result["attempts"] = [
+        {
+            key: attempt[key]
+            for key in ("attempt", "mode", "status", "modelMs", "solveMs", "objective")
+            if key in attempt
+        }
+        for attempt in result.get("attempts") or ()
+    ]
+    return result
+
+
 class _RenewableSolveLock:
     def __init__(self, lock, lease_seconds, renewal_interval_seconds=None):
         self.lock = lock
@@ -215,7 +236,7 @@ def build_discovery_cached_response(
             time_limit_seconds=CPSAT_TIME_LIMIT_SECONDS,
             workers=CPSAT_WORKERS,
         )
-        solved = solve_fn(query, args)
+        solved = compact_product_response(solve_fn(query, args))
         renewable_lock.stop_and_join()
         renewable_lock.raise_if_lost()
         response = _with_cache_diagnostics(

@@ -47,6 +47,37 @@ class FakeLock:
         return True
 
 
+class BuildDiscoveryProductResponseTest(unittest.TestCase):
+    def test_compacts_duplicate_and_solver_only_debug_fields(self):
+        response = service.compact_product_response(
+            {
+                "status": "complete",
+                "build": {"score": 1},
+                "builds": [{"score": 1}],
+                "candidateSummaries": [{"score": 1}],
+                "effectiveScoringStats": {"Strength": 1000},
+                "objectiveWeights": {"Strength": 1.0},
+                "attempts": [
+                    {
+                        "attempt": 1,
+                        "status": "FEASIBLE",
+                        "solveMs": 3000,
+                        "callbackCandidateEvents": [{"large": "payload"}],
+                    }
+                ],
+            }
+        )
+
+        self.assertEqual(response["builds"], [{"score": 1}])
+        self.assertNotIn("build", response)
+        self.assertNotIn("candidateSummaries", response)
+        self.assertNotIn("objectiveWeights", response)
+        self.assertEqual(
+            response["attempts"],
+            [{"attempt": 1, "status": "FEASIBLE", "solveMs": 3000}],
+        )
+
+
 class LostOwnershipLock(FakeLock):
     def release(self):
         raise LockError("lock is no longer owned")
