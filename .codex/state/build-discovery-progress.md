@@ -24,6 +24,17 @@
   - cache-miss HTTP p95: 3506.9 ms;
   - 200-request cache-hit HTTP p95: 31.34 ms;
   - maximum observed cache-hit latency: 74.64 ms.
+- Final launch gate uses a 3.2-second CP-SAT budget and compact product responses.
+  Two independent uncached HTTP runs both passed 19/19:
+  - run 1: warm cache-miss p95 3862.692 ms, cold HTTP p95 4836.851 ms,
+    cache-hit p95 47.245 ms;
+  - run 2: warm cache-miss p95 3921.125 ms, cold HTTP p95 3987.9 ms,
+    cache-hit p95 46.944 ms;
+  - measured constrained-container peak memory remained below the 400 MiB
+    gate (latest supplied/observed bound 347,262,976 bytes).
+- Rejected a feasibility-first seed solve. It removed no-candidate failures but
+  reduced generated score to 0.677-0.838 of the existing solver on sampled
+  comparisons, so none of that experiment was committed.
 
 Last updated: 2026-07-08
 

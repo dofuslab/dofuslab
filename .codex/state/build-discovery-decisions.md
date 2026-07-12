@@ -19,6 +19,12 @@
 - Only uncached single-build queries are eligible for synchronous solving. Multi-build requests with diversity constraints remain asynchronous because repeated exact diversity solves cannot satisfy the five-second request budget.
 - Performance changes must preserve the 19-row all-class quality matrix; reducing the solver timeout to 2.4 seconds was rejected after quality fell to 15/19.
 - OR-Tools 9.12 is required for the launch latency target. OR-Tools 9.8 retained 19/19 quality but missed the warm-search target at 4278.5 ms p95.
+- Use a 3.2-second production solve budget. Lower budgets were flaky on hard
+  Range targets; two complete constrained HTTP gates at 3.2 seconds stayed
+  below both the 4-second warm-miss and 5-second HTTP targets.
+- Compact the product/cache response by removing duplicate top-build and
+  solver-only callback diagnostics. Direct solver and regression tooling retain
+  full diagnostics.
 - Generated indexes must contain complete spell damage profiles. Database fallback is a development compatibility path, not an acceptable production scoring dependency.
 - Keep exact candidate sets for v1. Do not use objective-ranked pet/Dofus top-N pruning to meet latency, because it removes feasible solutions and benchmark paths.
 
