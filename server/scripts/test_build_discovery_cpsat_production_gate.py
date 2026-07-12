@@ -46,6 +46,7 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
                 "memorySource": "cgroup-v2",
             },
             peak_rss_fn=lambda: 256 * 1024**2,
+            ortools_version_fn=lambda: "9.12.4544",
         )
 
         self.assertEqual(report["status"], "pass")
@@ -77,6 +78,7 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
             smoke_runner=failing_smoke,
             context_fn=lambda: {"cpuCount": 4.0, "memoryLimitBytes": 1024**3},
             peak_rss_fn=lambda: MAX_PROCESS_RSS_BYTES + 1,
+            ortools_version_fn=lambda: "9.7.2996",
         )
 
         self.assertEqual(report["status"], "fail")
@@ -84,6 +86,7 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
         self.assertTrue(any("quality matrix" in failure for failure in report["failures"]))
         self.assertTrue(any("cache hit" in failure for failure in report["failures"]))
         self.assertTrue(any("peak RSS" in failure for failure in report["failures"]))
+        self.assertTrue(any("OR-Tools must be" in failure for failure in report["failures"]))
 
     def test_unobservable_memory_limit_is_recorded_without_context_failure(self):
         report = run_gate(
@@ -94,6 +97,7 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
             smoke_runner=passing_smoke,
             context_fn=lambda: {"cpuCount": 2.0, "memoryLimitBytes": None},
             peak_rss_fn=lambda: None,
+            ortools_version_fn=lambda: "9.12.4544",
         )
         self.assertEqual(report["status"], "pass")
         self.assertIsNone(report["executionContext"]["memoryLimitBytes"])

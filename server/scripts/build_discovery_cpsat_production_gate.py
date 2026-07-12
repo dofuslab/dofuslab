@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import ctypes
+from importlib.metadata import version
 import json
 import os
 import sys
@@ -23,6 +24,7 @@ EXPECTED_CPU_COUNT = 2.0
 EXPECTED_MEMORY_BYTES = 2 * 1024**3
 MAX_PROCESS_RSS_BYTES = 400 * 1024**2
 EXPECTED_QUALITY_ROWS = 19
+EXPECTED_ORTOOLS_VERSION = "9.12.4544"
 DEFAULT_MAX_WARM_MISS_P95_MS = 4000.0
 DEFAULT_MAX_CACHE_HIT_P95_MS = 100.0
 DEFAULT_MAX_END_TO_END_P95_MS = 5000.0
@@ -129,6 +131,7 @@ def run_gate(
     smoke_runner: Callable[[argparse.Namespace], dict[str, Any]] = run_smoke_report,
     context_fn: Callable[[], dict[str, Any]] = observable_execution_context,
     peak_rss_fn: Callable[[], int | None] = process_peak_rss_bytes,
+    ortools_version_fn: Callable[[], str] = lambda: version("ortools"),
 ) -> dict[str, Any]:
     failures: list[str] = []
     context = context_fn()
@@ -136,6 +139,11 @@ def run_gate(
         failures.append(f"workers must be {EXPECTED_WORKERS}, got {workers}")
     if concurrency != EXPECTED_CONCURRENCY:
         failures.append(f"concurrency must be {EXPECTED_CONCURRENCY}, got {concurrency}")
+    ortools_version = ortools_version_fn()
+    if ortools_version != EXPECTED_ORTOOLS_VERSION:
+        failures.append(
+            f"OR-Tools must be {EXPECTED_ORTOOLS_VERSION}, got {ortools_version}"
+        )
     if context.get("cpuCount") is not None and context["cpuCount"] != EXPECTED_CPU_COUNT:
         failures.append(f"observable CPU limit must be 2, got {context['cpuCount']}")
     if context.get("memoryLimitBytes") is not None and context["memoryLimitBytes"] != EXPECTED_MEMORY_BYTES:
@@ -169,6 +177,7 @@ def run_gate(
             "expectedCpuCount": EXPECTED_CPU_COUNT,
             "expectedMemoryBytes": EXPECTED_MEMORY_BYTES,
             "maxProcessRssBytes": MAX_PROCESS_RSS_BYTES,
+            "ortoolsVersion": ortools_version,
         },
         "executionContext": context,
         "processPeakRssBytes": peak_rss,
