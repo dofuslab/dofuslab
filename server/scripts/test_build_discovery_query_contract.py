@@ -199,6 +199,7 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
 
     def test_cli_query_args_include_level_and_optional_range(self):
         args = Namespace(
+            class_name="Iop",
             level=80,
             element="agility",
             target_ap=10,
@@ -319,8 +320,8 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
         configure_damage_profile("strength")
 
         self.assertNotEqual(strength_score, intelligence_score)
-        self.assertEqual(item["_score_by_profile"]["strength"], strength_score)
-        self.assertEqual(item["_score_by_profile"]["intelligence"], intelligence_score)
+        self.assertEqual(item["_score_by_profile"]["Iop:strength"], strength_score)
+        self.assertEqual(item["_score_by_profile"]["Iop:intelligence"], intelligence_score)
         self.assertEqual(active_profile_item_score(item), strength_score)
 
     def test_indexed_candidates_include_previous_normal_gear_bucket(self):
@@ -534,9 +535,9 @@ class BuildDiscoveryQueryContractTest(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     query.validate()
 
-    def test_scope_rejects_non_iop_invalid_levels_and_multi_element(self):
+    def test_scope_accepts_supported_classes_and_rejects_invalid_levels_and_multi_element(self):
+        BuildDiscoveryQuery(class_name="Cra").validate()
         invalid_queries = (
-            BuildDiscoveryQuery(class_name="Cra"),
             BuildDiscoveryQuery(level=0),
             BuildDiscoveryQuery(level=201),
             BuildDiscoveryQuery(elements=("strength", "chance")),
