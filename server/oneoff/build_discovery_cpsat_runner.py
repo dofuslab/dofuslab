@@ -76,6 +76,7 @@ def add_cpsat_diagnostics(response: dict[str, Any]) -> dict[str, Any]:
         "itemCount",
         "candidateCount",
         "requestedCandidateLimit",
+        "workers",
         "collectionMode",
         "stopAfterCandidates",
         "maxSharedItems",

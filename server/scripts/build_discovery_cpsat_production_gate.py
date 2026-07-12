@@ -220,8 +220,7 @@ def run_gate(
     invalid_worker_targets = [
         row["target"]
         for row in cold_rows
-        if row["profile"]["workers"] is not None
-        and row["profile"]["workers"] != EXPECTED_WORKERS
+        if row["profile"]["workers"] != EXPECTED_WORKERS
     ]
     if invalid_worker_targets:
         failures.append(
