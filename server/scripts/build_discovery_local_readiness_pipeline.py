@@ -108,7 +108,7 @@ def default_benchmark_comparison_report(
 
 def smoke_args(**overrides: Any) -> SimpleNamespace:
     defaults = {
-        "time_limit_seconds": 3.1,
+        "time_limit_seconds": 3.2,
         "workers": 8,
         "candidate_limit": 3,
         "stop_after_candidates": False,
