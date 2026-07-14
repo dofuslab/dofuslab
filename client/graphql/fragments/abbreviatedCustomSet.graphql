@@ -9,6 +9,14 @@ fragment abbreviatedCustomSet on CustomSet {
   }
   name
   level
+  generationRequest {
+    id
+    source
+    sourceLabel
+    datasetVersion
+    solverVersion
+    displaySummary
+  }
   equippedItems {
     id
     slot {
