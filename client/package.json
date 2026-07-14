@@ -13,6 +13,8 @@
     "dev-docker": "NODE_OPTIONS='--inspect=0.0.0.0:9229' yarn codegen && next dev",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "next start",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "type-check": "tsc",
     "generate": "graphql-codegen && npx prettier --write ./__generated__/globalTypes.ts && npx prettier --write ./graphql/**/__generated__/*.ts",
     "codegen": "yarn generate",
@@ -74,6 +76,8 @@
     "@graphql-codegen/add": "^6.0.0",
     "@graphql-codegen/near-operation-file-preset": "^3.1.0",
     "@parcel/watcher": "^2.5.1",
+    "@testing-library/dom": "10.4.0",
+    "@testing-library/react": "16.3.0",
     "@types/express": "^4.17.6",
     "@types/gtag.js": "^0.0.3",
     "@types/js-cookie": "^3.0.1",
@@ -87,10 +91,12 @@
     "cross-env": "^10.0.0",
     "graphql-codegen-apollo-next-ssr": "^1.7.4",
     "i18next-scanner": "^2.11.0",
+    "jsdom": "26.1.0",
     "nodemon": "^2.0.4",
     "sort-keys": "^4.0.0",
     "ts-node": "^8.10.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vitest": "3.2.4"
   },
   "lint-staged": {
     "*.tsx": [
