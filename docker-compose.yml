@@ -46,6 +46,7 @@ services:
           target: /home/dofuslab
   server:
     build: ./server/
+    command: sh -c "python -m scripts.ensure_build_discovery_index && ddtrace-run flask run --host=0.0.0.0"
     restart: always
     ports:
       - 5000:5000

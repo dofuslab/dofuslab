@@ -21,6 +21,9 @@ WORKDIR /home/dofuslab
 COPY --chown=dofuslab:dofuslab requirements.txt .
 # install from our dofuslab requirements:
 RUN pip3 install --user -r requirements.txt
+# CP-SAT does not use OR-Tools' optional Pandas integration. Install the solver
+# wheel separately so the legacy analytics NumPy/Pandas stack stays unchanged.
+RUN pip3 install --user --no-deps ortools==9.12.4544
 ENV PYTHONPATH='/home/dofuslab/.local/bin'
 ENV PATH="${PATH}:/home/dofuslab/.local/bin"
 

@@ -25,9 +25,9 @@ from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_set_bonus import ModelSetBonus
 from app.database.model_set_bonus_translation import ModelSetBonusTranslation
 from oneoff.enums import to_stat_enum
+from oneoff.build_discovery_index_lifecycle import regenerate_build_discovery_index
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 def create_set_bonuses(db_session, set_object, data):
     for num_items in data["bonuses"]:
@@ -364,6 +364,7 @@ def sync_set():
                         print(f"Skipped {len(skipped_sets)} sets.")
                     if errored_sets:
                         print(f"Failed to process {len(errored_sets)} sets due to errors.")
+                    regenerate_build_discovery_index()
                 else:
                     print("Operation cancelled.")
             
@@ -392,6 +393,7 @@ def sync_set():
                         print(f"Skipped {len(skipped_sets)} sets.")
                     if errored_sets:
                         print(f"Failed to process {len(errored_sets)} sets due to errors.")
+                    regenerate_build_discovery_index()
                 else:
                     print("Operation cancelled.")
             
@@ -408,6 +410,7 @@ def sync_set():
                         print(f"Skipped {len(skipped_sets)} sets.")
                     if errored_sets:
                         print(f"Failed to process {len(errored_sets)} sets due to errors.")
+                    regenerate_build_discovery_index()
             
             else:
                 print("Invalid choice. Please select 1-4.")

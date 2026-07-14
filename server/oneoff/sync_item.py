@@ -32,6 +32,7 @@ from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
 from app.database.model_equipped_item import ModelEquippedItem
 from oneoff.enums import to_stat_enum, to_effect_enum
+from oneoff.build_discovery_index_lifecycle import regenerate_build_discovery_index
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -42,7 +43,6 @@ allowed_file_names = [
     "weapons",
 ]
 languages = ["en", "fr", "pt", "it", "es", "de"]
-
 
 def update_or_create_item(
     db_session,
@@ -550,6 +550,7 @@ def sync_item():
                         print(f"Skipped {len(skipped_items)} items (e.g., Living objects).")
                     if errored_items:
                         print(f"Failed to process {len(errored_items)} items due to errors.")
+                    regenerate_build_discovery_index()
                 else:
                     print("Operation cancelled.")
             
@@ -578,6 +579,7 @@ def sync_item():
                         print(f"Skipped {len(skipped_items)} items (e.g., Living objects).")
                     if errored_items:
                         print(f"Failed to process {len(errored_items)} items due to errors.")
+                    regenerate_build_discovery_index()
                 else:
                     print("Operation cancelled.")
             
@@ -594,6 +596,7 @@ def sync_item():
                         print(f"Skipped {len(skipped_items)} items (e.g., Living objects).")
                     if errored_items:
                         print(f"Failed to process {len(errored_items)} items due to errors.")
+                    regenerate_build_discovery_index()
             
             else:
                 print("Invalid choice. Please select 1-4.")
