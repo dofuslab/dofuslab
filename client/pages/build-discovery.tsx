@@ -9,8 +9,21 @@ import CommonLayout from 'components/common/CommonLayout';
 import { mediaStyles } from 'components/common/Media';
 import { DEFAULT_LANGUAGE } from 'common/i18n-utils';
 import { getTitle } from 'common/utils';
+import { useBuildDiscoveryGate } from 'common/statsig';
+import ErrorPage from 'pages/_error';
 
 const BuildDiscoveryPage: NextPage = () => {
+  const { enabled: buildDiscoveryEnabled, loading: buildDiscoveryLoading } =
+    useBuildDiscoveryGate();
+
+  if (buildDiscoveryLoading) {
+    return null;
+  }
+
+  if (!buildDiscoveryEnabled) {
+    return <ErrorPage statusCode={404} />;
+  }
+
   return (
     <CommonLayout showSwitch={false}>
       <Head>
