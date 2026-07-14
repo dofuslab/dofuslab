@@ -59,7 +59,6 @@ from oneoff.build_discovery_core import (
 from oneoff.build_discovery_scoring import (
     DAMAGE_SCORING_STATS,
     RANGE_SOFT_WEIGHT_MARGINAL,
-    STAT_WEIGHTS,
     SURVIVABILITY_SCORING_STATS,
 )
 from oneoff.condition_evaluator import (
@@ -253,7 +252,7 @@ def exo_stats_for_target(target: BuildTarget, exo_policy: str) -> tuple[str, ...
 
 
 def collect_objective_stats(metadata: ModelMetadata) -> set[str]:
-    stats = set(STAT_WEIGHTS)
+    stats = set(active_stat_weights())
     for item_stats in metadata.item_objective_stats_by_id.values():
         stats.update(item_stats.keys())
     for bonus_stats_by_count in metadata.set_bonus_by_id.values():
@@ -365,6 +364,16 @@ def objective_weights_for_mode(
             survivability_weight,
             negative_resistance_penalty_weight,
         )
+    if mode == "final-linear-crit-neutral":
+        weights = linearized_final_score_weights(
+            metadata,
+            generic_damage_weight,
+            survivability_weight,
+            negative_resistance_penalty_weight,
+        )
+        weights["Critical"] = 0.0
+        weights["Critical Damage"] = 0.0
+        return weights
     raise ValueError(f"Unsupported objective mode: {mode}")
 
 
@@ -1567,7 +1576,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--objective-mode",
-        choices=("stat-linear", "final-linear"),
+        choices=("stat-linear", "final-linear", "final-linear-crit-neutral"),
         default="final-linear",
     )
     parser.add_argument("--generic-damage-weight", type=float, default=0.45)
