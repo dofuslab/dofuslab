@@ -1,0 +1,304 @@
+{
+  "reportVersion": "build-discovery-reference-anchors-v1",
+  "method": {
+    "recentWindow": "1 year (all-time fallback candidates at levels 1-40)",
+    "completeSlotMinimum": 16,
+    "monoElementMinimumShare": 0.7,
+    "topDamageFraction": 0.1,
+    "summary": "median stat line among the top generic-damage decile",
+    "level200Policy": "retain the quality-calibrated reference and report the production median separately",
+    "retainedProductionIdentifiers": false
+  },
+  "anchors": {
+    "20": {
+      "source": "level_60_linear_fallback",
+      "sampleCount": 0,
+      "selectedCount": 0,
+      "elementCounts": {},
+      "stats": {
+        "AP": 7,
+        "PrimaryStat": 239,
+        "Power": 12,
+        "ElementalDamage": 11,
+        "Critical": 0,
+        "CriticalDamage": 0
+      }
+    },
+    "40": {
+      "source": "level_60_linear_fallback",
+      "sampleCount": 1,
+      "selectedCount": 1,
+      "elementCounts": {
+        "chance": 1
+      },
+      "stats": {
+        "AP": 8,
+        "PrimaryStat": 479,
+        "Power": 23,
+        "ElementalDamage": 21,
+        "Critical": 1,
+        "CriticalDamage": 0
+      }
+    },
+    "60": {
+      "source": "production_top_damage_decile",
+      "sampleCount": 71,
+      "selectedCount": 8,
+      "elementCounts": {
+        "strength": 11,
+        "intelligence": 26,
+        "chance": 22,
+        "agility": 12
+      },
+      "stats": {
+        "AP": 9,
+        "PrimaryStat": 718,
+        "Power": 35,
+        "ElementalDamage": 32,
+        "Critical": 1,
+        "CriticalDamage": 0
+      }
+    },
+    "80": {
+      "source": "production_top_damage_decile",
+      "sampleCount": 83,
+      "selectedCount": 9,
+      "elementCounts": {
+        "agility": 23,
+        "strength": 17,
+        "chance": 26,
+        "intelligence": 17
+      },
+      "stats": {
+        "AP": 10,
+        "PrimaryStat": 735,
+        "Power": 20,
+        "ElementalDamage": 40,
+        "Critical": 7,
+        "CriticalDamage": 0
+      }
+    },
+    "100": {
+      "source": "production_top_damage_decile",
+      "sampleCount": 91,
+      "selectedCount": 10,
+      "elementCounts": {
+        "intelligence": 30,
+        "agility": 18,
+        "strength": 21,
+        "chance": 22
+      },
+      "stats": {
+        "AP": 11,
+        "PrimaryStat": 842,
+        "Power": 80,
+        "ElementalDamage": 35,
+        "Critical": 10,
+        "CriticalDamage": 0
+      }
+    },
+    "120": {
+      "source": "production_top_damage_decile",
+      "sampleCount": 146,
+      "selectedCount": 15,
+      "elementCounts": {
+        "chance": 51,
+        "intelligence": 35,
+        "strength": 34,
+        "agility": 26
+      },
+      "stats": {
+        "AP": 11,
+        "PrimaryStat": 928,
+        "Power": 100,
+        "ElementalDamage": 37,
+        "Critical": 13,
+        "CriticalDamage": 0
+      }
+    },
+    "140": {
+      "source": "production_top_damage_decile",
+      "sampleCount": 144,
+      "selectedCount": 15,
+      "elementCounts": {
+        "strength": 30,
+        "intelligence": 33,
+        "agility": 36,
+        "chance": 45
+      },
+      "stats": {
+        "AP": 11,
+        "PrimaryStat": 990,
+        "Power": 80,
+        "ElementalDamage": 52,
+        "Critical": 13,
+        "CriticalDamage": 15
+      }
+    },
+    "150": {
+      "source": "production_top_damage_decile",
+      "sampleCount": 86,
+      "selectedCount": 9,
+      "elementCounts": {
+        "intelligence": 29,
+        "strength": 26,
+        "agility": 21,
+        "chance": 10
+      },
+      "stats": {
+        "AP": 12,
+        "PrimaryStat": 1085,
+        "Power": 210,
+        "ElementalDamage": 20,
+        "Critical": 15,
+        "CriticalDamage": 0
+      }
+    },
+    "160": {
+      "source": "production_top_damage_decile",
+      "sampleCount": 124,
+      "selectedCount": 13,
+      "elementCounts": {
+        "intelligence": 35,
+        "agility": 28,
+        "strength": 36,
+        "chance": 25
+      },
+      "stats": {
+        "AP": 12,
+        "PrimaryStat": 1120,
+        "Power": 210,
+        "ElementalDamage": 58,
+        "Critical": 15,
+        "CriticalDamage": 0
+      }
+    },
+    "180": {
+      "source": "production_top_damage_decile",
+      "sampleCount": 144,
+      "selectedCount": 15,
+      "elementCounts": {
+        "strength": 45,
+        "intelligence": 33,
+        "chance": 43,
+        "agility": 23
+      },
+      "stats": {
+        "AP": 11,
+        "PrimaryStat": 1237,
+        "Power": 175,
+        "ElementalDamage": 66,
+        "Critical": 18,
+        "CriticalDamage": 0
+      }
+    },
+    "199": {
+      "source": "production_top_damage_decile",
+      "sampleCount": 152,
+      "selectedCount": 16,
+      "elementCounts": {
+        "chance": 49,
+        "intelligence": 33,
+        "strength": 39,
+        "agility": 31
+      },
+      "stats": {
+        "AP": 12,
+        "PrimaryStat": 1334,
+        "Power": 140,
+        "ElementalDamage": 132,
+        "Critical": 44,
+        "CriticalDamage": 10
+      }
+    },
+    "200": {
+      "source": "quality_calibrated_existing_reference",
+      "sampleCount": 76,
+      "selectedCount": 8,
+      "elementCounts": {
+        "intelligence": 24,
+        "strength": 29,
+        "agility": 13,
+        "chance": 10
+      },
+      "stats": {
+        "AP": 12,
+        "PrimaryStat": 1000,
+        "Power": 200,
+        "ElementalDamage": 100,
+        "Critical": 50,
+        "CriticalDamage": 100
+      },
+      "observedProductionStats": {
+        "AP": 12,
+        "PrimaryStat": 1478,
+        "Power": 195,
+        "ElementalDamage": 99,
+        "Critical": 71,
+        "CriticalDamage": 82
+      }
+    }
+  },
+  "rejections": {
+    "20": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 0
+    },
+    "40": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 2
+    },
+    "60": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 14
+    },
+    "80": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 22
+    },
+    "100": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 25
+    },
+    "120": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 154
+    },
+    "140": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 111
+    },
+    "150": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 45
+    },
+    "160": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 118
+    },
+    "180": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 156
+    },
+    "199": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 148
+    },
+    "200": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 224
+    }
+  }
+}
