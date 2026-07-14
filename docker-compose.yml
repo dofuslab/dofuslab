@@ -39,6 +39,8 @@ services:
     restart: always
     environment:
       - NODE_ENV=development
+      - NEXT_PUBLIC_STATSIG_CLIENT_KEY=${NEXT_PUBLIC_STATSIG_CLIENT_KEY:-}
+      - NEXT_PUBLIC_STATSIG_ENVIRONMENT_TIER=${NEXT_PUBLIC_STATSIG_ENVIRONMENT_TIER:-development}
     develop:
       watch:
         - action: sync
@@ -50,6 +52,7 @@ services:
     restart: always
     environment:
       STATSIG_SERVER_SECRET: ${STATSIG_SERVER_SECRET:-}
+      STATSIG_ENVIRONMENT_TIER: ${STATSIG_ENVIRONMENT_TIER:-development}
     ports:
       - 5000:5000
     # healthcheck:

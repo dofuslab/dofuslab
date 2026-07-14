@@ -33,7 +33,7 @@ class BuildDiscoveryFeatureGateTest(unittest.TestCase):
 
         self.assertTrue(enabled)
         user_type.assert_called_once_with(
-            str(self.user_id), custom={"username": "beta-tester"}
+            str(self.user_id), private_attributes={"username": "beta-tester"}
         )
         self.client.check_gate.assert_called_once_with(
             statsig_user, "build_generator_beta"
@@ -51,7 +51,9 @@ class BuildDiscoveryFeatureGateTest(unittest.TestCase):
         self.client.check_gate.assert_not_called()
 
     def test_unconfigured_and_evaluation_errors_fail_closed(self):
-        with patch.object(feature_gates, "_statsig_client", None):
+        with patch.object(feature_gates, "_statsig_client", None), patch.object(
+            feature_gates, "initialize_statsig", return_value=False
+        ):
             self.assertFalse(feature_gates.build_discovery_beta_enabled(self.user))
 
         self.client.check_gate.side_effect = RuntimeError("evaluation failed")
@@ -66,14 +68,24 @@ class BuildDiscoveryFeatureGateTest(unittest.TestCase):
 
 class StatsigInitializationTest(unittest.TestCase):
     def setUp(self):
-        self.attempted_patch = patch.object(
-            feature_gates, "_statsig_initialization_attempted", False
+        self.retry_patch = patch.object(
+            feature_gates, "_statsig_next_initialization_attempt_at", 0.0
         )
         self.client_patch = patch.object(feature_gates, "_statsig_client", None)
-        self.attempted_patch.start()
+        self.retry_patch.start()
         self.client_patch.start()
-        self.addCleanup(self.attempted_patch.stop)
+        self.addCleanup(self.retry_patch.stop)
         self.addCleanup(self.client_patch.stop)
+
+    @staticmethod
+    def initialize_details(ready=True, source="Network", success=True):
+        return SimpleNamespace(
+            is_config_spec_ready=ready,
+            init_success=success,
+            source=source,
+            failure_details=None if ready else "NoValues",
+            duration_ms=25,
+        )
 
     def test_missing_key_does_not_initialize(self):
         with patch.dict("os.environ", {}, clear=True), patch.object(
@@ -85,11 +97,12 @@ class StatsigInitializationTest(unittest.TestCase):
 
     def test_initialization_happens_only_once_per_process(self):
         client = Mock()
+        client.get_initialize_details.return_value = self.initialize_details()
         with patch.dict(
             "os.environ",
             {
-                "FLASK_ENV": "test",
                 "STATSIG_SERVER_SECRET": "test-secret",
+                "STATSIG_ENVIRONMENT_TIER": "staging",
             },
             clear=True,
         ), patch.object(
@@ -102,12 +115,33 @@ class StatsigInitializationTest(unittest.TestCase):
             self.assertTrue(feature_gates.initialize_statsig())
 
         statsig_type.assert_called_once_with("test-secret", options)
-        self.assertEqual(options.environment, "test")
+        self.assertEqual(options.environment, "staging")
         self.assertEqual(
             options.init_timeout_ms, feature_gates.STATSIG_INIT_TIMEOUT_MS
         )
         client.initialize.assert_called_once_with()
         client.initialize.return_value.wait.assert_called_once_with()
+        client.get_initialize_details.assert_called_once_with()
+
+    def test_environment_tier_defaults_follow_runtime_environment(self):
+        with patch.dict("os.environ", {"FLASK_ENV": "development"}, clear=True):
+            self.assertEqual(feature_gates._environment_tier(), "development")
+        with patch.dict("os.environ", {}, clear=True):
+            self.assertEqual(feature_gates._environment_tier(), "production")
+
+    def test_no_values_initialization_is_rejected_and_shut_down(self):
+        client = Mock()
+        client.get_initialize_details.return_value = self.initialize_details(
+            ready=False, source="NoValues", success=False
+        )
+        with patch.dict(
+            "os.environ", {"STATSIG_SERVER_SECRET": "test-secret"}, clear=True
+        ), patch.object(feature_gates, "Statsig", return_value=client):
+            self.assertFalse(feature_gates.initialize_statsig())
+
+        self.assertIsNone(feature_gates._statsig_client)
+        client.shutdown.assert_called_once_with()
+        client.shutdown.return_value.wait.assert_called_once_with()
 
     def test_initialization_error_fails_closed(self):
         client = Mock()
@@ -120,6 +154,32 @@ class StatsigInitializationTest(unittest.TestCase):
             self.assertFalse(feature_gates.initialize_statsig())
 
         self.assertIsNone(feature_gates._statsig_client)
+        client.shutdown.assert_called_once_with()
+
+    def test_transient_failure_retries_only_after_cooldown(self):
+        first_client = Mock()
+        first_client.get_initialize_details.return_value = self.initialize_details(
+            ready=False, source="NoValues", success=False
+        )
+        second_client = Mock()
+        second_client.get_initialize_details.return_value = self.initialize_details()
+
+        with patch.dict(
+            "os.environ", {"STATSIG_SERVER_SECRET": "test-secret"}, clear=True
+        ), patch.object(
+            feature_gates, "Statsig", side_effect=[first_client, second_client]
+        ) as statsig_type, patch.object(
+            feature_gates, "monotonic", return_value=100.0
+        ) as clock:
+            self.assertFalse(feature_gates.initialize_statsig())
+            self.assertFalse(feature_gates.initialize_statsig())
+            self.assertEqual(statsig_type.call_count, 1)
+
+            clock.return_value = 161.0
+            self.assertTrue(feature_gates.initialize_statsig())
+
+        self.assertEqual(statsig_type.call_count, 2)
+        self.assertIs(feature_gates._statsig_client, second_client)
 
 
 if __name__ == "__main__":
