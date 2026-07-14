@@ -28,14 +28,14 @@ const expectedDefaults = {
   element: 'strength',
   apTarget: 11,
   mpTarget: 6,
-  rangeTarget: 0,
+  rangeTarget: null,
   damageSurvivabilityPreset: 3,
   budgetTier: 2,
   exoPolicy: 'allow',
   weaponPolicy: 'stat_stick_allowed',
   lockedItemIds: [],
   avoidedItemIds: [],
-  limit: 5,
+  limit: 3,
 };
 
 assert.deepStrictEqual(DEFAULT_BUILD_DISCOVERY_INPUT, expectedDefaults);
@@ -48,14 +48,14 @@ assert.deepStrictEqual(defaultVariables, {
   elements: ['strength'],
   apTarget: 11,
   mpTarget: 6,
-  rangeTarget: 0,
+  rangeTarget: null,
   damageSurvivabilityPreset: 3,
   budgetTier: 2,
   exoPolicy: 'allow',
   weaponPolicy: 'stat_stick_allowed',
   lockedItemIds: [],
   avoidedItemIds: [],
-  limit: 5,
+  limit: 3,
 });
 assert.strictEqual('element' in defaultVariables, false);
 

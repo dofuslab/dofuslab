@@ -20,8 +20,8 @@ export type BuildDiscoveryQueryInput = Omit<
   startBuildDiscoveryVariables,
   'className' | 'level' | 'mode' | 'elements'
 > & {
-  className?: 'Iop';
-  level?: 200;
+  className?: string;
+  level?: number;
   mode?: 'pvm';
   element?: BuildDiscoveryElement;
   elements?: [BuildDiscoveryElement];
@@ -391,14 +391,14 @@ export const DEFAULT_BUILD_DISCOVERY_INPUT: Required<
   element: 'strength',
   apTarget: 11,
   mpTarget: 6,
-  rangeTarget: 0,
+  rangeTarget: null,
   damageSurvivabilityPreset: 3,
   budgetTier: 2,
   exoPolicy: 'allow',
   weaponPolicy: 'stat_stick_allowed',
   lockedItemIds: [],
   avoidedItemIds: [],
-  limit: 5,
+  limit: 3,
 };
 
 export function buildDiscoveryVariablesFromInput(
