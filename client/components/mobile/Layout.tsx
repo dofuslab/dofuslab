@@ -18,6 +18,7 @@ import { useQuery, useMutation, useApolloClient } from '@apollo/client';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
+import { useBuildDiscoveryGate } from 'common/statsig';
 import logoutMutation from 'graphql/mutations/logout.graphql';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -80,6 +81,7 @@ function Layout({ children }: LayoutProps) {
   const { t } = useTranslation(['auth', 'common']);
   const client = useApolloClient();
   const { data } = useQuery<ICurrentUser>(currentUserQuery);
+  const { enabled: buildDiscoveryEnabled } = useBuildDiscoveryGate();
   const [logout] = useMutation<ILogout>(logoutMutation);
   const [changeLocaleMutate] = useMutation<changeLocale, changeLocaleVariables>(
     changeLocaleMutation,
@@ -184,8 +186,10 @@ function Layout({ children }: LayoutProps) {
   );
 
   const menuItems: MenuItem[] = useMemo(() => {
-    const items: MenuItem[] = [
-      {
+    const items: MenuItem[] = [];
+
+    if (buildDiscoveryEnabled) {
+      items.push({
         key: 'build-discovery',
         label: (
           <Link href="/build-discovery" as="/build-discovery">
@@ -195,21 +199,22 @@ function Layout({ children }: LayoutProps) {
             {t('BUILD_DISCOVERY', { ns: 'common' })}
           </Link>
         ),
-      },
-      {
-        key: 'home',
-        label: (
-          <Link href="/" as="/" legacyBehavior>
-            <div css={{ display: 'flex' }}>
-              <span css={iconWrapper}>
-                <FontAwesomeIcon icon={faHome} />
-              </span>
-              <div>Home</div>
-            </div>
-          </Link>
-        ),
-      },
-    ];
+      });
+    }
+
+    items.push({
+      key: 'home',
+      label: (
+        <Link href="/" as="/" legacyBehavior>
+          <div css={{ display: 'flex' }}>
+            <span css={iconWrapper}>
+              <FontAwesomeIcon icon={faHome} />
+            </span>
+            <div>Home</div>
+          </div>
+        </Link>
+      ),
+    });
 
     if (data?.currentUser && data.currentUser.verified) {
       items.push({
@@ -378,7 +383,7 @@ function Layout({ children }: LayoutProps) {
     );
 
     return items;
-  }, [data?.currentUser, t]);
+  }, [buildDiscoveryEnabled, data?.currentUser, t]);
 
   const theme = useTheme();
 
