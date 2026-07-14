@@ -78,7 +78,7 @@ class BuildDiscoveryCpsatProductionGateTest(unittest.TestCase):
 
         report = run_gate(
             base_url="http://localhost:5000", request_fn=request,
-            clock=StepClock([5000] * 19 + [100] * 100), peak_rss_bytes=500 * 1024**2,
+            clock=StepClock([50000] * 19 + [100] * 100), peak_rss_bytes=500 * 1024**2,
         )
 
         self.assertEqual(report["status"], "fail")
