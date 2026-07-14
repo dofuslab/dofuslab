@@ -34,6 +34,7 @@ from app.database.model_custom_set_tag_association import ModelCustomSetTagAssoc
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_custom_set import ModelCustomSet, MAX_NAME_LENGTH
+from app.database.model_generation_request import ModelGenerationRequest
 from app.database.model_user import ModelUserAccount
 from app.database.model_spell_effect import ModelSpellEffect
 from app.database.model_spell_effect_condition_translation import (
@@ -46,7 +47,6 @@ from app.database.model_spell_translation import ModelSpellTranslation
 from app.database.model_spell import ModelSpell
 from app.database.model_spell_variant_pair import ModelSpellVariantPair
 from app.database.model_user_setting import ModelUserSetting
-from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_class import ModelClass
 from app.suggester.suggester import get_ordered_suggestions
 from app.tasks import send_email
@@ -78,6 +78,7 @@ from app.database.enums import (
 from app.token_utils import decode_token, encode_token, generate_verify_email_url
 import app.mutation_validation_utils as validation
 import graphene
+from graphene.types.generic import GenericScalar
 import pytz
 from graphql import GraphQLError
 from flask import session, render_template, g
@@ -89,6 +90,10 @@ from sqlalchemy.orm import aliased
 from sqlalchemy.sql.expression import true
 from datetime import datetime
 from ddtrace import tracer
+from app.build_discovery_graphql import BuildDiscovery
+from app.build_discovery_promotion import (
+    create_import_generated_custom_set_mutation,
+)
 
 # workaround from https://github.com/graphql-python/graphene-sqlalchemy/issues/211
 # without this workaround, graphene complains that there are multiple
@@ -376,6 +381,7 @@ class CustomSetTagAssociation(SQLAlchemyObjectType):
 
 class CustomSet(SQLAlchemyObjectType):
     equipped_items = graphene.NonNull(graphene.List(graphene.NonNull(EquippedItem)))
+    generation_request = graphene.Field(lambda: GenerationRequest)
 
     def resolve_equipped_items(self, info):
         return g.dataloaders.get("equipped_item_loader").load(self.uuid)
@@ -406,8 +412,97 @@ class CustomSet(SQLAlchemyObjectType):
             return False
         return True
 
+    @tracer.wrap(name="CustomSet.resolve_generation_request")
+    def resolve_generation_request(self, info):
+        return g.dataloaders.get("generation_request_loader").load(self.uuid)
+
     class Meta:
         model = ModelCustomSet
+        interfaces = (GlobalNode,)
+
+
+def generation_request_query_metadata(generation_request):
+    payload = generation_request.request_payload
+    if not isinstance(payload, dict):
+        return {}
+    query = payload.get("query")
+    return query if isinstance(query, dict) else {}
+
+
+def readable_generation_source(source):
+    if source == "build_discovery":
+        return "Build Discovery"
+    return " ".join(part.capitalize() for part in source.split("_") if part)
+
+
+class GenerationRequest(SQLAlchemyObjectType):
+    request_payload = GenericScalar()
+    source_label = graphene.String(required=True)
+    query_class_name = graphene.String()
+    query_elements = graphene.List(graphene.NonNull(graphene.String), required=True)
+    query_ap_target = graphene.Int()
+    query_mp_target = graphene.Int()
+    query_range_target = graphene.Int()
+    display_summary = graphene.String(required=True)
+
+    def resolve_source_label(self, info):
+        return readable_generation_source(self.source)
+
+    def resolve_query_class_name(self, info):
+        query = generation_request_query_metadata(self)
+        class_name = query.get("className")
+        return class_name if isinstance(class_name, str) else None
+
+    def resolve_query_elements(self, info):
+        query = generation_request_query_metadata(self)
+        elements = query.get("elements")
+        if not isinstance(elements, list):
+            return []
+        return [element for element in elements if isinstance(element, str)]
+
+    def resolve_query_ap_target(self, info):
+        query = generation_request_query_metadata(self)
+        value = query.get("apTarget")
+        return value if isinstance(value, int) else None
+
+    def resolve_query_mp_target(self, info):
+        query = generation_request_query_metadata(self)
+        value = query.get("mpTarget")
+        return value if isinstance(value, int) else None
+
+    def resolve_query_range_target(self, info):
+        query = generation_request_query_metadata(self)
+        value = query.get("rangeTarget")
+        return value if isinstance(value, int) else None
+
+    def resolve_display_summary(self, info):
+        context = [
+            GenerationRequest.resolve_query_class_name(self, info),
+            "/".join(GenerationRequest.resolve_query_elements(self, info)),
+        ]
+        action_stats = (
+            GenerationRequest.resolve_query_ap_target(self, info),
+            GenerationRequest.resolve_query_mp_target(self, info),
+            GenerationRequest.resolve_query_range_target(self, info),
+        )
+        if all(value is not None for value in action_stats):
+            context.append("{}/{}/{}".format(*action_stats))
+        versions = [
+            f"dataset {self.dataset_version}" if self.dataset_version else None,
+            f"solver {self.solver_version}" if self.solver_version else None,
+        ]
+        return " - ".join(
+            part
+            for part in [
+                GenerationRequest.resolve_source_label(self, info),
+                " ".join(part for part in context if part),
+                " - ".join(part for part in versions if part),
+            ]
+            if part
+        )
+
+    class Meta:
+        model = ModelGenerationRequest
         interfaces = (GlobalNode,)
 
 
@@ -847,6 +942,11 @@ class EquipMultipleItems(graphene.Mutation):
             custom_set.equip_items(items, db_session)
 
         return EquipMultipleItems(custom_set=custom_set)
+
+
+ImportGeneratedCustomSet = create_import_generated_custom_set_mutation(
+    CustomSet, GenerationRequest
+)
 
 
 class MageEquippedItem(graphene.Mutation):
@@ -1858,6 +1958,8 @@ class Mutation(graphene.ObjectType):
     edit_custom_set_stats = EditCustomSetStats.Field()
     equip_set = EquipSet.Field()
     equip_multiple_items = EquipMultipleItems.Field()
+    import_generated_custom_set = ImportGeneratedCustomSet.Field()
+    build_discovery = BuildDiscovery.Field(required=True)
     create_custom_set = CreateCustomSet.Field()
     resend_verification_email = ResendVerificationEmail.Field()
     change_locale = ChangeLocale.Field()

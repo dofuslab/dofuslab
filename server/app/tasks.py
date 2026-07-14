@@ -1,10 +1,8 @@
-import time
 import boto3
 import os
 
 from app import session_scope
 from app.database.model_user import ModelUserAccount
-from flask_babel import _
 
 
 def send_email(email, subject, content):

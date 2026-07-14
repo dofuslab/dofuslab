@@ -163,6 +163,7 @@ from app.loaders import (
     SpellDamageIncreaseLoader,
     EligibleItemSlotLoader,
     SpellDescriptionLoader,
+    GenerationRequestLoader,
 )
 
 
@@ -181,6 +182,7 @@ def construct_dataloaders():
         "spell_buff_loader": SpellBuffLoader(),
         "item_buff_loader": ItemBuffLoader(),
         "custom_set_tag_association_loader": CustomSetTagAssociationLoader(),
+        "generation_request_loader": GenerationRequestLoader(),
         "custom_set_tag_translation_loader": CustomSetTagTranslationLoader(),
         "item_slot_translation_loader": ItemSlotTranslationLoader(),
         "item_type_translation_loader": ItemTypeTranslationLoader(),
