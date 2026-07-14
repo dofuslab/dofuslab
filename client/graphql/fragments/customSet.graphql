@@ -6,6 +6,14 @@ fragment customSet on CustomSet {
   id
   name
   level
+  generationRequest {
+    id
+    source
+    sourceLabel
+    datasetVersion
+    solverVersion
+    displaySummary
+  }
   equippedItems {
     ...equippedItem
   }
