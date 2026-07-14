@@ -87,6 +87,23 @@ BUILD_DISCOVERY_REFERENCE_ANCHORS_PATH = os.getenv(
 )
 
 
+REFERENCE_LEVEL_BUCKETS = (
+    (20, 1, 20),
+    (21, 21, 39),
+    (40, 40, 59),
+    (60, 60, 79),
+    (80, 80, 99),
+    (100, 100, 119),
+    (120, 120, 139),
+    (140, 140, 149),
+    (150, 150, 159),
+    (160, 160, 179),
+    (180, 180, 198),
+    (199, 199, 199),
+    (200, 200, 200),
+)
+
+
 def base_ap_for_level(level: int) -> int:
     return 7 if level >= 100 else 6
 
@@ -102,12 +119,15 @@ def load_reference_anchors() -> dict[int, dict[str, int]]:
     }
 
 
+def reference_anchor_level(level: int) -> int:
+    for anchor_level, minimum_level, maximum_level in REFERENCE_LEVEL_BUCKETS:
+        if minimum_level <= level <= maximum_level:
+            return anchor_level
+    raise ValueError(f"Unsupported reference-anchor level: {level}")
+
+
 def reference_anchor_for_level(level: int) -> dict[str, int]:
-    anchors = load_reference_anchors()
-    for anchor_level in sorted(anchors):
-        if level <= anchor_level:
-            return anchors[anchor_level]
-    return anchors[max(anchors)]
+    return load_reference_anchors()[reference_anchor_level(level)]
 
 
 def normalize_range_target(range_target: int | None) -> int:

@@ -23,17 +23,19 @@ from oneoff.build_discovery_core import (  # noqa: E402
     PROFILE_DAMAGE_REFERENCE_ELEMENTAL_DAMAGE,
     PROFILE_DAMAGE_REFERENCE_POWER,
     PROFILE_DAMAGE_REFERENCE_PRIMARY_STAT,
+    REFERENCE_LEVEL_BUCKETS,
     apply_stat_delta,
     base_ap_for_level,
     load_all_item_records,
     load_sets,
+    reference_anchor_level,
     set_bonus_stats,
 )
 from oneoff.damage_calculator import DamageLine, profile_damage  # noqa: E402
 
 
 REPORT_VERSION = "build-discovery-reference-anchors-v1"
-ANCHOR_LEVELS = (20, 40, 60, 80, 100, 120, 140, 150, 160, 180, 199, 200)
+ANCHOR_LEVELS = tuple(bucket[0] for bucket in REFERENCE_LEVEL_BUCKETS)
 ELEMENTS = ("strength", "intelligence", "chance", "agility")
 PRIMARY_STAT = {
     "strength": "Strength",
@@ -80,17 +82,7 @@ DEFAULT_STATEMENT_TIMEOUT_MS = 25000
 
 
 def anchor_level(level: int) -> int:
-    if level == 200:
-        return 200
-    if level >= 181:
-        return 199
-    if level >= 161:
-        return 180
-    if level >= 151:
-        return 160
-    if level >= 141:
-        return 150
-    return max(20, math.ceil(level / 20) * 20)
+    return reference_anchor_level(level)
 
 
 def median(values: list[int]) -> int:
@@ -105,20 +97,19 @@ def fetch_rows(
     sample_limit: int,
     statement_timeout_ms: int,
 ) -> list[dict[str, Any]]:
+    anchor_case = "\n".join(
+        f"WHEN cs.level BETWEEN {minimum} AND {maximum} THEN {anchor}"
+        for anchor, minimum, maximum in REFERENCE_LEVEL_BUCKETS
+    )
     query = text(
-        """
+        f"""
         WITH raw_candidates AS (
             SELECT
                 cs.uuid,
                 cs.level,
                 cs.last_modified,
                 CASE
-                    WHEN cs.level = 200 THEN 200
-                    WHEN cs.level >= 181 THEN 199
-                    WHEN cs.level >= 161 THEN 180
-                    WHEN cs.level >= 151 THEN 160
-                    WHEN cs.level >= 141 THEN 150
-                    ELSE GREATEST(20, CEIL(cs.level / 20.0)::int * 20)
+                    {anchor_case}
                 END AS anchor_level
             FROM custom_set cs
             WHERE cs.level BETWEEN 1 AND 200
@@ -317,9 +308,9 @@ def normalize_builds(
 
 
 def extrapolated_low_level_anchor(
-    level: int, level_60: dict[str, int]
+    representative_level: int, level_60_bucket: dict[str, int]
 ) -> dict[str, int]:
-    ratio = level / 60
+    ratio = representative_level / 79
     baseline = {
         "AP": 6,
         "PrimaryStat": 0,
@@ -329,7 +320,7 @@ def extrapolated_low_level_anchor(
         "CriticalDamage": 0,
     }
     return {
-        stat: round(baseline[stat] + (level_60[stat] - baseline[stat]) * ratio)
+        stat: round(baseline[stat] + (level_60_bucket[stat] - baseline[stat]) * ratio)
         for stat in baseline
     }
 
@@ -364,12 +355,12 @@ def build_report(rows: list[dict[str, Any]]) -> dict[str, Any]:
             if selected
             else None,
         }
-    level_60 = anchors["60"]["stats"]
-    for level in (20, 40):
-        if anchors[str(level)]["sampleCount"] < 10:
-            anchors[str(level)]["source"] = "level_60_linear_fallback"
-            anchors[str(level)]["stats"] = extrapolated_low_level_anchor(
-                level, level_60
+    level_60_bucket = anchors["60"]["stats"]
+    for anchor, representative_level in ((20, 20), (21, 39), (40, 59)):
+        if anchors[str(anchor)]["sampleCount"] < 10:
+            anchors[str(anchor)]["source"] = "level_60_bucket_linear_fallback"
+            anchors[str(anchor)]["stats"] = extrapolated_low_level_anchor(
+                representative_level, level_60_bucket
             )
     observed_level_200_stats = anchors["200"]["stats"]
     anchors["200"].update(
@@ -394,6 +385,10 @@ def build_report(rows: list[dict[str, Any]]) -> dict[str, Any]:
             "monoElementMinimumShare": MONO_ELEMENT_SHARE,
             "topDamageFraction": TOP_FRACTION,
             "summary": "median stat line among the top generic-damage decile",
+            "levelBuckets": [
+                f"{minimum}-{maximum}"
+                for _anchor, minimum, maximum in REFERENCE_LEVEL_BUCKETS
+            ],
             "level200Policy": (
                 "retain the quality-calibrated reference and report the production "
                 "median separately"
