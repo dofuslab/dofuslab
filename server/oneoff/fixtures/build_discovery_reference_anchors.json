@@ -6,208 +6,242 @@
     "monoElementMinimumShare": 0.7,
     "topDamageFraction": 0.1,
     "summary": "median stat line among the top generic-damage decile",
+    "levelBuckets": [
+      "1-20",
+      "21-39",
+      "40-59",
+      "60-79",
+      "80-99",
+      "100-119",
+      "120-139",
+      "140-149",
+      "150-159",
+      "160-179",
+      "180-198",
+      "199-199",
+      "200-200"
+    ],
     "level200Policy": "retain the quality-calibrated reference and report the production median separately",
     "retainedProductionIdentifiers": false
   },
   "anchors": {
     "20": {
-      "source": "level_60_linear_fallback",
+      "source": "level_60_bucket_linear_fallback",
       "sampleCount": 0,
       "selectedCount": 0,
       "elementCounts": {},
       "stats": {
         "AP": 7,
-        "PrimaryStat": 239,
-        "Power": 12,
-        "ElementalDamage": 11,
-        "Critical": 0,
+        "PrimaryStat": 181,
+        "Power": 7,
+        "ElementalDamage": 9,
+        "Critical": 1,
         "CriticalDamage": 0
       }
     },
-    "40": {
-      "source": "level_60_linear_fallback",
+    "21": {
+      "source": "level_60_bucket_linear_fallback",
       "sampleCount": 1,
       "selectedCount": 1,
       "elementCounts": {
         "chance": 1
       },
       "stats": {
-        "AP": 8,
-        "PrimaryStat": 479,
-        "Power": 23,
-        "ElementalDamage": 21,
+        "AP": 7,
+        "PrimaryStat": 352,
+        "Power": 14,
+        "ElementalDamage": 18,
         "Critical": 1,
+        "CriticalDamage": 0
+      }
+    },
+    "40": {
+      "source": "production_top_damage_decile",
+      "sampleCount": 17,
+      "selectedCount": 2,
+      "elementCounts": {
+        "intelligence": 10,
+        "strength": 3,
+        "chance": 3,
+        "agility": 1
+      },
+      "stats": {
+        "AP": 7,
+        "PrimaryStat": 727,
+        "Power": 45,
+        "ElementalDamage": 36,
+        "Critical": -6,
         "CriticalDamage": 0
       }
     },
     "60": {
       "source": "production_top_damage_decile",
-      "sampleCount": 71,
-      "selectedCount": 8,
+      "sampleCount": 97,
+      "selectedCount": 10,
       "elementCounts": {
-        "strength": 11,
-        "intelligence": 26,
-        "chance": 22,
-        "agility": 12
+        "strength": 16,
+        "agility": 25,
+        "intelligence": 27,
+        "chance": 29
       },
       "stats": {
         "AP": 9,
-        "PrimaryStat": 718,
-        "Power": 35,
-        "ElementalDamage": 32,
-        "Critical": 1,
+        "PrimaryStat": 714,
+        "Power": 28,
+        "ElementalDamage": 36,
+        "Critical": 2,
         "CriticalDamage": 0
       }
     },
     "80": {
       "source": "production_top_damage_decile",
-      "sampleCount": 83,
-      "selectedCount": 9,
+      "sampleCount": 96,
+      "selectedCount": 10,
       "elementCounts": {
-        "agility": 23,
-        "strength": 17,
-        "chance": 26,
-        "intelligence": 17
+        "strength": 26,
+        "agility": 18,
+        "intelligence": 20,
+        "chance": 32
       },
       "stats": {
         "AP": 10,
-        "PrimaryStat": 735,
+        "PrimaryStat": 788,
         "Power": 20,
-        "ElementalDamage": 40,
-        "Critical": 7,
+        "ElementalDamage": 22,
+        "Critical": 15,
         "CriticalDamage": 0
       }
     },
     "100": {
       "source": "production_top_damage_decile",
-      "sampleCount": 91,
-      "selectedCount": 10,
+      "sampleCount": 151,
+      "selectedCount": 16,
       "elementCounts": {
-        "intelligence": 30,
-        "agility": 18,
-        "strength": 21,
-        "chance": 22
+        "chance": 46,
+        "intelligence": 45,
+        "strength": 27,
+        "agility": 33
       },
       "stats": {
-        "AP": 11,
-        "PrimaryStat": 842,
-        "Power": 80,
-        "ElementalDamage": 35,
-        "Critical": 10,
+        "AP": 12,
+        "PrimaryStat": 920,
+        "Power": 90,
+        "ElementalDamage": 43,
+        "Critical": 8,
         "CriticalDamage": 0
       }
     },
     "120": {
       "source": "production_top_damage_decile",
-      "sampleCount": 146,
-      "selectedCount": 15,
+      "sampleCount": 155,
+      "selectedCount": 16,
       "elementCounts": {
-        "chance": 51,
-        "intelligence": 35,
-        "strength": 34,
-        "agility": 26
+        "strength": 40,
+        "intelligence": 33,
+        "agility": 34,
+        "chance": 48
       },
       "stats": {
-        "AP": 11,
-        "PrimaryStat": 928,
-        "Power": 100,
-        "ElementalDamage": 37,
-        "Critical": 13,
-        "CriticalDamage": 0
+        "AP": 12,
+        "PrimaryStat": 996,
+        "Power": 82,
+        "ElementalDamage": 52,
+        "Critical": 11,
+        "CriticalDamage": 8
       }
     },
     "140": {
       "source": "production_top_damage_decile",
-      "sampleCount": 144,
-      "selectedCount": 15,
+      "sampleCount": 43,
+      "selectedCount": 5,
       "elementCounts": {
-        "strength": 30,
-        "intelligence": 33,
-        "agility": 36,
-        "chance": 45
+        "strength": 11,
+        "agility": 6,
+        "chance": 12,
+        "intelligence": 14
       },
       "stats": {
         "AP": 11,
-        "PrimaryStat": 990,
-        "Power": 80,
-        "ElementalDamage": 52,
-        "Critical": 13,
-        "CriticalDamage": 15
+        "PrimaryStat": 985,
+        "Power": 140,
+        "ElementalDamage": 36,
+        "Critical": 16,
+        "CriticalDamage": 10
       }
     },
     "150": {
       "source": "production_top_damage_decile",
-      "sampleCount": 86,
-      "selectedCount": 9,
+      "sampleCount": 107,
+      "selectedCount": 11,
       "elementCounts": {
-        "intelligence": 29,
-        "strength": 26,
-        "agility": 21,
-        "chance": 10
+        "agility": 26,
+        "strength": 35,
+        "intelligence": 32,
+        "chance": 14
       },
       "stats": {
         "AP": 12,
-        "PrimaryStat": 1085,
+        "PrimaryStat": 1105,
         "Power": 210,
-        "ElementalDamage": 20,
-        "Critical": 15,
+        "ElementalDamage": 54,
+        "Critical": 20,
         "CriticalDamage": 0
       }
     },
     "160": {
       "source": "production_top_damage_decile",
-      "sampleCount": 124,
-      "selectedCount": 13,
+      "sampleCount": 143,
+      "selectedCount": 15,
       "elementCounts": {
-        "intelligence": 35,
-        "agility": 28,
-        "strength": 36,
-        "chance": 25
+        "strength": 37,
+        "intelligence": 40,
+        "chance": 36,
+        "agility": 30
       },
       "stats": {
-        "AP": 12,
-        "PrimaryStat": 1120,
-        "Power": 210,
-        "ElementalDamage": 58,
-        "Critical": 15,
+        "AP": 11,
+        "PrimaryStat": 1198,
+        "Power": 185,
+        "ElementalDamage": 64,
+        "Critical": 18,
         "CriticalDamage": 0
       }
     },
     "180": {
       "source": "production_top_damage_decile",
-      "sampleCount": 144,
-      "selectedCount": 15,
+      "sampleCount": 122,
+      "selectedCount": 13,
       "elementCounts": {
-        "strength": 45,
-        "intelligence": 33,
-        "chance": 43,
-        "agility": 23
+        "intelligence": 30,
+        "chance": 41,
+        "strength": 30,
+        "agility": 21
       },
       "stats": {
-        "AP": 11,
-        "PrimaryStat": 1237,
-        "Power": 175,
-        "ElementalDamage": 66,
-        "Critical": 18,
-        "CriticalDamage": 0
+        "AP": 12,
+        "PrimaryStat": 1391,
+        "Power": 135,
+        "ElementalDamage": 126,
+        "Critical": 32,
+        "CriticalDamage": 10
       }
     },
     "199": {
       "source": "production_top_damage_decile",
-      "sampleCount": 152,
-      "selectedCount": 16,
+      "sampleCount": 141,
+      "selectedCount": 15,
       "elementCounts": {
-        "chance": 49,
-        "intelligence": 33,
-        "strength": 39,
-        "agility": 31
+        "chance": 38,
+        "intelligence": 28,
+        "agility": 35,
+        "strength": 40
       },
       "stats": {
-        "AP": 12,
-        "PrimaryStat": 1334,
-        "Power": 140,
-        "ElementalDamage": 132,
-        "Critical": 44,
+        "AP": 11,
+        "PrimaryStat": 1387,
+        "Power": 170,
+        "ElementalDamage": 128,
+        "Critical": 41,
         "CriticalDamage": 10
       }
     },
@@ -245,55 +279,60 @@
       "missing_item": 0,
       "not_mono": 0
     },
+    "21": {
+      "incomplete": 0,
+      "missing_item": 0,
+      "not_mono": 1
+    },
     "40": {
       "incomplete": 0,
       "missing_item": 0,
-      "not_mono": 2
+      "not_mono": 4
     },
     "60": {
       "incomplete": 0,
       "missing_item": 0,
-      "not_mono": 14
+      "not_mono": 30
     },
     "80": {
       "incomplete": 0,
       "missing_item": 0,
-      "not_mono": 22
+      "not_mono": 15
     },
     "100": {
       "incomplete": 0,
       "missing_item": 0,
-      "not_mono": 25
+      "not_mono": 136
     },
     "120": {
       "incomplete": 0,
       "missing_item": 0,
-      "not_mono": 154
+      "not_mono": 126
     },
     "140": {
       "incomplete": 0,
       "missing_item": 0,
-      "not_mono": 111
+      "not_mono": 37
     },
     "150": {
       "incomplete": 0,
       "missing_item": 0,
-      "not_mono": 45
+      "not_mono": 69
     },
     "160": {
       "incomplete": 0,
       "missing_item": 0,
-      "not_mono": 118
+      "not_mono": 157
     },
     "180": {
       "incomplete": 0,
       "missing_item": 0,
-      "not_mono": 156
+      "not_mono": 178
     },
     "199": {
       "incomplete": 0,
       "missing_item": 0,
-      "not_mono": 148
+      "not_mono": 159
     },
     "200": {
       "incomplete": 0,

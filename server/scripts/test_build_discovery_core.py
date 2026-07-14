@@ -13,12 +13,19 @@ from oneoff.build_discovery_core import (
 
 
 class BuildDiscoveryCoreTest(unittest.TestCase):
-    def test_reference_anchors_include_major_trophy_and_level_199_boundaries(self):
-        self.assertEqual(reference_anchor_for_level(140)["PrimaryStat"], 990)
-        self.assertEqual(reference_anchor_for_level(141)["PrimaryStat"], 1085)
-        self.assertEqual(reference_anchor_for_level(150)["PrimaryStat"], 1085)
-        self.assertEqual(reference_anchor_for_level(151)["PrimaryStat"], 1120)
-        self.assertEqual(reference_anchor_for_level(199)["PrimaryStat"], 1334)
+    def test_reference_anchors_respect_unlock_boundaries(self):
+        self.assertEqual(
+            reference_anchor_for_level(149), reference_anchor_for_level(140)
+        )
+        self.assertEqual(
+            reference_anchor_for_level(159), reference_anchor_for_level(150)
+        )
+        self.assertEqual(
+            reference_anchor_for_level(179), reference_anchor_for_level(160)
+        )
+        self.assertEqual(reference_anchor_for_level(99)["AP"], 10)
+        self.assertEqual(reference_anchor_for_level(100)["AP"], 12)
+        self.assertEqual(reference_anchor_for_level(199)["PrimaryStat"], 1387)
         self.assertEqual(reference_anchor_for_level(200)["PrimaryStat"], 1000)
 
     def test_level_anchor_only_changes_cpsat_linearization_reference(self):
@@ -27,8 +34,8 @@ class BuildDiscoveryCoreTest(unittest.TestCase):
             objective_reference = objective_linearization_reference_stats()
             final_score_reference = profile_damage_reference_stats()
 
-        self.assertEqual(objective_reference["Strength"], 1085)
-        self.assertEqual(objective_reference["Critical"], 15)
+        self.assertEqual(objective_reference["Strength"], 1105)
+        self.assertEqual(objective_reference["Critical"], 20)
         self.assertEqual(final_score_reference["Strength"], 1000)
         self.assertEqual(final_score_reference["Critical"], 50)
 
