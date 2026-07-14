@@ -37,7 +37,12 @@ try:
         weapon_damage_weight_for_query,
         filter_low_quality_alternatives,
     )
-    from oneoff.build_discovery_cpsat_runner import build_cpsat_args
+    from oneoff.build_discovery_cpsat_runner import (
+        DEFAULT_OBJECTIVE_MODES,
+        DEFAULT_RELEASE_TIME_LIMIT_SECONDS,
+        build_cpsat_args,
+        merge_objective_lane_responses,
+    )
     from oneoff.build_discovery_core import (
         BuildDiscoveryQuery,
         BuildState,
@@ -59,6 +64,9 @@ except Exception as exc:  # pragma: no cover - exercised only in incomplete envs
     effective_collection_mode = None
     objective_weights_for_mode = None
     build_cpsat_args = None
+    DEFAULT_OBJECTIVE_MODES = None
+    DEFAULT_RELEASE_TIME_LIMIT_SECONDS = None
+    merge_objective_lane_responses = None
     BuildDiscoveryQuery = None
     BuildState = None
     BuildTarget = None
@@ -191,6 +199,62 @@ def solve_fixture(items: list[dict], *, sets: dict | None = None, target: BuildT
 
 
 class BuildDiscoveryCpsatSolverContractTest(unittest.TestCase):
+    def test_release_defaults_run_both_quality_lanes(self):
+        args = build_cpsat_args(BuildDiscoveryQuery())
+
+        self.assertEqual(args.time_limit_seconds, DEFAULT_RELEASE_TIME_LIMIT_SECONDS)
+        self.assertEqual(args.workers, 2)
+        self.assertEqual(args.objective_modes, DEFAULT_OBJECTIVE_MODES)
+
+    def test_lane_merge_reranks_and_deduplicates_by_rich_score(self):
+        def response(mode, builds, search_ms):
+            return {
+                "query": {"objectiveMode": mode},
+                "status": "complete",
+                "solverStatus": "FEASIBLE",
+                "timings": {"loadMs": 10, "totalSearchMs": search_ms},
+                "attempts": [{"attempt": 1}],
+                "candidateCount": len(builds),
+                "objectiveWeights": {"Critical": 1 if mode == "normal" else 0},
+                "warnings": [],
+                "build": builds[0],
+                "builds": builds,
+            }
+
+        shared_low = {
+            "score": 100,
+            "items": {"hat": {"id": "shared"}},
+            "exos": {},
+        }
+        shared_high = {
+            "score": 120,
+            "items": {"hat": {"id": "shared"}},
+            "exos": {},
+        }
+        alternative = {
+            "score": 110,
+            "items": {"hat": {"id": "alternative"}},
+            "exos": {},
+        }
+        query = BuildDiscoveryQuery(limit=2, max_shared_items=None)
+        args = build_cpsat_args(query, output_build_limit=2, max_shared_items=None)
+
+        merged = merge_objective_lane_responses(
+            [
+                ("normal", response("normal", [shared_low], 1000)),
+                (
+                    "neutral",
+                    response("neutral", [shared_high, alternative], 1500),
+                ),
+            ],
+            args,
+        )
+
+        self.assertEqual([build["score"] for build in merged["builds"]], [120, 110])
+        self.assertEqual(merged["candidateCount"], 2)
+        self.assertEqual(merged["timings"]["totalSearchMs"], 2500)
+        self.assertEqual(len(merged["objectiveLanes"]), 2)
+
     def test_crit_neutral_objective_only_removes_crit_marginals(self):
         if IMPORT_ERROR is not None:
             self.skipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")

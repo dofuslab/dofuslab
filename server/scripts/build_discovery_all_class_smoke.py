@@ -132,6 +132,7 @@ def solver_args(query: BuildDiscoveryQuery, args: argparse.Namespace) -> argpars
         output_build_limit=1,
         collection_mode="callback",
         objective_mode=getattr(args, "objective_mode", "final-linear"),
+        objective_modes=(getattr(args, "objective_mode", "final-linear"),),
         max_shared_items=None,
         generic_damage_weight=0.45,
     )
