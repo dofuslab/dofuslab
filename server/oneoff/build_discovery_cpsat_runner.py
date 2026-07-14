@@ -120,7 +120,16 @@ def serialized_build_signature(build: dict[str, Any]) -> tuple:
         for item in (build.get("items") or {}).values()
         if item.get("id") is not None
     )
-    exos = tuple(sorted((build.get("exos") or {}).items()))
+    exos = tuple(
+        sorted(
+            (
+                stat,
+                exo.get("itemId") if isinstance(exo, dict) else exo,
+                exo.get("slot") if isinstance(exo, dict) else None,
+            )
+            for stat, exo in (build.get("exos") or {}).items()
+        )
+    )
     return item_ids, exos
 
 

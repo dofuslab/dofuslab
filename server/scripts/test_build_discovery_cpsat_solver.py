@@ -224,12 +224,12 @@ class BuildDiscoveryCpsatSolverContractTest(unittest.TestCase):
         shared_low = {
             "score": 100,
             "items": {"hat": {"id": "shared"}},
-            "exos": {},
+            "exos": {"AP": {"itemId": "shared", "slot": "hat"}},
         }
         shared_high = {
             "score": 120,
             "items": {"hat": {"id": "shared"}},
-            "exos": {},
+            "exos": {"AP": {"itemId": "shared", "slot": "hat"}},
         }
         alternative = {
             "score": 110,
