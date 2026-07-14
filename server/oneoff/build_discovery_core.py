@@ -77,8 +77,37 @@ BUILD_DISCOVERY_INDEX_PATH = os.getenv(
 BUILD_DISCOVERY_INDEX_SCHEMA_VERSION = 1
 
 
+BUILD_DISCOVERY_REFERENCE_ANCHORS_PATH = os.getenv(
+    "BUILD_DISCOVERY_REFERENCE_ANCHORS_PATH",
+    os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "fixtures",
+        "build_discovery_reference_anchors.json",
+    ),
+)
+
+
 def base_ap_for_level(level: int) -> int:
     return 7 if level >= 100 else 6
+
+
+@lru_cache(maxsize=1)
+def load_reference_anchors() -> dict[int, dict[str, int]]:
+    with open(BUILD_DISCOVERY_REFERENCE_ANCHORS_PATH, encoding="utf-8") as file:
+        payload = json.load(file)
+    return {
+        int(level): anchor["stats"]
+        for level, anchor in payload.get("anchors", {}).items()
+        if anchor.get("stats")
+    }
+
+
+def reference_anchor_for_level(level: int) -> dict[str, int]:
+    anchors = load_reference_anchors()
+    for anchor_level in sorted(anchors):
+        if level <= anchor_level:
+            return anchors[anchor_level]
+    return anchors[max(anchors)]
 
 
 def normalize_range_target(range_target: int | None) -> int:
@@ -2158,6 +2187,7 @@ def clear_spell_damage_profile_caches() -> None:
 
 
 def profile_damage_reference_stats() -> dict[str, int]:
+    """Stable reference used to normalize final damage scores across queries."""
     return {
         **active_base_stats(),
         "AP": MAX_AP,
@@ -2166,6 +2196,20 @@ def profile_damage_reference_stats() -> dict[str, int]:
         ACTIVE_DAMAGE_PROFILE.damage_stat: PROFILE_DAMAGE_REFERENCE_ELEMENTAL_DAMAGE,
         "Critical": PROFILE_DAMAGE_REFERENCE_CRITICAL,
         "Critical Damage": PROFILE_DAMAGE_REFERENCE_CRITICAL_DAMAGE,
+    }
+
+
+def objective_linearization_reference_stats() -> dict[str, int]:
+    """Realistic level-specific point for CP-SAT marginal score weights."""
+    anchor = reference_anchor_for_level(ACTIVE_TARGET_LEVEL)
+    return {
+        **active_base_stats(),
+        "AP": anchor["AP"],
+        ACTIVE_DAMAGE_PROFILE.primary_stat: anchor["PrimaryStat"],
+        "Power": anchor["Power"],
+        ACTIVE_DAMAGE_PROFILE.damage_stat: anchor["ElementalDamage"],
+        "Critical": anchor["Critical"],
+        "Critical Damage": anchor["CriticalDamage"],
     }
 
 

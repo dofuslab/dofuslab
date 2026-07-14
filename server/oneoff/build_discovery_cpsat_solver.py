@@ -46,10 +46,10 @@ from oneoff.build_discovery_core import (
     load_sets,
     negative_resistance_penalty,
     normalize_stats,
+    objective_linearization_reference_stats,
     optimize_base_allocation,
     optional_slot_choice,
     parse_optional_range_target,
-    profile_damage_reference_stats,
     query_summary,
     serialize_build,
     set_bonus_stats,
@@ -268,7 +268,7 @@ def linearized_final_score_weights(
     survivability_weight: float = 1.0,
     negative_resistance_penalty_weight: float = 0.0,
 ) -> dict[str, float]:
-    reference_stats = profile_damage_reference_stats()
+    reference_stats = objective_linearization_reference_stats()
     objective_stats = collect_objective_stats(metadata)
     for stat in objective_stats:
         reference_stats.setdefault(stat, active_base_stats().get(stat, 0))
