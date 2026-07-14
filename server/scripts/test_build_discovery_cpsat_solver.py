@@ -30,6 +30,7 @@ try:
         state_signature,
         build_model,
         effective_collection_mode,
+        objective_weights_for_mode,
         reconstruct_state,
         select_diverse_candidates,
         solve_query,
@@ -56,6 +57,7 @@ except Exception as exc:  # pragma: no cover - exercised only in incomplete envs
     weapon_damage_weight_for_query = None
     filter_low_quality_alternatives = None
     effective_collection_mode = None
+    objective_weights_for_mode = None
     build_cpsat_args = None
     BuildDiscoveryQuery = None
     BuildState = None
@@ -189,6 +191,25 @@ def solve_fixture(items: list[dict], *, sets: dict | None = None, target: BuildT
 
 
 class BuildDiscoveryCpsatSolverContractTest(unittest.TestCase):
+    def test_crit_neutral_objective_only_removes_crit_marginals(self):
+        if IMPORT_ERROR is not None:
+            self.skipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        configure_damage_profile("intelligence", "Cra")
+        metadata = build_model_metadata(base_fixture_items(), fixture_sets())
+
+        with target_level_context(200):
+            normal = objective_weights_for_mode("final-linear", metadata, 0.45)
+            crit_neutral = objective_weights_for_mode(
+                "final-linear-crit-neutral", metadata, 0.45
+            )
+
+        self.assertNotEqual(normal["Critical"], 0.0)
+        self.assertNotEqual(normal["Critical Damage"], 0.0)
+        self.assertEqual(crit_neutral["Critical"], 0.0)
+        self.assertEqual(crit_neutral["Critical Damage"], 0.0)
+        self.assertEqual(crit_neutral["Intelligence"], normal["Intelligence"])
+        self.assertEqual(crit_neutral["Fire Damage"], normal["Fire Damage"])
+
     def test_model_and_result_do_not_depend_on_legacy_item_score(self):
         if IMPORT_ERROR is not None:
             self.skipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
