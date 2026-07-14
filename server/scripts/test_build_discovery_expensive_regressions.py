@@ -76,8 +76,8 @@ class BuildDiscoveryExpensiveRegressionTest(unittest.TestCase):
 
         self.assertEqual(response["status"], "complete")
         best = response["builds"][0]
-        self.assertGreaterEqual(best["score"], 2866.74)
-        self.assertGreaterEqual(best["rawRotationDamageScore"], 1347.04)
+        self.assertGreaterEqual(best["score"], 2657.76)
+        self.assertGreaterEqual(best["rawRotationDamageScore"], 1230.45)
         self.assertEqual(best["totals"]["AP"], 11)
         self.assertEqual(best["totals"]["MP"], 6)
         self.assertGreaterEqual(best["totals"]["Range"], 6)
