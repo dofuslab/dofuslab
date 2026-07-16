@@ -266,8 +266,9 @@ def linearized_final_score_weights(
     generic_damage_weight: float,
     survivability_weight: float = 1.0,
     negative_resistance_penalty_weight: float = 0.0,
+    objective_lane: str | None = None,
 ) -> dict[str, float]:
-    reference_stats = objective_linearization_reference_stats()
+    reference_stats = objective_linearization_reference_stats(objective_lane)
     objective_stats = collect_objective_stats(metadata)
     for stat in objective_stats:
         reference_stats.setdefault(stat, active_base_stats().get(stat, 0))
@@ -363,6 +364,14 @@ def objective_weights_for_mode(
             generic_damage_weight,
             survivability_weight,
             negative_resistance_penalty_weight,
+        )
+    if mode in {"final-linear-crit", "final-linear-noncrit"}:
+        return linearized_final_score_weights(
+            metadata,
+            generic_damage_weight,
+            survivability_weight,
+            negative_resistance_penalty_weight,
+            objective_lane="crit" if mode == "final-linear-crit" else "nonCrit",
         )
     if mode == "final-linear-crit-neutral":
         weights = linearized_final_score_weights(
@@ -1576,7 +1585,13 @@ def main() -> None:
     )
     parser.add_argument(
         "--objective-mode",
-        choices=("stat-linear", "final-linear", "final-linear-crit-neutral"),
+        choices=(
+            "stat-linear",
+            "final-linear",
+            "final-linear-crit-neutral",
+            "final-linear-crit",
+            "final-linear-noncrit",
+        ),
         default="final-linear",
     )
     parser.add_argument("--generic-damage-weight", type=float, default=0.45)

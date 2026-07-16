@@ -27,6 +27,11 @@ class BuildDiscoveryCoreTest(unittest.TestCase):
         self.assertEqual(reference_anchor_for_level(100)["AP"], 12)
         self.assertEqual(reference_anchor_for_level(199)["PrimaryStat"], 1387)
         self.assertEqual(reference_anchor_for_level(200)["PrimaryStat"], 1000)
+        self.assertEqual(
+            reference_anchor_for_level(159, "crit"), reference_anchor_for_level(159)
+        )
+        self.assertEqual(reference_anchor_for_level(160, "nonCrit")["Critical"], 19)
+        self.assertEqual(reference_anchor_for_level(160, "crit")["CriticalDamage"], 45)
 
     def test_level_anchor_only_changes_cpsat_linearization_reference(self):
         configure_damage_profile("strength", "Iop")
@@ -38,6 +43,19 @@ class BuildDiscoveryCoreTest(unittest.TestCase):
         self.assertEqual(objective_reference["Critical"], 20)
         self.assertEqual(final_score_reference["Strength"], 1000)
         self.assertEqual(final_score_reference["Critical"], 50)
+
+    def test_level_200_objective_lanes_use_coherent_production_anchors(self):
+        configure_damage_profile("strength", "Iop")
+        with target_level_context(200):
+            noncrit = objective_linearization_reference_stats("nonCrit")
+            crit = objective_linearization_reference_stats("crit")
+
+        self.assertEqual(noncrit["Strength"], 1613)
+        self.assertEqual(noncrit["Critical"], 31)
+        self.assertEqual(noncrit["Critical Damage"], 25)
+        self.assertEqual(crit["Strength"], 1238)
+        self.assertEqual(crit["Critical"], 83)
+        self.assertEqual(crit["Critical Damage"], 72)
 
     def test_item_conditions_are_left_for_the_complete_build_model(self):
         item = {
