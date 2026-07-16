@@ -113,7 +113,8 @@ def main() -> None:
         items_to_update,
         items_to_delete,
     ):
-        print("No changes needed.")
+        print("No database changes needed. Regenerating build discovery index...")
+        write_index(source="db")
         return
 
     confirmation = input("\nType SYNC to apply all set/item changes and regenerate indexes: ")
