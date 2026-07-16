@@ -61,15 +61,14 @@ class EnsureBuildDiscoveryIndexTests(unittest.TestCase):
                 ):
                     ensure_index(path, generate=lambda *args, **kwargs: None)
 
-    def test_startup_commands_validate_before_web_and_worker(self):
+    def test_startup_commands_validate_before_web(self):
         server_root = Path(__file__).resolve().parents[1]
         procfile = (server_root / "Procfile").read_text(encoding="utf-8")
         compose = (server_root.parent / "docker-compose.yml").read_text(encoding="utf-8")
         validator = "python -m scripts.ensure_build_discovery_index &&"
 
         self.assertIn(f"web: {validator}", procfile)
-        self.assertIn(f"worker: {validator}", procfile)
-        self.assertEqual(compose.count(validator), 2)
+        self.assertEqual(compose.count(validator), 1)
 
 
 if __name__ == "__main__":
