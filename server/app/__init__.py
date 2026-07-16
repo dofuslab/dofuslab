@@ -95,10 +95,6 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-from app.feature_gates import initialize_statsig
-
-initialize_statsig()
-
 dirname = os.path.dirname(os.path.abspath(__file__))
 migration_dir = os.path.join(dirname, "migrations")
 
@@ -167,7 +163,6 @@ from app.loaders import (
     SpellDamageIncreaseLoader,
     EligibleItemSlotLoader,
     SpellDescriptionLoader,
-    GenerationRequestLoader,
 )
 
 
@@ -186,7 +181,6 @@ def construct_dataloaders():
         "spell_buff_loader": SpellBuffLoader(),
         "item_buff_loader": ItemBuffLoader(),
         "custom_set_tag_association_loader": CustomSetTagAssociationLoader(),
-        "generation_request_loader": GenerationRequestLoader(),
         "custom_set_tag_translation_loader": CustomSetTagTranslationLoader(),
         "item_slot_translation_loader": ItemSlotTranslationLoader(),
         "item_type_translation_loader": ItemTypeTranslationLoader(),

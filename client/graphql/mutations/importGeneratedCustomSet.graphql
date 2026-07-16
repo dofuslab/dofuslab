@@ -1,9 +1,0 @@
-#import "graphql/fragments/customSet.graphql"
-
-mutation importGeneratedCustomSet($promotionToken: String!, $name: String!) {
-  importGeneratedCustomSet(promotionToken: $promotionToken, name: $name) {
-    customSet {
-      ...customSet
-    }
-  }
-}

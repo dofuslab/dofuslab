@@ -18,7 +18,6 @@ import { useQuery, useMutation, useApolloClient } from '@apollo/client';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
 import { logout as ILogout } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import { useBuildDiscoveryGate } from 'common/statsig';
 import logoutMutation from 'graphql/mutations/logout.graphql';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -47,7 +46,6 @@ import {
   BUY_ME_COFFEE_LINK,
 } from 'common/constants';
 import { getImageUrl } from 'common/utils';
-import { buildDiscoveryMobileMenuItem } from '../common/BuildDiscoveryNavigation';
 
 const SignUpModal = dynamic(() => import('../common/SignUpModal'), {
   ssr: false,
@@ -81,7 +79,6 @@ function Layout({ children }: LayoutProps) {
   const { t } = useTranslation(['auth', 'common']);
   const client = useApolloClient();
   const { data } = useQuery<ICurrentUser>(currentUserQuery);
-  const { enabled: buildDiscoveryEnabled } = useBuildDiscoveryGate();
   const [logout] = useMutation<ILogout>(logoutMutation);
   const [changeLocaleMutate] = useMutation<changeLocale, changeLocaleVariables>(
     changeLocaleMutation,
@@ -186,30 +183,21 @@ function Layout({ children }: LayoutProps) {
   );
 
   const menuItems: MenuItem[] = useMemo(() => {
-    const items: MenuItem[] = [];
-
-    const buildDiscoveryItem = buildDiscoveryMobileMenuItem(
-      buildDiscoveryEnabled,
-      t('BUILD_DISCOVERY', { ns: 'common' }),
-      iconWrapper,
-    );
-    if (buildDiscoveryItem) {
-      items.push(buildDiscoveryItem);
-    }
-
-    items.push({
-      key: 'home',
-      label: (
-        <Link href="/" as="/" legacyBehavior>
-          <div css={{ display: 'flex' }}>
-            <span css={iconWrapper}>
-              <FontAwesomeIcon icon={faHome} />
-            </span>
-            <div>Home</div>
-          </div>
-        </Link>
-      ),
-    });
+    const items: MenuItem[] = [
+      {
+        key: 'home',
+        label: (
+          <Link href="/" as="/" legacyBehavior>
+            <div css={{ display: 'flex' }}>
+              <span css={iconWrapper}>
+                <FontAwesomeIcon icon={faHome} />
+              </span>
+              <div>Home</div>
+            </div>
+          </Link>
+        ),
+      },
+    ];
 
     if (data?.currentUser && data.currentUser.verified) {
       items.push({
@@ -378,7 +366,7 @@ function Layout({ children }: LayoutProps) {
     );
 
     return items;
-  }, [buildDiscoveryEnabled, data?.currentUser, t]);
+  }, [data?.currentUser, t]);
 
   const theme = useTheme();
 

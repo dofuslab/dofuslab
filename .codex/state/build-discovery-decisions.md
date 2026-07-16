@@ -33,21 +33,6 @@
 - Generated indexes must contain complete spell damage profiles. Database fallback is a development compatibility path, not an acceptable production scoring dependency.
 - Keep exact candidate sets for v1. Do not use objective-ranked pet/Dofus top-N pruning to meet latency, because it removes feasible solutions and benchmark paths.
 
-## 2026-07-14 Gated Beta Quality Decision
-
-- Do not upgrade production hardware before tester demand demonstrates that the
-  feature is useful despite cold-generation latency.
-- Prioritize candidate quality for the gated beta by running the normal
-  crit-aware and crit-neutral CP-SAT objectives sequentially with up to 12
-  seconds per lane, then merge and rich-rerank their candidates.
-- Keep the release synchronous and cache-backed. Initial beta gates allow cold
-  p95 under 45 seconds and warm-process cache-miss p95 under 30 seconds; cache
-  hits must remain under 100ms.
-- The beta allowance does not replace the Optimization milestone's eventual
-  cache-miss p95 target of under 5 seconds.
-- Reconsider a 4-vCPU deployment only after observing meaningful tester use or
-  demand constrained by generation latency.
-
 ## Product Decisions From PRD
 
 - v1 uses structured controls, not chat.

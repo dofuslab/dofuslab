@@ -24,7 +24,6 @@ import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated
 import { logout as LogoutMutationType } from 'graphql/mutations/__generated__/logout';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
 import logoutMutation from 'graphql/mutations/logout.graphql';
-import { useBuildDiscoveryGate } from 'common/statsig';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { LANGUAGES, langToFullName } from 'common/i18n-utils';
@@ -55,7 +54,6 @@ import { switchStyle } from 'common/mixins';
 import { ClassicContext, getImageUrl } from 'common/utils';
 import { DownOutlined } from '@ant-design/icons';
 import { Media } from 'components/common/Media';
-import { BuildDiscoveryDesktopNavigation } from '../common/BuildDiscoveryNavigation';
 
 const BuildList = dynamic(() => import('../common/BuildList'), { ssr: false });
 const SignUpModal = dynamic(() => import('../common/SignUpModal'), {
@@ -88,7 +86,6 @@ function Layout({ children, showSwitch }: LayoutProps) {
   const { t, i18n } = useTranslation(['auth', 'common', 'keyboard_shortcut']);
   const client = useApolloClient();
   const { data } = useQuery<CurrentUserQueryType>(currentUserQuery);
-  const { enabled: buildDiscoveryEnabled } = useBuildDiscoveryGate();
   const [logout] = useMutation<LogoutMutationType>(logoutMutation);
   const [changeLocaleMutate] = useMutation<changeLocale, changeLocaleVariables>(
     changeLocaleMutation,
@@ -365,10 +362,6 @@ function Layout({ children, showSwitch }: LayoutProps) {
           </div>
           <div css={{ display: 'flex', alignItems: 'center' }}>
             {showSwitch && classicSwitch}
-            <BuildDiscoveryDesktopNavigation
-              enabled={buildDiscoveryEnabled}
-              label={t('BUILD_DISCOVERY', { ns: 'common' })}
-            />
             {data?.currentUser ? (
               <div>
                 {langSelect}

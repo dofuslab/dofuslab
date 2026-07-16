@@ -38,7 +38,6 @@ import NotificationContext from 'common/notificationContext';
 import StaticFunctions from 'components/common/StaticFunctions';
 import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
 import type Entity from '@ant-design/cssinjs/es/Cache';
-import { DofusLabStatsigProvider } from 'common/statsig';
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
@@ -115,38 +114,36 @@ const DofusLabApp = ({ Component, apolloClient, pageProps }: Props) => {
   /* eslint-disable react/jsx-props-no-spreading */
   return (
     <ApolloProvider client={apolloClient}>
-      <DofusLabStatsigProvider>
-        <MediaContextProvider>
-          <ThemeProvider theme={darkTheme}>
-            <StyleProvider cache={cache}>
-              <ConfigProvider
-                theme={{
-                  algorithm: theme.darkAlgorithm,
-                }}
-              >
-                <App>
-                  <CustomSetContext.Provider value={customSetContextValue}>
-                    <NotificationContext.Provider
-                      value={notificationContextValue}
-                    >
-                      <Head>
-                        <meta
-                          name="viewport"
-                          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-                        />
-                        {styleText}
-                      </Head>
-                      {contextHolder}
-                      <StaticFunctions />
-                      <Component {...pageProps} />
-                    </NotificationContext.Provider>
-                  </CustomSetContext.Provider>
-                </App>
-              </ConfigProvider>
-            </StyleProvider>
-          </ThemeProvider>
-        </MediaContextProvider>
-      </DofusLabStatsigProvider>
+      <MediaContextProvider>
+        <ThemeProvider theme={darkTheme}>
+          <StyleProvider cache={cache}>
+            <ConfigProvider
+              theme={{
+                algorithm: theme.darkAlgorithm,
+              }}
+            >
+              <App>
+                <CustomSetContext.Provider value={customSetContextValue}>
+                  <NotificationContext.Provider
+                    value={notificationContextValue}
+                  >
+                    <Head>
+                      <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+                      />
+                      {styleText}
+                    </Head>
+                    {contextHolder}
+                    <StaticFunctions />
+                    <Component {...pageProps} />
+                  </NotificationContext.Provider>
+                </CustomSetContext.Provider>
+              </App>
+            </ConfigProvider>
+          </StyleProvider>
+        </ThemeProvider>
+      </MediaContextProvider>
     </ApolloProvider>
   );
 };

@@ -26,7 +26,6 @@ export type Scalars = {
   Int: { input: number; output: number };
   Float: { input: number; output: number };
   DateTime: { input: any; output: any };
-  GenericScalar: { input: any; output: any };
   JSONString: { input: any; output: any };
   UUID: { input: any; output: any };
 };
@@ -48,176 +47,6 @@ export type Buff = GlobalNode & {
   spellStats: Maybe<SpellStats>;
   stat: Stat;
   uuid: Scalars['String']['output'];
-};
-
-export type BuildDiscoveryBuild = {
-  __typename: 'BuildDiscoveryBuild';
-  apStrategy: Maybe<Scalars['String']['output']>;
-  baseAllocation: Array<BuildDiscoveryNamedNumber>;
-  conditionFailures: Array<Scalars['String']['output']>;
-  exos: Array<BuildDiscoveryExo>;
-  genericDamageScore: Maybe<Scalars['Float']['output']>;
-  items: Array<BuildDiscoveryItem>;
-  negativeResistancePenalty: Maybe<Scalars['Float']['output']>;
-  profileBaselineDamageScore: Maybe<Scalars['Float']['output']>;
-  profileRelativeDamage: Maybe<Scalars['Float']['output']>;
-  promotionToken: Scalars['String']['output'];
-  rawRotationDamageScore: Maybe<Scalars['Float']['output']>;
-  score: Scalars['Float']['output'];
-  sets: Array<BuildDiscoverySet>;
-  spellDamageScore: Maybe<Scalars['Float']['output']>;
-  survivabilityScore: Maybe<Scalars['Float']['output']>;
-  totals: Array<BuildDiscoveryNamedNumber>;
-  utilityStatScore: Maybe<Scalars['Float']['output']>;
-  weakestElementEhp: Maybe<Scalars['Float']['output']>;
-  weaponDamageScore: Maybe<Scalars['Float']['output']>;
-  weightedStatScore: Maybe<Scalars['Float']['output']>;
-};
-
-export type BuildDiscoveryCache = {
-  __typename: 'BuildDiscoveryCache';
-  solver: Maybe<Scalars['String']['output']>;
-  status: Scalars['String']['output'];
-  storage: Scalars['String']['output'];
-};
-
-export type BuildDiscoveryDiagnostics = {
-  __typename: 'BuildDiscoveryDiagnostics';
-  appCacheHit: Maybe<Scalars['Boolean']['output']>;
-  cacheHit: Maybe<Scalars['Boolean']['output']>;
-  cacheStatus: Maybe<Scalars['String']['output']>;
-  candidateCount: Maybe<Scalars['Int']['output']>;
-  elapsedMs: Maybe<Scalars['Float']['output']>;
-  itemCount: Maybe<Scalars['Int']['output']>;
-  lockWaitMs: Maybe<Scalars['Float']['output']>;
-  maxSharedItems: Maybe<Scalars['Int']['output']>;
-  maxSharedItemsEnforced: Maybe<Scalars['Boolean']['output']>;
-  resultCount: Scalars['Int']['output'];
-  solveLockAcquired: Maybe<Scalars['Boolean']['output']>;
-  solver: Maybe<Scalars['String']['output']>;
-  solverStatus: Maybe<Scalars['String']['output']>;
-  timings: Array<BuildDiscoveryTiming>;
-};
-
-export type BuildDiscoveryExo = {
-  __typename: 'BuildDiscoveryExo';
-  itemId: Scalars['String']['output'];
-  slot: Maybe<Scalars['String']['output']>;
-  stat: Scalars['String']['output'];
-};
-
-export type BuildDiscoveryInput = {
-  apTarget: Scalars['Int']['input'];
-  avoidedItemIds: Array<Scalars['String']['input']>;
-  budgetTier: Scalars['Int']['input'];
-  className: Scalars['String']['input'];
-  damageSurvivabilityPreset: Scalars['Int']['input'];
-  element: Scalars['String']['input'];
-  exoPolicy: Scalars['String']['input'];
-  level: Scalars['Int']['input'];
-  lockedItemIds: Array<Scalars['String']['input']>;
-  maxSharedItems?: InputMaybe<Scalars['Int']['input']>;
-  mpTarget: Scalars['Int']['input'];
-  rangeTarget?: InputMaybe<Scalars['Int']['input']>;
-  resultLimit: Scalars['Int']['input'];
-  weaponPolicy: Scalars['String']['input'];
-};
-
-export type BuildDiscoveryItem = {
-  __typename: 'BuildDiscoveryItem';
-  id: Scalars['String']['output'];
-  internalId: Maybe<Scalars['String']['output']>;
-  level: Maybe<Scalars['Int']['output']>;
-  name: Scalars['String']['output'];
-  set: Maybe<Scalars['String']['output']>;
-  slot: Scalars['String']['output'];
-  type: Scalars['String']['output'];
-};
-
-export type BuildDiscoveryNamedNumber = {
-  __typename: 'BuildDiscoveryNamedNumber';
-  name: Scalars['String']['output'];
-  value: Scalars['Float']['output'];
-};
-
-export type BuildDiscoveryNoBuildReason = {
-  __typename: 'BuildDiscoveryNoBuildReason';
-  code: Scalars['String']['output'];
-  unavailableItemIds: Array<Scalars['String']['output']>;
-  wrongSlotItemIds: Array<Scalars['String']['output']>;
-};
-
-export type BuildDiscoveryQueryResult = {
-  __typename: 'BuildDiscoveryQueryResult';
-  apTarget: Scalars['Int']['output'];
-  avoidedItemIds: Array<Scalars['String']['output']>;
-  budgetTier: Scalars['Int']['output'];
-  className: Scalars['String']['output'];
-  damageSurvivabilityPreset: Scalars['Int']['output'];
-  elements: Array<Scalars['String']['output']>;
-  exoPolicy: Scalars['String']['output'];
-  level: Scalars['Int']['output'];
-  lockedItemIds: Array<Scalars['String']['output']>;
-  maxSharedItems: Maybe<Scalars['Int']['output']>;
-  mode: Scalars['String']['output'];
-  mpTarget: Scalars['Int']['output'];
-  rangeTarget: Maybe<Scalars['Int']['output']>;
-  resultLimit: Scalars['Int']['output'];
-  weaponPolicy: Scalars['String']['output'];
-};
-
-export type BuildDiscoveryResult = {
-  __typename: 'BuildDiscoveryResult';
-  builds: Array<BuildDiscoveryBuild>;
-  cache: BuildDiscoveryCache;
-  cacheKey: Maybe<Scalars['String']['output']>;
-  datasetVersion: Scalars['String']['output'];
-  diagnostics: BuildDiscoveryDiagnostics;
-  noBuildReason: Maybe<BuildDiscoveryNoBuildReason>;
-  query: BuildDiscoveryQueryResult;
-  solverVersion: Scalars['String']['output'];
-  status: BuildDiscoveryStatus;
-  targetSemantics: BuildDiscoveryTargetSemantics;
-  warnings: Array<Scalars['String']['output']>;
-};
-
-export type BuildDiscoverySet = {
-  __typename: 'BuildDiscoverySet';
-  itemCount: Scalars['Int']['output'];
-  name: Scalars['String']['output'];
-};
-
-export enum BuildDiscoveryStatus {
-  COMPLETE = 'COMPLETE',
-  NO_VALID_BUILD = 'NO_VALID_BUILD',
-}
-
-export type BuildDiscoveryTargetCaps = {
-  __typename: 'BuildDiscoveryTargetCaps';
-  ap: Scalars['Int']['output'];
-  mp: Scalars['Int']['output'];
-  range: Scalars['Int']['output'];
-};
-
-export type BuildDiscoveryTargetKinds = {
-  __typename: 'BuildDiscoveryTargetKinds';
-  ap: Scalars['String']['output'];
-  mp: Scalars['String']['output'];
-  range: Scalars['String']['output'];
-};
-
-export type BuildDiscoveryTargetSemantics = {
-  __typename: 'BuildDiscoveryTargetSemantics';
-  caps: BuildDiscoveryTargetCaps;
-  surplusScoring: Scalars['String']['output'];
-  targets: BuildDiscoveryTargetKinds;
-  type: Scalars['String']['output'];
-};
-
-export type BuildDiscoveryTiming = {
-  __typename: 'BuildDiscoveryTiming';
-  elapsedMs: Scalars['Float']['output'];
-  name: Scalars['String']['output'];
 };
 
 /** An enumeration. */
@@ -280,7 +109,6 @@ export type CustomSet = GlobalNode & {
   defaultClassId: Maybe<Scalars['String']['output']>;
   description: Maybe<Scalars['String']['output']>;
   equippedItems: Array<EquippedItem>;
-  generationRequest: Maybe<GenerationRequest>;
   hasEditPermission: Scalars['Boolean']['output'];
   id: Scalars['UUID']['output'];
   lastModified: Maybe<Scalars['DateTime']['output']>;
@@ -440,26 +268,6 @@ export type EquippedItemExo = GlobalNode & {
   value: Scalars['Int']['output'];
 };
 
-export type GenerationRequest = GlobalNode & {
-  __typename: 'GenerationRequest';
-  creationDate: Maybe<Scalars['DateTime']['output']>;
-  customSet: Maybe<CustomSet>;
-  customSetId: Scalars['String']['output'];
-  datasetVersion: Maybe<Scalars['String']['output']>;
-  displaySummary: Scalars['String']['output'];
-  id: Scalars['UUID']['output'];
-  queryApTarget: Maybe<Scalars['Int']['output']>;
-  queryClassName: Maybe<Scalars['String']['output']>;
-  queryElements: Array<Scalars['String']['output']>;
-  queryMpTarget: Maybe<Scalars['Int']['output']>;
-  queryRangeTarget: Maybe<Scalars['Int']['output']>;
-  requestPayload: Maybe<Scalars['GenericScalar']['output']>;
-  solverVersion: Maybe<Scalars['String']['output']>;
-  source: Scalars['String']['output'];
-  sourceLabel: Scalars['String']['output'];
-  uuid: Scalars['String']['output'];
-};
-
 export type GlobalNode = {
   id: Scalars['UUID']['output'];
 };
@@ -467,12 +275,6 @@ export type GlobalNode = {
 export type ImportCustomSet = {
   __typename: 'ImportCustomSet';
   customSet: CustomSet;
-};
-
-export type ImportGeneratedCustomSet = {
-  __typename: 'ImportGeneratedCustomSet';
-  customSet: CustomSet;
-  generationRequest: GenerationRequest;
 };
 
 export type Item = GlobalNode & {
@@ -574,7 +376,6 @@ export type MageEquippedItem = {
 export type Mutation = {
   __typename: 'Mutation';
   addTagToCustomSet: Maybe<AddTagToCustomSet>;
-  buildDiscovery: BuildDiscoveryResult;
   changeClassic: Maybe<ChangeClassic>;
   changeLocale: Maybe<ChangeLocale>;
   changePassword: Maybe<ChangePassword>;
@@ -590,7 +391,6 @@ export type Mutation = {
   equipMultipleItems: Maybe<EquipMultipleItems>;
   equipSet: Maybe<EquipSet>;
   importCustomSet: Maybe<ImportCustomSet>;
-  importGeneratedCustomSet: Maybe<ImportGeneratedCustomSet>;
   loginUser: Maybe<LoginUser>;
   logoutUser: Maybe<LogoutUser>;
   mageEquippedItem: Maybe<MageEquippedItem>;
@@ -608,10 +408,6 @@ export type Mutation = {
 export type MutationaddTagToCustomSetArgs = {
   customSetId?: InputMaybe<Scalars['UUID']['input']>;
   customSetTagId: Scalars['UUID']['input'];
-};
-
-export type MutationbuildDiscoveryArgs = {
-  input: BuildDiscoveryInput;
 };
 
 export type MutationchangeClassicArgs = {
@@ -681,11 +477,6 @@ export type MutationimportCustomSetArgs = {
   level: Scalars['Int']['input'];
   name: Scalars['String']['input'];
   stats: CustomSetStatsInput;
-};
-
-export type MutationimportGeneratedCustomSetArgs = {
-  name: Scalars['String']['input'];
-  promotionToken: Scalars['String']['input'];
 };
 
 export type MutationloginUserArgs = {

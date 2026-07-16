@@ -16,7 +16,6 @@ server/app/translations/*/LC_MESSAGES/messages.mo
 
 # Run
 server/messages.pot
-server/app/database/data/build_discovery_index.json
 
 # Redis dump
 **/dump.rdb

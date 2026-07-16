@@ -6,7 +6,6 @@ from .base import Base
 from .model_item import ModelItem
 from .model_equipped_item import ModelEquippedItem
 from .model_equipped_item_exo import ModelEquippedItemExo
-from .model_generation_request import ModelGenerationRequest
 from .model_item_slot import ModelItemSlot
 from .model_custom_set_stat import ModelCustomSetStat
 from .model_custom_set_tag_association import ModelCustomSetTagAssociation
@@ -66,12 +65,6 @@ class ModelCustomSet(Base):
     )
     children_custom_sets = relationship("ModelCustomSet")
     default_class = relationship("ModelClass")
-    generation_request = relationship(
-        "ModelGenerationRequest",
-        back_populates="custom_set",
-        cascade="all, delete-orphan",
-        uselist=False,
-    )
 
     tags = relationship(
         "ModelCustomSetTag",
