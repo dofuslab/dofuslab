@@ -81,10 +81,31 @@ describe('Build Discovery Statsig boundary', () => {
     expect(checkGate).not.toHaveBeenCalled();
   });
 
+  it('keeps the gate disabled for anonymous users', () => {
+    checkGate.mockReturnValue(true);
+    render(
+      <DofusLabStatsigProvider>
+        <GateProbe />
+      </DofusLabStatsigProvider>,
+    );
+
+    expect(screen.getByText('false:false')).toBeTruthy();
+    expect(checkGate).not.toHaveBeenCalled();
+  });
+
   it.each([
     [false, 'false:false'],
     [true, 'false:true'],
   ])('reports a ready gate result of %s', (enabled, expected) => {
+    const id = '3ccf19fd-e9cc-4a78-b80d-c9c46feee1b8';
+    apolloState = {
+      loading: false,
+      data: { currentUser: { id, username: 'PrivateUser' } },
+    };
+    statsigUser = {
+      userID: id,
+      privateAttributes: { username: 'PrivateUser' },
+    };
     checkGate.mockReturnValue(enabled);
     render(
       <DofusLabStatsigProvider>

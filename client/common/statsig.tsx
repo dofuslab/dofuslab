@@ -19,11 +19,13 @@ import { currentUser as CurrentUserQuery } from 'graphql/queries/__generated__/c
 export const BUILD_DISCOVERY_GATE = 'build_generator_beta';
 
 interface StatsigState {
+  authenticated: boolean;
   configured: boolean;
   identityReady: boolean;
 }
 
 const StatsigStateContext = createContext<StatsigState>({
+  authenticated: false,
   configured: false,
   identityReady: true,
 });
@@ -43,8 +45,8 @@ const StatsigIdentity = ({ children }: Props) => {
   const identityReady =
     !loading && user.userID === userId && statsigUsername === username;
   const statsigState = useMemo(
-    () => ({ configured: true, identityReady }),
-    [identityReady],
+    () => ({ authenticated: Boolean(userId), configured: true, identityReady }),
+    [identityReady, userId],
   );
 
   useEffect(() => {
@@ -99,7 +101,8 @@ export const DofusLabStatsigProvider = ({ children }: Props) => {
 };
 
 export const useBuildDiscoveryGate = () => {
-  const { configured, identityReady } = useContext(StatsigStateContext);
+  const { authenticated, configured, identityReady } =
+    useContext(StatsigStateContext);
   const { checkGate, isLoading } = useStatsigClient();
 
   if (!configured) {
@@ -109,7 +112,7 @@ export const useBuildDiscoveryGate = () => {
   const loading = !identityReady || isLoading;
 
   return {
-    enabled: !loading && checkGate(BUILD_DISCOVERY_GATE),
+    enabled: !loading && authenticated && checkGate(BUILD_DISCOVERY_GATE),
     loading,
   };
 };
