@@ -17,12 +17,12 @@ from oneoff.build_discovery_core import (
 )
 from oneoff.build_discovery_cpsat_runner import (
     CPSAT_SOLVER_VERSION,
-    DEFAULT_FAST_TIME_LIMIT_SECONDS,
+    DEFAULT_RELEASE_TIME_LIMIT_SECONDS,
     build_cpsat_args,
     solve_cpsat_query,
 )
 
-CPSAT_TIME_LIMIT_SECONDS = DEFAULT_FAST_TIME_LIMIT_SECONDS
+CPSAT_TIME_LIMIT_SECONDS = DEFAULT_RELEASE_TIME_LIMIT_SECONDS
 CPSAT_WORKERS = 2
 CPSAT_SOLVE_LOCK_KEY = "build_discovery:cpsat:solve_lock"
 CPSAT_SOLVE_LOCK_TIMEOUT_SECONDS = 30
