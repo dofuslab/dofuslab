@@ -275,6 +275,25 @@ class BuildDiscoveryCpsatSolverContractTest(unittest.TestCase):
         self.assertEqual(crit_neutral["Intelligence"], normal["Intelligence"])
         self.assertEqual(crit_neutral["Fire Damage"], normal["Fire Damage"])
 
+    def test_production_crit_lanes_use_distinct_nonzero_marginals(self):
+        if IMPORT_ERROR is not None:
+            self.skipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")
+        configure_damage_profile("strength", "Iop")
+        metadata = build_model_metadata(base_fixture_items(), fixture_sets())
+
+        with target_level_context(200):
+            crit = objective_weights_for_mode(
+                "final-linear-crit", metadata, 0.45
+            )
+            noncrit = objective_weights_for_mode(
+                "final-linear-noncrit", metadata, 0.45
+            )
+
+        self.assertGreater(crit["Critical"], noncrit["Critical"])
+        self.assertGreater(crit["Critical Damage"], noncrit["Critical Damage"])
+        self.assertGreater(noncrit["Critical"], 0)
+        self.assertGreater(noncrit["Critical Damage"], 0)
+
     def test_model_and_result_do_not_depend_on_legacy_item_score(self):
         if IMPORT_ERROR is not None:
             self.skipTest(f"CP-SAT imports unavailable: {IMPORT_ERROR}")

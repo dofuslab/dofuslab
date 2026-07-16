@@ -109,13 +109,20 @@ def base_ap_for_level(level: int) -> int:
 
 
 @lru_cache(maxsize=1)
-def load_reference_anchors() -> dict[int, dict[str, int]]:
+def load_reference_anchor_records() -> dict[int, dict[str, Any]]:
     with open(BUILD_DISCOVERY_REFERENCE_ANCHORS_PATH, encoding="utf-8") as file:
         payload = json.load(file)
     return {
-        int(level): anchor["stats"]
+        int(level): anchor
         for level, anchor in payload.get("anchors", {}).items()
         if anchor.get("stats")
+    }
+
+
+def load_reference_anchors() -> dict[int, dict[str, int]]:
+    return {
+        level: anchor["stats"]
+        for level, anchor in load_reference_anchor_records().items()
     }
 
 
@@ -126,8 +133,15 @@ def reference_anchor_level(level: int) -> int:
     raise ValueError(f"Unsupported reference-anchor level: {level}")
 
 
-def reference_anchor_for_level(level: int) -> dict[str, int]:
-    return load_reference_anchors()[reference_anchor_level(level)]
+def reference_anchor_for_level(
+    level: int, objective_lane: str | None = None
+) -> dict[str, int]:
+    anchor = load_reference_anchor_records()[reference_anchor_level(level)]
+    if objective_lane:
+        lane = (anchor.get("objectiveLanes") or {}).get(objective_lane) or {}
+        if lane.get("stats"):
+            return lane["stats"]
+    return anchor["stats"]
 
 
 def normalize_range_target(range_target: int | None) -> int:
@@ -2219,9 +2233,11 @@ def profile_damage_reference_stats() -> dict[str, int]:
     }
 
 
-def objective_linearization_reference_stats() -> dict[str, int]:
+def objective_linearization_reference_stats(
+    objective_lane: str | None = None,
+) -> dict[str, int]:
     """Realistic level-specific point for CP-SAT marginal score weights."""
-    anchor = reference_anchor_for_level(ACTIVE_TARGET_LEVEL)
+    anchor = reference_anchor_for_level(ACTIVE_TARGET_LEVEL, objective_lane)
     return {
         **active_base_stats(),
         "AP": anchor["AP"],

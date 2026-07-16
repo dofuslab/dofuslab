@@ -455,7 +455,12 @@ def main() -> None:
     parser.add_argument("--candidate-limit", type=int, default=20)
     parser.add_argument(
         "--objective-mode",
-        choices=("final-linear", "final-linear-crit-neutral"),
+        choices=(
+            "final-linear",
+            "final-linear-crit-neutral",
+            "final-linear-crit",
+            "final-linear-noncrit",
+        ),
         default="final-linear",
     )
     parser.add_argument("--compare-reference", action="store_true")

@@ -76,6 +76,8 @@ SLOT_BY_ORDER = {
 MIN_COMPLETE_SLOTS = 16
 MONO_ELEMENT_SHARE = 0.70
 TOP_FRACTION = 0.10
+MIN_FAMILY_SELECTED = 3
+CRIT_LANE_MIN_LEVEL = 160
 DEFAULT_CANDIDATE_LIMIT = 1500
 DEFAULT_SAMPLE_LIMIT = 300
 DEFAULT_STATEMENT_TIMEOUT_MS = 25000
@@ -96,6 +98,7 @@ def fetch_rows(
     candidate_limit: int,
     sample_limit: int,
     statement_timeout_ms: int,
+    minimum_level: int = 1,
 ) -> list[dict[str, Any]]:
     anchor_case = "\n".join(
         f"WHEN cs.level BETWEEN {minimum} AND {maximum} THEN {anchor}"
@@ -112,7 +115,7 @@ def fetch_rows(
                     {anchor_case}
                 END AS anchor_level
             FROM custom_set cs
-            WHERE cs.level BETWEEN 1 AND 200
+            WHERE cs.level BETWEEN :minimum_level AND 200
               AND cs.default_class_id IS NOT NULL
               AND (
                   cs.level <= 40
@@ -188,6 +191,7 @@ def fetch_rows(
                             "candidate_limit": candidate_limit,
                             "sample_limit": sample_limit,
                             "min_slots": MIN_COMPLETE_SLOTS,
+                            "minimum_level": minimum_level,
                         },
                     )
                 ]
@@ -325,6 +329,137 @@ def extrapolated_low_level_anchor(
     }
 
 
+ANCHOR_STATS = (
+    "AP",
+    "PrimaryStat",
+    "Power",
+    "ElementalDamage",
+    "Critical",
+    "CriticalDamage",
+)
+
+
+def normalized_distance(
+    left: dict[str, Any],
+    right: dict[str, Any],
+    stats: tuple[str, ...],
+    scales: dict[str, int],
+) -> float:
+    return sum(abs(left[stat] - right[stat]) / scales[stat] for stat in stats)
+
+
+def representative_build(builds: list[dict[str, Any]]) -> dict[str, Any]:
+    """Return an observed stat line nearest the coordinate-wise center."""
+    center = {stat: median([build[stat] for build in builds]) for stat in ANCHOR_STATS}
+    scales = {
+        stat: max(build[stat] for build in builds)
+        - min(build[stat] for build in builds)
+        or 1
+        for stat in ANCHOR_STATS
+    }
+    return min(
+        builds,
+        key=lambda build: (
+            normalized_distance(build, center, ANCHOR_STATS, scales),
+            -build["damageScore"],
+        ),
+    )
+
+
+def crit_families(builds: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    """Split builds into coherent low/high crit families with two medoids."""
+    if len(builds) < 2:
+        return {"nonCrit": list(builds), "crit": []}
+    stats = ("Critical", "CriticalDamage")
+    scales = {
+        stat: max(build[stat] for build in builds)
+        - min(build[stat] for build in builds)
+        or 1
+        for stat in stats
+    }
+    ordered = sorted(
+        builds,
+        key=lambda build: (
+            build["Critical"] + build["CriticalDamage"],
+            build["CriticalDamage"],
+            build["Critical"],
+        ),
+    )
+    medoids = [ordered[0], ordered[-1]]
+    clusters: list[list[dict[str, Any]]] = [[], []]
+    for _iteration in range(20):
+        clusters = [[], []]
+        for build in builds:
+            cluster_index = min(
+                range(2),
+                key=lambda index: (
+                    normalized_distance(build, medoids[index], stats, scales),
+                    index,
+                ),
+            )
+            clusters[cluster_index].append(build)
+        next_medoids = []
+        for index, cluster in enumerate(clusters):
+            if not cluster:
+                next_medoids.append(medoids[index])
+                continue
+            next_medoids.append(
+                min(
+                    cluster,
+                    key=lambda candidate: (
+                        sum(
+                            normalized_distance(candidate, other, stats, scales)
+                            for other in cluster
+                        ),
+                        -candidate["damageScore"],
+                    ),
+                )
+            )
+        if next_medoids == medoids:
+            break
+        medoids = next_medoids
+    clusters.sort(
+        key=lambda cluster: (
+            median(
+                [build["Critical"] + build["CriticalDamage"] for build in cluster]
+            )
+            if cluster
+            else float("-inf")
+        )
+    )
+    return {"nonCrit": clusters[0], "crit": clusters[1]}
+
+
+def lane_anchor_report(builds: list[dict[str, Any]]) -> dict[str, Any]:
+    report = {}
+    for family, candidates in crit_families(builds).items():
+        ranked = sorted(
+            candidates, key=lambda build: build["damageScore"], reverse=True
+        )
+        selected_count = (
+            min(
+                len(ranked),
+                max(math.ceil(len(ranked) * TOP_FRACTION), MIN_FAMILY_SELECTED),
+            )
+            if ranked
+            else 0
+        )
+        selected = ranked[:selected_count]
+        representative = representative_build(selected) if selected else None
+        report[family] = {
+            "source": "production_crit_cluster_top_damage_medoid",
+            "sampleCount": len(ranked),
+            "selectedCount": selected_count,
+            "elementCounts": dict(Counter(build["element"] for build in ranked)),
+            "stats": {
+                stat: representative[stat] for stat in ANCHOR_STATS
+            }
+            if representative
+            else None,
+        }
+    return report
+
+
 def build_report(rows: list[dict[str, Any]]) -> dict[str, Any]:
     builds, rejection_counts = normalize_builds(rows)
     anchors = {}
@@ -355,28 +490,31 @@ def build_report(rows: list[dict[str, Any]]) -> dict[str, Any]:
             if selected
             else None,
         }
+        if level >= CRIT_LANE_MIN_LEVEL and candidates:
+            anchors[str(level)]["objectiveLanes"] = lane_anchor_report(candidates)
     level_60_bucket = anchors["60"]["stats"]
     for anchor, representative_level in ((20, 20), (21, 39), (40, 59)):
-        if anchors[str(anchor)]["sampleCount"] < 10:
+        if level_60_bucket and anchors[str(anchor)]["sampleCount"] < 10:
             anchors[str(anchor)]["source"] = "level_60_bucket_linear_fallback"
             anchors[str(anchor)]["stats"] = extrapolated_low_level_anchor(
                 representative_level, level_60_bucket
             )
     observed_level_200_stats = anchors["200"]["stats"]
-    anchors["200"].update(
-        {
-            "source": "quality_calibrated_existing_reference",
-            "observedProductionStats": observed_level_200_stats,
-            "stats": {
-                "AP": 12,
-                "PrimaryStat": PROFILE_DAMAGE_REFERENCE_PRIMARY_STAT,
-                "Power": PROFILE_DAMAGE_REFERENCE_POWER,
-                "ElementalDamage": PROFILE_DAMAGE_REFERENCE_ELEMENTAL_DAMAGE,
-                "Critical": PROFILE_DAMAGE_REFERENCE_CRITICAL,
-                "CriticalDamage": PROFILE_DAMAGE_REFERENCE_CRITICAL_DAMAGE,
-            },
-        }
-    )
+    if observed_level_200_stats:
+        anchors["200"].update(
+            {
+                "source": "quality_calibrated_existing_reference",
+                "observedProductionStats": observed_level_200_stats,
+                "stats": {
+                    "AP": 12,
+                    "PrimaryStat": PROFILE_DAMAGE_REFERENCE_PRIMARY_STAT,
+                    "Power": PROFILE_DAMAGE_REFERENCE_POWER,
+                    "ElementalDamage": PROFILE_DAMAGE_REFERENCE_ELEMENTAL_DAMAGE,
+                    "Critical": PROFILE_DAMAGE_REFERENCE_CRITICAL,
+                    "CriticalDamage": PROFILE_DAMAGE_REFERENCE_CRITICAL_DAMAGE,
+                },
+            }
+        )
     return {
         "reportVersion": REPORT_VERSION,
         "method": {
@@ -385,6 +523,11 @@ def build_report(rows: list[dict[str, Any]]) -> dict[str, Any]:
             "monoElementMinimumShare": MONO_ELEMENT_SHARE,
             "topDamageFraction": TOP_FRACTION,
             "summary": "median stat line among the top generic-damage decile",
+            "objectiveLaneSummary": (
+                "two crit-family clusters with an observed top-damage medoid per family"
+            ),
+            "objectiveLaneMinimumLevel": CRIT_LANE_MIN_LEVEL,
+            "objectiveLaneMinimumSelected": MIN_FAMILY_SELECTED,
             "levelBuckets": [
                 f"{minimum}-{maximum}"
                 for _anchor, minimum, maximum in REFERENCE_LEVEL_BUCKETS
@@ -414,6 +557,7 @@ def main() -> None:
     parser.add_argument(
         "--statement-timeout-ms", type=int, default=DEFAULT_STATEMENT_TIMEOUT_MS
     )
+    parser.add_argument("--minimum-level", type=int, default=1)
     args = parser.parse_args()
     database_url = os.getenv("DOFUSLAB_READONLY_DATABASE_URL")
     if not database_url:
@@ -423,6 +567,7 @@ def main() -> None:
         candidate_limit=args.candidate_limit,
         sample_limit=args.sample_limit,
         statement_timeout_ms=args.statement_timeout_ms,
+        minimum_level=args.minimum_level,
     )
     report = build_report(rows)
     args.output.parent.mkdir(parents=True, exist_ok=True)

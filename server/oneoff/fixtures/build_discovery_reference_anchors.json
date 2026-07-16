@@ -6,6 +6,9 @@
     "monoElementMinimumShare": 0.7,
     "topDamageFraction": 0.1,
     "summary": "median stat line among the top generic-damage decile",
+    "objectiveLaneSummary": "two crit-family clusters with an observed top-damage medoid per family",
+    "objectiveLaneMinimumLevel": 160,
+    "objectiveLaneMinimumSelected": 3,
     "levelBuckets": [
       "1-20",
       "21-39",
@@ -205,6 +208,22 @@
         "ElementalDamage": 64,
         "Critical": 18,
         "CriticalDamage": 0
+      },
+      "objectiveLanes": {
+        "nonCrit": {
+          "source": "production_crit_cluster_top_damage_medoid",
+          "sampleCount": 132,
+          "selectedCount": 14,
+          "elementCounts": {"intelligence": 38, "strength": 33, "chance": 33, "agility": 28},
+          "stats": {"AP": 11, "PrimaryStat": 1237, "Power": 120, "ElementalDamage": 77, "Critical": 19, "CriticalDamage": 0}
+        },
+        "crit": {
+          "source": "production_crit_cluster_top_damage_medoid",
+          "sampleCount": 10,
+          "selectedCount": 3,
+          "elementCounts": {"strength": 4, "intelligence": 2, "agility": 2, "chance": 2},
+          "stats": {"AP": 11, "PrimaryStat": 1035, "Power": 80, "ElementalDamage": 83, "Critical": 28, "CriticalDamage": 45}
+        }
       }
     },
     "180": {
@@ -224,6 +243,22 @@
         "ElementalDamage": 126,
         "Critical": 32,
         "CriticalDamage": 10
+      },
+      "objectiveLanes": {
+        "nonCrit": {
+          "source": "production_crit_cluster_top_damage_medoid",
+          "sampleCount": 96,
+          "selectedCount": 10,
+          "elementCounts": {"strength": 29, "agility": 16, "intelligence": 19, "chance": 32},
+          "stats": {"AP": 12, "PrimaryStat": 1476, "Power": 160, "ElementalDamage": 121, "Critical": 23, "CriticalDamage": 0}
+        },
+        "crit": {
+          "source": "production_crit_cluster_top_damage_medoid",
+          "sampleCount": 29,
+          "selectedCount": 3,
+          "elementCounts": {"intelligence": 9, "chance": 9, "agility": 5, "strength": 6},
+          "stats": {"AP": 12, "PrimaryStat": 1391, "Power": 80, "ElementalDamage": 126, "Critical": 62, "CriticalDamage": 57}
+        }
       }
     },
     "199": {
@@ -243,6 +278,22 @@
         "ElementalDamage": 128,
         "Critical": 41,
         "CriticalDamage": 10
+      },
+      "objectiveLanes": {
+        "nonCrit": {
+          "source": "production_crit_cluster_top_damage_medoid",
+          "sampleCount": 99,
+          "selectedCount": 10,
+          "elementCounts": {"strength": 30, "chance": 32, "intelligence": 25, "agility": 12},
+          "stats": {"AP": 11, "PrimaryStat": 1387, "Power": 170, "ElementalDamage": 147, "Critical": 31, "CriticalDamage": 0}
+        },
+        "crit": {
+          "source": "production_crit_cluster_top_damage_medoid",
+          "sampleCount": 44,
+          "selectedCount": 5,
+          "elementCounts": {"intelligence": 5, "agility": 24, "strength": 10, "chance": 5},
+          "stats": {"AP": 12, "PrimaryStat": 1422, "Power": 80, "ElementalDamage": 118, "Critical": 65, "CriticalDamage": 57}
+        }
       }
     },
     "200": {
@@ -262,6 +313,22 @@
         "ElementalDamage": 100,
         "Critical": 50,
         "CriticalDamage": 100
+      },
+      "objectiveLanes": {
+        "nonCrit": {
+          "source": "production_crit_cluster_top_damage_medoid",
+          "sampleCount": 54,
+          "selectedCount": 6,
+          "elementCounts": {"strength": 23, "chance": 11, "agility": 14, "intelligence": 6},
+          "stats": {"AP": 12, "PrimaryStat": 1613, "Power": 95, "ElementalDamage": 170, "Critical": 31, "CriticalDamage": 25}
+        },
+        "crit": {
+          "source": "production_crit_cluster_top_damage_medoid",
+          "sampleCount": 30,
+          "selectedCount": 3,
+          "elementCounts": {"intelligence": 19, "strength": 10, "agility": 1},
+          "stats": {"AP": 11, "PrimaryStat": 1238, "Power": 420, "ElementalDamage": 69, "Critical": 83, "CriticalDamage": 72}
+        }
       },
       "observedProductionStats": {
         "AP": 12,
