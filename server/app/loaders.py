@@ -21,7 +21,6 @@ from app.database.model_weapon_stat import ModelWeaponStat
 from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_custom_set_tag_association import ModelCustomSetTagAssociation
 from app.database.model_custom_set_tag_translation import ModelCustomSetTagTranslation
-from app.database.model_generation_request import ModelGenerationRequest
 from app.database.model_equipped_item import ModelEquippedItem
 from app.database.model_equipped_item_exo import ModelEquippedItemExo
 from app.database.model_spell_variant_pair import ModelSpellVariantPair
@@ -658,27 +657,6 @@ def load_custom_set_tag_associations(custom_set_ids):
 class CustomSetTagAssociationLoader(DataLoader):
     def batch_load_fn(self, custom_set_ids):
         return load_custom_set_tag_associations(custom_set_ids)
-
-
-def load_generation_requests(custom_set_ids):
-    generation_request_by_custom_set_id = {}
-    for generation_request in db.session.query(ModelGenerationRequest).filter(
-        ModelGenerationRequest.custom_set_id.in_(custom_set_ids)
-    ):
-        generation_request_by_custom_set_id[
-            generation_request.custom_set_id
-        ] = generation_request
-    return Promise.resolve(
-        [
-            generation_request_by_custom_set_id.get(custom_set_id, None)
-            for custom_set_id in custom_set_ids
-        ]
-    )
-
-
-class GenerationRequestLoader(DataLoader):
-    def batch_load_fn(self, custom_set_ids):
-        return load_generation_requests(custom_set_ids)
 
 
 def load_custom_set_tag_translations(tag_ids):

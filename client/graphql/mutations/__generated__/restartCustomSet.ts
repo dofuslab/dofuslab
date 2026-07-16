@@ -19,15 +19,6 @@ export type restartCustomSet = {
       lastModified: any | null;
       hasEditPermission: boolean;
       buildGender: Types.BuildGender;
-      generationRequest: {
-        __typename: 'GenerationRequest';
-        id: any;
-        source: string;
-        sourceLabel: string;
-        datasetVersion: string | null;
-        solverVersion: string | null;
-        displaySummary: string;
-      } | null;
       equippedItems: Array<{
         __typename: 'EquippedItem';
         id: any;

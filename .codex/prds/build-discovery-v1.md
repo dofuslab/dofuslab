@@ -468,9 +468,6 @@ checkpoint.
 - Shaker, Nomad, Jackanapes, and Voyager are considered budget enablers.
 - Cached result p95 returns under 500ms.
 - Cache miss / fresh generation p95 returns under 5s for the representative level 200 Iop and accepted level-diversity query matrices once Optimization is active.
-- The initial gated beta may accept cache-miss p95 up to 45s while it runs both
-  crit-aware and crit-neutral candidate lanes for quality. This does not change
-  the Optimization milestone's eventual cache-miss p95 target of under 5s.
 - Every generation logs timing breakdowns.
 - UI exposes structured controls, not numeric stat weights.
 - Results are labeled by role and include item list, stats, score breakdown, warnings, and explanations.
@@ -489,10 +486,8 @@ checkpoint.
 - A cheap linear objective guides CP-SAT; complete candidates are rescored with
   the richer damage and survivability model.
 - Availability tiers and exo policy are first-class query constraints.
-- The synchronous gated-beta path runs bounded crit-aware and crit-neutral
-  solves sequentially, merges their candidates through the rich final reranker,
-  uses the application cache, and retains one global Redis-backed solve-capacity
-  lock for the 2-vCPU deployment.
+- The synchronous product path uses a bounded solve budget, application cache,
+  and one global Redis-backed solve-capacity lock for the 2-vCPU deployment.
 - The 19-row all-class quality matrix is a regression gate, not proof of global
   representativeness; benchmark coverage must continue to grow with tester data.
 - Historical beam-search work remains available on

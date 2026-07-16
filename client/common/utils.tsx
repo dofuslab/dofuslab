@@ -81,6 +81,8 @@ import {
   ExoStatLine,
   CalcDamageInput,
   TSimpleEffect,
+  TCondition,
+  TConditionObj,
   StatCalculator,
   BaseStatKey,
   WeaponEffect,
@@ -104,8 +106,6 @@ import {
   EquippedItemSlot,
 } from './type-aliases';
 import { prependDe } from './i18n-utils';
-import { calculateDamage } from './damageCalculator';
-import { evaluateConditions } from './conditionEvaluator';
 
 export const getImageUrl = (suffix: string) =>
   suffix.startsWith('https://')
@@ -873,17 +873,51 @@ export const calcDamage = (
   stats: StatsFromCustomSet | null,
   damageTypeInput: CalcDamageInput,
   weaponSkillPower?: number,
-  critBonusDamage?: number,
 ) => {
   const statTypes = getStats(effectType, stats);
-  return calculateDamage(
-    baseDamage,
-    statTypes,
-    stats,
-    damageTypeInput,
-    weaponSkillPower,
-    critBonusDamage,
+  const { multiplier: multiplierType, damage: damageType } = statTypes;
+  let multiplierValue =
+    getStatWithDefault(stats, multiplierType) +
+    getStatWithDefault(stats, Stat.POWER);
+  let damageValue =
+    getStatWithDefault(stats, damageType) +
+    getStatWithDefault(stats, Stat.DAMAGE);
+  if (damageTypeInput.isTrap) {
+    multiplierValue += getStatWithDefault(stats, Stat.TRAP_POWER);
+    damageValue += getStatWithDefault(stats, Stat.TRAP_DAMAGE);
+  }
+  if (damageTypeInput.isCrit) {
+    damageValue += getStatWithDefault(stats, Stat.CRITICAL_DAMAGE);
+  }
+  if (damageTypeInput.isWeapon) {
+    multiplierValue += weaponSkillPower || 0;
+  }
+  const calculatedDamage = Math.floor(
+    baseDamage * (1 + multiplierValue / 100) + damageValue,
   );
+
+  let finalDamageMod =
+    1 + getStatWithDefault(stats, Stat.PCT_FINAL_DAMAGE) / 100;
+  if (damageTypeInput.isWeapon) {
+    finalDamageMod *=
+      1 + getStatWithDefault(stats, Stat.PCT_WEAPON_DAMAGE) / 100;
+  } else {
+    finalDamageMod *=
+      1 + getStatWithDefault(stats, Stat.PCT_SPELL_DAMAGE) / 100;
+  }
+
+  return {
+    melee: Math.floor(
+      calculatedDamage *
+        (finalDamageMod *
+          (1 + getStatWithDefault(stats, Stat.PCT_MELEE_DAMAGE) / 100)),
+    ),
+    ranged: Math.floor(
+      calculatedDamage *
+        (finalDamageMod *
+          (1 + getStatWithDefault(stats, Stat.PCT_RANGED_DAMAGE) / 100)),
+    ),
+  };
 };
 
 export const calcPushbackDamage = (
@@ -1214,9 +1248,76 @@ export const statCalculators: { [key: string]: StatCalculator } = {
     getStatWithDefault(statsFromCustomSet, Stat.STRENGTH) * 5,
 };
 
+function isLeafCondition(
+  conditionObj: TConditionObj,
+): conditionObj is TCondition {
+  return !!(
+    (conditionObj as TCondition).operator &&
+    (conditionObj as TCondition).stat &&
+    (conditionObj as TCondition).value
+  );
+}
+
 const getDefaultStatCalculator =
   (stat: Stat) => (statsFromCustomSet: StatsFromCustomSet) =>
     getStatWithDefault(statsFromCustomSet, stat);
+
+const evaluateLeafCondition = (
+  customSet: CustomSet,
+  statsFromCustomSet: StatsFromCustomSet,
+  condition: TCondition,
+) => {
+  if (condition.stat === 'SET_BONUS') {
+    const setBonuses = getBonusesFromCustomSet(customSet);
+    const numberBonuses = Object.values(setBonuses).reduce(
+      (acc, v) => acc + v.count - 1,
+      0,
+    );
+    if (condition.operator === '<') {
+      return numberBonuses < condition.value;
+    }
+    if (condition.operator === '>') {
+      return numberBonuses > condition.value;
+    }
+  } else {
+    const statCalculator =
+      statCalculators[condition.stat] ||
+      getDefaultStatCalculator(condition.stat);
+    const value = statCalculator(statsFromCustomSet, customSet);
+    if (condition.operator === '<') {
+      return value < condition.value;
+    }
+    if (condition.operator === '>') {
+      return value > condition.value;
+    }
+  }
+  // eslint-disable-next-line no-console
+  console.error('Unable to parse condition', condition);
+  return true;
+};
+
+const traverseConditions = (
+  customSet: CustomSet,
+  statsFromCustomSet: StatsFromCustomSet,
+  conditionsObj: TConditionObj,
+): boolean => {
+  if (isLeafCondition(conditionsObj)) {
+    return evaluateLeafCondition(customSet, statsFromCustomSet, conditionsObj);
+  }
+  if (conditionsObj.and) {
+    return conditionsObj.and.every((obj) =>
+      traverseConditions(customSet, statsFromCustomSet, obj),
+    );
+  }
+  if (conditionsObj.or) {
+    return conditionsObj.or.some((obj) =>
+      traverseConditions(customSet, statsFromCustomSet, obj),
+    );
+  }
+  // eslint-disable-next-line no-console
+  console.error('Unable to parse condition', conditionsObj);
+  return true;
+};
 
 export const checkConditions = (
   customSet: CustomSet | null,
@@ -1237,20 +1338,7 @@ export const checkConditions = (
     const parsed = JSON.parse(equippedItem.item.conditions);
     if (parsed && parsed.conditions && Object.keys(parsed.conditions).length) {
       const conditionsObj = parsed.conditions;
-      const pass = evaluateConditions(conditionsObj, (condition) => {
-        if (condition.stat === 'SET_BONUS') {
-          const setBonuses = getBonusesFromCustomSet(customSet);
-          return Object.values(setBonuses).reduce(
-            (total, bonus) => total + bonus.count - 1,
-            0,
-          );
-        }
-
-        const statCalculator =
-          statCalculators[condition.stat] ||
-          getDefaultStatCalculator(condition.stat);
-        return statCalculator(customSetStats, customSet);
-      });
+      const pass = traverseConditions(customSet, customSetStats, conditionsObj);
       if (!pass) {
         failingItems.push(equippedItem);
       }
