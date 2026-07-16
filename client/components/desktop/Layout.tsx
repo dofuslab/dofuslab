@@ -32,6 +32,7 @@ import {
   faKey,
   faKeyboard,
   faMugHot,
+  faSearch,
   faWrench,
 } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -362,6 +363,18 @@ function Layout({ children, showSwitch }: LayoutProps) {
           </div>
           <div css={{ display: 'flex', alignItems: 'center' }}>
             {showSwitch && classicSwitch}
+            <Tooltip
+              placement="bottom"
+              title={t('BUILD_DISCOVERY', { ns: 'common' })}
+            >
+              <Button
+                aria-label={t('BUILD_DISCOVERY', { ns: 'common' })}
+                href="/build-discovery"
+                css={{ marginLeft: 12 }}
+              >
+                <FontAwesomeIcon icon={faSearch} />
+              </Button>
+            </Tooltip>
             {data?.currentUser ? (
               <div>
                 {langSelect}

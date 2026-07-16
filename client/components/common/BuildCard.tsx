@@ -11,6 +11,8 @@ import { mq } from 'common/constants';
 import { useTheme } from '@emotion/react';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Tag } from 'antd';
+import { generationRequestDisplaySummary } from 'common/buildDiscoveryContract';
 
 export default function BuildCard({
   customSet,
@@ -27,6 +29,10 @@ export default function BuildCard({
   const theme = useTheme();
   const router = useRouter();
   const { customSetId } = router.query;
+  const generationTooltip = generationRequestDisplaySummary(
+    customSet.generationRequest,
+    t('BUILD_DISCOVERY'),
+  );
 
   return (
     <Card
@@ -36,7 +42,15 @@ export default function BuildCard({
           title={customSet.name || t('UNTITLED')}
           level={customSet.level}
           afterLevel={
-            <div css={{ display: 'flex', alignItems: 'center' }}>
+            <div css={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+              {customSet.generationRequest && (
+                <Tag
+                  title={generationTooltip}
+                  css={{ margin: 0, fontSize: '0.65rem', lineHeight: '16px' }}
+                >
+                  {t('GENERATED')}
+                </Tag>
+              )}
               {[...customSet.tagAssociations]
                 .sort(
                   (a1, a2) =>
@@ -52,7 +66,6 @@ export default function BuildCard({
                       css={{
                         width: 14,
                         height: 'auto',
-                        marginLeft: 4,
                         maxHeight: 14,
                       }}
                       alt={tag.name}
