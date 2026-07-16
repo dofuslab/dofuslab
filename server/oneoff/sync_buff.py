@@ -9,6 +9,7 @@ from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_buff import ModelBuff
 from app.database.model_item import ModelItem
 from oneoff.enums import to_stat_enum
+from app.catalog_revision import advance_catalog_revision
 
 root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -22,6 +23,8 @@ def add_item_buffs(db_session, item_id, record):
             max_stacks=buff["maxStacks"],
         )
         db_session.add(buff_object)
+    if record["buffs"]:
+        advance_catalog_revision(db_session)
 
 
 def update_item_buffs(db_session, item_id, record):
@@ -34,6 +37,7 @@ def update_item_buffs(db_session, item_id, record):
             max_stacks=buff["maxStacks"],
         )
         db_session.add(buff_object)
+    advance_catalog_revision(db_session)
 
 
 def add_spell_buff_for_level(db_session, spell_stat_id, buff_data):

@@ -5,6 +5,7 @@ import os
 from app import session_scope
 from app.database.model_item_type import ModelItemType
 from app.database.model_item_type_translation import ModelItemTypeTranslation
+from app.catalog_revision import advance_catalog_revision
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -59,9 +60,12 @@ def sync_item_type():
                         recreate_item_type_translations(
                             db_session, record["en"], record
                         )
+                    if data:
+                        advance_catalog_revision(db_session)
                 elif item_name in name_to_record_map:
                     record = name_to_record_map[item_name]
                     recreate_item_type_translations(db_session, item_name, record)
+                    advance_catalog_revision(db_session)
 
 
 if __name__ == "__main__":

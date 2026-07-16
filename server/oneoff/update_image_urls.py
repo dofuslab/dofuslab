@@ -11,6 +11,7 @@ from app.database.model_set import ModelSet
 from app.database.model_item import ModelItem
 from app.database.model_spell import ModelSpell
 from app.database.model_item_slot import ModelItemSlot
+from app.catalog_revision import advance_catalog_revision
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,14 +22,18 @@ def update_item_urls_in_db():
     mappings = []
 
     for item in db.session.query(ModelItem):
+        image_url = url_base + re.search(r"\d+\.png", item.image_url)[0]
+        if image_url == item.image_url:
+            continue
         info = {
             "uuid": item.uuid,
-            "image_url": url_base + re.search("\d+\.png", item.image_url)[0],
+            "image_url": image_url,
         }
         mappings.append(info)
 
-    db.session.bulk_update_mappings(ModelItem, mappings)
-    db.session.flush()
+    if mappings:
+        db.session.bulk_update_mappings(ModelItem, mappings)
+        advance_catalog_revision(db.session)
     db.session.commit()
 
 
