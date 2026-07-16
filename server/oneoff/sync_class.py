@@ -16,9 +16,9 @@ from oneoff.update_class_list import add_class_to_classes
 from oneoff.sync_spell import create_spell_stats
 import oneoff.sync_item
 import oneoff.sync_buff
+from oneoff.build_discovery_index_lifecycle import regenerate_build_discovery_index
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 def wipeSpellsAndBuffs():
     db.session.query(ModelSpell).delete()
@@ -118,3 +118,4 @@ def add_buffs():
 add_class_to_classes()
 add_classes_and_spells()
 add_buffs()
+regenerate_build_discovery_index()
