@@ -39,6 +39,9 @@ import StaticFunctions from 'components/common/StaticFunctions';
 import { createCache, StyleProvider } from '@ant-design/cssinjs';
 import type Entity from '@ant-design/cssinjs/es/Cache';
 import createEmotionCache from 'common/createEmotionCache';
+import registerServiceWorker, {
+  cachePublicRouteForOffline,
+} from 'common/registerServiceWorker';
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
@@ -92,6 +95,14 @@ const DofusLabApp = ({
   useEffect(() => {
     dispatch({ type: AppliedBuffActionType.CLEAR_ALL });
   }, [customSetId]);
+
+  useEffect(() => {
+    registerServiceWorker();
+  }, []);
+
+  useEffect(() => {
+    void cachePublicRouteForOffline(window.location.href);
+  }, [router.asPath]);
 
   const [api, contextHolder] = notification.useNotification();
 
