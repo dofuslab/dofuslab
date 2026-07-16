@@ -77,8 +77,71 @@ BUILD_DISCOVERY_INDEX_PATH = os.getenv(
 BUILD_DISCOVERY_INDEX_SCHEMA_VERSION = 1
 
 
+BUILD_DISCOVERY_REFERENCE_ANCHORS_PATH = os.getenv(
+    "BUILD_DISCOVERY_REFERENCE_ANCHORS_PATH",
+    os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "fixtures",
+        "build_discovery_reference_anchors.json",
+    ),
+)
+
+
+REFERENCE_LEVEL_BUCKETS = (
+    (20, 1, 20),
+    (21, 21, 39),
+    (40, 40, 59),
+    (60, 60, 79),
+    (80, 80, 99),
+    (100, 100, 119),
+    (120, 120, 139),
+    (140, 140, 149),
+    (150, 150, 159),
+    (160, 160, 179),
+    (180, 180, 198),
+    (199, 199, 199),
+    (200, 200, 200),
+)
+
+
 def base_ap_for_level(level: int) -> int:
     return 7 if level >= 100 else 6
+
+
+@lru_cache(maxsize=1)
+def load_reference_anchor_records() -> dict[int, dict[str, Any]]:
+    with open(BUILD_DISCOVERY_REFERENCE_ANCHORS_PATH, encoding="utf-8") as file:
+        payload = json.load(file)
+    return {
+        int(level): anchor
+        for level, anchor in payload.get("anchors", {}).items()
+        if anchor.get("stats")
+    }
+
+
+def load_reference_anchors() -> dict[int, dict[str, int]]:
+    return {
+        level: anchor["stats"]
+        for level, anchor in load_reference_anchor_records().items()
+    }
+
+
+def reference_anchor_level(level: int) -> int:
+    for anchor_level, minimum_level, maximum_level in REFERENCE_LEVEL_BUCKETS:
+        if minimum_level <= level <= maximum_level:
+            return anchor_level
+    raise ValueError(f"Unsupported reference-anchor level: {level}")
+
+
+def reference_anchor_for_level(
+    level: int, objective_lane: str | None = None
+) -> dict[str, int]:
+    anchor = load_reference_anchor_records()[reference_anchor_level(level)]
+    if objective_lane:
+        lane = (anchor.get("objectiveLanes") or {}).get(objective_lane) or {}
+        if lane.get("stats"):
+            return lane["stats"]
+    return anchor["stats"]
 
 
 def normalize_range_target(range_target: int | None) -> int:
@@ -2158,6 +2221,7 @@ def clear_spell_damage_profile_caches() -> None:
 
 
 def profile_damage_reference_stats() -> dict[str, int]:
+    """Stable reference used to normalize final damage scores across queries."""
     return {
         **active_base_stats(),
         "AP": MAX_AP,
@@ -2166,6 +2230,22 @@ def profile_damage_reference_stats() -> dict[str, int]:
         ACTIVE_DAMAGE_PROFILE.damage_stat: PROFILE_DAMAGE_REFERENCE_ELEMENTAL_DAMAGE,
         "Critical": PROFILE_DAMAGE_REFERENCE_CRITICAL,
         "Critical Damage": PROFILE_DAMAGE_REFERENCE_CRITICAL_DAMAGE,
+    }
+
+
+def objective_linearization_reference_stats(
+    objective_lane: str | None = None,
+) -> dict[str, int]:
+    """Realistic level-specific point for CP-SAT marginal score weights."""
+    anchor = reference_anchor_for_level(ACTIVE_TARGET_LEVEL, objective_lane)
+    return {
+        **active_base_stats(),
+        "AP": anchor["AP"],
+        ACTIVE_DAMAGE_PROFILE.primary_stat: anchor["PrimaryStat"],
+        "Power": anchor["Power"],
+        ACTIVE_DAMAGE_PROFILE.damage_stat: anchor["ElementalDamage"],
+        "Critical": anchor["Critical"],
+        "Critical Damage": anchor["CriticalDamage"],
     }
 
 
