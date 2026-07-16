@@ -6,6 +6,7 @@ from graphql import GraphQLError
 
 from app import limiter
 from app.build_discovery_promotion import sign_build_discovery_candidate
+from app.feature_gates import require_build_discovery_beta
 from app.build_discovery_service import (
     BuildDiscoverySolveLockTimeout,
     build_discovery_app_cache_key,
@@ -456,6 +457,7 @@ class BuildDiscovery(graphene.Mutation):
         error_message="Build Discovery request limit reached. Retry shortly.",
     )
     def mutate(self, info, input):
+        require_build_discovery_beta()
         try:
             query = build_discovery_query_from_input(input)
             query.validate()

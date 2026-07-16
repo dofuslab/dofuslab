@@ -7,6 +7,8 @@ from contextlib import contextmanager
 from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
+from graphql import GraphQLError
+
 schema_module = importlib.import_module("app.schema")
 graphql_module = importlib.import_module("app.build_discovery_graphql")
 promotion_module = importlib.import_module("app.build_discovery_promotion")
@@ -68,9 +70,62 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
             "/graphql", environ_base={"REMOTE_ADDR": "192.0.2.10"}
         )
         self.request_context.push()
+        self.search_gate_patch = patch.object(
+            graphql_module, "require_build_discovery_beta"
+        )
+        self.search_gate = self.search_gate_patch.start()
+        self.promotion_gate_patch = patch.object(
+            promotion_module, "require_build_discovery_beta"
+        )
+        self.promotion_gate = self.promotion_gate_patch.start()
 
     def tearDown(self):
+        self.promotion_gate_patch.stop()
+        self.search_gate_patch.stop()
         self.request_context.pop()
+
+    def test_search_checks_beta_before_solving(self):
+        self.search_gate.side_effect = GraphQLError("Build Discovery is not available.")
+        with patch.object(graphql_module, "build_discovery_cached_response") as solve:
+            result = schema.execute(
+                """
+                mutation Discover($input: BuildDiscoveryInput!) {
+                  buildDiscovery(input: $input) { status }
+                }
+                """,
+                variables={"input": query_input()},
+            )
+
+        self.assertIn("Build Discovery is not available.", str(result.errors[0]))
+        solve.assert_not_called()
+
+    def test_promotion_checks_beta_before_decoding_token(self):
+        self.promotion_gate.side_effect = GraphQLError(
+            "Build Discovery is not available."
+        )
+        verified_user = SimpleNamespace(
+            is_authenticated=True,
+            _get_current_object=lambda: SimpleNamespace(verified=True),
+        )
+        with patch.object(utils_module, "current_user", verified_user), patch.object(
+            promotion_module, "decode_build_discovery_promotion_token"
+        ) as decode:
+            result = schema.execute(
+                """
+                mutation Promote($token: String!) {
+                  importGeneratedCustomSet(
+                    name: "Generated Strength Iop"
+                    promotionToken: $token
+                  ) {
+                    generationRequest { source }
+                  }
+                }
+                """,
+                variables={"token": "signed"},
+            )
+
+        self.assertIn("Build Discovery is not available.", str(result.errors[0]))
+        decode.assert_not_called()
 
     def test_build_discovery_is_typed_synchronous_and_preserves_null_range(self):
         response = {
@@ -210,9 +265,7 @@ class BuildDiscoveryGraphQLTest(unittest.TestCase):
                       buildDiscovery(input: $input) { status }
                     }
                     """,
-                    variables={
-                        "input": query_input(maxSharedItems=max_shared_items)
-                    },
+                    variables={"input": query_input(maxSharedItems=max_shared_items)},
                 )
                 self.assertIn(
                     "maxSharedItems must be between 0 and 16",

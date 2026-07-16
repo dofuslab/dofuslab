@@ -10,6 +10,7 @@ from app import session_scope
 from app.database.model_class_translation import ModelClassTranslation
 from app.database.model_generation_request import ModelGenerationRequest
 from app.database.model_item import ModelItem
+from app.feature_gates import require_build_discovery_beta
 from app.token_utils import decode_token, encode_token
 from app.utils import (
     edit_custom_set_metadata,
@@ -145,6 +146,7 @@ def create_import_generated_custom_set_mutation(
         @tracer.wrap(name="ImportGeneratedCustomSet.mutate")
         @verified
         def mutate(self, info, **kwargs):
+            require_build_discovery_beta()
             payload = decode_build_discovery_promotion_token(
                 kwargs.get("promotion_token")
             )
