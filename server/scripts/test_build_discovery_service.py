@@ -216,7 +216,7 @@ class BuildDiscoveryServiceTest(unittest.TestCase):
         )
         args = solve.call_args.args[1]
         self.assertEqual(args.workers, 2)
-        self.assertEqual(args.time_limit_seconds, 3.2)
+        self.assertEqual(args.time_limit_seconds, 6.0)
         self.assertEqual(lock.acquire_calls, [{"blocking": True}])
         self.assertTrue(lock.released)
         self.assertEqual(result["cache"]["status"], "miss")
