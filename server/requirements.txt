@@ -108,7 +108,7 @@ typed-ast==1.4.2
 typing_extensions==4.7.1
 urllib3==1.25.7
 virtualenv==16.7.12
-Werkzeug==0.16.0
+Werkzeug==3.0.6
 wrapt==1.11.2
 xmltodict==0.14.2
 zipp==3.1.0
