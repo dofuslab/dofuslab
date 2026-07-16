@@ -95,6 +95,10 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+from app.feature_gates import initialize_statsig
+
+initialize_statsig()
+
 dirname = os.path.dirname(os.path.abspath(__file__))
 migration_dir = os.path.join(dirname, "migrations")
 

@@ -39,7 +39,7 @@ const StatsigIdentity = ({ children }: Props) => {
     ? String(data.currentUser.id)
     : undefined;
   const username = data?.currentUser?.username;
-  const statsigUsername = user.custom?.username;
+  const statsigUsername = user.privateAttributes?.username;
   const identityReady =
     !loading && user.userID === userId && statsigUsername === username;
   const statsigState = useMemo(
@@ -53,7 +53,7 @@ const StatsigIdentity = ({ children }: Props) => {
     }
 
     updateUserAsync(
-      userId ? { userID: userId, custom: { username } } : {},
+      userId ? { userID: userId, privateAttributes: { username } } : {},
     ).catch(() => undefined);
   }, [
     loading,
@@ -73,6 +73,9 @@ const StatsigIdentity = ({ children }: Props) => {
 
 export const DofusLabStatsigProvider = ({ children }: Props) => {
   const clientKey = process.env.NEXT_PUBLIC_STATSIG_CLIENT_KEY;
+  const environmentTier =
+    process.env.NEXT_PUBLIC_STATSIG_ENVIRONMENT_TIER ||
+    (process.env.NODE_ENV === 'production' ? 'production' : 'development');
 
   if (!clientKey) {
     return children;
@@ -82,7 +85,13 @@ export const DofusLabStatsigProvider = ({ children }: Props) => {
     <StatsigProvider
       sdkKey={clientKey}
       user={{}}
-      options={{ logLevel: LogLevel.Debug }}
+      options={{
+        environment: { tier: environmentTier },
+        logLevel:
+          process.env.NODE_ENV === 'production'
+            ? LogLevel.Warn
+            : LogLevel.Debug,
+      }}
     >
       <StatsigIdentity>{children}</StatsigIdentity>
     </StatsigProvider>
