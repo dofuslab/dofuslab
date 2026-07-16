@@ -2,14 +2,14 @@
 // @ts-nocheck
 import * as Types from '../../../__generated__/globalTypes';
 
-export type restartCustomSetVariables = Types.Exact<{
-  customSetId: Types.Scalars['UUID']['input'];
-  shouldResetStats: Types.Scalars['Boolean']['input'];
+export type importGeneratedCustomSetVariables = Types.Exact<{
+  promotionToken: Types.Scalars['String']['input'];
+  name: Types.Scalars['String']['input'];
 }>;
 
-export type restartCustomSet = {
-  restartCustomSet: {
-    __typename: 'RestartCustomSet';
+export type importGeneratedCustomSet = {
+  importGeneratedCustomSet: {
+    __typename: 'ImportGeneratedCustomSet';
     customSet: {
       __typename: 'CustomSet';
       id: any;
