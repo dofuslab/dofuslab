@@ -236,6 +236,14 @@ class Item(SQLAlchemyObjectType):
 
     name = graphene.String(required=True)
 
+    # Search-only names across every supported translation. `name` remains the
+    # request locale's display value.
+    search_names = graphene.NonNull(graphene.List(graphene.NonNull(graphene.String)))
+
+    @tracer.wrap(name="Item.resolve_search_names")
+    def resolve_search_names(self, info):
+        return g.dataloaders.get("all_item_names_loader").load(self.uuid)
+
     @tracer.wrap(name="Item.resolve_name")
     def resolve_name(self, info):
         return g.dataloaders.get("item_name_loader").load(self.uuid)
@@ -300,6 +308,14 @@ class Set(SQLAlchemyObjectType):
         return g.dataloaders.get("set_bonus_loader").load(self.uuid)
 
     name = graphene.String(required=True)
+
+    # Search-only names across every supported translation. `name` remains the
+    # request locale's display value.
+    search_names = graphene.NonNull(graphene.List(graphene.NonNull(graphene.String)))
+
+    @tracer.wrap(name="Set.resolve_search_names")
+    def resolve_search_names(self, info):
+        return g.dataloaders.get("all_set_names_loader").load(self.uuid)
 
     @tracer.wrap(name="Set.resolve_name")
     def resolve_name(self, info):

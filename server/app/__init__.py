@@ -131,12 +131,14 @@ cache = redis.Redis(
 from app.schema import schema
 from app.loaders import (
     ItemNameLoader,
+    AllItemNamesLoader,
     ItemStatsLoader,
     ItemStatTranslationLoader,
     SetLoader,
     SetBonusLoader,
     SetBonusTranslationLoader,
     SetTranslationLoader,
+    AllSetNamesLoader,
     WeaponEffectLoader,
     WeaponStatLoader,
     SpellBuffLoader,
@@ -172,12 +174,14 @@ from app.loaders import (
 def construct_dataloaders():
     g.dataloaders = {
         "item_name_loader": ItemNameLoader(),
+        "all_item_names_loader": AllItemNamesLoader(),
         "item_stats_loader": ItemStatsLoader(),
         "item_stat_translation_loader": ItemStatTranslationLoader(),
         "set_loader": SetLoader(),
         "set_bonus_loader": SetBonusLoader(),
         "set_bonus_translation_loader": SetBonusTranslationLoader(),
         "set_translation_loader": SetTranslationLoader(),
+        "all_set_names_loader": AllSetNamesLoader(),
         "weapon_stat_loader": WeaponStatLoader(),
         "weapon_effect_loader": WeaponEffectLoader(),
         "spell_buff_loader": SpellBuffLoader(),
