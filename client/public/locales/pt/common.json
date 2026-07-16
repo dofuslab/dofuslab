@@ -51,6 +51,7 @@
   "INVALID_CHARACTERISTIC_POINTS": "Alocação de pontos de característica inválida.",
   "INVALID_SCROLLED_CHARACTERISTICS": "Pontos de característica scrolados inválidos.",
   "ITEMS": "Itens",
+  "ITEM_SUGGESTIONS": "Sugestões de itens",
   "ITEM_EQUIPPED": "{{itemName}} equipado.",
   "ITEM_EQUIPPED_WITH_SLOT_one": "{{itemName}} equipado. Ainda há {{count}} slot de {{slotName}} vazio.",
   "ITEM_EQUIPPED_WITH_SLOT_other": "{{itemName}} equipado. Ainda há {{count}} slots de {{slotName}} vazios.",

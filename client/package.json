@@ -15,6 +15,7 @@
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "next start",
     "type-check": "tsc",
+    "test:suggestions": "ts-node --project catalog/tsconfig.test.json components/common/itemSuggestionUtils.test.ts",
     "generate": "graphql-codegen && npx prettier --write ./__generated__/globalTypes.ts && npx prettier --write ./graphql/**/__generated__/*.ts",
     "codegen": "yarn generate",
     "codegen-local": "yarn cross-env GRAPHQL_URI_FOR_CODEGEN=http://dev.localhost:5000/api/graphql yarn generate",

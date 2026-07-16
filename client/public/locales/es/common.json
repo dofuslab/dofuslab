@@ -51,6 +51,7 @@
   "INVALID_CHARACTERISTIC_POINTS": "Asignación de características inválida.",
   "INVALID_SCROLLED_CHARACTERISTICS": "Asignación de características de pergamino inválida.",
   "ITEMS": "Objetos",
+  "ITEM_SUGGESTIONS": "Sugerencias de objetos",
   "ITEM_EQUIPPED": "{{itemName}} equipado.",
   "ITEM_EQUIPPED_WITH_SLOT_one": "{{itemName}} equipado. Aún hay {{count}} espacio libre.",
   "ITEM_EQUIPPED_WITH_SLOT_other": "{{itemName}} equipado. Aún hay {{count}} espacios libres.",

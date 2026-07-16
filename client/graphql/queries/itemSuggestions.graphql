@@ -1,0 +1,17 @@
+#import "graphql/fragments/item.graphql"
+
+query itemSuggestions(
+  $equippedItemIds: [UUID!]!
+  $eligibleItemTypeIds: [UUID!]
+  $level: Int!
+  $numSuggestions: Int!
+) {
+  itemSuggestions(
+    eligibleItemTypeIds: $eligibleItemTypeIds
+    equippedItemIds: $equippedItemIds
+    level: $level
+    numSuggestions: $numSuggestions
+  ) {
+    ...item
+  }
+}

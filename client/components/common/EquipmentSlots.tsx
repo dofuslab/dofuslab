@@ -19,6 +19,8 @@ import MobileEquippedItem from '../mobile/EquippedItem';
 import MageModal from './MageModal';
 import SetModal from './SetModal';
 import { Media } from './Media';
+import ItemSuggestionsPopover from './ItemSuggestionsPopover';
+import { useItemSuggestions } from './useItemSuggestions';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -37,6 +39,7 @@ const EquipmentSlots = ({
 }: Props) => {
   const { data } = useQuery<ItemSlots>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
+  const suggestionsBySlot = useItemSuggestions(customSet, itemSlots);
 
   const equippedItemsBySlotId: {
     [key: string]: EquippedItem;
@@ -88,15 +91,21 @@ const EquipmentSlots = ({
         return (
           <Fragment key={slot.id}>
             <Media lessThan="xs">
-              <MobileEquippedItem
-                slot={slot}
-                key={slot.id}
-                equippedItem={ei}
-                customSet={customSet}
-                openMageModal={openMageModal}
-                openSetModal={openSetModal}
-                errors={equippedItemErrors}
-              />
+              <div css={{ position: 'relative' }}>
+                <MobileEquippedItem
+                  slot={slot}
+                  key={slot.id}
+                  equippedItem={ei}
+                  customSet={customSet}
+                  openMageModal={openMageModal}
+                  openSetModal={openSetModal}
+                  errors={equippedItemErrors}
+                />
+                <ItemSuggestionsPopover
+                  slot={slot}
+                  suggestions={suggestionsBySlot[slot.id]}
+                />
+              </div>
             </Media>
             <Media
               greaterThanOrEqual="xs"
@@ -107,18 +116,24 @@ const EquipmentSlots = ({
                 [mq[4]]: { maxWidth: 100 },
               }}
             >
-              <DesktopEquippedItem
-                slot={slot}
-                key={slot.id}
-                equippedItem={ei}
-                selected={selectedItemSlotId === slot.id}
-                selectItemSlot={selectItemSlot}
-                customSet={customSet}
-                openMageModal={openMageModal}
-                openSetModal={openSetModal}
-                errors={equippedItemErrors}
-                css={{ marginLeft: 4, [mq[4]]: { marginLeft: 8 } }}
-              />
+              <div css={{ position: 'relative' }}>
+                <DesktopEquippedItem
+                  slot={slot}
+                  key={slot.id}
+                  equippedItem={ei}
+                  selected={selectedItemSlotId === slot.id}
+                  selectItemSlot={selectItemSlot}
+                  customSet={customSet}
+                  openMageModal={openMageModal}
+                  openSetModal={openSetModal}
+                  errors={equippedItemErrors}
+                  css={{ marginLeft: 4, [mq[4]]: { marginLeft: 8 } }}
+                />
+                <ItemSuggestionsPopover
+                  slot={slot}
+                  suggestions={suggestionsBySlot[slot.id]}
+                />
+              </div>
             </Media>
           </Fragment>
         );
