@@ -1,0 +1,236 @@
+{
+  "fixtureVersion": "damage-parity-v1",
+  "contract": "Outgoing pre-resistance damage shared by client calcDamage and oneoff.damage_calculator.calc_damage.",
+  "resistanceDecision": "Defender resistance is outside the backend solver contract and neither compared outgoing-damage API accepts resistance parameters.",
+  "cases": [
+    {
+      "name": "zero_base_boundary",
+      "baseDamage": 0,
+      "element": "earth",
+      "stats": {},
+      "flags": {},
+      "expected": { "melee": 0, "ranged": 0 }
+    },
+    {
+      "name": "exact_integer_percentage_boundary",
+      "baseDamage": 18,
+      "element": "earth",
+      "stats": { "% Final Damage": 20, "% Melee Damage": 25 },
+      "flags": {},
+      "expected": { "melee": 27, "ranged": 21 }
+    },
+    {
+      "name": "earth_characteristic",
+      "baseDamage": 10,
+      "element": "earth",
+      "stats": { "Strength": 100 },
+      "flags": {},
+      "expected": { "melee": 20, "ranged": 20 }
+    },
+    {
+      "name": "neutral_elemental_and_generic_fixed",
+      "baseDamage": 10,
+      "element": "neutral",
+      "stats": { "Strength": 100, "Neutral Damage": 5, "Damage": 3 },
+      "flags": {},
+      "expected": { "melee": 28, "ranged": 28 }
+    },
+    {
+      "name": "fire_characteristic_power_fixed",
+      "baseDamage": 19,
+      "element": "fire",
+      "stats": {
+        "Intelligence": 123,
+        "Power": 47,
+        "Fire Damage": 8,
+        "Damage": 4
+      },
+      "flags": {},
+      "expected": { "melee": 63, "ranged": 63 }
+    },
+    {
+      "name": "water_negative_stats",
+      "baseDamage": 17,
+      "element": "water",
+      "stats": { "Chance": -50, "Power": -25, "Water Damage": -2, "Damage": 3 },
+      "flags": {},
+      "expected": { "melee": 5, "ranged": 5 }
+    },
+    {
+      "name": "air_characteristic_and_power",
+      "baseDamage": 13,
+      "element": "air",
+      "stats": { "Agility": 201, "Power": 99, "Air Damage": 7 },
+      "flags": {},
+      "expected": { "melee": 59, "ranged": 59 }
+    },
+    {
+      "name": "critical_damage_and_line_bonus",
+      "baseDamage": 25,
+      "element": "fire",
+      "stats": { "Intelligence": 80, "Critical Damage": 12 },
+      "flags": { "isCrit": true, "critBonusDamage": 5 },
+      "expected": { "melee": 62, "ranged": 62 }
+    },
+    {
+      "name": "noncrit_ignores_critical_bonuses",
+      "baseDamage": 25,
+      "element": "fire",
+      "stats": { "Intelligence": 80, "Critical Damage": 12 },
+      "flags": { "critBonusDamage": 5 },
+      "expected": { "melee": 45, "ranged": 45 }
+    },
+    {
+      "name": "trap_power_and_damage",
+      "baseDamage": 21,
+      "element": "earth",
+      "stats": { "Strength": 50, "Trap Power": 75, "Trap Damage": 9 },
+      "flags": { "isTrap": true },
+      "expected": { "melee": 56, "ranged": 56 }
+    },
+    {
+      "name": "weapon_skill_power",
+      "baseDamage": 30,
+      "element": "neutral",
+      "stats": { "Strength": 100 },
+      "flags": { "isWeapon": true, "weaponSkillPower": 20 },
+      "expected": { "melee": 66, "ranged": 66 }
+    },
+    {
+      "name": "spell_final_melee_ranged_modifiers",
+      "baseDamage": 37,
+      "element": "water",
+      "stats": {
+        "Chance": 137,
+        "% Final Damage": 11,
+        "% Spell Damage": 13,
+        "% Melee Damage": 17,
+        "% Ranged Damage": 19
+      },
+      "flags": {},
+      "expected": { "melee": 127, "ranged": 129 }
+    },
+    {
+      "name": "weapon_final_melee_ranged_modifiers",
+      "baseDamage": 37,
+      "element": "neutral",
+      "stats": {
+        "Strength": 137,
+        "% Final Damage": 11,
+        "% Weapon Damage": 13,
+        "% Melee Damage": 17,
+        "% Ranged Damage": 19
+      },
+      "flags": { "isWeapon": true, "weaponSkillPower": 15 },
+      "expected": { "melee": 136, "ranged": 138 }
+    },
+    {
+      "name": "weapon_ignores_spell_modifier",
+      "baseDamage": 20,
+      "element": "earth",
+      "stats": { "Strength": 100, "% Spell Damage": 50, "% Weapon Damage": 10 },
+      "flags": { "isWeapon": true },
+      "expected": { "melee": 44, "ranged": 44 }
+    },
+    {
+      "name": "spell_ignores_weapon_modifier",
+      "baseDamage": 20,
+      "element": "earth",
+      "stats": { "Strength": 100, "% Spell Damage": 10, "% Weapon Damage": 50 },
+      "flags": {},
+      "expected": { "melee": 44, "ranged": 44 }
+    },
+    {
+      "name": "negative_final_and_distance_modifiers",
+      "baseDamage": 40,
+      "element": "air",
+      "stats": {
+        "Agility": 100,
+        "% Final Damage": -10,
+        "% Spell Damage": -20,
+        "% Melee Damage": -30,
+        "% Ranged Damage": -40
+      },
+      "flags": {},
+      "expected": { "melee": 40, "ranged": 34 }
+    },
+    {
+      "name": "floor_before_final_modifiers",
+      "baseDamage": 7,
+      "element": "fire",
+      "stats": {
+        "Intelligence": 33,
+        "Fire Damage": 1,
+        "% Final Damage": 7,
+        "% Spell Damage": 9,
+        "% Melee Damage": 11,
+        "% Ranged Damage": 13
+      },
+      "flags": {},
+      "expected": { "melee": 12, "ranged": 13 }
+    },
+    {
+      "name": "binary_float_floor_boundary",
+      "baseDamage": 29,
+      "element": "water",
+      "stats": {
+        "Chance": 10,
+        "Power": 10,
+        "Damage": 1,
+        "% Final Damage": 10,
+        "% Spell Damage": 10,
+        "% Melee Damage": 10,
+        "% Ranged Damage": 10
+      },
+      "flags": {},
+      "expected": { "melee": 46, "ranged": 46 }
+    },
+    {
+      "name": "all_additive_dimensions",
+      "baseDamage": 31,
+      "element": "air",
+      "stats": {
+        "Agility": 90,
+        "Power": 40,
+        "Air Damage": 6,
+        "Damage": 4,
+        "Critical Damage": 8,
+        "Trap Power": 20,
+        "Trap Damage": 3
+      },
+      "flags": { "isCrit": true, "isTrap": true, "critBonusDamage": 2 },
+      "expected": { "melee": 100, "ranged": 100 }
+    },
+    {
+      "name": "all_multiplicative_weapon_dimensions",
+      "baseDamage": 31,
+      "element": "neutral",
+      "stats": {
+        "Strength": 90,
+        "Power": 40,
+        "Neutral Damage": 6,
+        "Damage": 4,
+        "Critical Damage": 8,
+        "% Final Damage": 12,
+        "% Weapon Damage": 14,
+        "% Melee Damage": 16,
+        "% Ranged Damage": 18
+      },
+      "flags": {
+        "isCrit": true,
+        "isWeapon": true,
+        "weaponSkillPower": 25,
+        "critBonusDamage": 2
+      },
+      "expected": { "melee": 146, "ranged": 149 }
+    },
+    {
+      "name": "negative_calculated_damage_floor",
+      "baseDamage": 5,
+      "element": "earth",
+      "stats": { "Strength": -150, "Earth Damage": -2 },
+      "flags": {},
+      "expected": { "melee": -5, "ranged": -5 }
+    }
+  ]
+}
