@@ -202,7 +202,8 @@ class BuildDiscoveryCpsatSolverContractTest(unittest.TestCase):
     def test_release_defaults_run_both_quality_lanes(self):
         args = build_cpsat_args(BuildDiscoveryQuery())
 
-        self.assertEqual(args.time_limit_seconds, DEFAULT_RELEASE_TIME_LIMIT_SECONDS)
+        self.assertEqual(DEFAULT_RELEASE_TIME_LIMIT_SECONDS, 6.0)
+        self.assertEqual(args.time_limit_seconds, 6.0)
         self.assertEqual(args.workers, 2)
         self.assertEqual(args.objective_modes, DEFAULT_OBJECTIVE_MODES)
 
