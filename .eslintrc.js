@@ -63,7 +63,15 @@ module.exports = {
     ],
     'import/no-extraneous-dependencies': [
       2,
-      { devDependencies: ['**/test.tsx', '**/test.ts'] },
+      {
+        devDependencies: [
+          '**/test.tsx',
+          '**/test.ts',
+          '**/*.test.tsx',
+          '**/*.test.ts',
+          '**/vitest.config.ts',
+        ],
+      },
     ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-unused-vars': [

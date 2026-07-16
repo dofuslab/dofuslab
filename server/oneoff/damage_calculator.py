@@ -85,8 +85,12 @@ def calc_damage(
 
 
 def average_line_damage(line: DamageLine, stats: dict[str, int]) -> float:
-    crit_base_min = line.crit_base_min if line.crit_base_min is not None else line.base_min
-    crit_base_max = line.crit_base_max if line.crit_base_max is not None else line.base_max
+    crit_base_min = (
+        line.crit_base_min if line.crit_base_min is not None else line.base_min
+    )
+    crit_base_max = (
+        line.crit_base_max if line.crit_base_max is not None else line.base_max
+    )
     noncrit_min = calc_damage(
         line.base_min,
         line.element,

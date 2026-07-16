@@ -2,3 +2,4 @@ node_modules/
 client/node_modules/
 client/__generated__/
 client/graphql/*/__generated__/
+client/next-env.d.ts

@@ -30,7 +30,6 @@ import {
   faUserPlus,
   faKey,
   faMugHot,
-  faSearch,
   faWrench,
 } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -48,6 +47,7 @@ import {
   BUY_ME_COFFEE_LINK,
 } from 'common/constants';
 import { getImageUrl } from 'common/utils';
+import { buildDiscoveryMobileMenuItem } from '../common/BuildDiscoveryNavigation';
 
 const SignUpModal = dynamic(() => import('../common/SignUpModal'), {
   ssr: false,
@@ -188,18 +188,13 @@ function Layout({ children }: LayoutProps) {
   const menuItems: MenuItem[] = useMemo(() => {
     const items: MenuItem[] = [];
 
-    if (buildDiscoveryEnabled) {
-      items.push({
-        key: 'build-discovery',
-        label: (
-          <Link href="/build-discovery" as="/build-discovery">
-            <span css={iconWrapper}>
-              <FontAwesomeIcon icon={faSearch} />
-            </span>
-            {t('BUILD_DISCOVERY', { ns: 'common' })}
-          </Link>
-        ),
-      });
+    const buildDiscoveryItem = buildDiscoveryMobileMenuItem(
+      buildDiscoveryEnabled,
+      t('BUILD_DISCOVERY', { ns: 'common' }),
+      iconWrapper,
+    );
+    if (buildDiscoveryItem) {
+      items.push(buildDiscoveryItem);
     }
 
     items.push({
