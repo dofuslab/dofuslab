@@ -4,6 +4,7 @@
 query sets($first: Int!, $after: String, $filters: SetFilters!) {
   sets(first: $first, after: $after, filters: $filters) {
     edges {
+      cursor
       node {
         ...set
         items {
