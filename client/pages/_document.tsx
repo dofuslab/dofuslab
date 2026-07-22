@@ -6,10 +6,12 @@ import Document, {
   DocumentProps,
   DocumentContext,
 } from 'next/document';
-import { extractStyle, createCache, StyleProvider } from '@ant-design/cssinjs';
+import { extractStyle, createCache } from '@ant-design/cssinjs';
+import createEmotionServer from '@emotion/server/create-instance';
 
 import { GA_TRACKING_ID } from '../gtag';
 import { mediaStyles } from '../components/common/Media';
+import createEmotionCache from '../common/createEmotionCache';
 
 const DofusLabDocument = ({ __NEXT_DATA__ }: DocumentProps) => {
   return (
@@ -77,27 +79,42 @@ const DofusLabDocument = ({ __NEXT_DATA__ }: DocumentProps) => {
 };
 
 DofusLabDocument.getInitialProps = async (ctx: DocumentContext) => {
-  const cache = createCache();
+  const antDesignCache = createCache();
+  const emotionCache = createEmotionCache();
+  const { extractCriticalToChunks } = createEmotionServer(emotionCache);
   const originalRenderPage = ctx.renderPage;
   ctx.renderPage = () =>
     originalRenderPage({
-      enhanceApp: (App) => (props) => (
-        <StyleProvider cache={cache}>
-          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-          <App {...props} />
-        </StyleProvider>
-      ),
+      enhanceApp: (App) => (props) => {
+        const appProps = { ...props, emotionCache, antDesignCache };
+
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        return <App {...appProps} />;
+      },
     });
 
   const initialProps = await Document.getInitialProps(ctx);
-  const style = extractStyle(cache, true);
+  const antDesignStyle = extractStyle(antDesignCache, true);
+  const emotionStyleChunks = extractCriticalToChunks(initialProps.html);
   return {
     ...initialProps,
     styles: (
       <>
         {initialProps.styles}
-        {/* eslint-disable-next-line react/no-danger */}
-        <style dangerouslySetInnerHTML={{ __html: style }} />
+        <style
+          data-rc-order="prepend"
+          data-rc-priority="-1000"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: antDesignStyle }}
+        />
+        {emotionStyleChunks.styles.map((style) => (
+          <style
+            data-emotion={`${style.key} ${style.ids.join(' ')}`}
+            key={style.key}
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: style.css }}
+          />
+        ))}
       </>
     ),
   };

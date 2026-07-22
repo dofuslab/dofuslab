@@ -10,7 +10,7 @@ import withApollo from 'common/apollo';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import { MediaContextProvider } from 'components/common/Media';
 import Router, { useRouter } from 'next/router';
-import { ThemeProvider } from '@emotion/react';
+import { CacheProvider, EmotionCache, ThemeProvider } from '@emotion/react';
 
 import CustomSetQuery from 'graphql/queries/customSet.graphql';
 import {
@@ -36,17 +36,28 @@ import Head from 'next/head';
 import { App, ConfigProvider, notification, theme } from 'antd';
 import NotificationContext from 'common/notificationContext';
 import StaticFunctions from 'components/common/StaticFunctions';
-import { createCache, extractStyle, StyleProvider } from '@ant-design/cssinjs';
+import { createCache, StyleProvider } from '@ant-design/cssinjs';
 import type Entity from '@ant-design/cssinjs/es/Cache';
+import createEmotionCache from 'common/createEmotionCache';
 
 Router.events.on('routeChangeComplete', (url) => gtag.pageview(url));
 config.autoAddCss = false;
 
 interface Props extends AppProps {
   apolloClient: ApolloClient<NormalizedCacheObject>;
+  emotionCache?: EmotionCache;
+  antDesignCache?: Entity;
 }
 
-const DofusLabApp = ({ Component, apolloClient, pageProps }: Props) => {
+const clientSideEmotionCache = createEmotionCache();
+
+const DofusLabApp = ({
+  Component,
+  apolloClient,
+  pageProps,
+  emotionCache = clientSideEmotionCache,
+  antDesignCache: providedAntDesignCache,
+}: Props) => {
   const router = useRouter();
   const { customSetId } = router.query;
 
@@ -107,44 +118,47 @@ const DofusLabApp = ({ Component, apolloClient, pageProps }: Props) => {
     ],
   );
 
-  // SSR Render
-  const cache = React.useMemo<Entity>(() => createCache(), []);
-  const styleText = extractStyle(cache);
+  const clientSideAntDesignCache = React.useMemo<Entity>(
+    () => createCache(),
+    [],
+  );
+  const antDesignCache = providedAntDesignCache || clientSideAntDesignCache;
 
   /* eslint-disable react/jsx-props-no-spreading */
   return (
-    <ApolloProvider client={apolloClient}>
-      <MediaContextProvider>
-        <ThemeProvider theme={darkTheme}>
-          <StyleProvider cache={cache}>
-            <ConfigProvider
-              theme={{
-                algorithm: theme.darkAlgorithm,
-              }}
-            >
-              <App>
-                <CustomSetContext.Provider value={customSetContextValue}>
-                  <NotificationContext.Provider
-                    value={notificationContextValue}
-                  >
-                    <Head>
-                      <meta
-                        name="viewport"
-                        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-                      />
-                      {styleText}
-                    </Head>
-                    {contextHolder}
-                    <StaticFunctions />
-                    <Component {...pageProps} />
-                  </NotificationContext.Provider>
-                </CustomSetContext.Provider>
-              </App>
-            </ConfigProvider>
-          </StyleProvider>
-        </ThemeProvider>
-      </MediaContextProvider>
-    </ApolloProvider>
+    <CacheProvider value={emotionCache}>
+      <ApolloProvider client={apolloClient}>
+        <MediaContextProvider>
+          <ThemeProvider theme={darkTheme}>
+            <StyleProvider cache={antDesignCache} layer>
+              <ConfigProvider
+                theme={{
+                  algorithm: theme.darkAlgorithm,
+                }}
+              >
+                <App>
+                  <CustomSetContext.Provider value={customSetContextValue}>
+                    <NotificationContext.Provider
+                      value={notificationContextValue}
+                    >
+                      <Head>
+                        <meta
+                          name="viewport"
+                          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+                        />
+                      </Head>
+                      {contextHolder}
+                      <StaticFunctions />
+                      <Component {...pageProps} />
+                    </NotificationContext.Provider>
+                  </CustomSetContext.Provider>
+                </App>
+              </ConfigProvider>
+            </StyleProvider>
+          </ThemeProvider>
+        </MediaContextProvider>
+      </ApolloProvider>
+    </CacheProvider>
   );
 };
 

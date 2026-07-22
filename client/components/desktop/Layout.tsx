@@ -17,7 +17,6 @@ import {
   Switch,
 } from 'antd';
 import { useRouter } from 'next/router';
-import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 import { useQuery, useMutation, useApolloClient } from '@apollo/client';
 import { currentUser as CurrentUserQueryType } from 'graphql/queries/__generated__/currentUser';
@@ -262,7 +261,7 @@ function Layout({ children, showSwitch }: LayoutProps) {
   );
 
   return (
-    <AntdRegistry>
+    <>
       <AntdLayout
         css={{
           height: '100vh',
@@ -584,7 +583,7 @@ function Layout({ children, showSwitch }: LayoutProps) {
           />
         )}
       </AntdLayout>
-    </AntdRegistry>
+    </>
   );
 }
 

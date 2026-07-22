@@ -11,6 +11,7 @@
     "dev-turbopack": "NODE_OPTIONS='--inspect' && yarn && yarn codegen && next dev --turbopack",
     "dev-webpack": "NODE_OPTIONS='--inspect' && yarn && yarn codegen && next dev",
     "dev-docker": "NODE_OPTIONS='--inspect=0.0.0.0:9229' yarn codegen && next dev",
+    "postinstall": "patch-package",
     "build": "next build && tsc --project tsconfig.server.json",
     "start": "next start",
     "type-check": "tsc",
@@ -31,7 +32,9 @@
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@apollo/client": "3.2",
     "@artsy/fresnel": "^8.1.0",
+    "@emotion/cache": "11.14.0",
     "@emotion/react": "^11.7.1",
+    "@emotion/server": "11.11.0",
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
     "@fortawesome/free-brands-svg-icons": "^7.0.0",
     "@fortawesome/free-regular-svg-icons": "^7.0.0",
@@ -85,6 +88,7 @@
     "graphql-codegen-apollo-next-ssr": "^1.7.4",
     "i18next-scanner": "^2.11.0",
     "nodemon": "^2.0.4",
+    "patch-package": "8.0.0",
     "sort-keys": "^4.0.0",
     "ts-node": "^8.10.2",
     "typescript": "^5.9.2"
@@ -101,6 +105,9 @@
   },
   "resolutions": {
     "@babel/runtime": "^7.24.6",
-    "@types/react": "19.1.12"
+    "@types/react": "19.1.12",
+    "rc-motion": "2.9.5",
+    "rc-resize-observer": "1.4.3",
+    "rc-util": "5.44.4"
   }
 }

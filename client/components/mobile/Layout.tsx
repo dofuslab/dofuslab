@@ -12,7 +12,6 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import Cookies from 'js-cookie';
 import { LANGUAGES, langToFullName } from 'common/i18n-utils';
-import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 import { useQuery, useMutation, useApolloClient } from '@apollo/client';
 import { currentUser as ICurrentUser } from 'graphql/queries/__generated__/currentUser';
@@ -371,7 +370,7 @@ function Layout({ children }: LayoutProps) {
   const theme = useTheme();
 
   return (
-    <AntdRegistry>
+    <>
       <AntdLayout
         css={{ height: '100%', minHeight: '100vh' }}
         suppressHydrationWarning
@@ -511,7 +510,7 @@ function Layout({ children }: LayoutProps) {
           />
         )}
       </AntdLayout>
-    </AntdRegistry>
+    </>
   );
 }
 
