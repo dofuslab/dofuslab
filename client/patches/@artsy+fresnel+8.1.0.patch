@@ -1,0 +1,70 @@
+diff --git a/node_modules/@artsy/fresnel/dist/Media.js b/node_modules/@artsy/fresnel/dist/Media.js
+index d785b8c..18fdd1e 100644
+--- a/node_modules/@artsy/fresnel/dist/Media.js
++++ b/node_modules/@artsy/fresnel/dist/Media.js
+@@ -140,8 +140,13 @@ function createMedia(config) {
+ 
+     var id = _react.default.useId();
+ 
+-    var isClient = typeof window !== "undefined";
+-    var isFirstRender = (0, _Utils.useIsFirstRender)();
++    var _React$useState = _react.default.useState(false),
++        hasHydrated = _React$useState[0],
++        setHasHydrated = _React$useState[1];
++
++    _react.default.useEffect(function () {
++      setHasHydrated(true);
++    }, []);
+     var className;
+ 
+     if (props.interaction) {
+@@ -163,45 +168,22 @@ function createMedia(config) {
+     var doesMatchParent = !mediaParentContext.hasParentMedia || (0, _Utils.intersection)(mediaQueries.breakpoints.toVisibleAtBreakpointSet(mediaParentContext.breakpointProps), mediaQueries.breakpoints.toVisibleAtBreakpointSet(breakpointProps)).length > 0;
+     var renderChildren = doesMatchParent && (onlyMatch === undefined || mediaQueries.shouldRenderMediaQuery(_objectSpread({}, breakpointProps, {
+       interaction: interaction
+-    }), onlyMatch)); // Append a unique id to the className (consistent on server and client)
++    }), onlyMatch));
++    var renderHydrationSafeChildren = hasHydrated ? renderChildren : doesMatchParent; // Append a unique id to the className (consistent on server and client)
+ 
+     var uniqueComponentId = " fresnel-".concat(id);
+     className += uniqueComponentId;
+-    /**
+-     * SPECIAL CASE:
+-     * If we're on the client, this is the first render, and we are not going
+-     * to render the children, we need to cleanup the the server-rendered HTML
+-     * to avoid a hydration mismatch on React 18+. We do this by grabbing the
+-     * already-existing element(s) directly from the DOM using the unique class
+-     * id and clearing its contents. This solution follows one of the
+-     * suggestions from Dan Abromov here:
+-     *
+-     * https://github.com/facebook/react/issues/23381#issuecomment-1096899474
+-     *
+-     * This will not have a negative impact on client-only rendering because
+-     * either 1) isFirstRender will be false OR 2) the element won't exist yet
+-     * so there will be nothing to clean up. It will only apply on SSR'd HTML
+-     * on initial hydration.
+-     */
+-
+-    if (isClient && isFirstRender && !renderChildren) {
+-      var containerEls = document.getElementsByClassName(uniqueComponentId);
+-      Array.from(containerEls).forEach(function (el) {
+-        return el.innerHTML = "";
+-      });
+-    }
+-
+     return _react.default.createElement(MediaParentContext.Provider, {
+       value: childMediaParentContext
+     }, function () {
+       if (props.children instanceof Function) {
+-        return props.children(className, renderChildren);
++        return props.children(className, renderHydrationSafeChildren);
+       } else {
+         return _react.default.createElement("div", {
+           className: ["fresnel-container", className, passedClassName].filter(Boolean).join(" "),
+           style: style,
+           suppressHydrationWarning: true
+-        }, renderChildren ? props.children : null);
++        }, renderHydrationSafeChildren ? props.children : null);
+       }
+     }());
+   };
