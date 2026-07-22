@@ -370,147 +370,139 @@ function Layout({ children }: LayoutProps) {
   const theme = useTheme();
 
   return (
-    <>
-      <AntdLayout
-        css={{ height: '100%', minHeight: '100vh' }}
-        suppressHydrationWarning
+    <AntdLayout
+      css={{ height: '100%', minHeight: '100vh' }}
+      suppressHydrationWarning
+    >
+      <Global
+        styles={{
+          html: {
+            fontSize: 18,
+          },
+          body: {
+            height: 'auto',
+          },
+        }}
+      />
+      <StatusChecker />
+      <AntdLayout.Header
+        css={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          background: theme.header?.background,
+          borderBottom: `1px solid ${theme.border?.default}`,
+          padding: '0 12px',
+          fontSize: '0.8rem',
+        }}
       >
-        <Global
-          styles={{
-            html: {
-              fontSize: 18,
-            },
-            body: {
-              height: 'auto',
-            },
-          }}
-        />
-        <StatusChecker />
-        <AntdLayout.Header
+        <Link href="/" as="/">
+          <div css={{ fontWeight: 500, display: 'flex', alignItems: 'center' }}>
+            <img
+              src={getImageUrl(
+                theme.name === LIGHT_THEME_NAME
+                  ? 'logo/DL-Full_Light.svg'
+                  : 'logo/DL-Full_Dark.svg',
+              )}
+              width={120}
+              height={36}
+              css={{ width: 120 }}
+              alt="DofusLab"
+            />
+          </div>
+        </Link>
+        <Button onClick={openDrawer} size="large" css={{ fontSize: '0.9rem' }}>
+          <MenuOutlined />
+        </Button>
+        <Drawer
+          open={showDrawer}
+          closable
+          onClose={closeDrawer}
           css={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            background: theme.header?.background,
-            borderBottom: `1px solid ${theme.border?.default}`,
-            padding: '0 12px',
-            fontSize: '0.8rem',
+            '.ant-drawer-body': {
+              padding: '44px 0 24px 0',
+            },
           }}
         >
-          <Link href="/" as="/">
+          {data?.currentUser && (
             <div
-              css={{ fontWeight: 500, display: 'flex', alignItems: 'center' }}
+              css={{
+                height: 40,
+                lineHeight: '40px',
+                paddingLeft: 24,
+                fontWeight: 500,
+              }}
             >
-              <img
-                src={getImageUrl(
-                  theme.name === LIGHT_THEME_NAME
-                    ? 'logo/DL-Full_Light.svg'
-                    : 'logo/DL-Full_Dark.svg',
-                )}
-                width={120}
-                height={36}
-                css={{ width: 120 }}
-                alt="DofusLab"
-              />
+              {t('WELCOME')}
+              <Link href={`/user/${data.currentUser.username}`}>
+                {data.currentUser.username}
+              </Link>
             </div>
-          </Link>
-          <Button
-            onClick={openDrawer}
-            size="large"
-            css={{ fontSize: '0.9rem' }}
-          >
-            <MenuOutlined />
-          </Button>
-          <Drawer
-            open={showDrawer}
-            closable
-            onClose={closeDrawer}
+          )}
+          <Menu
+            mode="inline"
+            onClick={menuClickHandler}
+            items={menuItems}
             css={{
-              '.ant-drawer-body': {
-                padding: '44px 0 24px 0',
+              border: 'none',
+              '.ant-menu-item, .ant-menu-submenu-title, .ant-menu-item:not(:last-child)':
+                {
+                  width: '100%',
+                  fontSize: '0.8rem',
+                  margin: 0,
+                },
+              '.ant-menu-item::after': {
+                left: 0,
+                right: 'auto',
+              },
+              '.ant-menu-item-divider': {
+                margin: '4px 0',
               },
             }}
-          >
-            {data?.currentUser && (
-              <div
-                css={{
-                  height: 40,
-                  lineHeight: '40px',
-                  paddingLeft: 24,
-                  fontWeight: 500,
-                }}
-              >
-                {t('WELCOME')}
-                <Link href={`/user/${data.currentUser.username}`}>
-                  {data.currentUser.username}
-                </Link>
-              </div>
-            )}
-            <Menu
-              mode="inline"
-              onClick={menuClickHandler}
-              items={menuItems}
-              css={{
-                border: 'none',
-                '.ant-menu-item, .ant-menu-submenu-title, .ant-menu-item:not(:last-child)':
-                  {
-                    width: '100%',
-                    fontSize: '0.8rem',
-                    margin: 0,
-                  },
-                '.ant-menu-item::after': {
-                  left: 0,
-                  right: 'auto',
-                },
-                '.ant-menu-item-divider': {
-                  margin: '4px 0',
-                },
-              }}
-              triggerSubMenuAction="click"
-            />
-          </Drawer>
-        </AntdLayout.Header>
-        <AntdLayout.Content
-          css={{
-            paddingTop: 12,
-            display: 'flex',
-            flexDirection: 'column',
-            paddingLeft: 8,
-            paddingRight: 8,
-            overflowAnchor: 'none',
-            position: 'relative',
-          }}
-        >
-          {children}
-        </AntdLayout.Content>
-        {showLoginModal && (
-          <LoginModal
-            open={showLoginModal}
-            onClose={closeLoginModal}
-            openSignUpModal={openSignUpModal}
+            triggerSubMenuAction="click"
           />
-        )}
-        {showSignUpModal && (
-          <SignUpModal
-            open={showSignUpModal}
-            onClose={closeSignUpModal}
-            openLoginModal={openLoginModal}
-          />
-        )}
-        {showPasswordModal && (
-          <ChangePasswordModal
-            open={showPasswordModal}
-            onClose={closePasswordModal}
-          />
-        )}
-        {showBuildSettings && (
-          <DefaultBuildSettingsModal
-            open={showBuildSettings}
-            onClose={closeBuildSettings}
-          />
-        )}
-      </AntdLayout>
-    </>
+        </Drawer>
+      </AntdLayout.Header>
+      <AntdLayout.Content
+        css={{
+          paddingTop: 12,
+          display: 'flex',
+          flexDirection: 'column',
+          paddingLeft: 8,
+          paddingRight: 8,
+          overflowAnchor: 'none',
+          position: 'relative',
+        }}
+      >
+        {children}
+      </AntdLayout.Content>
+      {showLoginModal && (
+        <LoginModal
+          open={showLoginModal}
+          onClose={closeLoginModal}
+          openSignUpModal={openSignUpModal}
+        />
+      )}
+      {showSignUpModal && (
+        <SignUpModal
+          open={showSignUpModal}
+          onClose={closeSignUpModal}
+          openLoginModal={openLoginModal}
+        />
+      )}
+      {showPasswordModal && (
+        <ChangePasswordModal
+          open={showPasswordModal}
+          onClose={closePasswordModal}
+        />
+      )}
+      {showBuildSettings && (
+        <DefaultBuildSettingsModal
+          open={showBuildSettings}
+          onClose={closeBuildSettings}
+        />
+      )}
+    </AntdLayout>
   );
 }
 
