@@ -68,6 +68,7 @@ const SetModal = ({
 }: Props) => {
   const { data, loading, error } = useQuery<set, setVariables>(setQuery, {
     variables: { id: setId },
+    fetchPolicy: typeof window === 'undefined' ? 'cache-first' : 'network-only',
   });
 
   const router = useRouter();

@@ -13,6 +13,7 @@ export type sets = {
     __typename: 'SetConnection';
     edges: Array<{
       __typename: 'SetEdge';
+      cursor: string;
       node: {
         __typename: 'Set';
         id: any;

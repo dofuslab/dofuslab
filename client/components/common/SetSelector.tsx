@@ -53,6 +53,9 @@ const SetSelector = ({
     itemTypeIdGroups,
   };
   const { data, loading, fetchMore } = useQuery<sets, setsVariables>(SetQuery, {
+    // Keep hydrated results visible while refreshing through the offline link.
+    fetchPolicy:
+      typeof window === 'undefined' ? 'cache-first' : 'cache-and-network',
     variables: { first: PAGE_SIZE, filters: queryFilters },
   });
 
@@ -132,11 +135,10 @@ const SetSelector = ({
       }}
       threshold={THRESHOLD}
     >
-      {loading ? (
+      {loading && !data ? (
         <SkeletonCardsLoader
           key="initial-loader"
           multiplier={2}
-          length={data?.sets.edges.length}
           isClassic
         />
       ) : (

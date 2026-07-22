@@ -52,6 +52,10 @@ const ItemSelector = ({
   const { data, loading, fetchMore } = useQuery<items, itemsVariables>(
     ItemsQuery,
     {
+      // Keep the server-rendered first page visible during hydration while the
+      // browser bootstraps or refreshes the complete IndexedDB catalog.
+      fetchPolicy:
+        typeof window === 'undefined' ? 'cache-first' : 'cache-and-network',
       variables: {
         first: ITEMS_PAGE_SIZE,
         filters: queryFilters,
@@ -159,10 +163,9 @@ const ItemSelector = ({
       }
       useWindow={isMobile}
     >
-      {loading ? (
+      {loading && !data ? (
         <SkeletonCardsLoader
           key="loader"
-          length={data?.items.edges.length}
           isClassic
           multiplier={2}
         />

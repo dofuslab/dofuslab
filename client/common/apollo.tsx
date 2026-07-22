@@ -10,6 +10,7 @@ import { IncomingHttpHeaders } from 'http';
 import { relayStylePagination } from '@apollo/client/utilities';
 import { useRouter } from 'next/router';
 import { GraphQLError } from 'graphql/error/GraphQLError';
+import { createCatalogLink } from 'catalog/link';
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
@@ -50,49 +51,65 @@ const getHttpLink = (headers?: IncomingHttpHeaders) =>
     headers,
   });
 
-const getLink = (headers?: IncomingHttpHeaders) =>
-  from([errorLink, getHttpLink(headers)]);
+const getLocale = (headers?: IncomingHttpHeaders) => {
+  const value = headers?.['accept-language'];
+  return Array.isArray(value) ? value[0] : value || 'en';
+};
+
+const getLink = (
+  cache: InMemoryCache,
+  headers?: IncomingHttpHeaders,
+) => {
+  const links = [errorLink];
+  if (typeof window !== 'undefined') {
+    links.push(createCatalogLink(getLocale(headers), cache));
+  }
+  links.push(getHttpLink(headers));
+  return from(links);
+};
 
 export function createApolloClient(
   initialState: NormalizedCacheObject,
   headers?: IncomingHttpHeaders,
   ssrMode?: boolean,
 ) {
-  return new ApolloClient<NormalizedCacheObject>({
-    cache: new InMemoryCache({
-      typePolicies: {
-        CustomSet: {
-          fields: {
-            tagAssociations: {
-              merge(_ignored: unknown, incoming: unknown) {
-                return incoming;
-              },
+  const cache = new InMemoryCache({
+    typePolicies: {
+      CustomSet: {
+        fields: {
+          tagAssociations: {
+            merge(_ignored: unknown, incoming: unknown) {
+              return incoming;
             },
-          },
-        },
-        EquippedItem: {
-          fields: {
-            exos: {
-              merge(_ignored: unknown, incoming: unknown) {
-                return incoming;
-              },
-            },
-          },
-        },
-        User: {
-          fields: {
-            customSets: relayStylePagination(['filters']),
-          },
-        },
-        Query: {
-          fields: {
-            items: relayStylePagination(['filters']),
-            sets: relayStylePagination(['filters']),
           },
         },
       },
-    }).restore(initialState || {}),
-    link: getLink(headers),
+      EquippedItem: {
+        fields: {
+          exos: {
+            merge(_ignored: unknown, incoming: unknown) {
+              return incoming;
+            },
+          },
+        },
+      },
+      User: {
+        fields: {
+          customSets: relayStylePagination(['filters']),
+        },
+      },
+      Query: {
+        fields: {
+          items: relayStylePagination(['filters']),
+          sets: relayStylePagination(['filters']),
+        },
+      },
+    },
+  }).restore(initialState || {});
+
+  return new ApolloClient<NormalizedCacheObject>({
+    cache,
+    link: getLink(cache, headers),
     ssrMode,
   });
 }
