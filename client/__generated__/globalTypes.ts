@@ -289,6 +289,7 @@ export type Item = GlobalNode & {
   itemTypeId: Scalars['String']['output'];
   level: Scalars['Int']['output'];
   name: Scalars['String']['output'];
+  searchNames: Array<Scalars['String']['output']>;
   set: Maybe<Set>;
   setId: Maybe<Scalars['String']['output']>;
   stats: Array<ItemStat>;
@@ -665,6 +666,7 @@ export type Set = GlobalNode & {
   id: Scalars['UUID']['output'];
   items: Array<Item>;
   name: Scalars['String']['output'];
+  searchNames: Array<Scalars['String']['output']>;
   uuid: Scalars['String']['output'];
 };
 

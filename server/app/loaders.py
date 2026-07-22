@@ -497,6 +497,24 @@ class ItemNameLoader(DataLoader):
         return load_item_names(item_ids)
 
 
+def load_all_item_names(item_ids):
+    names_by_item_id = defaultdict(list)
+    for translation in (
+        db.session.query(ModelItemTranslation)
+        .filter(ModelItemTranslation.item_id.in_(item_ids))
+        .order_by(ModelItemTranslation.item_id, ModelItemTranslation.locale)
+    ):
+        names_by_item_id[translation.item_id].append(translation.name)
+    return Promise.resolve(
+        [names_by_item_id.get(item_id, []) for item_id in item_ids]
+    )
+
+
+class AllItemNamesLoader(DataLoader):
+    def batch_load_fn(self, item_ids):
+        return load_all_item_names(item_ids)
+
+
 # @cache_region.cache_on_arguments()
 def load_sets(set_ids):
     sets = {
@@ -567,6 +585,22 @@ def load_set_translations(set_ids):
 class SetTranslationLoader(DataLoader):
     def batch_load_fn(self, set_ids):
         return load_set_translations(set_ids)
+
+
+def load_all_set_names(set_ids):
+    names_by_set_id = defaultdict(list)
+    for translation in (
+        db.session.query(ModelSetTranslation)
+        .filter(ModelSetTranslation.set_id.in_(set_ids))
+        .order_by(ModelSetTranslation.set_id, ModelSetTranslation.locale)
+    ):
+        names_by_set_id[translation.set_id].append(translation.name)
+    return Promise.resolve([names_by_set_id.get(set_id, []) for set_id in set_ids])
+
+
+class AllSetNamesLoader(DataLoader):
+    def batch_load_fn(self, set_ids):
+        return load_all_set_names(set_ids)
 
 
 # @cache_region.cache_on_arguments()
