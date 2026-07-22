@@ -40,8 +40,6 @@ export const getStaticProps: GetStaticProps = async ({
       variables: {
         first: ITEMS_PAGE_SIZE,
         filters: { stats: [], maxLevel: 200, search: '', itemTypeIds: [] },
-        equippedItemIds: [],
-        level: 200,
       },
     }),
     ssrClient.query<classes>({ query: ClassesQuery }),

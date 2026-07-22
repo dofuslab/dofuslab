@@ -4,12 +4,10 @@ query items(
   $first: Int!
   $after: String
   $filters: ItemFilters!
-  $equippedItemIds: [UUID!]!
-  $eligibleItemTypeIds: [UUID!]
-  $level: Int!
 ) {
   items(first: $first, after: $after, filters: $filters) {
     edges {
+      cursor
       node {
         ...item
       }
@@ -18,13 +16,5 @@ query items(
       hasNextPage
       endCursor
     }
-  }
-
-  itemSuggestions(
-    eligibleItemTypeIds: $eligibleItemTypeIds
-    equippedItemIds: $equippedItemIds
-    level: $level
-  ) {
-    ...item
   }
 }

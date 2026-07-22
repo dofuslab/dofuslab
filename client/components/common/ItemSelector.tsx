@@ -13,7 +13,6 @@ import { Item, ItemSet } from 'common/type-aliases';
 import {
   findEmptyOrOnlySlotId,
   findNextEmptySlotIds,
-  isUUID,
   useEquipItemMutation,
 } from 'common/utils';
 import { itemSlots } from 'graphql/queries/__generated__/itemSlots';
@@ -56,15 +55,6 @@ const ItemSelector = ({
       variables: {
         first: ITEMS_PAGE_SIZE,
         filters: queryFilters,
-        eligibleItemTypeIds:
-          selectedItemSlot?.itemTypes.map((type) => type.id) ?? [],
-        // filter required because of optimistic equipped item IDs that have the form of `equipped-item-{item UUID}`
-        // and to prevent dofuses from being used in item suggestion algorithm
-        equippedItemIds:
-          customSet?.equippedItems
-            .filter((ei) => isUUID(ei.id) && ei.slot.enName !== 'Dofus')
-            .map((ei) => ei.id) ?? [],
-        level: customSet?.level ?? 200,
       },
     },
   );
@@ -127,32 +117,14 @@ const ItemSelector = ({
     [mutate, selectItemSlot, selectedItemSlot, customSet, isClassic],
   );
 
-  const filtersUnchanged =
-    !filters.search &&
-    (!customSet || filters.maxLevel === customSet.level) &&
-    filters.stats.length === 0 &&
-    itemTypeIdsArr.length === 0;
-
   useEffect(() => {
     const listener = (e: KeyboardEvent) => {
       const keyIndex = Number(e.key) - 1;
 
       if (!data) return;
 
-      const numSuggestions = data.itemSuggestions.length;
-
       if (Number.isInteger(keyIndex) && keyIndex >= 0 && keyIndex <= 8) {
-        if (filtersUnchanged) {
-          if (keyIndex < numSuggestions) {
-            equipItem(data.itemSuggestions[keyIndex]);
-          } else {
-            const idx = keyIndex - numSuggestions;
-
-            if (data.items.edges[idx]) {
-              equipItem(data.items.edges[idx].node);
-            }
-          }
-        } else if (data.items.edges[keyIndex]) {
+        if (data.items.edges[keyIndex]) {
           equipItem(data.items.edges[keyIndex].node);
         }
       }
@@ -162,7 +134,7 @@ const ItemSelector = ({
     return () => {
       window.removeEventListener('keydown', listener);
     };
-  }, [data, filtersUnchanged]);
+  }, [data]);
 
   return (
     <InfiniteScroll
@@ -181,7 +153,7 @@ const ItemSelector = ({
       loader={
         <SkeletonCardsLoader
           key="loader"
-          length={data && data.items.edges.length + data.itemSuggestions.length}
+          length={data?.items.edges.length}
           isClassic
         />
       }
@@ -190,27 +162,12 @@ const ItemSelector = ({
       {loading ? (
         <SkeletonCardsLoader
           key="loader"
-          length={data && data.items.edges.length + data.itemSuggestions.length}
+          length={data?.items.edges.length}
           isClassic
           multiplier={2}
         />
       ) : (
         <>
-          {filtersUnchanged &&
-            data?.itemSuggestions.map((item) => (
-              <ItemCardWithContext
-                key={`suggestion-${item.id}`}
-                item={item}
-                selectedItemSlot={selectedItemSlot}
-                selectItemSlot={selectItemSlot}
-                isMobile={isMobile}
-                isClassic={isClassic}
-                customSetItemIds={customSetItemIds}
-                openSetModal={openSetModal}
-                isSuggestion
-                customSet={customSet}
-              />
-            ))}
           {data &&
             data.items.edges
               .map((edge) => edge.node)

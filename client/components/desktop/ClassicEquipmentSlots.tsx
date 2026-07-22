@@ -24,6 +24,8 @@ import MageModal from '../common/MageModal';
 import SetModal from '../common/SetModal';
 import BonusStats from './BonusStats';
 import ClassicEquippedItem from './ClassicEquippedItem';
+import ItemSuggestionsPopover from '../common/ItemSuggestionsPopover';
+import { useItemSuggestions } from '../common/useItemSuggestions';
 
 interface Props {
   customSet?: CustomSet | null;
@@ -67,6 +69,7 @@ const ClassicEquipmentSlots = ({
 }: Props) => {
   const { data } = useQuery<ItemSlotsQueryType>(ItemSlotsQuery);
   const itemSlots = data?.itemSlots;
+  const suggestionsBySlot = useItemSuggestions(customSet, itemSlots);
 
   const { data: currentUserData } =
     useQuery<CurrentUserQueryType>(currentUserQuery);
@@ -163,6 +166,7 @@ const ClassicEquipmentSlots = ({
             key={`slot-${slot.id}`}
             css={{
               minWidth: 0,
+              position: 'relative',
               gridArea: `${slot.enName}${
                 count ? slotCounter[slot.enName] : ''
               }`,
@@ -177,6 +181,10 @@ const ClassicEquipmentSlots = ({
               openSetModal={openSetModal}
               errors={equippedItemErrors}
               popoverPlacement={getPopoverPlacement(slot.enName)}
+            />
+            <ItemSuggestionsPopover
+              slot={slot}
+              suggestions={suggestionsBySlot[slot.id]}
             />
           </div>
         );

@@ -17,14 +17,19 @@ const errorLink = onError(
   ({
     graphQLErrors,
     networkError,
+    operation,
   }: {
     graphQLErrors?: readonly GraphQLError[];
     networkError?: Error;
+    operation: { getContext: () => Record<string, unknown> };
   }) => {
-    if (networkError && process.browser) {
+    const suppressNetworkError = Boolean(
+      operation.getContext().suppressNetworkErrorNotification,
+    );
+    if (networkError && process.browser && !suppressNetworkError) {
       notification.error({ message: networkError.message });
     }
-    if (graphQLErrors) {
+    if (graphQLErrors && !suppressNetworkError) {
       graphQLErrors.forEach(({ message }: { message: string }) => {
         if (process.browser) {
           notification.error({ message });

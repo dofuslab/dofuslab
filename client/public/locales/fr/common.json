@@ -51,6 +51,7 @@
   "INVALID_CHARACTERISTIC_POINTS": "Points de caractéristiques invalides.",
   "INVALID_SCROLLED_CHARACTERISTICS": "Parchotage invalide.",
   "ITEMS": "Items",
+  "ITEM_SUGGESTIONS": "Suggestions d'objets",
   "ITEM_EQUIPPED": "{{itemName}} équipé.",
   "ITEM_EQUIPPED_WITH_SLOT_one": "{{itemName}} équipé. Il reste {{count}} slot {{slotName}} vide.",
   "ITEM_EQUIPPED_WITH_SLOT_other": "{{itemName}} équipé. Il reste {{count}} slots {{slotName}} vides.",

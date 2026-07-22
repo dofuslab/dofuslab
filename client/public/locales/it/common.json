@@ -51,6 +51,7 @@
   "INVALID_CHARACTERISTIC_POINTS": "Allocazione dei punti caratteristica non valida",
   "INVALID_SCROLLED_CHARACTERISTICS": "Punti caratteristica scrollati non validi",
   "ITEMS": "Oggetti",
+  "ITEM_SUGGESTIONS": "Suggerimenti di oggetti",
   "ITEM_EQUIPPED": "{{itemName}} equipaggiato.",
   "ITEM_EQUIPPED_WITH_SLOT_one": "{{itemName}} equipaggiato. C'è ancora {{count}} slot {{slotName}} libero.",
   "ITEM_EQUIPPED_WITH_SLOT_other": "{{itemName}} equipaggiato. Ci sono ancora {{count}} slot {{slotName}} liberi.",
