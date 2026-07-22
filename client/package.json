@@ -16,6 +16,7 @@
     "start": "next start",
     "type-check": "tsc",
     "test:catalog": "ts-node --project catalog/tsconfig.test.json catalog/catalogLink.test.ts",
+    "test:service-worker": "node service-worker.test.js",
     "test:suggestions": "ts-node --project catalog/tsconfig.test.json components/common/itemSuggestionUtils.test.ts",
     "generate": "graphql-codegen && npx prettier --write ./__generated__/globalTypes.ts && npx prettier --write ./graphql/**/__generated__/*.ts",
     "codegen": "yarn generate",
