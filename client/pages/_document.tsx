@@ -50,7 +50,8 @@ const DofusLabDocument = ({ __NEXT_DATA__ }: DocumentProps) => {
         />
         <link rel="stylesheet" href="/twicon/twicon.css" />
         <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#1f1f1f" />
+        <meta name="color-scheme" content="dark" />
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script
           async
