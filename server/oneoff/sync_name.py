@@ -7,6 +7,7 @@ from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_spell_translation import ModelSpellTranslation
 from oneoff.sync_item import allowed_file_names as item_file_names
+from app.catalog_revision import advance_catalog_revision
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -107,6 +108,9 @@ def update_name(db_session, name_to_record_map, file_name, old_name, new_name):
                     db_session.add(spell_translation)
         else:
             raise ValueError("Invalid file name")
+
+        if file_name in item_file_names or file_name == "sets":
+            advance_catalog_revision(db_session)
 
 
 def get_name_to_record_map(file_name):

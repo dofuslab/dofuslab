@@ -21,9 +21,11 @@ app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def wipeSpellsAndBuffs():
+    db.session.query(ModelBuff).filter(
+        ModelBuff.spell_stat_id.isnot(None)
+    ).delete(synchronize_session=False)
     db.session.query(ModelSpell).delete()
     db.session.query(ModelSpellVariantPair).delete()
-    db.session.query(ModelBuff).delete()
     db.session.flush()
 
 
@@ -112,7 +114,7 @@ def add_buffs():
                     .item_id
                 )
 
-                oneoff.sync_buff.add_item_buffs(db_session, item_id, item)
+                oneoff.sync_buff.update_item_buffs(db_session, item_id, item)
 
 
 add_class_to_classes()
