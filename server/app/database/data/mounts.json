@@ -84,7 +84,7 @@
         "mountDofusID": "33003",
         "name": {
             "en": "Almond and Ebony Dragoturkey",
-            "fr": "Dragodinde Amande et Ebène",
+            "fr": "Dragodinde Amande et Ébène",
             "de": "Mandel-Ebenholz-Dracotruter",
             "es": "Dragopavo almendrado y ébano",
             "pt": "Dragoperu Amêndoa e Ébano",
@@ -116,7 +116,7 @@
         "mountDofusID": "33004",
         "name": {
             "en": "Almond and Emerald Dragoturkey",
-            "fr": "Dragodinde Amande et Emeraude",
+            "fr": "Dragodinde Amande et Émeraude",
             "de": "Mandel-Smaragd-Dracotruter",
             "es": "Dragopavo almendrado y esmeralda",
             "pt": "Dragoperu Amêndoa e Esmeralda",
@@ -367,7 +367,7 @@
         "mountDofusID": "33012",
         "name": {
             "en": "Golden and Ebony Dragoturkey",
-            "fr": "Dragodinde Dorée et Ebène",
+            "fr": "Dragodinde Dorée et Ébène",
             "de": "Gold-Ebenholz-Dracotruter",
             "es": "Dragopavo dorado y ébano",
             "pt": "Dragoperu Dourado e Ébano",
@@ -399,7 +399,7 @@
         "mountDofusID": "33013",
         "name": {
             "en": "Golden and Emerald Dragoturkey",
-            "fr": "Dragodinde Dorée et Emeraude",
+            "fr": "Dragodinde Dorée et Émeraude",
             "de": "Gold-Smaragd-Dracotruter",
             "es": "Dragopavo dorado y esmeralda",
             "pt": "Dragoperu Dourado e Esmeralda",
@@ -623,7 +623,7 @@
         "mountDofusID": "33020",
         "name": {
             "en": "Ebony Dragoturkey",
-            "fr": "Dragodinde Ebène",
+            "fr": "Dragodinde Ébène",
             "de": "Ebenholz-Dracotruter",
             "es": "Dragopavo ébano",
             "pt": "Dragoperu Ébano",
@@ -650,7 +650,7 @@
         "mountDofusID": "33021",
         "name": {
             "en": "Ebony and Emerald Dragoturkey",
-            "fr": "Dragodinde Ebène et Emeraude",
+            "fr": "Dragodinde Ébène et Émeraude",
             "de": "Ebenholz-Smaragd-Dracotruter",
             "es": "Dragopavo ébano y esmeralda",
             "pt": "Dragoperu Ébano e Esmeralda",
@@ -714,7 +714,7 @@
         "mountDofusID": "33023",
         "name": {
             "en": "Ebony and Ivory Dragoturkey",
-            "fr": "Dragodinde Ebène et Ivoire",
+            "fr": "Dragodinde Ébène et Ivoire",
             "de": "Ebenholz-Elfenbein-Dracotruter",
             "es": "Dragopavo ébano y marfil",
             "pt": "Dragoperu Ébano e Marfim",
@@ -746,7 +746,7 @@
         "mountDofusID": "33024",
         "name": {
             "en": "Ebony and Orchid Dragoturkey",
-            "fr": "Dragodinde Ebène et Orchidée",
+            "fr": "Dragodinde Ébène et Orchidée",
             "de": "Ebenholz-Orchidee-Dracotruter",
             "es": "Dragopavo ébano y orquídeo",
             "pt": "Dragoperu Ébano e Orquídea",
@@ -778,7 +778,7 @@
         "mountDofusID": "33025",
         "name": {
             "en": "Ebony and Crimson Dragoturkey",
-            "fr": "Dragodinde Ebène et Pourpre",
+            "fr": "Dragodinde Ébène et Pourpre",
             "de": "Ebenholz-Purpur-Dracotruter",
             "es": "Dragopavo ébano y púrpura",
             "pt": "Dragoperu Ébano e Púrpura",
@@ -810,7 +810,7 @@
         "mountDofusID": "33026",
         "name": {
             "en": "Ebony and Ginger Dragoturkey",
-            "fr": "Dragodinde Ebène et Rousse",
+            "fr": "Dragodinde Ébène et Rousse",
             "de": "Ebenholz-Fuchsrot-Dracotruter",
             "es": "Dragopavo ébano y pelirrojo",
             "pt": "Dragoperu Ébano e Ruivo",
@@ -842,7 +842,7 @@
         "mountDofusID": "33027",
         "name": {
             "en": "Ebony and Turquoise Dragoturkey",
-            "fr": "Dragodinde Ebène et Turquoise",
+            "fr": "Dragodinde Ébène et Turquoise",
             "de": "Ebenholz-Türkis-Dracotruter",
             "es": "Dragopavo ébano y turquesa",
             "pt": "Dragoperu Ébano e Turquesa",
@@ -874,7 +874,7 @@
         "mountDofusID": "33028",
         "name": {
             "en": "Emerald Dragoturkey",
-            "fr": "Dragodinde Emeraude",
+            "fr": "Dragodinde Émeraude",
             "de": "Smaragd-Dracotruter",
             "es": "Dragopavo esmeralda",
             "pt": "Dragoperu Esmeralda",
@@ -901,7 +901,7 @@
         "mountDofusID": "33029",
         "name": {
             "en": "Emerald and Indigo Dragoturkey",
-            "fr": "Dragodinde Emeraude et Indigo",
+            "fr": "Dragodinde Émeraude et Indigo",
             "de": "Smaragd-Indigo-Dracotruter",
             "es": "Dragopavo esmeralda e índigo",
             "pt": "Dragoperu Esmeralda e Índigo",
@@ -933,7 +933,7 @@
         "mountDofusID": "33030",
         "name": {
             "en": "Emerald and Ivory Dragoturkey",
-            "fr": "Dragodinde Emeraude et Ivoire",
+            "fr": "Dragodinde Émeraude et Ivoire",
             "de": "Smaragd-Elfenbein-Dracotruter",
             "es": "Dragopavo esmeralda y marfil",
             "pt": "Dragoperu Esmeralda e Marfim",
@@ -965,7 +965,7 @@
         "mountDofusID": "33031",
         "name": {
             "en": "Emerald and Orchid Dragoturkey",
-            "fr": "Dragodinde Emeraude et Orchidée",
+            "fr": "Dragodinde Émeraude et Orchidée",
             "de": "Smaragd-Orchidee-Dracotruter",
             "es": "Dragopavo esmeralda y orquídeo",
             "pt": "Dragoperu Esmeralda e Orquídea",
@@ -997,7 +997,7 @@
         "mountDofusID": "33032",
         "name": {
             "en": "Emerald and Crimson Dragoturkey",
-            "fr": "Dragodinde Emeraude et Pourpre",
+            "fr": "Dragodinde Émeraude et Pourpre",
             "de": "Smaragd-Purpur-Dracotruter",
             "es": "Dragopavo esmeralda y púrpura",
             "pt": "Dragoperu Esmeralda e Púrpura",
@@ -1029,7 +1029,7 @@
         "mountDofusID": "33033",
         "name": {
             "en": "Emerald and Ginger Dragoturkey",
-            "fr": "Dragodinde Emeraude et Rousse",
+            "fr": "Dragodinde Émeraude et Rousse",
             "de": "Smaragd-Fuchsrot-Dracotruter",
             "es": "Dragopavo esmeralda y pelirrojo",
             "pt": "Dragoperu Esmeralda e Ruivo",
@@ -1061,7 +1061,7 @@
         "mountDofusID": "33034",
         "name": {
             "en": "Emerald and Turquoise Dragoturkey",
-            "fr": "Dragodinde Emeraude et Turquoise",
+            "fr": "Dragodinde Émeraude et Turquoise",
             "de": "Smaragd-Türkis-Dracotruter",
             "es": "Dragopavo esmeralda y turquesa",
             "pt": "Dragoperu Esmeralda e Turquesa",
@@ -1723,7 +1723,7 @@
         "mountDofusID": "33055",
         "name": {
             "en": "Plum and Ebony Dragoturkey",
-            "fr": "Dragodinde Prune et Ebène",
+            "fr": "Dragodinde Prune et Ébène",
             "de": "Pflaume-Ebenholz-Dracotruter",
             "es": "Dragopavo ciruela y ébano",
             "pt": "Dragoperu Ameixa e Ébano",
@@ -1755,7 +1755,7 @@
         "mountDofusID": "33056",
         "name": {
             "en": "Plum and Emerald Dragoturkey",
-            "fr": "Dragodinde Prune et Emeraude",
+            "fr": "Dragodinde Prune et Émeraude",
             "de": "Pflaume-Smaragd-Dracotruter",
             "es": "Dragopavo ciruela y esmeralda",
             "pt": "Dragoperu Ameixa e Esmeralda",
@@ -2156,7 +2156,7 @@
         "mountDofusID": "33070",
         "name": {
             "en": "Almond and Emerald Seemyool",
-            "fr": "Muldo Amande et Emeraude",
+            "fr": "Muldo Amande et Émeraude",
             "de": "Mandel-Smaragd-Seequagga",
             "es": "Mulagua almendrada y esmeralda",
             "pt": "Marmula Amêndoa e Esmeralda",
@@ -2279,7 +2279,7 @@
         "mountDofusID": "33074",
         "name": {
             "en": "Golden and Ebony Seemyool",
-            "fr": "Muldo Doré et Ebène",
+            "fr": "Muldo Doré et Ébène",
             "de": "Gold-Ebenholz-Seequagga",
             "es": "Mulagua dorada y ébano",
             "pt": "Marmula Dourada e Ébano",
@@ -2311,7 +2311,7 @@
         "mountDofusID": "33075",
         "name": {
             "en": "Golden and Emerald Seemyool",
-            "fr": "Muldo Doré et Emeraude",
+            "fr": "Muldo Doré et Émeraude",
             "de": "Gold-Smaragd-Seequagga",
             "es": "Mulagua dorada y esmeralda",
             "pt": "Marmula Dourada e Esmeralda",
@@ -2471,7 +2471,7 @@
         "mountDofusID": "33080",
         "name": {
             "en": "Ebony Seemyool",
-            "fr": "Muldo Ebène",
+            "fr": "Muldo Ébène",
             "de": "Ebenholz-Seequagga",
             "es": "Mulagua ébano",
             "pt": "Marmula Ébano",
@@ -2498,7 +2498,7 @@
         "mountDofusID": "33081",
         "name": {
             "en": "Ebony and Almond Seemyool",
-            "fr": "Muldo Ebène et Amande",
+            "fr": "Muldo Ébène et Amande",
             "de": "Ebenholz-Mandel-Seequagga",
             "es": "Mulagua ébano y almendrada",
             "pt": "Marmula Ébano e Amêndoa",
@@ -2530,7 +2530,7 @@
         "mountDofusID": "33082",
         "name": {
             "en": "Ebony and Emerald Seemyool",
-            "fr": "Muldo Ebène et Emeraude",
+            "fr": "Muldo Ébène et Émeraude",
             "de": "Ebenholz-Smaragd-Seequagga",
             "es": "Mulagua ébano y esmeralda",
             "pt": "Marmula Ébano e Esmeralda",
@@ -2562,7 +2562,7 @@
         "mountDofusID": "33083",
         "name": {
             "en": "Ebony and Indigo Seemyool",
-            "fr": "Muldo Ebène et Indigo",
+            "fr": "Muldo Ébène et Indigo",
             "de": "Ebenholz-Indigo-Seequagga",
             "es": "Mulagua ébano e índigo",
             "pt": "Marmula Ébano e Índigo",
@@ -2594,7 +2594,7 @@
         "mountDofusID": "33084",
         "name": {
             "en": "Ebony and Ivory Seemyool",
-            "fr": "Muldo Ebène et Ivoire",
+            "fr": "Muldo Ébène et Ivoire",
             "de": "Ebenholz-Elfenbein-Seequagga",
             "es": "Mulagua ébano y marfil",
             "pt": "Marmula Ébano e Marfim",
@@ -2626,7 +2626,7 @@
         "mountDofusID": "33085",
         "name": {
             "en": "Ebony and Orchid Seemyool",
-            "fr": "Muldo Ebène et Orchidée",
+            "fr": "Muldo Ébène et Orchidée",
             "de": "Ebenholz-Orchidee-Seequagga",
             "es": "Mulagua ébano y orquídea",
             "pt": "Marmula Ébano e Orquídea",
@@ -2658,7 +2658,7 @@
         "mountDofusID": "33086",
         "name": {
             "en": "Ebony and Crimson Seemyool",
-            "fr": "Muldo Ebène et Pourpre",
+            "fr": "Muldo Ébène et Pourpre",
             "de": "Ebenholz-Purpur-Seequagga",
             "es": "Mulagua ébano y púrpura",
             "pt": "Marmula Ébano e Púrpura",
@@ -2690,7 +2690,7 @@
         "mountDofusID": "33087",
         "name": {
             "en": "Emerald Seemyool",
-            "fr": "Muldo Emeraude",
+            "fr": "Muldo Émeraude",
             "de": "Smaragd-Seequagga",
             "es": "Mulagua esmeralda",
             "pt": "Marmula Esmeralda",
@@ -2776,7 +2776,7 @@
         "mountDofusID": "33090",
         "name": {
             "en": "Indigo and Emerald Seemyool",
-            "fr": "Muldo Indigo et Emeraude",
+            "fr": "Muldo Indigo et Émeraude",
             "de": "Indigo-Smaragd-Seequagga",
             "es": "Mulagua índigo y esmeralda",
             "pt": "Marmula Índigo e Esmeralda",
@@ -2931,7 +2931,7 @@
         "mountDofusID": "33095",
         "name": {
             "en": "Ivory and Emerald Seemyool",
-            "fr": "Muldo Ivoire et Emeraude",
+            "fr": "Muldo Ivoire et Émeraude",
             "de": "Elfenbein-Smaragd-Seequagga",
             "es": "Mulagua marfil y esmeralda",
             "pt": "Marmula Marfim e Esmeralda",
@@ -3022,7 +3022,7 @@
         "mountDofusID": "33098",
         "name": {
             "en": "Orchid and Emerald Seemyool",
-            "fr": "Muldo Orchidée et Emeraude",
+            "fr": "Muldo Orchidée et Émeraude",
             "de": "Orchidee-Smaragd-Seequagga",
             "es": "Mulagua orquídea y esmeralda",
             "pt": "Marmula Orquídea e Esmeralda",
@@ -3177,7 +3177,7 @@
         "mountDofusID": "33103",
         "name": {
             "en": "Crimson and Emerald Seemyool",
-            "fr": "Muldo Pourpre et Emeraude",
+            "fr": "Muldo Pourpre et Émeraude",
             "de": "Purpur-Smaragd-Seequagga",
             "es": "Mulagua púrpura y esmeralda",
             "pt": "Marmula Púrpura e Esmeralda",
@@ -3332,7 +3332,7 @@
         "mountDofusID": "33108",
         "name": {
             "en": "Plum and Ebony Seemyool",
-            "fr": "Muldo Prune et Ebène",
+            "fr": "Muldo Prune et Ébène",
             "de": "Pflaume-Ebenholz-Seequagga",
             "es": "Mulagua ciruela y ébano",
             "pt": "Marmula Ameixa e Ébano",
@@ -3364,7 +3364,7 @@
         "mountDofusID": "33109",
         "name": {
             "en": "Plum and Emerald Seemyool",
-            "fr": "Muldo Prune et Emeraude",
+            "fr": "Muldo Prune et Émeraude",
             "de": "Pflaume-Smaragd-Seequagga",
             "es": "Mulagua ciruela y esmeralda",
             "pt": "Marmula Ameixa e Esmeralda",
@@ -3679,7 +3679,7 @@
         "mountDofusID": "33119",
         "name": {
             "en": "Ginger and Ebony Seemyool",
-            "fr": "Muldo Roux et Ebène",
+            "fr": "Muldo Roux et Ébène",
             "de": "Fuchsrot-Ebenholz-Seequagga",
             "es": "Mulagua roja y ébano",
             "pt": "Marmula Ruiva e Ébano",
@@ -3711,7 +3711,7 @@
         "mountDofusID": "33120",
         "name": {
             "en": "Ginger and Emerald Seemyool",
-            "fr": "Muldo Roux et Emeraude",
+            "fr": "Muldo Roux et Émeraude",
             "de": "Fuchsrot-Smaragd-Seequagga",
             "es": "Mulagua roja y esmeralda",
             "pt": "Marmula Ruiva e Esmeralda",
@@ -3962,7 +3962,7 @@
         "mountDofusID": "33128",
         "name": {
             "en": "Turquoise and Ebony Seemyool",
-            "fr": "Muldo Turquoise et Ebène",
+            "fr": "Muldo Turquoise et Ébène",
             "de": "Türkis-Ebenholz-Seequagga",
             "es": "Mulagua turquesa y ébano",
             "pt": "Marmula Turquesa e Ébano",
@@ -3994,7 +3994,7 @@
         "mountDofusID": "33129",
         "name": {
             "en": "Turquoise and Emerald Seemyool",
-            "fr": "Muldo Turquoise et Emeraude",
+            "fr": "Muldo Turquoise et Émeraude",
             "de": "Türkis-Smaragd-Seequagga",
             "es": "Mulagua turquesa y esmeralda",
             "pt": "Marmula Turquesa e Esmeralda",
@@ -4213,7 +4213,7 @@
         "mountDofusID": "33136",
         "name": {
             "en": "Almond and Ebony Rhineetle",
-            "fr": "Volkorne Amande et Ebène",
+            "fr": "Volkorne Amande et Ébène",
             "de": "Mandel-Ebenholz-Naskäfer",
             "es": "Vueloceronte almendrado y ébano",
             "pt": "Vulkórnio Amêndoa e Ébano",
@@ -4528,7 +4528,7 @@
         "mountDofusID": "33146",
         "name": {
             "en": "Amethyst and Ebony Rhineetle",
-            "fr": "Volkorne Améthyste et Ebène",
+            "fr": "Volkorne Améthyste et Ébène",
             "de": "Amethyst-Ebenholz-Naskäfer",
             "es": "Vueloceronte amatista y ébano",
             "pt": "Vulkórnio Ametista e Ébano",
@@ -4560,7 +4560,7 @@
         "mountDofusID": "33147",
         "name": {
             "en": "Amethyst and Emerald Rhineetle",
-            "fr": "Volkorne Améthyste et Emeraude",
+            "fr": "Volkorne Améthyste et Émeraude",
             "de": "Amethyst-Smaragd-Naskäfer",
             "es": "Vueloceronte amatista y esmeralda",
             "pt": "Vulkórnio Ametista e Esmeralda",
@@ -4875,7 +4875,7 @@
         "mountDofusID": "33157",
         "name": {
             "en": "Golden and Ebony Rhineetle",
-            "fr": "Volkorne Doré et Ebène",
+            "fr": "Volkorne Doré et Ébène",
             "de": "Gold-Ebenholz-Naskäfer",
             "es": "Vueloceronte dorado y ébano",
             "pt": "Vulkórnio Dourado e Ébano",
@@ -4907,7 +4907,7 @@
         "mountDofusID": "33158",
         "name": {
             "en": "Golden and Emerald Rhineetle",
-            "fr": "Volkorne Doré et Emeraude",
+            "fr": "Volkorne Doré et Émeraude",
             "de": "Gold-Smaragd-Naskäfer",
             "es": "Vueloceronte dorado y esmeralda",
             "pt": "Vulkórnio Dourado e Esmeralda",
@@ -5163,7 +5163,7 @@
         "mountDofusID": "33166",
         "name": {
             "en": "Ebony Rhineetle",
-            "fr": "Volkorne Ebène",
+            "fr": "Volkorne Ébène",
             "de": "Ebenholz-Naskäfer",
             "es": "Vueloceronte ébano",
             "pt": "Vulkórnio Ébano",
@@ -5190,7 +5190,7 @@
         "mountDofusID": "33167",
         "name": {
             "en": "Emerald Rhineetle",
-            "fr": "Volkorne Emeraude",
+            "fr": "Volkorne Émeraude",
             "de": "Smaragd-Naskäfer",
             "es": "Vueloceronte esmeralda",
             "pt": "Vulkórnio Esmeralda",
@@ -5217,7 +5217,7 @@
         "mountDofusID": "33168",
         "name": {
             "en": "Emerald and Almond Rhineetle",
-            "fr": "Volkorne Emeraude et Amande",
+            "fr": "Volkorne Émeraude et Amande",
             "de": "Smaragd-Mandel-Naskäfer",
             "es": "Vueloceronte esmeralda y almendrado",
             "pt": "Vulkórnio Esmeralda e Amêndoa",
@@ -5249,7 +5249,7 @@
         "mountDofusID": "33169",
         "name": {
             "en": "Emerald and Ebony Rhineetle",
-            "fr": "Volkorne Emeraude et Ebène",
+            "fr": "Volkorne Émeraude et Ébène",
             "de": "Smaragd-Ebenholz-Naskäfer",
             "es": "Vueloceronte esmeralda y ébano",
             "pt": "Vulkórnio Esmeralda e Ébano",
@@ -5281,7 +5281,7 @@
         "mountDofusID": "33170",
         "name": {
             "en": "Emerald and Indigo Rhineetle",
-            "fr": "Volkorne Emeraude et Indigo",
+            "fr": "Volkorne Émeraude et Indigo",
             "de": "Smaragd-Indigo-Naskäfer",
             "es": "Vueloceronte esmeralda e índigo",
             "pt": "Vulkórnio Esmeralda e Índigo",
@@ -5313,7 +5313,7 @@
         "mountDofusID": "33171",
         "name": {
             "en": "Emerald and Ivory Rhineetle",
-            "fr": "Volkorne Emeraude et Ivoire",
+            "fr": "Volkorne Émeraude et Ivoire",
             "de": "Smaragd-Elfenbein-Naskäfer",
             "es": "Vueloceronte esmeralda y marfil",
             "pt": "Vulkórnio Esmeralda e Marfim",
@@ -5345,7 +5345,7 @@
         "mountDofusID": "33172",
         "name": {
             "en": "Emerald and Orchid Rhineetle",
-            "fr": "Volkorne Emeraude et Orchidée",
+            "fr": "Volkorne Émeraude et Orchidée",
             "de": "Smaragd-Orchidee-Naskäfer",
             "es": "Vueloceronte esmeralda y orquídeo",
             "pt": "Vulkórnio Esmeralda e Orquídea",
@@ -5377,7 +5377,7 @@
         "mountDofusID": "33173",
         "name": {
             "en": "Emerald and Crimson Rhineetle",
-            "fr": "Volkorne Emeraude et Pourpre",
+            "fr": "Volkorne Émeraude et Pourpre",
             "de": "Smaragd-Purpur-Naskäfer",
             "es": "Vueloceronte esmeralda y púrpura",
             "pt": "Vulkórnio Esmeralda e Púrpura",
@@ -5409,7 +5409,7 @@
         "mountDofusID": "33174",
         "name": {
             "en": "Emerald and Ginger Rhineetle",
-            "fr": "Volkorne Emeraude et Roux",
+            "fr": "Volkorne Émeraude et Roux",
             "de": "Smaragd-Fuchsrot-Naskäfer",
             "es": "Vueloceronte esmeralda y pelirrojo",
             "pt": "Vulkórnio Esmeralda e Escarlate",
@@ -5441,7 +5441,7 @@
         "mountDofusID": "33175",
         "name": {
             "en": "Emerald and Turquoise Rhineetle",
-            "fr": "Volkorne Emeraude et Turquoise",
+            "fr": "Volkorne Émeraude et Turquoise",
             "de": "Smaragd-Türkis-Naskäfer",
             "es": "Vueloceronte esmeralda y turquesa",
             "pt": "Vulkórnio Esmeralda e Turquesa",
@@ -5500,7 +5500,7 @@
         "mountDofusID": "33177",
         "name": {
             "en": "Indigo and Ebony Rhineetle",
-            "fr": "Volkorne Indigo et Ebène",
+            "fr": "Volkorne Indigo et Ébène",
             "de": "Indigo-Ebenholz-Naskäfer",
             "es": "Vueloceronte índigo y ébano",
             "pt": "Vulkórnio Índigo e Ébano",
@@ -5559,7 +5559,7 @@
         "mountDofusID": "33179",
         "name": {
             "en": "Ivory and Ebony Rhineetle",
-            "fr": "Volkorne Ivoire et Ebène",
+            "fr": "Volkorne Ivoire et Ébène",
             "de": "Elfenbein-Ebenholz-Naskäfer",
             "es": "Vueloceronte marfil y ébano",
             "pt": "Vulkórnio Marfim e Ébano",
@@ -5842,7 +5842,7 @@
         "mountDofusID": "33188",
         "name": {
             "en": "Jade and Ebony Rhineetle",
-            "fr": "Volkorne Jade et Ebène",
+            "fr": "Volkorne Jade et Ébène",
             "de": "Jade-Ebenholz-Naskäfer",
             "es": "Vueloceronte jade y ébano",
             "pt": "Vulkórnio Jade e Ébano",
@@ -5874,7 +5874,7 @@
         "mountDofusID": "33189",
         "name": {
             "en": "Jade and Emerald Rhineetle",
-            "fr": "Volkorne Jade et Emeraude",
+            "fr": "Volkorne Jade et Émeraude",
             "de": "Jade-Smaragd-Naskäfer",
             "es": "Vueloceronte jade y esmeralda",
             "pt": "Vulkórnio Jade e Esmeralda",
@@ -6221,7 +6221,7 @@
         "mountDofusID": "33200",
         "name": {
             "en": "Orchid and Ebony Rhineetle",
-            "fr": "Volkorne Orchidée et Ebène",
+            "fr": "Volkorne Orchidée et Ébène",
             "de": "Orchidee-Ebenholz-Naskäfer",
             "es": "Vueloceronte orquídeo y ébano",
             "pt": "Vulkórnio Orquídea e Ébano",
@@ -6312,7 +6312,7 @@
         "mountDofusID": "33203",
         "name": {
             "en": "Crimson and Ebony Rhineetle",
-            "fr": "Volkorne Pourpre et Ebène",
+            "fr": "Volkorne Pourpre et Ébène",
             "de": "Purpur-Ebenholz-Naskäfer",
             "es": "Vueloceronte púrpura y ébano",
             "pt": "Vulkórnio Púrpura e Ébano",
@@ -6467,7 +6467,7 @@
         "mountDofusID": "33208",
         "name": {
             "en": "Plum and Ebony Rhineetle",
-            "fr": "Volkorne Prune et Ebène",
+            "fr": "Volkorne Prune et Ébène",
             "de": "Pflaume-Ebenholz-Naskäfer",
             "es": "Vueloceronte ciruela y ébano",
             "pt": "Vulkórnio Ameixa e Ébano",
@@ -6499,7 +6499,7 @@
         "mountDofusID": "33209",
         "name": {
             "en": "Plum and Emerald Rhineetle",
-            "fr": "Volkorne Prune et Emeraude",
+            "fr": "Volkorne Prune et Émeraude",
             "de": "Pflaume-Smaragd-Naskäfer",
             "es": "Vueloceronte ciruela y esmeralda",
             "pt": "Vulkórnio Ameixa e Esmeralda",
@@ -6750,7 +6750,7 @@
         "mountDofusID": "33217",
         "name": {
             "en": "Ginger and Ebony Rhineetle",
-            "fr": "Volkorne Roux et Ebène",
+            "fr": "Volkorne Roux et Ébène",
             "de": "Fuchsrot-Ebenholz-Naskäfer",
             "es": "Vueloceronte pelirrojo y ébano",
             "pt": "Vulkórnio Escarlate e Ébano",
@@ -7065,7 +7065,7 @@
         "mountDofusID": "33227",
         "name": {
             "en": "Ruby and Ebony Rhineetle",
-            "fr": "Volkorne Rubis et Ebène",
+            "fr": "Volkorne Rubis et Ébène",
             "de": "Rubin-Ebenholz-Naskäfer",
             "es": "Vueloceronte rubí y ébano",
             "pt": "Vulkórnio Rubi e Ébano",
@@ -7097,7 +7097,7 @@
         "mountDofusID": "33228",
         "name": {
             "en": "Ruby and Emerald Rhineetle",
-            "fr": "Volkorne Rubis et Emeraude",
+            "fr": "Volkorne Rubis et Émeraude",
             "de": "Rubin-Smaragd-Naskäfer",
             "es": "Vueloceronte rubí y esmeralda",
             "pt": "Vulkórnio Rubi e Esmeralda",
@@ -7508,7 +7508,7 @@
         "mountDofusID": "33241",
         "name": {
             "en": "Sapphire and Ebony Rhineetle",
-            "fr": "Volkorne Saphir et Ebène",
+            "fr": "Volkorne Saphir et Ébène",
             "de": "Saphir-Ebenholz-Naskäfer",
             "es": "Vueloceronte zafiro y ébano",
             "pt": "Vulkórnio Safira e Ébano",
@@ -7540,7 +7540,7 @@
         "mountDofusID": "33242",
         "name": {
             "en": "Sapphire and Emerald Rhineetle",
-            "fr": "Volkorne Saphir et Emeraude",
+            "fr": "Volkorne Saphir et Émeraude",
             "de": "Saphir-Smaragd-Naskäfer",
             "es": "Vueloceronte zafiro y esmeralda",
             "pt": "Vulkórnio Safira e Esmeralda",
@@ -7823,7 +7823,7 @@
         "mountDofusID": "33251",
         "name": {
             "en": "Turquoise and Ebony Rhineetle",
-            "fr": "Volkorne Turquoise et Ebène",
+            "fr": "Volkorne Turquoise et Ébène",
             "de": "Türkis-Ebenholz-Naskäfer",
             "es": "Vueloceronte turquesa y ébano",
             "pt": "Vulkórnio Turquesa e Ébano",
@@ -8091,7 +8091,7 @@
         "mountDofusID": "33260",
         "name": {
             "en": "Amber and Ebony Seemyool",
-            "fr": "Muldo Ambre et Ebène",
+            "fr": "Muldo Ambre et Ébène",
             "de": "Bernstein-Ebenholz-Seequagga",
             "es": "Mulagua ámbar y ébano",
             "pt": "Marmula Âmbar e Ébano",
@@ -8539,7 +8539,7 @@
         "mountDofusID": "33274",
         "name": {
             "en": "Coral and Ebony Seemyool",
-            "fr": "Muldo Corail et Ebène",
+            "fr": "Muldo Corail et Ébène",
             "de": "Koralle-Ebenholz-Seequagga",
             "es": "Mulagua coral y ébano",
             "pt": "Marmula Coral e Ébano",
@@ -8955,7 +8955,7 @@
         "mountDofusID": "33287",
         "name": {
             "en": "Azure and Ebony Seemyool",
-            "fr": "Muldo Azur et Ebène",
+            "fr": "Muldo Azur et Ébène",
             "de": "Azurblau-Ebenholz-Seequagga",
             "es": "Mulagua azur y ébano",
             "pt": "Marmula Azul-celeste e Ébano",
@@ -9339,7 +9339,7 @@
         "mountDofusID": "33299",
         "name": {
             "en": "Aquamarine and Ebony Seemyool",
-            "fr": "Muldo Aigue-marine et Ebène",
+            "fr": "Muldo Aigue-marine et Ébène",
             "de": "Aquamarin-Ebenholz-Seequagga",
             "es": "Mulagua aguamarina y ébano",
             "pt": "Marmula Água-marinha e Ébano",
