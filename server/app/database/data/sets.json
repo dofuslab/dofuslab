@@ -35669,8 +35669,13 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Power",
-                    "value": 50,
+                    "stat": "Dodge",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Range",
+                    "value": 1,
                     "altStat": null
                 },
                 {
@@ -35679,39 +35684,34 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Range",
-                    "value": 1,
-                    "altStat": null
-                },
-                {
-                    "stat": "Dodge",
-                    "value": 15,
+                    "stat": "Power",
+                    "value": 50,
                     "altStat": null
                 }
             ],
             "3": [
                 {
-                    "stat": "AP",
-                    "value": 1,
+                    "stat": "Air Damage",
+                    "value": 10,
                     "altStat": null
                 },
                 {
-                    "stat": "Power",
-                    "value": 100,
+                    "stat": "Water Damage",
+                    "value": 12,
                     "altStat": null
                 },
                 {
-                    "stat": "Initiative",
-                    "value": 1000,
+                    "stat": "Fire Damage",
+                    "value": 12,
                     "altStat": null
                 },
                 {
-                    "stat": "Range",
-                    "value": 1,
+                    "stat": "Earth Damage",
+                    "value": 15,
                     "altStat": null
                 },
                 {
-                    "stat": "AP Reduction",
+                    "stat": "Dodge",
                     "value": 30,
                     "altStat": null
                 },
@@ -35721,27 +35721,32 @@
                     "altStat": null
                 },
                 {
-                    "stat": "Dodge",
+                    "stat": "AP Reduction",
                     "value": 30,
                     "altStat": null
                 },
                 {
-                    "stat": "Earth Damage",
-                    "value": 15,
+                    "stat": "Range",
+                    "value": 1,
                     "altStat": null
                 },
                 {
-                    "stat": "Fire Damage",
-                    "value": 12,
+                    "stat": "Initiative",
+                    "value": 1000,
                     "altStat": null
                 },
                 {
-                    "stat": "Water Damage",
-                    "value": 12,
+                    "stat": "Power",
+                    "value": 100,
                     "altStat": null
                 },
                 {
-                    "stat": "Air Damage",
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Neutral Damage",
                     "value": 10,
                     "altStat": null
                 }
@@ -49115,6 +49120,160 @@
                 {
                     "stat": "AP",
                     "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1090",
+        "name": {
+            "en": "Eternal Gardens Sanctuary Set",
+            "fr": "Panoplie du Sanctuaire des Jardins éternels",
+            "de": "Set des Heiligtums der Ewigen Gärten",
+            "es": "Set del Santuario de los Jardines Eternos",
+            "pt": "Conjunto do Santuário dos Jardins Eternos",
+            "it": "Eternal Gardens Sanctuary Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Heals",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Air Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Earth Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Damage",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "% Fire Resistance",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Air Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Water Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "% Earth Resistance",
+                    "value": 5,
+                    "altStat": null
+                },
+                {
+                    "stat": "Damage",
+                    "value": 15,
+                    "altStat": null
+                },
+                {
+                    "stat": "Power",
+                    "value": 50,
+                    "altStat": null
+                },
+                {
+                    "stat": "Heals",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Summons",
+                    "value": 1,
+                    "altStat": null
+                }
+            ]
+        }
+    },
+    {
+        "id": "1091",
+        "name": {
+            "en": "Chasm Set",
+            "fr": "Panoplie du Gouffre",
+            "de": "Set des Abgrunds",
+            "es": "Set de la sima",
+            "pt": "Conjunto da Fenda",
+            "it": "Chasm Set"
+        },
+        "bonuses": {
+            "2": [
+                {
+                    "stat": "Chance",
+                    "value": 60,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 10,
+                    "altStat": null
+                }
+            ],
+            "3": [
+                {
+                    "stat": "AP",
+                    "value": 1,
+                    "altStat": null
+                },
+                {
+                    "stat": "Critical",
+                    "value": 7,
+                    "altStat": null
+                },
+                {
+                    "stat": "Lock",
+                    "value": 10,
+                    "altStat": null
+                },
+                {
+                    "stat": "Chance",
+                    "value": 60,
                     "altStat": null
                 }
             ]

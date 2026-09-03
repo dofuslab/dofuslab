@@ -47136,8 +47136,8 @@
       "usesPerTurn": 2,
       "minRange": null,
       "maxRange": 1,
-      "baseCritChance": 0,
-      "critBonusDamage": 0,
+      "baseCritChance": 100,
+      "critBonusDamage": 3,
       "weapon_effects": []
     },
     "customStats": {
@@ -47248,22 +47248,22 @@
     },
     "customStats": {
       "en": [
-        "Novamaire Cold:\n• At the end of each turn, the bearer removes 1 AP from adjacent enemies for 1 turn (stackable 1 time).\n• When the bearer finishes off an enemy fighter, they place a glyph-aura that makes allies Invisible for 1 turn in a 3-cell circle."
+        "Novamaire Cold:\n• At the end of each turn, the bearer removes 1 AP from adjacent enemies for 1 turn (stackable 1 time).\n• When an enemy fighter is finished off, the bearer gains 1 AP for 1 turn (stackable 2 times).\n• When the bearer finishes off an enemy fighter, they place a glyph-aura that makes allies Invisible for 1 turn in a 3-cell circle."
       ],
       "fr": [
-        "Froid de Novamaire :\n• À chaque fin de tour, le porteur retire 1 PA aux ennemis à son contact pendant 1 tour (cumulable 1 fois).\n• Lorsque le porteur achève un combattant ennemi, il pose un glyphe-aura qui rend les alliés invisibles pendant 1 tour dans un cercle de taille 3."
+        "Froid de Novamaire :\n• À chaque fin de tour, le porteur retire 1 PA aux ennemis à son contact pendant 1 tour (cumulable 1 fois).\n• Lorsqu'un combattant ennemi est achevé, le porteur gagne 1 PA pendant 1 tour (cumulable 2 fois).\n• Lorsque le porteur achève un combattant ennemi, il pose un glyphe-aura qui rend les alliés invisibles pendant 1 tour dans un cercle de taille 3."
       ],
       "de": [
-        "Kälte von Novamaire:\n• Am Ende jeder Runde entzieht der Träger 1 Runde lang Gegnern in Reichweite 1 AP (1-mal kumulierbar).\n• Wenn der Träger einen gegnerischen Kämpfer besiegt, platziert er eine Aura-Glyphe, die seine Verbündeten im Umkreis von 3 Feldern 1 Runde lang unsichtbar macht."
+        "Kälte von Novamaire:\n• Am Ende jeder Runde entzieht der Träger 1 Runde lang Gegnern in Reichweite 1 AP (1-mal kumulierbar).\n• Wenn ein gegnerischer Kämpfer besiegt wird, erhält der Träger 1 Runde lang 1 AP (2-mal kumulierbar).\n• Wenn der Träger einen gegnerischen Kämpfer besiegt, platziert er eine Aura-Glyphe, die seine Verbündeten im Umkreis von 3 Feldern 1 Runde lang unsichtbar macht."
       ],
       "es": [
-        "Frío de Novimiembro:\n• Al final de cada turno, el portador retira 1 PA a los enemigos en contacto con él durante 1 turno (acumulable 1 vez).\n• Cuando el portador acaba con un luchador enemigo, coloca un glifo aura que vuelve invisibles a los aliados durante 1 turno en un círculo de tamaño 3."
+        "Frío de Novimiembro:\n• Al final de cada turno, el portador retira 1 PA a los enemigos en contacto con él durante 1 turno (acumulable 1 vez).\n• Cuando un luchador enemigo es eliminado, el portador gana 1 PA durante 1 turno (acumulable 2 veces).\n• Cuando el portador acaba con un luchador enemigo, coloca un glifo aura que vuelve invisibles a los aliados durante 1 turno en un círculo de tamaño 3."
       ],
       "pt": [
-        "Frio de Novemeiro:\n• No final de cada turno, o portador retira 1 PA dos inimigos em contato com ele durante 1 turno (acumula 1 vez).\n• Ao derrotar um combatente inimigo, o portador coloca um glifo-aura que deixa os aliados invisíveis durante 1 turno em um círculo de tamanho 3."
+        "Frio de Novemeiro:\n• No final de cada turno, o portador retira 1 PA dos inimigos em contato com ele durante 1 turno (acumula 1 vez).\n• Ao derrotar um combatente inimigo, o portador ganha 1 PA durante 1 turno (acumula até 2 vezes).\n• Ao derrotar um combatente inimigo, o portador coloca um glifo-aura que deixa os aliados invisíveis durante 1 turno em um círculo de tamanho 3."
       ],
       "it": [
-        "Novamaire Cold:\n• At the end of each turn, the bearer removes 1 AP from adjacent enemies for 1 turn (stackable 1 time).\n• When the bearer finishes off an enemy fighter, they place a glyph-aura that makes allies Invisible for 1 turn in a 3-cell circle."
+        "Novamaire Cold:\n• At the end of each turn, the bearer removes 1 AP from adjacent enemies for 1 turn (stackable 1 time).\n• When an enemy fighter is finished off, the bearer gains 1 AP for 1 turn (stackable 2 times).\n• When the bearer finishes off an enemy fighter, they place a glyph-aura that makes allies Invisible for 1 turn in a 3-cell circle."
       ]
     },
     "conditions": {
@@ -48054,22 +48054,22 @@
     },
     "customStats": {
       "en": [
-        "Attrition Warfare:\n• At the end of each turn, the bearer removes 2 MP from adjacent enemies for 1 turn (stackable 1 time).\n• When the bearer finishes off an enemy fighter, they gain 1 MP until the end of the fight (stackable 5 times)."
+        "Attrition Warfare:\n• At the end of each turn, the bearer removes 2 MP from adjacent enemies for 1 turn (stackable 1 time).\n• When an enemy fighter is finished off, the bearer gains 1 MP until the end of the fight (stackable 5 times)."
       ],
       "fr": [
-        "Guerre de positions :\n• À chaque fin de tour, le porteur retire 2 PM aux ennemis à son contact pendant 1 tour (cumulable 1 fois).\n• Lorsque le porteur achève un combattant ennemi, il gagne 1 PM jusqu'à la fin du combat (cumulable 5 fois)."
+        "Guerre de Positions :\n• À chaque fin de tour, le porteur retire 2 PM aux ennemis à son contact pendant 1 tour (cumulable 1 fois).\n• Lorsqu'un combattant ennemi est achevé, le porteur gagne 1 PM jusqu'à la fin du combat (cumulable 5 fois)."
       ],
       "de": [
-        "Stellungskrieg:\n• Am Ende jeder Runde entzieht der Träger 1 Runde lang Gegnern in Reichweite 2 BP (1-mal kumulierbar).\n• Wenn der Träger einen gegnerischen Kämpfer besiegt, erhält er bis zum Ende des Kampfes 1 BP (5-mal kumulierbar)."
+        "Stellungskrieg:\n• Am Ende jeder Runde entzieht der Träger 1 Runde lang Gegnern in Reichweite 2 BP (1-mal kumulierbar).\n• Wenn ein gegnerischer Kämpfer besiegt wird, erhält der Träger bis zum Ende des Kampfes 1 BP (5-mal kumulierbar)."
       ],
       "es": [
-        "Guerra de Desgaste:\n• Al final de cada turno, el portador retira 2 PM a los enemigos en contacto con él durante 1 turno (acumulable 1 vez).\n• Cuando el portador acaba con un luchador enemigo, gana 1 PM hasta el final del combate (acumulable 5 veces)."
+        "Guerra de Desgaste:\n• Al final de cada turno, el portador retira 2 PM a los enemigos en contacto con él durante 1 turno (acumulable 1 vez).\n• Cuando un luchador enemigo es eliminado, el portador gana 1 PM hasta el final del combate (acumulable 5 veces)."
       ],
       "pt": [
-        "Guerra de Posição:\n• No final de cada turno, o portador retira 2 PM dos inimigos em contato com ele durante 1 turno (acumula 1 vez).\n• Ao derrotar um combatente inimigo, o portador ganha 1 PM até o final do combate (acumula até 5 vezes)."
+        "Guerra de Posição:\n• No final de cada turno, o portador retira 2 PM dos inimigos em contato com ele durante 1 turno (acumula 1 vez).\n• Ao derrotar um combatente inimigo, o portador ganha 1 PM até o fim do combate (acumula até 5 vezes)."
       ],
       "it": [
-        "Attrition Warfare:\n• At the end of each turn, the bearer removes 2 MP from adjacent enemies for 1 turn (stackable 1 time).\n• When the bearer finishes off an enemy fighter, they gain 1 MP until the end of the fight (stackable 5 times)."
+        "Attrition Warfare:\n• At the end of each turn, the bearer removes 2 MP from adjacent enemies for 1 turn (stackable 1 time).\n• When an enemy fighter is finished off, the bearer gains 1 MP until the end of the fight (stackable 5 times)."
       ]
     },
     "conditions": {
@@ -48180,49 +48180,26 @@
     },
     "customStats": {
       "en": [
-        "Trial of the Scales:\n• When the bearer suffers an attempted AP, MP or Range removal, they steal 2% resistance from their attacker for 2 turns (stackable 5 times)."
+        "Trial of the Scales:\n• When the bearer suffers an attempted AP, MP or Range reduction, they steal 2% resistance from their attacker for 2 turns (stackable 4 times).\n• The effects cannot be triggered by the bearer."
       ],
       "fr": [
-        "Épreuve de la Balance :\n• Lorsque le porteur subit une tentative de retrait de PA, de PM ou de Portée, il vole 2% de résistances à son attaquant pendant 2 tours (cumulable 5 fois)."
+        "Épreuve de la Balance :\n• Lorsque le porteur subit une tentative de retrait de PA, de PM ou de Portée, il vole 2% de résistances à son attaquant pendant 2 tours (cumulable 4 fois).\n• Les effets ne peuvent pas être déclenchés par le porteur."
       ],
       "de": [
-        "Prüfung der Waage:\n• Wenn versucht wird, dem Träger AP, BP oder Reichweite zu entziehen, stiehlt er 2 Runden lang 2 % der Resistenzen seines Angreifers (5-mal kumulierbar)."
+        "Prüfung der Waage:\n• Wenn versucht wird, dem Träger AP, BP oder Reichweite zu entziehen, stiehlt er 2 Runden lang 2 % der Resistenzen seines Angreifers (4-mal kumulierbar).\n• Die Wirkungen können nicht durch den Träger ausgelöst werden."
       ],
       "es": [
-        "Prueba de la Balanza:\n• Cuando el portador sufre un intento de retirada de PA, PM o alcance, roba un 2% de resistencias a su atacante durante 2 turnos (acumulable 5 veces)."
+        "Prueba de la Balanza:\n• Cuando el portador sufre un intento de retirada de PA, PM o alcance, roba un 2% de resistencias a su atacante durante 2 turnos (acumulable 4 veces).\n• El portador no puede activar los efectos."
       ],
       "pt": [
-        "Prova da Balança:\n• Quando o portador sofre uma tentativa de retirada de PA, PM ou AL, ele rouba 2% de resistência de seu atacante por 2 turnos (acumula 5 vezes)."
+        "Prova da Balança:\n• Quando o portador sofre uma tentativa de retirada de PA, PM ou AL, ele rouba 2% de resistência de seu atacante por 2 turnos (acumula até 4 vezes).\n• Os efeitos não podem ser acionados pelo portador."
       ],
       "it": [
-        "Trial of the Scales:\n• When the bearer suffers an attempted AP, MP or Range removal, they steal 2% resistance from their attacker for 2 turns (stackable 5 times)."
+        "Trial of the Scales:\n• When the bearer suffers an attempted AP, MP or Range reduction, they steal 2% resistance from their attacker for 2 turns (stackable 4 times).\n• The effects cannot be triggered by the bearer."
       ]
     },
     "conditions": {
-      "conditions": {
-        "and": [
-          {
-            "stat": "STRENGTH",
-            "operator": ">",
-            "value": 299
-          },
-          {
-            "stat": "INTELLIGENCE",
-            "operator": ">",
-            "value": 299
-          },
-          {
-            "stat": "AGILITY",
-            "operator": ">",
-            "value": 299
-          },
-          {
-            "stat": "CHANCE",
-            "operator": ">",
-            "value": 299
-          }
-        ]
-      },
+      "conditions": {},
       "customConditions": {}
     },
     "imageUrl": "item/4138.png"
@@ -54816,22 +54793,22 @@
     },
     "customStats": {
       "en": [
-        "Order of Thunder:\n• At the end of each turn, the bearer gives 1 MP to all allies in their line of sight for 1 turn (stackable 1 time).\n• When an allied fighter dies, the bearer increases the final damage of all others by 4% until the end of the fight (stackable 2 times).\n• When the bearer inflicts weapon damage, they gain 25 Pushback Damage for 2 turns.\n• The effects are removed when the bearer dies."
+        "Order of Thunder:\n• At the end of each turn, the bearer gives 1 MP and 40 Pushback Damage to all allies in their line of sight for 1 turn (stackable 1 time).\n• When an allied fighter dies, the bearer increases the final damage of all others by 4% until the end of the fight (stackable 2 times).\n• The effects are removed when the bearer dies."
       ],
       "fr": [
-        "Ordre du Tonnerre :\n• À chaque fin de tour, le porteur donne 1 PM pendant 1 tour à tous les alliés dans sa ligne de vue (cumulable 1 fois).\n• Lorsqu'un combattant allié meurt, le porteur augmente les dommages finaux de tous les autres de 4% jusqu'à la fin du combat (cumulable 2 fois).\n• Lorsque le porteur occasionne des dommages d'armes, il gagne 25 de Dommages Poussée pendant 2 tours.\n• Les effets sont retirés à la mort du porteur."
+        "Ordre du Tonnerre :\n• À chaque fin de tour, le porteur donne 1 PM et 40 Dommages Poussée pendant 1 tour à tous les alliés dans sa ligne de vue (cumulable 1 fois).\n• Lorsqu'un combattant allié meurt, le porteur augmente les dommages finaux de tous les autres de 4% jusqu'à la fin du combat (cumulable 2 fois).\n• Les effets sont retirés à la mort du porteur."
       ],
       "de": [
-        "Orden des Donners:\n• Am Ende jeder Runde gewährt der Träger allen Verbündeten in seiner Sichtlinie 1 Runde lang 1 BP (1-mal kumulierbar).\n• Wenn ein verbündeter Kämpfer stirbt, erhöht der Träger den Endschaden aller anderen bis zum Ende des Kampfes um 4 % (2-mal kumulierbar).\n• Wenn der Träger Waffenschaden verursacht, erhält er 2 Runden lang 25 Schubsschaden.\n• Die Effekte werden aufgehoben, wenn der Träger stirbt."
+        "Orden des Donners:\n• Am Ende jeder Runde gewährt der Träger allen Verbündeten in seiner Sichtlinie 1 Runde lang 1 BP und 40 Schubsschaden (1-mal kumulierbar).\n• Wenn ein verbündeter Kämpfer stirbt, erhöht der Träger den Endschaden aller anderen bis zum Ende des Kampfes um 4 % (2-mal kumulierbar).\n• Die Effekte werden aufgehoben, wenn der Träger stirbt."
       ],
       "es": [
-        "Orden del Trueno:\n• Al final de cada turno, el portador da 1 PM durante 1 turno a todos los aliados en su línea de visión (acumulable 1 vez).\n• Cuando muere un luchador aliado, el portador aumenta los daños finales de todos los demás en un 4% hasta el final del combate (acumulable 2 veces).\n• Cuando el portador ocasiona daños con armas, gana 25 de daños de empuje durante 2 turnos.\n• Los efectos se eliminan al morir el portador."
+        "Orden del Trueno:\n• Al final de cada turno, el portador da 1 PM y 40 de daños de empuje durante 1 turno a todos los aliados en su línea de visión (acumulable 1 vez).\n• Cuando muere un luchador aliado, el portador aumenta los daños finales de todos los demás en un 4% hasta el final del combate (acumulable 2 veces).\n• Los efectos se eliminan al morir el portador."
       ],
       "pt": [
-        "Ordem do Trovão:\n• No fim de cada turno, o portador concede 1 PM durante 1 turno a todos os aliados em sua linha de visão (acumula 1 vez).\n• Quando um combatente aliado morre, o portador aumenta os danos finais de todos os outros em 4% até o fim do combate (acumula até 2 vezes).\n• Quando o portador inflige danos de armas, ele ganha 25 de danos de empurrão durante 2 turnos.\n• Os efeitos são retirados quando o portador morre."
+        "Ordem do Trovão:\n• No fim de cada turno, o portador concede 1 PM e 40 danos de empurrão durante 1 turno a todos os aliados em sua linha de visão (acumula até 1 vez).\n• Quando um combatente aliado morre, o portador aumenta os danos finais de todos os outros em 4% até o fim do combate (acumula até 2 vezes).\n• Os efeitos são retirados quando o portador morre."
       ],
       "it": [
-        "Order of Thunder:\n• At the end of each turn, the bearer gives 1 MP to all allies in their line of sight for 1 turn (stackable 1 time).\n• When an allied fighter dies, the bearer increases the final damage of all others by 4% until the end of the fight (stackable 2 times).\n• When the bearer inflicts weapon damage, they gain 25 Pushback Damage for 2 turns.\n• The effects are removed when the bearer dies."
+        "Order of Thunder:\n• At the end of each turn, the bearer gives 1 MP and 40 Pushback Damage to all allies in their line of sight for 1 turn (stackable 1 time).\n• When an allied fighter dies, the bearer increases the final damage of all others by 4% until the end of the fight (stackable 2 times).\n• The effects are removed when the bearer dies."
       ]
     },
     "conditions": {
@@ -54932,22 +54909,22 @@
     },
     "customStats": {
       "en": [
-        "Thanatena's Judgement:\n• At the start of each turn, the bearer erodes and increases damage suffered by everyone by 4% for 1 turn (stackable 1 time).\n• When they finish off an enemy, they are healed for 20% of their health and gain 10% final damage for 1 turn. The effects are halved if it's a summons."
+        "Thanatena's Judgement:\n• At the start of each turn, the bearer erodes and increases damage suffered by everyone by 4% for 1 turn (stackable 1 time).\n• When they finish off an enemy, they are healed for 20% of their health and gain 10% final damage for 1 turn. Healing is 5% of their health if it is a summons."
       ],
       "fr": [
-        "Jugement de Thanatena :\n• À chaque début de tour, le porteur érode et augmente les dommages subis par tout le monde de 4% pendant 1 tour (cumulable 1 fois).\n• Lorsqu'il achève un ennemi, il est soigné de 20% de sa vie et gagne 10% dommages finaux pendant 1 tour. Les effets sont réduits de moitié si c'est une invocation."
+        "Jugement de Thanatena :\n• À chaque début de tour, le porteur érode et augmente les dommages subis par tout le monde de 4% pendant 1 tour (cumulable 1 fois).\n• Lorsqu'il achève un ennemi, il est soigné de 20% de sa vie et gagne 10% de dommages finaux pendant 1 tour. Les soins sont de 5% de sa vie si c'est une invocation."
       ],
       "de": [
-        "Thanatenas Urteil:\n• Zu Beginn jeder Runde erodiert der Träger alle und erhöht den von ihnen erlittenen Schaden 1 Runde lang um 4 % (1-mal kumulierbar).\n• Wenn er einen Gegner besiegt, wird er um 20 % seiner LP geheilt und sein Endschaden erhöht sich 1 Runde lang um 10 %. Handelt es sich um eine Beschwörung, werden die Wirkungen um die Hälfte verringert."
+        "Thanatenas Urteil:\n• Zu Beginn jeder Runde erodiert der Träger alle und erhöht den von ihnen erlittenen Schaden 1 Runde lang um 4 % (1-mal kumulierbar).\n• Wenn er einen Gegner besiegt, wird er um 20 % seiner LP geheilt und sein Endschaden erhöht sich 1 Runde lang um 10 %. Wenn es sich um eine Beschwörung handelt, wird sie um 5 % ihrer LP geheilt."
       ],
       "es": [
-        "Juicio de Thanatena:\n• Al inicio de cada turno, el portador erosiona y aumenta los daños recibidos por todos en un 4% durante 1 turno (acumulable 1 vez).\n• Cuando elimina a un enemigo, se cura un 20% de su vida y gana un 10% de daños finales durante 1 turno. Los efectos se reducen a la mitad si se trata de una invocación."
+        "Juicio de Thanatena:\n• Al inicio de cada turno, el portador erosiona y aumenta los daños recibidos por todos en un 4% durante 1 turno (acumulable 1 vez).\n• Cuando remata a un enemigo, se cura un 20% de su vida y gana un 10% de daños finales durante 1 turno. Cuando se trata de una invocación, las curas son del 5% de su vida."
       ],
       "pt": [
-        "Julgamento de Tanatena:\n• No começo de cada turno, o portador erode e aumenta os danos sofridos por todo mundo em 4% durante 1 turno (acumula 1 vez).\n• Ao derrotar um inimigo, ele cura 20% da própria vida e ganha 10% de danos finais durante 1 turno. Os efeitos são reduzidos pela metade se for uma invocação."
+        "Julgamento de Tanatena:\n• No começo de cada turno, o portador erode e aumenta os danos sofridos por todo mundo em 4% durante 1 turno (acumula 1 vez).\n• Ao derrotar um inimigo, ele cura 20% da própria vida e ganha 10% de danos finais durante 1 turno. As curas são de 5% da vida dele se for uma invocação."
       ],
       "it": [
-        "Thanatena's Judgement:\n• At the start of each turn, the bearer erodes and increases damage suffered by everyone by 4% for 1 turn (stackable 1 time).\n• When they finish off an enemy, they are healed for 20% of their health and gain 10% final damage for 1 turn. The effects are halved if it's a summons."
+        "Thanatena's Judgement:\n• At the start of each turn, the bearer erodes and increases damage suffered by everyone by 4% for 1 turn (stackable 1 time).\n• When they finish off an enemy, they are healed for 20% of their health and gain 10% final damage for 1 turn. Healing is 5% of their health if it is a summons."
       ]
     },
     "conditions": {
@@ -56889,5 +56866,122 @@
       "customConditions": {}
     },
     "imageUrl": "item/2098.png"
+  },
+  {
+    "dofusID": "34331",
+    "name": {
+      "en": "Crabinator Pincerlance",
+      "fr": "Lancepince d'Exécrabe",
+      "de": "Scherenlanze der Gruselkrabbe",
+      "es": "Lanzapinza de Cangrancio",
+      "pt": "Lançapinça de Carangnante",
+      "it": "Crabinator Pincerlance"
+    },
+    "itemType": "Lance",
+    "setID": "1091",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Chance",
+        "minStat": 71,
+        "maxStat": 90
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "MP Reduction",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Fire Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Initiative",
+        "minStat": null,
+        "maxStat": -300
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": null,
+        "maxStat": -10
+      }
+    ],
+    "weaponStats": {
+      "apCost": 5,
+      "usesPerTurn": 1,
+      "minRange": null,
+      "maxRange": 1,
+      "baseCritChance": 10,
+      "critBonusDamage": 3,
+      "weapon_effects": [
+        {
+          "stat": "Water damage",
+          "minStat": 9,
+          "maxStat": 13
+        },
+        {
+          "stat": "Water damage",
+          "minStat": 9,
+          "maxStat": 13
+        },
+        {
+          "stat": "Water steal",
+          "minStat": 27,
+          "maxStat": 33
+        },
+        {
+          "stat": "Attract cells",
+          "minStat": null,
+          "maxStat": 1
+        }
+      ]
+    },
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/183018.png"
   }
 ]

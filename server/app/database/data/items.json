@@ -20824,22 +20824,22 @@
     ],
     "customStats": {
       "en": [
-        "Harmony of Pandala:\n• When the bearer inflicts damage during their turn, they and their allies carrying the {{item,23408::Dorigami}} gain 20 Damage for 1 turn (stackable 1 time).\n• If the bearer does not inflict damage, they and their allies carrying the {{item,23237::Domakuro}} gain 150% of the bearer's level as shield for 1 turn."
+        "Harmony of Pandala:\n• When the bearer inflicts damage during their turn, they and their allies carrying the {{item,23408::Dorigami}} gain 20 Damage for 1 turn (stackable 1 time).\n• If the bearer does not inflict damage, they and their allies carrying the {{item,23237::Domakuro}} gain 100% of the bearer's level as shield for 1 turn."
       ],
       "fr": [
-        "Harmonie de Pandala :\n• Lorsque le porteur occasionne des dommages durant son tour de jeu, lui et ses alliés porteurs du {{item,23408::Dorigami}} gagnent 20 de Dommages pendant 1 tour (cumulable 1 fois).\n• S'il n'en occasionne pas, lui et ses alliés porteurs du {{item,23237::Domakuro}} gagnent 150% de son niveau en bouclier pendant 1 tour."
+        "Harmonie de Pandala :\n• Lorsque le porteur occasionne des dommages durant son tour de jeu, lui et ses alliés porteurs du {{item,23408::Dorigami}} gagnent 20 de Dommages pendant 1 tour (cumulable 1 fois).\n• S'il n'en occasionne pas, lui et ses alliés porteurs du {{item,23237::Domakuro}} gagnent 100% de son niveau en bouclier pendant 1 tour."
       ],
       "de": [
-        "Harmonie von Pandala:\n• Wenn der Träger während seiner Runde Schaden verursacht, erhalten er und seine Verbündeten, die einen {{item,23408::Dorigami}} bei sich tragen, 1 Runde lang 20 Schaden (1-mal kumulierbar).\n• Wenn er keinen Schaden verursacht, erhalten er und seine Verbündeten, die einen {{item,23237::Domakuro}} bei sich tragen, 1 Runde lang 150 % seiner Stufe als Schild."
+        "Harmonie von Pandala:\n• Wenn der Träger während seiner Runde Schaden verursacht, erhalten er und seine Verbündeten, die einen {{item,23408::Dorigami}} bei sich tragen, 1 Runde lang 20 Schaden (1-mal kumulierbar).\n• Wenn er keinen Schaden verursacht, erhalten er und seine Verbündeten, die einen {{item,23237::Domakuro}} bei sich tragen, 1 Runde lang 100 % seiner Stufe als Schild."
       ],
       "es": [
-        "Armonía de Pandala:\n• Cuando el portador ocasiona daños durante su turno, él y sus aliados portadores del {{item,23408::dorigami}} ganan 20 de daño durante 1 turno (acumulable 1 vez).\n• Si no ocasiona daños, gana, al igual que sus aliados portadores del {{item,23237::domakuro}}, el 150% de su nivel en escudo durante 1 turno."
+        "Armonía de Pandala:\n• Cuando el portador ocasiona daños durante su turno, él y sus aliados portadores del {{item,23408::dorigami}} ganan 20 de daño durante 1 turno (acumulable 1 vez).\n• Si no ocasiona daños, gana, al igual que sus aliados portadores del {{item,23237::domakuro}}, el 100% de su nivel en escudo durante 1 turno."
       ],
       "pt": [
-        "Harmonia de Pandala:\n• Quando o portador causa dano durante seu turno de jogo, ele e seus aliados que estiverem portando o {{item,23408::Dorigami}} ganham 20 de danos por 1 turno (acumula 1 vez).\n• Se não causar dano, ele e seus aliados portadores do {{item,23237::Domakuro}} ganharão 150% de seu nível em escudo durante 1 turno."
+        "Harmonia de Pandala:\n• Quando o portador causa dano durante seu turno de jogo, ele e seus aliados que estiverem portando o {{item,23408::Dorigami}} ganham 20 de danos por 1 turno (acumula 1 vez).\n• Se não causar dano, ele e seus aliados portadores do {{item,23237::Domakuro}} ganharão 100% de seu nível em escudo durante 1 turno."
       ],
       "it": [
-        "Harmony of Pandala:\n• When the bearer inflicts damage during their turn, they and their allies carrying the {{item,23408::Dorigami}} gain 20 Damage for 1 turn (stackable 1 time).\n• If the bearer does not inflict damage, they and their allies carrying the {{item,23237::Domakuro}} gain 150% of the bearer's level as shield for 1 turn."
+        "Harmony of Pandala:\n• When the bearer inflicts damage during their turn, they and their allies carrying the {{item,23408::Dorigami}} gain 20 Damage for 1 turn (stackable 1 time).\n• If the bearer does not inflict damage, they and their allies carrying the {{item,23237::Domakuro}} gain 100% of the bearer's level as shield for 1 turn."
       ]
     },
     "conditions": {
@@ -34818,64 +34818,58 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Optical Arrow: -1 AP",
-        "Raining Arrows: -1 AP",
-        "Frozen Arrow: -1 AP",
-        "Slow Down Arrow: -1 AP",
-        "Repulsive Shot: -1 AP",
-        "Burning Arrows: -1 AP",
-        "Lashing Arrow: -1 AP",
-        "Covering Fire: -1 AP"
+        "Abolition Arrow: +1 cast(s) per turn",
+        "Persecuting Arrow: -1 AP",
+        "Lashing Arrow: +1 cast(s) per turn",
+        "Assailing Arrow: modifiable Range",
+        "Exploding Arrow: +1 cast(s) per turn",
+        "Immobilising Arrow: +1 cast(s) per target",
+        "Tyrannical Arrow: +3 Maximum Range"
       ],
       "fr": [
-        "Flèche Optique : -1 PA",
-        "Pluie de Flèches : -1 PA",
-        "Flèche Glacée : -1 PA",
-        "Flèche Ralentissante : -1 PA",
-        "Tir Répulsif : -1 PA",
-        "Flèches Enflammées : -1 PA",
-        "Flèche Cinglante : -1 PA",
-        "Tir de Couverture : -1 PA"
+        "Flèche d'Abolition : +1 lancer(s) par tour",
+        "Flèche Persécutrice : -1 PA",
+        "Flèche Cinglante : +1 lancer(s) par tour",
+        "Flèche Assaillante : Portée modifiable",
+        "Flèche Détonante : +1 lancer(s) par tour",
+        "Flèche d'Immobilisation : +1 lancer(s) par cible",
+        "Flèche Tyrannique : +3 Portée maximale"
       ],
       "de": [
-        "Optischer Pfeil: –1 AP",
-        "Pfeilregen: –1 AP",
-        "Eispfeil: –1 AP",
-        "Verlangsamungspfeil: –1 AP",
-        "Abstoßender Schuss: –1 AP",
-        "Flammenpfeile: –1 AP",
-        "Peitschender Pfeil: –1 AP",
-        "Deckungsfeuer: –1 AP"
+        "Pfeil der Abschaffung : +1 Zauber pro Runde",
+        "Heimsuchender Pfeil: –1 AP",
+        "Peitschender Pfeil : +1 Zauber pro Runde",
+        "Angriffspfeil: Veränderbare Reichweite",
+        "Detonationspfeil : +1 Zauber pro Runde",
+        "Lähmpfeil : +1 Zauber pro Ziel",
+        "Tyrannischer Pfeil: +3 Maximale Reichweite"
       ],
       "es": [
-        "Flecha Óptica: -1 PA",
-        "Lluvia de Flechas: -1 PA",
-        "Flecha Helada: -1 PA",
-        "Flecha Ralentizante: -1 PA",
-        "Tiro Repulsivo: -1 PA",
-        "Flechas Flamígeras: -1 PA",
-        "Flecha Azotadora: -1 PA",
-        "Fuego de Cobertura: -1 PA"
+        "Flecha de Abolición: +1 lanzamiento(s) por turno",
+        "Flecha Perseguidora: -1 PA",
+        "Flecha Azotadora: +1 lanzamiento(s) por turno",
+        "Flecha Asaltante: alcance modificable",
+        "Flecha Detonadora: +1 lanzamiento(s) por turno",
+        "Flecha Inmovilizadora: +1 lanzamiento(s) por objetivo",
+        "Flecha Tiránica: +3 de alcance máximo"
       ],
       "pt": [
-        "Flecha Óptica: -1 PA",
-        "Chuva de Flechas: -1 PA",
-        "Flecha Congelada: -1 PA",
-        "Flecha Desaceleradora: -1 PA",
-        "Tiro Repulsivo: -1 PA",
-        "Flechas Flamejantes: -1 PA",
-        "Flecha Fustigante: -1 PA",
-        "Tiro de Cobertura: -1 PA"
+        "Flecha de Abolição: +1 lançamento(s) por turno",
+        "Flecha Perseguidora: -1 PA",
+        "Flecha Fustigante: +1 lançamento(s) por turno",
+        "Flecha Agressora: alcance modificável",
+        "Flecha Detonante: +1 lançamento(s) por turno",
+        "Flecha de Imobilização: +1 lançamento(s) por alvo",
+        "Flecha Tirânica: +3 de alcance máximo"
       ],
       "it": [
-        "Optical Arrow: -1 AP",
-        "Raining Arrows: -1 AP",
-        "Frozen Arrow: -1 AP",
-        "Slow Down Arrow: -1 AP",
-        "Repulsive Shot: -1 AP",
-        "Burning Arrows: -1 AP",
-        "Lashing Arrow: -1 AP",
-        "Covering Fire: -1 AP"
+        "Abolition Arrow: +1 cast(s) per turn",
+        "Persecuting Arrow: -1 AP",
+        "Lashing Arrow: +1 cast(s) per turn",
+        "Assailing Arrow: modifiable Range",
+        "Exploding Arrow: +1 cast(s) per turn",
+        "Immobilising Arrow: +1 cast(s) per target",
+        "Tyrannical Arrow: +3 Maximum Range"
       ]
     },
     "conditions": {
@@ -35796,64 +35790,58 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Immobilising Arrow: +1 cast(s) per target",
-        "Assailing Arrow: +35% Critical",
-        "Retreating Shot: line of sight off",
-        "Barricade Shot: line of sight off",
-        "Erosive Arrows: -1 AP",
-        "Withdrawal Arrows: line of sight off",
-        "Lark Mirror: line of sight off",
-        "Eye for Eye: line of sight off"
+        "Retreat Arrow: +1 cast(s) per target",
+        "Radiant Arrow: +1 cast(s) per turn",
+        "Dispersing Arrow: +1 cast(s) per turn",
+        "Burning Arrows: modifiable Range",
+        "Vagabond Arrow: +1 cast(s) per turn",
+        "Evasive Arrow: +1 cast(s) per target",
+        "Eye for Eye: +3 Maximum Range"
       ],
       "fr": [
-        "Flèche d'Immobilisation : +1 lancer(s) par cible",
-        "Flèche Assaillante : +35% Critique",
-        "Tir de Recul : ligne de vue désactivée",
-        "Tir de Barrage : ligne de vue désactivée",
-        "Flèches Érosives : -1 PA",
-        "Flèches de Repli : ligne de vue désactivée",
-        "Miroir aux Alouettes : ligne de vue désactivée",
-        "Œil pour Œil : ligne de vue désactivée"
+        "Flèche de Recul : +1 lancer(s) par cible",
+        "Flèche Éclatante : +1 lancer(s) par tour",
+        "Flèche de Dispersion : +1 lancer(s) par tour",
+        "Flèches Enflammées : Portée modifiable",
+        "Flèche Vagabonde : +1 lancer(s) par tour",
+        "Flèche Évasive : +1 lancer(s) par cible",
+        "Œil pour Œil : +3 Portée maximale"
       ],
       "de": [
-        "Lähmpfeil : +1 Zauber pro Ziel",
-        "Angriffspfeil: +35 % Kritische Treffer",
-        "Rückstoßschuss: Sichtlinie deaktiviert",
-        "Sperrfeuer: Sichtlinie deaktiviert",
-        "Erosionspfeile: –1 AP",
-        "Rückzugspfeile: Sichtlinie deaktiviert",
-        "Lerchenspiegel: Sichtlinie deaktiviert",
-        "Auge um Auge: Sichtlinie deaktiviert"
+        "Rückstoßpfeil : +1 Zauber pro Ziel",
+        "Leuchtpfeil : +1 Zauber pro Runde",
+        "Zerstreuungspfeil : +1 Zauber pro Runde",
+        "Flammenpfeile: Veränderbare Reichweite",
+        "Landstreicherpfeil : +1 Zauber pro Runde",
+        "Ausweichpfeil : +1 Zauber pro Ziel",
+        "Auge um Auge: +3 Maximale Reichweite"
       ],
       "es": [
-        "Flecha Inmovilizadora: +1 lanzamiento(s) por objetivo",
-        "Flecha Asaltante: +35% de crítico",
-        "Disparo de Retroceso: línea de visión desactivada",
-        "Tiro Peleón: línea de visión desactivada",
-        "Flechas Erosivas: -1 PA",
-        "Flechas de Repliegue: línea de visión desactivada",
-        "Señuelo para Alondras: línea de visión desactivada",
-        "Ojo por Ojo: línea de visión desactivada"
+        "Flecha de Retroceso: +1 lanzamiento(s) por objetivo",
+        "Flecha Impactante: +1 lanzamiento(s) por turno",
+        "Flecha de Dispersión: +1 lanzamiento(s) por turno",
+        "Flechas Flamígeras: alcance modificable",
+        "Flecha Vagabunda: +1 lanzamiento(s) por turno",
+        "Flecha Evasiva: +1 lanzamiento(s) por objetivo",
+        "Ojo por Ojo: +3 de alcance máximo"
       ],
       "pt": [
-        "Flecha de Imobilização: +1 lançamento(s) por alvo",
-        "Flecha Agressora: +35% de crítico",
-        "Tiro de Recuo: linha de visão desativada",
-        "Tiro de Barricada: linha de visão desativada",
-        "Flechas Erosivas: -1 PA",
-        "Flechas de Retirada: linha de visão desativada",
-        "Ar-dil: linha de visão desativada",
-        "Olho por Olho: linha de visão desativada"
+        "Flecha de Recuo: +1 lançamento(s) por alvo",
+        "Flecha Brilhante: +1 lançamento(s) por turno",
+        "Flecha Dispersante: +1 lançamento(s) por turno",
+        "Flechas Flamejantes: alcance modificável",
+        "Flecha Andarilha: +1 lançamento(s) por turno",
+        "Flecha Evasiva: +1 lançamento(s) por alvo",
+        "Olho por Olho: +3 de alcance máximo"
       ],
       "it": [
-        "Immobilising Arrow: +1 cast(s) per target",
-        "Assailing Arrow: +35% Critical",
-        "Retreating Shot: line of sight off",
-        "Barricade Shot: line of sight off",
-        "Erosive Arrows: -1 AP",
-        "Withdrawal Arrows: line of sight off",
-        "Lark Mirror: line of sight off",
-        "Eye for Eye: line of sight off"
+        "Retreat Arrow: +1 cast(s) per target",
+        "Radiant Arrow: +1 cast(s) per turn",
+        "Dispersing Arrow: +1 cast(s) per turn",
+        "Burning Arrows: modifiable Range",
+        "Vagabond Arrow: +1 cast(s) per turn",
+        "Evasive Arrow: +1 cast(s) per target",
+        "Eye for Eye: +3 Maximum Range"
       ]
     },
     "conditions": {
@@ -36774,64 +36762,46 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Powerful Shots: -1 cooldown",
-        "Exploding Arrow: +1 cast(s) per turn",
-        "Tormenting Arrow: -1 AP",
-        "Piercing Shot: +35% Critical",
-        "Devouring Arrow: +1 cast(s) per turn",
-        "Explosive Arrow: +2 Maximum Range",
-        "Fulminating Arrow: +2 Maximum Range",
-        "Piercing Shots: -1 cooldown"
+        "Plaguing Arrow: -1 AP",
+        "Bat's Eye: -1 AP",
+        "Raining Arrows: +35% Critical",
+        "Piercing Arrow: +3 Maximum Range",
+        "Boomerang Arrow: +1 cast(s) per turn"
       ],
       "fr": [
-        "Tirs Puissants : -1 de relance",
-        "Flèche Détonante : +1 lancer(s) par tour",
-        "Flèche de Tourment : -1 PA",
-        "Tir Perforant : +35% Critique",
-        "Flèche Dévorante : +1 lancer(s) par tour",
-        "Flèche Explosive : +2 Portée maximale",
-        "Flèche Fulminante : +2 Portée maximale",
-        "Tirs Perçants : -1 de relance"
+        "Flèche Harcelante : -1 PA",
+        "Œil de Taupe : -1 PA",
+        "Pluie de Flèches : +35% Critique",
+        "Flèche Perforante : +3 Portée maximale",
+        "Flèche Boomerang : +1 lancer(s) par tour"
       ],
       "de": [
-        "Powerschüsse: Abklingzeit verringert um –1",
-        "Detonationspfeil : +1 Zauber pro Runde",
-        "Peinigender Pfeil: –1 AP",
-        "Durchdringender Schuss: +35 % Kritische Treffer",
-        "Verheerender Pfeil : +1 Zauber pro Runde",
-        "Explosionspfeil: +2 Maximale Reichweite",
-        "Tobender Pfeil: +2 Maximale Reichweite",
-        "Durchbohrende Schüsse: Abklingzeit verringert um –1"
+        "Plagender Pfeil: –1 AP",
+        "Maulwurfssicht: –1 AP",
+        "Pfeilregen: +35 % Kritische Treffer",
+        "Durchdringender Pfeil: +3 Maximale Reichweite",
+        "Boomerangpfeil : +1 Zauber pro Runde"
       ],
       "es": [
-        "Tiros Potentes: -1 de reactivación",
-        "Flecha Detonadora: +1 lanzamiento(s) por turno",
-        "Flecha de Tormento: -1 PA",
-        "Tiro Perforante: +35% de crítico",
-        "Flecha Voraz: +1 lanzamiento(s) por turno",
-        "Flecha Explosiva: +2 de alcance máximo",
-        "Flecha Fulminante: +2 de alcance máximo",
-        "Tiros Perforantes: -1 de reactivación"
+        "Flecha Acosante: -1 PA",
+        "Ojo de Topo: -1 PA",
+        "Lluvia de Flechas: +35% de crítico",
+        "Flecha Percutiente: +3 de alcance máximo",
+        "Flecha Búmeran: +1 lanzamiento(s) por turno"
       ],
       "pt": [
-        "Tiros Poderosos: -1 de relançamento",
-        "Flecha Detonante: +1 lançamento(s) por turno",
-        "Flecha de Tormento: -1 PA",
-        "Tiro Penetrante: +35% de crítico",
-        "Flecha Devoradora: +1 lançamento(s) por turno",
-        "Flecha Explosiva: +2 de alcance máximo",
-        "Flecha Fulminante: +2 de alcance máximo",
-        "Tiros Perfurantes: -1 de relançamento"
+        "Flecha Inconveniente: -1 PA",
+        "Olho de Toupeira: -1 PA",
+        "Chuva de Flechas: +35% de crítico",
+        "Flecha Perfurante: +3 de alcance máximo",
+        "Flecha Bumerangue: +1 lançamento(s) por turno"
       ],
       "it": [
-        "Powerful Shots: -1 cooldown",
-        "Exploding Arrow: +1 cast(s) per turn",
-        "Tormenting Arrow: -1 AP",
-        "Piercing Shot: +35% Critical",
-        "Devouring Arrow: +1 cast(s) per turn",
-        "Explosive Arrow: +2 Maximum Range",
-        "Fulminating Arrow: +2 Maximum Range",
-        "Piercing Shots: -1 cooldown"
+        "Plaguing Arrow: -1 AP",
+        "Bat's Eye: -1 AP",
+        "Raining Arrows: +35% Critical",
+        "Piercing Arrow: +3 Maximum Range",
+        "Boomerang Arrow: +1 cast(s) per turn"
       ]
     },
     "conditions": {
@@ -38004,64 +37974,64 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Recall Beacon: line of sight off",
-        "Concentration Arrow: +1 cast(s) per turn",
-        "Destructive Bolts: +35% Critical",
-        "Bat's Eye: -1 AP",
-        "Crushing Arrow: -1 AP",
-        "Persecuting Arrow: straight-line casting off",
-        "Tyrannical Arrow: -1 AP",
-        "Tactical Beacon: +1 cast(s) per turn"
+        "Barricade Arrow: +3 Maximum Range",
+        "Destructive Bolts: +2 Maximum Range",
+        "Explosive Arrow: +30% Critical",
+        "Slaughtering Arrow: +3 Maximum Range",
+        "Punitive Arrow: +1 cast(s) per turn",
+        "Arrow of Judgement: -1 AP",
+        "Devouring Arrow: +1 cast(s) per turn",
+        "Fulminating Arrow: -1 AP"
       ],
       "fr": [
-        "Balise de Rappel : ligne de vue désactivée",
-        "Flèche de Concentration : +1 lancer(s) par tour",
-        "Carreaux Destructeurs : +35% Critique",
-        "Œil de Taupe : -1 PA",
-        "Flèche Écrasante : -1 PA",
-        "Flèche Persécutrice : lancer en ligne désactivé",
-        "Flèche Tyrannique : -1 PA",
-        "Balise Tactique : +1 lancer(s) par tour"
+        "Flèche de Barrage : +3 Portée maximale",
+        "Carreaux Destructeurs : +2 Portée maximale",
+        "Flèche Explosive : +30% Critique",
+        "Flèche Massacrante : +3 Portée maximale",
+        "Flèche Punitive : +1 lancer(s) par tour",
+        "Flèche du Jugement : -1 PA",
+        "Flèche Dévorante : +1 lancer(s) par tour",
+        "Flèche Fulminante : -1 PA"
       ],
       "de": [
-        "Leitmarkierung der Erinnerung: Sichtlinie deaktiviert",
-        "Pfeil der Konzentration : +1 Zauber pro Runde",
-        "Zerstörerische Karos: +35 % Kritische Treffer",
-        "Maulwurfssicht: –1 AP",
-        "Zermalmungspfeil: –1 AP",
-        "Heimsuchender Pfeil: Lineare Wirkungsweise deaktiviert",
-        "Tyrannischer Pfeil: –1 AP",
-        "Taktische Markierung : +1 Zauber pro Runde"
+        "Sperrpfeil: +3 Maximale Reichweite",
+        "Zerstörerische Karos: +2 Maximale Reichweite",
+        "Explosionspfeil: +30 % Kritische Treffer",
+        "Mörderpfeil: +3 Maximale Reichweite",
+        "Strafender Pfeil : +1 Zauber pro Runde",
+        "Pfeil der Verurteilung: –1 AP",
+        "Verheerender Pfeil : +1 Zauber pro Runde",
+        "Tobender Pfeil: –1 AP"
       ],
       "es": [
-        "Baliza de Recuerdo: línea de visión desactivada",
-        "Flecha de Concentración: +1 lanzamiento(s) por turno",
-        "Diamantes Destructores: +35% de crítico",
-        "Ojo de Topo: -1 PA",
-        "Flecha Aplastante: -1 PA",
-        "Flecha Perseguidora: lanzamiento en línea desactivado",
-        "Flecha Tiránica: -1 PA",
-        "Baliza Táctica: +1 lanzamiento(s) por turno"
+        "Flecha de Pelea: +3 de alcance máximo",
+        "Diamantes Destructores: +2 de alcance máximo",
+        "Flecha Explosiva: +30% de crítico",
+        "Flecha Masacrante: +3 de alcance máximo",
+        "Flecha Castigadora: +1 lanzamiento(s) por turno",
+        "Flecha del Juicio: -1 PA",
+        "Flecha Voraz: +1 lanzamiento(s) por turno",
+        "Flecha Fulminante: -1 PA"
       ],
       "pt": [
-        "Baliza de Recuo: linha de visão desativada",
-        "Flecha de Concentração: +1 lançamento(s) por turno",
-        "Ladrilhos Destruidores: +35% de crítico",
-        "Olho de Toupeira: -1 PA",
-        "Flecha Esmagadora: -1 PA",
-        "Flecha Perseguidora: lançamento em linha desativado",
-        "Flecha Tirânica: -1 PA",
-        "Baliza Tática: +1 lançamento(s) por turno"
+        "Flecha de Barricada: +3 de alcance máximo",
+        "Ladrilhos Destruidores: +2 de alcance máximo",
+        "Flecha Explosiva: +30% de crítico",
+        "Flecha Massacrante: +3 de alcance máximo",
+        "Flecha Punitiva: +1 lançamento(s) por turno",
+        "Flecha do Julgamento: -1 PA",
+        "Flecha Devoradora: +1 lançamento(s) por turno",
+        "Flecha Fulminante: -1 PA"
       ],
       "it": [
-        "Recall Beacon: line of sight off",
-        "Concentration Arrow: +1 cast(s) per turn",
-        "Destructive Bolts: +35% Critical",
-        "Bat's Eye: -1 AP",
-        "Crushing Arrow: -1 AP",
-        "Persecuting Arrow: straight-line casting off",
-        "Tyrannical Arrow: -1 AP",
-        "Tactical Beacon: +1 cast(s) per turn"
+        "Barricade Arrow: +3 Maximum Range",
+        "Destructive Bolts: +2 Maximum Range",
+        "Explosive Arrow: +30% Critical",
+        "Slaughtering Arrow: +3 Maximum Range",
+        "Punitive Arrow: +1 cast(s) per turn",
+        "Arrow of Judgement: -1 AP",
+        "Devouring Arrow: +1 cast(s) per turn",
+        "Fulminating Arrow: -1 AP"
       ]
     },
     "conditions": {
@@ -39170,64 +39140,64 @@
     ],
     "customStats": {
       "en": [
-        "Distant Shots: -1 AP",
-        "Absolute Acuteness: -1 AP",
-        "Poisoned Arrow: -1 AP",
-        "Paralysing Arrow: -1 AP",
-        "Punitive Arrow: +2 Maximum Range",
-        "Arrow of Judgement: +2 Maximum Range",
-        "Atonement Arrow: +2 Maximum Range",
-        "Redemption Arrow: +2 Maximum Range"
+        "Sidestep: +1 Maximum Range",
+        "Tactical Beacon: -1 cooldown",
+        "Distant Shots: -1 cooldown",
+        "Piercing Shot: +1 cast(s) per target",
+        "Survival Beacon: -1 AP",
+        "Reprisal: -1 AP",
+        "Withdrawal Shot: +1 cast(s) per target",
+        "Vendetta: +1 cast(s) per turn"
       ],
       "fr": [
-        "Tirs Éloignés : -1 PA",
-        "Acuité Absolue : -1 PA",
-        "Flèche Empoisonnée : -1 PA",
-        "Flèche Paralysante : -1 PA",
-        "Flèche Punitive : +2 Portée maximale",
-        "Flèche du Jugement : +2 Portée maximale",
-        "Flèche d'Expiation : +2 Portée maximale",
-        "Flèche de Rédemption : +2 Portée maximale"
+        "Pas Chassé : +1 Portée maximale",
+        "Balise Tactique : -1 de relance",
+        "Tirs Éloignés : -1 de relance",
+        "Tir Perçant : +1 lancer(s) par cible",
+        "Balise de Survie : -1 PA",
+        "Représailles : -1 PA",
+        "Tir de Repli : +1 lancer(s) par cible",
+        "Vendetta : +1 lancer(s) par tour"
       ],
       "de": [
-        "Weitschüsse: –1 AP",
-        "Absolute Intensität: –1 AP",
-        "Giftpfeil: –1 AP",
-        "Lähmender Pfeil: –1 AP",
-        "Strafender Pfeil: +2 Maximale Reichweite",
-        "Pfeil der Verurteilung: +2 Maximale Reichweite",
-        "Sühnepfeil: +2 Maximale Reichweite",
-        "Erlösungspfeil: +2 Maximale Reichweite"
+        "Gehetzter Schritt: +1 Maximale Reichweite",
+        "Taktische Markierung: Abklingzeit verringert um –1",
+        "Weitschüsse: Abklingzeit verringert um –1",
+        "Durchbohrender Schuss : +1 Zauber pro Ziel",
+        "Markierung des Überlebens: –1 AP",
+        "Vergeltungsmaßnahmen: –1 AP",
+        "Rückzugsschuss : +1 Zauber pro Ziel",
+        "Vendetta : +1 Zauber pro Runde"
       ],
       "es": [
-        "Disparos Lejanos: -1 PA",
-        "Agudeza Absoluta: -1 PA",
-        "Flecha Envenenada: -1 PA",
-        "Flecha Paralizadora: -1 PA",
-        "Flecha Castigadora: +2 de alcance máximo",
-        "Flecha del Juicio: +2 de alcance máximo",
-        "Flecha de Expiación: +2 de alcance máximo",
-        "Flecha de Redención: +2 de alcance máximo"
+        "Paso de Cacería: +1 de alcance máximo",
+        "Baliza Táctica: -1 de reactivación",
+        "Disparos Lejanos: -1 de reactivación",
+        "Tiro Penetrante: +1 lanzamiento(s) por objetivo",
+        "Baliza de Supervivencia: -1 PA",
+        "Represalias: -1 PA",
+        "Tiro de Repliegue: +1 lanzamiento(s) por objetivo",
+        "Vendetta: +1 lanzamiento(s) por turno"
       ],
       "pt": [
-        "Tiros Distantes: -1 PA",
-        "Acuidade Absoluta: -1 PA",
-        "Flecha Envenenada: -1 PA",
-        "Flecha Paralisante: -1 PA",
-        "Flecha Punitiva: +2 de alcance máximo",
-        "Flecha do Julgamento: +2 de alcance máximo",
-        "Flecha de Expiação: +2 de alcance máximo",
-        "Flecha de Redenção: +2 de alcance máximo"
+        "Passinho do Caçador: +1 de alcance máximo",
+        "Baliza Tática: -1 de relançamento",
+        "Tiros Distantes: -1 de relançamento",
+        "Tiro Perfurante: +1 lançamento(s) por alvo",
+        "Baliza de Sobrevivência: -1 PA",
+        "Represália: -1 PA",
+        "Tiro de Retirada: +1 lançamento(s) por alvo",
+        "Vendetta: +1 lançamento(s) por turno"
       ],
       "it": [
-        "Distant Shots: -1 AP",
-        "Absolute Acuteness: -1 AP",
-        "Poisoned Arrow: -1 AP",
-        "Paralysing Arrow: -1 AP",
-        "Punitive Arrow: +2 Maximum Range",
-        "Arrow of Judgement: +2 Maximum Range",
-        "Atonement Arrow: +2 Maximum Range",
-        "Redemption Arrow: +2 Maximum Range"
+        "Sidestep: +1 Maximum Range",
+        "Tactical Beacon: -1 cooldown",
+        "Distant Shots: -1 cooldown",
+        "Piercing Shot: +1 cast(s) per target",
+        "Survival Beacon: -1 AP",
+        "Reprisal: -1 AP",
+        "Withdrawal Shot: +1 cast(s) per target",
+        "Vendetta: +1 cast(s) per turn"
       ]
     },
     "conditions": {
@@ -105989,7 +105959,7 @@
         "Furacão: +1 lançamento(s) por alvo",
         "Rajada: -1 PA",
         "Violação: +1 lançamento(s) por alvo",
-        "Tormenta: -1 PA",
+        "Orage: -1 PA",
         "Vulcão: +1 lançamento(s) por alvo"
       ],
       "it": [
@@ -106025,63 +105995,63 @@
     "stats": [],
     "customStats": {
       "en": [
-        "Elemental Drain: line of sight off",
+        "Elemental Drain: +2 Maximum Range",
         "Tribute: line of sight off",
-        "Elemental Cycle: line of sight off",
-        "Quadramental Current: +1 cast(s) per turn",
-        "Propagation: +1 cast(s) per turn",
-        "Runic Prism: -1 cooldown",
-        "Supernova: modifiable Range",
+        "Elemental Cycle: modifiable Range",
+        "Quadramental Current: modifiable Range",
+        "Propagation: line of sight off",
+        "Runic Prism: -1 AP",
+        "Supernova: +2 Maximum Range",
         "Arcane Torrent: straight-line casting off"
       ],
       "fr": [
-        "Drain Élémentaire : ligne de vue désactivée",
+        "Drain Élémentaire : +2 Portée maximale",
         "Tribut : ligne de vue désactivée",
-        "Cycle Élémentaire : ligne de vue désactivée",
-        "Courant Quadramental : +1 lancer(s) par tour",
-        "Propagation : +1 lancer(s) par tour",
-        "Prisme Runique : -1 de relance",
-        "Supernova : Portée modifiable",
+        "Cycle Élémentaire : Portée modifiable",
+        "Courant Quadramental : Portée modifiable",
+        "Propagation : ligne de vue désactivée",
+        "Prisme Runique : -1 PA",
+        "Supernova : +2 Portée maximale",
         "Torrent Arcanique : lancer en ligne désactivé"
       ],
       "de": [
-        "Elementar-Raub: Sichtlinie deaktiviert",
+        "Elementar-Raub: +2 Maximale Reichweite",
         "Tribut: Sichtlinie deaktiviert",
-        "Elementarzyklus: Sichtlinie deaktiviert",
-        "Quadrelementarströmung : +1 Zauber pro Runde",
-        "Ausbreitung : +1 Zauber pro Runde",
-        "Runenprisma: Abklingzeit verringert um –1",
-        "Supernova: Veränderbare Reichweite",
+        "Elementarzyklus: Veränderbare Reichweite",
+        "Quadrelementarströmung: Veränderbare Reichweite",
+        "Ausbreitung: Sichtlinie deaktiviert",
+        "Runenprisma: –1 AP",
+        "Supernova: +2 Maximale Reichweite",
         "Arkaner Strom: Lineare Wirkungsweise deaktiviert"
       ],
       "es": [
-        "Drenaje Elemental: línea de visión desactivada",
+        "Drenaje Elemental: +2 de alcance máximo",
         "Tributo: línea de visión desactivada",
-        "Ciclo Elemental: línea de visión desactivada",
-        "Corriente Cuadramental: +1 lanzamiento(s) por turno",
-        "Propagación: +1 lanzamiento(s) por turno",
-        "Prisma Rúnico: -1 de reactivación",
-        "Supernova: alcance modificable",
+        "Ciclo Elemental: alcance modificable",
+        "Corriente Cuadramental: alcance modificable",
+        "Propagación: línea de visión desactivada",
+        "Prisma Rúnico: -1 PA",
+        "Supernova: +2 de alcance máximo",
         "Torrente Arcano: lanzamiento en línea desactivado"
       ],
       "pt": [
-        "Dreno Elementar: linha de visão desativada",
+        "Dreno Elementar: +2 de alcance máximo",
         "Tributo: linha de visão desativada",
-        "Ciclo Elementar: linha de visão desativada",
-        "Corrente Quadramental: +1 lançamento(s) por turno",
-        "Propagação: +1 lançamento(s) por turno",
-        "Prisma Rúnico: -1 de relançamento",
-        "Supernova: alcance modificável",
+        "Ciclo Elementar: alcance modificável",
+        "Corrente Quadramental: alcance modificável",
+        "Propagação: linha de visão desativada",
+        "Prisma Rúnico: -1 PA",
+        "Supernova: +2 de alcance máximo",
         "Torrente Arcana: lançamento em linha desativado"
       ],
       "it": [
-        "Elemental Drain: line of sight off",
+        "Elemental Drain: +2 Maximum Range",
         "Tribute: line of sight off",
-        "Elemental Cycle: line of sight off",
-        "Quadramental Current: +1 cast(s) per turn",
-        "Propagation: +1 cast(s) per turn",
-        "Runic Prism: -1 cooldown",
-        "Supernova: modifiable Range",
+        "Elemental Cycle: modifiable Range",
+        "Quadramental Current: modifiable Range",
+        "Propagation: line of sight off",
+        "Runic Prism: -1 AP",
+        "Supernova: +2 Maximum Range",
         "Arcane Torrent: straight-line casting off"
       ]
     },
@@ -123757,7 +123727,13 @@
     "itemType": "Dofus",
     "setID": null,
     "level": 180,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": null,
+        "maxStat": 300
+      }
+    ],
     "customStats": {
       "en": [
         "Promise of Silver:\n• When the bearer falls below 20% health, they are healed for 30% of their health and gain 20% final damage for 1 turn at the start of their next turn (once per fight)."
@@ -123846,22 +123822,22 @@
     ],
     "customStats": {
       "en": [
-        "Fallanster's Rectitude:\n• When the bearer ends their turn in an enemy's line of sight, they place a glyph-aura in a 1-cell cross, which reduces the damage suffered by allies by 10% until the start of the bearer's next turn. The glyph disappears on the next turn or if it is moved."
+        "Fallanster's Rectitude:\n• When the bearer ends their turn in an enemy's line of sight, they place a glyph-aura in a 1-cell square, which reduces the damage suffered by allies by 10% until the start of the bearer's next turn. The glyph disappears on the next turn or if it is moved."
       ],
       "fr": [
-        "Droiture de Fallanster :\n• Lorsque le porteur termine son tour en ligne de vue d'un ennemi, il pose un glyphe-aura dans une croix de taille 1 qui réduit les dommages subis par les alliés de 10% jusqu'au début de son prochain tour. Le glyphe est dissipé au prochain tour ou s'il est déplacé."
+        "Droiture de Fallanster :\n• Lorsque le porteur termine son tour en ligne de vue d'un ennemi, il pose un glyphe-aura dans un carré de taille 1 qui réduit les dommages subis par les alliés de 10% jusqu'au début de son prochain tour. Le glyphe est dissipé au prochain tour ou s'il est déplacé."
       ],
       "de": [
-        "Rechtschaffenheit von Fallanster:\n• Wenn der Träger seine Runde in Sichtlinie eines Gegners beendet, platziert er eine Aura-Glyphe in einem kreuzförmigen Bereich der Größe 1, die den von Verbündeten erlittenen Schaden bis zu Beginn seiner nächsten Runde um 10 % verringert. Die Glyphe verschwindet in der nächsten Runde oder wenn sie wegbewegt wird."
+        "Rechtschaffenheit von Fallanster:\n• Wenn der Träger seine Runde in Sichtlinie eines Gegners beendet, platziert er eine Aura-Glyphe in einem quadratischen Bereich der Größe 1, die den von Verbündeten erlittenen Schaden bis zu Beginn seiner nächsten Runde um 10 % verringert. Die Glyphe verschwindet in der nächsten Runde oder wenn sie wegbewegt wird."
       ],
       "es": [
-        "Rectitud de Fallanster:\n• Cuando el portador termina su turno en línea de visión de un enemigo, coloca un glifo aura en una cruz de tamaño 1 que reduce el daño recibido por los aliados en un 10% hasta el inicio de su siguiente turno. El glifo se disipa en el siguiente turno o si es desplazado."
+        "Rectitud de Fallanster:\n• Cuando el portador termina su turno en línea de visión de un enemigo, coloca un glifo aura en un cuadrado de tamaño 1 que reduce el daño recibido por los aliados en un 10% hasta el inicio de su siguiente turno. El glifo se disipa en el siguiente turno o si es desplazado."
       ],
       "pt": [
-        "Retidão de Fallanster:\n• Ao terminar seu turno na linha de visão de um inimigo, o portador coloca um glifo-aura em uma cruz de tamanho 1 que reduz os danos sofridos pelos aliados em 10% até o começo do próximo turno. O glifo desaparece no próximo turno ou ao ser movido."
+        "Retidão de Fallanster:\n• Ao terminar seu turno na linha de visão de um inimigo, o portador coloca um glifo-aura em um quadrado de tamanho 1 que reduz os danos sofridos pelos aliados em 10% até o começo do próximo turno. O glifo desaparece no próximo turno ou ao ser movido."
       ],
       "it": [
-        "Fallanster's Rectitude:\n• When the bearer ends their turn in an enemy's line of sight, they place a glyph-aura in a 1-cell cross, which reduces the damage suffered by allies by 10% until the start of the bearer's next turn. The glyph disappears on the next turn or if it is moved."
+        "Fallanster's Rectitude:\n• When the bearer ends their turn in an enemy's line of sight, they place a glyph-aura in a 1-cell square, which reduces the damage suffered by allies by 10% until the start of the bearer's next turn. The glyph disappears on the next turn or if it is moved."
       ]
     },
     "conditions": {
@@ -124038,22 +124014,22 @@
     ],
     "customStats": {
       "en": [
-        "King Under the Mountain:\n• When the bearer performs or suffers an attempted AP or MP removal, they gain 2% close-combat damage for 2 turns (stackable 5 times)."
+        "King Under the Mountain:\n• When the bearer performs or suffers an attempted AP or MP removal, they gain 2% final damage for 2 turns (stackable 5 times).\n• The effects cannot be triggered if the bearer is both the attacker and the target."
       ],
       "fr": [
-        "Roi sous la Montagne :\n• Lorsque le porteur effectue ou subit une tentative de retrait de PA ou PM, il gagne 2% de dommages en mêlée pendant 2 tours (cumulable 5 fois)."
+        "Roi sous la Montagne :\n• Lorsque le porteur effectue ou subit une tentative de retrait de PA ou PM, il gagne 2% de dommages finaux pendant 2 tours (cumulable 5 fois).\n• Les effets ne peuvent pas être déclenchés si le porteur est à la fois l'attaquant et la cible."
       ],
       "de": [
-        "König unter dem Berg:\n• Wenn der Träger versucht, einem Gegner AP oder BP zu entziehen, oder ein Gegner dies bei ihm versucht, erhöht sich sein Nahkampfschaden 2 Runden lang um 2 % (5-mal kumulierbar)."
+        "König unter dem Berg:\n• Wenn der Träger versucht, einem Gegner AP oder BP zu entziehen, oder ein Gegner dies bei ihm versucht, erhöht sich sein Endschaden 2 Runden lang um 2 % (5-mal kumulierbar).\n• Wenn der Träger sowohl der Angreifer als auch das Ziel ist, wird die Wirkung nicht ausgelöst."
       ],
       "es": [
-        "Rey Bajo la Montaña:\n• Cuando el portador realiza o sufre un intento de retirada de PA o de PM, gana un 2% de daños en cuerpo a cuerpo durante 2 turnos (acumulable 5 veces)."
+        "Rey Bajo la Montaña:\n• Cuando el portador realiza o sufre un intento de retirada de PA o PM, gana un 2% de daños finales durante 2 turnos (acumulable 5 veces).\n• Los efectos no pueden activarse si el portador es atacante y objetivo al mismo tiempo."
       ],
       "pt": [
-        "Rei Debaixo da Montanha:\n• Ao realizar ou sofrer uma tentativa de retirada de PA ou PM, o portador ganha 2% de danos corpo a corpo durante 2 turnos (acumula até 5 vezes)."
+        "Rei Debaixo da Montanha:\n• Ao realizar ou sofrer uma tentativa de retirada de PA ou PM, o portador ganha 2% de danos finais durante 2 turnos (acumula até 5 vezes).\n• Os efeitos não poderão ser acionados se o portador for, ao mesmo tempo, atacante e alvo."
       ],
       "it": [
-        "King Under the Mountain:\n• When the bearer performs or suffers an attempted AP or MP removal, they gain 2% close-combat damage for 2 turns (stackable 5 times)."
+        "King Under the Mountain:\n• When the bearer performs or suffers an attempted AP or MP removal, they gain 2% final damage for 2 turns (stackable 5 times).\n• The effects cannot be triggered if the bearer is both the attacker and the target."
       ]
     },
     "conditions": {
@@ -124417,22 +124393,22 @@
     ],
     "customStats": {
       "en": [
-        "Thousand Leagues:\n• The bearer gains 2 MP on odd turns and loses 1 MP on even turns."
+        "Thousand Leagues:\n• The bearer gains 2 MP on odd turns."
       ],
       "fr": [
-        "Mille Lieues :\n• Le porteur gagne 2 PM les tours impairs, et perd 1 PM les tours pairs."
+        "Mille Lieues :\n• Le porteur gagne 2 PM les tours impairs."
       ],
       "de": [
-        "Tausend Meilen:\n• Der Träger erhält in den ungeraden Runden 2 BP und verliert in den geraden Runden 1 BP."
+        "Tausend Meilen:\n• Der Träger erhält in den ungeraden Runden 2 BP."
       ],
       "es": [
-        "Mil Leguas:\n• El portador gana 2 PM en los turnos impares y pierde 1 PM en los turnos pares."
+        "Mil Leguas:\n• El portador gana 2 PM en los turnos impares."
       ],
       "pt": [
-        "Mil Léguas:\n• O carregador ganha 2 PM nos turnos ímpares e perde 1 PM nos turnos pares."
+        "Mil Léguas:\n• O portador ganha 2 PM nos turnos ímpares."
       ],
       "it": [
-        "Thousand Leagues:\n• The bearer gains 2 MP on odd turns and loses 1 MP on even turns."
+        "Thousand Leagues:\n• The bearer gains 2 MP on odd turns."
       ]
     },
     "conditions": {
@@ -126433,27 +126409,27 @@
       {
         "stat": "Neutral Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Earth Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Fire Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Water Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Air Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Vitality",
@@ -126504,27 +126480,27 @@
       {
         "stat": "Neutral Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Earth Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Fire Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Water Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Air Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Vitality",
@@ -126575,27 +126551,27 @@
       {
         "stat": "Neutral Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Earth Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Fire Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Water Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Air Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Vitality",
@@ -127013,22 +126989,22 @@
     ],
     "customStats": {
       "en": [
-        "Heals 80% of enemy damage suffered on the first turn, 30% on the second turn and 10% on the third turn."
+        "Heals 60% of enemy damage suffered on the first turn, 30% on the second turn and 10% on the third turn."
       ],
       "fr": [
-        "Soigne 80% des dommages ennemis subis au premier tour, puis 30% au deuxième tour, et 10% au troisième tour."
+        "Soigne 60% des dommages ennemis subis au premier tour, puis 30% au deuxième tour, et 10% au troisième tour."
       ],
       "de": [
-        "Heilt in der ersten Runde 80 % des durch Gegner erlittenen Schadens, in der zweiten Runde 30 % und in der dritten Runde 10 %."
+        "Heilt in der ersten Runde 60 % des durch Gegner erlittenen Schadens, in der zweiten Runde 30 % und in der dritten Runde 10 %."
       ],
       "es": [
-        "Cura un 80% de los daños enemigos sufridos en el primer turno, un 30% en el segundo turno y un 10% en el tercer turno."
+        "Cura un 60% de los daños enemigos sufridos en el primer turno, un 30% en el segundo turno y un 10% en el tercer turno."
       ],
       "pt": [
-        "Cura 80% dos danos inimigos sofridos no primeiro turno, 30% no segundo e 10% no terceiro."
+        "Cura 60% dos danos inimigos sofridos no primeiro turno, 30% no segundo e 10% no terceiro."
       ],
       "it": [
-        "Heals 80% of enemy damage suffered on the first turn, 30% on the second turn and 10% on the third turn."
+        "Heals 60% of enemy damage suffered on the first turn, 30% on the second turn and 10% on the third turn."
       ]
     },
     "conditions": {
@@ -127538,7 +127514,7 @@
       {
         "stat": "Neutral Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Initiative",
@@ -127548,22 +127524,22 @@
       {
         "stat": "Earth Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Fire Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Water Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       },
       {
         "stat": "Air Resistance",
         "minStat": null,
-        "maxStat": 25
+        "maxStat": 40
       }
     ],
     "customStats": {
@@ -127607,6 +127583,11 @@
     "level": 200,
     "stats": [
       {
+        "stat": "% Weapon Damage",
+        "minStat": null,
+        "maxStat": 6
+      },
+      {
         "stat": "Pushback Resistance",
         "minStat": null,
         "maxStat": -30
@@ -127614,22 +127595,22 @@
     ],
     "customStats": {
       "en": [
-        "The bearer gains 2% close-combat damage for 3 turns for each enemy fighter within 3 cells or less of the bearer at the start of their first turn."
+        "The bearer gains 2% close-combat damage for 3 turns for each enemy fighter within 3 cells or less of the bearer at the start and end of their first turn."
       ],
       "fr": [
-        "Le porteur gagne 2% de dommages en mêlée pendant 3 tours pour chaque combattant ennemi à 3 cases ou moins de lui au début de son premier tour."
+        "Le porteur gagne 2% de dommages en mêlée pendant 3 tours pour chaque combattant ennemi à 3 cases ou moins de lui au début et à la fin de son premier tour."
       ],
       "de": [
-        "Der Träger erhält zu Beginn seiner ersten Runde 3 Runden lang 2 % Nahkampfschaden pro gegnerischem Kämpfer, der nicht mehr als 3 Felder von ihm entfernt ist."
+        "Der Träger erhält zu Beginn und am Ende seiner ersten Runde 3 Runden lang 2 % Nahkampfschaden pro gegnerischem Kämpfer, der nicht mehr als 3 Felder von ihm entfernt ist."
       ],
       "es": [
-        "El portador gana un 2% de daños en cuerpo a cuerpo durante 3 turnos por cada luchador enemigo a 3 casillas o menos de él al principio de su primer turno."
+        "El portador gana un 2% de daños en cuerpo a cuerpo durante 3 turnos por cada luchador enemigo a 3 casillas o menos de él al principio y al final de su primer turno."
       ],
       "pt": [
-        "O portador ganha 2% de danos corpo a corpo durante 3 turnos para cada combatente inimigo a até 3 células dele no começo de seu primeiro turno."
+        "O portador ganha 2% de danos corpo a corpo durante 3 turnos para cada combatente inimigo a até 3 células dele no começo e no fim de seu primeiro turno."
       ],
       "it": [
-        "The bearer gains 2% close-combat damage for 3 turns for each enemy fighter within 3 cells or less of the bearer at the start of their first turn."
+        "The bearer gains 2% close-combat damage for 3 turns for each enemy fighter within 3 cells or less of the bearer at the start and end of their first turn."
       ]
     },
     "conditions": {
@@ -129247,22 +129228,22 @@
     ],
     "customStats": {
       "en": [
-        "Ink River:\n• Starting on turn 5, the bearer and their summons gain up to 64 Damage until the end of the fight.\n• This bonus is reduced each time the bearer inflicts damage on an enemy during their turn for each of the first 4 turns of the fight:\n • No attacks: 16 Damage\n • 1 attack: 8 Damage\n• 2 attacks or more: 0 Damage"
+        "Ink River:\n• At the end of each turn for the first 4 turns, the bearer and their summons gain up to 16 Damage until the end of the fight.\n• This bonus is reduced each time the bearer attacks an enemy during their turn:\n • No attacks: 16 Damage\n • 1 attack: 8 Damage\n• 2 attacks or more: 0 Damage"
       ],
       "fr": [
-        "Rivière d'Encre :\n• À partir du tour 5, le porteur et ses invocations gagnent jusqu'à 64 de Dommages jusqu'à la fin du combat.\n• Ce bonus est réduit à chaque fois que le porteur occasionne des dommages durant son tour à un ennemi pour chacun des 4 premiers tours du combat :\n • Aucune attaque : 16 Dommages\n • 1 attaque : 8 Dommages.\n • 2 attaques et plus : 0 Dommages."
+        "Rivière d'Encre :\n• À chaque fin de tour sur les 4 premiers tours, le porteur et ses invocations gagnent jusqu'à 16 Dommages jusqu'à la fin du combat.\n• Ce bonus est réduit à chaque fois que le porteur attaque un ennemi durant son tour :\n • Aucune attaque : 16 Dommages.\n • 1 attaque : 8 Dommages.\n • 2 attaques et plus : 0 Dommages."
       ],
       "de": [
-        "Tintenfluss:\n• Ab Runde 5 erhalten der Träger und seine Beschwörungen bis zu 64 Schaden bis zum Ende des Kampfes.\n• Dieser Bonus verringert sich jedes Mal, wenn der Träger einem Gegner während der ersten 4 Kampfrunden Schaden zufügt:\n • Kein Angriff: 16 Schaden.\n • 1 Angriff: 8 Schaden.\n• Ab 2 Angriffen: 0 Schaden."
+        "Tintenfluss:\n• In den ersten 4 Runden erhalten der Träger und seine Beschwörungen jeweils am Rundenende bis zu 16 Schadenspunkte zusätzlich, die sie bis zum Ende des Kampfes behalten.\n• Jedes Mal, wenn der Träger während seiner Runde einen Gegner angreift, verringert sich dieser Bonus:\n • Kein Angriff: 16 Schaden.\n • 1 Angriff: 8 Schaden.\n• Ab 2 Angriffen: 0 Schaden."
       ],
       "es": [
-        "Río de Tinta:\n• A partir del turno 5, el portador y sus invocaciones ganan hasta 64 de daño hasta el final del combate.\n• Este bonus se reduce cada vez que el portador ocasione daños durante su turno a un enemigo en cada uno de los 4 primeros turnos del combate:\n • Ningún ataque: 16 de daño.\n • 1 ataque: 8 de daño.\n• 2 ataques o más: 0 de daño."
+        "Río de Tinta:\n• Al final de cada turno de los primeros 4 turnos, el portador y sus invocaciones ganan hasta 16 de daño hasta el final del combate.\n• Este bonus se reduce cada vez que el portador ataque durante su turno a un enemigo:\n • Ningún ataque: 16 de daño.\n • 1 ataque: 8 de daño.\n• 2 ataques o más: 0 de daño."
       ],
       "pt": [
-        "Rio de Tinta:\n• A partir do 5º turno, o portador e suas invocações ganham até 64 de danos até o fim do combate.\n• Esse bônus diminui sempre que o portador inflige danos a um inimigo durante seu turno para cada um dos 4 primeiros turnos do combate:\n • Nenhum ataque: 16 de danos.\n • 1 ataque: 8 de danos.\n• 2 ataques e mais: 0 de danos."
+        "Rio de Tinta:\n• Ao final de cada turno nos 4 primeiros turnos, o portador e suas invocações ganham até 16 de danos até o fim do combate.\n• Esse bônus diminui sempre que o portador ataca um inimigo durante seu turno:\n • Nenhum ataque: 16 de danos.\n • 1 ataque: 8 de danos.\n• 2 ataques e mais: 0 de danos."
       ],
       "it": [
-        "Ink River:\n• Starting on turn 5, the bearer and their summons gain up to 64 Damage until the end of the fight.\n• This bonus is reduced each time the bearer inflicts damage on an enemy during their turn for each of the first 4 turns of the fight:\n • No attacks: 16 Damage\n • 1 attack: 8 Damage\n• 2 attacks or more: 0 Damage"
+        "Ink River:\n• At the end of each turn for the first 4 turns, the bearer and their summons gain up to 16 Damage until the end of the fight.\n• This bonus is reduced each time the bearer attacks an enemy during their turn:\n • No attacks: 16 Damage\n • 1 attack: 8 Damage\n• 2 attacks or more: 0 Damage"
       ]
     },
     "conditions": {
@@ -136565,22 +136546,22 @@
     ],
     "customStats": {
       "en": [
-        "Country Ranger:\n• The bearer gains 8 Power for 2 turns for each MP they use.\n• If the bearer doesn't use any MP during their turn, they are healed for 10% of their health."
+        "Country Ranger:\n• The bearer gains 8 Power for 2 turns for each MP they use.\n• If the bearer doesn't use any MP during their turn, they are healed for 8% of their health."
       ],
       "fr": [
-        "Garde Champêtre :\n• Le porteur gagne 8 de Puissance pendant 2 tours pour chaque PM qu'il utilise.\n• S'il n'a utilisé aucun PM durant son tour, il est soigné de 10% de sa vie."
+        "Garde Champêtre :\n• Le porteur gagne 8 de Puissance pendant 2 tours pour chaque PM qu'il utilise.\n• S'il n'a utilisé aucun PM durant son tour, il est soigné de 8% de sa vie."
       ],
       "de": [
-        "Feldschütz:\n• Der Träger erhält 2 Runden lang für jeden von ihm verwendeten BP 8 Schlagkraft.\n• Hat er in seiner Runde keinen BP verwendet, wird er um 10 % seiner LP geheilt."
+        "Feldschütz:\n• Der Träger erhält 2 Runden lang für jeden von ihm verwendeten BP 8 Schlagkraft.\n• Hat er in seiner Runde keinen BP verwendet, wird er um 8 % seiner LP geheilt."
       ],
       "es": [
-        "Guarda Campestre:\n• El portador gana 8 de potencia durante 2 turnos por cada PM que utilice.\n• Si no ha utilizado ningún PM durante su turno, se cura un 10% de su vida."
+        "Guarda Campestre:\n• El portador gana 8 de potencia durante 2 turnos por cada PM que utilice.\n• Si no ha utilizado ningún PM durante su turno, se cura un 8% de su vida."
       ],
       "pt": [
-        "Guarda Campestre:\n• O portador ganha 8 de potência durante 2 turnos para cada PM que ele utilizar.\n• Se ele não tiver usado PM durante seu turno, ele será curado em 10% da vida."
+        "Guarda Campestre:\n• O portador ganha 8 de potência durante 2 turnos para cada PM que ele utilizar.\n• Se ele não tiver usado PM durante seu turno, ele será curado em 8% da vida."
       ],
       "it": [
-        "Country Ranger:\n• The bearer gains 8 Power for 2 turns for each MP they use.\n• If the bearer doesn't use any MP during their turn, they are healed for 10% of their health."
+        "Country Ranger:\n• The bearer gains 8 Power for 2 turns for each MP they use.\n• If the bearer doesn't use any MP during their turn, they are healed for 8% of their health."
       ]
     },
     "conditions": {
@@ -136750,14 +136731,9 @@
         "maxStat": 6
       },
       {
-        "stat": "% Melee Damage",
-        "minStat": null,
-        "maxStat": -9
-      },
-      {
         "stat": "% Ranged Damage",
         "minStat": null,
-        "maxStat": -9
+        "maxStat": -6
       }
     ],
     "customStats": {},
@@ -136787,14 +136763,9 @@
         "maxStat": 6
       },
       {
-        "stat": "% Melee Damage",
-        "minStat": null,
-        "maxStat": -9
-      },
-      {
         "stat": "% Ranged Damage",
         "minStat": null,
-        "maxStat": -9
+        "maxStat": -6
       }
     ],
     "customStats": {},
@@ -136824,14 +136795,9 @@
         "maxStat": 6
       },
       {
-        "stat": "% Melee Resistance",
-        "minStat": null,
-        "maxStat": -9
-      },
-      {
         "stat": "% Ranged Resistance",
         "minStat": null,
-        "maxStat": -9
+        "maxStat": -6
       }
     ],
     "customStats": {},
@@ -136861,14 +136827,9 @@
         "maxStat": 6
       },
       {
-        "stat": "% Melee Resistance",
-        "minStat": null,
-        "maxStat": -9
-      },
-      {
         "stat": "% Ranged Resistance",
         "minStat": null,
-        "maxStat": -9
+        "maxStat": -6
       }
     ],
     "customStats": {},
@@ -136900,12 +136861,12 @@
       {
         "stat": "% Melee Resistance",
         "minStat": null,
-        "maxStat": -9
+        "maxStat": -6
       },
       {
         "stat": "% Ranged Resistance",
         "minStat": null,
-        "maxStat": -9
+        "maxStat": -6
       }
     ],
     "customStats": {},
@@ -136937,12 +136898,12 @@
       {
         "stat": "% Melee Resistance",
         "minStat": null,
-        "maxStat": -9
+        "maxStat": -3
       },
       {
         "stat": "% Ranged Resistance",
         "minStat": null,
-        "maxStat": -9
+        "maxStat": -3
       }
     ],
     "customStats": {},
@@ -140143,7 +140104,7 @@
       {
         "stat": "Summons",
         "minStat": null,
-        "maxStat": 1
+        "maxStat": 2
       }
     ],
     "customStats": {
@@ -140668,22 +140629,22 @@
     ],
     "customStats": {
       "en": [
-        "Blinding Reflection:\n• At the end of each turn, the bearer removes 4 Range from all enemies in their line of sight for 1 turn and reveals them if they're Invisible (stackable 1 time)."
+        "Blinding Reflection:\n• The bearer reduces and reflects 75% of initial damage from the first allied attack suffered onto the enemy closest to them in their line of sight (once per turn).\n• At the end of each turn, the bearer removes 4 Range from all enemies in their line of sight for 1 turn and reveals them if they are Invisible (stackable 1 time)."
       ],
       "fr": [
-        "Reflet Aveuglant :\n• À chaque fin de tour, le porteur retire 4 de Portée pendant 1 tour à tous les ennemis dans sa ligne de vue et les dévoile s'ils sont invisibles (cumulable 1 fois)."
+        "Reflet Aveuglant :\n• Le porteur réduit et renvoie 75% des dommages initiaux de la première attaque alliée subie à l'ennemi le plus proche de lui dans sa ligne de vue (une fois par tour).\n• À chaque fin de tour, il retire 4 de Portée pendant 1 tour à tous les ennemis dans sa ligne de vue et les dévoile s'ils sont invisibles (cumulable 1 fois)."
       ],
       "de": [
-        "Blendende Spiegelung:\n• Am Ende jeder Runde entzieht der Träger allen Gegnern in seiner Sichtlinie 1 Runde lang 4 Reichweite und enthüllt sie, wenn sie unsichtbar sind (1-mal kumulierbar)."
+        "Blendende Spiegelung:\n• Der Träger verringert den anfänglichen Schaden des ersten von einem Verbündeten erlittenen Angriffs und wirft 75 % dieses Schadens auf den nächsten Gegner in seiner Sichtlinie zurück (einmal pro Runde).\n• Am Ende jeder Runde entzieht er allen Gegnern in seiner Sichtlinie 1 Runde lang 4 Reichweite und macht sie sichtbar, wenn sie unsichtbar sind (1-mal kumulierbar)."
       ],
       "es": [
-        "Reflejo Cegador:\n• Al final de cada turno, el portador reduce en 4 el alcance durante 1 turno a todos los enemigos en su línea de visión y los revela si están invisibles (acumulable 1 vez)."
+        "Reflejo Cegador:\n• El portador reduce y devuelve el 75% de los daños iniciales del primer ataque aliado sufrido al enemigo más cercano en la línea de visión del portador (una vez por turno).\n• Al final de cada turno, retira 4 de alcance durante 1 turno a todos los enemigos en su línea de visión y los revela si están invisibles (acumulable 1 vez)."
       ],
       "pt": [
-        "Reflexo Cegante:\n• No fim de cada turno, o portador retira 4 de alcance durante 1 turno de todos os inimigos em sua linha de visão e os revela se eles estiverem invisíveis (acumula 1 vez)."
+        "Reflexo Cegante:\n• O portador reduz e reflete 75% dos danos iniciais do primeiro ataque aliado sofrido ao inimigo mais próximo dele em sua linha de visão (uma vez por turno).\n• No fim de cada turno, ele retira 4 de alcance durante 1 turno de todos os inimigos em sua linha de visão e os revela se eles estiverem invisíveis (acumula até 1 vez)."
       ],
       "it": [
-        "Blinding Reflection:\n• At the end of each turn, the bearer removes 4 Range from all enemies in their line of sight for 1 turn and reveals them if they're Invisible (stackable 1 time)."
+        "Blinding Reflection:\n• The bearer reduces and reflects 75% of initial damage from the first allied attack suffered onto the enemy closest to them in their line of sight (once per turn).\n• At the end of each turn, the bearer removes 4 Range from all enemies in their line of sight for 1 turn and reveals them if they are Invisible (stackable 1 time)."
       ]
     },
     "conditions": {
@@ -140764,22 +140725,22 @@
     ],
     "customStats": {
       "en": [
-        "Helsephine's Love:\n• When the bearer applies shield or inflicts close-combat damage, they heal allies for 8% of their health within 2 cells or less around them (once per turn)."
+        "Helsephine's Love:\n• When the bearer applies shield or inflicts close-combat damage, they heal allies for 8% of their health within 3 cells or less around them (once per turn)."
       ],
       "fr": [
-        "Amour d'Helséphine :\n• Lorsque le porteur applique du bouclier ou occasionne des dommages en mêlée, il soigne ses alliés de 8% de leur vie à 2 cases ou moins autour de lui (une fois par tour)."
+        "Amour d'Helséphine :\n• Lorsque le porteur applique du bouclier ou occasionne des dommages en mêlée, il soigne ses alliés de 8% de leur vie à 3 cases ou moins autour de lui (une fois par tour)."
       ],
       "de": [
-        "Helsefines Liebe:\n• Wenn der Träger einen Schild wirkt oder Nahkampfschaden verursacht, heilt er Verbündete, die nicht weiter als 2 Felder von ihm entfernt sind, um 8 % ihrer LP (einmal pro Runde)."
+        "Helsefines Liebe:\n• Wenn der Träger einen Schild wirkt oder Nahkampfschaden verursacht, heilt er Verbündete, die nicht weiter als 3 Felder von ihm entfernt sind, um 8 % ihrer LP (einmal pro Runde)."
       ],
       "es": [
-        "Amor de Helsefina:\n• Cuando el portador aplica escudo o inflige daños cuerpo a cuerpo, cura a sus aliados en un 8% de su vida si están a 2 casillas o menos (una vez por turno)."
+        "Amor de Helsefina:\n• Cuando el portador aplica escudo o inflige daños cuerpo a cuerpo, cura a sus aliados en un 8% de su vida si están a 3 casillas o menos (una vez por turno)."
       ],
       "pt": [
-        "Amor de Helsefina:\n• Ao aplicar escudo ou infligir danos corpo a corpo, o portador cura 8% da vida dos aliados a até 2 células ao redor de si (uma vez por turno)."
+        "Amor de Helsefina:\n• Ao aplicar escudo ou infligir danos corpo a corpo, o portador cura 8% da vida dos aliados a até 3 células ao redor de si (uma vez por turno)."
       ],
       "it": [
-        "Helsephine's Love:\n• When the bearer applies shield or inflicts close-combat damage, they heal allies for 8% of their health within 2 cells or less around them (once per turn)."
+        "Helsephine's Love:\n• When the bearer applies shield or inflicts close-combat damage, they heal allies for 8% of their health within 3 cells or less around them (once per turn)."
       ]
     },
     "conditions": {
@@ -140971,22 +140932,22 @@
     ],
     "customStats": {
       "en": [
-        "Meriana's Clairvoyance:\n• When the bearer inflicts elemental damage, they gain characteristics depending on the element for 2 turns (stackable 6 times, shared among effects):\n • Earth: 10 Dodge\n • Fire: 10 Lock\n • Water: 10 MP Reduction\n• Air: 10 AP Reduction"
+        "Meriana's Clairvoyance:\n• When the bearer inflicts elemental damage, they gain Reduction based on the element for 2 turns (stackable 8 times, shared among effects):\n • Earth & Water: 5 MP Reduction\n• Fire & Air: 5 AP Reduction"
       ],
       "fr": [
-        "Clairvoyance de Mériana :\n• Lorsque le porteur occasionne des dommages élémentaires, il gagne des caractéristiques selon l'élément pendant 2 tours (cumulable 6 fois, partagé entre les effets) :\n • Terre : 10 Fuite\n • Feu : 10 Tacle\n • Eau : 10 Retrait PM\n • Air : 10 Retrait PA"
+        "Clairvoyance de Mériana :\n• Lorsque le porteur occasionne des dommages élémentaires, il gagne du Retrait selon l'élément pendant 2 tours (cumulable 8 fois, partagé entre les effets) :\n • Terre & Eau : 5 Retrait PM\n • Feu & Air : 5 Retrait PA"
       ],
       "de": [
-        "Merianas Hellsicht:\n• Wenn der Träger Elementarschaden verursacht, erhält er 2 Runden lang auf dem jeweiligen Element basierende Attribute (6-mal kumulierbar, auf die einzelnen Wirkungen aufgeteilt):\n • Erde: 10 Ausweichen\n • Feuer: 10 Blocken\n • Wasser: 10 BP-Entzug\n• Luft: 10 AP-Entzug"
+        "Merianas Hellsicht:\n• Wenn der Träger Elementarschaden verursacht, erhält er 2 Runden lang einen Entzug im jeweiligen Element (8-mal kumulierbar, auf die einzelnen Wirkungen aufgeteilt):\n • Erde und Wasser: 5 BP-Entzug\n• Feuer und Luft: 5 AP-Entzug"
       ],
       "es": [
-        "Clarividencia de Mériana:\n• Cuando el portador ocasiona daños elementales, gana características según el elemento durante 2 turnos (acumulable 6 veces, compartido entre los efectos):\n • Tierra: 10 de huida\n • Fuego: 10 de placaje\n • Agua: 10 de retirada de PM\n• Aire: 10 de retirada de PA"
+        "Clarividencia de Mériana:\n• Cuando el portador ocasiona daños elementales, gana retirada según el elemento durante 2 turnos (acumulable 8 veces, compartido entre los efectos):\n • Tierra y agua: 5 de retirada de PM\n• Fuego y aire: 5 de retirada de PA"
       ],
       "pt": [
-        "Clarividência de Meriana:\n• Quando o portador inflige danos elementares, ele ganha características de acordo com o elemento durante 2 turnos (pode ser acumulado 6 vezes, repartido entre os efeitos):\n • Terra: 10 de fuga\n • Fogo: 10 de bloqueio\n • Água: 10 de retirada de PM\n• Ar: 10 de retirada de PA"
+        "Clarividência de Meriana:\n• Quando o portador inflige danos elementares, ele ganha Retirada de acordo com o elemento durante 2 turnos (acumula até 8 vezes, repartido entre os efeitos):\n • Terra e Água: 5 de retirada de PM\n• Fogo e Ar: 5 de retirada de PA"
       ],
       "it": [
-        "Meriana's Clairvoyance:\n• When the bearer inflicts elemental damage, they gain characteristics depending on the element for 2 turns (stackable 6 times, shared among effects):\n • Earth: 10 Dodge\n • Fire: 10 Lock\n • Water: 10 MP Reduction\n• Air: 10 AP Reduction"
+        "Meriana's Clairvoyance:\n• When the bearer inflicts elemental damage, they gain Reduction based on the element for 2 turns (stackable 8 times, shared among effects):\n • Earth & Water: 5 MP Reduction\n• Fire & Air: 5 AP Reduction"
       ]
     },
     "conditions": {
@@ -146966,5 +146927,425 @@
       "customConditions": {}
     },
     "imageUrl": "item/82583.png"
+  },
+  {
+    "dofusID": "34327",
+    "name": {
+      "en": "Sanctuary Guardian Helm",
+      "fr": "Heaume des Gardiens du Sanctuaire",
+      "de": "Helm der Wächter des Heiligtums",
+      "es": "Yelmo de los guardianes del santuario",
+      "pt": "Elmo dos Guardiões do Santuário",
+      "it": "Sanctuary Guardian Helm"
+    },
+    "itemType": "Hat",
+    "setID": "1090",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Power",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Heals",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "AP Parry",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -7
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": -15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16912.png"
+  },
+  {
+    "dofusID": "34328",
+    "name": {
+      "en": "Scarlet Greaves",
+      "fr": "Grèves Écarlates",
+      "de": "Scharlachrote Schienen",
+      "es": "Grebas escarlata",
+      "pt": "Grevas Escarlates",
+      "it": "Scarlet Greaves"
+    },
+    "itemType": "Boots",
+    "setID": "1090",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 450
+      },
+      {
+        "stat": "Power",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Heals",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -7
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": -15
+      },
+      {
+        "stat": "MP",
+        "minStat": null,
+        "maxStat": 1
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/11390.png"
+  },
+  {
+    "dofusID": "34329",
+    "name": {
+      "en": "Vegegrip",
+      "fr": "Étreinte Végétale",
+      "de": "Blumige Erdrosselung",
+      "es": "Apretón vegetal",
+      "pt": "Aperto Vegetal",
+      "it": "Vegegrip"
+    },
+    "itemType": "Amulet",
+    "setID": "1090",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 351,
+        "maxStat": 450
+      },
+      {
+        "stat": "Power",
+        "minStat": 51,
+        "maxStat": 70
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 40
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Heals",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 9,
+        "maxStat": 13
+      },
+      {
+        "stat": "Fire Damage",
+        "minStat": 9,
+        "maxStat": 13
+      },
+      {
+        "stat": "Earth Damage",
+        "minStat": 9,
+        "maxStat": 13
+      },
+      {
+        "stat": "Air Damage",
+        "minStat": 9,
+        "maxStat": 13
+      },
+      {
+        "stat": "Critical",
+        "minStat": null,
+        "maxStat": -7
+      },
+      {
+        "stat": "Critical Resistance",
+        "minStat": null,
+        "maxStat": -15
+      },
+      {
+        "stat": "AP",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 11,
+        "maxStat": 15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/1343.png"
+  },
+  {
+    "dofusID": "34330",
+    "name": {
+      "en": "Moraympress Face",
+      "fr": "Visage de Mureine",
+      "de": "Gesicht der Königsmuräne",
+      "es": "Cara de Morreina",
+      "pt": "Rosto de Morestade",
+      "it": "Moraympress Face"
+    },
+    "itemType": "Hat",
+    "setID": "1091",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Chance",
+        "minStat": 61,
+        "maxStat": 80
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical",
+        "minStat": 3,
+        "maxStat": 5
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 16,
+        "maxStat": 20
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Lock",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Summons",
+        "minStat": null,
+        "maxStat": 1
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "% Air Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "Initiative",
+        "minStat": null,
+        "maxStat": -300
+      },
+      {
+        "stat": "Dodge",
+        "minStat": null,
+        "maxStat": -15
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/16913.png"
+  },
+  {
+    "dofusID": "34332",
+    "name": {
+      "en": "Willorka Dorsal Fin",
+      "fr": "Dorsale de Willorque",
+      "de": "Rückenflosse von Willorca",
+      "es": "Dorsal de Willorca",
+      "pt": "Dorsal de Willorca",
+      "it": "Willorka Dorsal Fin"
+    },
+    "itemType": "Cloak",
+    "setID": "1091",
+    "level": 200,
+    "stats": [
+      {
+        "stat": "Vitality",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
+        "stat": "Chance",
+        "minStat": 81,
+        "maxStat": 100
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": 31,
+        "maxStat": 50
+      },
+      {
+        "stat": "Critical",
+        "minStat": 4,
+        "maxStat": 6
+      },
+      {
+        "stat": "Prospecting",
+        "minStat": 11,
+        "maxStat": 15
+      },
+      {
+        "stat": "Water Damage",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Critical Damage",
+        "minStat": 16,
+        "maxStat": 25
+      },
+      {
+        "stat": "Lock",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Heals",
+        "minStat": 9,
+        "maxStat": 12
+      },
+      {
+        "stat": "% Earth Resistance",
+        "minStat": 5,
+        "maxStat": 7
+      },
+      {
+        "stat": "% Water Resistance",
+        "minStat": 7,
+        "maxStat": 10
+      },
+      {
+        "stat": "Initiative",
+        "minStat": null,
+        "maxStat": -300
+      },
+      {
+        "stat": "MP Parry",
+        "minStat": null,
+        "maxStat": -10
+      }
+    ],
+    "customStats": {},
+    "conditions": {
+      "conditions": {},
+      "customConditions": {}
+    },
+    "imageUrl": "item/17698.png"
   }
 ]
