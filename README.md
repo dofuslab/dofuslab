@@ -261,7 +261,7 @@ $ python -m oneoff.sync_game_data
 ```
 
 This previews and synchronizes sets plus all item-family files (items, weapons,
-pets, mounts, and cosmetics) with one confirmation. Use `oneoff.sync_set` or
+pets, and mounts) with one confirmation. Use `oneoff.sync_set` or
 `oneoff.sync_item` when you only want to synchronize one category.
 
 </p>
