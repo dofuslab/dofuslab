@@ -257,8 +257,12 @@ After all changes to the .json files inside `server/app/database/data` are made,
 
 ```bash
 $ cd server
-$ python -m oneoff.sync_item
+$ python -m oneoff.sync_game_data
 ```
+
+This previews and synchronizes sets plus all item-family files (items, weapons,
+pets, mounts, and cosmetics) with one confirmation. Use `oneoff.sync_set` or
+`oneoff.sync_item` when you only want to synchronize one category.
 
 </p>
 </details>
@@ -289,7 +293,7 @@ $ docker compose exec -it server /bin/bash
 ...and following the sync instructions in the "manual" section. For example:
 
 ```bash
-$ python -m oneoff.sync_item
+$ python -m oneoff.sync_game_data
 ```
 
 </p>
