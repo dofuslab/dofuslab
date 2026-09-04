@@ -5,6 +5,7 @@ from app.database.model_item_type import ModelItemType
 from app.database.model_item_type_translation import ModelItemTypeTranslation
 from app.database.model_item_slot import ModelItemSlot
 from app.database.model_item_slot_translation import ModelItemSlotTranslation
+from app.catalog_revision import advance_catalog_revision
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -17,6 +18,7 @@ def add_item_type_to_slot():
         data = json.load(file)
 
         with session_scope() as db_session:
+            catalog_changed = False
             for record in data:
                 slots = (
                     db_session.query(ModelItemSlot)
@@ -49,11 +51,14 @@ def add_item_type_to_slot():
                         )
                         if not relationship_exists:
                             slot.item_types.append(item_type)
+                            catalog_changed = True
                             print(
                                 "{} type added to {} slot".format(
                                     type_en_name, record["name"]["en"]
                                 )
                             )
+            if catalog_changed:
+                advance_catalog_revision(db_session)
 
 
 if __name__ == "__main__":

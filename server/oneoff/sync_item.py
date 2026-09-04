@@ -21,6 +21,7 @@ import json
 import os
 from sqlalchemy import or_
 from app import session_scope
+from app.catalog_revision import advance_catalog_revision_for_changes
 from app.database.model_set import ModelSet
 from app.database.model_item import ModelItem
 from app.database.model_item_stat import ModelItemStat
@@ -399,7 +400,7 @@ def preview_changes(db_session, all_items, all_item_ids, operation_type):
     return items_to_create, items_to_update, items_to_delete
 
 
-def execute_upsert_all(db_session, all_items):
+def execute_upsert_all(db_session, all_items, advance_revision=True):
     """Execute upsert all operation."""
     created_items = []
     updated_items = []
@@ -412,11 +413,12 @@ def execute_upsert_all(db_session, all_items):
             item_name = record["name"]["en"]
             
             try:
-                result = update_or_create_item(
-                    db_session,
-                    item_id,
-                    record,
-                )
+                with db_session.begin_nested():
+                    result = update_or_create_item(
+                        db_session,
+                        item_id,
+                        record,
+                    )
                 
                 if result is True:
                     created_items.append(f"[{item_id}]: {item_name}")
@@ -430,13 +432,20 @@ def execute_upsert_all(db_session, all_items):
                 print(f"Error processing item {error_msg}")
                 # Continue processing other items
     
+    if advance_revision:
+        advance_catalog_revision_for_changes(
+            db_session, created_items, updated_items
+        )
+
     return created_items, updated_items, skipped_items, errored_items
 
 
 def execute_sync_all(db_session, all_items, all_item_ids):
     """Execute sync all operation (upsert + delete)."""
     # First do upsert
-    created_items, updated_items, skipped_items, errored_items = execute_upsert_all(db_session, all_items)
+    created_items, updated_items, skipped_items, errored_items = execute_upsert_all(
+        db_session, all_items, advance_revision=False
+    )
     
     # Then delete items not in input files
     items_to_delete = get_items_to_delete(db_session, all_item_ids, "all")
@@ -444,6 +453,10 @@ def execute_sync_all(db_session, all_items, all_item_ids):
     
     if items_to_delete:
         deleted_items = delete_items_not_in_file(db_session, items_to_delete, "all")
+
+    advance_catalog_revision_for_changes(
+        db_session, created_items, updated_items, deleted_items
+    )
     
     return created_items, updated_items, skipped_items, errored_items, deleted_items
 
@@ -490,11 +503,14 @@ def execute_individual_upsert(db_session, all_items):
             item_name = record["name"]["en"]
             
             try:
-                result = update_or_create_item(db_session, item_id, record)
+                with db_session.begin_nested():
+                    result = update_or_create_item(db_session, item_id, record)
                 
                 if result is True:
+                    advance_catalog_revision_for_changes(db_session, [item_id])
                     return [f"[{item_id}]: {item_name}"], [], [], []
                 elif result is False:
+                    advance_catalog_revision_for_changes(db_session, [item_id])
                     return [], [f"[{item_id}]: {item_name}"], [], []
                 elif result is None:
                     return [], [], [f"[{item_id}]: {item_name}"], []

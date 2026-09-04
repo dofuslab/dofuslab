@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from flask import Flask, escape, request, session, g
+from flask import Flask, escape, request, session, g, jsonify, make_response
 from flask_session import Session
 from flask_babel import Babel, _, ngettext
 from flask_bcrypt import Bcrypt
@@ -10,6 +10,8 @@ from flask_limiter_graphQL_support import Limiter
 from flask_limiter_graphQL_support.util import get_remote_address
 import os
 from app.database.base import Base
+from app.catalog_manifest import catalog_manifest, catalog_manifest_etag
+from app.catalog_revision import get_catalog_revision
 from flask_login import LoginManager, current_user
 from flask_cors import CORS
 import redis
@@ -213,6 +215,19 @@ app.add_url_rule(
         "graphql", schema=schema, graphiql=flask_env == "development"
     ),
 )
+
+
+@app.route("/api/catalog/manifest.json", methods=["GET"])
+def get_catalog_manifest():
+    manifest = catalog_manifest(get_catalog_revision(db.session))
+    etag = catalog_manifest_etag(manifest)
+    if request.if_none_match.contains(etag):
+        response = make_response("", 304)
+    else:
+        response = jsonify(manifest)
+    response.set_etag(etag)
+    response.headers["Cache-Control"] = "no-cache"
+    return response
 
 
 @app.teardown_appcontext

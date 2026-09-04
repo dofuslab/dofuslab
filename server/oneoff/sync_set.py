@@ -20,6 +20,7 @@ import json
 import os
 from sqlalchemy import or_
 from app import session_scope
+from app.catalog_revision import advance_catalog_revision_for_changes
 from app.database.model_set import ModelSet
 from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_set_bonus import ModelSetBonus
@@ -236,7 +237,7 @@ def preview_changes(db_session, all_sets, all_set_ids, operation_type):
     return sets_to_create, sets_to_update, sets_to_delete
 
 
-def execute_upsert_all(db_session, all_sets):
+def execute_upsert_all(db_session, all_sets, advance_revision=True):
     """Execute upsert all operation."""
     created_sets = []
     updated_sets = []
@@ -248,11 +249,12 @@ def execute_upsert_all(db_session, all_sets):
         set_name = record["name"]["en"]
         
         try:
-            result = update_or_create_set(
-                db_session,
-                set_id,
-                record,
-            )
+            with db_session.begin_nested():
+                result = update_or_create_set(
+                    db_session,
+                    set_id,
+                    record,
+                )
             
             if result is True:
                 created_sets.append(f"[{set_id}]: {set_name}")
@@ -266,13 +268,20 @@ def execute_upsert_all(db_session, all_sets):
             print(f"Error processing set {error_msg}")
             # Continue processing other sets
     
+    if advance_revision:
+        advance_catalog_revision_for_changes(
+            db_session, created_sets, updated_sets
+        )
+
     return created_sets, updated_sets, skipped_sets, errored_sets
 
 
 def execute_sync_all(db_session, all_sets, all_set_ids):
     """Execute sync all operation (upsert + delete)."""
     # First do upsert
-    created_sets, updated_sets, skipped_sets, errored_sets = execute_upsert_all(db_session, all_sets)
+    created_sets, updated_sets, skipped_sets, errored_sets = execute_upsert_all(
+        db_session, all_sets, advance_revision=False
+    )
     
     # Then delete sets not in input file
     sets_to_delete = get_sets_to_delete(db_session, all_set_ids)
@@ -280,6 +289,10 @@ def execute_sync_all(db_session, all_sets, all_set_ids):
     
     if sets_to_delete:
         deleted_sets = delete_sets_not_in_file(db_session, sets_to_delete)
+
+    advance_catalog_revision_for_changes(
+        db_session, created_sets, updated_sets, deleted_sets
+    )
     
     return created_sets, updated_sets, skipped_sets, errored_sets, deleted_sets
 
@@ -304,11 +317,14 @@ def execute_individual_upsert(db_session, all_sets):
             set_name = record["name"]["en"]
             
             try:
-                result = update_or_create_set(db_session, set_id, record)
+                with db_session.begin_nested():
+                    result = update_or_create_set(db_session, set_id, record)
                 
                 if result is True:
+                    advance_catalog_revision_for_changes(db_session, [set_id])
                     return [f"[{set_id}]: {set_name}"], [], [], []
                 elif result is False:
+                    advance_catalog_revision_for_changes(db_session, [set_id])
                     return [], [f"[{set_id}]: {set_name}"], [], []
                 elif result is None:
                     return [], [], [f"[{set_id}]: {set_name}"], []
