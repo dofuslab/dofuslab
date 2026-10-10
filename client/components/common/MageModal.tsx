@@ -221,8 +221,10 @@ const MageModal = ({
     [mutate, closeMageModal, client, t, customSet],
   );
 
-  const hasNeutralDamage = equippedItem.item.weaponStats?.weaponEffects.some(
-    ({ effectType }) => effectType === WeaponEffectType.NEUTRAL_DAMAGE,
+  const hasNeutralEffect = equippedItem.item.weaponStats?.weaponEffects.some(
+    ({ effectType }) =>
+      effectType === WeaponEffectType.NEUTRAL_DAMAGE ||
+      effectType === WeaponEffectType.NEUTRAL_HEALING,
   );
 
   return (
@@ -289,7 +291,7 @@ const MageModal = ({
                   innerDivStyle={{ marginBottom: 8 }}
                   elementMage={weaponElementMage}
                 />
-                {hasNeutralDamage && (
+                {hasNeutralEffect && (
                   <div>
                     <div
                       css={{ display: 'flex', gap: 8, alignItems: 'center' }}
