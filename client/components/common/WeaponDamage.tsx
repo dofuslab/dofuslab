@@ -79,13 +79,17 @@ const WeaponDamage = ({ weaponStats, customSet, weaponElementMage }: Props) => {
         let min = minDamage;
         let max = maxDamage;
         let type = effectType;
-        if (type === WeaponEffectType.NEUTRAL_DAMAGE && weaponElementMage) {
+        if (
+          (type === WeaponEffectType.NEUTRAL_DAMAGE ||
+            type === WeaponEffectType.NEUTRAL_HEALING) &&
+          weaponElementMage
+        ) {
           ({ minDamage: min, maxDamage: max } = calcElementMage(
             weaponElementMage,
             min || max,
             max,
           ));
-          type = elementMageToWeaponEffect(weaponElementMage);
+          type = elementMageToWeaponEffect(weaponElementMage, type);
         }
         return {
           id,

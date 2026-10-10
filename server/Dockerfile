@@ -1,4 +1,4 @@
-FROM python:3.8-bullseye
+FROM python:3.8-bookworm
 # note: this is based on bullseye (a debian based image) because alpine can take a long time to build python requirements: https://stackoverflow.com/a/49057289
 
 # Default value; will be overridden by build-args, if passed
@@ -7,8 +7,7 @@ ENV FLASK_ENV $flask_env
 ENV DATADOG_ENV=server
 
 # install packages required for installing python requirements
-RUN apt-get update
-RUN apt-get install -y libopenblas-dev python3-dev libffi-dev gcc gfortran python3-dev liblapack-dev libblis-dev
+RUN apt-get update && apt-get install -y libopenblas-dev python3-dev libffi-dev gcc gfortran python3-dev liblapack-dev libblis-dev
 
 # set up user to prevent sandbox escapes:
 RUN useradd -m -U -s /bin/bash dofuslab

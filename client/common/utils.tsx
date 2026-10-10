@@ -854,6 +854,8 @@ const getStats = (
     case WeaponEffectType.NEUTRAL_STEAL:
     case SpellEffectType.NEUTRAL_DAMAGE:
     case SpellEffectType.NEUTRAL_STEAL:
+    case WeaponEffectType.NEUTRAL_HEALING:
+    case SpellEffectType.NEUTRAL_HEALING:
       return { multiplier: Stat.STRENGTH, damage: Stat.NEUTRAL_DAMAGE };
     case WeaponEffectType.WATER_DAMAGE:
     case WeaponEffectType.WATER_STEAL:
@@ -991,6 +993,8 @@ export const effectToIconUrl = (effect: WeaponEffectType | SpellEffectType) => {
     case SpellEffectType.WATER_HEALING:
     case WeaponEffectType.AIR_HEALING:
     case SpellEffectType.AIR_HEALING:
+    case WeaponEffectType.NEUTRAL_HEALING:
+    case SpellEffectType.NEUTRAL_HEALING:
     case WeaponEffectType.HP_RESTORED:
     case SpellEffectType.HP_RESTORED:
       // HP restored is now deprecated in favor of Fire healing
@@ -1047,6 +1051,8 @@ export const getSimpleEffect: (
     case SpellEffectType.WATER_HEALING:
     case WeaponEffectType.AIR_HEALING:
     case SpellEffectType.AIR_HEALING:
+    case WeaponEffectType.NEUTRAL_HEALING:
+    case SpellEffectType.NEUTRAL_HEALING:
     case WeaponEffectType.HP_RESTORED:
     case SpellEffectType.HP_RESTORED:
       // HP restored is now deprecated in favor of Fire healing
@@ -1102,24 +1108,38 @@ export const calcEffect = (
   return baseDamage;
 };
 
-export const elementMageToWeaponEffect = (elementMage: WeaponElementMage) => {
+export const elementMageToWeaponEffect = (
+  elementMage: WeaponElementMage,
+  neutralEffectType:
+    | WeaponEffectType.NEUTRAL_DAMAGE
+    | WeaponEffectType.NEUTRAL_HEALING = WeaponEffectType.NEUTRAL_DAMAGE,
+) => {
+  const isHealing = neutralEffectType === WeaponEffectType.NEUTRAL_HEALING;
   switch (elementMage) {
     case WeaponElementMage.EARTH_50:
     case WeaponElementMage.EARTH_68:
     case WeaponElementMage.EARTH_85:
-      return WeaponEffectType.EARTH_DAMAGE;
+      return isHealing
+        ? WeaponEffectType.EARTH_HEALING
+        : WeaponEffectType.EARTH_DAMAGE;
     case WeaponElementMage.FIRE_50:
     case WeaponElementMage.FIRE_68:
     case WeaponElementMage.FIRE_85:
-      return WeaponEffectType.FIRE_DAMAGE;
+      return isHealing
+        ? WeaponEffectType.FIRE_HEALING
+        : WeaponEffectType.FIRE_DAMAGE;
     case WeaponElementMage.WATER_50:
     case WeaponElementMage.WATER_68:
     case WeaponElementMage.WATER_85:
-      return WeaponEffectType.WATER_DAMAGE;
+      return isHealing
+        ? WeaponEffectType.WATER_HEALING
+        : WeaponEffectType.WATER_DAMAGE;
     case WeaponElementMage.AIR_50:
     case WeaponElementMage.AIR_68:
     case WeaponElementMage.AIR_85:
-      return WeaponEffectType.AIR_DAMAGE;
+      return isHealing
+        ? WeaponEffectType.AIR_HEALING
+        : WeaponEffectType.AIR_DAMAGE;
     default:
       throw new Error('Unknown WeaponElementMage');
   }
@@ -1268,16 +1288,18 @@ const evaluateLeafCondition = (
   condition: TCondition,
 ) => {
   if (condition.stat === 'SET_BONUS') {
-    const setBonuses = getBonusesFromCustomSet(customSet);
-    const numberBonuses = Object.values(setBonuses).reduce(
-      (acc, v) => acc + v.count - 1,
-      0,
-    );
+    const equippedSetIds = new Set<string>();
+    customSet.equippedItems.forEach(({ item }) => {
+      if (item?.set) {
+        equippedSetIds.add(item.set.id);
+      }
+    });
+    const numberSets = equippedSetIds.size;
     if (condition.operator === '<') {
-      return numberBonuses < condition.value;
+      return numberSets < condition.value;
     }
     if (condition.operator === '>') {
-      return numberBonuses > condition.value;
+      return numberSets > condition.value;
     }
   } else {
     const statCalculator =

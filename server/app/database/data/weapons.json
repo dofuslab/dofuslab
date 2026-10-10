@@ -8583,12 +8583,12 @@
       "critBonusDamage": 5,
       "weapon_effects": [
         {
-          "stat": "Air damage",
+          "stat": "Neutral damage",
           "minStat": 12,
           "maxStat": 42
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 12,
           "maxStat": 42
         }
@@ -15934,12 +15934,12 @@
       "critBonusDamage": 2,
       "weapon_effects": [
         {
-          "stat": "Fire steal",
+          "stat": "Neutral steal",
           "minStat": 3,
           "maxStat": 7
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 7,
           "maxStat": 11
         }
@@ -16448,7 +16448,7 @@
           "maxStat": 22
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 13,
           "maxStat": 22
         }
@@ -16596,7 +16596,7 @@
           "maxStat": 27
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 9,
           "maxStat": 23
         }
@@ -17589,7 +17589,7 @@
           "maxStat": 40
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 1,
           "maxStat": 80
         }
@@ -19491,7 +19491,7 @@
           "maxStat": -1
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 8,
           "maxStat": 12
         }
@@ -21170,7 +21170,7 @@
           "maxStat": 35
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 1,
           "maxStat": 100
         }
@@ -25181,7 +25181,7 @@
       "critBonusDamage": 10,
       "weapon_effects": [
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 11,
           "maxStat": 30
         }
@@ -36078,7 +36078,7 @@
           "maxStat": 44
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 51,
           "maxStat": 100
         }
@@ -41708,24 +41708,24 @@
     ],
     "weaponStats": {
       "apCost": 3,
-      "usesPerTurn": 2,
+      "usesPerTurn": 1,
       "minRange": 4,
       "maxRange": 10,
       "baseCritChance": 30,
       "critBonusDamage": 3,
       "weapon_effects": [
         {
-          "stat": "Fire steal",
+          "stat": "Neutral steal",
           "minStat": 9,
           "maxStat": 12
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 12,
           "maxStat": 17
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 12,
           "maxStat": 17
         }
@@ -41822,17 +41822,17 @@
       "critBonusDamage": 6,
       "weapon_effects": [
         {
-          "stat": "Fire steal",
+          "stat": "Neutral steal",
           "minStat": 11,
           "maxStat": 15
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 26,
           "maxStat": 30
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 26,
           "maxStat": 30
         }
@@ -43450,7 +43450,7 @@
       "critBonusDamage": 1,
       "weapon_effects": [
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 11,
           "maxStat": 15
         }
@@ -46980,9 +46980,9 @@
         "maxStat": 20
       },
       {
-        "stat": "AP Parry",
+        "stat": "AP Reduction",
         "minStat": null,
-        "maxStat": -30
+        "maxStat": -20
       },
       {
         "stat": "Air Damage",
@@ -47010,9 +47010,9 @@
         "maxStat": 20
       },
       {
-        "stat": "MP Parry",
+        "stat": "MP Reduction",
         "minStat": null,
-        "maxStat": -30
+        "maxStat": -20
       },
       {
         "stat": "Wisdom",
@@ -47047,22 +47047,22 @@
     },
     "customStats": {
       "en": [
-        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 15 damage on themself in their best attack element to inflict the same amount of health-steal damage on adjacent entities at the end of the bearer's turn. Also heals attackers by 7% of damage inflicted on enemies hit until the bearer's next turn (stackable 1 time)."
+        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 15 damage on themself in their best attack element to inflict the same amount of health-steal damage on adjacent entities at the end of the bearer's turn. Also heals attackers by 7% of damage inflicted on enemies hit for 2 turns (stackable 1 time)."
       ],
       "fr": [
-        "Appétit de Crocobur :\n• À chaque début de tour, le porteur s'inflige 15 de dommages dans son meilleur élément d'attaque pour infliger les mêmes dommages en vol de vie aux entités à son contact à la fin de son tour. Soigne également les attaquants de 7% des dommages occasionnés aux ennemis touchés jusqu'au prochain tour du porteur (cumulable 1 fois)."
+        "Appétit de Crocobur :\n• À chaque début de tour, le porteur s'inflige 15 de dommages dans son meilleur élément d'attaque pour infliger les mêmes dommages en vol de vie aux entités à son contact à la fin de son tour. Soigne également les attaquants de 7% des dommages occasionnés aux ennemis touchés pendant 2 tours (cumulable 1 fois)."
       ],
       "de": [
-        "Appetit von Crocobur:\n• Zu Beginn jeder Runde fügt sich der Träger selbst 15 Schaden in seinem besten Angriffselement zu, um Einheiten in Reichweite am Ende seiner Runde durch LP-Diebstahl Schaden in gleicher Höhe zuzufügen. Außerdem werden Angreifer bis zur nächsten Runde des Trägers um 7 % des getroffenen Gegnern zugefügten Schadens geheilt (1-mal kumulierbar)."
+        "Appetit von Crocobur:\n• Zu Beginn jeder Runde fügt sich der Träger selbst 15 Schaden in seinem besten Angriffselement zu, um Einheiten in Reichweite am Ende seiner Runde durch LP-Diebstahl Schaden in gleicher Höhe zuzufügen. Außerdem werden Angreifer 2 Runden lang um 7 % des getroffenen Gegnern zugefügten Schadens geheilt (1-mal kumulierbar)."
       ],
       "es": [
-        "Apetito de Cocobur:\n• Al principio de cada turno, el portador se inflige 15 de daño con su mejor elemento de ataque e inflige el mismo daño con robo de vida a las entidades en contacto con él al final de su turno. Cura también a los atacantes un 7% de los daños ocasionados a los enemigos alcanzados hasta el siguiente turno del portador (acumulable 1 vez)."
+        "Apetito de Cocobur:\n• Al principio de cada turno, el portador se inflige 15 de daños con su mejor elemento de ataque e inflige los mismos daños en robo de vida a las entidades en contacto con él al final de su turno. Cura también a los atacantes un 7% de los daños ocasionados a los enemigos alcanzados durante 2 turnos (acumulable 1 vez)."
       ],
       "pt": [
-        "Apetite da Crocálibur:\n• No começo de cada turno, o portador inflige a si mesmo 15 de danos em seu melhor elemento de ataque para infligir os mesmos danos em roubo de vida às entidades em contato com ele ao final do turno. Também cura os atacantes em 7% dos danos infligidos aos inimigos atingidos até o próximo turno do portador (acumula 1 vez)."
+        "Apetite da Crocálibur:\n• A cada início de turno, o portador inflige a si mesmo 15 de danos em seu melhor elemento de ataque para infligir os mesmos danos em roubo de vida às entidades em contato com ele ao final do turno. Também cura os atacantes em 7% dos danos infligidos aos inimigos atingidos por 2 turnos (acumula 1 vez)."
       ],
       "it": [
-        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 15 damage on themself in their best attack element to inflict the same amount of health-steal damage on adjacent entities at the end of the bearer's turn. Also heals attackers by 7% of damage inflicted on enemies hit until the bearer's next turn (stackable 1 time)."
+        "Crocobur's Appetite:\n• At the start of each turn, the bearer inflicts 15 damage on themself in their best attack element to inflict the same amount of health-steal damage on adjacent entities at the end of the bearer's turn. Also heals attackers by 7% of damage inflicted on enemies hit for 2 turns (stackable 1 time)."
       ]
     },
     "conditions": {
@@ -47137,7 +47137,7 @@
       "minRange": null,
       "maxRange": 1,
       "baseCritChance": 100,
-      "critBonusDamage": 3,
+      "critBonusDamage": 6,
       "weapon_effects": []
     },
     "customStats": {
@@ -47148,13 +47148,13 @@
         "Destin Fatidique :\n• À chaque fin de tour, le porteur partage les dommages entre les ennemis dans un carré de taille 1 et augmente les dommages qu'ils subissent de 6% pendant 2 tours (cumulable 1 fois). Il gagne également 10 de Tacle pendant 1 tour pour chaque ennemi touché."
       ],
       "de": [
-        "Schicksalhafte Bestimmung:\n• Am Ende jeder Runde teilt der Träger den Schaden auf die Gegner in einem Quadrat der Größe 1 auf und erhöht den Schaden, den sie erleiden, 2 Runden lang um 6 % (1-mal kumulierbar). Er erhält außerdem 1 Runde lang 10 Blocken pro getroffenem Gegner."
+        "Schicksalhafte Bestimmung:\n• Am Ende jeder Runde teilt der Träger den Schaden auf die Gegner in einem quadratischen Bereich der Größe 1 auf und erhöht den Schaden, den sie erleiden, 2 Runden lang um 6 % (1-mal kumulierbar). Er erhält außerdem 1 Runde lang 10 Blocken pro getroffenem Gegner."
       ],
       "es": [
-        "Destino Fatídico:\n• Al final de cada turno, el portador reparte el daño entre los enemigos en un cuadrado de tamaño 1 y aumenta el daño que reciben en un 6% durante 2 turnos (acumulable 1 vez). También gana 10 de placaje durante 1 turno por cada enemigo alcanzado."
+        "Destino Fatídico:\n• Al final de cada turno, el portador reparte los daños entre los enemigos en un cuadrado de tamaño 1 y aumenta los daños que reciben en un 6% durante 2 turnos (acumulable 1 vez). También gana 10 de placaje durante 1 turno por cada enemigo alcanzado."
       ],
       "pt": [
-        "Destino Fatídico:\n• No fim de cada turno, o portador divide os danos entre os inimigos em um quadrado de tamanho 1 e aumenta os danos que eles sofreram em 6% durante 2 turnos (acumula 1 vez). Ele também ganha 10 de bloqueio durante 1 turno para cada inimigo atingido."
+        "Destino Fatídico:\n• No fim de cada turno, o portador divide os danos entre os inimigos em um quadrado de tamanho 1 e aumenta os danos que eles sofrem em 6% durante 2 turnos (acumula 1 vez). Ele também ganha 10 de bloqueio durante 1 turno para cada inimigo atingido."
       ],
       "it": [
         "Fateful Destiny:\n• At the end of each turn, the bearer shares damage between enemies in a 1-cell square and increases the damage they suffer by 6% for 2 turns (stackable 1 time). The bearer also gains 10 Lock for 1 turn for each enemy hit."
@@ -47187,8 +47187,8 @@
       },
       {
         "stat": "Chance",
-        "minStat": 81,
-        "maxStat": 120
+        "minStat": 41,
+        "maxStat": 60
       },
       {
         "stat": "AP Reduction",
@@ -47221,9 +47221,14 @@
         "maxStat": 10
       },
       {
-        "stat": "Water Damage",
+        "stat": "Damage",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Power",
+        "minStat": 41,
+        "maxStat": 60
       }
     ],
     "weaponStats": {
@@ -47235,7 +47240,7 @@
       "critBonusDamage": 10,
       "weapon_effects": [
         {
-          "stat": "Water damage",
+          "stat": "Best element damage",
           "minStat": 38,
           "maxStat": 44
         },
@@ -47260,7 +47265,7 @@
         "Frío de Novimiembro:\n• Al final de cada turno, el portador retira 1 PA a los enemigos en contacto con él durante 1 turno (acumulable 1 vez).\n• Cuando un luchador enemigo es eliminado, el portador gana 1 PA durante 1 turno (acumulable 2 veces).\n• Cuando el portador acaba con un luchador enemigo, coloca un glifo aura que vuelve invisibles a los aliados durante 1 turno en un círculo de tamaño 3."
       ],
       "pt": [
-        "Frio de Novemeiro:\n• No final de cada turno, o portador retira 1 PA dos inimigos em contato com ele durante 1 turno (acumula 1 vez).\n• Ao derrotar um combatente inimigo, o portador ganha 1 PA durante 1 turno (acumula até 2 vezes).\n• Ao derrotar um combatente inimigo, o portador coloca um glifo-aura que deixa os aliados invisíveis durante 1 turno em um círculo de tamanho 3."
+        "Frio de Novemeiro:\n• No final de cada turno, o portador retira 1 PA dos inimigos em contato com ele durante 1 turno (acumula até 1 vez).\n• Ao derrotar um combatente inimigo, o portador ganha 1 PA durante 1 turno (acumula até 2 vezes).\n• Ao derrotar um combatente inimigo, o portador coloca um glifo-aura que deixa os aliados invisíveis durante 1 turno em um círculo de tamanho 3."
       ],
       "it": [
         "Novamaire Cold:\n• At the end of each turn, the bearer removes 1 AP from adjacent enemies for 1 turn (stackable 1 time).\n• When an enemy fighter is finished off, the bearer gains 1 AP for 1 turn (stackable 2 times).\n• When the bearer finishes off an enemy fighter, they place a glyph-aura that makes allies Invisible for 1 turn in a 3-cell circle."
@@ -47293,8 +47298,8 @@
       },
       {
         "stat": "Agility",
-        "minStat": 81,
-        "maxStat": 120
+        "minStat": 41,
+        "maxStat": 60
       },
       {
         "stat": "Pushback Damage",
@@ -47327,9 +47332,14 @@
         "maxStat": 60
       },
       {
-        "stat": "Air Damage",
+        "stat": "Damage",
         "minStat": 7,
         "maxStat": 10
+      },
+      {
+        "stat": "Power",
+        "minStat": 41,
+        "maxStat": 60
       }
     ],
     "weaponStats": {
@@ -47341,7 +47351,7 @@
       "critBonusDamage": 15,
       "weapon_effects": [
         {
-          "stat": "Air damage",
+          "stat": "Best element damage",
           "minStat": 36,
           "maxStat": 45
         }
@@ -47349,22 +47359,22 @@
     },
     "customStats": {
       "en": [
-        "Buhorado Feather:\n• When the bearer lands a critical hit, they gain 10 Pushback Damage for 3 turns (stackable 10 times)."
+        "Buhorado Feather:\n• When the bearer lands a critical hit, they gain 10 Pushback Damage for 3 turns."
       ],
       "fr": [
-        "Plume de Buhorado :\n• Lorsque le porteur effectue un coup critique, il gagne 10 de Dommages Poussée pendant 3 tours (cumulable 10 fois)."
+        "Plume de Buhorado :\n• Lorsque le porteur effectue un coup critique, il gagne 10 de Dommages Poussée pendant 3 tours."
       ],
       "de": [
-        "Buhorado-Feder:\n• Wenn der Träger einen kritischen Treffer landet, erhält er 3 Runden lang 10 Schubsschaden (10-mal kumulierbar)."
+        "Buhorado-Feder:\n• Wenn der Träger einen kritischen Treffer landet, erhält er 3 Runden lang 10 Schubsschaden."
       ],
       "es": [
-        "Pluma de Buhorado:\n• Cuando el portador asesta un golpe crítico, gana 10 de daños de empuje durante 3 turnos, acumulable 10 veces."
+        "Pluma de Buhorado:\n• Cuando el portador asesta un golpe crítico, gana 10 de daños de empuje durante 3 turnos."
       ],
       "pt": [
-        "Pena de Buhorado:\n• Quando o portador efetua um golpe crítico, ele recebe 10 de danos de empurrão por 3 turnos, que podem ser acumulados 10 vezes."
+        "Pena de Buhorado:\n• Quando o portador efetua um golpe crítico, ele recebe 10 de danos de empurrão por 3 turnos."
       ],
       "it": [
-        "Buhorado Feather:\n• When the bearer lands a critical hit, they gain 10 Pushback Damage for 3 turns (stackable 10 times)."
+        "Buhorado Feather:\n• When the bearer lands a critical hit, they gain 10 Pushback Damage for 3 turns."
       ]
     },
     "conditions": {
@@ -47988,8 +47998,8 @@
       },
       {
         "stat": "Intelligence",
-        "minStat": 81,
-        "maxStat": 120
+        "minStat": 41,
+        "maxStat": 60
       },
       {
         "stat": "Lock",
@@ -48027,7 +48037,7 @@
         "maxStat": 5
       },
       {
-        "stat": "Fire Damage",
+        "stat": "Damage",
         "minStat": 7,
         "maxStat": 10
       },
@@ -48035,6 +48045,11 @@
         "stat": "Wisdom",
         "minStat": 41,
         "maxStat": 50
+      },
+      {
+        "stat": "Power",
+        "minStat": 41,
+        "maxStat": 60
       }
     ],
     "weaponStats": {
@@ -48043,12 +48058,12 @@
       "minRange": 1,
       "maxRange": 2,
       "baseCritChance": 15,
-      "critBonusDamage": 20,
+      "critBonusDamage": 10,
       "weapon_effects": [
         {
-          "stat": "Fire damage",
-          "minStat": 46,
-          "maxStat": 55
+          "stat": "Best element damage",
+          "minStat": 37,
+          "maxStat": 43
         }
       ]
     },
@@ -48066,7 +48081,7 @@
         "Guerra de Desgaste:\n• Al final de cada turno, el portador retira 2 PM a los enemigos en contacto con él durante 1 turno (acumulable 1 vez).\n• Cuando un luchador enemigo es eliminado, el portador gana 1 PM hasta el final del combate (acumulable 5 veces)."
       ],
       "pt": [
-        "Guerra de Posição:\n• No final de cada turno, o portador retira 2 PM dos inimigos em contato com ele durante 1 turno (acumula 1 vez).\n• Ao derrotar um combatente inimigo, o portador ganha 1 PM até o fim do combate (acumula até 5 vezes)."
+        "Guerra de Posição:\n• No final de cada turno, o portador retira 2 PM dos inimigos em contato com ele durante 1 turno (acumula até 1 vez).\n• Ao derrotar um combatente inimigo, o portador ganha 1 PM até o fim do combate (acumula até 5 vezes)."
       ],
       "it": [
         "Attrition Warfare:\n• At the end of each turn, the bearer removes 2 MP from adjacent enemies for 1 turn (stackable 1 time).\n• When an enemy fighter is finished off, the bearer gains 1 MP until the end of the fight (stackable 5 times)."
@@ -48154,7 +48169,7 @@
       "minRange": 1,
       "maxRange": 5,
       "baseCritChance": 15,
-      "critBonusDamage": 2,
+      "critBonusDamage": 3,
       "weapon_effects": [
         {
           "stat": "Air steal",
@@ -50379,17 +50394,17 @@
           "maxStat": 18
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 15,
           "maxStat": 18
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 15,
           "maxStat": 18
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 15,
           "maxStat": 18
         }
@@ -50939,22 +50954,22 @@
       "critBonusDamage": 2,
       "weapon_effects": [
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 7,
           "maxStat": 10
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 7,
           "maxStat": 10
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 7,
           "maxStat": 10
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 7,
           "maxStat": 10
         }
@@ -51619,12 +51634,12 @@
       "critBonusDamage": 0,
       "weapon_effects": [
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 8,
           "maxStat": 12
         },
         {
-          "stat": "Fire healing",
+          "stat": "Neutral healing",
           "minStat": 8,
           "maxStat": 12
         }
@@ -54793,22 +54808,22 @@
     },
     "customStats": {
       "en": [
-        "Order of Thunder:\n• At the end of each turn, the bearer gives 1 MP and 40 Pushback Damage to all allies in their line of sight for 1 turn (stackable 1 time).\n• When an allied fighter dies, the bearer increases the final damage of all others by 4% until the end of the fight (stackable 2 times).\n• The effects are removed when the bearer dies."
+        "Order of Thunder:\n• The bearer gains 6 Pushback Damage for 2 turns for each MP they use.\n• At the end of each turn, the bearer gives 1 MP to all allies in their line of sight for 1 turn (stackable 1 time)."
       ],
       "fr": [
-        "Ordre du Tonnerre :\n• À chaque fin de tour, le porteur donne 1 PM et 40 Dommages Poussée pendant 1 tour à tous les alliés dans sa ligne de vue (cumulable 1 fois).\n• Lorsqu'un combattant allié meurt, le porteur augmente les dommages finaux de tous les autres de 4% jusqu'à la fin du combat (cumulable 2 fois).\n• Les effets sont retirés à la mort du porteur."
+        "Ordre du Tonnerre :\n• Le porteur gagne 6 Dommages Poussée pendant 2 tours pour chaque PM qu'il utilise.\n• À chaque fin de tour, le porteur donne 1 PM pendant 1 tour à tous les alliés dans sa ligne de vue (cumulable 1 fois)."
       ],
       "de": [
-        "Orden des Donners:\n• Am Ende jeder Runde gewährt der Träger allen Verbündeten in seiner Sichtlinie 1 Runde lang 1 BP und 40 Schubsschaden (1-mal kumulierbar).\n• Wenn ein verbündeter Kämpfer stirbt, erhöht der Träger den Endschaden aller anderen bis zum Ende des Kampfes um 4 % (2-mal kumulierbar).\n• Die Effekte werden aufgehoben, wenn der Träger stirbt."
+        "Orden des Donners:\n• Der Träger erhält 2 Runden lang für jeden von ihm verwendeten BP 6 Schubsschaden.\n• Am Ende jeder Runde gewährt der Träger allen Verbündeten in seiner Sichtlinie 1 Runde lang 1 BP (1-mal kumulierbar)."
       ],
       "es": [
-        "Orden del Trueno:\n• Al final de cada turno, el portador da 1 PM y 40 de daños de empuje durante 1 turno a todos los aliados en su línea de visión (acumulable 1 vez).\n• Cuando muere un luchador aliado, el portador aumenta los daños finales de todos los demás en un 4% hasta el final del combate (acumulable 2 veces).\n• Los efectos se eliminan al morir el portador."
+        "Orden del Trueno:\n• El portador gana 6 de daños de empuje durante 2 turnos por cada PM que utiliza.\n• Al final de cada turno, el portador da 1 PM durante 1 turno a todos los aliados en su línea de visión (acumulable 1 vez)."
       ],
       "pt": [
-        "Ordem do Trovão:\n• No fim de cada turno, o portador concede 1 PM e 40 danos de empurrão durante 1 turno a todos os aliados em sua linha de visão (acumula até 1 vez).\n• Quando um combatente aliado morre, o portador aumenta os danos finais de todos os outros em 4% até o fim do combate (acumula até 2 vezes).\n• Os efeitos são retirados quando o portador morre."
+        "Ordem do Trovão:\n• O portador ganha 6 de danos de empurrão durante 2 turnos para cada PM que usa.\n• No fim de cada turno, o portador concede 1 PM durante 1 turno a todos os aliados em sua linha de visão (acumula 1 vez)."
       ],
       "it": [
-        "Order of Thunder:\n• At the end of each turn, the bearer gives 1 MP and 40 Pushback Damage to all allies in their line of sight for 1 turn (stackable 1 time).\n• When an allied fighter dies, the bearer increases the final damage of all others by 4% until the end of the fight (stackable 2 times).\n• The effects are removed when the bearer dies."
+        "Order of Thunder:\n• The bearer gains 6 Pushback Damage for 2 turns for each MP they use.\n• At the end of each turn, the bearer gives 1 MP to all allies in their line of sight for 1 turn (stackable 1 time)."
       ]
     },
     "conditions": {
@@ -54918,10 +54933,10 @@
         "Thanatenas Urteil:\n• Zu Beginn jeder Runde erodiert der Träger alle und erhöht den von ihnen erlittenen Schaden 1 Runde lang um 4 % (1-mal kumulierbar).\n• Wenn er einen Gegner besiegt, wird er um 20 % seiner LP geheilt und sein Endschaden erhöht sich 1 Runde lang um 10 %. Wenn es sich um eine Beschwörung handelt, wird sie um 5 % ihrer LP geheilt."
       ],
       "es": [
-        "Juicio de Thanatena:\n• Al inicio de cada turno, el portador erosiona y aumenta los daños recibidos por todos en un 4% durante 1 turno (acumulable 1 vez).\n• Cuando remata a un enemigo, se cura un 20% de su vida y gana un 10% de daños finales durante 1 turno. Cuando se trata de una invocación, las curas son del 5% de su vida."
+        "Juicio de Thanatena:\n• Al principio de cada turno, el portador erosiona y aumenta los daños que sufra todo el mundo un 4% durante 1 turno (acumulable 1 vez).\n• Cuando remata a un enemigo, se cura un 20% de su vida y gana un 10% de daños finales durante 1 turno. Las curas son del 5% de su vida si es una invocación."
       ],
       "pt": [
-        "Julgamento de Tanatena:\n• No começo de cada turno, o portador erode e aumenta os danos sofridos por todo mundo em 4% durante 1 turno (acumula 1 vez).\n• Ao derrotar um inimigo, ele cura 20% da própria vida e ganha 10% de danos finais durante 1 turno. As curas são de 5% da vida dele se for uma invocação."
+        "Julgamento de Tanatena:\n• No começo de cada turno, o portador erode e aumenta os danos sofridos por todo mundo em 4% durante 1 turno (acumula até 1 vez).\n• Ao derrotar um inimigo, ele cura 20% da própria vida e ganha 10% de danos finais durante 1 turno. As curas são de 5% da vida dele se for uma invocação."
       ],
       "it": [
         "Thanatena's Judgement:\n• At the start of each turn, the bearer erodes and increases damage suffered by everyone by 4% for 1 turn (stackable 1 time).\n• When they finish off an enemy, they are healed for 20% of their health and gain 10% final damage for 1 turn. Healing is 5% of their health if it is a summons."
@@ -54959,8 +54974,8 @@
       },
       {
         "stat": "Power",
-        "minStat": 61,
-        "maxStat": 80
+        "minStat": 71,
+        "maxStat": 100
       },
       {
         "stat": "Wisdom",
@@ -54974,8 +54989,8 @@
       },
       {
         "stat": "Pushback Damage",
-        "minStat": 16,
-        "maxStat": 20
+        "minStat": 21,
+        "maxStat": 30
       },
       {
         "stat": "% Earth Resistance",

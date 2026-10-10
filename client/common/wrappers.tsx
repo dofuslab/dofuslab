@@ -334,14 +334,18 @@ export const WeaponEffectsList = ({
       {weaponStats.weaponEffects.map((effect) => {
         let { effectType, minDamage, maxDamage } = effect;
 
-        if (elementMage && effectType === WeaponEffectType.NEUTRAL_DAMAGE) {
+        if (
+          elementMage &&
+          (effectType === WeaponEffectType.NEUTRAL_DAMAGE ||
+            effectType === WeaponEffectType.NEUTRAL_HEALING)
+        ) {
           ({ minDamage, maxDamage } = calcElementMage(
             elementMage,
             minDamage || maxDamage,
             maxDamage,
           ));
 
-          effectType = elementMageToWeaponEffect(elementMage);
+          effectType = elementMageToWeaponEffect(elementMage, effectType);
         }
 
         return (
@@ -358,7 +362,8 @@ export const WeaponEffectsList = ({
               css={{
                 color:
                   elementMage &&
-                  effect.effectType === WeaponEffectType.NEUTRAL_DAMAGE
+                  (effect.effectType === WeaponEffectType.NEUTRAL_DAMAGE ||
+                    effect.effectType === WeaponEffectType.NEUTRAL_HEALING)
                     ? blue6
                     : 'inherit',
               }}
