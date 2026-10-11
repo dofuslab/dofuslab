@@ -3,7 +3,7 @@
 import json
 import os
 from app import session_scope
-from app.database.model_spell_translation import ModelSpellTranslation
+from app.database.model_spell import ModelSpell
 from app.database.model_spell_stats import ModelSpellStats
 from app.database.model_item_translation import ModelItemTranslation
 from app.database.model_buff import ModelBuff
@@ -84,100 +84,60 @@ def update_or_create_item_buff(db_session, item_name, record, should_only_add_mi
         print("Buffs for {} added.".format(item_name))
 
 
-def update_or_create_spell_buff(db_session, spell_name, spell_data, should_only_add_missing):
-    translations = (
-        db_session.query(ModelSpellTranslation)
-        .filter(
-            ModelSpellTranslation.locale == "en",
-            ModelSpellTranslation.name == spell_name,
-        )
-        .all()
-    )
-    # I'm pretty sure spell names were recently made unique for all classes
-    # but a little error handling couldn't hurt
-    if len(translations) > 1:
-        print("Multiple spells with that name exist, skipping it.")
-        return
+def update_or_create_spell_buff(db_session, spell_data, should_only_add_missing):
+    dofus_id = str(spell_data["dofusID"])
+    spell = db_session.query(ModelSpell).filter_by(dofus_db_id=dofus_id).one_or_none()
+    if spell is None:
+        raise ValueError("Spell dofusID {} is missing; sync spells first".format(dofus_id))
 
-    spell_id = translations[0].spell_id
-
-    spell_stat_ids = {}
-
-    for spell_data_per_level in spell_data["levels"]:
-        spell_stat_id = (
+    seen_levels = set()
+    for level in spell_data["levels"]:
+        level_number = level["level"]
+        if level_number in seen_levels:
+            raise ValueError("Duplicate buff level {} for spell {}".format(level_number, dofus_id))
+        seen_levels.add(level_number)
+        spell_stat = (
             db_session.query(ModelSpellStats)
-            .filter(
-                ModelSpellStats.spell_id == spell_id,
-                ModelSpellStats.level == spell_data_per_level["level"],
-            )
-            .one()
-            .uuid
+            .filter_by(spell_id=spell.uuid, level=level_number)
+            .one_or_none()
         )
-        spell_stat_ids[spell_data_per_level["level"]] = spell_stat_id
-
-    level_to_spell_stat_record_map = {}
-
-    for spell_data_per_level in spell_data["levels"]:
-        level_to_spell_stat_record_map[
-            spell_data_per_level["level"]
-        ] = spell_data_per_level
-
-    buffs = (
-        db_session.query(ModelSpellStats)
-        .filter(ModelSpellStats.uuid == spell_stat_ids[next(iter(spell_stat_ids))])
-        .one()
-        .buffs
-    )
-
-    if len(buffs) >= 1 and not should_only_add_missing:
-        print("Buffs already exist for {}. Updating buffs...".format(spell_name))
-        for level in spell_stat_ids:
-            update_spell_buff_for_level(
-                db_session,
-                spell_stat_ids[level],
-                level_to_spell_stat_record_map[level],
-            )
-        print("Buffs for {} updated.".format(spell_name))
-    elif len(buffs) == 0:
-        print("No buffs currently exist for {}. Adding buffs now.".format(spell_name))
-        for level in spell_stat_ids:
-            add_spell_buff_for_level(
-                db_session,
-                spell_stat_ids[level],
-                level_to_spell_stat_record_map[level],
-            )
-        print("Buffs for {} added.".format(spell_name))
+        if spell_stat is None:
+            raise ValueError("Spell {} has no level {}".format(dofus_id, level_number))
+        has_buffs = (
+            db_session.query(ModelBuff)
+            .filter_by(spell_stat_id=spell_stat.uuid)
+            .first()
+        )
+        if should_only_add_missing and has_buffs:
+            continue
+        update_spell_buff_for_level(db_session, spell_stat.uuid, level)
+    print("Synced buffs for {} ({})".format(spell_data["name"], dofus_id))
 
 
-def sync_spell_buffs(db_session, class_name, spells):
+def sync_spell_buffs(class_name, spells):
     print(class_name)
-    name_to_spell_record_map = {}
-
-    for spell in spells:
-        name_to_spell_record_map[spell["name"]] = spell
+    id_to_spell_record_map = {str(spell["dofusID"]): spell for spell in spells}
 
     while True:
         response = input(
-            "Enter a spell name, type 'update all' to update all spell buffs for this class, 'add missing buffs' to only add buffs to spells that are missing them, or type 'q' to quit: "
+            "Enter a Dofus spell ID, type 'update all' to update all spell buffs for this class, 'add missing buffs' to only add buffs to levels that are missing them, or type 'q' to quit: "
         )
         if response == "q":
             break
         with session_scope() as db_session:
             if response == "update all":
                 for spell in spells:
-                    update_or_create_spell_buff(db_session, spell["name"], spell, False)
+                    update_or_create_spell_buff(db_session, spell, False)
                 break
             elif response == "add missing buffs":
                 for spell in spells:
-                    update_or_create_spell_buff(db_session, spell["name"], spell, True)
+                    update_or_create_spell_buff(db_session, spell, True)
                 break
-            elif response in name_to_spell_record_map:
-                spell_data = name_to_spell_record_map[response]
-                update_or_create_spell_buff(db_session, response, spell_data, False)
+            elif response in id_to_spell_record_map:
+                spell_data = id_to_spell_record_map[response]
+                update_or_create_spell_buff(db_session, spell_data, False)
             else:
-                print(
-                    "That spell either does not have a buff or a typo was made, please try again."
-                )
+                print("That spell ID is not in this class's buff data, please try again.")
 
 
 def sync_buffs():
@@ -190,20 +150,15 @@ def sync_buffs():
             )
             if response == "q":
                 break
-            with session_scope() as db_session:
-                if response == "update all":
-                    for class_name in data["spells"]:
-                        sync_spell_buffs(
-                            db_session, class_name, data["spells"][class_name]
-                        )
-                    break
-                elif response in data["spells"]:
-                    all_spell_data = data["spells"][response]
-                    sync_spell_buffs(db_session, response, all_spell_data)
-                else:
-                    print(
-                        "'{}' class does not exist, please try again.".format(response)
-                    )
+            if response == "update all":
+                for class_name in data["spells"]:
+                    sync_spell_buffs(class_name, data["spells"][class_name])
+                break
+            elif response in data["spells"]:
+                all_spell_data = data["spells"][response]
+                sync_spell_buffs(response, all_spell_data)
+            else:
+                print("'{}' class does not exist, please try again.".format(response))
 
         name_to_item_record_map = {}
 

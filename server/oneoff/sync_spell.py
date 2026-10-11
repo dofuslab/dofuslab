@@ -11,6 +11,9 @@ from app.database.model_spell_effect_condition_translation import (
     ModelSpellEffectConditionTranslation,
 )
 from app.database.model_spell_damage_increase import ModelSpellDamageIncrease
+from app.database.model_spell import ModelSpell
+from app.database.model_spell_variant_pair import ModelSpellVariantPair
+from app.database.model_class_translation import ModelClassTranslation
 from oneoff.enums import to_spell_enum
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -114,48 +117,71 @@ def create_spell_stats(db_session, record, spell):
             db_session.add(spell_damage_increase)
 
 
-def update_spell(db_session, spell_name, record, should_only_add_missing):
-    print(spell_name)
-    translations = (
-        db_session.query(ModelSpellTranslation)
-        .filter(
-            ModelSpellTranslation.locale == "en",
-            ModelSpellTranslation.name == spell_name,
+def update_spell(
+    db_session,
+    class_name,
+    pair_records,
+    record,
+    should_only_add_missing,
+):
+    dofus_id = str(record["dofusID"])
+    spell = db_session.query(ModelSpell).filter_by(dofus_db_id=dofus_id).one_or_none()
+    if spell is not None and should_only_add_missing:
+        return
+
+    created = spell is None
+    if spell is None:
+        pair_ids = [str(variant["dofusID"]) for variant in pair_records]
+        sibling = (
+            db_session.query(ModelSpell)
+            .filter(ModelSpell.dofus_db_id.in_(pair_ids))
+            .first()
         )
-        .all()
+        if sibling is None:
+            class_id = (
+                db_session.query(ModelClassTranslation)
+                .filter_by(locale="en", name=class_name)
+                .one()
+                .class_id
+            )
+            pair = ModelSpellVariantPair(class_id=class_id)
+            db_session.add(pair)
+            db_session.flush()
+            pair_id = pair.uuid
+        else:
+            pair_id = sibling.spell_variant_pair_id
+        spell = ModelSpell(dofus_db_id=dofus_id, spell_variant_pair_id=pair_id)
+        db_session.add(spell)
+    spell.image_url = record.get("imageUrl", "")
+    spell.is_trap = record.get("isTrap", False)
+    db_session.flush()
+    create_spell_translations(db_session, record, spell)
+    create_spell_stats(db_session, record, spell)
+    print(
+        "{} spell {} ({})".format(
+            "Created" if created else "Updated", record["name"]["en"], dofus_id
+        )
     )
-    if len(translations) > 1:
-        print("Error: Multiple spells with that name exist in the database")
-    elif len(translations) == 1 and not should_only_add_missing:
-        print("Spell already exists in database. Updating spell...")
-        spell = translations[0].spell
-        spell.image_url = record.get("imageUrl", "")
-        spell.is_trap = record.get("isTrap", False)
-        create_spell_translations(db_session, record, spell)
-        print("Spell translations successfully updated")
-        create_spell_stats(db_session, record, spell)
-        print("Spell stats successfully updated")
-    elif len(translations) == 0:
-        print("Error: Spell does not exist in database")
 
 
 def sync_spell():
     print("Loading and processing file...")
     with open(os.path.join(app_root, "app/database/data/spells.json"), "r") as file:
         data = json.load(file)
-        name_to_record_map = {}
-
-        for r in data:
-            class_name = r["names"]["en"]
-            for pair in r["spells"]:
+        id_to_record_map = {}
+        for class_record in data:
+            class_name = class_record["names"]["en"]
+            for pair in class_record["spells"]:
                 for spell in pair:
-                    name_to_record_map[spell["name"]["en"]] = spell
+                    id_to_record_map[str(spell["dofusID"])] = (
+                        class_name, pair, spell
+                    )
 
         should_prompt_spell = True
         while should_prompt_spell:
             response = input(
-                "Enter spell name, e.g. 'Blindness' or multiple spell names separated "
-                "by commas, type 'update all' to update all spells in file, "
+                "Enter Dofus spell ID or multiple IDs separated "
+                "by commas, type 'update all' to upsert all spells in file, "
                 "type 'add missing spells' to only add spells that are missing, or 'q' to quit: "
             )
             if response == "q":
@@ -163,28 +189,20 @@ def sync_spell():
             with session_scope() as db_session:
                 if response == "update all":
                     should_prompt_spell = False
-                    for class_data in data:
-                        for spell_pair in class_data["spells"]:
-                            for spell in spell_pair:
-                                update_spell(
-                                    db_session, spell["name"]["en"], spell, False
-                                )
+                    for class_name, pair, spell in id_to_record_map.values():
+                        update_spell(db_session, class_name, pair, spell, False)
                 elif response == "add missing spells":
                     should_prompt_spell = False
-                    for class_data in data:
-                        for spell_pair in class_data["spells"]:
-                            for spell in spell_pair:
-                                update_spell(
-                                    db_session, spell["name"]["en"], spell, True
-                                )
+                    for class_name, pair, spell in id_to_record_map.values():
+                        update_spell(db_session, class_name, pair, spell, True)
                 else:
-                    spell_names = response.split(",")
-                    print(spell_names)
-                    for name in spell_names:
-                        spell_name = name.strip()
-                        if spell_name in name_to_record_map:
-                            record = name_to_record_map[spell_name]
-                            update_spell(db_session, spell_name, record, False)
+                    for raw_id in response.split(","):
+                        requested_id = raw_id.strip()
+                        if requested_id in id_to_record_map:
+                            class_name, pair, spell = id_to_record_map[requested_id]
+                            update_spell(db_session, class_name, pair, spell, False)
+                        else:
+                            print("Spell ID {} is not in spells.json".format(requested_id))
 
 
 if __name__ == "__main__":
