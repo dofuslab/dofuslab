@@ -15,6 +15,7 @@ class ModelSpell(Base):
         nullable=False,
         primary_key=True,
     )
+    dofus_db_id = Column("dofus_db_id", String, unique=True, index=True)
     spell_variant_pair_id = Column(
         UUID(as_uuid=True),
         ForeignKey("spell_variant_pair.uuid", ondelete="CASCADE"),

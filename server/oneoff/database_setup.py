@@ -251,8 +251,8 @@ def add_mounts():
 def add_classes_and_spells():
     print("Adding classes to database")
     with open(os.path.join(app_root, "app/database/data/spells.json"), "r") as file:
+        data = json.load(file)
         with session_scope() as db_session:
-            data = json.load(file)
             for record in data:
                 en_name = record["names"]["en"]
                 class_object = ModelClass(
@@ -283,6 +283,7 @@ def add_classes_and_spells():
 
                     for spell in spell_pair:
                         spell_object = ModelSpell(
+                            dofus_db_id=str(spell["dofusID"]),
                             spell_variant_pair_id=spell_pair_object.uuid,
                             image_url=spell["imageUrl"],
                             is_trap=spell.get("isTrap", False),
@@ -314,17 +315,17 @@ def add_buffs():
         with session_scope() as db_session:
             for class_name in all_classes:
                 for spell in all_classes[class_name]:
-                    spell_id = (
-                        db_session.query(ModelSpellTranslation)
-                        .filter_by(name=spell["name"], locale="en")
+                    spell_uuid = (
+                        db_session.query(ModelSpell)
+                        .filter_by(dofus_db_id=str(spell["dofusID"]))
                         .one()
-                        .spell_id
+                        .uuid
                     )
 
                     for level in spell["levels"]:
                         spell_stat_id = (
                             db_session.query(ModelSpellStats)
-                            .filter_by(spell_id=spell_id, level=level["level"])
+                            .filter_by(spell_id=spell_uuid, level=level["level"])
                             .one()
                             .uuid
                         )
