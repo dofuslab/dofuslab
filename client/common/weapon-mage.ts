@@ -5,6 +5,8 @@ import {
 
 const mageDetails = (mage: WeaponElementMage) => {
   const [element, storedRate] = mage.split('_');
+  // The DB migration updates saved mages; this fallback also handles legacy
+  // values reaching the frontend (e.g. cached builds) using the 3.7 rates.
   const percentage = { '85': 100, '50': 10 }[storedRate] ?? Number(storedRate);
   if (
     !['EARTH', 'FIRE', 'WATER', 'AIR'].includes(element) ||
