@@ -19,6 +19,7 @@ import { useTranslation, Trans } from 'next-i18next';
 import { TFunction } from 'react-i18next';
 import CustomSetFragment from 'graphql/fragments/customSet.graphql';
 import { countEquippedSets } from './set-conditions';
+import { resolveEquipSlotId } from './equip-slot';
 export {
   calcElementMage,
   elementMageToWeaponEffect,
@@ -522,16 +523,31 @@ export const useEquipItemMutation = (item?: Item) => {
   const { t } = useTranslation('common');
 
   const onClick = useCallback(
-    async (itemSlotId?: string, item1?: Item) => {
+    async (itemSlotId?: string, item1?: Item, useNextOpenSlot = false) => {
       if (!itemSlotId) return;
       const customSet = customSetId ? getCustomSet(client, customSetId) : null;
       const ok = await checkAuthentication(client, t, customSet);
       if (!ok) return;
+      const selectedItem = item1 ?? item;
+      // Permission checks yield: another click may have filled this slot meanwhile.
+      // Read optimistic layers again, immediately before the mutation reserves it.
+      const latestCustomSet = customSetId
+        ? getCustomSet(client, customSetId)
+        : null;
+      const resolvedSlotId = selectedItem
+        ? resolveEquipSlotId(
+            itemSlotId,
+            selectedItem.itemType.eligibleItemSlots,
+            latestCustomSet?.equippedItems ?? [],
+            useNextOpenSlot,
+          )
+        : itemSlotId;
+      if (!resolvedSlotId) return;
       const { data } = await updateCustomSetItemMutate({
         variables: {
           customSetId,
           itemId: item1?.id || item?.id,
-          itemSlotId,
+          itemSlotId: resolvedSlotId,
         },
       });
 
@@ -539,7 +555,7 @@ export const useEquipItemMutation = (item?: Item) => {
         navigateToNewCustomSet(router, data.updateCustomSetItem.customSet.id);
       }
     },
-    [updateCustomSetItemMutate, customSetId, item],
+    [updateCustomSetItemMutate, customSetId, item, client, t, router],
   );
 
   return onClick;
