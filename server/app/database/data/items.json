@@ -147368,6 +147368,11 @@
         "stat": "Wisdom",
         "minStat": null,
         "maxStat": 15
+      },
+      {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 500
       }
     ],
     "customStats": {},
@@ -147395,6 +147400,11 @@
         "stat": "Wisdom",
         "minStat": null,
         "maxStat": 30
+      },
+      {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 1000
       }
     ],
     "customStats": {},
@@ -147422,6 +147432,11 @@
         "stat": "Wisdom",
         "minStat": null,
         "maxStat": 60
+      },
+      {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 2000
       }
     ],
     "customStats": {},
