@@ -1,7 +1,7 @@
 """Add the Dofus spell ID used by the spell and buff sync scripts.
 
 Revision ID: 2d6cb4f07a31
-Revises: 1cb498f44c5b
+Revises: ab37a012c9e1
 Create Date: 2026-10-11 13:22:36.434113
 """
 
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 revision = "2d6cb4f07a31"
-down_revision = "1cb498f44c5b"
+down_revision = "ab37a012c9e1"
 branch_labels = None
 depends_on = None
 
