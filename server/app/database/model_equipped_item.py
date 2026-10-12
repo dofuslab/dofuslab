@@ -35,10 +35,13 @@ class ModelEquippedItem(Base):
     slot = relationship("ModelItemSlot", backref="equipped_items")
     exos = relationship("ModelEquippedItemExo", cascade="all, delete-orphan")
     weapon_element_mage = Column("weapon_element_mage", WeaponElementMageEnum)
+    weapon_healing_mage = Column("weapon_healing_mage", WeaponElementMageEnum)
 
     def change_item(self, item_id):
         with session_scope() as db_session:
             self.item_id = item_id
+            self.weapon_element_mage = None
+            self.weapon_healing_mage = None
             db_session.query(ModelEquippedItemExo).filter_by(
                 equipped_item_id=self.uuid
             ).delete()

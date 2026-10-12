@@ -116,6 +116,14 @@ class SpellEffectType(Enum):
 
 
 class WeaponElementMage(Enum):
+    EARTH_100 = auto()
+    EARTH_10 = auto()
+    FIRE_100 = auto()
+    FIRE_10 = auto()
+    WATER_100 = auto()
+    WATER_10 = auto()
+    AIR_100 = auto()
+    AIR_10 = auto()
     EARTH_85 = auto()
     EARTH_68 = auto()
     EARTH_50 = auto()
@@ -128,6 +136,16 @@ class WeaponElementMage(Enum):
     AIR_85 = auto()
     AIR_68 = auto()
     AIR_50 = auto()
+
+
+def normalize_weapon_mage(value):
+    """Accept historical API values using the retroactive 3.7 percentages."""
+    if value is None:
+        return None
+    mage = WeaponElementMage(value)
+    element, percentage = mage.name.rsplit("_", 1)
+    percentage = {"85": "100", "50": "10"}.get(percentage, percentage)
+    return WeaponElementMage["{}_{}".format(element, percentage)]
 
 
 BuildGenderEnum = sqlalchemy.Enum(BuildGender)

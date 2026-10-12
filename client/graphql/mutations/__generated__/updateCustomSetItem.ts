@@ -18,6 +18,7 @@ export type updateCustomSetItem = {
         __typename: 'EquippedItem';
         id: any;
         weaponElementMage: Types.WeaponElementMage | null;
+        weaponHealingMage: Types.WeaponElementMage | null;
         slot: { __typename: 'ItemSlot'; id: any; name: string; order: number };
         item: {
           __typename: 'Item';

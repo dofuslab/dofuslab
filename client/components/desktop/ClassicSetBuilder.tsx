@@ -156,11 +156,13 @@ const ClassicSetBuilder = ({ customSet }: Props) => {
                 item={weapon.item}
                 showOnlyWeaponStats
                 weaponElementMage={weapon.weaponElementMage}
+                weaponHealingMage={weapon.weaponHealingMage}
               />
               <WeaponDamage
                 weaponStats={weapon.item.weaponStats}
                 customSet={customSet}
                 weaponElementMage={weapon.weaponElementMage}
+                weaponHealingMage={weapon.weaponHealingMage}
               />
             </>
           )}

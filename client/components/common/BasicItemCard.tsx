@@ -28,6 +28,7 @@ interface Props {
   onClick?: () => void;
   showOnlyWeaponStats: boolean;
   weaponElementMage?: WeaponElementMage | null;
+  weaponHealingMage?: WeaponElementMage | null;
   favorite?: ReactNode;
   isSuggestion?: boolean;
 }
@@ -39,6 +40,7 @@ const BasicItemCard = ({
   onClick,
   showOnlyWeaponStats,
   weaponElementMage,
+  weaponHealingMage,
   favorite,
   isSuggestion,
 }: Props) => {
@@ -123,6 +125,7 @@ const BasicItemCard = ({
         openSetModal={openSetModal}
         showOnlyWeaponStats={showOnlyWeaponStats}
         weaponElementMage={weaponElementMage}
+        weaponHealingMage={weaponHealingMage}
       />
     </Card>
   );

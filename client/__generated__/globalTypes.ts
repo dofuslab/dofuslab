@@ -257,6 +257,7 @@ export type EquippedItem = GlobalNode & {
   item: Item;
   slot: ItemSlot;
   weaponElementMage: Maybe<WeaponElementMage>;
+  weaponHealingMage: Maybe<WeaponElementMage>;
 };
 
 export type EquippedItemExo = GlobalNode & {
@@ -489,6 +490,7 @@ export type MutationmageEquippedItemArgs = {
   equippedItemId: Scalars['UUID']['input'];
   stats: Array<CustomSetExosInput>;
   weaponElementMage?: InputMaybe<WeaponElementMage>;
+  weaponHealingMage?: InputMaybe<WeaponElementMage>;
 };
 
 export type MutationregisterUserArgs = {
@@ -950,18 +952,26 @@ export enum WeaponEffectType {
 
 /** An enumeration. */
 export enum WeaponElementMage {
+  AIR_10 = 'AIR_10',
   AIR_50 = 'AIR_50',
   AIR_68 = 'AIR_68',
   AIR_85 = 'AIR_85',
+  AIR_100 = 'AIR_100',
+  EARTH_10 = 'EARTH_10',
   EARTH_50 = 'EARTH_50',
   EARTH_68 = 'EARTH_68',
   EARTH_85 = 'EARTH_85',
+  EARTH_100 = 'EARTH_100',
+  FIRE_10 = 'FIRE_10',
   FIRE_50 = 'FIRE_50',
   FIRE_68 = 'FIRE_68',
   FIRE_85 = 'FIRE_85',
+  FIRE_100 = 'FIRE_100',
+  WATER_10 = 'WATER_10',
   WATER_50 = 'WATER_50',
   WATER_68 = 'WATER_68',
   WATER_85 = 'WATER_85',
+  WATER_100 = 'WATER_100',
 }
 
 export type WeaponStat = GlobalNode & {

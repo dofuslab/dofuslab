@@ -19,6 +19,7 @@ import {
   getSimpleEffect,
   calcEffect,
   calcElementMage,
+  getWeaponEffectMage,
   elementMageToWeaponEffect,
   getInitialRangedState,
   getTotalDamage,
@@ -40,9 +41,15 @@ interface Props {
   weaponStats: WeaponStats;
   customSet: CustomSet;
   weaponElementMage: WeaponElementMage | null;
+  weaponHealingMage?: WeaponElementMage | null;
 }
 
-const WeaponDamage = ({ weaponStats, customSet, weaponElementMage }: Props) => {
+const WeaponDamage = ({
+  weaponStats,
+  customSet,
+  weaponElementMage,
+  weaponHealingMage,
+}: Props) => {
   const { statsFromCustomSetWithBuffs } = useContext(CustomSetContext);
   const { t } = useTranslation(['weapon_spell_effect', 'stat']);
   const [weaponSkillPower, setWeaponSkillPower] = useState(300);
@@ -79,13 +86,23 @@ const WeaponDamage = ({ weaponStats, customSet, weaponElementMage }: Props) => {
         let min = minDamage;
         let max = maxDamage;
         let type = effectType;
-        if (type === WeaponEffectType.NEUTRAL_DAMAGE && weaponElementMage) {
+        const effectMage = getWeaponEffectMage(
+          type,
+          weaponElementMage,
+          weaponHealingMage,
+        );
+        if (effectMage) {
           ({ minDamage: min, maxDamage: max } = calcElementMage(
-            weaponElementMage,
+            effectMage,
             min || max,
             max,
           ));
-          type = elementMageToWeaponEffect(weaponElementMage);
+          type = elementMageToWeaponEffect(
+            effectMage,
+            type as
+              | WeaponEffectType.NEUTRAL_DAMAGE
+              | WeaponEffectType.NEUTRAL_HEALING,
+          );
         }
         return {
           id,

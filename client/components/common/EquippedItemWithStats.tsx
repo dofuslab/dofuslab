@@ -138,7 +138,8 @@ const EquippedItemWithStats = ({
               />
             )}
             {(equippedItem.exos.length > 0 ||
-              equippedItem.weaponElementMage) && (
+              equippedItem.weaponElementMage ||
+              equippedItem.weaponHealingMage) && (
               <FontAwesomeIcon
                 icon={faMagic}
                 css={{

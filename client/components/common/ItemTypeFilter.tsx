@@ -11,7 +11,6 @@ import { mq } from 'common/constants';
 import { Checkbox, Dropdown } from 'antd';
 import { ItemType } from 'common/type-aliases';
 import { ellipsis } from 'common/mixins';
-import { getImageUrl } from 'common/utils';
 import type { SlotGroup } from './Selector';
 
 const { Group: CheckboxGroup } = Checkbox;
@@ -113,8 +112,9 @@ const SlotGroupFilterRow = ({
         indeterminate={indeterminate}
         onChange={() => toggleGroup(group, checked)}
         css={{
-          flex: '1 1 auto',
+          flex: '0 1 auto',
           minWidth: 0,
+          maxWidth: isExpandable ? 'calc(100% - 20px)' : '100%',
           alignItems: 'center',
           '.ant-checkbox + span': {
             ...ellipsis,
@@ -126,59 +126,46 @@ const SlotGroupFilterRow = ({
           },
         }}
       >
-        <img
-          src={getImageUrl(group.imageUrl)}
-          alt=""
-          css={{ width: 16, height: 16, marginRight: 4, flexShrink: 0 }}
-        />
         <span css={ellipsis}>{group.name}</span>
       </Checkbox>
-      <div
-        css={{
-          width: 20,
-          height: 20,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexShrink: 0,
-        }}
-      >
-        {isExpandable && (
-          <Dropdown
-            trigger={['click']}
-            open={isOpen}
-            onOpenChange={onOpenChange}
-            popupRender={renderPopup}
+      {isExpandable && (
+        <Dropdown
+          trigger={['click']}
+          open={isOpen}
+          onOpenChange={onOpenChange}
+          popupRender={renderPopup}
+        >
+          <button
+            type="button"
+            aria-label={group.name}
+            aria-expanded={isOpen}
+            css={{
+              width: 16,
+              height: 20,
+              marginInlineStart: 4,
+              flexShrink: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: 0,
+            }}
           >
-            <button
-              type="button"
-              aria-label={group.name}
+            <FontAwesomeIcon
+              icon={isOpen ? faChevronUp : faChevronDown}
+              size="xs"
+              color="white"
               css={{
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                padding: 0,
+                '&:hover': {
+                  color: theme.text?.primary,
+                },
               }}
-            >
-              <FontAwesomeIcon
-                icon={isOpen ? faChevronUp : faChevronDown}
-                size="xs"
-                color="white"
-                css={{
-                  '&:hover': {
-                    color: theme.text?.primary,
-                  },
-                }}
-              />
-            </button>
-          </Dropdown>
-        )}
-      </div>
+            />
+          </button>
+        </Dropdown>
+      )}
     </div>
   );
 };

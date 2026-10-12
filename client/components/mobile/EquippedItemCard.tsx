@@ -234,6 +234,7 @@ const EquippedItemCard = ({
           showImg
           errors={errors}
           weaponElementMage={equippedItem.weaponElementMage}
+          weaponHealingMage={equippedItem.weaponHealingMage}
         />
 
         {(equippedItem.item.buffs?.length ?? 0) > 0 && (

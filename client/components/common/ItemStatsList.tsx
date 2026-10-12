@@ -22,6 +22,7 @@ interface Props {
   readonly showImg?: boolean;
   readonly showOnlyWeaponStats?: boolean;
   readonly weaponElementMage?: WeaponElementMage | null;
+  readonly weaponHealingMage?: WeaponElementMage | null;
   readonly errors?: Array<BuildError>;
 }
 
@@ -80,6 +81,7 @@ const ItemStatsList = ({
   showImg,
   showOnlyWeaponStats,
   weaponElementMage,
+  weaponHealingMage,
   errors,
 }: Props) => {
   const { t, i18n } = useTranslation(['stat', 'weapon_spell_effect', 'common']);
@@ -156,6 +158,7 @@ const ItemStatsList = ({
           weaponStats={item.weaponStats}
           css={{ marginBottom: showImg ? 12 : 0 }}
           elementMage={weaponElementMage}
+          healingMage={weaponHealingMage}
         />
       )}
       {item.weaponStats &&

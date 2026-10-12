@@ -47,7 +47,6 @@ const makeItemTypesFromSlots = (
 export interface SlotGroup {
   key: string;
   name: string;
-  imageUrl: string;
   order: number;
   itemTypes: ItemSlot['itemTypes'];
 }
@@ -65,7 +64,6 @@ const makeSlotGroups = (slots: Array<ItemSlot>): Array<SlotGroup> => {
       groupsByKey.set(key, {
         key,
         name: slot.name,
-        imageUrl: slot.imageUrl,
         order: slot.order,
         itemTypes: slot.itemTypes,
       });

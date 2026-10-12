@@ -18,6 +18,13 @@ import groupBy from 'lodash/groupBy';
 import { useTranslation, Trans } from 'next-i18next';
 import { TFunction } from 'react-i18next';
 import CustomSetFragment from 'graphql/fragments/customSet.graphql';
+import { countEquippedSets } from './set-conditions';
+export {
+  calcElementMage,
+  elementMageToWeaponEffect,
+  getWeaponEffectMage,
+  getWeaponMageOptions,
+} from './weapon-mage';
 import ItemSlotsQuery from 'graphql/queries/itemSlots.graphql';
 import ItemFragment from 'graphql/fragments/item.graphql';
 import Lockr from 'lockr';
@@ -26,7 +33,6 @@ import {
   Stat,
   WeaponEffectType,
   SpellEffectType,
-  WeaponElementMage,
   BuildGender,
 } from '__generated__/globalTypes';
 import {
@@ -485,6 +491,8 @@ export const useEquipItemMutation = (item?: Item) => {
               equippedItems.splice(oldEquippedItemIdx, 1, {
                 ...oldEquippedItem,
                 item: cachedItem,
+                weaponElementMage: null,
+                weaponHealingMage: null,
               });
             } else {
               equippedItems.push({
@@ -493,6 +501,7 @@ export const useEquipItemMutation = (item?: Item) => {
                 slot,
                 item: cachedItem,
                 weaponElementMage: null,
+                weaponHealingMage: null,
                 __typename: 'EquippedItem',
               });
             }
@@ -854,6 +863,8 @@ const getStats = (
     case WeaponEffectType.NEUTRAL_STEAL:
     case SpellEffectType.NEUTRAL_DAMAGE:
     case SpellEffectType.NEUTRAL_STEAL:
+    case WeaponEffectType.NEUTRAL_HEALING:
+    case SpellEffectType.NEUTRAL_HEALING:
       return { multiplier: Stat.STRENGTH, damage: Stat.NEUTRAL_DAMAGE };
     case WeaponEffectType.WATER_DAMAGE:
     case WeaponEffectType.WATER_STEAL:
@@ -991,6 +1002,8 @@ export const effectToIconUrl = (effect: WeaponEffectType | SpellEffectType) => {
     case SpellEffectType.WATER_HEALING:
     case WeaponEffectType.AIR_HEALING:
     case SpellEffectType.AIR_HEALING:
+    case WeaponEffectType.NEUTRAL_HEALING:
+    case SpellEffectType.NEUTRAL_HEALING:
     case WeaponEffectType.HP_RESTORED:
     case SpellEffectType.HP_RESTORED:
       // HP restored is now deprecated in favor of Fire healing
@@ -1047,6 +1060,8 @@ export const getSimpleEffect: (
     case SpellEffectType.WATER_HEALING:
     case WeaponEffectType.AIR_HEALING:
     case SpellEffectType.AIR_HEALING:
+    case WeaponEffectType.NEUTRAL_HEALING:
+    case SpellEffectType.NEUTRAL_HEALING:
     case WeaponEffectType.HP_RESTORED:
     case SpellEffectType.HP_RESTORED:
       // HP restored is now deprecated in favor of Fire healing
@@ -1100,66 +1115,6 @@ export const calcEffect = (
     return calcShield(baseDamage, level);
   }
   return baseDamage;
-};
-
-export const elementMageToWeaponEffect = (elementMage: WeaponElementMage) => {
-  switch (elementMage) {
-    case WeaponElementMage.EARTH_50:
-    case WeaponElementMage.EARTH_68:
-    case WeaponElementMage.EARTH_85:
-      return WeaponEffectType.EARTH_DAMAGE;
-    case WeaponElementMage.FIRE_50:
-    case WeaponElementMage.FIRE_68:
-    case WeaponElementMage.FIRE_85:
-      return WeaponEffectType.FIRE_DAMAGE;
-    case WeaponElementMage.WATER_50:
-    case WeaponElementMage.WATER_68:
-    case WeaponElementMage.WATER_85:
-      return WeaponEffectType.WATER_DAMAGE;
-    case WeaponElementMage.AIR_50:
-    case WeaponElementMage.AIR_68:
-    case WeaponElementMage.AIR_85:
-      return WeaponEffectType.AIR_DAMAGE;
-    default:
-      throw new Error('Unknown WeaponElementMage');
-  }
-};
-
-export const calcElementMage = (
-  elementMage: WeaponElementMage,
-  baseMin: number,
-  baseMax: number,
-) => {
-  let multiplier = 1;
-  switch (elementMage) {
-    case WeaponElementMage.EARTH_50:
-    case WeaponElementMage.FIRE_50:
-    case WeaponElementMage.WATER_50:
-    case WeaponElementMage.AIR_50:
-      multiplier = 0.5;
-      break;
-    case WeaponElementMage.EARTH_68:
-    case WeaponElementMage.FIRE_68:
-    case WeaponElementMage.WATER_68:
-    case WeaponElementMage.AIR_68:
-      multiplier = 0.68;
-      break;
-    case WeaponElementMage.EARTH_85:
-    case WeaponElementMage.FIRE_85:
-    case WeaponElementMage.WATER_85:
-    case WeaponElementMage.AIR_85:
-      multiplier = 0.85;
-      break;
-    default:
-      throw new Error('Unknown WeaponElementMage');
-  }
-  const calcDamageBase = Math.floor((baseMin - 1) * multiplier);
-  const diff = Math.floor((baseMax - baseMin + 1) * multiplier);
-
-  return {
-    minDamage: diff === 1 ? null : calcDamageBase + 1,
-    maxDamage: calcDamageBase + diff,
-  };
 };
 
 export const statCalculators: { [key: string]: StatCalculator } = {
@@ -1268,16 +1223,12 @@ const evaluateLeafCondition = (
   condition: TCondition,
 ) => {
   if (condition.stat === 'SET_BONUS') {
-    const setBonuses = getBonusesFromCustomSet(customSet);
-    const numberBonuses = Object.values(setBonuses).reduce(
-      (acc, v) => acc + v.count - 1,
-      0,
-    );
+    const numberSets = countEquippedSets(customSet.equippedItems);
     if (condition.operator === '<') {
-      return numberBonuses < condition.value;
+      return numberSets < condition.value;
     }
     if (condition.operator === '>') {
-      return numberBonuses > condition.value;
+      return numberSets > condition.value;
     }
   } else {
     const statCalculator =
