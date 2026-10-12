@@ -5,6 +5,7 @@
 fragment equippedItem on EquippedItem {
   id
   weaponElementMage
+  weaponHealingMage
   slot {
     ...equippedItemSlot
   }

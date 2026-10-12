@@ -15,6 +15,7 @@ export type customSet = {
     __typename: 'EquippedItem';
     id: any;
     weaponElementMage: Types.WeaponElementMage | null;
+    weaponHealingMage: Types.WeaponElementMage | null;
     slot: {
       __typename: 'ItemSlot';
       id: any;

@@ -239,6 +239,7 @@ const EquippedItemCard = ({
         openSetModal={openSetModal}
         showImg={false}
         weaponElementMage={equippedItem.weaponElementMage}
+        weaponHealingMage={equippedItem.weaponHealingMage}
         errors={errors}
       />
       {(equippedItem.item.buffs?.length ?? 0) > 0 && (

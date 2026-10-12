@@ -73,6 +73,7 @@ from app.database.enums import (
     WeaponEffectType,
     SpellEffectType,
     WeaponElementMage,
+    normalize_weapon_mage,
     BuildGender,
 )
 from app.token_utils import decode_token, encode_token, generate_verify_email_url
@@ -340,7 +341,9 @@ class EquippedItem(SQLAlchemyObjectType):
     class Meta:
         model = ModelEquippedItem
         interfaces = (GlobalNode,)
-        only_fields = ("id", "item", "slot", "exos", "weapon_element_mage")
+        only_fields = (
+            "id", "item", "slot", "exos", "weapon_element_mage", "weapon_healing_mage"
+        )
 
 
 class CustomSetStats(SQLAlchemyObjectType):
@@ -854,6 +857,7 @@ class MageEquippedItem(graphene.Mutation):
         equipped_item_id = graphene.UUID(required=True)
         stats = graphene.NonNull(graphene.List(graphene.NonNull(CustomSetExosInput)))
         weapon_element_mage = graphene.Argument(WeaponElementMageEnum)
+        weapon_healing_mage = graphene.Argument(WeaponElementMageEnum)
 
     equipped_item = graphene.Field(EquippedItem, required=True)
 
@@ -863,6 +867,7 @@ class MageEquippedItem(graphene.Mutation):
         with session_scope() as db_session:
             equipped_item_id = kwargs.get("equipped_item_id")
             weapon_element_mage = kwargs.get("weapon_element_mage")
+            weapon_healing_mage = kwargs.get("weapon_healing_mage")
             stats = kwargs.get("stats")
             equipped_item = db_session.query(ModelEquippedItem).get(equipped_item_id)
             check_owner(equipped_item.custom_set)
@@ -888,11 +893,23 @@ class MageEquippedItem(graphene.Mutation):
                 .one()
                 .name
             )
-            if weapon_element_mage and slot_name != "Weapon":
+            if (weapon_element_mage or weapon_healing_mage) and slot_name != "Weapon":
                 raise GraphQLError(_("Invalid element mage on non-weapon item."))
-            equipped_item.weapon_element_mage = (
-                WeaponElementMage(weapon_element_mage) if weapon_element_mage else None
+            equipped_item.weapon_element_mage = normalize_weapon_mage(
+                weapon_element_mage
             )
+            # GraphQL-core 2 omits explicit nulls from kwargs. Check the document
+            # too, so clearing works while older clients preserve the healing mage.
+            has_healing_argument = any(
+                argument.name.value == "weaponHealingMage"
+                for field in info.field_asts
+                for argument in field.arguments
+            )
+            if "weapon_healing_mage" in kwargs or has_healing_argument:
+                healing_mage = normalize_weapon_mage(weapon_healing_mage)
+                if healing_mage and healing_mage.name.endswith("_68"):
+                    raise GraphQLError(_("Healing conversion must be 10% or 100%."))
+                equipped_item.weapon_healing_mage = healing_mage
             equipped_item.custom_set.last_modified = datetime.utcnow()
 
         return MageEquippedItem(equipped_item=equipped_item)
@@ -990,6 +1007,7 @@ class CopyCustomSet(graphene.Mutation):
                     item_slot_id=old_equipped_item.item_slot_id,
                     item_id=old_equipped_item.item_id,
                     weapon_element_mage=old_equipped_item.weapon_element_mage,
+                    weapon_healing_mage=old_equipped_item.weapon_healing_mage,
                 )
                 db_session.add(equipped_item)
                 db_session.flush()

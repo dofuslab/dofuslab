@@ -2,11 +2,13 @@ mutation mageEquippedItem(
   $stats: [CustomSetExosInput!]!
   $equippedItemId: UUID!
   $weaponElementMage: WeaponElementMage
+  $weaponHealingMage: WeaponElementMage
 ) {
   mageEquippedItem(
     equippedItemId: $equippedItemId
     stats: $stats
     weaponElementMage: $weaponElementMage
+    weaponHealingMage: $weaponHealingMage
   ) {
     equippedItem {
       id
@@ -16,6 +18,7 @@ mutation mageEquippedItem(
         value
       }
       weaponElementMage
+      weaponHealingMage
     }
   }
 }

@@ -38,6 +38,7 @@ import {
   getSimpleEffect,
   elementMageToWeaponEffect,
   calcElementMage,
+  getWeaponEffectMage,
   getTitle,
   getCustomSetMetaDescription,
   getCanonicalUrl,
@@ -322,11 +323,13 @@ export const WeaponEffectsList = ({
   className,
   innerDivStyle,
   elementMage,
+  healingMage,
 }: {
   weaponStats: WeaponStats;
   className?: string;
   innerDivStyle?: CSSObject;
   elementMage?: WeaponElementMage | null;
+  healingMage?: WeaponElementMage | null;
 }) => {
   const { t } = useTranslation('weapon_spell_effect');
   return (
@@ -334,18 +337,24 @@ export const WeaponEffectsList = ({
       {weaponStats.weaponEffects.map((effect) => {
         let { effectType, minDamage, maxDamage } = effect;
 
-        if (
-          elementMage &&
-          (effectType === WeaponEffectType.NEUTRAL_DAMAGE ||
-            effectType === WeaponEffectType.NEUTRAL_HEALING)
-        ) {
+        const effectMage = getWeaponEffectMage(
+          effectType,
+          elementMage,
+          healingMage,
+        );
+        if (effectMage) {
           ({ minDamage, maxDamage } = calcElementMage(
-            elementMage,
+            effectMage,
             minDamage || maxDamage,
             maxDamage,
           ));
 
-          effectType = elementMageToWeaponEffect(elementMage, effectType);
+          effectType = elementMageToWeaponEffect(
+            effectMage,
+            effectType as
+              | WeaponEffectType.NEUTRAL_DAMAGE
+              | WeaponEffectType.NEUTRAL_HEALING,
+          );
         }
 
         return (
@@ -360,12 +369,7 @@ export const WeaponEffectsList = ({
             />
             <div
               css={{
-                color:
-                  elementMage &&
-                  (effect.effectType === WeaponEffectType.NEUTRAL_DAMAGE ||
-                    effect.effectType === WeaponEffectType.NEUTRAL_HEALING)
-                    ? blue6
-                    : 'inherit',
+                color: effectMage ? blue6 : 'inherit',
               }}
             >
               {minDamage !== null ? `${minDamage}-` : ''}

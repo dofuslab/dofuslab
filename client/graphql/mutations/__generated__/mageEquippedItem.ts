@@ -6,6 +6,7 @@ export type mageEquippedItemVariables = Types.Exact<{
   stats: Array<Types.CustomSetExosInput> | Types.CustomSetExosInput;
   equippedItemId: Types.Scalars['UUID']['input'];
   weaponElementMage?: Types.InputMaybe<Types.WeaponElementMage>;
+  weaponHealingMage?: Types.InputMaybe<Types.WeaponElementMage>;
 }>;
 
 export type mageEquippedItem = {
@@ -15,6 +16,7 @@ export type mageEquippedItem = {
       __typename: 'EquippedItem';
       id: any;
       weaponElementMage: Types.WeaponElementMage | null;
+      weaponHealingMage: Types.WeaponElementMage | null;
       exos: Array<{
         __typename: 'EquippedItemExo';
         id: any;

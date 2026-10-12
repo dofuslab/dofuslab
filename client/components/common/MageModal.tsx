@@ -14,6 +14,7 @@ import {
   useCustomSet,
   effectToIconUrl,
   elementMageToWeaponEffect,
+  getWeaponMageOptions,
   getImageUrl,
   antdSelectFilterOption,
 } from 'common/utils';
@@ -155,7 +156,10 @@ const MageModal = ({
 
   const [weaponElementMage, setWeaponElementMage] = useState<
     WeaponElementMage | undefined
-  >();
+  >(equippedItem.weaponElementMage ?? undefined);
+  const [weaponHealingMage, setWeaponHealingMage] = useState<
+    WeaponElementMage | undefined
+  >(equippedItem.weaponHealingMage ?? undefined);
 
   const [mutate] = useMutation<mageEquippedItem, mageEquippedItemVariables>(
     MageEquippedItemMutation,
@@ -164,13 +168,20 @@ const MageModal = ({
         equippedItemId: equippedItem.id,
         stats: calcStatsDiff(originalStatsMap, statsState),
         weaponElementMage,
+        weaponHealingMage: weaponHealingMage ?? null,
       },
-      optimisticResponse: ({ stats }) => {
+      optimisticResponse: ({
+        stats,
+        weaponElementMage: damageMage,
+        weaponHealingMage: healingMage,
+      }) => {
         const statsArray = Array.isArray(stats) ? stats : [stats];
         return {
           mageEquippedItem: {
             equippedItem: {
               ...equippedItem,
+              weaponElementMage: damageMage ?? null,
+              weaponHealingMage: healingMage ?? null,
               exos: statsArray.map((line, idx) => ({
                 ...line,
                 id: `exo-${idx}`,
@@ -221,10 +232,25 @@ const MageModal = ({
     [mutate, closeMageModal, client, t, customSet],
   );
 
-  const hasNeutralEffect = equippedItem.item.weaponStats?.weaponEffects.some(
-    ({ effectType }) =>
-      effectType === WeaponEffectType.NEUTRAL_DAMAGE ||
-      effectType === WeaponEffectType.NEUTRAL_HEALING,
+  const mageSelections = [
+    {
+      effectType: WeaponEffectType.NEUTRAL_DAMAGE,
+      value: weaponElementMage,
+      setValue: setWeaponElementMage,
+      label: 'DAMAGE',
+      healing: false,
+    },
+    {
+      effectType: WeaponEffectType.NEUTRAL_HEALING,
+      value: weaponHealingMage,
+      setValue: setWeaponHealingMage,
+      label: 'HEAL',
+      healing: true,
+    },
+  ].filter(({ effectType }) =>
+    equippedItem.item.weaponStats?.weaponEffects.some(
+      (effect) => effect.effectType === effectType,
+    ),
   );
 
   return (
@@ -250,6 +276,7 @@ const MageModal = ({
                 onClick={() => {
                   dispatch({ type: 'RESET', originalStatsMap });
                   setWeaponElementMage(undefined);
+                  setWeaponHealingMage(undefined);
                 }}
               >
                 <FontAwesomeIcon icon={faRedo} />
@@ -290,50 +317,57 @@ const MageModal = ({
                   weaponStats={equippedItem.item.weaponStats}
                   innerDivStyle={{ marginBottom: 8 }}
                   elementMage={weaponElementMage}
+                  healingMage={weaponHealingMage}
                 />
-                {hasNeutralEffect && (
-                  <div>
-                    <div
-                      css={{ display: 'flex', gap: 8, alignItems: 'center' }}
-                    >
-                      <a
-                        onClick={() => {
-                          setWeaponElementMage(undefined);
-                        }}
+                {mageSelections.map(
+                  ({ effectType, value, setValue, label, healing }) => (
+                    <div key={effectType}>
+                      <div>{t(label, { ns: 'weapon_spell_effect' })}</div>
+                      <div
+                        css={{ display: 'flex', gap: 8, alignItems: 'center' }}
                       >
-                        <FontAwesomeIcon icon={faTimes} />
-                      </a>
-                      <Select<WeaponElementMage>
-                        value={weaponElementMage}
-                        onChange={setWeaponElementMage}
-                        popupClassName={css({ zIndex: 1062 })}
-                        css={{ width: '100%', fontSize: '0.75rem' }}
-                        onKeyDown={(e) => {
-                          // prevents triggering SetBuilderKeyboardShortcuts
-                          e.nativeEvent.stopPropagation();
-                        }}
-                      >
-                        {Object.values(WeaponElementMage).map((v) => (
-                          <Option key={v} value={v}>
-                            <div
-                              css={{ display: 'flex', alignItems: 'center' }}
-                            >
-                              <img
-                                src={getImageUrl(
-                                  effectToIconUrl(elementMageToWeaponEffect(v)),
-                                )}
-                                css={{ width: 16, marginRight: 8 }}
-                                alt={v}
-                              />{' '}
-                              {t(`WEAPON_ELEMENT_MAGE.${v}`, {
-                                ns: 'weapon_spell_effect',
-                              })}
-                            </div>
-                          </Option>
-                        ))}
-                      </Select>
+                        <a
+                          onClick={() => {
+                            setValue(undefined);
+                          }}
+                        >
+                          <FontAwesomeIcon icon={faTimes} />
+                        </a>
+                        <Select<WeaponElementMage>
+                          aria-label={t(label, { ns: 'weapon_spell_effect' })}
+                          value={value}
+                          onChange={setValue}
+                          popupClassName={css({ zIndex: 1062 })}
+                          css={{ width: '100%', fontSize: '0.75rem' }}
+                          onKeyDown={(e) => {
+                            // prevents triggering SetBuilderKeyboardShortcuts
+                            e.nativeEvent.stopPropagation();
+                          }}
+                        >
+                          {getWeaponMageOptions(healing).map((v) => (
+                            <Option key={v} value={v}>
+                              <div
+                                css={{ display: 'flex', alignItems: 'center' }}
+                              >
+                                <img
+                                  src={getImageUrl(
+                                    effectToIconUrl(
+                                      elementMageToWeaponEffect(v),
+                                    ),
+                                  )}
+                                  css={{ width: 16, marginRight: 8 }}
+                                  alt={v}
+                                />{' '}
+                                {t(`WEAPON_ELEMENT_MAGE.${v}`, {
+                                  ns: 'weapon_spell_effect',
+                                })}
+                              </div>
+                            </Option>
+                          ))}
+                        </Select>
+                      </div>
                     </div>
-                  </div>
+                  ),
                 )}
               </div>
               <Divider css={{ margin: '12px 0' }} />

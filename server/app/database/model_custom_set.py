@@ -184,6 +184,7 @@ class ModelCustomSet(Base):
         if equipped_item and item_id:
             equipped_item.item_id = item_id
             equipped_item.weapon_element_mage = None
+            equipped_item.weapon_healing_mage = None
             db_session.query(ModelEquippedItemExo).filter_by(
                 equipped_item_id=equipped_item.uuid
             ).delete()
