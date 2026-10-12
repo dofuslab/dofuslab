@@ -6999,7 +6999,13 @@
     "itemType": "Cloak",
     "setID": null,
     "level": 1,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "pods",
+        "minStat": 71,
+        "maxStat": 100
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -7020,7 +7026,13 @@
     "itemType": "Cloak",
     "setID": null,
     "level": 6,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "pods",
+        "minStat": 151,
+        "maxStat": 250
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -7041,7 +7053,13 @@
     "itemType": "Cloak",
     "setID": null,
     "level": 10,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "pods",
+        "minStat": 151,
+        "maxStat": 200
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -7106,6 +7124,11 @@
     "level": 13,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 71,
+        "maxStat": 110
+      },
+      {
         "stat": "Strength",
         "minStat": 7,
         "maxStat": 10
@@ -7131,7 +7154,13 @@
     "itemType": "Cloak",
     "setID": null,
     "level": 15,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "pods",
+        "minStat": 251,
+        "maxStat": 400
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -7152,7 +7181,13 @@
     "itemType": "Cloak",
     "setID": null,
     "level": 20,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "pods",
+        "minStat": 601,
+        "maxStat": 800
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -7173,7 +7208,13 @@
     "itemType": "Cloak",
     "setID": null,
     "level": 20,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "pods",
+        "minStat": 1001,
+        "maxStat": 1500
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -7194,7 +7235,13 @@
     "itemType": "Cloak",
     "setID": null,
     "level": 40,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "pods",
+        "minStat": 251,
+        "maxStat": 300
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -7215,7 +7262,13 @@
     "itemType": "Cloak",
     "setID": null,
     "level": 60,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "pods",
+        "minStat": 501,
+        "maxStat": 1000
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -7976,6 +8029,11 @@
     "level": 37,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": -300
+      },
+      {
         "stat": "Vitality",
         "minStat": 41,
         "maxStat": 50
@@ -8022,6 +8080,11 @@
     "setID": null,
     "level": 36,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": -300
+      },
       {
         "stat": "Vitality",
         "minStat": 41,
@@ -10080,6 +10143,11 @@
     "level": 20,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
         "stat": "Intelligence",
         "minStat": 11,
         "maxStat": 15
@@ -10111,6 +10179,11 @@
     "setID": "3",
     "level": 45,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": 51,
+        "maxStat": 150
+      },
       {
         "stat": "% Neutral Resistance",
         "minStat": 4,
@@ -10338,6 +10411,11 @@
     "setID": "4",
     "level": 30,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": 151,
+        "maxStat": 200
+      },
       {
         "stat": "Vitality",
         "minStat": 51,
@@ -12677,6 +12755,11 @@
     "level": 67,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
         "stat": "Strength",
         "minStat": 21,
         "maxStat": 30
@@ -14512,6 +14595,11 @@
     "level": 60,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 601,
+        "maxStat": 800
+      },
+      {
         "stat": "Intelligence",
         "minStat": 11,
         "maxStat": 15
@@ -16130,6 +16218,11 @@
     "level": 76,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
         "stat": "Vitality",
         "minStat": 31,
         "maxStat": 40
@@ -17058,6 +17151,11 @@
     "level": 70,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 251,
+        "maxStat": 300
+      },
+      {
         "stat": "Vitality",
         "minStat": 21,
         "maxStat": 30
@@ -17472,6 +17570,11 @@
     "setID": "23",
     "level": 16,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": 71,
+        "maxStat": 100
+      },
       {
         "stat": "Chance",
         "minStat": 11,
@@ -18230,6 +18333,11 @@
         "stat": "% Air Resistance",
         "minStat": 4,
         "maxStat": 5
+      },
+      {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 300
       }
     ],
     "customStats": {},
@@ -23150,6 +23258,11 @@
     "level": 41,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
         "stat": "Vitality",
         "minStat": 21,
         "maxStat": 30
@@ -23186,6 +23299,11 @@
     "setID": "36",
     "level": 80,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 200
+      },
       {
         "stat": "Strength",
         "minStat": 31,
@@ -24981,6 +25099,11 @@
         "stat": "Summons",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 300
       }
     ],
     "customStats": {},
@@ -25174,6 +25297,11 @@
     "level": 69,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 401,
+        "maxStat": 500
+      },
+      {
         "stat": "Vitality",
         "minStat": 151,
         "maxStat": 200
@@ -25332,6 +25460,11 @@
     "setID": null,
     "level": 71,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": 401,
+        "maxStat": 500
+      },
       {
         "stat": "Vitality",
         "minStat": 51,
@@ -25605,6 +25738,11 @@
         "maxStat": 300
       },
       {
+        "stat": "pods",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
         "stat": "Wisdom",
         "minStat": 7,
         "maxStat": 10
@@ -25858,6 +25996,11 @@
     "setID": "50",
     "level": 22,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": 151,
+        "maxStat": 200
+      },
       {
         "stat": "Intelligence",
         "minStat": 7,
@@ -26420,6 +26563,11 @@
         "stat": "Chance",
         "minStat": 16,
         "maxStat": 20
+      },
+      {
+        "stat": "pods",
+        "minStat": 161,
+        "maxStat": 200
       }
     ],
     "customStats": {},
@@ -26833,6 +26981,11 @@
         "stat": "Initiative",
         "minStat": 101,
         "maxStat": 150
+      },
+      {
+        "stat": "pods",
+        "minStat": 251,
+        "maxStat": 300
       },
       {
         "stat": "Vitality",
@@ -28693,6 +28846,11 @@
         "maxStat": 200
       },
       {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 200
+      },
+      {
         "stat": "Fire Resistance",
         "minStat": 4,
         "maxStat": 8
@@ -29847,6 +30005,11 @@
         "maxStat": 25
       },
       {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 500
+      },
+      {
         "stat": "Power",
         "minStat": 11,
         "maxStat": 15
@@ -30156,6 +30319,11 @@
     "setID": "56",
     "level": 126,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": 201,
+        "maxStat": 350
+      },
       {
         "stat": "Vitality",
         "minStat": 151,
@@ -30596,6 +30764,11 @@
     "level": 80,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
         "stat": "Vitality",
         "minStat": 21,
         "maxStat": 30
@@ -31004,6 +31177,11 @@
     "setID": "214",
     "level": 22,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": 101,
+        "maxStat": 150
+      },
       {
         "stat": "Vitality",
         "minStat": 26,
@@ -32685,6 +32863,11 @@
         "maxStat": 200
       },
       {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 500
+      },
+      {
         "stat": "Summons",
         "minStat": null,
         "maxStat": 1
@@ -33552,6 +33735,11 @@
         "stat": "Range",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "pods",
+        "minStat": 501,
+        "maxStat": 600
       },
       {
         "stat": "Initiative",
@@ -41630,6 +41818,11 @@
         "maxStat": 200
       },
       {
+        "stat": "pods",
+        "minStat": 151,
+        "maxStat": 200
+      },
+      {
         "stat": "Vitality",
         "minStat": 36,
         "maxStat": 45
@@ -43995,6 +44188,11 @@
     "level": 50,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 201,
+        "maxStat": 300
+      },
+      {
         "stat": "Vitality",
         "minStat": 41,
         "maxStat": 50
@@ -44036,6 +44234,11 @@
     "setID": "99",
     "level": 50,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": 201,
+        "maxStat": 300
+      },
       {
         "stat": "Vitality",
         "minStat": 41,
@@ -44079,6 +44282,11 @@
     "level": 50,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 201,
+        "maxStat": 300
+      },
+      {
         "stat": "Vitality",
         "minStat": 41,
         "maxStat": 50
@@ -44120,6 +44328,11 @@
     "setID": "101",
     "level": 50,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": 201,
+        "maxStat": 300
+      },
       {
         "stat": "Vitality",
         "minStat": 41,
@@ -44183,6 +44396,11 @@
         "maxStat": 3
       },
       {
+        "stat": "pods",
+        "minStat": 201,
+        "maxStat": 400
+      },
+      {
         "stat": "Prospecting",
         "minStat": 6,
         "maxStat": 10
@@ -44233,6 +44451,11 @@
         "stat": "Critical",
         "minStat": 2,
         "maxStat": 3
+      },
+      {
+        "stat": "pods",
+        "minStat": 201,
+        "maxStat": 400
       },
       {
         "stat": "Prospecting",
@@ -44287,6 +44510,11 @@
         "maxStat": 3
       },
       {
+        "stat": "pods",
+        "minStat": 201,
+        "maxStat": 400
+      },
+      {
         "stat": "Prospecting",
         "minStat": 6,
         "maxStat": 10
@@ -44337,6 +44565,11 @@
         "stat": "Critical",
         "minStat": 2,
         "maxStat": 3
+      },
+      {
+        "stat": "pods",
+        "minStat": 201,
+        "maxStat": 400
       },
       {
         "stat": "Prospecting",
@@ -46854,6 +47087,11 @@
         "stat": "Power",
         "minStat": 16,
         "maxStat": 20
+      },
+      {
+        "stat": "pods",
+        "minStat": 151,
+        "maxStat": 200
       }
     ],
     "customStats": {
@@ -49491,6 +49729,11 @@
         "maxStat": 1
       },
       {
+        "stat": "pods",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
         "stat": "Initiative",
         "minStat": 201,
         "maxStat": 250
@@ -49738,6 +49981,11 @@
         "stat": "Range",
         "minStat": null,
         "maxStat": 1
+      },
+      {
+        "stat": "pods",
+        "minStat": 251,
+        "maxStat": 300
       }
     ],
     "customStats": {},
@@ -50170,7 +50418,13 @@
     "itemType": "Cloak",
     "setID": null,
     "level": 20,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "pods",
+        "minStat": 251,
+        "maxStat": 300
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -50733,6 +50987,11 @@
     "level": 31,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
         "stat": "Vitality",
         "minStat": 21,
         "maxStat": 25
@@ -50785,6 +51044,11 @@
         "maxStat": 20
       },
       {
+        "stat": "pods",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
         "stat": "Initiative",
         "minStat": 151,
         "maxStat": 200
@@ -50825,6 +51089,11 @@
         "stat": "Critical",
         "minStat": 2,
         "maxStat": 3
+      },
+      {
+        "stat": "pods",
+        "minStat": 101,
+        "maxStat": 150
       }
     ],
     "customStats": {},
@@ -59704,6 +59973,11 @@
         "maxStat": 30
       },
       {
+        "stat": "pods",
+        "minStat": 101,
+        "maxStat": 150
+      },
+      {
         "stat": "Initiative",
         "minStat": 51,
         "maxStat": 100
@@ -65652,6 +65926,11 @@
     "level": 50,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": 401,
+        "maxStat": 600
+      },
+      {
         "stat": "Wisdom",
         "minStat": 21,
         "maxStat": 25
@@ -67523,7 +67802,13 @@
     "itemType": "Ring",
     "setID": null,
     "level": 5,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "pods",
+        "minStat": 31,
+        "maxStat": 80
+      }
+    ],
     "customStats": {
       "en": [
         "Linked to the character"
@@ -68618,6 +68903,11 @@
     "level": 50,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 500
+      },
+      {
         "stat": "Prospecting",
         "minStat": null,
         "maxStat": 5
@@ -68645,6 +68935,11 @@
     "level": 100,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 1000
+      },
+      {
         "stat": "Prospecting",
         "minStat": null,
         "maxStat": 10
@@ -68671,6 +68966,11 @@
     "setID": null,
     "level": 150,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 2000
+      },
       {
         "stat": "Prospecting",
         "minStat": null,
@@ -74532,6 +74832,11 @@
         "stat": "Range",
         "minStat": null,
         "maxStat": -1
+      },
+      {
+        "stat": "pods",
+        "minStat": 401,
+        "maxStat": 600
       },
       {
         "stat": "Initiative",
@@ -103702,7 +104007,13 @@
     "itemType": "Ring",
     "setID": null,
     "level": 8,
-    "stats": [],
+    "stats": [
+      {
+        "stat": "pods",
+        "minStat": 51,
+        "maxStat": 100
+      }
+    ],
     "customStats": {},
     "conditions": {
       "conditions": {},
@@ -106478,6 +106789,11 @@
         "maxStat": 40
       },
       {
+        "stat": "pods",
+        "minStat": 101,
+        "maxStat": 200
+      },
+      {
         "stat": "Wisdom",
         "minStat": 11,
         "maxStat": 15
@@ -108434,6 +108750,11 @@
     "setID": "409",
     "level": 114,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": 301,
+        "maxStat": 400
+      },
       {
         "stat": "Vitality",
         "minStat": 151,
@@ -139532,6 +139853,11 @@
         "maxStat": 350
       },
       {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 700
+      },
+      {
         "stat": "Vitality",
         "minStat": 301,
         "maxStat": 350
@@ -139877,6 +140203,11 @@
     "level": 171,
     "stats": [
       {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 300
+      },
+      {
         "stat": "Vitality",
         "minStat": 151,
         "maxStat": 200
@@ -139968,6 +140299,11 @@
     "setID": "1012",
     "level": 172,
     "stats": [
+      {
+        "stat": "pods",
+        "minStat": null,
+        "maxStat": 500
+      },
       {
         "stat": "Vitality",
         "minStat": 151,
@@ -147365,14 +147701,14 @@
     "level": 50,
     "stats": [
       {
-        "stat": "Wisdom",
-        "minStat": null,
-        "maxStat": 15
-      },
-      {
         "stat": "pods",
         "minStat": null,
         "maxStat": 500
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": null,
+        "maxStat": 15
       }
     ],
     "customStats": {},
@@ -147397,14 +147733,14 @@
     "level": 100,
     "stats": [
       {
-        "stat": "Wisdom",
-        "minStat": null,
-        "maxStat": 30
-      },
-      {
         "stat": "pods",
         "minStat": null,
         "maxStat": 1000
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": null,
+        "maxStat": 30
       }
     ],
     "customStats": {},
@@ -147429,14 +147765,14 @@
     "level": 150,
     "stats": [
       {
-        "stat": "Wisdom",
-        "minStat": null,
-        "maxStat": 60
-      },
-      {
         "stat": "pods",
         "minStat": null,
         "maxStat": 2000
+      },
+      {
+        "stat": "Wisdom",
+        "minStat": null,
+        "maxStat": 60
       }
     ],
     "customStats": {},
