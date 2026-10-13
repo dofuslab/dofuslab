@@ -5,7 +5,6 @@ import redis
 from database_url import normalize_database_url
 from worker import redis_connection, queues
 
-
 REDIS_HOST = environ.get("REDIS_HOST")
 REDIS_PORT = environ.get("REDIS_PORT")
 REDIS_URL = environ.get("REDIS_URL", "redis://{}:{}".format(REDIS_HOST, REDIS_PORT))
