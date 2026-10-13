@@ -1,7 +1,7 @@
 # Python 3.12 upgrade and rollback notes
 
 This change moves the API and RQ worker together from Python 3.8 to Python
-3.12.12. It is intentionally stacked on the production container scaffold so
+3.12.15. It is intentionally stacked on the production container scaffold so
 the new interpreter is built and tested as an immutable artifact before any
 host cutover. It does not authorize a production deployment, database change,
 Redis replacement, or credential change.

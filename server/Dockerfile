@@ -1,4 +1,4 @@
-FROM python:3.12.12-bookworm
+FROM python:3.12.15-bookworm
 # Debian is used because the scientific Python and PostgreSQL dependencies are
 # substantially slower and more fragile to build against musl/Alpine.
 
