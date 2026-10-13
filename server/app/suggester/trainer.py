@@ -2,14 +2,17 @@ from collections import defaultdict
 from app import cache, db
 from app.database.model_custom_set import ModelCustomSet
 from app.database.model_custom_set import ModelEquippedItem
-import json
 from sqlalchemy import func
 from mlxtend.frequent_patterns import fpgrowth
 from mlxtend.preprocessing import TransactionEncoder
 import pandas as pd
 import datetime
+import os
+import sys
 
 import argparse
+
+from app.suggester.publication import publish_lookup_table
 
 parser = argparse.ArgumentParser()
 
@@ -19,6 +22,12 @@ parser.add_argument(
     help="Number of days ago of builds to use (default 180)",
     type=int,
     default=180,
+)
+parser.add_argument(
+    "--lock-seconds",
+    help="Redis refresh lock lifetime (default: RECOMMENDATION_LOCK_SECONDS or 18000)",
+    type=int,
+    default=int(os.environ.get("RECOMMENDATION_LOCK_SECONDS", "18000")),
 )
 
 
@@ -31,7 +40,7 @@ def get_relative_date(days):
 DATE_180_DAYS_AGO = get_relative_date(180)
 
 
-def train_suggestion_model(date):
+def build_suggestion_lookup(date):
     item_lists = [
         [str(uuid) for uuid in result_tuple[0]]
         for result_tuple in db.session.query(func.array_agg(ModelEquippedItem.item_id),)
@@ -66,29 +75,46 @@ def train_suggestion_model(date):
             lookup_table[items[0]][items[1]] = row["support"] / support_table[items[0]]
             lookup_table[items[1]][items[0]] = row["support"] / support_table[items[1]]
 
-    old_version = cache.get("suggestion_lookup_table_version")
-    if old_version:
-        print("Found old version {}, bumping".format(old_version))
-        old_version = int(old_version)
-        new_version = old_version + 1
-    else:
-        print("Starting new version at 1")
-        new_version = 1
-    print(
-        "Setting hash in cache with key 'suggestion_lookup_table:{}'...".format(
-            new_version
-        )
-    )
-    for k, v in lookup_table.items():
-        cache.hset(
-            "suggestion_lookup_table:{}".format(new_version), k, json.dumps(v),
-        )
-    cache.set("suggestion_lookup_table_version", new_version)
-    cache.delete("suggestion_lookup_table:{}".format(old_version))
+    return lookup_table
+
+
+def train_suggestion_model(date):
+    lookup_table = build_suggestion_lookup(date)
+    new_version = publish_lookup_table(cache, lookup_table)
+    print("Published suggestion lookup table version {}".format(new_version))
 
     print("Done")
 
 
+def run_with_lock(date, lock_seconds):
+    if lock_seconds <= 0:
+        raise ValueError("lock-seconds must be greater than zero")
+
+    refresh_lock = cache.lock(
+        "suggestion_lookup_table_refresh_lock", timeout=lock_seconds
+    )
+    if not refresh_lock.acquire(blocking=False):
+        print("Suggestion refresh skipped: another refresh holds the Redis lock")
+        return False
+
+    try:
+        train_suggestion_model(date)
+    finally:
+        try:
+            refresh_lock.release()
+        except Exception:
+            # The process timeout is deliberately shorter than the lock TTL.
+            # If ownership was still lost, expiry safely clears the lock.
+            print(
+                "WARNING: suggestion refresh lock could not be released",
+                file=sys.stderr,
+            )
+    return True
+
+
 if __name__ == "__main__":
     args = parser.parse_args()
-    train_suggestion_model(get_relative_date(args.days))
+    if not run_with_lock(get_relative_date(args.days), args.lock_seconds):
+        # EX_TEMPFAIL lets the wrapper distinguish a safe overlap skip from a
+        # completed refresh without starting a retry.
+        sys.exit(75)
