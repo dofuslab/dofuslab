@@ -3,6 +3,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 
 DATA_DIR = Path(__file__).parents[1] / "app" / "database" / "data"
 LOCALES = {"de", "en", "es", "fr", "it", "pt"}
@@ -28,15 +30,22 @@ def assert_unique_numeric_ids(records, field):
     return set(ids)
 
 
-def test_equipment_ids_locales_and_references_are_consistent():
-    item_types = load("item_types.json")
+def assert_required_records(records, filename):
+    if not records:
+        raise AssertionError(f"{filename} must contain at least one record")
+
+
+def validate_equipment_data(load_data=load):
+    item_types = load_data("item_types.json")
+    assert_required_records(item_types, "item_types.json")
     type_names = {record["en"] for record in item_types}
     assert len(type_names) == len(item_types)
     for item_type in item_types:
         assert set(item_type) == LOCALES
         assert all(value.strip() for value in item_type.values())
 
-    sets = load("sets.json")
+    sets = load_data("sets.json")
+    assert_required_records(sets, "sets.json")
     set_ids = assert_unique_numeric_ids(sets, "id")
     for item_set in sets:
         assert_localized(item_set, "name")
@@ -48,7 +57,8 @@ def test_equipment_ids_locales_and_references_are_consistent():
         ("pets.json", "dofusID"),
         ("mounts.json", "mountDofusID"),
     ):
-        records = load(filename)
+        records = load_data(filename)
+        assert_required_records(records, filename)
         record_ids = assert_unique_numeric_ids(records, id_field)
         assert not equipment_ids.intersection(record_ids)
         equipment_ids.update(record_ids)
@@ -59,6 +69,26 @@ def test_equipment_ids_locales_and_references_are_consistent():
             assert 1 <= record["level"] <= 200
             if record.get("setID"):
                 assert str(record["setID"]) in set_ids
+
+
+def test_equipment_ids_locales_and_references_are_consistent():
+    validate_equipment_data()
+
+
+@pytest.mark.parametrize(
+    "empty_filename",
+    ("sets.json", "items.json", "weapons.json", "pets.json", "mounts.json"),
+)
+def test_required_equipment_family_cannot_be_empty(empty_filename):
+    def load_with_empty_family(filename):
+        if filename == empty_filename:
+            return []
+        return load(filename)
+
+    with pytest.raises(AssertionError) as failure:
+        validate_equipment_data(load_with_empty_family)
+
+    assert str(failure.value) == f"{empty_filename} must contain at least one record"
 
 
 def test_slots_only_reference_committed_item_types():
