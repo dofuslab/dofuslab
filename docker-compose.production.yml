@@ -34,7 +34,7 @@ services:
       - --error-logfile=-
       - app:app
     ports:
-      - 127.0.0.1:${DOFUSLAB_API_PORT:-5000}:5000
+      - 127.0.0.1:${DOFUSLAB_API_PORT:-5001}:5000
     stop_grace_period: 45s
 
   worker:
@@ -67,7 +67,7 @@ services:
       GRAPHQL_URI: ${DOFUSLAB_PUBLIC_GRAPHQL_URI}
       NEXT_PUBLIC_GRAPHQL_URI: ${DOFUSLAB_PUBLIC_GRAPHQL_URI}
     ports:
-      - 127.0.0.1:${DOFUSLAB_WEB_PORT:-3000}:3000
+      - 127.0.0.1:${DOFUSLAB_WEB_PORT:-3001}:3000
     logging:
       driver: json-file
       options:

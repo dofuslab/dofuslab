@@ -45,6 +45,7 @@ COPY --from=builder /opt/venv /opt/venv
 
 WORKDIR /app
 COPY --chown=dofuslab:dofuslab . .
+RUN pybabel compile -d app/translations
 
 USER 10001:10001
 EXPOSE 5000

@@ -51,15 +51,19 @@ contains non-secret compose inputs:
 DOFUSLAB_RELEASE=replace-with-git-sha
 DOFUSLAB_RUNTIME_ENV=/etc/dofuslab/runtime.env
 DOFUSLAB_PUBLIC_GRAPHQL_URI=https://dofuslab.io/api/graphql
-DOFUSLAB_API_PORT=5000
-DOFUSLAB_WEB_PORT=3000
+# Candidate-only loopback ports; keep the current 5000/3000 processes alive.
+DOFUSLAB_API_PORT=5001
+DOFUSLAB_WEB_PORT=3001
 GUNICORN_WORKERS=2
 GUNICORN_THREADS=2
 GUNICORN_TIMEOUT=60
 ```
 
 `/etc/dofuslab/runtime.env` contains runtime application settings. Never copy
-it into an image or commit it:
+it into an image or commit it. Start from the complete set of names in
+`server/.env.dist`, reconcile it against the current host configuration, and
+preserve every existing production value; the placeholders below are not
+credentials and must not replace working values:
 
 ```dotenv
 FLASK_APP=app
@@ -74,8 +78,19 @@ HOST=dofuslab.io
 REDIS_HOST=host.docker.internal
 REDIS_PORT=6379
 REDIS_URL=redis://host.docker.internal:6379/0
+AWS_ACCESS_KEY_ID=replace-with-existing-runtime-value
+AWS_SECRET_ACCESS_KEY=replace-with-existing-runtime-value
+SES_REGION=replace-with-existing-runtime-value
+SES_EMAIL_SOURCE=replace-with-existing-runtime-value
 HOME_PAGE=https://dofuslab.io/
 ```
+
+`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `SES_REGION`, and
+`SES_EMAIL_SOURCE` are required by verification and password-reset email jobs.
+Container health checks do not exercise SES and therefore cannot prove email
+delivery. Before cutover, run the mocked email task test and have an authorized
+operator perform a separately approved end-to-end email check; this runbook
+does not authorize reading credentials or sending an external email.
 
 Preserve the existing PostgreSQL TLS parameters. If Redis is bound only to
 host loopback, bridge containers cannot reach it through
@@ -111,6 +126,8 @@ Redis services before touching production. At minimum verify:
 5. The web container serves pages and calls the expected production API URL.
 6. SIGTERM lets Gunicorn requests and RQ work stop within the configured grace
    periods.
+7. `pytest -q tests/test_runtime_dependencies.py` passes with SES fully mocked;
+   treat a real delivery check as a separate operator action.
 
 The shared API image also supports reviewed one-shot jobs without adding a
 second dependency universe. For example, once the independent weekly trainer
@@ -128,31 +145,38 @@ schema migrations as part of the container start.
 
 Drain or pause enqueueing before changing the worker. Let active jobs finish,
 record queue counts, and keep the previous worker image until queued payloads
-have been tested against the new version. Then start the exact images without
-rebuilding:
+have been tested against the new version. Confirm the candidate loopback ports
+are unused, then start the exact images without rebuilding. The defaults use
+`5001` and `3001` specifically so the current services on `5000` and `3000`
+can remain live during validation:
 
 ```sh
 docker compose --env-file /etc/dofuslab/compose.env \
   -f docker-compose.production.yml up -d --no-build --remove-orphans
 docker compose --env-file /etc/dofuslab/compose.env \
   -f docker-compose.production.yml ps
-curl --fail --silent http://127.0.0.1:5000/health/ready
-curl --fail --silent http://127.0.0.1:3000/
+curl --fail --silent http://127.0.0.1:5001/health/ready
 ```
 
-That command changes only the API and worker. When the separately reviewed
-frontend artifact is ready, the exact PM2 replacement start command is:
+That command changes only the API and worker. Switch the reverse proxy's API
+upstream to `127.0.0.1:5001` only after readiness and application checks pass;
+keep the old API process on `5000` available until the new upstream has served
+real traffic successfully.
+
+When the separately reviewed frontend artifact is ready, start its candidate
+alongside PM2:
 
 ```sh
 docker compose --profile frontend --env-file /etc/dofuslab/compose.env \
   -f docker-compose.production.yml up -d --no-build web
+curl --fail --silent http://127.0.0.1:3001/
 ```
 
 Only after the loopback web check passes should the existing reverse proxy
-upstream be switched from PM2 to `127.0.0.1:3000` (if it is not already there).
-Keep TLS, the public hostname, and proxy rules unchanged for this first
-cutover. Stop or disable the PM2 app only after the proxy is serving the
-container and rollback has been rehearsed.
+upstream be switched from PM2 on `127.0.0.1:3000` to the candidate on
+`127.0.0.1:3001`. Keep TLS, the public hostname, and all other proxy rules
+unchanged for this first cutover. Stop or disable the old API and PM2 apps only
+after the proxy is serving the containers and rollback has been rehearsed.
 
 ## Rollback
 
@@ -160,8 +184,9 @@ Keep the previous tagged images on the host. Restore the prior
 `DOFUSLAB_RELEASE` value and run the same API/worker `up` command with
 `--no-build`. For the frontend, include `--profile frontend` and target `web`.
 The pre-container frontend fallback is to switch the reverse proxy upstream
-back to the still-retained PM2 process. Do not roll Redis or PostgreSQL back
-merely to roll application containers back.
+back to the still-retained PM2 process on `127.0.0.1:3000`; the API fallback is
+to switch its upstream back to the retained process on `127.0.0.1:5000`. Do
+not roll Redis or PostgreSQL back merely to roll application containers back.
 
 For the initial Python-only container scaffold, Redis/RQ serialization is
 unchanged. A later Python/dependency upgrade must prove that existing sessions,
