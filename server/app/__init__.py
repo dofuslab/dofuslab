@@ -44,7 +44,10 @@ class HealthAwareSessionInterface:
     def save_session(self, app, session, response):
         if request.path.startswith("/health/"):
             return None
-        return self.delegate.save_session(app, session, response)
+        self.delegate.save_session(app, session, response)
+        if session.accessed or "Set-Cookie" in response.headers:
+            response.vary.add("Cookie")
+        return None
 
     def __getattr__(self, name):
         return getattr(self.delegate, name)

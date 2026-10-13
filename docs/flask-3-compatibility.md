@@ -8,7 +8,11 @@ the eight advisories left by the interpreter upgrade.
 ## Advisory disposition
 
 - Flask's missing `Vary: Cookie` behavior can affect cache correctness for
-  session-aware responses and is fixed by Flask 3.1.3.
+  session-aware responses. Flask 3.1.3 provides access tracking, but the
+  retained Flask-Session 0.5 Redis interface owns response persistence and
+  does not emit the header itself. The application wrapper now propagates
+  Flask's access signal to `Vary: Cookie`; cookie-free health responses remain
+  exempt so probes are not made session-dependent.
 - Werkzeug's multipart limit bypass is in the HTTP request path and is fixed
   by Werkzeug 3.1.9. Gunicorn does not provide that parser fix.
 - The Werkzeug debugger advisory is not reachable through the production
@@ -18,7 +22,10 @@ the eight advisories left by the interpreter upgrade.
   `send_from_directory`; upgrading nevertheless removes the findings.
 
 `pip check` and `pip-audit 2.9.0` must both be clean on the built image before
-review. This is not permission to deploy it.
+review. A clean package audit alone is not proof that extension overrides use
+the patched framework behavior, which is why the Redis-backed response path is
+covered by an application regression test. This is not permission to deploy
+it.
 
 ## Compatibility approach
 

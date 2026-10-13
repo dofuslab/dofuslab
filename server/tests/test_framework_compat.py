@@ -83,11 +83,20 @@ def test_login_session_query_and_logout_round_trip(user):
 
     current = graphql(client, "{ currentUser { username } }")
     assert current.get_json()["data"]["currentUser"]["username"] == user.username
+    assert "Cookie" in current.vary
 
     logout = graphql(client, "mutation { logoutUser { ok } }")
     assert logout.get_json()["data"]["logoutUser"]["ok"] is True
     current = graphql(client, "{ currentUser { username } }")
     assert current.get_json()["data"]["currentUser"] is None
+    assert "Cookie" in current.vary
+
+
+def test_cookie_free_health_response_does_not_vary_on_cookie():
+    response = app.test_client().get("/health/live")
+
+    assert response.status_code == 200
+    assert "Cookie" not in response.vary
 
 
 def test_graphql_schema_and_validation_error_contract_remain_stable():
