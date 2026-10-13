@@ -29,6 +29,12 @@ isolated environment with a reviewed pip-tools version, then rebuild and rerun
 the entire verification set; do not upgrade individual transitive packages on
 the host.
 
+SQLAlchemy 1.4 expects the `postgresql+psycopg2://` dialect name. The committed
+environment templates use that supported spelling. The application also
+normalizes the repository's former `postgres+psycopg2://` prefix at the input
+boundary so an existing runtime setting can be carried forward without
+altering its encoded credentials, host, database name, or connection options.
+
 ## Stateful compatibility
 
 - Flask-Session remains on the existing Redis/pickle representation. Test
