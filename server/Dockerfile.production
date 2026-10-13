@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.7
 
-ARG PYTHON_VERSION=3.8.20
+ARG PYTHON_VERSION=3.12.12
 
 FROM python:${PYTHON_VERSION}-slim-bookworm AS builder
 
@@ -39,7 +39,9 @@ RUN apt-get update \
         libpq5 \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd --system --gid 10001 dofuslab \
-    && useradd --system --uid 10001 --gid dofuslab --home-dir /app dofuslab
+    && useradd --system --uid 10001 --gid dofuslab --home-dir /app dofuslab \
+    && mkdir -p /app \
+    && chown dofuslab:dofuslab /app
 
 COPY --from=builder /opt/venv /opt/venv
 
