@@ -1,4 +1,3 @@
-from app import db
 from enum import auto, Enum
 import sqlalchemy
 
@@ -138,7 +137,9 @@ class WeaponElementMage(Enum):
     AIR_50 = auto()
 
 
-def normalize_weapon_mage(value):
+def normalize_weapon_mage(
+    value: WeaponElementMage | int | None,
+) -> WeaponElementMage | None:
     """Accept historical API values using the retroactive 3.7 percentages."""
     if value is None:
         return None

@@ -59,5 +59,6 @@ jobs:
         run: >-
           python -m pytest
           tests/test_token_utils.py
+          tests/test_typed_enums.py
           tests/test_runtime_dependencies.py::test_send_email_uses_runtime_ses_configuration_without_external_send
           tests/test_runtime_dependencies.py::test_send_email_rejects_missing_source_before_creating_client
