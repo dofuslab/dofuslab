@@ -1,0 +1,81 @@
+name: dofuslab-production
+
+x-service-defaults: &service-defaults
+  restart: unless-stopped
+  init: true
+  env_file:
+    - ${DOFUSLAB_RUNTIME_ENV:?Set DOFUSLAB_RUNTIME_ENV to the absolute runtime env file path}
+  extra_hosts:
+    - host.docker.internal:host-gateway
+  logging:
+    driver: json-file
+    options:
+      max-size: 10m
+      max-file: "5"
+  networks:
+    - app
+
+services:
+  api:
+    <<: *service-defaults
+    image: dofuslab-api:${DOFUSLAB_RELEASE:?Set DOFUSLAB_RELEASE to an immutable release identifier}
+    build:
+      context: ./server
+      dockerfile: Dockerfile.production
+    command:
+      - gunicorn
+      - --bind=0.0.0.0:5000
+      - --workers=${GUNICORN_WORKERS:-2}
+      - --threads=${GUNICORN_THREADS:-2}
+      - --timeout=${GUNICORN_TIMEOUT:-60}
+      - --graceful-timeout=30
+      - --keep-alive=5
+      - --access-logfile=-
+      - --error-logfile=-
+      - app:app
+    ports:
+      - 127.0.0.1:${DOFUSLAB_API_PORT:-5000}:5000
+    stop_grace_period: 45s
+
+  worker:
+    <<: *service-defaults
+    image: dofuslab-api:${DOFUSLAB_RELEASE}
+    command: ["python", "worker.py"]
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import os, redis; redis.Redis(host=os.environ['REDIS_HOST'], port=int(os.environ.get('REDIS_PORT', '6379'))).ping()
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    stop_grace_period: 60s
+
+  web:
+    profiles: ["frontend"]
+    restart: unless-stopped
+    init: true
+    image: dofuslab-web:${DOFUSLAB_RELEASE}
+    build:
+      context: ./client
+      dockerfile: Dockerfile.production
+      args:
+        NEXT_PUBLIC_GRAPHQL_URI: ${DOFUSLAB_PUBLIC_GRAPHQL_URI:?Set DOFUSLAB_PUBLIC_GRAPHQL_URI}
+    environment:
+      GRAPHQL_URI: ${DOFUSLAB_PUBLIC_GRAPHQL_URI}
+      NEXT_PUBLIC_GRAPHQL_URI: ${DOFUSLAB_PUBLIC_GRAPHQL_URI}
+    ports:
+      - 127.0.0.1:${DOFUSLAB_WEB_PORT:-3000}:3000
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "5"
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge
