@@ -129,6 +129,24 @@ Redis services before touching production. At minimum verify:
 7. `pytest -q tests/test_runtime_dependencies.py` passes with SES fully mocked;
    treat a real delivery check as a separate operator action.
 
+Tests are deliberately excluded from the production image. Mount the reviewed
+tests read-only when exercising the exact image against disposable services:
+
+```sh
+docker run --rm --network dofuslab-validation \
+  --env-file /path/to/disposable-runtime.env \
+  --mount type=bind,src="$(pwd)/server/tests",dst=/tests,readonly \
+  --workdir /app "dofuslab-api:$(git rev-parse HEAD)" \
+  python -m pytest -q \
+    /tests/test_framework_compat.py \
+    /tests/test_runtime_dependencies.py \
+    /tests/test_queue_compat.py
+```
+
+The disposable env file must point only at the validation PostgreSQL and Redis
+instances and use non-production secrets. The SES test replaces the client and
+does not send mail.
+
 The shared API image also supports reviewed one-shot jobs without adding a
 second dependency universe. For example, once the independent weekly trainer
 wrapper is merged, its scheduler can override the image command with
