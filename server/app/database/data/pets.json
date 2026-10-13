@@ -1102,7 +1102,13 @@
         "itemType": "Pet",
         "setID": null,
         "level": 20,
-        "stats": [],
+        "stats": [
+            {
+                "stat": "pods",
+                "minStat": null,
+                "maxStat": 2000
+            }
+        ],
         "customStats": {},
         "conditions": {
             "conditions": {},
@@ -1650,7 +1656,13 @@
         "itemType": "Pet",
         "setID": null,
         "level": 20,
-        "stats": [],
+        "stats": [
+            {
+                "stat": "pods",
+                "minStat": null,
+                "maxStat": 2000
+            }
+        ],
         "customStats": {},
         "conditions": {
             "conditions": {},
@@ -2975,7 +2987,13 @@
         "itemType": "Pet",
         "setID": null,
         "level": 20,
-        "stats": [],
+        "stats": [
+            {
+                "stat": "pods",
+                "minStat": null,
+                "maxStat": 2000
+            }
+        ],
         "customStats": {},
         "conditions": {
             "conditions": {},
@@ -3092,7 +3110,13 @@
         "itemType": "Pet",
         "setID": null,
         "level": 20,
-        "stats": [],
+        "stats": [
+            {
+                "stat": "pods",
+                "minStat": null,
+                "maxStat": 2000
+            }
+        ],
         "customStats": {},
         "conditions": {
             "conditions": {},
@@ -3819,7 +3843,13 @@
         "itemType": "Pet",
         "setID": null,
         "level": 20,
-        "stats": [],
+        "stats": [
+            {
+                "stat": "pods",
+                "minStat": null,
+                "maxStat": 2000
+            }
+        ],
         "customStats": {},
         "conditions": {
             "conditions": {},
@@ -4394,7 +4424,13 @@
         "itemType": "Petsmount",
         "setID": null,
         "level": 60,
-        "stats": [],
+        "stats": [
+            {
+                "stat": "pods",
+                "minStat": null,
+                "maxStat": 2000
+            }
+        ],
         "customStats": {},
         "conditions": {
             "conditions": {},
