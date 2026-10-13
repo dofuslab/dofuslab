@@ -1,0 +1,59 @@
+name: Python types
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/python-types.yml'
+      - 'server/**/*.py'
+      - 'server/**/*.pyi'
+      - 'server/mypy.ini'
+      - 'server/requirements.in'
+      - 'server/requirements.txt'
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/python-types.yml'
+      - 'server/**/*.py'
+      - 'server/**/*.pyi'
+      - 'server/mypy.ini'
+      - 'server/requirements.in'
+      - 'server/requirements.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mypy:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: server/requirements.txt
+
+      - name: Install backend dependencies
+        run: python -m pip install --requirement requirements.txt
+
+      - name: Check typed backend boundary
+        run: python -m mypy
+
+      - name: Exercise typed token boundary
+        env:
+          DATABASE_URL: sqlite://
+          REDIS_HOST: localhost
+          REDIS_PORT: '6379'
+          SECRET_KEY: typing-ci-secret
+        run: python -m pytest tests/test_token_utils.py
