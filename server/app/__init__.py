@@ -1,21 +1,22 @@
 from dotenv import load_dotenv
-from flask import Flask, escape, request, session, g
+from flask import Flask, request, session, g
 from flask_session import Session
 from flask_babel import Babel, _, ngettext
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
 from flask_graphql import GraphQLView
 from flask_migrate import Migrate
-from flask_limiter_graphQL_support import Limiter
-from flask_limiter_graphQL_support.util import get_remote_address
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 import os
 from app.database.base import Base
 from flask_login import LoginManager, current_user
 from flask_cors import CORS
 import redis
-from worker import redis_connection
+from worker import BackwardCompatibleJob, redis_connection
 from rq import Queue
 from jinja2 import Environment, FileSystemLoader
+from markupsafe import escape
 from dogpile.cache import make_region
 
 import logging
@@ -58,7 +59,8 @@ def health_live():
     """Report that the API process is able to serve requests."""
     return {"status": "ok"}
 
-q = Queue(connection=redis_connection)
+
+q = Queue(connection=redis_connection, job_class=BackwardCompatibleJob)
 
 base_url = os.getenv("HOME_PAGE")
 flask_env = os.getenv("FLASK_ENV")
@@ -106,6 +108,8 @@ def health_ready():
         db.session.remove()
 
     return {"status": "ok", "checks": checks}
+
+
 CORS(
     app,
     resources={r"/*": {"origins": origins}},
@@ -151,7 +155,7 @@ template_env = Environment(
 )
 template_env.install_gettext_callables(gettext=_, ngettext=ngettext)
 
-limiter = Limiter(app, key_func=get_remote_address)
+limiter = Limiter(key_func=get_remote_address, app=app)
 
 cache_region = make_region().configure(
     "dogpile.cache.redis",

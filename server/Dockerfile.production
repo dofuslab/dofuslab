@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.7
 
-ARG PYTHON_VERSION=3.8.20
+ARG PYTHON_VERSION=3.12.15
 
 FROM python:${PYTHON_VERSION}-slim-bookworm AS builder
 
@@ -22,7 +22,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 WORKDIR /build
 COPY requirements.txt ./
-RUN pip install --upgrade "pip<25" \
+RUN pip install --upgrade "pip==26.2.1" \
     && pip install --requirement requirements.txt
 
 FROM python:${PYTHON_VERSION}-slim-bookworm AS runtime
@@ -39,7 +39,9 @@ RUN apt-get update \
         libpq5 \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd --system --gid 10001 dofuslab \
-    && useradd --system --uid 10001 --gid dofuslab --home-dir /app dofuslab
+    && useradd --system --uid 10001 --gid dofuslab --home-dir /app dofuslab \
+    && mkdir -p /app \
+    && chown dofuslab:dofuslab /app
 
 COPY --from=builder /opt/venv /opt/venv
 

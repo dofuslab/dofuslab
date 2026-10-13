@@ -3,11 +3,11 @@ from sqlalchemy import create_engine, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
 from dotenv import load_dotenv
-import os
+from config import Config
 
 load_dotenv()
 
-db_uri = os.getenv("DATABASE_URL")
+db_uri = Config.SQLALCHEMY_DATABASE_URI
 engine = create_engine(db_uri, convert_unicode=True)
 
 convention = {
