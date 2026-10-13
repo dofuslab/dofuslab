@@ -1,6 +1,7 @@
 .env
 .env.*
 !.env.dist
+!.env.docker
 .git
 .pytest_cache
 __pycache__
