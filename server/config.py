@@ -2,6 +2,7 @@
 
 from os import environ
 import redis
+from database_url import normalize_database_url
 from worker import redis_connection, queues
 
 
@@ -17,7 +18,7 @@ class Config:
     SECRET_KEY = environ.get("SECRET_KEY")
     FLASK_APP = environ.get("FLASK_APP")
     FLASK_ENV = environ.get("FLASK_ENV")
-    SQLALCHEMY_DATABASE_URI = environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = normalize_database_url(environ.get("DATABASE_URL"))
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SESSION_COOKIE_DOMAIN = environ.get("SESSION_COOKIE_DOMAIN", None)
     SESSION_COOKIE_SECURE = environ.get("SESSION_COOKIE_SECURE")

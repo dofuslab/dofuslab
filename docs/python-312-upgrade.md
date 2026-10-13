@@ -31,9 +31,11 @@ the host.
 
 SQLAlchemy 1.4 expects the `postgresql+psycopg2://` dialect name. The committed
 environment templates use that supported spelling. The application also
-normalizes the repository's former `postgres+psycopg2://` prefix at the input
-boundary so an existing runtime setting can be carried forward without
-altering its encoded credentials, host, database name, or connection options.
+normalizes the repository's former `postgres+psycopg2://` prefix once in the
+shared Flask configuration boundary. The runtime model engine,
+Flask-SQLAlchemy, and Alembic migration engine therefore consume the same
+supported URL without altering its encoded credentials, host, database name,
+or connection options.
 
 ## Stateful compatibility
 
