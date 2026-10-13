@@ -13,13 +13,23 @@ queries.
 ## Safety behavior
 
 - `flock` prevents overlap on the scheduler host; a Redis lock also prevents a
-  manual or second-host refresh from overlapping.
+  manual or second-host refresh from overlapping. Publication verifies that
+  the job still owns that Redis lock before switching the live version. A
+  background heartbeat renews the lock during direct or scheduled training.
 - The process is CPU/I/O deprioritized, numeric libraries are limited to one
-  thread, and the default wall-clock limit is four hours.
+  thread, and the default wall-clock limit is four hours. The training
+  transaction sets its own PostgreSQL statement timeout to three hours and 30
+  minutes, leaving time for calculation and publication; no global database
+  setting is changed.
 - A new Redis hash is built under an unreferenced staging key. Redis atomically
-  renames it and changes the reader's version pointer only after the entire
-  refresh succeeds. Empty results and failed writes leave the published table
-  unchanged.
+  validates it, renames it, removes its expiry, and changes the reader's version
+  pointer in one guarded Lua operation only after the entire refresh succeeds.
+  Empty results, lost locks, missing staging data, and failed writes leave the
+  published table unchanged. Staging data expires after the lock lifetime plus
+  one hour (at least six hours) if the process is forcibly terminated; the
+  expiry is removed atomically when that data becomes the published version.
+  The prior published hash remains available to in-flight readers for one
+  hour, then expires to bound Redis memory.
 - The wrapper logs timestamps, outcome, and exit status, but never prints the
   database URL, Redis address, or the environment file.
 
@@ -51,12 +61,15 @@ or enable anything.
    ```bash
    sudo -u dofuslab /opt/dofuslab/server/.venv/bin/python --version
    sudo -u dofuslab /opt/dofuslab/server/.venv/bin/python -m unittest \
-     discover -s /opt/dofuslab/server/tests -p 'test_suggestion_publication.py'
+     discover -s /opt/dofuslab/server/tests -p 'test_suggestion_*.py'
    ```
 
-2. Install the non-secret example config and adjust paths/limits. If application
-   secrets must be added because the deployed server does not already load
-   them, make the file readable only by root and the service group.
+2. Install the example config and adjust paths/limits. Assignments in this file
+   are exported to the Python process. `DATABASE_URL`, `REDIS_HOST`, and
+   `REDIS_PORT` are required here (or in a file sourced by it); the wrapper
+   fails closed before Python starts if they are absent, instead of falling
+   back to an unintended `.env`. Keep it readable only by root and the service
+   group.
 
    ```bash
    sudo install -d -m 0755 /etc/dofuslab /var/log/dofuslab
@@ -100,7 +113,8 @@ the outer `flock`, four-hour `timeout`, single attempt, low CPU/I/O priority,
 and invoke this command inside that one-shot container:
 
 ```bash
-python -m app.suggester.trainer --days 180 --lock-seconds 18000
+python -m app.suggester.trainer --days 180 --lock-seconds 18000 \
+  --statement-timeout-ms 12600000 --previous-version-ttl-seconds 3600
 ```
 
 Pass the existing PostgreSQL and Redis environment by reference (for example,

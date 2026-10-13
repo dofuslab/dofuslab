@@ -9,10 +9,21 @@ import pandas as pd
 import datetime
 import os
 import sys
+import uuid
 
 import argparse
 
-from app.suggester.publication import publish_lookup_table
+from app.suggester.publication import (
+    DEFAULT_PREVIOUS_VERSION_TTL_SECONDS,
+    DEFAULT_STAGING_TTL_SECONDS,
+    REFRESH_LOCK_KEY,
+    publish_lookup_table,
+)
+from app.suggester.refresh_lock import RefreshLockHeartbeat
+from app.suggester.database_limits import (
+    DEFAULT_STATEMENT_TIMEOUT_MS,
+    apply_statement_timeout,
+)
 
 parser = argparse.ArgumentParser()
 
@@ -22,6 +33,33 @@ parser.add_argument(
     help="Number of days ago of builds to use (default 180)",
     type=int,
     default=180,
+)
+parser.add_argument(
+    "--previous-version-ttl-seconds",
+    help=(
+        "Grace period for readers of the prior version "
+        "(default: RECOMMENDATION_PREVIOUS_VERSION_TTL_SECONDS or 3600)"
+    ),
+    type=int,
+    default=int(
+        os.environ.get(
+            "RECOMMENDATION_PREVIOUS_VERSION_TTL_SECONDS",
+            str(DEFAULT_PREVIOUS_VERSION_TTL_SECONDS),
+        )
+    ),
+)
+parser.add_argument(
+    "--statement-timeout-ms",
+    help=(
+        "PostgreSQL statement timeout for the training query "
+        "(default: RECOMMENDATION_DB_TIMEOUT_MS or 12600000)"
+    ),
+    type=int,
+    default=int(
+        os.environ.get(
+            "RECOMMENDATION_DB_TIMEOUT_MS", str(DEFAULT_STATEMENT_TIMEOUT_MS)
+        )
+    ),
 )
 parser.add_argument(
     "--lock-seconds",
@@ -40,7 +78,8 @@ def get_relative_date(days):
 DATE_180_DAYS_AGO = get_relative_date(180)
 
 
-def build_suggestion_lookup(date):
+def build_suggestion_lookup(date, statement_timeout_ms):
+    apply_statement_timeout(db.session, statement_timeout_ms)
     item_lists = [
         [str(uuid) for uuid in result_tuple[0]]
         for result_tuple in db.session.query(func.array_agg(ModelEquippedItem.item_id),)
@@ -78,28 +117,66 @@ def build_suggestion_lookup(date):
     return lookup_table
 
 
-def train_suggestion_model(date):
-    lookup_table = build_suggestion_lookup(date)
-    new_version = publish_lookup_table(cache, lookup_table)
+def train_suggestion_model(
+    date,
+    lock_token,
+    statement_timeout_ms,
+    staging_ttl_seconds=DEFAULT_STAGING_TTL_SECONDS,
+    previous_version_ttl_seconds=DEFAULT_PREVIOUS_VERSION_TTL_SECONDS,
+):
+    lookup_table = build_suggestion_lookup(date, statement_timeout_ms)
+    new_version = publish_lookup_table(
+        cache,
+        lookup_table,
+        REFRESH_LOCK_KEY,
+        lock_token,
+        staging_ttl_seconds=staging_ttl_seconds,
+        previous_version_ttl_seconds=previous_version_ttl_seconds,
+    )
     print("Published suggestion lookup table version {}".format(new_version))
 
     print("Done")
 
 
-def run_with_lock(date, lock_seconds):
-    if lock_seconds <= 0:
-        raise ValueError("lock-seconds must be greater than zero")
+def run_with_lock(
+    date, lock_seconds, statement_timeout_ms, previous_version_ttl_seconds,
+):
+    if lock_seconds < 60:
+        raise ValueError("lock-seconds must be at least 60")
+    if statement_timeout_ms <= 0:
+        raise ValueError("statement-timeout-ms must be greater than zero")
+    if previous_version_ttl_seconds <= 0:
+        raise ValueError("previous-version-ttl-seconds must be greater than zero")
 
+    lock_token = uuid.uuid4().hex
     refresh_lock = cache.lock(
-        "suggestion_lookup_table_refresh_lock", timeout=lock_seconds
+        REFRESH_LOCK_KEY, timeout=lock_seconds, thread_local=False
     )
-    if not refresh_lock.acquire(blocking=False):
+    if not refresh_lock.acquire(blocking=False, token=lock_token):
         print("Suggestion refresh skipped: another refresh holds the Redis lock")
         return False
 
+    heartbeat = RefreshLockHeartbeat(
+        refresh_lock, interval_seconds=min(60, lock_seconds // 3)
+    )
+    heartbeat.start()
     try:
-        train_suggestion_model(date)
+        # Keep abandoned staging data only one hour longer than the overlap
+        # lock, while retaining a conservative six-hour minimum for direct use.
+        staging_ttl_seconds = max(DEFAULT_STAGING_TTL_SECONDS, lock_seconds + (60 * 60))
+        train_suggestion_model(
+            date,
+            lock_token,
+            statement_timeout_ms,
+            staging_ttl_seconds=staging_ttl_seconds,
+            previous_version_ttl_seconds=previous_version_ttl_seconds,
+        )
     finally:
+        heartbeat.stop()
+        if heartbeat.error is not None:
+            print(
+                "WARNING: suggestion refresh lock renewal failed", file=sys.stderr,
+            )
         try:
             refresh_lock.release()
         except Exception:
@@ -114,7 +191,12 @@ def run_with_lock(date, lock_seconds):
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    if not run_with_lock(get_relative_date(args.days), args.lock_seconds):
+    if not run_with_lock(
+        get_relative_date(args.days),
+        args.lock_seconds,
+        args.statement_timeout_ms,
+        args.previous_version_ttl_seconds,
+    ):
         # EX_TEMPFAIL lets the wrapper distinguish a safe overlap skip from a
         # completed refresh without starting a retry.
         sys.exit(75)
