@@ -22,7 +22,7 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 WORKDIR /build
 COPY requirements.txt ./
-RUN pip install --upgrade "pip<25" \
+RUN pip install --upgrade "pip==26.2.1" \
     && pip install --requirement requirements.txt
 
 FROM python:${PYTHON_VERSION}-slim-bookworm AS runtime
