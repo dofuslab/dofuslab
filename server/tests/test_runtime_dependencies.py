@@ -3,6 +3,8 @@ from pathlib import Path
 import subprocess
 from types import SimpleNamespace
 
+import pytest
+
 
 @contextmanager
 def compiled_french_catalog():
@@ -95,3 +97,16 @@ def test_send_email_uses_runtime_ses_configuration_without_external_send(monkeyp
         },
     }
     assert user.email_sent is True
+
+
+def test_send_email_rejects_missing_source_before_creating_client(monkeypatch):
+    from app import tasks
+
+    def unexpected_client(*_args, **_kwargs):
+        raise AssertionError("SES client must not be created without a source address")
+
+    monkeypatch.delenv("SES_EMAIL_SOURCE", raising=False)
+    monkeypatch.setattr(tasks.boto3, "client", unexpected_client)
+
+    with pytest.raises(RuntimeError, match="SES_EMAIL_SOURCE must be configured"):
+        tasks.send_email("user@example.invalid", "Subject", "<p>Body</p>")

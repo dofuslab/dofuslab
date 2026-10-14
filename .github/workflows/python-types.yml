@@ -50,10 +50,14 @@ jobs:
       - name: Check typed backend boundary
         run: python -m mypy
 
-      - name: Exercise typed token boundary
+      - name: Exercise typed runtime boundaries
         env:
           DATABASE_URL: sqlite://
           REDIS_HOST: localhost
           REDIS_PORT: '6379'
           SECRET_KEY: typing-ci-secret
-        run: python -m pytest tests/test_token_utils.py
+        run: >-
+          python -m pytest
+          tests/test_token_utils.py
+          tests/test_runtime_dependencies.py::test_send_email_uses_runtime_ses_configuration_without_external_send
+          tests/test_runtime_dependencies.py::test_send_email_rejects_missing_source_before_creating_client
