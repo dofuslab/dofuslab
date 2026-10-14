@@ -8,7 +8,7 @@ from config import Config
 load_dotenv()
 
 db_uri = Config.SQLALCHEMY_DATABASE_URI
-engine = create_engine(db_uri, convert_unicode=True)
+engine = create_engine(db_uri)
 
 convention = {
     "ix": "ix_%(column_0_label)s",
@@ -21,3 +21,4 @@ convention = {
 metadata = MetaData(naming_convention=convention)
 Base = declarative_base(metadata=metadata)
 Base.metadata.bind = engine
+DatabaseSession = scoped_session(sessionmaker(bind=engine))

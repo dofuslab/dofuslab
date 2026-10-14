@@ -3,13 +3,12 @@ from flask import Flask, request, session, g
 from flask_session import Session
 from flask_babel import Babel, _, ngettext
 from flask_bcrypt import Bcrypt
-from flask_sqlalchemy import SQLAlchemy
 from flask_graphql import GraphQLView
 from flask_migrate import Migrate
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 import os
-from app.database.base import Base
+from app.database.base import Base, DatabaseSession
 from flask_login import LoginManager, current_user
 from flask_cors import CORS
 import redis
@@ -45,7 +44,10 @@ class HealthAwareSessionInterface:
     def save_session(self, app, session, response):
         if request.path.startswith("/health/"):
             return None
-        return self.delegate.save_session(app, session, response)
+        self.delegate.save_session(app, session, response)
+        if session.accessed or "Set-Cookie" in response.headers:
+            response.vary.add("Cookie")
+        return None
 
     def __getattr__(self, name):
         return getattr(self.delegate, name)
@@ -89,7 +91,14 @@ elif flask_env == "production":
 
     RuntimeMetrics.enable()
 
-db = SQLAlchemy(app)
+
+class DatabaseFacade:
+    """Expose the existing scoped SQLAlchemy session without Flask-SQLAlchemy."""
+
+    session = DatabaseSession
+
+
+db = DatabaseFacade()
 
 
 @app.route("/health/ready")
@@ -131,12 +140,11 @@ def session_scope():
         raise
 
 
-babel = Babel(app)
-
-
-@babel.localeselector
 def get_locale():
     return request.accept_languages.best_match(supported_languages)
+
+
+babel = Babel(app, locale_selector=get_locale)
 
 
 bcrypt = Bcrypt(app)
@@ -267,6 +275,7 @@ app.add_url_rule(
 @app.teardown_appcontext
 def teardown_dataloaders(_):
     g.pop("dataloaders", None)
+    db.session.remove()
 
 
 from app.verify_email import verify_email_blueprint

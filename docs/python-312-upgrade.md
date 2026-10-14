@@ -8,20 +8,16 @@ Redis replacement, or credential change.
 
 ## Compatibility boundary
 
-The first supported-Python step deliberately retains Flask 2.2, SQLAlchemy
-1.4, and Graphene 2. Those versions keep the existing application and GraphQL
-schema stable, but they are an intermediate compatibility line with known
-deprecation and security-maintenance limitations. A later, separately reviewed
-framework modernization should move to maintained Flask/SQLAlchemy/GraphQL
-APIs without combining that redesign with the interpreter cutover.
+The first supported-Python step deliberately retained Flask 2.2, SQLAlchemy
+1.4, and Graphene 2. This separately reviewed follow-on moves Flask and
+Werkzeug to supported patched releases while preserving SQLAlchemy 1.4,
+Graphene 2, and the existing GraphQL schema. See
+`docs/flask-3-compatibility.md` for the deliberately narrow boundary.
 
-The final image passes `pip check`. A `pip-audit 2.9.0` scan reduced the
-initial result from 41 advisories in 11 packages to 8 advisories in Flask 2.2.5
-and Werkzeug 2.3.8. Their published fixes require Flask 3 / Werkzeug 3; trying
-Werkzeug 3 independently broke Flask 2.2's test client. These eight findings
-are accepted only as visible follow-up debt for the separate framework and
-GraphQL modernization, not as evidence that this intermediate stack is fully
-security-current.
+The final follow-on image passes `pip check`. A `pip-audit 2.9.0` scan reports
+no known vulnerabilities, clearing the eight Flask/Werkzeug advisories left by
+the initial Python 3.12 branch. The Graphene/SQLAlchemy modernization remains a
+separate project rather than being hidden inside this security update.
 
 The dependency set is curated in `server/requirements.in` and fully resolved
 in `server/requirements.txt`. Regenerate the lock only from Python 3.12 in an

@@ -1,23 +1,45 @@
 from contextlib import contextmanager
+from pathlib import Path
+import subprocess
 from types import SimpleNamespace
 
 
+@contextmanager
+def compiled_french_catalog():
+    translations_dir = Path(__file__).parents[1] / "app" / "translations"
+    catalog_path = translations_dir / "fr" / "LC_MESSAGES" / "messages.mo"
+    existing_catalog = catalog_path.read_bytes() if catalog_path.exists() else None
+
+    try:
+        subprocess.run(
+            ["pybabel", "compile", "-d", str(translations_dir), "-l", "fr"],
+            check=True,
+        )
+        yield
+    finally:
+        if existing_catalog is None:
+            catalog_path.unlink(missing_ok=True)
+        else:
+            catalog_path.write_bytes(existing_catalog)
+
+
 def test_french_graphql_validation_uses_compiled_catalog():
-    from app import app
+    with compiled_french_catalog():
+        from app import app
 
-    response = app.test_client().post(
-        "/api/graphql",
-        json={
-            "query": (
-                'mutation { registerUser(username: "abc", email: "invalid", '
-                'password: "Password1", gender: MALE) { ok } }'
-            )
-        },
-        headers={"Accept-Language": "fr"},
-    )
+        response = app.test_client().post(
+            "/api/graphql",
+            json={
+                "query": (
+                    'mutation { registerUser(username: "abc", email: "invalid", '
+                    'password: "Password1", gender: MALE) { ok } }'
+                )
+            },
+            headers={"Accept-Language": "fr"},
+        )
 
-    assert response.status_code == 200
-    assert "L'adresse mail est invalide." in str(response.get_json())
+        assert response.status_code == 200
+        assert "L'adresse mail est invalide." in str(response.get_json())
 
 
 def test_send_email_uses_runtime_ses_configuration_without_external_send(monkeypatch):
