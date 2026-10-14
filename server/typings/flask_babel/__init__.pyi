@@ -1,0 +1,3 @@
+def gettext(string: str, **variables: object) -> str: ...
+
+_ = gettext

@@ -168,8 +168,12 @@ mdurl==0.1.2
     # via markdown-it-py
 mlxtend==0.23.1
     # via -r requirements.in
+mypy==1.18.2
+    # via -r requirements.in
 mypy-extensions==1.1.0
-    # via black
+    # via
+    #   black
+    #   mypy
 nodeenv==1.11.0
     # via pre-commit
 numpy==1.26.4
@@ -198,7 +202,9 @@ pandas==2.2.3
     #   -r requirements.in
     #   mlxtend
 pathspec==1.1.1
-    # via black
+    # via
+    #   black
+    #   mypy
 pillow==12.3.0
     # via
     #   -r requirements.in
@@ -299,6 +305,7 @@ typing-extensions==4.16.0
     #   alembic
     #   flask-limiter
     #   limits
+    #   mypy
     #   opentelemetry-api
 tzdata==2026.5
     # via pandas
