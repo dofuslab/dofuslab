@@ -268,11 +268,21 @@ def test_tags_multiple_items_set_restart_and_delete(
           }
         }
         """,
-        {"build": build_id, "items": [catalog_ids["item"]]},
+        {"build": build_id, "items": catalog_ids["set_items"]},
     )["data"]["equipMultipleItems"]["customSet"]
-    assert [entry["item"]["id"] for entry in multiple["equippedItems"]] == [
-        catalog_ids["item"]
-    ]
+    assert sorted(
+        entry["item"]["id"] for entry in multiple["equippedItems"]
+    ) == catalog_ids["set_items"]
+    with session_scope() as db_session:
+        persisted = (
+            db_session.query(ModelEquippedItem)
+            .filter_by(custom_set_id=build_id)
+            .all()
+        )
+        assert sorted(str(entry.item_id) for entry in persisted) == catalog_ids[
+            "set_items"
+        ]
+        assert len({entry.item_slot_id for entry in persisted}) == len(persisted)
 
     edit_stats(graphql_client, build_id, dict(ZERO_STATS, baseStrength=123))
 

@@ -26,10 +26,10 @@ DOFUSLAB_TEST_SERVICES=1 DATABASE_URL=postgresql+psycopg2://postgres:password@lo
 | `editCustomSetMetadata` | name/level persist | anonymous owner | invalid level rollback, missing build, cross-user denial |
 | `editCustomSetDefaultClass` | class/gender persist | anonymous owner | cross-user denial |
 | `updateCustomSetItem` | item/slot persist | anonymous owner | customization reset, cross-user denial |
-| `equipSet` | **known defect / xfail** | ownership gate covered | resolver passes model rows where mappings are required |
+| `equipSet` | **dormant legacy mutation / xfail** | ownership gate covered | resolver passes model rows where mappings are required |
 | `addTagToCustomSet` | association persists | anonymous owner | cross-user denial |
 | `removeTagFromCustomSet` | association removed | anonymous owner | cross-user denial |
-| `equipMultipleItems` | seeded item persists | anonymous owner | cross-user denial |
+| `equipMultipleItems` | complete seeded set persists, matching the live UI | anonymous owner | item/slot integrity, cross-user denial |
 | `mageEquippedItem` | stats and damage/healing conversions persist | anonymous owner | copy/replace integrity, cross-user denial |
 | `setEquippedItemExo` | AP shortcut persists | anonymous owner | invalid stat rollback, missing item, cross-user denial |
 | `deleteCustomSetItem` | equipment removed | anonymous owner | cross-user denial |
@@ -66,7 +66,10 @@ DOFUSLAB_TEST_SERVICES=1 DATABASE_URL=postgresql+psycopg2://postgres:password@lo
 set therefore raises `AttributeError: 'ModelItem' object has no attribute
 'get'`. The desired happy-path test xfails only after asserting that exact
 GraphQL error signature; unrelated setup, HTTP, and assertion failures remain
-hard failures. Production code is not changed in this testing PR.
+hard failures. Production code is not changed in this testing PR. This is not
+the path used by the current set-equipping UI: `SetModal` has called
+`equipMultipleItems` with the selected item IDs since partial-set selection was
+introduced. `useEquipSetMutation` remains defined but has no current caller.
 
 The highest-value next cases are unverified-user guards across build mutations,
 favorite-limit behavior, duplicate tags, incompatible item/slot validation,
@@ -75,9 +78,9 @@ query pagination/filter contracts. These are intentionally listed rather than
 encoded as desirable behavior where current error handling leaks internal
 exceptions.
 
-The empty-build `equipSet` regression proves complete persistence and unique
-slot assignment, but it does not yet prove rollback when a target build already
-has occupied slots and set allocation fails partway through.
+The stacked `equipSet` fix verifies complete persistence and unique slot
+assignment on an empty build. It does not yet prove rollback when a target
+build already has occupied slots and set allocation fails partway through.
 
 ## Modern-stack verification
 
