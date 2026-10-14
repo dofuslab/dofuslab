@@ -40,7 +40,6 @@ import {
   updateCustomSetItemVariables,
 } from 'graphql/mutations/__generated__/updateCustomSetItem';
 import UpdateCustomSetItemMutation from 'graphql/mutations/updateCustomSetItem.graphql';
-import EquipSetMutation from 'graphql/mutations/equipSet.graphql';
 import {
   deleteCustomSetItem,
   deleteCustomSetItemVariables,
@@ -51,10 +50,6 @@ import {
   currentUser as CurrentUserQueryType,
 } from 'graphql/queries/__generated__/currentUser';
 import currentUserQuery from 'graphql/queries/currentUser.graphql';
-import {
-  equipSet,
-  equipSetVariables,
-} from 'graphql/mutations/__generated__/equipSet';
 import { itemSlots as ItemSlotsQueryType } from 'graphql/queries/__generated__/itemSlots';
 import {
   equipItems,
@@ -582,44 +577,6 @@ export const useEquipItemsMutation = (
       );
     }
   }, [equipItemsMutate, routerSetId, router]);
-
-  return [onClick, { data, loading, error }];
-};
-
-export const useEquipSetMutation = (
-  setId: string,
-  customSet?: CustomSet | null,
-): [
-  () => Promise<void>,
-  { data?: equipSet | null; loading: boolean; error?: ApolloError },
-] => {
-  const router = useRouter();
-  const { customSetId: routerSetId } = router.query;
-
-  const [equipSetMutate, { data, loading, error }] = useMutation<
-    equipSet,
-    equipSetVariables
-  >(EquipSetMutation, {
-    variables: {
-      setId,
-      customSetId: customSet?.id,
-    },
-    refetchQueries: () => ['buildList'],
-  });
-
-  const client = useApolloClient();
-
-  const { t } = useTranslation('common');
-
-  const onClick = useCallback(async () => {
-    const ok = await checkAuthentication(client, t, customSet);
-    if (!ok) return;
-    const { data: resultData } = await equipSetMutate();
-
-    if (resultData?.equipSet) {
-      navigateToNewCustomSet(router, resultData.equipSet.customSet.id);
-    }
-  }, [equipSetMutate, routerSetId, router]);
 
   return [onClick, { data, loading, error }];
 };
