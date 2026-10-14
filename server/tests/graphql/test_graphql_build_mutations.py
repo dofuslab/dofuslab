@@ -434,6 +434,12 @@ def test_cross_user_writes_are_rejected_across_build_mutations(
     attacker = user_factory()
     graphql_client.login(owner["email"])
     build_id = create_build(graphql_client)["id"]
+    edit_stats(graphql_client, build_id, dict(ZERO_STATS, baseStrength=123))
+    graphql_client.execute(
+        "mutation($id: UUID!) { editCustomSetMetadata(customSetId: $id, "
+        'name: "Owner state", level: 199) { customSet { id } } }',
+        {"id": build_id},
+    )
     equipped_id = equip_item(
         graphql_client,
         build_id,
@@ -441,9 +447,10 @@ def test_cross_user_writes_are_rejected_across_build_mutations(
         catalog_ids["weapon"],
     )["equippedItems"][0]["id"]
     graphql_client.execute(
-        "mutation($build: UUID!, $tag: UUID!) { addTagToCustomSet("
-        "customSetId: $build, customSetTagId: $tag) { customSet { id } } }",
-        {"build": build_id, "tag": catalog_ids["tag"]},
+        "mutation($id: UUID!) { mageEquippedItem(equippedItemId: $id, "
+        "stats: [{stat: STRENGTH, value: 37}], weaponElementMage: FIRE_10) "
+        "{ equippedItem { id } } }",
+        {"id": equipped_id},
     )
     second_graphql_client.login(attacker["email"])
     before_denied_writes = second_graphql_client.execute(
@@ -494,11 +501,6 @@ def test_cross_user_writes_are_rejected_across_build_mutations(
             {"id": build_id, "tag": catalog_ids["tag"]},
         ),
         (
-            "mutation($id: UUID!, $tag: UUID!) { removeTagFromCustomSet("
-            "customSetId: $id, customSetTagId: $tag) { customSet { id } } }",
-            {"id": build_id, "tag": catalog_ids["tag"]},
-        ),
-        (
             "mutation($id: UUID!) { mageEquippedItem(equippedItemId: $id, "
             "stats: []) { equippedItem { id } } }",
             {"id": equipped_id},
@@ -537,6 +539,32 @@ def test_cross_user_writes_are_rejected_across_build_mutations(
             {"id": build_id},
         )["data"]["customSetById"]
         assert after_denied_write == before_denied_writes
+
+    # Seed the tag only after the denied add case so both tag mutations attempt
+    # an observable state transition rather than an idempotent no-op.
+    graphql_client.execute(
+        "mutation($build: UUID!, $tag: UUID!) { addTagToCustomSet("
+        "customSetId: $build, customSetTagId: $tag) { customSet { id } } }",
+        {"build": build_id, "tag": catalog_ids["tag"]},
+    )
+    before_denied_remove = second_graphql_client.execute(
+        "query($id: UUID!) { customSetById(id: $id) { " + BUILD_FIELDS + " } }",
+        {"id": build_id},
+    )["data"]["customSetById"]
+    denied_remove = second_graphql_client.execute(
+        "mutation($id: UUID!, $tag: UUID!) { removeTagFromCustomSet("
+        "customSetId: $id, customSetTagId: $tag) { customSet { id } } }",
+        {"id": build_id, "tag": catalog_ids["tag"]},
+        expect_errors=True,
+    )
+    assert error_messages(denied_remove) == [
+        "You don't have permission to edit that build."
+    ]
+    after_denied_remove = second_graphql_client.execute(
+        "query($id: UUID!) { customSetById(id: $id) { " + BUILD_FIELDS + " } }",
+        {"id": build_id},
+    )["data"]["customSetById"]
+    assert after_denied_remove == before_denied_remove
 
     with session_scope() as db_session:
         build = db_session.query(ModelCustomSet).get(build_id)

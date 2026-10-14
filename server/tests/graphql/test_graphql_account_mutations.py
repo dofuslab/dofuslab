@@ -82,7 +82,7 @@ def test_register_resend_logout_and_login_flow(
 
 
 def test_registration_validation_and_queue_failure_roll_back(
-    graphql_client, monkeypatch
+    graphql_client, monkeypatch, created_records
 ):
     invalid = graphql_client.execute(
         REGISTER,
@@ -96,6 +96,7 @@ def test_registration_validation_and_queue_failure_roll_back(
     assert invalid.get("errors")
 
     failed_email = "pytest-queue-failure@example.invalid"
+    created_records.user_email(failed_email)
 
     def fail_enqueue(*_args, **_kwargs):
         raise RuntimeError("synthetic queue failure")

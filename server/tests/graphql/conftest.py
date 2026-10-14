@@ -85,6 +85,7 @@ class GraphQLClient:
 class CreatedRecords:
     custom_set_ids: list = field(default_factory=list)
     user_ids: list = field(default_factory=list)
+    user_emails: list = field(default_factory=list)
 
     def custom_set(self, custom_set_id):
         if custom_set_id not in self.custom_set_ids:
@@ -95,6 +96,11 @@ class CreatedRecords:
         if user_id not in self.user_ids:
             self.user_ids.append(user_id)
         return user_id
+
+    def user_email(self, email):
+        if email not in self.user_emails:
+            self.user_emails.append(email)
+        return email
 
 
 @pytest.fixture
@@ -132,6 +138,12 @@ def created_records():
     records = CreatedRecords()
     yield records
     with session_scope() as db_session:
+        if records.user_emails:
+            for user in db_session.query(ModelUserAccount).filter(
+                ModelUserAccount.email.in_(records.user_emails)
+            ):
+                records.user(str(user.uuid))
+
         custom_sets = db_session.query(ModelCustomSet).filter(
             ModelCustomSet.uuid.in_(records.custom_set_ids),
         )

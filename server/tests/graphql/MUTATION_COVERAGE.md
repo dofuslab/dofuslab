@@ -74,3 +74,28 @@ missing catalog IDs for set/tag/item mutations, rate-limit behavior, and more
 query pagination/filter contracts. These are intentionally listed rather than
 encoded as desirable behavior where current error handling leaks internal
 exceptions.
+
+The empty-build `equipSet` regression proves complete persistence and unique
+slot assignment, but it does not yet prove rollback when a target build already
+has occupied slots and set allocation fails partway through.
+
+## Modern-stack verification
+
+Against Python 3.12 / Flask 3 at #538 head `7063f95f`, a fresh PostgreSQL 14.1
+database and Redis 6.2 instance were migrated and seeded before running:
+
+```sh
+docker run --rm --network codex-dofuslab-review \
+  --volume "$PWD/server/tests:/home/dofuslab/tests" \
+  --env DOFUSLAB_TEST_SERVICES=1 \
+  --env DATABASE_URL=postgresql+psycopg2://postgres:password@codex-dofuslab-review-postgres:5432/dofuslab \
+  --env REDIS_HOST=codex-dofuslab-review-redis --env REDIS_PORT=6379 \
+  --env REDIS_URL=redis://codex-dofuslab-review-redis:6379 \
+  --env SECRET_KEY=ci-only-secret --env FLASK_APP=app \
+  --env FLASK_ENV=development --env HOME_PAGE=http://localhost:3000/ \
+  --env SESSION_COOKIE_HTTPONLY=True --env DD_TRACE_ENABLED=false \
+  dofuslab-backend-tests:modern python -m pytest tests -q
+```
+
+The foundation result is `41 passed, 1 xfailed`; with the stacked `equipSet`
+fix the identical combined run is `42 passed`.

@@ -4,13 +4,17 @@ from urllib.parse import urlparse
 
 
 SAFE_SERVICE_HOSTS = {"127.0.0.1", "::1", "localhost", "postgres", "redis"}
+SAFE_TASK_SERVICE_HOSTS = {
+    "codex-dofuslab-review-postgres",
+    "codex-dofuslab-review-redis",
+    "codex-dofuslab-tests-postgres",
+    "codex-dofuslab-tests-redis",
+}
 OPT_IN_VARIABLE = "DOFUSLAB_TEST_SERVICES"
 
 
 def _is_safe_host(hostname):
-    return hostname in SAFE_SERVICE_HOSTS or hostname.startswith(
-        ("codex-dofuslab-tests-", "codex-dofuslab-review-")
-    )
+    return hostname in SAFE_SERVICE_HOSTS or hostname in SAFE_TASK_SERVICE_HOSTS
 
 
 def assert_safe_test_services(environ):
