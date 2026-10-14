@@ -2,6 +2,8 @@
 
 import importlib
 
+import pytest
+
 from app import app, reset_password_salt, session_scope
 from app.database.model_favorite_item import ModelFavoriteItem
 from app.database.model_user import ModelUserAccount
@@ -12,6 +14,7 @@ from conftest import TEST_PASSWORD, error_messages
 
 
 schema_module = importlib.import_module("app.schema")
+pytestmark = pytest.mark.usefixtures("isolate_external_services")
 
 
 REGISTER = """
