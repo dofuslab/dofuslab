@@ -1,9 +1,14 @@
 """Schema-level regression tests for anonymous and authenticated sessions."""
 
+import pytest
+
 from app import session_scope
 from app.database.model_custom_set import ModelCustomSet
 
 from conftest import error_messages
+
+
+pytestmark = pytest.mark.usefixtures("isolate_external_services")
 
 
 READ_BUILD = """

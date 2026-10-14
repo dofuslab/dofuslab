@@ -80,7 +80,7 @@ class CreatedRecords:
         return user_id
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture
 def isolate_external_services(monkeypatch):
     """Disable throttling and make outbound mail jobs observable but inert."""
     monkeypatch.setattr(limiter, "enabled", False)

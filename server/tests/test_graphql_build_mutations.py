@@ -9,6 +9,9 @@ from app.database.model_equipped_item import ModelEquippedItem
 from conftest import error_messages
 
 
+pytestmark = pytest.mark.usefixtures("isolate_external_services")
+
+
 ZERO_STATS = {
     "baseVitality": 0,
     "baseWisdom": 0,
