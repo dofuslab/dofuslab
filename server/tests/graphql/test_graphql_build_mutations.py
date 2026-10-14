@@ -6,7 +6,7 @@ from app import session_scope
 from app.database.model_custom_set import ModelCustomSet
 from app.database.model_equipped_item import ModelEquippedItem
 
-from conftest import error_messages
+from tests.graphql.conftest import error_messages
 
 
 pytestmark = pytest.mark.usefixtures("isolate_external_services")
@@ -274,6 +274,8 @@ def test_tags_multiple_items_set_restart_and_delete(
         catalog_ids["item"]
     ]
 
+    edit_stats(graphql_client, build_id, dict(ZERO_STATS, baseStrength=123))
+
     restarted = graphql_client.execute(
         """
         mutation Restart($id: UUID!) {
@@ -298,13 +300,9 @@ def test_tags_multiple_items_set_restart_and_delete(
         assert db_session.query(ModelCustomSet).get(build_id) is None
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason="equipSet passes ModelItem objects to equip_items, which expects mappings",
-)
 def test_equip_set_persists_the_seeded_set(graphql_client, create_build, catalog_ids):
     build_id = create_build(graphql_client)["id"]
-    equipped_set = graphql_client.execute(
+    payload = graphql_client.execute(
         """
         mutation EquipSet($build: UUID!, $set: UUID!) {
           equipSet(customSetId: $build, setId: $set) {
@@ -313,7 +311,18 @@ def test_equip_set_persists_the_seeded_set(graphql_client, create_build, catalog
         }
         """,
         {"build": build_id, "set": catalog_ids["set"]},
-    )["data"]["equipSet"]["customSet"]
+        expect_errors=True,
+    )
+    errors = payload.get("errors", [])
+    if errors:
+        assert payload["data"]["equipSet"] is None
+        assert len(errors) == 1
+        assert "'ModelItem' object has no attribute 'get'" in errors[0]["message"]
+        pytest.xfail(
+            "equipSet passes ModelItem objects to equip_items, which expects mappings"
+        )
+
+    equipped_set = payload["data"]["equipSet"]["customSet"]
     assert equipped_set["equippedItems"]
 
 
@@ -437,6 +446,10 @@ def test_cross_user_writes_are_rejected_across_build_mutations(
         {"build": build_id, "tag": catalog_ids["tag"]},
     )
     second_graphql_client.login(attacker["email"])
+    before_denied_writes = second_graphql_client.execute(
+        "query($id: UUID!) { customSetById(id: $id) { " + BUILD_FIELDS + " } }",
+        {"id": build_id},
+    )["data"]["customSetById"]
 
     cases = [
         (
@@ -517,6 +530,13 @@ def test_cross_user_writes_are_rejected_across_build_mutations(
         assert error_messages(rejected) == [
             "You don't have permission to edit that build."
         ]
+        after_denied_write = second_graphql_client.execute(
+            "query($id: UUID!) { customSetById(id: $id) { "
+            + BUILD_FIELDS
+            + " } }",
+            {"id": build_id},
+        )["data"]["customSetById"]
+        assert after_denied_write == before_denied_writes
 
     with session_scope() as db_session:
         build = db_session.query(ModelCustomSet).get(build_id)

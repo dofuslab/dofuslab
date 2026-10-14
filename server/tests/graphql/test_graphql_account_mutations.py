@@ -1,16 +1,17 @@
 """End-to-end GraphQL coverage for account and preference mutations."""
 
 import importlib
+import re
 
 import pytest
 
-from app import app, reset_password_salt, session_scope
+from app import session_scope
 from app.database.model_favorite_item import ModelFavoriteItem
 from app.database.model_user import ModelUserAccount
-from app.token_utils import encode_token
+from app.database.model_user_setting import ModelUserSetting
 from app.utils import ALLOWED_PROFILE_PICTURE_URLS
 
-from conftest import TEST_PASSWORD, error_messages
+from tests.graphql.conftest import TEST_PASSWORD, error_messages
 
 
 schema_module = importlib.import_module("app.schema")
@@ -62,6 +63,11 @@ def test_register_resend_logout_and_login_flow(
     assert len(isolate_external_services) == 2
 
     assert graphql_client.logout()["data"]["logoutUser"]["ok"] is True
+    assert graphql_client.logout()["data"]["logoutUser"]["ok"] is True
+    anonymous_resend = graphql_client.execute(
+        "mutation { resendVerificationEmail { ok } }", expect_errors=True
+    )
+    assert error_messages(anonymous_resend) == ["You must be signed in to do that."]
     invalid = graphql_client.execute(
         """
         mutation($email: String!) {
@@ -121,6 +127,12 @@ def test_authenticated_preferences_profile_favorite_and_settings(
         expect_errors=True,
     )
     assert error_messages(anonymous) == ["You are not logged in."]
+    anonymous_profile = graphql_client.execute(
+        'mutation { changeProfilePicture(picture: "profile-pictures/ProPic_Emerald_1.png") '
+        "{ user { id } } }",
+        expect_errors=True,
+    )
+    assert error_messages(anonymous_profile) == ["You are not logged in."]
 
     graphql_client.login(user["email"])
     data = graphql_client.execute(
@@ -157,6 +169,12 @@ def test_authenticated_preferences_profile_favorite_and_settings(
     assert data["changeProfilePicture"]["user"]["profilePicture"] == (
         ALLOWED_PROFILE_PICTURE_URLS[-1]
     )
+    # The locale query follows Accept-Language; persistence is verified in the
+    # user setting below. Classic is also mirrored in the server-side session.
+    assert graphql_client.execute("query { locale classic }")["data"] == {
+        "locale": "en",
+        "classic": False,
+    }
 
     invalid_picture = graphql_client.execute(
         'mutation { changeProfilePicture(picture: "https://example.invalid/x") '
@@ -173,6 +191,11 @@ def test_authenticated_preferences_profile_favorite_and_settings(
             .one()
         )
         assert favorite is not None
+        setting = db_session.query(ModelUserSetting).filter_by(user_id=user["id"]).one()
+        persisted_user = db_session.query(ModelUserAccount).get(user["id"])
+        assert setting.locale == "fr"
+        assert setting.classic is False
+        assert persisted_user.profile_picture == ALLOWED_PROFILE_PICTURE_URLS[-1]
 
 
 def test_password_change_request_and_token_reset(
@@ -203,8 +226,10 @@ def test_password_change_request_and_token_reset(
     assert requested["data"]["requestPasswordReset"]["ok"] is True
     assert isolate_external_services[-1][0][1] == user["email"]
 
-    with app.app_context():
-        token = encode_token(user["email"], reset_password_salt)
+    queued_email_html = isolate_external_services[-1][0][3]
+    token_match = re.search(r"reset-password\?token=([^\"'<\s]+)", queued_email_html)
+    assert token_match is not None
+    token = token_match.group(1)
     invalid = graphql_client.execute(
         'mutation { resetPassword(token: "bad-token", '
         'password: "Finalpass123") { ok } }',

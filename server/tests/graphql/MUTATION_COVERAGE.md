@@ -8,6 +8,13 @@ behavior is exercised through the real GraphQL schema.
 
 Outbound email is replaced at the RQ enqueue boundary, throttling is disabled,
 and all generated accounts/builds are synthetic and removed after each test.
+The suite fails closed before importing the application unless
+`DOFUSLAB_TEST_SERVICES=1` is explicitly set and both PostgreSQL and Redis use
+local/disposable hostnames. A local run against CI-style services is:
+
+```sh
+DOFUSLAB_TEST_SERVICES=1 DATABASE_URL=postgresql+psycopg2://postgres:password@localhost:5432/dofuslab REDIS_URL=redis://localhost:6379 REDIS_HOST=localhost REDIS_PORT=6379 python -m pytest tests
+```
 
 | Mutation | Happy path | Anonymous/auth | Ownership/error/integrity |
 | --- | --- | --- | --- |
@@ -15,7 +22,7 @@ and all generated accounts/builds are synthetic and removed after each test.
 | `loginUser` | session login and anonymous-build claim | anonymous required | bad password |
 | `logoutUser` | clears login | idempotent path exercised | re-login round trip |
 | `createCustomSet` | defaults and stats returned | anonymous + verified user | unverified guard is a remaining case |
-| `editCustomSetStats` | all stat fields persist | anonymous owner | range rejection, rollback, cross-user denial |
+| `editCustomSetStats` | representative base/scrolled fields persist | anonymous owner | range rejection, rollback, cross-user denial |
 | `editCustomSetMetadata` | name/level persist | anonymous owner | invalid level rollback, missing build, cross-user denial |
 | `editCustomSetDefaultClass` | class/gender persist | anonymous owner | cross-user denial |
 | `updateCustomSetItem` | item/slot persist | anonymous owner | customization reset, cross-user denial |
@@ -31,7 +38,7 @@ and all generated accounts/builds are synthetic and removed after each test.
 | `deleteCustomSet` | row removed | anonymous owner | cross-user denial |
 | `importCustomSet` | stats/item/exo persist | verified required | anonymous rejection |
 | `resendVerificationEmail` | inert enqueue asserted | unverified login required | anonymous and verified rejection paths |
-| `changeLocale` | preference/read query round trip | anonymous + login paths | unsupported locale is a remaining case |
+| `changeLocale` | authenticated preference/read query round trip | anonymous call is non-persistent | unsupported locale is a remaining case |
 | `changeClassic` | preference/read query round trip | anonymous + login paths | persisted user setting covered |
 | `changePassword` | password/login round trip | authenticated required | wrong password |
 | `requestPasswordReset` | inert enqueue asserted | anonymous required | unknown/unverified email are remaining cases |
@@ -57,8 +64,9 @@ and all generated accounts/builds are synthetic and removed after each test.
 `equipSet` currently calls `ModelCustomSet.equip_items(set_obj.items, ...)`, but
 `equip_items` expects mapping objects and calls `.get("item")`. A seeded real
 set therefore raises `AttributeError: 'ModelItem' object has no attribute
-'get'`. The desired happy-path test is strict-xfailed; production code is not
-changed in this testing PR.
+'get'`. The desired happy-path test xfails only after asserting that exact
+GraphQL error signature; unrelated setup, HTTP, and assertion failures remain
+hard failures. Production code is not changed in this testing PR.
 
 The highest-value next cases are unverified-user guards across build mutations,
 favorite-limit behavior, duplicate tags, incompatible item/slot validation,

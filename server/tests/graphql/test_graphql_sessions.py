@@ -5,7 +5,7 @@ import pytest
 from app import session_scope
 from app.database.model_custom_set import ModelCustomSet
 
-from conftest import error_messages
+from tests.graphql.conftest import error_messages
 
 
 pytestmark = pytest.mark.usefixtures("isolate_external_services")
@@ -131,12 +131,15 @@ def test_locale_and_classic_preferences_round_trip_for_anonymous_session(
         "changeLocale": {"ok": True},
         "changeClassic": {"ok": True},
     }
-    assert (
-        graphql_client.execute(
-            "query { locale classic itemSlots { id name } classes { id name } }"
-        )["data"]["classic"]
-        is True
-    )
+    preferences = graphql_client.execute(
+        "query { locale classic itemSlots { id name } classes { id name } }"
+    )["data"]
+    # Anonymous locale selection follows the request language; unlike classic,
+    # changeLocale has no anonymous session field to persist.
+    assert preferences["locale"] == "en"
+    assert preferences["classic"] is True
+    assert preferences["itemSlots"]
+    assert preferences["classes"]
 
 
 def test_unknown_build_read_is_null_and_edit_is_a_domain_error(graphql_client):
