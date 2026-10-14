@@ -26,7 +26,6 @@ DOFUSLAB_TEST_SERVICES=1 DATABASE_URL=postgresql+psycopg2://postgres:password@lo
 | `editCustomSetMetadata` | name/level persist | anonymous owner | invalid level rollback, missing build, cross-user denial |
 | `editCustomSetDefaultClass` | class/gender persist | anonymous owner | cross-user denial |
 | `updateCustomSetItem` | item/slot persist | anonymous owner | customization reset, cross-user denial |
-| `equipSet` | **dormant legacy mutation / xfail** | ownership gate covered | resolver passes model rows where mappings are required |
 | `addTagToCustomSet` | association persists | anonymous owner | cross-user denial |
 | `removeTagFromCustomSet` | association removed | anonymous owner | cross-user denial |
 | `equipMultipleItems` | complete seeded set persists, matching the live UI | anonymous owner | item/slot integrity, cross-user denial |
@@ -59,17 +58,17 @@ DOFUSLAB_TEST_SERVICES=1 DATABASE_URL=postgresql+psycopg2://postgres:password@lo
   user settings, favorites, equipment, stats, tags, and exos read fields are
   exercised after mutations.
 
-## Known defect and remaining gaps
+## Removed legacy mutation and remaining gaps
 
-`equipSet` currently calls `ModelCustomSet.equip_items(set_obj.items, ...)`, but
-`equip_items` expects mapping objects and calls `.get("item")`. A seeded real
-set therefore raises `AttributeError: 'ModelItem' object has no attribute
-'get'`. The desired happy-path test xfails only after asserting that exact
-GraphQL error signature; unrelated setup, HTTP, and assertion failures remain
-hard failures. Production code is not changed in this testing PR. This is not
-the path used by the current set-equipping UI: `SetModal` has called
-`equipMultipleItems` with the selected item IDs since partial-set selection was
-introduced. `useEquipSetMutation` remains defined but has no current caller.
+The dormant `equipSet` mutation was removed after repository and deployed-client
+audits confirmed that `SetModal` has called `equipMultipleItems` with selected
+item IDs since partial-set selection was introduced. The unused client hook,
+operation, generated types, server resolver, and exclusive model helper were
+removed together. A schema-introspection regression asserts that `equipSet` is
+absent while the supported `equipMultipleItems` operation remains exposed. No
+repository caller or documented public API promise was found; an unknown
+external GraphQL consumer would nevertheless experience this as a breaking
+schema change.
 
 The highest-value next cases are unverified-user guards across build mutations,
 favorite-limit behavior, duplicate tags, incompatible item/slot validation,
@@ -78,9 +77,9 @@ query pagination/filter contracts. These are intentionally listed rather than
 encoded as desirable behavior where current error handling leaks internal
 exceptions.
 
-The stacked `equipSet` fix verifies complete persistence and unique slot
-assignment on an empty build. It does not yet prove rollback when a target
-build already has occupied slots and set allocation fails partway through.
+The live whole-set path verifies complete persistence and unique slot assignment
+on an empty build. It does not yet prove rollback when a target build already
+has occupied slots and set allocation fails partway through.
 
 ## Modern-stack verification
 
@@ -100,5 +99,5 @@ docker run --rm --network codex-dofuslab-review \
   dofuslab-backend-tests:modern python -m pytest tests -q
 ```
 
-The foundation result is `43 passed, 1 xfailed`; with the stacked `equipSet`
-fix the identical combined run is `44 passed`.
+The foundation result is `43 passed, 1 xfailed`; after removing the dormant
+mutation, the identical combined run is `44 passed`.

@@ -116,9 +116,6 @@ class ModelCustomSet(Base):
                 empty_item_slots.append(item_slot)
         return empty_item_slots + filled_item_slots
 
-    def equip_set(self, set_obj, db_session):
-        self.equip_items(set_obj.items, db_session)
-
     def equip_items(self, items, db_session):
         ordered_slots_map = {}
         for item_obj in items:

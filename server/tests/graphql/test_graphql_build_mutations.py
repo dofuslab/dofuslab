@@ -310,30 +310,19 @@ def test_tags_multiple_items_set_restart_and_delete(
         assert db_session.query(ModelCustomSet).get(build_id) is None
 
 
-def test_equip_set_persists_the_seeded_set(graphql_client, create_build, catalog_ids):
-    build_id = create_build(graphql_client)["id"]
+def test_dormant_equip_set_mutation_is_not_exposed(graphql_client):
     payload = graphql_client.execute(
         """
-        mutation EquipSet($build: UUID!, $set: UUID!) {
-          equipSet(customSetId: $build, setId: $set) {
-            customSet { id equippedItems { id item { id } } }
-          }
+        query MutationNames {
+          __schema { mutationType { fields { name } } }
         }
-        """,
-        {"build": build_id, "set": catalog_ids["set"]},
-        expect_errors=True,
+        """
     )
-    errors = payload.get("errors", [])
-    if errors:
-        assert payload["data"]["equipSet"] is None
-        assert len(errors) == 1
-        assert "'ModelItem' object has no attribute 'get'" in errors[0]["message"]
-        pytest.xfail(
-            "equipSet passes ModelItem objects to equip_items, which expects mappings"
-        )
-
-    equipped_set = payload["data"]["equipSet"]["customSet"]
-    assert equipped_set["equippedItems"]
+    mutation_names = {
+        field["name"] for field in payload["data"]["__schema"]["mutationType"]["fields"]
+    }
+    assert "equipSet" not in mutation_names
+    assert "equipMultipleItems" in mutation_names
 
 
 def test_verified_import_happy_path_and_anonymous_rejection(
@@ -494,11 +483,6 @@ def test_cross_user_writes_are_rejected_across_build_mutations(
                 "slot": catalog_ids["weapon_slot"],
                 "item": catalog_ids["weapon"],
             },
-        ),
-        (
-            "mutation($id: UUID!, $set: UUID!) { equipSet(customSetId: $id, "
-            "setId: $set) { customSet { id } } }",
-            {"id": build_id, "set": catalog_ids["set"]},
         ),
         (
             "mutation($id: UUID!, $items: [UUID!]!) { equipMultipleItems("

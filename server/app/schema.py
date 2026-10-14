@@ -759,26 +759,6 @@ class UpdateCustomSetItem(graphene.Mutation):
         return UpdateCustomSetItem(custom_set=custom_set)
 
 
-class EquipSet(graphene.Mutation):
-    class Arguments:
-        custom_set_id = graphene.UUID()
-        set_id = graphene.UUID(required=True)
-
-    custom_set = graphene.Field(CustomSet, required=True)
-
-    @tracer.wrap(name="EquipSet.mutate")
-    @anonymous_or_verified
-    def mutate(self, info, **kwargs):
-        with session_scope() as db_session:
-            custom_set_id = kwargs.get("custom_set_id")
-            set_id = kwargs.get("set_id")
-            custom_set = get_or_create_custom_set(custom_set_id, db_session)
-            set_obj = db_session.query(ModelSet).get(set_id)
-            custom_set.equip_set(set_obj, db_session)
-
-        return EquipSet(custom_set=custom_set)
-
-
 class AddTagToCustomSet(graphene.Mutation):
     class Arguments:
         custom_set_id = graphene.UUID()
@@ -1874,7 +1854,6 @@ class Mutation(graphene.ObjectType):
     edit_custom_set_metadata = EditCustomSetMetadata.Field()
     edit_custom_set_default_class = EditCustomSetDefaultClass.Field()
     edit_custom_set_stats = EditCustomSetStats.Field()
-    equip_set = EquipSet.Field()
     equip_multiple_items = EquipMultipleItems.Field()
     create_custom_set = CreateCustomSet.Field()
     resend_verification_email = ResendVerificationEmail.Field()

@@ -245,11 +245,6 @@ export type EquipMultipleItems = {
   customSet: CustomSet;
 };
 
-export type EquipSet = {
-  __typename: 'EquipSet';
-  customSet: CustomSet;
-};
-
 export type EquippedItem = GlobalNode & {
   __typename: 'EquippedItem';
   exos: Array<EquippedItemExo>;
@@ -390,7 +385,6 @@ export type Mutation = {
   editCustomSetMetadata: Maybe<EditCustomSetMetadata>;
   editCustomSetStats: Maybe<EditCustomSetStats>;
   equipMultipleItems: Maybe<EquipMultipleItems>;
-  equipSet: Maybe<EquipSet>;
   importCustomSet: Maybe<ImportCustomSet>;
   loginUser: Maybe<LoginUser>;
   logoutUser: Maybe<LogoutUser>;
@@ -466,11 +460,6 @@ export type MutationeditCustomSetStatsArgs = {
 export type MutationequipMultipleItemsArgs = {
   customSetId?: InputMaybe<Scalars['UUID']['input']>;
   itemIds: Array<Scalars['UUID']['input']>;
-};
-
-export type MutationequipSetArgs = {
-  customSetId?: InputMaybe<Scalars['UUID']['input']>;
-  setId: Scalars['UUID']['input'];
 };
 
 export type MutationimportCustomSetArgs = {
