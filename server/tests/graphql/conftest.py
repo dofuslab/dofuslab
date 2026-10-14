@@ -2,8 +2,16 @@
 
 from dataclasses import dataclass, field
 import importlib
+import os
 
 import pytest
+from dotenv import load_dotenv
+
+from tests.graphql._target_safety import assert_safe_test_services
+
+
+load_dotenv()
+assert_safe_test_services(os.environ)
 
 from app import app, limiter, session_scope
 from app.database.enums import BuildGender
@@ -30,8 +38,9 @@ class GraphQLResponseError(AssertionError):
 
 
 class GraphQLClient:
-    def __init__(self):
+    def __init__(self, created_records):
         self.client = app.test_client()
+        self.created_records = created_records
 
     def execute(self, document, variables=None, expect_errors=False):
         response = self.client.post(
@@ -40,6 +49,12 @@ class GraphQLClient:
             headers={"Accept-Language": "en"},
         )
         payload = response.get_json()
+        with self.client.session_transaction() as client_session:
+            for custom_set_id in client_session.get("owned_custom_sets", []):
+                self.created_records.custom_set(str(custom_set_id))
+            user_id = client_session.get("_user_id")
+            if user_id:
+                self.created_records.user(str(user_id))
         if response.status_code != 200:
             raise GraphQLResponseError(
                 "GraphQL returned HTTP {}: {}".format(response.status_code, payload)
@@ -72,11 +87,13 @@ class CreatedRecords:
     user_ids: list = field(default_factory=list)
 
     def custom_set(self, custom_set_id):
-        self.custom_set_ids.append(custom_set_id)
+        if custom_set_id not in self.custom_set_ids:
+            self.custom_set_ids.append(custom_set_id)
         return custom_set_id
 
     def user(self, user_id):
-        self.user_ids.append(user_id)
+        if user_id not in self.user_ids:
+            self.user_ids.append(user_id)
         return user_id
 
 
@@ -95,13 +112,19 @@ def isolate_external_services(monkeypatch):
 
 
 @pytest.fixture
-def graphql_client():
-    return GraphQLClient()
+def graphql_client(created_records):
+    client = GraphQLClient(created_records)
+    yield client
+    with client.client.session_transaction() as client_session:
+        client_session.clear()
 
 
 @pytest.fixture
-def second_graphql_client():
-    return GraphQLClient()
+def second_graphql_client(created_records):
+    client = GraphQLClient(created_records)
+    yield client
+    with client.client.session_transaction() as client_session:
+        client_session.clear()
 
 
 @pytest.fixture

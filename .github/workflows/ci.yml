@@ -100,6 +100,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ci-placeholder
       DATABASE_URL: postgresql+psycopg2://postgres:password@localhost:5432/dofuslab
       DD_TRACE_ENABLED: 'false'
+      DOFUSLAB_TEST_SERVICES: '1'
       FLASK_APP: app
       FLASK_ENV: development
       HOME_PAGE: http://localhost:3000/

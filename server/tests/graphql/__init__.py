@@ -1,0 +1,1 @@
+"""GraphQL integration regression tests."""
