@@ -97,5 +97,5 @@ docker run --rm --network codex-dofuslab-review \
   dofuslab-backend-tests:modern python -m pytest tests -q
 ```
 
-The foundation result is `41 passed, 1 xfailed`; with the stacked `equipSet`
-fix the identical combined run is `42 passed`.
+The foundation result is `43 passed, 1 xfailed`; with the stacked `equipSet`
+fix the identical combined run is `44 passed`.
