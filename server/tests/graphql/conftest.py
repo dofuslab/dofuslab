@@ -252,14 +252,15 @@ def catalog_ids():
             if weapon_slot.item_slot in seeded_item.item_type.eligible_item_slots
         )
 
-        one_item_set = (
+        ui_set = (
             db_session.query(ModelSet)
             .join(ModelItem, ModelItem.set_id == ModelSet.uuid)
             .group_by(ModelSet.uuid)
-            .order_by(func.count(ModelItem.uuid), ModelSet.dofus_db_id)
+            .order_by(func.count(ModelItem.uuid).desc(), ModelSet.dofus_db_id)
             .first()
         )
-        assert one_item_set is not None
+        assert ui_set is not None
+        set_item_ids = sorted(str(set_item.uuid) for set_item in ui_set.items)
         tag = (
             db_session.query(ModelCustomSetTag).order_by(ModelCustomSetTag.uuid).first()
         )
@@ -271,7 +272,8 @@ def catalog_ids():
             "item_slot": str(item.item_type.eligible_item_slots[0].uuid),
             "weapon": str(weapon.uuid),
             "weapon_slot": str(weapon_slot.item_slot_id),
-            "set": str(one_item_set.uuid),
+            "set": str(ui_set.uuid),
+            "set_items": set_item_ids,
             "tag": str(tag.uuid),
             "class": str(character_class.uuid),
         }
