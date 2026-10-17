@@ -1016,6 +1016,7 @@ export const effectToIconUrl = (effect: WeaponEffectType | SpellEffectType) => {
     case WeaponEffectType.ATTRACT_CELLS:
       return 'icon/Melee.svg';
     case WeaponEffectType.BEST_ELEMENT_DAMAGE:
+    case WeaponEffectType.BEST_ELEMENT_STEAL:
       return 'icon/Omni.svg';
 
     default:
@@ -1038,6 +1039,7 @@ export const getSimpleEffect: (
     case WeaponEffectType.NEUTRAL_DAMAGE:
     case WeaponEffectType.NEUTRAL_STEAL:
     case WeaponEffectType.BEST_ELEMENT_DAMAGE:
+    case WeaponEffectType.BEST_ELEMENT_STEAL:
     case SpellEffectType.AIR_DAMAGE:
     case SpellEffectType.AIR_STEAL:
     case SpellEffectType.EARTH_DAMAGE:
