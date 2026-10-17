@@ -1,0 +1,56 @@
+# syntax=docker/dockerfile:1.7
+
+ARG PYTHON_VERSION=3.8.20
+
+FROM python:${PYTHON_VERSION}-slim-bookworm AS builder
+
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    PIP_NO_CACHE_DIR=1 \
+    VIRTUAL_ENV=/opt/venv
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        gcc \
+        gfortran \
+        libffi-dev \
+        libopenblas-dev \
+        libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN python -m venv "$VIRTUAL_ENV"
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+WORKDIR /build
+COPY requirements.txt ./
+RUN pip install --upgrade "pip<25" \
+    && pip install --requirement requirements.txt
+
+FROM python:${PYTHON_VERSION}-slim-bookworm AS runtime
+
+ENV FLASK_ENV=production \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PATH="/opt/venv/bin:$PATH"
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        libgomp1 \
+        libopenblas0-pthread \
+        libpq5 \
+    && rm -rf /var/lib/apt/lists/* \
+    && groupadd --system --gid 10001 dofuslab \
+    && useradd --system --uid 10001 --gid dofuslab --home-dir /app dofuslab
+
+COPY --from=builder /opt/venv /opt/venv
+
+WORKDIR /app
+COPY --chown=dofuslab:dofuslab . .
+RUN pybabel compile -d app/translations
+
+USER 10001:10001
+EXPOSE 5000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
+    CMD ["python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/health/live', timeout=3).read()"]
+
+CMD ["gunicorn", "--bind=0.0.0.0:5000", "--workers=2", "--threads=2", "--timeout=60", "--graceful-timeout=30", "--keep-alive=5", "--access-logfile=-", "--error-logfile=-", "app:app"]

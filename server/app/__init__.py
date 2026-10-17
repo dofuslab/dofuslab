@@ -31,6 +31,33 @@ app = Flask(__name__)
 app.config.from_object("config.Config")
 Session(app)
 
+
+class HealthAwareSessionInterface:
+    """Avoid turning health responses into Redis-backed session writes."""
+
+    def __init__(self, delegate):
+        self.delegate = delegate
+
+    def open_session(self, app, request):
+        return self.delegate.open_session(app, request)
+
+    def save_session(self, app, session, response):
+        if request.path.startswith("/health/"):
+            return None
+        return self.delegate.save_session(app, session, response)
+
+    def __getattr__(self, name):
+        return getattr(self.delegate, name)
+
+
+app.session_interface = HealthAwareSessionInterface(app.session_interface)
+
+
+@app.route("/health/live")
+def health_live():
+    """Report that the API process is able to serve requests."""
+    return {"status": "ok"}
+
 q = Queue(connection=redis_connection)
 
 base_url = os.getenv("HOME_PAGE")
@@ -61,6 +88,24 @@ elif flask_env == "production":
     RuntimeMetrics.enable()
 
 db = SQLAlchemy(app)
+
+
+@app.route("/health/ready")
+def health_ready():
+    """Report whether the API can reach its external state stores."""
+    checks = {"database": False, "redis": False}
+    try:
+        db.session.execute("SELECT 1")
+        checks["database"] = True
+        redis_connection.ping()
+        checks["redis"] = True
+    except Exception:
+        app.logger.exception("Readiness check failed")
+        return {"status": "unavailable", "checks": checks}, 503
+    finally:
+        db.session.remove()
+
+    return {"status": "ok", "checks": checks}
 CORS(
     app,
     resources={r"/*": {"origins": origins}},
