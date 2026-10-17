@@ -1,0 +1,6 @@
+# /etc/cron.d/dofuslab-recommendations
+#
+# IMPORTANT: Ubuntu cron interprets this schedule in the HOST timezone. This
+# example expects the host timezone to be UTC (verify with `timedatectl`).
+# Every Sunday at 03:17 UTC; the odd minute avoids common top-of-hour load.
+17 3 * * 0 dofuslab /opt/dofuslab/ops/recommendation-refresh/run-refresh.sh >> /var/log/dofuslab/recommendation-refresh.log 2>&1
