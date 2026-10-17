@@ -47138,7 +47138,13 @@
       "maxRange": 1,
       "baseCritChance": 100,
       "critBonusDamage": 6,
-      "weapon_effects": []
+      "weapon_effects": [
+        {
+          "stat": "Best element steal",
+          "minStat": null,
+          "maxStat": 30
+        }
+      ]
     },
     "customStats": {
       "en": [
@@ -48064,6 +48070,11 @@
           "stat": "Best element damage",
           "minStat": 37,
           "maxStat": 43
+        },
+        {
+          "stat": "Best element steal",
+          "minStat": 10,
+          "maxStat": 13
         }
       ]
     },
@@ -54914,6 +54925,11 @@
           "stat": "Best element damage",
           "minStat": null,
           "maxStat": 44
+        },
+        {
+          "stat": "Best element steal",
+          "minStat": null,
+          "maxStat": 8
         },
         {
           "stat": "Attract cells",
