@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import json
 import os
 from app import session_scope
 from app.database.model_spell_translation import ModelSpellTranslation
@@ -15,6 +14,8 @@ from app.database.model_spell import ModelSpell
 from app.database.model_spell_variant_pair import ModelSpellVariantPair
 from app.database.model_class_translation import ModelClassTranslation
 from oneoff.enums import to_spell_enum
+from oneoff import sync_buff
+from oneoff.sync_validation import load_and_validate_buffs, load_and_validate_classes
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -123,6 +124,7 @@ def update_spell(
     pair_records,
     record,
     should_only_add_missing,
+    buff_record=None,
 ):
     dofus_id = str(record["dofusID"])
     spell = db_session.query(ModelSpell).filter_by(dofus_db_id=dofus_id).one_or_none()
@@ -130,33 +132,43 @@ def update_spell(
         return
 
     created = spell is None
+    pair_ids = [str(variant["dofusID"]) for variant in pair_records]
+    class_id = (
+        db_session.query(ModelClassTranslation)
+        .filter_by(locale="en", name=class_name)
+        .one()
+        .class_id
+    )
+    sibling = (
+        db_session.query(ModelSpell)
+        .filter(ModelSpell.dofus_db_id.in_(pair_ids))
+        .filter(ModelSpell.dofus_db_id != dofus_id)
+        .one_or_none()
+    )
+    if sibling is not None:
+        pair_id = sibling.spell_variant_pair_id
+        sibling.spell_variant_pair.class_id = class_id
+    elif spell is not None:
+        pair_id = spell.spell_variant_pair_id
+        spell.spell_variant_pair.class_id = class_id
+    else:
+        pair = ModelSpellVariantPair(class_id=class_id)
+        db_session.add(pair)
+        db_session.flush()
+        pair_id = pair.uuid
     if spell is None:
-        pair_ids = [str(variant["dofusID"]) for variant in pair_records]
-        sibling = (
-            db_session.query(ModelSpell)
-            .filter(ModelSpell.dofus_db_id.in_(pair_ids))
-            .first()
-        )
-        if sibling is None:
-            class_id = (
-                db_session.query(ModelClassTranslation)
-                .filter_by(locale="en", name=class_name)
-                .one()
-                .class_id
-            )
-            pair = ModelSpellVariantPair(class_id=class_id)
-            db_session.add(pair)
-            db_session.flush()
-            pair_id = pair.uuid
-        else:
-            pair_id = sibling.spell_variant_pair_id
         spell = ModelSpell(dofus_db_id=dofus_id, spell_variant_pair_id=pair_id)
         db_session.add(spell)
+    else:
+        spell.spell_variant_pair_id = pair_id
     spell.image_url = record.get("imageUrl", "")
     spell.is_trap = record.get("isTrap", False)
     db_session.flush()
     create_spell_translations(db_session, record, spell)
     create_spell_stats(db_session, record, spell)
+    db_session.flush()
+    if buff_record is not None:
+        sync_buff.update_or_create_spell_buff(db_session, buff_record, False)
     print(
         "{} spell {} ({})".format(
             "Created" if created else "Updated", record["name"]["en"], dofus_id
@@ -166,43 +178,81 @@ def update_spell(
 
 def sync_spell():
     print("Loading and processing file...")
-    with open(os.path.join(app_root, "app/database/data/spells.json"), "r") as file:
-        data = json.load(file)
-        id_to_record_map = {}
-        for class_record in data:
-            class_name = class_record["names"]["en"]
-            for pair in class_record["spells"]:
-                for spell in pair:
-                    id_to_record_map[str(spell["dofusID"])] = (
-                        class_name, pair, spell
-                    )
+    data_dir = os.path.join(app_root, "app/database/data")
+    data, spell_ids, spell_levels = load_and_validate_classes(data_dir)
+    buffs = load_and_validate_buffs(data_dir, spell_ids, spell_levels)
+    buff_records = {
+        str(spell["dofusID"]): spell
+        for records in buffs["spells"].values()
+        for spell in records
+    }
+    id_to_record_map = {}
+    for class_record in data:
+        class_name = class_record["names"]["en"]
+        for pair in class_record["spells"]:
+            for spell in pair:
+                id_to_record_map[str(spell["dofusID"])] = (class_name, pair, spell)
 
-        should_prompt_spell = True
-        while should_prompt_spell:
-            response = input(
-                "Enter Dofus spell ID or multiple IDs separated "
-                "by commas, type 'update all' to upsert all spells in file, "
-                "type 'add missing spells' to only add spells that are missing, or 'q' to quit: "
-            )
-            if response == "q":
+    with session_scope() as db_session:
+        null_count = (
+            db_session.query(ModelSpell)
+            .filter(ModelSpell.dofus_db_id.is_(None))
+            .count()
+        )
+    if null_count:
+        raise ValueError(
+            "Found {} legacy spells without dofus_db_id; run oneoff.sync_class or "
+            "oneoff.sync_game_data for the safe atomic rebuild".format(null_count)
+        )
+
+    while True:
+        response = input(
+            "Enter Dofus spell ID or multiple IDs separated "
+            "by commas, type 'update all' to reconcile all spells, "
+            "type 'add missing spells' to only add missing spells, or 'q' to quit: "
+        )
+        if response == "q":
+            return
+        with session_scope() as db_session:
+            if response in ("update all", "add missing spells"):
+                only_missing = response == "add missing spells"
+                for class_name, pair, spell in id_to_record_map.values():
+                    update_spell(
+                        db_session,
+                        class_name,
+                        pair,
+                        spell,
+                        only_missing,
+                        buff_records.get(str(spell["dofusID"])),
+                    )
+                if not only_missing:
+                    stale = (
+                        db_session.query(ModelSpell)
+                        .filter(ModelSpell.dofus_db_id.notin_(set(id_to_record_map)))
+                        .all()
+                    )
+                    for stale_spell in stale:
+                        db_session.delete(stale_spell)
+                    db_session.flush()
+                    for variant_pair in db_session.query(ModelSpellVariantPair).all():
+                        if not variant_pair.spells:
+                            db_session.delete(variant_pair)
                 return
-            with session_scope() as db_session:
-                if response == "update all":
-                    should_prompt_spell = False
-                    for class_name, pair, spell in id_to_record_map.values():
-                        update_spell(db_session, class_name, pair, spell, False)
-                elif response == "add missing spells":
-                    should_prompt_spell = False
-                    for class_name, pair, spell in id_to_record_map.values():
-                        update_spell(db_session, class_name, pair, spell, True)
-                else:
-                    for raw_id in response.split(","):
-                        requested_id = raw_id.strip()
-                        if requested_id in id_to_record_map:
-                            class_name, pair, spell = id_to_record_map[requested_id]
-                            update_spell(db_session, class_name, pair, spell, False)
-                        else:
-                            print("Spell ID {} is not in spells.json".format(requested_id))
+            for raw_id in response.split(","):
+                requested_id = raw_id.strip()
+                if requested_id not in id_to_record_map:
+                    raise ValueError(
+                        "Spell ID {} is not in spells.json".format(requested_id)
+                    )
+                class_name, pair, spell = id_to_record_map[requested_id]
+                update_spell(
+                    db_session,
+                    class_name,
+                    pair,
+                    spell,
+                    False,
+                    buff_records.get(requested_id),
+                )
 
 
 if __name__ == "__main__":

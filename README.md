@@ -261,8 +261,13 @@ $ python -m oneoff.sync_game_data
 ```
 
 This previews and synchronizes sets plus all item-family files (items, weapons,
-pets, and mounts) with one confirmation. Use `oneoff.sync_set` or
-`oneoff.sync_item` when you only want to synchronize one category.
+pets, and mounts), classes, spells, and buffs with one confirmation and one
+database transaction. It validates every required input file before opening the
+write transaction and requires the exact confirmation `SYNC ALL GAME DATA`.
+Item previews report only semantic metadata/stat/weapon changes; an unchanged
+re-import is a no-op and preserves existing item/stat IDs. Use
+`oneoff.sync_set`, `oneoff.sync_item`, `oneoff.sync_class`, or
+`oneoff.sync_spell` when you intentionally want a narrower synchronization.
 
 </p>
 </details>

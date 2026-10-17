@@ -25,6 +25,7 @@ from app.database.model_set_translation import ModelSetTranslation
 from app.database.model_set_bonus import ModelSetBonus
 from app.database.model_set_bonus_translation import ModelSetBonusTranslation
 from oneoff.enums import to_stat_enum
+from oneoff.sync_validation import load_and_validate_sets
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -98,7 +99,7 @@ def update_or_create_set(
     database_set = (
         db_session.query(ModelSet).filter(ModelSet.dofus_db_id == set_id).all()
     )
-    
+
     if len(database_set) > 1:
         raise ValueError(f"Multiple sets with ID {set_id} exist in the database")
     elif len(database_set) == 1:
@@ -117,26 +118,12 @@ def update_or_create_set(
 
 
 def load_all_sets():
-    """Load all sets from the sets JSON file into memory."""
-    all_sets = []
-    all_set_ids = set()
-    
+    """Load the required set file and reject duplicate or empty input."""
     print("Loading sets file...")
-    file_path = os.path.join(app_root, "app/database/data/sets.json")
-    if os.path.exists(file_path):
-        with open(file_path, "r") as file:
-            data = json.load(file)
-            all_sets = data
-            
-            # Collect all set IDs
-            for record in data:
-                set_id = record["id"]
-                all_set_ids.add(set_id)
-                
-        print(f"Loaded {len(data)} sets from sets.json")
-    else:
-        print("Warning: sets.json not found")
-    
+    all_sets, all_set_ids = load_and_validate_sets(
+        os.path.join(app_root, "app/database/data")
+    )
+    print(f"Loaded {len(all_sets)} sets from sets.json")
     print(f"Total sets loaded: {len(all_set_ids)}")
     return all_sets, all_set_ids
 
@@ -149,12 +136,14 @@ def get_sets_to_delete(db_session, input_set_ids):
     """
     if not input_set_ids:
         return []
-    
+
     # Find sets not in input_set_ids using SQL NOT IN
-    sets_to_delete = db_session.query(ModelSet).filter(
-        ModelSet.dofus_db_id.notin_(input_set_ids)
-    ).all()
-    
+    sets_to_delete = (
+        db_session.query(ModelSet)
+        .filter(ModelSet.dofus_db_id.notin_(input_set_ids))
+        .all()
+    )
+
     return sets_to_delete
 
 
@@ -164,24 +153,26 @@ def delete_sets_not_in_file(db_session, sets_to_delete):
     The cascade relationships will handle deletion of related records.
     """
     deleted_sets = []
-    
+
     for set_obj in sets_to_delete:
         set_id = set_obj.dofus_db_id
         set_name = "Unknown"
-        
+
         # Try to get the set name from translations
-        translation = db_session.query(ModelSetTranslation).filter_by(
-            set_id=set_obj.uuid, locale="en"
-        ).first()
+        translation = (
+            db_session.query(ModelSetTranslation)
+            .filter_by(set_id=set_obj.uuid, locale="en")
+            .first()
+        )
         if translation:
             set_name = translation.name
-        
+
         print("Deleting set [{}]: {}".format(set_id, set_name))
         deleted_sets.append("[{}]: {}".format(set_id, set_name))
-        
+
         # Delete the set (cascade will handle related records)
         db_session.delete(set_obj)
-    
+
     return deleted_sets
 
 
@@ -190,49 +181,51 @@ def preview_changes(db_session, all_sets, all_set_ids, operation_type):
     sets_to_create = []
     sets_to_update = []
     sets_to_delete = []
-    
+
     print(f"\n=== PREVIEW: {operation_type.upper()} ===")
-    
+
     # Check what sets would be created/updated
     for record in all_sets:
         set_id = record["id"]
         set_name = record["name"]["en"]
-        
+
         # Check if set exists in database
-        existing_sets = db_session.query(ModelSet).filter(
-            ModelSet.dofus_db_id == set_id
-        ).all()
-        
+        existing_sets = (
+            db_session.query(ModelSet).filter(ModelSet.dofus_db_id == set_id).all()
+        )
+
         if len(existing_sets) == 0:
             sets_to_create.append((set_id, set_name))
         else:
             sets_to_update.append((set_id, set_name))
-    
+
     # Check what sets would be deleted (only for sync all)
     if operation_type == "sync all":
         sets_to_delete = get_sets_to_delete(db_session, all_set_ids)
-    
+
     # Display preview
     if sets_to_create:
         print(f"\nSets to CREATE ({len(sets_to_create)}):")
         for set_id, set_name in sets_to_create:
             print(f"  [{set_id}] (dofusID): {set_name}")
-    
+
     if sets_to_update:
         print(f"\nSets to UPDATE: {len(sets_to_update)} sets")
-    
+
     if sets_to_delete:
         print(f"\nSets to DELETE ({len(sets_to_delete)}):")
         for set_obj in sets_to_delete:
             set_id = set_obj.dofus_db_id
             set_name = "Unknown"
-            translation = db_session.query(ModelSetTranslation).filter_by(
-                set_id=set_obj.uuid, locale="en"
-            ).first()
+            translation = (
+                db_session.query(ModelSetTranslation)
+                .filter_by(set_id=set_obj.uuid, locale="en")
+                .first()
+            )
             if translation:
                 set_name = translation.name
             print(f"  [{set_id}] (dofusID): {set_name}")
-    
+
     return sets_to_create, sets_to_update, sets_to_delete
 
 
@@ -242,45 +235,36 @@ def execute_upsert_all(db_session, all_sets):
     updated_sets = []
     skipped_sets = []
     errored_sets = []
-    
+
     for record in all_sets:
         set_id = record["id"]
         set_name = record["name"]["en"]
-        
-        try:
-            result = update_or_create_set(
-                db_session,
-                set_id,
-                record,
-            )
-            
-            if result is True:
-                created_sets.append(f"[{set_id}]: {set_name}")
-            elif result is False:
-                updated_sets.append(f"[{set_id}]: {set_name}")
-            elif result is None:
-                skipped_sets.append(f"[{set_id}]: {set_name}")
-        except ValueError as e:
-            error_msg = f"[{set_id}]: {set_name} - {e}"
-            errored_sets.append(error_msg)
-            print(f"Error processing set {error_msg}")
-            # Continue processing other sets
-    
+
+        result = update_or_create_set(db_session, set_id, record)
+        if result is True:
+            created_sets.append(f"[{set_id}]: {set_name}")
+        elif result is False:
+            updated_sets.append(f"[{set_id}]: {set_name}")
+        elif result is None:
+            skipped_sets.append(f"[{set_id}]: {set_name}")
+
     return created_sets, updated_sets, skipped_sets, errored_sets
 
 
 def execute_sync_all(db_session, all_sets, all_set_ids):
     """Execute sync all operation (upsert + delete)."""
     # First do upsert
-    created_sets, updated_sets, skipped_sets, errored_sets = execute_upsert_all(db_session, all_sets)
-    
+    created_sets, updated_sets, skipped_sets, errored_sets = execute_upsert_all(
+        db_session, all_sets
+    )
+
     # Then delete sets not in input file
     sets_to_delete = get_sets_to_delete(db_session, all_set_ids)
     deleted_sets = []
-    
+
     if sets_to_delete:
         deleted_sets = delete_sets_not_in_file(db_session, sets_to_delete)
-    
+
     return created_sets, updated_sets, skipped_sets, errored_sets, deleted_sets
 
 
@@ -290,22 +274,22 @@ def execute_individual_upsert(db_session, all_sets):
     id_to_record_map = {}
     for record in all_sets:
         id_to_record_map[record["id"]] = record
-    
+
     print(f"\nAvailable sets ({len(id_to_record_map)} total):")
     for set_id, record in list(id_to_record_map.items())[:10]:  # Show first 10
         print(f"  {set_id}: {record['name']['en']}")
     if len(id_to_record_map) > 10:
         print(f"  ... and {len(id_to_record_map) - 10} more sets")
-    
+
     while True:
         set_id = input(f"Enter set ID: ")
         if set_id in id_to_record_map:
             record = id_to_record_map[set_id]
             set_name = record["name"]["en"]
-            
+
             try:
                 result = update_or_create_set(db_session, set_id, record)
-                
+
                 if result is True:
                     return [f"[{set_id}]: {set_name}"], [], [], []
                 elif result is False:
@@ -324,80 +308,116 @@ def execute_individual_upsert(db_session, all_sets):
 def sync_set():
     """Main sync function with improved developer experience."""
     print("=== DOFUS LAB SET SYNC ===")
-    
+
     # Load all sets from file
     all_sets, all_set_ids = load_all_sets()
-    
+
     if not all_sets:
         print("No sets loaded. Exiting.")
         return
-    
+
     # Present options to user
     print("\nAvailable operations:")
-    print("  1. upsert all - Update existing sets and create missing ones (no deletion)")
+    print(
+        "  1. upsert all - Update existing sets and create missing ones (no deletion)"
+    )
     print("  2. sync all - Full sync: upsert all + delete sets not in file")
     print("  3. individual upsert - Select and upsert a specific set")
     print("  4. quit")
-    
+
     while True:
         choice = input("\nSelect operation (1-4): ").strip()
-        
+
         if choice == "4" or choice.lower() == "q":
             print("Exiting.")
             return
-        
+
         with session_scope() as db_session:
             if choice == "1":  # upsert all
                 print("\n=== UPSERT ALL ===")
-                sets_to_create, sets_to_update, _ = preview_changes(db_session, all_sets, all_set_ids, "upsert all")
-                
+                sets_to_create, sets_to_update, _ = preview_changes(
+                    db_session, all_sets, all_set_ids, "upsert all"
+                )
+
                 if not sets_to_create and not sets_to_update:
                     print("No changes needed.")
                     continue
-                
-                confirm = input(f"\nProceed with upserting {len(sets_to_create)} new sets and updating {len(sets_to_update)} existing sets? (Y/n): ")
-                if confirm.lower() == 'y':
-                    created_sets, updated_sets, skipped_sets, errored_sets = execute_upsert_all(db_session, all_sets)
+
+                confirm = input(
+                    f"\nProceed with upserting {len(sets_to_create)} new sets and updating {len(sets_to_update)} existing sets? (Y/n): "
+                )
+                if confirm.lower() == "y":
+                    (
+                        created_sets,
+                        updated_sets,
+                        skipped_sets,
+                        errored_sets,
+                    ) = execute_upsert_all(db_session, all_sets)
                     db_session.commit()
-                    print(f"Successfully upserted {len(created_sets)} new sets and updated {len(updated_sets)} existing sets.")
+                    print(
+                        f"Successfully upserted {len(created_sets)} new sets and updated {len(updated_sets)} existing sets."
+                    )
                     if skipped_sets:
                         print(f"Skipped {len(skipped_sets)} sets.")
                     if errored_sets:
-                        print(f"Failed to process {len(errored_sets)} sets due to errors.")
+                        print(
+                            f"Failed to process {len(errored_sets)} sets due to errors."
+                        )
                 else:
                     print("Operation cancelled.")
-            
+
             elif choice == "2":  # sync all
                 print("\n=== SYNC ALL ===")
-                sets_to_create, sets_to_update, sets_to_delete = preview_changes(db_session, all_sets, all_set_ids, "sync all")
-                
+                sets_to_create, sets_to_update, sets_to_delete = preview_changes(
+                    db_session, all_sets, all_set_ids, "sync all"
+                )
+
                 if not sets_to_create and not sets_to_update and not sets_to_delete:
                     print("No changes needed.")
                     continue
-                
+
                 # Extra confirmation for large deletions
                 if sets_to_delete and len(sets_to_delete) > 50:
-                    print(f"\nWARNING: You are about to delete {len(sets_to_delete)} sets.")
+                    print(
+                        f"\nWARNING: You are about to delete {len(sets_to_delete)} sets."
+                    )
                     confirm_large = input("Type 'DELETE' to confirm large deletion: ")
                     if confirm_large != "DELETE":
                         print("Operation cancelled.")
                         continue
-                
-                confirm = input(f"\nProceed with syncing {len(sets_to_create)} new sets, updating {len(sets_to_update)} existing sets, and deleting {len(sets_to_delete)} sets? (y/N): ")
-                if confirm.lower() == 'y':
-                    created_sets, updated_sets, skipped_sets, errored_sets, deleted_sets = execute_sync_all(db_session, all_sets, all_set_ids)
+
+                confirm = input(
+                    f"\nProceed with syncing {len(sets_to_create)} new sets, updating {len(sets_to_update)} existing sets, and deleting {len(sets_to_delete)} sets? (y/N): "
+                )
+                if confirm.lower() == "y":
+                    (
+                        created_sets,
+                        updated_sets,
+                        skipped_sets,
+                        errored_sets,
+                        deleted_sets,
+                    ) = execute_sync_all(db_session, all_sets, all_set_ids)
                     db_session.commit()
-                    print(f"Successfully synced: {len(created_sets)} sets created, {len(updated_sets)} sets updated, {len(deleted_sets)} sets deleted.")
+                    print(
+                        f"Successfully synced: {len(created_sets)} sets created, {len(updated_sets)} sets updated, {len(deleted_sets)} sets deleted."
+                    )
                     if skipped_sets:
                         print(f"Skipped {len(skipped_sets)} sets.")
                     if errored_sets:
-                        print(f"Failed to process {len(errored_sets)} sets due to errors.")
+                        print(
+                            f"Failed to process {len(errored_sets)} sets due to errors."
+                        )
                 else:
                     print("Operation cancelled.")
-            
+
             elif choice == "3":  # individual upsert
                 print("\n=== INDIVIDUAL UPSERT ===")
-                created_sets, updated_sets, skipped_sets, errored_sets = execute_individual_upsert(db_session, all_sets)
+                (
+                    created_sets,
+                    updated_sets,
+                    skipped_sets,
+                    errored_sets,
+                ) = execute_individual_upsert(db_session, all_sets)
                 if created_sets or updated_sets or skipped_sets or errored_sets:
                     db_session.commit()
                     if created_sets:
@@ -407,8 +427,10 @@ def sync_set():
                     if skipped_sets:
                         print(f"Skipped {len(skipped_sets)} sets.")
                     if errored_sets:
-                        print(f"Failed to process {len(errored_sets)} sets due to errors.")
-            
+                        print(
+                            f"Failed to process {len(errored_sets)} sets due to errors."
+                        )
+
             else:
                 print("Invalid choice. Please select 1-4.")
 

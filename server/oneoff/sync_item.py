@@ -19,7 +19,7 @@ The script handles both regular items (using dofus_db_id) and mounts (using dofu
 
 import json
 import os
-from sqlalchemy import or_
+from sqlalchemy import and_, or_
 from app import session_scope
 from app.database.model_set import ModelSet
 from app.database.model_item import ModelItem
@@ -32,6 +32,8 @@ from app.database.model_weapon_effect import ModelWeaponEffect
 from app.database.model_weapon_stat import ModelWeaponStat
 from app.database.model_equipped_item import ModelEquippedItem
 from oneoff.enums import to_stat_enum, to_effect_enum
+from oneoff.item_diff import desired_stat_descriptors, diff_stat_descriptors
+from oneoff.sync_validation import load_and_validate_items
 
 app_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -42,6 +44,292 @@ allowed_file_names = [
     "weapons",
 ]
 languages = ["en", "fr", "pt", "it", "es", "de"]
+
+
+stat_enum_to_name = {value: key for key, value in to_stat_enum.items()}
+effect_enum_to_name = {value: key for key, value in to_effect_enum.items()}
+
+
+def _sort_effects(effects):
+    return sorted(
+        effects,
+        key=lambda effect: (
+            effect[0],
+            effect[1] is None,
+            effect[1] if effect[1] is not None else 0,
+            effect[2],
+        ),
+    )
+
+
+def _existing_stat_descriptors(db_session, item):
+    rows = (
+        db_session.query(ModelItemStat)
+        .filter_by(item_id=item.uuid)
+        .order_by(ModelItemStat.order, ModelItemStat.uuid)
+        .all()
+    )
+    descriptors = []
+    for row in rows:
+        if row.stat is not None:
+            descriptor = {
+                "kind": "stat",
+                "stat": stat_enum_to_name[row.stat],
+                "min": row.min_value,
+                "max": row.max_value,
+                "order": row.order,
+            }
+        else:
+            translations = (
+                db_session.query(ModelItemStatTranslation)
+                .filter_by(item_stat_id=row.uuid)
+                .all()
+            )
+            descriptor = {
+                "kind": "custom",
+                "translations": tuple(
+                    sorted(
+                        (translation.locale, translation.custom_stat)
+                        for translation in translations
+                    )
+                ),
+                "order": row.order,
+            }
+        descriptors.append(descriptor)
+    return rows, descriptors
+
+
+def _weapon_descriptor(weapon_stat):
+    if weapon_stat is None:
+        return None
+    effects = _sort_effects(
+        (
+            effect_enum_to_name[effect.effect_type],
+            effect.min_damage,
+            effect.max_damage,
+        )
+        for effect in weapon_stat.weapon_effects
+    )
+    return {
+        "apCost": weapon_stat.ap_cost,
+        "usesPerTurn": weapon_stat.uses_per_turn,
+        "minRange": weapon_stat.min_range,
+        "maxRange": weapon_stat.max_range,
+        "baseCritChance": weapon_stat.base_crit_chance,
+        "critBonusDamage": weapon_stat.crit_bonus_damage,
+        "effects": effects,
+    }
+
+
+def _desired_weapon_descriptor(record):
+    data = record.get("weaponStats")
+    if data is None:
+        return None
+    return {
+        "apCost": data["apCost"],
+        "usesPerTurn": data["usesPerTurn"],
+        "minRange": data["minRange"],
+        "maxRange": data["maxRange"],
+        "baseCritChance": data["baseCritChance"] or None,
+        "critBonusDamage": data["critBonusDamage"]
+        if data["baseCritChance"] > 0
+        else None,
+        "effects": _sort_effects(
+            (effect["stat"], effect.get("minStat"), effect["maxStat"])
+            for effect in data["weapon_effects"]
+        ),
+    }
+
+
+def plan_item_update(db_session, item, record):
+    """Build the semantic plan used by both dry-run preview and apply."""
+    set_id = record.get("setID")
+    desired_set_uuid = None
+    if set_id is not None:
+        desired_set = (
+            db_session.query(ModelSet).filter_by(dofus_db_id=str(set_id)).one_or_none()
+        )
+        desired_set_uuid = (
+            desired_set.uuid if desired_set is not None else ("new-set", str(set_id))
+        )
+    desired_type_uuid = (
+        db_session.query(ModelItemTypeTranslation)
+        .filter_by(locale="en", name=record["itemType"])
+        .one()
+        .item_type_id
+    )
+    desired_conditions = None
+    if "conditions" in record:
+        desired_conditions = {
+            "conditions": record["conditions"].get("conditions", {}),
+            "customConditions": record["conditions"].get("customConditions", {}),
+        }
+    scalar_values = {
+        "dofus_db_id": record.get("dofusID"),
+        "dofus_db_mount_id": record.get("mountDofusID"),
+        "level": record["level"],
+        "image_url": record["imageUrl"],
+        "set_id": desired_set_uuid,
+        "item_type_id": desired_type_uuid,
+        "conditions": desired_conditions,
+    }
+    scalar_changes = {
+        field: value
+        for field, value in scalar_values.items()
+        if getattr(item, field) != value
+    }
+
+    existing_translations = {
+        translation.locale: translation.name
+        for translation in db_session.query(ModelItemTranslation)
+        .filter_by(item_id=item.uuid)
+        .all()
+    }
+    desired_translations = {
+        locale: record["name"][locale]
+        for locale in languages
+        if record["name"].get(locale)
+    }
+
+    stat_rows, existing_stats = _existing_stat_descriptors(db_session, item)
+    desired_stats = desired_stat_descriptors(record)
+    stat_diff = diff_stat_descriptors(existing_stats, desired_stats)
+
+    weapon_rows = db_session.query(ModelWeaponStat).filter_by(item_id=item.uuid).all()
+    if len(weapon_rows) > 1:
+        raise ValueError("Item {} has multiple weapon stat rows".format(item.uuid))
+    weapon_row = weapon_rows[0] if weapon_rows else None
+    existing_weapon = _weapon_descriptor(weapon_row)
+    desired_weapon = _desired_weapon_descriptor(record)
+
+    details = []
+    details.extend("field:{}".format(field) for field in sorted(scalar_changes))
+    if existing_translations != desired_translations:
+        details.append("translations")
+    if stat_diff["creates"] or stat_diff["updates"] or stat_diff["deletes"]:
+        details.append(
+            "stats(+{}/~{}/-{})".format(
+                len(stat_diff["creates"]),
+                len(stat_diff["updates"]),
+                len(stat_diff["deletes"]),
+            )
+        )
+    if existing_weapon != desired_weapon:
+        details.append("weapon")
+    return {
+        "item": item,
+        "record": record,
+        "scalar_changes": scalar_changes,
+        "existing_translations": existing_translations,
+        "desired_translations": desired_translations,
+        "stat_rows": stat_rows,
+        "desired_stats": desired_stats,
+        "stat_diff": stat_diff,
+        "weapon_row": weapon_row,
+        "desired_weapon": desired_weapon,
+        "details": details,
+        "changed": bool(details),
+    }
+
+
+def _add_stat_from_descriptor(db_session, item, descriptor):
+    row = ModelItemStat(item_id=item.uuid, order=descriptor["order"])
+    if descriptor["kind"] == "stat":
+        row.stat = to_stat_enum[descriptor["stat"]]
+        row.min_value = descriptor.get("min")
+        row.max_value = descriptor.get("max")
+    db_session.add(row)
+    db_session.flush()
+    if descriptor["kind"] == "custom":
+        for locale, custom_stat in descriptor["translations"]:
+            db_session.add(
+                ModelItemStatTranslation(
+                    item_stat_id=row.uuid, locale=locale, custom_stat=custom_stat
+                )
+            )
+
+
+def apply_item_update_plan(db_session, plan):
+    item = plan["item"]
+    for field, value in plan["scalar_changes"].items():
+        setattr(item, field, value)
+
+    existing_rows = {
+        translation.locale: translation
+        for translation in db_session.query(ModelItemTranslation)
+        .filter_by(item_id=item.uuid)
+        .all()
+    }
+    for locale, row in existing_rows.items():
+        if locale not in plan["desired_translations"]:
+            db_session.delete(row)
+    for locale, name in plan["desired_translations"].items():
+        row = existing_rows.get(locale)
+        if row is None:
+            db_session.add(
+                ModelItemTranslation(item_id=item.uuid, locale=locale, name=name)
+            )
+        else:
+            row.name = name
+
+    for existing_index, desired_index, _ in plan["stat_diff"]["updates"]:
+        row = plan["stat_rows"][existing_index]
+        desired = plan["desired_stats"][desired_index]
+        row.min_value = desired.get("min")
+        row.max_value = desired.get("max")
+        row.order = desired["order"]
+    for desired_index in plan["stat_diff"]["creates"]:
+        _add_stat_from_descriptor(
+            db_session, item, plan["desired_stats"][desired_index]
+        )
+    for existing_index in plan["stat_diff"]["deletes"]:
+        db_session.delete(plan["stat_rows"][existing_index])
+
+    desired_weapon = plan["desired_weapon"]
+    weapon_row = plan["weapon_row"]
+    if desired_weapon is None:
+        if weapon_row is not None:
+            db_session.delete(weapon_row)
+        return
+    if weapon_row is None:
+        weapon_row = ModelWeaponStat(item_id=item.uuid)
+        db_session.add(weapon_row)
+        db_session.flush()
+    for source, target in (
+        ("apCost", "ap_cost"),
+        ("usesPerTurn", "uses_per_turn"),
+        ("minRange", "min_range"),
+        ("maxRange", "max_range"),
+        ("baseCritChance", "base_crit_chance"),
+        ("critBonusDamage", "crit_bonus_damage"),
+    ):
+        setattr(weapon_row, target, desired_weapon[source])
+
+    existing_effects = {}
+    for effect in list(weapon_row.weapon_effects):
+        key = (
+            effect_enum_to_name[effect.effect_type],
+            effect.min_damage,
+            effect.max_damage,
+        )
+        existing_effects.setdefault(key, []).append(effect)
+    for effect_type, min_damage, max_damage in desired_weapon["effects"]:
+        key = (effect_type, min_damage, max_damage)
+        matches = existing_effects.get(key, [])
+        if matches:
+            matches.pop()
+        else:
+            db_session.add(
+                ModelWeaponEffect(
+                    weapon_stat_id=weapon_row.uuid,
+                    effect_type=to_effect_enum[effect_type],
+                    min_damage=min_damage,
+                    max_damage=max_damage,
+                )
+            )
+    for remaining in existing_effects.values():
+        for effect in remaining:
+            db_session.delete(effect)
 
 
 def update_or_create_item(
@@ -64,39 +352,15 @@ def update_or_create_item(
         database_item = (
             db_session.query(ModelItem).filter(ModelItem.dofus_db_id == item_id).all()
         )
-    
+
     if len(database_item) > 1:
         raise ValueError(f"Multiple items with ID {item_id} exist in the database")
     elif len(database_item) == 1:
-        # Update existing item
         item = database_item[0]
-        item.dofus_db_id = record.get("dofusID", None)
-        item.dofus_db_mount_id = record.get("mountDofusID", None)
-        item.level = record["level"]
-        item.image_url = record["imageUrl"]
-        new_set_id = record.get("setID", None)
-        new_set_db_id = (
-            (
-                db_session.query(ModelSet)
-                .filter(ModelSet.dofus_db_id == record["setID"])
-                .one()
-            ).uuid
-            if new_set_id != None
-            else None
-        )
-        if item.set_id != new_set_db_id:
-            item.set_id = new_set_db_id
-        create_item_translations(db_session, record, item)
-        db_session.query(ModelItemStat).filter_by(item_id=item.uuid).delete()
-        create_item_stats(db_session, record, item)
-        if "conditions" in record:
-            conditions = {
-                "conditions": record["conditions"].get("conditions", {}),
-                "customConditions": record["conditions"].get("customConditions", {}),
-            }
-            item.conditions = conditions
-        if "weaponStats" in record:
-            create_weapon_stat(db_session, record, item)
+        plan = plan_item_update(db_session, item, record)
+        if not plan["changed"]:
+            return "unchanged"
+        apply_item_update_plan(db_session, plan)
         return False  # Item was updated
     elif len(database_item) == 0:
         # Create new item
@@ -216,8 +480,8 @@ def create_weapon_stat(db_session, record, item):
     )
 
     if record["weaponStats"]["baseCritChance"] > 0:
-        weapon_stat.base_crit_chance = (record["weaponStats"]["baseCritChance"],)
-        weapon_stat.crit_bonus_damage = (record["weaponStats"]["critBonusDamage"],)
+        weapon_stat.base_crit_chance = record["weaponStats"]["baseCritChance"]
+        weapon_stat.crit_bonus_damage = record["weaponStats"]["critBonusDamage"]
 
     db_session.add(weapon_stat)
     db_session.flush()
@@ -240,27 +504,41 @@ def get_items_to_delete(db_session, input_item_ids, file_name):
     """
     if not input_item_ids:
         return []
-    
+
     if file_name == "all":
-        # For all files, find items not in input_item_ids using SQL NOT IN
-        # This covers both regular items and mounts
-        items_to_delete = db_session.query(ModelItem).filter(
-            or_(
-                ModelItem.dofus_db_id.notin_(input_item_ids),
-                ModelItem.dofus_db_mount_id.notin_(input_item_ids)
+        regular_ids = input_item_ids["regular"]
+        mount_ids = input_item_ids["mounts"]
+        items_to_delete = (
+            db_session.query(ModelItem)
+            .filter(
+                or_(
+                    and_(
+                        ModelItem.dofus_db_id.isnot(None),
+                        ModelItem.dofus_db_id.notin_(regular_ids),
+                    ),
+                    and_(
+                        ModelItem.dofus_db_mount_id.isnot(None),
+                        ModelItem.dofus_db_mount_id.notin_(mount_ids),
+                    ),
+                )
             )
-        ).all()
+            .all()
+        )
     elif file_name == "mounts":
         # For mounts, find items not in input_item_ids using SQL NOT IN
-        items_to_delete = db_session.query(ModelItem).filter(
-            ModelItem.dofus_db_mount_id.notin_(input_item_ids)
-        ).all()
+        items_to_delete = (
+            db_session.query(ModelItem)
+            .filter(ModelItem.dofus_db_mount_id.notin_(input_item_ids))
+            .all()
+        )
     else:
         # For regular items, find items not in input_item_ids using SQL NOT IN
-        items_to_delete = db_session.query(ModelItem).filter(
-            ModelItem.dofus_db_id.notin_(input_item_ids)
-        ).all()
-    
+        items_to_delete = (
+            db_session.query(ModelItem)
+            .filter(ModelItem.dofus_db_id.notin_(input_item_ids))
+            .all()
+        )
+
     return items_to_delete
 
 
@@ -270,56 +548,41 @@ def delete_items_not_in_file(db_session, items_to_delete, file_name):
     The cascade relationships will handle deletion of related records.
     """
     deleted_items = []
-    
+
     for item in items_to_delete:
         item_id = item.dofus_db_mount_id if file_name == "mounts" else item.dofus_db_id
         item_name = "Unknown"
-        
+
         # Try to get the item name from translations
-        translation = db_session.query(ModelItemTranslation).filter_by(
-            item_id=item.uuid, locale="en"
-        ).first()
+        translation = (
+            db_session.query(ModelItemTranslation)
+            .filter_by(item_id=item.uuid, locale="en")
+            .first()
+        )
         if translation:
             item_name = translation.name
-        
+
         print("Deleting item [{}]: {}".format(item_id, item_name))
         deleted_items.append("[{}]: {}".format(item_id, item_name))
-        
+
         # Delete the item (cascade will handle related records)
         db_session.delete(item)
-    
+
     return deleted_items
 
 
 def load_all_items():
-    """Load all items from all allowed JSON files into memory."""
-    all_items = {}
-    all_item_ids = set()
-    
+    """Load every required item family and reject incomplete/ambiguous input."""
     print("Loading all item files...")
+    data_dir = os.path.join(app_root, "app/database/data")
+    all_items, all_item_ids = load_and_validate_items(data_dir, allowed_file_names)
     for file_name in allowed_file_names:
-        file_path = os.path.join(app_root, "app/database/data/{}.json".format(file_name))
-        if os.path.exists(file_path):
-            print(f"Loading {file_name}...")
-            with open(file_path, "r") as file:
-                data = json.load(file)
-                all_items[file_name] = data
-                
-                # Collect all item IDs
-                for record in data:
-                    if file_name == "mounts":
-                        item_id = record["mountDofusID"]
-                        all_item_ids.add(item_id)
-                    else:
-                        item_id = record["dofusID"]
-                        all_item_ids.add(item_id)
-                        
-            print(f"Loaded {len(data)} items from {file_name}")
-        else:
-            print(f"Warning: {file_name}.json not found")
-            all_items[file_name] = []
-    
-    print(f"Total items loaded: {len(all_item_ids)}")
+        print("Loaded {} items from {}".format(len(all_items[file_name]), file_name))
+    print(
+        "Total items loaded: {} regular, {} mounts".format(
+            len(all_item_ids["regular"]), len(all_item_ids["mounts"])
+        )
+    )
     return all_items, all_item_ids
 
 
@@ -328,49 +591,69 @@ def preview_changes(db_session, all_items, all_item_ids, operation_type):
     items_to_create = []
     items_to_update = []
     items_to_delete = []
-    
+
     print(f"\n=== PREVIEW: {operation_type.upper()} ===")
-    
+
     # Check what items would be created/updated
     for file_name, data in all_items.items():
         for record in data:
-            item_id = record.get("mountDofusID") if file_name == "mounts" else record.get("dofusID")
+            item_id = (
+                record.get("mountDofusID")
+                if file_name == "mounts"
+                else record.get("dofusID")
+            )
             item_name = record["name"]["en"]
-            
+
             # Check if item exists in database
             if file_name == "mounts":
-                existing_items = db_session.query(ModelItem).filter(
-                    ModelItem.dofus_db_mount_id == item_id
-                ).all()
+                existing_items = (
+                    db_session.query(ModelItem)
+                    .filter(ModelItem.dofus_db_mount_id == item_id)
+                    .all()
+                )
             else:
-                existing_items = db_session.query(ModelItem).filter(
-                    ModelItem.dofus_db_id == item_id
-                ).all()
-            
+                existing_items = (
+                    db_session.query(ModelItem)
+                    .filter(ModelItem.dofus_db_id == item_id)
+                    .all()
+                )
+
+            if len(existing_items) > 1:
+                raise ValueError(
+                    "Multiple items with ID {} exist in the database".format(item_id)
+                )
             if len(existing_items) == 0:
                 items_to_create.append((item_id, item_name, file_name))
             else:
-                items_to_update.append((item_id, item_name, file_name))
-    
+                plan = plan_item_update(db_session, existing_items[0], record)
+                if plan["changed"]:
+                    items_to_update.append(
+                        (item_id, item_name, file_name, plan["details"])
+                    )
+
     # Check what items would be deleted (only for sync all)
     if operation_type == "sync all":
         items_to_delete = get_items_to_delete(db_session, all_item_ids, "all")
-    
+
     # Display preview
     if items_to_create:
         print(f"\nItems to CREATE ({len(items_to_create)}):")
         for item_id, item_name, file_name in items_to_create:
             id_type = "mountDofusID" if file_name == "mounts" else "dofusID"
             print(f"  [{item_id}] ({id_type}): {item_name}")
-    
+
     if items_to_update:
         print(f"\nItems to UPDATE: {len(items_to_update)} items")
-    
+        for item_id, item_name, _, details in items_to_update[:20]:
+            print("  [{}] {}: {}".format(item_id, item_name, ", ".join(details)))
+        if len(items_to_update) > 20:
+            print("  ... and {} more".format(len(items_to_update) - 20))
+
     if items_to_delete:
         print(f"\nItems to DELETE ({len(items_to_delete)}):")
         print(f"{'dofusID':<12} {'EN Name':<40} {'Equipped Items':<15}")
         print("-" * 70)
-        
+
         for item in items_to_delete:
             # Determine if it's a mount or regular item
             if item.dofus_db_mount_id:
@@ -379,23 +662,25 @@ def preview_changes(db_session, all_items, all_item_ids, operation_type):
             else:
                 item_id = item.dofus_db_id
                 id_type = "dofusID"
-            
+
             item_name = "Unknown"
-            translation = db_session.query(ModelItemTranslation).filter_by(
-                item_id=item.uuid, locale="en"
-            ).first()
+            translation = (
+                db_session.query(ModelItemTranslation)
+                .filter_by(item_id=item.uuid, locale="en")
+                .first()
+            )
             if translation:
                 item_name = translation.name
-            
+
             # Count equipped items associated with this item
-            equipped_count = db_session.query(ModelEquippedItem).filter_by(
-                item_id=item.uuid
-            ).count()
-            
+            equipped_count = (
+                db_session.query(ModelEquippedItem).filter_by(item_id=item.uuid).count()
+            )
+
             # Truncate long names for table formatting
             display_name = item_name[:37] + "..." if len(item_name) > 40 else item_name
             print(f"{item_id:<12} {display_name:<40} {equipped_count:<15}")
-    
+
     return items_to_create, items_to_update, items_to_delete
 
 
@@ -405,46 +690,41 @@ def execute_upsert_all(db_session, all_items):
     updated_items = []
     skipped_items = []
     errored_items = []
-    
+
     for file_name, data in all_items.items():
         for record in data:
-            item_id = record.get("mountDofusID") if file_name == "mounts" else record.get("dofusID")
+            item_id = (
+                record.get("mountDofusID")
+                if file_name == "mounts"
+                else record.get("dofusID")
+            )
             item_name = record["name"]["en"]
-            
-            try:
-                result = update_or_create_item(
-                    db_session,
-                    item_id,
-                    record,
-                )
-                
-                if result is True:
-                    created_items.append(f"[{item_id}]: {item_name}")
-                elif result is False:
-                    updated_items.append(f"[{item_id}]: {item_name}")
-                elif result is None:
-                    skipped_items.append(f"[{item_id}]: {item_name}")
-            except ValueError as e:
-                error_msg = f"[{item_id}]: {item_name} - {e}"
-                errored_items.append(error_msg)
-                print(f"Error processing item {error_msg}")
-                # Continue processing other items
-    
+
+            result = update_or_create_item(db_session, item_id, record)
+            if result is True:
+                created_items.append(f"[{item_id}]: {item_name}")
+            elif result is False:
+                updated_items.append(f"[{item_id}]: {item_name}")
+            elif result is None:
+                skipped_items.append(f"[{item_id}]: {item_name}")
+
     return created_items, updated_items, skipped_items, errored_items
 
 
 def execute_sync_all(db_session, all_items, all_item_ids):
     """Execute sync all operation (upsert + delete)."""
     # First do upsert
-    created_items, updated_items, skipped_items, errored_items = execute_upsert_all(db_session, all_items)
-    
+    created_items, updated_items, skipped_items, errored_items = execute_upsert_all(
+        db_session, all_items
+    )
+
     # Then delete items not in input files
     items_to_delete = get_items_to_delete(db_session, all_item_ids, "all")
     deleted_items = []
-    
+
     if items_to_delete:
         deleted_items = delete_items_not_in_file(db_session, items_to_delete, "all")
-    
+
     return created_items, updated_items, skipped_items, errored_items, deleted_items
 
 
@@ -455,7 +735,7 @@ def execute_individual_upsert(db_session, all_items):
     for i, file_name in enumerate(allowed_file_names, 1):
         item_count = len(all_items.get(file_name, []))
         print(f"  {i}. {file_name} ({item_count} items)")
-    
+
     while True:
         try:
             file_choice = int(input("Select file number: ")) - 1
@@ -466,32 +746,32 @@ def execute_individual_upsert(db_session, all_items):
                 print("Invalid choice. Please try again.")
         except ValueError:
             print("Please enter a valid number.")
-    
+
     # Let user enter item ID
     data = all_items[selected_file]
     id_to_record_map = {}
-    
+
     for record in data:
         if selected_file == "mounts":
             id_to_record_map[record["mountDofusID"]] = record
         else:
             id_to_record_map[record["dofusID"]] = record
-    
+
     print(f"\nAvailable items in {selected_file}:")
     for item_id, record in list(id_to_record_map.items())[:10]:  # Show first 10
         print(f"  {item_id}: {record['name']['en']}")
     if len(id_to_record_map) > 10:
         print(f"  ... and {len(id_to_record_map) - 10} more items")
-    
+
     while True:
         item_id = input(f"Enter ID ({selected_file}): ")
         if item_id in id_to_record_map:
             record = id_to_record_map[item_id]
             item_name = record["name"]["en"]
-            
+
             try:
                 result = update_or_create_item(db_session, item_id, record)
-                
+
                 if result is True:
                     return [f"[{item_id}]: {item_name}"], [], [], []
                 elif result is False:
@@ -510,80 +790,120 @@ def execute_individual_upsert(db_session, all_items):
 def sync_item():
     """Main sync function with improved developer experience."""
     print("=== DOFUS LAB ITEM SYNC ===")
-    
+
     # Load all items from all files
     all_items, all_item_ids = load_all_items()
-    
+
     if not any(all_items.values()):
         print("No items loaded. Exiting.")
         return
-    
+
     # Present options to user
     print("\nAvailable operations:")
-    print("  1. upsert all - Update existing items and create missing ones (no deletion)")
+    print(
+        "  1. upsert all - Update existing items and create missing ones (no deletion)"
+    )
     print("  2. sync all - Full sync: upsert all + delete items not in files")
     print("  3. individual upsert - Select and upsert a specific item")
     print("  4. quit")
-    
+
     while True:
         choice = input("\nSelect operation (1-4): ").strip()
-        
+
         if choice == "4" or choice.lower() == "q":
             print("Exiting.")
             return
-        
+
         with session_scope() as db_session:
             if choice == "1":  # upsert all
                 print("\n=== UPSERT ALL ===")
-                items_to_create, items_to_update, _ = preview_changes(db_session, all_items, all_item_ids, "upsert all")
-                
+                items_to_create, items_to_update, _ = preview_changes(
+                    db_session, all_items, all_item_ids, "upsert all"
+                )
+
                 if not items_to_create and not items_to_update:
                     print("No changes needed.")
                     continue
-                
-                confirm = input(f"\nProceed with upserting {len(items_to_create)} new items and updating {len(items_to_update)} existing items? (Y/n): ")
-                if confirm.lower() == 'y' or confirm == '':
-                    created_items, updated_items, skipped_items, errored_items = execute_upsert_all(db_session, all_items)
+
+                confirm = input(
+                    f"\nProceed with upserting {len(items_to_create)} new items and updating {len(items_to_update)} existing items? (Y/n): "
+                )
+                if confirm.lower() == "y" or confirm == "":
+                    (
+                        created_items,
+                        updated_items,
+                        skipped_items,
+                        errored_items,
+                    ) = execute_upsert_all(db_session, all_items)
                     db_session.commit()
-                    print(f"Successfully upserted {len(created_items)} new items and updated {len(updated_items)} existing items.")
+                    print(
+                        f"Successfully upserted {len(created_items)} new items and updated {len(updated_items)} existing items."
+                    )
                     if skipped_items:
-                        print(f"Skipped {len(skipped_items)} items (e.g., Living objects).")
+                        print(
+                            f"Skipped {len(skipped_items)} items (e.g., Living objects)."
+                        )
                     if errored_items:
-                        print(f"Failed to process {len(errored_items)} items due to errors.")
+                        print(
+                            f"Failed to process {len(errored_items)} items due to errors."
+                        )
                 else:
                     print("Operation cancelled.")
-            
+
             elif choice == "2":  # sync all
                 print("\n=== SYNC ALL ===")
-                items_to_create, items_to_update, items_to_delete = preview_changes(db_session, all_items, all_item_ids, "sync all")
-                
+                items_to_create, items_to_update, items_to_delete = preview_changes(
+                    db_session, all_items, all_item_ids, "sync all"
+                )
+
                 if not items_to_create and not items_to_update and not items_to_delete:
                     print("No changes needed.")
                     continue
-                
+
                 # Extra confirmation for large deletions
                 if items_to_delete and len(items_to_delete) > 50:
-                    print(f"\nWARNING: You are about to delete {len(items_to_delete)} items.")
+                    print(
+                        f"\nWARNING: You are about to delete {len(items_to_delete)} items."
+                    )
                     confirm_large = input("Type 'DELETE' to confirm large deletion: ")
                     if confirm_large != "DELETE":
                         print("Operation cancelled.")
                         continue
-                
-                confirm = input(f"\nProceed with syncing {len(items_to_create)} new items, updating {len(items_to_update)} existing items, and deleting {len(items_to_delete)} items? (y/N): ")
-                if confirm.lower() == 'y':
-                    created_items, updated_items, skipped_items, errored_items, deleted_items = execute_sync_all(db_session, all_items, all_item_ids)
+
+                confirm = input(
+                    f"\nProceed with syncing {len(items_to_create)} new items, updating {len(items_to_update)} existing items, and deleting {len(items_to_delete)} items? (y/N): "
+                )
+                if confirm.lower() == "y":
+                    (
+                        created_items,
+                        updated_items,
+                        skipped_items,
+                        errored_items,
+                        deleted_items,
+                    ) = execute_sync_all(db_session, all_items, all_item_ids)
                     db_session.commit()
-                    print(f"Successfully synced: {len(created_items)} items created, {len(updated_items)} items updated, {len(deleted_items)} items deleted.")
+                    print(
+                        f"Successfully synced: {len(created_items)} items created, {len(updated_items)} items updated, {len(deleted_items)} items deleted."
+                    )
                     if skipped_items:
-                        print(f"Skipped {len(skipped_items)} items (e.g., Living objects).")
+                        print(
+                            f"Skipped {len(skipped_items)} items (e.g., Living objects)."
+                        )
                     if errored_items:
-                        print(f"Failed to process {len(errored_items)} items due to errors.")
+                        print(
+                            f"Failed to process {len(errored_items)} items due to errors."
+                        )
                 else:
                     print("Operation cancelled.")
-            
+
             elif choice == "3":  # individual upsert
                 print("\n=== INDIVIDUAL UPSERT ===")
-                created_items, updated_items, skipped_items, errored_items = execute_individual_upsert(db_session, all_items)
+                (
+                    created_items,
+                    updated_items,
+                    skipped_items,
+                    errored_items,
+                ) = execute_individual_upsert(db_session, all_items)
                 if created_items or updated_items or skipped_items or errored_items:
                     db_session.commit()
                     if created_items:
@@ -591,10 +911,14 @@ def sync_item():
                     if updated_items:
                         print(f"Successfully updated {len(updated_items)} items.")
                     if skipped_items:
-                        print(f"Skipped {len(skipped_items)} items (e.g., Living objects).")
+                        print(
+                            f"Skipped {len(skipped_items)} items (e.g., Living objects)."
+                        )
                     if errored_items:
-                        print(f"Failed to process {len(errored_items)} items due to errors.")
-            
+                        print(
+                            f"Failed to process {len(errored_items)} items due to errors."
+                        )
+
             else:
                 print("Invalid choice. Please select 1-4.")
 
