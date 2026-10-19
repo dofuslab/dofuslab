@@ -71707,7 +71707,7 @@
                 "minRange": 1,
                 "maxRange": 6
               },
-              "damageIncreaseMaxStacks": 1,
+              "damageIncreaseMaxStacks": 2,
               "normalEffects": {
                 "modifiableEffect": [
                   {
@@ -71785,7 +71785,7 @@
                 "minRange": 1,
                 "maxRange": 7
               },
-              "damageIncreaseMaxStacks": 1,
+              "damageIncreaseMaxStacks": 2,
               "normalEffects": {
                 "modifiableEffect": [
                   {
@@ -71863,7 +71863,7 @@
                 "minRange": 1,
                 "maxRange": 8
               },
-              "damageIncreaseMaxStacks": 1,
+              "damageIncreaseMaxStacks": 2,
               "normalEffects": {
                 "modifiableEffect": [
                   {
@@ -97852,7 +97852,7 @@
                 "minRange": 0,
                 "maxRange": 5
               },
-              "damageIncreaseMaxStacks": 1,
+              "damageIncreaseMaxStacks": 4,
               "normalEffects": {
                 "conditionalEffect": [
                   {
@@ -97972,7 +97972,7 @@
                 "minRange": 0,
                 "maxRange": 6
               },
-              "damageIncreaseMaxStacks": 1,
+              "damageIncreaseMaxStacks": 4,
               "normalEffects": {
                 "conditionalEffect": [
                   {
