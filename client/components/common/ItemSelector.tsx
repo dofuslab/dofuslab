@@ -121,7 +121,14 @@ const ItemSelector = ({
           selectItemSlot(nextSlot);
         }
 
-        mutate(itemSlotId, item);
+        mutate(
+          itemSlotId,
+          item,
+          !selectedItemSlot ||
+            !customSet?.equippedItems.some(
+              ({ slot }) => slot.id === selectedItemSlot.id,
+            ),
+        );
       }
     },
     [mutate, selectItemSlot, selectedItemSlot, customSet, isClassic],

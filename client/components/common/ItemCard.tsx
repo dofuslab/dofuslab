@@ -28,6 +28,7 @@ import BasicItemCard from './BasicItemCard';
 interface Props {
   item: Item;
   itemSlotId: string | null;
+  useNextOpenSlot: boolean;
   customSetId: string | null;
   selectItemSlot?: Dispatch<SetStateAction<ItemSlot | null>>;
   equipped: boolean;
@@ -41,6 +42,7 @@ interface Props {
 const ItemCard = ({
   item,
   itemSlotId,
+  useNextOpenSlot,
   customSetId,
   selectItemSlot,
   equipped,
@@ -109,11 +111,12 @@ const ItemCard = ({
           });
         }
       }
-      mutate(itemSlotId);
+      mutate(itemSlotId, undefined, useNextOpenSlot);
     }
   }, [
     item,
     itemSlotId,
+    useNextOpenSlot,
     customSetId,
     mutate,
     selectItemSlot,

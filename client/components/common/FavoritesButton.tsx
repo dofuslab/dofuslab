@@ -130,6 +130,12 @@ const FavoritesButton = ({
                   key={`item-card-${item.id}`}
                   item={item}
                   itemSlotId={itemSlotId}
+                  useNextOpenSlot={
+                    !selectedItemSlot ||
+                    !customSet?.equippedItems.some(
+                      ({ slot }) => slot.id === selectedItemSlot.id,
+                    )
+                  }
                   equipped={false}
                   customSetId={customSet?.id ?? null}
                   selectItemSlot={selectItemSlot}
