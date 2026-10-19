@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.dist
+.git
+.next
+node_modules
+npm-debug.log*
+yarn-error.log*
