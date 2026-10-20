@@ -193,12 +193,8 @@ const SelectorFilters = ({
             css={{
               display: 'flex',
               alignItems: 'center',
-              height: 36,
               fontSize: '0.75rem',
               justifyContent: 'space-between',
-              [mq[1]]: {
-                height: 'auto',
-              },
             }}
           >
             {(isMobile || isClassic) && (
